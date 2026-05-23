@@ -1,0 +1,168 @@
+# CompMap ingestion pipeline — design note
+
+This document describes the intended design for the AI-assisted ingestion pipeline
+(`ingestion/`). The pipeline does not yet exist; this note records the design
+constraints and required validation gates so that source integrity is preserved
+when it is built.
+
+---
+
+## Why this document exists
+
+The current case records (`data/cases/**/*.yaml`) were authored manually. During
+the manual authoring of `us_microsoft_activision_2023`, a source document was
+added with a plausible-looking title ("FTC ALJ Initial Decision") and a
+fabricated URL. The PDF URL returned HTTP 404 — no such ALJ decision was ever
+issued in that matter. The `check_source_integrity.py` script was built to make
+this class of error detectable; this document ensures the future ingestion
+pipeline is designed to prevent it.
+
+---
+
+## Required pipeline stages
+
+Every AI-generated YAML record must pass through the following stages before
+being written to `data/cases/`. Stages must run in order; a failure at any
+stage must halt the pipeline and produce an actionable error, not silently
+continue.
+
+### Stage 1 — Candidate source discovery
+
+The model proposes one or more source documents for the case (complaint, court
+opinion, agency decision, etc.). At this stage the model outputs metadata only:
+title, document type (`doc_type`), authority, expected URL or search query.
+
+**Do not write to YAML yet.** Proposals are unverified assertions.
+
+### Stage 2 — Fetch and classify
+
+For each proposed source document:
+
+1. Resolve a URL (from the model's proposal, a known authority URL pattern, or
+   a search/scrape of the authority's case registry).
+2. Perform an HTTP GET. Record status code, content-type, and final URL after
+   redirects.
+3. Classify the response:
+   - `ok_pdf` — HTTP 200, `application/pdf`
+   - `ok_html` — HTTP 200, `text/html`
+   - `broken` — 4xx or 5xx
+   - `timeout` — no response within threshold
+   - `portal` — HTTP 200 HTML but URL is a landing page / search portal, not
+     the specific document
+
+Treat `broken`, `timeout`, and `portal` as **blocking errors** — do not proceed
+to extraction for that document. Log the failure and either discard the document
+or flag it for human review.
+
+### Stage 3 — Extract and structure
+
+For documents that passed Stage 2:
+
+- **PDF**: extract text with `pypdf` (available in the venv). Note page
+  numbers; store page number with each extracted passage.
+- **HTML**: strip script/style blocks; extract visible text.
+- **Scanned PDFs** (image-only; `pypdf` returns empty text): do not attempt
+  extraction. Flag as `retrieval_status: fallback` and require human review
+  before any quote is committed.
+
+### Stage 4 — Quote extraction and validation
+
+The model proposes `source_passages` with `quote_snippet` values. Before
+writing each passage:
+
+1. Run `quote_found_in_text(quote, extracted_text)` from
+   `scripts/check_source_integrity.py`.
+2. If the quote is **not found**: do not write the passage. Log a WARNING.
+   The model may have hallucinated the quote or cited the wrong page.
+3. If the quote **is found**: record the page number and section heading if
+   available, set `extraction_method: ai_extracted`, and set
+   `review_status: unreviewed`.
+
+A passage that fails quote validation must not appear in the committed YAML.
+A market definition finding or theory of harm that has no passing passage
+should have `definition_status: discussed` (not `defined`) and should carry
+an explicit `SOURCE NEEDED` note.
+
+### Stage 5 — Integrity gate
+
+Run `check_source_integrity.py` against the candidate YAML. The pipeline must
+exit non-zero (and must not commit) if any **ERROR**-level issues remain:
+
+```bash
+.venv/bin/python scripts/check_source_integrity.py --cases-dir <draft_dir>
+```
+
+Warnings may be reviewed and accepted by a human; errors must be resolved.
+
+### Stage 6 — Schema validation
+
+Run `validate_cases.py` against the candidate YAML:
+
+```bash
+.venv/bin/python scripts/validate_cases.py --cases-dir <draft_dir>
+```
+
+This validates Pydantic types, enum values, required fields, and referential
+consistency between passages and source documents.
+
+### Stage 7 — Human review and commit
+
+The output of Stages 1–6 is a draft YAML file with:
+- all source documents verified (HTTP 200, correct content-type)
+- all quote snippets confirmed present in extracted text
+- `review_status: unreviewed` on every passage and event
+- `overall_confidence` ≤ 0.70 until a human sets it higher
+
+A human reviewer changes `review_status` to `spot_checked` or `lawyer_reviewed`
+after verifying passages against the source, then commits.
+
+---
+
+## What the pipeline must never do
+
+- **Never write a source document without a verified URL.** A plausible title
+  is not evidence that a document exists. A URL must return HTTP 200 with
+  appropriate content-type before the document is recorded.
+
+- **Never write a quote snippet that was not found in the extracted text.**
+  If the model proposes a quote and `quote_found_in_text` returns False, the
+  quote is discarded. Do not adjust the quote to make it pass; locate the
+  actual text in the document or omit the passage.
+
+- **Never characterise complaint allegations as adjudicated findings.**
+  If the only available source is a complaint, `definition_status` must be
+  `discussed` and any proposition notes must make clear that the text reflects
+  allegations, not a court or authority finding.
+
+- **Never infer a document exists from the case name or docket number alone.**
+  Some proceedings end without a final decision (PI denied, deal abandoned,
+  administrative case withdrawn). Check the authority's case registry before
+  asserting a document exists.
+
+---
+
+## Source integrity script
+
+`apps/api/scripts/check_source_integrity.py` is the enforcement point for
+Stages 5. It can be run at any time against any directory of YAML files:
+
+```bash
+cd apps/api
+.venv/bin/python scripts/check_source_integrity.py --cases-dir ../../data/cases
+```
+
+**ERROR** issues block ingestion. **WARNING** issues require human judgment.
+The script is also runnable in CI as a pre-merge gate.
+
+---
+
+## File locations
+
+| Path | Purpose |
+|------|---------|
+| `ingestion/` | Reserved for future ingestion pipeline code |
+| `apps/api/scripts/check_source_integrity.py` | Source validation gate |
+| `apps/api/scripts/check_source_links.py` | Lightweight HTTP link checker |
+| `apps/api/scripts/validate_cases.py` | Pydantic schema validator |
+| `apps/api/tests/test_source_integrity.py` | Unit tests for the gate |
+| `data/cases/**/*.yaml` | Canonical case records (human-reviewed) |

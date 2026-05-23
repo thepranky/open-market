@@ -1,0 +1,182 @@
+case_id: us_microsoft_activision_2023
+case_name: "Microsoft / Activision Blizzard"
+jurisdiction: US
+authority: FTC
+decision_date: "2023-07-10"
+  # Date of the federal district court PI denial — the determinative procedural event.
+  # The FTC's Part 3 administrative complaint was voluntarily dismissed without an ALJ
+  # decision on the merits. No adjudicated decision date exists for the administrative track.
+case_type: merger
+procedure_stage: federal_district_court
+  # The FTC pursued two parallel tracks: (1) Part 3 administrative proceedings, and
+  # (2) a federal PI action in N.D. Cal. The PI denial (July 2023) was the outcome-determining
+  # event. The admin complaint was voluntarily dismissed after the deal closed. No ALJ
+  # initial decision was ever issued.
+sector: digital / platforms
+parties:
+  - name: Microsoft Corporation
+    role: acquirer
+  - name: Activision Blizzard Inc
+    role: target
+outcome: cleared
+remedies:
+  - "10-year licensing agreements with Sony, Nintendo, and NVIDIA to supply Call of Duty on their platforms."
+  - "Cloud gaming licensing agreement with Boosteroid and other cloud providers."
+  - "Cloud gaming rights in the UK ring-fenced for 15 years (CMA condition)."
+theories_of_harm:
+  - theory_id: toh_1
+    name: Vertical foreclosure – console gaming
+    description: >
+      FTC alleged Microsoft would withhold or degrade Activision Blizzard's titles
+      (primarily Call of Duty) from rival consoles (PlayStation), harming Sony's
+      ability to compete in the console gaming market.
+  - theory_id: toh_2
+    name: Vertical foreclosure – cloud gaming
+    description: >
+      FTC alleged Microsoft would foreclose rival cloud gaming platforms from access
+      to Activision Blizzard's game portfolio, entrenching Microsoft's Azure-based
+      Game Pass / Xbox Cloud Gaming service.
+  - theory_id: toh_3
+    name: Horizontal consolidation – gaming subscription services
+    description: >
+      Combined entity would be the largest gaming subscription service provider,
+      with Call of Duty, King/Candy Crush, and existing Xbox Game Pass content,
+      potentially foreclosing rival subscription services.
+
+product_markets_considered:
+  - market_id: pm_1
+    name: High-performance console gaming
+    definition_status: discussed
+    notes: >
+      FTC alleged a distinct market for high-performance console gaming excluding
+      mobile gaming. The precise scope was contested; no adjudicated market definition
+      ruling was made in the US proceedings — the federal PI action was denied on
+      other grounds and the administrative case was dismissed without a merits decision.
+  - market_id: pm_2
+    name: Cloud gaming services / subscription
+    definition_status: discussed
+    notes: >
+      FTC alleged a distinct emerging market for cloud gaming subscription services,
+      distinct from downloaded console and PC gaming. No adjudicated finding was made;
+      source needed for any attributed propositions.
+  - market_id: pm_3
+    name: Gaming content / AAA game publishing
+    definition_status: discussed
+    notes: >
+      The FTC complaint referenced gaming content markets in the context of foreclosure
+      theories. No formal market definition ruling was issued in the US proceedings.
+
+geographic_markets_considered:
+  - market_id: gm_1
+    name: United States (console gaming)
+    definition_status: discussed
+  - market_id: gm_2
+    name: United States (cloud gaming)
+    definition_status: discussed
+
+source_documents:
+  - doc_id: ftc_msft_activision_complaint
+    title: "FTC Administrative Complaint: In the Matter of Microsoft Corp. / Activision Blizzard"
+    case_page_url: "https://www.ftc.gov/legal-library/browse/cases-proceedings/2210077-microsoftactivision-blizzard-matter"
+    pdf_url: "https://www.ftc.gov/system/files/ftc_gov/pdf/D09412MicrosoftActivisionAdministrativeComplaintPublicVersionFinal.pdf"
+    doc_type: complaint
+    retrieval_status: direct
+    published_date: "2022-12-08"
+
+source_passages: []
+  # All prior passages referenced ftc_msft_activision_alj_decision, which was a
+  # fabricated document — no FTC ALJ initial decision was ever issued in this matter.
+  # The FTC administrative complaint is sourced above, but its text contains
+  # allegations only (not adjudicated findings); no quote has been added to avoid
+  # mischaracterising complaint allegations as established market definitions or
+  # liability conclusions.
+  # Source-needed: market definition propositions (pm_1, pm_2), foreclosure
+  # incentive analysis (toh_1), and cloud gaming market definition (toh_2).
+
+similar_cases:
+  - case_id: uk_meta_giphy_2022
+    score: 0.47
+    method: graph_feature_overlap
+    reasons:
+      - Both involve vertical foreclosure theories in digital platform markets
+      - Both involve content/API access theories of harm
+  - case_id: eu_google_fitbit_2021
+    score: 0.43
+    method: graph_feature_overlap
+    reasons:
+      - Both involve ecosystem foreclosure theories
+      - Both involve platform interoperability as key competitive dimension
+
+case_history:
+  status: final_no_known_challenge
+  events:
+    - event_type: procedural
+      event_date: "2022-12-08"
+      forum: FTC (Part 3 administrative proceedings)
+      title: FTC files administrative complaint — Part 3 proceedings initiated
+      review_status: spot_checked
+      summary: >
+        FTC filed an administrative complaint in Part 3 proceedings and simultaneously
+        sought a federal preliminary injunction in the Northern District of California
+        (Case No. 3:23-cv-02880-JSC), alleging vertical foreclosure in console and
+        cloud gaming markets.
+    - event_type: judgment
+      event_date: "2023-07-10"
+      forum: N.D. Cal. (Case No. 3:23-cv-02880-JSC)
+      title: Federal district court denies FTC preliminary injunction
+      outcome: cleared
+      review_status: unreviewed
+      summary: >
+        Judge Jacqueline Scott Corley denied the FTC's motion for a federal preliminary
+        injunction, finding the FTC had not demonstrated a likelihood of success on the
+        merits of its foreclosure theories. SOURCE NEEDED — no source document added yet.
+    - event_type: procedural
+      event_date: "2023-10-13"
+      forum: n/a
+      title: Microsoft-Activision deal closes
+      review_status: unreviewed
+      summary: >
+        Microsoft closed its acquisition of Activision Blizzard following the federal PI
+        denial and regulatory clearances worldwide. The CMA cleared the transaction after
+        it was restructured to exclude cloud gaming rights for 15 years.
+        SOURCE NEEDED — no source document added yet.
+    - event_type: procedural
+      event_date: "2024-01-08"
+      forum: FTC (Part 3 administrative proceedings)
+      title: FTC voluntarily dismisses Part 3 administrative complaint
+      review_status: unreviewed
+      summary: >
+        After the deal closed, the FTC's Part 3 administrative proceedings were
+        voluntarily dismissed. No ALJ initial decision was ever issued; the
+        administrative complaint was withdrawn without adjudication on the merits.
+        SOURCE NEEDED — no source document added yet.
+
+ai_summary: >
+  The FTC challenged Microsoft's $68.7bn acquisition of Activision Blizzard on vertical
+  foreclosure and horizontal consolidation theories. The FTC alleged Microsoft would
+  withhold Call of Duty from rival consoles (primarily PlayStation) and foreclose cloud
+  gaming platforms from Activision's game portfolio. In July 2023, the Northern District
+  of California denied the FTC's motion for a federal preliminary injunction, finding the
+  FTC had not demonstrated a likelihood of success on its foreclosure theories. The deal
+  closed in October 2023. Microsoft had pre-committed to 10-year licensing agreements with
+  Sony, Nintendo, and NVIDIA for Call of Duty access. The FTC's Part 3 administrative
+  proceedings were voluntarily dismissed without any ALJ decision on the merits. No
+  adjudicated market definition finding was made in the US proceedings. This case is
+  a significant US precedent on the incentive prong in vertical foreclosure analysis and
+  the limits of the FTC's ability to block deals through the federal PI mechanism.
+  [AI-generated summary — verify against source]
+
+metadata:
+  extraction_method: manually_added
+  review_status: spot_checked
+  overall_confidence: 0.60
+  created_date: "2025-01-01"
+  last_updated_date: "2026-05-22"
+  tags:
+    - digital
+    - gaming
+    - vertical-foreclosure
+    - cloud-gaming
+    - ftc
+    - cleared
+    - source-needed

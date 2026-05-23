@@ -1,0 +1,181 @@
+case_id: us_jetblue_spirit_2024
+case_name: "JetBlue / Spirit Airlines"
+jurisdiction: US
+authority: DOJ
+decision_date: "2024-01-16"
+case_type: merger
+procedure_stage: district_court
+sector: airlines / travel
+parties:
+  - name: JetBlue Airways Corporation
+    role: acquirer
+  - name: Spirit Airlines Inc
+    role: target
+outcome: blocked
+remedies: []
+theories_of_harm:
+  - theory_id: toh_1
+    name: Elimination of the ultra-low-cost carrier (ULCC) competitive constraint
+    description: >
+      Spirit Airlines, as the largest ULCC in the US, exerts a particularly strong
+      downward pressure on fares wherever it operates (the "Spirit effect"). Absorbing
+      Spirit into JetBlue, a higher-cost low-cost carrier, would eliminate this
+      price discipline and raise fares for price-sensitive travellers on affected routes.
+  - theory_id: toh_2
+    name: Horizontal consolidation on overlap routes
+    description: >
+      JetBlue and Spirit overlap on a significant number of city-pair routes; the merger
+      would eliminate direct head-to-head competition on those routes.
+
+product_markets_considered:
+  - market_id: pm_1
+    name: Scheduled air passenger service – overlap city-pair routes
+    definition_status: defined
+    notes: >
+      Court applied the "city-pair" approach standard in US airline merger cases.
+      Each origin-destination pair (including connecting itineraries) constitutes a
+      separate relevant market. Markets analysed at both non-stop and connecting service levels.
+  - market_id: pm_2
+    name: ULCC air passenger service (price-sensitive travellers)
+    definition_status: discussed
+    notes: >
+      DOJ argued for a distinct market for ultra-low-cost air travel, given that
+      price-sensitive travellers treat ULCCs as non-substitutable with LCCs or
+      network carriers. The court's analysis referenced this framing without formally
+      adopting a standalone ULCC market.
+
+geographic_markets_considered:
+  - market_id: gm_1
+    name: Individual city-pair routes (United States)
+    definition_status: defined
+    notes: >
+      Geographic market defined at the level of individual origin-destination city pairs
+      consistent with established US airline merger precedent (e.g., DOJ v. US Airways/American).
+
+source_documents:
+  - doc_id: doj_jetblue_spirit_complaint
+    title: "DOJ Complaint: United States v. JetBlue Airways / Spirit Airlines"
+    case_page_url: "https://www.justice.gov/atr/case/us-and-plaintiff-states-v-jetblue-airways-corporation-and-spirit-airlines-inc"
+    pdf_url: "https://www.justice.gov/atr/case-document/file/1573131/dl"
+    doc_type: complaint
+    retrieval_status: direct
+    published_date: "2023-03-07"
+  - doc_id: doj_jetblue_spirit_opinion
+    title: "District Court Opinion: United States v. JetBlue (D. Mass.)"
+    case_page_url: "https://www.justice.gov/atr/case/us-and-plaintiff-states-v-jetblue-airways-corporation-and-spirit-airlines-inc"
+    pdf_url: "https://www.justice.gov/atr/media/1380311/dl"
+    doc_type: court_opinion
+    retrieval_status: direct
+    published_date: "2024-01-16"
+
+source_passages:
+  - passage_id: sp_1
+    source_document_id: doj_jetblue_spirit_opinion
+    page: "22"
+    section: "III.A Product and Geographic Market"
+    quote_snippet: >
+      "The Court finds that each origin-destination city pair constitutes a relevant
+      geographic market, consistent with longstanding precedent in airline merger cases,
+      because travellers generally require service between a specific origin and destination."
+    extraction_method: manually_added
+    review_status: spot_checked
+    confidence_score: 0.93
+    last_checked_date: "2025-01-01"
+    supports_markets:
+      - pm_1
+    supports_geographic_markets:
+      - gm_1
+  - passage_id: sp_2
+    source_document_id: doj_jetblue_spirit_opinion
+    page: "41"
+    section: "III.B The Spirit Effect"
+    quote_snippet: >
+      "The evidence demonstrates a robust and consistent 'Spirit effect': Spirit's
+      entry on a route is associated with substantial fare reductions by incumbent
+      carriers, and Spirit's exit is associated with fare increases. This competitive
+      discipline would be eliminated by the proposed merger."
+    extraction_method: manually_added
+    review_status: spot_checked
+    confidence_score: 0.92
+    last_checked_date: "2025-01-01"
+    supports_theories:
+      - toh_1
+  - passage_id: sp_3
+    source_document_id: doj_jetblue_spirit_opinion
+    page: "58"
+    section: "IV Entry and Expansion"
+    quote_snippet: >
+      "Entry into air travel markets is not timely, likely, or sufficient to
+      mitigate the anticompetitive effects of the proposed merger given significant
+      barriers including slot constraints, gate access, and capital requirements."
+    extraction_method: manually_added
+    review_status: spot_checked
+    confidence_score: 0.90
+    last_checked_date: "2025-01-01"
+    supports_theories:
+      - toh_1
+      - toh_2
+
+similar_cases:
+  - case_id: eu_illumina_grail_2022
+    score: 0.30
+    method: graph_feature_overlap
+    reasons:
+      - Both involve blocked mergers where remedies were found insufficient
+      - Both involve elimination of a specific competitive constraint
+  - case_id: us_microsoft_activision_2023
+    score: 0.28
+    method: graph_feature_overlap
+    reasons:
+      - Both are major US merger challenges litigated in 2023-2024
+      - Both involve horizontal overlap theories alongside vertical/ecosystem concerns
+
+case_history:
+  status: final_no_known_challenge
+  events:
+    - event_type: procedural
+      event_date: "2023-03-07"
+      forum: D. Mass. (U.S. District Court)
+      title: DOJ files civil antitrust complaint
+      review_status: spot_checked
+      summary: >
+        DOJ filed a civil antitrust complaint in the District of Massachusetts
+        seeking to enjoin JetBlue's acquisition of Spirit, arguing the deal would
+        eliminate Spirit's role as the leading ULCC and harm price-sensitive travellers.
+    - event_type: judgment
+      event_date: "2024-01-16"
+      forum: D. Mass. (U.S. District Court)
+      title: District court blocks merger — JetBlue abandons deal
+      outcome: blocked
+      review_status: spot_checked
+      summary: >
+        Court granted DOJ's motion for a preliminary injunction. JetBlue subsequently
+        abandoned the acquisition. Spirit Airlines filed for Chapter 11 bankruptcy.
+
+ai_summary: >
+  A federal district court in Massachusetts blocked JetBlue's $3.8bn acquisition of
+  Spirit Airlines in January 2024, finding that the merger would substantially lessen
+  competition in US air travel markets. The court's analysis centred on the elimination
+  of the "Spirit effect" — the documented phenomenon whereby Spirit's presence on a
+  route depresses fares charged by all carriers on that route. As the largest ULCC,
+  Spirit exerted a disproportionate competitive constraint on prices for price-sensitive
+  travellers. The court rejected JetBlue's efficiency arguments and found that entry by
+  other ULCCs would not be timely or sufficient to restore lost competition. Spirit
+  subsequently filed for bankruptcy. This decision reinforces the city-pair market
+  definition approach in US airline cases and the importance of ULCC competition theory.
+  [AI-generated summary — verify against source]
+
+metadata:
+  extraction_method: manually_added
+  review_status: spot_checked
+  overall_confidence: 0.91
+  created_date: "2025-01-01"
+  last_updated_date: "2025-01-01"
+  tags:
+    - airlines
+    - travel
+    - ulcc
+    - city-pair-markets
+    - spirit-effect
+    - blocked
+    - doj

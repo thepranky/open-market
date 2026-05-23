@@ -1,0 +1,185 @@
+case_id: eu_google_fitbit_2021
+case_name: "Google / Fitbit"
+jurisdiction: EU
+authority: European Commission
+decision_date: "2021-01-14"
+case_type: merger
+procedure_stage: phase2
+sector: digital / platforms
+parties:
+  - name: Google LLC
+    role: acquirer
+  - name: Fitbit Inc
+    role: target
+outcome: cleared_with_remedies
+remedies:
+  - "Google committed not to use Fitbit health and wellness data for Google Ads for 10 years."
+  - "Interoperability commitments: Android must continue to interoperate with third-party wearables."
+  - "Effective separation of Fitbit health data from Google's advertising systems."
+theories_of_harm:
+  - theory_id: toh_1
+    name: Horizontal consolidation – wearables / fitness OS
+    description: >
+      Google and Fitbit both active in wearables; combined entity could foreclose rival
+      wearable manufacturers from access to Android/WearOS ecosystem.
+  - theory_id: toh_2
+    name: Data advantage in digital advertising
+    description: >
+      Fitbit's granular health and location data could strengthen Google's dominance
+      in online advertising by enabling superior audience targeting.
+  - theory_id: toh_3
+    name: Vertical foreclosure – wearable OS / app ecosystem
+    description: >
+      Google could degrade API access or interoperability for rival wearable OEMs
+      relying on Android connectivity.
+
+product_markets_considered:
+  - market_id: pm_1
+    name: Wearable fitness devices
+    definition_status: defined
+    notes: >
+      Commission concluded a relevant product market for wearable fitness devices,
+      distinct from general smartwatches, given dedicated fitness tracking functionality.
+  - market_id: pm_2
+    name: Wearable OS / platforms
+    definition_status: discussed
+    notes: >
+      Market left partially open; Commission assessed competitive effects on both
+      narrow (WearOS) and broader (all wearable OS) bases.
+  - market_id: pm_3
+    name: Online advertising (general search advertising)
+    definition_status: defined
+    notes: >
+      Commission relied on prior precedent defining a market for general search
+      advertising in which Google holds a dominant position.
+
+geographic_markets_considered:
+  - market_id: gm_1
+    name: EEA (wearable fitness devices)
+    definition_status: defined
+  - market_id: gm_2
+    name: EEA (online advertising)
+    definition_status: defined
+
+source_documents:
+  - doc_id: eu_google_fitbit_decision
+    title: "Case M.9660 – Google / Fitbit: Commission Decision"
+    case_page_url: "https://competition-cases.ec.europa.eu/cases/M.9660"
+    pdf_url: "https://ec.europa.eu/competition/mergers/cases1/202120/m9660_3314_3.pdf"
+    doc_type: decision
+    authority_reference: "M.9660"
+    retrieval_status: direct
+    published_date: "2021-01-14"
+
+source_passages:
+  - passage_id: sp_1
+    source_document_id: eu_google_fitbit_decision
+    page: "14"
+    paragraph: "88"
+    section: "5.1.1 Product market definition"
+    quote_snippet: >
+      "The Commission concludes that the relevant product market is the market for
+      wearable fitness devices, distinct from general-purpose smartwatches."
+    extraction_method: manually_added
+    review_status: spot_checked
+    confidence_score: 0.95
+    last_checked_date: "2025-01-01"
+    supports_markets:
+      - pm_1
+    supports_geographic_markets:
+      - gm_1
+  - passage_id: sp_2
+    source_document_id: eu_google_fitbit_decision
+    page: "21"
+    paragraph: "130"
+    section: "5.2.2 Data advantage"
+    quote_snippet: >
+      "The combination of Fitbit's health and wellness data with Google's existing
+      data sets could reinforce Google's already strong position in online advertising."
+    extraction_method: manually_added
+    review_status: spot_checked
+    confidence_score: 0.90
+    last_checked_date: "2025-01-01"
+    supports_markets:
+      - pm_3
+    supports_theories:
+      - toh_2
+  - passage_id: sp_3
+    source_document_id: eu_google_fitbit_decision
+    page: "9"
+    paragraph: "51"
+    section: "4.2 Geographic market"
+    quote_snippet: >
+      "The geographic scope of the relevant market for wearable fitness devices is
+      at least EEA-wide, given broadly similar competitive conditions across Member States."
+    extraction_method: manually_added
+    review_status: spot_checked
+    confidence_score: 0.90
+    last_checked_date: "2025-01-01"
+    supports_markets:
+      - pm_1
+    supports_geographic_markets:
+      - gm_1
+
+similar_cases:
+  - case_id: us_microsoft_activision_2023
+    score: 0.55
+    method: graph_feature_overlap
+    reasons:
+      - Both involve digital platform ecosystem foreclosure theories
+      - Both involve remedies focused on interoperability commitments
+  - case_id: uk_meta_giphy_2022
+    score: 0.50
+    method: graph_feature_overlap
+    reasons:
+      - Both involve data advantage theories in digital advertising
+      - Both involve major digital platform acquirers
+
+case_history:
+  status: final_no_known_challenge
+  events:
+    - event_type: procedural
+      event_date: "2020-08-04"
+      forum: European Commission
+      case_number: M.9660
+      title: Phase II investigation opened
+      review_status: spot_checked
+      summary: >
+        Commission opened an in-depth Phase II investigation after Phase I
+        review raised serious doubts as to the compatibility of the transaction
+        with the internal market, focusing on data advantage and foreclosure concerns.
+    - event_type: decision
+      event_date: "2021-01-14"
+      forum: European Commission
+      case_number: M.9660
+      title: Phase II decision — cleared with remedies
+      outcome: cleared_with_remedies
+      review_status: spot_checked
+      summary: >
+        Commission cleared the acquisition subject to behavioural commitments on
+        data separation and interoperability. Decision was not challenged before
+        the EU courts.
+
+ai_summary: >
+  The European Commission cleared Google's acquisition of Fitbit in January 2021 after
+  a Phase II investigation, subject to significant behavioural remedies. The Commission
+  identified concerns across three overlapping theories of harm: horizontal overlap in
+  wearables, Google's potential data advantage in advertising, and vertical foreclosure
+  of the Android/WearOS ecosystem. The remedies focused on data separation and
+  interoperability commitments rather than structural divestiture. This case is notable
+  as an early precedent for data-advantage theories of harm in digital mergers and for
+  the Commission's use of long-duration behavioural commitments.
+  [AI-generated summary — verify against source]
+
+metadata:
+  extraction_method: manually_added
+  review_status: spot_checked
+  overall_confidence: 0.88
+  created_date: "2025-01-01"
+  last_updated_date: "2025-01-01"
+  tags:
+    - digital
+    - platforms
+    - data-advantage
+    - wearables
+    - behavioural-remedies

@@ -1,0 +1,562 @@
+#!/usr/bin/env python3
+"""
+check_source_integrity.py — source validation gate for CompMap YAML case records.
+
+For each source document:
+  - fetches the URL and records HTTP status / content-type
+  - checks whether doc_type keywords appear in the URL path
+  - flags pdf_url fields that resolve to HTML (redirect to landing page)
+  - flags URLs that look like generic portals / search pages
+  - checks whether title tokens appear in the URL (basic mismatch detection)
+
+For each source passage:
+  - confirms source_document_id exists in the record's source_documents
+  - confirms quote_snippet is non-empty
+  - where text can be extracted (HTML or PDF), searches for the quote
+
+Issue levels:
+  ERROR   — broken link, dangling source_document_id, empty quote snippet,
+             pdf_url returning HTML
+  WARNING — quote not found in fetched text, URL looks like a generic page,
+             doc_type keywords absent from URL path, possible title/URL mismatch
+  INFO    — check passed; text extraction notes
+
+Usage:
+    cd apps/api
+    .venv/bin/python scripts/check_source_integrity.py [--cases-dir ../../data/cases]
+                                                       [--timeout 20] [--verbose]
+"""
+
+import argparse
+import io
+import re
+import sys
+import unicodedata
+from dataclasses import dataclass, field as dc_field
+from enum import Enum
+from pathlib import Path
+from typing import Optional
+from urllib.parse import urlparse
+
+import httpx
+import yaml
+
+try:
+    import pypdf
+    _HAS_PYPDF = True
+except ImportError:
+    _HAS_PYPDF = False
+
+
+DATA_DIR = Path(__file__).resolve().parents[3] / "data" / "cases"
+
+HEADERS = {
+    "User-Agent": "CompMap-IntegrityChecker/1.0 (open-source research tool)"
+}
+
+# Keywords expected to appear somewhere in the URL for a given doc_type.
+# A WARNING fires when *none* match.
+_DOC_TYPE_URL_HINTS: dict[str, list[str]] = {
+    "alj_decision":   ["alj", "initial", "initialdecision", "decision"],
+    "complaint":      ["complaint"],
+    "court_opinion":  ["opinion", "order", "judgment", "decision", "recap"],
+    "decision":       ["decision", "m.", "cases"],
+    "final_report":   ["final", "report", "report_", "-report"],
+    "press_release":  ["press", "release", "news"],
+}
+
+# URL path/query patterns that suggest a portal or search page rather than
+# a specific document. Only applied to pdf_url (not case_page_url).
+_GENERIC_PATH_RX = re.compile(
+    r"(/search|/browse|[?&](q|query|search)=|^/[^/]{0,30}$)",
+    re.I,
+)
+
+# Authorities (EC, DOJ, CMA, CourtListener, …) often use opaque numeric file IDs
+# in PDF download URLs, e.g. /file/1573131/dl or /202120/m9660_3314_3.pdf.
+# Party names and doc-type keywords will never appear in these paths.
+# When detected, skip the title-token and doc-type keyword URL checks —
+# the opaque ID itself is sufficient evidence the URL is document-specific.
+_OPAQUE_ID_RX = re.compile(
+    r"(/file/\d{5,}|/media/\d{5,}|/\d{5,}/|[0-9a-f]{20,}|/dl$)",
+    re.I,
+)
+
+# Stop-words excluded when comparing title tokens against the URL.
+_TITLE_STOP: set[str] = {
+    "about", "against", "and", "case", "commission", "corporation",
+    "court", "decision", "district", "european", "federal", "final",
+    "ftc", "initial", "into", "the", "matter", "opinion", "report",
+    "with",
+}
+
+
+# ---------------------------------------------------------------------------
+# Data model
+# ---------------------------------------------------------------------------
+
+class Level(str, Enum):
+    ERROR = "ERROR"
+    WARNING = "WARNING"
+    INFO = "INFO"
+
+
+@dataclass
+class Issue:
+    level: Level
+    case_id: str
+    scope: str          # doc_id, passage_id, or "record"
+    message: str
+    url: Optional[str] = None
+
+    def __str__(self) -> str:
+        url_part = f"\n        url: {self.url}" if self.url else ""
+        return f"  [{self.level.value:<7}] {self.scope}: {self.message}{url_part}"
+
+
+@dataclass
+class FetchResult:
+    ok: bool
+    status: Optional[int]
+    content_type: str
+    final_url: str
+    content: Optional[bytes]
+    error: Optional[str]
+
+
+# ---------------------------------------------------------------------------
+# Text normalisation and quote matching
+# ---------------------------------------------------------------------------
+
+def _normalise(text: str) -> str:
+    """Lowercase, ASCII-fold, strip punctuation, collapse whitespace."""
+    text = unicodedata.normalize("NFKD", text).encode("ascii", "ignore").decode("ascii")
+    text = text.lower()
+    text = re.sub(r"[^\w\s]", " ", text)
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def quote_found_in_text(quote: str, text: str, min_fragment: int = 28) -> bool:
+    """
+    Return True if *quote* appears approximately in *text*.
+
+    Strategy:
+    1. Fast-path: normalised quote is a direct substring of normalised text.
+    2. Fragment search: slide a window of *min_fragment* chars across the
+       normalised quote and look for each fragment in the normalised text.
+       If two or more non-overlapping fragments match, the quote is found.
+    """
+    nq = _normalise(quote)
+    nt = _normalise(text)
+
+    if not nq or not nt:
+        return False
+
+    if nq in nt:
+        return True
+
+    if len(nq) < min_fragment:
+        return False
+
+    hits = 0
+    step = max(1, min_fragment // 2)
+    last_hit_end = -1
+    for i in range(0, len(nq) - min_fragment + 1, step):
+        fragment = nq[i : i + min_fragment]
+        pos = nt.find(fragment)
+        if pos >= 0 and pos >= last_hit_end:
+            hits += 1
+            last_hit_end = pos + len(fragment)
+            if hits >= 2:
+                return True
+
+    return False
+
+
+# ---------------------------------------------------------------------------
+# Text extraction
+# ---------------------------------------------------------------------------
+
+def _extract_html_text(content: bytes) -> str:
+    html = content.decode("utf-8", errors="replace")
+    html = re.sub(r"<(script|style)[^>]*>.*?</\1>", " ", html, flags=re.DOTALL | re.I)
+    text = re.sub(r"<[^>]+>", " ", html)
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def _extract_pdf_text(content: bytes) -> Optional[str]:
+    if not _HAS_PYPDF:
+        return None
+    try:
+        reader = pypdf.PdfReader(io.BytesIO(content))
+        parts = [page.extract_text() or "" for page in reader.pages]
+        return "\n".join(parts)
+    except Exception:
+        return None
+
+
+def extract_text(content: bytes, content_type: str) -> Optional[str]:
+    ct = content_type.lower()
+    if "html" in ct:
+        return _extract_html_text(content)
+    if "pdf" in ct:
+        return _extract_pdf_text(content)
+    return None
+
+
+# ---------------------------------------------------------------------------
+# URL heuristics
+# ---------------------------------------------------------------------------
+
+def _pdf_url_looks_like_portal(final_url: str) -> bool:
+    """True when a resolved URL resembles a portal/search page, not a document."""
+    parsed = urlparse(final_url)
+    path_and_query = parsed.path + ("?" + parsed.query if parsed.query else "")
+    if _GENERIC_PATH_RX.search(path_and_query):
+        return True
+    path = parsed.path.rstrip("/")
+    if not path:
+        return True
+    segments = [s for s in path.split("/") if s]
+    # Suspicious if very short path with no digits and no long slug
+    has_identifier = any(re.search(r"\d", s) or len(s) > 18 for s in segments)
+    return len(segments) <= 1 and not has_identifier
+
+
+def _url_uses_opaque_id(url: str) -> bool:
+    """
+    Return True when the URL uses an opaque numeric or hash-based file ID.
+
+    Authorities such as the EC, DOJ, CMA, and CourtListener frequently assign
+    internal numeric IDs to document downloads (e.g. /file/1573131/dl,
+    /202120/m9660_3314_3.pdf).  Party names and doc-type keywords are never
+    present in these paths, so title-token and doc-type keyword checks are
+    inappropriate and would produce false-positive warnings.
+    """
+    return bool(_OPAQUE_ID_RX.search(urlparse(url).path))
+
+
+def _doc_type_hints_in_url(doc_type: str, url: str) -> bool:
+    """
+    Return True when doc_type-related keywords appear in the URL, OR when the
+    URL uses an opaque internal file ID (in which case the check is skipped).
+    """
+    if _url_uses_opaque_id(url):
+        return True  # Opaque ID — keyword presence is not expected; skip check
+    hints = _DOC_TYPE_URL_HINTS.get(doc_type)
+    if not hints:
+        return True
+    url_lower = url.lower()
+    return any(h in url_lower for h in hints)
+
+
+def _title_tokens_in_url(title: str, url: str) -> bool:
+    """
+    Return True when at least one meaningful title token appears in the URL,
+    OR when the URL uses an opaque internal file ID (check skipped).
+    """
+    if _url_uses_opaque_id(url):
+        return True  # Opaque ID — title tokens are not expected in the path
+    tokens = [
+        t for t in re.findall(r"[a-zA-Z]{5,}", title)
+        if t.lower() not in _TITLE_STOP
+    ]
+    if not tokens:
+        return True  # Nothing meaningful to check
+    url_lower = url.lower()
+    return any(t.lower() in url_lower for t in tokens)
+
+
+# ---------------------------------------------------------------------------
+# HTTP client
+# ---------------------------------------------------------------------------
+
+def fetch(client: httpx.Client, url: str, timeout: int) -> FetchResult:
+    try:
+        r = client.get(url, follow_redirects=True, timeout=timeout, headers=HEADERS)
+        return FetchResult(
+            ok=r.status_code < 400,
+            status=r.status_code,
+            content_type=r.headers.get("content-type", ""),
+            final_url=str(r.url),
+            content=r.content if r.status_code < 400 else None,
+            error=None,
+        )
+    except httpx.TimeoutException:
+        return FetchResult(False, None, "", url, None, "timeout")
+    except httpx.RequestError as exc:
+        return FetchResult(False, None, "", url, None, str(exc))
+
+
+# ---------------------------------------------------------------------------
+# Per-document checker
+# ---------------------------------------------------------------------------
+
+def check_document(
+    client: httpx.Client,
+    case_id: str,
+    doc: dict,
+    passage_count: int,
+    timeout: int,
+) -> tuple[list[Issue], Optional[str]]:
+    """
+    Validate one source document entry.
+
+    Returns (issues, extracted_text_or_None).
+    extracted_text is set only when passages are present and text was extractable.
+    """
+    issues: list[Issue] = []
+    doc_id = doc.get("doc_id", "?")
+    doc_type = doc.get("doc_type", "")
+    title = doc.get("title", "")
+
+    pdf_url = doc.get("pdf_url")
+    case_page_url = doc.get("case_page_url")
+    generic_url = doc.get("url")
+
+    # The URL we actually use for integrity checking is the most specific one.
+    primary_url = pdf_url or case_page_url or generic_url
+
+    if not primary_url:
+        issues.append(Issue(Level.ERROR, case_id, doc_id,
+                            "No URL found (pdf_url, case_page_url, and url are all absent)"))
+        return issues, None
+
+    result = fetch(client, primary_url, timeout)
+
+    if not result.ok:
+        err = result.error or f"HTTP {result.status}"
+        issues.append(Issue(Level.ERROR, case_id, doc_id,
+                            f"Broken link ({err})", url=primary_url))
+        return issues, None
+
+    ct = result.content_type.split(";")[0].strip().lower()
+    ct_display = ct or "unknown content-type"
+
+    # pdf_url returning HTML instead of PDF
+    if pdf_url and "html" in ct and "pdf" not in ct:
+        issues.append(Issue(Level.WARNING, case_id, doc_id,
+                            "pdf_url returned text/html, not application/pdf — "
+                            "may be redirecting to a case landing page",
+                            url=primary_url))
+
+    # pdf_url resolving to a portal/search page
+    if pdf_url and _pdf_url_looks_like_portal(result.final_url):
+        issues.append(Issue(Level.WARNING, case_id, doc_id,
+                            "pdf_url resolved to a URL that resembles a portal or "
+                            "search page rather than a specific document",
+                            url=result.final_url))
+
+    # doc_type keyword in URL
+    if not _doc_type_hints_in_url(doc_type, primary_url):
+        issues.append(Issue(Level.WARNING, case_id, doc_id,
+                            f"doc_type '{doc_type}' — none of its expected URL keywords "
+                            f"appear in the URL path; the URL may point to the wrong document",
+                            url=primary_url))
+
+    # Title/URL consistency
+    if title and not _title_tokens_in_url(title, primary_url):
+        issues.append(Issue(Level.WARNING, case_id, doc_id,
+                            f"No title token from \"{title[:60]}\" found in URL — "
+                            "possible title/URL mismatch",
+                            url=primary_url))
+
+    # Text extraction (only when there are passages to check)
+    extracted_text: Optional[str] = None
+    if passage_count > 0 and result.content:
+        extracted_text = extract_text(result.content, result.content_type)
+        if extracted_text is None:
+            if "pdf" in ct:
+                if not _HAS_PYPDF:
+                    issues.append(Issue(Level.INFO, case_id, doc_id,
+                                        "PDF text extraction skipped — install pypdf to enable quote checks"))
+                else:
+                    issues.append(Issue(Level.WARNING, case_id, doc_id,
+                                        "Could not extract text from PDF (possibly encrypted or image-only)"))
+            else:
+                issues.append(Issue(Level.INFO, case_id, doc_id,
+                                    f"Text extraction not supported for content-type '{ct_display}'"))
+
+    issues.append(Issue(Level.INFO, case_id, doc_id,
+                        f"Link OK (HTTP {result.status}, {ct_display})"))
+    return issues, extracted_text
+
+
+# ---------------------------------------------------------------------------
+# Per-passage checker
+# ---------------------------------------------------------------------------
+
+def check_passage(
+    case_id: str,
+    passage: dict,
+    doc_map: dict[str, dict],
+    text_map: dict[str, Optional[str]],
+) -> list[Issue]:
+    """Validate one source_passage entry."""
+    issues: list[Issue] = []
+    pid = passage.get("passage_id", "?")
+    doc_id = passage.get("source_document_id", "")
+    quote = passage.get("quote_snippet", "")
+
+    # Dangling reference
+    if not doc_id:
+        issues.append(Issue(Level.ERROR, case_id, pid,
+                            "Missing source_document_id"))
+        return issues
+
+    if doc_id not in doc_map:
+        issues.append(Issue(Level.ERROR, case_id, pid,
+                            f"source_document_id '{doc_id}' not found in this "
+                            "record's source_documents"))
+        return issues
+
+    # Empty quote
+    if not quote or not quote.strip():
+        issues.append(Issue(Level.ERROR, case_id, pid,
+                            "quote_snippet is empty or blank"))
+        return issues
+
+    # Quote in text
+    text = text_map.get(doc_id)
+    if text is None:
+        issues.append(Issue(Level.INFO, case_id, pid,
+                            "Quote check skipped — no extracted text for "
+                            f"'{doc_id}' (broken link or extraction failed)"))
+        return issues
+
+    if quote_found_in_text(quote, text):
+        issues.append(Issue(Level.INFO, case_id, pid,
+                            "Quote found in document text"))
+    else:
+        issues.append(Issue(Level.WARNING, case_id, pid,
+                            "Quote snippet not found in extracted document text — "
+                            "verify the quote against the linked source; "
+                            "may be OCR/encoding variation or wrong page"))
+
+    return issues
+
+
+# ---------------------------------------------------------------------------
+# Per-record entry point
+# ---------------------------------------------------------------------------
+
+def check_record(
+    client: httpx.Client,
+    record: dict,
+    timeout: int,
+) -> list[Issue]:
+    issues: list[Issue] = []
+    case_id = record.get("case_id", "?")
+    source_docs: list[dict] = record.get("source_documents") or []
+    passages: list[dict] = record.get("source_passages") or []
+
+    doc_map = {d["doc_id"]: d for d in source_docs if d.get("doc_id")}
+
+    # Build a map of which doc_ids have passages, for targeted fetching
+    doc_passage_counts: dict[str, int] = {}
+    for p in passages:
+        did = p.get("source_document_id", "")
+        doc_passage_counts[did] = doc_passage_counts.get(did, 0) + 1
+
+    # Check each source document
+    text_map: dict[str, Optional[str]] = {}
+    for doc in source_docs:
+        doc_id = doc.get("doc_id", "?")
+        pcount = doc_passage_counts.get(doc_id, 0)
+        doc_issues, extracted = check_document(client, case_id, doc, pcount, timeout)
+        issues.extend(doc_issues)
+        text_map[doc_id] = extracted
+
+    # Check each source passage
+    for passage in passages:
+        issues.extend(check_passage(case_id, passage, doc_map, text_map))
+
+    return issues
+
+
+# ---------------------------------------------------------------------------
+# CLI
+# ---------------------------------------------------------------------------
+
+def _classify(issues: list[Issue]) -> tuple[int, int, int]:
+    errors = sum(1 for i in issues if i.level == Level.ERROR)
+    warnings = sum(1 for i in issues if i.level == Level.WARNING)
+    infos = sum(1 for i in issues if i.level == Level.INFO)
+    return errors, warnings, infos
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(
+        description="Source integrity gate for CompMap YAML case records"
+    )
+    parser.add_argument(
+        "--cases-dir",
+        default=str(DATA_DIR),
+        help=f"Path to data/cases directory (default: {DATA_DIR})",
+    )
+    parser.add_argument(
+        "--timeout", type=int, default=20,
+        help="HTTP request timeout in seconds (default: 20)",
+    )
+    parser.add_argument(
+        "--verbose", "-v", action="store_true",
+        help="Print INFO messages in addition to ERROR and WARNING",
+    )
+    args = parser.parse_args()
+
+    cases_dir = Path(args.cases_dir)
+    yaml_files = sorted(cases_dir.rglob("*.yaml"))
+    if not yaml_files:
+        print(f"No YAML files found under {cases_dir}", file=sys.stderr)
+        return 1
+
+    print(f"CompMap Source Integrity Check")
+    print(f"Checking {len(yaml_files)} case file(s) …\n")
+
+    total_errors = total_warnings = 0
+
+    with httpx.Client(follow_redirects=True) as client:
+        for path in yaml_files:
+            with open(path) as f:
+                record = yaml.safe_load(f)
+
+            case_id = record.get("case_id", path.stem)
+            issues = check_record(client, record, args.timeout)
+            errors, warnings, infos = _classify(issues)
+            total_errors += errors
+            total_warnings += warnings
+
+            # Case-level header
+            if errors:
+                marker = "✗"
+            elif warnings:
+                marker = "⚠"
+            else:
+                marker = "✓"
+
+            ndocs = len(record.get("source_documents") or [])
+            npass = len(record.get("source_passages") or [])
+            print(f"{marker} {case_id}  ({ndocs} doc(s), {npass} passage(s))  "
+                  f"{errors} error(s), {warnings} warning(s)")
+
+            for issue in issues:
+                if issue.level == Level.ERROR:
+                    print(str(issue))
+                elif issue.level == Level.WARNING:
+                    print(str(issue))
+                elif args.verbose and issue.level == Level.INFO:
+                    print(str(issue))
+
+            print()
+
+    print("─" * 60)
+    print(f"Total: {len(yaml_files)} case(s) — "
+          f"{total_errors} error(s), {total_warnings} warning(s)")
+
+    if total_errors:
+        return 1
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

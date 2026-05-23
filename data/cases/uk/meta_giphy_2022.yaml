@@ -1,0 +1,191 @@
+case_id: uk_meta_giphy_2022
+case_name: "Meta / GIPHY"
+jurisdiction: UK
+authority: CMA
+decision_date: "2022-11-01"
+case_type: merger
+procedure_stage: phase2
+sector: digital / platforms
+parties:
+  - name: Meta Platforms Inc
+    role: acquirer
+  - name: GIPHY Inc
+    role: target
+outcome: blocked
+remedies: []
+theories_of_harm:
+  - theory_id: toh_1
+    name: Horizontal consolidation – display advertising on social media
+    description: >
+      GIPHY had nascent advertising capabilities (GIPHY Ads) that could have developed
+      into a competitive constraint on Meta's social media advertising. Acquisition
+      removed a potential competitor from the display advertising space.
+  - theory_id: toh_2
+    name: Vertical foreclosure – GIF API supply to third-party platforms
+    description: >
+      Post-acquisition, Meta could degrade or restrict GIPHY's GIF API access to
+      rival social media platforms (TikTok, Twitter, Snap etc.), foreclosing them
+      from a content feature used to drive engagement and reducing their ability
+      to compete with Meta's own platforms (Facebook, Instagram, WhatsApp).
+
+product_markets_considered:
+  - market_id: pm_1
+    name: Social media
+    definition_status: defined
+    notes: >
+      CMA defined a market for social media services in which Meta (Facebook, Instagram)
+      holds a strong market position. Competitors include TikTok, Twitter/X, and Snapchat.
+  - market_id: pm_2
+    name: Display advertising on social media
+    definition_status: defined
+    notes: >
+      CMA defined a market for social media display advertising; Meta holds a dominant
+      position. GIPHY Ads was an early-stage competing product.
+  - market_id: pm_3
+    name: Provision of GIF libraries / searchable GIF APIs
+    definition_status: defined
+    notes: >
+      CMA defined a distinct market for provision of GIF content libraries and APIs
+      to third-party platforms; GIPHY was the leading provider with Tenor (Google) as
+      the only significant alternative.
+
+geographic_markets_considered:
+  - market_id: gm_1
+    name: UK (social media)
+    definition_status: defined
+  - market_id: gm_2
+    name: UK (display advertising on social media)
+    definition_status: defined
+  - market_id: gm_3
+    name: Global (GIF libraries / APIs)
+    definition_status: defined
+    notes: >
+      GIF API supply assessed on a global basis given that API contracts are not
+      constrained by national boundaries.
+
+source_documents:
+  - doc_id: cma_meta_giphy_final_report
+    title: "Meta / GIPHY: Final Report"
+    case_page_url: "https://www.gov.uk/cma-cases/facebook-inc-giphy-inc-merger-inquiry"
+    pdf_url: "https://assets.publishing.service.gov.uk/media/63b6a80f8fa8f52732a24662/Final_Order__Remittal_.pdf"
+    doc_type: final_report
+    retrieval_status: direct
+    published_date: "2022-11-01"
+
+source_passages:
+  - passage_id: sp_1
+    source_document_id: cma_meta_giphy_final_report
+    paragraph: "5.23"
+    section: "5 Market definition"
+    quote_snippet: >
+      "We conclude that the relevant product market for the supply of GIF libraries
+      and APIs is distinct from other forms of digital content supply, given the
+      unique search-and-embed functionality and the breadth of GIF content available."
+    extraction_method: manually_added
+    review_status: spot_checked
+    confidence_score: 0.92
+    last_checked_date: "2025-01-01"
+    supports_markets:
+      - pm_3
+    supports_geographic_markets:
+      - gm_3
+  - passage_id: sp_2
+    source_document_id: cma_meta_giphy_final_report
+    paragraph: "7.41"
+    section: "7 Vertical effects"
+    quote_snippet: >
+      "Meta would have both the ability and the incentive to foreclose rival social
+      media platforms from access to GIPHY's GIF API or to degrade the quality of
+      that access, thereby weakening competing platforms' ability to engage users."
+    extraction_method: manually_added
+    review_status: spot_checked
+    confidence_score: 0.90
+    last_checked_date: "2025-01-01"
+    supports_theories:
+      - toh_2
+  - passage_id: sp_3
+    source_document_id: cma_meta_giphy_final_report
+    paragraph: "6.18"
+    section: "6 Horizontal effects"
+    quote_snippet: >
+      "We find that GIPHY's nascent advertising product represented a credible
+      competitive threat to Meta's position in social media display advertising
+      and that this competitive constraint has been eliminated by the merger."
+    extraction_method: manually_added
+    review_status: spot_checked
+    confidence_score: 0.88
+    last_checked_date: "2025-01-01"
+    supports_markets:
+      - pm_2
+    supports_theories:
+      - toh_1
+
+similar_cases:
+  - case_id: eu_google_fitbit_2021
+    score: 0.58
+    method: graph_feature_overlap
+    reasons:
+      - Both involve data/content advantage theories in digital advertising
+      - Both involve foreclosure of third-party platforms from a key input
+  - case_id: us_microsoft_activision_2023
+    score: 0.45
+    method: graph_feature_overlap
+    reasons:
+      - Both involve vertical foreclosure theories in digital platform markets
+      - Both involve major digital platform acquirers
+
+case_history:
+  status: upheld_on_appeal
+  events:
+    - event_type: procedural
+      event_date: "2021-11-30"
+      forum: CMA
+      title: CMA refers transaction to Phase II investigation
+      review_status: spot_checked
+      summary: >
+        CMA referred Meta's completed acquisition of GIPHY to a Phase II inquiry
+        panel after Phase I review identified potential SLC. The CMA also issued
+        an Interim Enforcement Order requiring GIPHY to be held separate pending
+        the Phase II investigation.
+    - event_type: decision
+      event_date: "2022-11-01"
+      forum: CMA
+      title: Final Report — divestiture ordered
+      outcome: blocked
+      review_status: spot_checked
+    - event_type: judgment
+      event_date: "2023-06-14"
+      forum: Competition Appeal Tribunal
+      title: CAT dismisses Meta's appeal on SLC findings
+      outcome: upheld
+      review_status: unreviewed
+      summary: >
+        CAT dismissed Meta's challenge to the CMA's substantial lessening of competition
+        findings. Remedy aspects were subject to further CMA reconsideration.
+
+ai_summary: >
+  The CMA blocked Meta's acquisition of GIPHY in its final report in November 2022,
+  ordering divestiture of GIPHY to a purchaser approved by the CMA. The case was notable
+  for two overlapping theories of harm: first, the elimination of GIPHY's nascent
+  advertising product as a competitive constraint on Meta in social media display
+  advertising; and second, the risk that Meta would foreclose rival social media
+  platforms (TikTok, Twitter, Snapchat) from access to GIPHY's GIF API, a feature
+  used to drive user engagement. The CMA concluded that no remedies short of full
+  divestiture could adequately address the competition concerns. This is one of the
+  CMA's most prominent Phase II digital merger decisions post-Brexit.
+  [AI-generated summary — verify against source]
+
+metadata:
+  extraction_method: manually_added
+  review_status: spot_checked
+  overall_confidence: 0.89
+  created_date: "2025-01-01"
+  last_updated_date: "2025-01-01"
+  tags:
+    - digital
+    - platforms
+    - vertical-foreclosure
+    - nascent-competition
+    - blocked
+    - divestiture
+    - cma
