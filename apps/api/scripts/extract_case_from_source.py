@@ -2241,24 +2241,33 @@ def _promotion_action(
 ) -> tuple[str, str]:
     """Return (recommended_action, reason) for a single draft market entry.
 
-    Decision rules (in priority order):
+    Promotion decision rules (authoritative source-first logic):
 
     1. background                                  → exclude_from_canonical
     2. ancillary                                   → keep_as_context_only
     3. precedent_only                              → keep_as_context_only
     4. incomplete_source (explicit)                → hold_pending_source_check
     5. unknown status + no source refs             → hold_pending_source_check
-    6. core_assessed + source refs                 → promote_to_canonical
-    7. core_assessed + no source refs              → manual_review
-    8. assessed_no_overlap + source refs           → promote_to_canonical
-    9. assessed_no_overlap + no source refs        → manual_review
-    10. possible_segmentation                       → promote_with_uncertainty
-    11. has source refs but no recognised importance → manual_review
-    12. fallback                                    → manual_review
+    6. core_assessed + (defined|left_open|considered) + refs → promote_to_canonical
+    7. core_assessed + possible_segmentation       → promote_with_uncertainty (needs review)
+    8. core_assessed + other status                → manual_review
+    9. core_assessed + no source refs              → manual_review
+    10. assessed_no_overlap + source refs          → promote_to_canonical
+    11. assessed_no_overlap + no source refs       → manual_review
+    12. possible_segmentation (implicit)           → promote_with_uncertainty (needs review)
+    13. has source refs but no recognised importance → manual_review
+    14. fallback                                   → manual_review
+
+    NOTE: These rules implement source-first canonicalisation. Reconciliation with
+    existing canonical records is supplementary only and should not override these
+    promotion decisions.
     """
     imp = (market_importance or "").strip()
     status = (definition_status or "").strip()
     unknown_status = status in ("unknown", "")
+
+    # Statuses that are conclusive enough for core_assessed promotion
+    _CONCLUSIVE_STATUSES = {"defined", "left_open", "considered"}
 
     # Rule 1: background — exclude regardless of status or refs
     if imp == "background":
@@ -2300,44 +2309,73 @@ def _promotion_action(
             "re-check with a broader section run before promoting.",
         )
 
-    # Rules 6–9: core_assessed and assessed_no_overlap
-    if imp in ("core_assessed", "assessed_no_overlap"):
-        if has_source_refs:
-            note = ""
-            if imp == "assessed_no_overlap":
-                note = " Preserve no-overlap status in schema notes."
+    # Rules 6–9: core_assessed (requires conclusive status + refs for promotion)
+    if imp == "core_assessed":
+        # Rule 7: core_assessed + possible_segmentation → needs explicit review
+        if status == "possible_segmentation":
+            return (
+                "promote_with_uncertainty",
+                "Commission formally assessed this market but left segmentation open. "
+                "Review whether this should be a narrower market or candidate submarket "
+                "before promoting to canonical.",
+            )
+        # Rule 6: core_assessed + conclusive status + refs → promote
+        if status in _CONCLUSIVE_STATUSES and has_source_refs:
             return (
                 "promote_to_canonical",
-                f"Commission formally assessed this market ({imp}); "
-                f"supported by cited source passages.{note}",
+                f"Commission core_assessed this market with {status!r} definition; "
+                "supported by cited source passages.",
+            )
+        # Rules 8–9: core_assessed but lacking status or refs → manual review
+        if has_source_refs and status not in _CONCLUSIVE_STATUSES:
+            return (
+                "manual_review",
+                f"Commission assessed this market but definition status is {status!r}; "
+                "verify conclusion and refs before promoting to canonical.",
             )
         return (
             "manual_review",
-            f"Market classified as {imp!r} but no source passages were validated; "
+            "Market classified as core_assessed but lacks source passages or conclusive "
+            "definition status; manual review required before canonical promotion.",
+        )
+
+    # Rule 10–11: assessed_no_overlap
+    if imp == "assessed_no_overlap":
+        if has_source_refs:
+            return (
+                "promote_to_canonical",
+                "Commission formally assessed this market (no party overlap); "
+                "supported by cited source passages. Preserve no-overlap status in schema notes.",
+            )
+        return (
+            "manual_review",
+            f"Market classified as assessed_no_overlap but no source passages validated; "
             "verify quotes before promoting.",
         )
 
-    # Rule 10: possible_segmentation
-    if imp == "possible_segmentation":
+    # Rule 12: possible_segmentation (implicit importance classification)
+    if status == "possible_segmentation":
         return (
             "promote_with_uncertainty",
-            "Segmentation was considered but left open; flag definition_status "
-            "as 'possible_segmentation' in canonical record.",
+            "Segmentation was considered but left open by the Commission. "
+            "This may be a narrower market or candidate for submarket definition. "
+            "Review before adding to canonical market list.",
         )
 
-    # Rule 11: has refs but no recognised importance
+    # Rule 13: has refs but no recognised importance
     if has_source_refs:
         return (
             "manual_review",
-            "Market has source citations but importance is unclassified; "
-            "review classification before deciding on promotion.",
+            "Market has source citations but importance/assessment type is unclassified; "
+            "review classification and Commission conclusion before deciding on promotion.",
         )
 
-    # Rule 12: unknown status with unrecognised importance — hold for review
+    # Rule 14: unknown status with unrecognised importance — hold for review
     if unknown_status:
         return (
             "hold_pending_source_check",
-            "Definition status is unknown; cannot promote without a clear Commission conclusion.",
+            "Definition status is unknown; cannot determine promotion without "
+            "a clear Commission conclusion on market definition.",
         )
 
     return (
@@ -2518,10 +2556,21 @@ def serialize_report(report: ExtractionReport, mode: str = "extract") -> dict:
         "chunks_used": chunks_summary,
         "section_batches": section_batches_summary,
         "extraction_summary": extraction_summary,
+        "promotion_plan": _serialize_promotion_plan(report.draft_record),
+        "promotion_plan_note": (
+            "promotion_plan is the authoritative source-first canonicalisation aid. "
+            "Each market's recommended_action (promote_to_canonical, keep_as_context_only, etc.) "
+            "is derived from the Commission's assessment in source documents. "
+            "Reconciliation sections below are supplementary only and should not override these decisions."
+        ),
         "reconciliation": [_finding_to_dict(f) for f in report.findings],
+        "reconciliation_note": (
+            "Reconciliation findings compare the extracted draft against any existing canonical YAML. "
+            "These are supplementary context only. Use promotion_plan as the authoritative guide for "
+            "canonicalisation decisions."
+        ),
         "reconciliation_grouped": _group_reconciliation(report.findings),
         "reconciliation_triage": _build_reconciliation_triage(report.findings),
-        "promotion_plan": _serialize_promotion_plan(report.draft_record),
     }
 
 
