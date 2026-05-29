@@ -1,0 +1,616 @@
+_gold_metadata:
+  case_id: eu_google_fitbit_2021
+  gold_status: reviewed_partial
+  partial: true
+  review_required: false
+  source_draft_path: ../../data/drafts/eu/eu_google_fitbit_2021.market_definition.draft.yaml
+  created_from_report: true
+  reviewed_scope:
+    focus: market_definition
+    sections:
+    - '8.2'
+    - '8.3'
+    - '8.6'
+    - '8.7'
+    groups:
+    - online_advertising_intermediation
+  reviewer_notes: Gold file narrowed to source-checked core market-definition entries.
+    Quote snippets are intended to be verbatim excerpts only; explanatory wording
+    belongs in reviewer_notes, not quote_snippet. Context-only/out-of-scope manual-review
+    entries generated for health and fitness apps and digital music geographic scope
+    were removed. Ad tech is represented as fine-grained market nodes.
+case_id: eu_google_fitbit_2021
+case_name: Google / Fitbit
+authority: European Commission
+jurisdiction: EU
+sector: digital / platforms
+decision_date: '2021-01-14'
+parties:
+- name: Google LLC
+  role: acquirer
+- name: Fitbit Inc
+  role: target
+source_documents:
+- doc_id: eu_google_fitbit_decision
+  title: 'Case M.9660 – Google / Fitbit: Commission Decision'
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9660
+  pdf_url: https://ec.europa.eu/competition/mergers/cases1/202120/m9660_3314_3.pdf
+  doc_type: decision
+  authority_reference: M.9660
+  retrieval_status: direct
+  published_date: '2021-01-14'
+product_markets_considered:
+- name: Wrist-worn wearable devices
+  market_type: product
+  expected_definition_status: possible_segmentation
+  expected_promotion_action: promote_with_uncertainty
+  importance: core_assessed
+  source_refs:
+  - '25'
+  - '26'
+  linked_source_passages:
+  - passage_id: sp_1
+    source_document_id: eu_google_fitbit_decision
+    page: '25'
+    quote_snippet: >-
+      In line with the Notifying Party's submission and the results of the market
+      investigation, the Commission considers that wrist-worn wearables constitute
+      a separate product market from other types of wearable devices.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  - passage_id: sp_2
+    source_document_id: eu_google_fitbit_decision
+    page: '26'
+    quote_snippet: >-
+      In light of recitals (74) to (78), for the purpose of assessing the Transaction
+      in this Decision, the Commission considers that the relevant product market
+      is the market for wrist-worn wearable devices. The question whether the supply
+      of wrist-worn wearable devices should be further segmented between (i) fitness
+      trackers and smartwatches, (ii) fitness trackers and smartwatches with and without
+      GPS connectivity, (iii) smartwatches with and without cellular connectivity
+      and (iv) basic and full smartwatches can be left open in this Decision since
+      the Parties do no overlap as regards wrist-worn wearable devices and any further
+      segmentations would thus not change the outcome of the competitive assessment
+      in the present case.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  - passage_id: sp_3
+    source_document_id: eu_google_fitbit_decision
+    page: '26'
+    quote_snippet: >-
+      From a demand-side perspective, the majority of respondents indicated that users
+      do not consider other wearable devices, in particular connected rings, earwear
+      and eyewear, as substitutes for wrist-worn wearable devices, namely. smartwatches
+      and fitness trackers.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  aliases:
+  - Wearable fitness devices
+  - Wrist-worn wearables
+  reviewer_notes: >-
+    Top-level market is defined; further segmentation is left open because the Parties
+    do not overlap in wrist-worn wearable devices.
+  reviewed: true
+- name: Supply of licensable OSs for wrist-worn wearable devices
+  market_type: product
+  expected_definition_status: possible_segmentation
+  expected_promotion_action: promote_with_uncertainty
+  importance: core_assessed
+  source_refs:
+  - '29'
+  linked_source_passages:
+  - passage_id: sp_11
+    source_document_id: eu_google_fitbit_decision
+    page: '28'
+    quote_snippet: >-
+      The Notifying Party considers that the relevant product market for wearable
+      OSs is separate from the market for OSs for other smart devices, such as smart
+      mobile devices.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  - passage_id: sp_12
+    source_document_id: eu_google_fitbit_decision
+    page: '28'
+    quote_snippet: >-
+      The Notifying Party submits that no further distinction is needed between OSs
+      for fitness trackers and smartwatches.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  - passage_id: sp_14
+    source_document_id: eu_google_fitbit_decision
+    page: '29'
+    quote_snippet: >-
+      From a demand-side perspective, it is not possible for an OEM to simply transfer
+      an OS for PCs, smart TVs or smart mobile devices onto wearable devices. While
+      it is possible and common to adapt OSs for smart mobile devices for use on wearable
+      devices (for example iOS, Android OS), this requires a significant level of
+      customisation.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  aliases:
+  - Wearable OS / platforms
+  - Wear OS market
+  - Licensable wearable OSs
+  reviewer_notes: >-
+    Kept as a core assessed product market. The canonical market of interest is the
+    wrist-worn wearable OS market; the smart mobile OS market may be relevant as context
+    for vertical/conglomerate effects but is not separately gold-labelled here.
+  reviewed: true
+- name: Online search advertising services
+  market_type: product
+  expected_definition_status: possible_segmentation
+  expected_promotion_action: promote_with_uncertainty
+  importance: core_assessed
+  source_refs:
+  - '38'
+  linked_source_passages:
+  - passage_id: sp_40
+    source_document_id: eu_google_fitbit_decision
+    page: '38'
+    quote_snippet: >-
+      The market investigation confirms that the market for online advertising is
+      separate from offline advertising. The majority of respondents does not consider
+      the market for offline advertising services as an alternative to online search
+      or display advertising.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  - passage_id: sp_41
+    source_document_id: eu_google_fitbit_decision
+    page: '38'
+    quote_snippet: >-
+      The evidence in the Commission's file has not provided any indication that would
+      suggest that it would be appropriate to depart from its previous practice of
+      considering online search and non-search advertising as separate markets.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  - passage_id: sp_42
+    source_document_id: eu_google_fitbit_decision
+    page: '39'
+    quote_snippet: >-
+      The Commission has also considered whether a segmentation according to the platform
+      where the ad is delivered, namely desktop or mobile devices, may be appropriate.
+      In particular, it cannot be excluded that building a mobile app or a website,
+      on which the ads may be served or delivered, are very different processes. The
+      question as to the relevance of the segmentation according to the platform where
+      the ad is delivered can be left open, as it would not change the outcome of
+      the competitive assessment in the present case.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  aliases:
+  - Online advertising (general search advertising)
+  - Online search advertising
+  reviewer_notes: >-
+    Product market identified by the Commission; platform segmentation is left open.
+  reviewed: true
+- name: Online display advertising services
+  market_type: product
+  expected_definition_status: possible_segmentation
+  expected_promotion_action: promote_with_uncertainty
+  importance: core_assessed
+  source_refs:
+  - '38'
+  linked_source_passages:
+  - passage_id: sp_40
+    source_document_id: eu_google_fitbit_decision
+    page: '38'
+    quote_snippet: >-
+      The market investigation confirms that the market for online advertising is
+      separate from offline advertising. The majority of respondents does not consider
+      the market for offline advertising services as an alternative to online search
+      or display advertising.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  - passage_id: sp_41
+    source_document_id: eu_google_fitbit_decision
+    page: '38'
+    quote_snippet: >-
+      The evidence in the Commission's file has not provided any indication that would
+      suggest that it would be appropriate to depart from its previous practice of
+      considering online search and non-search advertising as separate markets.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  aliases:
+  - Online non-search advertising
+  - Display advertising services
+  reviewer_notes: >-
+    Added because recital (155) identifies online display advertising separately from
+    online search advertising. Further segmentation is left open.
+  reviewed: true
+- name: Supply of search ad network services
+  market_type: product
+  expected_definition_status: possible_segmentation
+  expected_promotion_action: promote_with_uncertainty
+  importance: core_assessed
+  market_group: online_advertising_intermediation
+  source_refs:
+  - '40'
+  linked_source_passages:
+  - passage_id: sp_48
+    source_document_id: eu_google_fitbit_decision
+    page: '41'
+    quote_snippet: >-
+      in relation to search ads the Commission has considered a market for intermediation
+      services as in Google AdSense, which coincides with the supply of search ad
+      network services.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  - passage_id: sp_49
+    source_document_id: eu_google_fitbit_decision
+    page: '41'
+    quote_snippet: |-
+      for the purpose of assessing the Transaction, the Commission considers that the relevant product markets are:
+      (a) The supply of search ad network services;
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  aliases:
+  - Search ad network services
+  - Online search advertising intermediation
+  reviewer_notes: >-
+    Fine-grained ad tech node from recital (168). Exact segmentation remains left
+    open in recital (169).
+  reviewed: true
+- name: Supply of display ads SSP services
+  market_type: product
+  expected_definition_status: possible_segmentation
+  expected_promotion_action: promote_with_uncertainty
+  importance: core_assessed
+  market_group: online_advertising_intermediation
+  source_refs:
+  - '40'
+  linked_source_passages:
+  - passage_id: sp_50
+    source_document_id: eu_google_fitbit_decision
+    page: '41'
+    quote_snippet: |-
+      for the purpose of assessing the Transaction, the Commission considers that the relevant product markets are:
+      (a) The supply of search ad network services;
+      (b) The supply of display ads SSP services;
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  aliases:
+  - Display ads SSP services
+  - SSP services
+  reviewer_notes: >-
+    Fine-grained ad tech node from recital (168). Exact segmentation remains left
+    open in recital (169).
+  reviewed: true
+- name: Supply of display ads DSP services
+  market_type: product
+  expected_definition_status: possible_segmentation
+  expected_promotion_action: promote_with_uncertainty
+  importance: core_assessed
+  market_group: online_advertising_intermediation
+  source_refs:
+  - '40'
+  linked_source_passages:
+  - passage_id: sp_44
+    source_document_id: eu_google_fitbit_decision
+    page: '40'
+    quote_snippet: >-
+      In Google AdSense, the Commission concluded that online advertising intermediation
+      constitutes a relevant product market separate from the direct sale of online
+      ads and that it should be further sub-divided in a market for online search
+      advertising intermediation services and a market for online non-search intermediation
+      services.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  - passage_id: sp_45
+    source_document_id: eu_google_fitbit_decision
+    page: '40'
+    quote_snippet: >-
+      In Google/DoubleClick, the Commission considered a market for online display
+      ad serving technology, which could be further segmented between services for
+      advertisers and publishers.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  - passage_id: sp_112
+    source_document_id: eu_google_fitbit_decision
+    page: '40'
+    quote_snippet: >-
+      The evidence in the Commission's file has not provided any indication which
+      would suggest that, in defining the relevant geographic market for online advertising
+      (and segments thereof), it would be appropriate to deviate from its previous
+      decisional practice.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  aliases:
+  - Display ads DSP services
+  - DSP services
+  reviewer_notes: >-
+    Fine-grained ad tech node from recital (168). Exact segmentation remains left
+    open in recital (169).
+  reviewed: true
+- name: Supply of display ad network services
+  market_type: product
+  expected_definition_status: possible_segmentation
+  expected_promotion_action: promote_with_uncertainty
+  importance: core_assessed
+  market_group: online_advertising_intermediation
+  source_refs:
+  - '41'
+  linked_source_passages:
+  - passage_id: sp_47
+    source_document_id: eu_google_fitbit_decision
+    page: '41'
+    quote_snippet: >-
+      in relation to search ads the Commission has considered a market for intermediation
+      services as in Google AdSense, which coincides with the supply of search ad
+      network services. In relation to display ads, however, the Commission has considered
+      a segmentation between (i) supply of SSP services; (ii) the supply of DSP services;
+      (iii) the supply of ad network services; (iv) the supply of advertiser ad server
+      and (v) the supply of publisher ad server services.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  - passage_id: sp_48
+    source_document_id: eu_google_fitbit_decision
+    page: '41'
+    quote_snippet: >-
+      in relation to search ads the Commission has considered a market for intermediation
+      services as in Google AdSense, which coincides with the supply of search ad
+      network services.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  - passage_id: sp_49
+    source_document_id: eu_google_fitbit_decision
+    page: '41'
+    quote_snippet: |-
+      for the purpose of assessing the Transaction, the Commission considers that the relevant product markets are:
+      (a) The supply of search ad network services;
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  aliases:
+  - Display ad network services
+  reviewer_notes: >-
+    Fine-grained ad tech node from recital (168). Exact segmentation remains left
+    open in recital (169).
+  reviewed: true
+- name: Supply of display ads publisher ad server services
+  market_type: product
+  expected_definition_status: possible_segmentation
+  expected_promotion_action: promote_with_uncertainty
+  importance: core_assessed
+  market_group: online_advertising_intermediation
+  source_refs:
+  - '41'
+  linked_source_passages:
+  - passage_id: sp_47
+    source_document_id: eu_google_fitbit_decision
+    page: '41'
+    quote_snippet: >-
+      in relation to search ads the Commission has considered a market for intermediation
+      services as in Google AdSense, which coincides with the supply of search ad
+      network services. In relation to display ads, however, the Commission has considered
+      a segmentation between (i) supply of SSP services; (ii) the supply of DSP services;
+      (iii) the supply of ad network services; (iv) the supply of advertiser ad server
+      and (v) the supply of publisher ad server services.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  - passage_id: sp_50
+    source_document_id: eu_google_fitbit_decision
+    page: '41'
+    quote_snippet: |-
+      for the purpose of assessing the Transaction, the Commission considers that the relevant product markets are:
+      (a) The supply of search ad network services;
+      (b) The supply of display ads SSP services;
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  - passage_id: sp_51
+    source_document_id: eu_google_fitbit_decision
+    page: '41'
+    quote_snippet: >-
+      In relation to display ads, however, the Commission has considered a segmentation
+      between (i) supply of SSP services; (ii) the supply of DSP services; (iii) the
+      supply of ad network services; (iv) the supply of advertiser ad server and (v)
+      the supply of publisher ad server services.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  aliases:
+  - Publisher ad server services
+  reviewer_notes: >-
+    Fine-grained ad tech node from recital (168). Exact segmentation remains left
+    open in recital (169).
+  reviewed: true
+- name: Supply of display ads advertiser ad server services
+  market_type: product
+  expected_definition_status: possible_segmentation
+  expected_promotion_action: promote_with_uncertainty
+  importance: core_assessed
+  market_group: online_advertising_intermediation
+  source_refs:
+  - '41'
+  linked_source_passages:
+  - passage_id: sp_47
+    source_document_id: eu_google_fitbit_decision
+    page: '41'
+    quote_snippet: >-
+      in relation to search ads the Commission has considered a market for intermediation
+      services as in Google AdSense, which coincides with the supply of search ad
+      network services. In relation to display ads, however, the Commission has considered
+      a segmentation between (i) supply of SSP services; (ii) the supply of DSP services;
+      (iii) the supply of ad network services; (iv) the supply of advertiser ad server
+      and (v) the supply of publisher ad server services.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  - passage_id: sp_50
+    source_document_id: eu_google_fitbit_decision
+    page: '41'
+    quote_snippet: |-
+      for the purpose of assessing the Transaction, the Commission considers that the relevant product markets are:
+      (a) The supply of search ad network services;
+      (b) The supply of display ads SSP services;
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  - passage_id: sp_51
+    source_document_id: eu_google_fitbit_decision
+    page: '41'
+    quote_snippet: >-
+      In relation to display ads, however, the Commission has considered a segmentation
+      between (i) supply of SSP services; (ii) the supply of DSP services; (iii) the
+      supply of ad network services; (iv) the supply of advertiser ad server and (v)
+      the supply of publisher ad server services.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  aliases:
+  - Advertiser ad server services
+  expected_draft_names:
+  - Supply of advertiser ad server services
+  reviewer_notes: >-
+    Fine-grained ad tech node from recital (168). Exact segmentation remains left
+    open in recital (169). The source text uses “and” because this item precedes item
+    (g).
+  reviewed: true
+- name: Supply of analytics services
+  market_type: product
+  expected_definition_status: possible_segmentation
+  expected_promotion_action: promote_with_uncertainty
+  importance: core_assessed
+  market_group: online_advertising_intermediation
+  source_refs:
+  - '41'
+  linked_source_passages:
+  - passage_id: sp_52
+    source_document_id: eu_google_fitbit_decision
+    page: '41'
+    quote_snippet: >-
+      for the purposes of assessing the Transaction, data services, and in particular
+      data analytics services, are of particular relevance, both for online search
+      and display advertising.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  aliases:
+  - Analytics services
+  - Data analytics services
+  expected_draft_names:
+  - Data analytics services (for online search and display advertising)
+  reviewer_notes: >-
+    Fine-grained ad tech node from recital (168). Exact segmentation remains left
+    open in recital (169).
+  reviewed: true
+geographic_markets_considered:
+- name: Wrist-worn wearable devices geographic market
+  market_type: geographic
+  expected_definition_status: defined
+  expected_promotion_action: promote_with_uncertainty
+  importance: core_assessed
+  source_refs:
+  - '27'
+  linked_source_passages:
+  - passage_id: sp_88
+    source_document_id: eu_google_fitbit_decision
+    page: '27'
+    quote_snippet: >-
+      In light of recital (83) , for the purpose of assessing the Transaction in this
+      Decision, the Commission considers that the geographic scope of the relevant
+      product markets for wrist-worn wearable devices identified in recital (79) above
+      is at least EEA-wide if not worldwide.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  - passage_id: sp_89
+    source_document_id: eu_google_fitbit_decision
+    page: '27'
+    quote_snippet: >-
+      Nevertheless, as can be seen from market shares (see Section 9.1.1), competitive
+      conditions and competitors' market position can vary significantly by geographic
+      region.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  - passage_id: sp_91
+    source_document_id: eu_google_fitbit_decision
+    page: '27'
+    quote_snippet: >-
+      The Commission has not previously considered the market for wrist-worn wearable
+      devices.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  aliases:
+  - EEA (wearable fitness devices)
+  - Wrist-worn wearable devices — at least EEA-wide if not worldwide
+  expected_draft_names:
+  - Wrist-worn wearable devices - geographic market
+  - Wrist-worn wearable devices — geographic market
+  - Wrist-worn wearable devices geographic scope
+  reviewer_notes: >-
+    Geographic scope is expressed as at least EEA-wide if not worldwide.
+  reviewed: true
+- name: Online advertising services geographic market
+  market_type: geographic
+  expected_definition_status: defined
+  expected_promotion_action: promote_with_uncertainty
+  importance: core_assessed
+  source_refs:
+  - '39'
+  - '40'
+  linked_source_passages:
+  - passage_id: sp_43
+    source_document_id: eu_google_fitbit_decision
+    page: '39'
+    quote_snippet: >-
+      for the purpose of assessing the Transaction in this Decision, the Commission
+      considers that the relevant product markets are those for: (a) the supply of
+      online search advertising services, potentially segmented in the supply of online
+      search advertising services on desktops or on mobile apps;
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  - passage_id: sp_110
+    source_document_id: eu_google_fitbit_decision
+    page: '39'
+    quote_snippet: >-
+      With reference to the geographic scope of the online advertising market and
+      its possible segments, the Commission found in previous cases that they should
+      be defined as national in scope or alongside linguistic borders within the EEA.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  - passage_id: sp_111
+    source_document_id: eu_google_fitbit_decision
+    page: '39'
+    quote_snippet: >-
+      In the Google AdSense decision, the Commission concluded that online search
+      advertising constitutes a separate relevant product market, whose relevant scope
+      is national.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  aliases:
+  - EEA (online advertising)
+  - Online advertising — national or linguistic borders within EEA
+  expected_draft_names:
+  - Online advertising services (including search and display) — national geographic market
+  - Online advertising services (search and display) — national geographic market
+  - National or alongside linguistic borders within the EEA (online advertising and segments)
+  - Online advertising (and segments thereof) — national or alongside linguistic borders within the EEA
+  reviewer_notes: >-
+    Replaces unrelated health/fitness and digital music geographic candidates from
+    the generated draft. This is the core geographic market for section 8.6.
+  reviewed: true

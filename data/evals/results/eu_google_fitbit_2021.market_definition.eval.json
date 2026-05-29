@@ -1,0 +1,341 @@
+{
+  "generated_at": "2026-05-29T23:53:59.044174+00:00",
+  "case_id": "eu_google_fitbit_2021",
+  "gold_partial": true,
+  "gold_reviewed_count": 13,
+  "product_markets": {
+    "market_type": "product",
+    "true_positives": 7,
+    "false_positives": 0,
+    "false_negatives": 4,
+    "precision": 1.0,
+    "recall": 0.636,
+    "f1": 0.778,
+    "matched_items": [
+      {
+        "gold_name": "Wrist-worn wearable devices",
+        "draft_name": "Wrist-worn wearable devices",
+        "match_type": "exact"
+      },
+      {
+        "gold_name": "Supply of licensable OSs for wrist-worn wearable devices",
+        "draft_name": "Supply of licensable OSs for wrist-worn wearable devices",
+        "match_type": "exact"
+      },
+      {
+        "gold_name": "Online search advertising services",
+        "draft_name": "Online search advertising services",
+        "match_type": "exact"
+      },
+      {
+        "gold_name": "Supply of search ad network services",
+        "draft_name": "Supply of search ad network services",
+        "match_type": "exact"
+      },
+      {
+        "gold_name": "Supply of display ads SSP services",
+        "draft_name": "Supply of display ads SSP services",
+        "match_type": "exact"
+      },
+      {
+        "gold_name": "Supply of display ads advertiser ad server services",
+        "draft_name": "Supply of advertiser ad server services",
+        "match_type": "expected_draft_name"
+      },
+      {
+        "gold_name": "Supply of analytics services",
+        "draft_name": "Data analytics services (for online search and display advertising)",
+        "match_type": "expected_draft_name"
+      }
+    ],
+    "false_negatives_detail": [
+      {
+        "gold_name": "Online display advertising services",
+        "aliases": [
+          "Online non-search advertising",
+          "Display advertising services"
+        ],
+        "expected_draft_names": [],
+        "expected_market_ids": [],
+        "market_group": null,
+        "expected_definition_status": "possible_segmentation",
+        "nearest_draft_candidates": [
+          {
+            "draft_name": "Online search advertising services",
+            "market_id": "pm_7",
+            "overlap_score": 0.5
+          },
+          {
+            "draft_name": "Data analytics services (for online search and display advertising)",
+            "market_id": "pm_12",
+            "overlap_score": 0.5
+          },
+          {
+            "draft_name": "Online advertising intermediation services (search and non-search)",
+            "market_id": "pm_8",
+            "overlap_score": 0.333
+          },
+          {
+            "draft_name": "Online advertising intermediation services (including sub-segments: online search advertising intermediation, display ad network services, display ads publisher ad server services, display ads advertiser ad server services, analytics services)",
+            "market_id": "pm_14",
+            "overlap_score": 0.214
+          },
+          {
+            "draft_name": "Supply of display ads SSP services",
+            "market_id": "pm_10",
+            "overlap_score": 0.2
+          }
+        ]
+      },
+      {
+        "gold_name": "Supply of display ads DSP services",
+        "aliases": [
+          "Display ads DSP services",
+          "DSP services"
+        ],
+        "expected_draft_names": [],
+        "expected_market_ids": [],
+        "market_group": "online_advertising_intermediation",
+        "expected_definition_status": "possible_segmentation",
+        "nearest_draft_candidates": [
+          {
+            "draft_name": "Supply of display ads SSP services",
+            "market_id": "pm_10",
+            "overlap_score": 0.5
+          },
+          {
+            "draft_name": "Online advertising intermediation services (including sub-segments: online search advertising intermediation, display ad network services, display ads publisher ad server services, display ads advertiser ad server services, analytics services)",
+            "market_id": "pm_14",
+            "overlap_score": 0.133
+          },
+          {
+            "draft_name": "Data analytics services (for online search and display advertising)",
+            "market_id": "pm_12",
+            "overlap_score": 0.125
+          }
+        ]
+      },
+      {
+        "gold_name": "Supply of display ad network services",
+        "aliases": [
+          "Display ad network services"
+        ],
+        "expected_draft_names": [],
+        "expected_market_ids": [],
+        "market_group": "online_advertising_intermediation",
+        "expected_definition_status": "possible_segmentation",
+        "nearest_draft_candidates": [
+          {
+            "draft_name": "Supply of search ad network services",
+            "market_id": "pm_9",
+            "overlap_score": 0.333
+          },
+          {
+            "draft_name": "Supply of display ads SSP services",
+            "market_id": "pm_10",
+            "overlap_score": 0.25
+          },
+          {
+            "draft_name": "Data analytics services (for online search and display advertising)",
+            "market_id": "pm_12",
+            "overlap_score": 0.143
+          },
+          {
+            "draft_name": "Online advertising intermediation services (including sub-segments: online search advertising intermediation, display ad network services, display ads publisher ad server services, display ads advertiser ad server services, analytics services)",
+            "market_id": "pm_14",
+            "overlap_score": 0.143
+          }
+        ]
+      },
+      {
+        "gold_name": "Supply of display ads publisher ad server services",
+        "aliases": [
+          "Publisher ad server services"
+        ],
+        "expected_draft_names": [],
+        "expected_market_ids": [],
+        "market_group": "online_advertising_intermediation",
+        "expected_definition_status": "possible_segmentation",
+        "nearest_draft_candidates": [
+          {
+            "draft_name": "Supply of display ads SSP services",
+            "market_id": "pm_10",
+            "overlap_score": 0.4
+          },
+          {
+            "draft_name": "Online advertising intermediation services (including sub-segments: online search advertising intermediation, display ad network services, display ads publisher ad server services, display ads advertiser ad server services, analytics services)",
+            "market_id": "pm_14",
+            "overlap_score": 0.286
+          },
+          {
+            "draft_name": "Supply of advertiser ad server services",
+            "market_id": "pm_11",
+            "overlap_score": 0.2
+          },
+          {
+            "draft_name": "Data analytics services (for online search and display advertising)",
+            "market_id": "pm_12",
+            "overlap_score": 0.111
+          }
+        ]
+      }
+    ],
+    "false_positives_detail": [],
+    "unjudged_items": [
+      {
+        "draft_name": "App stores for a given OS platform of smart mobile devices (in particular Android app stores)"
+      },
+      {
+        "draft_name": "App stores for a given OS platform of wrist-worn wearable devices (in particular app stores for Wear OS and Fitbit devices)"
+      },
+      {
+        "draft_name": "General search services"
+      },
+      {
+        "draft_name": "App stores for wrist-worn wearable devices (Wear OS and Fitbit app stores)"
+      },
+      {
+        "draft_name": "Online advertising intermediation services (search and non-search)"
+      },
+      {
+        "draft_name": "Health and fitness apps"
+      },
+      {
+        "draft_name": "Online advertising intermediation services (including sub-segments: online search advertising intermediation, display ad network services, display ads publisher ad server services, display ads advertiser ad server services, analytics services)"
+      },
+      {
+        "draft_name": "Mobile payment services (including proximity/offline and remote/online segments)"
+      },
+      {
+        "draft_name": "Retail provision of mobile payment services"
+      },
+      {
+        "draft_name": "Navigation apps offering turn-by-turn navigation"
+      },
+      {
+        "draft_name": "Virtual assistants"
+      },
+      {
+        "draft_name": "Digital music distribution services"
+      },
+      {
+        "draft_name": "Digital translation services"
+      },
+      {
+        "draft_name": "Provision of cloud infrastructure and data analytics"
+      },
+      {
+        "draft_name": "Patient monitoring"
+      },
+      {
+        "draft_name": "Provision of data for medical research and real-world evidence (RWE)"
+      },
+      {
+        "draft_name": "Corporate wellness programmes"
+      }
+    ],
+    "evaluated_candidates": 7,
+    "unjudged_candidates": 17,
+    "out_of_scope_candidates": 0,
+    "partial_precision": 1.0,
+    "partial_recall": 0.636,
+    "partial_f1": 0.778
+  },
+  "geographic_markets": {
+    "market_type": "geographic",
+    "true_positives": 2,
+    "false_positives": 0,
+    "false_negatives": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "matched_items": [
+      {
+        "gold_name": "Wrist-worn wearable devices geographic market",
+        "draft_name": "Wrist-worn wearable devices — geographic market",
+        "match_type": "expected_draft_name"
+      },
+      {
+        "gold_name": "Online advertising services geographic market",
+        "draft_name": "Online advertising services (search and display) — national geographic market",
+        "match_type": "expected_draft_name"
+      }
+    ],
+    "false_negatives_detail": [],
+    "false_positives_detail": [],
+    "unjudged_items": [
+      {
+        "draft_name": "Licensable OSs for smart mobile devices — worldwide excluding China"
+      },
+      {
+        "draft_name": "Licensable OSs for wrist-worn wearable devices — at least EEA-wide, potentially worldwide excluding China"
+      },
+      {
+        "draft_name": "Geographic market for app stores for a given OS platform of smart mobile devices (worldwide excluding China)"
+      },
+      {
+        "draft_name": "Worldwide excluding China — app stores for smart mobile devices and wrist-worn wearable devices"
+      },
+      {
+        "draft_name": "General search services — national geographic market"
+      },
+      {
+        "draft_name": "Online advertising intermediation services (ad tech) — EEA-wide"
+      },
+      {
+        "draft_name": "Health and fitness apps — geographic scope"
+      },
+      {
+        "draft_name": "Geographic market for health and fitness apps"
+      },
+      {
+        "draft_name": "Retail provision of mobile payment services – geographic scope"
+      },
+      {
+        "draft_name": "Navigation apps – geographic scope"
+      },
+      {
+        "draft_name": "Virtual assistants – geographic scope"
+      },
+      {
+        "draft_name": "Digital music distribution services – geographic scope"
+      },
+      {
+        "draft_name": "Digital translation services — geographic market"
+      },
+      {
+        "draft_name": "Provision of cloud infrastructure and data analytics — geographic market"
+      },
+      {
+        "draft_name": "Patient monitoring — geographic market"
+      },
+      {
+        "draft_name": "Provision of data for medical research and RWE — geographic market"
+      },
+      {
+        "draft_name": "Corporate wellness programmes — geographic market"
+      }
+    ],
+    "evaluated_candidates": 2,
+    "unjudged_candidates": 17,
+    "out_of_scope_candidates": 0,
+    "partial_precision": 1.0,
+    "partial_recall": 1.0,
+    "partial_f1": 1.0
+  },
+  "promotion_safety": {
+    "risky_promotions": 0,
+    "safe_promoted_count": 0,
+    "safety_score": 1.0,
+    "overpromotion_risk": "low"
+  },
+  "quote_validity": {
+    "total_checked": 33,
+    "passed": 33,
+    "failures": 0,
+    "warnings": 0,
+    "failure_details": []
+  },
+  "overall_f1": 0.889,
+  "gating_decision": "auto_accept"
+}
