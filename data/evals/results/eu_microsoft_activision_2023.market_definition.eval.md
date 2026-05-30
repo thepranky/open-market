@@ -1,12 +1,12 @@
 # Extraction Evaluation — eu_microsoft_activision_2023
 
-Generated: 2026-05-30T03:19:08.593028+00:00
+Generated: 2026-05-30T04:05:11.126266+00:00
 
 ## Summary
 - Gold partial: True
-- Reviewed gold entries: 2
+- Reviewed gold entries: 3
 - **Gating decision: AUTO_ACCEPT**
-- Overall F1: 0.5
+- Overall F1: 1.0
 - *(Partial gold: precision/recall cover reviewed scope only)*
 
 ## Product Markets
@@ -25,14 +25,15 @@ Generated: 2026-05-30T03:19:08.593028+00:00
   - `Operating systems for mobile devices`
 
 ## Geographic Markets
-- TP: 0, FP: 0, FN: 0
-- Unjudged: 3, Out-of-scope: 0
-- Partial Precision: 0.0, Partial Recall: 0.0, Partial F1: 0.0
+- TP: 1, FP: 0, FN: 0
+- Unjudged: 1, Out-of-scope: 0
+- Partial Precision: 1.0, Partial Recall: 1.0, Partial F1: 1.0
 
-### Unjudged (3 draft markets outside reviewed scope)
+### Matched
+  - ✓ `Geographic market for PC and console video game distribution` → `Geographic market for PC and console video game distribution` (exact)
+
+### Unjudged (1 draft markets outside reviewed scope)
   - `Geographic market for development and publishing of PC and console video games`
-  - `Geographic market for PC and console video game distribution`
-  - `Distribution of PC and video console games — worldwide or EEA-wide`
 
 ## Promotion Safety
 - Safe promoted: 0
@@ -41,7 +42,7 @@ Generated: 2026-05-30T03:19:08.593028+00:00
 - Overpromotion risk: LOW
 
 ## Quote Validity
-- Checked: 6
-- Passed: 6
+- Checked: 9
+- Passed: 9
 - Failures: 0
 - Warnings (cache unavailable): 0

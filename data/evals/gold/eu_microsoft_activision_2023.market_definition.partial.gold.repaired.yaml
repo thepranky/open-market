@@ -156,4 +156,54 @@ product_markets_considered:
   reviewer_notes: >-
     Reviewed as a partial gold entry. Source passages validate and include the Commission's conclusion that the relevant market is an overall market for game distribution and should not be segmented between physical and digital distribution. The alias candidate "distribution of mobile games" is not approved because the source treats mobile game distribution as outside the same market as PC and console game distribution.
   reviewed: true
-geographic_markets_considered: []
+geographic_markets_considered:
+- name: Geographic market for PC and console video game distribution
+  market_type: geographic
+  expected_definition_status: left_open
+  expected_promotion_action: promote_with_uncertainty
+  importance: core_assessed
+  market_group: null
+  linked_source_passages:
+  - passage_id: sp_34
+    source_document_id: eu_microsoft_activision_decision
+    page: '29'
+    quote_snippet: >-
+      In Microsoft/ZeniMax, the Commission found that the geographic scope of both
+      physical and digital game distribution is at least EEA-wide, and possibly
+      worldwide.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  - passage_id: sp_37
+    source_document_id: eu_microsoft_activision_decision
+    page: '30'
+    quote_snippet: >-
+      In any case, the Commission notes that, for the purposes of this Decision,
+      the outcome of the analysis will be the same regardless of whether the Commission
+      considers an EEA-wide or a worldwide geographic market for game distribution.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  - passage_id: sp_38
+    source_document_id: eu_microsoft_activision_decision
+    page: '30'
+    quote_snippet: >-
+      Therefore, the Commission considers that, for the purpose of this Decision,
+      the question whether the geographic scope of the market for the distribution
+      of PC and video console games is worldwide or EEA-wide can be left open.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  aliases:
+  - Distribution of PC and video console games — worldwide or EEA-wide
+  alias_candidates: []
+  reviewer_notes: >-
+    Reviewed as a partial gold geo entry for the PC and console video game distribution
+    geographic market. The Commission left open the geographic scope between EEA-wide
+    and worldwide, concluding the competitive analysis outcome is the same regardless.
+    Source passages validate against Commission precedent (Microsoft/ZeniMax, sp_34)
+    and the Phase II assessment conclusion (sp_37, sp_38). The approved alias reflects
+    the draft's alternative market name (gm_3) describing the same geographic scope
+    question. sp_36 was excluded because embedded footnote numbers break verbatim
+    validation.
+  reviewed: true

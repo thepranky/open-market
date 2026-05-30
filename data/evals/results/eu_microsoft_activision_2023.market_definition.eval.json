@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-05-30T03:19:08.593028+00:00",
+  "generated_at": "2026-05-30T04:05:11.126266+00:00",
   "case_id": "eu_microsoft_activision_2023",
   "gold_partial": true,
-  "gold_reviewed_count": 2,
+  "gold_reviewed_count": 3,
   "gold_review_status": "has_reviewed_gold_items",
   "evaluation_valid": true,
   "product_markets": {
@@ -50,32 +50,32 @@
   },
   "geographic_markets": {
     "market_type": "geographic",
-    "true_positives": 0,
+    "true_positives": 1,
     "false_positives": 0,
     "false_negatives": 0,
-    "precision": 0.0,
-    "recall": 0.0,
-    "f1": 0.0,
-    "matched_items": [],
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "matched_items": [
+      {
+        "gold_name": "Geographic market for PC and console video game distribution",
+        "draft_name": "Geographic market for PC and console video game distribution",
+        "match_type": "exact"
+      }
+    ],
     "false_negatives_detail": [],
     "false_positives_detail": [],
     "unjudged_items": [
       {
         "draft_name": "Geographic market for development and publishing of PC and console video games"
-      },
-      {
-        "draft_name": "Geographic market for PC and console video game distribution"
-      },
-      {
-        "draft_name": "Distribution of PC and video console games — worldwide or EEA-wide"
       }
     ],
-    "evaluated_candidates": 0,
-    "unjudged_candidates": 3,
+    "evaluated_candidates": 1,
+    "unjudged_candidates": 1,
     "out_of_scope_candidates": 0,
-    "partial_precision": 0.0,
-    "partial_recall": 0.0,
-    "partial_f1": 0.0
+    "partial_precision": 1.0,
+    "partial_recall": 1.0,
+    "partial_f1": 1.0
   },
   "promotion_safety": {
     "risky_promotions": 0,
@@ -84,13 +84,13 @@
     "overpromotion_risk": "low"
   },
   "quote_validity": {
-    "total_checked": 6,
-    "passed": 6,
+    "total_checked": 9,
+    "passed": 9,
     "failures": 0,
     "warnings": 0,
     "failure_details": []
   },
-  "overall_f1": 0.5,
+  "overall_f1": 1.0,
   "gating_decision": "auto_accept",
   "gating_reason": ""
 }
