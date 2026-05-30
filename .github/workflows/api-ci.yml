@@ -34,11 +34,9 @@ jobs:
           tests/test_benchmark_runner.py
           tests/test_extract_case_from_source.py
 
-# TODO: add benchmark runner step once lightweight committed fixtures replace the
-# generated file dependencies that are currently gitignored:
-#   - data/drafts/eu/*.market_definition.draft.yaml
-#   - data/source_text/*_market_definition_report.json
-# Until then, run the benchmark locally:
-#   cd apps/api
-#   .venv/bin/python scripts/run_eval_benchmark.py \
-#     --config ../../data/evals/benchmark.market_definition.yaml
+      - name: Run market-definition benchmark (CI fixtures)
+        run: >
+          .venv/bin/python scripts/run_eval_benchmark.py
+          --config ../../data/evals/benchmark.market_definition.ci.yaml
+          --output-json /tmp/benchmark.market_definition.ci.summary.json
+          --output-markdown /tmp/benchmark.market_definition.ci.summary.md

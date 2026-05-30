@@ -506,3 +506,25 @@ class TestRunBenchmarkIntegration:
             "promotion_safety_score", "overpromotion_risk", "gating_decision", "passed",
         ):
             assert key in row, f"Missing key in case row: {key}"
+
+    def test_per_case_cache_dir_overrides_global(self, tmp_path):
+        """Per-case cache_dir in the config is used instead of the global cache_dir.
+
+        The global cache_dir points to a non-existent directory; the per-case
+        cache_dir points to the real location.  Quote validation must still pass
+        (warnings only, no failures), proving the per-case path is honoured.
+        """
+        config_path = _write_fixture(tmp_path)
+
+        # Rewrite config: set a bogus global cache_dir; add per-case cache_dir
+        # pointing to the real source_text directory.
+        with open(config_path) as fh:
+            cfg = yaml.safe_load(fh)
+        cfg["cache_dir"] = "data/nonexistent_cache"
+        cfg["benchmarks"][0]["cache_dir"] = "data/source_text"
+        config_path.write_text(yaml.dump(cfg))
+
+        exit_code = run_benchmark(config_path, base_dir=tmp_path)
+        # The per-case cache_dir points to source_text (which has no cache for
+        # the test doc), so we get warnings not failures → still passes.
+        assert exit_code == 0

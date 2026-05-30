@@ -1,0 +1,132 @@
+{
+  "canonical_merge_candidates": {
+    "safe_to_promote": [],
+    "uncertain_markets": [
+      {
+        "name": "Development and publishing of PC and console video games",
+        "market_type": "product",
+        "importance": "core_assessed",
+        "definition_status": "possible_segmentation",
+        "reason": "Commission formally assessed this market but left segmentation open. Review whether this should be a narrower market or candidate submarket before promoting to canonical.",
+        "source_refs": [
+          "15",
+          "16",
+          "17",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23"
+        ]
+      },
+      {
+        "name": "PC and console video game distribution (overall market)",
+        "market_type": "product",
+        "importance": "core_assessed",
+        "definition_status": "possible_segmentation",
+        "reason": "Commission formally assessed this market but left segmentation open. Review whether this should be a narrower market or candidate submarket before promoting to canonical.",
+        "source_refs": [
+          "25",
+          "26",
+          "27",
+          "28",
+          "29"
+        ]
+      }
+    ],
+    "context_only": [
+      {
+        "name": "Supply of gaming hardware (consoles)",
+        "market_type": "product",
+        "importance": "ancillary",
+        "definition_status": "left_open",
+        "reason": "Related market mentioned but not the primary analytical focus; include in background_concepts rather than product/geo market lists.",
+        "source_refs": [
+          "15"
+        ]
+      },
+      {
+        "name": "Distribution of mobile games (potential separate market)",
+        "market_type": "product",
+        "importance": "assessed_no_overlap",
+        "definition_status": "defined",
+        "reason": "Commission assessed this market but parties do not materially overlap. Keep as context only in draft; preserve source passages and notes for review. Do not promote to canonical without additional evidence of relevance.",
+        "source_refs": [
+          "28"
+        ]
+      },
+      {
+        "name": "Distribution of PC and video console games",
+        "market_type": "product",
+        "importance": "ancillary",
+        "definition_status": "left_open",
+        "reason": "Related market mentioned but not the primary analytical focus; include in background_concepts rather than product/geo market lists.",
+        "source_refs": [
+          "30"
+        ]
+      },
+      {
+        "name": "Operating systems for mobile devices",
+        "market_type": "product",
+        "importance": "assessed_no_overlap",
+        "definition_status": "considered",
+        "reason": "Commission assessed this market but parties do not materially overlap. Keep as context only in draft; preserve source passages and notes for review. Do not promote to canonical without additional evidence of relevance.",
+        "source_refs": [
+          "30"
+        ]
+      },
+      {
+        "name": "Distribution of PC and video console games — worldwide or EEA-wide",
+        "market_type": "geographic",
+        "importance": "ancillary",
+        "definition_status": "left_open",
+        "reason": "Related market mentioned but not the primary analytical focus; include in background_concepts rather than product/geo market lists.",
+        "source_refs": [
+          "30"
+        ]
+      }
+    ],
+    "hold_pending_source_check": [
+      {
+        "name": "Operating systems for PCs (PC OS)",
+        "market_type": "product",
+        "importance": "core_assessed",
+        "definition_status": "defined",
+        "reason": "Market would promote but supporting passages lack commission_assessment or conclusion source role (only found: notifying_party_view, precedent, background). Re-validate with conclusive source roles before promoting.",
+        "source_refs": [
+          "30"
+        ]
+      },
+      {
+        "name": "Geographic market for development and publishing of PC and console video games",
+        "market_type": "geographic",
+        "importance": "core_assessed",
+        "definition_status": "left_open",
+        "reason": "Market would promote but supporting passages lack commission_assessment or conclusion source role (only found: notifying_party_view, precedent, background). Re-validate with conclusive source roles before promoting.",
+        "source_refs": [
+          "24"
+        ]
+      },
+      {
+        "name": "Geographic market for PC and console video game distribution",
+        "market_type": "geographic",
+        "importance": "core_assessed",
+        "definition_status": "left_open",
+        "reason": "Market would promote but supporting passages lack commission_assessment or conclusion source role (only found: notifying_party_view, precedent, background). Re-validate with conclusive source roles before promoting.",
+        "source_refs": [
+          "29"
+        ]
+      }
+    ],
+    "manual_review": [],
+    "manual_review_geo_pairing": [],
+    "_counts": {
+      "safe_to_promote": 0,
+      "uncertain_markets": 2,
+      "context_only": 5,
+      "hold_pending_source_check": 3,
+      "manual_review": 0,
+      "manual_review_geo_pairing": 0
+    }
+  }
+}

@@ -1,0 +1,17 @@
+focus: market_definition
+# cache_dir points to the fixture subdirectory for each case — set per-case via fixture_cache_dir
+# output goes to a temp-friendly location so CI does not write into the committed tree
+output_dir: data/evals/results
+
+benchmarks:
+  - case_id: eu_microsoft_activision_2023
+    gold_yaml: data/evals/gold/eu_microsoft_activision_2023.market_definition.partial.gold.repaired.yaml
+    draft_yaml: data/evals/fixtures/market_definition/eu_microsoft_activision_2023/draft.yaml
+    report_json: data/evals/fixtures/market_definition/eu_microsoft_activision_2023/report.json
+    cache_dir: data/evals/fixtures/market_definition/eu_microsoft_activision_2023
+
+  - case_id: eu_sika_mbcc_2023
+    gold_yaml: data/evals/gold/eu_sika_mbcc_2023.market_definition.partial.gold.repaired.yaml
+    draft_yaml: data/evals/fixtures/market_definition/eu_sika_mbcc_2023/draft.yaml
+    report_json: data/evals/fixtures/market_definition/eu_sika_mbcc_2023/report.json
+    cache_dir: data/evals/fixtures/market_definition/eu_sika_mbcc_2023

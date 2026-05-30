@@ -247,6 +247,13 @@ def _run_one_case(
     draft_path  = _resolve(case_cfg["draft_yaml"],  base_dir)
     report_path = _resolve(case_cfg["report_json"], base_dir)
 
+    # Per-case cache_dir overrides the global default (used by fixture configs)
+    effective_cache_dir = (
+        _resolve(case_cfg["cache_dir"], base_dir)
+        if "cache_dir" in case_cfg
+        else cache_dir
+    )
+
     missing = [str(p) for p in (gold_path, draft_path, report_path) if not p.exists()]
     if missing:
         err = f"Missing files: {', '.join(missing)}"
@@ -267,7 +274,7 @@ def _run_one_case(
         return _error_result(case_id, err), False
 
     try:
-        result = _evaluate_extraction(case_id, gold, draft, report, cache_dir)
+        result = _evaluate_extraction(case_id, gold, draft, report, effective_cache_dir)
     except Exception as exc:
         err = f"Evaluation error: {exc}"
         print(f"  [{case_id}] ERROR: {err}", file=sys.stderr)

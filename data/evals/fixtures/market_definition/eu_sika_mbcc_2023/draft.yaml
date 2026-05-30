@@ -1,0 +1,53 @@
+product_markets_considered:
+- name: Chemical admixtures (overall market)
+  market_id: pm_1
+- name: Concrete admixtures (narrower market)
+  market_id: pm_2
+- name: Injection resins (concrete works)
+  market_id: pm_3
+- name: Resin-based grouts (concrete works)
+  market_id: pm_4
+- name: Bonding agents (concrete works)
+  market_id: pm_5
+- name: Primers (concrete works)
+  market_id: pm_6
+- name: Impregnations including coats/coatings (concrete works)
+  market_id: pm_7
+- name: Corrosion protection/control (concrete works)
+  market_id: pm_8
+- name: Structural reinforcing/strengthening and ancillaries including cleaners and
+    release agents (concrete works)
+  market_id: pm_9
+- name: Premix mortars (dry vs. paste distinction)
+  market_id: pm_10
+- name: 'Premix mortars (distinction based on application: construction, façade, tile-fixing)'
+  market_id: pm_11
+- name: Industrial flooring (overall and technology-based sub-segments)
+  market_id: pm_12
+- name: Industrial flooring
+  market_id: pm_13
+- name: Sealants (overall market and sub-segments)
+  market_id: pm_14
+- name: Sealants (construction and DIY/consumer)
+  market_id: pm_15
+- name: Adhesives
+  market_id: pm_16
+- name: Waterproofing – segmented by application type and technology (acrylic liquid
+    membranes used under tiling; acrylic liquid membranes other applications; PU liquid
+    membranes; epoxy liquid membranes; bitumen liquid; bitumen felts; PVC/TPO bonding
+    sheets; other non-liquid membranes; PU injection resins; damp proofing injection;
+    epoxy injection systems)
+  market_id: pm_17
+geographic_markets_considered:
+- name: Chemical admixtures / Concrete admixtures — national markets (EEA)
+  market_id: gm_1
+- name: Concrete works — national geographic markets
+  market_id: gm_2
+- name: Industrial flooring — geographic market (national or EEA-wide)
+  market_id: gm_3
+- name: Geographic market for industrial flooring
+  market_id: gm_4
+- name: Geographic market for sealants
+  market_id: gm_5
+- name: EEA-wide or national markets for sealants
+  market_id: gm_6
