@@ -1,6 +1,6 @@
 # Benchmark summary: market_definition
 
-Generated: 2026-05-30T17:02:43.535783+00:00  
+Generated: 2026-05-30T17:05:22.492188+00:00  
 Result: **PASS** (2/2 cases passed)
 
 ## Per-case results
