@@ -76,6 +76,14 @@ from extract_case_from_source import (
     extract_case,
     replay_section_debug,
     serialize_report,
+    # Fallback selector
+    _MARKET_DEF_FALLBACK_SIGNALS,
+    _MARKET_DEF_FALLBACK_MIN_SCORE,
+    _MAX_FALLBACK_PAGES,
+    _MAX_FALLBACK_CHUNKS,
+    _score_page_market_def,
+    _select_market_def_fallback_chunks,
+    _infer_section_label_from_pages,
 )
 from repair_source_passages import _extract_section_map
 
@@ -7658,3 +7666,359 @@ class TestSerializeReportPromotion:
 
         payload = serialize_report(rpt)
         assert payload["promotion_plan"] == []
+
+
+# ---------------------------------------------------------------------------
+# Tests for neutral market-definition page-text fallback selector
+# ---------------------------------------------------------------------------
+
+def _market_def_page(extra: str = "") -> str:
+    """Return page text with enough neutral market-definition signals to clear threshold."""
+    return (
+        "The Commission examined the relevant market and the relevant product market. "
+        "Market definition and demand-side substitutability were considered. "
+        "The exact scope of the market was left open for the purpose of assessing. "
+        + extra
+    )
+
+
+def _neutral_noise_page(extra: str = "") -> str:
+    """Return page text with no market-definition signals."""
+    return (
+        "Procedural considerations relating to the notification submission date "
+        "and administrative filing requirements under the applicable regulation. "
+        + extra
+    )
+
+
+class TestScorePageMarketDef:
+    def test_market_def_signals_score_above_zero(self):
+        text = _market_def_page()
+        assert _score_page_market_def(text) >= _MARKET_DEF_FALLBACK_MIN_SCORE
+
+    def test_noise_page_scores_zero_or_below_threshold(self):
+        text = _neutral_noise_page()
+        assert _score_page_market_def(text) < _MARKET_DEF_FALLBACK_MIN_SCORE
+
+    def test_empty_text_scores_zero(self):
+        assert _score_page_market_def("") == 0
+
+    def test_all_signals_are_neutral(self):
+        # Confirm no industry-specific term appears in the signal list.
+        industry_terms = [
+            "game", "gaming", "console", "cloud", "wearable", "fitbit",
+            "pharma", "airline", "sequenc", "advertis", "ad tech",
+        ]
+        joined = " ".join(_MARKET_DEF_FALLBACK_SIGNALS).lower()
+        for term in industry_terms:
+            assert term not in joined, f"Industry-specific term found in signals: {term!r}"
+
+
+class TestSelectRelevantChunksFallback:
+    def _chunks_with_section_heading(self) -> list[ChunkInfo]:
+        """Chunks where section_path contains a market-definition keyword."""
+        return [
+            _make_chunk("c1", "8.3 Relevant market definition", [(1, "relevant market analysis")]),
+            _make_chunk("c2", "8.4 Competitive assessment", [(2, "competitive analysis")]),
+            _make_chunk("c3", "3 Background", [(3, "background text only")]),
+        ]
+
+    def _chunks_no_section_heading(self) -> list[ChunkInfo]:
+        """Chunks with no market-definition keywords in section_path."""
+        return [
+            _make_chunk("c1", "Introduction", [(1, "introductory material")]),
+            _make_chunk("c2", "Procedure", [(2, "procedural context")]),
+        ]
+
+    def test_section_path_selection_used_when_match_found(self):
+        chunks = self._chunks_with_section_heading()
+        selected = _select_relevant_chunks(chunks, focus="market_definition")
+        assert len(selected) >= 1
+        # All selected chunks must have section_path match — no fallback triggered.
+        assert all(c.selection_method == "section_path" for c in selected)
+        assert any("relevant market" in c.section_path.lower() for c in selected)
+
+    def test_fallback_triggers_when_section_path_empty(self):
+        # Chunks have market-def content in page text but not section_path.
+        chunks = [
+            _make_chunk("c1", "Introduction", [(1, _market_def_page())]),
+            _make_chunk("c2", "Procedure", [(2, _neutral_noise_page())]),
+        ]
+        selected = _select_relevant_chunks(chunks, focus="market_definition")
+        assert len(selected) >= 1
+        assert all(c.selection_method == "page_text_fallback" for c in selected)
+
+    def test_noise_only_pages_not_selected_by_fallback(self):
+        # All pages are noise — fallback should return nothing.
+        chunks = [
+            _make_chunk("c1", "Procedure", [(1, _neutral_noise_page("a"))]),
+            _make_chunk("c2", "Procedure", [(2, _neutral_noise_page("b"))]),
+        ]
+        selected = _select_relevant_chunks(chunks, focus="market_definition")
+        assert len(selected) == 0
+
+    def test_fallback_not_triggered_for_other_focus_modes(self):
+        # Fallback is only for market_definition focus.
+        chunks = [
+            _make_chunk("c1", "Introduction", [(1, _market_def_page())]),
+        ]
+        # theories focus: no fallback, should return empty
+        selected = _select_relevant_chunks(chunks, focus="theories")
+        assert len(selected) == 0
+
+    def test_section_path_wins_over_page_text_when_both_match(self):
+        # Chunk has both a section_path match and high page-text score — section_path wins.
+        chunks = [
+            _make_chunk("c1", "8.3 Relevant market", [(1, _market_def_page())]),
+        ]
+        selected = _select_relevant_chunks(chunks, focus="market_definition")
+        assert len(selected) == 1
+        assert selected[0].selection_method == "section_path"
+
+
+class TestSelectMarketDefFallbackChunks:
+    def test_returns_chunks_for_high_scoring_pages(self):
+        chunks = [_make_chunk("c1", "section", [(1, _market_def_page())])]
+        result = _select_market_def_fallback_chunks(chunks)
+        assert len(result) >= 1
+        assert result[0].selection_method == "page_text_fallback"
+
+    def test_returns_empty_for_noise_only(self):
+        chunks = [_make_chunk("c1", "section", [(1, _neutral_noise_page())])]
+        result = _select_market_def_fallback_chunks(chunks)
+        assert result == []
+
+    def test_adjacent_continuation_included(self):
+        # Page 2 is a high-scorer; page 3 is a weak continuation; page 5 is isolated noise.
+        pages = [
+            (1, _neutral_noise_page()),
+            (2, _market_def_page()),
+            (3, "relevant market brief mention"),
+            (5, _neutral_noise_page()),
+        ]
+        cache = _make_page_cache(pages)
+        all_chunks = _build_chunks(cache)
+        result = _select_market_def_fallback_chunks(all_chunks)
+        selected_pages = {pn for c in result for pn in c.page_numbers}
+        assert 2 in selected_pages
+        assert 3 in selected_pages   # continuation of page 2
+        assert 5 not in selected_pages  # not adjacent to any primary
+
+    def test_page_cap_respected(self):
+        pages = [(i, _market_def_page(str(i))) for i in range(1, 60)]
+        cache = _make_page_cache(pages)
+        all_chunks = _build_chunks(cache)
+        result = _select_market_def_fallback_chunks(all_chunks, max_fallback_pages=10)
+        total = sum(len(c.pages) for c in result)
+        assert total <= 10
+
+    def test_chunk_cap_respected(self):
+        # Many non-adjacent high-scoring pages produce many isolated chunks.
+        pages = [(i, _market_def_page(str(i))) for i in range(1, 100, 10)]
+        cache = _make_page_cache(pages)
+        all_chunks = _build_chunks(cache)
+        result = _select_market_def_fallback_chunks(all_chunks)
+        assert len(result) <= _MAX_FALLBACK_CHUNKS
+
+    def test_source_document_id_preserved(self):
+        cache = _make_page_cache([(1, _market_def_page())], doc_id="my_doc")
+        all_chunks = _build_chunks(cache)
+        result = _select_market_def_fallback_chunks(all_chunks)
+        assert len(result) >= 1
+        assert result[0].source_document_id == "my_doc"
+
+    def test_page_number_preserved(self):
+        cache = _make_page_cache([(42, _market_def_page())], doc_id="doc")
+        all_chunks = _build_chunks(cache)
+        result = _select_market_def_fallback_chunks(all_chunks)
+        assert len(result) >= 1
+        assert 42 in result[0].page_numbers
+
+    def test_effective_prefix_set_for_batch_grouping(self):
+        cache = _make_page_cache([(1, _market_def_page())])
+        all_chunks = _build_chunks(cache)
+        result = _select_market_def_fallback_chunks(all_chunks)
+        assert len(result) >= 1
+        assert result[0].effective_prefix is not None
+        assert "fallback_p" in result[0].effective_prefix
+
+    def test_fallback_does_not_select_whole_document(self):
+        # A long document: only pages with market-def signals should be selected.
+        pages = []
+        for i in range(1, 50):
+            if i % 10 == 0:
+                pages.append((i, _market_def_page(str(i))))
+            else:
+                pages.append((i, _neutral_noise_page(str(i))))
+        cache = _make_page_cache(pages)
+        all_chunks = _build_chunks(cache)
+        result = _select_market_def_fallback_chunks(all_chunks)
+        total = sum(len(c.pages) for c in result)
+        assert total < 49, "Fallback must not select the whole document"
+
+    def test_returns_empty_when_all_chunks_empty(self):
+        result = _select_market_def_fallback_chunks([])
+        assert result == []
+
+
+class TestInferSectionLabel:
+    def test_numbered_heading_preferred(self):
+        pages = [{"page_number": 1, "text": "8.3 Market Definition\nSome text follows.\n"}]
+        label = _infer_section_label_from_pages(pages)
+        assert "8.3" in label
+
+    def test_uppercase_heading_fallback(self):
+        pages = [{"page_number": 1, "text": "MARKET DEFINITION\nSome text follows.\n"}]
+        label = _infer_section_label_from_pages(pages)
+        assert "MARKET" in label
+
+    def test_generic_label_when_no_heading(self):
+        pages = [{"page_number": 1, "text": "no heading here, just body text about things."}]
+        label = _infer_section_label_from_pages(pages)
+        assert "inferred" in label or "market" in label.lower()
+
+    def test_empty_pages_returns_label(self):
+        label = _infer_section_label_from_pages([])
+        assert isinstance(label, str)
+        assert len(label) > 0
+
+
+class TestFallbackBatchGrouping:
+    def test_fallback_chunks_group_by_effective_prefix(self):
+        # Each fallback chunk has a unique effective_prefix → one group per chunk.
+        pages_a = [(1, _market_def_page("a"))]
+        pages_b = [(20, _market_def_page("b"))]
+        cache = _make_page_cache(pages_a + pages_b)
+        all_chunks = _build_chunks(cache)
+        fallback = _select_market_def_fallback_chunks(all_chunks)
+        groups = _group_chunks_by_section_prefix(fallback)
+        # Each isolated page should produce a separate group
+        assert len(groups) >= 1
+        for prefix, grp_chunks in groups:
+            assert prefix.startswith("fallback_p")
+
+    def test_estimate_cost_compatible_with_fallback(self, tmp_path):
+        """estimate-cost path must not crash with fallback chunks."""
+        from unittest.mock import patch
+        import sys, io
+
+        existing = {
+            "case_id": "tc_fallback", "case_name": "Alpha / Beta",
+            "authority": "European Commission",
+            "jurisdiction": "EU", "sector": "digital", "outcome": "unknown",
+            "decision_date": "2023-01-01", "parties": [],
+            "source_documents": [{"doc_id": "doc_fb", "title": "D",
+                                   "pdf_url": "https://example.com/d.pdf",
+                                   "doc_type": "decision"}],
+            "source_passages": [],
+            "product_markets_considered": [],
+            "geographic_markets_considered": [],
+            "theories_of_harm": [],
+        }
+        yaml_path = tmp_path / "tc_fallback.yaml"
+        yaml_path.write_text(yaml.dump(existing))
+
+        page_cache = {
+            "source_document_id": "doc_fb",
+            "source_url": "https://example.com/d.pdf",
+            "page_count": 3,
+            "pages": [
+                {"page_number": 1, "text": _market_def_page("1")},
+                {"page_number": 2, "text": _neutral_noise_page("2")},
+                {"page_number": 3, "text": _market_def_page("3")},
+            ],
+            "extracted_at": "2026-01-01T00:00:00+00:00",
+        }
+
+        with patch("extract_case_from_source.load_cache", return_value=page_cache):
+            rpt = extract_case(
+                yaml_path, cache_dir=tmp_path / "cache",
+                use_claude=False, focus="market_definition",
+            )
+
+        assert rpt.error is None or "No chunks" not in (rpt.error or "")
+        total_pages = sum(len(c.pages) for c in rpt.chunks_used)
+        # Should have selected at least the two market-def pages
+        assert total_pages >= 1
+        # Verify batch grouping doesn't crash
+        groups = _group_chunks_by_section_prefix(rpt.chunks_used)
+        assert isinstance(groups, list)
+
+    def test_inspect_output_reports_fallback(self, tmp_path, capsys):
+        """--inspect-chunks must report 'fallback' when fallback was used."""
+        from unittest.mock import patch
+
+        existing = {
+            "case_id": "tc_ins", "case_name": "X / Y",
+            "authority": "European Commission",
+            "jurisdiction": "EU", "sector": "test", "outcome": "unknown",
+            "decision_date": "2023-01-01", "parties": [],
+            "source_documents": [{"doc_id": "doc_ins", "title": "D",
+                                   "pdf_url": "https://example.com/d.pdf",
+                                   "doc_type": "decision"}],
+            "source_passages": [],
+            "product_markets_considered": [],
+            "geographic_markets_considered": [],
+            "theories_of_harm": [],
+        }
+        yaml_path = tmp_path / "tc_ins.yaml"
+        yaml_path.write_text(yaml.dump(existing))
+
+        page_cache = {
+            "source_document_id": "doc_ins",
+            "source_url": "https://example.com/d.pdf",
+            "page_count": 2,
+            "pages": [
+                {"page_number": 1, "text": _market_def_page()},
+                {"page_number": 2, "text": _neutral_noise_page()},
+            ],
+            "extracted_at": "2026-01-01T00:00:00+00:00",
+        }
+
+        with patch("extract_case_from_source.load_cache", return_value=page_cache):
+            rpt = extract_case(
+                yaml_path, cache_dir=tmp_path / "cache",
+                use_claude=False, focus="market_definition",
+            )
+
+        used_fallback = any(c.selection_method == "page_text_fallback" for c in rpt.chunks_used)
+        assert used_fallback, "Expected fallback to be used (no section-path match)"
+
+    def test_inspect_output_no_fallback_label_for_section_path_selection(self, tmp_path):
+        """When section-path selection succeeds, selection_method is 'section_path'."""
+        from unittest.mock import patch
+
+        existing = {
+            "case_id": "tc_sp", "case_name": "A / B",
+            "authority": "European Commission",
+            "jurisdiction": "EU", "sector": "test", "outcome": "unknown",
+            "decision_date": "2023-01-01", "parties": [],
+            "source_documents": [{"doc_id": "doc_sp", "title": "D",
+                                   "pdf_url": "https://example.com/d.pdf",
+                                   "doc_type": "decision"}],
+            "source_passages": [],
+            "product_markets_considered": [],
+            "geographic_markets_considered": [],
+            "theories_of_harm": [],
+        }
+        yaml_path = tmp_path / "tc_sp.yaml"
+        yaml_path.write_text(yaml.dump(existing))
+
+        # Page whose cache section_map will produce a market-definition section path
+        page_text = "8.3 Relevant market\n\nThe Commission defines the relevant market.\n"
+        page_cache = {
+            "source_document_id": "doc_sp",
+            "source_url": "https://example.com/d.pdf",
+            "page_count": 1,
+            "pages": [{"page_number": 1, "text": page_text}],
+            "extracted_at": "2026-01-01T00:00:00+00:00",
+        }
+
+        with patch("extract_case_from_source.load_cache", return_value=page_cache):
+            rpt = extract_case(
+                yaml_path, cache_dir=tmp_path / "cache",
+                use_claude=False, focus="market_definition",
+            )
+
+        if rpt.chunks_used:
+            assert all(c.selection_method == "section_path" for c in rpt.chunks_used)

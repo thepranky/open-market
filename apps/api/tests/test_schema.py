@@ -46,7 +46,7 @@ def test_google_fitbit_structure():
 
 
 def test_illumina_grail_blocked():
-    path = CASES_DIR / "eu" / "illumina_grail_2022.yaml"
+    path = CASES_DIR / "eu" / "eu_illumina_grail_2022.yaml"
     case = load_yaml_file(path)
     assert case.outcome == Outcome.blocked
     assert len(case.theories_of_harm) >= 1
@@ -78,7 +78,7 @@ def test_case_history_google_fitbit():
 
 
 def test_case_history_illumina_annulled():
-    path = CASES_DIR / "eu" / "illumina_grail_2022.yaml"
+    path = CASES_DIR / "eu" / "eu_illumina_grail_2022.yaml"
     case = load_yaml_file(path)
     assert case.case_history is not None
     assert case.case_history.status == CaseHistoryStatus.annulled

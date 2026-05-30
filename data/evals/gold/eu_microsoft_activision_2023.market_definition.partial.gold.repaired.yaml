@@ -1,0 +1,159 @@
+_gold_metadata:
+  case_id: eu_microsoft_activision_2023
+  gold_status: draft_for_review
+  partial: true
+  review_required: true
+  source_draft_path: eu_microsoft_activision_2023.draft.yaml
+  created_from_report: true
+case_id: eu_microsoft_activision_2023
+case_name: Microsoft / Activision Blizzard
+authority: European Commission
+jurisdiction: EU
+sector: digital / gaming
+decision_date: '2023-05-15'
+parties:
+- name: Microsoft Corporation
+  role: acquirer
+- name: Activision Blizzard, Inc.
+  role: target
+source_documents:
+- doc_id: eu_microsoft_activision_decision
+  title: 'Case M.10646 – Microsoft / Activision Blizzard: Commission Decision'
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10646
+  pdf_url: https://ec.europa.eu/competition/mergers/cases1/202330/M_10646_9311516_7443_3.pdf
+  doc_type: decision
+  authority_reference: M.10646
+  retrieval_status: direct
+  published_date: '2023-05-15'
+product_markets_considered:
+- name: Development and publishing of PC and console video games
+  market_type: product
+  expected_definition_status: possible_segmentation
+  expected_promotion_action: promote_with_uncertainty
+  importance: core_assessed
+  market_group: null
+  linked_source_passages:
+  - passage_id: sp_1
+    source_document_id: eu_microsoft_activision_decision
+    page: '15'
+    quote_snippet: >-
+      In Microsoft/ZeniMax, the Commission considered potential segmentations of the
+      market for video game publishing and development on the basis of: (i) gaming
+      platforms (i.e., PC games, console games and mobile games); (ii) game genres
+      (e.g., strategy, simulation, action, adventure, role-playing etc.); or (iii)
+      type of games (e.g., premium or "AAA" games, casual games). The Commission left
+      the precise market definition open.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  - passage_id: sp_4
+    source_document_id: eu_microsoft_activision_decision
+    page: '16'
+    quote_snippet: >-
+      The Notifying Party considers that it is not warranted to segment the game publishing
+      market based on genre or type of games.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  - passage_id: sp_7
+    source_document_id: eu_microsoft_activision_decision
+    page: '20'
+    quote_snippet: >-
+      The Phase I market investigation provided mixed results with regard to a possible
+      segmentation of the video game publishing product market by genre (action and
+      adventure, shooter/battle royale, role-playing games, sports, racing, fighting,
+      and strategy).
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  aliases:
+  - Development and publishing of video games
+  - Development and publishing of PC and console games
+  - Game development and publishing of PC and console games
+  - The development and publishing of PC and console video games
+  alias_candidates:
+  - value: game development and publishing of PC and console games
+    source: source_passage
+    status: suggested
+    page: '19'
+    passage_id: sp_6
+    quote_snippet: In light of the above, for the purposes of this Decision, the Commission
+      concludes that the development and publishing o
+  - value: development of mobile games
+    source: source_passage
+    status: suggested
+    page: '19'
+    passage_id: sp_6
+    quote_snippet: In light of the above, for the purposes of this Decision, the Commission
+      concludes that the development and publishing o
+  - value: the development and publishing of PC and console video games
+    source: source_passage
+    status: suggested
+    page: '23'
+    passage_id: sp_10
+    quote_snippet: for the purposes of this Decision, the Commission concludes that
+      the relevant product market is the market for the devel
+  reviewer_notes: >-
+    Reviewed as a partial gold entry. Source passages validate and support the Commission's assessment of the PC and console video games development/publishing market and possible segmentations. The alias candidate "development of mobile games" is not approved because the source treats mobile games as outside the same product market for this entry.
+  reviewed: true
+- name: PC and console video game distribution (overall market)
+  market_type: product
+  expected_definition_status: possible_segmentation
+  expected_promotion_action: promote_with_uncertainty
+  importance: core_assessed
+  market_group: null
+  linked_source_passages:
+  - passage_id: sp_15
+    source_document_id: eu_microsoft_activision_decision
+    page: '25'
+    quote_snippet: >-
+      In Microsoft/ZeniMax83, the Commission considered whether the market for video
+      game distribution should be segmented according to physical vs. digital distribution.
+      Further, in relation to digital distribution, the Commission considered whether
+      segmentations were appropriate by: (i) gaming platforms (PC, console and mobile);
+      (ii) payment model (upfront payment vs. subscription); and (iii) type of access
+      to games (download vs. streaming). The Commission left open the product market
+      definition as regards physical vs. digital distribution and a possible segmentation
+      by gaming platforms, whereas it found that a segmentation by payment model and
+      type of access was not warranted.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  - passage_id: sp_16
+    source_document_id: eu_microsoft_activision_decision
+    page: '26'
+    quote_snippet: >-
+      From the demand-side, the majority of respondents to the market investigation
+      that expressed a view on this subject submitted that, based on technical features,
+      pricing, storage, and accessibility, physical and digital video game distribution
+      are interchangeable for gamers.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  - passage_id: sp_17
+    source_document_id: eu_microsoft_activision_decision
+    page: '26'
+    quote_snippet: >-
+      for the purposes of this Decision, the Commission concludes that the relevant
+      market is an overall market for game distribution and that this market should
+      not be segmented between physical and digital distribution.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  aliases:
+  - Overall market for game distribution
+  - Overall market for PC and console video game distribution
+  - PC and console video game distribution
+  - Distribution of PC and video console games
+  alias_candidates:
+  - value: distribution of mobile games
+    source: source_passage
+    status: suggested
+    page: '28'
+    passage_id: sp_19
+    quote_snippet: for the purposes of this Decision, the Commission concludes that
+      the distribution of mobile games does not belong to the
+  reviewer_notes: >-
+    Reviewed as a partial gold entry. Source passages validate and include the Commission's conclusion that the relevant market is an overall market for game distribution and should not be segmented between physical and digital distribution. The alias candidate "distribution of mobile games" is not approved because the source treats mobile game distribution as outside the same market as PC and console game distribution.
+  reviewed: true
+geographic_markets_considered: []

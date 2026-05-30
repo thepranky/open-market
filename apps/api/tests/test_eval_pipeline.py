@@ -459,6 +459,8 @@ class TestCreateGoldDraftConventions:
         assert meta["gold_status"] == "draft_for_review"
 
     def test_aliases_from_reconciliation(self):
+        # aliases is reviewer-approved only; reconciliation findings no longer
+        # auto-populate alias_candidates (evaluator uses nearest-candidate diagnostics).
         draft = _make_draft(pm_entries=[_pm_entry("Online ads", "pm_1")])
         report = _make_report(
             safe=[_candidate("Online ads")],
@@ -469,7 +471,12 @@ class TestCreateGoldDraftConventions:
             }],
         )
         gold = _create_gold_draft("test", draft, report)
-        assert "Display advertising" in gold["product_markets_considered"][0]["aliases"]
+        pm = gold["product_markets_considered"][0]
+        # aliases must be empty (reviewer-approved only)
+        assert pm["aliases"] == []
+        # Reconciliation names are NOT auto-added to alias_candidates
+        alias_values = [c["value"] for c in pm.get("alias_candidates", [])]
+        assert "Display advertising" not in alias_values
 
 
 # ---------------------------------------------------------------------------
@@ -2418,3 +2425,728 @@ class TestTerminalSummaryWording:
         assert "Promotion safety score:" in md
         assert "Overpromotion risk:"     in md
         assert "Promotion safety: " not in md
+
+
+# ---------------------------------------------------------------------------
+# TestZeroReviewedGoldGating
+# ---------------------------------------------------------------------------
+
+class TestZeroReviewedGoldGating:
+    """
+    Partial gold with zero reviewed entries must never auto-accept.
+    All tests use _evaluate_extraction directly; no Claude API calls.
+    """
+
+    def _dummy_report(self, *, risky: bool = False) -> dict:
+        return {
+            "canonical_merge_candidates": {
+                "safe_to_promote": [{"name": "X"}] if risky else [],
+                "uncertain_markets": [{"name": "X"}] if risky else [],
+                "hold_pending_source_check": [],
+                "manual_review": [],
+            }
+        }
+
+    def _partial_gold_no_reviewed(self, market_names: list[str] = None) -> dict:
+        """Partial gold file where all markets have reviewed=False (or absent)."""
+        names = market_names or ["Market A"]
+        return {
+            "_gold_metadata": {"partial": True, "reviewed_scope": {}},
+            "case_id": "test",
+            "source_documents": [],
+            "product_markets_considered": [
+                {"name": n, "reviewed": False, "linked_source_passages": []}
+                for n in names
+            ],
+            "geographic_markets_considered": [],
+        }
+
+    def _partial_gold_empty(self) -> dict:
+        """Partial gold file with no markets at all (zero reviewed by definition)."""
+        return {
+            "_gold_metadata": {"partial": True, "reviewed_scope": {}},
+            "case_id": "test",
+            "source_documents": [],
+            "product_markets_considered": [],
+            "geographic_markets_considered": [],
+        }
+
+    def _draft(self, market_names: list[str] = None) -> dict:
+        names = market_names or ["Market A"]
+        return {
+            "product_markets_considered": [{"name": n} for n in names],
+            "geographic_markets_considered": [],
+        }
+
+    def test_partial_zero_reviewed_gives_insufficient_gold(self, tmp_path):
+        """Zero reviewed items in partial mode → gating_decision = insufficient_gold."""
+        from evaluate_extraction import _evaluate_extraction
+        cache_dir = tmp_path / "cache"
+        cache_dir.mkdir()
+
+        result = _evaluate_extraction(
+            "test",
+            self._partial_gold_no_reviewed(["Market A", "Market B"]),
+            self._draft(["Market A", "Market B"]),
+            self._dummy_report(),
+            cache_dir,
+        )
+        assert result["gating_decision"] == "insufficient_gold"
+        assert result["gating_decision"] != "auto_accept"
+
+    def test_partial_zero_reviewed_evaluation_valid_is_false(self, tmp_path):
+        """evaluation_valid must be False when zero reviewed items in partial mode."""
+        from evaluate_extraction import _evaluate_extraction
+        cache_dir = tmp_path / "cache"
+        cache_dir.mkdir()
+
+        result = _evaluate_extraction(
+            "test",
+            self._partial_gold_no_reviewed(),
+            self._draft(),
+            self._dummy_report(),
+            cache_dir,
+        )
+        assert result["evaluation_valid"] is False
+
+    def test_partial_zero_reviewed_gold_review_status_field(self, tmp_path):
+        """gold_review_status must be 'no_reviewed_gold_items' when count is zero."""
+        from evaluate_extraction import _evaluate_extraction
+        cache_dir = tmp_path / "cache"
+        cache_dir.mkdir()
+
+        result = _evaluate_extraction(
+            "test",
+            self._partial_gold_no_reviewed(),
+            self._draft(),
+            self._dummy_report(),
+            cache_dir,
+        )
+        assert result["gold_review_status"] == "no_reviewed_gold_items"
+        assert result["gold_reviewed_count"] == 0
+
+    def test_partial_zero_reviewed_gating_reason_populated(self, tmp_path):
+        """gating_reason must explain why the eval was blocked."""
+        from evaluate_extraction import _evaluate_extraction
+        cache_dir = tmp_path / "cache"
+        cache_dir.mkdir()
+
+        result = _evaluate_extraction(
+            "test",
+            self._partial_gold_no_reviewed(),
+            self._draft(),
+            self._dummy_report(),
+            cache_dir,
+        )
+        assert result["gating_reason"]
+        assert "reviewed" in result["gating_reason"].lower()
+
+    def test_quote_valid_zero_reviewed_not_auto_accept(self, tmp_path):
+        """Quote validity passing alone cannot produce auto_accept with zero reviewed items."""
+        from evaluate_extraction import _evaluate_extraction
+        cache_dir = tmp_path / "cache"
+        cache_dir.mkdir()
+
+        # Empty partial gold = no passages to validate → quote_validity passes trivially
+        result = _evaluate_extraction(
+            "test",
+            self._partial_gold_empty(),
+            self._draft([]),
+            self._dummy_report(),
+            cache_dir,
+        )
+        assert result["quote_validity"]["failures"] == 0
+        assert result["gating_decision"] != "auto_accept"
+        assert result["evaluation_valid"] is False
+
+    def test_partial_with_reviewed_items_can_auto_accept(self, tmp_path):
+        """Partial gold with reviewed items and perfect metrics still auto-accepts."""
+        from evaluate_extraction import _evaluate_extraction
+        cache_dir = tmp_path / "cache"
+        cache_dir.mkdir()
+
+        gold = {
+            "_gold_metadata": {"partial": True, "reviewed_scope": {}},
+            "case_id": "test",
+            "source_documents": [],
+            "product_markets_considered": [
+                {"name": "Market A", "reviewed": True, "linked_source_passages": []},
+                {"name": "Market B", "reviewed": True, "linked_source_passages": []},
+            ],
+            "geographic_markets_considered": [],
+        }
+        draft = self._draft(["Market A", "Market B"])
+        result = _evaluate_extraction("test", gold, draft, self._dummy_report(), cache_dir)
+        # Must still auto_accept when all conditions are good
+        assert result["gating_decision"] == "auto_accept"
+        assert result["evaluation_valid"] is True
+        assert result["gold_reviewed_count"] == 2
+
+    def test_markdown_shows_reviewed_gold_entries_label(self, tmp_path):
+        """Markdown report must show 'Reviewed gold entries' label."""
+        from evaluate_extraction import _evaluate_extraction, _format_eval_markdown
+        cache_dir = tmp_path / "cache"
+        cache_dir.mkdir()
+
+        result = _evaluate_extraction(
+            "test",
+            self._partial_gold_no_reviewed(),
+            self._draft(),
+            self._dummy_report(),
+            cache_dir,
+        )
+        md = _format_eval_markdown(result)
+        assert "Reviewed gold entries: 0" in md
+
+    def test_markdown_shows_not_valid_warning(self, tmp_path):
+        """Markdown report must include a not-valid-for-acceptance warning."""
+        from evaluate_extraction import _evaluate_extraction, _format_eval_markdown
+        cache_dir = tmp_path / "cache"
+        cache_dir.mkdir()
+
+        result = _evaluate_extraction(
+            "test",
+            self._partial_gold_no_reviewed(),
+            self._draft(),
+            self._dummy_report(),
+            cache_dir,
+        )
+        md = _format_eval_markdown(result)
+        assert "not valid" in md.lower() or "no reviewed" in md.lower()
+
+    def test_terminal_summary_includes_reviewed_count(self, tmp_path):
+        """Terminal summary must show 'Reviewed gold entries' line."""
+        import io, sys
+        from evaluate_extraction import _evaluate_extraction
+        cache_dir = tmp_path / "cache"
+        cache_dir.mkdir()
+
+        result = _evaluate_extraction(
+            "test",
+            self._partial_gold_no_reviewed(),
+            self._draft(),
+            self._dummy_report(),
+            cache_dir,
+        )
+        # Simulate what the CLI prints
+        safety = result["promotion_safety"]
+        lines = [
+            f"Gating decision:         {result['gating_decision'].upper()}",
+            f"Overall F1:              {result['overall_f1']}",
+            f"Promotion safety score:  {safety['safety_score']}",
+            f"Overpromotion risk:      {safety['overpromotion_risk'].upper()}",
+            f"Reviewed gold entries:   {result['gold_reviewed_count']}",
+        ]
+        if not result.get("evaluation_valid", True):
+            lines.append(
+                "WARNING: Evaluation is not valid for acceptance until at least "
+                "one gold item is reviewed."
+            )
+        output = "\n".join(lines)
+        assert "Reviewed gold entries:   0" in output
+        assert "WARNING" in output
+
+    def test_partial_zero_reviewed_overpromotion_still_rejects(self, tmp_path):
+        """Overpromotion → reject takes priority even when zero reviewed items."""
+        from evaluate_extraction import _evaluate_extraction
+        cache_dir = tmp_path / "cache"
+        cache_dir.mkdir()
+
+        result = _evaluate_extraction(
+            "test",
+            self._partial_gold_no_reviewed(),
+            self._draft(),
+            self._dummy_report(risky=True),
+            cache_dir,
+        )
+        # reject takes priority over insufficient_gold
+        assert result["gating_decision"] == "reject"
+
+
+# ---------------------------------------------------------------------------
+# TestAliasCandidates
+# ---------------------------------------------------------------------------
+
+class TestAliasCandidates:
+    """
+    Alias candidates are suggested by the pipeline but not approved as aliases.
+    All candidates are source-derived; none are invented.
+    No Claude API calls; no canonical YAML mutation.
+    """
+
+    # ------------------------------------------------------------------
+    # Helpers
+    # ------------------------------------------------------------------
+
+    def _gold_pm(self, gold: dict) -> dict:
+        return gold["product_markets_considered"][0]
+
+    def _alias_values(self, gold: dict) -> list[str]:
+        return [c["value"] for c in self._gold_pm(gold).get("alias_candidates", [])]
+
+    def _alias_sources(self, gold: dict) -> list[str]:
+        return [c["source"] for c in self._gold_pm(gold).get("alias_candidates", [])]
+
+    # ------------------------------------------------------------------
+    # Draft market names are never alias candidates
+    # ------------------------------------------------------------------
+
+    def test_no_draft_market_names_as_candidates(self):
+        """Other draft market names are never added as alias candidates."""
+        draft = _make_draft(pm_entries=[
+            _pm_entry("Game distribution", "pm_1"),
+            _pm_entry("Distribution of PC and console games", "pm_2"),
+        ])
+        report = _make_report(safe=[_candidate("Game distribution")])
+        gold = _create_gold_draft("test", draft, report)
+
+        pm = self._gold_pm(gold)
+        draft_sources = [c for c in pm.get("alias_candidates", [])
+                         if c["source"] == "draft_market_name"]
+        assert draft_sources == []
+        # The other draft market name must not appear even by coincidence
+        values = self._alias_values(gold)
+        assert "Distribution of PC and console games" not in values
+
+    def test_exact_gold_name_not_in_candidates(self):
+        """The gold entry's own name is never a candidate."""
+        draft = _make_draft(pm_entries=[_pm_entry("Game distribution", "pm_1")])
+        report = _make_report(safe=[_candidate("Game distribution")])
+        gold = _create_gold_draft("test", draft, report)
+
+        values = self._alias_values(gold)
+        assert "Game distribution" not in values
+        assert "game distribution" not in [v.lower() for v in values]
+
+    def test_no_draft_names_including_geo(self):
+        """No draft market names — including geo names — appear in alias_candidates."""
+        draft = _make_draft(
+            pm_entries=[_pm_entry("Game distribution", "pm_1")],
+            gm_entries=[{"market_id": "gm_1", "name": "EEA-wide game distribution",
+                          "definition_status": "defined"}],
+        )
+        report = _make_report(safe=[_candidate("Game distribution")])
+        gold = _create_gold_draft("test", draft, report)
+
+        values = self._alias_values(gold)
+        assert "EEA-wide game distribution" not in values
+
+    # ------------------------------------------------------------------
+    # Reconciliation findings are not alias candidates
+    # ------------------------------------------------------------------
+
+    def test_reconciliation_names_not_in_candidates(self):
+        """should_be_renamed reconciliation findings do NOT populate alias_candidates."""
+        draft = _make_draft(pm_entries=[_pm_entry("Online ads", "pm_1")])
+        report = _make_report(
+            safe=[_candidate("Online ads")],
+            reconciliation=[{
+                "finding_type": "should_be_renamed",
+                "draft_name": "Online ads",
+                "existing_name": "Online advertising",
+            }],
+        )
+        gold = _create_gold_draft("test", draft, report)
+
+        values = self._alias_values(gold)
+        assert "Online advertising" not in values
+        pm = self._gold_pm(gold)
+        assert not any(c["source"] == "reconciliation" for c in pm.get("alias_candidates", []))
+
+    def test_reconciliation_findings_entirely_ignored(self):
+        """No reconciliation finding type produces alias candidates."""
+        draft = _make_draft(pm_entries=[_pm_entry("Online ads", "pm_1")])
+        report = _make_report(
+            safe=[_candidate("Online ads")],
+            reconciliation=[
+                {"finding_type": "should_be_renamed",
+                 "draft_name": "Online ads", "existing_name": "Online advertising"},
+                {"finding_type": "supported_as_is",
+                 "draft_name": "Online ads", "existing_name": "Online advertising"},
+            ],
+        )
+        gold = _create_gold_draft("test", draft, report)
+        pm = self._gold_pm(gold)
+        assert not any(c["source"] == "reconciliation" for c in pm.get("alias_candidates", []))
+
+    # ------------------------------------------------------------------
+    # Source: source passage phrases (the only active source)
+    # ------------------------------------------------------------------
+
+    def test_creates_candidates_from_passage_phrase(self):
+        """Neutral phrase 'the relevant market is an overall market for X' yields a candidate."""
+        passage = _passage(
+            "pm_1", "42",
+            "the relevant market is an overall market for game distribution",
+        )
+        draft = _make_draft(
+            pm_entries=[_pm_entry("Game distribution", "pm_1")],
+            passages=[passage],
+        )
+        report = _make_report(safe=[_candidate("Game distribution")])
+        gold = _create_gold_draft("test", draft, report)
+
+        values = self._alias_values(gold)
+        # The phrase following "is an" should be extracted
+        assert any("game distribution" in v.lower() for v in values)
+
+    def test_passage_candidate_includes_page_and_passage_id(self):
+        passage = _passage(
+            "pm_1", "42",
+            "the relevant market is an overall market for game distribution",
+            pid="sp_7",
+        )
+        draft = _make_draft(
+            pm_entries=[_pm_entry("Game distribution", "pm_1")],
+            passages=[passage],
+        )
+        report = _make_report(safe=[_candidate("Game distribution")])
+        gold = _create_gold_draft("test", draft, report)
+
+        pm = self._gold_pm(gold)
+        passage_cands = [c for c in pm.get("alias_candidates", []) if c["source"] == "source_passage"]
+        assert passage_cands
+        for c in passage_cands:
+            assert "page" in c
+            assert c["page"] == "42"
+            assert "passage_id" in c
+            assert c["passage_id"] == "sp_7"
+
+    def test_passage_candidate_includes_quote_snippet(self):
+        passage = _passage(
+            "pm_1", "42",
+            "the relevant market is an overall market for game distribution",
+        )
+        draft = _make_draft(
+            pm_entries=[_pm_entry("Game distribution", "pm_1")],
+            passages=[passage],
+        )
+        report = _make_report(safe=[_candidate("Game distribution")])
+        gold = _create_gold_draft("test", draft, report)
+
+        pm = self._gold_pm(gold)
+        passage_cands = [c for c in pm.get("alias_candidates", []) if c["source"] == "source_passage"]
+        assert passage_cands
+        for c in passage_cands:
+            assert "quote_snippet" in c
+
+    # ------------------------------------------------------------------
+    # Filtering rules
+    # ------------------------------------------------------------------
+
+    def test_generic_phrases_not_candidates(self):
+        """Values in _ALIAS_GENERIC_VALUES are filtered out."""
+        from create_gold_draft import _ALIAS_GENERIC_VALUES
+        # Each generic value should not appear in candidates even if extracted
+        passage = _passage(
+            "pm_1", "1",
+            "The relevant product market and relevant geographic market are considered.",
+        )
+        draft = _make_draft(
+            pm_entries=[_pm_entry("Some market", "pm_1")],
+            passages=[passage],
+        )
+        report = _make_report(safe=[_candidate("Some market")])
+        gold = _create_gold_draft("test", draft, report)
+
+        values = [v.lower() for v in self._alias_values(gold)]
+        for generic in _ALIAS_GENERIC_VALUES:
+            assert generic.lower() not in values, f"Generic phrase '{generic}' leaked into candidates"
+
+    def test_too_short_values_filtered(self):
+        """Extracted passage phrases shorter than _ALIAS_MIN_LENGTH are not candidates."""
+        from create_gold_draft import _ALIAS_MIN_LENGTH
+        # Passage where the extracted phrase would be very short (e.g. "ads")
+        passage = _passage("pm_1", "1",
+                            "the relevant market is an overall market for ads")
+        draft = _make_draft(
+            pm_entries=[_pm_entry("Online ads", "pm_1")],
+            passages=[passage],
+        )
+        report = _make_report(safe=[_candidate("Online ads")])
+        gold = _create_gold_draft("test", draft, report)
+
+        values = self._alias_values(gold)
+        assert not any(len(v) < _ALIAS_MIN_LENGTH for v in values)
+
+    def test_deduplication_case_insensitive(self):
+        """Case-insensitive deduplication prevents the same phrase appearing twice."""
+        # Two passages that extract the same phrase in different cases
+        p1 = _passage("pm_1", "1",
+                      "the relevant market is an overall market for game distribution",
+                      pid="sp_1")
+        p2 = _passage("pm_1", "2",
+                      "the relevant market is an overall market for Game Distribution",
+                      pid="sp_2")
+        draft = _make_draft(
+            pm_entries=[_pm_entry("Game distribution", "pm_1")],
+            passages=[p1, p2],
+        )
+        report = _make_report(safe=[_candidate("Game distribution")])
+        gold = _create_gold_draft("test", draft, report)
+
+        values = self._alias_values(gold)
+        lower_values = [v.lower() for v in values]
+        # "game distribution" is the gold name itself — must not appear
+        assert "game distribution" not in lower_values
+        # Even if both passages are present, the phrase appears at most once
+        assert lower_values.count("game distribution") == 0
+
+    # ------------------------------------------------------------------
+    # aliases field is reviewer-approved only
+    # ------------------------------------------------------------------
+
+    def test_aliases_field_is_empty_list(self):
+        """aliases is never auto-populated; it is always [] in a fresh gold draft."""
+        draft = _make_draft(pm_entries=[_pm_entry("Market A", "pm_1")])
+        report = _make_report(
+            safe=[_candidate("Market A")],
+            reconciliation=[{
+                "finding_type": "should_be_renamed",
+                "draft_name": "Market A",
+                "existing_name": "Alternative name",
+            }],
+        )
+        gold = _create_gold_draft("test", draft, report)
+        assert gold["product_markets_considered"][0]["aliases"] == []
+
+    def test_alias_candidates_separate_from_aliases(self):
+        """alias_candidates and aliases are distinct keys with distinct semantics."""
+        draft = _make_draft(pm_entries=[_pm_entry("Market A", "pm_1")])
+        report = _make_report(safe=[_candidate("Market A")])
+        gold = _create_gold_draft("test", draft, report)
+        pm = gold["product_markets_considered"][0]
+        assert "alias_candidates" in pm
+        assert "aliases" in pm
+        assert isinstance(pm["alias_candidates"], list)
+        assert isinstance(pm["aliases"], list)
+
+    # ------------------------------------------------------------------
+    # Evaluator does not treat alias_candidates as approved aliases
+    # ------------------------------------------------------------------
+
+    def test_evaluator_ignores_alias_candidates(self, tmp_path):
+        """Evaluator counts alias_candidates as FN, not TP — they are not approved aliases."""
+        from evaluate_extraction import _evaluate_extraction
+
+        # Gold with a reviewed market; alias_candidates contains the draft market name
+        gold = {
+            "_gold_metadata": {"partial": True, "reviewed_scope": {}},
+            "case_id": "test",
+            "source_documents": [],
+            "product_markets_considered": [{
+                "name": "Game distribution",
+                "reviewed": True,
+                "aliases": [],  # no approved alias
+                "alias_candidates": [
+                    {"value": "Distribution of games", "source": "draft_market_name",
+                     "status": "suggested"}
+                ],
+                "linked_source_passages": [],
+            }],
+            "geographic_markets_considered": [],
+        }
+        # Draft uses only the alias_candidates value (not approved alias)
+        draft = {
+            "product_markets_considered": [{"name": "Distribution of games"}],
+            "geographic_markets_considered": [],
+        }
+        report = {"canonical_merge_candidates": {
+            "safe_to_promote": [], "uncertain_markets": [],
+            "hold_pending_source_check": [], "manual_review": [],
+        }}
+        cache_dir = tmp_path / "cache"
+        cache_dir.mkdir()
+
+        result = _evaluate_extraction("test", gold, draft, report, cache_dir)
+        pm = result["product_markets"]
+        # alias_candidates alone does NOT produce a match
+        assert pm["false_negatives"] == 1
+        assert pm["true_positives"] == 0
+
+    def test_evaluator_counts_tp_when_candidate_copied_to_aliases(self, tmp_path):
+        """When reviewer copies alias_candidates value to aliases, evaluator counts TP."""
+        from evaluate_extraction import _evaluate_extraction
+
+        gold = {
+            "_gold_metadata": {"partial": True, "reviewed_scope": {}},
+            "case_id": "test",
+            "source_documents": [],
+            "product_markets_considered": [{
+                "name": "Game distribution",
+                "reviewed": True,
+                "aliases": ["Distribution of games"],  # reviewer-approved
+                "alias_candidates": [
+                    {"value": "Distribution of games", "source": "draft_market_name",
+                     "status": "suggested"}
+                ],
+                "linked_source_passages": [],
+            }],
+            "geographic_markets_considered": [],
+        }
+        draft = {
+            "product_markets_considered": [{"name": "Distribution of games"}],
+            "geographic_markets_considered": [],
+        }
+        report = {"canonical_merge_candidates": {
+            "safe_to_promote": [], "uncertain_markets": [],
+            "hold_pending_source_check": [], "manual_review": [],
+        }}
+        cache_dir = tmp_path / "cache"
+        cache_dir.mkdir()
+
+        result = _evaluate_extraction("test", gold, draft, report, cache_dir)
+        pm = result["product_markets"]
+        assert pm["true_positives"] == 1
+        assert pm["false_negatives"] == 0
+
+    # ------------------------------------------------------------------
+    # Quote text is unchanged
+    # ------------------------------------------------------------------
+
+    def test_quote_snippet_unchanged_in_linked_passages(self):
+        """Alias candidate extraction never modifies quote_snippet in linked passages."""
+        verbatim = "the relevant market is an overall market for game distribution"
+        passage = _passage("pm_1", "42", verbatim)
+        draft = _make_draft(
+            pm_entries=[_pm_entry("Game distribution", "pm_1")],
+            passages=[passage],
+        )
+        report = _make_report(safe=[_candidate("Game distribution")])
+        gold = _create_gold_draft("test", draft, report)
+
+        linked = gold["product_markets_considered"][0]["linked_source_passages"]
+        assert linked[0]["quote_snippet"] == verbatim
+
+    # ------------------------------------------------------------------
+    # No draft names — not even high-overlap or cross-type
+    # ------------------------------------------------------------------
+
+    def test_no_draft_names_regardless_of_overlap(self):
+        """No draft market name appears in alias_candidates, even with high token overlap."""
+        draft = _make_draft(pm_entries=[
+            _pm_entry("Game distribution", "pm_1"),
+            _pm_entry("Distribution of PC and console games", "pm_2"),
+            _pm_entry("Operating systems for PCs", "pm_3"),
+        ])
+        report = _make_report(safe=[_candidate("Game distribution")])
+        gold = _create_gold_draft("test", draft, report)
+
+        pm = self._gold_pm(gold)
+        assert not any(c["source"] == "draft_market_name" for c in pm.get("alias_candidates", []))
+        values = self._alias_values(gold)
+        assert "Distribution of PC and console games" not in values
+        assert "Operating systems for PCs" not in values
+
+    def test_no_draft_names_for_geo_entry(self):
+        """Geo gold entries also receive no draft-name alias candidates."""
+        draft = _make_draft(
+            pm_entries=[_pm_entry("Online advertising", "pm_1")],
+            gm_entries=[
+                {"market_id": "gm_1", "name": "EEA-wide online advertising",
+                 "definition_status": "defined"},
+                {"market_id": "gm_2", "name": "Worldwide online advertising",
+                 "definition_status": "defined"},
+            ],
+        )
+        report = _make_report(
+            geo=[_candidate("EEA-wide online advertising", mtype="geographic")]
+        )
+        gold = _create_gold_draft("test", draft, report)
+
+        gm_list = gold.get("geographic_markets_considered", [])
+        assert gm_list
+        gm = gm_list[0]
+        assert not any(c["source"] == "draft_market_name" for c in gm.get("alias_candidates", []))
+
+    # ------------------------------------------------------------------
+    # Source-passage truncation filter
+    # ------------------------------------------------------------------
+
+    def test_truncated_passage_alias_rejected(self):
+        """Alias candidates ending mid-enumeration or containing clause markers are rejected."""
+        from create_gold_draft import _is_truncated_alias
+        # Ends mid-parenthetical
+        assert _is_truncated_alias("on the basis of: (i") is True
+        assert _is_truncated_alias("the supply of X, (ii") is True
+        assert _is_truncated_alias("some market:") is True
+        # Contains list enumeration marker anywhere (multi-item capture)
+        assert _is_truncated_alias("defined on the basis of: (i) demand substitutability") is True
+        assert _is_truncated_alias("supply of (a) hardware and (b) software") is True
+        # Modal/auxiliary verb → clause, not a market name
+        assert _is_truncated_alias("game distribution should be segmented by platform") is True
+        assert _is_truncated_alias("segmentation would be appropriate") is True
+
+    def test_clean_passage_alias_accepted(self):
+        """A well-formed noun-phrase alias is not classified as truncated."""
+        from create_gold_draft import _is_truncated_alias
+        assert _is_truncated_alias("gaming hardware and accessories") is False
+        assert _is_truncated_alias("online video game distribution") is False
+        # Contains a parenthetical that is NOT a list marker
+        assert _is_truncated_alias("supply of hardware (excluding software)") is False
+        # Plain noun phrase with no modal verbs
+        assert _is_truncated_alias("development and publishing of PC and console video games") is False
+
+    def test_truncated_passage_not_in_candidates(self):
+        """Source-passage candidates that are cut mid-list are filtered from alias_candidates."""
+        # Passage contains a phrase that would be extracted as truncated
+        passage = _passage(
+            "pm_1", "10",
+            "the relevant market is defined on the basis of: (i) demand substitutability",
+        )
+        draft = _make_draft(
+            pm_entries=[_pm_entry("Game distribution", "pm_1")],
+            passages=[passage],
+        )
+        report = _make_report(safe=[_candidate("Game distribution")])
+        gold = _create_gold_draft("test", draft, report)
+
+        pm = self._gold_pm(gold)
+        passage_vals = [c["value"] for c in pm.get("alias_candidates", [])
+                        if c["source"] == "source_passage"]
+        # "defined on the basis of: (i" — truncated, must be filtered
+        assert not any("(i)" in v or "(i" in v for v in passage_vals)
+
+    def test_clean_passage_alias_in_candidates(self):
+        """A clean, non-truncated source-passage phrase is included as a candidate."""
+        passage = _passage(
+            "pm_1", "5",
+            "the relevant market is an overall market for online game distribution",
+        )
+        draft = _make_draft(
+            pm_entries=[_pm_entry("Game distribution", "pm_1")],
+            passages=[passage],
+        )
+        report = _make_report(safe=[_candidate("Game distribution")])
+        gold = _create_gold_draft("test", draft, report)
+
+        values = self._alias_values(gold)
+        assert any("online game distribution" in v.lower() for v in values)
+
+    # ------------------------------------------------------------------
+    # Microsoft/Activision-style: publishing entry gets no draft-name aliases
+    # ------------------------------------------------------------------
+
+    def test_publishing_entry_gets_no_draft_name_aliases(self):
+        """No draft market names — related or unrelated — appear as alias candidates."""
+        draft = _make_draft(
+            pm_entries=[
+                _pm_entry("Development and publishing of PC and console video games", "pm_1"),
+                _pm_entry("Distribution of video games", "pm_2"),
+                _pm_entry("Operating systems for PCs", "pm_3"),
+            ],
+            gm_entries=[{"market_id": "gm_1",
+                          "name": "EEA distribution of PC and console video games",
+                          "definition_status": "left open"}],
+        )
+        report = _make_report(
+            safe=[_candidate("Development and publishing of PC and console video games")]
+        )
+        gold = _create_gold_draft("test", draft, report)
+
+        pm = self._gold_pm(gold)
+        assert not any(c["source"] == "draft_market_name" for c in pm.get("alias_candidates", []))
+        values = [c["value"] for c in pm.get("alias_candidates", [])]
+        assert "EEA distribution of PC and console video games" not in values
+        assert "Operating systems for PCs" not in values
+        assert "Distribution of video games" not in values

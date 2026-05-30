@@ -37,6 +37,7 @@ Usage
 
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 from typing import IO, Optional
@@ -137,6 +138,161 @@ def _build_market_id_index(draft_record: dict) -> dict[str, str]:
 
 
 # ---------------------------------------------------------------------------
+# Alias candidate helpers — truncation / clause detection for passage phrases
+# ---------------------------------------------------------------------------
+
+# Detect alias candidates that were cut mid-enumeration (e.g. "on the basis of: (i").
+_ALIAS_TRUNCATED_RE: re.Pattern = re.compile(
+    r"(?:"
+    r"\(\w*$"       # ends with (i, (ii, (
+    r"|:\s*\(\w*$"  # ends with ": (i" or ": ("
+    r"|,\s*\(\w*$"  # ends with ", (i"
+    r"|:\s*$"       # ends with bare colon
+    r")"
+)
+
+# Parenthetical list enumeration markers — presence anywhere in an extracted alias
+# indicates the regex captured text that spans multiple list items.
+_ALIAS_ENUM_MARKER_RE: re.Pattern = re.compile(
+    r"\(\s*(?:i{1,3}|iv|v|ix|x|[a-z])\s*\)", re.I
+)
+
+# Modal / auxiliary verb phrases that signal the extracted text is a clause, not a market name.
+# Market names are noun phrases; they never contain these constructions.
+_ALIAS_CLAUSE_RE: re.Pattern = re.compile(
+    r"\b(?:should|would|could|must|shall|will|cannot|need not|"
+    r"is not|are not|does not|do not|did not|"
+    r"would not|should not|could not)\b",
+    re.I,
+)
+
+
+def _is_truncated_alias(value: str) -> bool:
+    """Return True if the alias candidate should be rejected because it is:
+    - cut mid-enumeration (trailing colon / open parenthetical), or
+    - contains parenthetical list markers (regex captured multiple list items), or
+    - contains modal/auxiliary verbs indicating it is a clause, not a market name.
+    """
+    if _ALIAS_TRUNCATED_RE.search(value):
+        return True
+    if _ALIAS_ENUM_MARKER_RE.search(value):
+        return True
+    if _ALIAS_CLAUSE_RE.search(value):
+        return True
+    return False
+
+
+# ---------------------------------------------------------------------------
+# Alias candidate extraction
+# ---------------------------------------------------------------------------
+
+# Neutral phrase patterns that signal a market name follows in passage text.
+# No industry-specific terms; patterns are grounded in EU competition-law phrasing.
+_ALIAS_EXTRACTION_PATTERNS: tuple[re.Pattern, ...] = (
+    # "the relevant [product/geographic] market is [a/an] X" → X
+    re.compile(
+        r'\bthe relevant (?:product |geographic )?market is (?:an? )?'
+        r'([A-Za-z][^.;\n]{5,79}?)(?=\s*[.,;]|\s*$)',
+        re.I | re.MULTILINE,
+    ),
+    # "[an/the] overall market for [the] X" → "overall market for X"
+    re.compile(
+        r'\b(?:an? |the )?overall market for (?:the )?([A-Za-z][^.;\n]{5,79}?)(?=\s*[.,;]|\s*$)',
+        re.I | re.MULTILINE,
+    ),
+    # "relevant product market for [the] X" → X
+    re.compile(
+        r'\brelevant product market for (?:the )?([A-Za-z][^.;\n]{5,79}?)(?=\s*[.,;]|\s*$)',
+        re.I | re.MULTILINE,
+    ),
+    # "relevant geographic market for [the] X" → X
+    re.compile(
+        r'\brelevant geographic market for (?:the )?([A-Za-z][^.;\n]{5,79}?)(?=\s*[.,;]|\s*$)',
+        re.I | re.MULTILINE,
+    ),
+    # "market for [the] X" — exclude false positives like "for the purpose of"
+    re.compile(
+        r'\bmarket for (?!(?:the purpose|assessing ))(?:the )?([A-Za-z][^.;\n]{5,79}?)(?=\s*[.,;]|\s*$)',
+        re.I | re.MULTILINE,
+    ),
+)
+
+# Lowercased values that are too generic to be useful as alias candidates.
+_ALIAS_GENERIC_VALUES: frozenset[str] = frozenset({
+    "relevant market", "relevant markets",
+    "relevant product market", "relevant geographic market",
+    "relevant product markets", "relevant geographic markets",
+    "product market", "product markets",
+    "geographic market", "geographic markets",
+    "overall market", "the market", "this market",
+    "the relevant market", "a relevant market",
+    "the product market", "the geographic market",
+    "left open", "not defined",
+})
+
+_ALIAS_MIN_LENGTH: int = 8  # alias candidates shorter than this are filtered out
+
+
+def _build_alias_candidates(
+    market_name: str,
+    raw_passages: list[dict],
+) -> list[dict]:
+    """Extract alias candidates from the market's own linked source passages.
+
+    Only short noun phrases grounded in EU competition-law phrasing are extracted.
+    Clause fragments, enumeration markers, and truncated values are rejected.
+    Draft market names and reconciliation findings are NOT used as alias sources —
+    the evaluator handles those via nearest-candidate diagnostics and expected_draft_names.
+
+    Parameters
+    ----------
+    market_name:
+        The gold entry's own name; excluded from candidates.
+    raw_passages:
+        Source passages linked to this market in the draft, for phrase extraction.
+    """
+    seen: set[str] = {market_name.lower().strip()}
+    candidates: list[dict] = []
+
+    def _add(value: str, **kwargs: object) -> None:
+        clean = value.strip().rstrip(".,;:")
+        key = clean.lower()
+        if not clean or key in seen:
+            return
+        if len(clean) < _ALIAS_MIN_LENGTH:
+            return
+        if key in _ALIAS_GENERIC_VALUES:
+            return
+        seen.add(key)
+        entry: dict = {"value": clean, "source": "source_passage", "status": "suggested"}
+        for k, v in kwargs.items():
+            if v:
+                entry[k] = v
+        candidates.append(entry)
+
+    for sp in raw_passages:
+        quote = (sp.get("quote_snippet") or "").strip()
+        if not quote:
+            continue
+        page = sp.get("page", "")
+        pid = sp.get("passage_id", "")
+        for pat in _ALIAS_EXTRACTION_PATTERNS:
+            for m in pat.finditer(quote):
+                extracted = m.group(1).strip().rstrip(".,;:")
+                if not extracted:
+                    continue
+                if _is_truncated_alias(extracted):
+                    continue
+                # Strip uninformative leading "the market for" prefix when present.
+                cleaned = re.sub(r"^the market for\s+", "", extracted, flags=re.I).strip()
+                if not cleaned:
+                    continue
+                _add(cleaned, page=page, passage_id=pid, quote_snippet=quote[:120])
+
+    return candidates
+
+
+# ---------------------------------------------------------------------------
 # Core gold-draft builder
 # ---------------------------------------------------------------------------
 
@@ -199,15 +355,6 @@ def _create_gold_draft(
     passage_index = _build_passage_index(draft_record.get("source_passages") or [])
     name_to_id = _build_market_id_index(draft_record)
 
-    # ---- reconciliation aliases -------------------------------------------
-    aliases_map: dict[str, list[str]] = {}  # draft_name → [existing_names]
-    for finding in (report.get("reconciliation") or []):
-        if finding.get("finding_type") == "should_be_renamed":
-            dn = finding.get("draft_name", "")
-            en = finding.get("existing_name", "")
-            if dn and en:
-                aliases_map.setdefault(dn, []).append(en)
-
     # ---- category → action mapping ----------------------------------------
     category_to_action = {
         "safe_to_promote":          "promote_to_canonical",
@@ -269,7 +416,9 @@ def _create_gold_draft(
                 # Fine-grained grouping: leave null unless reviewer fills it in.
                 "market_group":             None,
                 "linked_source_passages":   linked,
-                "aliases":                  aliases_map.get(market_name, []),
+                # aliases is reviewer-approved only; auto-discovered names go in alias_candidates.
+                "aliases":                  [],
+                "alias_candidates":         _build_alias_candidates(market_name, raw_passages),
                 # Block scalar: review notes must not contain source text.
                 "reviewer_notes":           _FoldedStr(reviewer_notes_str),
                 "reviewed":                 False,

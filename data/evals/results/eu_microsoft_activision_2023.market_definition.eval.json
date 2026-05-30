@@ -1,0 +1,96 @@
+{
+  "generated_at": "2026-05-30T03:19:08.593028+00:00",
+  "case_id": "eu_microsoft_activision_2023",
+  "gold_partial": true,
+  "gold_reviewed_count": 2,
+  "gold_review_status": "has_reviewed_gold_items",
+  "evaluation_valid": true,
+  "product_markets": {
+    "market_type": "product",
+    "true_positives": 2,
+    "false_positives": 0,
+    "false_negatives": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "matched_items": [
+      {
+        "gold_name": "Development and publishing of PC and console video games",
+        "draft_name": "Development and publishing of PC and console video games",
+        "match_type": "exact"
+      },
+      {
+        "gold_name": "PC and console video game distribution (overall market)",
+        "draft_name": "PC and console video game distribution (overall market)",
+        "match_type": "exact"
+      }
+    ],
+    "false_negatives_detail": [],
+    "false_positives_detail": [],
+    "unjudged_items": [
+      {
+        "draft_name": "Supply of gaming hardware (consoles)"
+      },
+      {
+        "draft_name": "Distribution of mobile games (potential separate market)"
+      },
+      {
+        "draft_name": "Operating systems for PCs (PC OS)"
+      },
+      {
+        "draft_name": "Operating systems for mobile devices"
+      }
+    ],
+    "evaluated_candidates": 2,
+    "unjudged_candidates": 4,
+    "out_of_scope_candidates": 0,
+    "partial_precision": 1.0,
+    "partial_recall": 1.0,
+    "partial_f1": 1.0
+  },
+  "geographic_markets": {
+    "market_type": "geographic",
+    "true_positives": 0,
+    "false_positives": 0,
+    "false_negatives": 0,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "matched_items": [],
+    "false_negatives_detail": [],
+    "false_positives_detail": [],
+    "unjudged_items": [
+      {
+        "draft_name": "Geographic market for development and publishing of PC and console video games"
+      },
+      {
+        "draft_name": "Geographic market for PC and console video game distribution"
+      },
+      {
+        "draft_name": "Distribution of PC and video console games — worldwide or EEA-wide"
+      }
+    ],
+    "evaluated_candidates": 0,
+    "unjudged_candidates": 3,
+    "out_of_scope_candidates": 0,
+    "partial_precision": 0.0,
+    "partial_recall": 0.0,
+    "partial_f1": 0.0
+  },
+  "promotion_safety": {
+    "risky_promotions": 0,
+    "safe_promoted_count": 0,
+    "safety_score": 1.0,
+    "overpromotion_risk": "low"
+  },
+  "quote_validity": {
+    "total_checked": 6,
+    "passed": 6,
+    "failures": 0,
+    "warnings": 0,
+    "failure_details": []
+  },
+  "overall_f1": 0.5,
+  "gating_decision": "auto_accept",
+  "gating_reason": ""
+}

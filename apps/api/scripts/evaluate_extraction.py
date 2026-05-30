@@ -441,10 +441,34 @@ def _evaluate_extraction(
     }
     quote_failures = len(quote_report.failures)
 
+    # ---- Compute gold_reviewed_count early (used in gating guard below) ----
+    gold_reviewed_count = sum(1 for m in gold_pm + gold_gm if m.get("reviewed"))
+
     # ---- Gating decision ---------------------------------------------------
     overpromotion = safety["overpromotion_risk"] == "high"
+    evaluation_valid = True
+    gold_review_status = (
+        "no_reviewed_gold_items" if gold_reviewed_count == 0 else "has_reviewed_gold_items"
+    )
+    gating_reason = ""
+
     if overpromotion or quote_failures > 0:
         gating = "reject"
+        if overpromotion:
+            gating_reason = "Overpromotion risk is high."
+        else:
+            gating_reason = f"Quote validation failed: {quote_failures} failure(s)."
+
+    elif is_partial and gold_reviewed_count == 0:
+        # Zero reviewed gold entries in partial mode — evaluation has no signal.
+        # Never auto-accept: there is nothing to compare against.
+        gating = "insufficient_gold"
+        evaluation_valid = False
+        gold_review_status = "no_reviewed_gold_items"
+        gating_reason = (
+            "No reviewed gold items; mark at least one gold entry as reviewed "
+            "before accepting."
+        )
 
     elif is_partial:
         def _recall_if_applicable(ev: dict) -> Optional[float]:
@@ -466,6 +490,7 @@ def _evaluate_extraction(
 
         if avg_recall < 0.7:
             gating = "needs_review"
+            gating_reason = f"Partial recall {avg_recall:.2f} below 0.70 threshold."
         elif avg_precision < 0.8 or safety["safety_score"] < 0.95:
             gating = "accept_with_caveat"
         else:
@@ -478,6 +503,7 @@ def _evaluate_extraction(
 
         if avg_f1 < 0.7:
             gating = "needs_review"
+            gating_reason = f"Average F1 {avg_f1:.2f} below 0.70 threshold."
         elif safety["safety_score"] < 0.95:
             gating = "accept_with_caveat"
         else:
@@ -495,13 +521,16 @@ def _evaluate_extraction(
         "generated_at":        datetime.now(timezone.utc).isoformat(),
         "case_id":             case_id,
         "gold_partial":        is_partial,
-        "gold_reviewed_count": sum(1 for m in gold_pm + gold_gm if m.get("reviewed")),
+        "gold_reviewed_count": gold_reviewed_count,
+        "gold_review_status":  gold_review_status,
+        "evaluation_valid":    evaluation_valid,
         "product_markets":     pm_eval,
         "geographic_markets":  gm_eval,
         "promotion_safety":    safety,
         "quote_validity":      quote_validity,
         "overall_f1":          overall_f1,
         "gating_decision":     gating,
+        "gating_reason":       gating_reason,
     }
 
 
@@ -511,15 +540,25 @@ def _evaluate_extraction(
 
 def _format_eval_markdown(eval_result: dict) -> str:
     partial = eval_result.get("gold_partial", False)
+    reviewed_count = eval_result.get("gold_reviewed_count", 0)
+    evaluation_valid = eval_result.get("evaluation_valid", True)
+    gating_reason = eval_result.get("gating_reason", "")
+
     lines = [
         f"# Extraction Evaluation — {eval_result['case_id']}",
         f"\nGenerated: {eval_result['generated_at']}",
         "\n## Summary",
         f"- Gold partial: {partial}",
-        f"- Reviewed markets: {eval_result['gold_reviewed_count']}",
+        f"- Reviewed gold entries: {reviewed_count}",
         f"- **Gating decision: {eval_result['gating_decision'].upper()}**",
         f"- Overall F1: {eval_result['overall_f1']}",
     ]
+    if not evaluation_valid:
+        lines.append(
+            "- **⚠ Evaluation is not valid for acceptance until at least one gold item is reviewed.**"
+        )
+    if gating_reason:
+        lines.append(f"- Gating reason: {gating_reason}")
     if partial:
         lines.append("- *(Partial gold: precision/recall cover reviewed scope only)*")
 
@@ -675,6 +714,14 @@ def main() -> int:
     print(f"Overall F1:              {eval_result['overall_f1']}")
     print(f"Promotion safety score:  {safety['safety_score']}")
     print(f"Overpromotion risk:      {safety['overpromotion_risk'].upper()}")
+    print(f"Reviewed gold entries:   {eval_result['gold_reviewed_count']}")
+    if not eval_result.get("evaluation_valid", True):
+        print(
+            "WARNING: Evaluation is not valid for acceptance until at least "
+            "one gold item is reviewed."
+        )
+    if eval_result.get("gating_reason"):
+        print(f"Gating reason:           {eval_result['gating_reason']}")
     if eval_result.get("gold_partial"):
         pm = eval_result["product_markets"]
         gm = eval_result["geographic_markets"]

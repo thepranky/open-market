@@ -192,6 +192,62 @@ _FOCUS_TERMS: dict[str, tuple[str, ...]] = {
     ),
 }
 
+# ---------------------------------------------------------------------------
+# Neutral market-definition page-text fallback
+# ---------------------------------------------------------------------------
+
+# Neutral signals for the market-definition fallback selector.
+# These reflect EU competition-law methodology and structure only.
+# No industry-specific terms are included here.
+_MARKET_DEF_FALLBACK_SIGNALS: tuple[str, ...] = (
+    "relevant market",
+    "relevant markets",
+    "market definition",
+    "product market",
+    "product markets",
+    "geographic market",
+    "geographic markets",
+    "relevant product market",
+    "relevant geographic market",
+    "demand-side substitut",
+    "supply-side substitut",
+    "substitutab",
+    "competitive conditions",
+    "plausible market definition",
+    "exact scope of the market",
+    "left open",
+    "for the purpose of assessing",
+    "no need to conclude on the exact market",
+    "commission's assessment",
+    "commission precedent",
+    "notifying party",
+    "market investigation",
+    "definition of the relevant",
+)
+
+_MARKET_DEF_FALLBACK_MIN_SCORE: int = 2      # min signal hits for a primary candidate page
+_MARKET_DEF_FALLBACK_CONTINUATION_MIN: int = 1  # min hits for an adjacent continuation page
+_MAX_FALLBACK_PAGES: int = 40                # hard cap on total fallback pages
+_MAX_FALLBACK_CHUNKS: int = 8                # hard cap on number of fallback chunks returned
+
+# Matches a first uppercase/heading-like line to infer a synthetic section label.
+_FALLBACK_HEADING_RE = re.compile(
+    r'^[ \t]*([A-Z][A-Z\s\-/]{4,})[ \t]*$',
+    re.MULTILINE,
+)
+
+# Section-path regex patterns — defined early so they can be used in the fallback
+# selector functions below as well as in the section-batch grouping helpers later.
+_SECTION_PREFIX_RE = re.compile(r'\b(\d+\.\d+)\b')
+
+# Matches section headings like "8.6 Title", "8.6. Title", "8.6.1 Title" at start of line.
+# Requires an uppercase letter to follow so footnotes ("14 July 2020") are not matched.
+_SECTION_TRIM_RE = re.compile(
+    r'^(\d+(?:\.\d+)+)\.?[ \t]+[A-Z]',
+    re.MULTILINE,
+)
+
+
 # Strings Claude sometimes returns instead of [] when nothing was found.
 _NULL_LIKE_STRINGS: frozenset[str] = frozenset({
     "", "not found", "none", "n/a", "na", "null", "[]",
@@ -219,6 +275,7 @@ class ChunkInfo:
     source_document_id: str = ""
     trimmed_pages: list[dict] = field(default_factory=list)  # prefix-trimmed; used for prompt/display
     effective_prefix: Optional[str] = None  # overrides section_path for batch grouping (spillover chunks)
+    selection_method: str = "section_path"  # "section_path" | "page_text_fallback"
 
     @property
     def page_numbers(self) -> list[int]:
@@ -408,6 +465,124 @@ def _build_chunks(
     return chunks
 
 
+# ---------------------------------------------------------------------------
+# Neutral market-definition page-text fallback selector (functions)
+# ---------------------------------------------------------------------------
+
+def _score_page_market_def(text: str) -> int:
+    """Count neutral market-definition signal occurrences in *text*."""
+    lower = text.lower()
+    return sum(lower.count(sig) for sig in _MARKET_DEF_FALLBACK_SIGNALS)
+
+
+def _infer_section_label_from_pages(pages: list[dict]) -> str:
+    """Derive a synthetic section label from heading-like lines in the first two pages.
+
+    Prefers numbered section headings (e.g. '8.3 Title'); falls back to an
+    all-caps heading line; returns a generic label if nothing is found.
+    """
+    for page in pages[:2]:
+        text = page.get("text", "")
+        m = _SECTION_TRIM_RE.search(text)
+        if m:
+            line_end = text.find("\n", m.start())
+            return text[m.start(): line_end if line_end > 0 else m.start() + 80].strip()[:80]
+        m2 = _FALLBACK_HEADING_RE.search(text)
+        if m2:
+            return m2.group(1).strip()[:80]
+    return "market definition (inferred)"
+
+
+def _select_market_def_fallback_chunks(
+    all_chunks: list[ChunkInfo],
+    max_fallback_pages: int = _MAX_FALLBACK_PAGES,
+) -> list[ChunkInfo]:
+    """Select market-definition chunks via neutral page-text scoring.
+
+    Used when section-path selection returns no results for focus='market_definition'.
+    Returned chunks carry selection_method='page_text_fallback'.
+    Industry-specific terms are never used — only neutral EU market-definition signals.
+    """
+    # Score every page once (first occurrence in document order wins for duplicates).
+    page_info: dict[int, tuple[int, str, str]] = {}  # page_num → (score, text, doc_id)
+    for chunk in all_chunks:
+        for page in chunk.pages:
+            pn = page["page_number"]
+            if pn not in page_info:
+                page_info[pn] = (
+                    _score_page_market_def(page["text"]),
+                    page["text"],
+                    chunk.source_document_id,
+                )
+
+    if not page_info:
+        return []
+
+    primary = {pn for pn, (score, _, _) in page_info.items() if score >= _MARKET_DEF_FALLBACK_MIN_SCORE}
+    if not primary:
+        return []
+
+    # Include adjacent pages as continuation when they carry at least the minimum signal.
+    selected: set[int] = set(primary)
+    for pn in list(primary):
+        for adj in (pn - 1, pn + 1):
+            if adj in page_info and adj not in selected:
+                if page_info[adj][0] >= _MARKET_DEF_FALLBACK_CONTINUATION_MIN:
+                    selected.add(adj)
+
+    selected_sorted = sorted(selected)
+
+    # Cap total pages, keeping highest-scoring and primary candidates first.
+    if len(selected_sorted) > max_fallback_pages:
+        ranked = sorted(
+            selected_sorted,
+            key=lambda pn: (-page_info[pn][0], pn not in primary, pn),
+        )
+        selected_sorted = sorted(ranked[:max_fallback_pages])
+
+    # Group consecutive (or near-consecutive with ≤1-page gap) pages into chunks.
+    groups: list[list[int]] = []
+    current: list[int] = []
+    for pn in selected_sorted:
+        if not current or pn <= current[-1] + 2:
+            current.append(pn)
+        else:
+            groups.append(current)
+            current = [pn]
+    if current:
+        groups.append(current)
+
+    # Cap number of chunks.
+    groups = groups[:_MAX_FALLBACK_CHUNKS]
+
+    result: list[ChunkInfo] = []
+    for group in groups:
+        pages_list: list[dict] = []
+        doc_id = ""
+        for pn in group:
+            _, text, d = page_info[pn]
+            pages_list.append({"page_number": pn, "text": text})
+            if not doc_id:
+                doc_id = d
+
+        section_label = _infer_section_label_from_pages(pages_list)
+        page_prefix = (
+            f"fallback_p{group[0]}"
+            if len(group) == 1
+            else f"fallback_p{group[0]}-{group[-1]}"
+        )
+        result.append(ChunkInfo(
+            chunk_id=f"fallback_chunk_{len(result) + 1:03d}",
+            section_path=section_label,
+            pages=pages_list,
+            source_document_id=doc_id,
+            selection_method="page_text_fallback",
+            effective_prefix=page_prefix,
+        ))
+
+    return result
+
+
 def _select_relevant_chunks(
     chunks: list[ChunkInfo],
     max_total_pages: int = _MAX_INPUT_PAGES,
@@ -416,15 +591,25 @@ def _select_relevant_chunks(
     """
     Return relevant chunks up to *max_total_pages* total pages.
 
-    When *focus* is set, only chunks whose section path matches that focus
-    mode's keywords are included (no fallback).  Without a focus, chunks whose
-    section path matches _RELEVANT_TERMS are preferred; falls back to all
-    non-empty chunks when nothing matches.
+    When *focus* is 'market_definition':
+    - Section-path matching is tried first (preferred path).
+    - If zero chunks match, a neutral page-text fallback is used; returned
+      chunks carry selection_method='page_text_fallback'.
+
+    For other focus values, only section-path matching is used (no fallback).
+    Without a focus, section-path relevance is used with a broad fallback to
+    all non-empty chunks.
     """
     if focus:
         candidates = [
             c for c in chunks if _is_focused_section(c.section_path, focus) and c.pages
         ]
+        # Neutral page-text fallback for market_definition when section-path finds nothing.
+        if not candidates and focus == "market_definition":
+            return _select_market_def_fallback_chunks(
+                chunks,
+                max_fallback_pages=min(max_total_pages, _MAX_FALLBACK_PAGES),
+            )
     else:
         candidates = [c for c in chunks if _is_relevant_section(c.section_path) and c.pages]
         if not candidates:
@@ -444,15 +629,7 @@ def _select_relevant_chunks(
 # ---------------------------------------------------------------------------
 # Section-batch grouping
 # ---------------------------------------------------------------------------
-
-_SECTION_PREFIX_RE = re.compile(r'\b(\d+\.\d+)\b')
-
-# Matches section headings like "8.6 Title", "8.6. Title", "8.6.1 Title" at start of line.
-# Requires an uppercase letter to follow so footnotes ("14 July 2020") are not matched.
-_SECTION_TRIM_RE = re.compile(
-    r'^(\d+(?:\.\d+)+)\.?[ \t]+[A-Z]',
-    re.MULTILINE,
-)
+# _SECTION_PREFIX_RE and _SECTION_TRIM_RE are defined in the constants section above.
 
 
 def _section_batch_prefix(section_path: str) -> str:
@@ -3536,11 +3713,22 @@ def main() -> int:
 
     if inspect_mode:
         sep = "-" * 72
-        print(f"Selected chunks: {len(rpt.chunks_used)}\n")
+        used_fallback = any(c.selection_method == "page_text_fallback" for c in rpt.chunks_used)
+        selection_label = (
+            "neutral page-text fallback (section-path selection returned 0)"
+            if used_fallback
+            else "normal section-path selection"
+        )
+        print(f"Selected chunks: {len(rpt.chunks_used)}  [selection: {selection_label}]\n")
         for c in rpt.chunks_used:
             label = c.section_path if c.section_path else "unknown"
-            spill_note = f"  [spillover for {c.effective_prefix}]" if c.effective_prefix else ""
-            print(f"{c.chunk_id}  {c.page_range}  [{label}]{spill_note}")
+            fallback_note = "  [FALLBACK]" if c.selection_method == "page_text_fallback" else ""
+            spill_note = (
+                f"  [spillover for {c.effective_prefix}]"
+                if c.effective_prefix and c.selection_method != "page_text_fallback"
+                else ""
+            )
+            print(f"{c.chunk_id}  {c.page_range}  [{label}]{spill_note}{fallback_note}")
             preview = c.prompt_text[:500]  # trimmed text if section_prefix was applied
             if len(c.prompt_text) > 500:
                 preview += " …"
