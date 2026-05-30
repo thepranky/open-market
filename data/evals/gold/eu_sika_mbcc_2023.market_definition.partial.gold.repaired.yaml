@@ -1,0 +1,331 @@
+_gold_metadata:
+  case_id: eu_sika_mbcc_2023
+  gold_status: draft_for_review
+  partial: true
+  review_required: true
+  source_draft_path: eu_sika_mbcc_2023.draft.yaml
+  created_from_report: true
+case_id: eu_sika_mbcc_2023
+case_name: Sika / MBCC Group
+authority: European Commission
+jurisdiction: EU
+sector: industrials / construction chemicals
+decision_date: '2023-02-08'
+parties:
+- name: Sika AG
+  role: acquirer
+- name: MBCC Group
+  role: target
+source_documents:
+- doc_id: eu_sika_mbcc_decision
+  title: 'Case M.10560 – Sika / MBCC Group: Commission Decision'
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10560
+  pdf_url: https://ec.europa.eu/competition/mergers/cases1/202410/M_10560_9946206_16411_3.pdf
+  doc_type: decision
+  authority_reference: M.10560
+  retrieval_status: direct
+  published_date: '2023-02-08'
+product_markets_considered:
+- name: Adhesives
+  market_type: product
+  expected_definition_status: possible_segmentation
+  expected_promotion_action: promote_with_uncertainty
+  importance: possible_segmentation
+  market_group: null
+  linked_source_passages:
+  - passage_id: sp_42
+    source_document_id: eu_sika_mbcc_decision
+    page: '27'
+    quote_snippet: >-
+      Adhesives are products specifically developed to hold or stick objects together.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  - passage_id: sp_43
+    source_document_id: eu_sika_mbcc_decision
+    page: '27'
+    quote_snippet: >-
+      In previous decisions, the Commission considered a possible distinction between
+      adhesives and sealants. The Commission categorised adhesives into three end-use
+      groups, according to the target customer group, namely adhesives for consumers
+      and DIY customers, adhesives for the construction sector and adhesives for industrial
+      applications. As regards adhesives for industrial applications, the Commission
+      considered further segmentations according to the specific application such
+      as automotive, bookbinding, labelling, packaging and according to the adhesive
+      technology, such as water-based technologies, solvent-based technologies, hot
+      melts or reactive adhesives.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  - passage_id: sp_44
+    source_document_id: eu_sika_mbcc_decision
+    page: '27'
+    quote_snippet: >-
+      The Notifying Party argues that the market of adhesives should not be sub-segmented
+      based on the end-use group (i.e. DIY/consumers, construction, industrial). According
+      to the Notifying Party, all customers have similar demands with respect to the
+      technical properties and usage of particular adhesives. Also, suppliers tend
+      to cater to all end-use groups.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  aliases: []
+  alias_candidates: []
+  gold_selection_reason: default_promotion_filter
+  reviewer_notes: ''
+  reviewed: false
+- name: Waterproofing – segmented by application type and technology (acrylic liquid
+    membranes used under tiling; acrylic liquid membranes other applications; PU liquid
+    membranes; epoxy liquid membranes; bitumen liquid; bitumen felts; PVC/TPO bonding
+    sheets; other non-liquid membranes; PU injection resins; damp proofing injection;
+    epoxy injection systems)
+  market_type: product
+  expected_definition_status: possible_segmentation
+  expected_promotion_action: promote_with_uncertainty
+  importance: core_assessed
+  market_group: null
+  linked_source_passages:
+  - passage_id: sp_46
+    source_document_id: eu_sika_mbcc_decision
+    page: '29'
+    quote_snippet: >-
+      In its previous decisional practice108, the Commission considered waterproofing
+      and assessed distinct markets along the following lines as narrowest plausible
+      markets: acrylic liquid membranes (used under tiling), acrylic liquid membranes
+      (other applications), PU liquid membranes, epoxy liquid membranes, bitumen (liquid),
+      bitumen felts, PVC/TPO bonding sheets, other non-liquid membranes (foils, tapes,
+      etc.), PU injection resins, damp proofing injection and epoxy injection systems.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  - passage_id: sp_48
+    source_document_id: eu_sika_mbcc_decision
+    page: '29'
+    quote_snippet: >-
+      The Notifying Party proposes the following product groupings in case the Commission
+      would consider in the future to delineate the product market by technology:
+      • liquid-applied membranes, which include reactive coatings (i.e., PU, PUA and
+      epoxy) and modified emulsion (i.e., acrylic and bitumen); • sheet membranes,
+      which include bitumen membranes and polymeric membranes (i.e., TPO, PVC, HDPE
+      including tapes, foil, gaskets, hoses and joints); and • injections (i.e., PU
+      and epoxy).
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  - passage_id: sp_49
+    source_document_id: eu_sika_mbcc_decision
+    page: '30'
+    quote_snippet: >-
+      Contrary to the Notifying Party's view and in line with considerations in previous
+      Commission cases, the Commission's preliminary market investigation confirmed
+      a distinction of the waterproofing markets by waterproofing application type
+      and technology, namely as narrowest plausible markets: acrylic liquid membranes
+      (used under tiling), acrylic liquid membranes (other applications), PU liquid
+      membranes, epoxy liquid membranes, bitumen (liquid), bitumen felts, PVC/TPO
+      bonding sheets, other non-liquid membranes (foils, tapes, etc.), PU injection
+      resins, damp proofing injection and epoxy injection systems.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  aliases: []
+  alias_candidates: []
+  gold_selection_reason: default_promotion_filter
+  reviewer_notes: ''
+  reviewed: false
+- name: Bonding agents (concrete works)
+  market_type: product
+  expected_definition_status: defined
+  expected_promotion_action: manual_review
+  importance: core_assessed
+  market_group: null
+  linked_source_passages: []
+  aliases: []
+  alias_candidates: []
+  gold_selection_reason: default_promotion_filter
+  reviewer_notes: |-
+    source passage needs review
+    source passage requires manual selection
+  reviewed: false
+- name: Primers (concrete works)
+  market_type: product
+  expected_definition_status: defined
+  expected_promotion_action: manual_review
+  importance: core_assessed
+  market_group: null
+  linked_source_passages: []
+  aliases: []
+  alias_candidates: []
+  gold_selection_reason: default_promotion_filter
+  reviewer_notes: |-
+    source passage needs review
+    source passage requires manual selection
+  reviewed: false
+- name: Corrosion protection/control (concrete works)
+  market_type: product
+  expected_definition_status: defined
+  expected_promotion_action: manual_review
+  importance: core_assessed
+  market_group: null
+  linked_source_passages: []
+  aliases: []
+  alias_candidates: []
+  gold_selection_reason: default_promotion_filter
+  reviewer_notes: |-
+    source passage needs review
+    source passage requires manual selection
+  reviewed: false
+- name: Chemical admixtures (overall market)
+  market_type: product
+  expected_definition_status: defined
+  expected_promotion_action: hold_pending_source_check
+  importance: core_assessed
+  market_group: null
+  linked_source_passages:
+  - passage_id: sp_1
+    source_document_id: eu_sika_mbcc_decision
+    page: '4'
+    quote_snippet: >-
+      Admixtures are ingredients that are added in order to improve the properties
+      of cement, concrete or mortar.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  - passage_id: sp_2
+    source_document_id: eu_sika_mbcc_decision
+    page: '10'
+    quote_snippet: >-
+      For the purpose of this Decision, the Commission considers as relevant product
+      markets the overall market of chemical admixtures, as well as the narrower market
+      of concrete admixtures.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  - passage_id: sp_3
+    source_document_id: eu_sika_mbcc_decision
+    page: '10'
+    quote_snippet: >-
+      The breadth and diversification of each suppliers' concrete admixtures portfolio
+      and its position in infrastructure and underground applications will also be
+      taken into account in the competitive assessment of the Transaction.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  aliases:
+  - Overall market of chemical admixtures
+  - Chemical admixtures
+  alias_candidates: []
+  gold_selection_reason: explicit_market_name
+  reviewer_notes: >-
+    Reviewed as a partial gold entry. Source passages validate and include the Commission's conclusion that the overall market of chemical admixtures is a relevant product market for the purposes of the Decision.
+  reviewed: true
+- name: Concrete admixtures (narrower market)
+  market_type: product
+  expected_definition_status: defined
+  expected_promotion_action: hold_pending_source_check
+  importance: core_assessed
+  market_group: null
+  linked_source_passages:
+  - passage_id: sp_4
+    source_document_id: eu_sika_mbcc_decision
+    page: '4'
+    quote_snippet: >-
+      Cement admixtures (often called 'grinding aids') are added to clinker cement
+      to reduce the energy required to grind this material and produce cement powder
+      of the desired finesse. Concrete and mortar admixtures are added to the mix
+      of water, cement and aggregates to improve the workability and hardened properties
+      of those materials. The vast majority of admixtures are used in concrete mixes.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  - passage_id: sp_5
+    source_document_id: eu_sika_mbcc_decision
+    page: '10'
+    quote_snippet: >-
+      For the purpose of this Decision, the Commission considers as relevant product
+      markets the overall market of chemical admixtures, as well as the narrower market
+      of concrete admixtures.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  - passage_id: sp_6
+    source_document_id: eu_sika_mbcc_decision
+    page: '10'
+    quote_snippet: >-
+      Since concrete admixtures used across residential and commercial construction
+      segments appear to be in principle similar, the Commission will not consider
+      separate markets based on those applications for the purpose of this Decision.
+      However, since infrastructure and underground applications appear to require
+      suppliers with a certain track-record, the Commission will take into account
+      the Parties' and their competitors' market position for those specific applications
+      when assessing their competitive strengths and differentiation.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  aliases:
+  - Narrower market of concrete admixtures
+  - Concrete admixtures
+  alias_candidates: []
+  gold_selection_reason: explicit_market_name
+  reviewer_notes: >-
+    Reviewed as a partial gold entry. Source passages validate and include the Commission's conclusion that the narrower market of concrete admixtures is a relevant product market for the purposes of the Decision.
+  reviewed: true
+geographic_markets_considered:
+- name: Chemical admixtures / Concrete admixtures — national markets (EEA)
+  market_type: geographic
+  expected_definition_status: defined
+  expected_promotion_action: hold_pending_source_check
+  importance: core_assessed
+  market_group: null
+  linked_source_passages:
+  - passage_id: sp_56
+    source_document_id: eu_sika_mbcc_decision
+    page: '10'
+    quote_snippet: >-
+      In its past decisions, the Commission left open whether the relevant geographic
+      market for admixtures was EEA-wide or narrower. The Commission carried out its
+      assessment based on the narrowest plausible geographic scope, i.e. national
+      markets, as that was the most conservative approach.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  - passage_id: sp_57
+    source_document_id: eu_sika_mbcc_decision
+    page: '10'
+    quote_snippet: >-
+      The Notifying Party submits that the markets for chemical admixtures have a
+      national dimension and that a narrower delimitation based on local catchment
+      areas is not appropriate. In particular, the Notifying Party notes that the
+      average radii in which Sika and MBCC realise 80% of their sales are 410 km and
+      379 km around their plants, respectively, and these catchment areas cover the
+      majority if not the entirety of the country in which each plant is located.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  - passage_id: sp_58
+    source_document_id: eu_sika_mbcc_decision
+    page: '12'
+    quote_snippet: >-
+      These reasons strongly indicate that the geographic markets of admixtures in
+      the EEA are narrower than EEA-wide and no broader than national. The Commission
+      therefore preliminarily concludes, for the purpose of this Decision, that in
+      the EEA the markets for chemical admixtures (and for concrete admixtures) are
+      national.
+    extraction_method: pdf_extracted
+    review_status: unreviewed
+    source_summary: ''
+  aliases:
+  - National markets for chemical admixtures
+  - National markets for concrete admixtures
+  - Chemical admixtures and concrete admixtures — national geographic markets
+  alias_candidates:
+  - value: admixtures was EEA-wide or narrower
+    source: source_passage
+    status: suggested
+    page: '10'
+    passage_id: sp_56
+    quote_snippet: In its past decisions, the Commission left open whether the relevant
+      geographic market for admixtures was EEA-wide or na
+  gold_selection_reason: explicit_market_name
+  reviewer_notes: >-
+    Reviewed as a partial gold entry. Source passages validate and include the Commission's conclusion that, in the EEA, the markets for chemical admixtures and concrete admixtures are national.
+  reviewed: true

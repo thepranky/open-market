@@ -1,0 +1,18 @@
+focus: market_definition
+cache_dir: data/source_text
+output_dir: data/evals/results
+
+# TODO: eu_google_fitbit_2021 — draft_yaml and report_json are not yet generated
+# (no eu_google_fitbit_decision.json in data/source_text/). Re-add once the
+# extraction pipeline has been run for this case.
+
+benchmarks:
+  - case_id: eu_microsoft_activision_2023
+    gold_yaml: data/evals/gold/eu_microsoft_activision_2023.market_definition.partial.gold.repaired.yaml
+    draft_yaml: data/drafts/eu/eu_microsoft_activision_2023.market_definition.draft.yaml
+    report_json: data/source_text/microsoft_activision_market_definition_report.json
+
+  - case_id: eu_sika_mbcc_2023
+    gold_yaml: data/evals/gold/eu_sika_mbcc_2023.market_definition.partial.gold.repaired.yaml
+    draft_yaml: data/drafts/eu/eu_sika_mbcc_2023.market_definition.draft.yaml
+    report_json: data/source_text/sika_mbcc_market_definition_report.json

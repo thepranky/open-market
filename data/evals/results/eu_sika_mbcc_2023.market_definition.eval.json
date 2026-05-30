@@ -1,0 +1,141 @@
+{
+  "generated_at": "2026-05-30T17:02:43.625965+00:00",
+  "case_id": "eu_sika_mbcc_2023",
+  "gold_partial": true,
+  "gold_reviewed_count": 3,
+  "gold_review_status": "has_reviewed_gold_items",
+  "evaluation_valid": true,
+  "product_markets": {
+    "market_type": "product",
+    "true_positives": 2,
+    "false_positives": 0,
+    "false_negatives": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "matched_items": [
+      {
+        "gold_name": "Chemical admixtures (overall market)",
+        "draft_name": "Chemical admixtures (overall market)",
+        "match_type": "exact"
+      },
+      {
+        "gold_name": "Concrete admixtures (narrower market)",
+        "draft_name": "Concrete admixtures (narrower market)",
+        "match_type": "exact"
+      }
+    ],
+    "false_negatives_detail": [],
+    "false_positives_detail": [],
+    "unjudged_items": [
+      {
+        "draft_name": "Injection resins (concrete works)"
+      },
+      {
+        "draft_name": "Resin-based grouts (concrete works)"
+      },
+      {
+        "draft_name": "Bonding agents (concrete works)"
+      },
+      {
+        "draft_name": "Primers (concrete works)"
+      },
+      {
+        "draft_name": "Impregnations including coats/coatings (concrete works)"
+      },
+      {
+        "draft_name": "Corrosion protection/control (concrete works)"
+      },
+      {
+        "draft_name": "Structural reinforcing/strengthening and ancillaries including cleaners and release agents (concrete works)"
+      },
+      {
+        "draft_name": "Premix mortars (dry vs. paste distinction)"
+      },
+      {
+        "draft_name": "Premix mortars (distinction based on application: construction, fa\u00e7ade, tile-fixing)"
+      },
+      {
+        "draft_name": "Industrial flooring (overall and technology-based sub-segments)"
+      },
+      {
+        "draft_name": "Industrial flooring"
+      },
+      {
+        "draft_name": "Sealants (overall market and sub-segments)"
+      },
+      {
+        "draft_name": "Sealants (construction and DIY/consumer)"
+      },
+      {
+        "draft_name": "Adhesives"
+      },
+      {
+        "draft_name": "Waterproofing \u2013 segmented by application type and technology (acrylic liquid membranes used under tiling; acrylic liquid membranes other applications; PU liquid membranes; epoxy liquid membranes; bitumen liquid; bitumen felts; PVC/TPO bonding sheets; other non-liquid membranes; PU injection resins; damp proofing injection; epoxy injection systems)"
+      }
+    ],
+    "evaluated_candidates": 2,
+    "unjudged_candidates": 15,
+    "out_of_scope_candidates": 0,
+    "partial_precision": 1.0,
+    "partial_recall": 1.0,
+    "partial_f1": 1.0
+  },
+  "geographic_markets": {
+    "market_type": "geographic",
+    "true_positives": 1,
+    "false_positives": 0,
+    "false_negatives": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "matched_items": [
+      {
+        "gold_name": "Chemical admixtures / Concrete admixtures \u2014 national markets (EEA)",
+        "draft_name": "Chemical admixtures / Concrete admixtures \u2014 national markets (EEA)",
+        "match_type": "exact"
+      }
+    ],
+    "false_negatives_detail": [],
+    "false_positives_detail": [],
+    "unjudged_items": [
+      {
+        "draft_name": "Concrete works \u2014 national geographic markets"
+      },
+      {
+        "draft_name": "Industrial flooring \u2014 geographic market (national or EEA-wide)"
+      },
+      {
+        "draft_name": "Geographic market for industrial flooring"
+      },
+      {
+        "draft_name": "Geographic market for sealants"
+      },
+      {
+        "draft_name": "EEA-wide or national markets for sealants"
+      }
+    ],
+    "evaluated_candidates": 1,
+    "unjudged_candidates": 5,
+    "out_of_scope_candidates": 0,
+    "partial_precision": 1.0,
+    "partial_recall": 1.0,
+    "partial_f1": 1.0
+  },
+  "promotion_safety": {
+    "risky_promotions": 0,
+    "safe_promoted_count": 0,
+    "safety_score": 1.0,
+    "overpromotion_risk": "low"
+  },
+  "quote_validity": {
+    "total_checked": 15,
+    "passed": 15,
+    "failures": 0,
+    "warnings": 0,
+    "failure_details": []
+  },
+  "overall_f1": 1.0,
+  "gating_decision": "auto_accept",
+  "gating_reason": ""
+}

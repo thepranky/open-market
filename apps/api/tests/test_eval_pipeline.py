@@ -18,9 +18,16 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "scripts"))
 from create_gold_draft import (
     _FoldedStr,
     _GoldDumper,
+    _PAIRING_MIN_TOKEN_LEN,
+    _PAIRING_STOPWORDS,
     _build_market_id_index,
     _build_passage_index,
     _create_gold_draft,
+    _max_pairing_signal,
+    _normalize_market_name,
+    _pairing_overlap,
+    _pairing_token_set,
+    _score_candidate,
     gold_yaml_dump,
 )
 from evaluate_extraction import (
@@ -3150,3 +3157,1142 @@ class TestAliasCandidates:
         assert "EEA distribution of PC and console video games" not in values
         assert "Operating systems for PCs" not in values
         assert "Distribution of video games" not in values
+
+
+# ---------------------------------------------------------------------------
+# TestExplicitMarketIncludes
+# ---------------------------------------------------------------------------
+
+class TestExplicitMarketIncludes:
+    """
+    Tests for --include-market-name / --include-market-id:
+    markets outside the default promotion categories can be explicitly pulled in.
+
+    No Claude API calls; no canonical YAML mutation.
+    """
+
+    # ------------------------------------------------------------------
+    # Helpers
+    # ------------------------------------------------------------------
+
+    def _gold_pm_names(self, gold: dict) -> list[str]:
+        return [m["name"] for m in gold.get("product_markets_considered", [])]
+
+    def _gold_gm_names(self, gold: dict) -> list[str]:
+        return [m["name"] for m in gold.get("geographic_markets_considered", [])]
+
+    def _gold_selection_reasons(self, gold: dict) -> dict[str, str]:
+        """Return name → gold_selection_reason for all entries."""
+        result = {}
+        for lst_key in ("product_markets_considered", "geographic_markets_considered"):
+            for m in gold.get(lst_key, []):
+                result[m["name"]] = m.get("gold_selection_reason", "")
+        return result
+
+    # ------------------------------------------------------------------
+    # _normalize_market_name unit tests
+    # ------------------------------------------------------------------
+
+    def test_normalize_lowercases(self):
+        assert _normalize_market_name("Online Advertising") == "online advertising"
+
+    def test_normalize_collapses_whitespace(self):
+        assert _normalize_market_name("  a  b  c  ") == "a b c"
+
+    def test_normalize_strips_leading_trailing(self):
+        assert _normalize_market_name("  Market A  ") == "market a"
+
+    # ------------------------------------------------------------------
+    # Default behaviour unchanged without explicit params
+    # ------------------------------------------------------------------
+
+    def test_default_includes_safe_to_promote(self):
+        """Default filter: safe_to_promote is included; hold_pending is not."""
+        draft = _make_draft(
+            pm_entries=[
+                _pm_entry("Safe market", "pm_1"),
+                _pm_entry("Hold market", "pm_2"),
+            ],
+        )
+        report = _make_report(
+            safe=[_candidate("Safe market")],
+            hold=[_candidate("Hold market")],
+        )
+        gold = _create_gold_draft("test", draft, report)
+
+        pm_names = self._gold_pm_names(gold)
+        assert "Safe market" in pm_names
+        assert "Hold market" not in pm_names
+
+    def test_default_selection_reason(self):
+        """Markets included by the default filter get gold_selection_reason='default_promotion_filter'."""
+        draft = _make_draft(pm_entries=[_pm_entry("Safe market", "pm_1")])
+        report = _make_report(safe=[_candidate("Safe market")])
+        gold = _create_gold_draft("test", draft, report)
+
+        reasons = self._gold_selection_reasons(gold)
+        assert reasons["Safe market"] == "default_promotion_filter"
+
+    # ------------------------------------------------------------------
+    # Explicit include by product market name
+    # ------------------------------------------------------------------
+
+    def test_explicit_name_includes_hold_pending_product(self):
+        """A hold_pending product market is included when named explicitly."""
+        draft = _make_draft(
+            pm_entries=[_pm_entry("Chemical admixtures", "pm_1")],
+        )
+        report = _make_report(hold=[_candidate("Chemical admixtures")])
+        gold = _create_gold_draft(
+            "test", draft, report,
+            explicit_names=frozenset(["Chemical admixtures"]),
+        )
+
+        assert "Chemical admixtures" in self._gold_pm_names(gold)
+
+    def test_explicit_name_selection_reason(self):
+        """Explicitly included-by-name entry gets gold_selection_reason='explicit_market_name'."""
+        draft = _make_draft(pm_entries=[_pm_entry("Hold market", "pm_1")])
+        report = _make_report(hold=[_candidate("Hold market")])
+        gold = _create_gold_draft(
+            "test", draft, report,
+            explicit_names=frozenset(["Hold market"]),
+        )
+
+        reasons = self._gold_selection_reasons(gold)
+        assert reasons["Hold market"] == "explicit_market_name"
+
+    def test_explicit_name_case_insensitive(self):
+        """Explicit name match is case-insensitive."""
+        draft = _make_draft(pm_entries=[_pm_entry("Chemical Admixtures", "pm_1")])
+        report = _make_report(hold=[_candidate("Chemical Admixtures")])
+        gold = _create_gold_draft(
+            "test", draft, report,
+            explicit_names=frozenset(["chemical admixtures"]),
+        )
+
+        assert "Chemical Admixtures" in self._gold_pm_names(gold)
+
+    def test_explicit_name_whitespace_normalised(self):
+        """Explicit name match collapses extra whitespace."""
+        draft = _make_draft(pm_entries=[_pm_entry("Market A", "pm_1")])
+        report = _make_report(hold=[_candidate("Market A")])
+        gold = _create_gold_draft(
+            "test", draft, report,
+            explicit_names=frozenset(["Market  A"]),  # double space
+        )
+
+        assert "Market A" in self._gold_pm_names(gold)
+
+    # ------------------------------------------------------------------
+    # Explicit include by geographic market name
+    # ------------------------------------------------------------------
+
+    def test_explicit_name_includes_hold_pending_geo(self):
+        """A hold_pending geographic market is included when named explicitly."""
+        draft = _make_draft(
+            gm_entries=[{"market_id": "gm_1", "name": "National markets (EEA)",
+                          "definition_status": "left_open"}],
+        )
+        report = _make_report(hold=[_candidate("National markets (EEA)", mtype="geographic")])
+        gold = _create_gold_draft(
+            "test", draft, report,
+            explicit_names=frozenset(["National markets (EEA)"]),
+        )
+
+        assert "National markets (EEA)" in self._gold_gm_names(gold)
+
+    def test_explicit_geo_name_selection_reason(self):
+        """Geo market included by explicit name gets the right selection reason."""
+        draft = _make_draft(
+            gm_entries=[{"market_id": "gm_1", "name": "National markets (EEA)",
+                          "definition_status": "left_open"}],
+        )
+        report = _make_report(hold=[_candidate("National markets (EEA)", mtype="geographic")])
+        gold = _create_gold_draft(
+            "test", draft, report,
+            explicit_names=frozenset(["National markets (EEA)"]),
+        )
+
+        reasons = self._gold_selection_reasons(gold)
+        assert reasons["National markets (EEA)"] == "explicit_market_name"
+
+    # ------------------------------------------------------------------
+    # Explicit include by market_id
+    # ------------------------------------------------------------------
+
+    def test_explicit_id_includes_hold_pending_product(self):
+        """A hold_pending product market is included when its draft market_id is specified."""
+        draft = _make_draft(pm_entries=[_pm_entry("Chemical admixtures", "pm_1")])
+        report = _make_report(hold=[_candidate("Chemical admixtures")])
+        gold = _create_gold_draft(
+            "test", draft, report,
+            explicit_ids=frozenset(["pm_1"]),
+        )
+
+        assert "Chemical admixtures" in self._gold_pm_names(gold)
+
+    def test_explicit_id_selection_reason(self):
+        """Market included by explicit id gets gold_selection_reason='explicit_market_id'."""
+        draft = _make_draft(pm_entries=[_pm_entry("Hold market", "pm_1")])
+        report = _make_report(hold=[_candidate("Hold market")])
+        gold = _create_gold_draft(
+            "test", draft, report,
+            explicit_ids=frozenset(["pm_1"]),
+        )
+
+        reasons = self._gold_selection_reasons(gold)
+        assert reasons["Hold market"] == "explicit_market_id"
+
+    def test_explicit_id_for_geo_market(self):
+        """Geo market is also matched by draft market_id."""
+        draft = _make_draft(
+            gm_entries=[{"market_id": "gm_3", "name": "National geo market",
+                          "definition_status": "left_open"}],
+        )
+        report = _make_report(hold=[_candidate("National geo market", mtype="geographic")])
+        gold = _create_gold_draft(
+            "test", draft, report,
+            explicit_ids=frozenset(["gm_3"]),
+        )
+
+        assert "National geo market" in self._gold_gm_names(gold)
+
+    # ------------------------------------------------------------------
+    # No duplication when market already in default filter
+    # ------------------------------------------------------------------
+
+    def test_no_duplicate_when_also_in_default(self):
+        """A market already included by the default filter is not duplicated when explicitly named."""
+        draft = _make_draft(pm_entries=[_pm_entry("Safe market", "pm_1")])
+        report = _make_report(safe=[_candidate("Safe market")])
+        gold = _create_gold_draft(
+            "test", draft, report,
+            explicit_names=frozenset(["Safe market"]),
+        )
+
+        pm_names = self._gold_pm_names(gold)
+        assert pm_names.count("Safe market") == 1
+
+    def test_no_duplicate_when_also_in_default_by_id(self):
+        """Same deduplication guarantee when the market is explicitly requested by id."""
+        draft = _make_draft(pm_entries=[_pm_entry("Safe market", "pm_1")])
+        report = _make_report(safe=[_candidate("Safe market")])
+        gold = _create_gold_draft(
+            "test", draft, report,
+            explicit_ids=frozenset(["pm_1"]),
+        )
+
+        pm_names = self._gold_pm_names(gold)
+        assert pm_names.count("Safe market") == 1
+
+    def test_default_reason_wins_when_also_explicitly_named(self):
+        """When a market is in the default filter AND explicitly named, the default reason is used
+        (default is Phase 1 and runs first; Phase 2 deduplicates and skips re-adding)."""
+        draft = _make_draft(pm_entries=[_pm_entry("Safe market", "pm_1")])
+        report = _make_report(safe=[_candidate("Safe market")])
+        gold = _create_gold_draft(
+            "test", draft, report,
+            explicit_names=frozenset(["Safe market"]),
+        )
+
+        reasons = self._gold_selection_reasons(gold)
+        assert reasons["Safe market"] == "default_promotion_filter"
+
+    # ------------------------------------------------------------------
+    # Unmatched explicit request → warning to stderr
+    # ------------------------------------------------------------------
+
+    def test_unmatched_name_warns(self, capsys):
+        """A name that matches nothing in the report prints a warning to stderr."""
+        draft = _make_draft(pm_entries=[_pm_entry("Real market", "pm_1")])
+        report = _make_report(safe=[_candidate("Real market")])
+        _create_gold_draft(
+            "test", draft, report,
+            explicit_names=frozenset(["Nonexistent market"]),
+        )
+
+        captured = capsys.readouterr()
+        assert "nonexistent market" in captured.err.lower()
+        assert "WARNING" in captured.err
+
+    def test_unmatched_id_warns(self, capsys):
+        """An id that matches nothing in the draft prints a warning to stderr."""
+        draft = _make_draft(pm_entries=[_pm_entry("Real market", "pm_1")])
+        report = _make_report(safe=[_candidate("Real market")])
+        _create_gold_draft(
+            "test", draft, report,
+            explicit_ids=frozenset(["pm_99"]),
+        )
+
+        captured = capsys.readouterr()
+        assert "pm_99" in captured.err
+        assert "WARNING" in captured.err
+
+    def test_matched_explicit_no_spurious_warning(self, capsys):
+        """No warning is printed when the explicit name successfully matches."""
+        draft = _make_draft(pm_entries=[_pm_entry("Hold market", "pm_1")])
+        report = _make_report(hold=[_candidate("Hold market")])
+        _create_gold_draft(
+            "test", draft, report,
+            explicit_names=frozenset(["Hold market"]),
+        )
+
+        captured = capsys.readouterr()
+        assert "WARNING" not in captured.err
+
+    # ------------------------------------------------------------------
+    # Quote snippets remain unchanged
+    # ------------------------------------------------------------------
+
+    def test_quote_snippet_verbatim_in_explicit_include(self):
+        """Quote snippets from linked passages are not modified for explicitly included markets."""
+        verbatim = "The relevant market is the market for chemical admixtures."
+        passage = _passage("pm_1", "10", verbatim, pid="sp_1")
+        draft = _make_draft(
+            pm_entries=[_pm_entry("Chemical admixtures", "pm_1")],
+            passages=[passage],
+        )
+        report = _make_report(hold=[_candidate("Chemical admixtures")])
+        gold = _create_gold_draft(
+            "test", draft, report,
+            explicit_names=frozenset(["Chemical admixtures"]),
+        )
+
+        pm = gold["product_markets_considered"][0]
+        assert pm["linked_source_passages"][0]["quote_snippet"] == verbatim
+
+    # ------------------------------------------------------------------
+    # Multiple explicit includes
+    # ------------------------------------------------------------------
+
+    def test_multiple_explicit_names(self):
+        """Multiple --include-market-name values all result in included entries."""
+        draft = _make_draft(pm_entries=[
+            _pm_entry("Market A", "pm_1"),
+            _pm_entry("Market B", "pm_2"),
+            _pm_entry("Market C", "pm_3"),
+        ])
+        report = _make_report(hold=[
+            _candidate("Market A"),
+            _candidate("Market B"),
+            _candidate("Market C"),
+        ])
+        gold = _create_gold_draft(
+            "test", draft, report,
+            explicit_names=frozenset(["Market A", "Market C"]),
+        )
+
+        pm_names = self._gold_pm_names(gold)
+        assert "Market A" in pm_names
+        assert "Market C" in pm_names
+        assert "Market B" not in pm_names
+
+    def test_name_and_id_together(self):
+        """Both --include-market-name and --include-market-id can be used simultaneously."""
+        draft = _make_draft(pm_entries=[
+            _pm_entry("Market A", "pm_1"),
+            _pm_entry("Market B", "pm_2"),
+        ])
+        report = _make_report(hold=[
+            _candidate("Market A"),
+            _candidate("Market B"),
+        ])
+        gold = _create_gold_draft(
+            "test", draft, report,
+            explicit_names=frozenset(["Market A"]),
+            explicit_ids=frozenset(["pm_2"]),
+        )
+
+        pm_names = self._gold_pm_names(gold)
+        assert "Market A" in pm_names
+        assert "Market B" in pm_names
+
+
+# ---------------------------------------------------------------------------
+# TestAutoSelectReviewSet
+# ---------------------------------------------------------------------------
+
+class TestAutoSelectReviewSet:
+    """
+    Tests for auto_select / --auto-select-review-set mode.
+
+    All market names are generic; no industry-specific terms.
+    No Claude API calls; no canonical YAML mutation.
+    """
+
+    # ------------------------------------------------------------------
+    # Helpers
+    # ------------------------------------------------------------------
+
+    def _pm_with_passage(self, mid, name, status="defined",
+                          importance="core_assessed", role="commission_assessment"):
+        pm = _pm_entry(name, mid, status=status, importance=importance)
+        passage = {
+            "passage_id": f"sp_{mid}",
+            "source_document_id": "doc_1",
+            "page": "10",
+            "quote_snippet": f"The Commission assessed {name}.",
+            "extraction_method": "pdf_extracted",
+            "review_status": "unreviewed",
+            "source_role": role,
+            "supports_markets": [mid],
+        }
+        return pm, passage
+
+    def _gm_with_passage(self, mid, name, status="left_open",
+                          importance="core_assessed", role="commission_assessment"):
+        gm = {"market_id": mid, "name": name, "definition_status": status,
+              "market_importance": importance}
+        passage = {
+            "passage_id": f"sp_{mid}",
+            "source_document_id": "doc_1",
+            "page": "15",
+            "quote_snippet": f"The Commission found the geographic scope of {name}.",
+            "extraction_method": "pdf_extracted",
+            "review_status": "unreviewed",
+            "source_role": role,
+            "supports_geographic_markets": [mid],
+        }
+        return gm, passage
+
+    def _gold_pm_names(self, gold):
+        return [m["name"] for m in gold.get("product_markets_considered", [])]
+
+    def _gold_gm_names(self, gold):
+        return [m["name"] for m in gold.get("geographic_markets_considered", [])]
+
+    def _gold_all_entries(self, gold):
+        return (gold.get("product_markets_considered", [])
+                + gold.get("geographic_markets_considered", []))
+
+    # ------------------------------------------------------------------
+    # Default behavior unchanged without flag
+    # ------------------------------------------------------------------
+
+    def test_default_unchanged_without_flag(self):
+        """Without auto_select, safe_to_promote is included and hold_pending is not."""
+        pm1, sp1 = self._pm_with_passage("pm_1", "Primary market")
+        pm2, sp2 = self._pm_with_passage("pm_2", "Held market")
+        draft = _make_draft(pm_entries=[pm1, pm2], passages=[sp1, sp2])
+        report = _make_report(
+            safe=[_candidate("Primary market")],
+            hold=[_candidate("Held market")],
+        )
+        gold = _create_gold_draft("test", draft, report)  # auto_select=False default
+
+        pm_names = self._gold_pm_names(gold)
+        assert "Primary market" in pm_names
+        assert "Held market" not in pm_names
+
+    # ------------------------------------------------------------------
+    # Auto-select count
+    # ------------------------------------------------------------------
+
+    def test_auto_select_product_count(self):
+        """auto_select picks exactly review_product_count product markets."""
+        pms, passages, candidates = [], [], []
+        for i in range(1, 5):
+            pm, sp = self._pm_with_passage(f"pm_{i}", f"Product market {i}")
+            pms.append(pm)
+            passages.append(sp)
+            candidates.append(_candidate(f"Product market {i}"))
+
+        draft = _make_draft(pm_entries=pms, passages=passages)
+        report = _make_report(uncertain=candidates)
+        gold = _create_gold_draft(
+            "test", draft, report,
+            auto_select=True, review_product_count=2, review_geographic_count=0,
+        )
+
+        assert len(self._gold_pm_names(gold)) == 2
+
+    def test_auto_select_geographic_count(self):
+        """auto_select picks exactly review_geographic_count geographic markets."""
+        gms, passages, geo_cands = [], [], []
+        for i in range(1, 4):
+            gm, sp = self._gm_with_passage(f"gm_{i}", f"Geographic scope {i}")
+            gms.append(gm)
+            passages.append(sp)
+            geo_cands.append(_candidate(f"Geographic scope {i}", mtype="geographic"))
+
+        draft = _make_draft(gm_entries=gms, passages=passages)
+        report = _make_report(uncertain=geo_cands)
+        gold = _create_gold_draft(
+            "test", draft, report,
+            auto_select=True, review_product_count=0, review_geographic_count=1,
+        )
+
+        assert len(self._gold_gm_names(gold)) == 1
+
+    # ------------------------------------------------------------------
+    # Sourced vs unsourced ranking
+    # ------------------------------------------------------------------
+
+    def test_sourced_outranks_unsourced(self):
+        """A candidate with linked source passages is selected over one without."""
+        pm_sourced, sp = self._pm_with_passage("pm_1", "Sourced market")
+        pm_unsourced = _pm_entry("Unsourced market", "pm_2")
+        draft = _make_draft(pm_entries=[pm_sourced, pm_unsourced], passages=[sp])
+        report = _make_report(uncertain=[
+            _candidate("Sourced market"),
+            _candidate("Unsourced market"),
+        ])
+        gold = _create_gold_draft(
+            "test", draft, report,
+            auto_select=True, review_product_count=1, review_geographic_count=0,
+        )
+
+        pm_names = self._gold_pm_names(gold)
+        assert "Sourced market" in pm_names
+        assert "Unsourced market" not in pm_names
+
+    def test_sourced_scores_higher_than_unsourced(self):
+        """_score_candidate gives a higher score when passages are present."""
+        entry = _candidate("Generic market")
+        score_with = _score_candidate(entry, "uncertain_markets", [{"source_role": "commission_assessment"}])
+        score_without = _score_candidate(entry, "uncertain_markets", [])
+        assert score_with > score_without
+
+    # ------------------------------------------------------------------
+    # Source role ranking
+    # ------------------------------------------------------------------
+
+    def test_commission_conclusion_outranks_background(self):
+        """Passage with source_role=commission_conclusion outranks background role."""
+        pm1, sp1 = self._pm_with_passage("pm_1", "Conclusion market", role="commission_conclusion")
+        pm2, sp2 = self._pm_with_passage("pm_2", "Background market", role="background")
+        draft = _make_draft(pm_entries=[pm1, pm2], passages=[sp1, sp2])
+        report = _make_report(uncertain=[
+            _candidate("Conclusion market"),
+            _candidate("Background market"),
+        ])
+        gold = _create_gold_draft(
+            "test", draft, report,
+            auto_select=True, review_product_count=1, review_geographic_count=0,
+        )
+
+        pm_names = self._gold_pm_names(gold)
+        assert "Conclusion market" in pm_names
+        assert "Background market" not in pm_names
+
+    def test_commission_assessment_outranks_background_score(self):
+        """commission_assessment source role scores higher than background."""
+        entry = _candidate("Generic market")
+        score_assessed = _score_candidate(
+            entry, "uncertain_markets", [{"source_role": "commission_assessment"}]
+        )
+        score_background = _score_candidate(
+            entry, "uncertain_markets", [{"source_role": "background"}]
+        )
+        assert score_assessed > score_background
+
+    # ------------------------------------------------------------------
+    # Importance ranking
+    # ------------------------------------------------------------------
+
+    def test_core_assessed_preferred(self):
+        """core_assessed importance produces a higher score than context_background."""
+        core_entry = _candidate("Market A", importance="core_assessed")
+        context_entry = _candidate("Market B", importance="context_background")
+        passages = [{"source_role": "commission_assessment"}]
+
+        score_core = _score_candidate(core_entry, "uncertain_markets", passages)
+        score_context = _score_candidate(context_entry, "uncertain_markets", passages)
+        assert score_core > score_context
+
+    # ------------------------------------------------------------------
+    # Explicit include + auto-select: no duplicate
+    # ------------------------------------------------------------------
+
+    def test_explicit_and_auto_no_duplicate(self):
+        """A market in explicit_names is not also added by auto-select."""
+        pm1, sp1 = self._pm_with_passage("pm_1", "Explicit market")
+        pm2, sp2 = self._pm_with_passage("pm_2", "Auto market A")
+        pm3, sp3 = self._pm_with_passage("pm_3", "Auto market B")
+        draft = _make_draft(pm_entries=[pm1, pm2, pm3], passages=[sp1, sp2, sp3])
+        report = _make_report(
+            hold=[_candidate("Explicit market")],
+            uncertain=[_candidate("Auto market A"), _candidate("Auto market B")],
+        )
+        gold = _create_gold_draft(
+            "test", draft, report,
+            auto_select=True, review_product_count=2, review_geographic_count=0,
+            explicit_names=frozenset(["Explicit market"]),
+        )
+
+        pm_names = self._gold_pm_names(gold)
+        assert pm_names.count("Explicit market") == 1
+
+    def test_auto_selected_market_not_duplicated_when_also_explicit(self):
+        """When auto-select picks a market that is also in explicit_names, it appears once."""
+        pm1, sp1 = self._pm_with_passage("pm_1", "Shared market", role="commission_conclusion")
+        draft = _make_draft(pm_entries=[pm1], passages=[sp1])
+        report = _make_report(uncertain=[_candidate("Shared market")])
+        gold = _create_gold_draft(
+            "test", draft, report,
+            auto_select=True, review_product_count=1, review_geographic_count=0,
+            explicit_names=frozenset(["Shared market"]),
+        )
+
+        pm_names = self._gold_pm_names(gold)
+        assert pm_names.count("Shared market") == 1
+
+    # ------------------------------------------------------------------
+    # reviewed: false / aliases: []
+    # ------------------------------------------------------------------
+
+    def test_auto_selected_entries_are_not_reviewed(self):
+        """Auto-selected entries always have reviewed: false."""
+        pm1, sp1 = self._pm_with_passage("pm_1", "Selected market")
+        gm1, sg1 = self._gm_with_passage("gm_1", "Selected geo")
+        draft = _make_draft(pm_entries=[pm1], gm_entries=[gm1], passages=[sp1, sg1])
+        report = _make_report(
+            uncertain=[_candidate("Selected market")],
+            geo=[_candidate("Selected geo", mtype="geographic")],
+        )
+        gold = _create_gold_draft(
+            "test", draft, report,
+            auto_select=True, review_product_count=1, review_geographic_count=1,
+        )
+
+        for entry in self._gold_all_entries(gold):
+            assert entry["reviewed"] is False
+
+    def test_auto_selected_aliases_empty(self):
+        """Auto-selected entries always have aliases: []."""
+        pm1, sp1 = self._pm_with_passage("pm_1", "Auto market")
+        draft = _make_draft(pm_entries=[pm1], passages=[sp1])
+        report = _make_report(uncertain=[_candidate("Auto market")])
+        gold = _create_gold_draft(
+            "test", draft, report,
+            auto_select=True, review_product_count=1, review_geographic_count=0,
+        )
+
+        for entry in self._gold_all_entries(gold):
+            assert entry["aliases"] == []
+
+    # ------------------------------------------------------------------
+    # gold_selection_reason and gold_selection_score
+    # ------------------------------------------------------------------
+
+    def test_auto_selected_reason_is_auto_review_set(self):
+        """Auto-selected entries have gold_selection_reason='auto_review_set'."""
+        pm1, sp1 = self._pm_with_passage("pm_1", "Selected market")
+        draft = _make_draft(pm_entries=[pm1], passages=[sp1])
+        report = _make_report(uncertain=[_candidate("Selected market")])
+        gold = _create_gold_draft(
+            "test", draft, report,
+            auto_select=True, review_product_count=1, review_geographic_count=0,
+        )
+
+        pm = gold["product_markets_considered"][0]
+        assert pm["gold_selection_reason"] == "auto_review_set"
+
+    def test_auto_selected_score_field_present(self):
+        """Auto-selected entries include a numeric gold_selection_score field."""
+        pm1, sp1 = self._pm_with_passage("pm_1", "Scored market")
+        draft = _make_draft(pm_entries=[pm1], passages=[sp1])
+        report = _make_report(uncertain=[_candidate("Scored market")])
+        gold = _create_gold_draft(
+            "test", draft, report,
+            auto_select=True, review_product_count=1, review_geographic_count=0,
+        )
+
+        pm = gold["product_markets_considered"][0]
+        assert "gold_selection_score" in pm
+        assert isinstance(pm["gold_selection_score"], float)
+
+    # ------------------------------------------------------------------
+    # Geographic pairing
+    # ------------------------------------------------------------------
+
+    def test_geographic_pairing_when_available(self):
+        """With geographic_count=1, a geo candidate is auto-selected when available."""
+        pm1, sp1 = self._pm_with_passage("pm_1", "Product market")
+        gm1, sg1 = self._gm_with_passage("gm_1", "Geographic scope")
+        draft = _make_draft(pm_entries=[pm1], gm_entries=[gm1], passages=[sp1, sg1])
+        report = _make_report(
+            uncertain=[_candidate("Product market")],
+            geo=[_candidate("Geographic scope", mtype="geographic")],
+        )
+        gold = _create_gold_draft(
+            "test", draft, report,
+            auto_select=True, review_product_count=1, review_geographic_count=1,
+        )
+
+        assert "Geographic scope" in self._gold_gm_names(gold)
+
+    # ------------------------------------------------------------------
+    # Fewer candidates than requested
+    # ------------------------------------------------------------------
+
+    def test_fewer_candidates_returns_available(self):
+        """When fewer candidates exist than review_product_count, return what's available."""
+        pm1, sp1 = self._pm_with_passage("pm_1", "Only market")
+        draft = _make_draft(pm_entries=[pm1], passages=[sp1])
+        report = _make_report(uncertain=[_candidate("Only market")])
+        gold = _create_gold_draft(
+            "test", draft, report,
+            auto_select=True, review_product_count=5, review_geographic_count=0,
+        )
+
+        pm_names = self._gold_pm_names(gold)
+        assert len(pm_names) == 1
+        assert "Only market" in pm_names
+
+    # ------------------------------------------------------------------
+    # context_only excluded when better candidates exist
+    # ------------------------------------------------------------------
+
+    def test_context_only_excluded_when_sourced_candidates_available(self):
+        """context_only candidates are not auto-selected when better candidates exist."""
+        pm_main, sp_main = self._pm_with_passage("pm_1", "Main market", role="commission_assessment")
+        pm_ctx, sp_ctx = self._pm_with_passage("pm_2", "Context market", role="background")
+        draft = _make_draft(pm_entries=[pm_main, pm_ctx], passages=[sp_main, sp_ctx])
+        report = _make_report(
+            uncertain=[_candidate("Main market")],
+            context=[_candidate("Context market")],
+        )
+        gold = _create_gold_draft(
+            "test", draft, report,
+            auto_select=True, review_product_count=1, review_geographic_count=0,
+        )
+
+        pm_names = self._gold_pm_names(gold)
+        assert "Main market" in pm_names
+        assert "Context market" not in pm_names
+
+    # ------------------------------------------------------------------
+    # No industry-specific terms in selector logic
+    # ------------------------------------------------------------------
+
+    def test_selector_works_with_generic_market_names(self):
+        """Selector uses no industry-specific logic — generic domain-neutral names work."""
+        entry_high = _candidate("Service category A", importance="core_assessed")
+        entry_low = _candidate("Service category B", importance="context_background")
+        high_passages = [{"source_role": "commission_conclusion"}]
+        low_passages = [{"source_role": "background"}]
+
+        score_high = _score_candidate(entry_high, "uncertain_markets", high_passages)
+        score_low = _score_candidate(entry_low, "context_only", low_passages)
+
+        assert score_high > score_low
+
+    # ------------------------------------------------------------------
+    # No canonical YAML mutation
+    # ------------------------------------------------------------------
+
+    def test_no_canonical_yaml_mutation(self):
+        """auto_select does not mutate the input draft or report dicts."""
+        import copy
+        pm1, sp1 = self._pm_with_passage("pm_1", "Primary market")
+        draft = _make_draft(pm_entries=[pm1], passages=[sp1])
+        report = _make_report(uncertain=[_candidate("Primary market")])
+
+        draft_copy = copy.deepcopy(draft)
+        report_copy = copy.deepcopy(report)
+
+        _create_gold_draft(
+            "test", draft, report,
+            auto_select=True, review_product_count=1, review_geographic_count=0,
+        )
+
+        assert draft == draft_copy
+        assert report == report_copy
+
+    # ------------------------------------------------------------------
+    # Diversity: second slot prefers different definition_status
+    # ------------------------------------------------------------------
+
+    def test_diversity_second_slot_prefers_different_status(self):
+        """With product_count=2, the second slot soft-prefers a different definition_status.
+
+        When no pairing bonus distinguishes candidates, diversity soft-preference
+        causes the different-status entry to win the second slot.
+        """
+        # Market A: defined, commission_conclusion (top scorer)
+        # Market B: defined, commission_assessment (same status as A)
+        # Market C: possible_segmentation, commission_assessment (different status)
+        # No geo candidates → no pairing bonuses.  Diversity should pick C over B.
+        pm_a, sp_a = self._pm_with_passage("pm_1", "Primary assessment market",
+                                             status="defined", role="commission_conclusion")
+        pm_b, sp_b = self._pm_with_passage("pm_2", "Secondary assessment market",
+                                             status="defined", role="commission_assessment")
+        pm_c, sp_c = self._pm_with_passage("pm_3", "Segmented assessment market",
+                                             status="possible_segmentation",
+                                             role="commission_assessment")
+
+        draft = _make_draft(pm_entries=[pm_a, pm_b, pm_c], passages=[sp_a, sp_b, sp_c])
+        report = _make_report(uncertain=[
+            _candidate("Primary assessment market", status="defined"),
+            _candidate("Secondary assessment market", status="defined"),
+            _candidate("Segmented assessment market", status="possible_segmentation"),
+        ])
+        gold = _create_gold_draft(
+            "test", draft, report,
+            auto_select=True, review_product_count=2, review_geographic_count=0,
+        )
+
+        pm_names = self._gold_pm_names(gold)
+        assert "Primary assessment market" in pm_names
+        assert "Segmented assessment market" in pm_names
+        assert "Secondary assessment market" not in pm_names
+
+
+# ---------------------------------------------------------------------------
+# TestPairingAndCentralityScoring
+# ---------------------------------------------------------------------------
+
+class TestPairingAndCentralityScoring:
+    """
+    Tests for product/geographic pairing bonus and source_refs centrality bonus.
+
+    All market names use generic, domain-neutral vocabulary.
+    No industry-specific terms in scoring constants or test data.
+    No Claude API calls; no canonical YAML mutation.
+    """
+
+    # ------------------------------------------------------------------
+    # _pairing_token_set unit tests
+    # ------------------------------------------------------------------
+
+    def test_token_set_lowercases(self):
+        assert "widget" in _pairing_token_set("Widget supply")
+
+    def test_token_set_filters_short_tokens(self):
+        tokens = _pairing_token_set("A BC DEF widgets")
+        assert "a" not in tokens
+        assert "bc" not in tokens
+        assert "def" not in tokens  # 3 chars → filtered
+        assert "widgets" in tokens
+
+    def test_token_set_removes_stopwords(self):
+        tokens = _pairing_token_set("supply and demand for widgets")
+        assert "and" not in tokens
+        assert "for" not in tokens
+        assert "demand" not in tokens  # in stopwords
+        assert "supply" not in tokens  # in stopwords
+        assert "widgets" in tokens
+
+    def test_token_set_splits_on_punctuation(self):
+        tokens = _pairing_token_set("widgets/gadgets — components (assembled)")
+        assert "widgets" in tokens
+        assert "gadgets" in tokens
+        assert "components" in tokens
+        assert "assembled" in tokens
+
+    def test_token_set_empty_name(self):
+        assert _pairing_token_set("") == frozenset()
+
+    def test_token_set_all_stopwords(self):
+        assert _pairing_token_set("market for supply and demand") == frozenset()
+
+    # ------------------------------------------------------------------
+    # _pairing_overlap unit tests
+    # ------------------------------------------------------------------
+
+    def test_pairing_overlap_identical_names(self):
+        overlap = _pairing_overlap("Standardised components assembly",
+                                   "Standardised components assembly")
+        assert overlap == 1.0
+
+    def test_pairing_overlap_geo_wraps_product(self):
+        """Geo name that contains all of the product's significant tokens → high overlap."""
+        product = "Standardised components assembly"
+        geo = "Geographic scope of standardised components assembly"
+        overlap = _pairing_overlap(product, geo)
+        assert overlap >= 0.8
+
+    def test_pairing_overlap_no_significant_tokens_shared(self):
+        assert _pairing_overlap("Widget assembly components",
+                                "Logistics routing platforms") == 0.0
+
+    def test_pairing_overlap_partial(self):
+        overlap = _pairing_overlap("Widget assembly", "Widget assembly and logistics")
+        assert 0 < overlap <= 1.0
+
+    def test_pairing_overlap_symmetric(self):
+        a = "Standardised components assembly"
+        b = "Geographic standardised components"
+        assert abs(_pairing_overlap(a, b) - _pairing_overlap(b, a)) < 1e-9
+
+    def test_pairing_overlap_empty_returns_zero(self):
+        assert _pairing_overlap("", "Widget supply") == 0.0
+        assert _pairing_overlap("Widget supply", "") == 0.0
+
+    # ------------------------------------------------------------------
+    # No industry-specific terms in pairing constants
+    # ------------------------------------------------------------------
+
+    def test_pairing_stopwords_are_generic(self):
+        """_PAIRING_STOPWORDS must contain only generic linguistic/structural terms."""
+        for word in _PAIRING_STOPWORDS:
+            assert len(word) <= 12, f"Suspicious long stopword: {word!r}"
+        assert _PAIRING_MIN_TOKEN_LEN <= 5
+
+    def test_selector_constants_work_with_generic_vocabulary(self):
+        """Pairing works correctly with completely generic market name vocabulary."""
+        product_name = "Standardised assembly components"
+        geo_name = "Geographic scope of standardised assembly components"
+        overlap = _pairing_overlap(product_name, geo_name)
+        assert overlap > 0.5
+
+    # ------------------------------------------------------------------
+    # Pairing bonus via _max_pairing_signal
+    # ------------------------------------------------------------------
+
+    def test_max_pairing_signal_with_matching_geo(self):
+        """Product entry gets a high pairing signal when a geo candidate matches its name."""
+        product_entry = _candidate("Widget assembly services", mtype="product")
+        geo_entry = _candidate("Geographic scope of widget assembly services",
+                               mtype="geographic")
+        signal = _max_pairing_signal(product_entry,
+                                     [(8.0, geo_entry, "uncertain_markets")])
+        assert signal > 0.5
+
+    def test_max_pairing_signal_no_geo_match(self):
+        """Product entry gets zero pairing signal when no geo candidate shares its tokens."""
+        product_entry = _candidate("Widget assembly services", mtype="product")
+        geo_entry = _candidate("Geographic scope of logistics routing", mtype="geographic")
+        signal = _max_pairing_signal(product_entry,
+                                     [(8.0, geo_entry, "uncertain_markets")])
+        assert signal == 0.0
+
+    def test_max_pairing_signal_market_group_match(self):
+        """market_group equality produces a perfect pairing signal."""
+        product_entry = {**_candidate("Widget supply", mtype="product"),
+                         "market_group": "widgets"}
+        geo_entry = {**_candidate("Geographic widget scope", mtype="geographic"),
+                     "market_group": "widgets"}
+        signal = _max_pairing_signal(product_entry,
+                                     [(8.0, geo_entry, "uncertain_markets")])
+        assert signal == 1.0
+
+    def test_max_pairing_signal_empty_others(self):
+        """No geo candidates → zero pairing signal."""
+        product_entry = _candidate("Widget assembly", mtype="product")
+        assert _max_pairing_signal(product_entry, []) == 0.0
+
+    # ------------------------------------------------------------------
+    # Paired product outranks equal unpaired product
+    # ------------------------------------------------------------------
+
+    def _pm_with_passage(self, mid, name, status="defined",
+                          importance="core_assessed", role="commission_assessment",
+                          refs=None):
+        pm = _pm_entry(name, mid, status=status, importance=importance)
+        passage = {
+            "passage_id": f"sp_{mid}",
+            "source_document_id": "doc_1",
+            "page": "10",
+            "quote_snippet": f"The Commission assessed {name}.",
+            "extraction_method": "pdf_extracted",
+            "review_status": "unreviewed",
+            "source_role": role,
+            "supports_markets": [mid],
+        }
+        return pm, passage
+
+    def _gm_with_passage(self, mid, name, status="left_open",
+                          importance="core_assessed", role="commission_assessment"):
+        gm = {"market_id": mid, "name": name, "definition_status": status,
+              "market_importance": importance}
+        passage = {
+            "passage_id": f"sp_{mid}",
+            "source_document_id": "doc_1",
+            "page": "15",
+            "quote_snippet": f"The geographic scope of {name} is EEA-wide.",
+            "extraction_method": "pdf_extracted",
+            "review_status": "unreviewed",
+            "source_role": role,
+            "supports_geographic_markets": [mid],
+        }
+        return gm, passage
+
+    def _gold_pm_names(self, gold):
+        return [m["name"] for m in gold.get("product_markets_considered", [])]
+
+    def _gold_gm_names(self, gold):
+        return [m["name"] for m in gold.get("geographic_markets_considered", [])]
+
+    def test_paired_product_outranks_unpaired_equal_base(self):
+        """A product with a geo pair outranks an otherwise equal unpaired product.
+
+        Two products share the same base signals (same category, status, importance,
+        source role, source_refs count).  Only one has a paired geographic market.
+        The paired product must be selected.
+        """
+        pm_a, sp_a = self._pm_with_passage("pm_1", "Widget assembly services")
+        pm_b, sp_b = self._pm_with_passage("pm_2", "Logistics routing platforms")
+        gm, sg = self._gm_with_passage("gm_1",
+                                        "Geographic scope of widget assembly services")
+
+        draft = _make_draft(pm_entries=[pm_a, pm_b], gm_entries=[gm],
+                            passages=[sp_a, sp_b, sg])
+        report = _make_report(
+            uncertain=[
+                _candidate("Widget assembly services"),
+                _candidate("Logistics routing platforms"),
+            ],
+            geo=[_candidate("Geographic scope of widget assembly services",
+                            mtype="geographic")],
+        )
+        gold = _create_gold_draft(
+            "test", draft, report,
+            auto_select=True, review_product_count=1, review_geographic_count=0,
+        )
+
+        pm_names = self._gold_pm_names(gold)
+        assert "Widget assembly services" in pm_names
+        assert "Logistics routing platforms" not in pm_names
+
+    def test_pairing_breaks_tie_over_diversity(self):
+        """Pairing bonus beats the diversity soft-preference when the paired market has the same status.
+
+        Three same-status products: A (top by role), B (no pair), C (has geo pair).
+        Without pairing, diversity would not distinguish B and C.  With pairing, C
+        must win because its pairing bonus (0.40) > diversity soft bonus (0.25).
+
+        Names are chosen so that only C's tokens appear in the geo name — B's tokens
+        are entirely disjoint from the geo candidate.
+        """
+        # A: top scorer (commission_conclusion)
+        pm_a, sp_a = self._pm_with_passage("pm_1", "Widget assembly components",
+                                             status="defined", role="commission_conclusion")
+        # B: equal base to C (commission_assessment), no geo pair — entirely different tokens
+        pm_b, sp_b = self._pm_with_passage("pm_2", "Logistics routing services",
+                                             status="defined", role="commission_assessment")
+        # C: equal base to B (commission_assessment), HAS geo pair
+        pm_c, sp_c = self._pm_with_passage("pm_3", "Procurement evaluation platforms",
+                                             status="defined", role="commission_assessment")
+        # Geo pairs with C only — contains "procurement", "evaluation", "platforms"
+        gm, sg = self._gm_with_passage("gm_1",
+                                        "Geographic scope of procurement evaluation platforms")
+
+        draft = _make_draft(pm_entries=[pm_a, pm_b, pm_c], gm_entries=[gm],
+                            passages=[sp_a, sp_b, sp_c, sg])
+        report = _make_report(
+            uncertain=[
+                _candidate("Widget assembly components", status="defined"),
+                _candidate("Logistics routing services", status="defined"),
+                _candidate("Procurement evaluation platforms", status="defined"),
+            ],
+            geo=[_candidate("Geographic scope of procurement evaluation platforms",
+                            mtype="geographic")],
+        )
+        gold = _create_gold_draft(
+            "test", draft, report,
+            auto_select=True, review_product_count=2, review_geographic_count=0,
+        )
+
+        pm_names = self._gold_pm_names(gold)
+        assert "Widget assembly components" in pm_names
+        assert "Procurement evaluation platforms" in pm_names   # paired → wins over B
+        assert "Logistics routing services" not in pm_names
+
+    # ------------------------------------------------------------------
+    # Geo prefers market paired to selected product (two-pass)
+    # ------------------------------------------------------------------
+
+    def test_geo_prefers_pair_with_selected_product(self):
+        """Geographic auto-selection prefers a candidate that pairs with a selected product.
+
+        Two geo candidates: geo_a pairs with the selected product, geo_b does not.
+        geo_b has a higher base score (more source_refs).  geo_a must still win
+        because its pairing bonus overcomes geo_b's base advantage.
+        """
+        pm, sp = self._pm_with_passage("pm_1", "Widget assembly services")
+        gm_a, sg_a = self._gm_with_passage("gm_1",
+                                             "Geographic scope of widget assembly services")
+        gm_b, sg_b = self._gm_with_passage("gm_2",
+                                             "Geographic scope of logistics routing platforms")
+
+        draft = _make_draft(pm_entries=[pm], gm_entries=[gm_a, gm_b],
+                            passages=[sp, sg_a, sg_b])
+        report = _make_report(
+            uncertain=[_candidate("Widget assembly services")],
+            geo=[
+                _candidate("Geographic scope of widget assembly services",
+                           mtype="geographic", refs=["10"]),
+                # geo_b gets extra source_refs for a higher base score
+                _candidate("Geographic scope of logistics routing platforms",
+                           mtype="geographic",
+                           refs=["10", "11", "12", "13", "14", "15", "16", "17"]),
+            ],
+        )
+        gold = _create_gold_draft(
+            "test", draft, report,
+            auto_select=True, review_product_count=1, review_geographic_count=1,
+        )
+
+        gm_names = self._gold_gm_names(gold)
+        assert "Geographic scope of widget assembly services" in gm_names
+        assert "Geographic scope of logistics routing platforms" not in gm_names
+
+    # ------------------------------------------------------------------
+    # Centrality bonus from source_refs
+    # ------------------------------------------------------------------
+
+    def test_centrality_bonus_scores_higher_with_more_source_refs(self):
+        """Candidate with more source_refs gets a higher _score_candidate result."""
+        entry_many = _candidate("Generic market",
+                                refs=["1", "2", "3", "4", "5", "6", "7", "8"])
+        entry_few = _candidate("Generic market", refs=["1"])
+        passages = [{"source_role": "commission_assessment"}]
+        assert _score_candidate(entry_many, "uncertain_markets", passages) > \
+               _score_candidate(entry_few,  "uncertain_markets", passages)
+
+    def test_centrality_saturates_at_scale(self):
+        """Centrality bonus saturates and does not grow unboundedly."""
+        entry_100 = _candidate("Generic market", refs=[str(i) for i in range(100)])
+        entry_8   = _candidate("Generic market", refs=[str(i) for i in range(8)])
+        passages = [{"source_role": "commission_assessment"}]
+        assert _score_candidate(entry_100, "uncertain_markets", passages) == \
+               _score_candidate(entry_8,   "uncertain_markets", passages)
+
+    # ------------------------------------------------------------------
+    # Explicit includes still override auto-selection
+    # ------------------------------------------------------------------
+
+    def test_explicit_includes_still_override_with_pairing(self):
+        """Explicit market includes work alongside pairing-aware auto-selection."""
+        pm_held, sp_held = self._pm_with_passage("pm_1", "Held widget market")
+        pm_auto, sp_auto = self._pm_with_passage("pm_2", "Auto selected market")
+        gm, sg = self._gm_with_passage("gm_1", "Geographic scope of auto selected market")
+
+        draft = _make_draft(pm_entries=[pm_held, pm_auto], gm_entries=[gm],
+                            passages=[sp_held, sp_auto, sg])
+        report = _make_report(
+            hold=[_candidate("Held widget market")],
+            uncertain=[_candidate("Auto selected market")],
+            geo=[_candidate("Geographic scope of auto selected market", mtype="geographic")],
+        )
+        gold = _create_gold_draft(
+            "test", draft, report,
+            auto_select=True, review_product_count=1, review_geographic_count=1,
+            explicit_names=frozenset(["Held widget market"]),
+        )
+
+        pm_names = self._gold_pm_names(gold)
+        assert "Held widget market" in pm_names
+        assert "Auto selected market" in pm_names
+
+    # ------------------------------------------------------------------
+    # Default mode unchanged
+    # ------------------------------------------------------------------
+
+    def test_default_mode_unchanged_by_pairing_refinement(self):
+        """The default (non-auto-select) mode is unaffected by pairing/centrality constants."""
+        pm1, sp1 = self._pm_with_passage("pm_1", "Safe market")
+        pm2, sp2 = self._pm_with_passage("pm_2", "Held market")
+        draft = _make_draft(pm_entries=[pm1, pm2], passages=[sp1, sp2])
+        report = _make_report(
+            safe=[_candidate("Safe market")],
+            hold=[_candidate("Held market")],
+        )
+        gold = _create_gold_draft("test", draft, report)  # auto_select=False
+
+        pm_names = self._gold_pm_names(gold)
+        assert "Safe market" in pm_names
+        assert "Held market" not in pm_names
