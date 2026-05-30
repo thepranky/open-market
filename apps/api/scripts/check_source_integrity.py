@@ -13,22 +13,29 @@ For each source passage:
   - confirms source_document_id exists in the record's source_documents
   - confirms quote_snippet is non-empty
   - where text can be extracted (HTML or PDF), searches for the quote
+  - when a page-level cache is available (data/source_text/), checks that
+    the quote appears on the listed page; if not, searches all pages and
+    reports the suggested corrected page or flags as possible hallucination
 
 Issue levels:
   ERROR   — broken link, dangling source_document_id, empty quote snippet,
              pdf_url returning HTML
   WARNING — quote not found in fetched text, URL looks like a generic page,
-             doc_type keywords absent from URL path, possible title/URL mismatch
+             doc_type keywords absent from URL path, possible title/URL mismatch,
+             quote found on different page than listed (page-level cache),
+             quote not found on any page (page-level cache — possible hallucination)
   INFO    — check passed; text extraction notes
 
 Usage:
     cd apps/api
     .venv/bin/python scripts/check_source_integrity.py [--cases-dir ../../data/cases]
+                                                       [--cache-dir ../../data/source_text]
                                                        [--timeout 20] [--verbose]
 """
 
 import argparse
 import io
+import json
 import re
 import sys
 import unicodedata
@@ -49,6 +56,7 @@ except ImportError:
 
 
 DATA_DIR = Path(__file__).resolve().parents[3] / "data" / "cases"
+_DEFAULT_CACHE_DIR = Path(__file__).resolve().parents[3] / "data" / "source_text"
 
 HEADERS = {
     "User-Agent": "CompMap-IntegrityChecker/1.0 (open-source research tool)"
@@ -122,6 +130,35 @@ class FetchResult:
     final_url: str
     content: Optional[bytes]
     error: Optional[str]
+
+
+# ---------------------------------------------------------------------------
+# Page-level cache helpers (used when data/source_text/ cache is available)
+# ---------------------------------------------------------------------------
+
+def _load_page_cache(doc_id: str, cache_dir: Path) -> Optional[dict]:
+    """Return page cache for doc_id if the JSON file exists, else None."""
+    path = cache_dir / f"{doc_id}.json"
+    if path.exists():
+        try:
+            with open(path) as f:
+                return json.load(f)
+        except Exception:
+            return None
+    return None
+
+
+def find_quote_page(quote: str, page_cache: dict) -> Optional[int]:
+    """
+    Search all pages in *page_cache* for *quote*.
+
+    Returns the first page_number where the quote is found, or None.
+    """
+    for page in page_cache.get("pages", []):
+        ptext = page.get("text", "")
+        if quote_found_in_text(quote, ptext):
+            return page["page_number"]
+    return None
 
 
 # ---------------------------------------------------------------------------
@@ -391,8 +428,17 @@ def check_passage(
     passage: dict,
     doc_map: dict[str, dict],
     text_map: dict[str, Optional[str]],
+    page_caches: Optional[dict[str, dict]] = None,
 ) -> list[Issue]:
-    """Validate one source_passage entry."""
+    """
+    Validate one source_passage entry.
+
+    When *page_caches* is provided (dict mapping doc_id → page cache dict),
+    performs additional page-level grounding checks:
+      - verifies the quote appears on the listed page number;
+      - if not, searches all pages and suggests the correct page;
+      - if not found anywhere, flags as a possible hallucination.
+    """
     issues: list[Issue] = []
     pid = passage.get("passage_id", "?")
     doc_id = passage.get("source_document_id", "")
@@ -416,7 +462,45 @@ def check_passage(
                             "quote_snippet is empty or blank"))
         return issues
 
-    # Quote in text
+    # --- Page-level grounding (when cache is available) ---
+    if page_caches is not None:
+        page_cache = page_caches.get(doc_id)
+        listed_page_str = passage.get("page")
+        if page_cache is not None and listed_page_str is not None:
+            try:
+                listed_page = int(listed_page_str)
+            except (TypeError, ValueError):
+                listed_page = None
+
+            if listed_page is not None:
+                from app.utils.pdf_extractor import get_page_text
+                page_text = get_page_text(page_cache, listed_page)
+                if page_text is None:
+                    issues.append(Issue(Level.WARNING, case_id, pid,
+                                        f"Listed page {listed_page} does not exist in "
+                                        f"extracted cache (document has "
+                                        f"{page_cache.get('page_count', '?')} pages)"))
+                elif quote_found_in_text(quote, page_text):
+                    issues.append(Issue(Level.INFO, case_id, pid,
+                                        f"Quote grounded: found on listed page {listed_page}"))
+                    return issues  # page-level check passed; skip whole-doc check
+                else:
+                    # Search all pages for the quote
+                    found_page = find_quote_page(quote, page_cache)
+                    if found_page is not None:
+                        issues.append(Issue(Level.WARNING, case_id, pid,
+                                            f"Quote not on listed page {listed_page} — "
+                                            f"found on page {found_page} instead; "
+                                            "run repair_source_passages.py to fix"))
+                    else:
+                        issues.append(Issue(Level.WARNING, case_id, pid,
+                                            f"Quote not found on listed page {listed_page} "
+                                            "or any other page in extracted text — "
+                                            "possible hallucination; "
+                                            "run repair_source_passages.py to investigate"))
+                    return issues
+
+    # --- Whole-document fallback check ---
     text = text_map.get(doc_id)
     if text is None:
         issues.append(Issue(Level.INFO, case_id, pid,
@@ -444,6 +528,7 @@ def check_record(
     client: httpx.Client,
     record: dict,
     timeout: int,
+    cache_dir: Optional[Path] = None,
 ) -> list[Issue]:
     issues: list[Issue] = []
     case_id = record.get("case_id", "?")
@@ -467,9 +552,22 @@ def check_record(
         issues.extend(doc_issues)
         text_map[doc_id] = extracted
 
+    # Load page-level caches when cache_dir is provided
+    page_caches: Optional[dict[str, dict]] = None
+    if cache_dir is not None:
+        page_caches = {}
+        for doc in source_docs:
+            doc_id = doc.get("doc_id", "")
+            if doc_id:
+                loaded = _load_page_cache(doc_id, cache_dir)
+                if loaded is not None:
+                    page_caches[doc_id] = loaded
+
     # Check each source passage
     for passage in passages:
-        issues.extend(check_passage(case_id, passage, doc_map, text_map))
+        issues.extend(check_passage(
+            case_id, passage, doc_map, text_map, page_caches=page_caches
+        ))
 
     return issues
 
@@ -499,6 +597,15 @@ def main() -> int:
         help="HTTP request timeout in seconds (default: 20)",
     )
     parser.add_argument(
+        "--cache-dir",
+        default=str(_DEFAULT_CACHE_DIR),
+        help=f"Path to source_text cache directory (default: {_DEFAULT_CACHE_DIR})",
+    )
+    parser.add_argument(
+        "--no-cache", action="store_true",
+        help="Disable page-level cache checks even if cache files exist",
+    )
+    parser.add_argument(
         "--verbose", "-v", action="store_true",
         help="Print INFO messages in addition to ERROR and WARNING",
     )
@@ -510,7 +617,10 @@ def main() -> int:
         print(f"No YAML files found under {cases_dir}", file=sys.stderr)
         return 1
 
-    print(f"CompMap Source Integrity Check")
+    cache_dir: Optional[Path] = None if args.no_cache else Path(args.cache_dir)
+    cache_note = f" (page cache: {cache_dir})" if cache_dir else " (page cache: disabled)"
+
+    print(f"CompMap Source Integrity Check{cache_note}")
     print(f"Checking {len(yaml_files)} case file(s) …\n")
 
     total_errors = total_warnings = 0
@@ -521,7 +631,7 @@ def main() -> int:
                 record = yaml.safe_load(f)
 
             case_id = record.get("case_id", path.stem)
-            issues = check_record(client, record, args.timeout)
+            issues = check_record(client, record, args.timeout, cache_dir=cache_dir)
             errors, warnings, infos = _classify(issues)
             total_errors += errors
             total_warnings += warnings

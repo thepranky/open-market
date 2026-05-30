@@ -16,7 +16,7 @@ from app.models import CaseRecord, Outcome, RetrievalStatus, CaseHistoryStatus, 
 
 
 def _sample_files():
-    return sorted(CASES_DIR.rglob("*.yaml"))
+    return sorted(p for p in CASES_DIR.rglob("*.yaml") if ".draft" not in p.stem)
 
 
 @pytest.mark.parametrize("yaml_path", _sample_files(), ids=lambda p: p.stem)
@@ -34,7 +34,7 @@ def test_all_cases_valid():
 
 
 def test_google_fitbit_structure():
-    path = CASES_DIR / "eu" / "google_fitbit_2021.yaml"
+    path = CASES_DIR / "eu" / "eu_google_fitbit_2021.yaml"
     case = load_yaml_file(path)
     assert case.case_id == "eu_google_fitbit_2021"
     assert case.jurisdiction == "EU"
@@ -61,7 +61,7 @@ def test_jetblue_spirit_blocked():
 
 
 def test_source_document_retrieval_status():
-    path = CASES_DIR / "eu" / "google_fitbit_2021.yaml"
+    path = CASES_DIR / "eu" / "eu_google_fitbit_2021.yaml"
     case = load_yaml_file(path)
     doc = case.source_documents[0]
     assert doc.retrieval_status == RetrievalStatus.direct
@@ -70,7 +70,7 @@ def test_source_document_retrieval_status():
 
 
 def test_case_history_google_fitbit():
-    path = CASES_DIR / "eu" / "google_fitbit_2021.yaml"
+    path = CASES_DIR / "eu" / "eu_google_fitbit_2021.yaml"
     case = load_yaml_file(path)
     assert case.case_history is not None
     assert case.case_history.status == CaseHistoryStatus.final_no_known_challenge
@@ -87,7 +87,7 @@ def test_case_history_illumina_annulled():
 
 def test_proposition_verification_defaults():
     # ProductMarket verification is optional — should default to None
-    path = CASES_DIR / "eu" / "google_fitbit_2021.yaml"
+    path = CASES_DIR / "eu" / "eu_google_fitbit_2021.yaml"
     case = load_yaml_file(path)
     for market in case.product_markets_considered:
         # verification is Optional; when absent defaults to None

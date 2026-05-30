@@ -9,6 +9,7 @@ class ExtractionMethod(str, Enum):
     ai_extracted = "ai_extracted"
     manually_added = "manually_added"
     imported_metadata = "imported_metadata"
+    pdf_extracted = "pdf_extracted"
 
 
 class ReviewStatus(str, Enum):

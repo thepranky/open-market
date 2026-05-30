@@ -2231,7 +2231,72 @@ _PROMOTION_ACTIONS: frozenset[str] = frozenset({
     "keep_as_context_only",
     "exclude_from_canonical",
     "manual_review",
+    "manual_review_no_overlap",
+    "manual_review_geo_pairing",
 })
+
+# Source roles that can justify promotion to canonical
+_CONCLUSIVE_SOURCE_ROLES: frozenset[str] = frozenset({
+    "commission_assessment",
+    "conclusion",
+})
+
+
+def _has_conclusive_source_role(
+    passages: list[ExtractedPassage],
+) -> bool:
+    """Return True if at least one passage has a conclusive source role."""
+    return any(p.source_role in _CONCLUSIVE_SOURCE_ROLES for p in passages)
+
+
+def _extract_section_caveats(caveats: list[str]) -> dict[str, bool]:
+    """Parse caveats for conclusion-missing flags.
+
+    Returns dict with flags:
+    - conclusion_missing: any caveat mentions missing/incomplete/absent conclusion
+    - incomplete_definition: definition is incomplete or uncertain
+    """
+    conclusion_missing = False
+    incomplete_definition = False
+
+    for caveat in caveats or []:
+        caveat_lower = caveat.lower()
+        if any(term in caveat_lower for term in ["conclusion", "absent", "missing", "incomplete", "cut off", "not in supplied"]):
+            conclusion_missing = True
+        if any(term in caveat_lower for term in ["definition", "inconclusive", "uncertain", "not conclusive"]):
+            incomplete_definition = True
+
+    return {
+        "conclusion_missing": conclusion_missing,
+        "incomplete_definition": incomplete_definition,
+    }
+
+
+def _find_product_market_pairs(
+    market_name: str,
+    market_type: str,
+    all_markets: dict,
+) -> list[str]:
+    """Find product markets that could pair with a geographic market.
+
+    Returns list of product market IDs that have semantic overlap with the geo market name.
+    Geographic markets should reference or pair with product markets where possible.
+    """
+    if market_type != "geographic":
+        return []
+
+    product_list = all_markets.get("product", [])
+    geo_tokens = set(market_name.lower().split())
+
+    pairs = []
+    for pm in product_list:
+        pm_name = pm.get("name", "").lower()
+        pm_tokens = set(pm_name.split())
+        # Simple overlap check: if there's common meaningful tokens, consider it a pair
+        if len(geo_tokens & pm_tokens) > 0:
+            pairs.append(pm.get("market_id", ""))
+
+    return pairs
 
 
 def _promotion_action(
@@ -2241,26 +2306,26 @@ def _promotion_action(
 ) -> tuple[str, str]:
     """Return (recommended_action, reason) for a single draft market entry.
 
-    Promotion decision rules (authoritative source-first logic):
+    Promotion decision rules (conservative source-first logic):
 
     1. background                                  → exclude_from_canonical
     2. ancillary                                   → keep_as_context_only
     3. precedent_only                              → keep_as_context_only
     4. incomplete_source (explicit)                → hold_pending_source_check
-    5. unknown status + no source refs             → hold_pending_source_check
-    6. core_assessed + (defined|left_open|considered) + refs → promote_to_canonical
-    7. core_assessed + possible_segmentation       → promote_with_uncertainty (needs review)
-    8. core_assessed + other status                → manual_review
-    9. core_assessed + no source refs              → manual_review
-    10. assessed_no_overlap + source refs          → promote_to_canonical
-    11. assessed_no_overlap + no source refs       → manual_review
-    12. possible_segmentation (implicit)           → promote_with_uncertainty (needs review)
-    13. has source refs but no recognised importance → manual_review
-    14. fallback                                   → manual_review
+    5. assessed_no_overlap (any status)            → keep_as_context_only (conservative)
+    6. unknown status + no source refs             → hold_pending_source_check
+    7. core_assessed + (defined|left_open|considered) + refs → promote_to_canonical
+    8. core_assessed + possible_segmentation + refs → promote_with_uncertainty (needs review)
+    9. core_assessed + other status                → manual_review
+    10. core_assessed + no source refs             → manual_review
+    11. possible_segmentation (implicit)           → promote_with_uncertainty (needs review)
+    12. has source refs but no recognised importance → manual_review
+    13. fallback                                   → manual_review
 
-    NOTE: These rules implement source-first canonicalisation. Reconciliation with
-    existing canonical records is supplementary only and should not override these
-    promotion decisions.
+    NOTE: These rules implement conservative source-first canonicalisation. Assessed
+    no-overlap markets are kept as context only, not promoted to canonical, preserving
+    source refs for future review. Reconciliation with existing canonical records is
+    supplementary only and should not override these promotion decisions.
     """
     imp = (market_importance or "").strip()
     status = (definition_status or "").strip()
@@ -2301,6 +2366,16 @@ def _promotion_action(
             "re-check with a broader section run before promoting.",
         )
 
+    # Rule 10: assessed_no_overlap — conservative: keep as context only, preserve refs
+    # Check this before unknown status rule so assessed_no_overlap is never held
+    if imp == "assessed_no_overlap":
+        return (
+            "keep_as_context_only",
+            "Commission assessed this market but parties do not materially overlap. "
+            "Keep as context only in draft; preserve source passages and notes for "
+            "review. Do not promote to canonical without additional evidence of relevance.",
+        )
+
     # Rule 5: unknown status without source refs — block until refs found
     if unknown_status and not has_source_refs:
         return (
@@ -2339,21 +2414,7 @@ def _promotion_action(
             "definition status; manual review required before canonical promotion.",
         )
 
-    # Rule 10–11: assessed_no_overlap
-    if imp == "assessed_no_overlap":
-        if has_source_refs:
-            return (
-                "promote_to_canonical",
-                "Commission formally assessed this market (no party overlap); "
-                "supported by cited source passages. Preserve no-overlap status in schema notes.",
-            )
-        return (
-            "manual_review",
-            f"Market classified as assessed_no_overlap but no source passages validated; "
-            "verify quotes before promoting.",
-        )
-
-    # Rule 12: possible_segmentation (implicit importance classification)
+    # Rule 11: possible_segmentation (implicit importance classification)
     if status == "possible_segmentation":
         return (
             "promote_with_uncertainty",
@@ -2362,7 +2423,7 @@ def _promotion_action(
             "Review before adding to canonical market list.",
         )
 
-    # Rule 13: has refs but no recognised importance
+    # Rule 12: has refs but no recognised importance
     if has_source_refs:
         return (
             "manual_review",
@@ -2370,7 +2431,7 @@ def _promotion_action(
             "review classification and Commission conclusion before deciding on promotion.",
         )
 
-    # Rule 14: unknown status with unrecognised importance — hold for review
+    # Rule 13: unknown status with unrecognised importance — hold for review
     if unknown_status:
         return (
             "hold_pending_source_check",
@@ -2384,28 +2445,118 @@ def _promotion_action(
     )
 
 
+def _promotion_action_with_guards(
+    market_importance: str,
+    definition_status: str,
+    has_source_refs: bool,
+    passages: list[ExtractedPassage],
+    caveats: list[str],
+    market_type: str,
+    market_name: str,
+    all_markets: dict,
+) -> tuple[str, str]:
+    """Apply hardening guards to promotion decisions.
+
+    Wraps _promotion_action with additional checks:
+    1. Source role guard: promotion requires commission_assessment or conclusion (when passages available)
+    2. Section caveat guard: missing conclusions downgrade to hold_pending_source_check
+    3. Geographic pairing: orphan geographic markets go to manual_review_geo_pairing
+    4. Left_open tightening: left_open alone does not promote (needs defined status)
+
+    Returns (recommended_action, reason) after applying all guards.
+    """
+    base_action, base_reason = _promotion_action(market_importance, definition_status, has_source_refs)
+
+    # Guard 1: Source role check — only commission_assessment or conclusion can promote
+    # Only apply if we have passages to check (passages may be empty if page refs but no explicit passage mapping)
+    if base_action == "promote_to_canonical" and passages:
+        if not _has_conclusive_source_role(passages):
+            return (
+                "hold_pending_source_check",
+                "Market would promote but supporting passages lack commission_assessment or "
+                "conclusion source role (only found: notifying_party_view, precedent, background). "
+                "Re-validate with conclusive source roles before promoting.",
+            )
+
+    # Guard 2: Section caveat check — missing conclusions downgrade to hold
+    caveat_flags = _extract_section_caveats(caveats)
+    if base_action in ("promote_to_canonical", "promote_with_uncertainty"):
+        if caveat_flags["conclusion_missing"] and definition_status in ("left_open", "considered", "not_conclusive"):
+            return (
+                "hold_pending_source_check",
+                f"Market's definition status is {definition_status!r} but section caveats indicate "
+                "the Commission's conclusion on this market is absent from supplied chunks. "
+                "Re-run with broader sections before promoting.",
+            )
+
+    # Guard 3: Geographic pairing check — orphan geographic markets require manual review
+    if market_type == "geographic" and base_action in ("promote_to_canonical", "promote_with_uncertainty"):
+        product_pairs = _find_product_market_pairs(market_name, market_type, all_markets)
+        if not product_pairs:
+            return (
+                "manual_review_geo_pairing",
+                "Geographic market has no obvious product market pairing. "
+                "Verify this geographic scope is independent or pair with a product market definition.",
+            )
+
+    return base_action, base_reason
+
+
 def _build_promotion_plan(
     draft_record: dict,
     ref_map: dict[str, list[str]],
 ) -> list[dict]:
-    """Build a source-first promotion plan for all draft product and geographic markets.
+    """Build a source-first promotion plan with hardening guards applied.
 
-    Works without an existing canonical YAML — it operates purely on the draft
-    record and the source_passages citation map.
+    Works without an existing canonical YAML — operates purely on draft record.
+    Applies guards: source role validation, caveat checks, geographic pairing.
 
     Returns a list of dicts, one per draft market, ordered product then geographic.
     """
     plan: list[dict] = []
+
+    # Build a passage lookup by market_id to check source roles
+    passage_by_market: dict[str, list[ExtractedPassage]] = {}
+    for sp in (draft_record.get("source_passages") or []):
+        for mid in (sp.get("supports_markets") or []) + (sp.get("supports_geographic_markets") or []):
+            if mid not in passage_by_market:
+                passage_by_market[mid] = []
+            # Reconstruct a passage object from the stored data
+            passage_by_market[mid].append(ExtractedPassage(
+                chunk_id=sp.get("source_document_id", ""),
+                page_number=int(sp.get("page", "0") or "0"),
+                quote=sp.get("quote_snippet", ""),
+                validated=True,
+                source_document_id=sp.get("source_document_id", ""),
+                source_role=sp.get("source_role", ""),
+            ))
+
+    # Build market maps for pairing checks
+    all_markets = {
+        "product": draft_record.get("product_markets_considered") or [],
+        "geographic": draft_record.get("geographic_markets_considered") or [],
+    }
+
+    # Get caveats from draft
+    caveats = draft_record.get("caveats") or []
 
     def _process_market_list(items: list[dict], market_type: str) -> None:
         for m in items:
             mid = str(m.get("market_id") or "")
             importance = str(m.get("market_importance") or "")
             status = str(m.get("definition_status") or "")
+            market_name = m.get("name", "")
             source_refs = list(dict.fromkeys(ref_map.get(mid, [])))
-            action, reason = _promotion_action(importance, status, bool(source_refs))
+            passages = passage_by_market.get(mid, [])
+
+            # Apply hardening guards
+            action, reason = _promotion_action_with_guards(
+                importance, status, bool(source_refs),
+                passages, caveats, market_type, market_name, all_markets,
+            )
+
             entry: dict = {
-                "draft_name": m.get("name", ""),
+                "draft_name": market_name,
                 "draft_market_type": market_type,
                 "market_importance": importance,
                 "definition_status": status,
@@ -2492,6 +2643,108 @@ def _build_reconciliation_triage(findings: list[ReconciliationFinding]) -> dict:
     }
 
 
+def _group_promotion_plan_by_action(plan: list[dict]) -> dict[str, list[dict]]:
+    """Group promotion plan entries by their recommended_action.
+
+    Returns a dict mapping action names to lists of plan entries that recommend that action.
+    Includes a count of entries per action for quick triage.
+    """
+    groups: dict[str, list[dict]] = {}
+    for entry in plan:
+        action = entry.get("recommended_action", "manual_review")
+        if action not in groups:
+            groups[action] = []
+        groups[action].append(entry)
+    return groups
+
+
+def _build_promotion_plan_summary(plan: list[dict]) -> dict:
+    """Build a summary of the promotion plan grouped by recommended_action.
+
+    Returns a dict with total counts and per-action breakdowns, enabling source-first
+    merge triage: 'how many core_assessed markets need canonical promotion'
+    vs 'how many are assessed_no_overlap or ancillary and should stay as context only'.
+    """
+    grouped = _group_promotion_plan_by_action(plan)
+    by_action: dict[str, int] = {action: len(entries) for action, entries in grouped.items()}
+
+    # Build per-action details for transparency
+    action_details: dict[str, dict] = {}
+    for action, entries in grouped.items():
+        mtype_counts = {}
+        importance_counts = {}
+        for entry in entries:
+            mtype = entry.get("draft_market_type", "unclassified")
+            importance = entry.get("market_importance", "unclassified")
+            mtype_counts[mtype] = mtype_counts.get(mtype, 0) + 1
+            importance_counts[importance] = importance_counts.get(importance, 0) + 1
+        action_details[action] = {
+            "count": len(entries),
+            "by_market_type": mtype_counts,
+            "by_market_importance": importance_counts,
+        }
+
+    return {
+        "total_entries": len(plan),
+        "by_action": by_action,
+        "action_details": action_details,
+    }
+
+
+def _build_canonical_merge_candidates(plan: list[dict]) -> dict:
+    """Build a structured grouping of markets ready for canonical merge.
+
+    Groups promotion plan entries by merge readiness:
+    - safe_to_promote: promote_to_canonical (ready now)
+    - uncertain_markets: promote_with_uncertainty (needs review)
+    - context_only: keep_as_context_only (preserve but don't promote)
+    - hold_pending_source_check: re-run with broader sections
+    - manual_review: various issues requiring human judgment
+    - manual_review_geo_pairing: geographic markets needing product pairing
+
+    Returns dict with these categories and counts.
+    """
+    result = {
+        "safe_to_promote": [],
+        "uncertain_markets": [],
+        "context_only": [],
+        "hold_pending_source_check": [],
+        "manual_review": [],
+        "manual_review_geo_pairing": [],
+    }
+
+    for entry in plan:
+        action = entry.get("recommended_action", "manual_review")
+        # Strip the entry down to essential info for each category
+        summary = {
+            "name": entry.get("draft_name", ""),
+            "market_type": entry.get("draft_market_type", ""),
+            "importance": entry.get("market_importance", ""),
+            "definition_status": entry.get("definition_status", ""),
+            "reason": entry.get("reason", ""),
+        }
+        if entry.get("source_refs"):
+            summary["source_refs"] = entry["source_refs"]
+
+        if action == "promote_to_canonical":
+            result["safe_to_promote"].append(summary)
+        elif action == "promote_with_uncertainty":
+            result["uncertain_markets"].append(summary)
+        elif action == "keep_as_context_only":
+            result["context_only"].append(summary)
+        elif action == "hold_pending_source_check":
+            result["hold_pending_source_check"].append(summary)
+        elif action == "manual_review_geo_pairing":
+            result["manual_review_geo_pairing"].append(summary)
+        else:  # manual_review and any others
+            result["manual_review"].append(summary)
+
+    # Add counts
+    result["_counts"] = {k: len(v) for k, v in result.items() if k != "_counts"}
+
+    return result
+
+
 def _serialize_promotion_plan(draft_record: Optional[dict]) -> list[dict]:
     """Build and return the promotion plan for *draft_record*, or [] when no draft exists."""
     if not draft_record:
@@ -2545,6 +2798,9 @@ def serialize_report(report: ExtractionReport, mode: str = "extract") -> dict:
         }
         for b in report.section_batches
     ]
+    promotion_plan = _serialize_promotion_plan(report.draft_record)
+    promotion_plan_summary = _build_promotion_plan_summary(promotion_plan)
+    canonical_merge_candidates = _build_canonical_merge_candidates(promotion_plan)
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "tool": "extract_case_from_source",
@@ -2556,12 +2812,20 @@ def serialize_report(report: ExtractionReport, mode: str = "extract") -> dict:
         "chunks_used": chunks_summary,
         "section_batches": section_batches_summary,
         "extraction_summary": extraction_summary,
-        "promotion_plan": _serialize_promotion_plan(report.draft_record),
+        "promotion_plan": promotion_plan,
+        "promotion_plan_summary": promotion_plan_summary,
         "promotion_plan_note": (
             "promotion_plan is the authoritative source-first canonicalisation aid. "
             "Each market's recommended_action (promote_to_canonical, keep_as_context_only, etc.) "
             "is derived from the Commission's assessment in source documents. "
             "Reconciliation sections below are supplementary only and should not override these decisions."
+        ),
+        "canonical_merge_candidates": canonical_merge_candidates,
+        "canonical_merge_note": (
+            "canonical_merge_candidates groups the promotion_plan by merge readiness: "
+            "safe_to_promote contains only promote_to_canonical items ready for immediate merge; "
+            "uncertain_markets needs review; context_only should not be promoted; "
+            "hold_pending requires broader source re-runs; manual_review needs human judgment."
         ),
         "reconciliation": [_finding_to_dict(f) for f in report.findings],
         "reconciliation_note": (

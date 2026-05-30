@@ -21,24 +21,30 @@ from extract_case_from_source import (
     ExtractedMarket,
     ExtractedPassage,
     ExtractedTheory,
+    _CONCLUSIVE_SOURCE_ROLES,
     _DEVICE_CONTEXT_CONFLICT_FACTOR,
     _GEO_CONTEXT_MIN_OVERLAP,
     _PROMOTION_ACTIONS,
     _RECON_GROUP,
     _VALID_MARKET_IMPORTANCE,
     _apply_focus_guardrails,
+    _build_canonical_merge_candidates,
     _build_promotion_plan,
+    _build_promotion_plan_summary,
     _build_reconciliation_triage,
     _detect_device_contexts,
     _device_context_factor,
+    _extract_section_caveats,
     _finding_to_dict,
     _geo_product_context_overlap,
     _group_reconciliation,
+    _has_conclusive_source_role,
     _is_truncated_quote,
     _market_similarity,
     _merge_geo_market_pair,
     _normalize_for_similarity,
     _promotion_action,
+    _promotion_action_with_guards,
     ExtractionReport,
     ExtractionResult,
     ReconciliationFinding,
@@ -7129,14 +7135,16 @@ class TestPromotionAction:
         action, reason = _promotion_action("core_assessed", "defined", has_source_refs=False)
         assert action == "manual_review"
 
-    def test_assessed_no_overlap_with_refs_promotes(self):
+    def test_assessed_no_overlap_with_refs_context_only(self):
+        # assessed_no_overlap no longer auto-promotes — kept as context only to stay conservative
         action, reason = _promotion_action("assessed_no_overlap", "defined", has_source_refs=True)
-        assert action == "promote_to_canonical"
-        assert "no-overlap" in reason or "assessed_no_overlap" in reason
+        assert action == "keep_as_context_only"
+        assert "overlap" in reason.lower() or "assessed_no_overlap" in reason
 
-    def test_assessed_no_overlap_no_refs_manual_review(self):
+    def test_assessed_no_overlap_no_refs_context_only(self):
+        # assessed_no_overlap is always kept as context, regardless of source refs
         action, reason = _promotion_action("assessed_no_overlap", "defined", has_source_refs=False)
-        assert action == "manual_review"
+        assert action == "keep_as_context_only"
 
     def test_possible_segmentation_promote_with_uncertainty(self):
         action, _ = _promotion_action("possible_segmentation", "possible_segmentation", has_source_refs=True)
@@ -7191,11 +7199,11 @@ class TestPromotionAction:
         action, reason = _promotion_action("core_assessed", "considered", has_source_refs=True)
         assert action == "promote_to_canonical"
 
-    def test_assessed_no_overlap_with_refs_still_promotes(self):
-        # assessed_no_overlap with refs still promotes with no-overlap note
+    def test_assessed_no_overlap_with_refs_still_context_only(self):
+        # assessed_no_overlap stays context-only even with source refs (conservative approach)
         action, reason = _promotion_action("assessed_no_overlap", "defined", has_source_refs=True)
-        assert action == "promote_to_canonical"
-        assert "no-overlap" in reason.lower()
+        assert action == "keep_as_context_only"
+        assert "overlap" in reason.lower() or "assessed_no_overlap" in reason
 
     def test_incomplete_source_still_holds(self):
         # incomplete_source still triggers hold
@@ -7240,6 +7248,221 @@ class TestPromotionAction:
             action, reason = _promotion_action(imp, status, refs)
             assert action in _PROMOTION_ACTIONS, f"Invalid action {action!r} for ({imp!r}, {status!r}, {refs})"
             assert reason, "Reason must be non-empty"
+
+    def test_assessed_no_overlap_never_promotes_to_canonical(self):
+        # Tested with various statuses and source refs combinations
+        test_cases = [
+            ("assessed_no_overlap", "defined", True),
+            ("assessed_no_overlap", "defined", False),
+            ("assessed_no_overlap", "left_open", True),
+            ("assessed_no_overlap", "considered", True),
+            ("assessed_no_overlap", "unknown", False),
+        ]
+        for imp, status, has_refs in test_cases:
+            action, _ = _promotion_action(imp, status, has_refs)
+            assert action != "promote_to_canonical", (
+                f"assessed_no_overlap should never promote to canonical "
+                f"({imp!r}, {status!r}, refs={has_refs})"
+            )
+            assert action == "keep_as_context_only", (
+                f"assessed_no_overlap should always recommend keep_as_context_only, "
+                f"got {action!r}"
+            )
+
+    def test_promotion_plan_summary_groups_by_action(self):
+        # Test that promotion_plan_summary correctly groups entries by action
+        from extract_case_from_source import _build_promotion_plan_summary
+
+        plan = [
+            {"draft_name": "Market A", "recommended_action": "promote_to_canonical",
+             "draft_market_type": "product", "market_importance": "core_assessed"},
+            {"draft_name": "Market B", "recommended_action": "promote_to_canonical",
+             "draft_market_type": "geographic", "market_importance": "core_assessed"},
+            {"draft_name": "Market C", "recommended_action": "keep_as_context_only",
+             "draft_market_type": "product", "market_importance": "assessed_no_overlap"},
+            {"draft_name": "Market D", "recommended_action": "keep_as_context_only",
+             "draft_market_type": "geographic", "market_importance": "ancillary"},
+            {"draft_name": "Market E", "recommended_action": "promote_with_uncertainty",
+             "draft_market_type": "product", "market_importance": "possible_segmentation"},
+            {"draft_name": "Market F", "recommended_action": "manual_review",
+             "draft_market_type": "product", "market_importance": ""},
+        ]
+        summary = _build_promotion_plan_summary(plan)
+
+        # Check total count
+        assert summary["total_entries"] == 6
+
+        # Check action counts
+        by_action = summary["by_action"]
+        assert by_action["promote_to_canonical"] == 2
+        assert by_action["keep_as_context_only"] == 2
+        assert by_action["promote_with_uncertainty"] == 1
+        assert by_action["manual_review"] == 1
+
+        # Check action details
+        assert summary["action_details"]["promote_to_canonical"]["count"] == 2
+        assert summary["action_details"]["keep_as_context_only"]["count"] == 2
+        assert summary["action_details"]["keep_as_context_only"]["by_market_importance"]["assessed_no_overlap"] == 1
+        assert summary["action_details"]["keep_as_context_only"]["by_market_importance"]["ancillary"] == 1
+
+    def test_promotion_plan_summary_market_type_breakdown(self):
+        # Test that summary correctly breaks down by market type
+        from extract_case_from_source import _build_promotion_plan_summary
+
+        plan = [
+            {"draft_name": "Product 1", "recommended_action": "promote_to_canonical",
+             "draft_market_type": "product", "market_importance": "core_assessed"},
+            {"draft_name": "Geographic 1", "recommended_action": "promote_to_canonical",
+             "draft_market_type": "geographic", "market_importance": "core_assessed"},
+            {"draft_name": "Product 2", "recommended_action": "keep_as_context_only",
+             "draft_market_type": "product", "market_importance": "assessed_no_overlap"},
+        ]
+        summary = _build_promotion_plan_summary(plan)
+
+        # Verify market type breakdown for promote_to_canonical
+        promo_details = summary["action_details"]["promote_to_canonical"]
+        assert promo_details["by_market_type"]["product"] == 1
+        assert promo_details["by_market_type"]["geographic"] == 1
+
+        # Verify market type breakdown for keep_as_context_only
+        context_details = summary["action_details"]["keep_as_context_only"]
+        assert context_details["by_market_type"]["product"] == 1
+
+
+class TestPromotionActionWithGuards:
+    """Hardening guards for promotion decisions."""
+
+    def test_source_role_guard_blocks_non_conclusive_passages(self):
+        # promote_to_canonical requires conclusive source roles
+        passages = [
+            ExtractedPassage(chunk_id="chunk_1", page_number=10, quote="quote", source_role="notifying_party_view"),
+            ExtractedPassage(chunk_id="chunk_1", page_number=11, quote="quote", source_role="precedent"),
+        ]
+        action, reason = _promotion_action_with_guards(
+            "core_assessed", "defined", True,
+            passages, [], "product", "Online ads", {"product": [], "geographic": []}
+        )
+        assert action == "hold_pending_source_check"
+        assert "source role" in reason.lower() or "conclusive" in reason.lower()
+
+    def test_source_role_guard_allows_conclusive_passages(self):
+        # promote_to_canonical allowed when at least one passage has conclusive source role
+        passages = [
+            ExtractedPassage(chunk_id="chunk_1", page_number=10, quote="quote", source_role="commission_assessment"),
+        ]
+        action, reason = _promotion_action_with_guards(
+            "core_assessed", "defined", True,
+            passages, [], "product", "Online ads", {"product": [], "geometric": []}
+        )
+        assert action == "promote_to_canonical"
+
+    def test_caveat_guard_missing_conclusion_downgrades_to_hold(self):
+        # Section caveat saying conclusion is missing downgrades to hold_pending
+        passages = [
+            ExtractedPassage(chunk_id="chunk_1", page_number=10, quote="quote", source_role="commission_assessment"),
+        ]
+        caveats = ["The Commission's definition conclusion on this market is absent from the supplied sections."]
+        action, reason = _promotion_action_with_guards(
+            "core_assessed", "left_open", True,
+            passages, caveats, "product", "Online ads", {"product": [], "geographic": []}
+        )
+        assert action == "hold_pending_source_check"
+        assert "absent" in reason.lower() or "conclusion" in reason.lower()
+
+    def test_geographic_pairing_guard_orphan_requires_manual_review(self):
+        # Geographic market with no product market pairing requires manual review
+        passages = [
+            ExtractedPassage(chunk_id="chunk_1", page_number=10, quote="quote", source_role="commission_assessment"),
+        ]
+        action, reason = _promotion_action_with_guards(
+            "core_assessed", "defined", True,
+            passages, [], "geographic", "EEA", {"product": [{"name": "Search ads"}], "geographic": []}
+        )
+        assert action == "manual_review_geo_pairing"
+        assert "pairing" in reason.lower() or "geographic" in reason.lower()
+
+    def test_geographic_pairing_guard_with_product_pair_allows_promotion(self):
+        # Geographic market that can pair with a product market allows promotion
+        passages = [
+            ExtractedPassage(chunk_id="chunk_1", page_number=10, quote="quote", source_role="commission_assessment"),
+        ]
+        action, reason = _promotion_action_with_guards(
+            "core_assessed", "defined", True,
+            passages, [], "geographic", "EEA Search ads market",
+            {"product": [{"name": "Search ads"}], "geographic": []}
+        )
+        assert action == "promote_to_canonical"
+
+    def test_assessed_no_overlap_remains_context_only_with_guards(self):
+        # assessed_no_overlap always stays context_only even with conclusive passages
+        passages = [
+            ExtractedPassage(chunk_id="chunk_1", page_number=10, quote="quote", source_role="conclusion"),
+        ]
+        action, reason = _promotion_action_with_guards(
+            "assessed_no_overlap", "defined", True,
+            passages, [], "product", "Online ads", {"product": [], "geographic": []}
+        )
+        assert action == "keep_as_context_only"
+
+
+class TestCanonicalMergeCandidates:
+    """canonical_merge_candidates groups markets by merge readiness."""
+
+    def test_candidates_groups_by_action(self):
+        plan = [
+            {"draft_name": "Market A", "recommended_action": "promote_to_canonical",
+             "draft_market_type": "product", "definition_status": "defined"},
+            {"draft_name": "Market B", "recommended_action": "promote_with_uncertainty",
+             "draft_market_type": "product", "definition_status": "possible_segmentation"},
+            {"draft_name": "Market C", "recommended_action": "keep_as_context_only",
+             "draft_market_type": "geographic", "definition_status": "defined"},
+            {"draft_name": "Market D", "recommended_action": "hold_pending_source_check",
+             "draft_market_type": "product", "definition_status": "unknown"},
+            {"draft_name": "Market E", "recommended_action": "manual_review",
+             "draft_market_type": "product", "definition_status": "considered"},
+        ]
+        candidates = _build_canonical_merge_candidates(plan)
+
+        # Check that entries are grouped correctly
+        assert len(candidates["safe_to_promote"]) == 1
+        assert candidates["safe_to_promote"][0]["name"] == "Market A"
+
+        assert len(candidates["uncertain_markets"]) == 1
+        assert candidates["uncertain_markets"][0]["name"] == "Market B"
+
+        assert len(candidates["context_only"]) == 1
+        assert candidates["context_only"][0]["name"] == "Market C"
+
+        assert len(candidates["hold_pending_source_check"]) == 1
+        assert candidates["hold_pending_source_check"][0]["name"] == "Market D"
+
+        assert len(candidates["manual_review"]) == 1
+        assert candidates["manual_review"][0]["name"] == "Market E"
+
+    def test_candidates_excludes_uncertain_from_safe_promote(self):
+        # Verify that only promote_to_canonical goes in safe_to_promote
+        plan = [
+            {"draft_name": "Safe", "recommended_action": "promote_to_canonical", "draft_market_type": "product"},
+            {"draft_name": "Uncertain", "recommended_action": "promote_with_uncertainty", "draft_market_type": "product"},
+            {"draft_name": "Hold", "recommended_action": "hold_pending_source_check", "draft_market_type": "product"},
+        ]
+        candidates = _build_canonical_merge_candidates(plan)
+
+        assert len(candidates["safe_to_promote"]) == 1
+        assert candidates["safe_to_promote"][0]["name"] == "Safe"
+        assert len(candidates["uncertain_markets"]) == 1
+        assert len(candidates["hold_pending_source_check"]) == 1
+
+    def test_candidates_has_count_metadata(self):
+        plan = [
+            {"draft_name": "A", "recommended_action": "promote_to_canonical", "draft_market_type": "product"},
+            {"draft_name": "B", "recommended_action": "keep_as_context_only", "draft_market_type": "geographic"},
+        ]
+        candidates = _build_canonical_merge_candidates(plan)
+
+        assert "_counts" in candidates
+        assert candidates["_counts"]["safe_to_promote"] == 1
+        assert candidates["_counts"]["context_only"] == 1
 
 
 class TestBuildPromotionPlan:

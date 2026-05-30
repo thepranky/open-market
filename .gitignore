@@ -1,0 +1,19 @@
+
+# Local Python environments
+.venv/
+venv/
+env/
+apps/api/.venv/
+
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# macOS
+.DS_Store
+
+# Local/generated extraction artifacts
+data/source_text/debug/
+data/drafts/
