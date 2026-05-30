@@ -1,0 +1,44 @@
+name: API CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/api
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          python -m venv .venv
+          .venv/bin/pip install --upgrade pip
+          .venv/bin/pip install -r requirements.txt
+
+      - name: Run tests
+        run: >
+          .venv/bin/python -m pytest
+          tests/test_eval_pipeline.py
+          tests/test_benchmark_runner.py
+          tests/test_extract_case_from_source.py
+
+# TODO: add benchmark runner step once lightweight committed fixtures replace the
+# generated file dependencies that are currently gitignored:
+#   - data/drafts/eu/*.market_definition.draft.yaml
+#   - data/source_text/*_market_definition_report.json
+# Until then, run the benchmark locally:
+#   cd apps/api
+#   .venv/bin/python scripts/run_eval_benchmark.py \
+#     --config ../../data/evals/benchmark.market_definition.yaml
