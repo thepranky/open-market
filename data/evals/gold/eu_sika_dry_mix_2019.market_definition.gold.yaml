@@ -1,0 +1,376 @@
+_gold_metadata:
+  case_id: eu_sika_dry_mix_2019
+  gold_status: canonical_derived
+  partial: false
+  review_required: false
+  created_from: data/cases/eu/eu_sika_dry_mix_2019.yaml
+  notes: >
+    Derived directly from the promoted canonical record.  All 6 product markets and 5
+    geographic markets are fully reviewed.  This is a full-gold (partial: false) fixture:
+    every draft market not in this list counts as a false positive.
+
+    Key evaluation criteria:
+    - Product markets: 6 markets, all definition_status=defined (Commission used
+      "should be considered" working-assumption language but canonical maps them to
+      "defined" as the human reviewer's binding decision).
+    - Geographic markets: gm_1 is left_open; gm_2–5 are considered (Commission used
+      "for the purpose of this decision" language — CompMap maps to "considered").
+    - Outcome passages (sp_3, sp_6, sp_9, sp_11, sp_14, sp_17) must NOT appear in
+      supports_markets or supports_geographic_markets.
+
+case_id: eu_sika_dry_mix_2019
+case_name: "Sika / Financière Dry Mix Solutions"
+authority: European Commission
+jurisdiction: EU
+sector: industrials / construction chemicals
+decision_date: "2019-03-27"
+parties:
+  - name: Sika AG
+    role: acquirer
+  - name: Financière Dry Mix Solutions
+    role: target
+
+source_documents:
+  - doc_id: eu_sika_dry_mix_decision
+    title: "Case M.9276 – Sika / Financière Dry Mix Solutions: Commission Decision"
+    case_page_url: "https://competition-cases.ec.europa.eu/cases/M.9276"
+    pdf_url: "https://ec.europa.eu/competition/mergers/cases/decisions/m9276_298_3.pdf"
+    doc_type: decision
+    authority_reference: M.9276
+    retrieval_status: direct
+    published_date: "2019-03-27"
+
+product_markets_considered:
+
+  - name: Construction dry premix mortar
+    market_type: product
+    expected_definition_status: defined
+    expected_promotion_action: promote
+    importance: core_assessed
+    market_group: null
+    aliases:
+      - Construction dry-mix mortar
+      - Dry premix mortar (construction)
+    expected_draft_names:
+      - Construction dry premix mortar
+    linked_source_passages:
+      - passage_id: sp_1
+        source_document_id: eu_sika_dry_mix_decision
+        page: "5"
+        quote_snippet: >-
+          In line with previous Commission decisions and considering the information provided by
+          the Parties and the results of the market investigation, the Commission is of the view
+          that construction dry premix mortar and tile-fixing dry premix mortar should be considered
+          separate product markets for assessing the Transaction.
+        extraction_method: pdf_extracted
+        review_status: spot_checked
+      - passage_id: sp_2
+        source_document_id: eu_sika_dry_mix_decision
+        page: "5"
+        quote_snippet: >-
+          The majority of respondents to the market investigation (customers and competitors)
+          confirmed that the market for mortar should be divided according to (i) the place where
+          the mortar is mixed (at factory or on the construction site), (ii) the physical form of
+          the mortar (dry, wet or paste), and (iii) the final application of the mortar
+          (construction, tile-fixing or façade).
+        extraction_method: pdf_extracted
+        review_status: spot_checked
+    reviewer_notes: >-
+      Both sp_1 and sp_2 confirm this as a distinct product market. sp_1 uses the
+      Commission's working-assumption formula ("should be considered separate product
+      markets for assessing the Transaction") — canonical maps to definition_status=defined
+      as the authoritative human reviewer decision.
+    reviewed: true
+
+  - name: Tile-fixing dry premix mortar
+    market_type: product
+    expected_definition_status: defined
+    expected_promotion_action: promote
+    importance: core_assessed
+    market_group: null
+    aliases:
+      - Tile-fixing dry-mix mortar
+      - Tile fixing dry premix mortar
+    expected_draft_names:
+      - Tile-fixing dry premix mortar
+    linked_source_passages:
+      - passage_id: sp_4
+        source_document_id: eu_sika_dry_mix_decision
+        page: "5"
+        quote_snippet: >-
+          In line with previous Commission decisions and considering the information provided by
+          the Parties and the results of the market investigation, the Commission is of the view
+          that construction dry premix mortar and tile-fixing dry premix mortar should be considered
+          separate product markets for assessing the Transaction.
+        extraction_method: pdf_extracted
+        review_status: spot_checked
+      - passage_id: sp_5
+        source_document_id: eu_sika_dry_mix_decision
+        page: "5"
+        quote_snippet: >-
+          With regard to these products, the majority of the respondents (customers and competitors)
+          to the market investigation confirmed that there is a price difference between them;
+          tile-fixing dry premix mortar is more expensive than construction dry premix mortar.
+        extraction_method: pdf_extracted
+        review_status: spot_checked
+    reviewer_notes: >-
+      Distinct from construction dry premix mortar based on price, application, and
+      Commission precedent. Canonical maps to definition_status=defined.
+    reviewed: true
+
+  - name: Chemical-based concrete and mortar admixtures
+    market_type: product
+    expected_definition_status: defined
+    expected_promotion_action: promote
+    importance: core_assessed
+    market_group: null
+    aliases:
+      - Chemical-based admixtures
+      - Chemical based concrete and mortar admixtures
+    expected_draft_names:
+      - Chemical-based concrete and mortar admixtures
+    linked_source_passages:
+      - passage_id: sp_7
+        source_document_id: eu_sika_dry_mix_decision
+        page: "19"
+        quote_snippet: >-
+          In line with previous Commission decisions and considering the information provided by
+          the Parties and the results of the market investigation, the Commission is of the view
+          that chemical-based concrete and mortar admixtures should be considered as a separate
+          product market for assessing the Transaction.
+        extraction_method: pdf_extracted
+        review_status: spot_checked
+    reviewer_notes: >-
+      Distinct from mineral-based admixtures. sp_7 uses working-assumption language;
+      canonical maps to definition_status=defined.
+      sp_8 omitted from gold quotes: contains "mineral-based" which the PDF hyphenates
+      across a line break, causing "mineralbased" after normalisation — not a quote failure.
+    reviewed: true
+
+  - name: Structural reinforcing/strengthening (concrete works)
+    market_type: product
+    expected_definition_status: defined
+    expected_promotion_action: promote
+    importance: core_assessed
+    market_group: null
+    aliases:
+      - Structural reinforcing and strengthening (concrete works)
+      - Structural reinforcing/strengthening
+    expected_draft_names:
+      - Structural reinforcing/strengthening (concrete works)
+    linked_source_passages:
+      - passage_id: sp_18
+        source_document_id: eu_sika_dry_mix_decision
+        page: "23"
+        quote_snippet: >-
+          In line with the Commission's prior decisional practice and considering the information
+          provided by the Parties and the results of the market investigation, the Commission is of
+          the view that structural reinforcing/strengthening should be considered as a separate
+          product market for assessing the Transaction.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+    reviewer_notes: >-
+      Separate sub-segment within concrete works confirmed by prior Commission practice and
+      market investigation. Only France is assessed as affected country in the Sika/Dry Mix
+      decision (UK overlap noted in sp_21 context but not a separate market entry here).
+      sp_10 omitted from gold quotes: contains "resin-based" which the PDF hyphenates
+      across a line break, causing "resinbased" after normalisation — not a quote failure.
+    reviewed: true
+
+  - name: PU sealants for DIY/consumers
+    market_type: product
+    expected_definition_status: defined
+    expected_promotion_action: promote
+    importance: core_assessed
+    market_group: null
+    aliases:
+      - Polyurethane sealants for DIY/consumers
+      - PU sealants (DIY/consumers)
+    expected_draft_names:
+      - PU sealants for DIY/consumers
+    linked_source_passages:
+      - passage_id: sp_12
+        source_document_id: eu_sika_dry_mix_decision
+        page: "27"
+        quote_snippet: >-
+          In line with the most recent Commission decisions concerning sealants and considering the
+          information provided by the Parties and the results of the market investigation, the
+          Commission is of the view that PU sealants for DIY/consumers should be considered as a
+          separate product market for assessing the Transaction.
+        extraction_method: pdf_extracted
+        review_status: spot_checked
+      - passage_id: sp_13
+        source_document_id: eu_sika_dry_mix_decision
+        page: "27"
+        quote_snippet: >-
+          In the market investigation, the majority of customers and the majority of competitors
+          that expressed a view confirmed the market for sealants should be segmented according
+          to (i) the target consumer group (professional construction or DIY/consumer), and (ii)
+          the technology (silicone, acrylic, polyurethane (PU), silyl-modified polymers).
+        extraction_method: pdf_extracted
+        review_status: spot_checked
+    reviewer_notes: >-
+      Segmented by consumer group (DIY/consumer) and technology (PU). sp_12 uses
+      working-assumption language; canonical maps to definition_status=defined.
+    reviewed: true
+
+  - name: ETICS (External Thermal Insulation Composite Systems)
+    market_type: product
+    expected_definition_status: defined
+    expected_promotion_action: promote
+    importance: core_assessed
+    market_group: null
+    aliases:
+      - External Thermal Insulation Composite Systems (ETICS)
+      - ETICS
+    expected_draft_names:
+      - ETICS (External Thermal Insulation Composite Systems)
+    linked_source_passages:
+      - passage_id: sp_15
+        source_document_id: eu_sika_dry_mix_decision
+        page: "31"
+        quote_snippet: >-
+          In line with previous Commission decisions and considering the information provided by
+          the Parties and the results of the market investigation, the Commission is of the view
+          that ETICS should be considered as a separate product market for assessing the Transaction.
+        extraction_method: pdf_extracted
+        review_status: spot_checked
+    reviewer_notes: >-
+      Distinct from other insulation systems. Spain is the affected country.
+      sp_15 uses working-assumption language; canonical maps to definition_status=defined.
+      sp_16 omitted from gold quotes: contains an inline footnote number ("systems134")
+      that interrupts the quote text in the PDF — not a quote failure.
+    reviewed: true
+
+geographic_markets_considered:
+
+  - name: "Dry premix mortars — national (France affected)"
+    market_type: geographic
+    expected_definition_status: left_open
+    expected_promotion_action: promote
+    importance: core_assessed
+    market_group: null
+    aliases:
+      - "Dry premix mortars — national"
+      - "Construction and tile-fixing dry premix mortars — national"
+    expected_draft_names:
+      - "Dry premix mortars — national (France affected)"
+    linked_source_passages:
+      - passage_id: sp_19
+        source_document_id: eu_sika_dry_mix_decision
+        page: "8"
+        quote_snippet: >-
+          the Commission is of the view that, for assessing the Transaction, the relevant geographic
+          market for construction dry premix and tile-fixing dry premix mortars could be national in
+          scope. In any event, the precise geographic market definition can be left open, as the
+          Transaction does not raise competition concerns under any plausible market definition.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+    reviewer_notes: >-
+      Geographic market definition explicitly left open. This is a left_open case
+      (note: sp_19 is a mixed passage — it also contains the outcome phrase "does not raise
+      competition concerns" — the supports_markets links must be verified to exclude
+      outcome-passage misuse).
+    reviewed: true
+
+  - name: "Chemical-based concrete and mortar admixtures — national (France affected)"
+    market_type: geographic
+    expected_definition_status: considered
+    expected_promotion_action: promote
+    importance: core_assessed
+    market_group: null
+    aliases:
+      - "Chemical-based admixtures — national"
+      - "Chemical-based concrete and mortar admixtures — national"
+    expected_draft_names:
+      - "Chemical-based concrete and mortar admixtures — national (France affected)"
+    linked_source_passages:
+      - passage_id: sp_20
+        source_document_id: eu_sika_dry_mix_decision
+        page: "20"
+        quote_snippet: >-
+          In line with the most recent Commission decisions and considering the information provided
+          by the Parties and the results of the market investigation, the Commission is of the view
+          that, for the purpose of this decision, it will consider the relevant geographic market
+          for chemical-based admixtures national in scope.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+    reviewer_notes: >-
+      "For the purpose of this decision" language → definition_status=considered.
+    reviewed: true
+
+  - name: "Structural reinforcing/strengthening — national (France affected)"
+    market_type: geographic
+    expected_definition_status: considered
+    expected_promotion_action: promote
+    importance: core_assessed
+    market_group: null
+    aliases:
+      - "Structural reinforcing/strengthening — national"
+    expected_draft_names:
+      - "Structural reinforcing/strengthening — national (France affected)"
+    linked_source_passages:
+      - passage_id: sp_21
+        source_document_id: eu_sika_dry_mix_decision
+        page: "23"
+        quote_snippet: >-
+          In line with the Commission's prior decisional practice and considering the information
+          provided by the Parties and the results of the market investigation, the Commission is of
+          the view that, for the purpose of this decision, it will consider the relevant geographic
+          market for structural reinforcing/strengthening national in scope.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+    reviewer_notes: >-
+      "For the purpose of this decision" language → definition_status=considered.
+    reviewed: true
+
+  - name: "PU sealants for DIY/consumers — national (France affected)"
+    market_type: geographic
+    expected_definition_status: considered
+    expected_promotion_action: promote
+    importance: core_assessed
+    market_group: null
+    aliases:
+      - "PU sealants for DIY/consumers — national"
+    expected_draft_names:
+      - "PU sealants for DIY/consumers — national (France affected)"
+    linked_source_passages:
+      - passage_id: sp_22
+        source_document_id: eu_sika_dry_mix_decision
+        page: "28"
+        quote_snippet: >-
+          In line with the most recent Commission decisions and considering the information provided
+          by the Parties and the results of the market investigation, the Commission is of the view
+          that, for the purpose of this decision, it will consider the relevant geographic market
+          for PU sealants for DIY/consumers national in scope.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+    reviewer_notes: >-
+      "For the purpose of this decision" language → definition_status=considered.
+    reviewed: true
+
+  - name: "ETICS — national (Spain affected)"
+    market_type: geographic
+    expected_definition_status: considered
+    expected_promotion_action: promote
+    importance: core_assessed
+    market_group: null
+    aliases:
+      - "ETICS — national"
+    expected_draft_names:
+      - "ETICS — national (Spain affected)"
+    linked_source_passages:
+      - passage_id: sp_23
+        source_document_id: eu_sika_dry_mix_decision
+        page: "32"
+        quote_snippet: >-
+          In line with previous Commission decisions and considering the information provided by
+          the Parties and the results of the market investigation, the Commission is of the view
+          that, for assessing the Transaction, the relevant geographic market for ETICS is national
+          in scope.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+    reviewer_notes: >-
+      "For assessing the Transaction" language → definition_status=considered.
+      Spain is the affected country.
+    reviewed: true

@@ -16,3 +16,8 @@ benchmarks:
     gold_yaml: data/evals/gold/eu_sika_mbcc_2023.market_definition.partial.gold.repaired.yaml
     draft_yaml: data/drafts/eu/eu_sika_mbcc_2023.market_definition.draft.yaml
     report_json: data/source_text/sika_mbcc_market_definition_report.json
+
+  - case_id: eu_sika_dry_mix_2019
+    gold_yaml: data/evals/gold/eu_sika_dry_mix_2019.market_definition.gold.yaml
+    draft_yaml: data/drafts/eu/eu_sika_dry_mix_2019.market_definition.draft.yaml
+    report_json: data/source_text/sika_dry_mix_market_definition_report.json

@@ -15,3 +15,9 @@ benchmarks:
     draft_yaml: data/evals/fixtures/market_definition/eu_sika_mbcc_2023/draft.yaml
     report_json: data/evals/fixtures/market_definition/eu_sika_mbcc_2023/report.json
     cache_dir: data/evals/fixtures/market_definition/eu_sika_mbcc_2023
+
+  - case_id: eu_sika_dry_mix_2019
+    gold_yaml: data/evals/gold/eu_sika_dry_mix_2019.market_definition.gold.yaml
+    draft_yaml: data/evals/fixtures/market_definition/eu_sika_dry_mix_2019/draft.yaml
+    report_json: data/evals/fixtures/market_definition/eu_sika_dry_mix_2019/report.json
+    cache_dir: data/evals/fixtures/market_definition/eu_sika_dry_mix_2019
