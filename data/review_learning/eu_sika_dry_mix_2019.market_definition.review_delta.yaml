@@ -1,0 +1,87 @@
+schema_version: '1'
+case_id: eu_sika_dry_mix_2019
+focus: market_definition
+generated_at: '2026-05-31T06:24:36Z'
+source_files:
+  draft: data/drafts/eu/eu_sika_dry_mix_2019.market_definition.draft.yaml
+  llm_review: data/drafts/eu/eu_sika_dry_mix_2019.market_definition.llm_review.json
+  canonical: data/cases/eu/eu_sika_dry_mix_2019.yaml
+summary:
+  total_corrections: 4
+  by_type:
+    metadata_completion: 3
+    note_cleanup: 1
+  llm_triage_status: needs_legal_review
+llm_review_insights:
+  triage_status: needs_legal_review
+  triage_rationale: Multiple product markets carry definition_status "defined" but the Commission's language
+    consistently uses "should be considered as a separate product market for assessing the Transaction"
+    — a working assumption formula that CompMap maps to "considered", not "defined". Additionally, sp_19
+    is a mixed passage (geographic left-open language combined with an outcome sentence) that warrants
+    reviewer attention, and the UK overlap mentioned in sp_21 context suggests a possible missing geographic
+    market entry for structural reinforcing/strengthening in the United Kingdom.
+corrections:
+- correction_type: metadata_completion
+  object_type: case
+  object_id: eu_sika_dry_mix_2019
+  before:
+    outcome: unknown
+  after:
+    outcome: cleared
+  inferred_reason: Draft used 'unknown' as a placeholder outcome; human reviewer set the actual outcome
+    after verifying the conclusion section of the source decision.
+  reusable_rule_candidate: 'outcome: unknown is a promotion blocker — always resolve against the conclusion
+    section before promoting to data/cases/.'
+  suggested_follow_up: validator_rule
+  confidence: high
+- correction_type: metadata_completion
+  object_type: case
+  object_id: eu_sika_dry_mix_2019
+  before:
+    authority_reference: null
+    case_type: null
+    procedure_stage: null
+  after:
+    authority_reference: M.9276
+    case_type: merger
+    procedure_stage: phase1
+  inferred_reason: Required fields absent from draft; set by the human reviewer during canonical promotion.
+  reusable_rule_candidate: procedure_stage, case_type, and authority_reference must always be explicitly
+    resolved during the promotion checklist review.
+  suggested_follow_up: docs_update
+  confidence: high
+- correction_type: metadata_completion
+  object_type: metadata
+  object_id: eu_sika_dry_mix_2019
+  before: null
+  after:
+    overall_confidence: 0.65
+    review_status: unreviewed
+    created_date: '2026-05-31'
+  inferred_reason: The metadata block (overall_confidence, review_status, dates) is not written by the
+    extraction script and is always created at promotion time.
+  reusable_rule_candidate: The metadata block is a required canonical section. It must be added during
+    promotion; its absence from drafts is expected.
+  suggested_follow_up: docs_update
+  confidence: high
+- correction_type: note_cleanup
+  object_type: product_market
+  object_id: pm_6
+  before:
+    notes: Commission treated ETICS as a separate product market, distinct from other insulation systems
+      (sp_15). Market investigation confirmed ETICS do not compete with other insulation systems and noted
+      a component vs. system sales distinction (sp_16). That component/system nuance is recorded as context
+      but not separately encoded as a product market in this draft. Geographic assessment conducted nationally;
+      Spain is the affected country.
+  after:
+    notes: Commission treated ETICS as a separate product market, distinct from other insulation systems
+      (sp_15). Market investigation confirmed ETICS do not compete with other insulation systems and noted
+      a component vs. system sales distinction (sp_16). That component/system nuance is recorded as context
+      but not separately encoded as a product market in this record. Geographic assessment conducted nationally;
+      Spain is the affected country.
+  inferred_reason: Notes revised during canonical promotion (e.g. 'draft' → 'record', wording clarification,
+    added context).
+  reusable_rule_candidate: Draft-specific language (e.g. 'in this draft') should be avoided in extraction
+    notes so they need no cleanup at promotion time.
+  suggested_follow_up: prompt_update
+  confidence: low
