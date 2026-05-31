@@ -44,13 +44,17 @@ If a quote is wrong or cannot be located, do not promote — fix it first.
 
 **Key rule:** Only `commission_assessment` and `conclusion` passages justify formal market definitions. A market entry supported only by `notifying_party_view` or `market_investigation` passages needs a Commission assessment passage or must be downgraded.
 
-### Outcome / clearance passages
+### Outcome / clearance passages — general rule
 
-Passages that say "does not raise serious doubts", "the transaction is cleared", or similar clearance language are `source_role: conclusion` passages about the **outcome** of the competitive assessment, not about market definition.
+Passages that say "does not raise serious doubts", "compatible with the internal market", "the transaction is cleared", "authorised", or any similar clearance language are `source_role: conclusion` passages about the **outcome** of the competitive assessment.
+
+**They must not appear in `supports_markets` or `supports_geographic_markets` for any entry.** Market definition and merger outcome are related but distinct: a clearance conclusion does not prove that a particular product or geographic market was defined or considered.
 
 - Do **not** link outcome passages to `supports_markets` or `supports_geographic_markets`
-- They may be retained in the record as supporting the outcome, or removed if they add nothing
-- A market entry whose only support passages are outcome conclusions is under-evidenced
+- They may be retained in the record as unlinked source passages (no `supports_markets` / `supports_geographic_markets`), or as context for the overall outcome
+- They may remain as competitive assessment context, theory/remedy evidence, or unlinked passages with a reviewer note
+- A market entry whose **only** support passages are outcome conclusions is under-evidenced; a market entry that has **any** outcome passage in its support list violates this rule
+- The deterministic validation in Stage 3 emits a warning when a `source_role: conclusion` passage is linked to a market, or when outcome language is detected in a passage linked to a market
 
 ---
 

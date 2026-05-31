@@ -66,9 +66,10 @@ def test_stage_validate_draft_passes_clean_record():
             }
         ],
     }
-    ok, errors = stage_validate_draft(record)
+    ok, errors, warnings = stage_validate_draft(record)
     assert ok
     assert errors == []
+    assert warnings == []
 
 
 def test_stage_validate_draft_catches_invalid_outcome():
@@ -77,7 +78,7 @@ def test_stage_validate_draft_catches_invalid_outcome():
         "outcome": "not_a_real_outcome",
         "source_documents": [{"doc_id": "doc1"}],
     }
-    ok, errors = stage_validate_draft(record)
+    ok, errors, warnings = stage_validate_draft(record)
     assert not ok
     assert any("outcome" in e for e in errors)
 
@@ -96,6 +97,81 @@ def test_stage_validate_draft_catches_dangling_passage_reference():
             }
         ],
     }
-    ok, errors = stage_validate_draft(record)
+    ok, errors, warnings = stage_validate_draft(record)
     assert not ok
     assert any("nonexistent_doc" in e for e in errors)
+
+
+def test_stage_validate_draft_warns_conclusion_role_linked_to_market():
+    record = {
+        "case_id": "test_case",
+        "outcome": "unknown",
+        "source_documents": [{"doc_id": "doc1"}],
+        "source_passages": [
+            {
+                "passage_id": "sp_out",
+                "source_document_id": "doc1",
+                "review_status": "unreviewed",
+                "extraction_method": "pdf_extracted",
+                "source_role": "conclusion",
+                "quote_snippet": "The Commission clears the transaction.",
+                "supports_markets": ["pm_1"],
+                "supports_geographic_markets": [],
+            }
+        ],
+    }
+    ok, errors, warnings = stage_validate_draft(record)
+    assert ok  # warnings do not block
+    assert errors == []
+    assert any("sp_out" in w and "conclusion" in w for w in warnings)
+
+
+def test_stage_validate_draft_warns_outcome_language_linked_to_geographic_market():
+    record = {
+        "case_id": "test_case",
+        "outcome": "unknown",
+        "source_documents": [{"doc_id": "doc1"}],
+        "source_passages": [
+            {
+                "passage_id": "sp_clear",
+                "source_document_id": "doc1",
+                "review_status": "unreviewed",
+                "extraction_method": "pdf_extracted",
+                "source_role": "commission_assessment",
+                "quote_snippet": (
+                    "the Commission considers that the Transaction does not raise "
+                    "serious doubts as to its compatibility with the internal market."
+                ),
+                "supports_markets": [],
+                "supports_geographic_markets": ["gm_1"],
+            }
+        ],
+    }
+    ok, errors, warnings = stage_validate_draft(record)
+    assert ok
+    assert errors == []
+    assert any("sp_clear" in w for w in warnings)
+
+
+def test_stage_validate_draft_no_warning_for_unlinked_conclusion():
+    record = {
+        "case_id": "test_case",
+        "outcome": "unknown",
+        "source_documents": [{"doc_id": "doc1"}],
+        "source_passages": [
+            {
+                "passage_id": "sp_out",
+                "source_document_id": "doc1",
+                "review_status": "unreviewed",
+                "extraction_method": "pdf_extracted",
+                "source_role": "conclusion",
+                "quote_snippet": "The transaction does not raise serious doubts.",
+                "supports_markets": [],
+                "supports_geographic_markets": [],
+            }
+        ],
+    }
+    ok, errors, warnings = stage_validate_draft(record)
+    assert ok
+    assert errors == []
+    assert warnings == []

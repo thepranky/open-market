@@ -1020,6 +1020,24 @@ IMPORTANT: Only "commission_assessment" and "conclusion" passages justify formal
 definitions. If a market entry is supported only by "notifying_party_view" or "precedent"
 passages, set its definition_status to "precedent_only" or add an explanatory caveat.
 
+OUTCOME / CLEARANCE PASSAGES — DO NOT LINK TO MARKETS:
+Passages that express a merger clearance outcome — containing language such as
+"does not raise serious doubts", "compatible with the internal market", "cleared", or
+"authorised" — describe the RESULT of the competitive assessment, not market definition.
+
+They MUST NOT appear in:
+  - A market or geographic market entry's nested "passages" array
+  - The top-level "source_passages" array with a "supports" value pointing at any
+    product or geographic market
+
+They MAY be retained as:
+  - Top-level source_passages with an empty or absent "supports" list (unlinked)
+  - Evidence for the overall_outcome value
+
+Reason: market definition and merger outcome are related but distinct. A clearance
+conclusion does not itself prove that a particular product or geographic market was
+defined or considered.
+
 VERBATIM QUOTES ONLY:
 Copy passage text EXACTLY as it appears in the source. Do NOT paraphrase, summarise,
 or rephrase. If you cannot find an exact verbatim quote, do not include the passage.

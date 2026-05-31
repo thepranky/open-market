@@ -126,15 +126,32 @@ def stage_fetch_pdfs(
 # Stage 3 — Structural validation of draft
 # ---------------------------------------------------------------------------
 
-def stage_validate_draft(draft_record: dict) -> tuple[bool, list[str]]:
+_OUTCOME_LANGUAGE_PATTERNS = (
+    "does not raise serious doubts",
+    "compatible with the internal market",
+    "cleared",
+    "authorised",
+)
+
+
+def _passage_has_outcome_language(quote: str) -> bool:
+    lower = quote.lower()
+    return any(pat in lower for pat in _OUTCOME_LANGUAGE_PATTERNS)
+
+
+def stage_validate_draft(draft_record: dict) -> tuple[bool, list[str], list[str]]:
     """
     Check structural correctness of draft fields without full Pydantic validation.
 
-    Validates: required top-level fields, enum values, passage referential integrity.
+    Validates: required top-level fields, enum values, passage referential integrity,
+    and outcome-passage-to-market linkage (warns, does not block).
+
+    Returns (ok, errors, warnings).  Errors block promotion; warnings require review.
     Full Pydantic validation (including required canonical fields like `metadata`)
     runs only at canonical promotion time via validate_cases.py.
     """
     errors: list[str] = []
+    warnings: list[str] = []
 
     # Required structural fields
     for field in ("case_id", "source_documents"):
@@ -156,7 +173,8 @@ def stage_validate_draft(draft_record: dict) -> tuple[bool, list[str]]:
                     f"{mlist_key}/{mid}: invalid definition_status '{status}'"
                 )
 
-    # Source passages: review_status, extraction_method, referential integrity
+    # Source passages: review_status, extraction_method, referential integrity,
+    # and outcome-passage-to-market linkage.
     doc_ids = {d.get("doc_id") for d in (draft_record.get("source_documents") or []) if d.get("doc_id")}
     for sp in (draft_record.get("source_passages") or []):
         pid = sp.get("passage_id", "?")
@@ -172,7 +190,27 @@ def stage_validate_draft(draft_record: dict) -> tuple[bool, list[str]]:
                 f"passage {pid}: source_document_id '{ref}' not found in source_documents"
             )
 
-    return len(errors) == 0, errors
+        # Outcome passage linked to market: warn (not block).
+        has_market_link = bool(
+            (sp.get("supports_markets") or []) or (sp.get("supports_geographic_markets") or [])
+        )
+        if has_market_link:
+            quote = sp.get("quote_snippet", "") or ""
+            role = sp.get("source_role", "") or ""
+            if role == "conclusion":
+                warnings.append(
+                    f"passage {pid}: source_role 'conclusion' must not support market entries "
+                    "(supports_markets / supports_geographic_markets). "
+                    "Outcome and market definition are distinct — remove the market linkage."
+                )
+            elif _passage_has_outcome_language(quote):
+                warnings.append(
+                    f"passage {pid}: quote contains outcome/clearance language but is linked "
+                    "to a market entry. Remove supports_markets / supports_geographic_markets "
+                    "linkage and set source_role: conclusion."
+                )
+
+    return len(errors) == 0, errors, warnings
 
 
 # ---------------------------------------------------------------------------
@@ -207,9 +245,12 @@ def write_review_report(
     extraction_mode: str = "single-batch",
     schema_ok: bool,
     schema_errors: list[str],
+    schema_warnings: list[str] = [],
     integrity_errors: int,
     integrity_warnings: int,
     integrity_issues: list,
+    llm_triage_status: Optional[str] = None,
+    llm_review_path: Optional[Path] = None,
 ) -> None:
     lines: list[str] = []
     ts = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
@@ -265,13 +306,19 @@ def write_review_report(
 
     # Stage 3
     lines += ["## Stage 3 — Structural validation", ""]
-    if schema_ok:
-        lines += ["✓ No structural errors", ""]
+    if schema_ok and not schema_warnings:
+        lines += ["✓ No structural errors or warnings", ""]
     else:
-        lines += [f"✗ {len(schema_errors)} error(s):", ""]
-        for msg in schema_errors:
-            lines.append(f"- {msg}")
-        lines.append("")
+        if not schema_ok:
+            lines += [f"✗ {len(schema_errors)} error(s):", ""]
+            for msg in schema_errors:
+                lines.append(f"- {msg}")
+            lines.append("")
+        if schema_warnings:
+            lines += [f"⚠ {len(schema_warnings)} warning(s):", ""]
+            for msg in schema_warnings:
+                lines.append(f"- {msg}")
+            lines.append("")
     lines += [
         "_Note: Full Pydantic schema validation (validate_cases.py) applies only_",
         "_to canonical records. Run it after promoting draft to data/cases/._",
@@ -351,22 +398,99 @@ def write_review_report(
         except Exception:
             pass
 
+    # Stage 5 — LLM review (optional)
+    if llm_triage_status is not None:
+        lines += ["## Stage 5 — LLM review (triage)", ""]
+        lines.append(f"Triage status: **`{llm_triage_status}`**")
+        if llm_review_path:
+            lines.append(f"Report: `{llm_review_path}`")
+        lines.append("")
+
     # Next steps
     lines += ["## Next steps", ""]
     if blocking:
         lines.append("1. Fix the errors listed above before proceeding.")
     else:
+        step = 1
+        if llm_triage_status is not None:
+            lines.append(f"{step}. Review LLM triage report at `{llm_review_path or 'see above'}`.")
+            step += 1
         lines += [
-            "1. Review passages marked `unreviewed` against the source PDF.",
-            "2. For passages that are verbatim and correctly located, set `review_status: spot_checked`.",
-            "3. Promote markets with `promote_to_canonical` action to canonical YAML.",
-            "4. Run `python apps/api/scripts/validate_cases.py` after canonical promotion.",
-            "5. Run `python apps/api/scripts/check_source_integrity.py --no-cache` as final gate.",
+            f"{step}. Review passages marked `unreviewed` against the source PDF.",
+            f"{step + 1}. For passages that are verbatim and correctly located, set `review_status: spot_checked`.",
+            f"{step + 2}. Promote markets with `promote_to_canonical` action to canonical YAML.",
+            f"{step + 3}. Run `python apps/api/scripts/validate_cases.py` after canonical promotion.",
+            f"{step + 4}. Run `python apps/api/scripts/check_source_integrity.py --no-cache` as final gate.",
         ]
     lines.append("")
 
     report_path.parent.mkdir(parents=True, exist_ok=True)
     report_path.write_text("\n".join(lines), encoding="utf-8")
+
+
+# ---------------------------------------------------------------------------
+# Stage 5a — LLM review (optional)
+# ---------------------------------------------------------------------------
+
+def stage_llm_review(
+    draft_path: Path,
+    report_path: Path,
+    cache_dir: Path,
+    max_cost: float,
+) -> tuple[Optional[str], Optional[Path], Optional[Path]]:
+    """
+    Run the optional LLM review / triage stage after Stage 4 passes.
+
+    Returns (triage_status, json_path, md_path).
+    Returns (None, None, None) if the review cannot run (missing API key, etc.).
+    Never raises — logs errors and returns None on failure.
+    """
+    try:
+        from review_draft import run_llm_review as _run_llm_review
+    except ImportError as exc:
+        print(f"  WARN: Could not import review_draft: {exc}")
+        return None, None, None
+
+    json_out = draft_path.parent / (draft_path.stem.replace(".draft", "") + ".llm_review.json")
+    md_out = draft_path.parent / (draft_path.stem.replace(".draft", "") + ".llm_review.md")
+
+    try:
+        import anthropic as _anthropic
+        anthropic_client = _anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+    except (ImportError, KeyError) as exc:
+        print(f"  WARN: LLM review skipped — {exc}")
+        return None, None, None
+
+    print("Stage 5a — LLM review")
+    try:
+        triage, validation_errors = _run_llm_review(
+            draft_path=draft_path,
+            review_md_path=report_path,
+            json_out=json_out,
+            md_out=md_out,
+            cache_dir=cache_dir,
+            anthropic_client=anthropic_client,
+            max_cost=max_cost,
+            skip_preflight=True,
+        )
+    except (ValueError, RuntimeError) as exc:
+        print(f"  WARN: LLM review failed — {exc}")
+        return None, None, None
+
+    marker = {
+        "auto_verified_candidate": "✓",
+        "needs_light_review": "⚠",
+        "needs_legal_review": "⚠",
+        "blocked": "✗",
+    }.get(triage, "?")
+    print(f"  {marker} Triage: {triage}")
+    if validation_errors:
+        for ve in validation_errors:
+            print(f"    WARN: {ve}")
+    print(f"  JSON:    {json_out}")
+    print(f"  MD:      {md_out}")
+    print()
+    return triage, json_out, md_out
 
 
 # ---------------------------------------------------------------------------
@@ -395,6 +519,12 @@ def main() -> int:
                         help="Skip Claude extraction; validate an existing draft if present")
     parser.add_argument("--cache-dir", default=str(DEFAULT_CACHE_DIR),
                         help=f"PDF text cache directory (default: {DEFAULT_CACHE_DIR})")
+    parser.add_argument("--llm-review", action="store_true",
+                        help=(
+                            "Run LLM review / triage stage after Stage 4 passes. "
+                            "Writes llm_review.json and llm_review.md to drafts/. "
+                            "Requires ANTHROPIC_API_KEY. Does not promote to data/cases/."
+                        ))
     args = parser.parse_args()
 
     cache_dir = Path(args.cache_dir)
@@ -510,12 +640,14 @@ def main() -> int:
     # Stage 3 — Structural validation
     # -----------------------------------------------------------------------
     print("Stage 3 — Structural validation")
-    schema_ok, schema_errors_list = stage_validate_draft(draft_record)
-    if schema_ok:
+    schema_ok, schema_errors_list, schema_warnings_list = stage_validate_draft(draft_record)
+    if schema_ok and not schema_warnings_list:
         print("  ✓ Valid")
     else:
         for msg in schema_errors_list:
             print(f"  ✗ {msg}")
+        for msg in schema_warnings_list:
+            print(f"  ⚠ WARN: {msg}")
     print()
 
     # -----------------------------------------------------------------------
@@ -531,6 +663,22 @@ def main() -> int:
     print()
 
     # -----------------------------------------------------------------------
+    # Stage 5a — LLM review (optional, only when Stage 4 passed)
+    # -----------------------------------------------------------------------
+    llm_triage: Optional[str] = None
+    llm_json_path: Optional[Path] = None
+    llm_md_path: Optional[Path] = None
+
+    stage4_passed = not (bool(extraction_report.error) or not schema_ok or int_errors > 0)
+    if getattr(args, "llm_review", False) and stage4_passed:
+        llm_triage, llm_json_path, llm_md_path = stage_llm_review(
+            draft_path=draft_path,
+            report_path=report_path,
+            cache_dir=cache_dir,
+            max_cost=args.max_cost,
+        )
+
+    # -----------------------------------------------------------------------
     # Stage 5 — Review report
     # -----------------------------------------------------------------------
     print("Stage 5 — Review report")
@@ -544,9 +692,12 @@ def main() -> int:
         extraction_mode="batch-by-section" if args.batch_by_section else "single-batch",
         schema_ok=schema_ok,
         schema_errors=schema_errors_list,
+        schema_warnings=schema_warnings_list,
         integrity_errors=int_errors,
         integrity_warnings=int_warnings,
         integrity_issues=int_issues,
+        llm_triage_status=llm_triage,
+        llm_review_path=llm_json_path,
     )
     print(f"  Written: {report_path}")
     print()

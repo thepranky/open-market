@@ -94,6 +94,48 @@ exit non-zero (and must not commit) if any **ERROR**-level issues remain:
 
 Warnings may be reviewed and accepted by a human; errors must be resolved.
 
+### Stage 5a — LLM review / promotion triage (optional)
+
+After Stage 5 (integrity gate) passes, an optional LLM critic stage evaluates the
+draft semantically before human promotion.
+
+**Script:** `apps/api/scripts/review_draft.py`
+
+**What it checks:**
+- Whether each quote actually supports the proposition it is linked to
+- Whether `definition_status` values appear correct (`defined` vs. `left_open` vs. `discussed`)
+- Whether `source_role` labels are accurate (Commission finding vs. party submission vs. precedent)
+- Whether outcome / clearance passages are being misused as market-definition support (general rule: any outcome passage linked to `supports_markets` or `supports_geographic_markets` is a violation)
+- Whether geographic markets are missing from the record
+- Whether theories of harm are missing or improperly linked
+- Whether important market-definition sections appear absent
+
+**Outputs:**
+- `data/drafts/{jurisdiction}/{case_id}.{focus}.llm_review.json` — machine-readable
+- `data/drafts/{jurisdiction}/{case_id}.{focus}.llm_review.md` — human-readable
+
+**Triage statuses:**
+- `auto_verified_candidate` — all passages strong, all statuses correct, no gaps
+- `needs_light_review` — minor issues a non-lawyer can check against the source
+- `needs_legal_review` — status misclassification or gaps requiring legal judgment
+- `blocked` — passages contradict propositions or fundamental structural problems
+
+**What this stage must never do:**
+- Write to or modify `data/cases/`
+- Mark any passage or record as `lawyer_reviewed`
+- Substitute for human or legal review
+- Invent new propositions not supported by passages already in the draft
+
+Run standalone or via `ingest_case.py --llm-review`:
+```bash
+python apps/api/scripts/review_draft.py \\
+    --case-id eu_sika_dry_mix_2019 \\
+    --focus market_definition \\
+    --max-cost 0.50
+```
+
+---
+
 ### Stage 6 — Schema validation
 
 Run `validate_cases.py` against the candidate YAML:
@@ -138,6 +180,17 @@ after verifying passages against the source, then commits.
   Some proceedings end without a final decision (PI denied, deal abandoned,
   administrative case withdrawn). Check the authority's case registry before
   asserting a document exists.
+
+- **Never link outcome/clearance passages to market entries** (general rule).
+  Passages containing language such as "does not raise serious doubts",
+  "compatible with the internal market", "cleared", or "authorised" are outcome
+  conclusions about the merger result — not market definition findings.
+  They must not appear in `supports_markets` or `supports_geographic_markets`.
+  They may be retained as unlinked source passages or as evidence for the overall
+  outcome. Reason: market definition and merger outcome are related but distinct;
+  a clearance conclusion does not prove that a particular product or geographic
+  market was defined or considered.
+  Stage 3 of the pipeline emits a deterministic warning when this rule is violated.
 
 ---
 
