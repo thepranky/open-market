@@ -1,7 +1,7 @@
 # Benchmark summary: market_definition
 
-Generated: 2026-05-30T17:05:22.492188+00:00  
-Result: **PASS** (2/2 cases passed)
+Generated: 2026-05-31T21:30:17.104004+00:00  
+Result: **PASS** (3/3 cases passed)
 
 ## Per-case results
 
@@ -9,4 +9,5 @@ Result: **PASS** (2/2 cases passed)
 |------|----------|--------|--------|------|-------|-------|------------|--------|------|--------|------|
 | eu_microsoft_activision_2023 | 3 | 9 | 0 | 0 | 1.000 | 1.000 | 1.000 | 1.00 | low | auto_accept | ✓ |
 | eu_sika_mbcc_2023 | 3 | 15 | 0 | 0 | 1.000 | 1.000 | 1.000 | 1.00 | low | auto_accept | ✓ |
+| eu_sika_dry_mix_2019 | 11 | 14 | 0 | 0 | 1.000 | 1.000 | 1.000 | 1.00 | low | auto_accept | ✓ |
 

@@ -1,9 +1,9 @@
 {
   "focus": "market_definition",
-  "generated_at": "2026-05-30T17:05:22.492188+00:00",
+  "generated_at": "2026-05-31T21:30:17.104004+00:00",
   "overall_passed": true,
-  "cases_total": 2,
-  "cases_passed": 2,
+  "cases_total": 3,
+  "cases_passed": 3,
   "cases_failed": 0,
   "cases": [
     {
@@ -26,6 +26,20 @@
       "quote_failures": 0,
       "quote_warnings": 0,
       "reviewed_gold_count": 3,
+      "product_f1": 1.0,
+      "geographic_f1": 1.0,
+      "overall_f1": 1.0,
+      "promotion_safety_score": 1.0,
+      "overpromotion_risk": "low",
+      "gating_decision": "auto_accept",
+      "passed": true
+    },
+    {
+      "case_id": "eu_sika_dry_mix_2019",
+      "quote_checked": 14,
+      "quote_failures": 0,
+      "quote_warnings": 0,
+      "reviewed_gold_count": 11,
       "product_f1": 1.0,
       "geographic_f1": 1.0,
       "overall_f1": 1.0,

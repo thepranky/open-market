@@ -1,0 +1,107 @@
+{
+  "generated_at": "2026-05-31T21:30:17.157323+00:00",
+  "case_id": "eu_sika_dry_mix_2019",
+  "gold_partial": false,
+  "gold_reviewed_count": 11,
+  "gold_review_status": "has_reviewed_gold_items",
+  "evaluation_valid": true,
+  "product_markets": {
+    "market_type": "product",
+    "true_positives": 6,
+    "false_positives": 0,
+    "false_negatives": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "matched_items": [
+      {
+        "gold_name": "Construction dry premix mortar",
+        "draft_name": "Construction dry premix mortar",
+        "match_type": "exact"
+      },
+      {
+        "gold_name": "Tile-fixing dry premix mortar",
+        "draft_name": "Tile-fixing dry premix mortar",
+        "match_type": "exact"
+      },
+      {
+        "gold_name": "Chemical-based concrete and mortar admixtures",
+        "draft_name": "Chemical-based concrete and mortar admixtures",
+        "match_type": "exact"
+      },
+      {
+        "gold_name": "Structural reinforcing/strengthening (concrete works)",
+        "draft_name": "Structural reinforcing/strengthening (concrete works)",
+        "match_type": "exact"
+      },
+      {
+        "gold_name": "PU sealants for DIY/consumers",
+        "draft_name": "PU sealants for DIY/consumers",
+        "match_type": "exact"
+      },
+      {
+        "gold_name": "ETICS (External Thermal Insulation Composite Systems)",
+        "draft_name": "ETICS (External Thermal Insulation Composite Systems)",
+        "match_type": "exact"
+      }
+    ],
+    "false_negatives_detail": [],
+    "false_positives_detail": [],
+    "unjudged_items": []
+  },
+  "geographic_markets": {
+    "market_type": "geographic",
+    "true_positives": 5,
+    "false_positives": 0,
+    "false_negatives": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "matched_items": [
+      {
+        "gold_name": "Dry premix mortars \u2014 national (France affected)",
+        "draft_name": "Dry premix mortars \u2014 national (France affected)",
+        "match_type": "exact"
+      },
+      {
+        "gold_name": "Chemical-based concrete and mortar admixtures \u2014 national (France affected)",
+        "draft_name": "Chemical-based concrete and mortar admixtures \u2014 national (France affected)",
+        "match_type": "exact"
+      },
+      {
+        "gold_name": "Structural reinforcing/strengthening \u2014 national (France affected)",
+        "draft_name": "Structural reinforcing/strengthening \u2014 national (France affected)",
+        "match_type": "exact"
+      },
+      {
+        "gold_name": "PU sealants for DIY/consumers \u2014 national (France affected)",
+        "draft_name": "PU sealants for DIY/consumers \u2014 national (France affected)",
+        "match_type": "exact"
+      },
+      {
+        "gold_name": "ETICS \u2014 national (Spain affected)",
+        "draft_name": "ETICS \u2014 national (Spain affected)",
+        "match_type": "exact"
+      }
+    ],
+    "false_negatives_detail": [],
+    "false_positives_detail": [],
+    "unjudged_items": []
+  },
+  "promotion_safety": {
+    "risky_promotions": 0,
+    "safe_promoted_count": 11,
+    "safety_score": 1.0,
+    "overpromotion_risk": "low"
+  },
+  "quote_validity": {
+    "total_checked": 14,
+    "passed": 14,
+    "failures": 0,
+    "warnings": 0,
+    "failure_details": []
+  },
+  "overall_f1": 1.0,
+  "gating_decision": "auto_accept",
+  "gating_reason": ""
+}
