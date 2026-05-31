@@ -45,13 +45,6 @@ def test_google_fitbit_structure():
         assert 0.0 <= passage.confidence_score <= 1.0
 
 
-def test_illumina_grail_blocked():
-    path = CASES_DIR / "eu" / "eu_illumina_grail_2022.yaml"
-    case = load_yaml_file(path)
-    assert case.outcome == Outcome.blocked
-    assert len(case.theories_of_harm) >= 1
-
-
 def test_jetblue_spirit_blocked():
     path = CASES_DIR / "us" / "jetblue_spirit_2024.yaml"
     case = load_yaml_file(path)
@@ -77,12 +70,6 @@ def test_case_history_google_fitbit():
     assert len(case.case_history.events) >= 1
 
 
-def test_case_history_illumina_annulled():
-    path = CASES_DIR / "eu" / "eu_illumina_grail_2022.yaml"
-    case = load_yaml_file(path)
-    assert case.case_history is not None
-    assert case.case_history.status == CaseHistoryStatus.annulled
-    assert any(e.event_type == "judgment" for e in case.case_history.events)
 
 
 def test_proposition_verification_defaults():

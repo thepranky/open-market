@@ -136,6 +136,14 @@ class FetchResult:
 # Page-level cache helpers (used when data/source_text/ cache is available)
 # ---------------------------------------------------------------------------
 
+def _get_page_text(cache: dict, page_number: int) -> Optional[str]:
+    """Return text for a specific 1-indexed page from a page cache dict, or None."""
+    for p in cache.get("pages", []):
+        if p["page_number"] == page_number:
+            return p.get("text")
+    return None
+
+
 def _load_page_cache(doc_id: str, cache_dir: Path) -> Optional[dict]:
     """Return page cache for doc_id if the JSON file exists, else None."""
     path = cache_dir / f"{doc_id}.json"
@@ -473,8 +481,7 @@ def check_passage(
                 listed_page = None
 
             if listed_page is not None:
-                from app.utils.pdf_extractor import get_page_text
-                page_text = get_page_text(page_cache, listed_page)
+                page_text = _get_page_text(page_cache, listed_page)
                 if page_text is None:
                     issues.append(Issue(Level.WARNING, case_id, pid,
                                         f"Listed page {listed_page} does not exist in "
@@ -512,10 +519,21 @@ def check_passage(
         issues.append(Issue(Level.INFO, case_id, pid,
                             "Quote found in document text"))
     else:
+        paragraph = passage.get("paragraph")
+        review_status = passage.get("review_status", "")
+        para_hint = (
+            f" paragraph='{paragraph}'" if paragraph else ""
+        )
+        status_hint = (
+            " review_status is spot_checked but quote unverifiable — downgrade to unreviewed."
+            if review_status == "spot_checked" else ""
+        )
         issues.append(Issue(Level.WARNING, case_id, pid,
-                            "Quote snippet not found in extracted document text — "
-                            "verify the quote against the linked source; "
-                            "may be OCR/encoding variation or wrong page"))
+                            f"Quote snippet not found in extracted document text "
+                            f"(page={passage.get('page', '?')}{para_hint}) — "
+                            "verify verbatim text against the linked source; "
+                            "may be paraphrase, OCR/encoding variation, or wrong locator."
+                            + status_hint))
 
     return issues
 

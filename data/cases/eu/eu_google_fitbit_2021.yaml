@@ -35,11 +35,12 @@ theories_of_harm:
 
 product_markets_considered:
   - market_id: pm_1
-    name: Wearable fitness devices
+    name: Wrist-worn wearable devices
     definition_status: defined
     notes: >
-      Commission concluded a relevant product market for wearable fitness devices,
-      distinct from general smartwatches, given dedicated fitness tracking functionality.
+      Commission concluded relevant product market is wrist-worn wearable devices (recital 79).
+      Further segmentation (fitness trackers vs smartwatches, GPS, cellular) left open as Parties
+      do not overlap — would not change competitive assessment.
   - market_id: pm_2
     name: Wearable OS / platforms
     definition_status: discussed
@@ -55,7 +56,7 @@ product_markets_considered:
 
 geographic_markets_considered:
   - market_id: gm_1
-    name: EEA (wearable fitness devices)
+    name: EEA (wrist-worn wearable devices)
     definition_status: defined
   - market_id: gm_2
     name: EEA (online advertising)
@@ -74,48 +75,51 @@ source_documents:
 source_passages:
   - passage_id: sp_1
     source_document_id: eu_google_fitbit_decision
-    page: "14"
-    paragraph: "88"
-    section: "5.1.1 Product market definition"
+    page: "24"
+    paragraph: "79"
+    section: "8.2.1.3 Product market definition — Commission's assessment"
     quote_snippet: >
-      "The Commission concludes that the relevant product market is the market for
-      wearable fitness devices, distinct from general-purpose smartwatches."
+      In light of recitals (74) to (78), for the purpose of assessing the Transaction in this
+      Decision, the Commission considers that the relevant product market is the market
+      for wrist-worn wearable devices.
     extraction_method: manually_added
     review_status: spot_checked
-    confidence_score: 0.95
-    last_checked_date: "2025-01-01"
+    confidence_score: 0.97
+    last_checked_date: "2026-05-30"
     supports_markets:
       - pm_1
-    supports_geographic_markets:
-      - gm_1
   - passage_id: sp_2
     source_document_id: eu_google_fitbit_decision
-    page: "21"
-    paragraph: "130"
-    section: "5.2.2 Data advantage"
+    page: "98"
+    paragraph: "427"
+    section: "9.3.3.2 Commission's assessment — data for online advertising"
     quote_snippet: >
-      "The combination of Fitbit's health and wellness data with Google's existing
-      data sets could reinforce Google's already strong position in online advertising."
+      The Commission considers that, although pre-Transaction Fitbit is not competing in
+      the same markets as Google, the Transaction would give Google control over an
+      important asset, the Fitbit data, that would further strengthen Google's dominance in
+      the markets for the supply of online search advertising services.
     extraction_method: manually_added
     review_status: spot_checked
-    confidence_score: 0.90
-    last_checked_date: "2025-01-01"
+    confidence_score: 0.97
+    last_checked_date: "2026-05-30"
     supports_markets:
       - pm_3
     supports_theories:
       - toh_2
   - passage_id: sp_3
     source_document_id: eu_google_fitbit_decision
-    page: "9"
-    paragraph: "51"
-    section: "4.2 Geographic market"
+    page: "25"
+    paragraph: "84"
+    section: "8.2.2.3 Geographic market definition — Commission's assessment"
     quote_snippet: >
-      "The geographic scope of the relevant market for wearable fitness devices is
-      at least EEA-wide, given broadly similar competitive conditions across Member States."
+      In light of recital (83) , for the purpose of assessing the Transaction in this Decision,
+      the Commission considers that the geographic scope of the relevant product markets
+      for wrist-worn wearable devices identified in recital (79) above is at least EEA-wide
+      if not worldwide.
     extraction_method: manually_added
     review_status: spot_checked
-    confidence_score: 0.90
-    last_checked_date: "2025-01-01"
+    confidence_score: 0.97
+    last_checked_date: "2026-05-30"
     supports_markets:
       - pm_1
     supports_geographic_markets:
@@ -174,9 +178,9 @@ ai_summary: >
 metadata:
   extraction_method: manually_added
   review_status: spot_checked
-  overall_confidence: 0.88
+  overall_confidence: 0.90
   created_date: "2025-01-01"
-  last_updated_date: "2025-01-01"
+  last_updated_date: "2026-05-30"
   tags:
     - digital
     - platforms

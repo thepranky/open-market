@@ -65,56 +65,62 @@ geographic_markets_considered:
 
 source_documents:
   - doc_id: cma_meta_giphy_final_report
-    title: "Meta / GIPHY: Final Report"
+    title: "Meta / GIPHY: Remittal Final Report (October 2022)"
     case_page_url: "https://www.gov.uk/cma-cases/facebook-inc-giphy-inc-merger-inquiry"
-    pdf_url: "https://assets.publishing.service.gov.uk/media/63b6a80f8fa8f52732a24662/Final_Order__Remittal_.pdf"
+    pdf_url: "https://assets.publishing.service.gov.uk/media/635017428fa8f53463dcb9f2/Final_Report_Meta.GIPHY.pdf"
     doc_type: final_report
     retrieval_status: direct
-    published_date: "2022-11-01"
+    published_date: "2022-10-18"
 
 source_passages:
   - passage_id: sp_1
     source_document_id: cma_meta_giphy_final_report
-    paragraph: "5.23"
-    section: "5 Market definition"
+    page: "85"
+    paragraph: "5.44"
+    section: "5 Market definition — GIPHY's position in the supply of searchable GIF libraries"
     quote_snippet: >
-      "We conclude that the relevant product market for the supply of GIF libraries
-      and APIs is distinct from other forms of digital content supply, given the
-      unique search-and-embed functionality and the breadth of GIF content available."
+      We found that the relevant market for the competitive assessment of the Merger is the
+      supply of searchable GIF libraries (including both video and non-video GIFs, but
+      excluding non-GIF stickers and other types of content, and including both API/SDK and
+      O&O distribution channels) on a global basis.
     extraction_method: manually_added
     review_status: spot_checked
-    confidence_score: 0.92
-    last_checked_date: "2025-01-01"
+    confidence_score: 0.97
+    last_checked_date: "2026-05-30"
     supports_markets:
       - pm_3
     supports_geographic_markets:
       - gm_3
   - passage_id: sp_2
     source_document_id: cma_meta_giphy_final_report
-    paragraph: "7.41"
-    section: "7 Vertical effects"
+    page: "272"
+    paragraph: "8.10"
+    section: "8 Vertical Effects — conclusion on foreclosure"
     quote_snippet: >
-      "Meta would have both the ability and the incentive to foreclose rival social
-      media platforms from access to GIPHY's GIF API or to degrade the quality of
-      that access, thereby weakening competing platforms' ability to engage users."
+      For the reasons set out below, our conclusion is that the Merged Entity will have
+      both the ability and incentive to foreclose its social media rivals in this way, thus
+      having the effect of further strengthening Facebook's significant market power in social
+      media. On that basis we conclude that the Merger has resulted, or may be expected to
+      result, in a substantial lessening of competition in the supply of social media services.
     extraction_method: manually_added
     review_status: spot_checked
-    confidence_score: 0.90
-    last_checked_date: "2025-01-01"
+    confidence_score: 0.97
+    last_checked_date: "2026-05-30"
     supports_theories:
       - toh_2
   - passage_id: sp_3
     source_document_id: cma_meta_giphy_final_report
-    paragraph: "6.18"
-    section: "6 Horizontal effects"
+    page: "269"
+    paragraph: "7.279"
+    section: "7 Horizontal Effects — conclusion on horizontal unilateral effects"
     quote_snippet: >
-      "We find that GIPHY's nascent advertising product represented a credible
-      competitive threat to Meta's position in social media display advertising
-      and that this competitive constraint has been eliminated by the merger."
+      On the basis of the above assessment, our view is that the Merger will lead to a
+      substantial lessening of competition in the supply of display advertising services
+      in the UK arising from a loss of dynamic competition.
     extraction_method: manually_added
     review_status: spot_checked
-    confidence_score: 0.88
-    last_checked_date: "2025-01-01"
+    confidence_score: 0.97
+    last_checked_date: "2026-05-30"
     supports_markets:
       - pm_2
     supports_theories:
@@ -178,9 +184,9 @@ ai_summary: >
 metadata:
   extraction_method: manually_added
   review_status: spot_checked
-  overall_confidence: 0.89
+  overall_confidence: 0.88
   created_date: "2025-01-01"
-  last_updated_date: "2025-01-01"
+  last_updated_date: "2026-05-30"
   tags:
     - digital
     - platforms

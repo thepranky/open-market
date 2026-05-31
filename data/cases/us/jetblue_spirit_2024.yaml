@@ -71,58 +71,52 @@ source_documents:
 source_passages:
   - passage_id: sp_1
     source_document_id: doj_jetblue_spirit_opinion
-    page: "22"
-    section: "III.A Product and Geographic Market"
+    page: "75"
+    section: "C Market Definition"
     quote_snippet: >
-      "The Court finds that each origin-destination city pair constitutes a relevant
-      geographic market, consistent with longstanding precedent in airline merger cases,
-      because travellers generally require service between a specific origin and destination."
+      This Court, therefore, defines the relevant geographic market in this case as each
+      individual O&D pair, otherwise known as a route, on which the Defendant Airlines
+      currently compete.
     extraction_method: manually_added
     review_status: spot_checked
-    confidence_score: 0.93
-    last_checked_date: "2025-01-01"
+    confidence_score: 0.97
+    last_checked_date: "2026-05-30"
     supports_markets:
       - pm_1
     supports_geographic_markets:
       - gm_1
   - passage_id: sp_2
     source_document_id: doj_jetblue_spirit_opinion
-    page: "41"
-    section: "III.B The Spirit Effect"
+    page: "83"
+    section: "D Prima Facie Case — Direct Evidence"
     quote_snippet: >
-      "The evidence demonstrates a robust and consistent 'Spirit effect': Spirit's
-      entry on a route is associated with substantial fare reductions by incumbent
-      carriers, and Spirit's exit is associated with fare increases. This competitive
-      discipline would be eliminated by the proposed merger."
+      In eliminating Spirit from the marketplace, the proposed transaction would, by
+      definition, dampen Spirit's disruptive force. As Spirit plays a special role in the
+      market, both to constrain prices and spur innovation, the proposed transaction would
+      substantially lessen competition among other, non-party airlines.
     extraction_method: manually_added
     review_status: spot_checked
-    confidence_score: 0.92
-    last_checked_date: "2025-01-01"
+    confidence_score: 0.97
+    last_checked_date: "2026-05-30"
     supports_theories:
       - toh_1
   - passage_id: sp_3
     source_document_id: doj_jetblue_spirit_opinion
-    page: "58"
-    section: "IV Entry and Expansion"
+    page: "109"
+    section: "E Defendant Airlines' Rebuttal — Entry"
     quote_snippet: >
-      "Entry into air travel markets is not timely, likely, or sufficient to
-      mitigate the anticompetitive effects of the proposed merger given significant
-      barriers including slot constraints, gate access, and capital requirements."
+      Even if other ULCCs entered former Spirit routes at an unprecedented rate of growth
+      (which, given the current restraints on airline growth, is unlikely), their entry is
+      unlikely to be sufficient to protect every consumer, in every relevant market from harm.
     extraction_method: manually_added
     review_status: spot_checked
-    confidence_score: 0.90
-    last_checked_date: "2025-01-01"
+    confidence_score: 0.95
+    last_checked_date: "2026-05-30"
     supports_theories:
       - toh_1
       - toh_2
 
 similar_cases:
-  - case_id: eu_illumina_grail_2022
-    score: 0.30
-    method: graph_feature_overlap
-    reasons:
-      - Both involve blocked mergers where remedies were found insufficient
-      - Both involve elimination of a specific competitive constraint
   - case_id: us_microsoft_activision_2023
     score: 0.28
     method: graph_feature_overlap
@@ -168,9 +162,9 @@ ai_summary: >
 metadata:
   extraction_method: manually_added
   review_status: spot_checked
-  overall_confidence: 0.91
+  overall_confidence: 0.88
   created_date: "2025-01-01"
-  last_updated_date: "2025-01-01"
+  last_updated_date: "2026-05-30"
   tags:
     - airlines
     - travel
