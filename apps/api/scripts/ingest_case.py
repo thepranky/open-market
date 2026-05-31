@@ -1,0 +1,567 @@
+#!/usr/bin/env python3
+"""
+ingest_case.py — end-to-end ingestion orchestrator for CompMap.
+
+Orchestrates the full pipeline for a single case:
+  1. Fetch / cache source PDFs
+  2. Claude extraction → draft YAML
+  3. Structural validation of draft (enum values, referential integrity)
+  4. Source integrity gate (quote grounding)
+  5. Write review report
+
+NOTE on schema validation: Full Pydantic validation (validate_cases.py) applies
+only to canonical records in data/cases/ — drafts intentionally omit fields like
+`metadata` and `procedure_stage` that are added during canonical promotion.
+This script runs a targeted structural check (valid enums, passage references)
+instead of full Pydantic validation.
+
+Usage (from repo root):
+    python apps/api/scripts/ingest_case.py \\
+        --case-id eu_sika_mbcc_2023 \\
+        --focus market_definition \\
+        --max-cost 1.00
+"""
+
+import argparse
+import os
+import sys
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Optional
+
+import httpx
+import yaml
+
+# ---------------------------------------------------------------------------
+# Path setup — must precede all local imports
+# ---------------------------------------------------------------------------
+
+_SCRIPTS_DIR = Path(__file__).resolve().parent
+_API_DIR = _SCRIPTS_DIR.parent
+_REPO_ROOT = _API_DIR.parents[1]
+
+for _p in (str(_API_DIR), str(_SCRIPTS_DIR)):
+    if _p not in sys.path:
+        sys.path.insert(0, _p)
+
+from app.utils.pdf_extractor import DEFAULT_CACHE_DIR, fetch_and_extract
+from check_source_integrity import Level, check_record
+from extract_case_from_source import (
+    ExtractionReport,
+    _resolve_canonical_yaml,
+    extract_case,
+)
+
+_CASES_DIR = _REPO_ROOT / "data" / "cases"
+_DRAFTS_DIR = _REPO_ROOT / "data" / "drafts"
+
+# Valid enum values used in draft structural check
+_VALID_OUTCOMES = {
+    "cleared", "cleared_with_conditions", "cleared_with_remedies",
+    "blocked", "abandoned", "referred", "pending",
+    "pending_litigation", "under_appeal", "annulled",
+    "partially_annulled", "upheld_on_appeal", "unknown",
+}
+_VALID_DEFINITION_STATUSES = {
+    "defined", "left_open", "discussed", "segmented",
+    "considered", "not_conclusive", "possible_segmentation",
+    "precedent_only", "unknown",
+}
+_VALID_REVIEW_STATUSES = {"unreviewed", "spot_checked", "lawyer_reviewed"}
+_VALID_EXTRACTION_METHODS = {
+    "ai_extracted", "manually_added", "imported_metadata", "pdf_extracted",
+}
+
+
+# ---------------------------------------------------------------------------
+# Stage 1 — Fetch / cache source PDFs
+# ---------------------------------------------------------------------------
+
+def stage_fetch_pdfs(
+    source_docs: list[dict],
+    cache_dir: Path,
+    refresh: bool,
+    timeout: int = 90,
+) -> list[dict]:
+    """Fetch and cache PDFs for all source_documents with a pdf_url."""
+    results = []
+    with httpx.Client(follow_redirects=True, timeout=timeout) as client:
+        for doc in source_docs:
+            doc_id = doc.get("doc_id", "")
+            pdf_url = doc.get("pdf_url")
+            if not doc_id:
+                results.append({"doc_id": doc_id, "status": "skip", "note": "missing doc_id"})
+                continue
+            if not pdf_url:
+                results.append({"doc_id": doc_id, "status": "skip", "note": "no pdf_url"})
+                continue
+            cache_file = cache_dir / f"{doc_id}.json"
+            if cache_file.exists() and not refresh:
+                import json
+                with open(cache_file) as fh:
+                    cached = json.load(fh)
+                results.append({
+                    "doc_id": doc_id, "status": "cached",
+                    "pages": cached.get("page_count", "?"),
+                    "note": str(cache_file),
+                })
+                continue
+            print(f"  Fetching {doc_id} …", end=" ", flush=True)
+            try:
+                data = fetch_and_extract(
+                    doc_id, pdf_url,
+                    cache_dir=cache_dir,
+                    force=refresh,
+                    client=client,
+                )
+                print(f"ok ({data['page_count']} pages)")
+                results.append({"doc_id": doc_id, "status": "fetched", "pages": data["page_count"]})
+            except Exception as exc:
+                print(f"FAILED: {exc}")
+                results.append({"doc_id": doc_id, "status": "error", "note": str(exc)})
+    return results
+
+
+# ---------------------------------------------------------------------------
+# Stage 3 — Structural validation of draft
+# ---------------------------------------------------------------------------
+
+def stage_validate_draft(draft_record: dict) -> tuple[bool, list[str]]:
+    """
+    Check structural correctness of draft fields without full Pydantic validation.
+
+    Validates: required top-level fields, enum values, passage referential integrity.
+    Full Pydantic validation (including required canonical fields like `metadata`)
+    runs only at canonical promotion time via validate_cases.py.
+    """
+    errors: list[str] = []
+
+    # Required structural fields
+    for field in ("case_id", "source_documents"):
+        if not draft_record.get(field):
+            errors.append(f"Missing required field: '{field}'")
+
+    # Outcome enum
+    outcome = draft_record.get("outcome", "unknown")
+    if outcome not in _VALID_OUTCOMES:
+        errors.append(f"Invalid outcome '{outcome}' — must be one of {sorted(_VALID_OUTCOMES)}")
+
+    # Market definition_status values
+    for mlist_key in ("product_markets_considered", "geographic_markets_considered"):
+        for m in (draft_record.get(mlist_key) or []):
+            status = m.get("definition_status", "")
+            if status and status not in _VALID_DEFINITION_STATUSES:
+                mid = m.get("market_id", "?")
+                errors.append(
+                    f"{mlist_key}/{mid}: invalid definition_status '{status}'"
+                )
+
+    # Source passages: review_status, extraction_method, referential integrity
+    doc_ids = {d.get("doc_id") for d in (draft_record.get("source_documents") or []) if d.get("doc_id")}
+    for sp in (draft_record.get("source_passages") or []):
+        pid = sp.get("passage_id", "?")
+        rs = sp.get("review_status", "")
+        if rs and rs not in _VALID_REVIEW_STATUSES:
+            errors.append(f"passage {pid}: invalid review_status '{rs}'")
+        em = sp.get("extraction_method", "")
+        if em and em not in _VALID_EXTRACTION_METHODS:
+            errors.append(f"passage {pid}: invalid extraction_method '{em}'")
+        ref = sp.get("source_document_id", "")
+        if ref and ref not in doc_ids:
+            errors.append(
+                f"passage {pid}: source_document_id '{ref}' not found in source_documents"
+            )
+
+    return len(errors) == 0, errors
+
+
+# ---------------------------------------------------------------------------
+# Stage 4 — Source integrity gate
+# ---------------------------------------------------------------------------
+
+def stage_integrity(
+    draft_record: dict,
+    cache_dir: Path,
+    timeout: int = 20,
+) -> tuple[int, int, list]:
+    """Run check_record against the draft; return (error_count, warning_count, issues)."""
+    with httpx.Client(follow_redirects=True, timeout=timeout) as client:
+        issues = check_record(client, draft_record, timeout, cache_dir=cache_dir)
+    errors = sum(1 for i in issues if i.level == Level.ERROR)
+    warnings = sum(1 for i in issues if i.level == Level.WARNING)
+    return errors, warnings, issues
+
+
+# ---------------------------------------------------------------------------
+# Stage 5 — Review report
+# ---------------------------------------------------------------------------
+
+def write_review_report(
+    report_path: Path,
+    *,
+    case_id: str,
+    focus: str,
+    draft_path: Path,
+    fetch_results: list[dict],
+    extraction_report: ExtractionReport,
+    extraction_mode: str = "single-batch",
+    schema_ok: bool,
+    schema_errors: list[str],
+    integrity_errors: int,
+    integrity_warnings: int,
+    integrity_issues: list,
+) -> None:
+    lines: list[str] = []
+    ts = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+
+    lines += [
+        f"# Ingestion Review: `{case_id}` — `{focus}`",
+        "",
+        f"Generated: {ts}  ",
+        f"Draft: `{draft_path}`",
+        "",
+    ]
+
+    blocking = bool(extraction_report.error) or not schema_ok or integrity_errors > 0
+    status = "BLOCKED" if blocking else ("WARNINGS" if integrity_warnings else "PASS")
+    lines += [f"**Status: {status}**", ""]
+
+    # Stage 1
+    lines += ["## Stage 1 — PDF cache", ""]
+    for r in fetch_results:
+        icon = "✓" if r["status"] in ("cached", "fetched") else ("–" if r["status"] == "skip" else "✗")
+        pages = f" ({r['pages']} pages)" if r.get("pages") else ""
+        note = f" — {r['note']}" if r.get("note") and r["status"] not in ("cached", "fetched") else ""
+        lines.append(f"- {icon} `{r['doc_id']}`: {r['status']}{pages}{note}")
+    lines.append("")
+
+    # Stage 2
+    lines += ["## Stage 2 — Extraction", ""]
+    lines += [f"Mode: `{extraction_mode}`", ""]
+    if extraction_report.error:
+        lines += [f"**ERROR:** {extraction_report.error}", ""]
+    elif extraction_report.result:
+        r = extraction_report.result
+        lines += [
+            f"- Product markets found: {len(r.product_markets)}",
+            f"- Geographic markets found: {len(r.geographic_markets)}",
+            f"- Theories of harm: {len(r.theories)}",
+            f"- Passages validated: {r.passages_validated}",
+            f"- Passages rejected: {r.passages_rejected}",
+            "",
+        ]
+        if extraction_report.section_batches:
+            succeeded = sum(1 for b in extraction_report.section_batches if b.result is not None)
+            total = len(extraction_report.section_batches)
+            lines.append(f"- Section batches: {succeeded}/{total} succeeded")
+            lines.append("")
+        if r.caveats:
+            lines += ["**Caveats:**", ""]
+            for c in r.caveats:
+                lines.append(f"- {c}")
+            lines.append("")
+    else:
+        lines += ["Skipped (--no-claude or no result)", ""]
+
+    # Stage 3
+    lines += ["## Stage 3 — Structural validation", ""]
+    if schema_ok:
+        lines += ["✓ No structural errors", ""]
+    else:
+        lines += [f"✗ {len(schema_errors)} error(s):", ""]
+        for msg in schema_errors:
+            lines.append(f"- {msg}")
+        lines.append("")
+    lines += [
+        "_Note: Full Pydantic schema validation (validate_cases.py) applies only_",
+        "_to canonical records. Run it after promoting draft to data/cases/._",
+        "",
+    ]
+
+    # Stage 4
+    lines += ["## Stage 4 — Source integrity", ""]
+    if integrity_errors == 0 and integrity_warnings == 0:
+        lines += ["✓ 0 errors, 0 warnings", ""]
+    else:
+        lines += [f"Errors: {integrity_errors}   Warnings: {integrity_warnings}", ""]
+        for issue in integrity_issues:
+            if issue.level in (Level.ERROR, Level.WARNING):
+                lines.append(f"- [{issue.level.value}] `{issue.scope}`: {issue.message}")
+                if issue.url:
+                    lines.append(f"  - url: {issue.url}")
+        lines.append("")
+
+    # Promotion plan
+    draft_rec = extraction_report.draft_record
+    if draft_rec:
+        try:
+            from extract_case_from_source import (
+                _build_canonical_merge_candidates,
+                _serialize_promotion_plan,
+            )
+            plan = _serialize_promotion_plan(draft_rec)
+            if plan:
+                merge = _build_canonical_merge_candidates(plan)
+                counts = merge.get("_counts", {})
+                lines += ["## Promotion plan", ""]
+                for action, count in sorted(counts.items()):
+                    if count:
+                        lines.append(f"- `{action}`: {count}")
+                lines.append("")
+                safe = merge.get("safe_to_promote", [])
+                if safe:
+                    lines += ["**Ready to promote to canonical:**", ""]
+                    for m in safe:
+                        refs = ", ".join(f"p.{p}" for p in m.get("source_refs", []))
+                        lines.append(
+                            f"- [{m['market_type']}] **{m['name']}**"
+                            f" ({m['definition_status']})"
+                            + (f" — {refs}" if refs else "")
+                        )
+                    lines.append("")
+                holds = merge.get("hold_pending_source_check", [])
+                if holds:
+                    lines += ["**Hold — needs broader source run:**", ""]
+                    for m in holds:
+                        lines.append(f"- [{m['market_type']}] {m['name']}")
+                    lines.append("")
+        except Exception:
+            pass
+
+    # Reconciliation
+    if extraction_report.findings:
+        try:
+            from extract_case_from_source import _group_reconciliation
+            grouped = _group_reconciliation(extraction_report.findings)
+            lines += ["## Reconciliation vs existing YAML", ""]
+            labels = {
+                "matched": "Matched",
+                "likely_rename": "Possible rename",
+                "candidate_addition": "New from source",
+                "out_of_scope": "Unmatched in source",
+            }
+            for key, label in labels.items():
+                items = grouped.get(key, [])
+                if items:
+                    lines += [f"**{label} ({len(items)}):**", ""]
+                    for f in items:
+                        name = f.get("existing_name") or f.get("draft_name") or "?"
+                        lines.append(f"- {name}")
+                    lines.append("")
+        except Exception:
+            pass
+
+    # Next steps
+    lines += ["## Next steps", ""]
+    if blocking:
+        lines.append("1. Fix the errors listed above before proceeding.")
+    else:
+        lines += [
+            "1. Review passages marked `unreviewed` against the source PDF.",
+            "2. For passages that are verbatim and correctly located, set `review_status: spot_checked`.",
+            "3. Promote markets with `promote_to_canonical` action to canonical YAML.",
+            "4. Run `python apps/api/scripts/validate_cases.py` after canonical promotion.",
+            "5. Run `python apps/api/scripts/check_source_integrity.py --no-cache` as final gate.",
+        ]
+    lines.append("")
+
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+    report_path.write_text("\n".join(lines), encoding="utf-8")
+
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
+
+def main() -> int:
+    parser = argparse.ArgumentParser(
+        description="End-to-end ingestion orchestrator for CompMap cases",
+    )
+    parser.add_argument("--case-id", required=True, help="Case ID (e.g. eu_sika_mbcc_2023)")
+    parser.add_argument(
+        "--focus", default="market_definition",
+        choices=["market_definition", "theories", "remedies", "case_history"],
+        help="Extraction focus (default: market_definition)",
+    )
+    parser.add_argument("--refresh-cache", action="store_true",
+                        help="Re-download PDFs even if a cache file exists")
+    parser.add_argument("--max-cost", type=float, default=1.00,
+                        help="Max estimated API cost in USD (default: 1.00)")
+    parser.add_argument("--report-md", default=None,
+                        help="Override path for the review report Markdown file")
+    parser.add_argument("--batch-by-section", action="store_true",
+                        help="Run extraction in section-by-section batch mode (recommended for large cases)")
+    parser.add_argument("--no-claude", action="store_true",
+                        help="Skip Claude extraction; validate an existing draft if present")
+    parser.add_argument("--cache-dir", default=str(DEFAULT_CACHE_DIR),
+                        help=f"PDF text cache directory (default: {DEFAULT_CACHE_DIR})")
+    args = parser.parse_args()
+
+    cache_dir = Path(args.cache_dir)
+
+    # Resolve canonical YAML
+    yaml_path = _resolve_canonical_yaml(args.case_id, _CASES_DIR)
+    if yaml_path is None:
+        print(f"ERROR: No canonical YAML found for '{args.case_id}' under {_CASES_DIR}")
+        return 1
+
+    with open(yaml_path) as fh:
+        record = yaml.safe_load(fh)
+
+    jurisdiction = record.get("jurisdiction", "unknown").lower()
+    source_docs: list[dict] = record.get("source_documents") or []
+
+    # Determine output paths
+    draft_dir = _DRAFTS_DIR / jurisdiction
+    draft_dir.mkdir(parents=True, exist_ok=True)
+    draft_path = draft_dir / f"{args.case_id}.{args.focus}.draft.yaml"
+    report_path = (
+        Path(args.report_md)
+        if args.report_md
+        else draft_dir / f"{args.case_id}.{args.focus}.review.md"
+    )
+
+    print(f"Case:       {args.case_id}")
+    print(f"YAML:       {yaml_path}")
+    print(f"Focus:      {args.focus}")
+    print(f"Draft out:  {draft_path}")
+    print(f"Review:     {report_path}")
+    print(f"Max cost:   ${args.max_cost:.2f}")
+    print()
+
+    # -----------------------------------------------------------------------
+    # Stage 1 — PDF cache
+    # -----------------------------------------------------------------------
+    print("Stage 1 — PDF cache")
+    fetch_results = stage_fetch_pdfs(source_docs, cache_dir, args.refresh_cache)
+    cached_count = sum(1 for r in fetch_results if r["status"] in ("cached", "fetched"))
+    fetch_errors = sum(1 for r in fetch_results if r["status"] == "error")
+    print(f"  {cached_count} doc(s) ready, {fetch_errors} fetch error(s)")
+    if cached_count == 0:
+        print("ERROR: No PDF caches available — cannot proceed with extraction")
+        return 1
+    print()
+
+    # -----------------------------------------------------------------------
+    # Stage 2 — Claude extraction
+    # -----------------------------------------------------------------------
+    extraction_report = ExtractionReport(case_id=args.case_id, yaml_path=yaml_path)
+
+    if args.no_claude:
+        print("Stage 2 — Skipped (--no-claude)")
+        if not draft_path.exists():
+            print(f"  No draft found at {draft_path}; nothing to validate.")
+            return 0
+        print(f"  Using existing draft: {draft_path}")
+    else:
+        print("Stage 2 — Claude extraction")
+        anthropic_client = None
+        use_claude = True
+        try:
+            import anthropic as _anthropic
+            anthropic_client = _anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+        except (ImportError, KeyError):
+            print("  WARN: anthropic package or ANTHROPIC_API_KEY not available — falling back to --no-claude mode")
+            use_claude = False
+
+        if use_claude:
+            extraction_report = extract_case(
+                yaml_path,
+                cache_dir=cache_dir,
+                output_path=draft_path,
+                use_claude=True,
+                anthropic_client=anthropic_client,
+                focus=args.focus,
+                max_cost=args.max_cost,
+                batch_by_section=args.batch_by_section,
+            )
+            if extraction_report.error:
+                print(f"  ERROR: {extraction_report.error}")
+                write_review_report(
+                    report_path, case_id=args.case_id, focus=args.focus,
+                    draft_path=draft_path, fetch_results=fetch_results,
+                    extraction_report=extraction_report,
+                    extraction_mode="batch-by-section" if args.batch_by_section else "single-batch",
+                    schema_ok=False, schema_errors=[extraction_report.error],
+                    integrity_errors=0, integrity_warnings=0, integrity_issues=[],
+                )
+                print(f"\nReview:     {report_path}")
+                return 1
+            r = extraction_report.result
+            print(f"  Product markets:  {len(r.product_markets)}")
+            print(f"  Geo markets:      {len(r.geographic_markets)}")
+            print(f"  Passages:         validated={r.passages_validated} rejected={r.passages_rejected}")
+            if extraction_report.section_batches:
+                succeeded = sum(1 for b in extraction_report.section_batches if b.result is not None)
+                print(f"  Batches:          {succeeded}/{len(extraction_report.section_batches)} succeeded")
+            print(f"  Draft written:    {draft_path}")
+        else:
+            # Fell back from no-API-key; try to use existing draft
+            if not draft_path.exists():
+                print(f"  No draft found at {draft_path}; cannot validate without Claude.")
+                return 1
+            print(f"  Using existing draft: {draft_path}")
+    print()
+
+    # Load the draft for subsequent stages
+    draft_record = yaml.safe_load(draft_path.read_text(encoding="utf-8"))
+
+    # -----------------------------------------------------------------------
+    # Stage 3 — Structural validation
+    # -----------------------------------------------------------------------
+    print("Stage 3 — Structural validation")
+    schema_ok, schema_errors_list = stage_validate_draft(draft_record)
+    if schema_ok:
+        print("  ✓ Valid")
+    else:
+        for msg in schema_errors_list:
+            print(f"  ✗ {msg}")
+    print()
+
+    # -----------------------------------------------------------------------
+    # Stage 4 — Source integrity
+    # -----------------------------------------------------------------------
+    print("Stage 4 — Source integrity")
+    int_errors, int_warnings, int_issues = stage_integrity(draft_record, cache_dir)
+    marker = "✓" if int_errors == 0 and int_warnings == 0 else ("⚠" if int_errors == 0 else "✗")
+    print(f"  {marker} {int_errors} error(s), {int_warnings} warning(s)")
+    for issue in int_issues:
+        if issue.level in (Level.ERROR, Level.WARNING):
+            print(f"    [{issue.level.value}] {issue.scope}: {issue.message[:100]}")
+    print()
+
+    # -----------------------------------------------------------------------
+    # Stage 5 — Review report
+    # -----------------------------------------------------------------------
+    print("Stage 5 — Review report")
+    write_review_report(
+        report_path,
+        case_id=args.case_id,
+        focus=args.focus,
+        draft_path=draft_path,
+        fetch_results=fetch_results,
+        extraction_report=extraction_report,
+        extraction_mode="batch-by-section" if args.batch_by_section else "single-batch",
+        schema_ok=schema_ok,
+        schema_errors=schema_errors_list,
+        integrity_errors=int_errors,
+        integrity_warnings=int_warnings,
+        integrity_issues=int_issues,
+    )
+    print(f"  Written: {report_path}")
+    print()
+
+    # Final result
+    failed = bool(extraction_report.error) or not schema_ok or int_errors > 0
+    if failed:
+        print("RESULT: BLOCKED — fix errors above before promoting to canonical")
+        return 1
+    if int_warnings:
+        print(f"RESULT: PASS with {int_warnings} warning(s) — review before promoting")
+    else:
+        print("RESULT: PASS — draft ready for human review")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

@@ -10,7 +10,7 @@
 
 **Practical use case:** A lawyer researching market definition precedent in a media/gaming merger can search CompMap and find: which product markets were considered, what definition status was reached (defined, discussed, left open), what theories of harm were raised, and exactly which passage of which decision supports each finding — with page and paragraph numbers.
 
-**Current state:** This is a v0 first slice. There are 7 manually-curated case records. The extraction scripts exist and have been evaluated. The full automated ingestion pipeline is designed but not yet built.
+**Current state:** This is a v0 first slice. There are 6 source-verified case records. The extraction scripts exist and have been evaluated. The full automated ingestion pipeline is designed but not yet built.
 
 ---
 
@@ -47,24 +47,22 @@ The pipeline has two distinct parts: **manual authoring** (how current cases wer
 
 ---
 
-### Stage 1 — Source document acquisition and caching
 
 - **What:** Fetch the PDF decision and extract its text for downstream use.
 - **Script:** `apps/api/app/utils/pdf_extractor.py`
 - **Inputs:** URL of authority PDF.
 - **Outputs:** Cached JSON text file in `data/source_text/` (e.g., `eu_microsoft_activision_2023_decision.json`).
-- **Competition law context:** The source text is the evidentiary foundation. If the wrong document is fetched (e.g., `eu_illumina_grail_2022` currently points to a 2024 annulment document rather than the 2022 prohibition decision — a known data quality issue), all downstream extractions will be wrong.
+- **Competition law context:** The source text is the evidentiary foundation. If the wrong document is fetched, all downstream extractions will be wrong. This was confirmed during the data baseline pass: valid URLs were not enough; each source had to be checked against the actual authority document.
 - **Status:** Semi-automated; cache is checked before re-fetching.
 
 ---
 
-### Stage 2 — YAML case record setup
 
 - **What:** Create the skeleton YAML file with case metadata.
 - **Files written:** `data/cases/{jurisdiction}/{case_id}.yaml`
 - **Schema:** Validated against `CaseRecord` Pydantic model (`apps/api/app/models/case.py`).
 - **Key fields set at this stage:** `case_id`, `case_name`, `jurisdiction`, `authority`, `decision_date`, `procedure_stage`, `sector`, `parties`, `outcome`.
-- **Status:** Manual. For current 7 cases, this was done by hand.
+- **Status:** Manual. For the current 6 cases, this was done by hand.
 
 ---
 
@@ -126,13 +124,12 @@ The pipeline has two distinct parts: **manual authoring** (how current cases wer
 
 ---
 
-### Stage 9 — Graph ingestion (optional)
 
 - **What:** Seeds the Neo4j graph database from the canonical YAML records. Creates 13 node types (Case, Authority, Jurisdiction, Party, Sector, ProductMarket, GeographicMarket, TheoryOfHarm, Outcome, SourceDocument, SourcePassage, Remedy, SimilarCase) and 15 relationship types.
 - **Script:** `graph/seed_graph.py` (312 lines). Run via `docker compose --profile seed run seed`.
 - **Inputs:** `data/cases/**/*.yaml`; Neo4j instance.
 - **Outputs:** Populated Neo4j database with constraints and full-text indexes.
-- **Status:** Implemented. Optional — the API falls back to YAML-based queries if Neo4j is unavailable.
+- **Status:** Implemented and verified after the data baseline pass. The current 6-case dataset seeds cleanly into Neo4j. Optional — the API falls back to YAML-based queries if Neo4j is unavailable.
 
 ---
 
@@ -199,19 +196,18 @@ Every proposition in the YAML must be backed by a `source_passage` entry. A find
 
 ---
 
-## 6. Quality Assessment
 
 
 | Dimension                       | Score /10 | Reason                                                                                                            | Practical improvement                                                                       |
 | ------------------------------- | --------- | ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
 | **Automation**                  | 4/10      | Extraction scripts exist and run; but ingestion pipeline is not built, and current 7 cases were manually authored | Build the `ingestion/` pipeline as a proper CLI that runs Stages 1–6 automatically          |
-| **Scalability**                 | 3/10      | In-memory YAML search works for 7 cases; Neo4j graph is designed for scale but only partially seeded              | Add proper database indexing and move search to Neo4j full-text; increase case count to 50+ |
+| **Scalability**                 | 3/10      | In-memory YAML search works for 6 cases; Neo4j graph seeds cleanly but the corpus is still too small              | Add proper database indexing and move search to Neo4j full-text; increase case count to 50+ |
 | **Accuracy / source grounding** | 7/10      | Quote validation gate is real and enforced; eval results on 2 cases show F1 = 1.0 on partial gold                 | Expand gold standard coverage; add completeness checks for missed markets                   |
 | **Legal reliability**           | 5/10      | Source passage links are genuine; but no formal legal weighting, definition status can be misclassified by LLM    | Add structured legal review checklist; separate allegation vs. finding at schema level      |
 | **Maintainability**             | 7/10      | YAML is readable and git-diffable; Pydantic schema enforces structure; scripts are well-factored                  | Document the schema evolution policy; add migration tooling for schema changes              |
 | **Deployment readiness**        | 3/10      | Docker Compose works locally; no production deployment, no auth, no rate limiting, no monitoring                  | Add authentication, environment config management, and a staging deploy                     |
-| **User-facing usefulness**      | 5/10      | Frontend exists and shows markets, theories, sources; but 7 cases is too few for real research value              | Expand case count; add cross-case filtering by market name and theory type                  |
-| **Evaluation / test coverage**  | 6/10      | Eval framework is real with precision/recall metrics; gold standard exists for 2 cases; CI runs benchmark subset  | Expand gold standard to all 7 cases; add completeness recall (not just precision-on-gold)   |
+| **User-facing usefulness**      | 5/10      | Frontend exists and shows markets, theories, sources; but 6 cases is too few for real research value              | Expand case count; add cross-case filtering by market name and theory type                  |
+| **Evaluation / test coverage**  | 6/10      | Eval framework is real with precision/recall metrics; gold standard exists for 2 cases; CI runs benchmark subset  | Expand gold standard to all 6 canonical cases; add completeness recall (not just precision-on-gold)   |
 
 
 ---
@@ -241,8 +237,8 @@ This is not a rigid roadmap. It is the sensible order of priority based on the c
 
 | Priority | Workstream                      | What to do                                                                                                                                               | Implementer / role                                                                 | Why it comes now                                                                                                  |
 | -------- | ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| **1**    | **Data quality baseline**       | Fix known bad source links, standardise existing 7 records, and make every important proposition source-backed                                           | **Human + ChatGPT** — human makes legal calls; ChatGPT helps audit, summarise, and draft fixes | Do not scale bad data                                                                                             |
-| **2**    | **Ingestion CLI**               | Turn the current scripts into one reliable command: fetch source → extract text → draft YAML → validate quotes → validate schema → produce review report | **Claude + human** — Claude implements durable CLI architecture; human defines workflow and reviews edge cases | This converts the pipeline from a collection of scripts into a repeatable workflow                                |
+| **1**    | **Data quality baseline** ✅ Done | Completed source-verification pass: removed Illumina/Grail, corrected bad locators/quotes, verified 6 canonical records, seeded Neo4j, tagged `data-baseline-v1` | **Human + ChatGPT + Claude** — human made legal calls; ChatGPT guided the sequence; Claude made targeted repo fixes | Completed first because scaling bad data would undermine the product |
+| **2**    | **Ingestion CLI** ← Next | Turn the current scripts into one reliable command: fetch source → extract text → draft YAML → validate quotes/locators → validate schema → produce review report | **Claude + human** — Claude implements durable CLI architecture; human defines workflow and reviews edge cases | This converts the pipeline from a collection of scripts into a repeatable workflow |
 | **3**    | **Human review workflow**       | Create a lightweight review checklist and status flow for promoting `data/drafts/` into `data/cases/`                                                    | **Human + ChatGPT** — human owns legal judgment; ChatGPT helps design checklists and review templates | Legal reliability still depends on human judgment                                                                 |
 | **4**    | **Evaluation expansion**        | Add gold fixtures for all current cases and track precision, recall, quote validity, and missed-market risk                                              | **Human + Claude + ChatGPT** — human creates gold judgments; Claude implements eval logic; ChatGPT helps interpret results | Scaling requires knowing when extraction quality regresses                                                        |
 | **5**    | **Case coverage**               | Expand from 7 cases to a useful seed corpus, likely 50–100 high-value merger decisions across EU, UK, and US                                             | **Human + ChatGPT + Claude** — human selects/prioritises cases; ChatGPT assists research triage; Claude improves batch ingestion | The product only becomes useful once cross-case comparison works                                                  |
@@ -269,7 +265,7 @@ This is not a rigid roadmap. It is the sensible order of priority based on the c
 >
 > The core design principle is source-first. Every proposition — every market definition, theory of harm, or evidentiary finding — has to trace back to a real quote in a real document. We validate every quote against the actual extracted text before it enters the database. If the quote isn't there, it doesn't go in.
 >
-> Today we have 7 case records across the EU, UK, and US, built with a combination of AI-assisted extraction using Claude and human legal review. The extraction pipeline exists; the ingestion automation is the next thing to build.
+> Today we have 6 source-verified case records across the EU, UK, and US, built with a combination of AI-assisted extraction using Claude and human legal review. The extraction pipeline exists; the ingestion automation is the next thing to build.
 >
 > The system is not production-deployed yet. It runs locally with Docker, with a FastAPI backend, a Neo4j graph layer, and a Next.js frontend. The main gap between now and a deployable product is ingestion automation, broader case coverage, and access control.
 >
@@ -277,4 +273,4 @@ This is not a rigid roadmap. It is the sensible order of priority based on the c
 
 ---
 
-*File paths and scores reflect the repository as of May 2026. The ingestion pipeline design is in `docs/ingestion-design.md`. Known data quality issues are tracked in `docs/data-quality-notes.md`.*
+*File paths and scores reflect the repository as of May 2026. The ingestion pipeline design is in `docs/ingestion-design.md`. The completed data baseline and any future source-quality notes are tracked in `docs/data-quality-notes.md`.*
