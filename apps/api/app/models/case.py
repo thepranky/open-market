@@ -23,6 +23,9 @@ class DefinitionStatus(str, Enum):
     discussed = "discussed"
     segmented = "segmented"
     left_open = "left_open"
+    considered = "considered"   # Commission adopted a working market basis with cautious/context-specific
+                                # wording (e.g. "for the purpose of this decision…"); lower precedential
+                                # weight than "defined", more concrete than "left_open".
 
 
 class PartyRole(str, Enum):

@@ -81,6 +81,8 @@ For each product and geographic market entry:
 
 **`defined` vs `left_open`:** If the text says the definition was "left open", "not necessary to conclude", or "inconclusive", the status must be `left_open` or `discussed` — not `defined`. "For the purpose of this decision, it will consider X" is a working assumption: use `considered`.
 
+**`considered` (CompMap internal status):** Captures cases where the Commission assessed the transaction on a specific market basis with cautious or context-specific wording — e.g. "for the purpose of this decision, the Commission will consider…" or "for assessing the Transaction, the relevant geographic market could be national in scope". This is a valid status with lower precedential weight than `defined` but more concrete than `left_open` (the authority committed to a working basis for its assessment). It reflects the 2024 Commission Market Definition Notice's acknowledgment that in merger cases the exact definition may be left open where the outcome does not depend on it.
+
 **Geographic markets:** EC phrases like "for the purpose of this decision, it will consider the relevant geographic market national in scope" are working assumptions for the competitive assessment. Use `considered`, not `defined`, unless the Commission explicitly adopts the market as formally defined.
 
 ---
@@ -139,19 +141,62 @@ If either produces errors, fix them before proceeding.
 
 ---
 
-## Step 7 — Promote the draft
+## Step 7 — Build the canonical YAML
 
-Copy the draft to `data/cases/` in the correct jurisdiction subdirectory:
+The canonical YAML is **not** a direct copy of the draft. The draft contains extraction metadata (`_draft_note`, `source_role`, `market_importance`, `verification.status`) that must not appear in canonical records. Build the canonical file by hand, guided by the draft.
 
-```bash
-# Example
-cp data/drafts/eu/eu_sika_dry_mix_2019.market_definition.draft.yaml \
-   data/cases/eu/eu_sika_dry_mix_2019.yaml
+**Minimum required canonical fields not present in the draft:**
+
+| Field | Where | Typical value |
+|---|---|---|
+| `procedure_stage` | top-level | `phase1` or `phase2` |
+| `metadata` | top-level block | see below |
+| `outcome` | top-level | `cleared`, `cleared_with_conditions`, etc. |
+| `similar_cases` | top-level | `[]` if none known |
+| `case_history` | top-level | at minimum the decision event |
+
+**Fields to strip from draft → canonical:**
+- `_draft_note` (top-level annotation)
+- `source_role` on passages (draft-only; not in canonical `SourcePassage`)
+- `market_importance` on markets (draft-only; not in canonical `ProductMarket`/`GeographicMarket`)
+- `verification.status` — rename to `verification.verification_status` if keeping, or omit
+
+**`metadata` block template:**
+```yaml
+metadata:
+  extraction_method: pdf_extracted   # or manually_added
+  review_status: unreviewed          # until lawyer-reviewed
+  overall_confidence: 0.65           # ≤ 0.70 until spot_checked; ≤ 0.90 until lawyer_reviewed
+  created_date: "YYYY-MM-DD"
+  last_updated_date: "YYYY-MM-DD"
+  tags:
+    - sector-keyword
+    - phase1          # or phase2
+    - cleared         # outcome slug
 ```
 
-Then edit the promoted file:
-- Remove the `_draft_note` header line
-- Add required canonical fields missing from the draft: `metadata` (with `procedure_stage`, `overall_confidence`), `outcome` if known
+**`procedure_stage` values:**
+- `phase1` — Phase I clearance (no in-depth investigation)
+- `phase2` — Phase II investigation (in-depth, with or without remedies)
+
+After writing the canonical file, run validation before committing:
+
+```bash
+# Validate schema
+apps/api/.venv/bin/python apps/api/scripts/validate_cases.py
+
+# Check source links (live HTTP)
+apps/api/.venv/bin/python apps/api/scripts/check_source_links.py
+
+# Source integrity (0 errors required)
+apps/api/.venv/bin/python apps/api/scripts/check_source_integrity.py --no-cache
+
+# Seed graph
+python graph/seed_graph.py
+
+# Tests
+apps/api/.venv/bin/python -m pytest apps/api/tests/ -q
+```
 
 ---
 
