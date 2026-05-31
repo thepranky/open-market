@@ -229,6 +229,10 @@ _MARKET_DEF_FALLBACK_MIN_SCORE: int = 2      # min signal hits for a primary can
 _MARKET_DEF_FALLBACK_CONTINUATION_MIN: int = 1  # min hits for an adjacent continuation page
 _MAX_FALLBACK_PAGES: int = 40                # hard cap on total fallback pages
 _MAX_FALLBACK_CHUNKS: int = 8                # hard cap on number of fallback chunks returned
+# If section-path selection yields fewer than this many pages for market_definition focus,
+# supplement with page-text fallback. Handles documents where footnote numbers are
+# misread as section headings, leaving relevant pages under unrecognised labels.
+_MARKET_DEF_SP_MIN_PAGES: int = 8
 
 # Matches a first uppercase/heading-like line to infer a synthetic section label.
 _FALLBACK_HEADING_RE = re.compile(
@@ -595,6 +599,10 @@ def _select_relevant_chunks(
     - Section-path matching is tried first (preferred path).
     - If zero chunks match, a neutral page-text fallback is used; returned
       chunks carry selection_method='page_text_fallback'.
+    - If section-path matches fewer than _MARKET_DEF_SP_MIN_PAGES pages,
+      page-text fallback chunks covering non-overlapping pages are appended.
+      This handles documents where footnote numbers are misread as section
+      headings, leaving major sections under unrecognised labels.
 
     For other focus values, only section-path matching is used (no fallback).
     Without a focus, section-path relevance is used with a broad fallback to
@@ -610,6 +618,23 @@ def _select_relevant_chunks(
                 chunks,
                 max_fallback_pages=min(max_total_pages, _MAX_FALLBACK_PAGES),
             )
+        # Supplement sparse section-path results with page-text fallback.
+        if (
+            focus == "market_definition"
+            and sum(len(c.pages) for c in candidates) < _MARKET_DEF_SP_MIN_PAGES
+        ):
+            covered = {n for c in candidates for n in c.page_numbers}
+            for fb_chunk in _select_market_def_fallback_chunks(
+                chunks, max_fallback_pages=min(max_total_pages, _MAX_FALLBACK_PAGES)
+            ):
+                # Add the chunk if it contains at least one page not yet covered.
+                # Using "all covered" (not superset) rather than "any overlap" so that
+                # fallback chunks which partially overlap with section-path pages still
+                # contribute their new pages to the selection.
+                if not covered.issuperset(set(fb_chunk.page_numbers)):
+                    candidates.append(fb_chunk)
+                    covered.update(fb_chunk.page_numbers)
+            candidates.sort(key=lambda c: min(c.page_numbers) if c.page_numbers else 0)
     else:
         candidates = [c for c in chunks if _is_relevant_section(c.section_path) and c.pages]
         if not candidates:

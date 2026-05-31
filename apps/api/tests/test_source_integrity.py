@@ -215,6 +215,19 @@ class TestUrlHeuristics:
             "https://assets.publishing.service.gov.uk/media/63b6a80f8fa8f52732a24662/Final_Order.pdf"
         )
 
+    def test_opaque_id_ec_old_format_pdf(self):
+        # Old EC URL format (/cases/decisions/mNNNN_NNN_N.pdf) — no 5-digit numeric dir.
+        assert _url_uses_opaque_id(
+            "https://ec.europa.eu/competition/mergers/cases/decisions/m9276_298_3.pdf"
+        )
+
+    def test_title_check_skipped_for_old_ec_format(self):
+        # Old-format EC URL: title tokens absent but check should pass (opaque ID).
+        assert _title_tokens_in_url(
+            "Case M.9276 – Sika / Financière Dry Mix Solutions: Commission Decision",
+            "https://ec.europa.eu/competition/mergers/cases/decisions/m9276_298_3.pdf",
+        )
+
     def test_not_opaque_descriptive_ftc_url(self):
         assert not _url_uses_opaque_id(
             "https://www.ftc.gov/system/files/ftc_gov/pdf/D09412MicrosoftActivisionComplaint.pdf"

@@ -79,6 +79,7 @@ from extract_case_from_source import (
     # Fallback selector
     _MARKET_DEF_FALLBACK_SIGNALS,
     _MARKET_DEF_FALLBACK_MIN_SCORE,
+    _MARKET_DEF_SP_MIN_PAGES,
     _MAX_FALLBACK_PAGES,
     _MAX_FALLBACK_CHUNKS,
     _score_page_market_def,
@@ -7774,6 +7775,39 @@ class TestSelectRelevantChunksFallback:
         selected = _select_relevant_chunks(chunks, focus="market_definition")
         assert len(selected) == 1
         assert selected[0].selection_method == "section_path"
+
+    def test_sparse_section_path_supplemented_by_fallback(self):
+        # Simulates a Phase 1 decision where footnote numbers are misread as section
+        # headings, leaving most relevant pages under non-matching labels.
+        # Section-path finds 1 page (< _MARKET_DEF_SP_MIN_PAGES); fallback fills in
+        # additional pages whose text scores are high.
+        sp_chunk = _make_chunk("c1", "4.1 Relevant market definition", [(1, "relevant market brief")])
+        # Pages 10–11: well-separated from page 1 so the fallback continuation logic
+        # does not pull page 1 into the same fallback chunk.
+        fb_chunks = [
+            _make_chunk("c2", "24 Questionnaire", [(10, _market_def_page())]),
+            _make_chunk("c3", "24 Questionnaire", [(11, _market_def_page())]),
+        ]
+        selected = _select_relevant_chunks([sp_chunk] + fb_chunks, focus="market_definition")
+        page_numbers = {n for c in selected for n in c.page_numbers}
+        # The section-path page is preserved.
+        assert 1 in page_numbers
+        # Fallback pages are merged in because section-path was sparse.
+        assert 10 in page_numbers
+        assert 11 in page_numbers
+        # Section-path chunk keeps its method; the fallback chunk is marked as fallback.
+        by_page = {c.page_numbers[0]: c.selection_method for c in selected if c.page_numbers}
+        assert by_page[1] == "section_path"
+        assert by_page[10] == "page_text_fallback"
+
+    def test_adequate_section_path_not_supplemented(self):
+        # When section-path finds >= _MARKET_DEF_SP_MIN_PAGES pages, no supplement.
+        chunks = [
+            _make_chunk(f"c{i}", "8.3 Relevant market definition", [(i, "relevant market")])
+            for i in range(1, _MARKET_DEF_SP_MIN_PAGES + 1)
+        ]
+        selected = _select_relevant_chunks(chunks, focus="market_definition")
+        assert all(c.selection_method == "section_path" for c in selected)
 
 
 class TestSelectMarketDefFallbackChunks:
