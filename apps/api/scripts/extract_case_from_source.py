@@ -981,9 +981,16 @@ If the supplied chunks are background or overview text only:
 
 PRECISE MARKET DEFINITION STATUS:
 Choose the most accurate definition_status for each market entry:
-  - "defined": Commission conclusively defined the market
-  - "left_open": Commission expressly stated it was unnecessary to conclude on market definition
-  - "considered": Market discussed or examined but Commission reserved its conclusion
+  - "defined": Commission conclusively determined the relevant market scope
+  - "left_open": Commission expressly stated it was unnecessary to conclude on the exact
+    market definition (e.g. "the exact scope of the market can be left open")
+  - "considered": Commission assessed the transaction on this market basis using
+    cautious or context-specific wording — e.g. "for the purpose of this decision,
+    the Commission will consider…" or "for assessing the Transaction, the relevant
+    geographic market could be…". Lower precedential weight than "defined"; more
+    concrete than "left_open" because the authority did commit to a working basis.
+    Use this when the Commission adopts a market scope for its assessment without
+    formally resolving the definition as a general legal matter.
   - "not_conclusive": Analysis performed but no conclusion reached
   - "possible_segmentation": Segmentation was considered but not definitively resolved
   - "precedent_only": Referenced from prior cases only, not assessed in this decision
@@ -1088,8 +1095,12 @@ _MARKET_ITEM_SCHEMA = {
             "type": "string",
             "enum": sorted(_VALID_MARKET_STATUSES),
             "description": (
-                "defined=Commission concluded; left_open=Commission said unnecessary to decide; "
-                "considered=discussed but no formal conclusion; not_conclusive=analysis inconclusive; "
+                "defined=Commission conclusively determined scope; "
+                "left_open=Commission said unnecessary to conclude on exact definition; "
+                "considered=Commission adopted this market basis with cautious/context-specific wording "
+                "(e.g. 'for the purpose of this decision' / 'for assessing the Transaction') — "
+                "lower precedential weight than defined, more concrete than left_open; "
+                "not_conclusive=analysis inconclusive; "
                 "possible_segmentation=segmentation considered, not resolved; "
                 "precedent_only=from prior cases, not assessed here; unknown=cannot determine."
             ),

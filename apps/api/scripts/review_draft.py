@@ -293,10 +293,19 @@ for a given market entry, set outcome_passage_misuse = true — even if other \
 non-outcome passages also support the market. \
 Market definition and merger outcome are related but distinct: a clearance conclusion \
 does not prove a product or geographic market was defined or considered.
-7. definition_status semantics: \
-"defined" requires the authority to have definitively concluded on market scope; \
-"left_open" means the authority explicitly said it was unnecessary to conclude; \
-"discussed" means the authority examined it without a final ruling. \
+7. definition_status semantics — CompMap uses these values: \
+"defined": authority conclusively determined market scope; \
+"left_open": authority explicitly said it was unnecessary to conclude on the exact \
+definition (e.g. "the exact scope of the market can be left open"); \
+"considered": authority assessed the transaction on this market basis using cautious / \
+context-specific wording — e.g. "for the purpose of this decision, the Commission will \
+consider…", "for assessing the Transaction…", "the Commission assessed the transaction \
+on the basis of…". This IS a valid, documented CompMap status. Do NOT flag "considered" \
+as undocumented, incorrect, or requiring upgrade to "defined" or "left_open" merely \
+because it is not one of those values. It captures working assumptions that carry \
+lower precedential weight than "defined" but are more concrete than "left_open"; \
+"not_conclusive": analysis performed but no conclusion reached; \
+"discussed": authority examined without any formal ruling. \
 If the quote says "the Commission considers it unnecessary to conclude" or similar, \
 that market should be "left_open", not "defined".
 8. Geographic market check: if passages mention country-level or regional competitive \
@@ -311,6 +320,17 @@ market_investigation). \
 commission_assessment depending on context). \
 "does not raise serious doubts" is the clearance outcome (source_role: conclusion), \
 not a market definition finding.
+10. Mixed passages — market-definition language combined with incidental outcome language: \
+a passage that contains substantive market-definition analysis AND incidental outcome \
+language (e.g. "the precise geographic market definition can be left open, as the \
+Transaction does not raise competition concerns under any plausible market definition") \
+is NOT automatically disqualified from supporting a market entry. \
+If the market-definition portion independently supports the proposition (e.g. it says \
+the definition is left open or that the geographic market is national in scope), the \
+passage may keep its market link. In your note, flag it as a mixed passage and suggest \
+that the reviewer consider splitting it into narrower snippets at promotion time. \
+Do NOT set outcome_passage_misuse = true for a mixed passage unless the passage \
+contains NO substantive market-definition content — i.e. it is purely an outcome conclusion.
 
 TRIAGE CALIBRATION:
 - auto_verified_candidate: all passages are strong authority findings, all \

@@ -10,7 +10,7 @@
 
 **Practical use case:** A lawyer researching market definition precedent in a media/gaming merger can search CompMap and find: which product markets were considered, what definition status was reached (defined, discussed, left open), what theories of harm were raised, and exactly which passage of which decision supports each finding — with page and paragraph numbers.
 
-**Current state:** This is a v0 first slice. There are 6 source-verified case records. The extraction scripts exist and have been evaluated. A first ingestion CLI now orchestrates fetch/cache, extraction, draft validation, source integrity checks, and review report generation.
+**Current state:** This is a v0 first slice. There are 7 source-verified case records. A first ingestion CLI now orchestrates fetch/cache, extraction, draft validation, source integrity checks, LLM review triage, and review report generation. The first genuinely fresh case (`eu_sika_dry_mix_2019`) has been promoted to canonical. Frontend cleanup is deferred.
 
 ---
 
@@ -36,7 +36,7 @@
 
 ## 3. Current Pipeline
 
-The pipeline has two distinct parts: **manual authoring** (how current cases were built) and a **semi-automated ingestion flow**. A first CLI wrapper now exists, but it still needs to be proven on a genuinely fresh case before it should be treated as production-ready.
+The pipeline has two distinct parts: **manual authoring** (how the baseline cases were built) and a **semi-automated ingestion flow**. The semi-automated flow has now been proven on a genuinely fresh EC case (`eu_sika_dry_mix_2019`).
 
 ### Stage 0 — Case selection (manual)
 
@@ -62,7 +62,7 @@ The pipeline has two distinct parts: **manual authoring** (how current cases wer
 - **Files written:** `data/cases/{jurisdiction}/{case_id}.yaml`
 - **Schema:** Validated against `CaseRecord` Pydantic model (`apps/api/app/models/case.py`).
 - **Key fields set at this stage:** `case_id`, `case_name`, `jurisdiction`, `authority`, `decision_date`, `procedure_stage`, `sector`, `parties`, `outcome`.
-- **Status:** Manual. For the current 6 cases, this was done by hand.
+- **Status:** Manual. For the baseline cases, this was done by hand.
 
 ---
 
@@ -116,6 +116,16 @@ The pipeline has two distinct parts: **manual authoring** (how current cases wer
 
 ---
 
+### Stage 7a — Review learning log
+
+- **What:** Capture the delta between the original draft, the LLM review, the human-reviewed draft, and the promoted canonical record.
+- **Goal:** Turn repeated human corrections into reusable extraction rules, validator warnings, prompt updates, and eval fixtures.
+- **Inputs:** `data/drafts/...draft.yaml`, `data/drafts/...llm_review.json`, promoted `data/cases/...yaml`.
+- **Outputs:** Review learning logs under `data/review_learning/`, with categorised correction types such as `definition_status_mapping`, `source_role_correction`, `support_linkage_correction`, `outcome_passage_misuse`, and `missing_market_added`.
+- **Status:** Next to build. This should be auditable and rule/eval-driven, not model fine-tuning.
+
+---
+
 ### Stage 8 — API serving
 
 - **What:** FastAPI loads all validated YAML from `data/cases/` into an in-memory LRU cache on startup. Routes: `GET /cases`, `GET /cases/{id}`, `GET /search?q=`, `GET /graph/case/{id}`.
@@ -129,7 +139,7 @@ The pipeline has two distinct parts: **manual authoring** (how current cases wer
 - **Script:** `graph/seed_graph.py` (312 lines). Run via `docker compose --profile seed run seed`.
 - **Inputs:** `data/cases/**/*.yaml`; Neo4j instance.
 - **Outputs:** Populated Neo4j database with constraints and full-text indexes.
-- **Status:** Implemented and verified after the data baseline pass. The current 6-case dataset seeds cleanly into Neo4j. Optional — the API falls back to YAML-based queries if Neo4j is unavailable.
+- **Status:** Implemented and verified after the data baseline pass. The current 7-case dataset seeds cleanly into Neo4j. Optional — the API falls back to YAML-based queries if Neo4j is unavailable.
 
 ---
 
@@ -200,14 +210,14 @@ Every proposition in the YAML must be backed by a `source_passage` entry. A find
 
 | Dimension                       | Score /10 | Reason                                                                                                            | Practical improvement                                                                       |
 | ------------------------------- | --------- | ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| **Automation**                  | 4/10      | Extraction scripts exist and run; but ingestion pipeline is not built, and current 7 cases were manually authored | Build the `ingestion/` pipeline as a proper CLI that runs Stages 1–6 automatically          |
-| **Scalability**                 | 3/10      | In-memory YAML search works for 6 cases; Neo4j graph seeds cleanly but the corpus is still too small              | Add proper database indexing and move search to Neo4j full-text; increase case count to 50+ |
+| **Automation**                  | 5/10      | Ingestion CLI + LLM triage exist; first fresh case promoted; corpus expansion still manual-heavy                  | Build out review-learning pipeline; increase automation coverage for corpus expansion       |
+| **Scalability**                 | 3/10      | In-memory YAML search works for 7 cases; Neo4j graph seeds cleanly but the corpus is still too small              | Add proper database indexing and move search to Neo4j full-text; increase case count to 50+ |
 | **Accuracy / source grounding** | 7/10      | Quote validation gate is real and enforced; eval results on 2 cases show F1 = 1.0 on partial gold                 | Expand gold standard coverage; add completeness checks for missed markets                   |
 | **Legal reliability**           | 5/10      | Source passage links are genuine; but no formal legal weighting, definition status can be misclassified by LLM    | Add structured legal review checklist; separate allegation vs. finding at schema level      |
 | **Maintainability**             | 7/10      | YAML is readable and git-diffable; Pydantic schema enforces structure; scripts are well-factored                  | Document the schema evolution policy; add migration tooling for schema changes              |
 | **Deployment readiness**        | 3/10      | Docker Compose works locally; no production deployment, no auth, no rate limiting, no monitoring                  | Add authentication, environment config management, and a staging deploy                     |
-| **User-facing usefulness**      | 5/10      | Frontend exists and shows markets, theories, sources; but 6 cases is too few for real research value              | Expand case count; add cross-case filtering by market name and theory type                  |
-| **Evaluation / test coverage**  | 6/10      | Eval framework is real with precision/recall metrics; gold standard exists for 2 cases; CI runs benchmark subset  | Expand gold standard to all 6 canonical cases; add completeness recall (not just precision-on-gold)   |
+| **User-facing usefulness**      | 5/10      | Frontend exists and shows markets, theories, sources; but 7 cases is too few for real research value; frontend cleanup still needed | Expand case count; add cross-case filtering by market name and theory type                  |
+| **Evaluation / test coverage**  | 6/10      | Eval framework is real with precision/recall metrics; gold standard exists for 2 cases; CI runs benchmark subset  | Expand gold standard to all 7 canonical cases; add completeness recall (not just precision-on-gold)   |
 
 
 ---
@@ -239,16 +249,17 @@ This is not a rigid roadmap. It is the sensible order of priority based on the c
 | -------- | ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
 | **1**    | **Data quality baseline** ✅ Done | Completed source-verification pass: removed Illumina/Grail, corrected bad locators/quotes, verified 6 canonical records, seeded Neo4j, tagged `data-baseline-v1` | **Human + ChatGPT + Claude** — human made legal calls; ChatGPT guided the sequence; Claude made targeted repo fixes | Completed first because scaling bad data would undermine the product |
 | **2**    | **Ingestion CLI** ✅ v1 Done | Added `apps/api/scripts/ingest_case.py` to orchestrate source caching, extraction, draft validation, source integrity checks, and review report generation; supports `--batch-by-section` | **Claude + human** — Claude implemented the CLI/tests; human tested and reviewed workflow fit | v1 works on existing case data; next proof point is running it on a genuinely fresh case |
-| **3**    | **Fresh-case ingestion proof** ✅ Done | Ran the CLI on `eu_sika_dry_mix_2019` (M.9276) from source URL to draft YAML, review report, and LLM triage; identified and fixed outcome-passage misuse and missing geographic markets in the draft | **Human + Claude** — human made legal calls on promotion items; Claude ran the pipeline and made targeted fixes | Proved the ingestion CLI works on a genuinely fresh case; revealed outcome-passage and geographic-market gaps that shaped the promotion checklist |
+| **3**    | **Fresh-case ingestion proof** ✅ Done | Ran the CLI on `eu_sika_dry_mix_2019` (M.9276) from source URL to draft YAML, review report, and LLM triage; identified and fixed outcome-passage misuse and missing geographic markets; promoted to canonical | **Human + Claude** — human made legal calls on promotion items; Claude ran the pipeline and made targeted fixes | Proved the ingestion CLI works on a genuinely fresh case; revealed outcome-passage and geographic-market gaps that shaped the promotion checklist |
 | **3a**   | **LLM review / triage** ✅ v1 Done | Added `apps/api/scripts/review_draft.py`; integrated as optional `--llm-review` flag in `ingest_case.py`; 38 tests; correctly identified outcome-passage misuse and missing geographic markets on first real run | **Claude + human** — Claude implemented; human validated findings against source PDF | Reduces manual review burden by flagging semantic issues before human promotion review |
 | **4**    | **Human review workflow** ✅ Done | Created `docs/human-promotion-checklist.md` with promotion prerequisites, review steps, definition_status mapping, source_role guidance, outcome-passage rules, and pre/post-promotion commands | **Human + Claude** — human set policy decisions; Claude drafted the checklist | Formalises the review loop so cases can be promoted consistently and auditably |
-| **5**    | **Evaluation expansion** ← Next | Add gold fixtures for all current cases and track precision, recall, quote validity, and missed-market risk                                              | **Human + Claude + ChatGPT** — human creates gold judgments; Claude implements eval logic; ChatGPT helps interpret results | Scaling requires knowing when extraction quality regresses                                                        |
-| **6**    | **Case coverage**               | Expand from 7 cases to a useful seed corpus, likely 50–100 high-value merger decisions across EU, UK, and US                                             | **Human + ChatGPT + Claude** — human selects/prioritises cases; ChatGPT assists research triage; Claude improves batch ingestion | The product only becomes useful once cross-case comparison works                                                  |
-| **7**    | **Search and graph hardening**  | Improve cross-case filtering by market, sector, authority, theory of harm, outcome, and source passage                                                   | **Claude + human** — Claude implements backend/search/graph improvements; human validates usefulness for legal research | This is the core user value beyond reading one YAML record                                                        |
-| **8**    | **Production API readiness**    | Add auth, environment config, rate limiting, logging, monitoring, and proper startup/restart behaviour                                                   | **Claude + human** — Claude implements technical hardening; human decides deployment constraints and reviews security posture | FastAPI production deployments need security, restart handling, replication/memory planning, and pre-start checks |
-| **9**    | **Frontend productisation**     | Make the UI usable for real research: source cards, filters, case comparison, and clear citation trails                                                  | **ChatGPT + Claude + human** — ChatGPT helps product/spec design; Claude implements; human tests as target user | Lawyers need an interface, not just validated data                                                                |
-| **10**   | **Database / graph operations** | Decide whether YAML remains canonical while Neo4j is derived, then add backup, monitoring, and seed/rebuild procedures                                   | **Claude + human** — Claude implements operations scripts; human chooses architecture and recovery expectations | Neo4j can support traversal, but production use needs monitoring and operational discipline                       |
-| **11**   | **Staging deploy**              | Deploy a private staging version with separate dev/staging/prod env config and a small reviewed corpus                                                   | **Claude + human** — Claude prepares deploy config; human controls credentials, hosting choices, and acceptance testing | Next.js/FastAPI/Neo4j need environment separation before external users touch it                                  |
+| **5**    | **Review learning logs** ← Next | Capture human-review deltas from draft → reviewed draft → canonical record, then convert repeated corrections into reusable rules, prompt updates, validator warnings, and eval fixtures | **Claude + human + ChatGPT** — Claude implements log capture and rule extraction; human validates categories; ChatGPT helps interpret patterns | This is how manual review scope shrinks over time without weakening source-first reliability                      |
+| **6**    | **Evaluation expansion**        | Add gold fixtures for all current cases and track precision, recall, quote validity, and missed-market risk                                              | **Human + Claude + ChatGPT** — human creates gold judgments; Claude implements eval logic; ChatGPT helps interpret results | Scaling requires knowing when extraction quality regresses                                                        |
+| **7**    | **Case coverage**               | Expand from 7 cases to a useful seed corpus, likely 50–100 high-value merger decisions across EU, UK, and US                                             | **Human + ChatGPT + Claude** — human selects/prioritises cases; ChatGPT assists research triage; Claude improves batch ingestion | The product only becomes useful once cross-case comparison works                                                  |
+| **8**    | **Search and graph hardening**  | Improve cross-case filtering by market, sector, authority, theory of harm, outcome, and source passage                                                   | **Claude + human** — Claude implements backend/search/graph improvements; human validates usefulness for legal research | This is the core user value beyond reading one YAML record                                                        |
+| **9**    | **Production API readiness**    | Add auth, environment config, rate limiting, logging, monitoring, and proper startup/restart behaviour                                                   | **Claude + human** — Claude implements technical hardening; human decides deployment constraints and reviews security posture | FastAPI production deployments need security, restart handling, replication/memory planning, and pre-start checks |
+| **10**   | **Frontend productisation**     | Make the UI usable for real research: source cards, filters, case comparison, and clear citation trails                                                  | **ChatGPT + Claude + human** — ChatGPT helps product/spec design; Claude implements; human tests as target user | Lawyers need an interface, not just validated data                                                                |
+| **11**   | **Database / graph operations** | Decide whether YAML remains canonical while Neo4j is derived, then add backup, monitoring, and seed/rebuild procedures                                   | **Claude + human** — Claude implements operations scripts; human chooses architecture and recovery expectations | Neo4j can support traversal, but production use needs monitoring and operational discipline                       |
+| **12**   | **Staging deploy**              | Deploy a private staging version with separate dev/staging/prod env config and a small reviewed corpus                                                   | **Claude + human** — Claude prepares deploy config; human controls credentials, hosting choices, and acceptance testing | Next.js/FastAPI/Neo4j need environment separation before external users touch it                                  |
 
 
 **Near-term deployment target:** a private research demo with reviewed data, source-backed case pages, reliable search, and no public write access.
@@ -267,7 +278,7 @@ This is not a rigid roadmap. It is the sensible order of priority based on the c
 >
 > The core design principle is source-first. Every proposition — every market definition, theory of harm, or evidentiary finding — has to trace back to a real quote in a real document. We validate every quote against the actual extracted text before it enters the database. If the quote isn't there, it doesn't go in.
 >
-> Today we have 6 source-verified case records across the EU, UK, and US, built with a combination of AI-assisted extraction using Claude and human legal review. A first ingestion CLI now exists; the next step is proving it on a genuinely fresh case before scaling the corpus.
+> Today we have 7 source-verified case records across the EU, UK, and US, built with a combination of AI-assisted extraction using Claude and human legal review. The first fresh case has now completed the full loop — from source fetch through LLM extraction, LLM review triage, human review, and canonical promotion. The next step is review-learning logs: capturing the delta from each human correction so it becomes a reusable extraction rule, validator warning, or eval fixture — that is how the manual review workload shrinks over time without sacrificing source-first reliability.
 >
 > The system is not production-deployed yet. It runs locally with Docker, with a FastAPI backend, a Neo4j graph layer, and a Next.js frontend. The main gap between now and a deployable product is ingestion automation, broader case coverage, and access control.
 >
