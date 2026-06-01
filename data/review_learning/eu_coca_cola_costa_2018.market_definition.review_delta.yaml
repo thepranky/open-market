@@ -1,0 +1,68 @@
+schema_version: '1'
+case_id: eu_coca_cola_costa_2018
+focus: market_definition
+generated_at: '2026-06-01T00:02:37Z'
+source_files:
+  draft: data/drafts/eu/eu_coca_cola_costa_2018.market_definition.draft.yaml
+  llm_review: data/drafts/eu/eu_coca_cola_costa_2018.market_definition.llm_review.json
+  canonical: data/cases/eu/eu_coca_cola_costa_2018.yaml
+summary:
+  total_corrections: 3
+  by_type:
+    metadata_completion: 2
+    note_cleanup: 1
+  llm_triage_status: needs_legal_review
+llm_review_insights:
+  triage_status: needs_legal_review
+  triage_rationale: Multiple outcome/clearance passages (sp_2, sp_7, sp_10, sp_14, sp_27, sp_29, sp_31)
+    are linked as primary support for product markets and theories of harm; several geographic markets
+    (gm_2, gm_3) reference passage IDs not supplied in this batch (sp_37–sp_41); theory entries carry
+    no supporting passages; and role misuse is present where conclusion passages are labelled commission_assessment.
+    These issues require legal judgment to resolve.
+corrections:
+- correction_type: metadata_completion
+  object_type: case
+  object_id: eu_coca_cola_costa_2018
+  before:
+    authority_reference: null
+    case_type: null
+    procedure_stage: null
+  after:
+    authority_reference: M.9122
+    case_type: merger
+    procedure_stage: phase1
+  inferred_reason: Required fields absent from draft; set by the human reviewer during canonical promotion.
+  reusable_rule_candidate: procedure_stage, case_type, and authority_reference must always be explicitly
+    resolved during the promotion checklist review.
+  suggested_follow_up: docs_update
+  confidence: high
+- correction_type: metadata_completion
+  object_type: metadata
+  object_id: eu_coca_cola_costa_2018
+  before: null
+  after:
+    overall_confidence: 0.7
+    review_status: unreviewed
+    created_date: '2026-05-31'
+  inferred_reason: The metadata block (overall_confidence, review_status, dates) is not written by the
+    extraction script and is always created at promotion time.
+  reusable_rule_candidate: The metadata block is a required canonical section. It must be added during
+    promotion; its absence from drafts is expected.
+  suggested_follow_up: docs_update
+  confidence: high
+- correction_type: note_cleanup
+  object_type: geographic_market
+  object_id: gm_1
+  before:
+    notes: The Commission treated the geographic scope of NABs as national, relying on consistent prior
+      decisional practice, the Notifying Party's agreement, and market investigation confirmation, and
+      conducted its assessment on that basis.
+  after:
+    notes: The Commission confirms it will assess NABs markets on a national basis, consistent with prior
+      precedents and confirmed by the market investigation.
+  inferred_reason: Notes revised during canonical promotion (e.g. 'draft' → 'record', wording clarification,
+    added context).
+  reusable_rule_candidate: Draft-specific language (e.g. 'in this draft') should be avoided in extraction
+    notes so they need no cleanup at promotion time.
+  suggested_follow_up: prompt_update
+  confidence: low
