@@ -1,16 +1,16 @@
 # Review Learning Proposals
 
-Generated: 2026-06-01T00:02:52Z  
-Cases reviewed: 2  |  Total corrections: 7  |  Patterns identified: 4
+Generated: 2026-06-01T21:01:26Z  
+Cases reviewed: 3  |  Total corrections: 9  |  Patterns identified: 4
 
 ---
 
 ## Summary
 
-- **Cases reviewed:** `eu_coca_cola_costa_2018`, `eu_sika_dry_mix_2019`
-- **Total corrections captured:** 7
+- **Cases reviewed:** `eu_coca_cola_costa_2018`, `eu_facebook_whatsapp_2014`, `eu_sika_dry_mix_2019`
+- **Total corrections captured:** 9
 - **Distinct patterns:** 4
-- **Priority breakdown:** 4 low patterns
+- **Priority breakdown:** 2 low, 2 medium patterns
 
 ## High-Priority Proposed Pipeline Changes
 
@@ -31,6 +31,14 @@ Cases reviewed: 2  |  Total corrections: 7  |  Patterns identified: 4
 - `review_prompt_update`: Clarify `considered` vs `defined` working-assumption language in the LLM review prompt.
 - `extraction_prompt_update`: Flag mixed passages (outcome + definition language in the same quote snippet) as a known difficult pattern.
 
+**Case `eu_facebook_whatsapp_2014`** — triage status: `needs_legal_review`
+
+> Several passages require legal judgment: sp_4 and sp_11 contain pure or near-pure outcome/clearance language linked to market entries; sp_9 is a mixed left-open/outcome passage with a clearance rationale; the definition_status of pm_1 as "considered" is borderline given the Commission's explicit conclusion wording; and sp_25 appears to be a copy-paste of a gm_1 passage repurposed for gm_2 without a distinct source. Additionally, sp_29 is misplaced (geographic advertising market evidence appearing in a consumer communications apps context passage), and there are no theories of harm drafted despite the decision assessing effects.
+
+**Implied proposals (require human judgement before acting):**
+- `review_prompt_update`: Clarify `considered` vs `defined` working-assumption language in the LLM review prompt.
+- `extraction_prompt_update`: Flag mixed passages (outcome + definition language in the same quote snippet) as a known difficult pattern.
+
 **Case `eu_sika_dry_mix_2019`** — triage status: `needs_legal_review`
 
 > Multiple product markets carry definition_status "defined" but the Commission's language consistently uses "should be considered as a separate product market for assessing the Transaction" — a working assumption formula that CompMap maps to "considered", not "defined". Additionally, sp_19 is a mixed passage (geographic left-open language combined with an outcome sentence) that warrants reviewer attention, and the UK overlap mentioned in sp_21 context suggests a possible missing geographic market entry for structural reinforcing/strengthening in the United Kingdom.
@@ -41,10 +49,10 @@ Cases reviewed: 2  |  Total corrections: 7  |  Patterns identified: 4
 
 ## Low-Priority / No-Action Items
 
-- **`metadata_completion`** (2x, priority: low) → `docs_update`  
+- **`metadata_completion`** (3x, priority: medium) → `docs_update`  
   Rule: procedure_stage, case_type, and authority_reference must always be explicitly resolved during the promotion checklist review.
 
-- **`metadata_completion`** (2x, priority: low) → `docs_update`  
+- **`metadata_completion`** (3x, priority: medium) → `docs_update`  
   Rule: The metadata block is a required canonical section. It must be added during promotion; its absence from drafts is expected.
 
 - **`note_cleanup`** (2x, priority: low) → `extraction_prompt_update`  

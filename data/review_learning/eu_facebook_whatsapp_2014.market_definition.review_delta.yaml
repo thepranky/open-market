@@ -1,0 +1,53 @@
+schema_version: '1'
+case_id: eu_facebook_whatsapp_2014
+focus: market_definition
+generated_at: '2026-06-01T21:01:25Z'
+source_files:
+  draft: data/drafts/eu/eu_facebook_whatsapp_2014.market_definition.draft.yaml
+  llm_review: data/drafts/eu/eu_facebook_whatsapp_2014.market_definition.llm_review.json
+  canonical: data/cases/eu/eu_facebook_whatsapp_2014.yaml
+summary:
+  total_corrections: 2
+  by_type:
+    metadata_completion: 2
+  llm_triage_status: needs_legal_review
+llm_review_insights:
+  triage_status: needs_legal_review
+  triage_rationale: 'Several passages require legal judgment: sp_4 and sp_11 contain pure or near-pure
+    outcome/clearance language linked to market entries; sp_9 is a mixed left-open/outcome passage with
+    a clearance rationale; the definition_status of pm_1 as "considered" is borderline given the Commission''s
+    explicit conclusion wording; and sp_25 appears to be a copy-paste of a gm_1 passage repurposed for
+    gm_2 without a distinct source. Additionally, sp_29 is misplaced (geographic advertising market evidence
+    appearing in a consumer communications apps context passage), and there are no theories of harm drafted
+    despite the decision assessing effects.'
+corrections:
+- correction_type: metadata_completion
+  object_type: case
+  object_id: eu_facebook_whatsapp_2014
+  before:
+    authority_reference: null
+    case_type: null
+    procedure_stage: null
+  after:
+    authority_reference: M.7217
+    case_type: merger
+    procedure_stage: phase1
+  inferred_reason: Required fields absent from draft; set by the human reviewer during canonical promotion.
+  reusable_rule_candidate: procedure_stage, case_type, and authority_reference must always be explicitly
+    resolved during the promotion checklist review.
+  suggested_follow_up: docs_update
+  confidence: high
+- correction_type: metadata_completion
+  object_type: metadata
+  object_id: eu_facebook_whatsapp_2014
+  before: null
+  after:
+    overall_confidence: 0.7
+    review_status: unreviewed
+    created_date: '2026-05-31'
+  inferred_reason: The metadata block (overall_confidence, review_status, dates) is not written by the
+    extraction script and is always created at promotion time.
+  reusable_rule_candidate: The metadata block is a required canonical section. It must be added during
+    promotion; its absence from drafts is expected.
+  suggested_follow_up: docs_update
+  confidence: high
