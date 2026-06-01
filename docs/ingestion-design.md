@@ -247,6 +247,58 @@ When adding or modifying a rule: (1) update the YAML registry first, (2) update
 
 ---
 
+## Section selection and coverage sanity check
+
+### How `--batch-by-section` selects pages
+
+For `focus=market_definition`, the selector first tries **section-path matching** —
+chunks whose section heading path contains terms from `_FOCUS_TERMS["market_definition"]`
+("relevant market", "market definition", "product market", "geographic market").
+
+If section-path selection returns too few pages, a **neutral page-text fallback** runs:
+every non-TOC page is scored by occurrences of neutral EU market-definition signals
+(e.g. "left open", "demand-side substitut", "plausible market definition"); high-scoring
+pages and their adjacent neighbours are bundled into fallback chunks.
+
+**Supplemental fallback thresholds** — both conditions trigger the fallback independently:
+- Absolute: section-path yields < 8 pages (handles short docs where headings were garbled).
+- Relative: section-path yields < 25% of the document's non-TOC pages AND the doc has ≥ 30
+  non-TOC pages (handles long pharma/tech decisions where market-definition content is
+  embedded inside therapeutic-area or competitive-assessment sub-sections that lack
+  "market definition" in their heading).
+
+When the relative threshold fires, the fallback chunk cap is doubled (from 8 to 16 groups)
+so that scattered sections (e.g. `4.3.3 Other Overlaps`) are not cut off.
+
+### Coverage warning
+
+After selection, `ingest_case.py` computes:
+```
+coverage_ratio = selected_pages / total_non_toc_pages
+```
+If `coverage_ratio < 0.25` for a decision with ≥ 30 non-TOC pages, the review report
+shows **Status: PASS (coverage warning)** and the console prints:
+```
+WARN Coverage:  N/M pages (X%) — re-run with --full-market-definition-pass
+```
+
+### `--full-market-definition-pass`
+
+Adds this flag to `ingest_case.py`. When set, the page-text fallback is always merged
+with section-path results regardless of thresholds, up to `_MAX_FALLBACK_PAGES` additional
+pages. Use for long decisions where the relative threshold may still miss sections, or
+to get maximum coverage for an unfamiliar document structure.
+
+### Motivation: BMS/Celgene (M.9294)
+
+M.9294 is a 68-page pharma Phase I decision. Market definition is analysed per therapeutic
+area under sections named "4.1 Autoimmune diseases", "4.2 Fibrotic diseases", etc.
+Only the sub-sections explicitly labelled "4.x.x.1 Market definition" matched the
+section-path focus terms, giving 10/65 = 15% coverage. The relative threshold (< 25%)
+now triggers supplemental fallback, raising coverage to ≈ 84% of non-TOC pages.
+
+---
+
 ## File locations
 
 | Path | Purpose |

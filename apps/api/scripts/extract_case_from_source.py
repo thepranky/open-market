@@ -233,6 +233,13 @@ _MAX_FALLBACK_CHUNKS: int = 8                # hard cap on number of fallback ch
 # supplement with page-text fallback. Handles documents where footnote numbers are
 # misread as section headings, leaving relevant pages under unrecognised labels.
 _MARKET_DEF_SP_MIN_PAGES: int = 8
+# For long decisions (≥ this many non-TOC pages), also trigger supplemental fallback when
+# the section-path selection covers less than this fraction of the document.  Prevents
+# section-path matching from silently returning partial coverage on long pharma/tech
+# decisions where market-definition content is embedded in therapeutic-area or
+# competitive-assessment sub-sections that lack "market definition" in their heading.
+_MARKET_DEF_COVERAGE_MIN_RATIO: float = 0.25
+_MARKET_DEF_COVERAGE_MIN_DOC_PAGES: int = 30  # only apply ratio check above this size
 
 # Matches a first uppercase/heading-like line to infer a synthetic section label.
 _FALLBACK_HEADING_RE = re.compile(
@@ -395,6 +402,8 @@ class ExtractionReport:
     draft_record: Optional[dict] = None
     error: Optional[str] = None
     section_batches: list[SectionBatchResult] = field(default_factory=list)
+    # Set after chunk selection; used by the review report to warn on narrow coverage.
+    selection_coverage: Optional[dict] = None  # keys: total_non_toc_pages, selected_pages, ratio
 
 
 # ---------------------------------------------------------------------------
@@ -500,12 +509,17 @@ def _infer_section_label_from_pages(pages: list[dict]) -> str:
 def _select_market_def_fallback_chunks(
     all_chunks: list[ChunkInfo],
     max_fallback_pages: int = _MAX_FALLBACK_PAGES,
+    max_chunks: int = _MAX_FALLBACK_CHUNKS,
 ) -> list[ChunkInfo]:
     """Select market-definition chunks via neutral page-text scoring.
 
     Used when section-path selection returns no results for focus='market_definition'.
     Returned chunks carry selection_method='page_text_fallback'.
     Industry-specific terms are never used — only neutral EU market-definition signals.
+
+    *max_chunks* caps the number of returned chunk groups (default: _MAX_FALLBACK_CHUNKS).
+    Callers performing supplemental fallback on large documents should pass a higher value
+    so that scattered market-definition sections (e.g. "Other Overlaps") are not cut off.
     """
     # Score every page once (first occurrence in document order wins for duplicates).
     page_info: dict[int, tuple[int, str, str]] = {}  # page_num → (score, text, doc_id)
@@ -557,7 +571,7 @@ def _select_market_def_fallback_chunks(
         groups.append(current)
 
     # Cap number of chunks.
-    groups = groups[:_MAX_FALLBACK_CHUNKS]
+    groups = groups[:max_chunks]
 
     result: list[ChunkInfo] = []
     for group in groups:
@@ -591,6 +605,7 @@ def _select_relevant_chunks(
     chunks: list[ChunkInfo],
     max_total_pages: int = _MAX_INPUT_PAGES,
     focus: Optional[str] = None,
+    full_market_def_pass: bool = False,
 ) -> list[ChunkInfo]:
     """
     Return relevant chunks up to *max_total_pages* total pages.
@@ -599,15 +614,22 @@ def _select_relevant_chunks(
     - Section-path matching is tried first (preferred path).
     - If zero chunks match, a neutral page-text fallback is used; returned
       chunks carry selection_method='page_text_fallback'.
-    - If section-path matches fewer than _MARKET_DEF_SP_MIN_PAGES pages,
-      page-text fallback chunks covering non-overlapping pages are appended.
-      This handles documents where footnote numbers are misread as section
-      headings, leaving major sections under unrecognised labels.
+    - Supplemental fallback is triggered when EITHER:
+        (a) section-path yields fewer than _MARKET_DEF_SP_MIN_PAGES absolute pages, OR
+        (b) the document has >= _MARKET_DEF_COVERAGE_MIN_DOC_PAGES non-TOC pages and
+            section-path covers < _MARKET_DEF_COVERAGE_MIN_RATIO of them.
+      Condition (b) catches long pharma/tech decisions where market-definition content
+      is embedded in therapeutic-area or competitive-assessment sub-sections that lack
+      "market definition" in their heading.
+    - When *full_market_def_pass* is True, page-text fallback is always merged with
+      section-path results regardless of thresholds, up to max_total_pages.
 
     For other focus values, only section-path matching is used (no fallback).
     Without a focus, section-path relevance is used with a broad fallback to
     all non-empty chunks.
     """
+    total_non_toc_pages = sum(len(c.pages) for c in chunks)
+
     if focus:
         candidates = [
             c for c in chunks if _is_focused_section(c.section_path, focus) and c.pages
@@ -618,23 +640,40 @@ def _select_relevant_chunks(
                 chunks,
                 max_fallback_pages=min(max_total_pages, _MAX_FALLBACK_PAGES),
             )
-        # Supplement sparse section-path results with page-text fallback.
-        if (
-            focus == "market_definition"
-            and sum(len(c.pages) for c in candidates) < _MARKET_DEF_SP_MIN_PAGES
-        ):
-            covered = {n for c in candidates for n in c.page_numbers}
-            for fb_chunk in _select_market_def_fallback_chunks(
-                chunks, max_fallback_pages=min(max_total_pages, _MAX_FALLBACK_PAGES)
-            ):
-                # Add the chunk if it contains at least one page not yet covered.
-                # Using "all covered" (not superset) rather than "any overlap" so that
-                # fallback chunks which partially overlap with section-path pages still
-                # contribute their new pages to the selection.
-                if not covered.issuperset(set(fb_chunk.page_numbers)):
-                    candidates.append(fb_chunk)
-                    covered.update(fb_chunk.page_numbers)
-            candidates.sort(key=lambda c: min(c.page_numbers) if c.page_numbers else 0)
+
+        if focus == "market_definition":
+            candidate_page_count = sum(len(c.pages) for c in candidates)
+
+            # Determine whether supplemental fallback should run.
+            below_absolute = candidate_page_count < _MARKET_DEF_SP_MIN_PAGES
+            below_relative = (
+                total_non_toc_pages >= _MARKET_DEF_COVERAGE_MIN_DOC_PAGES
+                and candidate_page_count / total_non_toc_pages < _MARKET_DEF_COVERAGE_MIN_RATIO
+            )
+            needs_supplement = below_absolute or below_relative or full_market_def_pass
+
+            if needs_supplement:
+                covered = {n for c in candidates for n in c.page_numbers}
+                # Allow more fallback chunk groups for large documents so scattered
+                # sections (e.g. therapeutic-area "Other Overlaps") are not cut off.
+                _fb_max_chunks = (
+                    _MAX_FALLBACK_CHUNKS * 2
+                    if total_non_toc_pages >= _MARKET_DEF_COVERAGE_MIN_DOC_PAGES
+                    else _MAX_FALLBACK_CHUNKS
+                )
+                for fb_chunk in _select_market_def_fallback_chunks(
+                    chunks,
+                    max_fallback_pages=min(max_total_pages, _MAX_FALLBACK_PAGES),
+                    max_chunks=_fb_max_chunks,
+                ):
+                    # Add the chunk if it contains at least one page not yet covered.
+                    # Using "all covered" (not superset) rather than "any overlap" so that
+                    # fallback chunks which partially overlap with section-path pages still
+                    # contribute their new pages to the selection.
+                    if not covered.issuperset(set(fb_chunk.page_numbers)):
+                        candidates.append(fb_chunk)
+                        covered.update(fb_chunk.page_numbers)
+                candidates.sort(key=lambda c: min(c.page_numbers) if c.page_numbers else 0)
     else:
         candidates = [c for c in chunks if _is_relevant_section(c.section_path) and c.pages]
         if not candidates:
@@ -3104,6 +3143,7 @@ def extract_case(
     max_section_batches: Optional[int] = None,
     max_cost: Optional[float] = None,
     max_input_tokens: Optional[int] = None,
+    full_market_def_pass: bool = False,
 ) -> ExtractionReport:
     """
     Load the existing YAML and PDF text cache, extract a draft record via Claude,
@@ -3156,10 +3196,20 @@ def extract_case(
 
     all_chunks.sort(key=lambda c: min(c.page_numbers) if c.page_numbers else 0)
     selected = _select_relevant_chunks(
-        all_chunks, max_total_pages=max_input_pages, focus=focus
+        all_chunks, max_total_pages=max_input_pages, focus=focus,
+        full_market_def_pass=full_market_def_pass,
     )
     if max_chunks is not None:
         selected = selected[:max_chunks]
+
+    # Record coverage stats for the review report.
+    _total_non_toc = sum(len(c.pages) for c in all_chunks)
+    _selected_pages = sum(len(c.pages) for c in selected)
+    report.selection_coverage = {
+        "total_non_toc_pages": _total_non_toc,
+        "selected_pages": _selected_pages,
+        "ratio": round(_selected_pages / _total_non_toc, 3) if _total_non_toc else 1.0,
+    }
 
     # Apply section prefix filter across ALL modes (inspect, estimate, single-batch, batched).
     if section_prefix is not None:

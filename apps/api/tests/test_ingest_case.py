@@ -175,3 +175,68 @@ def test_stage_validate_draft_no_warning_for_unlinked_conclusion():
     assert ok
     assert errors == []
     assert warnings == []
+
+
+# ---------------------------------------------------------------------------
+# Coverage warning in review report
+# ---------------------------------------------------------------------------
+
+def _make_report_with_coverage(
+    tmp_path: Path,
+    selected_pages: int,
+    total_pages: int,
+    focus: str = "market_definition",
+) -> str:
+    """Write a review report with the given coverage stats and return its text."""
+    report = _blank_report()
+    report.selection_coverage = {
+        "selected_pages": selected_pages,
+        "total_non_toc_pages": total_pages,
+        "ratio": selected_pages / total_pages if total_pages else 1.0,
+    }
+    report_path = tmp_path / "review.md"
+    write_review_report(
+        report_path,
+        case_id="test_case",
+        focus=focus,
+        draft_path=tmp_path / "draft.yaml",
+        fetch_results=[],
+        extraction_report=report,
+        extraction_mode="batch-by-section",
+        schema_ok=True,
+        schema_errors=[],
+        integrity_errors=0,
+        integrity_warnings=0,
+        integrity_issues=[],
+    )
+    return report_path.read_text()
+
+
+def test_review_report_coverage_warning_on_low_ratio(tmp_path):
+    """Low coverage on a long decision emits a warning and shows PASS (coverage warning)."""
+    text = _make_report_with_coverage(tmp_path, selected_pages=10, total_pages=65)
+    assert "coverage warning" in text.lower()
+    assert "PASS (coverage warning)" in text
+    assert "--full-market-definition-pass" in text
+
+
+def test_review_report_no_coverage_warning_on_short_doc(tmp_path):
+    """Coverage warning is suppressed for short documents (< 30 pages)."""
+    text = _make_report_with_coverage(tmp_path, selected_pages=5, total_pages=20)
+    assert "coverage warning" not in text.lower()
+    assert "PASS" in text
+
+
+def test_review_report_no_coverage_warning_when_ratio_ok(tmp_path):
+    """No coverage warning when selected pages / total pages >= threshold."""
+    # 20/65 ≈ 31% > 25% threshold → no warning
+    text = _make_report_with_coverage(tmp_path, selected_pages=20, total_pages=65)
+    assert "coverage warning" not in text.lower()
+
+
+def test_review_report_no_coverage_warning_for_other_focus(tmp_path):
+    """Coverage warning only fires for market_definition focus."""
+    text = _make_report_with_coverage(
+        tmp_path, selected_pages=5, total_pages=65, focus="remedies"
+    )
+    assert "coverage warning" not in text.lower()

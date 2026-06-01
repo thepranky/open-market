@@ -80,6 +80,8 @@ from extract_case_from_source import (
     _MARKET_DEF_FALLBACK_SIGNALS,
     _MARKET_DEF_FALLBACK_MIN_SCORE,
     _MARKET_DEF_SP_MIN_PAGES,
+    _MARKET_DEF_COVERAGE_MIN_RATIO,
+    _MARKET_DEF_COVERAGE_MIN_DOC_PAGES,
     _MAX_FALLBACK_PAGES,
     _MAX_FALLBACK_CHUNKS,
     _score_page_market_def,
@@ -257,6 +259,124 @@ class TestSelectRelevantChunks:
         ]
         selected = _select_relevant_chunks(chunks)
         assert len(selected) == 2
+
+    def test_relative_coverage_triggers_supplemental_fallback(self):
+        """For long docs, supplemental fallback fires when coverage ratio is below threshold.
+
+        Simulates a pharma-style decision where market definition is embedded in
+        competitive-assessment sub-sections (no "market definition" in heading) and the
+        focused sections cover far less than _MARKET_DEF_COVERAGE_MIN_RATIO of the doc.
+        """
+        market_def_signal = (
+            "The Commission considered the relevant product market. "
+            "The market investigation confirmed demand-side substitutability. "
+            "The geographic market was left open for the purpose of assessing the transaction."
+        )
+        # Build a large doc: 2 focused pages + 30 unfocused pages with high signal.
+        # Total non-TOC = 32, focused = 2 → 6.25% < 25% threshold.
+        focused_chunks = [
+            _make_chunk(
+                "chunk_001",
+                "4 COMPETITIVE ASSESSMENT > 4.1 Autoimmune > 4.1.1.1 Market definition",
+                [(1, market_def_signal), (2, market_def_signal)],
+            ),
+        ]
+        # 30 pages under "Competitive assessment" heading with high market-def signal text.
+        unfocused_chunks = [
+            _make_chunk(
+                f"chunk_{i:03d}",
+                "4 COMPETITIVE ASSESSMENT > 4.3.3 Other Overlaps > 4.3.3.2 Competitive assessment",
+                [(i * 2 + 1, market_def_signal), (i * 2 + 2, market_def_signal)],
+            )
+            for i in range(1, 16)  # 15 chunks × 2 pages = 30 pages
+        ]
+        all_chunks = focused_chunks + unfocused_chunks
+
+        # Without the fix: only focused_chunks would be selected (2 pages, 6% of 32).
+        # With the fix: supplemental fallback adds high-scoring unfocused pages.
+        selected = _select_relevant_chunks(all_chunks, focus="market_definition")
+        selected_pages = sum(len(c.pages) for c in selected)
+
+        # Should have pulled in more than just the 2 focused pages.
+        assert selected_pages > 2, (
+            f"Expected supplemental fallback to add pages from unfocused high-signal chunks, "
+            f"got only {selected_pages} pages"
+        )
+
+    def test_full_market_def_pass_selects_beyond_focused_sections(self):
+        """full_market_def_pass=True always merges fallback with focused sections."""
+        market_def_signal = (
+            "relevant product market left open plausible market definition "
+            "market investigation demand-side substitutability geographic market"
+        )
+        focused = _make_chunk(
+            "chunk_001",
+            "4 COMPETITIVE ASSESSMENT > 4.1 Market definition",
+            [(1, "product market text"), (2, "product market text")],
+        )
+        high_signal_unfocused = _make_chunk(
+            "chunk_002",
+            "4 COMPETITIVE ASSESSMENT > 4.3.3 Other Overlaps > 4.3.3.2 Competitive assessment",
+            [(10, market_def_signal), (11, market_def_signal), (12, market_def_signal)],
+        )
+        all_chunks = [focused, high_signal_unfocused]
+
+        # Normal run: only focused chunk selected (2 pages total < 8 abs threshold,
+        # but also < 25% of 5 non-TOC pages, so supplemental would fire anyway for this
+        # small doc — use a path that tests full_market_def_pass explicitly).
+        # Build a doc big enough that normal mode would stay focused-only (> 8 focused pages).
+        big_focused = _make_chunk(
+            "chunk_big",
+            "4 COMPETITIVE ASSESSMENT > 4.1 Market definition",
+            [(i, "product market text") for i in range(1, 10)],  # 9 pages
+        )
+        all_big = [big_focused, high_signal_unfocused]
+
+        normal = _select_relevant_chunks(all_big, focus="market_definition", full_market_def_pass=False)
+        full_pass = _select_relevant_chunks(all_big, focus="market_definition", full_market_def_pass=True)
+
+        normal_pages = sum(len(c.pages) for c in normal)
+        full_pages = sum(len(c.pages) for c in full_pass)
+
+        # full_market_def_pass should include the high-signal unfocused chunk's pages.
+        assert full_pages > normal_pages, (
+            f"full_market_def_pass should select more pages than normal mode "
+            f"(got {full_pages} vs {normal_pages})"
+        )
+
+    def test_pharma_section_paths_trigger_coverage_fallback(self):
+        """Section paths like 'Other Overlaps > Competitive assessment' do not match focus terms.
+
+        Verify that a document with these pharma-style paths triggers the relative-coverage
+        supplemental fallback when such sections dominate the doc.
+        """
+        signal = (
+            "relevant product market plausible market definition market investigation "
+            "demand-side substitutability left open geographic market EEA-wide"
+        )
+        # One focused chunk with explicit "Market definition" sub-section (5 pages).
+        focused = _make_chunk(
+            "chunk_focus",
+            "4 COMPETITIVE ASSESSMENT > 4.1 Autoimmune > 4.1.2.1 Market definition",
+            [(i, signal) for i in range(1, 6)],
+        )
+        # Many unfocused but high-signal chunks under therapeutic-area/competitive-assessment headings.
+        other_overlaps = _make_chunk(
+            "chunk_other",
+            "4 COMPETITIVE ASSESSMENT > 4.3.3 Other Overlaps > 4.3.3.2 Competitive assessment",
+            [(i, signal) for i in range(10, 40)],  # 30 pages
+        )
+        all_chunks = [focused, other_overlaps]  # 35 non-TOC pages, 5 focused = 14%
+
+        selected = _select_relevant_chunks(all_chunks, focus="market_definition")
+        selected_pages = sum(len(c.pages) for c in selected)
+        total_pages = sum(len(c.pages) for c in all_chunks)
+
+        # Coverage ratio was 5/35 = 14%, below 25% threshold → fallback should fire.
+        assert selected_pages > 5, (
+            f"Expected fallback to add pages from 'Other Overlaps' chunks, "
+            f"got {selected_pages}/{total_pages}"
+        )
 
 
 # ---------------------------------------------------------------------------

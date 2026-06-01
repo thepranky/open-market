@@ -252,6 +252,10 @@ def write_review_report(
     llm_triage_status: Optional[str] = None,
     llm_review_path: Optional[Path] = None,
 ) -> None:
+    from extract_case_from_source import (
+        _MARKET_DEF_COVERAGE_MIN_RATIO,
+        _MARKET_DEF_COVERAGE_MIN_DOC_PAGES,
+    )
     lines: list[str] = []
     ts = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
@@ -263,9 +267,38 @@ def write_review_report(
         "",
     ]
 
+    # Coverage check: warn when market_definition extraction selected a small fraction
+    # of the available pages for a long decision.
+    cov = extraction_report.selection_coverage
+    coverage_warn = (
+        focus == "market_definition"
+        and cov is not None
+        and cov.get("total_non_toc_pages", 0) >= _MARKET_DEF_COVERAGE_MIN_DOC_PAGES
+        and cov.get("ratio", 1.0) < _MARKET_DEF_COVERAGE_MIN_RATIO
+    )
+
     blocking = bool(extraction_report.error) or not schema_ok or integrity_errors > 0
-    status = "BLOCKED" if blocking else ("WARNINGS" if integrity_warnings else "PASS")
+    if blocking:
+        status = "BLOCKED"
+    elif coverage_warn:
+        status = "PASS (coverage warning)"
+    elif integrity_warnings:
+        status = "WARNINGS"
+    else:
+        status = "PASS"
     lines += [f"**Status: {status}**", ""]
+
+    if coverage_warn:
+        sel = cov["selected_pages"]
+        tot = cov["total_non_toc_pages"]
+        pct = int(round(cov["ratio"] * 100))
+        lines += [
+            f"⚠ **Coverage warning:** {sel}/{tot} non-TOC pages selected ({pct}%). "
+            "Market-definition content may be embedded in therapeutic-area or competitive-assessment "
+            "sub-sections not matched by section-path keywords. "
+            "Re-run with `--full-market-definition-pass` to widen extraction.",
+            "",
+        ]
 
     # Stage 1
     lines += ["## Stage 1 — PDF cache", ""]
@@ -525,6 +558,13 @@ def main() -> int:
                             "Writes llm_review.json and llm_review.md to drafts/. "
                             "Requires ANTHROPIC_API_KEY. Does not promote to data/cases/."
                         ))
+    parser.add_argument("--full-market-definition-pass", action="store_true",
+                        help=(
+                            "Merge page-text fallback with section-path selection regardless "
+                            "of coverage thresholds. Use for long pharma or multi-section "
+                            "decisions where market-definition content is embedded inside "
+                            "therapeutic-area or competitive-assessment sub-sections."
+                        ))
     args = parser.parse_args()
 
     cache_dir = Path(args.cache_dir)
@@ -604,6 +644,7 @@ def main() -> int:
                 focus=args.focus,
                 max_cost=args.max_cost,
                 batch_by_section=args.batch_by_section,
+                full_market_def_pass=getattr(args, "full_market_definition_pass", False),
             )
             if extraction_report.error:
                 print(f"  ERROR: {extraction_report.error}")
@@ -624,6 +665,17 @@ def main() -> int:
             if extraction_report.section_batches:
                 succeeded = sum(1 for b in extraction_report.section_batches if b.result is not None)
                 print(f"  Batches:          {succeeded}/{len(extraction_report.section_batches)} succeeded")
+            cov = extraction_report.selection_coverage
+            if cov:
+                pct = int(round(cov["ratio"] * 100))
+                warn = (
+                    args.focus == "market_definition"
+                    and cov["total_non_toc_pages"] >= 30
+                    and cov["ratio"] < 0.25
+                )
+                prefix = "  WARN Coverage:" if warn else "  Coverage:      "
+                print(f"{prefix}  {cov['selected_pages']}/{cov['total_non_toc_pages']} pages ({pct}%)"
+                      + (" — re-run with --full-market-definition-pass" if warn else ""))
             print(f"  Draft written:    {draft_path}")
         else:
             # Fell back from no-API-key; try to use existing draft
@@ -707,7 +759,20 @@ def main() -> int:
     if failed:
         print("RESULT: BLOCKED — fix errors above before promoting to canonical")
         return 1
-    if int_warnings:
+    _cov = extraction_report.selection_coverage
+    _cov_warn = (
+        args.focus == "market_definition"
+        and _cov is not None
+        and _cov.get("total_non_toc_pages", 0) >= 30
+        and _cov.get("ratio", 1.0) < 0.25
+    )
+    if _cov_warn:
+        print(
+            f"RESULT: PASS (coverage warning) — "
+            f"{_cov['selected_pages']}/{_cov['total_non_toc_pages']} pages selected; "
+            "re-run with --full-market-definition-pass before promoting"
+        )
+    elif int_warnings:
         print(f"RESULT: PASS with {int_warnings} warning(s) — review before promoting")
     else:
         print("RESULT: PASS — draft ready for human review")
