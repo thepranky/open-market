@@ -21,3 +21,9 @@ benchmarks:
     draft_yaml: data/evals/fixtures/market_definition/eu_sika_dry_mix_2019/draft.yaml
     report_json: data/evals/fixtures/market_definition/eu_sika_dry_mix_2019/report.json
     cache_dir: data/evals/fixtures/market_definition/eu_sika_dry_mix_2019
+
+  - case_id: eu_coca_cola_costa_2018
+    gold_yaml: data/evals/gold/eu_coca_cola_costa_2018.market_definition.gold.yaml
+    draft_yaml: data/evals/fixtures/market_definition/eu_coca_cola_costa_2018/draft.yaml
+    report_json: data/evals/fixtures/market_definition/eu_coca_cola_costa_2018/report.json
+    cache_dir: data/evals/fixtures/market_definition/eu_coca_cola_costa_2018

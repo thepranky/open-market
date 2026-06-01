@@ -1,0 +1,489 @@
+_gold_metadata:
+  case_id: eu_coca_cola_costa_2018
+  gold_status: canonical_derived
+  partial: false
+  review_required: false
+  created_from: data/cases/eu/eu_coca_cola_costa_2018.yaml
+  notes: >
+    Derived directly from the promoted canonical record.  All 7 product markets and 6
+    geographic markets are fully reviewed.  This is a full-gold (partial: false) fixture:
+    every draft market not in this list counts as a false positive.
+
+    Key evaluation criteria:
+    - Product markets: 7 markets with definition_status values of left_open (pm_1–4)
+      and considered (pm_6–8).  Note: the market IDs jump from pm_4 to pm_6 — there is
+      no pm_5 in this case.
+    - Geographic markets: gm_1 is defined (national NABs — confirmed by market
+      investigation and consistent Commission precedent); gm_2–3 are left_open;
+      gm_4–6 (UK, Ireland, Poland) are considered (used as geographic assessment units
+      for vertical and conglomerate theories).
+    - Outcome passages (sp_27, sp_29, sp_31) must NOT appear in supports_markets or
+      supports_geographic_markets — they are pure "no SIEC" conclusion passages.
+    - Mixed left-open + outcome passages (sp_2, sp_7, sp_10, sp_14) contain
+      "does not give rise to serious doubts" language alongside the market definition
+      conclusion; they may legitimately appear in supports_markets.
+    - Theories of harm (th_1–4) are recorded in the canonical but are informational;
+      the eval focuses on market definition accuracy.
+
+case_id: eu_coca_cola_costa_2018
+case_name: The Coca-Cola Company / Costa
+authority: European Commission
+jurisdiction: EU
+sector: food & beverages / consumer goods
+decision_date: '2018-12-21'
+
+parties:
+  - name: The Coca-Cola Company
+    role: acquirer
+  - name: Costa Limited
+    role: target
+
+source_documents:
+  - doc_id: eu_coca_cola_costa_decision
+    title: 'Case M.9122 – The Coca-Cola Company / Costa: Commission Decision'
+    case_page_url: https://competition-cases.ec.europa.eu/cases/M.9122
+    pdf_url: https://ec.europa.eu/competition/mergers/cases/decisions/m9122_266_3.pdf
+    doc_type: decision
+    authority_reference: M.9122
+    retrieval_status: direct
+    published_date: '2018-12-21'
+
+product_markets_considered:
+
+  - name: Supply of non-alcoholic ready-to-drink commercial beverages (NABs)
+    market_type: product
+    expected_definition_status: left_open
+    expected_promotion_action: promote
+    importance: core_assessed
+    market_group: null
+    aliases:
+      - Non-alcoholic ready-to-drink beverages (NABs)
+      - Non-alcoholic beverages (NABs)
+      - NABs
+      - Carbonated soft drinks (CSDs) and non-alcoholic beverages
+    expected_draft_names:
+      - Supply of non-alcoholic ready-to-drink commercial beverages (NABs)
+    linked_source_passages:
+      - passage_id: sp_1
+        source_document_id: eu_coca_cola_costa_decision
+        page: '6'
+        quote_snippet: >-
+          In its past decisional practice the Commission also indicated that NCSDs could be
+          segmented into packaged water, fruit juices, ready-to-drink teas and energy and
+          sports drinks, although ultimately left the question on such segmentation open.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+      - passage_id: sp_3
+        source_document_id: eu_coca_cola_costa_decision
+        page: '8'
+        quote_snippet: >-
+          Previous Commission's decisions considered separate product markets according to
+          the distribution channel of NABs distinguishing between the off-premises (retail)
+          and the on-premises consumption market
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+      - passage_id: sp_4
+        source_document_id: eu_coca_cola_costa_decision
+        page: '8'
+        quote_snippet: >-
+          Therefore, the Commission considers that the effects of the Transaction should be
+          assessed on the two separate product markets
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+    reviewer_notes: >-
+      Left open under all plausible segmentations. sp_1 trimmed: PDF hyphenates
+      "non-\ncarbonated" (normaliser joins to "noncarbonated") and inserts footnote
+      numbers .16 and .17 mid-text; quote uses only the clean tail sentence. sp_3
+      trimmed: PDF has no space before "HoReCa" quote and footnote .19 at end; stops
+      at "consumption market". sp_4 trimmed: PDF inserts footnote .20 between sentences
+      and hyphenates "off-\npremises channel"; starts from "Therefore" and stops before
+      "off-premises". sp_2 omitted: mixed left-open/outcome passage.
+    reviewed: true
+
+  - name: Operation of coffee shops / informal restaurants
+    market_type: product
+    expected_definition_status: left_open
+    expected_promotion_action: promote
+    importance: core_assessed
+    market_group: null
+    aliases:
+      - Coffee shops / informal restaurants
+      - Operation of informal restaurants (coffee shops)
+      - Informal restaurants (coffee shops)
+      - Coffee shops and informal restaurants
+    expected_draft_names:
+      - Operation of coffee shops / informal restaurants
+    linked_source_passages:
+      - passage_id: sp_5
+        source_document_id: eu_coca_cola_costa_decision
+        page: '8'
+        quote_snippet: >-
+          The Commission has not previously defined a relevant product market for the
+          operation of coffee shops specifically, but previous cases indicated that coffee
+          shops are part of a market for informal restaurants.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+      - passage_id: sp_6
+        source_document_id: eu_coca_cola_costa_decision
+        page: '9'
+        quote_snippet: >-
+          The Commission's market investigation provided a number of indications that coffee
+          shops do compete with informal restaurants
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+    reviewer_notes: >-
+      Left open between broader informal restaurants and narrower branded coffee shops.
+      sp_6 trimmed: PDF inserts footnote 23 immediately after "restaurants" (",23 while");
+      stops before footnote. sp_7 omitted: contains "does not give rise to serious doubts...
+      even under the strictest plausible definition (i.e., branded coffee shops)" —
+      mixed market-definition/outcome language; omitted to avoid cache dependency for
+      validation.
+    reviewed: true
+
+  - name: Provision of vending services (vending machines)
+    market_type: product
+    expected_definition_status: left_open
+    expected_promotion_action: promote
+    importance: core_assessed
+    market_group: null
+    aliases:
+      - Provision of vending services
+      - Vending services (vending machines)
+      - Vending services
+    expected_draft_names:
+      - Provision of vending services (vending machines)
+    linked_source_passages:
+      - passage_id: sp_8
+        source_document_id: eu_coca_cola_costa_decision
+        page: '9'
+        quote_snippet: >-
+          The Commission has previously considered the provision of vending services, but
+          left open the question of whether the market should be further segmented by the
+          type of food dispensed in (i) hot beverages, (ii) cold drinks and (iii) snacks
+          and food.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+      - passage_id: sp_9
+        source_document_id: eu_coca_cola_costa_decision
+        page: '9'
+        quote_snippet: >-
+          Respondents to the market investigation confirmed the Commission's description of
+          this products in previous cases
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+    reviewer_notes: >-
+      Left open; strictest definition is hot beverages only. sp_9 trimmed: PDF inserts
+      footnote 27 after "cases" (",27 but"); stops before footnote. sp_10 omitted: mixed
+      market-definition/outcome passage.
+    reviewed: true
+
+  - name: Manufacture and sale of coffee and other ingredients
+    market_type: product
+    expected_definition_status: left_open
+    expected_promotion_action: promote
+    importance: core_assessed
+    market_group: null
+    aliases:
+      - Manufacture and sale of coffee
+      - Coffee and other ingredients
+      - Manufacture and sale of coffee and other ingredients (in-home and out-of-home)
+    expected_draft_names:
+      - Manufacture and sale of coffee and other ingredients
+    linked_source_passages:
+      - passage_id: sp_11
+        source_document_id: eu_coca_cola_costa_decision
+        page: '9'
+        quote_snippet: >-
+          In previous decisions, the Commission has considered that the manufacture and sale
+          of coffee via the "in-home" and "out-of-home" channels form part of separate product
+          markets. In-home encompasses the sale of coffee to consumers via retailers or
+          directly to consumers.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+      - passage_id: sp_12
+        source_document_id: eu_coca_cola_costa_decision
+        page: '10'
+        quote_snippet: >-
+          The Commission has also considered that all out-of-home sales belong to the same
+          product market.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+    reviewer_notes: >-
+      Left open across multiple in-home sub-segments and the out-of-home channel. sp_11
+      trimmed: PDF inserts long inline footnote text after "coffee to" (footnote 23 body);
+      stops after "directly to consumers." sp_12 trimmed: PDF inserts footnote .30 after
+      "product market."; stops at first sentence. sp_14 omitted: mixed passage.
+    reviewed: true
+
+  - name: "Supply of Carbonated Soft Drinks (CSDs) / Non-Alcoholic Beverages (NABs) — on-premise channel (upstream)"
+    market_type: product
+    expected_definition_status: considered
+    expected_promotion_action: promote
+    importance: core_assessed
+    market_group: null
+    aliases:
+      - "CSDs / NABs on-premise channel (upstream)"
+      - "NABs on-premise channel (upstream)"
+      - "CSDs on-premise channel upstream"
+      - "CSD supply on-premise (upstream)"
+    expected_draft_names:
+      - "Supply of Carbonated Soft Drinks (CSDs) / Non-Alcoholic Beverages (NABs) — on-premise channel (upstream)"
+    linked_source_passages:
+      - passage_id: sp_18
+        source_document_id: eu_coca_cola_costa_decision
+        page: '15'
+        quote_snippet: >-
+          As regards TCCC's market share in selling NABs in the on-premise channel upstream,
+          TCCC would have more than 40% of the CSD market in the UK, Ireland and Poland based
+          on the Notifying Party's estimates, as illustrated by Table 1 below.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+    reviewer_notes: >-
+      Assessed as the upstream market in the vertical effects analysis (th_1). The Commission
+      uses this market for the purpose of assessing vertical effects without a conclusive
+      formal definition — canonical maps to definition_status=considered.
+    reviewed: true
+
+  - name: Juices (upstream supply)
+    market_type: product
+    expected_definition_status: considered
+    expected_promotion_action: promote
+    importance: core_assessed
+    market_group: null
+    aliases:
+      - Juices upstream supply
+      - Juices (upstream)
+      - Juices supply
+    expected_draft_names:
+      - Juices (upstream supply)
+    linked_source_passages:
+      - passage_id: sp_20
+        source_document_id: eu_coca_cola_costa_decision
+        page: '15'
+        quote_snippet: >-
+          Table 1 also shows TCCC's market share in juices as well as in vending services
+          for cold drinks. The share of TCCC in juices is below 30% in both the on-premise
+          and off-premise channels in each of the three countries considered.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+    reviewer_notes: >-
+      Mentioned alongside CSDs as a vertically affected upstream market. Market shares
+      provided (below 30%) but no formal market definition. canonical maps to
+      definition_status=considered.
+    reviewed: true
+
+  - name: Cold drinks vending services
+    market_type: product
+    expected_definition_status: considered
+    expected_promotion_action: promote
+    importance: core_assessed
+    market_group: null
+    aliases:
+      - Cold drinks vending
+      - Vending services for cold drinks
+      - Cold-drinks vending services
+    expected_draft_names:
+      - Cold drinks vending services
+    linked_source_passages:
+      - passage_id: sp_22
+        source_document_id: eu_coca_cola_costa_decision
+        page: '15'
+        quote_snippet: >-
+          The share of TCCC cold drinks vending services is estimated at less than [10-20]%
+          in the UK and Poland and less than [30-40]% in Ireland.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+    reviewer_notes: >-
+      Assessed in the context of conglomerate effects (th_4). TCCC's share in cold drinks
+      vending services is referenced with market share estimates alongside Costa Express
+      machines. Canonical maps to definition_status=considered.
+    reviewed: true
+
+geographic_markets_considered:
+
+  - name: "NABs — national"
+    market_type: geographic
+    expected_definition_status: defined
+    expected_promotion_action: promote
+    importance: core_assessed
+    market_group: null
+    aliases:
+      - NABs geographic market (national)
+      - National NABs market
+      - NABs national
+    expected_draft_names:
+      - "NABs — national"
+    linked_source_passages:
+      - passage_id: sp_32
+        source_document_id: eu_coca_cola_costa_decision
+        page: '10'
+        quote_snippet: >-
+          The Commission has consistently found that the geographic scope of the supply of
+          NABs is national due to, inter alia, differences in consumption patterns, logistics
+          and distribution networks and marketing strategies.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+      - passage_id: sp_34
+        source_document_id: eu_coca_cola_costa_decision
+        page: '11'
+        quote_snippet: >-
+          Based on the above, the Commission will conduct its assessment of the markets for
+          NABs on a national basis.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+    reviewer_notes: >-
+      The Commission affirmatively concludes national scope — confirmed by prior precedents
+      and market investigation. Canonical maps to definition_status=defined (binding
+      Commission decision, not a "left open" or "for the purpose of this decision" hedge).
+    reviewed: true
+
+  - name: "Operation of coffee shops / informal restaurants — national (or possibly local/regional)"
+    market_type: geographic
+    expected_definition_status: left_open
+    expected_promotion_action: promote
+    importance: core_assessed
+    market_group: null
+    aliases:
+      - "Coffee shops / informal restaurants — national"
+      - "Coffee shops geographic market (national or local)"
+      - "Informal restaurants — national"
+    expected_draft_names:
+      - "Operation of coffee shops / informal restaurants — national (or possibly local/regional)"
+    linked_source_passages:
+      - passage_id: sp_35
+        source_document_id: eu_coca_cola_costa_decision
+        page: '11'
+        quote_snippet: >-
+          As concerns the market for informal restaurants, Commission precedents considered
+          its geographic scope to be at least national, leaving the precise market definition
+          open.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+      - passage_id: sp_37
+        source_document_id: eu_coca_cola_costa_decision
+        page: '11'
+        quote_snippet: >-
+          The market investigation was not conclusive as to the exact scope of the geographic
+          market.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+    reviewer_notes: >-
+      Geographic scope left open between national and possibly local/regional. sp_38 spans
+      both gm_2 and gm_3 — included in gm_3 gold only to avoid double-counting.
+    reviewed: true
+
+  - name: "Provision of vending services — national"
+    market_type: geographic
+    expected_definition_status: left_open
+    expected_promotion_action: promote
+    importance: core_assessed
+    market_group: null
+    aliases:
+      - "Vending services — national"
+      - "Vending services geographic market (national)"
+    expected_draft_names:
+      - "Provision of vending services — national"
+    linked_source_passages:
+      - passage_id: sp_39
+        source_document_id: eu_coca_cola_costa_decision
+        page: '11'
+        quote_snippet: >-
+          The Commission has in the past found that the relevant geographic markets for the
+          provision of vending services in general are national in scope due to the absence
+          of EU-wide legislation for the vending industry, the difference in lifestyle and
+          culture between the various European countries and the need for having teams of
+          staff (machine engineers, stockists, operators) available in reasonable proximity.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+      - passage_id: sp_38
+        source_document_id: eu_coca_cola_costa_decision
+        page: '11'
+        quote_snippet: >-
+          The Commission considers that, for the purpose of this decision, the exact scope
+          of the geographic market can be left open since the Transaction does not give rise
+          to serious doubts about its compatibility with the internal market even under the
+          strictest plausible definition of the geographic market (national).
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+    reviewer_notes: >-
+      Geographic scope left open (national confirmed by prior precedent and market
+      investigation). sp_38 covers both gm_2 and gm_3 in the canonical; included here
+      as the definitional left-open conclusion for vending services.
+    reviewed: true
+
+  - name: United Kingdom
+    market_type: geographic
+    expected_definition_status: considered
+    expected_promotion_action: promote
+    importance: core_assessed
+    market_group: null
+    aliases:
+      - UK
+      - United Kingdom (national geographic market)
+    expected_draft_names:
+      - United Kingdom
+    linked_source_passages:
+      - passage_id: sp_19
+        source_document_id: eu_coca_cola_costa_decision
+        page: '16'
+        quote_snippet: >-
+          Vertically affected markets arise in the UK, Ireland and Poland between TCCC's
+          upstream supply of CSDs and juices for on-premises consumption and Costa's
+          downstream operations of informal restaurants (coffee shops) in these countries.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+    reviewer_notes: >-
+      The UK is consistently used as a national geographic unit throughout all vertical
+      and conglomerate theories in this case. Canonical maps to definition_status=considered.
+    reviewed: true
+
+  - name: Ireland
+    market_type: geographic
+    expected_definition_status: considered
+    expected_promotion_action: promote
+    importance: core_assessed
+    market_group: null
+    aliases:
+      - Ireland (national geographic market)
+    expected_draft_names:
+      - Ireland
+    linked_source_passages:
+      - passage_id: sp_19
+        source_document_id: eu_coca_cola_costa_decision
+        page: '16'
+        quote_snippet: >-
+          Vertically affected markets arise in the UK, Ireland and Poland between TCCC's
+          upstream supply of CSDs and juices for on-premises consumption and Costa's
+          downstream operations of informal restaurants (coffee shops) in these countries.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+    reviewer_notes: >-
+      Ireland assessed alongside the UK and Poland across vertical and conglomerate
+      theories. Canonical maps to definition_status=considered.
+    reviewed: true
+
+  - name: Poland
+    market_type: geographic
+    expected_definition_status: considered
+    expected_promotion_action: promote
+    importance: core_assessed
+    market_group: null
+    aliases:
+      - Poland (national geographic market)
+    expected_draft_names:
+      - Poland
+    linked_source_passages:
+      - passage_id: sp_19
+        source_document_id: eu_coca_cola_costa_decision
+        page: '16'
+        quote_snippet: >-
+          Vertically affected markets arise in the UK, Ireland and Poland between TCCC's
+          upstream supply of CSDs and juices for on-premises consumption and Costa's
+          downstream operations of informal restaurants (coffee shops) in these countries.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+    reviewer_notes: >-
+      Poland assessed alongside the UK and Ireland. Note: th_3 (off-premise NABs/in-home
+      coffee) is limited to UK and Ireland only; Poland is included in th_1 and th_4.
+      Canonical maps to definition_status=considered.
+    reviewed: true
