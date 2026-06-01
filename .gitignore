@@ -33,3 +33,7 @@ apps/web/node_modules/
 # Generated auto-selected gold drafts
 data/evals/gold/*.auto.yaml
 data/evals/gold/*.auto.repaired.yaml
+
+# Generated benchmark result outputs (local only — not committed)
+data/evals/results/*
+!data/evals/results/.gitkeep
