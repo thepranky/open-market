@@ -269,6 +269,35 @@ _REVIEW_TOOL_SCHEMA = {
     },
 }
 
+# ---------------------------------------------------------------------------
+# Active market-definition rules (sourced from data/pipeline_rules/market_definition_rules.yaml)
+# Keep in sync with that registry. Tests verify key rules are present here.
+# ---------------------------------------------------------------------------
+
+_ACTIVE_RULES_BLOCK = """\
+ACTIVE MARKET-DEFINITION RULES (registry: data/pipeline_rules/market_definition_rules.yaml):
+[mdr_001] Pure outcome/no-serious-doubts passages must not be linked to product or \
+geographic market entries. Set outcome_passage_misuse = true when violated.
+[mdr_002] Phase I left-open formula passages may support market entries if they contain \
+substantive market-definition wording alongside the left-open conclusion.
+[mdr_003] "considered" is a valid definition_status for assessment-basis/working-assumption \
+language. Do NOT flag it as incorrect or require upgrade to "defined" or "left_open".
+[mdr_004] Prior decisional practice + party agreement + market investigation confirmation \
+together can support definition_status: defined — no single passage need say so explicitly.
+[mdr_005] Theory-specific analytical frames must not be overcounted as separate product \
+markets if they duplicate formal market entries already captured.
+[mdr_006] Pure conclusion passages (source_role: conclusion) may support theories_of_harm \
+or outcome context, but must not be the sole support for a market entry.
+[mdr_007] Duplicate identical quote snippets should be merged into a single passage with \
+combined support lists.
+[mdr_008] Thin passages that do not independently support any proposition should be \
+flagged; note if a market entry would be unsupported without them.
+[mdr_009] Quote snippets should avoid PDF-normalisation artifacts: footnote injections, \
+line-break hyphen joins, inline footnote numbers.
+[mdr_010] A mixed passage (substantive market-definition content AND incidental outcome \
+language) is NOT automatically disqualified. Only set outcome_passage_misuse = true \
+when the passage contains NO substantive market-definition content."""
+
 _REVIEW_SYSTEM_PROMPT = """\
 You are a competition law critic reviewing a DRAFT case record for the CompMap \
 source-first legal research pipeline.
@@ -331,6 +360,8 @@ passage may keep its market link. In your note, flag it as a mixed passage and s
 that the reviewer consider splitting it into narrower snippets at promotion time. \
 Do NOT set outcome_passage_misuse = true for a mixed passage unless the passage \
 contains NO substantive market-definition content — i.e. it is purely an outcome conclusion.
+
+""" + _ACTIVE_RULES_BLOCK + """
 
 TRIAGE CALIBRATION:
 - auto_verified_candidate: all passages are strong authority findings, all \
@@ -433,6 +464,53 @@ def _get_page_context(
             # Quote not at exact position — return page start as fallback
             return text[: _CONTEXT_WINDOW_CHARS * 4]
     return None
+
+
+def _get_surrounding_context(
+    quote: str,
+    doc_id: str,
+    page_str: Optional[str],
+    cache_dir: Path,
+) -> tuple[Optional[str], Optional[str]]:
+    """
+    Return (before_ctx, after_ctx) around the quote in the cached page text.
+
+    Both are capped at _CONTEXT_WINDOW_CHARS characters so the review window
+    stays small. Returns (None, None) when the source cache is unavailable or
+    the quote cannot be located.
+    """
+    if not page_str:
+        return None, None
+    try:
+        page_num = int(page_str)
+    except (TypeError, ValueError):
+        return None, None
+
+    cache_file = cache_dir / f"{doc_id}.json"
+    if not cache_file.exists():
+        return None, None
+
+    try:
+        cache = json.loads(cache_file.read_text(encoding="utf-8"))
+    except Exception:
+        return None, None
+
+    for page in cache.get("pages", []):
+        if page.get("page_number") == page_num:
+            text = page.get("text", "")
+            if not text:
+                return None, None
+            needle = quote[:60].lower().strip()
+            pos = text.lower().find(needle)
+            if pos >= 0:
+                before = text[max(0, pos - _CONTEXT_WINDOW_CHARS) : pos].strip()
+                after_start = pos + len(quote)
+                after = text[after_start : after_start + _CONTEXT_WINDOW_CHARS].strip()
+                return (before or None), (after or None)
+            # Quote not found at exact position — return page-start context only
+            fallback = text[: _CONTEXT_WINDOW_CHARS * 2].strip()
+            return (fallback or None), None
+    return None, None
 
 
 # ---------------------------------------------------------------------------
@@ -550,11 +628,13 @@ def _build_review_prompt(draft: dict, cache_dir: Path) -> str:
         lines.append(f"--- {pid} ---")
         lines.append(f"  doc: {doc_id}   page: {page}   source_role_in_draft: {role}")
         lines.append(f"  supports: {', '.join(all_supports) or 'none'}")
-        lines.append(f"  quote: {quote!r}")
 
-        ctx = _get_page_context(quote, doc_id, page, cache_dir)
-        if ctx:
-            lines.append(f"  [page context]:\n{ctx}")
+        before_ctx, after_ctx = _get_surrounding_context(quote, doc_id, page, cache_dir)
+        if before_ctx:
+            lines.append(f"  [context before quote]:\n{before_ctx}")
+        lines.append(f"  [quote]: {quote!r}")
+        if after_ctx:
+            lines.append(f"  [context after quote]:\n{after_ctx}")
         lines.append("")
 
     lines += [

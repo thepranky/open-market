@@ -1049,6 +1049,20 @@ VERBATIM QUOTES ONLY:
 Copy passage text EXACTLY as it appears in the source. Do NOT paraphrase, summarise,
 or rephrase. If you cannot find an exact verbatim quote, do not include the passage.
 
+QUOTE CLEANLINESS — PDF NORMALISATION TRAPS (rule mdr_009):
+PDF-extracted text commonly contains artifacts that make quote snippets hard to verify.
+Avoid including:
+  - Footnote number injections mid-sentence: "market definition.14 The Commission"
+    where "14" is a footnote marker injected into body text.
+  - Line-break hyphen joins: "compe-\ntitive" or "compe- titive" from a word split
+    across a line end — copy the joined form "competitive" instead.
+  - Inline footnote reference numbers embedded in text: "widget market (23) where
+    parties overlap" — omit the parenthesised footnote number if it breaks readability.
+Prefer shorter, clean snippets that still fully support the proposition over longer
+snippets that include these artifacts. If the only available text is affected, copy it
+verbatim but keep the snippet as short as possible. Do not omit a genuinely important
+passage solely to avoid artifacts.
+
 MARKET DEDUPLICATION AND HIERARCHY:
 Do not create multiple entries for the same market at different hierarchical levels.
   - If segmentation is considered (e.g. search ads vs. display ads within online advertising),

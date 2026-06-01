@@ -209,11 +209,50 @@ The script is also runnable in CI as a pre-merge gate.
 
 ---
 
+---
+
+## Central rule registry
+
+`data/pipeline_rules/market_definition_rules.yaml` is the authoritative registry of
+market-definition rules that govern both extraction and LLM review.
+
+Each rule entry records:
+- `id` — stable slug (e.g. `mdr_001_outcome_no_market_link`)
+- `status` — `active` | `deprecated` | `draft`
+- `severity` — `error` | `warning` | `info`
+- `short_rule` — one-sentence version used in compact prompt sections
+- `applies_to` — `extractor` | `reviewer` | `both`
+- `deterministic_enforcement` — `true` if `check_source_integrity.py` also enforces it
+- `llm_guidance` — fuller explanation included in LLM system prompts
+- `examples` — illustrative good/bad cases
+
+**How the registry feeds prompts:**
+
+The `review_draft.py` script maintains an `_ACTIVE_RULES_BLOCK` constant that mirrors
+active registry rules in compact form and is appended to `_REVIEW_SYSTEM_PROMPT`.
+The `extract_case_from_source.py` script includes `_EXTRACTION_TASK` guidance derived
+from the registry (especially mdr_009 for quote cleanliness).
+
+**Tests:**
+
+`apps/api/tests/test_review_draft.py` includes tests that fail if key active rule IDs
+(mdr_001 through mdr_010) are absent from `_ACTIVE_RULES_BLOCK` or from the system
+prompt. This prevents silent rule drift when the registry is updated.
+
+**Update discipline:**
+
+When adding or modifying a rule: (1) update the YAML registry first, (2) update
+`_ACTIVE_RULES_BLOCK` in `review_draft.py` and any relevant prompt text in
+`extract_case_from_source.py`, (3) run the tests to confirm coverage.
+
+---
+
 ## File locations
 
 | Path | Purpose |
 |------|---------|
 | `ingestion/` | Reserved for future ingestion pipeline code |
+| `data/pipeline_rules/market_definition_rules.yaml` | Central rule registry |
 | `apps/api/scripts/check_source_integrity.py` | Source validation gate |
 | `apps/api/scripts/check_source_links.py` | Lightweight HTTP link checker |
 | `apps/api/scripts/validate_cases.py` | Pydantic schema validator |

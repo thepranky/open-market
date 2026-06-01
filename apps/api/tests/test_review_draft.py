@@ -16,11 +16,14 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 sys.path.insert(0, str(Path(__file__).parent.parent / "scripts"))
 
 from review_draft import (
+    _ACTIVE_RULES_BLOCK,
+    _REVIEW_SYSTEM_PROMPT,
     _VALID_TRIAGE_STATUSES,
     _build_review_prompt,
     _check_preflight,
     _find_draft_path,
     _get_page_context,
+    _get_surrounding_context,
     _validate_review_output,
     write_llm_review_json,
     write_llm_review_md,
@@ -497,3 +500,146 @@ def test_write_review_report_unchanged_without_llm_flag(tmp_path):
     content = report_path.read_text()
     # LLM section should not appear when not requested
     assert "Stage 5 — LLM review" not in content
+
+
+# ---------------------------------------------------------------------------
+# Rule-registry integration: key rules must be present in prompts
+# ---------------------------------------------------------------------------
+
+def test_active_rules_block_contains_outcome_rule():
+    """mdr_001: outcome passages must not be linked to market entries."""
+    assert "mdr_001" in _ACTIVE_RULES_BLOCK
+    assert "outcome" in _ACTIVE_RULES_BLOCK.lower()
+    assert "no-serious-doubts" in _ACTIVE_RULES_BLOCK or "serious doubts" in _ACTIVE_RULES_BLOCK.lower()
+
+
+def test_active_rules_block_contains_considered_rule():
+    """mdr_003: 'considered' is a valid definition_status."""
+    assert "mdr_003" in _ACTIVE_RULES_BLOCK
+    assert "considered" in _ACTIVE_RULES_BLOCK
+
+
+def test_active_rules_block_contains_left_open_rule():
+    """mdr_002: left-open formula passages may support market entries."""
+    assert "mdr_002" in _ACTIVE_RULES_BLOCK
+    assert "left_open" in _ACTIVE_RULES_BLOCK or "left-open" in _ACTIVE_RULES_BLOCK
+
+
+def test_active_rules_block_contains_deduplication_rule():
+    """mdr_007: duplicate identical quote snippets should be merged."""
+    assert "mdr_007" in _ACTIVE_RULES_BLOCK
+    assert "duplicate" in _ACTIVE_RULES_BLOCK.lower() or "merged" in _ACTIVE_RULES_BLOCK.lower()
+
+
+def test_active_rules_block_contains_quote_cleanliness_rule():
+    """mdr_009: quote snippets should avoid PDF-normalisation artifacts."""
+    assert "mdr_009" in _ACTIVE_RULES_BLOCK
+    assert "footnote" in _ACTIVE_RULES_BLOCK.lower() or "pdf" in _ACTIVE_RULES_BLOCK.lower()
+
+
+def test_active_rules_block_contains_mixed_passage_rule():
+    """mdr_010: mixed passages are not automatically disqualified."""
+    assert "mdr_010" in _ACTIVE_RULES_BLOCK
+    assert "mixed" in _ACTIVE_RULES_BLOCK.lower()
+
+
+def test_review_system_prompt_includes_active_rules_block():
+    """_ACTIVE_RULES_BLOCK must appear verbatim in _REVIEW_SYSTEM_PROMPT."""
+    # Check a distinctive phrase from the block rather than the whole string
+    assert "mdr_001" in _REVIEW_SYSTEM_PROMPT
+    assert "mdr_003" in _REVIEW_SYSTEM_PROMPT
+    assert "ACTIVE MARKET-DEFINITION RULES" in _REVIEW_SYSTEM_PROMPT
+
+
+def test_review_system_prompt_retains_original_critical_rules():
+    """Original critical rules (outcome, considered, left_open) must still be present."""
+    assert "does not raise serious doubts" in _REVIEW_SYSTEM_PROMPT
+    assert '"considered"' in _REVIEW_SYSTEM_PROMPT or "'considered'" in _REVIEW_SYSTEM_PROMPT
+    assert "left_open" in _REVIEW_SYSTEM_PROMPT
+
+
+# ---------------------------------------------------------------------------
+# _get_surrounding_context
+# ---------------------------------------------------------------------------
+
+def test_get_surrounding_context_returns_none_when_no_cache(tmp_path):
+    before, after = _get_surrounding_context("some quote", "missing_doc", "5", tmp_path)
+    assert before is None
+    assert after is None
+
+
+def test_get_surrounding_context_splits_before_and_after(tmp_path):
+    prefix = "Text before the quote. " * 20
+    quote = "The Commission concludes that widgets form a market."
+    suffix = "Text after the quote. " * 20
+    page_text = prefix + quote + suffix
+    cache = {"pages": [{"page_number": 5, "text": page_text}]}
+    (tmp_path / "test_doc.json").write_text(json.dumps(cache))
+
+    before, after = _get_surrounding_context(quote, "test_doc", "5", tmp_path)
+    assert before is not None
+    assert after is not None
+    assert "Text before" in before
+    assert "Text after" in after
+    # The quote itself should not appear in the after context
+    assert "Commission concludes" not in after
+
+
+def test_get_surrounding_context_before_is_capped(tmp_path):
+    from review_draft import _CONTEXT_WINDOW_CHARS
+    prefix = "X" * 2000
+    quote = "The Commission concludes."
+    page_text = prefix + quote + "Y" * 2000
+    cache = {"pages": [{"page_number": 3, "text": page_text}]}
+    (tmp_path / "test_doc.json").write_text(json.dumps(cache))
+
+    before, after = _get_surrounding_context(quote, "test_doc", "3", tmp_path)
+    assert before is not None
+    assert len(before) <= _CONTEXT_WINDOW_CHARS
+
+
+def test_get_surrounding_context_after_is_capped(tmp_path):
+    from review_draft import _CONTEXT_WINDOW_CHARS
+    prefix = "X" * 200
+    quote = "The Commission concludes."
+    page_text = prefix + quote + "Y" * 2000
+    cache = {"pages": [{"page_number": 3, "text": page_text}]}
+    (tmp_path / "test_doc.json").write_text(json.dumps(cache))
+
+    before, after = _get_surrounding_context(quote, "test_doc", "3", tmp_path)
+    assert after is not None
+    assert len(after) <= _CONTEXT_WINDOW_CHARS
+
+
+def test_build_review_prompt_uses_before_after_context_labels(tmp_path):
+    """When page cache is present, prompt should include before/after context labels."""
+    prefix = "Some context before the Commission's analysis. " * 5
+    quote = "The Commission concludes that widgets constitute a separate product market."
+    suffix = "Further text after the key finding. " * 5
+    page_text = prefix + quote + suffix
+
+    cache = {"pages": [{"page_number": 5, "text": page_text}]}
+    (tmp_path / "test_doc.json").write_text(json.dumps(cache))
+
+    draft = {
+        **_MINIMAL_DRAFT,
+        "source_passages": [
+            {
+                "passage_id": "sp_1",
+                "source_document_id": "test_doc",
+                "page": "5",
+                "quote_snippet": quote,
+                "extraction_method": "pdf_extracted",
+                "review_status": "unreviewed",
+                "supports_markets": ["pm_1"],
+                "supports_geographic_markets": [],
+                "supports_theories": [],
+            }
+        ],
+    }
+    prompt = _build_review_prompt(draft, tmp_path)
+    assert "[context before quote]" in prompt
+    assert "[quote]" in prompt
+    assert "[context after quote]" in prompt
+    assert "Some context before" in prompt
+    assert "Further text after" in prompt

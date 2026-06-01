@@ -8056,3 +8056,27 @@ class TestFallbackBatchGrouping:
 
         if rpt.chunks_used:
             assert all(c.selection_method == "section_path" for c in rpt.chunks_used)
+
+
+# ---------------------------------------------------------------------------
+# Rule-registry integration: quote-cleanliness rule (mdr_009) in extraction task
+# ---------------------------------------------------------------------------
+
+class TestExtractionTaskQuoteCleanlinessRule:
+    """mdr_009 guidance must be present in the extraction task prompt."""
+
+    def test_extraction_task_contains_mdr009_reference(self):
+        from extract_case_from_source import _EXTRACTION_TASK
+        assert "mdr_009" in _EXTRACTION_TASK
+
+    def test_extraction_task_mentions_footnote_injections(self):
+        from extract_case_from_source import _EXTRACTION_TASK
+        assert "footnote" in _EXTRACTION_TASK.lower()
+
+    def test_extraction_task_mentions_line_break_hyphen(self):
+        from extract_case_from_source import _EXTRACTION_TASK
+        assert "hyphen" in _EXTRACTION_TASK.lower() or "line-break" in _EXTRACTION_TASK.lower()
+
+    def test_extraction_task_mentions_pdf_normalisation(self):
+        from extract_case_from_source import _EXTRACTION_TASK
+        assert "pdf" in _EXTRACTION_TASK.lower()

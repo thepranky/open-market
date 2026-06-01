@@ -1,0 +1,267 @@
+# CompMap — central market-definition rules registry
+# Authoritative source for rules that govern extraction and LLM review.
+# Prompts in review_draft.py and extract_case_from_source.py must remain
+# consistent with active rules in this file.
+#
+# Fields per rule:
+#   id                       — stable slug, never reuse
+#   status                   — active | deprecated | draft
+#   severity                 — error | warning | info
+#   short_rule               — one sentence, used verbatim in compact prompt sections
+#   applies_to               — extractor | reviewer | both
+#   deterministic_enforcement — true if check_source_integrity.py enforces this automatically
+#   llm_guidance             — fuller explanation for the LLM system prompt
+#   examples                 — illustrative good / bad cases
+
+rules:
+
+  - id: mdr_001_outcome_no_market_link
+    status: active
+    severity: error
+    short_rule: >
+      Pure outcome / no-serious-doubts passages must not be linked to product or
+      geographic market entries.
+    applies_to: both
+    deterministic_enforcement: true
+    llm_guidance: >
+      Passages containing "does not raise serious doubts", "compatible with the
+      internal market", "no competition concerns", "cleared", or "authorised"
+      describe the merger outcome, not market definition. They must never appear
+      in supports_markets or supports_geographic_markets for any market entry.
+      They may be retained as unlinked passages or as evidence for overall_outcome.
+      Set outcome_passage_misuse = true in the market review if any linked passage
+      is purely an outcome conclusion. A mixed passage (outcome language + substantive
+      market-definition content) is not automatically disqualified — see mdr_010.
+    examples:
+      bad: >
+        Passage says "the Transaction does not raise serious doubts as to its
+        compatibility with the internal market" and is linked to pm_1 (widgets).
+      good: >
+        Passage is retained in source_passages with an empty supports list, and
+        the market entry pm_1 is supported only by commission_assessment passages.
+
+  - id: mdr_002_left_open_formula
+    status: active
+    severity: warning
+    short_rule: >
+      Phase I left-open formula passages may support market entries if they contain
+      substantive market-definition wording alongside the left-open conclusion.
+    applies_to: both
+    deterministic_enforcement: false
+    llm_guidance: >
+      The standard EU Phase I formula "the exact scope of the market can be left
+      open" is a market-definition finding (definition_status: left_open), not an
+      outcome conclusion. A passage that uses this formula while also describing
+      candidate product or geographic markets IS valid support for a left_open
+      market entry. Do not exclude it merely because it uses hedging language.
+      However, if the passage says only "left open" with no surrounding market
+      analysis, assign it a weak support verdict.
+    examples:
+      good: >
+        "The precise scope of the product market can be left open as the Transaction
+        does not raise competition concerns under any plausible market definition"
+        — qualifies as left_open support because it acknowledges candidate definitions.
+      bad: >
+        Treating the left-open formula as an outcome conclusion and refusing to
+        link it to the market entry.
+
+  - id: mdr_003_considered_status_valid
+    status: active
+    severity: info
+    short_rule: >
+      `considered` is a valid definition_status for assessment-basis or
+      working-assumption language — do not flag it as incorrect or require upgrade.
+    applies_to: both
+    deterministic_enforcement: false
+    llm_guidance: >
+      CompMap uses "considered" when the Commission adopts a market scope for its
+      assessment with cautious or context-specific wording such as "for the purpose
+      of this decision, the Commission will consider…" or "for assessing the
+      Transaction, the relevant market could be…". This is lower in precedential
+      weight than "defined" but more concrete than "left_open". Do NOT flag
+      "considered" as undocumented, incorrect, or as requiring upgrade to "defined"
+      or "left_open". It is an intentional CompMap status.
+    examples:
+      good: >
+        Market entry has definition_status: considered and the supporting passage
+        says "for the purposes of this assessment, the Commission considers the
+        relevant product market to be the supply of ready-mix concrete."
+      bad: >
+        Reviewer flags "considered" as wrong and suggests changing it to "defined"
+        because the Commission did commit to a scope.
+
+  - id: mdr_004_defined_status_support
+    status: active
+    severity: warning
+    short_rule: >
+      Prior decisional practice + party agreement + market investigation confirmation
+      together can support definition_status: defined.
+    applies_to: both
+    deterministic_enforcement: false
+    llm_guidance: >
+      A market entry may be "defined" even if no single passage says "the Commission
+      defines the market as X". Supporting evidence can include: (a) a prior decision
+      establishing the market, (b) the parties not disputing the definition, and (c)
+      market investigation responses confirming the same scope. When all three are
+      present in linked passages with appropriate source_roles (precedent,
+      notifying_party_view, market_investigation), the aggregate can justify "defined".
+      Weak support from any single passage is expected — look at the passage set.
+    examples:
+      good: >
+        pm_1 (widgets) has three passages: one citing Commission Decision M.XXXX as
+        precedent, one where parties confirmed the same definition, and one summarising
+        market-investigation responses — together these support definition_status: defined.
+      bad: >
+        Reviewer insists definition_status must be "left_open" because no single passage
+        explicitly says "the Commission defines the market as widgets".
+
+  - id: mdr_005_no_theory_frame_overcounting
+    status: active
+    severity: warning
+    short_rule: >
+      Theory-specific analytical frames must not be overcounted as separate product
+      markets if they duplicate formal market entries.
+    applies_to: both
+    deterministic_enforcement: false
+    llm_guidance: >
+      Some decisions analyse theories of harm (e.g. horizontal overlaps, input
+      foreclosure) with reference to the same product market defined earlier.
+      Do not create a separate market entry for each theory-of-harm framing if
+      the underlying market is already captured in product_markets_considered.
+      Instead, link the theory to the existing market entry. Create a new entry
+      only when the theory genuinely concerns a distinct market not otherwise
+      analysed in the decision.
+    examples:
+      bad: >
+        Decision defines "online search advertising" as a product market and then
+        analyses a horizontal overlap theory within that same market. Extractor
+        creates two entries: pm_1 (online search advertising) and pm_2 (online
+        search advertising — horizontal overlap), which are duplicates.
+      good: >
+        Single pm_1 entry (online search advertising), theory linked to pm_1.
+
+  - id: mdr_006_conclusion_no_market_link
+    status: active
+    severity: error
+    short_rule: >
+      Pure conclusion passages (source_role: conclusion) may support theories_of_harm
+      or outcome context, but must not be the sole support for market entries.
+    applies_to: both
+    deterministic_enforcement: false
+    llm_guidance: >
+      A passage with source_role: conclusion records the Commission's final verdict
+      on the competitive assessment (e.g. "the Commission concludes that the
+      Transaction is compatible with the internal market"). Such passages can
+      provide evidence for theories_of_harm outcomes or overall_outcome, but
+      they should not be the only passage supporting a market entry. A market entry
+      needs at least one commission_assessment or market_investigation passage
+      that shows the analysis, not just the verdict.
+    examples:
+      bad: >
+        pm_1 (widgets) is supported only by sp_3 which says "the Commission
+        concludes that the parties overlap in widget manufacturing". No analysis
+        passage is present.
+      good: >
+        pm_1 (widgets) is supported by sp_1 (commission_assessment — actual
+        market analysis) and sp_3 (conclusion — verdict). Conclusion passage
+        serves as corroboration, not sole support.
+
+  - id: mdr_007_deduplicate_identical_quotes
+    status: active
+    severity: warning
+    short_rule: >
+      Duplicate identical quote snippets should be merged into a single passage
+      with combined support lists; do not retain separate entries.
+    applies_to: extractor
+    deterministic_enforcement: false
+    llm_guidance: >
+      If the same verbatim quote text would appear more than once in source_passages
+      (e.g. because it supports both a product market and a theory), merge them into
+      one passage with all relevant market_ids and theory names in its supports list.
+      Duplicate passages inflate passage counts, create review noise, and can cause
+      the reviewer to assess the same quote twice with different verdicts.
+    examples:
+      bad: >
+        sp_4 and sp_7 contain identical text "the Commission considers widgets…";
+        sp_4 supports pm_1 and sp_7 supports theory_1.
+      good: >
+        Single sp_4 with supports: [pm_1, theory_1].
+
+  - id: mdr_008_thin_passages_remove
+    status: active
+    severity: warning
+    short_rule: >
+      Thin passages that do not independently support any proposition should be
+      removed; retain only passages that carry substantive evidentiary weight.
+    applies_to: extractor
+    deterministic_enforcement: false
+    llm_guidance: >
+      A thin passage is one whose quote_snippet is too short, too vague, or too
+      dependent on surrounding context to support the linked proposition on its own.
+      Examples: a single sentence that names a market without analysis; a clause
+      fragment; a pure background sentence. If removing the passage would leave
+      the market entry without support, extend the snippet to include the surrounding
+      analysis, or omit the entry and note it in caveats. Do not keep thin passages
+      merely to pad the source_passages count.
+    examples:
+      bad: >
+        sp_9 quote is "the widget market." (three words) linked to pm_1.
+      good: >
+        sp_9 extended to include the full Commission sentence: "The Commission
+        considers the widget market to be the relevant product market for the
+        purposes of this assessment."
+
+  - id: mdr_009_quote_cleanliness
+    status: active
+    severity: warning
+    short_rule: >
+      Quote snippets should avoid PDF-normalisation artifacts: footnote injections,
+      line-break hyphen joins, and inline footnote numbers.
+    applies_to: extractor
+    deterministic_enforcement: false
+    llm_guidance: >
+      PDF text extraction commonly introduces: (1) footnote number injections
+      mid-sentence (e.g. "market definition.14 The Commission" where "14" is a
+      footnote marker); (2) line-break hyphen joins where a hyphenated word at a
+      line end appears as "compe- titive" or "compe-\ntitive"; (3) inline footnote
+      reference numbers embedded in text (e.g. "widget market (23) where"). Prefer
+      shorter, clean snippets that still fully support the proposition over longer
+      snippets containing these artifacts. If the only available text is affected,
+      copy it verbatim but keep the snippet as short as possible. The quote
+      cleanliness check is best-effort — do not omit a genuinely important passage
+      solely to avoid artifacts, but avoid gratuitous artifact inclusion.
+    examples:
+      bad: >
+        "the relevant product market.14 The Commission considers that widgets form
+        a separate market15 from other building materials." (footnote markers 14
+        and 15 injected)
+      good: >
+        "The Commission considers that widgets form a separate market from other
+        building materials." (shorter, clean, still supports the proposition)
+
+  - id: mdr_010_mixed_passage_not_disqualified
+    status: active
+    severity: info
+    short_rule: >
+      A mixed passage containing substantive market-definition content AND incidental
+      outcome language is not automatically disqualified from supporting a market entry.
+    applies_to: reviewer
+    deterministic_enforcement: false
+    llm_guidance: >
+      A passage that combines genuine market-definition analysis with incidental
+      outcome language (e.g. "the precise geographic market definition can be left
+      open, as the Transaction does not raise competition concerns under any plausible
+      market definition") is NOT purely an outcome conclusion. If the market-definition
+      portion independently supports the linked proposition, keep the link. In the
+      review note, flag it as a mixed passage and suggest the human reviewer consider
+      splitting it into narrower snippets at promotion time. Only set
+      outcome_passage_misuse = true when the passage contains NO substantive
+      market-definition content — i.e. it is purely an outcome conclusion.
+    examples:
+      bad: >
+        Reviewer sets outcome_passage_misuse = true for a passage that says "the
+        geographic market can be left open as concerns are absent under any scope"
+        — the left-open conclusion is itself market-definition content.
+      good: >
+        Reviewer notes it as a mixed passage, keeps the market link, and suggests
+        splitting at promotion. outcome_passage_misuse remains false.
