@@ -1,0 +1,389 @@
+#!/usr/bin/env python3
+"""
+promote_draft_to_canonical.py — Convert a reviewed draft to a canonical case record.
+
+Reads data/drafts/{jurisdiction}/{case_id}.{focus}.draft.yaml, merges it with the
+existing seed/canonical at data/cases/{jurisdiction}/{case_id}.yaml, strips
+draft-only fields, adds required canonical fields, validates against the Pydantic
+CaseRecord schema, and writes the result.
+
+Usage:
+    # Promote using seed metadata already in data/cases/
+    apps/api/.venv/bin/python apps/api/scripts/promote_draft_to_canonical.py \\
+        --case-id eu_facebook_whatsapp_2014 \\
+        --focus market_definition
+
+    # Pass procedure_stage explicitly when the seed does not have it
+    apps/api/.venv/bin/python apps/api/scripts/promote_draft_to_canonical.py \\
+        --case-id eu_facebook_whatsapp_2014 \\
+        --focus market_definition \\
+        --procedure-stage phase1
+
+    # Dry run — print result, do not write
+    apps/api/.venv/bin/python apps/api/scripts/promote_draft_to_canonical.py \\
+        --case-id eu_facebook_whatsapp_2014 \\
+        --focus market_definition \\
+        --dry-run
+
+    # Overwrite an existing canonical record
+    apps/api/.venv/bin/python apps/api/scripts/promote_draft_to_canonical.py \\
+        --case-id eu_facebook_whatsapp_2014 \\
+        --focus market_definition \\
+        --overwrite
+
+    # Write to a custom path
+    apps/api/.venv/bin/python apps/api/scripts/promote_draft_to_canonical.py \\
+        --case-id eu_facebook_whatsapp_2014 \\
+        --focus market_definition \\
+        --output /tmp/eu_facebook_whatsapp_2014.yaml
+"""
+
+import argparse
+import datetime
+import sys
+from pathlib import Path
+from typing import Optional
+
+import yaml
+
+_SCRIPTS_DIR = Path(__file__).resolve().parent
+_API_DIR = _SCRIPTS_DIR.parent
+_REPO_ROOT = _API_DIR.parents[1]
+
+sys.path.insert(0, str(_API_DIR))
+
+from app.loader.yaml_loader import load_yaml_file
+
+# ---------------------------------------------------------------------------
+# Fields that belong only in drafts
+# ---------------------------------------------------------------------------
+
+# Top-level keys the extraction pipeline adds that have no place in canonical records.
+_DRAFT_TOP_STRIP: frozenset[str] = frozenset({"_draft_note"})
+
+# Keys on ProductMarket / GeographicMarket entries that the pipeline adds.
+_DRAFT_MARKET_STRIP: frozenset[str] = frozenset({"verification", "market_importance"})
+
+# Keys on SourcePassage entries that the pipeline adds.
+_DRAFT_PASSAGE_STRIP: frozenset[str] = frozenset({"source_role"})
+
+# ---------------------------------------------------------------------------
+# Fields that should come from the seed/canonical file, not the draft.
+# (Case-level metadata set by the human curator, not by AI extraction.)
+# ---------------------------------------------------------------------------
+
+_SEED_PRIORITY_FIELDS: frozenset[str] = frozenset({
+    "procedure_stage",
+    "case_type",
+    "authority_reference",
+    "metadata",
+    "remedies",
+    "case_history",
+    "ai_summary",
+    "similar_cases",
+})
+
+# ---------------------------------------------------------------------------
+# YAML output helpers
+# ---------------------------------------------------------------------------
+
+class _CanonicalDumper(yaml.SafeDumper):
+    """SafeDumper with block-scalar strings and ISO-formatted dates."""
+
+
+def _str_representer(dumper: yaml.SafeDumper, data: str) -> yaml.ScalarNode:
+    if len(data) > 80 or "\n" in data:
+        # Strip trailing whitespace from each line; yaml.dump re-wraps `|` blocks.
+        cleaned = "\n".join(line.rstrip() for line in data.splitlines()).rstrip() + "\n"
+        return dumper.represent_scalar("tag:yaml.org,2002:str", cleaned, style="|")
+    return dumper.represent_scalar("tag:yaml.org,2002:str", data)
+
+
+def _date_representer(dumper: yaml.SafeDumper, data: datetime.date) -> yaml.ScalarNode:
+    return dumper.represent_scalar("tag:yaml.org,2002:str", data.isoformat())
+
+
+_CanonicalDumper.add_representer(str, _str_representer)
+_CanonicalDumper.add_representer(datetime.date, _date_representer)
+
+
+def _dump_canonical_yaml(data: dict) -> str:
+    return yaml.dump(
+        data,
+        Dumper=_CanonicalDumper,
+        default_flow_style=False,
+        allow_unicode=True,
+        sort_keys=False,
+        width=90,
+    )
+
+# ---------------------------------------------------------------------------
+# Path resolution helpers
+# ---------------------------------------------------------------------------
+
+def find_draft(case_id: str, focus: str, drafts_dir: Path) -> Optional[Path]:
+    """Return the draft path by searching all jurisdiction sub-directories."""
+    filename = f"{case_id}.{focus}.draft.yaml"
+    for p in drafts_dir.rglob(filename):
+        if not any(".draft" in part for part in p.parent.parts):
+            return p
+    return None
+
+
+def find_canonical(case_id: str, cases_dir: Path) -> Optional[Path]:
+    """Return the canonical YAML path for case_id, or None if not found."""
+    for p in cases_dir.rglob(f"{case_id}.yaml"):
+        if p.stem != case_id:
+            continue
+        if any(".draft" in part for part in p.parts):
+            continue
+        return p
+    return None
+
+
+def _canonical_output_path(draft_path: Path, cases_dir: Path, case_id: str) -> Path:
+    """Derive the default canonical output path from the draft's jurisdiction directory."""
+    # draft_path: .../data/drafts/eu/eu_xxx.yyy.draft.yaml
+    # output:     .../data/cases/eu/eu_xxx.yaml
+    jurisdiction = draft_path.parent.name
+    return cases_dir / jurisdiction / f"{case_id}.yaml"
+
+# ---------------------------------------------------------------------------
+# Transformation
+# ---------------------------------------------------------------------------
+
+def _strip_draft_fields_inplace(record: dict) -> None:
+    """Mutate *record* in-place: remove all draft-only keys."""
+    for key in _DRAFT_TOP_STRIP:
+        record.pop(key, None)
+
+    for markets_key in ("product_markets_considered", "geographic_markets_considered"):
+        for market in record.get(markets_key) or []:
+            for field in _DRAFT_MARKET_STRIP:
+                market.pop(field, None)
+
+    for passage in record.get("source_passages") or []:
+        for field in _DRAFT_PASSAGE_STRIP:
+            passage.pop(field, None)
+
+
+def _apply_seed_fields(record: dict, seed: dict) -> None:
+    """Mutate *record* in-place: overlay seed values for metadata-priority fields."""
+    for field in _SEED_PRIORITY_FIELDS:
+        if field in seed:
+            record[field] = seed[field]
+
+
+def _ensure_metadata(record: dict, today: str) -> None:
+    """Add a default metadata block if none is present (cannot be inferred from draft)."""
+    if "metadata" not in record:
+        record["metadata"] = {
+            "extraction_method": "ai_extracted",
+            "review_status": "unreviewed",
+            "overall_confidence": 0.7,
+            "created_date": today,
+            "last_updated_date": today,
+            "tags": [],
+        }
+
+
+def build_canonical(
+    draft: dict,
+    seed: Optional[dict],
+    *,
+    procedure_stage_override: Optional[str],
+    today: str,
+) -> dict:
+    """
+    Return a new canonical-ready dict derived from *draft* and *seed*.
+
+    Raises ValueError listing all missing required fields if the result cannot
+    be validated.
+    """
+    result: dict = {}
+    result.update(draft)
+
+    # Overlay seed values for human-curated metadata fields.
+    if seed:
+        _apply_seed_fields(result, seed)
+
+    # CLI override always wins for procedure_stage.
+    if procedure_stage_override:
+        result["procedure_stage"] = procedure_stage_override
+
+    # Strip draft-only fields.
+    _strip_draft_fields_inplace(result)
+
+    # Fill in metadata default if not present (from seed or otherwise).
+    _ensure_metadata(result, today)
+
+    # Check required fields that cannot have safe defaults.
+    missing = [f for f in ("procedure_stage",) if not result.get(f)]
+    if missing:
+        raise ValueError(
+            f"Required canonical fields are missing and could not be inferred: "
+            f"{missing}.\n"
+            "Provide them in the seed YAML at data/cases/, or pass "
+            "--procedure-stage on the command line."
+        )
+
+    return result
+
+
+# ---------------------------------------------------------------------------
+# Validation
+# ---------------------------------------------------------------------------
+
+def validate_canonical_dict(record: dict) -> tuple[bool, str]:
+    """
+    Validate *record* against the Pydantic CaseRecord model.
+
+    Returns (ok, error_message).  error_message is empty when ok is True.
+    """
+    try:
+        from pydantic import ValidationError
+        from app.models import CaseRecord
+        CaseRecord.model_validate(record)
+        return True, ""
+    except Exception as exc:
+        return False, str(exc)
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
+
+def main(argv: Optional[list[str]] = None) -> int:
+    parser = argparse.ArgumentParser(
+        description="Promote a reviewed draft to a canonical case record.",
+    )
+    parser.add_argument("--case-id", required=True,
+                        help="Case ID (e.g. eu_facebook_whatsapp_2014)")
+    parser.add_argument("--focus", default="market_definition",
+                        help="Extraction focus (default: market_definition)")
+    parser.add_argument("--procedure-stage",
+                        help="Override procedure_stage (phase1 | phase2). "
+                             "Required when the seed does not have it.")
+    parser.add_argument("--dry-run", action="store_true",
+                        help="Print the canonical YAML without writing to disk.")
+    parser.add_argument("--output",
+                        help="Custom output path (default: data/cases/{jur}/{case_id}.yaml)")
+    parser.add_argument("--overwrite", action="store_true",
+                        help="Overwrite the canonical file if it already exists.")
+    parser.add_argument("--drafts-dir", default=str(_REPO_ROOT / "data" / "drafts"),
+                        help="Root directory for draft files.")
+    parser.add_argument("--cases-dir", default=str(_REPO_ROOT / "data" / "cases"),
+                        help="Root directory for canonical case files.")
+    args = parser.parse_args(argv)
+
+    drafts_dir = Path(args.drafts_dir)
+    cases_dir = Path(args.cases_dir)
+    today = datetime.date.today().isoformat()
+
+    # ------------------------------------------------------------------
+    # 1. Locate draft
+    # ------------------------------------------------------------------
+    draft_path = find_draft(args.case_id, args.focus, drafts_dir)
+    if draft_path is None:
+        print(
+            f"ERROR: No draft found for '{args.case_id}' (focus={args.focus}) "
+            f"under {drafts_dir}",
+            file=sys.stderr,
+        )
+        return 1
+
+    draft = yaml.safe_load(draft_path.read_text(encoding="utf-8"))
+    print(f"Draft:     {draft_path}")
+
+    # ------------------------------------------------------------------
+    # 2. Locate seed / existing canonical (optional)
+    # ------------------------------------------------------------------
+    canonical_path = find_canonical(args.case_id, cases_dir)
+    seed: Optional[dict] = None
+    if canonical_path:
+        seed = yaml.safe_load(canonical_path.read_text(encoding="utf-8"))
+        print(f"Seed:      {canonical_path}")
+    else:
+        print("Seed:      (none)")
+
+    # ------------------------------------------------------------------
+    # 3. Determine output path
+    # ------------------------------------------------------------------
+    if args.output:
+        out_path = Path(args.output)
+    elif canonical_path:
+        out_path = canonical_path
+    else:
+        out_path = _canonical_output_path(draft_path, cases_dir, args.case_id)
+
+    print(f"Output:    {out_path}")
+    print()
+
+    # ------------------------------------------------------------------
+    # 4. Safety gate: refuse to overwrite without --overwrite
+    # ------------------------------------------------------------------
+    if not args.dry_run and out_path.exists() and not args.overwrite:
+        print(
+            f"ERROR: {out_path} already exists. "
+            "Pass --overwrite to replace it.",
+            file=sys.stderr,
+        )
+        return 1
+
+    # ------------------------------------------------------------------
+    # 5. Build canonical record
+    # ------------------------------------------------------------------
+    try:
+        canonical = build_canonical(
+            draft,
+            seed,
+            procedure_stage_override=args.procedure_stage,
+            today=today,
+        )
+    except ValueError as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        return 1
+
+    # ------------------------------------------------------------------
+    # 6. Validate against Pydantic model
+    # ------------------------------------------------------------------
+    ok, error_msg = validate_canonical_dict(canonical)
+    if not ok:
+        print(f"ERROR: Pydantic validation failed:\n{error_msg}", file=sys.stderr)
+        return 1
+
+    print("Validation: PASS")
+
+    # ------------------------------------------------------------------
+    # 7. Write (or print for dry-run)
+    # ------------------------------------------------------------------
+    yaml_text = _dump_canonical_yaml(canonical)
+
+    if args.dry_run:
+        print("\n--- DRY RUN — canonical YAML (not written) ---\n")
+        print(yaml_text)
+        return 0
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(yaml_text, encoding="utf-8")
+    print(f"Written:   {out_path}")
+
+    # ------------------------------------------------------------------
+    # 8. Quick summary
+    # ------------------------------------------------------------------
+    pms = len(canonical.get("product_markets_considered") or [])
+    gms = len(canonical.get("geographic_markets_considered") or [])
+    ths = len(canonical.get("theories_of_harm") or [])
+    sps = len(canonical.get("source_passages") or [])
+    print(
+        f"\nSummary:   {pms} product market(s), {gms} geographic market(s), "
+        f"{ths} theory/ies, {sps} passage(s)"
+    )
+    print("\nPromotion complete. Run the post-promotion checks:")
+    print("  apps/api/.venv/bin/python apps/api/scripts/validate_cases.py")
+    print("  apps/api/.venv/bin/python apps/api/scripts/check_source_integrity.py --no-cache")
+
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

@@ -141,30 +141,31 @@ If either produces errors, fix them before proceeding.
 
 ---
 
-## Step 7 — Build the canonical YAML
+## Step 7 — Promote the draft to canonical
 
-The canonical YAML is **not** a direct copy of the draft. The draft contains extraction metadata (`_draft_note`, `source_role`, `market_importance`, `verification.status`) that must not appear in canonical records. Build the canonical file by hand, guided by the draft.
+Use the promotion script — **do not copy the draft by hand**.  The draft contains
+extraction metadata (`_draft_note`, `source_role`, `market_importance`,
+`verification`) that must not appear in canonical records; the script strips
+these automatically.
 
-**Minimum required canonical fields not present in the draft:**
+### Prerequisites for the seed file
+
+Before running the script, ensure `data/cases/{jurisdiction}/{case_id}.yaml`
+exists and contains the human-curated case-level fields the extractor does not
+set:
 
 | Field | Where | Typical value |
 |---|---|---|
 | `procedure_stage` | top-level | `phase1` or `phase2` |
+| `case_type` | top-level | `merger` |
+| `authority_reference` | top-level | e.g. `M.7217` |
+| `remedies` | top-level | `[]` (or list strings) |
 | `metadata` | top-level block | see below |
-| `outcome` | top-level | `cleared`, `cleared_with_conditions`, etc. |
-| `similar_cases` | top-level | `[]` if none known |
-| `case_history` | top-level | at minimum the decision event |
 
-**Fields to strip from draft → canonical:**
-- `_draft_note` (top-level annotation)
-- `source_role` on passages (draft-only; not in canonical `SourcePassage`)
-- `market_importance` on markets (draft-only; not in canonical `ProductMarket`/`GeographicMarket`)
-- `verification.status` — rename to `verification.verification_status` if keeping, or omit
-
-**`metadata` block template:**
+**`metadata` block in the seed:**
 ```yaml
 metadata:
-  extraction_method: pdf_extracted   # or manually_added
+  extraction_method: ai_extracted    # or manually_added / pdf_extracted
   review_status: unreviewed          # until lawyer-reviewed
   overall_confidence: 0.65           # ≤ 0.70 until spot_checked; ≤ 0.90 until lawyer_reviewed
   created_date: "YYYY-MM-DD"
@@ -179,24 +180,45 @@ metadata:
 - `phase1` — Phase I clearance (no in-depth investigation)
 - `phase2` — Phase II investigation (in-depth, with or without remedies)
 
-After writing the canonical file, run validation before committing:
+### Run the promotion script
 
 ```bash
-# Validate schema
-apps/api/.venv/bin/python apps/api/scripts/validate_cases.py
+# Dry run first — inspect what will be written
+apps/api/.venv/bin/python apps/api/scripts/promote_draft_to_canonical.py \
+    --case-id {case_id} \
+    --focus market_definition \
+    --dry-run
 
-# Check source links (live HTTP)
-apps/api/.venv/bin/python apps/api/scripts/check_source_links.py
-
-# Source integrity (0 errors required)
-apps/api/.venv/bin/python apps/api/scripts/check_source_integrity.py --no-cache
-
-# Seed graph
-python graph/seed_graph.py
-
-# Tests
-apps/api/.venv/bin/python -m pytest apps/api/tests/ -q
+# Promote (overwrites the existing seed/canonical in data/cases/)
+apps/api/.venv/bin/python apps/api/scripts/promote_draft_to_canonical.py \
+    --case-id {case_id} \
+    --focus market_definition \
+    --overwrite
 ```
+
+If `procedure_stage` is not in the seed, pass it explicitly:
+
+```bash
+apps/api/.venv/bin/python apps/api/scripts/promote_draft_to_canonical.py \
+    --case-id {case_id} \
+    --focus market_definition \
+    --procedure-stage phase1 \
+    --overwrite
+```
+
+The script will:
+1. Strip all draft-only fields (`_draft_note`, `source_role` on passages,
+   `verification` and `market_importance` on market entries).
+2. Take case-level metadata (`procedure_stage`, `metadata`, `authority_reference`,
+   `remedies`, etc.) from the seed file.
+3. Take extracted content (markets, passages, theories) from the draft.
+4. Validate the result against the Pydantic `CaseRecord` model.
+5. Write to `data/cases/{jurisdiction}/{case_id}.yaml`.
+
+The script **fails clearly** if `procedure_stage` is missing and cannot be
+inferred, listing exactly which fields need to be supplied.
+
+After the script writes the canonical file, run post-promotion validation:
 
 ---
 
