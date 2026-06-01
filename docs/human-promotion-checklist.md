@@ -143,14 +143,14 @@ If either produces errors, fix them before proceeding.
 
 ## Step 7 — Promote the draft to canonical
 
-Use the promotion script — **do not copy the draft by hand**.  The draft contains
-extraction metadata (`_draft_note`, `source_role`, `market_importance`,
-`verification`) that must not appear in canonical records; the script strips
-these automatically.
+**Use the pipeline script — do not copy the draft by hand and do not run the
+individual promotion commands manually.**  Manual promotion has caused mistakes
+in the past: draft-only fields ending up in canonical records, missed learning
+logs, and unrelated integrity warnings obscuring real issues.
 
 ### Prerequisites for the seed file
 
-Before running the script, ensure `data/cases/{jurisdiction}/{case_id}.yaml`
+Before running the pipeline, ensure `data/cases/{jurisdiction}/{case_id}.yaml`
 exists and contains the human-curated case-level fields the extractor does not
 set:
 
@@ -180,65 +180,50 @@ metadata:
 - `phase1` — Phase I clearance (no in-depth investigation)
 - `phase2` — Phase II investigation (in-depth, with or without remedies)
 
-### Run the promotion script
+### Run the promotion pipeline (preferred)
 
 ```bash
-# Dry run first — inspect what will be written
-apps/api/.venv/bin/python apps/api/scripts/promote_draft_to_canonical.py \
+# Dry run first — checks draft integrity and prints what would be written
+apps/api/.venv/bin/python apps/api/scripts/promote_case_pipeline.py \
     --case-id {case_id} \
     --focus market_definition \
+    --procedure-stage phase1 \
     --dry-run
 
-# Promote (overwrites the existing seed/canonical in data/cases/)
-apps/api/.venv/bin/python apps/api/scripts/promote_draft_to_canonical.py \
-    --case-id {case_id} \
-    --focus market_definition \
-    --overwrite
-```
-
-If `procedure_stage` is not in the seed, pass it explicitly:
-
-```bash
-apps/api/.venv/bin/python apps/api/scripts/promote_draft_to_canonical.py \
+# Full promotion (runs all gates, seeds graph, writes learning log)
+apps/api/.venv/bin/python apps/api/scripts/promote_case_pipeline.py \
     --case-id {case_id} \
     --focus market_definition \
     --procedure-stage phase1 \
     --overwrite
 ```
 
-The script will:
-1. Strip all draft-only fields (`_draft_note`, `source_role` on passages,
-   `verification` and `market_importance` on market entries).
-2. Take case-level metadata (`procedure_stage`, `metadata`, `authority_reference`,
-   `remedies`, etc.) from the seed file.
-3. Take extracted content (markets, passages, theories) from the draft.
-4. Validate the result against the Pydantic `CaseRecord` model.
-5. Write to `data/cases/{jurisdiction}/{case_id}.yaml`.
+The pipeline will, in order:
+1. Run source integrity on the **target draft only** (0 errors and 0 warnings
+   required — aborts before writing anything if either is non-zero).
+2. Strip all draft-only fields and promote to `data/cases/`.
+3. Run `validate_cases.py` (Pydantic schema validation on all canonical records).
+4. Run `check_source_links.py` (live URL liveness check on canonical records).
+5. Run `check_source_integrity.py --no-cache` (quote/locator checks on canonical).
+6. Run `graph/seed_graph.py` (seed Neo4j with the updated case set).
+7. Run `create_review_learning_log.py` (capture human corrections as a delta log).
+8. Run `apply_review_learning.py` (aggregate proposals from all learning logs).
 
-The script **fails clearly** if `procedure_stage` is missing and cannot be
-inferred, listing exactly which fields need to be supplied.
-
-After the script writes the canonical file, run post-promotion validation:
+The script **fails clearly** at the first blocking step and prints a concise
+summary at exit showing the status of every gate.
 
 ---
 
 ## Step 8 — Post-promotion validation
 
-Run the full canonical validation after promoting:
+The pipeline (Step 7) already runs all canonical gates automatically. After it
+completes, run the test suite:
 
 ```bash
-# 1. Pydantic schema validation on canonical records
-apps/api/.venv/bin/python apps/api/scripts/validate_cases.py
-
-# 2. Source integrity on canonical records (live URL check)
-apps/api/.venv/bin/python apps/api/scripts/check_source_integrity.py \
-    --cases-dir data/cases
-
-# 3. Run tests
 apps/api/.venv/bin/python -m pytest apps/api/tests/ -q
 ```
 
-All three must pass before committing.
+All tests must pass before committing.
 
 ---
 
@@ -248,8 +233,7 @@ All three must pass before committing.
 - [ ] No `review_status: lawyer_reviewed` set unless a lawyer reviewed the passage
 - [ ] `overall_confidence` is ≤ 0.70 if only `spot_checked` passages (no legal review)
 - [ ] `_draft_note` line removed from the promoted YAML
-- [ ] `validate_cases.py` passes cleanly
-- [ ] `check_source_integrity.py --cases-dir data/cases` passes cleanly (0 errors)
+- [ ] `promote_case_pipeline.py` exited 0 (all gates passed, including `validate_cases.py` and canonical source integrity)
 - [ ] Tests pass
 - [ ] Commit message references the case ID and notes what was promoted
 
