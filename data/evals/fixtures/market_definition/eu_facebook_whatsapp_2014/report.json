@@ -1,0 +1,88 @@
+{
+  "canonical_merge_candidates": {
+    "safe_to_promote": [
+      {
+        "name": "Consumer communications apps for smartphones",
+        "market_type": "product",
+        "importance": "core_assessed",
+        "definition_status": "considered",
+        "reason": "Commission core_assessed this market with 'considered' definition; supported by cited source passages.",
+        "source_refs": [
+          "5",
+          "6",
+          "7"
+        ]
+      },
+      {
+        "name": "Social networking services",
+        "market_type": "product",
+        "importance": "core_assessed",
+        "definition_status": "left_open",
+        "reason": "Commission core_assessed this market with 'left_open' definition; supported by cited source passages.",
+        "source_refs": [
+          "11"
+        ]
+      },
+      {
+        "name": "Online advertising services (online vs. offline; sub-segments left open)",
+        "market_type": "product",
+        "importance": "core_assessed",
+        "definition_status": "left_open",
+        "reason": "Commission core_assessed this market with 'left_open' definition; supported by cited source passages.",
+        "source_refs": [
+          "14",
+          "12",
+          "13"
+        ]
+      },
+      {
+        "name": "Consumer communications apps – EEA-wide (at least), possibly worldwide",
+        "market_type": "geographic",
+        "importance": "core_assessed",
+        "definition_status": "considered",
+        "reason": "Commission core_assessed this market with 'considered' definition; supported by cited source passages.",
+        "source_refs": [
+          "7",
+          "8",
+          "9"
+        ]
+      },
+      {
+        "name": "Social networking services – EEA-wide (at least), possibly worldwide",
+        "market_type": "geographic",
+        "importance": "core_assessed",
+        "definition_status": "considered",
+        "reason": "Commission core_assessed this market with 'considered' definition; supported by cited source passages.",
+        "source_refs": [
+          "8",
+          "12"
+        ]
+      }
+    ],
+    "uncertain_markets": [],
+    "context_only": [],
+    "hold_pending_source_check": [],
+    "manual_review": [
+      {
+        "name": "Online advertising – national or linguistic borders within the EEA",
+        "market_type": "geographic",
+        "importance": "",
+        "definition_status": "defined",
+        "reason": "Market has source citations but importance/assessment type is unclassified; review classification and Commission conclusion before deciding on promotion.",
+        "source_refs": [
+          "15",
+          "14"
+        ]
+      }
+    ],
+    "manual_review_geo_pairing": [],
+    "_counts": {
+      "safe_to_promote": 5,
+      "uncertain_markets": 0,
+      "context_only": 0,
+      "hold_pending_source_check": 0,
+      "manual_review": 1,
+      "manual_review_geo_pairing": 0
+    }
+  }
+}

@@ -27,3 +27,9 @@ benchmarks:
     draft_yaml: data/evals/fixtures/market_definition/eu_coca_cola_costa_2018/draft.yaml
     report_json: data/evals/fixtures/market_definition/eu_coca_cola_costa_2018/report.json
     cache_dir: data/evals/fixtures/market_definition/eu_coca_cola_costa_2018
+
+  - case_id: eu_facebook_whatsapp_2014
+    gold_yaml: data/evals/gold/eu_facebook_whatsapp_2014.market_definition.gold.yaml
+    draft_yaml: data/evals/fixtures/market_definition/eu_facebook_whatsapp_2014/draft.yaml
+    report_json: data/evals/fixtures/market_definition/eu_facebook_whatsapp_2014/report.json
+    cache_dir: data/evals/fixtures/market_definition/eu_facebook_whatsapp_2014

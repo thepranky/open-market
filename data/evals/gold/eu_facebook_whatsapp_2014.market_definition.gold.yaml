@@ -1,0 +1,326 @@
+_gold_metadata:
+  case_id: eu_facebook_whatsapp_2014
+  gold_status: canonical_derived
+  partial: false
+  review_required: false
+  created_from: data/cases/eu/eu_facebook_whatsapp_2014.yaml
+  notes: >
+    Derived directly from the promoted canonical record.  All 3 product markets and 3
+    geographic markets are fully reviewed.  This is a full-gold (partial: false) fixture:
+    every draft market not in this list counts as a false positive.
+
+    Key evaluation criteria:
+    - Product markets: 3 markets.
+        pm_1 (consumer communications apps for smartphones): definition_status=considered.
+        The Commission adopted this market scope "for the purpose of the assessment of the
+        present case" (para. 34) — CompMap maps to 'considered'.
+        pm_2 (social networking services): definition_status=left_open. Exact boundaries
+        left open; whether consumer comms apps fall within scope left open.
+        pm_3 (online advertising services): definition_status=left_open. Commission
+        confirmed online ≠ offline advertising; sub-segmentation (search/non-search,
+        mobile/static, social-SNS) all left open.
+    - Geographic markets: 3 markets.
+        gm_1 (consumer comms apps — EEA-wide): definition_status=considered. Commission
+        adopted EEA-wide as more conservative; global scope not ruled out.
+        gm_2 (social networking services — EEA-wide): definition_status=considered. Same
+        EEA-wide conservative approach.
+        gm_3 (online advertising — national/linguistic borders): definition_status=defined.
+        Commission conclusively defined national or linguistic-border scope; consistent with
+        Google/DoubleClick and Microsoft/Yahoo! Search Business precedents.
+    - Data, privacy, and network effects must NOT appear as separate product markets.
+        The Commission explicitly stated it would not investigate any market for data or
+        data analytics services (neither party active in such markets). Network effects and
+        privacy considerations appear as competitive assessment context, not market entries.
+    - Mixed left-open formula passages (sp_4, sp_9, sp_11, sp_12) contain incidental
+        clearance language alongside substantive market-definition content. They may
+        legitimately appear in supports_markets under mdr_002 and mdr_010; pure outcome
+        passages must not be linked to market entries.
+    - Theories of harm: none formally assessed in this Phase I decision (cleared without
+        serious doubts under any market definition). theories_of_harm: [] is correct.
+
+case_id: eu_facebook_whatsapp_2014
+case_name: Facebook / WhatsApp
+authority: European Commission
+jurisdiction: EU
+sector: consumer internet / social media / messaging
+decision_date: '2014-10-03'
+
+parties:
+  - name: Facebook Inc.
+    role: acquirer
+  - name: WhatsApp Inc.
+    role: target
+
+source_documents:
+  - doc_id: eu_facebook_whatsapp_decision
+    title: 'Case M.7217 – Facebook / WhatsApp: Commission Decision'
+    case_page_url: https://competition-cases.ec.europa.eu/cases/M.7217
+    pdf_url: https://ec.europa.eu/competition/mergers/cases/decisions/m7217_20141003_20310_3962132_EN.pdf
+    doc_type: decision
+    authority_reference: M.7217
+    retrieval_status: direct
+    published_date: '2014-10-03'
+
+product_markets_considered:
+
+  - name: Consumer communications apps for smartphones
+    market_type: product
+    expected_definition_status: considered
+    expected_promotion_action: promote
+    importance: core_assessed
+    market_group: null
+    aliases:
+      - Consumer communications apps (smartphones)
+      - Market for consumer communications apps for smartphones
+      - Consumer communications apps
+      - Consumer communications services — smartphones
+    expected_draft_names:
+      - Consumer communications apps for smartphones
+    linked_source_passages:
+      - passage_id: sp_1
+        source_document_id: eu_facebook_whatsapp_decision
+        page: '5'
+        quote_snippet: >-
+          the Commission notes that the segmentation that is most relevant for the assessment
+          of the present case is the segmentation based on platforms, since WhatsApp is offered
+          only for smartphones and it does not have any plan to expand its offering to other
+          platforms. Therefore, the present case can be assessed on the basis of a relevant
+          product market including only consumer communications apps for smartphones.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+      - passage_id: sp_3
+        source_document_id: eu_facebook_whatsapp_decision
+        page: '6'
+        quote_snippet: >-
+          the Commission considers that for the assessment of the present case the relevant
+          product market should encompass consumer communications apps offered for all
+          operating systems and including all communications functionalities.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+    reviewer_notes: >-
+      The Commission adopted consumer communications apps for smartphones as the relevant
+      product market for the purpose of this case (para. 34 language: "for the assessment
+      of the present case"). CompMap maps this to definition_status=considered.
+      Sub-segmentation by OS and by functionality was considered and rejected (market
+      investigation finding: sp_2). Traditional electronic communications services
+      (SMS, voice calls) explicitly excluded from the narrowest market.
+      sp_4 (left-open formula + clearance language) is a valid mixed passage under
+      mdr_002/mdr_010 and may support pm_1 in the draft; it is omitted from gold to
+      avoid quote-validation ambiguity from clearance language detection.
+    reviewed: true
+
+  - name: Social networking services
+    market_type: product
+    expected_definition_status: left_open
+    expected_promotion_action: promote
+    importance: core_assessed
+    market_group: null
+    aliases:
+      - Social networking services (SNS)
+      - Online social networking services
+      - Market for social networking services
+    expected_draft_names:
+      - Social networking services
+    linked_source_passages:
+      - passage_id: sp_7
+        source_document_id: eu_facebook_whatsapp_decision
+        page: '11'
+        quote_snippet: >-
+          Therefore, social networking services should not be further segmented according
+          to a platform or an operating system.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+      - passage_id: sp_10
+        source_document_id: eu_facebook_whatsapp_decision
+        page: '11'
+        quote_snippet: >-
+          the Commission concludes that while consumer communications apps like Facebook
+          Messenger and WhatsApp offer certain elements which are typical of a social
+          networking service, in particular sharing of messages and photos, there are
+          important differences between WhatsApp and social network services, as described
+          in paragraphs (50) and (53)-(56).
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+    reviewer_notes: >-
+      The Commission explicitly left open the exact boundaries of the social networking
+      services market, in particular whether consumer communications apps fall within scope
+      (para. 62 equivalent). definition_status=left_open.
+      Segmentation by intended use (professional vs. personal/entertainment) was considered
+      and left open. Segmentation by platform or OS was rejected (sp_7).
+      The question of whether WhatsApp/Facebook Messenger overlap with SNS was left open
+      as immaterial to the outcome (sp_11 is the formal left-open conclusion — a mixed
+      passage under mdr_002/mdr_010; omitted from gold passages to avoid clearance-language
+      ambiguity in quote validation, but may validly appear in draft's supports_markets).
+    reviewed: true
+
+  - name: Online advertising services (online vs. offline; sub-segments left open)
+    market_type: product
+    expected_definition_status: left_open
+    expected_promotion_action: promote
+    importance: core_assessed
+    market_group: null
+    aliases:
+      - Online advertising services
+      - Online advertising
+      - Online advertising market
+      - Online advertising (non-search; possible sub-segments)
+      - Online advertising — online vs. offline
+    expected_draft_names:
+      - Online advertising services (online vs. offline; sub-segments left open)
+    linked_source_passages:
+      - passage_id: sp_16
+        source_document_id: eu_facebook_whatsapp_decision
+        page: '13'
+        quote_snippet: >-
+          In previous decisions, the Commission distinguished between the provision of online
+          and offline advertising space.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+      - passage_id: sp_17
+        source_document_id: eu_facebook_whatsapp_decision
+        page: '14'
+        quote_snippet: >-
+          The market investigation conducted for the purpose of reviewing the Transaction
+          clearly confirmed the distinction made in the Commission precedents between the
+          provision of online and offline advertising.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+    reviewer_notes: >-
+      The Commission conclusively determined that online advertising constitutes a relevant
+      market separate from offline advertising (sp_12 — the primary Commission-assessment
+      passage: "the Commission concludes that online advertising constitutes a relevant
+      market separate from offline advertising"). Sub-segmentation into search/non-search,
+      social-SNS advertising, and mobile/static was all left open. definition_status=left_open
+      reflects that the precise sub-segment scope was not resolved.
+      WhatsApp not active in advertising; the market was assessed solely because of
+      Facebook's position. sp_12 is a mixed passage (Commission conclusion + incidental
+      clearance language — left-open formula for sub-segments); valid under mdr_002/mdr_010
+      but omitted from gold passages to avoid quote-validator clearance-language ambiguity.
+      sp_16 quote shortened to first sentence only: the full passage has footnote 25
+      injected mid-sentence ("advertising space.25 The Commission also considered…") —
+      per mdr_009, the shorter clean sentence is used instead. sp_17 is unaffected.
+      sp_25 (gm_2) appears on page 12 in the PDF cache, not page 8 as attributed in
+      the draft; gold uses the correct page.
+    reviewed: true
+
+geographic_markets_considered:
+
+  - name: Consumer communications apps – EEA-wide (at least), possibly worldwide
+    market_type: geographic
+    expected_definition_status: considered
+    expected_promotion_action: promote
+    importance: core_assessed
+    market_group: null
+    aliases:
+      - Consumer communications apps — EEA-wide
+      - EEA-wide market for consumer communications apps
+      - Consumer communications apps geographic market — EEA-wide
+      - Geographic market for consumer communications apps (EEA)
+    expected_draft_names:
+      - Consumer communications apps – EEA-wide (at least), possibly worldwide
+    linked_source_passages:
+      - passage_id: sp_22
+        source_document_id: eu_facebook_whatsapp_decision
+        page: '8'
+        quote_snippet: >-
+          while there are indications that the geographic scope of the consumer communications
+          apps market could be global, the Commission considers that the relevant geographic
+          market for the assessment of the case is EEA-wide in line with a more conservative
+          approach.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+      - passage_id: sp_23
+        source_document_id: eu_facebook_whatsapp_decision
+        page: '9'
+        quote_snippet: >-
+          the Commission considers that the relevant geographic market for the assessment
+          of the Transaction is at least EEA-wide, if not worldwide.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+    reviewer_notes: >-
+      The Commission adopted EEA-wide scope as the working geographic market, noting
+      indications of a potentially global market but selecting EEA as more conservative
+      given higher party shares there. definition_status=considered reflects the
+      Commission's own "for the assessment of the case" language. National sub-segmentation
+      explicitly rejected (WhatsApp subscription fee in Italy/UK insufficient — sp_35).
+    reviewed: true
+
+  - name: Social networking services – EEA-wide (at least), possibly worldwide
+    market_type: geographic
+    expected_definition_status: considered
+    expected_promotion_action: promote
+    importance: core_assessed
+    market_group: null
+    aliases:
+      - Social networking services — EEA-wide
+      - Geographic market for social networking services (EEA)
+      - Social networking services geographic market
+    expected_draft_names:
+      - Social networking services – EEA-wide (at least), possibly worldwide
+    linked_source_passages:
+      - passage_id: sp_25
+        source_document_id: eu_facebook_whatsapp_decision
+        page: '12'
+        quote_snippet: >-
+          while there are indications that the geographic scope of the market for social
+          networking services could be global, the Commission considers that the relevant
+          geographic market for the assessment of the case is EEA-wide in line with a
+          more conservative approach.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+      - passage_id: sp_26
+        source_document_id: eu_facebook_whatsapp_decision
+        page: '12'
+        quote_snippet: >-
+          the Commission concludes that the geographic scope for the market for social
+          networking services is at least EEA-wide, if not worldwide.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+    reviewer_notes: >-
+      Parallel to gm_1; the Commission adopted EEA-wide scope for social networking
+      services with the same conservative approach. definition_status=considered.
+    reviewed: true
+
+  - name: Online advertising – national or linguistic borders within the EEA
+    market_type: geographic
+    expected_definition_status: defined
+    expected_promotion_action: promote
+    importance: core_assessed
+    market_group: null
+    aliases:
+      - Online advertising — national or EEA linguistic borders
+      - Online advertising geographic market (national/linguistic)
+      - National or linguistic online advertising market
+    expected_draft_names:
+      - Online advertising – national or linguistic borders within the EEA
+    linked_source_passages:
+      - passage_id: sp_27
+        source_document_id: eu_facebook_whatsapp_decision
+        page: '15'
+        quote_snippet: >-
+          In previous decisions, the Commission concluded that the market for online
+          advertising space is to be divided alongside national or linguistic borders
+          within the EEA, although it ultimately left the geographic market definition
+          open in one case.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+      - passage_id: sp_30
+        source_document_id: eu_facebook_whatsapp_decision
+        page: '15'
+        quote_snippet: >-
+          The market investigation in this case generally confirmed the Commission's
+          previous findings as regards the geographic market definition for online
+          advertising. The majority of the respondents to the market investigation
+          stated that advertisers typically purchase online advertising space and
+          conduct advertising campaigns on a national (or linguistic) basis
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+    reviewer_notes: >-
+      The Commission conclusively defined the geographic market for online advertising
+      as national or alongside linguistic borders within the EEA, consistent with
+      Google/DoubleClick and Microsoft/Yahoo! Search Business precedents (sp_28, page 15).
+      definition_status=defined: the Commission "concludes" (not merely "considers" or
+      "leaves open") this geographic scope. The market investigation confirmed this.
+      Note: draft passage sp_28 page attribution is '14' but the text appears on page 15
+      in the PDF cache — sp_27 and sp_30 (both correctly at page 15) are used here instead.
+    reviewed: true
