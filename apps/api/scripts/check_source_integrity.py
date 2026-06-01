@@ -87,7 +87,7 @@ _GENERIC_PATH_RX = re.compile(
 # the opaque ID itself is sufficient evidence the URL is document-specific.
 _OPAQUE_ID_RX = re.compile(
     r"(/file/\d{5,}|/media/\d{5,}|/\d{5,}/|[0-9a-f]{20,}|/dl$"
-    r"|/m\d{4,}_\d+_\d+\.pdf)",
+    r"|/m\d{4,}(?:_[\w]+){2,}\.pdf)",
     re.I,
 )
 

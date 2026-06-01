@@ -228,6 +228,19 @@ class TestUrlHeuristics:
             "https://ec.europa.eu/competition/mergers/cases/decisions/m9276_298_3.pdf",
         )
 
+    def test_opaque_id_ec_new_format_pdf_with_language_suffix(self):
+        # New EC URL format: mNNNN_YYYYMMDD_NNNNN_NNNNNNN_EN.pdf — four numeric
+        # segments plus language suffix; the old two-segment pattern did not match.
+        assert _url_uses_opaque_id(
+            "https://ec.europa.eu/competition/mergers/cases/decisions/m7217_20141003_20310_3962132_EN.pdf"
+        )
+
+    def test_title_check_skipped_for_new_ec_format(self):
+        assert _title_tokens_in_url(
+            "Case M.7217 – Facebook / WhatsApp: Commission Decision",
+            "https://ec.europa.eu/competition/mergers/cases/decisions/m7217_20141003_20310_3962132_EN.pdf",
+        )
+
     def test_not_opaque_descriptive_ftc_url(self):
         assert not _url_uses_opaque_id(
             "https://www.ftc.gov/system/files/ftc_gov/pdf/D09412MicrosoftActivisionComplaint.pdf"
