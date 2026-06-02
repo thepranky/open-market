@@ -7,9 +7,12 @@ source_files:
   llm_review: data/drafts/eu/eu_apple_shazam_2018.market_definition.llm_review.json
   canonical: data/cases/eu/eu_apple_shazam_2018.yaml
 summary:
-  total_corrections: 2
+  total_corrections: 6
   by_type:
     metadata_completion: 2
+    missing_market_added: 2
+    outcome_passage_misuse: 1
+    definition_status_mapping: 1
   llm_triage_status: needs_legal_review
 llm_review_insights:
   triage_status: needs_legal_review
@@ -47,4 +50,72 @@ corrections:
   reusable_rule_candidate: The metadata block is a required canonical section. It must be added during
     promotion; its absence from drafts is expected.
   suggested_follow_up: docs_update
+  confidence: high
+- correction_type: missing_market_added
+  object_type: geographic_market
+  object_id: eu_apple_shazam_2018
+  before: null
+  after:
+    count_added: 5
+    description: Five geographic market counterparts (EEA-wide or global) added after
+      draft extraction produced only product markets.
+  inferred_reason: The extraction prompt did not capture geographic dimensions when
+    the decision text explicitly addressed them for each product market.
+  reusable_rule_candidate: When a product market is extracted, the extraction prompt
+    should explicitly probe for a corresponding geographic market assessment. Decisions
+    that discuss EEA-wide or global scope should yield at least one geographic market
+    entry per product market.
+  suggested_follow_up: prompt_update
+  confidence: high
+- correction_type: missing_market_added
+  object_type: product_market
+  object_id: eu_apple_shazam_2018
+  before: null
+  after:
+    count_added: 1
+    description: Shazam-specific music-recognition market added post-draft; draft
+      extracted only broader music-streaming and radio markets.
+  inferred_reason: The LLM did not identify the narrowest relevant market (music-recognition
+    apps) as a separate entry, merging it with adjacent broader markets instead.
+  reusable_rule_candidate: When a decision explicitly uses language such as "narrowest
+    relevant product market" or names a sub-segment separately, that sub-segment should
+    be extracted as its own product_market entry with definition_status=defined.
+  suggested_follow_up: prompt_update
+  confidence: high
+- correction_type: outcome_passage_misuse
+  object_type: source_passage
+  object_id: eu_apple_shazam_2018
+  before:
+    passages_affected:
+    - sp_3
+    - sp_9
+    - sp_12
+    pattern: Passages concluding "left open because no competitive harm" were linked
+      to market entries as primary market-definition evidence.
+  after:
+    action: Passages re-classified or de-linked from market definitions.
+  inferred_reason: '"Left open" conclusion passages record a procedural finding (no
+    harm → no need to define), not substantive market-definition reasoning. Using
+    them as primary market-definition evidence inflates the apparent certainty of
+    market boundaries.'
+  reusable_rule_candidate: Passages whose quote indicates that a market was "left
+    open" or "need not be resolved" because competitive harm was excluded should not
+    be linked to product_markets_considered or geographic_markets_considered entries
+    as primary evidence. They may be retained in source_passages with source_role=outcome_finding.
+  suggested_follow_up: prompt_update
+  confidence: high
+- correction_type: definition_status_mapping
+  object_type: case
+  object_id: eu_apple_shazam_2018
+  before:
+    outcome: null
+  after:
+    outcome: cleared
+  inferred_reason: The decision granted unconditional clearance under Article 8(1)
+    EUMR. The extraction did not map this to outcome=cleared.
+  reusable_rule_candidate: Article 8(1) EUMR unconditional clearance decisions should
+    map to outcome=cleared. The operative part of the decision (dispositif) is the
+    authoritative source for outcome; it should be preferred over incidental references
+    in recitals.
+  suggested_follow_up: prompt_update
   confidence: high

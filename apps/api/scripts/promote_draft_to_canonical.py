@@ -83,6 +83,15 @@ _SEED_PRIORITY_FIELDS: frozenset[str] = frozenset({
     "similar_cases",
 })
 
+# List fields where the seed value is preferred when the seed has a non-empty
+# list but the draft has an empty or absent list.  This prevents a new AI
+# draft from silently wiping human-reviewed content that was added after the
+# original extraction (e.g. theories_of_harm added post-promotion).
+# When both draft and seed are non-empty the draft wins (newer extraction).
+_SEED_NONEMPTY_FALLBACK_FIELDS: frozenset[str] = frozenset({
+    "theories_of_harm",
+})
+
 # ---------------------------------------------------------------------------
 # YAML output helpers
 # ---------------------------------------------------------------------------
@@ -174,6 +183,44 @@ def _apply_seed_fields(record: dict, seed: dict) -> None:
             record[field] = seed[field]
 
 
+def _apply_seed_nonempty_fallbacks(record: dict, seed: dict) -> None:
+    """Mutate *record* in-place: use seed list when draft list is empty/absent.
+
+    For fields in _SEED_NONEMPTY_FALLBACK_FIELDS: if the seed has a non-empty
+    list but the draft produced an empty (or missing) list, keep the seed value
+    so human-reviewed content is not silently wiped.
+    """
+    for field in _SEED_NONEMPTY_FALLBACK_FIELDS:
+        seed_val = seed.get(field)
+        if seed_val:  # non-empty list in seed
+            draft_val = record.get(field)
+            if not draft_val:  # draft is empty or absent
+                record[field] = seed_val
+
+
+def check_draft_warnings(draft: dict) -> list[str]:
+    """Return a list of human-readable warnings about quality issues in *draft*.
+
+    These are emitted before promotion so the operator can decide whether to
+    proceed or fix the draft first.  They do not block promotion.
+    """
+    warnings: list[str] = []
+
+    not_set_passages = [
+        p.get("passage_id", "<unknown>")
+        for p in (draft.get("source_passages") or [])
+        if p.get("source_role") == "not_set"
+    ]
+    if not_set_passages:
+        ids = ", ".join(not_set_passages)
+        warnings.append(
+            f"WARNING: {len(not_set_passages)} passage(s) have source_role=not_set "
+            f"({ids}). Assign roles before promotion or accept unclassified evidence."
+        )
+
+    return warnings
+
+
 def _ensure_metadata(record: dict, today: str) -> None:
     """Add a default metadata block if none is present (cannot be inferred from draft)."""
     if "metadata" not in record:
@@ -206,6 +253,8 @@ def build_canonical(
     # Overlay seed values for human-curated metadata fields.
     if seed:
         _apply_seed_fields(result, seed)
+        # Preserve non-empty seed lists when the draft produced an empty result.
+        _apply_seed_nonempty_fallbacks(result, seed)
 
     # CLI override always wins for procedure_stage.
     if procedure_stage_override:
@@ -293,6 +342,12 @@ def main(argv: Optional[list[str]] = None) -> int:
 
     draft = yaml.safe_load(draft_path.read_text(encoding="utf-8"))
     print(f"Draft:     {draft_path}")
+
+    # ------------------------------------------------------------------
+    # 1b. Draft quality warnings (non-blocking)
+    # ------------------------------------------------------------------
+    for w in check_draft_warnings(draft):
+        print(f"\n{w}", file=sys.stderr)
 
     # ------------------------------------------------------------------
     # 2. Locate seed / existing canonical (optional)

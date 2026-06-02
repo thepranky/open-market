@@ -29,9 +29,12 @@ from scripts.promote_draft_to_canonical import (
     _DRAFT_MARKET_STRIP,
     _DRAFT_PASSAGE_STRIP,
     _DRAFT_TOP_STRIP,
+    _SEED_NONEMPTY_FALLBACK_FIELDS,
+    _apply_seed_nonempty_fallbacks,
     _dump_canonical_yaml,
     _strip_draft_fields_inplace,
     build_canonical,
+    check_draft_warnings,
     find_canonical,
     find_draft,
     main,
@@ -335,6 +338,137 @@ class TestBuildCanonical:
         with pytest.raises(ValueError, match="procedure_stage"):
             build_canonical(draft, seed, procedure_stage_override=None, today=TODAY)
 
+    # ------------------------------------------------------------------
+    # theories_of_harm non-regression tests
+    # ------------------------------------------------------------------
+
+    def test_seed_theories_preserved_when_draft_omits_field(self):
+        """Draft with no theories_of_harm key must not wipe canonical theories."""
+        draft = _minimal_draft()
+        draft.pop("theories_of_harm", None)
+
+        seed = _minimal_seed()
+        seed["theories_of_harm"] = [
+            {"theory_id": "th_seed", "name": "Seed theory", "description": "From canonical."}
+        ]
+
+        result = build_canonical(draft, seed, procedure_stage_override=None, today=TODAY)
+        assert len(result["theories_of_harm"]) == 1
+        assert result["theories_of_harm"][0]["theory_id"] == "th_seed"
+
+    def test_seed_theories_preserved_when_draft_has_empty_list(self):
+        """Draft with theories_of_harm: [] must not wipe canonical theories."""
+        draft = _minimal_draft()
+        draft["theories_of_harm"] = []
+
+        seed = _minimal_seed()
+        seed["theories_of_harm"] = [
+            {"theory_id": "th_seed", "name": "Seed theory", "description": "From canonical."}
+        ]
+
+        result = build_canonical(draft, seed, procedure_stage_override=None, today=TODAY)
+        assert len(result["theories_of_harm"]) == 1
+        assert result["theories_of_harm"][0]["theory_id"] == "th_seed"
+
+    def test_draft_theories_win_when_both_are_non_empty(self):
+        """When the draft has its own theories, they take precedence over seed."""
+        draft = _minimal_draft()
+        # draft already has th_1 from _minimal_draft
+        seed = _minimal_seed()
+        seed["theories_of_harm"] = [
+            {"theory_id": "th_seed", "name": "Seed theory", "description": "From canonical."}
+        ]
+
+        result = build_canonical(draft, seed, procedure_stage_override=None, today=TODAY)
+        assert len(result["theories_of_harm"]) == 1
+        assert result["theories_of_harm"][0]["theory_id"] == "th_1"
+
+    def test_draft_theories_used_when_seed_is_empty(self):
+        """When seed theories_of_harm is empty, draft theories are used."""
+        draft = _minimal_draft()
+        seed = _minimal_seed()
+        seed["theories_of_harm"] = []
+
+        result = build_canonical(draft, seed, procedure_stage_override=None, today=TODAY)
+        assert len(result["theories_of_harm"]) == 1
+        assert result["theories_of_harm"][0]["theory_id"] == "th_1"
+
+    def test_draft_theories_used_when_no_seed(self):
+        """Without a seed, draft theories are always used."""
+        draft = _minimal_draft()
+        result = build_canonical(draft, None, procedure_stage_override="phase1", today=TODAY)
+        assert len(result["theories_of_harm"]) == 1
+        assert result["theories_of_harm"][0]["theory_id"] == "th_1"
+
+
+# ---------------------------------------------------------------------------
+# Tests — draft quality warnings
+# ---------------------------------------------------------------------------
+
+class TestDraftWarnings:
+
+    def _passage(self, passage_id: str, source_role: str) -> dict:
+        return {
+            "passage_id": passage_id,
+            "source_document_id": "doc_1",
+            "page": "1",
+            "source_role": source_role,
+            "quote_snippet": "...",
+            "extraction_method": "pdf_extracted",
+            "review_status": "unreviewed",
+            "confidence_score": 0.7,
+            "last_checked_date": TODAY,
+            "supports_markets": [],
+            "supports_geographic_markets": [],
+            "supports_theories": [],
+        }
+
+    def test_no_warnings_for_classified_passages(self):
+        draft = {"source_passages": [self._passage("sp_1", "commission_assessment")]}
+        assert check_draft_warnings(draft) == []
+
+    def test_warns_for_not_set_source_role(self):
+        draft = {"source_passages": [self._passage("sp_1", "not_set")]}
+        warnings = check_draft_warnings(draft)
+        assert len(warnings) == 1
+        assert "not_set" in warnings[0]
+        assert "sp_1" in warnings[0]
+
+    def test_warns_lists_all_not_set_passages(self):
+        draft = {
+            "source_passages": [
+                self._passage("sp_1", "not_set"),
+                self._passage("sp_2", "commission_assessment"),
+                self._passage("sp_3", "not_set"),
+            ]
+        }
+        warnings = check_draft_warnings(draft)
+        assert len(warnings) == 1
+        assert "sp_1" in warnings[0]
+        assert "sp_3" in warnings[0]
+        assert "sp_2" not in warnings[0]
+
+    def test_no_warnings_for_empty_passages(self):
+        assert check_draft_warnings({"source_passages": []}) == []
+        assert check_draft_warnings({}) == []
+
+    def test_apply_seed_nonempty_fallbacks_unit(self):
+        """Direct unit test for the fallback function."""
+        record = {"theories_of_harm": []}
+        seed = {"theories_of_harm": [{"theory_id": "th_1", "name": "T"}]}
+        _apply_seed_nonempty_fallbacks(record, seed)
+        assert record["theories_of_harm"][0]["theory_id"] == "th_1"
+
+    def test_apply_seed_nonempty_fallbacks_no_overwrite_when_draft_has_content(self):
+        draft_theories = [{"theory_id": "th_draft", "name": "Draft T"}]
+        record = {"theories_of_harm": draft_theories}
+        seed = {"theories_of_harm": [{"theory_id": "th_seed", "name": "Seed T"}]}
+        _apply_seed_nonempty_fallbacks(record, seed)
+        assert record["theories_of_harm"][0]["theory_id"] == "th_draft"
+
+    def test_seed_nonempty_fallback_fields_contains_theories_of_harm(self):
+        assert "theories_of_harm" in _SEED_NONEMPTY_FALLBACK_FIELDS
+
 
 # ---------------------------------------------------------------------------
 # Tests — Pydantic validation
@@ -530,6 +664,54 @@ class TestCLI:
         ])
         assert rc == 0
         assert out.exists()
+
+    def test_not_set_source_role_warns_but_does_not_block(self, tmp_path, capsys):
+        """Passages with source_role=not_set emit a warning but promotion succeeds."""
+        draft = _minimal_draft()
+        # Replace passage with a not_set source_role
+        draft["source_passages"][0]["source_role"] = "not_set"
+
+        seed = _minimal_seed()
+        self._write_draft(tmp_path, draft)
+        self._write_seed(tmp_path, seed)
+        out = tmp_path / "out.yaml"
+
+        rc = main([
+            "--case-id", "eu_test_case_2020",
+            "--focus", "market_definition",
+            "--output", str(out),
+            "--drafts-dir", str(tmp_path / "drafts"),
+            "--cases-dir", str(tmp_path / "cases"),
+        ])
+        assert rc == 0, "Promotion should succeed despite not_set source_role"
+        captured = capsys.readouterr()
+        assert "not_set" in captured.err
+        assert "sp_1" in captured.err
+
+    def test_seed_theories_not_wiped_via_cli(self, tmp_path):
+        """CLI: draft with empty theories_of_harm must not wipe canonical theories."""
+        draft = _minimal_draft()
+        draft["theories_of_harm"] = []
+
+        seed = _minimal_seed()
+        seed["theories_of_harm"] = [
+            {"theory_id": "th_seed", "name": "Seed theory", "description": "From canonical."}
+        ]
+        self._write_draft(tmp_path, draft)
+        self._write_seed(tmp_path, seed)
+        out = tmp_path / "out.yaml"
+
+        rc = main([
+            "--case-id", "eu_test_case_2020",
+            "--focus", "market_definition",
+            "--output", str(out),
+            "--drafts-dir", str(tmp_path / "drafts"),
+            "--cases-dir", str(tmp_path / "cases"),
+        ])
+        assert rc == 0
+        loaded = yaml.safe_load(out.read_text())
+        assert len(loaded["theories_of_harm"]) == 1
+        assert loaded["theories_of_harm"][0]["theory_id"] == "th_seed"
 
 
 # ---------------------------------------------------------------------------

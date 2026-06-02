@@ -1,13 +1,13 @@
 schema_version: '1'
-generated_at: '2026-06-02T01:18:04Z'
+generated_at: '2026-06-02T01:40:33Z'
 cases_reviewed:
 - eu_apple_shazam_2018
 - eu_coca_cola_costa_2018
 - eu_daimler_geely_smart_2020
 - eu_facebook_whatsapp_2014
 - eu_sika_dry_mix_2019
-total_corrections: 13
-total_patterns: 4
+total_corrections: 17
+total_patterns: 8
 llm_review_insights:
 - case_id: eu_apple_shazam_2018
   triage_status: needs_legal_review
@@ -50,6 +50,90 @@ llm_review_insights:
     reviewer attention, and the UK overlap mentioned in sp_21 context suggests a possible missing geographic
     market entry for structural reinforcing/strengthening in the United Kingdom.
 proposals:
+- correction_type: definition_status_mapping
+  reusable_rule_candidate: Article 8(1) EUMR unconditional clearance decisions should map to outcome=cleared.
+    The operative part of the decision (dispositif) is the authoritative source for outcome; it should
+    be preferred over incidental references in recitals.
+  suggested_follow_up: prompt_update
+  proposal_action: extraction_prompt_update
+  priority: high
+  count: 1
+  cases:
+  - eu_apple_shazam_2018
+  evidence:
+  - case_id: eu_apple_shazam_2018
+    object_type: case
+    object_id: eu_apple_shazam_2018
+    before:
+      outcome: null
+    after:
+      outcome: cleared
+    confidence: high
+- correction_type: missing_market_added
+  reusable_rule_candidate: When a product market is extracted, the extraction prompt should explicitly
+    probe for a corresponding geographic market assessment. Decisions that discuss EEA-wide or global
+    scope should yield at least one geographic market entry per product market.
+  suggested_follow_up: prompt_update
+  proposal_action: extraction_prompt_update
+  priority: high
+  count: 1
+  cases:
+  - eu_apple_shazam_2018
+  evidence:
+  - case_id: eu_apple_shazam_2018
+    object_type: geographic_market
+    object_id: eu_apple_shazam_2018
+    before: null
+    after:
+      count_added: 5
+      description: Five geographic market counterparts (EEA-wide or global) added after draft extraction
+        produced only product markets.
+    confidence: high
+- correction_type: missing_market_added
+  reusable_rule_candidate: When a decision explicitly uses language such as "narrowest relevant product
+    market" or names a sub-segment separately, that sub-segment should be extracted as its own product_market
+    entry with definition_status=defined.
+  suggested_follow_up: prompt_update
+  proposal_action: extraction_prompt_update
+  priority: high
+  count: 1
+  cases:
+  - eu_apple_shazam_2018
+  evidence:
+  - case_id: eu_apple_shazam_2018
+    object_type: product_market
+    object_id: eu_apple_shazam_2018
+    before: null
+    after:
+      count_added: 1
+      description: Shazam-specific music-recognition market added post-draft; draft extracted only broader
+        music-streaming and radio markets.
+    confidence: high
+- correction_type: outcome_passage_misuse
+  reusable_rule_candidate: Passages whose quote indicates that a market was "left open" or "need not be
+    resolved" because competitive harm was excluded should not be linked to product_markets_considered
+    or geographic_markets_considered entries as primary evidence. They may be retained in source_passages
+    with source_role=outcome_finding.
+  suggested_follow_up: prompt_update
+  proposal_action: extraction_prompt_update
+  priority: high
+  count: 1
+  cases:
+  - eu_apple_shazam_2018
+  evidence:
+  - case_id: eu_apple_shazam_2018
+    object_type: source_passage
+    object_id: eu_apple_shazam_2018
+    before:
+      passages_affected:
+      - sp_3
+      - sp_9
+      - sp_12
+      pattern: Passages concluding "left open because no competitive harm" were linked to market entries
+        as primary market-definition evidence.
+    after:
+      action: Passages re-classified or de-linked from market definitions.
+    confidence: high
 - correction_type: metadata_completion
   reusable_rule_candidate: procedure_stage, case_type, and authority_reference must always be explicitly
     resolved during the promotion checklist review.

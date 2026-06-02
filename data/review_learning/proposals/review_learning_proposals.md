@@ -1,21 +1,48 @@
 # Review Learning Proposals
 
-Generated: 2026-06-02T01:18:04Z  
-Cases reviewed: 5  |  Total corrections: 13  |  Patterns identified: 4
+Generated: 2026-06-02T01:40:33Z  
+Cases reviewed: 5  |  Total corrections: 17  |  Patterns identified: 8
 
 ---
 
 ## Summary
 
 - **Cases reviewed:** `eu_apple_shazam_2018`, `eu_coca_cola_costa_2018`, `eu_daimler_geely_smart_2020`, `eu_facebook_whatsapp_2014`, `eu_sika_dry_mix_2019`
-- **Total corrections captured:** 13
-- **Distinct patterns:** 4
-- **Priority breakdown:** 2 low, 2 medium patterns
+- **Total corrections captured:** 17
+- **Distinct patterns:** 8
+- **Priority breakdown:** 4 high, 2 low, 2 medium patterns
 
 ## High-Priority Proposed Pipeline Changes
 
-> No high-priority pipeline changes in the current corpus.  
-> The corrections found are mostly metadata completion and note cleanup — low-risk artefacts of the promotion workflow rather than substantive extraction failures.
+### Extraction Prompt Update
+
+### `definition_status_mapping` — 1 occurrence (cases: `eu_apple_shazam_2018`)
+
+**Proposed action:** `extraction_prompt_update`  
+**Rule candidate:** Article 8(1) EUMR unconditional clearance decisions should map to outcome=cleared. The operative part of the decision (dispositif) is the authoritative source for outcome; it should be preferred over …
+
+- Case `eu_apple_shazam_2018` `eu_apple_shazam_2018` (case): `outcome`: `None` → `cleared`
+
+### `missing_market_added` — 1 occurrence (cases: `eu_apple_shazam_2018`)
+
+**Proposed action:** `extraction_prompt_update`  
+**Rule candidate:** When a product market is extracted, the extraction prompt should explicitly probe for a corresponding geographic market assessment. Decisions that discuss EEA-wide or global scope should yield at leas…
+
+- Case `eu_apple_shazam_2018` `eu_apple_shazam_2018` (geographic_market): added: ['count_added', 'description']
+
+### `missing_market_added` — 1 occurrence (cases: `eu_apple_shazam_2018`)
+
+**Proposed action:** `extraction_prompt_update`  
+**Rule candidate:** When a decision explicitly uses language such as "narrowest relevant product market" or names a sub-segment separately, that sub-segment should be extracted as its own product_market entry with defini…
+
+- Case `eu_apple_shazam_2018` `eu_apple_shazam_2018` (product_market): added: ['count_added', 'description']
+
+### `outcome_passage_misuse` — 1 occurrence (cases: `eu_apple_shazam_2018`)
+
+**Proposed action:** `extraction_prompt_update`  
+**Rule candidate:** Passages whose quote indicates that a market was "left open" or "need not be resolved" because competitive harm was excluded should not be linked to product_markets_considered or geographic_markets_co…
+
+- Case `eu_apple_shazam_2018` `eu_apple_shazam_2018` (source_passage): `action`: `None` → `Passages re-classified or de-linked from market definitions.`; `passages_affected`: `['sp_3', 'sp_9', 'sp_12']` → `None`; `pattern`: `Passages concluding "left open because no competitive harm" were linked to market entries as primary market-definition evidence.` → `None`
 
 ## Eval Fixture Candidates
 
@@ -81,6 +108,7 @@ Cases reviewed: 5  |  Total corrections: 13  |  Patterns identified: 4
 
 Review and approve before applying any change to pipeline code or prompts:
 
+- [ ] Apply extraction prompt updates for high-priority patterns above
 - [ ] Review LLM review prompt for `considered` vs `defined` mapping lesson
 - [ ] Implement and test validator rules for approved candidates
 - [ ] Apply approved docs / promotion checklist updates
