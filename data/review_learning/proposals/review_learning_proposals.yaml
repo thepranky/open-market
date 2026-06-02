@@ -1,12 +1,13 @@
 schema_version: '1'
-generated_at: '2026-06-02T01:40:33Z'
+generated_at: '2026-06-02T03:00:11Z'
 cases_reviewed:
 - eu_apple_shazam_2018
 - eu_coca_cola_costa_2018
 - eu_daimler_geely_smart_2020
 - eu_facebook_whatsapp_2014
+- eu_siemens_gamesa_2017
 - eu_sika_dry_mix_2019
-total_corrections: 17
+total_corrections: 19
 total_patterns: 8
 llm_review_insights:
 - case_id: eu_apple_shazam_2018
@@ -41,6 +42,15 @@ llm_review_insights:
     gm_2 without a distinct source. Additionally, sp_29 is misplaced (geographic advertising market evidence
     appearing in a consumer communications apps context passage), and there are no theories of harm drafted
     despite the decision assessing effects.'
+- case_id: eu_siemens_gamesa_2017
+  triage_status: needs_legal_review
+  triage_rationale: 'Multiple significant issues require legal judgment: (1) no geographic markets are
+    captured despite passages clearly referencing EEA-wide scope for wind turbines and components; (2)
+    sp_1 and sp_7 are identical quotes used as duplicate passages supporting two markets; (3) sp_2 and
+    sp_6 are identical quotes used as duplicates; (4) sp_3 and sp_8 are identical quotes used as duplicates;
+    (5) definition_status for pm_1 and pm_2 may warrant "defined" rather than "considered" given the Commission''s
+    conclusory language; (6) sp_10 (pm_3) and sp_12 (pm_4) contain mixed outcome language that must be
+    flagged; (7) all source_role_in_draft values are not_set, requiring review.'
 - case_id: eu_sika_dry_mix_2019
   triage_status: needs_legal_review
   triage_rationale: Multiple product markets carry definition_status "defined" but the Commission's language
@@ -140,12 +150,13 @@ proposals:
   suggested_follow_up: docs_update
   proposal_action: docs_update
   priority: medium
-  count: 5
+  count: 6
   cases:
   - eu_apple_shazam_2018
   - eu_coca_cola_costa_2018
   - eu_daimler_geely_smart_2020
   - eu_facebook_whatsapp_2014
+  - eu_siemens_gamesa_2017
   - eu_sika_dry_mix_2019
   evidence:
   - case_id: eu_apple_shazam_2018
@@ -194,6 +205,18 @@ proposals:
       case_type: merger
       procedure_stage: phase1
     confidence: high
+  - case_id: eu_siemens_gamesa_2017
+    object_type: case
+    object_id: eu_siemens_gamesa_2017
+    before:
+      authority_reference: null
+      case_type: null
+      procedure_stage: null
+    after:
+      authority_reference: M.8134
+      case_type: merger
+      procedure_stage: phase1
+    confidence: high
   - case_id: eu_sika_dry_mix_2019
     object_type: case
     object_id: eu_sika_dry_mix_2019
@@ -212,12 +235,13 @@ proposals:
   suggested_follow_up: docs_update
   proposal_action: docs_update
   priority: medium
-  count: 5
+  count: 6
   cases:
   - eu_apple_shazam_2018
   - eu_coca_cola_costa_2018
   - eu_daimler_geely_smart_2020
   - eu_facebook_whatsapp_2014
+  - eu_siemens_gamesa_2017
   - eu_sika_dry_mix_2019
   evidence:
   - case_id: eu_apple_shazam_2018
@@ -255,6 +279,15 @@ proposals:
       overall_confidence: 0.7
       review_status: unreviewed
       created_date: '2026-05-31'
+    confidence: high
+  - case_id: eu_siemens_gamesa_2017
+    object_type: metadata
+    object_id: eu_siemens_gamesa_2017
+    before: null
+    after:
+      overall_confidence: 0.0
+      review_status: unreviewed
+      created_date: '2026-06-01'
     confidence: high
   - case_id: eu_sika_dry_mix_2019
     object_type: metadata

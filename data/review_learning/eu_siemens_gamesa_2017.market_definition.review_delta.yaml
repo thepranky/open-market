@@ -1,0 +1,53 @@
+schema_version: '1'
+case_id: eu_siemens_gamesa_2017
+focus: market_definition
+generated_at: '2026-06-02T03:00:11Z'
+source_files:
+  draft: data/drafts/eu/eu_siemens_gamesa_2017.market_definition.draft.yaml
+  llm_review: data/drafts/eu/eu_siemens_gamesa_2017.market_definition.llm_review.json
+  canonical: data/cases/eu/eu_siemens_gamesa_2017.yaml
+summary:
+  total_corrections: 2
+  by_type:
+    metadata_completion: 2
+  llm_triage_status: needs_legal_review
+llm_review_insights:
+  triage_status: needs_legal_review
+  triage_rationale: 'Multiple significant issues require legal judgment: (1) no geographic markets are
+    captured despite passages clearly referencing EEA-wide scope for wind turbines and components; (2)
+    sp_1 and sp_7 are identical quotes used as duplicate passages supporting two markets; (3) sp_2 and
+    sp_6 are identical quotes used as duplicates; (4) sp_3 and sp_8 are identical quotes used as duplicates;
+    (5) definition_status for pm_1 and pm_2 may warrant "defined" rather than "considered" given the Commission''s
+    conclusory language; (6) sp_10 (pm_3) and sp_12 (pm_4) contain mixed outcome language that must be
+    flagged; (7) all source_role_in_draft values are not_set, requiring review.'
+corrections:
+- correction_type: metadata_completion
+  object_type: case
+  object_id: eu_siemens_gamesa_2017
+  before:
+    authority_reference: null
+    case_type: null
+    procedure_stage: null
+  after:
+    authority_reference: M.8134
+    case_type: merger
+    procedure_stage: phase1
+  inferred_reason: Required fields absent from draft; set by the human reviewer during canonical promotion.
+  reusable_rule_candidate: procedure_stage, case_type, and authority_reference must always be explicitly
+    resolved during the promotion checklist review.
+  suggested_follow_up: docs_update
+  confidence: high
+- correction_type: metadata_completion
+  object_type: metadata
+  object_id: eu_siemens_gamesa_2017
+  before: null
+  after:
+    overall_confidence: 0.0
+    review_status: unreviewed
+    created_date: '2026-06-01'
+  inferred_reason: The metadata block (overall_confidence, review_status, dates) is not written by the
+    extraction script and is always created at promotion time.
+  reusable_rule_candidate: The metadata block is a required canonical section. It must be added during
+    promotion; its absence from drafts is expected.
+  suggested_follow_up: docs_update
+  confidence: high

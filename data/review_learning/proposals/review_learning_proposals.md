@@ -1,14 +1,14 @@
 # Review Learning Proposals
 
-Generated: 2026-06-02T01:40:33Z  
-Cases reviewed: 5  |  Total corrections: 17  |  Patterns identified: 8
+Generated: 2026-06-02T03:00:11Z  
+Cases reviewed: 6  |  Total corrections: 19  |  Patterns identified: 8
 
 ---
 
 ## Summary
 
-- **Cases reviewed:** `eu_apple_shazam_2018`, `eu_coca_cola_costa_2018`, `eu_daimler_geely_smart_2020`, `eu_facebook_whatsapp_2014`, `eu_sika_dry_mix_2019`
-- **Total corrections captured:** 17
+- **Cases reviewed:** `eu_apple_shazam_2018`, `eu_coca_cola_costa_2018`, `eu_daimler_geely_smart_2020`, `eu_facebook_whatsapp_2014`, `eu_siemens_gamesa_2017`, `eu_sika_dry_mix_2019`
+- **Total corrections captured:** 19
 - **Distinct patterns:** 8
 - **Priority breakdown:** 4 high, 2 low, 2 medium patterns
 
@@ -82,6 +82,14 @@ Cases reviewed: 5  |  Total corrections: 17  |  Patterns identified: 8
 - `review_prompt_update`: Clarify `considered` vs `defined` working-assumption language in the LLM review prompt.
 - `extraction_prompt_update`: Flag mixed passages (outcome + definition language in the same quote snippet) as a known difficult pattern.
 
+**Case `eu_siemens_gamesa_2017`** — triage status: `needs_legal_review`
+
+> Multiple significant issues require legal judgment: (1) no geographic markets are captured despite passages clearly referencing EEA-wide scope for wind turbines and components; (2) sp_1 and sp_7 are identical quotes used as duplicate passages supporting two markets; (3) sp_2 and sp_6 are identical quotes used as duplicates; (4) sp_3 and sp_8 are identical quotes used as duplicates; (5) definition_status for pm_1 and pm_2 may warrant "defined" rather than "considered" given the Commission's conclusory language; (6) sp_10 (pm_3) and sp_12 (pm_4) contain mixed outcome language that must be flagged; (7) all source_role_in_draft values are not_set, requiring review.
+
+**Implied proposals (require human judgement before acting):**
+- `review_prompt_update`: Clarify `considered` vs `defined` working-assumption language in the LLM review prompt.
+- `extraction_prompt_update`: Flag mixed passages (outcome + definition language in the same quote snippet) as a known difficult pattern.
+
 **Case `eu_sika_dry_mix_2019`** — triage status: `needs_legal_review`
 
 > Multiple product markets carry definition_status "defined" but the Commission's language consistently uses "should be considered as a separate product market for assessing the Transaction" — a working assumption formula that CompMap maps to "considered", not "defined". Additionally, sp_19 is a mixed passage (geographic left-open language combined with an outcome sentence) that warrants reviewer attention, and the UK overlap mentioned in sp_21 context suggests a possible missing geographic market entry for structural reinforcing/strengthening in the United Kingdom.
@@ -92,10 +100,10 @@ Cases reviewed: 5  |  Total corrections: 17  |  Patterns identified: 8
 
 ## Low-Priority / No-Action Items
 
-- **`metadata_completion`** (5x, priority: medium) → `docs_update`  
+- **`metadata_completion`** (6x, priority: medium) → `docs_update`  
   Rule: procedure_stage, case_type, and authority_reference must always be explicitly resolved during the promotion checklist review.
 
-- **`metadata_completion`** (5x, priority: medium) → `docs_update`  
+- **`metadata_completion`** (6x, priority: medium) → `docs_update`  
   Rule: The metadata block is a required canonical section. It must be added during promotion; its absence from drafts is expected.
 
 - **`note_cleanup`** (2x, priority: low) → `extraction_prompt_update`  
