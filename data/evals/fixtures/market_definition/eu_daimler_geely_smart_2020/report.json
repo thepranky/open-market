@@ -1,0 +1,67 @@
+{
+  "canonical_merge_candidates": {
+    "safe_to_promote": [
+      {
+        "name": "Manufacturing and supply of passenger cars (and LCVs)",
+        "market_type": "product",
+        "importance": "assessed_no_overlap",
+        "definition_status": "left_open",
+        "reason": "Commission left open the product market definition; no affected manufacturing market arises. Segmentation by car segment and BEV/non-BEV all left open.",
+        "source_refs": ["5", "6"]
+      },
+      {
+        "name": "Wholesale distribution of new passenger cars and LCVs",
+        "market_type": "product",
+        "importance": "core_assessed",
+        "definition_status": "left_open",
+        "reason": "Commission left open wholesale vs LCV segmentation and car-type segmentation; exact scope left open. Only affected market is wholesale in Sweden.",
+        "source_refs": ["6"]
+      },
+      {
+        "name": "Retail distribution of new passenger cars and LCVs",
+        "market_type": "product",
+        "importance": "core_assessed",
+        "definition_status": "left_open",
+        "reason": "Commission left open retail vs wholesale and LCV segmentation; exact scope left open. Only affected market is retail in Sweden.",
+        "source_refs": ["7"]
+      },
+      {
+        "name": "Manufacturing and supply of passenger cars — EEA-wide or national (left open)",
+        "market_type": "geographic",
+        "importance": "assessed_no_overlap",
+        "definition_status": "left_open",
+        "reason": "Commission left open EEA-wide vs national scope for manufacturing/supply; no affected geographic market arises.",
+        "source_refs": ["6"]
+      },
+      {
+        "name": "Wholesale distribution of new passenger cars — EEA-wide or national (left open); Sweden affected",
+        "market_type": "geographic",
+        "importance": "core_assessed",
+        "definition_status": "left_open",
+        "reason": "Commission left open EEA-wide vs national scope for wholesale distribution; Sweden is the affected market under either scope.",
+        "source_refs": ["6"]
+      },
+      {
+        "name": "Retail distribution of new passenger cars — EEA-wide, national, or local (left open); Sweden affected",
+        "market_type": "geographic",
+        "importance": "core_assessed",
+        "definition_status": "left_open",
+        "reason": "Commission left open EEA-wide, national, or local scope for retail distribution; Sweden is the affected market under any scope.",
+        "source_refs": ["7"]
+      }
+    ],
+    "uncertain_markets": [],
+    "context_only": [],
+    "hold_pending_source_check": [],
+    "manual_review": [],
+    "manual_review_geo_pairing": [],
+    "_counts": {
+      "safe_to_promote": 6,
+      "uncertain_markets": 0,
+      "context_only": 0,
+      "hold_pending_source_check": 0,
+      "manual_review": 0,
+      "manual_review_geo_pairing": 0
+    }
+  }
+}

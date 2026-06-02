@@ -1,0 +1,336 @@
+_gold_metadata:
+  case_id: eu_daimler_geely_smart_2020
+  gold_status: canonical_derived
+  partial: false
+  review_required: false
+  created_from: data/cases/eu/eu_daimler_geely_smart_2020.yaml
+  notes: >
+    Derived directly from the promoted canonical record.  All 3 product markets and 3
+    geographic markets are fully reviewed.  This is a full-gold (partial: false) fixture:
+    every draft market not in this list counts as a false positive.
+
+    Key evaluation criteria:
+    - Product markets: 3 markets, all definition_status=left_open.
+        pm_1 (manufacturing and supply of passenger cars and LCVs): The Commission left
+        open the product market definition in its entirety — including whether to segment
+        by car segment (mini/small/…/SUV/MPV), whether BEV cars form a separate market,
+        and whether to sub-segment by technology (BEV vs hybrid). The Transaction does not
+        lead to any affected manufacturing market. No BEV-specific market should appear as
+        a separate draft entry; "Battery electric vehicles", "Pure BEV cars", or similar
+        entries are false positives — the Commission explicitly left this open.
+        pm_2 (wholesale distribution of new passenger cars and LCVs): definition_status=
+        left_open. Wholesale vs retail distinction is established precedent; further
+        segmentation between passenger cars and LCVs, and by car type, were both left open.
+        The only affected wholesale market is Sweden (driven by Volvo/Geely).
+        pm_3 (retail distribution of new passenger cars and LCVs): definition_status=
+        left_open. Retail distinction from wholesale is established. Further segmentation
+        by LCV vs passenger car at retail level was left open. The only affected retail
+        market is Sweden.
+    - Geographic markets: 3 markets, all definition_status=left_open.
+        gm_1 (manufacturing/supply — EEA-wide or national): left_open; no affected market.
+        gm_2 (wholesale — EEA-wide or national; Sweden affected): left_open.
+        gm_3 (retail — EEA-wide, national, or local; Sweden affected): left_open.
+    - No separate BEV market: the Commission left open whether BEV cars constitute a
+        separate product market and the Transaction does not create any BEV-specific
+        affected market. A draft listing "BEV", "electric vehicles", or "battery electric
+        vehicles" as a standalone product market entry is a false positive.
+    - Theories of harm: none. This is a Phase I clearance with no serious doubts under any
+        market definition. theories_of_harm: [] is correct; any theory entry is a false
+        positive.
+    - Mixed passages (sp_6, sp_9, sp_15): these contain the Commission's left-open
+        conclusion formula alongside outcome/clearance language ("does not lead to affected
+        markets", "does not give rise to serious doubts", "will not give rise to serious
+        doubts"). They are legitimate commission_assessment passages and may validly support
+        the relevant product/geographic market entries in the draft under mdr_002/mdr_010.
+        They are omitted from gold linked_source_passages here to avoid clearance-language
+        detection ambiguity in quote validation. Pure clearance-conclusion passages must
+        NOT appear in supports_markets or supports_geographic_markets.
+    - Note on sp_1 (page 4): the passage ends mid-sentence ("(ii) the wholesale of new
+        passenger cars") because the text continues on page 5 as sp_2. Both are valid
+        passages despite crossing a page boundary.
+
+case_id: eu_daimler_geely_smart_2020
+case_name: Daimler / Geely / Smart Brand JV
+authority: European Commission
+jurisdiction: EU
+sector: automotive / passenger cars
+decision_date: '2019-12-10'
+
+parties:
+  - name: Daimler AG
+    role: acquirer
+  - name: Zhejiang Geely Holding Group Co., Ltd.
+    role: acquirer
+
+source_documents:
+  - doc_id: eu_daimler_geely_smart_decision
+    title: 'Case M.9360 – Daimler / Geely / Smart Brand JV: Commission Decision'
+    case_page_url: https://competition-cases.ec.europa.eu/cases/M.9360
+    pdf_url: https://ec.europa.eu/competition/mergers/cases/decisions/m9360_191_3.pdf
+    doc_type: decision
+    authority_reference: M.9360
+    retrieval_status: direct
+    published_date: '2019-12-10'
+
+product_markets_considered:
+
+  - name: Manufacturing and supply of passenger cars (and LCVs)
+    market_type: product
+    expected_definition_status: left_open
+    expected_promotion_action: promote
+    importance: assessed_no_overlap
+    market_group: null
+    aliases:
+      - Manufacturing and supply of passenger cars and LCVs
+      - Manufacturing and supply of new passenger cars
+      - Manufacture and supply of passenger cars (and LCVs)
+      - Manufacture and sale of new passenger cars
+      - Market for manufacturing and supply of passenger cars
+      - Manufacturing and supply of passenger cars
+      - Passenger cars (manufacturing and supply)
+    expected_draft_names:
+      - Manufacturing and supply of passenger cars (and LCVs)
+    linked_source_passages:
+      - passage_id: sp_3
+        source_document_id: eu_daimler_geely_smart_decision
+        page: '5'
+        quote_snippet: >-
+          the Commission has in the past considered separate markets for the manufacturing
+          and supply of passenger cars on the one hand, and of commercial vehicles on the
+          other hand.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+      - passage_id: sp_4
+        source_document_id: eu_daimler_geely_smart_decision
+        page: '5'
+        quote_snippet: >-
+          For passenger cars, the Commission's decisional practice has defined separate
+          product markets for (i) mini cars, (ii) small cars, (iii) medium cars (iv) large
+          cars, (v) executive cars, (vi) luxury cars (vii) sport cars, (viii) sport utility
+          vehicles ("SUVs") and (ix) multipurpose vehicles.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+      - passage_id: sp_5
+        source_document_id: eu_daimler_geely_smart_decision
+        page: '5'
+        quote_snippet: >-
+          the Commission left open whether electric cars constitute a separate product market
+          and whether this possible market should be further segmented according to (i)
+          technology (electric battery cars and hybrid cars) or (ii) the categories defined
+          for vehicles with combustion engines.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+    reviewer_notes: >-
+      The Commission has in past practice defined separate product markets by car segment
+      (mini, small, medium, large, executive, luxury, sport, SUV, MPV) and left open BEV
+      sub-segmentation. For this Transaction the exact definition was left open because no
+      affected manufacturing market arises under any plausible definition (para 21).
+      sp_6 (page 6) is a mixed passage — it contains the standard left-open formula
+      alongside outcome language ("does not lead to affected markets under any plausible
+      product or geographic market definition"); it is a legitimate commission_assessment
+      passage supporting pm_1/gm_1 in the draft, but is omitted from gold linked passages
+      to avoid clearance-language detection ambiguity in quote validation.
+      sp_5 establishes that the BEV sub-market question was explicitly left open:
+      a draft that adds a separate BEV market entry is a false positive.
+    reviewed: true
+
+  - name: Wholesale distribution of new passenger cars and LCVs
+    market_type: product
+    expected_definition_status: left_open
+    expected_promotion_action: promote
+    importance: core_assessed
+    market_group: null
+    aliases:
+      - Wholesale distribution of new passenger cars and LCVs
+      - Wholesale distribution of passenger cars and LCVs
+      - Wholesale distribution of new passenger cars
+      - Wholesale of new passenger cars and LCVs
+      - Wholesale distribution (passenger cars and LCVs)
+    expected_draft_names:
+      - Wholesale distribution of new passenger cars and LCVs
+    linked_source_passages:
+      - passage_id: sp_7
+        source_document_id: eu_daimler_geely_smart_decision
+        page: '6'
+        quote_snippet: >-
+          the Commission has distinguished between the wholesale and retail distribution of
+          motor vehicles. The Commission has also considered whether the wholesale distribution
+          market should be further segmented between passenger cars and LCVs, leaving this
+          question open.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+      - passage_id: sp_8
+        source_document_id: eu_daimler_geely_smart_decision
+        page: '6'
+        quote_snippet: >-
+          The Commission also concluded that a further segmentation would not be necessary
+          by type of cars (e.g. mini cars, small cars, medium cars, etc.) because manufacturers
+          normally distribute a model range which covers different market segments under the
+          same distribution channel.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+      - passage_id: sp_10
+        source_document_id: eu_daimler_geely_smart_decision
+        page: '6'
+        quote_snippet: >-
+          The only affected market, whether considered at EEA or national level is the market
+          for wholesale distribution of new passenger cars and LCVs in Sweden.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+    reviewer_notes: >-
+      The Commission established wholesale vs retail as a precedent-backed distinction and
+      left open further segmentation by vehicle type and by car segment. The only affected
+      wholesale market is Sweden (driven by Volvo's strong national position).
+      sp_9 (page 6) is a mixed passage — left-open formula + "does not give rise to serious
+      doubts as to its compatibility with the internal market"; it is a legitimate
+      commission_assessment passage supporting pm_2/gm_2 in the draft, but is omitted from
+      gold linked passages to avoid clearance-language detection ambiguity.
+      sp_10 is included: it identifies the affected wholesale market (Sweden) and is not
+      pure clearance language — it names the market found to be affected, not a dismissal
+      of competition concerns.
+    reviewed: true
+
+  - name: Retail distribution of new passenger cars and LCVs
+    market_type: product
+    expected_definition_status: left_open
+    expected_promotion_action: promote
+    importance: core_assessed
+    market_group: null
+    aliases:
+      - Retail distribution of new passenger cars and LCVs
+      - Retail distribution of passenger cars and LCVs
+      - Retail distribution of new passenger cars
+      - Retail sale of new passenger cars and LCVs
+      - Retail distribution (passenger cars and LCVs)
+    expected_draft_names:
+      - Retail distribution of new passenger cars and LCVs
+    linked_source_passages:
+      - passage_id: sp_13
+        source_document_id: eu_daimler_geely_smart_decision
+        page: '7'
+        quote_snippet: >-
+          At retail level, vehicles are sold to final customers via independent or vertically
+          integrated retailers ("dealers").
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+    reviewer_notes: >-
+      The Commission distinguished retail from wholesale distribution and left open further
+      segmentation by LCV vs passenger car at retail level. The only affected retail market
+      is Sweden (para 35).
+      sp_13 (page 7, para 29) is truncated to the first sentence only in gold linked
+      passages: the full passage contains an inline footnote "14" between "decisions," and
+      "the Commission" which breaks strict substring matching in the gold quote validator
+      (validate_gold_quotes.py uses substring match, not fragment search). The full sp_13
+      quote is verbatim and passes check_source_integrity.py's fragment search; it may
+      validly appear in the draft's source_passages supporting pm_3.
+      sp_15 (page 7) is a mixed passage — it combines the standard left-open conclusion
+      ("will not give rise to serious doubts") with the identification of the affected
+      market in Sweden; it is a legitimate commission_assessment passage supporting pm_3/gm_3
+      in the draft, but is omitted from gold linked passages to avoid clearance-language
+      detection ambiguity.
+    reviewed: true
+
+geographic_markets_considered:
+
+  - name: Manufacturing and supply of passenger cars — EEA-wide or national (left open)
+    market_type: geographic
+    expected_definition_status: left_open
+    expected_promotion_action: promote
+    importance: assessed_no_overlap
+    market_group: null
+    aliases:
+      - Manufacturing and supply of passenger cars — EEA-wide or national (left open)
+      - Manufacturing/supply of passenger cars — EEA-wide or national
+      - Manufacturing and supply — EEA-wide or national
+      - EEA-wide or national market for manufacturing and supply of passenger cars
+      - Geographic market for manufacturing and supply of passenger cars
+    expected_draft_names:
+      - Manufacturing and supply of passenger cars — EEA-wide or national (left open)
+    linked_source_passages:
+      - passage_id: sp_11
+        source_document_id: eu_daimler_geely_smart_decision
+        page: '6'
+        quote_snippet: >-
+          In previous decisions, the Commission has ultimately left open whether the geographic
+          scope of the markets for manufacturing and supply of passenger cars and LCVs is
+          EEA-wide or national in scope.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+    reviewer_notes: >-
+      The Commission explicitly left open EEA-wide vs national scope for the manufacturing
+      and supply market (para 19), consistent with prior cases. No affected geographic market
+      arises at manufacturing level under any plausible definition (para 21).
+      sp_6 is also linked to this market in the draft (it is the combined product+geographic
+      left-open conclusion for pm_1/gm_1) but is omitted from gold passages due to mixed
+      outcome language.
+    reviewed: true
+
+  - name: Wholesale distribution of new passenger cars — EEA-wide or national (left open); Sweden affected
+    market_type: geographic
+    expected_definition_status: left_open
+    expected_promotion_action: promote
+    importance: core_assessed
+    market_group: null
+    aliases:
+      - Wholesale distribution of new passenger cars — EEA-wide or national (left open); Sweden affected
+      - Wholesale distribution — EEA-wide or national (Sweden affected)
+      - Wholesale of new passenger cars — EEA-wide or national
+      - Geographic market for wholesale distribution of new passenger cars
+      - Wholesale distribution geographic market (Sweden)
+    expected_draft_names:
+      - Wholesale distribution of new passenger cars — EEA-wide or national (left open); Sweden affected
+    linked_source_passages:
+      - passage_id: sp_12
+        source_document_id: eu_daimler_geely_smart_decision
+        page: '6'
+        quote_snippet: >-
+          The Commission has considered in previous decisions that the market could be EEA-wide
+          or national in scope.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+      - passage_id: sp_10
+        source_document_id: eu_daimler_geely_smart_decision
+        page: '6'
+        quote_snippet: >-
+          The only affected market, whether considered at EEA or national level is the market
+          for wholesale distribution of new passenger cars and LCVs in Sweden.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+    reviewer_notes: >-
+      The Commission left open EEA-wide vs national scope for wholesale distribution (para 25),
+      consistent with prior cases. The affected market is wholesale in Sweden under either
+      geographic scope (para 28).
+      sp_9 (the combined product+geographic left-open conclusion for pm_2/gm_2) is a mixed
+      passage omitted from gold linked passages due to clearance-language detection ambiguity.
+    reviewed: true
+
+  - name: Retail distribution of new passenger cars — EEA-wide, national, or local (left open); Sweden affected
+    market_type: geographic
+    expected_definition_status: left_open
+    expected_promotion_action: promote
+    importance: core_assessed
+    market_group: null
+    aliases:
+      - Retail distribution of new passenger cars — EEA-wide, national, or local (left open); Sweden affected
+      - Retail distribution — EEA-wide, national, or local (Sweden affected)
+      - Retail of new passenger cars — EEA-wide, national, or local
+      - Geographic market for retail distribution of new passenger cars
+      - Retail distribution geographic market (Sweden)
+    expected_draft_names:
+      - Retail distribution of new passenger cars — EEA-wide, national, or local (left open); Sweden affected
+    linked_source_passages:
+      - passage_id: sp_14
+        source_document_id: eu_daimler_geely_smart_decision
+        page: '7'
+        quote_snippet: >-
+          In previous cases, the Commission has left open whether the market for retail
+          distribution of new passenger cars is EEA-wide, national or local.
+        extraction_method: pdf_extracted
+        review_status: unreviewed
+    reviewer_notes: >-
+      The Commission left open EEA-wide, national, or local scope for retail distribution
+      (para 32). The affected market is retail in Sweden under any geographic scope (para 35).
+      sp_15 (the combined product+geographic left-open conclusion + Sweden identification for
+      pm_3/gm_3) is a mixed passage omitted from gold linked passages due to clearance-language
+      detection ambiguity.
+    reviewed: true

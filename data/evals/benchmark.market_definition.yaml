@@ -31,3 +31,8 @@ benchmarks:
     gold_yaml: data/evals/gold/eu_facebook_whatsapp_2014.market_definition.gold.yaml
     draft_yaml: data/evals/fixtures/market_definition/eu_facebook_whatsapp_2014/draft.yaml
     report_json: data/evals/fixtures/market_definition/eu_facebook_whatsapp_2014/report.json
+
+  - case_id: eu_daimler_geely_smart_2020
+    gold_yaml: data/evals/gold/eu_daimler_geely_smart_2020.market_definition.gold.yaml
+    draft_yaml: data/evals/fixtures/market_definition/eu_daimler_geely_smart_2020/draft.yaml
+    report_json: data/evals/fixtures/market_definition/eu_daimler_geely_smart_2020/report.json
