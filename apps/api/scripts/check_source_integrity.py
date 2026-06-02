@@ -29,6 +29,7 @@ Issue levels:
 Usage:
     cd apps/api
     .venv/bin/python scripts/check_source_integrity.py [--cases-dir ../../data/cases]
+                                                       [--case-id eu_daimler_geely_smart_2020]
                                                        [--cache-dir ../../data/source_text]
                                                        [--timeout 20] [--verbose]
 """
@@ -612,6 +613,15 @@ def main() -> int:
         help=f"Path to data/cases directory (default: {DATA_DIR})",
     )
     parser.add_argument(
+        "--case-id",
+        default=None,
+        help=(
+            "Check only this case (e.g. eu_daimler_geely_smart_2020). "
+            "Matches <cases-dir>/**/<case-id>.yaml and "
+            "<cases-dir>/**/<case-id>.market_definition.draft.yaml."
+        ),
+    )
+    parser.add_argument(
         "--timeout", type=int, default=20,
         help="HTTP request timeout in seconds (default: 20)",
     )
@@ -631,10 +641,34 @@ def main() -> int:
     args = parser.parse_args()
 
     cases_dir = Path(args.cases_dir)
-    yaml_files = sorted(cases_dir.rglob("*.yaml"))
-    if not yaml_files:
-        print(f"No YAML files found under {cases_dir}", file=sys.stderr)
-        return 1
+
+    if args.case_id:
+        candidates = [
+            cases_dir / f"{args.case_id}.yaml",
+            *cases_dir.rglob(f"{args.case_id}.yaml"),
+            *cases_dir.rglob(f"{args.case_id}.market_definition.draft.yaml"),
+        ]
+        # Deduplicate while preserving order
+        seen: set[Path] = set()
+        yaml_files = []
+        for p in candidates:
+            if p.exists() and p not in seen:
+                seen.add(p)
+                yaml_files.append(p)
+        if not yaml_files:
+            print(
+                f"No file found for case-id '{args.case_id}' under {cases_dir}.\n"
+                f"Expected one of:\n"
+                f"  {cases_dir}/**/{args.case_id}.yaml\n"
+                f"  {cases_dir}/**/{args.case_id}.market_definition.draft.yaml",
+                file=sys.stderr,
+            )
+            return 1
+    else:
+        yaml_files = sorted(cases_dir.rglob("*.yaml"))
+        if not yaml_files:
+            print(f"No YAML files found under {cases_dir}", file=sys.stderr)
+            return 1
 
     cache_dir: Optional[Path] = None if args.no_cache else Path(args.cache_dir)
     cache_note = f" (page cache: {cache_dir})" if cache_dir else " (page cache: disabled)"

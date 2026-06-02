@@ -5,6 +5,7 @@ All HTTP calls are mocked — no network access required.
 """
 import io
 import sys
+import textwrap
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 
@@ -569,3 +570,99 @@ class TestCheckRecord:
 
         errors = [i for i in issues if i.level == Level.ERROR]
         assert not errors
+
+
+# ---------------------------------------------------------------------------
+# --case-id CLI filter
+# ---------------------------------------------------------------------------
+
+_MINIMAL_YAML = textwrap.dedent("""\
+    case_id: {case_id}
+    source_documents: []
+    source_passages: []
+""")
+
+
+class TestCaseIdFilter:
+    """Tests for the --case-id filtering logic in main()."""
+
+    def _write_yaml(self, tmp_path: Path, name: str, case_id: str) -> Path:
+        p = tmp_path / name
+        p.write_text(_MINIMAL_YAML.format(case_id=case_id))
+        return p
+
+    def test_canonical_pattern_matched(self, tmp_path):
+        """<cases-dir>/<case_id>.yaml is found when --case-id is given."""
+        self._write_yaml(tmp_path, "eu_foo_bar_2020.yaml", "eu_foo_bar_2020")
+        self._write_yaml(tmp_path, "eu_other_2021.yaml", "eu_other_2021")
+
+        from check_source_integrity import main
+        with patch("sys.argv", ["prog", "--cases-dir", str(tmp_path),
+                                "--case-id", "eu_foo_bar_2020", "--no-cache"]):
+            with patch("check_source_integrity.fetch") as mock_fetch:
+                mock_fetch.return_value = FetchResult(True, 200, "text/html",
+                                                      "https://x.com/", b"", None)
+                rc = main()
+        assert rc == 0
+
+    def test_draft_pattern_matched(self, tmp_path):
+        """<cases-dir>/<case_id>.market_definition.draft.yaml is found."""
+        eu_dir = tmp_path / "eu"
+        eu_dir.mkdir()
+        self._write_yaml(
+            eu_dir,
+            "eu_daimler_geely_smart_2020.market_definition.draft.yaml",
+            "eu_daimler_geely_smart_2020",
+        )
+        self._write_yaml(eu_dir, "eu_other_2021.yaml", "eu_other_2021")
+
+        from check_source_integrity import main
+        with patch("sys.argv", ["prog", "--cases-dir", str(tmp_path),
+                                "--case-id", "eu_daimler_geely_smart_2020", "--no-cache"]):
+            with patch("check_source_integrity.fetch") as mock_fetch:
+                mock_fetch.return_value = FetchResult(True, 200, "text/html",
+                                                      "https://x.com/", b"", None)
+                rc = main()
+        assert rc == 0
+
+    def test_unrelated_files_excluded(self, tmp_path):
+        """Only the matched file is checked; other YAML files are not loaded."""
+        self._write_yaml(tmp_path, "eu_target_2020.yaml", "eu_target_2020")
+        unrelated = tmp_path / "eu_unrelated_2019.yaml"
+        unrelated.write_text("INVALID: [this is intentionally broken yaml: }")
+
+        from check_source_integrity import main
+        with patch("sys.argv", ["prog", "--cases-dir", str(tmp_path),
+                                "--case-id", "eu_target_2020", "--no-cache"]):
+            with patch("check_source_integrity.fetch") as mock_fetch:
+                mock_fetch.return_value = FetchResult(True, 200, "text/html",
+                                                      "https://x.com/", b"", None)
+                rc = main()
+        # Would crash parsing the broken YAML if it were loaded; passing means it wasn't.
+        assert rc == 0
+
+    def test_missing_case_id_exits_nonzero(self, tmp_path, capsys):
+        """Exits with code 1 and prints a helpful message when no file is found."""
+        self._write_yaml(tmp_path, "eu_other_2021.yaml", "eu_other_2021")
+
+        from check_source_integrity import main
+        with patch("sys.argv", ["prog", "--cases-dir", str(tmp_path),
+                                "--case-id", "eu_nonexistent_case_2099", "--no-cache"]):
+            rc = main()
+
+        assert rc == 1
+        captured = capsys.readouterr()
+        assert "eu_nonexistent_case_2099" in captured.err
+
+    def test_no_case_id_checks_all_files(self, tmp_path):
+        """Without --case-id, all YAML files under cases-dir are checked."""
+        self._write_yaml(tmp_path, "case_a.yaml", "case_a")
+        self._write_yaml(tmp_path, "case_b.yaml", "case_b")
+
+        from check_source_integrity import main
+        with patch("sys.argv", ["prog", "--cases-dir", str(tmp_path), "--no-cache"]):
+            with patch("check_source_integrity.fetch") as mock_fetch:
+                mock_fetch.return_value = FetchResult(True, 200, "text/html",
+                                                      "https://x.com/", b"", None)
+                rc = main()
+        assert rc == 0
