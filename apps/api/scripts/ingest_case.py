@@ -542,7 +542,7 @@ def main() -> int:
     parser.add_argument("--case-id", required=True, help="Case ID (e.g. eu_sika_mbcc_2023)")
     parser.add_argument(
         "--focus", default="market_definition",
-        choices=["market_definition", "theories", "remedies", "case_history"],
+        choices=["market_definition", "theories", "remedies", "case_history", "outcome_metadata"],
         help="Extraction focus (default: market_definition)",
     )
     parser.add_argument("--refresh-cache", action="store_true",
@@ -614,6 +614,10 @@ def main() -> int:
             )
             return 1
         page_range = (pr_start, pr_end)
+
+    # outcome_metadata defaults to pp.1-30 when no --page-range is given.
+    if args.focus == "outcome_metadata" and page_range is None:
+        page_range = (1, 30)
 
     # Derive output suffix: explicit --output-suffix takes precedence;
     # fall back to pp{start}-{end} when --page-range is given.

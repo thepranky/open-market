@@ -30,6 +30,8 @@ from extract_case_from_source import (
     _RECON_GROUP,
     _VALID_COMMITMENT_TYPES,
     _VALID_THEORY_TYPES,
+    _VALID_PROCEDURE_STAGES,
+    _map_article_to_outcome,
     _VALID_MARKET_IMPORTANCE,
     _EXTRACTION_TASK,
     _EXTRACTION_TOOL_SCHEMA,
@@ -8727,3 +8729,312 @@ class TestInnovationTheories:
         result = ExtractionResult(theories=[th])
         out = _apply_focus_guardrails(result, "market_definition")
         assert len(out.theories) == 0
+
+
+# ---------------------------------------------------------------------------
+# TestOutcomeMetadata
+# ---------------------------------------------------------------------------
+
+
+class TestOutcomeMetadata:
+
+    # ------------------------------------------------------------------ _map_article_to_outcome
+
+    def test_article_8_2_maps_to_cleared_with_conditions_phase2(self):
+        outcome, stage = _map_article_to_outcome(
+            "The Commission declares the concentration compatible with Article 8(2) "
+            "of the Merger Regulation subject to conditions."
+        )
+        assert outcome == "cleared_with_conditions"
+        assert stage == "phase2"
+
+    def test_article_8_1_maps_to_cleared_phase2(self):
+        outcome, stage = _map_article_to_outcome(
+            "compatible with the common market pursuant to Article 8(1)"
+        )
+        assert outcome == "cleared"
+        assert stage == "phase2"
+
+    def test_article_8_3_maps_to_blocked_phase2(self):
+        outcome, stage = _map_article_to_outcome(
+            "declared incompatible pursuant to Article 8(3) of the Merger Regulation"
+        )
+        assert outcome == "blocked"
+        assert stage == "phase2"
+
+    def test_article_6_1b_plain_maps_to_cleared_phase1(self):
+        outcome, stage = _map_article_to_outcome(
+            "The concentration is compatible with the common market pursuant to "
+            "Article 6(1)(b) of Regulation (EC) No 139/2004."
+        )
+        assert outcome == "cleared"
+        assert stage == "phase1"
+
+    def test_article_6_1b_with_conditions_maps_to_cleared_with_conditions(self):
+        outcome, stage = _map_article_to_outcome(
+            "declared compatible pursuant to Article 6(1)(b) subject to conditions "
+            "and obligations"
+        )
+        assert outcome == "cleared_with_conditions"
+        assert stage == "phase1"
+
+    def test_article_6_2_maps_to_cleared_with_conditions_phase1(self):
+        outcome, stage = _map_article_to_outcome(
+            "The concentration is declared compatible pursuant to Article 6(2)."
+        )
+        assert outcome == "cleared_with_conditions"
+        assert stage == "phase1"
+
+    def test_article_6_1c_maps_to_pending_phase2(self):
+        outcome, stage = _map_article_to_outcome(
+            "In-depth investigation initiated pursuant to Article 6(1)(c)."
+        )
+        assert outcome == "pending"
+        assert stage == "phase2"
+
+    def test_serious_doubts_language_maps_to_cleared(self):
+        outcome, stage = _map_article_to_outcome(
+            "The proposed concentration does not raise serious doubts as to its "
+            "compatibility with the common market."
+        )
+        assert outcome == "cleared"
+
+    def test_unknown_text_returns_unknown(self):
+        outcome, stage = _map_article_to_outcome("Section 1. Introduction.")
+        assert outcome == "unknown"
+        assert stage == "unknown"
+
+    def test_article_8_3_not_confused_with_8_2(self):
+        # 8(3) must take precedence (checked first) — ensure no spurious 8(2) match
+        outcome, stage = _map_article_to_outcome("Article 8(3) incompatibility decision")
+        assert outcome == "blocked"
+
+    def test_case_insensitive(self):
+        outcome, stage = _map_article_to_outcome("ARTICLE 8(2) OF THE MERGER REGULATION")
+        assert outcome == "cleared_with_conditions"
+        assert stage == "phase2"
+
+    # ------------------------------------------------------------------ _VALID_PROCEDURE_STAGES
+
+    def test_valid_procedure_stages_contains_phase1_phase2_unknown(self):
+        assert "phase1" in _VALID_PROCEDURE_STAGES
+        assert "phase2" in _VALID_PROCEDURE_STAGES
+        assert "unknown" in _VALID_PROCEDURE_STAGES
+
+    # ------------------------------------------------------------------ _FOCUS_TERMS
+
+    def test_outcome_metadata_in_focus_terms(self):
+        assert "outcome_metadata" in _FOCUS_TERMS
+
+    def test_outcome_metadata_terms_empty_matches_all_sections(self):
+        # Empty tuple → _is_focused_section returns True for any section path
+        from extract_case_from_source import _is_focused_section
+        assert _is_focused_section("ANY SECTION PATH", "outcome_metadata") is True
+        assert _is_focused_section("", "outcome_metadata") is True
+
+    # ------------------------------------------------------------------ ExtractionResult fields
+
+    def test_extraction_result_has_procedure_stage_default(self):
+        r = ExtractionResult()
+        assert r.procedure_stage == "unknown"
+
+    def test_extraction_result_has_extracted_authority_reference(self):
+        r = ExtractionResult(extracted_authority_reference="M.8084")
+        assert r.extracted_authority_reference == "M.8084"
+
+    def test_extraction_result_has_extracted_decision_date(self):
+        r = ExtractionResult(extracted_decision_date="2018-03-21")
+        assert r.extracted_decision_date == "2018-03-21"
+
+    # ------------------------------------------------------------------ _validate_extraction
+
+    def test_validate_extraction_parses_procedure_stage(self):
+        raw = {
+            "product_markets": [], "geographic_markets": [],
+            "theories_of_harm": [], "commitments": [],
+            "overall_outcome": "cleared_with_conditions",
+            "procedure_stage": "phase2",
+            "source_passages": [], "caveats": [],
+        }
+        result = _validate_extraction(raw, chunks=[], chunk_doc_map={})
+        assert result.procedure_stage == "phase2"
+
+    def test_validate_extraction_coerces_invalid_procedure_stage(self):
+        raw = {
+            "product_markets": [], "geographic_markets": [],
+            "theories_of_harm": [], "commitments": [],
+            "overall_outcome": "unknown",
+            "procedure_stage": "PHASE_III_INVALID",
+            "source_passages": [], "caveats": [],
+        }
+        result = _validate_extraction(raw, chunks=[], chunk_doc_map={})
+        assert result.procedure_stage == "unknown"
+
+    def test_validate_extraction_parses_authority_reference(self):
+        raw = {
+            "product_markets": [], "geographic_markets": [],
+            "theories_of_harm": [], "commitments": [],
+            "overall_outcome": "cleared_with_conditions",
+            "authority_reference": "M.8084",
+            "source_passages": [], "caveats": [],
+        }
+        result = _validate_extraction(raw, chunks=[], chunk_doc_map={})
+        assert result.extracted_authority_reference == "M.8084"
+
+    def test_validate_extraction_parses_decision_date(self):
+        raw = {
+            "product_markets": [], "geographic_markets": [],
+            "theories_of_harm": [], "commitments": [],
+            "overall_outcome": "cleared_with_conditions",
+            "decision_date": "2018-03-21",
+            "source_passages": [], "caveats": [],
+        }
+        result = _validate_extraction(raw, chunks=[], chunk_doc_map={})
+        assert result.extracted_decision_date == "2018-03-21"
+
+    # ------------------------------------------------------------------ _apply_focus_guardrails
+
+    def test_outcome_metadata_guardrail_clears_markets(self):
+        pm = ExtractedMarket(name="Herbicides", market_type="product",
+                             definition_status="left_open", notes="")
+        result = ExtractionResult(
+            product_markets=[pm],
+            overall_outcome="cleared_with_conditions",
+        )
+        out = _apply_focus_guardrails(result, "outcome_metadata")
+        assert out.product_markets == []
+        assert out.geographic_markets == []
+
+    def test_outcome_metadata_guardrail_clears_theories(self):
+        th = ExtractedTheory(name="Innovation rivalry", theory_type="innovation",
+                             theory_outcome="upheld", notes="")
+        result = ExtractionResult(theories=[th], overall_outcome="cleared_with_conditions")
+        out = _apply_focus_guardrails(result, "outcome_metadata")
+        assert out.theories == []
+
+    def test_outcome_metadata_guardrail_clears_commitments(self):
+        cm = ExtractedCommitment(title="BASF Divestment", commitment_type="structural",
+                                 description="", divested_assets=[])
+        result = ExtractionResult(commitments=[cm], overall_outcome="cleared_with_conditions")
+        out = _apply_focus_guardrails(result, "outcome_metadata")
+        assert out.commitments == []
+
+    def test_outcome_metadata_guardrail_preserves_overall_outcome(self):
+        result = ExtractionResult(overall_outcome="cleared_with_conditions")
+        out = _apply_focus_guardrails(result, "outcome_metadata")
+        assert out.overall_outcome == "cleared_with_conditions"
+
+    def test_outcome_metadata_guardrail_preserves_procedure_stage(self):
+        result = ExtractionResult(
+            overall_outcome="cleared_with_conditions",
+            procedure_stage="phase2",
+        )
+        out = _apply_focus_guardrails(result, "outcome_metadata")
+        assert out.procedure_stage == "phase2"
+
+    # ------------------------------------------------------------------ _merge_extraction_results
+
+    def test_merge_results_takes_first_non_unknown_procedure_stage(self):
+        r1 = ExtractionResult(procedure_stage="unknown")
+        r2 = ExtractionResult(procedure_stage="phase2")
+        r3 = ExtractionResult(procedure_stage="phase1")
+        merged = _merge_extraction_results([r1, r2, r3])
+        assert merged.procedure_stage == "phase2"
+
+    def test_merge_results_aggregates_authority_reference(self):
+        r1 = ExtractionResult(extracted_authority_reference="")
+        r2 = ExtractionResult(extracted_authority_reference="M.8084")
+        merged = _merge_extraction_results([r1, r2])
+        assert merged.extracted_authority_reference == "M.8084"
+
+    def test_merge_results_procedure_stage_stays_unknown_when_all_unknown(self):
+        r1 = ExtractionResult(procedure_stage="unknown")
+        r2 = ExtractionResult(procedure_stage="unknown")
+        merged = _merge_extraction_results([r1, r2])
+        assert merged.procedure_stage == "unknown"
+
+    # ------------------------------------------------------------------ _build_draft_record
+
+    def test_build_draft_record_includes_procedure_stage(self):
+        result = ExtractionResult(
+            overall_outcome="cleared_with_conditions",
+            procedure_stage="phase2",
+        )
+        draft = _build_draft_record(result, {"case_id": "test", "source_documents": []})
+        assert draft["procedure_stage"] == "phase2"
+
+    def test_build_draft_record_procedure_stage_unknown_when_not_extracted(self):
+        result = ExtractionResult(overall_outcome="unknown")
+        draft = _build_draft_record(result, {"case_id": "test", "source_documents": []})
+        assert draft["procedure_stage"] == "unknown"
+
+    def test_build_draft_record_uses_extracted_decision_date(self):
+        result = ExtractionResult(
+            overall_outcome="cleared_with_conditions",
+            extracted_decision_date="2018-03-21",
+        )
+        existing = {
+            "case_id": "test",
+            "decision_date": "2020-01-01",
+            "source_documents": [],
+        }
+        draft = _build_draft_record(result, existing)
+        assert draft["decision_date"] == "2018-03-21"
+
+    def test_build_draft_record_falls_back_to_existing_date_when_not_extracted(self):
+        result = ExtractionResult(overall_outcome="unknown", extracted_decision_date="")
+        existing = {
+            "case_id": "test",
+            "decision_date": "2020-01-01",
+            "source_documents": [],
+        }
+        draft = _build_draft_record(result, existing)
+        assert draft["decision_date"] == "2020-01-01"
+
+    # ------------------------------------------------------------------ prompt content
+
+    def test_extraction_task_contains_outcome_metadata_guidance(self):
+        assert "OUTCOME METADATA EXTRACTION" in _EXTRACTION_TASK
+
+    def test_extraction_task_mentions_article_8_2(self):
+        assert "Article 8(2)" in _EXTRACTION_TASK
+
+    def test_extraction_task_mentions_procedure_stage(self):
+        assert "procedure_stage" in _EXTRACTION_TASK
+
+    # ------------------------------------------------------------------ other focus modes not disturbed
+
+    def test_market_definition_guardrail_still_clears_outcome(self):
+        result = ExtractionResult(
+            overall_outcome="cleared", procedure_stage="phase1"
+        )
+        out = _apply_focus_guardrails(result, "market_definition")
+        assert out.overall_outcome == "unknown"
+        # procedure_stage is not touched by market_definition guardrail
+        assert out.procedure_stage == "phase1"
+
+    def test_theories_guardrail_still_clears_outcome(self):
+        result = ExtractionResult(
+            overall_outcome="cleared", procedure_stage="phase2"
+        )
+        out = _apply_focus_guardrails(result, "theories")
+        assert out.overall_outcome == "unknown"
+
+    def test_tool_schema_includes_procedure_stage(self):
+        props = _EXTRACTION_TOOL_SCHEMA["input_schema"]["properties"]
+        assert "procedure_stage" in props
+
+    def test_tool_schema_procedure_stage_enum_valid(self):
+        props = _EXTRACTION_TOOL_SCHEMA["input_schema"]["properties"]
+        enum_vals = props["procedure_stage"]["enum"]
+        assert "phase1" in enum_vals
+        assert "phase2" in enum_vals
+        assert "unknown" in enum_vals
+
+    def test_tool_schema_includes_authority_reference(self):
+        props = _EXTRACTION_TOOL_SCHEMA["input_schema"]["properties"]
+        assert "authority_reference" in props
+
+    def test_tool_schema_includes_decision_date(self):
+        props = _EXTRACTION_TOOL_SCHEMA["input_schema"]["properties"]
+        assert "decision_date" in props

@@ -82,6 +82,10 @@ _VALID_THEORY_TYPES: frozenset[str] = frozenset({
     "horizontal", "vertical", "conglomerate", "data", "innovation", "other",
 })
 
+_VALID_PROCEDURE_STAGES: frozenset[str] = frozenset({
+    "phase1", "phase2", "unknown",
+})
+
 # Precise market definition status values (old values kept for backward compat).
 _VALID_MARKET_STATUSES: frozenset[str] = frozenset({
     "defined", "left_open", "discussed", "segmented", "unknown",      # legacy
@@ -207,6 +211,9 @@ _FOCUS_TERMS: dict[str, tuple[str, ...]] = {
         "article 22",
         "phase ii",
     ),
+    # outcome_metadata: empty tuple → _is_focused_section returns True for all sections,
+    # so all pages in the (defaulted) pp.1-30 range are processed.
+    "outcome_metadata": (),
 }
 
 # ---------------------------------------------------------------------------
@@ -376,6 +383,46 @@ class ExtractedCommitment:
     not_found: bool = False
 
 
+def _map_article_to_outcome(text: str) -> tuple[str, str]:
+    """Map EU merger decision operative-article language to (outcome, procedure_stage).
+
+    Returns values from _VALID_OUTCOMES and _VALID_PROCEDURE_STAGES.
+    Returns ("unknown", "unknown") when no operative article is detectable.
+    """
+    lower = text.lower()
+    # Article 8(3) → blocked, phase2  (check before 8(2) to avoid prefix match)
+    if "article 8(3)" in lower or "article 8, paragraph 3" in lower:
+        return "blocked", "phase2"
+    # Article 8(2) → cleared_with_conditions, phase2
+    if "article 8(2)" in lower or "article 8, paragraph 2" in lower:
+        return "cleared_with_conditions", "phase2"
+    # Article 8(1) → cleared, phase2
+    if "article 8(1)" in lower or "article 8, paragraph 1" in lower:
+        return "cleared", "phase2"
+    # Article 6(2) → cleared_with_conditions, phase1
+    if "article 6(2)" in lower or "article 6, paragraph 2" in lower:
+        return "cleared_with_conditions", "phase1"
+    # Article 6(1)(b) with conditions/commitments → cleared_with_conditions, phase1
+    if "article 6(1)(b)" in lower and any(
+        t in lower for t in ("condition", "commitment", "undertaking")
+    ):
+        return "cleared_with_conditions", "phase1"
+    # Article 6(1)(b) plain → cleared, phase1
+    if "article 6(1)(b)" in lower:
+        return "cleared", "phase1"
+    # Article 6(1)(c) → phase2 opened, not a final decision
+    if "article 6(1)(c)" in lower:
+        return "pending", "phase2"
+    # Clearance language without explicit article reference
+    if any(t in lower for t in (
+        "does not raise serious doubts",
+        "compatible with the internal market",
+        "does not significantly impede effective competition",
+    )):
+        return "cleared", "unknown"
+    return "unknown", "unknown"
+
+
 @dataclass
 class ExtractionResult:
     product_markets: list[ExtractedMarket] = field(default_factory=list)
@@ -383,6 +430,12 @@ class ExtractionResult:
     theories: list[ExtractedTheory] = field(default_factory=list)
     commitments: list[ExtractedCommitment] = field(default_factory=list)
     overall_outcome: str = "unknown"
+    procedure_stage: str = "unknown"
+    extracted_authority_reference: str = ""
+    extracted_decision_date: str = ""
+    # Top-level source_passages from Claude that are not nested under any market/theory/commitment.
+    # Populated only for outcome_metadata focus (or when Claude returns unlinked passages).
+    unlinked_passages: list[ExtractedPassage] = field(default_factory=list)
     caveats: list[str] = field(default_factory=list)
     background_concepts: list[str] = field(default_factory=list)
     passages_validated: int = 0
@@ -962,6 +1015,23 @@ def _apply_focus_guardrails(
         result.geographic_markets = []
         result.commitments = []
         result.overall_outcome = "unknown"
+    elif focus == "outcome_metadata":
+        # Outcome metadata: preserve overall_outcome, procedure_stage, and
+        # extracted_authority_reference/decision_date — clear everything else.
+        # Rescue validated nested passages before clearing the lists so they
+        # appear in the draft as unlinked outcome-evidence passages.
+        rescued: list[ExtractedPassage] = []
+        for item_list in (
+            result.product_markets, result.geographic_markets,
+            result.theories, result.commitments,
+        ):
+            for item in item_list:
+                rescued.extend(p for p in item.passages if p.validated)  # type: ignore[attr-defined]
+        result.unlinked_passages = result.unlinked_passages + rescued
+        result.product_markets = []
+        result.geographic_markets = []
+        result.theories = []
+        result.commitments = []
     elif focus not in (None, "remedies"):
         # case_history and any future focus modes: no commitments
         result.commitments = []
@@ -1199,6 +1269,25 @@ Rules for commitment entries:
   - If a passage quotes the operative clearance article (e.g. "Article 8(2)"), include it
     as an unlinked source_passage supporting the overall outcome, not as a commitment entry.
 
+OUTCOME METADATA EXTRACTION (outcome_metadata focus only):
+When processing the preamble, operative section, or procedural introduction of a decision:
+1. Set `overall_outcome` from the operative Article cited:
+   - Article 6(1)(b) without conditions → "cleared"
+   - Article 6(1)(b) with conditions / Article 6(2) → "cleared_with_conditions"
+   - Article 8(1) → "cleared"
+   - Article 8(2) → "cleared_with_conditions"
+   - Article 8(3) → "blocked"
+   - Article 6(1)(c) (Phase II opened but not yet decided) → "pending"
+   - Language "does not raise serious doubts" or "compatible with the internal market"
+     without an explicit operative article → "cleared"
+   - If the operative decision is not in the supplied text → "unknown"
+2. Set `procedure_stage`: "phase1" for Article 6 decisions, "phase2" for Article 8.
+3. Set `authority_reference` to the case reference number (e.g., "M.8084").
+4. Set `decision_date` to the date of the Commission decision (ISO YYYY-MM-DD).
+5. Include at least one verbatim passage quoting the operative clearance language
+   with `source_role: "conclusion"` and empty `supports` list.
+6. Leave product_markets, geographic_markets, theories_of_harm, and commitments as [].
+
 Use the record_extraction tool to return your findings."""
 
 _COMMITMENT_ITEM_SCHEMA = {
@@ -1360,6 +1449,29 @@ _EXTRACTION_TOOL_SCHEMA = {
             "overall_outcome": {
                 "type": "string",
                 "enum": sorted(_VALID_OUTCOMES),
+            },
+            "procedure_stage": {
+                "type": "string",
+                "enum": sorted(_VALID_PROCEDURE_STAGES),
+                "description": (
+                    "Procedure stage of the decision: 'phase1' for Article 6 decisions, "
+                    "'phase2' for Article 8 decisions, 'unknown' if not determinable. "
+                    "Set only for outcome_metadata focus; use 'unknown' otherwise."
+                ),
+            },
+            "authority_reference": {
+                "type": "string",
+                "description": (
+                    "Case reference number (e.g. 'M.8084'). "
+                    "Set only for outcome_metadata focus; empty string otherwise."
+                ),
+            },
+            "decision_date": {
+                "type": "string",
+                "description": (
+                    "Date of the authority decision in ISO format YYYY-MM-DD. "
+                    "Set only for outcome_metadata focus; empty string otherwise."
+                ),
             },
             "source_passages": {
                 "type": "array",
@@ -1812,16 +1924,23 @@ def _validate_extraction(
             not_found=bool(cm.get("not_found")),
         ))
 
-    # Detect orphan top-level source_passages (not referenced in any market/theory).
+    # Detect and store orphan top-level source_passages (not nested under any market/theory).
     nested_quotes: set[str] = set()
     for item_list in (product_markets, geographic_markets, theories, commitments):
         for item in item_list:
             for p in item.passages:
                 nested_quotes.add(p.quote[:80])
-    orphan_count = sum(
-        1 for sp in (raw.get("source_passages") or [])
+    unlinked_passages = _process_passages([
+        sp for sp in (raw.get("source_passages") or [])
         if isinstance(sp, dict) and (sp.get("quote", "") or "")[:80] not in nested_quotes
-    )
+    ])
+    orphan_count = len(unlinked_passages)
+
+    procedure_stage = str(raw.get("procedure_stage", "unknown") or "unknown").strip()
+    if procedure_stage not in _VALID_PROCEDURE_STAGES:
+        procedure_stage = "unknown"
+    extracted_authority_reference = str(raw.get("authority_reference", "") or "").strip()
+    extracted_decision_date = str(raw.get("decision_date", "") or "").strip()
 
     return ExtractionResult(
         product_markets=product_markets,
@@ -1829,6 +1948,10 @@ def _validate_extraction(
         theories=theories,
         commitments=commitments,
         overall_outcome=raw.get("overall_outcome", "unknown"),
+        procedure_stage=procedure_stage,
+        extracted_authority_reference=extracted_authority_reference,
+        extracted_decision_date=extracted_decision_date,
+        unlinked_passages=unlinked_passages,
         caveats=list(raw.get("caveats") or []),
         background_concepts=list(raw.get("background_concepts") or []),
         passages_validated=validated_count,
@@ -2126,6 +2249,10 @@ def _merge_extraction_results(results: list[ExtractionResult]) -> ExtractionResu
     caveats: list[str] = []
     background_concepts: list[str] = []
     overall_outcome = "unknown"
+    procedure_stage = "unknown"
+    extracted_authority_reference = ""
+    extracted_decision_date = ""
+    unlinked_passages: list[ExtractedPassage] = []
     passages_validated = 0
     passages_rejected = 0
 
@@ -2187,6 +2314,13 @@ def _merge_extraction_results(results: list[ExtractionResult]) -> ExtractionResu
         background_concepts.extend(r.background_concepts)
         if r.overall_outcome != "unknown" and overall_outcome == "unknown":
             overall_outcome = r.overall_outcome
+        if r.procedure_stage != "unknown" and procedure_stage == "unknown":
+            procedure_stage = r.procedure_stage
+        if r.extracted_authority_reference and not extracted_authority_reference:
+            extracted_authority_reference = r.extracted_authority_reference
+        if r.extracted_decision_date and not extracted_decision_date:
+            extracted_decision_date = r.extracted_decision_date
+        unlinked_passages.extend(r.unlinked_passages)
         passages_validated += r.passages_validated
         passages_rejected += r.passages_rejected
 
@@ -2196,6 +2330,10 @@ def _merge_extraction_results(results: list[ExtractionResult]) -> ExtractionResu
         theories=th_list,
         commitments=cm_list,
         overall_outcome=overall_outcome,
+        procedure_stage=procedure_stage,
+        extracted_authority_reference=extracted_authority_reference,
+        extracted_decision_date=extracted_decision_date,
+        unlinked_passages=unlinked_passages,
         caveats=caveats,
         # Deduplicate background_concepts preserving first-occurrence order
         background_concepts=list(dict.fromkeys(background_concepts)),
@@ -2231,7 +2369,12 @@ def _build_draft_record(
         "jurisdiction": existing_record.get("jurisdiction", ""),
         "sector": existing_record.get("sector", ""),
         "outcome": result.overall_outcome,
-        "decision_date": existing_record.get("decision_date"),
+        "procedure_stage": result.procedure_stage,
+        "decision_date": (
+            result.extracted_decision_date
+            if result.extracted_decision_date
+            else existing_record.get("decision_date")
+        ),
         "parties": existing_record.get("parties", []),
         "source_documents": existing_record.get("source_documents", []),
     }
@@ -2345,6 +2488,26 @@ def _build_draft_record(
     _add_passages(gm_with_ids, support_gm=True)
     _add_passages(toh_with_ids, support_toh=True)
     _add_passages(cm_with_ids, support_cm=True)
+
+    # Include unlinked top-level passages (e.g. outcome evidence from outcome_metadata focus).
+    for ep in result.unlinked_passages:
+        if not ep.validated:
+            continue
+        sp_id = f"sp_{len(passages) + 1}"
+        passages.append({
+            "passage_id": sp_id,
+            "source_document_id": ep.source_document_id or "",
+            "page": str(ep.page_number),
+            "quote_snippet": ep.quote,
+            "extraction_method": "pdf_extracted",
+            "review_status": "unreviewed",
+            "confidence_score": 0.70,
+            "last_checked_date": today,
+            "supports_markets": [],
+            "supports_geographic_markets": [],
+            "supports_theories": [],
+            "supports_commitments": [],
+        })
 
     draft["source_passages"] = passages
     return draft
@@ -2693,8 +2856,8 @@ def _reconcile(
     # When a focus mode is active, skip reconciling proposition types that were
     # out of scope for that extraction run — they would always appear as
     # unsupported_remove, which is misleading rather than actionable.
-    _skip_markets = focus in ("theories", "remedies", "case_history")
-    _skip_theories = focus in ("market_definition", "remedies", "case_history")
+    _skip_markets = focus in ("theories", "remedies", "case_history", "outcome_metadata")
+    _skip_theories = focus in ("market_definition", "remedies", "case_history", "outcome_metadata")
 
     if not _skip_markets:
         _match_list(
