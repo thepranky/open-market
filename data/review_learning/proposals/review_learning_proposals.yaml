@@ -1,13 +1,22 @@
 schema_version: '1'
-generated_at: '2026-06-02T00:02:07Z'
+generated_at: '2026-06-02T01:18:04Z'
 cases_reviewed:
+- eu_apple_shazam_2018
 - eu_coca_cola_costa_2018
 - eu_daimler_geely_smart_2020
 - eu_facebook_whatsapp_2014
 - eu_sika_dry_mix_2019
-total_corrections: 11
+total_corrections: 13
 total_patterns: 4
 llm_review_insights:
+- case_id: eu_apple_shazam_2018
+  triage_status: needs_legal_review
+  triage_rationale: 'Multiple issues require legal judgment: (1) all five product markets are missing
+    geographic market counterparts despite the decision''s text referencing EEA-wide or global geographic
+    assessments for each market; (2) sp_3 and sp_9 and sp_12 are pure "left-open because no competitive
+    harm" outcome passages yet are linked to market entries; (3) source_role is "not_set" for all 13 passages,
+    requiring assessment; (4) definition_status for pm_2 ("considered") may be too weak given the Commission''s
+    explicit framing of the "narrowest relevant product market."'
 - case_id: eu_coca_cola_costa_2018
   triage_status: needs_legal_review
   triage_rationale: Multiple outcome/clearance passages (sp_2, sp_7, sp_10, sp_14, sp_27, sp_29, sp_31)
@@ -47,13 +56,24 @@ proposals:
   suggested_follow_up: docs_update
   proposal_action: docs_update
   priority: medium
-  count: 4
+  count: 5
   cases:
+  - eu_apple_shazam_2018
   - eu_coca_cola_costa_2018
   - eu_daimler_geely_smart_2020
   - eu_facebook_whatsapp_2014
   - eu_sika_dry_mix_2019
   evidence:
+  - case_id: eu_apple_shazam_2018
+    object_type: case
+    object_id: eu_apple_shazam_2018
+    before:
+      case_type: null
+      procedure_stage: null
+    after:
+      case_type: merger
+      procedure_stage: phase2
+    confidence: high
   - case_id: eu_coca_cola_costa_2018
     object_type: case
     object_id: eu_coca_cola_costa_2018
@@ -108,13 +128,23 @@ proposals:
   suggested_follow_up: docs_update
   proposal_action: docs_update
   priority: medium
-  count: 4
+  count: 5
   cases:
+  - eu_apple_shazam_2018
   - eu_coca_cola_costa_2018
   - eu_daimler_geely_smart_2020
   - eu_facebook_whatsapp_2014
   - eu_sika_dry_mix_2019
   evidence:
+  - case_id: eu_apple_shazam_2018
+    object_type: metadata
+    object_id: eu_apple_shazam_2018
+    before: null
+    after:
+      overall_confidence: 0.9
+      review_status: spot_checked
+      created_date: '2026-06-01'
+    confidence: high
   - case_id: eu_coca_cola_costa_2018
     object_type: metadata
     object_id: eu_coca_cola_costa_2018

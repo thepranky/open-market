@@ -1,0 +1,50 @@
+schema_version: '1'
+case_id: eu_apple_shazam_2018
+focus: market_definition
+generated_at: '2026-06-02T01:18:04Z'
+source_files:
+  draft: data/drafts/eu/eu_apple_shazam_2018.market_definition.draft.yaml
+  llm_review: data/drafts/eu/eu_apple_shazam_2018.market_definition.llm_review.json
+  canonical: data/cases/eu/eu_apple_shazam_2018.yaml
+summary:
+  total_corrections: 2
+  by_type:
+    metadata_completion: 2
+  llm_triage_status: needs_legal_review
+llm_review_insights:
+  triage_status: needs_legal_review
+  triage_rationale: 'Multiple issues require legal judgment: (1) all five product markets are missing
+    geographic market counterparts despite the decision''s text referencing EEA-wide or global geographic
+    assessments for each market; (2) sp_3 and sp_9 and sp_12 are pure "left-open because no competitive
+    harm" outcome passages yet are linked to market entries; (3) source_role is "not_set" for all 13 passages,
+    requiring assessment; (4) definition_status for pm_2 ("considered") may be too weak given the Commission''s
+    explicit framing of the "narrowest relevant product market."'
+corrections:
+- correction_type: metadata_completion
+  object_type: case
+  object_id: eu_apple_shazam_2018
+  before:
+    case_type: null
+    procedure_stage: null
+  after:
+    case_type: merger
+    procedure_stage: phase2
+  inferred_reason: Required fields absent from draft; set by the human reviewer during canonical promotion.
+  reusable_rule_candidate: procedure_stage, case_type, and authority_reference must always be explicitly
+    resolved during the promotion checklist review.
+  suggested_follow_up: docs_update
+  confidence: high
+- correction_type: metadata_completion
+  object_type: metadata
+  object_id: eu_apple_shazam_2018
+  before: null
+  after:
+    overall_confidence: 0.9
+    review_status: spot_checked
+    created_date: '2026-06-01'
+  inferred_reason: The metadata block (overall_confidence, review_status, dates) is not written by the
+    extraction script and is always created at promotion time.
+  reusable_rule_candidate: The metadata block is a required canonical section. It must be added during
+    promotion; its absence from drafts is expected.
+  suggested_follow_up: docs_update
+  confidence: high

@@ -1,14 +1,14 @@
 # Review Learning Proposals
 
-Generated: 2026-06-02T00:02:07Z  
-Cases reviewed: 4  |  Total corrections: 11  |  Patterns identified: 4
+Generated: 2026-06-02T01:18:04Z  
+Cases reviewed: 5  |  Total corrections: 13  |  Patterns identified: 4
 
 ---
 
 ## Summary
 
-- **Cases reviewed:** `eu_coca_cola_costa_2018`, `eu_daimler_geely_smart_2020`, `eu_facebook_whatsapp_2014`, `eu_sika_dry_mix_2019`
-- **Total corrections captured:** 11
+- **Cases reviewed:** `eu_apple_shazam_2018`, `eu_coca_cola_costa_2018`, `eu_daimler_geely_smart_2020`, `eu_facebook_whatsapp_2014`, `eu_sika_dry_mix_2019`
+- **Total corrections captured:** 13
 - **Distinct patterns:** 4
 - **Priority breakdown:** 2 low, 2 medium patterns
 
@@ -22,6 +22,14 @@ Cases reviewed: 4  |  Total corrections: 11  |  Patterns identified: 4
 > No eval fixture candidates in the current corpus.
 
 ## LLM Review Insights
+
+**Case `eu_apple_shazam_2018`** — triage status: `needs_legal_review`
+
+> Multiple issues require legal judgment: (1) all five product markets are missing geographic market counterparts despite the decision's text referencing EEA-wide or global geographic assessments for each market; (2) sp_3 and sp_9 and sp_12 are pure "left-open because no competitive harm" outcome passages yet are linked to market entries; (3) source_role is "not_set" for all 13 passages, requiring assessment; (4) definition_status for pm_2 ("considered") may be too weak given the Commission's explicit framing of the "narrowest relevant product market."
+
+**Implied proposals (require human judgement before acting):**
+- `review_prompt_update`: Clarify `considered` vs `defined` working-assumption language in the LLM review prompt.
+- `extraction_prompt_update`: Flag mixed passages (outcome + definition language in the same quote snippet) as a known difficult pattern.
 
 **Case `eu_coca_cola_costa_2018`** — triage status: `needs_legal_review`
 
@@ -57,10 +65,10 @@ Cases reviewed: 4  |  Total corrections: 11  |  Patterns identified: 4
 
 ## Low-Priority / No-Action Items
 
-- **`metadata_completion`** (4x, priority: medium) → `docs_update`  
+- **`metadata_completion`** (5x, priority: medium) → `docs_update`  
   Rule: procedure_stage, case_type, and authority_reference must always be explicitly resolved during the promotion checklist review.
 
-- **`metadata_completion`** (4x, priority: medium) → `docs_update`  
+- **`metadata_completion`** (5x, priority: medium) → `docs_update`  
   Rule: The metadata block is a required canonical section. It must be added during promotion; its absence from drafts is expected.
 
 - **`note_cleanup`** (2x, priority: low) → `extraction_prompt_update`  
