@@ -310,3 +310,17 @@ now triggers supplemental fallback, raising coverage to ≈ 84% of non-TOC pages
 | `apps/api/scripts/validate_cases.py` | Pydantic schema validator |
 | `apps/api/tests/test_source_integrity.py` | Unit tests for the gate |
 | `data/cases/**/*.yaml` | Canonical case records (human-reviewed) |
+| `docs/hard-case-diagnostics.md` | Diagnostic runs on complex decisions + multi-focus design |
+
+---
+
+## Multi-focus extraction
+
+Beyond `market_definition`, the pipeline supports `theories`, `remedies`, and
+`case_history` focus modes (see `_FOCUS_TERMS` in `extract_case_from_source.py`).
+
+For mega Phase II decisions (800+ pages), a single focus pass covers only a fraction
+of the document. The recommended approach for these cases is **section-group iteration**:
+run the relevant focus mode over specific page ranges (e.g. `--page-range 64:309`)
+and merge results. See `docs/hard-case-diagnostics.md` for the full design and
+the M.8084 Bayer/Monsanto diagnostic that motivated it.
