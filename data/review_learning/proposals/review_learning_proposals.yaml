@@ -1,10 +1,11 @@
 schema_version: '1'
-generated_at: '2026-06-01T21:01:26Z'
+generated_at: '2026-06-02T00:02:07Z'
 cases_reviewed:
 - eu_coca_cola_costa_2018
+- eu_daimler_geely_smart_2020
 - eu_facebook_whatsapp_2014
 - eu_sika_dry_mix_2019
-total_corrections: 9
+total_corrections: 11
 total_patterns: 4
 llm_review_insights:
 - case_id: eu_coca_cola_costa_2018
@@ -14,6 +15,14 @@ llm_review_insights:
     (gm_2, gm_3) reference passage IDs not supplied in this batch (sp_37–sp_41); theory entries carry
     no supporting passages; and role misuse is present where conclusion passages are labelled commission_assessment.
     These issues require legal judgment to resolve.
+- case_id: eu_daimler_geely_smart_2020
+  triage_status: needs_legal_review
+  triage_rationale: 'Multiple structural issues: sp_1 and sp_2 are introductory overlap-identification
+    passages with no substantive market definition analysis; sp_6 and sp_9 are mixed left-open/outcome
+    passages linked to markets without source_role set; no geographic markets are captured despite clear
+    geographic analysis in the decision (EEA-wide vs national, Sweden affected market); pm_1 and pm_2
+    have unknown definition_status and incomplete_source flags requiring legal judgment; duplicate content
+    across sp_1/sp_2 and sp_6/sp_9 needs review.'
 - case_id: eu_facebook_whatsapp_2014
   triage_status: needs_legal_review
   triage_rationale: 'Several passages require legal judgment: sp_4 and sp_11 contain pure or near-pure
@@ -38,9 +47,10 @@ proposals:
   suggested_follow_up: docs_update
   proposal_action: docs_update
   priority: medium
-  count: 3
+  count: 4
   cases:
   - eu_coca_cola_costa_2018
+  - eu_daimler_geely_smart_2020
   - eu_facebook_whatsapp_2014
   - eu_sika_dry_mix_2019
   evidence:
@@ -53,6 +63,18 @@ proposals:
       procedure_stage: null
     after:
       authority_reference: M.9122
+      case_type: merger
+      procedure_stage: phase1
+    confidence: high
+  - case_id: eu_daimler_geely_smart_2020
+    object_type: case
+    object_id: eu_daimler_geely_smart_2020
+    before:
+      authority_reference: null
+      case_type: null
+      procedure_stage: null
+    after:
+      authority_reference: M.9360
       case_type: merger
       procedure_stage: phase1
     confidence: high
@@ -86,9 +108,10 @@ proposals:
   suggested_follow_up: docs_update
   proposal_action: docs_update
   priority: medium
-  count: 3
+  count: 4
   cases:
   - eu_coca_cola_costa_2018
+  - eu_daimler_geely_smart_2020
   - eu_facebook_whatsapp_2014
   - eu_sika_dry_mix_2019
   evidence:
@@ -100,6 +123,15 @@ proposals:
       overall_confidence: 0.7
       review_status: unreviewed
       created_date: '2026-05-31'
+    confidence: high
+  - case_id: eu_daimler_geely_smart_2020
+    object_type: metadata
+    object_id: eu_daimler_geely_smart_2020
+    before: null
+    after:
+      overall_confidence: 0.0
+      review_status: unreviewed
+      created_date: '2026-06-01'
     confidence: high
   - case_id: eu_facebook_whatsapp_2014
     object_type: metadata

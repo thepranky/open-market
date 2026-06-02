@@ -10,7 +10,7 @@
 
 **Practical use case:** A lawyer researching market definition precedent in a media/gaming merger can search CompMap and find: which product markets were considered, what definition status was reached (defined, discussed, left open), what theories of harm were raised, and exactly which passage of which decision supports each finding — with page and paragraph numbers.
 
-**Current state:** This is a v0 first slice. There are 7 source-verified case records. A first ingestion CLI now orchestrates fetch/cache, extraction, draft validation, source integrity checks, LLM review triage, and review report generation. The first genuinely fresh case (`eu_sika_dry_mix_2019`) has been promoted to canonical, and the small-batch EC case-coverage stage has started with TCCC/Costa. Frontend cleanup is deferred.
+**Current state:** This is a v0 first slice. There are 10 source-verified canonical case records. The ingestion pipeline now covers source caching, LLM extraction, deterministic validation, LLM review triage, central market-definition rules, safe draft-to-canonical promotion, final promotion gates, review-learning logs, and eval fixtures. The first EC Phase I expansion batch has added TCCC/Costa, Facebook/WhatsApp, and Daimler/Geely/Smart; BMS/Celgene remains parked as a hard pharma/remedy draft template. Frontend cleanup is deferred.
 
 ---
 
@@ -112,7 +112,17 @@ The pipeline has two distinct parts: **manual authoring** (how the baseline case
 
 - **What:** A human reviewer reads the draft YAML against the actual source document. They verify quote accuracy, check that `definition_status` is correct (e.g., not marking `defined` for something the authority only `discussed`), and update `review_status` fields from `unreviewed` to `spot_checked` or `lawyer_reviewed`.
 - **Files edited:** `data/drafts/.../` → promoted to `data/cases/` after review.
-- **Status:** Manual. This is the current reliability bottleneck.
+- **Status:** Manual legal sign-off, but promotion is now automated through `apps/api/scripts/promote_case_pipeline.py`. The wrapper runs target-draft source integrity first and aborts before promotion if the target draft has any source-integrity errors or warnings.
+
+Preferred promotion command:
+
+```bash
+apps/api/.venv/bin/python apps/api/scripts/promote_case_pipeline.py \
+  --case-id <case_id> \
+  --focus market_definition \
+  --procedure-stage phase1 \
+  --overwrite
+```
 
 ---
 
@@ -130,9 +140,9 @@ The pipeline has two distinct parts: **manual authoring** (how the baseline case
 
 - **What:** Read review-learning logs and convert recurring corrections into concrete pipeline changes.
 - **Outputs:** Proposed extraction prompt updates, LLM review prompt updates, deterministic validator rules, eval fixtures, and documentation updates.
-- **Central rule registry:** Planned. General legal-extraction rules should move into a canonical `data/pipeline_rules/market_definition_rules.yaml` registry, then be reflected in prompts, validators, docs, and evals.
-- **Why:** The registry avoids rule drift. The LLM should not receive scattered conflicting rules; prompts should be generated or checked against the same canonical rule text.
-- **Status:** v1 proposal tooling exists via `apply_review_learning.py`; central rule registry is the next infrastructure refinement, before scaling beyond the first small EC batch.
+- **Central rule registry:** Implemented. General legal-extraction rules now live in `data/pipeline_rules/market_definition_rules.yaml` and are reflected in extraction/review prompt guidance and tests.
+- **Why:** The registry avoids rule drift. The LLM should not receive scattered conflicting rules; prompts should be generated from or checked against the same canonical rule text.
+- **Status:** v1 proposal tooling exists via `apply_review_learning.py`; central market-definition rules are v1 implemented. Future work is to load/generate prompt blocks directly from the registry rather than mirroring them manually.
 
 ---
 
@@ -149,7 +159,7 @@ The pipeline has two distinct parts: **manual authoring** (how the baseline case
 - **Script:** `graph/seed_graph.py` (312 lines). Run via `docker compose --profile seed run seed`.
 - **Inputs:** `data/cases/**/*.yaml`; Neo4j instance.
 - **Outputs:** Populated Neo4j database with constraints and full-text indexes.
-- **Status:** Implemented and verified after the data baseline pass. The current 7-case dataset seeds cleanly into Neo4j. Optional — the API falls back to YAML-based queries if Neo4j is unavailable.
+- **Status:** Implemented and verified after the data baseline pass. The current 10-case dataset seeds cleanly into Neo4j. Optional — the API falls back to YAML-based queries if Neo4j is unavailable.
 
 ---
 
@@ -159,7 +169,7 @@ The pipeline has two distinct parts: **manual authoring** (how the baseline case
 - **Scripts:** `evaluate_extraction.py`, `run_eval_benchmark.py`, `create_gold_draft.py`.
 - **Benchmark config:** `data/evals/benchmark.market_definition.yaml`; CI-safe subset: `benchmark.market_definition.ci.yaml`.
 - **Example result (eu_microsoft_activision_2023):** Product market F1 = 1.0 (2/2 true positives, 0 false positives, 4 unjudged candidates outside the gold subset). Quote validity: 9/9 passed.
-- **Status:** Implemented for 3 cases (eu_microsoft_activision_2023, eu_sika_mbcc_2023, eu_sika_dry_mix_2019). Benchmark runs 3/3 PASS at F1=1.000. `eu_sika_dry_mix_2019` added as full-gold eval fixture in v1 expansion. Gold standard is partial (not full-case coverage).
+- **Status:** Implemented for 6 market-definition eval fixtures. The benchmark runs 6/6 PASS at F1=1.000 and now serves as a regression suite for known-good promoted cases. Generated `data/evals/results/*` outputs should remain workflow artifacts, not committed product data.
 
 ---
 
@@ -220,14 +230,14 @@ Every proposition in the YAML must be backed by a `source_passage` entry. A find
 
 | Dimension                       | Score /10 | Reason                                                                                                            | Practical improvement                                                                       |
 | ------------------------------- | --------- | ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| **Automation**                  | 5/10      | Ingestion CLI + LLM triage exist; first fresh case promoted; corpus expansion still manual-heavy                  | Build out review-learning pipeline; increase automation coverage for corpus expansion       |
-| **Scalability**                 | 3/10      | In-memory YAML search works for 7 cases; Neo4j graph seeds cleanly but the corpus is still too small              | Add proper database indexing and move search to Neo4j full-text; increase case count to 50+ |
-| **Accuracy / source grounding** | 7/10      | Quote validation gate is real and enforced; eval results on 2 cases show F1 = 1.0 on partial gold                 | Expand gold standard coverage; add completeness checks for missed markets                   |
+| **Automation**                  | 5/10      | Ingestion, LLM triage, promotion wrapper, review learning, and central rules exist; corpus expansion still needs human legal sign-off | Build out review-learning pipeline; increase automation coverage for corpus expansion       |
+| **Scalability**                 | 3/10      | In-memory YAML search works for 10 cases; Neo4j graph seeds cleanly but the corpus is still too small              | Add proper database indexing and move search to Neo4j full-text; increase case count to 50+ |
+| **Accuracy / source grounding** | 7/10      | Quote validation gate is real and enforced; eval results on 6 cases show F1 = 1.0 on partial gold                 | Expand gold standard coverage; add completeness checks for missed markets                   |
 | **Legal reliability**           | 5/10      | Source passage links are genuine; but no formal legal weighting, definition status can be misclassified by LLM    | Add structured legal review checklist; separate allegation vs. finding at schema level      |
 | **Maintainability**             | 7/10      | YAML is readable and git-diffable; Pydantic schema enforces structure; scripts are well-factored                  | Document the schema evolution policy; add migration tooling for schema changes              |
 | **Deployment readiness**        | 3/10      | Docker Compose works locally; no production deployment, no auth, no rate limiting, no monitoring                  | Add authentication, environment config management, and a staging deploy                     |
-| **User-facing usefulness**      | 5/10      | Frontend exists and shows markets, theories, sources; but 7 cases is too few for real research value; frontend cleanup still needed | Expand case count; add cross-case filtering by market name and theory type                  |
-| **Evaluation / test coverage**  | 6/10      | Eval framework is real with precision/recall metrics; gold standard covers 3 cases (benchmark 3/3 PASS at F1=1.000); CI runs benchmark subset  | Expand gold standard to all 7 canonical cases; add completeness recall (not just precision-on-gold)   |
+| **User-facing usefulness**      | 5/10      | Frontend exists and shows markets, theories, sources; but 10 cases is too few for real research value; frontend cleanup still needed | Expand case count; add cross-case filtering by market name and theory type                  |
+| **Evaluation / test coverage**  | 6/10      | Eval framework is real with precision/recall metrics; gold standard covers 6 market-definition fixtures (benchmark 6/6 PASS at F1=1.000); CI-safe benchmark subset exists | Keep expanding gold fixtures for promoted cases; add completeness recall and keep generated eval results out of git status |
 
 
 ---
@@ -263,9 +273,11 @@ This is not a rigid roadmap. It is the sensible order of priority based on the c
 | **3a**   | **LLM review / triage** ✅ v1 Done | Added `apps/api/scripts/review_draft.py`; integrated as optional `--llm-review` flag in `ingest_case.py`; 38 tests; correctly identified outcome-passage misuse and missing geographic markets on first real run | **Claude + human** — Claude implemented; human validated findings against source PDF | Reduces manual review burden by flagging semantic issues before human promotion review |
 | **4**    | **Human review workflow** ✅ Done | Created `docs/human-promotion-checklist.md` with promotion prerequisites, review steps, definition_status mapping, source_role guidance, outcome-passage rules, and pre/post-promotion commands | **Human + Claude** — human set policy decisions; Claude drafted the checklist | Formalises the review loop so cases can be promoted consistently and auditably |
 | **5**    | **Review learning logs** ✅ v1 Done | Captured human-review deltas from draft → reviewed draft → canonical record; categorised correction types; proposals aggregated and output to `data/review_learning/proposals/` | **Claude + human + ChatGPT** — Claude implemented log capture and proposal aggregation; human validated categories | This is how manual review scope shrinks over time without weakening source-first reliability                      |
-| **6**    | **Evaluation expansion** ✅ v1 started | Added `eu_sika_dry_mix_2019` as full-gold eval fixture; benchmark now covers 3 cases and runs 3/3 PASS at F1=1.000; CI-safe subset updated | **Human + Claude** — human created gold judgments for Sika/Dry Mix; Claude wired up eval fixtures and benchmark config | Scaling requires knowing when extraction quality regresses                                                        |
-| **7**    | **Small-batch case coverage** ← Current | Continue the first small EC Phase I batch. TCCC/Costa has been ingested and cleaned to promotion-review state; next is human promotion, learning log, and eval fixture before moving to BMS/Celgene and Facebook/WhatsApp | **Human + ChatGPT + Claude** — human makes legal promotion decisions; ChatGPT helps triage; Claude runs cleanup and promotion tooling | Proves the loop can scale beyond one fresh case while still converting each review into reusable pipeline learning |
-| **8**    | **Central market-definition rule registry** ← Next infra | Create `data/pipeline_rules/market_definition_rules.yaml` as the canonical source for reusable legal-extraction rules; use it to keep extraction prompts, review prompts, validators, docs, and evals aligned | **Claude + human + ChatGPT** — Claude implements registry/checks; human approves legal policy; ChatGPT helps structure rules | Prevents rule drift as the pipeline accumulates legal-meaning rules from review learning logs |
+| **6**    | **Evaluation expansion** ✅ v1 started | Benchmark now covers 6 cases and 6/6 PASS. | **Human + Claude** — human created gold judgments for Sika/Dry Mix; Claude wired up eval fixtures and benchmark config | Scaling requires knowing when extraction quality regresses                                                        |
+| **7**    | **Small-batch case coverage** ← Current | TCCC/Costa, Facebook/WhatsApp, and Daimler/Geely/Smart are promoted; BMS/Celgene is parked as a hard pharma/remedy draft template. | **Human + ChatGPT + Claude** — human makes legal promotion decisions; ChatGPT helps triage; Claude runs cleanup and promotion tooling | Proves the loop can scale beyond one fresh case while still converting each review into reusable pipeline learning |
+| **8**    | **Central market-definition rule registry** ✅ v1 Done | Registry exists at `data/pipeline_rules/market_definition_rules.yaml`. | **Claude + human + ChatGPT** — Claude implements registry/checks; human approves legal policy; ChatGPT helps structure rules | Prevents rule drift as the pipeline accumulates legal-meaning rules from review learning logs |
+| **8a**   | **Case promotion pipeline** ✅ v1 Done | Added `promote_case_pipeline.py` to run target-draft integrity, safe promotion, canonical gates, graph seed, review learning log, and apply-learning proposals in one fail-fast workflow | **Claude + human + ChatGPT** — Claude implemented/tests; human validated workflow; ChatGPT shaped safety requirements | Prevents repeated raw-copy promotion mistakes and makes final promotion repeatable |
+| **Next** | **Eval workflow hygiene** | Ensure generated `data/evals/results/*` outputs do not pollute git status; keep eval results as workflow artifacts only | **Claude + human** | Keeps repo clean and avoids accidental commit of eval artifacts |
 | **9**    | **Search and graph hardening**  | Improve cross-case filtering by market, sector, authority, theory of harm, outcome, and source passage                                                   | **Claude + human** — Claude implements backend/search/graph improvements; human validates usefulness for legal research | This is the core user value beyond reading one YAML record                                                        |
 | **10**   | **Production API readiness**    | Add auth, environment config, rate limiting, logging, monitoring, and proper startup/restart behaviour                                                   | **Claude + human** — Claude implements technical hardening; human decides deployment constraints and reviews security posture | FastAPI production deployments need security, restart handling, replication/memory planning, and pre-start checks |
 | **11**   | **Frontend productisation**     | Make the UI usable for real research: source cards, filters, case comparison, and clear citation trails                                                  | **ChatGPT + Claude + human** — ChatGPT helps product/spec design; Claude implements; human tests as target user | Lawyers need an interface, not just validated data                                                                |
@@ -289,7 +301,7 @@ This is not a rigid roadmap. It is the sensible order of priority based on the c
 >
 > The core design principle is source-first. Every proposition — every market definition, theory of harm, or evidentiary finding — has to trace back to a real quote in a real document. We validate every quote against the actual extracted text before it enters the database. If the quote isn't there, it doesn't go in.
 >
-> Today we have 7 source-verified case records across the EU, UK, and US, built with a combination of AI-assisted extraction using Claude and human legal review. The first fresh case has completed the full loop — source fetch, LLM extraction, LLM review triage, human review, canonical promotion, learning log, and eval fixture. We are now testing the loop on a small EC Phase I batch; the next infrastructure step is a central market-definition rule registry so recurring legal-review lessons become consistent prompt rules, validator warnings, and eval fixtures.
+> Today we have 10 source-verified canonical case records across the EU, UK, and US. The first small-batch Phase I expansion added consumer foodservice, digital communications, and automotive/JV cases through the full loop: source fetch, LLM extraction, LLM review triage, human review, safe canonical promotion, learning log, and eval fixture. Central market-definition rules and a promotion pipeline now reduce repeated workflow errors. The next focus is eval workflow hygiene and continued controlled case coverage.
 >
 > The system is not production-deployed yet. It runs locally with Docker, with a FastAPI backend, a Neo4j graph layer, and a Next.js frontend. The main gap between now and a deployable product is ingestion automation, broader case coverage, and access control.
 >

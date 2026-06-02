@@ -1,0 +1,52 @@
+schema_version: '1'
+case_id: eu_daimler_geely_smart_2020
+focus: market_definition
+generated_at: '2026-06-02T00:02:07Z'
+source_files:
+  draft: data/drafts/eu/eu_daimler_geely_smart_2020.market_definition.draft.yaml
+  llm_review: data/drafts/eu/eu_daimler_geely_smart_2020.market_definition.llm_review.json
+  canonical: data/cases/eu/eu_daimler_geely_smart_2020.yaml
+summary:
+  total_corrections: 2
+  by_type:
+    metadata_completion: 2
+  llm_triage_status: needs_legal_review
+llm_review_insights:
+  triage_status: needs_legal_review
+  triage_rationale: 'Multiple structural issues: sp_1 and sp_2 are introductory overlap-identification
+    passages with no substantive market definition analysis; sp_6 and sp_9 are mixed left-open/outcome
+    passages linked to markets without source_role set; no geographic markets are captured despite clear
+    geographic analysis in the decision (EEA-wide vs national, Sweden affected market); pm_1 and pm_2
+    have unknown definition_status and incomplete_source flags requiring legal judgment; duplicate content
+    across sp_1/sp_2 and sp_6/sp_9 needs review.'
+corrections:
+- correction_type: metadata_completion
+  object_type: case
+  object_id: eu_daimler_geely_smart_2020
+  before:
+    authority_reference: null
+    case_type: null
+    procedure_stage: null
+  after:
+    authority_reference: M.9360
+    case_type: merger
+    procedure_stage: phase1
+  inferred_reason: Required fields absent from draft; set by the human reviewer during canonical promotion.
+  reusable_rule_candidate: procedure_stage, case_type, and authority_reference must always be explicitly
+    resolved during the promotion checklist review.
+  suggested_follow_up: docs_update
+  confidence: high
+- correction_type: metadata_completion
+  object_type: metadata
+  object_id: eu_daimler_geely_smart_2020
+  before: null
+  after:
+    overall_confidence: 0.0
+    review_status: unreviewed
+    created_date: '2026-06-01'
+  inferred_reason: The metadata block (overall_confidence, review_status, dates) is not written by the
+    extraction script and is always created at promotion time.
+  reusable_rule_candidate: The metadata block is a required canonical section. It must be added during
+    promotion; its absence from drafts is expected.
+  suggested_follow_up: docs_update
+  confidence: high
