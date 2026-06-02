@@ -78,6 +78,10 @@ _VALID_COMMITMENT_TYPES: frozenset[str] = frozenset({
     "structural", "behavioral", "access", "other",
 })
 
+_VALID_THEORY_TYPES: frozenset[str] = frozenset({
+    "horizontal", "vertical", "conglomerate", "data", "innovation", "other",
+})
+
 # Precise market definition status values (old values kept for backward compat).
 _VALID_MARKET_STATUSES: frozenset[str] = frozenset({
     "defined", "left_open", "discussed", "segmented", "unknown",      # legacy
@@ -172,6 +176,13 @@ _FOCUS_TERMS: dict[str, tuple[str, ...]] = {
         "foreclosure",
         "effects on competition",
         "competitive effect",
+        "innovation",
+        "innovation spaces",
+        "r&d",
+        "pipeline",
+        "leading innovators",
+        "pipeline products",
+        "research and development",
     ),
     "remedies": (
         "commitment",
@@ -346,7 +357,7 @@ class ExtractedMarket:
 @dataclass
 class ExtractedTheory:
     name: str
-    theory_type: str     # "horizontal" | "vertical" | "conglomerate" | "data" | "other"
+    theory_type: str     # "horizontal" | "vertical" | "conglomerate" | "data" | "innovation" | "other"
     theory_outcome: str  # "dismissed" | "upheld" | "remedied" | "unclear"
     notes: str
     passages: list[ExtractedPassage] = field(default_factory=list)
@@ -1137,6 +1148,34 @@ Do not create multiple entries for the same market at different hierarchical lev
     unless the Commission assessed them as genuinely separate relevant markets.
   - For each market, link all supporting passages via the nested "passages" array.
 
+THEORIES OF HARM — INNOVATION AND R&D COMPETITION:
+Competition authorities sometimes assess mergers as reducing innovation rivalry rather
+than (or in addition to) price competition. These appear as theories of harm even when
+no formal "relevant market" is defined. Use `theory_type: "innovation"` when:
+  - The text discusses the merger eliminating a "leading innovator", "pipeline competitor",
+    or "close innovator" in a technology or R&D space.
+  - The authority assesses whether the transaction reduces incentives to invest in R&D
+    or results in the loss of an important R&D pipeline.
+  - The terms "innovation spaces", "innovation competition", "R&D competition",
+    "pipeline products", "pipeline overlap", or "reduction in innovation incentives"
+    appear as part of a competitive concern analysis.
+  - The authority refers to the parties as "leading innovators" or notes the removal of
+    an important innovation constraint.
+
+IMPORTANT DISTINCTIONS — innovation theory context:
+  - An "innovation space" used only as an analytical framework (not as a finding of
+    competitive harm) is NOT a theory of harm — do not create a theory entry for it.
+  - A market definition for an innovation space (e.g., the Commission formally defining
+    an R&D market) should go in product_markets, not theories_of_harm.
+  - An innovation theory entry REQUIRES that the authority expressly states a competitive
+    concern: that the merger eliminates, reduces, or impairs innovation competition.
+  - Innovation theories often appear in "Competitive Assessment > Innovation" or
+    "Innovation Competition" sections — these are valid theory-of-harm source sections.
+  - Capture the authority's view, the notifying parties' counter-arguments, and any
+    third-party/customer concerns separately in the `notes` field. Use the source_role
+    field on passages to distinguish: commission_assessment, notifying_party_view,
+    market_investigation.
+
 COMMITMENTS / REMEDIES (for sections containing operative articles or conditions):
 If the supplied text consists of remedies, commitments, conditions of approval, or
 divestiture schedules, populate the `commitments` array instead of (or in addition to)
@@ -1306,7 +1345,7 @@ _EXTRACTION_TOOL_SCHEMA = {
                         "name": {"type": "string"},
                         "theory_type": {
                             "type": "string",
-                            "enum": ["horizontal", "vertical", "conglomerate", "data", "other"],
+                            "enum": sorted(_VALID_THEORY_TYPES),
                         },
                         "theory_outcome": {
                             "type": "string",
@@ -1745,9 +1784,12 @@ def _validate_extraction(
 
     theories: list[ExtractedTheory] = []
     for th in raw.get("theories_of_harm") or []:
+        th_type = th.get("theory_type", "other")
+        if th_type not in _VALID_THEORY_TYPES:
+            th_type = "other"
         theories.append(ExtractedTheory(
             name=th.get("name", ""),
-            theory_type=th.get("theory_type", "other"),
+            theory_type=th_type,
             theory_outcome=th.get("theory_outcome", "unclear"),
             notes=th.get("notes", ""),
             passages=_process_passages(th.get("passages") or []),
@@ -2237,6 +2279,8 @@ def _build_draft_record(
         {
             "theory_id": tid,
             "name": th.name,
+            "theory_type": th.theory_type,
+            "theory_outcome": th.theory_outcome,
             "description": th.notes,
             "verification": {"status": "source_linked"},
         }

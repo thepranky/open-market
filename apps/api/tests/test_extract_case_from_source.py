@@ -29,7 +29,9 @@ from extract_case_from_source import (
     _PROMOTION_ACTIONS,
     _RECON_GROUP,
     _VALID_COMMITMENT_TYPES,
+    _VALID_THEORY_TYPES,
     _VALID_MARKET_IMPORTANCE,
+    _EXTRACTION_TASK,
     _EXTRACTION_TOOL_SCHEMA,
     _apply_focus_guardrails,
     _build_canonical_merge_candidates,
@@ -8553,3 +8555,175 @@ class TestCommitmentsSupport:
         out = _apply_focus_guardrails(result, "remedies")
         assert len(out.product_markets) == 1
         assert len(out.theories) == 1
+
+
+# ---------------------------------------------------------------------------
+# TestInnovationTheories
+# ---------------------------------------------------------------------------
+
+
+class TestInnovationTheories:
+    """Innovation theory_type support in theories_of_harm extraction."""
+
+    # ------------------------------------------------------------------ schema
+
+    def test_valid_theory_types_includes_innovation(self):
+        """_VALID_THEORY_TYPES includes 'innovation'."""
+        assert "innovation" in _VALID_THEORY_TYPES
+
+    def test_valid_theory_types_retains_existing_values(self):
+        """Existing theory types are still present after adding innovation."""
+        for t in ("horizontal", "vertical", "conglomerate", "data", "other"):
+            assert t in _VALID_THEORY_TYPES
+
+    def test_tool_schema_theory_type_enum_includes_innovation(self):
+        """The LLM tool schema theory_type enum contains 'innovation'."""
+        theories_schema = (
+            _EXTRACTION_TOOL_SCHEMA["input_schema"]["properties"]["theories_of_harm"]
+        )
+        theory_item = theories_schema["items"]
+        enum_values = theory_item["properties"]["theory_type"]["enum"]
+        assert "innovation" in enum_values
+
+    def test_tool_schema_theory_type_enum_retains_existing_values(self):
+        """The tool schema theory_type enum still contains all legacy values."""
+        theories_schema = (
+            _EXTRACTION_TOOL_SCHEMA["input_schema"]["properties"]["theories_of_harm"]
+        )
+        enum_values = theories_schema["items"]["properties"]["theory_type"]["enum"]
+        for t in ("horizontal", "vertical", "conglomerate", "data", "other"):
+            assert t in enum_values
+
+    # ------------------------------------------------------------------ focus terms
+
+    def test_focus_terms_theories_includes_innovation_keywords(self):
+        """_FOCUS_TERMS['theories'] contains innovation/R&D keywords."""
+        terms = _FOCUS_TERMS["theories"]
+        for kw in ("innovation", "r&d", "pipeline", "leading innovators",
+                   "research and development"):
+            assert kw in terms, f"missing keyword: {kw!r}"
+
+    def test_focus_terms_theories_retains_existing_keywords(self):
+        """_FOCUS_TERMS['theories'] still contains all original keywords."""
+        terms = _FOCUS_TERMS["theories"]
+        for kw in ("competitive assessment", "horizontal", "foreclosure"):
+            assert kw in terms, f"missing keyword: {kw!r}"
+
+    # ------------------------------------------------------------------ prompt
+
+    def test_extraction_task_mentions_innovation_theory_type(self):
+        """_EXTRACTION_TASK prompt guidance mentions innovation theory type."""
+        assert "innovation" in _EXTRACTION_TASK.lower()
+
+    def test_extraction_task_mentions_innovation_spaces(self):
+        assert "innovation spaces" in _EXTRACTION_TASK.lower()
+
+    def test_extraction_task_mentions_leading_innovator(self):
+        assert "leading innovator" in _EXTRACTION_TASK.lower()
+
+    def test_extraction_task_mentions_pipeline_competitor(self):
+        assert "pipeline competitor" in _EXTRACTION_TASK.lower()
+
+    # ------------------------------------------------------------------ parsing
+
+    def test_parse_innovation_theory_type_accepted(self):
+        """Parsing a raw response with theory_type 'innovation' stores it as-is."""
+        raw = {
+            "product_markets": [],
+            "geographic_markets": [],
+            "theories_of_harm": [
+                {
+                    "name": "Innovation competition in traits",
+                    "theory_type": "innovation",
+                    "theory_outcome": "upheld",
+                    "notes": "The Commission found the merger eliminates a leading innovator.",
+                    "not_found": False,
+                    "passages": [],
+                }
+            ],
+            "overall_outcome": "cleared_with_conditions",
+            "source_passages": [],
+            "caveats": [],
+            "background_concepts": [],
+            "commitments": [],
+        }
+        result = _validate_extraction(raw, chunks=[], chunk_doc_map={})
+        assert len(result.theories) == 1
+        assert result.theories[0].theory_type == "innovation"
+
+    def test_parse_unknown_theory_type_coerced_to_other(self):
+        """An unrecognised theory_type (e.g. 'novel') is normalised to 'other'."""
+        raw = {
+            "product_markets": [],
+            "geographic_markets": [],
+            "theories_of_harm": [
+                {
+                    "name": "Novel theory",
+                    "theory_type": "novel_type_not_in_enum",
+                    "theory_outcome": "unclear",
+                    "notes": "Some notes.",
+                    "not_found": False,
+                    "passages": [],
+                }
+            ],
+            "overall_outcome": "unknown",
+            "source_passages": [],
+            "caveats": [],
+            "background_concepts": [],
+            "commitments": [],
+        }
+        result = _validate_extraction(raw, chunks=[], chunk_doc_map={})
+        assert len(result.theories) == 1
+        assert result.theories[0].theory_type == "other"
+
+    def test_parse_innovation_theory_with_passage(self):
+        """An innovation theory with a supporting passage is stored with it."""
+        raw = {
+            "product_markets": [],
+            "geographic_markets": [],
+            "theories_of_harm": [
+                {
+                    "name": "R&D rivalry reduction",
+                    "theory_type": "innovation",
+                    "theory_outcome": "upheld",
+                    "notes": "Reduction of innovation incentives.",
+                    "not_found": False,
+                    "passages": [
+                        {
+                            "chunk_id": "chunk_001",
+                            "page_number": 420,
+                            "quote": "The transaction eliminates an important pipeline competitor.",
+                            "source_role": "commission_assessment",
+                        }
+                    ],
+                }
+            ],
+            "overall_outcome": "cleared_with_conditions",
+            "source_passages": [],
+            "caveats": [],
+            "background_concepts": [],
+            "commitments": [],
+        }
+        result = _validate_extraction(raw, chunks=[], chunk_doc_map={})
+        assert result.theories[0].theory_type == "innovation"
+        assert len(result.theories[0].passages) == 1
+        assert "pipeline competitor" in result.theories[0].passages[0].quote
+
+    # ------------------------------------------------------------------ focus guardrails
+
+    def test_theories_focus_does_not_drop_innovation_theories(self):
+        """theories guardrail does not strip innovation theories."""
+        th = ExtractedTheory(name="R&D rivalry", theory_type="innovation",
+                             theory_outcome="upheld", notes="")
+        result = ExtractionResult(theories=[th])
+        out = _apply_focus_guardrails(result, "theories")
+        assert len(out.theories) == 1
+        assert out.theories[0].theory_type == "innovation"
+
+    def test_market_definition_focus_does_not_affect_theory_type(self):
+        """market_definition guardrail clears theories regardless of theory_type."""
+        th = ExtractedTheory(name="R&D rivalry", theory_type="innovation",
+                             theory_outcome="upheld", notes="")
+        result = ExtractionResult(theories=[th])
+        out = _apply_focus_guardrails(result, "market_definition")
+        assert len(out.theories) == 0
