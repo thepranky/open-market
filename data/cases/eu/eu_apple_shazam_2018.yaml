@@ -1,0 +1,283 @@
+case_id: eu_apple_shazam_2018
+case_name: "Apple / Shazam"
+jurisdiction: EU
+authority: European Commission
+decision_date: "2018-09-06"
+case_type: merger
+procedure_stage: phase2
+sector: digital / music recognition technology
+parties:
+  - name: Apple Inc.
+    role: acquirer
+  - name: Shazam Entertainment Limited
+    role: target
+outcome: cleared
+remedies: []
+theories_of_harm:
+  - theory_id: toh_1
+    name: Data advantage — music taste data for streaming advertising
+    description: >
+      Shazam collects granular music-preference and behavioural data from its
+      users. Post-Transaction, Apple could use this data to improve targeting
+      for Apple Music or to disadvantage rival streaming services in online
+      advertising, strengthening Apple Music's competitive position.
+  - theory_id: toh_2
+    name: Input foreclosure — removal of referral links to rival streaming services
+    description: >
+      Shazam generates referral traffic to multiple digital music streaming
+      apps (Spotify, Deezer, etc.) as well as Apple Music. Post-Transaction,
+      Apple could modify Shazam to steer users toward Apple Music and away
+      from rivals, damaging competitors' user-acquisition funnel.
+  - theory_id: toh_3
+    name: Conglomerate foreclosure — ACR software solutions
+    description: >
+      Apple's market power in mobile and desktop OS platforms could be
+      leveraged, post-Transaction, to foreclose competing ACR software
+      solution providers from access to Apple's ecosystem (iOS, macOS, Siri).
+
+product_markets_considered:
+  - market_id: pm_1
+    name: Digital music streaming apps for smart mobile devices
+    definition_status: defined
+    notes: >
+      Commission defined the narrowest relevant product market as digital music
+      streaming services (apps) for smart mobile devices, excluding video
+      streaming services (recital 99). Question whether downloading services form
+      part of the same market was left open; further segmentation by OS or app
+      type was also left open. Competitive assessment conducted on this narrowest
+      basis.
+  - market_id: pm_2
+    name: ACR software solutions / music recognition apps
+    definition_status: not_conclusive
+    notes: >
+      Commission assessed effects on the narrowest possible market (dedicated
+      stand-alone music recognition apps for smart mobile devices) as well as on
+      broader possible markets for ACR software solutions for PCs, smart mobile
+      devices, smart wearables, smart watches and smart TVs (recital 114).
+      Exact product market definition left open; segmentation by underlying
+      technology (fingerprinting vs. watermarking) also left open.
+  - market_id: pm_3
+    name: Licensing of music charts data / music data analytics
+    definition_status: left_open
+    notes: >
+      Commission investigated whether there is a market for the licensing of
+      music data (charts, analytics). Prior decisional practice does not address
+      this market. The Commission noted the Parties both license music chart
+      data but found no competitive overlap in user behavioural data (not
+      licensed to third parties). Exact market definition left open (recital 122).
+  - market_id: pm_4
+    name: Online advertising (including advertising in music recognition apps)
+    definition_status: left_open
+    notes: >
+      Shazam generates revenue from online advertising displayed in its app.
+      Commission assessed whether a distinct market for online advertising
+      targeting music enthusiasts exists. Question left open; assessment
+      conducted on the broader online advertising market as well as possible
+      narrower segments. No competition concerns found (Section 7.6).
+
+geographic_markets_considered:
+  - market_id: gm_1
+    name: Digital music streaming apps — EEA-wide or national (left open)
+    definition_status: left_open
+    notes: >
+      Commission left open whether the geographic market for digital music
+      streaming apps on smart mobile devices is EEA-wide or national; the
+      Concentration raises no significant impediment to effective competition
+      under any plausible geographic definition (recital 104).
+  - market_id: gm_2
+    name: Music recognition apps / ACR software solutions — at least EEA-wide
+    definition_status: defined
+    notes: >
+      Commission concluded the geographic scope is at least EEA-wide, given no
+      significant differences in customer demand across EEA countries (recital
+      118).
+  - market_id: gm_3
+    name: Online advertising — at least EEA-wide
+    definition_status: left_open
+    notes: >
+      Geographic scope of online advertising markets left open consistent with
+      prior Commission practice; no competition concerns identified.
+
+source_documents:
+  - doc_id: eu_apple_shazam_decision
+    title: "Case M.8788 – Apple / Shazam: Commission Decision"
+    case_page_url: "https://competition-cases.ec.europa.eu/cases/M.8788"
+    pdf_url: "https://ec.europa.eu/competition/mergers/cases/decisions/m8788_1279_3.pdf"
+    doc_type: decision
+    authority_reference: M.8788
+    retrieval_status: direct
+    published_date: "2018-09-06"
+
+source_passages:
+  - passage_id: sp_1
+    source_document_id: eu_apple_shazam_decision
+    page: "23"
+    paragraph: "99"
+    section: "7.3.1.2 Commission's assessment — digital music streaming apps"
+    quote_snippet: >
+      For the purposes of assessing the effects of the Concentration, the
+      Commission considers that the narrowest relevant product market is the one
+      for digital music streaming services for smart mobile devices, excluding
+      video streaming services, and the competitive assessment should therefore
+      be carried out on that basis.
+    extraction_method: manually_added
+    review_status: spot_checked
+    confidence_score: 0.97
+    last_checked_date: "2026-06-01"
+    supports_markets:
+      - pm_1
+  - passage_id: sp_2
+    source_document_id: eu_apple_shazam_decision
+    page: "24"
+    paragraph: "104"
+    section: "7.3.2.2 Commission's assessment — geographic market for digital music streaming"
+    quote_snippet: >
+      For the purposes of assessing the Concentration, the question as to whether
+      the geographic scope of the relevant product market for digital music
+      streaming apps on smart mobile devices is EEA-wide or national can be left
+      open as the Concentration would not significantly impede effective
+      competition under any plausible geographic market definition.
+    extraction_method: manually_added
+    review_status: spot_checked
+    confidence_score: 0.97
+    last_checked_date: "2026-06-01"
+    supports_markets:
+      - pm_1
+    supports_geographic_markets:
+      - gm_1
+  - passage_id: sp_3
+    source_document_id: eu_apple_shazam_decision
+    page: "25"
+    paragraph: "114"
+    section: "7.4.1.2 Commission's assessment — ACR software solutions / music recognition apps"
+    quote_snippet: >
+      Therefore, for the purposes of assessing the Concentration, the Commission
+      considers that the effects of the Concentration should be assessed on the
+      narrowest relevant product market for the provision of dedicated stand-alone
+      music recognition apps for smart mobile devices, as well as on the broader
+      possible markets for ACR software solutions for each of PCs, smart mobile
+      devices, smart wearables (including smart watches), smart watches and smart
+      TVs.
+    extraction_method: manually_added
+    review_status: spot_checked
+    confidence_score: 0.97
+    last_checked_date: "2026-06-01"
+    supports_markets:
+      - pm_2
+  - passage_id: sp_4
+    source_document_id: eu_apple_shazam_decision
+    page: "26"
+    paragraph: "118"
+    section: "7.4.2.2 Commission's assessment — geographic market for music recognition"
+    quote_snippet: >
+      Therefore, the Commission considers that, for the purposes of assessing the
+      Concentration, the geographic scope of the relevant product market is at
+      least EEA-wide.
+    extraction_method: manually_added
+    review_status: spot_checked
+    confidence_score: 0.97
+    last_checked_date: "2026-06-01"
+    supports_markets:
+      - pm_2
+    supports_geographic_markets:
+      - gm_2
+  - passage_id: sp_5
+    source_document_id: eu_apple_shazam_decision
+    page: "73"
+    paragraph: "Article 1"
+    section: "9. Conclusion / Article 1 — Operative part"
+    quote_snippet: >
+      The notified concentration resulting from the transaction whereby Apple,
+      Inc. acquires control, within the meaning of Article 3(1)(b) of the
+      Regulation (EC) No 139/2004, of the entire undertaking of Shazam
+      Entertainment Ltd. is declared compatible with the internal market and the
+      Agreement on the European Economic Area.
+    extraction_method: manually_added
+    review_status: spot_checked
+    confidence_score: 0.99
+    last_checked_date: "2026-06-01"
+    supports_markets: []
+
+similar_cases:
+  - case_id: eu_facebook_whatsapp_2014
+    score: 0.55
+    method: graph_feature_overlap
+    reasons:
+      - Both involve data-advantage theories in digital platforms
+      - Both involve a major platform acquirer obtaining user behavioural data
+  - case_id: eu_google_fitbit_2021
+    score: 0.60
+    method: graph_feature_overlap
+    reasons:
+      - Both involve data-advantage concerns in digital consumer platforms
+      - Both involve post-Transaction access to user preference data
+      - Both cleared with no/minimal structural remedies
+
+case_history:
+  status: final_no_known_challenge
+  events:
+    - event_type: procedural
+      event_date: "2018-03-14"
+      forum: European Commission
+      case_number: M.8788
+      title: Notification under Article 22(3) referral
+      review_status: spot_checked
+      summary: >
+        Concentration was notified to the Commission on 14 March 2018 following
+        a multi-NCA referral request initiated by Austria and joined by France,
+        Iceland, Italy, Norway, Spain and Sweden.
+    - event_type: procedural
+      event_date: "2018-04-23"
+      forum: European Commission
+      case_number: M.8788
+      title: Phase II investigation opened — Article 6(1)(c) decision
+      review_status: spot_checked
+      summary: >
+        After Phase I investigation, Commission found serious doubts as to
+        compatibility and opened Phase II proceedings under Article 6(1)(c),
+        focusing on data-advantage and foreclosure concerns in digital music
+        streaming and ACR software solutions.
+    - event_type: decision
+      event_date: "2018-09-06"
+      forum: European Commission
+      case_number: M.8788
+      title: Phase II decision — cleared unconditionally (Article 8(1))
+      outcome: cleared
+      review_status: spot_checked
+      summary: >
+        Commission cleared the acquisition unconditionally after Phase II
+        investigation. Found no significant impediment to effective competition
+        in digital music streaming apps, ACR software solutions, licensing of
+        music data, or online advertising. Decision not challenged before EU
+        courts.
+
+ai_summary: >
+  The European Commission cleared Apple's acquisition of Shazam in September 2018
+  after a Phase II investigation, unconditionally (no conditions or remedies). The
+  case was referred to the Commission by seven national competition authorities who
+  raised initial concerns. Three main theories of harm were investigated: (i) Apple
+  could exploit Shazam's music-preference user data to gain an advertising advantage
+  for Apple Music; (ii) Apple could modify Shazam to remove or degrade referral links
+  to rival streaming services; (iii) Apple could foreclose competing ACR software
+  solution providers via its platform ecosystem. The Commission found that Shazam's
+  data was not sufficiently large or unique to give Apple a meaningful advantage,
+  that the referral traffic from Shazam to rival services was commercially
+  insignificant, and that no evidence of ability or incentive to foreclose ACR
+  competitors was established. This case is a key early precedent for data-advantage
+  theories of harm in digital acquisitions and for the use of multi-NCA Article 22
+  referrals to bring sub-threshold deals under EC review.
+  [AI-generated summary — verify against source]
+
+metadata:
+  extraction_method: manually_added
+  review_status: spot_checked
+  overall_confidence: 0.90
+  created_date: "2026-06-01"
+  last_updated_date: "2026-06-01"
+  tags:
+    - digital
+    - music-recognition
+    - data-advantage
+    - acr-technology
+    - streaming
+    - article-22-referral
