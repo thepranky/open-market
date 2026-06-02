@@ -74,6 +74,10 @@ _VALID_OUTCOMES: frozenset[str] = frozenset({
     "cleared", "cleared_with_conditions", "blocked", "pending", "unknown",
 })
 
+_VALID_COMMITMENT_TYPES: frozenset[str] = frozenset({
+    "structural", "behavioral", "access", "other",
+})
+
 # Precise market definition status values (old values kept for backward compat).
 _VALID_MARKET_STATUSES: frozenset[str] = frozenset({
     "defined", "left_open", "discussed", "segmented", "unknown",      # legacy
@@ -134,6 +138,7 @@ _DEFAULT_EXTRACTION_ENVELOPE: dict = {
     "background_concepts": [],
     "case_history_events": [],
     "remedies": [],
+    "commitments": [],
 }
 
 # All list fields the extraction schema expects (including optional extras Claude may add).
@@ -144,6 +149,7 @@ _EXPECTED_LIST_FIELDS: tuple[str, ...] = (
     "caveats",
     "background_concepts",
     "remedies",
+    "commitments",
     "source_passages",
     "case_history_events",
 )
@@ -348,10 +354,23 @@ class ExtractedTheory:
 
 
 @dataclass
+class ExtractedCommitment:
+    title: str
+    commitment_type: str  # "structural" | "behavioral" | "access" | "other"
+    description: str
+    divested_assets: list[str] = field(default_factory=list)
+    purchaser_requirements: str = ""
+    markets_addressed: list[str] = field(default_factory=list)
+    passages: list[ExtractedPassage] = field(default_factory=list)
+    not_found: bool = False
+
+
+@dataclass
 class ExtractionResult:
     product_markets: list[ExtractedMarket] = field(default_factory=list)
     geographic_markets: list[ExtractedMarket] = field(default_factory=list)
     theories: list[ExtractedTheory] = field(default_factory=list)
+    commitments: list[ExtractedCommitment] = field(default_factory=list)
     overall_outcome: str = "unknown"
     caveats: list[str] = field(default_factory=list)
     background_concepts: list[str] = field(default_factory=list)
@@ -916,17 +935,25 @@ def _apply_focus_guardrails(
 ) -> ExtractionResult:
     """Strip out-of-scope proposition types from *result* based on *focus*.
 
-    market_definition: drop theories_of_harm; force overall_outcome to "unknown"
+    market_definition: drop theories_of_harm and commitments; force overall_outcome to "unknown"
                        so the run does not infer case outcome from training data.
-    theories:          drop product/geographic markets; force overall_outcome to "unknown".
+    theories:          drop product/geographic markets and commitments; force overall_outcome to "unknown".
+    remedies:          may populate commitments; markets and theories are still allowed if present.
+    None (full run):   all fields allowed.
+    All other focus modes (case_history, etc.): drop commitments.
     """
     if focus == "market_definition":
         result.theories = []
+        result.commitments = []
         result.overall_outcome = "unknown"
     elif focus == "theories":
         result.product_markets = []
         result.geographic_markets = []
+        result.commitments = []
         result.overall_outcome = "unknown"
+    elif focus not in (None, "remedies"):
+        # case_history and any future focus modes: no commitments
+        result.commitments = []
     return result
 
 
@@ -1110,7 +1137,75 @@ Do not create multiple entries for the same market at different hierarchical lev
     unless the Commission assessed them as genuinely separate relevant markets.
   - For each market, link all supporting passages via the nested "passages" array.
 
+COMMITMENTS / REMEDIES (for sections containing operative articles or conditions):
+If the supplied text consists of remedies, commitments, conditions of approval, or
+divestiture schedules, populate the `commitments` array instead of (or in addition to)
+the market/theory fields.
+
+Rules for commitment entries:
+  - Create one entry per distinct commitment or condition package (e.g. one entry for the
+    "Vegetable Seeds Divestment Business", a separate entry for the "GA Divestment Business").
+  - Set `commitment_type`:
+      "structural" — divestiture, spin-off, asset transfer, IP transfer
+      "behavioral" — ongoing conduct obligation (licensing, supply, access, non-compete)
+      "access"     — access remedy (data access, interoperability, customer access)
+      "other"      — conditions not fitting the above
+  - Copy `divested_assets` as a list of verbatim asset/business names from the text.
+  - Copy `purchaser_requirements` verbatim from the text if stated (e.g. "stand-alone viable
+    business", "approved by the Commission").
+  - Set `markets_addressed` to the market names explicitly linked to this commitment in the
+    text. Use [] if the text does not explicitly link the commitment to named markets.
+  - Include supporting `passages` as verbatim excerpts from the remedy/commitment text.
+  - Do NOT invent market definitions or competitive assessments from remedy schedules alone.
+  - If a passage quotes the operative clearance article (e.g. "Article 8(2)"), include it
+    as an unlinked source_passage supporting the overall outcome, not as a commitment entry.
+
 Use the record_extraction tool to return your findings."""
+
+_COMMITMENT_ITEM_SCHEMA = {
+    "type": "object",
+    "required": ["title", "commitment_type", "description", "not_found", "passages"],
+    "properties": {
+        "title": {
+            "type": "string",
+            "description": "Short descriptive title of this commitment or condition.",
+        },
+        "commitment_type": {
+            "type": "string",
+            "enum": sorted(_VALID_COMMITMENT_TYPES),
+            "description": (
+                "structural=divestiture or asset transfer; "
+                "behavioral=ongoing conduct obligation (e.g. licensing, supply, access); "
+                "access=access remedy (third-party, customer, data); "
+                "other=conditions not fitting above categories."
+            ),
+        },
+        "description": {
+            "type": "string",
+            "description": "Full description of the commitment scope, obligations, and conditions as stated in the text.",
+        },
+        "divested_assets": {
+            "type": "array",
+            "items": {"type": "string"},
+            "description": "List of specific assets, businesses, product lines, or IP to be divested. Use [] for non-structural commitments.",
+        },
+        "purchaser_requirements": {
+            "type": "string",
+            "description": "Requirements for the approved purchaser or trustee, if stated. Empty string if none.",
+        },
+        "markets_addressed": {
+            "type": "array",
+            "items": {"type": "string"},
+            "description": "Market names or IDs this commitment addresses. Use [] if not explicitly linked to specific markets in the text.",
+        },
+        "not_found": {"type": "boolean"},
+        "passages": {
+            "type": "array",
+            "items": None,  # filled with _PASSAGE_ITEM_SCHEMA after it is defined
+            "description": "Verbatim passages from the text supporting this commitment entry.",
+        },
+    },
+}
 
 _PASSAGE_ITEM_SCHEMA = {
     "type": "object",
@@ -1181,7 +1276,8 @@ _EXTRACTION_TOOL_SCHEMA = {
     "name": "record_extraction",
     "description": (
         "Record the structured extraction of product markets, geographic markets, "
-        "and theories of harm from the supplied merger decision text."
+        "theories of harm, and (for remedy sections) commitments from the supplied "
+        "merger decision text."
     ),
     "input_schema": {
         "type": "object",
@@ -1249,9 +1345,21 @@ _EXTRACTION_TOOL_SCHEMA = {
                     "appear in product_markets or geographic_markets. Return [] if none."
                 ),
             },
+            "commitments": {
+                "type": "array",
+                "description": (
+                    "Commitments, remedies, or conditions of approval found in the supplied text. "
+                    "Populate ONLY when the text contains remedy/commitment content (operative "
+                    "articles, divestiture schedules, conditions). Return [] if none found."
+                ),
+                "items": _COMMITMENT_ITEM_SCHEMA,
+            },
         },
     },
 }
+
+# Wire the passage item schema into _COMMITMENT_ITEM_SCHEMA (defined before _PASSAGE_ITEM_SCHEMA).
+_COMMITMENT_ITEM_SCHEMA["properties"]["passages"]["items"] = _PASSAGE_ITEM_SCHEMA
 
 
 def _format_chunks_for_prompt(chunks: list[ChunkInfo]) -> str:
@@ -1646,9 +1754,25 @@ def _validate_extraction(
             not_found=bool(th.get("not_found")),
         ))
 
+    commitments: list[ExtractedCommitment] = []
+    for cm in raw.get("commitments") or []:
+        cm_type = cm.get("commitment_type", "other")
+        if cm_type not in _VALID_COMMITMENT_TYPES:
+            cm_type = "other"
+        commitments.append(ExtractedCommitment(
+            title=cm.get("title", ""),
+            commitment_type=cm_type,
+            description=cm.get("description", ""),
+            divested_assets=list(cm.get("divested_assets") or []),
+            purchaser_requirements=cm.get("purchaser_requirements") or "",
+            markets_addressed=list(cm.get("markets_addressed") or []),
+            passages=_process_passages(cm.get("passages") or []),
+            not_found=bool(cm.get("not_found")),
+        ))
+
     # Detect orphan top-level source_passages (not referenced in any market/theory).
     nested_quotes: set[str] = set()
-    for item_list in (product_markets, geographic_markets, theories):
+    for item_list in (product_markets, geographic_markets, theories, commitments):
         for item in item_list:
             for p in item.passages:
                 nested_quotes.add(p.quote[:80])
@@ -1661,6 +1785,7 @@ def _validate_extraction(
         product_markets=product_markets,
         geographic_markets=geographic_markets,
         theories=theories,
+        commitments=commitments,
         overall_outcome=raw.get("overall_outcome", "unknown"),
         caveats=list(raw.get("caveats") or []),
         background_concepts=list(raw.get("background_concepts") or []),
@@ -1955,6 +2080,7 @@ def _merge_extraction_results(results: list[ExtractionResult]) -> ExtractionResu
     pm_list: list[ExtractedMarket] = []
     gm_list: list[ExtractedMarket] = []
     th_list: list[ExtractedTheory] = []
+    cm_list: list[ExtractedCommitment] = []
     caveats: list[str] = []
     background_concepts: list[str] = []
     overall_outcome = "unknown"
@@ -1979,6 +2105,20 @@ def _merge_extraction_results(results: list[ExtractionResult]) -> ExtractionResu
             else:
                 existing_list.append(item)
 
+    def _dedup_merge_commitments(incoming: list[ExtractedCommitment], existing_list: list) -> None:
+        for item in incoming:
+            best_sim = 0.0
+            best_idx = -1
+            for i, ex in enumerate(existing_list):
+                sim = _similarity(item.title, ex.title)
+                if sim > best_sim:
+                    best_sim, best_idx = sim, i
+            if best_sim >= _SIMILARITY_MATCH and best_idx >= 0:
+                if _validated_count(item) > _validated_count(existing_list[best_idx]):
+                    existing_list[best_idx] = item
+            else:
+                existing_list.append(item)
+
     def _dedup_merge_geo(incoming: list[ExtractedMarket], existing_list: list[ExtractedMarket]) -> None:
         """Merge geographic markets, combining notes and keeping the stronger status."""
         for item in incoming:
@@ -1997,6 +2137,7 @@ def _merge_extraction_results(results: list[ExtractionResult]) -> ExtractionResu
         _dedup_merge(r.product_markets, pm_list)
         _dedup_merge_geo(r.geographic_markets, gm_list)
         _dedup_merge(r.theories, th_list)
+        _dedup_merge_commitments(r.commitments, cm_list)
         # Prefix each caveat with its section label so the merged list stays navigable.
         _lbl = r.section_label.strip() if r.section_label else ""
         for c in r.caveats:
@@ -2011,6 +2152,7 @@ def _merge_extraction_results(results: list[ExtractionResult]) -> ExtractionResu
         product_markets=pm_list,
         geographic_markets=gm_list,
         theories=th_list,
+        commitments=cm_list,
         overall_outcome=overall_outcome,
         caveats=caveats,
         # Deduplicate background_concepts preserving first-occurrence order
@@ -2068,6 +2210,11 @@ def _build_draft_record(
         if not th.not_found:
             toh_with_ids.append((f"toh_{len(toh_with_ids) + 1}", th))
 
+    cm_with_ids: list[tuple[str, ExtractedCommitment]] = []
+    for cm in result.commitments:
+        if not cm.not_found:
+            cm_with_ids.append((f"com_{len(cm_with_ids) + 1}", cm))
+
     def _market_entry(mid: str, m: "ExtractedMarket") -> dict:
         entry: dict = {
             "market_id": mid,
@@ -2096,6 +2243,22 @@ def _build_draft_record(
         for tid, th in toh_with_ids
     ]
 
+    # Commitments — built before passage collection so passage IDs can be back-linked.
+    draft["commitments"] = [
+        {
+            "commitment_id": cid,
+            "commitment_type": cm.commitment_type,
+            "title": cm.title,
+            "description": cm.description,
+            "divested_assets": cm.divested_assets,
+            "purchaser_requirements": cm.purchaser_requirements or None,
+            "markets_addressed": cm.markets_addressed,
+            "related_source_passages": [],  # filled during passage collection below
+            "review_status": "unreviewed",
+        }
+        for cid, cm in cm_with_ids
+    ]
+
     # Collect validated passages only.
     passages: list[dict] = []
     sp_n = 0
@@ -2105,6 +2268,7 @@ def _build_draft_record(
         support_pm: bool = False,
         support_gm: bool = False,
         support_toh: bool = False,
+        support_cm: bool = False,
     ) -> None:
         nonlocal sp_n
         for prop_id, item in with_ids:
@@ -2112,8 +2276,9 @@ def _build_draft_record(
                 if not ep.validated:
                     continue
                 sp_n += 1
+                sp_id = f"sp_{sp_n}"
                 passages.append({
-                    "passage_id": f"sp_{sp_n}",
+                    "passage_id": sp_id,
                     "source_document_id": ep.source_document_id,
                     "page": str(ep.page_number),
                     "quote_snippet": ep.quote,
@@ -2124,11 +2289,18 @@ def _build_draft_record(
                     "supports_markets": [prop_id] if support_pm else [],
                     "supports_geographic_markets": [prop_id] if support_gm else [],
                     "supports_theories": [prop_id] if support_toh else [],
+                    "supports_commitments": [prop_id] if support_cm else [],
                 })
+                if support_cm:
+                    # Back-link: add this passage ID to the commitment's related_source_passages.
+                    for com_entry in draft["commitments"]:
+                        if com_entry["commitment_id"] == prop_id:
+                            com_entry["related_source_passages"].append(sp_id)
 
     _add_passages(pm_with_ids, support_pm=True)
     _add_passages(gm_with_ids, support_gm=True)
     _add_passages(toh_with_ids, support_toh=True)
+    _add_passages(cm_with_ids, support_cm=True)
 
     draft["source_passages"] = passages
     return draft

@@ -324,6 +324,7 @@ def write_review_report(
             f"- Product markets found: {len(r.product_markets)}",
             f"- Geographic markets found: {len(r.geographic_markets)}",
             f"- Theories of harm: {len(r.theories)}",
+            f"- Commitments found: {len(r.commitments)}",
             f"- Passages validated: {r.passages_validated}",
             f"- Passages rejected: {r.passages_rejected}",
             "",

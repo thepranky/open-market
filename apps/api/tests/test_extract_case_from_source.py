@@ -18,6 +18,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "scripts"))
 
 from extract_case_from_source import (
     ChunkInfo,
+    ExtractedCommitment,
     ExtractedMarket,
     ExtractedPassage,
     ExtractedTheory,
@@ -27,7 +28,9 @@ from extract_case_from_source import (
     _GEO_CONTEXT_MIN_OVERLAP,
     _PROMOTION_ACTIONS,
     _RECON_GROUP,
+    _VALID_COMMITMENT_TYPES,
     _VALID_MARKET_IMPORTANCE,
+    _EXTRACTION_TOOL_SCHEMA,
     _apply_focus_guardrails,
     _build_canonical_merge_candidates,
     _build_promotion_plan,
@@ -8274,3 +8277,279 @@ class TestFilterChunksToRange:
         chunks = [self._chunk(f"c{i}", [i * 10]) for i in range(1, 6)]
         result = _filter_chunks_to_range(chunks, (1, 100))
         assert len(result) == 5
+
+
+# ---------------------------------------------------------------------------
+# TestCommitmentsSupport
+# ---------------------------------------------------------------------------
+
+def _make_commitment(
+    title: str = "Test Divestiture",
+    commitment_type: str = "structural",
+    description: str = "Divestiture of test assets.",
+    not_found: bool = False,
+    passages: list | None = None,
+) -> ExtractedCommitment:
+    return ExtractedCommitment(
+        title=title,
+        commitment_type=commitment_type,
+        description=description,
+        divested_assets=["Test Asset A"],
+        purchaser_requirements="Standalone viable buyer",
+        markets_addressed=[],
+        passages=passages or [],
+        not_found=not_found,
+    )
+
+
+def _make_validated_passage(
+    chunk_id: str = "chunk_001",
+    page: int = 100,
+    quote: str = "The parties shall divest the Test Business.",
+    doc_id: str = "test_decision",
+) -> ExtractedPassage:
+    return ExtractedPassage(
+        chunk_id=chunk_id,
+        page_number=page,
+        quote=quote,
+        validated=True,
+        source_document_id=doc_id,
+        source_role="commission_assessment",
+    )
+
+
+class TestCommitmentsSupport:
+    """Additive commitments[] support for remedies extraction."""
+
+    # ------------------------------------------------------------------ schema
+
+    def test_tool_schema_has_commitments_property(self):
+        """The LLM tool schema exposes a commitments array field."""
+        props = _EXTRACTION_TOOL_SCHEMA["input_schema"]["properties"]
+        assert "commitments" in props
+        assert props["commitments"]["type"] == "array"
+
+    def test_commitment_item_schema_required_fields(self):
+        """Commitment item schema has the expected required fields."""
+        props = _EXTRACTION_TOOL_SCHEMA["input_schema"]["properties"]
+        item_schema = props["commitments"]["items"]
+        required = set(item_schema["required"])
+        assert required >= {"title", "commitment_type", "description", "not_found", "passages"}
+
+    def test_valid_commitment_types_set(self):
+        """All expected commitment types are in the valid set."""
+        assert "structural" in _VALID_COMMITMENT_TYPES
+        assert "behavioral" in _VALID_COMMITMENT_TYPES
+        assert "access" in _VALID_COMMITMENT_TYPES
+        assert "other" in _VALID_COMMITMENT_TYPES
+
+    def test_default_extraction_envelope_has_commitments(self):
+        """The default envelope guarantees commitments: [] even when Claude omits it."""
+        assert "commitments" in _DEFAULT_EXTRACTION_ENVELOPE
+        assert _DEFAULT_EXTRACTION_ENVELOPE["commitments"] == []
+
+    # ------------------------------------------------------------------ guardrails
+
+    def test_remedies_focus_keeps_commitments(self):
+        """remedies focus leaves commitments populated."""
+        cm = _make_commitment()
+        result = ExtractionResult(commitments=[cm])
+        out = _apply_focus_guardrails(result, "remedies")
+        assert len(out.commitments) == 1
+
+    def test_market_definition_focus_drops_commitments(self):
+        """market_definition focus clears commitments."""
+        cm = _make_commitment()
+        result = ExtractionResult(commitments=[cm])
+        out = _apply_focus_guardrails(result, "market_definition")
+        assert out.commitments == []
+
+    def test_theories_focus_drops_commitments(self):
+        """theories focus clears commitments."""
+        cm = _make_commitment()
+        result = ExtractionResult(commitments=[cm])
+        out = _apply_focus_guardrails(result, "theories")
+        assert out.commitments == []
+
+    def test_case_history_focus_drops_commitments(self):
+        """case_history focus clears commitments."""
+        cm = _make_commitment()
+        result = ExtractionResult(commitments=[cm])
+        out = _apply_focus_guardrails(result, "case_history")
+        assert out.commitments == []
+
+    def test_no_focus_keeps_commitments(self):
+        """A full run (focus=None) allows commitments to remain."""
+        cm = _make_commitment()
+        result = ExtractionResult(commitments=[cm])
+        out = _apply_focus_guardrails(result, None)
+        assert len(out.commitments) == 1
+
+    def test_theories_focus_still_drops_markets(self):
+        """theories guardrail still drops product/geo markets (regression)."""
+        pm = ExtractedMarket(name="Test market", market_type="product",
+                             definition_status="defined", notes="")
+        result = ExtractionResult(product_markets=[pm])
+        out = _apply_focus_guardrails(result, "theories")
+        assert out.product_markets == []
+
+    # ------------------------------------------------------------------ parse
+
+    def test_parse_commitments_from_raw(self):
+        """_validate_extraction turns a raw commitments list into ExtractedCommitment objects."""
+        raw = {
+            "product_markets": [],
+            "geographic_markets": [],
+            "theories_of_harm": [],
+            "overall_outcome": "cleared_with_conditions",
+            "source_passages": [],
+            "caveats": [],
+            "commitments": [
+                {
+                    "title": "Vegetable Seeds Divestment",
+                    "commitment_type": "structural",
+                    "description": "Bayer shall divest its vegetable seeds business.",
+                    "divested_assets": ["Vegetable Seeds Business"],
+                    "purchaser_requirements": "Standalone viable buyer",
+                    "markets_addressed": [],
+                    "not_found": False,
+                    "passages": [],
+                }
+            ],
+        }
+        result = _validate_extraction(raw, chunks=[], chunk_doc_map={})
+        assert len(result.commitments) == 1
+        cm = result.commitments[0]
+        assert cm.title == "Vegetable Seeds Divestment"
+        assert cm.commitment_type == "structural"
+        assert cm.divested_assets == ["Vegetable Seeds Business"]
+        assert cm.purchaser_requirements == "Standalone viable buyer"
+        assert not cm.not_found
+
+    def test_parse_unknown_commitment_type_coerced_to_other(self):
+        """An unrecognised commitment_type is coerced to 'other'."""
+        raw = {
+            "product_markets": [],
+            "geographic_markets": [],
+            "theories_of_harm": [],
+            "overall_outcome": "unknown",
+            "source_passages": [],
+            "caveats": [],
+            "commitments": [
+                {
+                    "title": "Mystery remedy",
+                    "commitment_type": "something_invalid",
+                    "description": "Desc.",
+                    "not_found": False,
+                    "passages": [],
+                }
+            ],
+        }
+        result = _validate_extraction(raw, chunks=[], chunk_doc_map={})
+        assert result.commitments[0].commitment_type == "other"
+
+    def test_parse_missing_commitments_key_returns_empty(self):
+        """When Claude omits 'commitments', the result has an empty list."""
+        raw = {
+            "product_markets": [],
+            "geographic_markets": [],
+            "theories_of_harm": [],
+            "overall_outcome": "unknown",
+            "source_passages": [],
+            "caveats": [],
+        }
+        result = _validate_extraction(raw, chunks=[], chunk_doc_map={})
+        assert result.commitments == []
+
+    # ------------------------------------------------------------------ draft build
+
+    def test_build_draft_record_includes_commitments(self):
+        """_build_draft_record emits a commitments[] key in the draft."""
+        passage = _make_validated_passage()
+        cm = _make_commitment(passages=[passage])
+        result = ExtractionResult(commitments=[cm], overall_outcome="cleared_with_conditions")
+        existing = _make_record()
+        draft = _build_draft_record(result, existing)
+        assert "commitments" in draft
+        assert len(draft["commitments"]) == 1
+        entry = draft["commitments"][0]
+        assert entry["commitment_id"] == "com_1"
+        assert entry["commitment_type"] == "structural"
+        assert entry["title"] == "Test Divestiture"
+        assert entry["review_status"] == "unreviewed"
+
+    def test_build_draft_passage_supports_commitments(self):
+        """Source passages for commitments carry a supports_commitments back-reference."""
+        passage = _make_validated_passage()
+        cm = _make_commitment(passages=[passage])
+        result = ExtractionResult(commitments=[cm], overall_outcome="cleared_with_conditions")
+        draft = _build_draft_record(result, _make_record())
+        sp = draft["source_passages"][0]
+        assert sp["supports_commitments"] == ["com_1"]
+        assert sp["supports_markets"] == []
+        assert sp["supports_theories"] == []
+
+    def test_build_draft_commitment_related_passage_backlink(self):
+        """related_source_passages on the commitment entry references the passage ID."""
+        passage = _make_validated_passage()
+        cm = _make_commitment(passages=[passage])
+        result = ExtractionResult(commitments=[cm], overall_outcome="cleared_with_conditions")
+        draft = _build_draft_record(result, _make_record())
+        com_entry = draft["commitments"][0]
+        assert "sp_1" in com_entry["related_source_passages"]
+
+    def test_build_draft_not_found_commitment_excluded(self):
+        """Commitments with not_found=True are excluded from the draft."""
+        cm = _make_commitment(not_found=True)
+        result = ExtractionResult(commitments=[cm])
+        draft = _build_draft_record(result, _make_record())
+        assert draft["commitments"] == []
+
+    def test_build_draft_no_commitments_emits_empty_list(self):
+        """When result has no commitments, draft still has commitments: []."""
+        result = ExtractionResult()
+        draft = _build_draft_record(result, _make_record())
+        assert "commitments" in draft
+        assert draft["commitments"] == []
+
+    # ------------------------------------------------------------------ merge
+
+    def test_merge_deduplicates_identical_commitment_titles(self):
+        """_merge_extraction_results deduplicates commitments with the same title."""
+        cm_a = _make_commitment(title="Vegetable Seeds Divestment")
+        cm_b = _make_commitment(title="Vegetable Seeds Divestment")
+        r1 = ExtractionResult(commitments=[cm_a])
+        r2 = ExtractionResult(commitments=[cm_b])
+        merged = _merge_extraction_results([r1, r2])
+        assert len(merged.commitments) == 1
+
+    def test_merge_keeps_distinct_commitments(self):
+        """_merge_extraction_results keeps commitments with different titles."""
+        cm_a = _make_commitment(title="Vegetable Seeds Divestment")
+        cm_b = _make_commitment(title="GA Divestment Business")
+        r1 = ExtractionResult(commitments=[cm_a])
+        r2 = ExtractionResult(commitments=[cm_b])
+        merged = _merge_extraction_results([r1, r2])
+        assert len(merged.commitments) == 2
+
+    def test_merge_prefers_richer_commitment(self):
+        """When duplicates exist, the one with more validated passages wins."""
+        p1 = _make_validated_passage(quote="Passage one.")
+        p2 = _make_validated_passage(quote="Passage two.")
+        cm_sparse = _make_commitment(title="Vegetable Seeds Divestment", passages=[p1])
+        cm_rich = _make_commitment(title="Vegetable Seeds Divestment", passages=[p1, p2])
+        r1 = ExtractionResult(commitments=[cm_sparse])
+        r2 = ExtractionResult(commitments=[cm_rich])
+        merged = _merge_extraction_results([r1, r2])
+        assert len(merged.commitments[0].passages) == 2
+
+    def test_remedies_focus_does_not_drop_markets_or_theories(self):
+        """remedies guardrail does not clear product markets or theories of harm."""
+        pm = ExtractedMarket(name="Seeds market", market_type="product",
+                             definition_status="defined", notes="")
+        th = ExtractedTheory(name="NSH overlap", theory_type="horizontal",
+                             theory_outcome="upheld", notes="")
+        result = ExtractionResult(product_markets=[pm], theories=[th])
+        out = _apply_focus_guardrails(result, "remedies")
+        assert len(out.product_markets) == 1
+        assert len(out.theories) == 1

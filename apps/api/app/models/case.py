@@ -57,6 +57,13 @@ class VerificationStatus(str, Enum):
     no_source_linked = "no_source_linked"
 
 
+class CommitmentType(str, Enum):
+    structural = "structural"
+    behavioral = "behavioral"
+    access = "access"
+    other = "other"
+
+
 class RetrievalStatus(str, Enum):
     direct = "direct"
     fallback = "fallback"
@@ -117,6 +124,7 @@ class SourcePassage(BaseModel):
     supports_markets: list[str] = Field(default_factory=list)
     supports_geographic_markets: list[str] = Field(default_factory=list)
     supports_theories: list[str] = Field(default_factory=list)
+    supports_commitments: list[str] = Field(default_factory=list)
 
 
 class SourceDocument(BaseModel):
@@ -160,6 +168,18 @@ class TheoryOfHarm(BaseModel):
     verification: Optional[PropositionVerification] = None
 
 
+class Commitment(BaseModel):
+    commitment_id: str
+    commitment_type: CommitmentType
+    title: str
+    description: str
+    divested_assets: list[str] = Field(default_factory=list)
+    purchaser_requirements: Optional[str] = None
+    markets_addressed: list[str] = Field(default_factory=list)
+    related_source_passages: list[str] = Field(default_factory=list)
+    review_status: ReviewStatus = ReviewStatus.unreviewed
+
+
 class SimilarCase(BaseModel):
     case_id: str
     score: float = Field(ge=0.0, le=1.0)
@@ -188,6 +208,7 @@ class CaseRecord(BaseModel):
     parties: list[Party]
     outcome: Outcome
     remedies: list[str] = Field(default_factory=list)
+    commitments: list[Commitment] = Field(default_factory=list)
     theories_of_harm: list[TheoryOfHarm] = Field(default_factory=list)
     product_markets_considered: list[ProductMarket] = Field(default_factory=list)
     geographic_markets_considered: list[GeographicMarket] = Field(default_factory=list)
