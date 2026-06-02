@@ -1,0 +1,831 @@
+#!/usr/bin/env python3
+"""
+merge_drafts.py — Merge multiple partial extraction drafts into one reviewable draft.
+
+Reads two or more draft YAMLs for the same case_id, deduplicates records,
+rewrites cross-reference IDs, and writes a single merged draft YAML.
+
+Does NOT promote to canonical. Does NOT modify data/cases/.
+
+Usage:
+    apps/api/.venv/bin/python apps/api/scripts/merge_drafts.py \\
+        data/drafts/eu/eu_bayer_monsanto_2018.outcome_metadata.outcome_pp1_30_v3.draft.yaml \\
+        data/drafts/eu/eu_bayer_monsanto_2018.theories.theories_innovation_process_382.draft.yaml \\
+        data/drafts/eu/eu_bayer_monsanto_2018.remedies.remedies_vegseeds_basf_adequacy_803.draft.yaml
+
+    # Dry run — print merged YAML, do not write
+    ... --dry-run
+
+    # Custom output path
+    ... --output /tmp/merged.yaml
+
+    # Validate that all drafts match a specific case ID
+    ... --case-id eu_bayer_monsanto_2018
+"""
+
+import argparse
+import datetime
+import re
+import sys
+from pathlib import Path
+from typing import Any, Optional
+
+import yaml
+
+_SCRIPTS_DIR = Path(__file__).resolve().parent
+_API_DIR = _SCRIPTS_DIR.parent
+_REPO_ROOT = _API_DIR.parents[1]
+
+sys.path.insert(0, str(_API_DIR))
+
+# ---------------------------------------------------------------------------
+# YAML output helpers (shared with promote_draft_to_canonical)
+# ---------------------------------------------------------------------------
+
+class _MergedDumper(yaml.SafeDumper):
+    """SafeDumper with block-scalar strings and ISO-formatted dates."""
+
+
+def _str_representer(dumper: yaml.SafeDumper, data: str) -> yaml.ScalarNode:
+    if len(data) > 80 or "\n" in data:
+        cleaned = "\n".join(line.rstrip() for line in data.splitlines()).rstrip() + "\n"
+        return dumper.represent_scalar("tag:yaml.org,2002:str", cleaned, style="|")
+    return dumper.represent_scalar("tag:yaml.org,2002:str", data)
+
+
+def _date_representer(dumper: yaml.SafeDumper, data: datetime.date) -> yaml.ScalarNode:
+    return dumper.represent_scalar("tag:yaml.org,2002:str", data.isoformat())
+
+
+_MergedDumper.add_representer(str, _str_representer)
+_MergedDumper.add_representer(datetime.date, _date_representer)
+
+
+def _dump_yaml(data: dict) -> str:
+    return yaml.dump(
+        data,
+        Dumper=_MergedDumper,
+        default_flow_style=False,
+        allow_unicode=True,
+        sort_keys=False,
+        width=90,
+    )
+
+# ---------------------------------------------------------------------------
+# Normalisation helpers
+# ---------------------------------------------------------------------------
+
+def _norm(text: str) -> str:
+    """Lowercase, collapse whitespace, strip leading/trailing space."""
+    return re.sub(r"\s+", " ", (text or "").lower()).strip()
+
+
+def _passage_key(p: dict) -> tuple:
+    """Dedup key for a source passage."""
+    return (
+        _norm(p.get("quote_snippet", ""))[:160],
+        str(p.get("page", "") or "").strip(),
+        str(p.get("source_document_id", "") or "").strip(),
+    )
+
+
+def _theory_key(t: dict) -> tuple:
+    """Dedup key for a theory_of_harm."""
+    return (
+        _norm(t.get("name", ""))[:80],
+        str(t.get("theory_type", "") or "").strip().lower(),
+    )
+
+
+def _commitment_key(c: dict) -> tuple:
+    """Dedup key for a commitment."""
+    return (
+        _norm(c.get("title", ""))[:80],
+        str(c.get("commitment_type", "") or "").strip().lower(),
+    )
+
+
+def _market_key(m: dict) -> str:
+    """Dedup key for a product or geographic market."""
+    return _norm(m.get("name", ""))[:80]
+
+# ---------------------------------------------------------------------------
+# ID map
+# ---------------------------------------------------------------------------
+
+class _IdMap:
+    """Track (draft_idx, old_id) -> new_global_id."""
+
+    def __init__(self) -> None:
+        self._map: dict[tuple[int, str], str] = {}
+
+    def register(self, draft_idx: int, old_id: str, new_id: str) -> None:
+        self._map[(draft_idx, old_id)] = new_id
+
+    def get(self, draft_idx: int, old_id: str) -> str:
+        return self._map.get((draft_idx, old_id), old_id)
+
+    def rewrite_list(self, draft_idx: int, ids: list) -> list:
+        seen: set = set()
+        out: list = []
+        for old in ids or []:
+            new = self.get(draft_idx, str(old))
+            if new not in seen:
+                seen.add(new)
+                out.append(new)
+        return out
+
+# ---------------------------------------------------------------------------
+# Metadata helpers
+# ---------------------------------------------------------------------------
+
+_UNKNOWN_SENTINELS = frozenset({"unknown", "", None})
+
+def _is_empty(v: Any) -> bool:
+    """True if value should be treated as absent/unknown."""
+    if v is None:
+        return True
+    if isinstance(v, str) and v.strip().lower() in _UNKNOWN_SENTINELS:
+        return True
+    if isinstance(v, list) and len(v) == 0:
+        return True
+    return False
+
+
+def _focus_of(path: Path) -> str:
+    """Extract focus segment from a draft filename.
+
+    e.g. eu_bayer_monsanto_2018.outcome_metadata.outcome_pp1_30.draft.yaml
+         -> outcome_metadata
+    """
+    stem = path.name  # e.g. "eu_bayer_monsanto_2018.outcome_metadata.foo.draft.yaml"
+    # Remove trailing ".draft.yaml"
+    if stem.endswith(".draft.yaml"):
+        stem = stem[: -len(".draft.yaml")]
+    parts = stem.split(".")
+    # parts[0] = case_id, parts[1] = focus, parts[2...] = sub-focus
+    if len(parts) >= 2:
+        return parts[1]
+    return ""
+
+
+def _pick_metadata(drafts: list[dict], paths: list[Path]) -> dict:
+    """Return merged scalar metadata, preferring outcome_metadata drafts."""
+    outcome_meta_idxs = [
+        i for i, p in enumerate(paths)
+        if _focus_of(p) == "outcome_metadata"
+    ]
+
+    scalar_fields = [
+        "case_name", "authority", "jurisdiction", "sector",
+        "outcome", "procedure_stage", "decision_date", "authority_reference",
+    ]
+    # Fields where outcome_metadata draft wins
+    outcome_priority_fields = frozenset({
+        "outcome", "procedure_stage", "decision_date", "authority_reference",
+    })
+
+    result: dict = {}
+
+    for field in scalar_fields:
+        # Try outcome_metadata drafts first for priority fields
+        if field in outcome_priority_fields and outcome_meta_idxs:
+            for i in outcome_meta_idxs:
+                v = drafts[i].get(field)
+                if not _is_empty(v):
+                    result[field] = v
+                    break
+
+        # Fall back to first non-empty value across all drafts
+        if field not in result or _is_empty(result.get(field)):
+            for d in drafts:
+                v = d.get(field)
+                if not _is_empty(v):
+                    result[field] = v
+                    break
+
+    # parties: prefer outcome_metadata draft, else first non-empty
+    for i in (outcome_meta_idxs or range(len(drafts))):
+        parties = drafts[i].get("parties")
+        if parties:
+            result["parties"] = parties
+            break
+    if "parties" not in result:
+        for d in drafts:
+            if d.get("parties"):
+                result["parties"] = d["parties"]
+                break
+    if "parties" not in result:
+        result["parties"] = []
+
+    return result
+
+# ---------------------------------------------------------------------------
+# Source document merge (dedup by doc_id)
+# ---------------------------------------------------------------------------
+
+def _merge_source_documents(drafts: list[dict]) -> list[dict]:
+    seen: dict[str, dict] = {}
+    for d in drafts:
+        for doc in d.get("source_documents") or []:
+            doc_id = doc.get("doc_id", "")
+            if doc_id not in seen:
+                seen[doc_id] = dict(doc)
+            else:
+                # Fill in any missing fields from duplicate
+                for k, v in doc.items():
+                    if not _is_empty(v) and _is_empty(seen[doc_id].get(k)):
+                        seen[doc_id][k] = v
+    return list(seen.values())
+
+# ---------------------------------------------------------------------------
+# Record deduplication
+# ---------------------------------------------------------------------------
+
+def _merge_records(
+    items: list[tuple[int, dict]],
+    key_fn,
+    prefix: str,
+    id_field: str,
+    id_map: _IdMap,
+    warnings: list[str],
+    *,
+    union_fields: Optional[list[str]] = None,
+    per_draft_ref_fields: Optional[list[str]] = None,
+    description_field: Optional[str] = None,
+) -> list[dict]:
+    """
+    Deduplicate records, assign new sequential IDs, register in id_map.
+
+    items: [(draft_idx, record_dict), ...]
+    key_fn: record -> hashable key
+    prefix: 'pm_', 'gm_', 'toh_', 'com_', 'sp_'
+    id_field: field name holding the ID ('market_id', 'theory_id', etc.)
+    id_map: IdMap to register (draft_idx, old_id) -> new_id
+    union_fields: non-ID list fields to union directly (safe to union before rewrite)
+    per_draft_ref_fields: ID-reference list fields that must be tracked per draft index
+        and rewritten in the cross-ref rewriting phase.  Stored as
+        _per_draft_refs_{field}: [(draft_idx, [old_id, ...]), ...] on the merged record.
+    description_field: field whose value should be kept as the richer one
+    """
+    # canonical_key -> (new_id, merged_record)
+    canonical: dict[Any, tuple[str, dict]] = {}
+    counter = 1
+    collapsed = 0
+
+    for draft_idx, rec in items:
+        key = key_fn(rec)
+        old_id = rec.get(id_field, "")
+
+        if key not in canonical:
+            new_id = f"{prefix}{counter}"
+            counter += 1
+            merged = dict(rec)
+            merged[id_field] = new_id
+            # Seed the per-draft ref accumulator for each tracked field
+            for f in (per_draft_ref_fields or []):
+                merged[f"_per_draft_refs_{f}"] = [(draft_idx, list(rec.get(f) or []))]
+            canonical[key] = (new_id, merged)
+            id_map.register(draft_idx, old_id, new_id)
+        else:
+            new_id, merged = canonical[key]
+            id_map.register(draft_idx, old_id, new_id)
+            collapsed += 1
+
+            # Accumulate per-draft ID-reference lists (rewritten later)
+            for f in (per_draft_ref_fields or []):
+                acc_key = f"_per_draft_refs_{f}"
+                merged.setdefault(acc_key, []).append((draft_idx, list(rec.get(f) or [])))
+
+            # Union non-ID list fields directly
+            for f in (union_fields or []):
+                existing = merged.get(f) or []
+                incoming = rec.get(f) or []
+                merged_vals = list(existing)
+                for v in incoming:
+                    if v not in merged_vals:
+                        merged_vals.append(v)
+                merged[f] = merged_vals
+
+            # Keep richer description
+            if description_field:
+                existing_desc = merged.get(description_field) or ""
+                incoming_desc = rec.get(description_field) or ""
+                if len(incoming_desc) > len(existing_desc):
+                    merged[description_field] = incoming_desc
+                elif incoming_desc and incoming_desc != existing_desc:
+                    warnings.append(
+                        f"WARN: merged {prefix.rstrip('_')} '{new_id}': "
+                        f"conflicting '{description_field}' values — keeping longer."
+                    )
+
+            # Fill non-empty scalar/list fields
+            for k, v in rec.items():
+                if k in (id_field, description_field or ""):
+                    continue
+                if k in (per_draft_ref_fields or []):
+                    continue  # handled separately
+                if not _is_empty(v) and _is_empty(merged.get(k)):
+                    merged[k] = v
+
+    if collapsed:
+        warnings.append(
+            f"INFO: {prefix.rstrip('_')}: {collapsed} duplicate(s) collapsed."
+        )
+
+    return [rec for _, rec in canonical.values()]
+
+
+def _merge_passages(
+    items: list[tuple[int, dict]],
+    id_map: _IdMap,
+    warnings: list[str],
+) -> list[dict]:
+    """Deduplicate passages and track per-draft ID-reference lists for later rewriting."""
+    return _merge_records(
+        items,
+        _passage_key,
+        "sp_",
+        "passage_id",
+        id_map,
+        warnings,
+        per_draft_ref_fields=[
+            "supports_markets",
+            "supports_geographic_markets",
+            "supports_theories",
+            "supports_commitments",
+        ],
+        description_field=None,
+    )
+
+
+def _merge_theories(
+    items: list[tuple[int, dict]],
+    id_map: _IdMap,
+    warnings: list[str],
+) -> list[dict]:
+    return _merge_records(
+        items,
+        _theory_key,
+        "toh_",
+        "theory_id",
+        id_map,
+        warnings,
+        description_field="description",
+    )
+
+
+def _merge_commitments(
+    items: list[tuple[int, dict]],
+    id_map: _IdMap,
+    warnings: list[str],
+) -> list[dict]:
+    return _merge_records(
+        items,
+        _commitment_key,
+        "com_",
+        "commitment_id",
+        id_map,
+        warnings,
+        union_fields=["divested_assets", "markets_addressed"],
+        per_draft_ref_fields=["related_source_passages"],
+        description_field="description",
+    )
+
+
+def _merge_markets(
+    items: list[tuple[int, dict]],
+    id_map: _IdMap,
+    prefix: str,
+    id_field: str,
+    warnings: list[str],
+) -> list[dict]:
+    return _merge_records(
+        items,
+        _market_key,
+        prefix,
+        id_field,
+        id_map,
+        warnings,
+        union_fields=[],
+        description_field="notes",
+    )
+
+# ---------------------------------------------------------------------------
+# Cross-reference rewriting
+# ---------------------------------------------------------------------------
+
+_PASSAGE_REF_FIELDS = [
+    "supports_markets",
+    "supports_geographic_markets",
+    "supports_theories",
+    "supports_commitments",
+]
+_COMMITMENT_REF_FIELDS = ["related_source_passages"]
+
+
+def _rewrite_per_draft_refs(
+    record: dict,
+    ref_fields: list[str],
+    field_maps: dict[str, _IdMap],
+) -> None:
+    """
+    Consume `_per_draft_refs_{field}` accumulators on *record*, rewrite IDs,
+    union, and write back to the canonical field name.
+
+    field_maps maps canonical field name -> the _IdMap for that ID type.
+    """
+    for f in ref_fields:
+        acc_key = f"_per_draft_refs_{f}"
+        per_draft = record.pop(acc_key, None)
+        id_map = field_maps[f]
+        if per_draft is None:
+            # Field wasn't tracked per-draft (e.g. non-deduplicated record):
+            # fall back to the current field value rewritten by _draft_idx.
+            di = record.get("_draft_idx", 0)
+            old_vals = record.get(f) or []
+            record[f] = id_map.rewrite_list(di, old_vals)
+        else:
+            seen: set = set()
+            out: list = []
+            for draft_idx, old_ids in per_draft:
+                for new_id in id_map.rewrite_list(draft_idx, old_ids):
+                    if new_id not in seen:
+                        seen.add(new_id)
+                        out.append(new_id)
+            record[f] = out
+
+
+def _rewrite_all_refs(
+    merged_passages: list[dict],
+    merged_commitments: list[dict],
+    pm_map: _IdMap,
+    gm_map: _IdMap,
+    toh_map: _IdMap,
+    com_map: _IdMap,
+    sp_map: _IdMap,
+) -> None:
+    """
+    Rewrite cross-references in already-merged (globally ID'd) records.
+
+    Each record carries `_per_draft_refs_{field}` accumulators set by
+    _merge_records, plus a `_draft_idx` for any non-deduplicated single instance.
+    We consume those here and write canonical rewritten ref lists back.
+    """
+    passage_field_maps = {
+        "supports_markets": pm_map,
+        "supports_geographic_markets": gm_map,
+        "supports_theories": toh_map,
+        "supports_commitments": com_map,
+    }
+    commitment_field_maps = {
+        "related_source_passages": sp_map,
+    }
+
+    for p in merged_passages:
+        _rewrite_per_draft_refs(p, _PASSAGE_REF_FIELDS, passage_field_maps)
+        p.pop("_draft_idx", None)
+
+    for c in merged_commitments:
+        _rewrite_per_draft_refs(c, _COMMITMENT_REF_FIELDS, commitment_field_maps)
+        c.pop("_draft_idx", None)
+
+
+# ---------------------------------------------------------------------------
+# Validation
+# ---------------------------------------------------------------------------
+
+def _validate_merged(record: dict) -> tuple[bool, str]:
+    """
+    Attempt Pydantic validation of the merged draft by stripping draft-only fields first.
+
+    Returns (ok, error_msg).
+    """
+    import copy
+    candidate = copy.deepcopy(record)
+
+    # Strip draft-only fields (same as promote script)
+    candidate.pop("_draft_note", None)
+    for key in ("product_markets_considered", "geographic_markets_considered"):
+        for m in candidate.get(key) or []:
+            m.pop("verification", None)
+            m.pop("market_importance", None)
+    for p in candidate.get("source_passages") or []:
+        p.pop("source_role", None)
+    # Strip extra draft fields on theories (theory_type, theory_outcome)
+    for t in candidate.get("theories_of_harm") or []:
+        t.pop("theory_type", None)
+        t.pop("theory_outcome", None)
+        if isinstance(t.get("verification"), dict):
+            # Rename status -> verification_status if needed
+            v = t["verification"]
+            if "status" in v and "verification_status" not in v:
+                v["verification_status"] = v.pop("status")
+
+    # Ensure required canonical fields have defaults so validation can run
+    if not candidate.get("procedure_stage"):
+        candidate["procedure_stage"] = "unknown"
+    if not candidate.get("case_type"):
+        candidate["case_type"] = "merger"
+    if not candidate.get("metadata"):
+        today = datetime.date.today().isoformat()
+        candidate["metadata"] = {
+            "extraction_method": "ai_extracted",
+            "review_status": "unreviewed",
+            "overall_confidence": 0.7,
+            "created_date": today,
+            "last_updated_date": today,
+            "tags": [],
+        }
+
+    try:
+        from app.models import CaseRecord
+        CaseRecord.model_validate(candidate)
+        return True, ""
+    except Exception as exc:
+        return False, str(exc)
+
+# ---------------------------------------------------------------------------
+# Output path
+# ---------------------------------------------------------------------------
+
+def _default_output_path(drafts_dir: Path, case_id: str, draft_paths: list[Path]) -> Path:
+    """Derive merged draft output path from the first draft's jurisdiction directory."""
+    # Try to infer jurisdiction from the first draft's parent dir name
+    first = draft_paths[0]
+    jur = first.parent.name  # e.g. "eu"
+    return drafts_dir / jur / f"{case_id}.merged.draft.yaml"
+
+# ---------------------------------------------------------------------------
+# Core merge function
+# ---------------------------------------------------------------------------
+
+def merge_drafts(
+    draft_paths: list[Path],
+    *,
+    case_id_override: Optional[str] = None,
+    drafts_dir: Optional[Path] = None,
+) -> tuple[dict, list[str]]:
+    """
+    Merge draft YAMLs at draft_paths into a single merged draft dict.
+
+    Returns (merged_dict, warnings).
+    Raises ValueError on case ID mismatch or other fatal errors.
+    """
+    if not draft_paths:
+        raise ValueError("No draft paths provided.")
+
+    drafts: list[dict] = []
+    for p in draft_paths:
+        drafts.append(yaml.safe_load(p.read_text(encoding="utf-8")))
+
+    # ------------------------------------------------------------------
+    # 1. Case identity validation
+    # ------------------------------------------------------------------
+    case_ids = [d.get("case_id", "") for d in drafts]
+    unique_ids = set(case_ids)
+    if len(unique_ids) > 1:
+        raise ValueError(
+            f"Drafts have mismatched case_ids: {sorted(unique_ids)}. "
+            "All drafts must be for the same case."
+        )
+    resolved_case_id = case_ids[0]
+    if not resolved_case_id:
+        raise ValueError("No case_id found in the provided drafts.")
+    if case_id_override and resolved_case_id != case_id_override:
+        raise ValueError(
+            f"case_id mismatch: drafts have '{resolved_case_id}' "
+            f"but --case-id specified '{case_id_override}'."
+        )
+
+    warnings: list[str] = []
+
+    # ------------------------------------------------------------------
+    # 2. Metadata precedence
+    # ------------------------------------------------------------------
+    metadata = _pick_metadata(drafts, draft_paths)
+
+    # ------------------------------------------------------------------
+    # 3. Source documents (dedup by doc_id)
+    # ------------------------------------------------------------------
+    source_documents = _merge_source_documents(drafts)
+
+    # ------------------------------------------------------------------
+    # 4. Collect records with their draft index
+    #    We tag each record with _draft_idx so rewriting can apply per-draft maps.
+    # ------------------------------------------------------------------
+    pm_items: list[tuple[int, dict]] = []
+    gm_items: list[tuple[int, dict]] = []
+    toh_items: list[tuple[int, dict]] = []
+    com_items: list[tuple[int, dict]] = []
+    sp_items: list[tuple[int, dict]] = []
+
+    for i, d in enumerate(drafts):
+        for rec in d.get("product_markets_considered") or []:
+            r = dict(rec)
+            r["_draft_idx"] = i
+            pm_items.append((i, r))
+        for rec in d.get("geographic_markets_considered") or []:
+            r = dict(rec)
+            r["_draft_idx"] = i
+            gm_items.append((i, r))
+        for rec in d.get("theories_of_harm") or []:
+            r = dict(rec)
+            r["_draft_idx"] = i
+            toh_items.append((i, r))
+        for rec in d.get("commitments") or []:
+            r = dict(rec)
+            r["_draft_idx"] = i
+            com_items.append((i, r))
+        for rec in d.get("source_passages") or []:
+            r = dict(rec)
+            r["_draft_idx"] = i
+            sp_items.append((i, r))
+
+    # ------------------------------------------------------------------
+    # 5. Deduplicate and assign global IDs
+    # ------------------------------------------------------------------
+    pm_map = _IdMap()
+    gm_map = _IdMap()
+    toh_map = _IdMap()
+    com_map = _IdMap()
+    sp_map = _IdMap()
+
+    merged_pms = _merge_markets(pm_items, pm_map, "pm_", "market_id", warnings)
+    merged_gms = _merge_markets(gm_items, gm_map, "gm_", "market_id", warnings)
+    merged_tohs = _merge_theories(toh_items, toh_map, warnings)
+    merged_coms = _merge_commitments(com_items, com_map, warnings)
+    merged_sps = _merge_passages(sp_items, sp_map, warnings)
+
+    # ------------------------------------------------------------------
+    # 6. Rewrite cross-references
+    # ------------------------------------------------------------------
+    _rewrite_all_refs(
+        merged_sps,
+        merged_coms,
+        pm_map,
+        gm_map,
+        toh_map,
+        com_map,
+        sp_map,
+    )
+
+    # Strip _draft_idx from records with no cross-refs to rewrite
+    for rec in merged_pms + merged_gms + merged_tohs:
+        rec.pop("_draft_idx", None)
+
+    # ------------------------------------------------------------------
+    # 7. Build merged draft
+    # ------------------------------------------------------------------
+    today = datetime.date.today().isoformat()
+    merged: dict = {
+        "_draft_note": (
+            f"DRAFT (MERGED) — generated by merge_drafts.py on {today}. "
+            "Review and validate before promoting to canonical YAML."
+        ),
+        "case_id": resolved_case_id,
+        "case_name": metadata.get("case_name", ""),
+        "authority": metadata.get("authority", ""),
+        "jurisdiction": metadata.get("jurisdiction", ""),
+        "sector": metadata.get("sector", ""),
+        "outcome": metadata.get("outcome", "unknown"),
+        "decision_date": metadata.get("decision_date", ""),
+        "parties": metadata.get("parties", []),
+        "source_documents": source_documents,
+        "product_markets_considered": merged_pms,
+        "geographic_markets_considered": merged_gms,
+        "theories_of_harm": merged_tohs,
+        "commitments": merged_coms,
+        "source_passages": merged_sps,
+    }
+    if metadata.get("procedure_stage"):
+        merged["procedure_stage"] = metadata["procedure_stage"]
+    if metadata.get("authority_reference"):
+        merged["authority_reference"] = metadata["authority_reference"]
+
+    return merged, warnings
+
+
+# ---------------------------------------------------------------------------
+# Report helpers
+# ---------------------------------------------------------------------------
+
+def _print_report(
+    draft_paths: list[Path],
+    merged: dict,
+    warnings: list[str],
+    output_path: Optional[Path],
+    dry_run: bool,
+) -> None:
+    print(f"\nMerge report")
+    print(f"  Input drafts : {len(draft_paths)}")
+    for p in draft_paths:
+        print(f"    {p}")
+    print(f"  Product markets   : {len(merged.get('product_markets_considered') or [])}")
+    print(f"  Geographic markets: {len(merged.get('geographic_markets_considered') or [])}")
+    print(f"  Theories of harm  : {len(merged.get('theories_of_harm') or [])}")
+    print(f"  Commitments       : {len(merged.get('commitments') or [])}")
+    print(f"  Source passages   : {len(merged.get('source_passages') or [])}")
+    print(f"  Warnings          : {len(warnings)}")
+    for w in warnings:
+        print(f"    {w}")
+    if dry_run:
+        print(f"  Output            : (dry-run — not written)")
+    else:
+        print(f"  Output            : {output_path}")
+
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
+
+def main(argv: Optional[list[str]] = None) -> int:
+    parser = argparse.ArgumentParser(
+        description="Merge partial extraction drafts into one reviewable draft YAML."
+    )
+    parser.add_argument(
+        "drafts",
+        nargs="+",
+        metavar="DRAFT_PATH",
+        help="Paths to draft YAML files to merge.",
+    )
+    parser.add_argument(
+        "--case-id",
+        help="Expected case ID. Fails if any draft does not match.",
+    )
+    parser.add_argument(
+        "--output",
+        help="Custom output path. Default: data/drafts/<jur>/<case_id>.merged.draft.yaml",
+    )
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Print merged YAML without writing to disk.",
+    )
+    parser.add_argument(
+        "--drafts-dir",
+        default=str(_REPO_ROOT / "data" / "drafts"),
+        help="Root directory for draft files (used for default output path).",
+    )
+    args = parser.parse_args(argv)
+
+    draft_paths = [Path(p) for p in args.drafts]
+    drafts_dir = Path(args.drafts_dir)
+
+    # Check all input files exist
+    missing = [p for p in draft_paths if not p.exists()]
+    if missing:
+        for p in missing:
+            print(f"ERROR: Draft not found: {p}", file=sys.stderr)
+        return 1
+
+    # ------------------------------------------------------------------
+    # Merge
+    # ------------------------------------------------------------------
+    try:
+        merged, warnings = merge_drafts(
+            draft_paths,
+            case_id_override=args.case_id,
+            drafts_dir=drafts_dir,
+        )
+    except ValueError as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        return 1
+
+    # ------------------------------------------------------------------
+    # Validate
+    # ------------------------------------------------------------------
+    ok, err_msg = _validate_merged(merged)
+    if ok:
+        print("Validation: PASS")
+    else:
+        print(f"Validation: WARN — schema issues (merged draft may still be useful):\n{err_msg}")
+
+    # ------------------------------------------------------------------
+    # Determine output path
+    # ------------------------------------------------------------------
+    if args.output:
+        out_path = Path(args.output)
+    else:
+        out_path = _default_output_path(drafts_dir, merged["case_id"], draft_paths)
+
+    # ------------------------------------------------------------------
+    # Report + output
+    # ------------------------------------------------------------------
+    _print_report(draft_paths, merged, warnings, out_path, args.dry_run)
+
+    yaml_text = _dump_yaml(merged)
+
+    if args.dry_run:
+        print("\n--- DRY RUN — merged YAML (not written) ---\n")
+        print(yaml_text)
+        return 0
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(yaml_text, encoding="utf-8")
+    print(f"\nWritten: {out_path}")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
