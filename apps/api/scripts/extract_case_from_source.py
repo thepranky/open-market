@@ -3126,6 +3126,32 @@ def serialize_report(report: ExtractionReport, mode: str = "extract") -> dict:
 # Main extraction function
 # ---------------------------------------------------------------------------
 
+def _filter_chunks_to_range(
+    chunks: list[ChunkInfo],
+    page_range: tuple[int, int],
+) -> list[ChunkInfo]:
+    """Return chunks restricted to pages within [page_range[0], page_range[1]] inclusive.
+
+    Chunks that overlap partially with the range have their pages trimmed to those
+    within the range.  Chunks with no pages in range are dropped entirely.
+    The original pages list on each chunk is replaced with the filtered subset;
+    trimmed_pages is left empty (no prefix trimming needed at this stage).
+    """
+    pr_start, pr_end = page_range
+    result: list[ChunkInfo] = []
+    for c in chunks:
+        in_range = [p for p in c.pages if pr_start <= p["page_number"] <= pr_end]
+        if not in_range:
+            continue
+        result.append(ChunkInfo(
+            chunk_id=c.chunk_id,
+            section_path=c.section_path,
+            pages=in_range,
+            source_document_id=c.source_document_id,
+        ))
+    return result
+
+
 def extract_case(
     yaml_path: Path,
     *,
@@ -3144,6 +3170,7 @@ def extract_case(
     max_cost: Optional[float] = None,
     max_input_tokens: Optional[int] = None,
     full_market_def_pass: bool = False,
+    page_range: Optional[tuple[int, int]] = None,
 ) -> ExtractionReport:
     """
     Load the existing YAML and PDF text cache, extract a draft record via Claude,
@@ -3156,6 +3183,11 @@ def extract_case(
     grouped by their X.Y section prefix and each group is sent as a separate
     Claude call.  Failed sections are recorded in report.section_batches but
     do not abort the run.
+
+    When *page_range* is (start, end), only pages in [start, end] (inclusive)
+    are considered.  Coverage stats are relative to the restricted range, making
+    section-group iteration on long decisions straightforward.  ``page_range``
+    is compatible with ``batch_by_section``.
     """
     with open(yaml_path) as fh:
         existing_record: dict = yaml.safe_load(fh)
@@ -3195,6 +3227,27 @@ def extract_case(
         all_chunks.extend(_build_chunks(cache, smap))
 
     all_chunks.sort(key=lambda c: min(c.page_numbers) if c.page_numbers else 0)
+
+    # Apply page-range restriction before focus selection.
+    # Coverage stats are relative to the restricted range so that section-group
+    # iteration (e.g. pp64-309) reports meaningful per-run numbers.
+    _document_total_non_toc = sum(len(c.pages) for c in all_chunks)
+    if page_range is not None:
+        pr_start, pr_end = page_range
+        if pr_start < 1 or pr_end < pr_start:
+            report.error = (
+                f"Invalid page_range ({pr_start}, {pr_end}): "
+                "start must be >= 1 and end must be >= start"
+            )
+            return report
+        all_chunks = _filter_chunks_to_range(all_chunks, page_range)
+        if not all_chunks:
+            report.error = (
+                f"page_range ({pr_start}, {pr_end}) matched no pages in the document "
+                f"(document has {_document_total_non_toc} non-TOC pages)"
+            )
+            return report
+
     selected = _select_relevant_chunks(
         all_chunks, max_total_pages=max_input_pages, focus=focus,
         full_market_def_pass=full_market_def_pass,
@@ -3209,6 +3262,8 @@ def extract_case(
         "total_non_toc_pages": _total_non_toc,
         "selected_pages": _selected_pages,
         "ratio": round(_selected_pages / _total_non_toc, 3) if _total_non_toc else 1.0,
+        "page_range": list(page_range) if page_range is not None else None,
+        "document_total_non_toc_pages": _document_total_non_toc,
     }
 
     # Apply section prefix filter across ALL modes (inspect, estimate, single-batch, batched).

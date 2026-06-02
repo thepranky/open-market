@@ -21,6 +21,7 @@ from extract_case_from_source import (
     ExtractedMarket,
     ExtractedPassage,
     ExtractedTheory,
+    _filter_chunks_to_range,
     _CONCLUSIVE_SOURCE_ROLES,
     _DEVICE_CONTEXT_CONFLICT_FACTOR,
     _GEO_CONTEXT_MIN_OVERLAP,
@@ -8200,3 +8201,76 @@ class TestExtractionTaskQuoteCleanlinessRule:
     def test_extraction_task_mentions_pdf_normalisation(self):
         from extract_case_from_source import _EXTRACTION_TASK
         assert "pdf" in _EXTRACTION_TASK.lower()
+
+
+# ---------------------------------------------------------------------------
+# _filter_chunks_to_range
+# ---------------------------------------------------------------------------
+
+class TestFilterChunksToRange:
+    """Unit tests for the page-range filtering helper."""
+
+    def _chunk(self, chunk_id: str, pages: list[int], section: str = "5 Markets") -> ChunkInfo:
+        return ChunkInfo(
+            chunk_id=chunk_id,
+            section_path=section,
+            pages=[{"page_number": n, "text": f"page {n}"} for n in pages],
+            source_document_id="doc1",
+        )
+
+    def test_range_keeps_fully_in_range_chunks(self):
+        chunks = [self._chunk("c1", [10, 11, 12])]
+        result = _filter_chunks_to_range(chunks, (1, 50))
+        assert len(result) == 1
+        assert result[0].page_numbers == [10, 11, 12]
+
+    def test_range_drops_chunks_entirely_outside(self):
+        chunks = [
+            self._chunk("c1", [5, 6]),
+            self._chunk("c2", [20, 21]),
+            self._chunk("c3", [100, 101]),
+        ]
+        result = _filter_chunks_to_range(chunks, (15, 25))
+        assert len(result) == 1
+        assert result[0].chunk_id == "c2"
+
+    def test_range_trims_partially_overlapping_chunk(self):
+        """A chunk spanning pages 8-15 restricted to range 10-20 should keep only pp.10-15."""
+        chunks = [self._chunk("c1", [8, 9, 10, 11, 12, 13, 14, 15])]
+        result = _filter_chunks_to_range(chunks, (10, 20))
+        assert len(result) == 1
+        assert result[0].page_numbers == [10, 11, 12, 13, 14, 15]
+
+    def test_range_exact_boundary_pages_included(self):
+        """Start and end pages of the range are included (inclusive)."""
+        chunks = [self._chunk("c1", [64, 65, 309, 310])]
+        result = _filter_chunks_to_range(chunks, (64, 309))
+        assert result[0].page_numbers == [64, 65, 309]
+
+    def test_range_beyond_document_returns_empty(self):
+        """Range entirely beyond the document returns no chunks."""
+        chunks = [self._chunk("c1", [1, 2, 3])]
+        result = _filter_chunks_to_range(chunks, (500, 600))
+        assert result == []
+
+    def test_range_single_page(self):
+        """A single-page range (start == end) keeps exactly that page."""
+        chunks = [self._chunk("c1", [10, 11, 12])]
+        result = _filter_chunks_to_range(chunks, (11, 11))
+        assert len(result) == 1
+        assert result[0].page_numbers == [11]
+
+    def test_range_preserves_section_path_and_doc_id(self):
+        """Metadata on the original chunk is preserved in the filtered copy."""
+        chunks = [self._chunk("c1", [5, 6], section="8.2 Competitive Assessment")]
+        result = _filter_chunks_to_range(chunks, (1, 10))
+        assert result[0].section_path == "8.2 Competitive Assessment"
+        assert result[0].source_document_id == "doc1"
+
+    def test_empty_chunks_input_returns_empty(self):
+        assert _filter_chunks_to_range([], (1, 100)) == []
+
+    def test_multiple_chunks_all_in_range(self):
+        chunks = [self._chunk(f"c{i}", [i * 10]) for i in range(1, 6)]
+        result = _filter_chunks_to_range(chunks, (1, 100))
+        assert len(result) == 5

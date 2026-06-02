@@ -292,8 +292,12 @@ def write_review_report(
         sel = cov["selected_pages"]
         tot = cov["total_non_toc_pages"]
         pct = int(round(cov["ratio"] * 100))
+        _range_note = (
+            f" (restricted to pp{cov['page_range'][0]}-{cov['page_range'][1]})"
+            if cov.get("page_range") else ""
+        )
         lines += [
-            f"⚠ **Coverage warning:** {sel}/{tot} non-TOC pages selected ({pct}%). "
+            f"⚠ **Coverage warning:** {sel}/{tot} non-TOC pages selected ({pct}%){_range_note}. "
             "Market-definition content may be embedded in therapeutic-area or competitive-assessment "
             "sub-sections not matched by section-path keywords. "
             "Re-run with `--full-market-definition-pass` to widen extraction.",
@@ -565,7 +569,56 @@ def main() -> int:
                             "decisions where market-definition content is embedded inside "
                             "therapeutic-area or competitive-assessment sub-sections."
                         ))
+    parser.add_argument(
+        "--page-range",
+        default=None,
+        metavar="START:END",
+        help=(
+            "Restrict extraction to pages START through END (inclusive). "
+            "Useful for section-group iteration on large decisions "
+            "(e.g. --page-range 64:309 to process Section VIII only). "
+            "Coverage stats are relative to the restricted range. "
+            "Compatible with --batch-by-section."
+        ),
+    )
+    parser.add_argument(
+        "--output-suffix",
+        default=None,
+        metavar="SUFFIX",
+        help=(
+            "Append SUFFIX to the draft and report file stems "
+            "(e.g. --output-suffix section_viii → …section_viii.draft.yaml). "
+            "Defaults to pp{START}-{END} when --page-range is used without this flag."
+        ),
+    )
     args = parser.parse_args()
+
+    # Parse and validate --page-range
+    page_range: Optional[tuple[int, int]] = None
+    if args.page_range:
+        parts = args.page_range.split(":")
+        if len(parts) != 2 or not all(p.strip().lstrip("-").isdigit() for p in parts):
+            print(
+                f"ERROR: Invalid --page-range '{args.page_range}' — "
+                "expected format START:END (e.g. --page-range 64:309)"
+            )
+            return 1
+        pr_start, pr_end = int(parts[0]), int(parts[1])
+        if pr_start < 1:
+            print(f"ERROR: --page-range START must be >= 1 (got {pr_start})")
+            return 1
+        if pr_end < pr_start:
+            print(
+                f"ERROR: --page-range END ({pr_end}) must be >= START ({pr_start})"
+            )
+            return 1
+        page_range = (pr_start, pr_end)
+
+    # Derive output suffix: explicit --output-suffix takes precedence;
+    # fall back to pp{start}-{end} when --page-range is given.
+    output_suffix: Optional[str] = args.output_suffix
+    if output_suffix is None and page_range is not None:
+        output_suffix = f"pp{page_range[0]}-{page_range[1]}"
 
     cache_dir = Path(args.cache_dir)
 
@@ -581,19 +634,24 @@ def main() -> int:
     jurisdiction = record.get("jurisdiction", "unknown").lower()
     source_docs: list[dict] = record.get("source_documents") or []
 
-    # Determine output paths
+    # Determine output paths (suffix inserted before .draft/.review when set)
     draft_dir = _DRAFTS_DIR / jurisdiction
     draft_dir.mkdir(parents=True, exist_ok=True)
-    draft_path = draft_dir / f"{args.case_id}.{args.focus}.draft.yaml"
+    _stem = f"{args.case_id}.{args.focus}"
+    if output_suffix:
+        _stem = f"{_stem}.{output_suffix}"
+    draft_path = draft_dir / f"{_stem}.draft.yaml"
     report_path = (
         Path(args.report_md)
         if args.report_md
-        else draft_dir / f"{args.case_id}.{args.focus}.review.md"
+        else draft_dir / f"{_stem}.review.md"
     )
 
     print(f"Case:       {args.case_id}")
     print(f"YAML:       {yaml_path}")
     print(f"Focus:      {args.focus}")
+    if page_range is not None:
+        print(f"Page range: pp{page_range[0]}-{page_range[1]}")
     print(f"Draft out:  {draft_path}")
     print(f"Review:     {report_path}")
     print(f"Max cost:   ${args.max_cost:.2f}")
@@ -645,6 +703,7 @@ def main() -> int:
                 max_cost=args.max_cost,
                 batch_by_section=args.batch_by_section,
                 full_market_def_pass=getattr(args, "full_market_definition_pass", False),
+                page_range=page_range,
             )
             if extraction_report.error:
                 print(f"  ERROR: {extraction_report.error}")
@@ -674,8 +733,18 @@ def main() -> int:
                     and cov["ratio"] < 0.25
                 )
                 prefix = "  WARN Coverage:" if warn else "  Coverage:      "
-                print(f"{prefix}  {cov['selected_pages']}/{cov['total_non_toc_pages']} pages ({pct}%)"
-                      + (" — re-run with --full-market-definition-pass" if warn else ""))
+                _range_note = (
+                    f" in pp{cov['page_range'][0]}-{cov['page_range'][1]}"
+                    if cov.get("page_range") else ""
+                )
+                _doc_note = ""
+                if cov.get("page_range") and cov.get("document_total_non_toc_pages"):
+                    _doc_note = f" (doc total: {cov['document_total_non_toc_pages']})"
+                print(
+                    f"{prefix}  {cov['selected_pages']}/{cov['total_non_toc_pages']} pages"
+                    f"{_range_note} ({pct}%){_doc_note}"
+                    + (" — re-run with --full-market-definition-pass" if warn else "")
+                )
             print(f"  Draft written:    {draft_path}")
         else:
             # Fell back from no-API-key; try to use existing draft
@@ -767,10 +836,14 @@ def main() -> int:
         and _cov.get("ratio", 1.0) < 0.25
     )
     if _cov_warn:
+        _range_suffix = (
+            f" in pp{_cov['page_range'][0]}-{_cov['page_range'][1]}"
+            if _cov.get("page_range") else ""
+        )
         print(
             f"RESULT: PASS (coverage warning) — "
-            f"{_cov['selected_pages']}/{_cov['total_non_toc_pages']} pages selected; "
-            "re-run with --full-market-definition-pass before promoting"
+            f"{_cov['selected_pages']}/{_cov['total_non_toc_pages']} pages selected"
+            f"{_range_suffix}; re-run with --full-market-definition-pass before promoting"
         )
     elif int_warnings:
         print(f"RESULT: PASS with {int_warnings} warning(s) — review before promoting")

@@ -240,3 +240,186 @@ def test_review_report_no_coverage_warning_for_other_focus(tmp_path):
         tmp_path, selected_pages=5, total_pages=65, focus="remedies"
     )
     assert "coverage warning" not in text.lower()
+
+
+# ---------------------------------------------------------------------------
+# --page-range argument parsing (tested via main() with a minimal YAML fixture)
+# ---------------------------------------------------------------------------
+
+import io
+import textwrap
+from unittest.mock import patch
+
+
+def _run_main_with_args(args: list[str], tmp_cases_dir: Path) -> int:
+    """
+    Import main from ingest_case and run it with a fake YAML and args.
+    Patches _CASES_DIR so it resolves the fixture YAML without touching production data/.
+    """
+    import ingest_case as ic
+
+    with patch.object(ic, "_CASES_DIR", tmp_cases_dir):
+        with patch("sys.argv", ["ingest_case.py"] + args):
+            return ic.main()
+
+
+def _write_minimal_seed(tmp_path: Path, case_id: str = "eu_test_case_2023") -> Path:
+    """Write a minimal seed YAML for argument-parsing tests."""
+    seed = textwrap.dedent(f"""\
+        case_id: {case_id}
+        case_name: "Test Case"
+        jurisdiction: EU
+        authority: European Commission
+        authority_reference: M.9999
+        decision_date: "2023-01-01"
+        case_type: merger
+        procedure_stage: phase1
+        sector: test
+        outcome: unknown
+        source_documents:
+          - doc_id: test_doc
+            title: "Test Decision"
+            doc_type: decision
+        source_passages: []
+        metadata:
+          extraction_method: manually_added
+          review_status: unreviewed
+          overall_confidence: 0.0
+          created_date: "2023-01-01"
+          last_updated_date: "2023-01-01"
+    """)
+    eu_dir = tmp_path / "eu"
+    eu_dir.mkdir()
+    yaml_path = eu_dir / f"{case_id}.yaml"
+    yaml_path.write_text(seed)
+    return yaml_path
+
+
+class TestPageRangeParsing:
+    """--page-range argument parsing and validation in main()."""
+
+    def test_invalid_format_no_colon(self, tmp_path, capsys):
+        """Non-colon format is rejected with a clear error."""
+        _write_minimal_seed(tmp_path)
+        rc = _run_main_with_args(
+            ["--case-id", "eu_test_case_2023", "--page-range", "64309", "--no-claude"],
+            tmp_path,
+        )
+        assert rc == 1
+        out = capsys.readouterr().out
+        assert "Invalid --page-range" in out
+
+    def test_invalid_format_non_integer(self, tmp_path, capsys):
+        """Non-integer values are rejected."""
+        _write_minimal_seed(tmp_path)
+        rc = _run_main_with_args(
+            ["--case-id", "eu_test_case_2023", "--page-range", "start:end", "--no-claude"],
+            tmp_path,
+        )
+        assert rc == 1
+        out = capsys.readouterr().out
+        assert "Invalid --page-range" in out
+
+    def test_invalid_start_zero(self, tmp_path, capsys):
+        """START=0 is rejected (pages are 1-indexed)."""
+        _write_minimal_seed(tmp_path)
+        rc = _run_main_with_args(
+            ["--case-id", "eu_test_case_2023", "--page-range", "0:100", "--no-claude"],
+            tmp_path,
+        )
+        assert rc == 1
+        out = capsys.readouterr().out
+        assert "START must be >= 1" in out
+
+    def test_invalid_end_before_start(self, tmp_path, capsys):
+        """END < START is rejected."""
+        _write_minimal_seed(tmp_path)
+        rc = _run_main_with_args(
+            ["--case-id", "eu_test_case_2023", "--page-range", "100:50", "--no-claude"],
+            tmp_path,
+        )
+        assert rc == 1
+        out = capsys.readouterr().out
+        assert "END" in out and "START" in out
+
+    def test_valid_range_shown_in_header(self, tmp_path, capsys):
+        """A valid --page-range is echoed in the header output and drives output-suffix."""
+        _write_minimal_seed(tmp_path)
+        # --no-claude so we don't need a real PDF cache; will fail at stage 1 or 2,
+        # but the header (printed before any stage) should show the range.
+        _run_main_with_args(
+            ["--case-id", "eu_test_case_2023", "--page-range", "64:309",
+             "--no-claude", "--focus", "theories"],
+            tmp_path,
+        )
+        out = capsys.readouterr().out
+        assert "pp64-309" in out
+
+    def test_output_suffix_auto_derived_from_page_range(self, tmp_path):
+        """Draft path uses pp{start}-{end} suffix when --output-suffix is omitted."""
+        _write_minimal_seed(tmp_path)
+        import ingest_case as ic
+        import yaml as _yaml
+
+        with patch.object(ic, "_CASES_DIR", tmp_path):
+            with patch("sys.argv", [
+                "ingest_case.py",
+                "--case-id", "eu_test_case_2023",
+                "--page-range", "100:200",
+                "--no-claude",
+                "--focus", "theories",
+            ]):
+                # Capture the draft_path value by patching extract_case and reading
+                # what path ingest_case derives. We just need the suffix in the
+                # console header, which already includes Draft out: line.
+                import io, contextlib
+                buf = io.StringIO()
+                with contextlib.redirect_stdout(buf):
+                    ic.main()
+        output = buf.getvalue()
+        assert "pp100-200" in output
+
+    def test_explicit_output_suffix_overrides_page_range_default(self, tmp_path):
+        """--output-suffix takes precedence over the auto-derived pp{start}-{end}."""
+        _write_minimal_seed(tmp_path)
+        import ingest_case as ic
+
+        with patch.object(ic, "_CASES_DIR", tmp_path):
+            with patch("sys.argv", [
+                "ingest_case.py",
+                "--case-id", "eu_test_case_2023",
+                "--page-range", "100:200",
+                "--output-suffix", "section_viii",
+                "--no-claude",
+                "--focus", "theories",
+            ]):
+                import io, contextlib
+                buf = io.StringIO()
+                with contextlib.redirect_stdout(buf):
+                    ic.main()
+        output = buf.getvalue()
+        assert "section_viii" in output
+        # Draft path uses the explicit suffix, not the auto-derived pp{start}-{end}
+        draft_line = next((l for l in output.splitlines() if "Draft out:" in l), "")
+        assert "section_viii" in draft_line
+        assert "pp100-200" not in draft_line
+
+    def test_no_page_range_no_suffix_in_draft_path(self, tmp_path):
+        """Without --page-range, draft path has no extra suffix component."""
+        _write_minimal_seed(tmp_path)
+        import ingest_case as ic
+
+        with patch.object(ic, "_CASES_DIR", tmp_path):
+            with patch("sys.argv", [
+                "ingest_case.py",
+                "--case-id", "eu_test_case_2023",
+                "--no-claude",
+                "--focus", "market_definition",
+            ]):
+                import io, contextlib
+                buf = io.StringIO()
+                with contextlib.redirect_stdout(buf):
+                    ic.main()
+        output = buf.getvalue()
+        # Draft out line should contain case_id.focus.draft.yaml with no extra token
+        assert "eu_test_case_2023.market_definition.draft.yaml" in output
