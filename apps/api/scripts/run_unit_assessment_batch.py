@@ -75,7 +75,7 @@ class WindowResult:
     page_range: tuple[int, int]
     output_suffix: str                 # full suffix used for draft file name
     draft_path: Path
-    status: str                        # pass | empty | failed | skipped | dry_run
+    status: str                        # pass | empty | failed | skipped | skipped_existing | dry_run
     units_extracted: int = 0
     findings: int = 0
     siec: int = 0
@@ -172,6 +172,7 @@ def _run_window(
     max_cost: float,
     retry_empty: bool,
     dry_run: bool,
+    skip_existing: bool = False,
 ) -> WindowResult:
     """Run extraction for one ProbeWindow; return a WindowResult.
 
@@ -183,12 +184,47 @@ def _run_window(
     command = _make_command(case_id, window, suffix, max_cost)
 
     if dry_run:
+        if skip_existing and draft_path.exists():
+            stats = _read_draft_unit_stats(draft_path)
+            return WindowResult(
+                label=window.context_suffix,
+                page_range=(window.start_page, window.end_page),
+                output_suffix=suffix,
+                draft_path=draft_path,
+                status="skipped_existing",
+                units_extracted=stats["units"],
+                findings=stats["findings"],
+                siec=stats["siec"],
+                no_siec=stats["no_siec"],
+                discussed=stats["discussed"],
+                other_conclusion=stats["other_conclusion"],
+                source_passages=stats["source_passages"],
+                command=command,
+            )
         return WindowResult(
             label=window.context_suffix,
             page_range=(window.start_page, window.end_page),
             output_suffix=suffix,
             draft_path=draft_path,
             status="dry_run",
+            command=command,
+        )
+
+    if skip_existing and draft_path.exists():
+        stats = _read_draft_unit_stats(draft_path)
+        return WindowResult(
+            label=window.context_suffix,
+            page_range=(window.start_page, window.end_page),
+            output_suffix=suffix,
+            draft_path=draft_path,
+            status="skipped_existing",
+            units_extracted=stats["units"],
+            findings=stats["findings"],
+            siec=stats["siec"],
+            no_siec=stats["no_siec"],
+            discussed=stats["discussed"],
+            other_conclusion=stats["other_conclusion"],
+            source_passages=stats["source_passages"],
             command=command,
         )
 
@@ -258,6 +294,7 @@ def run_batch(
     max_cost: float = 2.00,
     retry_empty: bool = True,
     dry_run: bool = False,
+    skip_existing: bool = False,
     anthropic_client=None,
     cache_dir: Optional[Path] = None,
 ) -> list[WindowResult]:
@@ -309,6 +346,7 @@ def run_batch(
             max_cost=max_cost,
             retry_empty=retry_empty,
             dry_run=dry_run,
+            skip_existing=skip_existing,
         )
         results.append(result)
 
@@ -352,11 +390,14 @@ def format_batch_report(results: list[WindowResult], case_id: str) -> str:
             lines.append(f"    Error: {r.error}")
         elif r.status == "skipped":
             lines.append(f"    Skipped: {r.error or 'unknown reason'}")
+        elif r.status == "skipped_existing":
+            lines.append(f"    Draft already exists — skipped (units={r.units_extracted} findings={r.findings})")
 
     passed = sum(1 for r in results if r.status == "pass")
     empty = sum(1 for r in results if r.status == "empty")
     failed = sum(1 for r in results if r.status == "failed")
     skipped = sum(1 for r in results if r.status == "skipped")
+    skipped_existing = sum(1 for r in results if r.status == "skipped_existing")
     dry = sum(1 for r in results if r.status == "dry_run")
     total_units = sum(r.units_extracted for r in results)
     total_findings = sum(r.findings for r in results)
@@ -364,7 +405,7 @@ def format_batch_report(results: list[WindowResult], case_id: str) -> str:
     retried = sum(1 for r in results if r.retries > 0)
 
     lines += ["", "=" * 60, f"Summary: {len(results)} window(s)"]
-    status_line = f"  pass={passed}  empty={empty}  failed={failed}  skipped={skipped}"
+    status_line = f"  pass={passed}  empty={empty}  failed={failed}  skipped={skipped}  skipped_existing={skipped_existing}"
     if dry:
         status_line += f"  dry_run={dry}"
     lines.append(status_line)
@@ -426,6 +467,13 @@ def main(argv: list[str] | None = None) -> int:
         help="Disable retry-on-empty",
     )
     parser.add_argument(
+        "--skip-existing", action="store_true",
+        help=(
+            "Skip windows whose output draft already exists. "
+            "Safe to use when resuming an interrupted batch."
+        ),
+    )
+    parser.add_argument(
         "--cache-dir", default=str(DEFAULT_CACHE_DIR),
         help=f"PDF text cache directory (default: {DEFAULT_CACHE_DIR})",
     )
@@ -450,6 +498,7 @@ def main(argv: list[str] | None = None) -> int:
             max_cost=args.max_cost,
             retry_empty=args.retry_empty,
             dry_run=args.dry_run,
+            skip_existing=args.skip_existing,
             anthropic_client=anthropic_client,
             cache_dir=Path(args.cache_dir),
         )

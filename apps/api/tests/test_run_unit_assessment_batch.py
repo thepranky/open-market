@@ -750,3 +750,185 @@ class TestNoHardcodedNames:
             2.00,
         )
         assert "--batch-by-section" not in cmd
+
+
+# ---------------------------------------------------------------------------
+# Tests: --skip-existing
+# ---------------------------------------------------------------------------
+
+
+class TestSkipExisting:
+    """Tests for the skip_existing guard in _run_window and run_batch."""
+
+    # ---- _run_window: real mode ----
+
+    def test_skip_when_draft_exists_and_flag_set(self, tmp_path):
+        w = _window(70, 78, "alpha_70")
+        suffix = uab._make_suffix(w.context_suffix)
+        _draft_with_units(tmp_path, "tc", suffix, ["Alpha"])
+
+        with patch("run_unit_assessment_batch.extract_case") as mock_ec:
+            result = uab._run_window(
+                window=w, case_id="tc", yaml_path=tmp_path / "tc.yaml",
+                cache_dir=tmp_path, draft_dir=tmp_path,
+                anthropic_client=MagicMock(), max_cost=2.0,
+                retry_empty=True, dry_run=False, skip_existing=True,
+            )
+
+        mock_ec.assert_not_called()
+        assert result.status == "skipped_existing"
+
+    def test_no_skip_when_draft_exists_but_flag_not_set(self, tmp_path):
+        w = _window(70, 78, "alpha_70")
+        suffix = uab._make_suffix(w.context_suffix)
+        _draft_with_units(tmp_path, "tc", suffix, ["Alpha"])
+
+        with patch("run_unit_assessment_batch.extract_case", return_value=_mock_rpt()) as mock_ec:
+            result = uab._run_window(
+                window=w, case_id="tc", yaml_path=tmp_path / "tc.yaml",
+                cache_dir=tmp_path, draft_dir=tmp_path,
+                anthropic_client=MagicMock(), max_cost=2.0,
+                retry_empty=False, dry_run=False, skip_existing=False,
+            )
+
+        mock_ec.assert_called_once()
+        assert result.status != "skipped_existing"
+
+    def test_no_skip_when_draft_missing_and_flag_set(self, tmp_path):
+        """skip_existing=True must still run extraction when the draft does not exist."""
+        w = _window(70, 78, "alpha_70")
+        # draft is intentionally NOT created
+
+        with patch("run_unit_assessment_batch.extract_case", return_value=_mock_rpt()) as mock_ec:
+            uab._run_window(
+                window=w, case_id="tc", yaml_path=tmp_path / "tc.yaml",
+                cache_dir=tmp_path, draft_dir=tmp_path,
+                anthropic_client=MagicMock(), max_cost=2.0,
+                retry_empty=False, dry_run=False, skip_existing=True,
+            )
+
+        mock_ec.assert_called_once()
+
+    def test_skip_reads_existing_stats(self, tmp_path):
+        w = _window(70, 78, "alpha_70")
+        suffix = uab._make_suffix(w.context_suffix)
+        _draft_with_units(tmp_path, "tc", suffix, ["Alpha"], findings_per_unit=5, siec_per_unit=4)
+
+        with patch("run_unit_assessment_batch.extract_case"):
+            result = uab._run_window(
+                window=w, case_id="tc", yaml_path=tmp_path / "tc.yaml",
+                cache_dir=tmp_path, draft_dir=tmp_path,
+                anthropic_client=MagicMock(), max_cost=2.0,
+                retry_empty=False, dry_run=False, skip_existing=True,
+            )
+
+        assert result.units_extracted == 1
+        assert result.findings == 5
+        assert result.siec == 4
+
+    def test_skip_when_draft_missing_runs_extraction(self, tmp_path):
+        """No draft → extraction runs even with skip_existing=True."""
+        w = _window(70, 78, "alpha_70")
+        suffix = uab._make_suffix(w.context_suffix)
+        # do NOT pre-create the draft
+
+        with patch("run_unit_assessment_batch.extract_case", return_value=_mock_rpt()) as mock_ec:
+            uab._run_window(
+                window=w, case_id="tc", yaml_path=tmp_path / "tc.yaml",
+                cache_dir=tmp_path, draft_dir=tmp_path,
+                anthropic_client=MagicMock(), max_cost=2.0,
+                retry_empty=False, dry_run=False, skip_existing=True,
+            )
+
+        mock_ec.assert_called_once()
+
+    # ---- _run_window: dry-run mode ----
+
+    def test_dry_run_shows_skipped_existing_when_draft_exists(self, tmp_path):
+        w = _window(70, 78, "alpha_70")
+        suffix = uab._make_suffix(w.context_suffix)
+        _draft_with_units(tmp_path, "tc", suffix, ["Alpha"], findings_per_unit=3, siec_per_unit=2)
+
+        result = uab._run_window(
+            window=w, case_id="tc", yaml_path=tmp_path / "tc.yaml",
+            cache_dir=tmp_path, draft_dir=tmp_path,
+            anthropic_client=None, max_cost=2.0,
+            retry_empty=False, dry_run=True, skip_existing=True,
+        )
+
+        assert result.status == "skipped_existing"
+        # Dry-run skip should still report existing stats
+        assert result.units_extracted == 1
+        assert result.findings == 3
+        assert result.siec == 2
+
+    def test_dry_run_shows_dry_run_when_no_draft(self, tmp_path):
+        w = _window(70, 78, "alpha_70")
+        # draft does NOT exist
+
+        result = uab._run_window(
+            window=w, case_id="tc", yaml_path=tmp_path / "tc.yaml",
+            cache_dir=tmp_path, draft_dir=tmp_path,
+            anthropic_client=None, max_cost=2.0,
+            retry_empty=False, dry_run=True, skip_existing=True,
+        )
+
+        assert result.status == "dry_run"
+
+    def test_dry_run_without_skip_always_dry_run(self, tmp_path):
+        w = _window(70, 78, "alpha_70")
+        suffix = uab._make_suffix(w.context_suffix)
+        _draft_with_units(tmp_path, "tc", suffix, ["Alpha"])
+
+        result = uab._run_window(
+            window=w, case_id="tc", yaml_path=tmp_path / "tc.yaml",
+            cache_dir=tmp_path, draft_dir=tmp_path,
+            anthropic_client=None, max_cost=2.0,
+            retry_empty=False, dry_run=True, skip_existing=False,
+        )
+
+        assert result.status == "dry_run"
+
+    # ---- format_batch_report ----
+
+    def test_report_shows_skipped_existing_status(self):
+        results = [
+            uab.WindowResult(
+                label="alpha_70", page_range=(70, 78), output_suffix="unit_alpha_70",
+                draft_path=Path("/tmp/a.yaml"), status="skipped_existing",
+                units_extracted=1, findings=4, command="",
+            )
+        ]
+        report = uab.format_batch_report(results, "tc")
+        assert "SKIPPED_EXISTING" in report
+        assert "already exists" in report
+
+    def test_report_summary_counts_skipped_existing(self):
+        results = [
+            uab.WindowResult(
+                label="a", page_range=(1, 5), output_suffix="unit_a_1",
+                draft_path=Path("/tmp/a.yaml"), status="pass", command="",
+            ),
+            uab.WindowResult(
+                label="b", page_range=(6, 10), output_suffix="unit_b_6",
+                draft_path=Path("/tmp/b.yaml"), status="skipped_existing", command="",
+            ),
+            uab.WindowResult(
+                label="c", page_range=(11, 15), output_suffix="unit_c_11",
+                draft_path=Path("/tmp/c.yaml"), status="skipped_existing", command="",
+            ),
+        ]
+        report = uab.format_batch_report(results, "tc")
+        assert "skipped_existing=2" in report
+        assert "pass=1" in report
+
+    def test_skipped_existing_not_counted_as_failure(self):
+        """skipped_existing windows must not cause a non-zero exit code."""
+        results = [
+            uab.WindowResult(
+                label="b", page_range=(6, 10), output_suffix="unit_b_6",
+                draft_path=Path("/tmp/b.yaml"), status="skipped_existing", command="",
+            ),
+        ]
+        failed = sum(1 for r in results if r.status == "failed")
+        assert failed == 0
