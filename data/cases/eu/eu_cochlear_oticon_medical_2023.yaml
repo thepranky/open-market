@@ -1,0 +1,328 @@
+case_id: eu_cochlear_oticon_medical_2023
+case_name: Cochlear / Oticon Medical
+authority: European Commission
+jurisdiction: EU
+sector: medical devices / hearing implants
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2023-10-09'
+parties:
+- name: Cochlear Limited
+  role: acquirer
+- name: Oticon Medical A/S (cochlear implant business)
+  role: target
+source_documents:
+- doc_id: eu_cochlear_oticon_medical_decision
+  title: 'Case M.10966 – Cochlear / Oticon Medical: Commission Decision'
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10966
+  pdf_url: https://ec.europa.eu/competition/mergers/cases1/202405/M_10966_9881563_2329_5.pdf
+  doc_type: decision
+  authority_reference: M.10966
+  retrieval_status: direct
+  published_date: '2023-10-09'
+product_markets_considered:
+- market_id: pm_1
+  name: Market for the manufacture and supply of cochlear implants (CIs)
+  definition_status: defined
+  notes: The Commission considered, for the purposes of this decision, that the relevant product
+    market is the market for CIs. The investigation found CIs are not substitutable with other
+    hearing solutions (hearing aids, other implantable hearing solutions, reconstructive surgery).
+    No sub-segmentation by patient type (adults vs. children) or by implant vs. processor/accessories
+    was found appropriate. The Notifying Party argued for a broader market including other hearing
+    solutions and argued against sub-segmentation; both views were largely aligned on no sub-segmentation
+    though differed on breadth. The Commission adopted the narrow CI-only market for this decision.
+geographic_markets_considered:
+- market_id: gm_1
+  name: National markets for the manufacture and supply of cochlear implants (CIs)
+  definition_status: considered
+  notes: 'The Commission assessed the market for CIs at national level for the purpose of this
+    decision, covering 13 Affected Jurisdictions: Bulgaria, Denmark, Finland, France, Ireland,
+    Italy, Lithuania, Netherlands, Norway, Poland, Portugal, Spain, and Sweden. Key factors:
+    differing medical indications, purchasing behaviours, reimbursement systems and prices across
+    EEA countries; importance of local presence; reimbursement and purchasing at national level.
+    Notifying Party submitted national scope; Commission confirmed this through market investigation.
+    Precedent cited for medical devices being national in scope.'
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_cochlear_oticon_medical_decision
+  page: '6'
+  quote_snippet: The Commission's investigation indicated that likely there exists a separate
+    market for the manufacturing and supply of CIs, distinct from manufacturing and supply of
+    other hearing implants and solutions.
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_cochlear_oticon_medical_decision
+  page: '6'
+  quote_snippet: the results of the market investigation revealed that CIs are not substitutable
+    with other types of hearing solutions as the majority of both competitors and customers
+    indicated that patients using CIs would not generally be able to use other types of hearing
+    solutions (including hearing aids, other implantable hearing solutions or reconstructive
+    surgery) and achieve audiological results comparable to those achieved with CIs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_cochlear_oticon_medical_decision
+  page: '6'
+  quote_snippet: The Commission's investigation confirmed the Notifying Party's view that it
+    would be inappropriate to distinguish CIs by patient type, as no competitor supplies adult-only
+    or child-only CIs, most customers do not make separate purchases for adult and child CIs
+    and there is no evidence of any other substantial difference between CIs for adults and
+    children.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_cochlear_oticon_medical_decision
+  page: '7'
+  quote_snippet: Based on all available evidence, the Commission considers, for the purposes
+    of this decision, that the relevant product market is the market for CIs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_cochlear_oticon_medical_decision
+  page: '5'
+  quote_snippet: The Notifying Party submits that when assessing competition in the CI segment,
+    it is important to take into account the competitive pressure from other forms of hearing
+    solutions
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_cochlear_oticon_medical_decision
+  page: '6'
+  quote_snippet: The Notifying Party further submits that it would be inappropriate to sub-segment
+    the CIs market by patient type between children and adults
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_cochlear_oticon_medical_decision
+  page: '5'
+  quote_snippet: 'Whilst the Commission has not previously assessed specifically the relevant
+    market for CIs, in a past case concerning hearing aids, the Commission indicated that hearing
+    aids are distinguished from: (i) CIs and BCS that are surgically implanted to treat hearing
+    impairment; (ii) personal sound amplification products; and (iii) assistive listening devices.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_cochlear_oticon_medical_decision
+  page: '7'
+  quote_snippet: 'The Notifying Party submits that the relevant geographic market for CIs is
+    national because: (i) the specific indications for CIs may vary between EEA countries; (ii)
+    customers'' purchasing behaviour differs from one EEA country to another; (iii) the sales,
+    clinical and customer service organisations of CI manufacturers are national in scope; (iv)
+    it is important to have national sales, clinical and customer service organisations to provide
+    customer and patient support before and after surgery and aftercare support; and (v) the
+    presence of specific reimbursement systems across the EEA has resulted in service, support,
+    and price variations between EEA countries.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_cochlear_oticon_medical_decision
+  page: '7'
+  quote_snippet: The market investigation largely confirmed the Notifying Party's arguments.
+    In particular, competitors indicated that medical indications, purchasing behaviours, reimbursement
+    systems and prices differ across EEA countries. Virtually all competitors and customers
+    that responded to the market investigation considered local presence as very important,
+    underlining the significance of local customer and patient support services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_cochlear_oticon_medical_decision
+  page: '7'
+  quote_snippet: In conclusion, for the purpose of this decision, the Commission will assess
+    the market for the manufacturing and supply of CIs at national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_cochlear_oticon_medical_decision
+  page: '7'
+  quote_snippet: Whilst the Commission has not previously specifically assessed the relevant
+    geographic market for CIs, in previous cases concerning medical devices, the Commission
+    has considered the geographic scope of the relevant markets as being national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_cochlear_oticon_medical_decision
+  page: '11'
+  quote_snippet: First, the Target is by far the smallest supplier of CIs in the vast majority
+    of the Affected Jurisdictions and has de facto exited the market in 2022. In 2022, the Target
+    had sales only in [...], which are residual sales that are expected to further diminish.
+    Accordingly, the share increment contributed by the Target is at most [0-5]% and in the
+    vast majority of the Affected Jurisdictions the Transaction will not result in any incremental
+    share.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_cochlear_oticon_medical_decision
+  page: '11'
+  quote_snippet: Second, even prior to the recall in 2021, the Target was the last entrant and
+    the smallest player in the market, with its sales decreasing considerably already in the
+    pre-recall period... the Target has long been loss-making and has failed to profitably invest
+    in innovation and R&D.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_cochlear_oticon_medical_decision
+  page: '12'
+  quote_snippet: Third, the Target is not expected to be able to recover its pre-recall market
+    position. The market investigation suggests that typically with an appropriate response,
+    it is possible for players to recover their sales after a recall. However, the majority
+    of the market investigation respondents anticipate that, in absence of the Transaction,
+    the Target's position would continue to decline.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_cochlear_oticon_medical_decision
+  page: '12'
+  quote_snippet: Fourth, the Commission's investigation confirmed that the Target's very low
+    market shares (even before the product recall in 2021) appropriately reflect the lack of
+    competitive constraint that the Target poses on the other players in the market, including
+    Cochlear.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_cochlear_oticon_medical_decision
+  page: '12'
+  quote_snippet: Fifth, the Merged Entity will continue facing competition from two competitors,
+    Med-El and AB, which exert significantly stronger competitive pressure on Cochlear than
+    does the Target.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_cochlear_oticon_medical_decision
+  page: '13'
+  quote_snippet: the majority of the respondents to the market investigation consider that the
+    Transaction will not have an impact on the markets for CIs in the Affected Jurisdictions,
+    mainly due to Oticon CI's current marginal competitive role and lack of scale to profitably
+    invest in innovation. Additionally, none of the reimbursement authorities have voiced concerns
+    for competition related to the Transaction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.65
+  created_date: '2026-06-03'
+  last_updated_date: '2026-06-03'
+  tags:
+  - medical-devices
+  - hearing-implants
+  - phase1
+  - cleared
+remedies: []
+authority_reference: M.10966
+case_type: merger

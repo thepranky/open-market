@@ -47,7 +47,11 @@ class _MergedDumper(yaml.SafeDumper):
 
 
 def _str_representer(dumper: yaml.SafeDumper, data: str) -> yaml.ScalarNode:
-    if len(data) > 80 or "\n" in data:
+    if "\n" in data:
+        # Block scalar only for strings that contain real newlines.
+        # Single-line strings — including long URLs — are left to yaml.dump's
+        # natural word-wrapping so no spurious trailing newline is introduced
+        # on YAML round-trip (the old len>80 path caused httpx.InvalidURL).
         cleaned = "\n".join(line.rstrip() for line in data.splitlines()).rstrip() + "\n"
         return dumper.represent_scalar("tag:yaml.org,2002:str", cleaned, style="|")
     return dumper.represent_scalar("tag:yaml.org,2002:str", data)

@@ -720,11 +720,22 @@ class TestCLI:
 
 class TestYamlOutput:
 
-    def test_long_notes_use_block_scalar(self):
-        long_notes = "A" * 100
-        d = {"notes": long_notes}
+    def test_multiline_notes_use_block_scalar(self):
+        # Strings with actual newlines must use literal block scalar.
+        multiline = "Line one.\nLine two.\nLine three that goes on a bit longer."
+        d = {"notes": multiline}
         out = _dump_canonical_yaml(d)
         assert "|" in out
+
+    def test_url_round_trip_no_trailing_newline(self):
+        # Long single-line strings (e.g. PDF URLs > 80 chars) must NOT gain a
+        # spurious trailing newline on YAML round-trip.  The old |‑clip representer
+        # caused httpx.InvalidURL when source integrity tried to fetch the URL.
+        url = "https://ec.europa.eu/competition/mergers/cases1/202405/M_10966_9881563_2329_5.pdf"
+        d = {"pdf_url": url}
+        out = _dump_canonical_yaml(d)
+        loaded = yaml.safe_load(out)
+        assert loaded["pdf_url"] == url
 
     def test_short_notes_use_plain_scalar(self):
         short = "Short note."
