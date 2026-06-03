@@ -109,6 +109,24 @@ def _market_key(m: dict) -> str:
     """Dedup key for a product or geographic market."""
     return _norm(m.get("name", ""))[:80]
 
+
+def _unit_key(u: dict) -> tuple:
+    """Dedup key for a unit_assessment — (unit_type, normalized unit_label)."""
+    return (
+        str(u.get("unit_type", "") or "").strip().lower(),
+        _norm(u.get("unit_label", ""))[:80],
+    )
+
+
+def _finding_key(f: dict) -> tuple:
+    """Dedup key for a finding within a unit_assessment."""
+    return (
+        str(f.get("finding_type", "") or "").strip().lower(),
+        _norm(f.get("segment", ""))[:80],
+        _norm(f.get("geography", ""))[:40],
+        str(f.get("conclusion", "") or "").strip().lower(),
+    )
+
 # ---------------------------------------------------------------------------
 # ID map
 # ---------------------------------------------------------------------------
@@ -410,6 +428,110 @@ def _merge_markets(
         union_fields=[],
         description_field="notes",
     )
+
+
+def _merge_unit_assessments(
+    items: list[tuple[int, dict]],
+    sp_map: _IdMap,
+    warnings: list[str],
+) -> list[dict]:
+    """
+    Deduplicate unit_assessments by (unit_type, normalised unit_label).
+
+    - Assigns stable global IDs: unit_1, unit_2, ...
+    - Deduplicates findings within each unit by (finding_type, segment, geography, conclusion).
+    - Unions findings when the same unit appears in multiple drafts.
+    - Rewrites source_passage_refs in findings using sp_map.
+    - related_markets and related_theories are string labels — unioned directly.
+    - Finding IDs are reassigned sequentially (f_1, f_2, ...) within each merged unit.
+
+    Note: passages do not carry a supports_unit_assessments forward link in the
+    current schema, so back-reference synthesis from passages to unit findings is
+    not performed here.  The reverse direction (finding → passage via
+    source_passage_refs) is rewritten correctly.
+    """
+    # canonical_key -> {"unit_type", "unit_label", "_unit_idx", "_pending"}
+    canonical: dict[tuple, dict] = {}
+    unit_counter = 1
+    collapsed_units = 0
+
+    for draft_idx, unit in items:
+        key = _unit_key(unit)
+        if key not in canonical:
+            canonical[key] = {
+                "unit_type": unit.get("unit_type", ""),
+                "unit_label": unit.get("unit_label", ""),
+                "_unit_idx": unit_counter,
+                "_pending": [(draft_idx, f) for f in (unit.get("findings") or [])],
+            }
+            unit_counter += 1
+        else:
+            canonical[key]["_pending"].extend(
+                (draft_idx, f) for f in (unit.get("findings") or [])
+            )
+            collapsed_units += 1
+
+    if collapsed_units:
+        warnings.append(
+            f"INFO: unit_assessment: {collapsed_units} duplicate unit(s) collapsed."
+        )
+
+    result: list[dict] = []
+    for key, acc in canonical.items():
+        pending: list[tuple[int, dict]] = acc.pop("_pending")
+        acc.pop("_unit_idx")
+
+        # Deduplicate findings within this unit
+        finding_canonical: dict[tuple, dict] = {}
+        finding_counter = 1
+        collapsed_findings = 0
+
+        for draft_idx, finding in pending:
+            fkey = _finding_key(finding)
+            old_refs = list(finding.get("source_passage_refs") or [])
+            new_refs = sp_map.rewrite_list(draft_idx, old_refs)
+
+            if fkey not in finding_canonical:
+                merged_finding = dict(finding)
+                merged_finding["finding_id"] = f"f_{finding_counter}"
+                finding_counter += 1
+                merged_finding["source_passage_refs"] = new_refs
+                finding_canonical[fkey] = merged_finding
+            else:
+                existing = finding_canonical[fkey]
+                collapsed_findings += 1
+                # Union source_passage_refs
+                seen_refs: set = set(existing["source_passage_refs"])
+                for ref in new_refs:
+                    if ref not in seen_refs:
+                        seen_refs.add(ref)
+                        existing["source_passage_refs"].append(ref)
+                # Union string-label list fields
+                for lf in ("related_markets", "related_theories"):
+                    existing_vals = existing.get(lf) or []
+                    incoming_vals = finding.get(lf) or []
+                    seen_vals: set = set(existing_vals)
+                    for v in incoming_vals:
+                        if v not in seen_vals:
+                            seen_vals.add(v)
+                            existing_vals.append(v)
+                    existing[lf] = existing_vals
+                # Keep richer description
+                incoming_desc = finding.get("description") or ""
+                if len(incoming_desc) > len(existing.get("description") or ""):
+                    existing["description"] = incoming_desc
+
+        if collapsed_findings:
+            warnings.append(
+                f"INFO: unit_assessment '{acc['unit_label']}': "
+                f"{collapsed_findings} duplicate finding(s) collapsed."
+            )
+
+        acc["findings"] = list(finding_canonical.values())
+        result.append(acc)
+
+    return result
+
 
 # ---------------------------------------------------------------------------
 # Cross-reference rewriting
@@ -745,6 +867,7 @@ def merge_drafts(
     toh_items: list[tuple[int, dict]] = []
     com_items: list[tuple[int, dict]] = []
     sp_items: list[tuple[int, dict]] = []
+    ua_items: list[tuple[int, dict]] = []
 
     for i, d in enumerate(drafts):
         for rec in d.get("product_markets_considered") or []:
@@ -767,6 +890,8 @@ def merge_drafts(
             r = dict(rec)
             r["_draft_idx"] = i
             sp_items.append((i, r))
+        for rec in d.get("unit_assessments") or []:
+            ua_items.append((i, dict(rec)))
 
     # ------------------------------------------------------------------
     # 5. Deduplicate and assign global IDs
@@ -782,6 +907,9 @@ def merge_drafts(
     merged_tohs = _merge_theories(toh_items, toh_map, warnings)
     merged_coms = _merge_commitments(com_items, com_map, warnings)
     merged_sps = _merge_passages(sp_items, sp_map, warnings)
+    # unit_assessments: passage refs must be rewritten using the final sp_map,
+    # so merge after passages are assigned global IDs.
+    merged_uas = _merge_unit_assessments(ua_items, sp_map, warnings)
 
     # ------------------------------------------------------------------
     # 6. Rewrite cross-references
@@ -834,6 +962,8 @@ def merge_drafts(
         "commitments": merged_coms,
         "source_passages": merged_sps,
     }
+    if merged_uas:
+        merged["unit_assessments"] = merged_uas
     if metadata.get("procedure_stage"):
         merged["procedure_stage"] = metadata["procedure_stage"]
     if metadata.get("authority_reference"):
@@ -862,6 +992,10 @@ def _print_report(
     print(f"  Theories of harm  : {len(merged.get('theories_of_harm') or [])}")
     print(f"  Commitments       : {len(merged.get('commitments') or [])}")
     print(f"  Source passages   : {len(merged.get('source_passages') or [])}")
+    uas = merged.get("unit_assessments") or []
+    if uas:
+        total_findings = sum(len(u.get("findings") or []) for u in uas)
+        print(f"  Unit assessments  : {len(uas)} unit(s), {total_findings} finding(s)")
     print(f"  Warnings          : {len(warnings)}")
     for w in warnings:
         print(f"    {w}")

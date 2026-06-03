@@ -10,7 +10,7 @@
 
 **Practical use case:** A lawyer researching market definition precedent in a media/gaming merger can search CompMap and find: which product markets were considered, what definition status was reached (defined, discussed, left open), what theories of harm were raised, and exactly which passage of which decision supports each finding — with page and paragraph numbers.
 
-**Current state:** This is a v0 first slice. There are 10 source-verified canonical case records. The ingestion pipeline now covers source caching, LLM extraction, deterministic validation, LLM review triage, central market-definition rules, safe draft-to-canonical promotion, final promotion gates, review-learning logs, and eval fixtures. The first EC Phase I expansion batch has added TCCC/Costa, Facebook/WhatsApp, and Daimler/Geely/Smart; BMS/Celgene remains parked as a hard pharma/remedy draft template. Frontend cleanup is deferred.
+**Current state:** This is a v0 first slice. There are 12 source-verified canonical case records. The ingestion pipeline now covers source caching, multi-focus LLM extraction, deterministic validation, LLM review triage, safe draft-to-canonical promotion, review-learning logs, eval fixtures, and long-decision assembly. The pipeline started with market-definition extraction and has now been extended to outcome metadata, theories of harm, remedies/commitments, and repeated-unit assessment for long Phase II decisions. Frontend cleanup is deferred.
 
 ---
 
@@ -25,8 +25,8 @@
 | **Graph database**         | Neo4j 5.22 Community (`graph/`)                                         | Stores cases as a graph of 13 node types, 15 relationship types                         | Enables cross-case traversal: "which cases in gaming considered distribution markets?" |
 | **Frontend**               | Next.js 14, React 18, TypeScript, Tailwind (`apps/web/`)                | Search UI, case detail pages, source passage display                                    | Makes the data usable without direct API calls                                         |
 | **PDF / text extraction**  | pypdf, pdfplumber (`apps/api/app/utils/pdf_extractor.py`)               | Extracts and caches text from authority PDFs                                            | Required before any quote can be validated or extracted                                |
-| **LLM extraction**         | Anthropic SDK / Claude (`apps/api/scripts/extract_case_from_source.py`) | AI-assisted extraction of markets, theories, passages from source text                  | 3,790-line script; core of the semi-automated pipeline                                 |
-| **Validation scripts**     | Python CLI scripts (`apps/api/scripts/`)                                | 9 scripts covering link checking, quote integrity, schema validation, eval benchmarking | These are the quality gates; they enforce the "source-first" principle                 |
+| **LLM extraction**         | Anthropic SDK / Claude (`apps/api/scripts/extract_case_from_source.py`) | Multi-focus extraction of markets, geographic scope, outcome metadata, theories of harm, remedies/commitments, source passages, and repeated-unit findings | Core semi-automated legal structuring layer; each pass remains source-backed and reviewable |
+| **Validation / pipeline scripts** | Python CLI scripts (`apps/api/scripts/`)                                | Orchestrates ingestion, page-range planning, draft merging, quote integrity, schema validation, source-link checks, and eval benchmarks | These are the quality gates; they enforce the source-first principle and keep generated drafts reviewable |
 | **Evaluation fixtures**    | YAML gold files + JSON eval reports (`data/evals/`)                     | Benchmark extraction quality against curated ground-truth records                       | Enables measurable precision/recall for extraction                                     |
 | **Containerisation**       | Docker Compose (`docker-compose.yml`)                                   | Runs neo4j, api, web, and a one-off seed container together                             | Full local stack in one command; not yet production-deployed                           |
 | **CI**                     | GitHub Actions (`.github/workflows/`)                                   | Runs schema validation + a CI-safe eval benchmark subset on every push                  | Catches regressions without requiring Neo4j or live PDFs                               |
@@ -36,7 +36,7 @@
 
 ## 3. Current Pipeline
 
-The pipeline has two distinct parts: **manual authoring** (how the baseline cases were built) and a **semi-automated ingestion flow**. The semi-automated flow has now been proven on a genuinely fresh EC case (`eu_sika_dry_mix_2019`).
+The pipeline has two distinct parts: **manual legal judgment** and a **semi-automated, source-first ingestion flow**. The ingestion flow is no longer a single market-definition pass. It now supports multiple focused passes — market definition, outcome metadata, theories of harm, remedies/commitments, and repeated-unit assessment — which can be assembled into one reviewable draft before human promotion.
 
 ### Stage 0 — Case selection (manual)
 
@@ -68,12 +68,42 @@ The pipeline has two distinct parts: **manual authoring** (how the baseline case
 
 ### Stage 3 — LLM-assisted extraction
 
-- **What:** Claude reads the cached source text and proposes: product markets, geographic markets, theories of harm, source passages (with quotes and page numbers), remedies, case history.
-- **Script:** `apps/api/scripts/extract_case_from_source.py` (3,790 lines)
-- **Inputs:** Cached source text JSON from `data/source_text/`; existing case YAML (if any) for reconciliation.
-- **Outputs:** Draft YAML in `data/drafts/{jurisdiction}/` (e.g., `eu_sika_mbcc_2023.market_definition.draft.yaml`) and a reconciliation report JSON.
-- **Competition law context:** The script extracts structured legal propositions — what product market was considered, what definition status was reached, what evidence the authority relied on, with direct quotes.
-- **Status:** Semi-automated. Script runs with a single command; output requires human review before promotion to `data/cases/`.
+- **What:** Claude reads cached source text and proposes structured legal records from the authority document.
+- **Script:** `apps/api/scripts/extract_case_from_source.py`
+- **Inputs:** Cached source text JSON from `data/source_text/`; existing case YAML (if any) for reconciliation; optional focus mode and page range.
+- **Outputs:** Draft YAML in `data/drafts/{jurisdiction}/` and a review report.
+- **Focus modes:**
+  - `market_definition` — product/geographic markets and source passages.
+  - `outcome_metadata` — outcome, procedure stage, decision date, authority reference, and operative support.
+  - `theories` — horizontal, vertical, conglomerate, innovation, and other theories of harm.
+  - `remedies` — commitments, divestitures, access/licensing obligations, and related source passages.
+  - `unit_assessment` — repeated unit-level findings where a long decision analyses many similar units, such as crops, routes, countries, indications, customer segments, or asset sites.
+- **Competition law context:** A merger decision is not just a list of market definitions. A useful research record also needs to know what the authority decided, which harms were identified, what remedies were accepted, and where repeated factual assessments sit in the source.
+- **Status:** Semi-automated. Each draft remains generated work product and requires human review before promotion to `data/cases/`.
+
+---
+
+### Stage 3a — Long-decision planning and page-range extraction
+
+- **What:** For large Phase II decisions, the pipeline plans smaller extraction windows instead of sending hundreds of pages into one prompt.
+- **Scripts:** `apps/api/scripts/plan_extraction_ranges.py`; `ingest_case.py --page-range START:END --output-suffix SUFFIX`.
+- **Inputs:** Cached source text with page/section metadata.
+- **Outputs:** Suggested page ranges and commands for targeted focus-specific drafts.
+- **Why this matters:** Long decisions often contain distinct sections for market definition, competitive assessment, remedies, and operative outcome language. Page-range extraction keeps each pass narrow enough to be accurate and reviewable.
+- **Status:** Implemented for diagnostic and controlled long-case extraction.
+
+---
+
+### Stage 3b — Multi-focus draft assembly
+
+- **What:** Merge multiple focus-specific drafts for the same case into one reviewable draft.
+- **Script:** `apps/api/scripts/merge_drafts.py`
+- **Inputs:** Draft YAMLs from market-definition, outcome, theories, remedies, and unit-assessment passes.
+- **Outputs:** A merged draft under `data/drafts/`, with global IDs and rewritten cross-references.
+- **What it handles:** Metadata precedence, theory/commitment/unit deduplication, source-passage deduplication, ID rewriting, and back-reference synthesis.
+- **Status:** Implemented as a review-draft assembly tool. It does not promote to canonical data.
+
+---
 
 ---
 
@@ -186,8 +216,10 @@ The data model maps onto the standard competition law analysis framework as foll
 | **Parties and transaction**       | `parties[]` with `role` (acquirer / target / third_party)        | Structural context for the transaction                                                                       |
 | **Theories of harm**              | `theories_of_harm[]`                                             | Name + description; linked to source passages via `supports_theories` cross-references                       |
 | **Evidence relied on**            | `source_passages[]` with `quote_snippet`, `page`, `paragraph`    | Direct quotes from the decision; each passage explicitly links to the markets or theories it supports        |
-| **Remedies / outcome**            | `outcome` (enum) + `remedies[]`                                  | Decision result and any behavioural or structural conditions                                                 |
+| **Outcome / procedural posture**  | `outcome`, `procedure_stage`, `decision_date`, `authority_reference` | Whether the transaction was cleared, conditionally cleared, prohibited, or otherwise resolved; anchored in operative decision language |
+| **Remedies / commitments**        | `commitments[]` / remedies-related passages                         | Structural divestitures, behavioural/access obligations, purchaser requirements, and source support                              |
 | **Procedural history**            | `case_history` object with timeline events                       | Phase transitions, referrals, appeals, annulments                                                            |
+| **Repeated factual assessments**  | `unit_assessments[]`                                                 | Unit-level findings where a decision analyses many repeated units, such as crops, routes, countries, indications, or asset sites |
 | **Source citation support**       | `source_documents[]` + `source_passages[]`                       | Every finding is traceable to a specific document, page, and paragraph                                       |
 
 
@@ -252,6 +284,7 @@ Every proposition in the YAML must be backed by a `source_passage` entry. A find
 | **LLM extraction without legal judgment**    | The model can extract the right passage but misclassify its legal significance                     | Kept human review as a required promotion step before draft YAML becomes canonical data        |
 | **Over-reliance on record-level confidence** | A single case-level quality score hides which exact propositions are reliable                      | Shifted reliability toward proposition-level source passages, review status, and quote support |
 | **Completeness risk**                        | Passing quote validation proves a quote exists, not that all relevant markets were found           | Added evaluation fixtures and precision/recall benchmarking, but coverage remains limited      |
+| **Long Phase II decision coverage** | Large decisions split legal analysis across hundreds of pages, so a single extraction pass can miss theories, remedies, or repeated unit-level findings | Added page-range extraction, range planning, multi-focus extraction, unit assessment, and draft merging before human review |
 | **Schema drift risk**                        | As the legal model evolves, old YAML records can silently become inconsistent                      | Centralised validation through Pydantic schemas and CI checks                                  |
 | **Prototype-to-product gap**                 | Local scripts can work without being a usable deployed system                                      | Containerised the local stack with Docker Compose and identified deployment-readiness gaps     |
 
@@ -274,9 +307,12 @@ This is not a rigid roadmap. It is the sensible order of priority based on the c
 | **4**    | **Human review workflow** ✅ Done | Created `docs/human-promotion-checklist.md` with promotion prerequisites, review steps, definition_status mapping, source_role guidance, outcome-passage rules, and pre/post-promotion commands | **Human + Claude** — human set policy decisions; Claude drafted the checklist | Formalises the review loop so cases can be promoted consistently and auditably |
 | **5**    | **Review learning logs** ✅ v1 Done | Captured human-review deltas from draft → reviewed draft → canonical record; categorised correction types; proposals aggregated and output to `data/review_learning/proposals/` | **Claude + human + ChatGPT** — Claude implemented log capture and proposal aggregation; human validated categories | This is how manual review scope shrinks over time without weakening source-first reliability                      |
 | **6**    | **Evaluation expansion** ✅ v1 started | Benchmark now covers 6 cases and 6/6 PASS. | **Human + Claude** — human created gold judgments for Sika/Dry Mix; Claude wired up eval fixtures and benchmark config | Scaling requires knowing when extraction quality regresses                                                        |
-| **7**    | **Small-batch case coverage** ← Current | TCCC/Costa, Facebook/WhatsApp, and Daimler/Geely/Smart are promoted; BMS/Celgene is parked as a hard pharma/remedy draft template. | **Human + ChatGPT + Claude** — human makes legal promotion decisions; ChatGPT helps triage; Claude runs cleanup and promotion tooling | Proves the loop can scale beyond one fresh case while still converting each review into reusable pipeline learning |
+| **7**    | **Small-batch case coverage** ✅ Done | Promoted additional EC cases through the full loop; fresh-case runs exposed recurring gaps around geographic markets, outcome metadata, and source-role classification | **Human + ChatGPT + Claude** — human makes legal promotion decisions; ChatGPT helps triage; Claude runs cleanup and promotion tooling | Proved the loop can scale beyond one fresh case while converting each review into reusable pipeline learning |
 | **8**    | **Central market-definition rule registry** ✅ v1 Done | Registry exists at `data/pipeline_rules/market_definition_rules.yaml`. | **Claude + human + ChatGPT** — Claude implements registry/checks; human approves legal policy; ChatGPT helps structure rules | Prevents rule drift as the pipeline accumulates legal-meaning rules from review learning logs |
 | **8a**   | **Case promotion pipeline** ✅ v1 Done | Added `promote_case_pipeline.py` to run target-draft integrity, safe promotion, canonical gates, graph seed, review learning log, and apply-learning proposals in one fail-fast workflow | **Claude + human + ChatGPT** — Claude implemented/tests; human validated workflow; ChatGPT shaped safety requirements | Prevents repeated raw-copy promotion mistakes and makes final promotion repeatable |
+| **8b**   | **Multi-focus extraction** ✅ v1 Done | Added focused extraction for outcome metadata, theories of harm, remedies/commitments, and repeated-unit assessments, alongside market definition | **Claude + human + ChatGPT** — Claude implemented; human validated legal usefulness; ChatGPT shaped the abstraction | Prevents the pipeline from tunnelling into market definition and makes long Phase II decisions structurally representable |
+| **8c**   | **Long-decision assembly** ✅ v1 Done | Added page-range extraction, extraction-range planning, and draft merging so multiple focus-specific passes can become one reviewable draft | **Claude + human + ChatGPT** — Claude implemented scripts/tests; human reviewed outputs; ChatGPT guided sequencing | Long decisions need controlled windows and assembly before legal review; this is the bridge from extraction experiments to reviewable drafts |
+| **Next** | **Controlled corpus expansion** ← Current | Use the generalized pipeline on a medium batch of further cases, keeping hard cases as diagnostics and only promoting after legal review | **Human + ChatGPT + Claude** — human decides legal promotion; ChatGPT helps prioritise cases and risks; Claude runs pipeline/tooling | Now that the pipeline can represent markets, outcomes, theories, remedies, and repeated-unit findings, the next proof is repeatable case coverage |
 | **Next** | **Eval workflow hygiene** | Ensure generated `data/evals/results/*` outputs do not pollute git status; keep eval results as workflow artifacts only | **Claude + human** | Keeps repo clean and avoids accidental commit of eval artifacts |
 | **9**    | **Search and graph hardening**  | Improve cross-case filtering by market, sector, authority, theory of harm, outcome, and source passage                                                   | **Claude + human** — Claude implements backend/search/graph improvements; human validates usefulness for legal research | This is the core user value beyond reading one YAML record                                                        |
 | **10**   | **Production API readiness**    | Add auth, environment config, rate limiting, logging, monitoring, and proper startup/restart behaviour                                                   | **Claude + human** — Claude implements technical hardening; human decides deployment constraints and reviews security posture | FastAPI production deployments need security, restart handling, replication/memory planning, and pre-start checks |
@@ -301,7 +337,7 @@ This is not a rigid roadmap. It is the sensible order of priority based on the c
 >
 > The core design principle is source-first. Every proposition — every market definition, theory of harm, or evidentiary finding — has to trace back to a real quote in a real document. We validate every quote against the actual extracted text before it enters the database. If the quote isn't there, it doesn't go in.
 >
-> Today we have 10 source-verified canonical case records across the EU, UK, and US. The first small-batch Phase I expansion added consumer foodservice, digital communications, and automotive/JV cases through the full loop: source fetch, LLM extraction, LLM review triage, human review, safe canonical promotion, learning log, and eval fixture. Central market-definition rules and a promotion pipeline now reduce repeated workflow errors. The next focus is eval workflow hygiene and continued controlled case coverage.
+> Today we have 12 source-verified canonical case records. The pipeline began with market-definition extraction, but it now supports a more complete merger-control record: outcome metadata, theories of harm, remedies and commitments, source passages, and repeated unit-level findings for long decisions. For large Phase II decisions, we can run narrow page-range passes and merge them into one reviewable draft before a human promotes anything to canonical data.
 >
 > The system is not production-deployed yet. It runs locally with Docker, with a FastAPI backend, a Neo4j graph layer, and a Next.js frontend. The main gap between now and a deployable product is ingestion automation, broader case coverage, and access control.
 >
@@ -309,4 +345,4 @@ This is not a rigid roadmap. It is the sensible order of priority based on the c
 
 ---
 
-*File paths and scores reflect the repository as of May 2026. The ingestion pipeline design is in `docs/ingestion-design.md`. The completed data baseline and any future source-quality notes are tracked in `docs/data-quality-notes.md`.*
+*File paths and scores reflect the repository as of June 2026. The ingestion pipeline design is in `docs/ingestion-design.md`. Long-case and hard-case diagnostics are tracked in `docs/hard-case-diagnostics.md`. The completed data baseline and any future source-quality notes are tracked in `docs/data-quality-notes.md`.*

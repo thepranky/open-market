@@ -28,6 +28,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from scripts.merge_drafts import (
     _IdMap,
     _commitment_key,
+    _finding_key,
     _focus_of,
     _is_empty,
     _market_key,
@@ -36,12 +37,14 @@ from scripts.merge_drafts import (
     _merge_passages,
     _merge_source_documents,
     _merge_theories,
+    _merge_unit_assessments,
     _norm,
     _normalize_definition_statuses,
     _passage_key,
     _pick_metadata,
     _synthesize_back_refs,
     _theory_key,
+    _unit_key,
     _validate_merged,
     main,
     merge_drafts,
@@ -953,3 +956,248 @@ class TestDefinitionStatusNormalization:
         # Validation should PASS (not_conclusive was the only schema error)
         ok, err = _validate_merged(merged)
         assert ok, f"Validation still failing after normalisation: {err}"
+
+
+# ---------------------------------------------------------------------------
+# unit_assessment key helpers
+# ---------------------------------------------------------------------------
+
+class TestUnitKey:
+    def test_key_normalises_label(self):
+        u = {"unit_type": "crop", "unit_label": "  CUCUMBER  "}
+        assert _unit_key(u) == ("crop", "cucumber")
+
+    def test_key_case_insensitive_unit_type(self):
+        u = {"unit_type": "Crop", "unit_label": "Onion"}
+        assert _unit_key(u)[0] == "crop"
+
+    def test_key_differs_by_label(self):
+        u1 = {"unit_type": "crop", "unit_label": "Cucumber"}
+        u2 = {"unit_type": "crop", "unit_label": "Onion"}
+        assert _unit_key(u1) != _unit_key(u2)
+
+    def test_key_differs_by_type(self):
+        u1 = {"unit_type": "crop", "unit_label": "Cucumber"}
+        u2 = {"unit_type": "route", "unit_label": "Cucumber"}
+        assert _unit_key(u1) != _unit_key(u2)
+
+
+class TestFindingKey:
+    def test_key_normalises_fields(self):
+        f = {
+            "finding_type": "horizontal_overlap",
+            "segment": "  American Slicer  ",
+            "geography": "Italy",
+            "conclusion": "siec",
+        }
+        key = _finding_key(f)
+        assert key == ("horizontal_overlap", "american slicer", "italy", "siec")
+
+    def test_distinct_geography_different_key(self):
+        base = {"finding_type": "h", "segment": "seg", "geography": "IT", "conclusion": "siec"}
+        other = dict(base, geography="DE")
+        assert _finding_key(base) != _finding_key(other)
+
+
+# ---------------------------------------------------------------------------
+# unit_assessment merge
+# ---------------------------------------------------------------------------
+
+def _unit(unit_type: str, unit_label: str, findings: list = None) -> dict:
+    return {
+        "unit_type": unit_type,
+        "unit_label": unit_label,
+        "findings": findings or [],
+    }
+
+
+def _finding(fid: str, ftype: str = "horizontal_overlap", segment: str = "Seg A",
+              geography: str = "Italy", conclusion: str = "siec",
+              description: str = "desc", refs: list = None,
+              markets: list = None, theories: list = None) -> dict:
+    return {
+        "finding_id": fid,
+        "finding_type": ftype,
+        "segment": segment,
+        "geography": geography,
+        "conclusion": conclusion,
+        "description": description,
+        "source_passage_refs": refs or [],
+        "related_markets": markets or [],
+        "related_theories": theories or [],
+    }
+
+
+class TestMergeUnitAssessments:
+    def _run(self, items, sp_map=None):
+        if sp_map is None:
+            sp_map = _IdMap()
+        warnings: list = []
+        result = _merge_unit_assessments(items, sp_map, warnings)
+        return result, warnings
+
+    def test_single_unit_preserved(self):
+        u = _unit("crop", "Cucumber", [_finding("f_1")])
+        result, _ = self._run([(0, u)])
+        assert len(result) == 1
+        assert result[0]["unit_label"] == "Cucumber"
+        assert len(result[0]["findings"]) == 1
+
+    def test_two_distinct_units_kept_separately(self):
+        u1 = _unit("crop", "Cucumber", [_finding("f_1")])
+        u2 = _unit("crop", "Onion", [_finding("f_1")])
+        result, _ = self._run([(0, u1), (0, u2)])
+        assert len(result) == 2
+        labels = {r["unit_label"] for r in result}
+        assert labels == {"Cucumber", "Onion"}
+
+    def test_same_unit_different_drafts_deduped(self):
+        u1 = _unit("crop", "Cucumber", [_finding("f_1", segment="Seg A")])
+        u2 = _unit("crop", "Cucumber", [_finding("f_1", segment="Seg B")])
+        result, warnings = self._run([(0, u1), (1, u2)])
+        assert len(result) == 1
+        assert len(result[0]["findings"]) == 2   # distinct findings kept
+        assert any("collapsed" in w for w in warnings)
+
+    def test_same_unit_label_case_insensitive(self):
+        u1 = _unit("crop", "cucumber", [_finding("f_1")])
+        u2 = _unit("crop", "CUCUMBER", [_finding("f_1", segment="Seg B")])
+        result, _ = self._run([(0, u1), (1, u2)])
+        assert len(result) == 1
+
+    def test_finding_ids_reassigned_sequentially(self):
+        u = _unit("crop", "Cucumber", [
+            _finding("f_1", segment="A"),
+            _finding("f_2", segment="B"),
+        ])
+        result, _ = self._run([(0, u)])
+        ids = [f["finding_id"] for f in result[0]["findings"]]
+        assert ids == ["f_1", "f_2"]
+
+    def test_finding_ids_unique_after_dedupe(self):
+        # Two drafts, same unit, distinct findings → IDs should be f_1, f_2
+        u1 = _unit("crop", "Cucumber", [_finding("f_1", segment="Seg A")])
+        u2 = _unit("crop", "Cucumber", [_finding("f_1", segment="Seg B")])
+        result, _ = self._run([(0, u1), (1, u2)])
+        ids = [f["finding_id"] for f in result[0]["findings"]]
+        assert len(ids) == len(set(ids))   # all unique
+        assert set(ids) == {"f_1", "f_2"}
+
+    def test_duplicate_findings_collapsed(self):
+        f = _finding("f_1", segment="Seg A", geography="Italy", conclusion="siec")
+        u1 = _unit("crop", "Cucumber", [f])
+        u2 = _unit("crop", "Cucumber", [copy.deepcopy(f)])
+        result, warnings = self._run([(0, u1), (1, u2)])
+        assert len(result[0]["findings"]) == 1
+        assert any("collapsed" in w for w in warnings)
+
+    def test_duplicate_finding_unions_refs(self):
+        f1 = _finding("f_1", segment="Seg A", refs=["sp_1"])
+        f2 = _finding("f_1", segment="Seg A", refs=["sp_2"])
+        u1 = _unit("crop", "Cucumber", [f1])
+        u2 = _unit("crop", "Cucumber", [f2])
+        # Build a sp_map that maps (draft_idx, old_id) -> new_id
+        sp_map = _IdMap()
+        sp_map.register(0, "sp_1", "sp_1")
+        sp_map.register(1, "sp_2", "sp_2")
+        result, _ = self._run([(0, u1), (1, u2)], sp_map)
+        refs = set(result[0]["findings"][0]["source_passage_refs"])
+        assert refs == {"sp_1", "sp_2"}
+
+    def test_duplicate_finding_keeps_richer_description(self):
+        f1 = _finding("f_1", segment="Seg A", description="Short.")
+        f2 = _finding("f_1", segment="Seg A", description="Much longer description with detail.")
+        u1 = _unit("crop", "Cucumber", [f1])
+        u2 = _unit("crop", "Cucumber", [f2])
+        result, _ = self._run([(0, u1), (1, u2)])
+        assert result[0]["findings"][0]["description"] == "Much longer description with detail."
+
+    def test_duplicate_finding_unions_related_markets(self):
+        f1 = _finding("f_1", segment="Seg A", markets=["Market A"])
+        f2 = _finding("f_1", segment="Seg A", markets=["Market B"])
+        u1 = _unit("crop", "Cucumber", [f1])
+        u2 = _unit("crop", "Cucumber", [f2])
+        result, _ = self._run([(0, u1), (1, u2)])
+        markets = set(result[0]["findings"][0]["related_markets"])
+        assert markets == {"Market A", "Market B"}
+
+    def test_passage_refs_rewritten_via_sp_map(self):
+        f = _finding("f_1", refs=["sp_1"])
+        u = _unit("crop", "Cucumber", [f])
+        sp_map = _IdMap()
+        sp_map.register(0, "sp_1", "sp_3")   # sp_1 in draft 0 -> sp_3 global
+        result, _ = self._run([(0, u)], sp_map)
+        assert result[0]["findings"][0]["source_passage_refs"] == ["sp_3"]
+
+    def test_empty_unit_assessments_not_added_to_merged(self, tmp_path):
+        # Draft with no unit_assessments field — merged output should not have key
+        a = _base_draft()
+        pa = tmp_path / "eu_test.theories.a.draft.yaml"
+        pa.write_text(yaml.dump(a))
+        merged, _ = merge_drafts([pa])
+        assert "unit_assessments" not in merged
+
+    def test_unit_assessments_appear_in_merged_output(self, tmp_path):
+        u = _unit("crop", "Cucumber", [_finding("f_1")])
+        a = _base_draft(unit_assessments=[u])
+        pa = tmp_path / "eu_test.unit_assessment.a.draft.yaml"
+        pa.write_text(yaml.dump(a))
+        merged, _ = merge_drafts([pa])
+        assert "unit_assessments" in merged
+        assert len(merged["unit_assessments"]) == 1
+
+    def test_two_unit_assessment_drafts_merged(self, tmp_path):
+        # Two drafts with different units — both should appear in merged output
+        a = _base_draft(unit_assessments=[_unit("crop", "Cucumber", [_finding("f_1")])])
+        b = _base_draft(unit_assessments=[_unit("crop", "Onion", [_finding("f_1")])])
+        pa = tmp_path / "eu_test.unit_assessment.a.draft.yaml"
+        pb = tmp_path / "eu_test.unit_assessment.b.draft.yaml"
+        pa.write_text(yaml.dump(a))
+        pb.write_text(yaml.dump(b))
+        merged, _ = merge_drafts([pa, pb])
+        uas = merged.get("unit_assessments", [])
+        assert len(uas) == 2
+        labels = {u["unit_label"] for u in uas}
+        assert labels == {"Cucumber", "Onion"}
+
+    def test_same_unit_across_two_drafts_deduped_in_merge(self, tmp_path):
+        # Same unit in two drafts with different findings — should collapse to 1 unit, 2 findings
+        a = _base_draft(unit_assessments=[
+            _unit("crop", "Cucumber", [_finding("f_1", segment="Seg A")])
+        ])
+        b = _base_draft(unit_assessments=[
+            _unit("crop", "Cucumber", [_finding("f_1", segment="Seg B")])
+        ])
+        pa = tmp_path / "eu_test.unit_assessment.a.draft.yaml"
+        pb = tmp_path / "eu_test.unit_assessment.b.draft.yaml"
+        pa.write_text(yaml.dump(a))
+        pb.write_text(yaml.dump(b))
+        merged, warnings = merge_drafts([pa, pb])
+        uas = merged.get("unit_assessments", [])
+        assert len(uas) == 1
+        assert len(uas[0]["findings"]) == 2
+        assert any("collapsed" in w for w in warnings)
+
+    def test_no_regression_existing_market_merge(self, tmp_path):
+        # Verify that adding unit_assessment support doesn't break market merging
+        a = _base_draft(product_markets_considered=[_market("pm_1", "Widget market")])
+        b = _base_draft(product_markets_considered=[_market("pm_1", "Gadget market")])
+        pa = tmp_path / "eu_test.market_definition.a.draft.yaml"
+        pb = tmp_path / "eu_test.market_definition.b.draft.yaml"
+        pa.write_text(yaml.dump(a))
+        pb.write_text(yaml.dump(b))
+        merged, _ = merge_drafts([pa, pb])
+        pm_ids = [m["market_id"] for m in merged["product_markets_considered"]]
+        assert pm_ids == ["pm_1", "pm_2"]
+
+    def test_no_regression_theory_merge(self, tmp_path):
+        # Verify that theory merging still works when unit_assessments are also present
+        a = _base_draft(
+            theories_of_harm=[_theory("toh_1", "Innovation harm")],
+            unit_assessments=[_unit("crop", "Cucumber", [_finding("f_1")])],
+        )
+        pa = tmp_path / "eu_test.theories.a.draft.yaml"
+        pa.write_text(yaml.dump(a))
+        merged, _ = merge_drafts([pa])
+        assert len(merged["theories_of_harm"]) == 1
+        assert len(merged["unit_assessments"]) == 1

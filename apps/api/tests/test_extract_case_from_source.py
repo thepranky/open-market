@@ -2827,6 +2827,57 @@ class TestBatchedExtractCase:
         assert "_draft_note" in draft
         assert "background_concepts" not in draft
 
+    def test_unit_assessment_with_batch_by_section_falls_through_to_single_batch(self, tmp_path):
+        """batch_by_section=True must be ignored for unit_assessment; single-batch path used."""
+        existing = _make_record()
+        yaml_path = tmp_path / "test_case.yaml"
+        yaml_path.write_text(yaml.dump(existing))
+
+        ua_response = {
+            "unit_assessments": [
+                {
+                    "unit_type": "crop",
+                    "unit_label": "Carrot",
+                    "findings": [],
+                    "source_passage_refs": [],
+                }
+            ],
+            "source_passages": [],
+            "caveats": [],
+        }
+        mock_block = MagicMock()
+        mock_block.type = "tool_use"
+        mock_block.input = ua_response
+        mock_msg = MagicMock()
+        mock_msg.content = [mock_block]
+        mock_msg.model = "claude-sonnet-4-6"
+        mock_msg.stop_reason = "tool_use"
+        mock_msg.usage = MagicMock(input_tokens=100, output_tokens=50)
+        mock_ac = MagicMock()
+        mock_ac.messages.create.return_value = mock_msg
+
+        from unittest.mock import patch
+        with patch("extract_case_from_source.load_cache", return_value=self._make_page_cache_multi_section()):
+            rpt = extract_case(
+                yaml_path,
+                cache_dir=tmp_path / "cache",
+                use_claude=True,
+                anthropic_client=mock_ac,
+                batch_by_section=True,
+                focus="unit_assessment",
+            )
+
+        # Single Claude call (not one per section group)
+        assert mock_ac.messages.create.call_count == 1
+        # Section batches list is empty — single-batch path was used
+        assert rpt.section_batches == []
+        assert rpt.result is not None
+        assert len(rpt.result.unit_assessments) == 1
+        ua = rpt.result.unit_assessments[0]
+        assert ua["unit_type"] == "crop"
+        assert ua["unit_label"] == "Carrot"
+        assert ua["findings"] == []
+
 
 # ---------------------------------------------------------------------------
 # section_prefix filtering tests (bug-fix: applied to all modes)

@@ -108,6 +108,17 @@ _LOW_PRIORITY: dict[str, tuple[str, ...]] = {
     ),
 }
 
+# Generic heading words that indicate framework/structural sections rather than unit labels.
+# unit_assessment planner excludes top-level sections whose stripped title matches any of these.
+_UNIT_SECTION_EXCLUSIONS = frozenset({
+    "introduction", "background", "summary", "overview", "conclusion",
+    "conclusions", "annex", "appendix", "recitals", "procedure", "scope",
+    "general", "framework", "assessment", "methodology", "legal",
+    "market", "markets", "competition", "competitive", "parties",
+    "notification", "notifying", "transaction", "concentration",
+    "jurisdiction", "applicable", "decision", "outline",
+})
+
 # Default window size (pages per suggested range)
 _DEFAULT_WINDOW = 15
 
@@ -194,6 +205,112 @@ def _score_page(section_path: str, focus: str) -> tuple[int, list[str]]:
 # ---------------------------------------------------------------------------
 # Window building
 # ---------------------------------------------------------------------------
+
+
+def _is_unit_label(heading_text: str) -> bool:
+    """
+    Return True if a top-level heading text looks like a repeated-unit label
+    (e.g. a crop name, route, country, indication) rather than a structural heading.
+
+    Heuristics:
+    - Strip leading section number to get the label.
+    - Label must be 1–4 words.
+    - No word in the label may appear in _UNIT_SECTION_EXCLUSIONS.
+    """
+    # Strip leading section number (e.g. "8 " or "8.1 ")
+    label = re.sub(r"^\d+(?:\.\d+)*\s*", "", heading_text).strip()
+    if not label:
+        return False
+    words = label.lower().split()
+    if not (1 <= len(words) <= 4):
+        return False
+    return not any(w in _UNIT_SECTION_EXCLUSIONS for w in words)
+
+
+def _build_unit_assessment_windows(
+    section_map: dict[int, str],
+    page_range: Optional[tuple[int, int]] = None,
+    window_size: int = _DEFAULT_WINDOW,
+) -> list[ProbeWindow]:
+    """
+    Build ProbeWindows for the unit_assessment focus.
+
+    Instead of keyword scoring, detects pages that belong to a repeated
+    unit structure (crops, routes, countries, indications, …) by grouping
+    consecutive pages that share the same top-level section heading and
+    whose heading label looks like a unit name rather than a generic section.
+
+    Each qualifying group becomes one ProbeWindow.  Large groups are split
+    at natural sub-section boundaries (same logic as keyword-based planner).
+    """
+    all_pages = sorted(section_map.keys())
+    if page_range:
+        lo, hi = page_range
+        all_pages = [p for p in all_pages if lo <= p <= hi]
+
+    if not all_pages:
+        return []
+
+    # Group pages by their top-level section heading
+    groups: list[tuple[str, list[int]]] = []   # (top_heading, pages)
+    current_top = ""
+    current_group: list[int] = []
+
+    for pn in all_pages:
+        sp = section_map.get(pn, "")
+        top = sp.split(" > ")[0] if sp else ""
+        if top != current_top:
+            if current_group and _is_unit_label(current_top):
+                groups.append((current_top, current_group))
+            current_top = top
+            current_group = [pn]
+        else:
+            current_group.append(pn)
+    if current_group and _is_unit_label(current_top):
+        groups.append((current_top, current_group))
+
+    # Build ProbeWindows — split large groups
+    windows: list[ProbeWindow] = []
+    for top_heading, pages in groups:
+        label = re.sub(r"^\d+(?:\.\d+)*\s*", "", top_heading).strip()
+        safe_label = re.sub(r"[^a-z0-9]+", "_", label.lower()).strip("_")[:30]
+
+        if len(pages) <= window_size:
+            chunks = [pages]
+        else:
+            split_points = _find_split_points(pages, section_map, window_size)
+            chunks = []
+            prev = 0
+            for sp_idx in split_points:
+                chunks.append(pages[prev:sp_idx])
+                prev = sp_idx
+            chunks.append(pages[prev:])
+
+        for chunk_idx, chunk in enumerate(chunks):
+            if not chunk:
+                continue
+            start, end = min(chunk), max(chunk)
+            suffix = f"{safe_label}_{start}" if chunk_idx == 0 else f"{safe_label}_{start}_p{chunk_idx + 1}"
+            # Collect unique sub-headings within the chunk
+            seen_leaves: set[str] = set()
+            headings: list[tuple[int, str]] = []
+            for pn in chunk:
+                sp = section_map.get(pn, "")
+                if sp:
+                    leaf = sp.split(" > ")[-1]
+                    if leaf not in seen_leaves:
+                        seen_leaves.add(leaf)
+                        headings.append((pn, leaf))
+            windows.append(ProbeWindow(
+                start_page=start,
+                end_page=end,
+                focus="unit_assessment",
+                headings=headings[:5],
+                total_score=len(chunk),   # score = page count (all pages are relevant)
+                context_suffix=suffix,
+            ))
+
+    return windows
 
 
 def _build_windows(
@@ -452,6 +569,14 @@ def format_plan(
                 lines.append(f"    • p.{pn}: {heading}")
             if len(w.headings) > 5:
                 lines.append(f"    … +{len(w.headings) - 5} more headings")
+        # Warn if this window is immediately adjacent to the next (no gap = possible split mid-section)
+        if focus == "unit_assessment" and i < len(windows):
+            next_w = windows[i]  # i is 1-based; windows[i] is the next window (0-based i)
+            if next_w.start_page <= w.end_page + 1:
+                lines.append(
+                    f"    ⚠ WARNING: adjacent window boundary at p.{w.end_page}/{next_w.start_page} "
+                    "may cross a section boundary — verify headings before extracting."
+                )
         lines.append(f"    $ {w.command(case_id, i)}")
         lines.append("")
 
@@ -471,6 +596,12 @@ def plan(
 ) -> list[ProbeWindow]:
     """Core planning function — returns ProbeWindow list (no I/O)."""
     section_map = _extract_section_map(source_cache)
+    if focus == "unit_assessment":
+        return _build_unit_assessment_windows(
+            section_map,
+            page_range=page_range,
+            window_size=window_size,
+        )
     return _build_windows(
         section_map,
         focus=focus,
@@ -490,7 +621,7 @@ def main(argv: list[str] | None = None) -> None:
     parser.add_argument(
         "--focus",
         required=True,
-        choices=["theories", "remedies", "market_definition"],
+        choices=["theories", "remedies", "market_definition", "unit_assessment"],
         help="Extraction focus mode",
     )
     parser.add_argument(

@@ -4110,6 +4110,15 @@ def extract_case(
     # -----------------------------------------------------------------------
     # Batched extraction path: one Claude call per section prefix
     # -----------------------------------------------------------------------
+    # unit_assessment uses a separate tool/prompt; _extract_section_batch only
+    # knows the standard extraction path, so force single-batch mode here.
+    if batch_by_section and focus == "unit_assessment":
+        print(
+            "  INFO: --batch-by-section not supported for unit_assessment focus "
+            "(uses single-batch automatically)"
+        )
+        batch_by_section = False
+
     if batch_by_section or section_prefix is not None:
         # selected is already prefix-filtered; just group whatever remains.
         groups = _group_chunks_by_section_prefix(selected)

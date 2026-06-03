@@ -17,8 +17,11 @@ from plan_extraction_ranges import (
     ProbeWindow,
     _HIGH_PRIORITY,
     _LOW_PRIORITY,
+    _UNIT_SECTION_EXCLUSIONS,
+    _build_unit_assessment_windows,
     _build_windows,
     _find_split_points,
+    _is_unit_label,
     _make_window,
     _score_page,
     _top_prefix,
@@ -351,3 +354,193 @@ class TestPlanFunction:
         for w in result:
             assert w.start_page >= 49  # allow 1 context page
             assert w.end_page <= 62
+
+
+# ---------------------------------------------------------------------------
+# _is_unit_label
+# ---------------------------------------------------------------------------
+
+
+class TestIsUnitLabel:
+
+    def test_single_word_crop_name(self):
+        assert _is_unit_label("8 CUCUMBER")
+
+    def test_two_word_unit_name(self):
+        assert _is_unit_label("9 SWEET PEPPER")
+
+    def test_generic_introduction_excluded(self):
+        assert not _is_unit_label("1 INTRODUCTION")
+
+    def test_generic_background_excluded(self):
+        assert not _is_unit_label("2 BACKGROUND")
+
+    def test_generic_competition_assessment_excluded(self):
+        assert not _is_unit_label("3 COMPETITIVE")
+
+    def test_five_word_label_excluded(self):
+        # Too many words — not a compact unit label
+        assert not _is_unit_label("8 THIS IS TOO MANY WORDS")
+
+    def test_empty_heading_excluded(self):
+        assert not _is_unit_label("")
+
+    def test_number_only_heading_excluded(self):
+        # After stripping number, nothing remains
+        assert not _is_unit_label("8")
+
+    def test_three_word_unit_label_allowed(self):
+        assert _is_unit_label("10 FIELD CORN SEED")
+
+    def test_markets_excluded(self):
+        assert not _is_unit_label("3 MARKETS")
+
+
+# ---------------------------------------------------------------------------
+# _build_unit_assessment_windows
+# ---------------------------------------------------------------------------
+
+
+class TestBuildUnitAssessmentWindows:
+
+    def _sm_with_units(self, units: list[tuple[str, range]]) -> dict[int, str]:
+        """Build a section map with each unit spanning a range of pages."""
+        sm: dict[int, str] = {}
+        for label, pages in units:
+            for p in pages:
+                sm[p] = f"{label} > {label} Competitive assessment"
+        return sm
+
+    def test_single_unit_produces_one_window(self):
+        sm = self._sm_with_units([("8 CUCUMBER", range(79, 92))])   # 13 pages < window_size
+        windows = _build_unit_assessment_windows(sm)
+        assert len(windows) == 1
+        assert windows[0].start_page == 79
+        assert windows[0].end_page == 91
+
+    def test_two_units_produce_two_windows(self):
+        sm = self._sm_with_units([
+            ("8 CUCUMBER", range(79, 92)),    # 13 pages each < window_size
+            ("9 ONION", range(178, 191)),
+        ])
+        windows = _build_unit_assessment_windows(sm)
+        assert len(windows) == 2
+
+    def test_generic_sections_excluded(self):
+        sm: dict[int, str] = {}
+        # Framework sections: should NOT produce windows
+        for p in range(1, 10):
+            sm[p] = "1 INTRODUCTION > 1.1 Background"
+        for p in range(10, 20):
+            sm[p] = "2 BACKGROUND > 2.1 Procedure"
+        # Unit section: should produce a window (14 pages < window_size=15)
+        for p in range(79, 93):
+            sm[p] = "8 CUCUMBER > 8.2 Competitive assessment"
+        windows = _build_unit_assessment_windows(sm)
+        assert len(windows) == 1
+        assert windows[0].start_page == 79
+
+    def test_page_range_restriction_applied(self):
+        sm = self._sm_with_units([
+            ("8 CUCUMBER", range(79, 92)),
+            ("9 ONION", range(178, 191)),
+        ])
+        windows = _build_unit_assessment_windows(sm, page_range=(79, 100))
+        assert len(windows) == 1
+        assert windows[0].start_page == 79
+
+    def test_large_unit_split_at_window_size(self):
+        # A unit spanning 40 pages — should be split with default window_size=15
+        sm: dict[int, str] = {}
+        for p in range(79, 119):
+            sm[p] = "8 CUCUMBER > 8.2 Competitive assessment"
+        windows = _build_unit_assessment_windows(sm, window_size=15)
+        assert len(windows) >= 2
+        for w in windows:
+            assert w.page_count <= 15
+
+    def test_window_focus_is_unit_assessment(self):
+        sm: dict[int, str] = {}
+        for p in range(79, 92):
+            sm[p] = "8 CUCUMBER > 8.2 Competitive assessment"
+        windows = _build_unit_assessment_windows(sm)
+        for w in windows:
+            assert w.focus == "unit_assessment"
+
+    def test_context_suffix_contains_unit_label(self):
+        sm: dict[int, str] = {}
+        for p in range(79, 92):
+            sm[p] = "8 CUCUMBER > 8.2 Competitive assessment"
+        windows = _build_unit_assessment_windows(sm)
+        assert "cucumber" in windows[0].context_suffix.lower()
+
+    def test_command_output_has_unit_assessment_focus(self):
+        sm: dict[int, str] = {}
+        for p in range(79, 92):
+            sm[p] = "8 CUCUMBER > 8.2 Competitive assessment"
+        windows = _build_unit_assessment_windows(sm)
+        cmd = windows[0].command("eu_bayer_monsanto_2018", 1)
+        assert "--focus unit_assessment" in cmd
+        assert "--page-range 79:91" in cmd
+
+    def test_empty_section_map_returns_empty(self):
+        assert _build_unit_assessment_windows({}) == []
+
+    def test_no_unit_sections_returns_empty(self):
+        sm: dict[int, str] = {}
+        for p in range(1, 30):
+            sm[p] = "1 INTRODUCTION > 1.1 Background"
+        assert _build_unit_assessment_windows(sm) == []
+
+
+# ---------------------------------------------------------------------------
+# format_plan with unit_assessment focus (adjacent-window warning)
+# ---------------------------------------------------------------------------
+
+
+class TestFormatPlanUnitAssessment:
+
+    def _make_ua_window(self, start: int, end: int, label: str = "cucumber") -> ProbeWindow:
+        return ProbeWindow(
+            start_page=start,
+            end_page=end,
+            focus="unit_assessment",
+            headings=[(start, f"8 {label.upper()}")],
+            total_score=end - start + 1,
+            context_suffix=f"{label}_{start}",
+        )
+
+    def test_output_includes_unit_assessment_focus(self):
+        w = self._make_ua_window(79, 105)
+        out = format_plan([w], "eu_bayer_monsanto_2018", "unit_assessment", "eu_decision", 1006)
+        assert "unit_assessment" in out
+
+    def test_adjacent_windows_trigger_warning(self):
+        # Windows 79-105 and 106-120 are adjacent (no gap)
+        w1 = self._make_ua_window(79, 105, "cucumber")
+        w2 = self._make_ua_window(106, 120, "onion")
+        out = format_plan([w1, w2], "eu_bayer_monsanto_2018", "unit_assessment", "eu_decision", 1006)
+        assert "WARNING" in out or "warning" in out.lower()
+
+    def test_non_adjacent_windows_no_warning(self):
+        # Gap of 10 pages between windows
+        w1 = self._make_ua_window(79, 105, "cucumber")
+        w2 = self._make_ua_window(178, 194, "onion")
+        out = format_plan([w1, w2], "eu_bayer_monsanto_2018", "unit_assessment", "eu_decision", 1006)
+        assert "WARNING" not in out
+
+    def test_single_window_no_warning(self):
+        w = self._make_ua_window(79, 105)
+        out = format_plan([w], "eu_bayer_monsanto_2018", "unit_assessment", "eu_decision", 1006)
+        assert "WARNING" not in out
+
+    def test_command_in_output_has_output_suffix(self):
+        w = self._make_ua_window(79, 105)
+        out = format_plan([w], "eu_bayer_monsanto_2018", "unit_assessment", "eu_decision", 1006)
+        assert "--output-suffix" in out
+
+    def test_plan_function_dispatches_to_unit_assessment(self):
+        # plan() with focus=unit_assessment should use structural detection, not keyword scoring
+        cache = _make_cache([])   # empty cache returns empty list
+        result = plan(cache, focus="unit_assessment")
+        assert result == []
