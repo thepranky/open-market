@@ -50,6 +50,12 @@ import httpx
 import yaml
 
 try:
+    import pdfplumber
+    _HAS_PDFPLUMBER = True
+except ImportError:
+    _HAS_PDFPLUMBER = False
+
+try:
     import pypdf
     _HAS_PYPDF = True
 except ImportError:
@@ -207,11 +213,11 @@ def quote_found_in_text(quote: str, text: str, min_fragment: int = 28) -> bool:
 
     hits = 0
     step = max(1, min_fragment // 2)
-    last_hit_end = -1
+    last_hit_end = 0
     for i in range(0, len(nq) - min_fragment + 1, step):
         fragment = nq[i : i + min_fragment]
-        pos = nt.find(fragment)
-        if pos >= 0 and pos >= last_hit_end:
+        pos = nt.find(fragment, last_hit_end)
+        if pos >= 0:
             hits += 1
             last_hit_end = pos + len(fragment)
             if hits >= 2:
@@ -232,6 +238,15 @@ def _extract_html_text(content: bytes) -> str:
 
 
 def _extract_pdf_text(content: bytes) -> Optional[str]:
+    # Prefer pdfplumber — same extractor used by pdf_extractor.py / the cache builder,
+    # so --no-cache results stay consistent with cached-mode results.
+    if _HAS_PDFPLUMBER:
+        try:
+            with pdfplumber.open(io.BytesIO(content)) as pdf:
+                parts = [page.extract_text() or "" for page in pdf.pages]
+            return "\n".join(parts)
+        except Exception:
+            pass
     if not _HAS_PYPDF:
         return None
     try:
