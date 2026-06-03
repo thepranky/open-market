@@ -1,6 +1,6 @@
 # CompMap — Project Pipeline Explainer
 
-*For a lawyer-builder preparing for product discussions. Based on actual repository state as of May 2026.*
+*For a lawyer-builder preparing for product discussions. Based on actual repository state as of June 2026.*
 
 ---
 
@@ -47,6 +47,7 @@ The pipeline has two distinct parts: **manual legal judgment** and a **semi-auto
 
 ---
 
+### Stage 1 — Source fetch and text cache
 
 - **What:** Fetch the PDF decision and extract its text for downstream use.
 - **Script:** `apps/api/app/utils/pdf_extractor.py`
@@ -57,6 +58,7 @@ The pipeline has two distinct parts: **manual legal judgment** and a **semi-auto
 
 ---
 
+### Stage 2 — Seed / skeleton case record
 
 - **What:** Create the skeleton YAML file with case metadata.
 - **Files written:** `data/cases/{jurisdiction}/{case_id}.yaml`
@@ -102,8 +104,6 @@ The pipeline has two distinct parts: **manual legal judgment** and a **semi-auto
 - **Outputs:** A merged draft under `data/drafts/`, with global IDs and rewritten cross-references.
 - **What it handles:** Metadata precedence, theory/commitment/unit deduplication, source-passage deduplication, ID rewriting, and back-reference synthesis.
 - **Status:** Implemented as a review-draft assembly tool. It does not promote to canonical data.
-
----
 
 ---
 
@@ -185,6 +185,7 @@ apps/api/.venv/bin/python apps/api/scripts/promote_case_pipeline.py \
 
 ---
 
+### Stage 9 — Graph seed
 
 - **What:** Seeds the Neo4j graph database from the canonical YAML records. Creates 13 node types (Case, Authority, Jurisdiction, Party, Sector, ProductMarket, GeographicMarket, TheoryOfHarm, Outcome, SourceDocument, SourcePassage, Remedy, SimilarCase) and 15 relationship types.
 - **Script:** `graph/seed_graph.py` (312 lines). Run via `docker compose --profile seed run seed`.
@@ -313,9 +314,9 @@ This is not a rigid roadmap. It is the sensible order of priority based on the c
 | **8a**   | **Case promotion pipeline** ✅ v1 Done | Added `promote_case_pipeline.py` to run target-draft integrity, safe promotion, canonical gates, graph seed, review learning log, and apply-learning proposals in one fail-fast workflow | **Claude + human + ChatGPT** — Claude implemented/tests; human validated workflow; ChatGPT shaped safety requirements | Prevents repeated raw-copy promotion mistakes and makes final promotion repeatable |
 | **8b**   | **Multi-focus extraction** ✅ v1 Done | Added focused extraction for outcome metadata, theories of harm, remedies/commitments, and repeated-unit assessments, alongside market definition | **Claude + human + ChatGPT** — Claude implemented; human validated legal usefulness; ChatGPT shaped the abstraction | Prevents the pipeline from tunnelling into market definition and makes long Phase II decisions structurally representable |
 | **8c**   | **Long-decision assembly** ✅ v1 Done | Added page-range extraction, extraction-range planning, and draft merging so multiple focus-specific passes can become one reviewable draft | **Claude + human + ChatGPT** — Claude implemented scripts/tests; human reviewed outputs; ChatGPT guided sequencing | Long decisions need controlled windows and assembly before legal review; this is the bridge from extraction experiments to reviewable drafts |
-| **8d**   | **Hard-case promotion** ✅ v1 proven | Promoted `eu_bayer_monsanto_2018` as the first long Phase II / Article 8(2) conditional-clearance hard case (1006 pages, 49 product markets, 15 geo markets, 10 theories, 14 commitments, 66 unit assessments, 461 passages — 0 errors / 0 warnings); `docs/hard-case-review-checklist.md` added as a durable pre-promotion gate | **Human + Claude** — human made legal promotion decisions; Claude ran pipeline, diagnostics, and source-integrity cleanup | Proves the generalized pipeline can handle a full-complexity Phase II decision end-to-end, not just Phase I cases |
+| **8d**   | **Hard-case promotion** ✅ v1 proven | Promoted `eu_bayer_monsanto_2018` as the first long Phase II hard case ; `docs/hard-case-review-checklist.md` added as a durable pre-promotion gate | **Human + Claude** — human made legal promotion decisions; Claude ran pipeline, diagnostics, and source-integrity cleanup | Proves the generalized pipeline can handle a full-complexity Phase II decision end-to-end, not just Phase I cases |
 | **Next** | **Controlled corpus expansion** ← Current | Use the generalized pipeline on a medium batch of further cases, keeping hard cases as diagnostics and only promoting after legal review | **Human + ChatGPT + Claude** — human decides legal promotion; ChatGPT helps prioritise cases and risks; Claude runs pipeline/tooling | Pipeline can now represent markets, outcomes, theories, remedies, and repeated-unit findings for decisions of any length; next proof is repeatable coverage |
-| **Next** | **Eval workflow hygiene** | Ensure generated `data/evals/results/*` outputs do not pollute git status; keep eval results as workflow artifacts only | **Claude + human** | Keeps repo clean and avoids accidental commit of eval artifacts |
+| **Parallel** | **Eval workflow hygiene** | Ensure generated `data/evals/results/*` outputs do not pollute git status; keep eval results as workflow artifacts only | **Claude + human** | Keeps repo clean and avoids accidental commit of eval artifacts |
 | **9**    | **Search and graph hardening**  | Improve cross-case filtering by market, sector, authority, theory of harm, outcome, and source passage                                                   | **Claude + human** — Claude implements backend/search/graph improvements; human validates usefulness for legal research | This is the core user value beyond reading one YAML record                                                        |
 | **10**   | **Production API readiness**    | Add auth, environment config, rate limiting, logging, monitoring, and proper startup/restart behaviour                                                   | **Claude + human** — Claude implements technical hardening; human decides deployment constraints and reviews security posture | FastAPI production deployments need security, restart handling, replication/memory planning, and pre-start checks |
 | **11**   | **Frontend productisation**     | Make the UI usable for real research: source cards, filters, case comparison, and clear citation trails                                                  | **ChatGPT + Claude + human** — ChatGPT helps product/spec design; Claude implements; human tests as target user | Lawyers need an interface, not just validated data                                                                |
@@ -358,6 +359,7 @@ This document should be updated after any of the following:
 - **Promoted flagship cases** — especially first-of-type cases (new jurisdiction, new procedure stage, new decision length).
 - **Deployment changes** — any move from local to staging or production.
 - **Roadmap shifts** — when a "Next" item completes or a new priority displaces the current one.
+- **Detailed diagnostics** - detailed diagnostics should live in docs/hard-case-diagnostics.md
 
 Keep updates concise. This document is for product discussions, not for raw logs or case-specific extraction statistics.
 
