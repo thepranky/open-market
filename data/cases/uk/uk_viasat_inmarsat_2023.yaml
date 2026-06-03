@@ -1,0 +1,684 @@
+case_id: uk_viasat_inmarsat_2023
+case_name: "Viasat / Inmarsat (CMA)"
+jurisdiction: UK
+authority: CMA
+authority_reference: ME/6997/22
+decision_date: "2023-05-09"
+case_type: merger
+procedure_stage: phase2
+sector: satellite communications / inflight connectivity
+parties:
+  - name: Viasat Inc
+    role: acquirer
+  - name: Inmarsat Group Holdings Limited
+    role: target
+outcome: cleared
+remedies: []
+commitments: []
+
+theories_of_harm:
+  - theory_id: toh_1
+    name: Horizontal unilateral effects in the supply of broadband IFC services to commercial airlines
+    theory_type: horizontal
+    theory_outcome: dismissed
+    description: >
+      The CMA assessed whether the Merger would give rise to an SLC through the loss of
+      competition between Viasat and Inmarsat in the supply of broadband IFC to commercial
+      airlines. The CMA found the Parties compete closely (particularly in widebody
+      opportunities), but concluded that significant constraints from Panasonic, Intelsat,
+      and (increasingly) Starlink would remain, such that no SLC was expected. Theory dismissed.
+    verification:
+      status: source_linked
+  - theory_id: toh_2
+    name: Horizontal unilateral effects in the supply of broadband IFC services to large business aircraft operators
+    theory_type: horizontal
+    theory_outcome: dismissed
+    description: >
+      The CMA assessed whether the Merger would give rise to an SLC through the loss of
+      competition between Viasat and Inmarsat in the supply of broadband IFC to large business
+      aircraft operators. The Parties compete closely and would remain close competitors absent
+      the Merger (para 9.63). However, the CMA found that Gogo and Starlink would likely become
+      significant constraints on the Merged Entity, and Intelsat and Satcom Direct moderate
+      constraints. At para 9.65 the CMA concluded that the aggregate constraints are significant
+      and likely to increase, such that no SLC was expected. Theory dismissed.
+    verification:
+      status: source_linked
+
+product_markets_considered:
+  - market_id: pm_1
+    name: Supply of broadband IFC services to commercial airlines
+    definition_status: defined
+    notes: >
+      CMA found the relevant product market is the supply of broadband IFC services to
+      commercial airlines without further segmentation (para 7.20). ATG and satellite-based
+      services found to be in the same market (para 7.11). Narrowband excluded as not
+      substitutable (para 7.13). Short-haul/long-haul segmentation considered but not applied
+      as suppliers bid across both types (para 7.20). Parties' overlap only in broadband IFC.
+    verification:
+      status: source_linked
+    market_importance: core_assessed
+  - market_id: pm_2
+    name: Supply of broadband IFC services to operators of large business aircraft
+    definition_status: defined
+    notes: >
+      CMA found the relevant product market is the supply of broadband IFC services to
+      operators of large business aircraft without further segmentation (para 7.25). Commercial
+      and business aviation assessed as separate product markets (para 7.15). Small business
+      aircraft excluded because the Parties' antennae are currently too large to fit on small
+      aircraft — no Parties' overlap there (para 7.23).
+    verification:
+      status: source_linked
+    market_importance: core_assessed
+  - market_id: pm_3
+    name: Supply of narrowband IFC services
+    definition_status: discussed
+    notes: >
+      CMA accepted the Parties' submission that broadband and narrowband IFC services are not
+      substitutable due to different customer needs and technical capabilities (para 7.13).
+      Parties do not overlap materially in narrowband supply (para 7.13, fn 139). Excluded
+      from competitive assessment; all subsequent analysis refers only to broadband IFC.
+    verification:
+      status: source_linked
+    market_importance: assessed_no_overlap
+  - market_id: pm_4
+    name: Supply of IFC services to small business aircraft operators
+    definition_status: discussed
+    notes: >
+      CMA explicitly considered segmenting business aviation into large and small aircraft
+      (para 7.22–7.23). Small aircraft require smaller antennae; the Parties' antennae are
+      too large to fit on small business aircraft. No Parties' overlap. Excluded from
+      competitive assessment; only large business aircraft considered (para 7.23).
+    verification:
+      status: source_linked
+    market_importance: assessed_no_overlap
+
+geographic_markets_considered:
+  - market_id: gm_1
+    name: Global supply of broadband IFC services to commercial airlines
+    definition_status: defined
+    notes: >
+      CMA found the relevant geographic market is global (para 7.30), but focused its
+      competitive assessment on routes to and from the UK. Demand-side and supply-side
+      dynamics vary somewhat across geographies but global scope adopted. Short-haul/long-haul
+      geographic differences noted but not used to define separate geographic markets.
+    verification:
+      status: source_linked
+    market_importance: core_assessed
+  - market_id: gm_2
+    name: Global supply of broadband IFC services to operators of large business aircraft
+    definition_status: defined
+    notes: >
+      CMA found it appropriate to treat the provision of broadband IFC services to large
+      business aircraft as a single global market given that some customers require global
+      coverage (para 7.32). Assessment focused on large business aircraft used or most
+      likely to be used by UK consumers and businesses (para 7.33).
+    verification:
+      status: source_linked
+    market_importance: core_assessed
+
+source_documents:
+  - doc_id: cma_viasat_inmarsat_final_report
+    title: "Viasat / Inmarsat: Final Report (May 2023)"
+    case_page_url: "https://www.gov.uk/cma-cases/viasat-slash-inmarsat-merger-inquiry"
+    pdf_url: "https://assets.publishing.service.gov.uk/media/645b8da5c6e897000ca0fc92/Final_report._A.pdf"
+    doc_type: final_report
+    retrieval_status: direct
+    published_date: "2023-05-10"
+
+source_passages:
+  # --- Outcome metadata (executive summary, pp.1–30) ---
+  - passage_id: sp_1
+    source_document_id: cma_viasat_inmarsat_final_report
+    page: "7"
+    quote_snippet: >
+      The Competition and Markets Authority (CMA) has decided that the anticipated acquisition
+      (the Merger) of Inmarsat Group Holdings Limited (Inmarsat) by Viasat, Inc (Viasat)
+      (together, the Parties or, for statements referring to the future, the Merged Entity)
+      may not be expected to result in a substantial lessening of competition (SLC) in the
+      supply of broadband inflight connectivity (IFC) services to commercial airlines or
+      business aircraft operators serving the United Kingdom (UK).
+    extraction_method: pdf_extracted
+    review_status: spot_checked
+    source_role: conclusion
+    confidence_score: 0.95
+    last_checked_date: "2026-06-03"
+    supports_markets: []
+    supports_geographic_markets: []
+    supports_theories: []
+    supports_commitments: []
+  - passage_id: sp_2
+    source_document_id: cma_viasat_inmarsat_final_report
+    page: "7"
+    quote_snippet: >
+      Our investigation has focused on the supply of IFC, as this is the main area of overlap
+      between the Parties in the UK.
+    extraction_method: pdf_extracted
+    review_status: spot_checked
+    source_role: commission_assessment
+    confidence_score: 0.95
+    last_checked_date: "2026-06-03"
+    supports_markets: []
+    supports_geographic_markets: []
+    supports_theories: []
+    supports_commitments: []
+  - passage_id: sp_3
+    source_document_id: cma_viasat_inmarsat_final_report
+    page: "12"
+    quote_snippet: >
+      The evidence we have assessed has led us to decide that, while the Parties compete
+      closely and would likely remain close competitors absent the Merger, the aggregate
+      constraints the Merged Entity would likely face from other rivals are significant and
+      are likely to increase, such that the Merger may not be expected to give rise to an
+      SLC as a result of horizontal unilateral effects in the supply of broadband IFC services
+      to commercial airlines serving UK consumers.
+    extraction_method: pdf_extracted
+    review_status: spot_checked
+    source_role: conclusion
+    confidence_score: 0.95
+    last_checked_date: "2026-06-03"
+    supports_markets: []
+    supports_geographic_markets: []
+    supports_theories: []
+    supports_commitments: []
+  - passage_id: sp_4
+    source_document_id: cma_viasat_inmarsat_final_report
+    page: "16"
+    quote_snippet: >
+      We have also considered the Merger's effect on the supply of IFC to large business
+      aircraft operators. Supplying IFC to business aircraft operators has many of the same
+      features as supplying it to commercial airlines. Currently the Parties compete closely
+      as the two main providers offering satellite-based IFC to business aircraft operators
+      outside North America.
+    extraction_method: pdf_extracted
+    review_status: spot_checked
+    source_role: commission_assessment
+    confidence_score: 0.95
+    last_checked_date: "2026-06-03"
+    supports_markets: []
+    supports_geographic_markets: []
+    supports_theories: []
+    supports_commitments: []
+  - passage_id: sp_5
+    source_document_id: cma_viasat_inmarsat_final_report
+    page: "15"
+    quote_snippet: >
+      We have therefore decided that the aggregate constraints the Merged Entity would likely
+      face from other rivals are significant and are likely to increase such that the Merger
+      may not be expected to give rise to an SLC as a result of horizontal unilateral effects
+      in the supply of broadband IFC services to large business aircraft operators serving
+      UK consumers.
+    extraction_method: pdf_extracted
+    review_status: spot_checked
+    source_role: conclusion
+    confidence_score: 0.95
+    last_checked_date: "2026-06-03"
+    supports_markets: []
+    supports_geographic_markets: []
+    supports_theories: []
+    supports_commitments: []
+  - passage_id: sp_6
+    source_document_id: cma_viasat_inmarsat_final_report
+    page: "17"
+    quote_snippet: >
+      whether the creation of that situation may be expected to result in a substantial
+      lessening of competition (SLC) within any market or markets in the United Kingdom
+      (UK) for goods or services.
+    extraction_method: pdf_extracted
+    review_status: spot_checked
+    source_role: background
+    confidence_score: 0.95
+    last_checked_date: "2026-06-03"
+    supports_markets: []
+    supports_geographic_markets: []
+    supports_theories: []
+    supports_commitments: []
+  - passage_id: sp_7
+    source_document_id: cma_viasat_inmarsat_final_report
+    page: "11"
+    quote_snippet: >
+      Both Parties have been growing faster than other established suppliers of IFC services
+      at a global level, regularly bid against each other in tenders, identify each other in
+      internal documents as likely rivals in upcoming tenders and are regarded as strong
+      alternatives by airlines.
+    extraction_method: pdf_extracted
+    review_status: spot_checked
+    source_role: commission_assessment
+    confidence_score: 0.95
+    last_checked_date: "2026-06-03"
+    supports_markets: []
+    supports_geographic_markets: []
+    supports_theories: []
+    supports_commitments: []
+  - passage_id: sp_8
+    source_document_id: cma_viasat_inmarsat_final_report
+    page: "12"
+    quote_snippet: >
+      We have therefore concluded that the Parties compete closely and would likely remain
+      close competitors in the next few years absent the Merger.
+    extraction_method: pdf_extracted
+    review_status: spot_checked
+    source_role: commission_assessment
+    confidence_score: 0.95
+    last_checked_date: "2026-06-03"
+    supports_markets: []
+    supports_geographic_markets: []
+    supports_theories: []
+    supports_commitments: []
+  - passage_id: sp_9
+    source_document_id: cma_viasat_inmarsat_final_report
+    page: "16"
+    quote_snippet: >
+      Currently the Parties compete closely as the two main providers offering satellite-based
+      IFC to business aircraft operators outside North America. However, we expect other
+      suppliers to expand and improve the services they offer in the next few years.
+    extraction_method: pdf_extracted
+    review_status: spot_checked
+    source_role: commission_assessment
+    confidence_score: 0.95
+    last_checked_date: "2026-06-03"
+    supports_markets: []
+    supports_geographic_markets: []
+    supports_theories: []
+    supports_commitments: []
+  # --- Market definition (Chapter 7) ---
+  - passage_id: sp_10
+    source_document_id: cma_viasat_inmarsat_final_report
+    page: "48"
+    quote_snippet: >
+      We therefore have found that ATG and satellite-based services belong to the same market.
+    extraction_method: pdf_extracted
+    review_status: spot_checked
+    source_role: commission_assessment
+    confidence_score: 0.95
+    last_checked_date: "2026-06-03"
+    supports_markets:
+      - pm_1
+    supports_geographic_markets: []
+    supports_theories: []
+    supports_commitments: []
+  - passage_id: sp_11
+    source_document_id: cma_viasat_inmarsat_final_report
+    page: "48"
+    quote_snippet: >
+      We agree with the Parties' submissions and consider that broadband and narrowband IFC
+      services are not substitutable given that they each serve different customer needs (eg
+      broadband has more bandwidth and is used for more data-intensive applications; narrowband,
+      by contrast, can use lower frequencies that are less susceptible to signal interference
+      and is used for less data-intensive tasks where resilience is critical).
+    extraction_method: pdf_extracted
+    review_status: spot_checked
+    source_role: commission_assessment
+    confidence_score: 0.95
+    last_checked_date: "2026-06-03"
+    supports_markets:
+      - pm_1
+      - pm_3
+    supports_geographic_markets: []
+    supports_theories: []
+    supports_commitments: []
+  - passage_id: sp_12
+    source_document_id: cma_viasat_inmarsat_final_report
+    page: "49"
+    quote_snippet: >
+      We therefore consider that the supply of IFC services to commercial aviation customers
+      (ie commercial airlines) should be assessed as a separate product market to the supply
+      of IFC services to business aviation customers (ie business aircraft operators, including
+      both operators that manage fleets of aircraft for their customers' use and individual and
+      corporate owners that operate their own business aircraft).
+    extraction_method: pdf_extracted
+    review_status: spot_checked
+    source_role: commission_assessment
+    confidence_score: 0.95
+    last_checked_date: "2026-06-03"
+    supports_markets:
+      - pm_1
+      - pm_2
+    supports_geographic_markets: []
+    supports_theories: []
+    supports_commitments: []
+  - passage_id: sp_13
+    source_document_id: cma_viasat_inmarsat_final_report
+    page: "51"
+    quote_snippet: >
+      we have found that the relevant product market for the purposes of our competitive
+      assessment is the supply of broadband IFC services to commercial airlines without
+      further segmentation, but we have considered differences between the relative strength
+      of suppliers for particular types of opportunity, where relevant, in our competitive
+      assessment.
+    extraction_method: pdf_extracted
+    review_status: spot_checked
+    source_role: commission_assessment
+    confidence_score: 0.95
+    last_checked_date: "2026-06-03"
+    supports_markets:
+      - pm_1
+    supports_geographic_markets: []
+    supports_theories: []
+    supports_commitments: []
+  - passage_id: sp_14
+    source_document_id: cma_viasat_inmarsat_final_report
+    page: "51"
+    quote_snippet: >
+      we have found that the relevant product market for the purposes of our competitive
+      assessment is the supply of broadband IFC services to operators of large business
+      aircraft without further segmentation.
+    extraction_method: pdf_extracted
+    review_status: spot_checked
+    source_role: commission_assessment
+    confidence_score: 0.95
+    last_checked_date: "2026-06-03"
+    supports_markets:
+      - pm_2
+    supports_geographic_markets: []
+    supports_theories: []
+    supports_commitments: []
+  - passage_id: sp_15
+    source_document_id: cma_viasat_inmarsat_final_report
+    page: "53"
+    quote_snippet: >
+      while we have found that the relevant geographic market is global, in our competitive
+      assessment we focus on competitive dynamics affecting routes to and from the UK and the
+      strength of the competitive constraints between the Parties and rival suppliers to serve
+      customers flying such routes.
+    extraction_method: pdf_extracted
+    review_status: spot_checked
+    source_role: commission_assessment
+    confidence_score: 0.95
+    last_checked_date: "2026-06-03"
+    supports_markets: []
+    supports_geographic_markets:
+      - gm_1
+    supports_theories: []
+    supports_commitments: []
+  - passage_id: sp_16
+    source_document_id: cma_viasat_inmarsat_final_report
+    page: "52"
+    quote_snippet: >
+      From a demand-side perspective, the Parties supply IFC services to some commercial
+      airlines that operate globally and others that have a more regional focus. From a supply
+      side perspective, some (albeit not all) suppliers operate globally and compete for both
+      short-haul and long-haul opportunities, including those relevant to UK consumers.
+    extraction_method: pdf_extracted
+    review_status: spot_checked
+    source_role: market_investigation
+    confidence_score: 0.95
+    last_checked_date: "2026-06-03"
+    supports_markets: []
+    supports_geographic_markets:
+      - gm_1
+    supports_theories: []
+    supports_commitments: []
+  - passage_id: sp_17
+    source_document_id: cma_viasat_inmarsat_final_report
+    page: "53"
+    quote_snippet: >
+      we consider that it is appropriate to treat the provision of broadband IFC services to
+      large business aircraft as a single global market given that some customers require
+      global coverage.
+    extraction_method: pdf_extracted
+    review_status: spot_checked
+    source_role: commission_assessment
+    confidence_score: 0.95
+    last_checked_date: "2026-06-03"
+    supports_markets: []
+    supports_geographic_markets:
+      - gm_2
+    supports_theories: []
+    supports_commitments: []
+  - passage_id: sp_18
+    source_document_id: cma_viasat_inmarsat_final_report
+    page: "53"
+    quote_snippet: >
+      we have focused our competitive assessment on the supply of IFC services most likely to
+      impact UK customers. This means our assessment of the potential effects of the Merger has
+      a particular focus on large business aircraft that are used (or most likely to be used)
+      by UK consumers and businesses.
+    extraction_method: pdf_extracted
+    review_status: spot_checked
+    source_role: commission_assessment
+    confidence_score: 0.95
+    last_checked_date: "2026-06-03"
+    supports_markets: []
+    supports_geographic_markets:
+      - gm_2
+    supports_theories: []
+    supports_commitments: []
+  # --- Theories of harm (Chapters 8–9) ---
+  - passage_id: sp_19
+    source_document_id: cma_viasat_inmarsat_final_report
+    page: "179"
+    quote_snippet: >
+      we have concluded the Merger may not be expected to give rise to an SLC as a result of
+      horizontal unilateral effects in the market for the supply of broadband IFC services to
+      commercial airlines serving UK customers.
+    extraction_method: pdf_extracted
+    review_status: spot_checked
+    source_role: conclusion
+    confidence_score: 0.95
+    last_checked_date: "2026-06-03"
+    supports_markets: []
+    supports_geographic_markets: []
+    supports_theories:
+      - toh_1
+    supports_commitments: []
+  - passage_id: sp_20
+    source_document_id: cma_viasat_inmarsat_final_report
+    page: "179"
+    quote_snippet: >
+      We recognise that there will be some lessening of competition in the next few years in
+      view of the closeness of competition between Parties, in particular for certain tenders
+      for widebody opportunities post-Merger. However, we consider that the aggregate
+      constraints the Merged Entity will likely face both for wide and narrowbody opportunities
+      are significant and will likely increase over the next few years.
+    extraction_method: pdf_extracted
+    review_status: spot_checked
+    source_role: commission_assessment
+    confidence_score: 0.95
+    last_checked_date: "2026-06-03"
+    supports_markets: []
+    supports_geographic_markets: []
+    supports_theories:
+      - toh_1
+    supports_commitments: []
+  - passage_id: sp_21
+    source_document_id: cma_viasat_inmarsat_final_report
+    page: "98"
+    quote_snippet: >
+      In almost all cases, Inmarsat's internal documents refer to Viasat as an expected bidder
+      in upcoming tenders alongside a small number of others
+    extraction_method: pdf_extracted
+    review_status: spot_checked
+    source_role: market_investigation
+    confidence_score: 0.95
+    last_checked_date: "2026-06-03"
+    supports_markets: []
+    supports_geographic_markets: []
+    supports_theories:
+      - toh_1
+    supports_commitments: []
+  - passage_id: sp_22
+    source_document_id: cma_viasat_inmarsat_final_report
+    page: "99"
+    quote_snippet: >
+      We consider that these documents show that Inmarsat regards Viasat as a significant []
+      rival in tenders.
+    extraction_method: pdf_extracted
+    review_status: spot_checked
+    source_role: commission_assessment
+    confidence_score: 0.95
+    last_checked_date: "2026-06-03"
+    supports_markets: []
+    supports_geographic_markets: []
+    supports_theories:
+      - toh_1
+    supports_commitments: []
+  - passage_id: sp_23
+    source_document_id: cma_viasat_inmarsat_final_report
+    page: "100"
+    quote_snippet: >
+      We consider that these documents show that Viasat regards Inmarsat as a rival in most
+      tenders and the key rival in a few of these.
+    extraction_method: pdf_extracted
+    review_status: spot_checked
+    source_role: commission_assessment
+    confidence_score: 0.95
+    last_checked_date: "2026-06-03"
+    supports_markets: []
+    supports_geographic_markets: []
+    supports_theories:
+      - toh_1
+    supports_commitments: []
+  - passage_id: sp_24
+    source_document_id: cma_viasat_inmarsat_final_report
+    page: "90"
+    quote_snippet: >
+      In terms of tender outcomes, Viasat (which won the most, six out of nine bids), Inmarsat
+      (four out of 12 bids) and Panasonic (three out of 12 bids) account for all the tender
+      wins in our sample
+    extraction_method: pdf_extracted
+    review_status: spot_checked
+    source_role: market_investigation
+    confidence_score: 0.95
+    last_checked_date: "2026-06-03"
+    supports_markets: []
+    supports_geographic_markets: []
+    supports_theories:
+      - toh_1
+    supports_commitments: []
+  - passage_id: sp_25
+    source_document_id: cma_viasat_inmarsat_final_report
+    page: "185"
+    quote_snippet: >
+      Based on the evidence above, we consider that the Parties compete closely today and,
+      given their expansion plans, will remain close competitors in the future. Although they
+      have focused on different sized business aircraft historically, the Parties are
+      nevertheless rivals for all types of large business aircraft and have been targeting
+      each other's core segments.
+    extraction_method: pdf_extracted
+    review_status: spot_checked
+    source_role: commission_assessment
+    confidence_score: 0.95
+    last_checked_date: "2026-06-03"
+    supports_markets: []
+    supports_geographic_markets: []
+    supports_theories:
+      - toh_2
+    supports_commitments: []
+  - passage_id: sp_26
+    source_document_id: cma_viasat_inmarsat_final_report
+    page: "185"
+    quote_snippet: >
+      We therefore concluded that the Parties compete closely and would likely remain close
+      competitors in the next few years absent the Merger.
+    extraction_method: pdf_extracted
+    review_status: spot_checked
+    source_role: commission_assessment
+    confidence_score: 0.95
+    last_checked_date: "2026-06-03"
+    supports_markets: []
+    supports_geographic_markets: []
+    supports_theories:
+      - toh_2
+    supports_commitments: []
+  - passage_id: sp_27
+    source_document_id: cma_viasat_inmarsat_final_report
+    page: "188"
+    quote_snippet: >
+      We therefore concluded that Gogo would likely be a significant constraint on the Merged
+      Entity, including on routes to and from the UK, in the next few years.
+    extraction_method: pdf_extracted
+    review_status: spot_checked
+    source_role: commission_assessment
+    confidence_score: 0.95
+    last_checked_date: "2026-06-03"
+    supports_markets: []
+    supports_geographic_markets: []
+    supports_theories:
+      - toh_2
+    supports_commitments: []
+  - passage_id: sp_28
+    source_document_id: cma_viasat_inmarsat_final_report
+    page: "192"
+    quote_snippet: >
+      Given the evidence above, and the evidence on Starlink's progress in commercial aviation
+      (see paragraphs 8.450 to 8.500), we concluded that the constraint from Starlink will
+      likely grow and Starlink would likely become a significant constraint on the Merged Entity
+      in the next few years.
+    extraction_method: pdf_extracted
+    review_status: spot_checked
+    source_role: commission_assessment
+    confidence_score: 0.95
+    last_checked_date: "2026-06-03"
+    supports_markets: []
+    supports_geographic_markets: []
+    supports_theories:
+      - toh_2
+    supports_commitments: []
+  - passage_id: sp_29
+    source_document_id: cma_viasat_inmarsat_final_report
+    page: "192"
+    quote_snippet: >
+      Having regard to the evidence above, we concluded that Satcom Direct would likely exert
+      a moderate constraint on the Merged Entity in the next few years.
+    extraction_method: pdf_extracted
+    review_status: spot_checked
+    source_role: commission_assessment
+    confidence_score: 0.95
+    last_checked_date: "2026-06-03"
+    supports_markets: []
+    supports_geographic_markets: []
+    supports_theories:
+      - toh_2
+    supports_commitments: []
+  - passage_id: sp_30
+    source_document_id: cma_viasat_inmarsat_final_report
+    page: "193"
+    quote_snippet: >
+      we have decided that the aggregate constraints the Merged Entity would likely face in the
+      next few years are significant and are likely to increase, such that the Merger may not
+      be expected to give rise to an SLC as a result of horizontal unilateral effects in the
+      market for the supply of broadband IFC services to large business aircraft operators
+      serving UK customers.
+    extraction_method: pdf_extracted
+    review_status: spot_checked
+    source_role: conclusion
+    confidence_score: 0.95
+    last_checked_date: "2026-06-03"
+    supports_markets: []
+    supports_geographic_markets: []
+    supports_theories:
+      - toh_2
+    supports_commitments: []
+
+similar_cases: []
+
+ai_summary: >
+  The CMA cleared Viasat's anticipated acquisition of Inmarsat in its Phase 2 final report
+  dated 9 May 2023, finding no substantial lessening of competition (SLC) in either of the
+  two relevant markets. The investigation focused on the supply of broadband inflight
+  connectivity (IFC) services — assessed as two separate product markets: supply to commercial
+  airlines and supply to operators of large business aircraft, both on a global geographic
+  basis with competitive assessment focused on UK-connected routes. In both markets the CMA
+  found the Parties compete closely and would likely remain close competitors absent the
+  Merger. However, significant and growing constraints from Panasonic, Intelsat, and
+  (increasingly) Starlink were found sufficient in commercial aviation, and constraints from
+  Gogo, Starlink, Intelsat, and Satcom Direct sufficient in business aviation, such that no
+  SLC was expected in either segment. The CMA ran in parallel with the European Commission
+  (M.10807), which also cleared the transaction unconditionally in May 2023.
+  [AI-generated summary — verify against source]
+
+metadata:
+  extraction_method: ai_extracted
+  review_status: spot_checked
+  overall_confidence: 0.88
+  created_date: "2026-06-03"
+  last_updated_date: "2026-06-03"
+  tags:
+    - satellite
+    - inflight-connectivity
+    - cleared
+    - cma
+    - phase2
+    - uk
+    - ifc
+    - parallel-investigation
