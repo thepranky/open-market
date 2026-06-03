@@ -214,6 +214,10 @@ _FOCUS_TERMS: dict[str, tuple[str, ...]] = {
     # outcome_metadata: empty tuple → _is_focused_section returns True for all sections,
     # so all pages in the (defaulted) pp.1-30 range are processed.
     "outcome_metadata": (),
+    # unit_assessment: empty tuple → all pages in the supplied --page-range pass through.
+    # Section-heading filtering would miss competitive-assessment tables; the caller
+    # always supplies a narrow --page-range to scope the target crop/route/unit section.
+    "unit_assessment": (),
 }
 
 # ---------------------------------------------------------------------------
@@ -443,6 +447,8 @@ class ExtractionResult:
     orphan_passages: int = 0  # source_passages not linked to any market/theory
     raw_response: str = ""
     section_label: str = ""  # set by section-batch extractor; used to scope caveats
+    # Populated only for unit_assessment focus — list of validated unit dicts.
+    unit_assessments: list[dict] = field(default_factory=list)
 
 
 @dataclass
@@ -1032,6 +1038,15 @@ def _apply_focus_guardrails(
         result.geographic_markets = []
         result.theories = []
         result.commitments = []
+    elif focus == "unit_assessment":
+        # unit_assessment output lives in result.unit_assessments.
+        # Clear all standard proposition fields — they are empty from _validate_unit_assessment
+        # and should stay empty so _build_draft_record produces clean empty lists.
+        result.product_markets = []
+        result.geographic_markets = []
+        result.theories = []
+        result.commitments = []
+        result.overall_outcome = "unknown"
     elif focus not in (None, "remedies"):
         # case_history and any future focus modes: no commitments
         result.commitments = []
@@ -1513,6 +1528,189 @@ _EXTRACTION_TOOL_SCHEMA = {
 _COMMITMENT_ITEM_SCHEMA["properties"]["passages"]["items"] = _PASSAGE_ITEM_SCHEMA
 
 
+# ---------------------------------------------------------------------------
+# Unit-assessment tool schema and extraction prompt
+# ---------------------------------------------------------------------------
+
+_VALID_FINDING_TYPES: frozenset[str] = frozenset({
+    "horizontal_overlap", "vertical_overlap", "conglomerate",
+    "innovation", "no_overlap", "other",
+})
+
+_VALID_FINDING_CONCLUSIONS: frozenset[str] = frozenset({
+    "siec", "no_siec", "discussed", "remedied", "unknown",
+})
+
+_UNIT_FINDING_SCHEMA: dict = {
+    "type": "object",
+    "required": ["finding_id", "finding_type", "conclusion", "description", "source_passage_refs"],
+    "properties": {
+        "finding_id": {
+            "type": "string",
+            "description": "Short stable ID within this unit, e.g. 'f_1', 'f_2'.",
+        },
+        "finding_type": {
+            "type": "string",
+            "enum": sorted(_VALID_FINDING_TYPES),
+            "description": (
+                "horizontal_overlap=parties compete in same segment/geography; "
+                "vertical_overlap=parties at different supply-chain levels; "
+                "conglomerate=concern from combined portfolio; "
+                "innovation=R&D or pipeline concern; "
+                "no_overlap=authority found no overlap or no concern; "
+                "other=any other finding type."
+            ),
+        },
+        "segment": {
+            "type": "string",
+            "description": (
+                "Product segment or sub-market within the unit "
+                "(e.g. 'Open field cucumbers', 'F1 hybrid seeds'). "
+                "Use empty string if not sub-segmented."
+            ),
+        },
+        "geography": {
+            "type": "string",
+            "description": "Geographic scope of this finding (e.g. 'EEA', 'Germany', 'worldwide').",
+        },
+        "conclusion": {
+            "type": "string",
+            "enum": sorted(_VALID_FINDING_CONCLUSIONS),
+            "description": (
+                "siec=authority found significant impediment to effective competition; "
+                "no_siec=authority found no concern; "
+                "discussed=authority assessed but left open; "
+                "remedied=concern resolved by commitment; "
+                "unknown=conclusion absent from supplied text."
+            ),
+        },
+        "description": {
+            "type": "string",
+            "description": "Verbatim or near-verbatim text from the decision describing this finding.",
+        },
+        "related_markets": {
+            "type": "array",
+            "items": {"type": "string"},
+            "description": "Market names explicitly linked to this finding.",
+        },
+        "related_theories": {
+            "type": "array",
+            "items": {"type": "string"},
+            "description": "Theory names or IDs explicitly linked to this finding.",
+        },
+        "source_passage_refs": {
+            "type": "array",
+            "items": {"type": "string"},
+            "description": (
+                "IDs (e.g. 'sp_1') from the source_passages array supporting this finding. "
+                "Use the same IDs you assign in source_passages."
+            ),
+        },
+    },
+}
+
+_UNIT_ITEM_SCHEMA: dict = {
+    "type": "object",
+    "required": ["unit_type", "unit_label", "findings"],
+    "properties": {
+        "unit_type": {
+            "type": "string",
+            "description": (
+                "Category of the repeated unit "
+                "(e.g. 'crop', 'route', 'indication', 'country', 'asset')."
+            ),
+        },
+        "unit_label": {
+            "type": "string",
+            "description": (
+                "Specific label for this unit instance "
+                "(e.g. 'Cucumber', 'LHR-CDG', 'Lisinopril')."
+            ),
+        },
+        "findings": {
+            "type": "array",
+            "items": _UNIT_FINDING_SCHEMA,
+            "description": (
+                "All competitive assessment findings for this unit. "
+                "Include one entry per distinct segment × geography combination assessed."
+            ),
+        },
+    },
+}
+
+_UNIT_ASSESSMENT_TOOL_SCHEMA: dict = {
+    "name": "record_unit_assessment",
+    "description": (
+        "Record repeated-unit competitive assessment findings extracted from a merger "
+        "decision section. Used for cases where the authority analyses many similar "
+        "sub-markets (crops, routes, indications, etc.) using a consistent structure."
+    ),
+    "input_schema": {
+        "type": "object",
+        "required": ["unit_assessments", "source_passages", "caveats"],
+        "properties": {
+            "unit_assessments": {
+                "type": "array",
+                "items": _UNIT_ITEM_SCHEMA,
+                "description": "All assessment units found in the supplied text.",
+            },
+            "source_passages": {
+                "type": "array",
+                "items": _PASSAGE_ITEM_SCHEMA,
+                "description": "All verbatim passages cited across all unit findings.",
+            },
+            "caveats": {
+                "type": "array",
+                "items": {"type": "string"},
+                "description": "Notes where evidence was ambiguous or absent from the supplied text.",
+            },
+        },
+    },
+}
+
+_UNIT_ASSESSMENT_TASK = """\
+TASK:
+You are extracting a repeated-unit competitive assessment from a merger decision.
+
+A "repeated-unit assessment" appears in long decisions where the authority analyses
+many similar sub-markets using a consistent analytical structure:
+  1. Market definition for the unit (this crop / this route / this indication)
+  2. Competitive overlap analysis (which segments and geographies are affected)
+  3. Conclusion for each combination: SIEC / no SIEC / discussed / remedied
+
+CRITICAL RULES:
+- Extract findings from TABLES, bullet lists, AND prose equally.
+  Table-heavy pages are valid sources — do not skip them.
+- Do NOT rely on "Theory of harm" framing. Crop/unit SIEC findings often appear as:
+    "The Commission concludes that the Transaction raises serious doubts as to its
+    compatibility with the internal market in [segment] – [country/geography]."
+  or as a structured table with columns like: Segment | Country | Parties overlap | SIEC?
+- For each named assessment unit in the text, create one entry in unit_assessments.
+- For each segment × geography combination the authority assessed, create one finding.
+- Set conclusion:
+    siec        → authority found SIEC or "serious doubts"
+    no_siec     → authority found no concern, no overlap, or "no serious doubts"
+    remedied    → concern identified but resolved by a commitment/remedy
+    discussed   → authority assessed but left the conclusion open
+    unknown     → conclusion absent from the supplied text
+- Assign short passage IDs (e.g. "sp_1", "sp_2") in source_passages and reference
+  the same IDs in source_passage_refs.
+- Quote text VERBATIM — do not paraphrase.
+- Set source_role on each passage:
+    commission_assessment → Commission actively analysing
+    conclusion            → Commission's explicit finding
+    notifying_party_view  → parties' submission
+    background            → factual context only
+- Do NOT invent findings absent from the supplied text.
+- If the supplied text contains only procedural background or no assessment units,
+  return unit_assessments: [] and explain in caveats.
+
+REQUIRED RESPONSE KEYS: unit_assessments, source_passages, caveats.
+Never return {}.
+
+Use the record_unit_assessment tool to return your findings."""
+
+
 def _format_chunks_for_prompt(chunks: list[ChunkInfo]) -> str:
     sep = "=" * 60
     parts: list[str] = []
@@ -1545,6 +1743,27 @@ def _build_extraction_prompt(chunks: list[ChunkInfo], case_context: dict) -> str
     )
 
 
+def _build_unit_assessment_prompt(chunks: list[ChunkInfo], case_context: dict) -> str:
+    """Build the prompt for unit_assessment focus mode."""
+    parties_str = ", ".join(
+        f"{p.get('name', '')} ({p.get('role', '')})"
+        for p in (case_context.get("parties") or [])
+    )
+    context_block = (
+        "Case: " + case_context.get("case_name", "?") + "\n"
+        + "Authority: " + case_context.get("authority", "?") + "\n"
+        + "Parties: " + (parties_str or "?")
+    )
+    chunks_block = _format_chunks_for_prompt(chunks)
+    return (
+        "You are a competition law research assistant extracting structured "
+        "information from merger decision text.\n\n"
+        "CASE CONTEXT:\n" + context_block + "\n\n"
+        "SUPPLIED SOURCE CHUNKS:\n" + chunks_block + "\n\n"
+        + _UNIT_ASSESSMENT_TASK
+    )
+
+
 # ---------------------------------------------------------------------------
 # Claude API call
 # ---------------------------------------------------------------------------
@@ -1571,6 +1790,147 @@ def _call_claude(prompt: str, anthropic_client) -> str:
         if getattr(block, "type", None) == "text":
             return block.text.strip()
     return ""
+
+
+def _call_claude_unit_assessment_raw(prompt: str, anthropic_client):
+    """Call Claude with the unit_assessment tool; return raw Anthropic message."""
+    return anthropic_client.messages.create(
+        model="claude-sonnet-4-6",
+        max_tokens=4096,
+        tools=[_UNIT_ASSESSMENT_TOOL_SCHEMA],
+        tool_choice={"type": "tool", "name": "record_unit_assessment"},
+        messages=[{"role": "user", "content": prompt}],
+    )
+
+
+def _call_claude_unit_assessment(prompt: str, anthropic_client) -> str:
+    """Call Claude with the unit_assessment tool; return JSON string."""
+    message = _call_claude_unit_assessment_raw(prompt, anthropic_client)
+    for block in message.content:
+        if getattr(block, "type", None) == "tool_use":
+            return json.dumps(block.input)
+    for block in message.content:
+        if getattr(block, "type", None) == "text":
+            return block.text.strip()
+    return ""
+
+
+def _validate_unit_assessment(
+    raw: dict,
+    chunks: list[ChunkInfo],
+    chunk_doc_map: dict[str, str],
+) -> "ExtractionResult":
+    """Parse and validate a unit_assessment Claude response.
+
+    Quote-validates all source_passages; populates ExtractionResult.unit_assessments.
+    Passages are stored as unlinked (the link is in finding.source_passage_refs which
+    uses Claude's internal passage IDs — the draft builder preserves them as-is).
+    """
+    validated_count = 0
+    rejected_count = 0
+
+    # Build a map from Claude's raw passage IDs to validated sp snippets so the
+    # draft builder can emit stable passage refs in the findings.
+    raw_id_to_quote: dict[str, str] = {}
+    for rp in (raw.get("source_passages") or []):
+        if isinstance(rp, dict):
+            pid = str(rp.get("chunk_id", "") or rp.get("passage_id", "") or "")
+            quote = (rp.get("quote") or "").strip()
+            # Claude uses the passage_id field as the ref target
+            raw_pid = str(rp.get("passage_id", "") or "").strip()
+            if raw_pid and quote:
+                raw_id_to_quote[raw_pid] = quote[:80]
+
+    unlinked_passages: list[ExtractedPassage] = []
+    for rp in (raw.get("source_passages") or []):
+        if not isinstance(rp, dict):
+            continue
+        quote = (rp.get("quote") or "").strip()
+        chunk_id = str(rp.get("chunk_id", "") or "")
+        source_role = str(rp.get("source_role", "") or "")
+        if source_role and source_role not in _VALID_SOURCE_ROLES:
+            source_role = ""
+        try:
+            page_num = int(rp.get("page_number") or 0)
+        except (TypeError, ValueError):
+            page_num = 0
+
+        if not chunk_id or not quote or page_num == 0:
+            rejected_count += 1
+            unlinked_passages.append(ExtractedPassage(
+                chunk_id=chunk_id, page_number=page_num, quote=quote,
+                validated=False,
+                rejection_reason="Missing required field(s): chunk_id, quote, or page_number",
+                source_role=source_role,
+            ))
+            continue
+
+        valid, note, corrected_page = _validate_quote_against_chunks(
+            quote, chunk_id, page_num, chunks
+        )
+        actual_page = corrected_page if corrected_page is not None else page_num
+        ep = ExtractedPassage(
+            chunk_id=chunk_id,
+            page_number=actual_page,
+            quote=quote,
+            validated=valid,
+            source_document_id=chunk_doc_map.get(chunk_id, ""),
+            rejection_reason="" if valid else note,
+            source_role=source_role,
+        )
+        if valid:
+            validated_count += 1
+        else:
+            rejected_count += 1
+        unlinked_passages.append(ep)
+
+    # Parse unit_assessments — validate enum values; preserve raw dicts.
+    unit_assessments: list[dict] = []
+    for raw_unit in (raw.get("unit_assessments") or []):
+        if not isinstance(raw_unit, dict):
+            continue
+        unit_label = str(raw_unit.get("unit_label", "") or "").strip()
+        if not unit_label:
+            continue
+        findings: list[dict] = []
+        for raw_f in (raw_unit.get("findings") or []):
+            if not isinstance(raw_f, dict):
+                continue
+            ft = str(raw_f.get("finding_type", "other") or "other").strip()
+            if ft not in _VALID_FINDING_TYPES:
+                ft = "other"
+            conc = str(raw_f.get("conclusion", "unknown") or "unknown").strip()
+            if conc not in _VALID_FINDING_CONCLUSIONS:
+                conc = "unknown"
+            findings.append({
+                "finding_id": str(raw_f.get("finding_id", "") or ""),
+                "finding_type": ft,
+                "segment": str(raw_f.get("segment", "") or ""),
+                "geography": str(raw_f.get("geography", "") or ""),
+                "conclusion": conc,
+                "description": str(raw_f.get("description", "") or ""),
+                "related_markets": list(raw_f.get("related_markets") or []),
+                "related_theories": list(raw_f.get("related_theories") or []),
+                "source_passage_refs": list(raw_f.get("source_passage_refs") or []),
+            })
+        unit_assessments.append({
+            "unit_type": str(raw_unit.get("unit_type", "") or "").strip(),
+            "unit_label": unit_label,
+            "findings": findings,
+        })
+
+    return ExtractionResult(
+        product_markets=[],
+        geographic_markets=[],
+        theories=[],
+        commitments=[],
+        overall_outcome="unknown",
+        unlinked_passages=unlinked_passages,
+        caveats=list(raw.get("caveats") or []),
+        passages_validated=validated_count,
+        passages_rejected=rejected_count,
+        unit_assessments=unit_assessments,
+    )
 
 
 def _parse_extraction_response(
@@ -2510,6 +2870,11 @@ def _build_draft_record(
         })
 
     draft["source_passages"] = passages
+
+    # Include unit_assessments when the unit_assessment focus was used.
+    if result.unit_assessments:
+        draft["unit_assessments"] = result.unit_assessments
+
     return draft
 
 
@@ -2856,8 +3221,8 @@ def _reconcile(
     # When a focus mode is active, skip reconciling proposition types that were
     # out of scope for that extraction run — they would always appear as
     # unsupported_remove, which is misleading rather than actionable.
-    _skip_markets = focus in ("theories", "remedies", "case_history", "outcome_metadata")
-    _skip_theories = focus in ("market_definition", "remedies", "case_history", "outcome_metadata")
+    _skip_markets = focus in ("theories", "remedies", "case_history", "outcome_metadata", "unit_assessment")
+    _skip_theories = focus in ("market_definition", "remedies", "case_history", "outcome_metadata", "unit_assessment")
 
     if not _skip_markets:
         _match_list(
@@ -3796,100 +4161,137 @@ def extract_case(
             f"~{approx_tokens:,} tokens"
         )
 
-        prompt = _build_extraction_prompt(selected, existing_record)
-        try:
-            response_text = _call_claude(prompt, anthropic_client)
-        except Exception as exc:
-            report.error = f"Claude API error: {exc}"
-            return report
+        # -------------------------------------------------------------------
+        # unit_assessment focus uses a separate tool and validation path.
+        # -------------------------------------------------------------------
+        if focus == "unit_assessment":
+            prompt = _build_unit_assessment_prompt(selected, existing_record)
+            try:
+                response_text = _call_claude_unit_assessment(prompt, anthropic_client)
+            except Exception as exc:
+                report.error = f"Claude API error: {exc}"
+                return report
 
-        # Parse
-        try:
-            raw = _parse_extraction_response(
-                response_text, debug_dir=_effective_debug_dir, case_id=case_id
-            )
-        except ValueError as exc:
-            report.error = f"Failed to parse Claude response: {exc}"
-            return report
+            try:
+                raw = _parse_extraction_response(
+                    response_text, debug_dir=_effective_debug_dir, case_id=case_id
+                )
+            except ValueError as exc:
+                report.error = f"Failed to parse Claude response: {exc}"
+                return report
 
-        # Empty-object guard
-        if not raw:
-            _effective_debug_dir.mkdir(parents=True, exist_ok=True)
-            debug_path = _effective_debug_dir / f"{case_id}_claude_raw_response.txt"
-            debug_path.write_text(response_text, encoding="utf-8")
-            report.error = (
-                f"Claude returned empty extraction object — raw response saved to {debug_path}"
-            )
-            return report
-
-        # Envelope merge + normalise + validate
-        merged = dict(_DEFAULT_EXTRACTION_ENVELOPE)
-        merged.update(raw)
-        raw = merged
-        raw, norm_errors = _normalize_list_fields(raw)
-        schema_errors = _validate_extraction_schema(raw)
-        all_errors = norm_errors + schema_errors
-        if all_errors:
-            if _should_attempt_repair(norm_errors, schema_errors):
-                print("  WARN: Stringified list fields detected — attempting repair call")
-                _effective_debug_dir.mkdir(parents=True, exist_ok=True)
-                err_path = _effective_debug_dir / f"{case_id}_claude_raw_response.txt"
-                err_path.write_text(response_text, encoding="utf-8")
-                try:
-                    repaired_text = _call_claude_repair(response_text, all_errors, anthropic_client)
-                    repaired_raw = _parse_extraction_response(
-                        repaired_text, debug_dir=None, case_id=""
-                    )
-                except Exception as exc:
-                    report.error = (
-                        f"Schema validation failed and repair call errored: {exc}\n"
-                        + "Original errors:\n"
-                        + "\n".join(f"  - {e}" for e in all_errors)
-                        + f"\nOriginal response saved to {err_path}"
-                    )
-                    return report
-
-                if not repaired_raw:
-                    report.error = (
-                        "Schema validation failed; repair returned empty object.\n"
-                        "Original errors:\n"
-                        + "\n".join(f"  - {e}" for e in all_errors)
-                        + f"\nOriginal response saved to {err_path}"
-                    )
-                    return report
-
-                r_merged = dict(_DEFAULT_EXTRACTION_ENVELOPE)
-                r_merged.update(repaired_raw)
-                repaired_raw = r_merged
-                repaired_raw, r_norm_errors = _normalize_list_fields(repaired_raw)
-                r_all_errors = r_norm_errors + _validate_extraction_schema(repaired_raw)
-                if r_all_errors:
-                    repair_path = _effective_debug_dir / f"{case_id}_repair_response.txt"
-                    repair_path.write_text(repaired_text, encoding="utf-8")
-                    report.error = (
-                        "Repair retry still failed:\n"
-                        + "\n".join(f"  - {e}" for e in r_all_errors)
-                        + f"\nRepaired response saved to {repair_path}"
-                    )
-                    return report
-
-                print("  Repair succeeded")
-                raw = repaired_raw
-                response_text = repaired_text
-            else:
+            if not raw:
                 _effective_debug_dir.mkdir(parents=True, exist_ok=True)
                 debug_path = _effective_debug_dir / f"{case_id}_claude_raw_response.txt"
                 debug_path.write_text(response_text, encoding="utf-8")
                 report.error = (
-                    "Claude response failed schema validation:\n"
-                    + "\n".join(f"  - {e}" for e in all_errors)
-                    + f"\nRaw response saved to {debug_path}"
+                    f"Claude returned empty unit_assessment object — "
+                    f"raw response saved to {debug_path}"
                 )
                 return report
 
-        result = _validate_extraction(raw, selected, chunk_doc_map)
-        result.raw_response = response_text
-        report.result = result
+            result = _validate_unit_assessment(raw, selected, chunk_doc_map)
+            result.raw_response = response_text
+            report.result = result
+
+        # -------------------------------------------------------------------
+        # Standard extraction path (all other focus modes)
+        # -------------------------------------------------------------------
+        else:
+            prompt = _build_extraction_prompt(selected, existing_record)
+            try:
+                response_text = _call_claude(prompt, anthropic_client)
+            except Exception as exc:
+                report.error = f"Claude API error: {exc}"
+                return report
+
+            # Parse
+            try:
+                raw = _parse_extraction_response(
+                    response_text, debug_dir=_effective_debug_dir, case_id=case_id
+                )
+            except ValueError as exc:
+                report.error = f"Failed to parse Claude response: {exc}"
+                return report
+
+            # Empty-object guard
+            if not raw:
+                _effective_debug_dir.mkdir(parents=True, exist_ok=True)
+                debug_path = _effective_debug_dir / f"{case_id}_claude_raw_response.txt"
+                debug_path.write_text(response_text, encoding="utf-8")
+                report.error = (
+                    f"Claude returned empty extraction object — raw response saved to {debug_path}"
+                )
+                return report
+
+            # Envelope merge + normalise + validate
+            merged = dict(_DEFAULT_EXTRACTION_ENVELOPE)
+            merged.update(raw)
+            raw = merged
+            raw, norm_errors = _normalize_list_fields(raw)
+            schema_errors = _validate_extraction_schema(raw)
+            all_errors = norm_errors + schema_errors
+            if all_errors:
+                if _should_attempt_repair(norm_errors, schema_errors):
+                    print("  WARN: Stringified list fields detected — attempting repair call")
+                    _effective_debug_dir.mkdir(parents=True, exist_ok=True)
+                    err_path = _effective_debug_dir / f"{case_id}_claude_raw_response.txt"
+                    err_path.write_text(response_text, encoding="utf-8")
+                    try:
+                        repaired_text = _call_claude_repair(response_text, all_errors, anthropic_client)
+                        repaired_raw = _parse_extraction_response(
+                            repaired_text, debug_dir=None, case_id=""
+                        )
+                    except Exception as exc:
+                        report.error = (
+                            f"Schema validation failed and repair call errored: {exc}\n"
+                            + "Original errors:\n"
+                            + "\n".join(f"  - {e}" for e in all_errors)
+                            + f"\nOriginal response saved to {err_path}"
+                        )
+                        return report
+
+                    if not repaired_raw:
+                        report.error = (
+                            "Schema validation failed; repair returned empty object.\n"
+                            "Original errors:\n"
+                            + "\n".join(f"  - {e}" for e in all_errors)
+                            + f"\nOriginal response saved to {err_path}"
+                        )
+                        return report
+
+                    r_merged = dict(_DEFAULT_EXTRACTION_ENVELOPE)
+                    r_merged.update(repaired_raw)
+                    repaired_raw = r_merged
+                    repaired_raw, r_norm_errors = _normalize_list_fields(repaired_raw)
+                    r_all_errors = r_norm_errors + _validate_extraction_schema(repaired_raw)
+                    if r_all_errors:
+                        repair_path = _effective_debug_dir / f"{case_id}_repair_response.txt"
+                        repair_path.write_text(repaired_text, encoding="utf-8")
+                        report.error = (
+                            "Repair retry still failed:\n"
+                            + "\n".join(f"  - {e}" for e in r_all_errors)
+                            + f"\nRepaired response saved to {repair_path}"
+                        )
+                        return report
+
+                    print("  Repair succeeded")
+                    raw = repaired_raw
+                    response_text = repaired_text
+                else:
+                    _effective_debug_dir.mkdir(parents=True, exist_ok=True)
+                    debug_path = _effective_debug_dir / f"{case_id}_claude_raw_response.txt"
+                    debug_path.write_text(response_text, encoding="utf-8")
+                    report.error = (
+                        "Claude response failed schema validation:\n"
+                        + "\n".join(f"  - {e}" for e in all_errors)
+                        + f"\nRaw response saved to {debug_path}"
+                    )
+                    return report
+
+            result = _validate_extraction(raw, selected, chunk_doc_map)
+            result.raw_response = response_text
+            report.result = result
 
     # Enforce focus-mode output constraints (strips out-of-scope types, forces outcome).
     result = _apply_focus_guardrails(result, focus)

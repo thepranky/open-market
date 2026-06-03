@@ -320,15 +320,25 @@ def write_review_report(
         lines += [f"**ERROR:** {extraction_report.error}", ""]
     elif extraction_report.result:
         r = extraction_report.result
-        lines += [
-            f"- Product markets found: {len(r.product_markets)}",
-            f"- Geographic markets found: {len(r.geographic_markets)}",
-            f"- Theories of harm: {len(r.theories)}",
-            f"- Commitments found: {len(r.commitments)}",
-            f"- Passages validated: {r.passages_validated}",
-            f"- Passages rejected: {r.passages_rejected}",
-            "",
-        ]
+        if r.unit_assessments:
+            total_findings = sum(len(ua.get("findings", [])) for ua in r.unit_assessments)
+            lines += [
+                f"- Unit assessments: {len(r.unit_assessments)}",
+                f"- Findings: {total_findings}",
+                f"- Passages validated: {r.passages_validated}",
+                f"- Passages rejected: {r.passages_rejected}",
+                "",
+            ]
+        else:
+            lines += [
+                f"- Product markets found: {len(r.product_markets)}",
+                f"- Geographic markets found: {len(r.geographic_markets)}",
+                f"- Theories of harm: {len(r.theories)}",
+                f"- Commitments found: {len(r.commitments)}",
+                f"- Passages validated: {r.passages_validated}",
+                f"- Passages rejected: {r.passages_rejected}",
+                "",
+            ]
         if extraction_report.section_batches:
             succeeded = sum(1 for b in extraction_report.section_batches if b.result is not None)
             total = len(extraction_report.section_batches)
@@ -542,7 +552,8 @@ def main() -> int:
     parser.add_argument("--case-id", required=True, help="Case ID (e.g. eu_sika_mbcc_2023)")
     parser.add_argument(
         "--focus", default="market_definition",
-        choices=["market_definition", "theories", "remedies", "case_history", "outcome_metadata"],
+        choices=["market_definition", "theories", "remedies", "case_history", "outcome_metadata",
+                 "unit_assessment"],
         help="Extraction focus (default: market_definition)",
     )
     parser.add_argument("--refresh-cache", action="store_true",
@@ -723,8 +734,13 @@ def main() -> int:
                 print(f"\nReview:     {report_path}")
                 return 1
             r = extraction_report.result
-            print(f"  Product markets:  {len(r.product_markets)}")
-            print(f"  Geo markets:      {len(r.geographic_markets)}")
+            if r.unit_assessments:
+                total_findings = sum(len(ua.get("findings", [])) for ua in r.unit_assessments)
+                print(f"  Unit assessments: {len(r.unit_assessments)}")
+                print(f"  Findings:         {total_findings}")
+            else:
+                print(f"  Product markets:  {len(r.product_markets)}")
+                print(f"  Geo markets:      {len(r.geographic_markets)}")
             print(f"  Passages:         validated={r.passages_validated} rejected={r.passages_rejected}")
             if extraction_report.section_batches:
                 succeeded = sum(1 for b in extraction_report.section_batches if b.result is not None)

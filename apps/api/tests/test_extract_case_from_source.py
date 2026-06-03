@@ -95,6 +95,13 @@ from extract_case_from_source import (
     _score_page_market_def,
     _select_market_def_fallback_chunks,
     _infer_section_label_from_pages,
+    # unit_assessment
+    _UNIT_ASSESSMENT_TOOL_SCHEMA,
+    _UNIT_ASSESSMENT_TASK,
+    _VALID_FINDING_TYPES,
+    _VALID_FINDING_CONCLUSIONS,
+    _build_unit_assessment_prompt,
+    _validate_unit_assessment,
 )
 from repair_source_passages import _extract_section_map
 
@@ -9038,3 +9045,324 @@ class TestOutcomeMetadata:
     def test_tool_schema_includes_decision_date(self):
         props = _EXTRACTION_TOOL_SCHEMA["input_schema"]["properties"]
         assert "decision_date" in props
+
+
+class TestUnitAssessmentFocus:
+    """Tests for the unit_assessment extraction focus mode."""
+
+    def _make_chunk(self, chunk_id: str, page_num: int, text: str, doc_id: str = "doc1") -> ChunkInfo:
+        return ChunkInfo(
+            chunk_id=chunk_id,
+            section_path="competitive assessment",
+            pages=[{"page_number": page_num, "text": text}],
+            source_document_id=doc_id,
+        )
+
+    # ------------------------------------------------------------------
+    # Focus-terms registration
+    # ------------------------------------------------------------------
+
+    def test_unit_assessment_in_focus_terms(self):
+        assert "unit_assessment" in _FOCUS_TERMS
+
+    def test_unit_assessment_focus_terms_is_empty_tuple(self):
+        # Empty tuple → _is_focused_section returns True for ALL sections,
+        # so page-range controls scope rather than section-heading matching.
+        assert _FOCUS_TERMS["unit_assessment"] == ()
+
+    def test_is_focused_section_true_for_any_path(self):
+        for path in ("", "competitive assessment", "market definition", "procedure"):
+            assert _is_focused_section(path, "unit_assessment"), (
+                f"expected True for path={path!r}"
+            )
+
+    # ------------------------------------------------------------------
+    # Tool schema shape
+    # ------------------------------------------------------------------
+
+    def test_unit_assessment_tool_name(self):
+        assert _UNIT_ASSESSMENT_TOOL_SCHEMA["name"] == "record_unit_assessment"
+
+    def test_unit_assessment_tool_required_keys(self):
+        req = _UNIT_ASSESSMENT_TOOL_SCHEMA["input_schema"]["required"]
+        assert set(req) == {"unit_assessments", "source_passages", "caveats"}
+
+    def test_unit_assessment_tool_has_unit_assessments_array(self):
+        props = _UNIT_ASSESSMENT_TOOL_SCHEMA["input_schema"]["properties"]
+        assert props["unit_assessments"]["type"] == "array"
+
+    def test_unit_finding_conclusion_enum_complete(self):
+        assert _VALID_FINDING_CONCLUSIONS == {"siec", "no_siec", "discussed", "remedied", "unknown"}
+
+    def test_unit_finding_type_enum_complete(self):
+        assert _VALID_FINDING_TYPES == {
+            "horizontal_overlap", "vertical_overlap", "conglomerate",
+            "innovation", "no_overlap", "other",
+        }
+
+    def test_unit_assessment_task_mentions_table(self):
+        assert "TABLE" in _UNIT_ASSESSMENT_TASK or "table" in _UNIT_ASSESSMENT_TASK.lower()
+
+    def test_unit_assessment_task_mentions_siec(self):
+        assert "siec" in _UNIT_ASSESSMENT_TASK.lower()
+
+    # ------------------------------------------------------------------
+    # _validate_unit_assessment
+    # ------------------------------------------------------------------
+
+    def test_validate_unit_assessment_empty_response(self):
+        raw = {"unit_assessments": [], "source_passages": [], "caveats": []}
+        chunks = []
+        result = _validate_unit_assessment(raw, chunks, {})
+        assert result.unit_assessments == []
+        assert result.product_markets == []
+        assert result.theories == []
+        assert result.overall_outcome == "unknown"
+
+    def test_validate_unit_assessment_parses_unit_and_findings(self):
+        chunk = self._make_chunk("chunk_001", 60, "The Commission finds serious doubts for cucumbers in EEA.")
+        raw = {
+            "unit_assessments": [
+                {
+                    "unit_type": "crop",
+                    "unit_label": "Cucumber",
+                    "findings": [
+                        {
+                            "finding_id": "f_1",
+                            "finding_type": "horizontal_overlap",
+                            "segment": "Open field cucumbers",
+                            "geography": "EEA",
+                            "conclusion": "siec",
+                            "description": "The Commission finds serious doubts for cucumbers in EEA.",
+                            "related_markets": [],
+                            "related_theories": [],
+                            "source_passage_refs": ["sp_1"],
+                        }
+                    ],
+                }
+            ],
+            "source_passages": [
+                {
+                    "chunk_id": "chunk_001",
+                    "page_number": 60,
+                    "quote": "The Commission finds serious doubts for cucumbers in EEA.",
+                    "source_role": "conclusion",
+                    "passage_id": "sp_1",
+                }
+            ],
+            "caveats": [],
+        }
+        result = _validate_unit_assessment(raw, [chunk], {"chunk_001": "doc1"})
+        assert len(result.unit_assessments) == 1
+        ua = result.unit_assessments[0]
+        assert ua["unit_label"] == "Cucumber"
+        assert ua["unit_type"] == "crop"
+        assert len(ua["findings"]) == 1
+        fi = ua["findings"][0]
+        assert fi["conclusion"] == "siec"
+        assert fi["segment"] == "Open field cucumbers"
+        assert fi["geography"] == "EEA"
+        assert result.passages_validated == 1
+        assert result.passages_rejected == 0
+
+    def test_validate_unit_assessment_invalid_finding_type_coerced(self):
+        chunk = self._make_chunk("chunk_001", 70, "Some text.")
+        raw = {
+            "unit_assessments": [
+                {
+                    "unit_type": "crop",
+                    "unit_label": "Onion",
+                    "findings": [
+                        {
+                            "finding_id": "f_1",
+                            "finding_type": "INVALID_TYPE",
+                            "conclusion": "no_siec",
+                            "description": "Some text.",
+                            "source_passage_refs": [],
+                        }
+                    ],
+                }
+            ],
+            "source_passages": [],
+            "caveats": [],
+        }
+        result = _validate_unit_assessment(raw, [chunk], {})
+        assert result.unit_assessments[0]["findings"][0]["finding_type"] == "other"
+
+    def test_validate_unit_assessment_invalid_conclusion_coerced(self):
+        chunk = self._make_chunk("chunk_001", 70, "Some text.")
+        raw = {
+            "unit_assessments": [
+                {
+                    "unit_type": "crop",
+                    "unit_label": "Onion",
+                    "findings": [
+                        {
+                            "finding_id": "f_1",
+                            "finding_type": "horizontal_overlap",
+                            "conclusion": "BAD_VALUE",
+                            "description": "Some text.",
+                            "source_passage_refs": [],
+                        }
+                    ],
+                }
+            ],
+            "source_passages": [],
+            "caveats": [],
+        }
+        result = _validate_unit_assessment(raw, [chunk], {})
+        assert result.unit_assessments[0]["findings"][0]["conclusion"] == "unknown"
+
+    def test_validate_unit_assessment_passage_not_found_counted_as_rejected(self):
+        chunk = self._make_chunk("chunk_001", 60, "Actual page text here.")
+        raw = {
+            "unit_assessments": [],
+            "source_passages": [
+                {
+                    "chunk_id": "chunk_001",
+                    "page_number": 60,
+                    "quote": "Quote that does not appear in the page text at all.",
+                    "passage_id": "sp_1",
+                }
+            ],
+            "caveats": [],
+        }
+        result = _validate_unit_assessment(raw, [chunk], {"chunk_001": "doc1"})
+        assert result.passages_rejected == 1
+        assert result.passages_validated == 0
+
+    def test_validate_unit_assessment_missing_unit_label_skipped(self):
+        raw = {
+            "unit_assessments": [
+                {"unit_type": "crop", "unit_label": "", "findings": []},
+                {"unit_type": "crop", "unit_label": "Onion", "findings": []},
+            ],
+            "source_passages": [],
+            "caveats": [],
+        }
+        result = _validate_unit_assessment(raw, [], {})
+        assert len(result.unit_assessments) == 1
+        assert result.unit_assessments[0]["unit_label"] == "Onion"
+
+    # ------------------------------------------------------------------
+    # _apply_focus_guardrails for unit_assessment
+    # ------------------------------------------------------------------
+
+    def test_guardrail_unit_assessment_clears_markets(self):
+        result = ExtractionResult(
+            product_markets=[ExtractedMarket("m", "product", "defined", "")],
+            geographic_markets=[],
+            theories=[],
+            commitments=[],
+            overall_outcome="cleared",
+        )
+        out = _apply_focus_guardrails(result, "unit_assessment")
+        assert out.product_markets == []
+        assert out.overall_outcome == "unknown"
+
+    def test_guardrail_unit_assessment_clears_theories(self):
+        result = ExtractionResult(
+            theories=[ExtractedTheory("T", "horizontal", "upheld", "")],
+        )
+        out = _apply_focus_guardrails(result, "unit_assessment")
+        assert out.theories == []
+
+    def test_guardrail_unit_assessment_preserves_unit_assessments(self):
+        result = ExtractionResult(
+            unit_assessments=[{"unit_type": "crop", "unit_label": "Cucumber", "findings": []}],
+        )
+        out = _apply_focus_guardrails(result, "unit_assessment")
+        assert len(out.unit_assessments) == 1
+
+    # ------------------------------------------------------------------
+    # _build_draft_record includes unit_assessments
+    # ------------------------------------------------------------------
+
+    def test_build_draft_record_includes_unit_assessments(self):
+        result = ExtractionResult(
+            unit_assessments=[
+                {
+                    "unit_type": "crop",
+                    "unit_label": "Cucumber",
+                    "findings": [
+                        {
+                            "finding_id": "f_1",
+                            "finding_type": "horizontal_overlap",
+                            "segment": "Greenhouse cucumbers",
+                            "geography": "EEA",
+                            "conclusion": "siec",
+                            "description": "...",
+                            "related_markets": [],
+                            "related_theories": [],
+                            "source_passage_refs": ["sp_1"],
+                        }
+                    ],
+                }
+            ],
+        )
+        existing = {
+            "case_id": "test_case",
+            "case_name": "Test Case",
+            "authority": "EC",
+            "jurisdiction": "EU",
+            "sector": "agriculture",
+            "parties": [],
+            "source_documents": [],
+        }
+        draft = _build_draft_record(result, existing)
+        assert "unit_assessments" in draft
+        assert len(draft["unit_assessments"]) == 1
+        assert draft["unit_assessments"][0]["unit_label"] == "Cucumber"
+
+    def test_build_draft_record_no_unit_assessments_omits_key(self):
+        result = ExtractionResult()
+        existing = {
+            "case_id": "test_case",
+            "case_name": "Test",
+            "authority": "EC",
+            "jurisdiction": "EU",
+            "sector": "x",
+            "parties": [],
+            "source_documents": [],
+        }
+        draft = _build_draft_record(result, existing)
+        assert "unit_assessments" not in draft
+
+    # ------------------------------------------------------------------
+    # Reconciliation skip for unit_assessment
+    # ------------------------------------------------------------------
+
+    def test_reconcile_unit_assessment_skips_markets(self):
+        draft = {
+            "case_id": "test",
+            "product_markets_considered": [],
+            "geographic_markets_considered": [],
+            "theories_of_harm": [],
+            "source_passages": [],
+        }
+        existing = {
+            "product_markets_considered": [
+                {"market_id": "pm_1", "name": "Some market"}
+            ],
+            "geographic_markets_considered": [],
+            "theories_of_harm": [],
+        }
+        findings = _reconcile(draft, existing, focus="unit_assessment")
+        # unit_assessment skips both markets and theories — no reconciliation findings
+        assert len(findings) == 0
+
+    # ------------------------------------------------------------------
+    # Prompt builder
+    # ------------------------------------------------------------------
+
+    def test_build_unit_assessment_prompt_contains_task(self):
+        chunk = self._make_chunk("c1", 1, "text")
+        ctx = {"case_name": "Test Case", "authority": "EC", "parties": []}
+        prompt = _build_unit_assessment_prompt([chunk], ctx)
+        assert "record_unit_assessment" in prompt or "TASK" in prompt
+
+    def test_build_unit_assessment_prompt_contains_case_name(self):
+        chunk = self._make_chunk("c1", 1, "text")
+        ctx = {"case_name": "Bayer / Monsanto", "authority": "EC", "parties": []}
+        prompt = _build_unit_assessment_prompt([chunk], ctx)
+        assert "Bayer / Monsanto" in prompt
