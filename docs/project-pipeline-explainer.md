@@ -10,7 +10,7 @@
 
 **Practical use case:** A lawyer researching market definition precedent in a media/gaming merger can search CompMap and find: which product markets were considered, what definition status was reached (defined, discussed, left open), what theories of harm were raised, and exactly which passage of which decision supports each finding — with page and paragraph numbers.
 
-**Current state:** This is a v0 first slice. There are 12 source-verified canonical case records. The ingestion pipeline now covers source caching, multi-focus LLM extraction, deterministic validation, LLM review triage, safe draft-to-canonical promotion, review-learning logs, eval fixtures, and long-decision assembly. The pipeline started with market-definition extraction and has now been extended to outcome metadata, theories of harm, remedies/commitments, and repeated-unit assessment for long Phase II decisions. Frontend cleanup is deferred.
+**Current state:** This is a v0 first slice. There are 13 source-verified canonical case records. The ingestion pipeline now covers source caching, multi-focus LLM extraction, deterministic validation, LLM review triage, safe draft-to-canonical promotion, review-learning logs, eval fixtures, and long-decision assembly. The pipeline started with market-definition extraction and has now been extended to outcome metadata, theories of harm, remedies/commitments, and repeated-unit assessment for long Phase II decisions. The long-decision pipeline has been proven on a promoted Phase II conditional-clearance hard case (`eu_bayer_monsanto_2018`). Frontend cleanup is deferred.
 
 ---
 
@@ -110,11 +110,11 @@ The pipeline has two distinct parts: **manual legal judgment** and a **semi-auto
 ### Stage 4 — Quote validation gate
 
 - **What:** Every quote snippet proposed by the LLM is checked against the actual extracted source text. If a quote cannot be found, it is rejected — it is not written to YAML.
-- **Script:** `apps/api/scripts/check_source_integrity.py` (672 lines); key function: `quote_found_in_text(quote, text)` using fuzzy matching.
+- **Script:** `apps/api/scripts/check_source_integrity.py`; key function: `quote_found_in_text(quote, text)` using fuzzy matching.
 - **Inputs:** Draft YAML; cached source text.
 - **Outputs:** Pass/fail report; passages that failed are excluded from the draft.
 - **Why this matters:** LLMs hallucinate quotes. This gate is the primary technical safeguard against fabricated citations appearing in the record. The gate was built after a fabricated source URL was discovered in `us_microsoft_activision_2023` during manual authoring (see `docs/ingestion-design.md`).
-- **Status:** Automated check; runs as part of script and in CI.
+- **Status:** Automated check; runs as part of script and in CI. The `--no-cache` extraction path was updated to prefer `pdfplumber` over `pypdf` (consistent with the cache builder), and the fragment search was fixed to scan forward monotonically — both changes surfaced during Bayer/Monsanto source-integrity cleanup.
 
 ---
 
@@ -142,6 +142,7 @@ The pipeline has two distinct parts: **manual legal judgment** and a **semi-auto
 
 - **What:** A human reviewer reads the draft YAML against the actual source document. They verify quote accuracy, check that `definition_status` is correct (e.g., not marking `defined` for something the authority only `discussed`), and update `review_status` fields from `unreviewed` to `spot_checked` or `lawyer_reviewed`.
 - **Files edited:** `data/drafts/.../` → promoted to `data/cases/` after review.
+- **Hard-case review:** For merged drafts from long decisions, use `docs/hard-case-review-checklist.md` as the promotion gate. It covers cross-reference integrity, orphaned nodes, dangling refs, conclusion labels, duplicate passage detection, and outcome metadata verification.
 - **Status:** Manual legal sign-off, but promotion is now automated through `apps/api/scripts/promote_case_pipeline.py`. The wrapper runs target-draft source integrity first and aborts before promotion if the target draft has any source-integrity errors or warnings.
 
 Preferred promotion command:
@@ -189,7 +190,7 @@ apps/api/.venv/bin/python apps/api/scripts/promote_case_pipeline.py \
 - **Script:** `graph/seed_graph.py` (312 lines). Run via `docker compose --profile seed run seed`.
 - **Inputs:** `data/cases/**/*.yaml`; Neo4j instance.
 - **Outputs:** Populated Neo4j database with constraints and full-text indexes.
-- **Status:** Implemented and verified after the data baseline pass. The current 10-case dataset seeds cleanly into Neo4j. Optional — the API falls back to YAML-based queries if Neo4j is unavailable.
+- **Status:** Implemented and verified after the data baseline pass. The current 13-case dataset seeds cleanly into Neo4j. Optional — the API falls back to YAML-based queries if Neo4j is unavailable.
 
 ---
 
@@ -263,12 +264,12 @@ Every proposition in the YAML must be backed by a `source_passage` entry. A find
 | Dimension                       | Score /10 | Reason                                                                                                            | Practical improvement                                                                       |
 | ------------------------------- | --------- | ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
 | **Automation**                  | 5/10      | Ingestion, LLM triage, promotion wrapper, review learning, and central rules exist; corpus expansion still needs human legal sign-off | Build out review-learning pipeline; increase automation coverage for corpus expansion       |
-| **Scalability**                 | 3/10      | In-memory YAML search works for 10 cases; Neo4j graph seeds cleanly but the corpus is still too small              | Add proper database indexing and move search to Neo4j full-text; increase case count to 50+ |
+| **Scalability**                 | 3/10      | In-memory YAML search works for 13 cases; Neo4j graph seeds cleanly but the corpus is still too small              | Add proper database indexing and move search to Neo4j full-text; increase case count to 50+ |
 | **Accuracy / source grounding** | 7/10      | Quote validation gate is real and enforced; eval results on 6 cases show F1 = 1.0 on partial gold                 | Expand gold standard coverage; add completeness checks for missed markets                   |
 | **Legal reliability**           | 5/10      | Source passage links are genuine; but no formal legal weighting, definition status can be misclassified by LLM    | Add structured legal review checklist; separate allegation vs. finding at schema level      |
 | **Maintainability**             | 7/10      | YAML is readable and git-diffable; Pydantic schema enforces structure; scripts are well-factored                  | Document the schema evolution policy; add migration tooling for schema changes              |
 | **Deployment readiness**        | 3/10      | Docker Compose works locally; no production deployment, no auth, no rate limiting, no monitoring                  | Add authentication, environment config management, and a staging deploy                     |
-| **User-facing usefulness**      | 5/10      | Frontend exists and shows markets, theories, sources; but 10 cases is too few for real research value; frontend cleanup still needed | Expand case count; add cross-case filtering by market name and theory type                  |
+| **User-facing usefulness**      | 5/10      | Frontend exists and shows markets, theories, sources; but 13 cases is too few for real research value; frontend cleanup still needed | Expand case count; add cross-case filtering by market name and theory type                  |
 | **Evaluation / test coverage**  | 6/10      | Eval framework is real with precision/recall metrics; gold standard covers 6 market-definition fixtures (benchmark 6/6 PASS at F1=1.000); CI-safe benchmark subset exists | Keep expanding gold fixtures for promoted cases; add completeness recall and keep generated eval results out of git status |
 
 
@@ -312,7 +313,8 @@ This is not a rigid roadmap. It is the sensible order of priority based on the c
 | **8a**   | **Case promotion pipeline** ✅ v1 Done | Added `promote_case_pipeline.py` to run target-draft integrity, safe promotion, canonical gates, graph seed, review learning log, and apply-learning proposals in one fail-fast workflow | **Claude + human + ChatGPT** — Claude implemented/tests; human validated workflow; ChatGPT shaped safety requirements | Prevents repeated raw-copy promotion mistakes and makes final promotion repeatable |
 | **8b**   | **Multi-focus extraction** ✅ v1 Done | Added focused extraction for outcome metadata, theories of harm, remedies/commitments, and repeated-unit assessments, alongside market definition | **Claude + human + ChatGPT** — Claude implemented; human validated legal usefulness; ChatGPT shaped the abstraction | Prevents the pipeline from tunnelling into market definition and makes long Phase II decisions structurally representable |
 | **8c**   | **Long-decision assembly** ✅ v1 Done | Added page-range extraction, extraction-range planning, and draft merging so multiple focus-specific passes can become one reviewable draft | **Claude + human + ChatGPT** — Claude implemented scripts/tests; human reviewed outputs; ChatGPT guided sequencing | Long decisions need controlled windows and assembly before legal review; this is the bridge from extraction experiments to reviewable drafts |
-| **Next** | **Controlled corpus expansion** ← Current | Use the generalized pipeline on a medium batch of further cases, keeping hard cases as diagnostics and only promoting after legal review | **Human + ChatGPT + Claude** — human decides legal promotion; ChatGPT helps prioritise cases and risks; Claude runs pipeline/tooling | Now that the pipeline can represent markets, outcomes, theories, remedies, and repeated-unit findings, the next proof is repeatable case coverage |
+| **8d**   | **Hard-case promotion** ✅ v1 proven | Promoted `eu_bayer_monsanto_2018` as the first long Phase II / Article 8(2) conditional-clearance hard case (1006 pages, 49 product markets, 15 geo markets, 10 theories, 14 commitments, 66 unit assessments, 461 passages — 0 errors / 0 warnings); `docs/hard-case-review-checklist.md` added as a durable pre-promotion gate | **Human + Claude** — human made legal promotion decisions; Claude ran pipeline, diagnostics, and source-integrity cleanup | Proves the generalized pipeline can handle a full-complexity Phase II decision end-to-end, not just Phase I cases |
+| **Next** | **Controlled corpus expansion** ← Current | Use the generalized pipeline on a medium batch of further cases, keeping hard cases as diagnostics and only promoting after legal review | **Human + ChatGPT + Claude** — human decides legal promotion; ChatGPT helps prioritise cases and risks; Claude runs pipeline/tooling | Pipeline can now represent markets, outcomes, theories, remedies, and repeated-unit findings for decisions of any length; next proof is repeatable coverage |
 | **Next** | **Eval workflow hygiene** | Ensure generated `data/evals/results/*` outputs do not pollute git status; keep eval results as workflow artifacts only | **Claude + human** | Keeps repo clean and avoids accidental commit of eval artifacts |
 | **9**    | **Search and graph hardening**  | Improve cross-case filtering by market, sector, authority, theory of harm, outcome, and source passage                                                   | **Claude + human** — Claude implements backend/search/graph improvements; human validates usefulness for legal research | This is the core user value beyond reading one YAML record                                                        |
 | **10**   | **Production API readiness**    | Add auth, environment config, rate limiting, logging, monitoring, and proper startup/restart behaviour                                                   | **Claude + human** — Claude implements technical hardening; human decides deployment constraints and reviews security posture | FastAPI production deployments need security, restart handling, replication/memory planning, and pre-start checks |
@@ -337,7 +339,7 @@ This is not a rigid roadmap. It is the sensible order of priority based on the c
 >
 > The core design principle is source-first. Every proposition — every market definition, theory of harm, or evidentiary finding — has to trace back to a real quote in a real document. We validate every quote against the actual extracted text before it enters the database. If the quote isn't there, it doesn't go in.
 >
-> Today we have 12 source-verified canonical case records. The pipeline began with market-definition extraction, but it now supports a more complete merger-control record: outcome metadata, theories of harm, remedies and commitments, source passages, and repeated unit-level findings for long decisions. For large Phase II decisions, we can run narrow page-range passes and merge them into one reviewable draft before a human promotes anything to canonical data.
+> Today we have 13 source-verified canonical case records, including the first promoted long Phase II conditional-clearance hard case. The pipeline began with market-definition extraction, but it now supports a more complete merger-control record: outcome metadata, theories of harm, remedies and commitments, source passages, and repeated unit-level findings for long decisions. For large Phase II decisions, we can run narrow page-range passes and merge them into one reviewable draft before a human promotes anything to canonical data.
 >
 > The system is not production-deployed yet. It runs locally with Docker, with a FastAPI backend, a Neo4j graph layer, and a Next.js frontend. The main gap between now and a deployable product is ingestion automation, broader case coverage, and access control.
 >
@@ -345,4 +347,20 @@ This is not a rigid roadmap. It is the sensible order of priority based on the c
 
 ---
 
-*File paths and scores reflect the repository as of June 2026. The ingestion pipeline design is in `docs/ingestion-design.md`. Long-case and hard-case diagnostics are tracked in `docs/hard-case-diagnostics.md`. The completed data baseline and any future source-quality notes are tracked in `docs/data-quality-notes.md`.*
+---
+
+## 10. Maintenance Note
+
+This document should be updated after any of the following:
+
+- **Schema changes** — new fields, enum values, or model restructuring that affect what the pipeline can represent.
+- **New focus modes or extraction scripts** — any addition to the extraction or assembly stages.
+- **Promoted flagship cases** — especially first-of-type cases (new jurisdiction, new procedure stage, new decision length).
+- **Deployment changes** — any move from local to staging or production.
+- **Roadmap shifts** — when a "Next" item completes or a new priority displaces the current one.
+
+Keep updates concise. This document is for product discussions, not for raw logs or case-specific extraction statistics.
+
+---
+
+*File paths and scores reflect the repository as of June 2026. The ingestion pipeline design is in `docs/ingestion-design.md`. Long-case and hard-case diagnostics are tracked in `docs/hard-case-diagnostics.md`. The hard-case pre-promotion checklist is in `docs/hard-case-review-checklist.md`. The completed data baseline and any future source-quality notes are tracked in `docs/data-quality-notes.md`.*
