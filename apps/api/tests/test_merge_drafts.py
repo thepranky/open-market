@@ -37,8 +37,10 @@ from scripts.merge_drafts import (
     _merge_source_documents,
     _merge_theories,
     _norm,
+    _normalize_definition_statuses,
     _passage_key,
     _pick_metadata,
+    _synthesize_back_refs,
     _theory_key,
     _validate_merged,
     main,
@@ -744,3 +746,210 @@ class TestIntegrationTwoTheoryDrafts:
         assert all_theory_refs.issubset(valid_ids), (
             f"Stale theory refs: {all_theory_refs - valid_ids}"
         )
+
+
+# ---------------------------------------------------------------------------
+# Back-reference synthesis
+# ---------------------------------------------------------------------------
+
+class TestSynthesizeBackRefs:
+    def test_theory_back_refs_populated_from_passages(self, tmp_path):
+        # Passages support toh_1; theory should get source_passage_refs populated.
+        a = _base_draft(
+            theories_of_harm=[_theory("toh_1", "Innovation harm")],
+            source_passages=[
+                _passage("sp_1", "Passage A", theories=["toh_1"]),
+                _passage("sp_2", "Passage B", page="2", theories=["toh_1"]),
+            ],
+        )
+        pa = tmp_path / "eu_test.theories.a.draft.yaml"
+        pa.write_text(yaml.dump(a))
+        merged, warnings = merge_drafts([pa])
+
+        toh = merged["theories_of_harm"][0]
+        assert toh["theory_id"] == "toh_1"
+        assert set(toh["source_passage_refs"]) == {"sp_1", "sp_2"}
+        assert any("back-ref" in w.lower() for w in warnings)
+
+    def test_theory_back_refs_union_with_existing(self, tmp_path):
+        # Theory already has an explicit source_passage_ref; synthesis should
+        # add the passage-inferred ones without duplicating the existing one.
+        theory = _theory("toh_1", "Horizontal overlap")
+        theory["source_passage_refs"] = ["sp_1"]  # pre-existing explicit ref
+        a = _base_draft(
+            theories_of_harm=[theory],
+            source_passages=[
+                _passage("sp_1", "Quote already referenced", theories=["toh_1"]),
+                _passage("sp_2", "Additional quote", page="3", theories=["toh_1"]),
+            ],
+        )
+        pa = tmp_path / "eu_test.theories.a.draft.yaml"
+        pa.write_text(yaml.dump(a))
+        merged, _ = merge_drafts([pa])
+
+        toh = merged["theories_of_harm"][0]
+        refs = toh["source_passage_refs"]
+        # Both sp_1 and sp_2 must appear, but sp_1 must not be duplicated
+        assert set(refs) == {"sp_1", "sp_2"}
+        assert refs.count("sp_1") == 1
+
+    def test_theory_with_no_passage_support_gets_empty_list(self, tmp_path):
+        # Theory not referenced by any passage keeps an empty list.
+        a = _base_draft(
+            theories_of_harm=[_theory("toh_1", "Orphan theory")],
+            source_passages=[_passage("sp_1", "Unrelated passage", theories=[])],
+        )
+        pa = tmp_path / "eu_test.theories.a.draft.yaml"
+        pa.write_text(yaml.dump(a))
+        merged, _ = merge_drafts([pa])
+
+        toh = merged["theories_of_harm"][0]
+        assert toh["source_passage_refs"] == []
+
+    def test_commitment_back_refs_populated_from_passages(self, tmp_path):
+        # Passages with supports_commitments -> commitment.related_source_passages.
+        a = _base_draft(
+            commitments=[_commitment("com_1", "Divestiture A")],
+            source_passages=[
+                _passage("sp_1", "Remedy passage A", commitments=["com_1"]),
+                _passage("sp_2", "Remedy passage B", page="5", commitments=["com_1"]),
+            ],
+        )
+        pa = tmp_path / "eu_test.remedies.a.draft.yaml"
+        pa.write_text(yaml.dump(a))
+        merged, warnings = merge_drafts([pa])
+
+        com = merged["commitments"][0]
+        assert set(com["related_source_passages"]) == {"sp_1", "sp_2"}
+        assert any("back-ref" in w.lower() for w in warnings)
+
+    def test_commitment_back_refs_union_with_existing(self, tmp_path):
+        # Commitment already has related_source_passages; union, no duplicates.
+        com = _commitment("com_1", "Remedy B", passages=["sp_1"])
+        a = _base_draft(
+            commitments=[com],
+            source_passages=[
+                _passage("sp_1", "Existing passage", commitments=["com_1"]),
+                _passage("sp_2", "New passage", page="6", commitments=["com_1"]),
+            ],
+        )
+        pa = tmp_path / "eu_test.remedies.a.draft.yaml"
+        pa.write_text(yaml.dump(a))
+        merged, _ = merge_drafts([pa])
+
+        com_out = merged["commitments"][0]
+        refs = com_out["related_source_passages"]
+        assert set(refs) == {"sp_1", "sp_2"}
+        assert refs.count("sp_1") == 1
+
+    def test_back_refs_correct_after_id_rewrite(self, tmp_path):
+        # Two drafts each with distinct passages; after ID rewrite the back-refs
+        # in theories and commitments must use the new global IDs.
+        a = _base_draft(
+            theories_of_harm=[_theory("toh_1", "Theory Alpha")],
+            source_passages=[_passage("sp_1", "Alpha passage", theories=["toh_1"])],
+        )
+        b = _base_draft(
+            theories_of_harm=[_theory("toh_1", "Theory Beta")],
+            source_passages=[_passage("sp_1", "Beta passage", theories=["toh_1"])],
+        )
+        pa = tmp_path / "eu_test.theories.a.draft.yaml"
+        pb = tmp_path / "eu_test.theories.b.draft.yaml"
+        pa.write_text(yaml.dump(a))
+        pb.write_text(yaml.dump(b))
+        merged, _ = merge_drafts([pa, pb])
+
+        # Theories are distinct -> toh_1 and toh_2
+        toh_map = {t["theory_id"]: t for t in merged["theories_of_harm"]}
+        sp_map = {p["passage_id"]: p for p in merged["source_passages"]}
+        assert "toh_1" in toh_map and "toh_2" in toh_map
+        # toh_1's back-refs must only contain the passage that references it
+        toh1_refs = set(toh_map["toh_1"]["source_passage_refs"])
+        toh2_refs = set(toh_map["toh_2"]["source_passage_refs"])
+        # Each theory supported by exactly one passage; refs must be global IDs
+        assert len(toh1_refs) == 1
+        assert len(toh2_refs) == 1
+        # The passage IDs in back-refs must exist in merged passages
+        all_sp_ids = set(sp_map.keys())
+        assert toh1_refs.issubset(all_sp_ids)
+        assert toh2_refs.issubset(all_sp_ids)
+        # They must reference different passages
+        assert toh1_refs != toh2_refs
+
+
+# ---------------------------------------------------------------------------
+# definition_status normalisation
+# ---------------------------------------------------------------------------
+
+class TestDefinitionStatusNormalization:
+    def _run_normalize(self, pm_statuses, gm_statuses=None):
+        """Helper: build minimal market lists, run normalisation, return (pms, gms, warnings)."""
+        pms = [{"market_id": f"pm_{i+1}", "name": f"Market {i+1}", "definition_status": s}
+               for i, s in enumerate(pm_statuses)]
+        gms = [{"market_id": f"gm_{i+1}", "name": f"Geo {i+1}", "definition_status": s}
+               for i, s in enumerate(gm_statuses or [])]
+        warnings: list = []
+        _normalize_definition_statuses(pms, gms, warnings)
+        return pms, gms, warnings
+
+    def test_valid_statuses_unchanged(self):
+        for status in ("defined", "discussed", "segmented", "left_open", "considered"):
+            pms, _, warnings = self._run_normalize([status])
+            assert pms[0]["definition_status"] == status
+            assert not warnings
+
+    def test_not_conclusive_normalized_to_left_open(self):
+        pms, _, warnings = self._run_normalize(["not_conclusive"])
+        assert pms[0]["definition_status"] == "left_open"
+        assert any("not_conclusive" in w and "left_open" in w for w in warnings)
+
+    def test_precedent_only_normalized_to_discussed(self):
+        pms, _, warnings = self._run_normalize(["precedent_only"])
+        assert pms[0]["definition_status"] == "discussed"
+        assert any("precedent_only" in w and "discussed" in w for w in warnings)
+
+    def test_possible_segmentation_normalized_to_discussed(self):
+        pms, _, warnings = self._run_normalize(["possible_segmentation"])
+        assert pms[0]["definition_status"] == "discussed"
+        assert any("possible_segmentation" in w for w in warnings)
+
+    def test_unknown_warned_but_not_changed(self):
+        pms, _, warnings = self._run_normalize(["unknown"])
+        # 'unknown' has no safe automatic mapping — value preserved
+        assert pms[0]["definition_status"] == "unknown"
+        assert any("WARN" in w and "unknown" in w for w in warnings)
+
+    def test_unrecognised_value_warned_but_not_changed(self):
+        pms, _, warnings = self._run_normalize(["provisional"])
+        assert pms[0]["definition_status"] == "provisional"
+        assert any("WARN" in w and "provisional" in w for w in warnings)
+
+    def test_normalisation_applied_to_geographic_markets(self):
+        _, gms, warnings = self._run_normalize([], ["not_conclusive"])
+        assert gms[0]["definition_status"] == "left_open"
+
+    def test_warning_deduplicated_across_multiple_occurrences(self):
+        # Three markets with 'not_conclusive' -> only one INFO warning, not three.
+        pms, _, warnings = self._run_normalize(
+            ["not_conclusive", "not_conclusive", "not_conclusive"]
+        )
+        info_warnings = [w for w in warnings if "not_conclusive" in w]
+        assert len(info_warnings) == 1
+
+    def test_normalisation_reduces_schema_warnings_in_merge(self, tmp_path):
+        # End-to-end: drafts with non_conclusive status; after merge validation
+        # should not flag that field.
+        a = _base_draft(
+            product_markets_considered=[
+                _market("pm_1", "Widget market", status="not_conclusive"),
+            ],
+        )
+        pa = tmp_path / "eu_test.market_definition.a.draft.yaml"
+        pa.write_text(yaml.dump(a))
+        merged, warnings = merge_drafts([pa])
+
+        # Merged market should have the normalised value
+        assert merged["product_markets_considered"][0]["definition_status"] == "left_open"
+        # Validation should PASS (not_conclusive was the only schema error)
+        ok, err = _validate_merged(merged)
+        assert ok, f"Validation still failing after normalisation: {err}"

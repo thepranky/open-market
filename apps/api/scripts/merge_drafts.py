@@ -492,6 +492,132 @@ def _rewrite_all_refs(
 
 
 # ---------------------------------------------------------------------------
+# Back-reference synthesis
+# ---------------------------------------------------------------------------
+
+def _synthesize_back_refs(
+    merged_theories: list[dict],
+    merged_commitments: list[dict],
+    merged_passages: list[dict],
+    warnings: list[str],
+) -> None:
+    """
+    Populate source_passage_refs on theories and related_source_passages on
+    commitments from the inverse of passage supports_theories / supports_commitments.
+
+    Extractors write the forward link (passage -> theory/commitment) but omit the
+    reverse.  This step synthesises the reverse so consumers can navigate either way.
+    Existing explicit refs are preserved; new ones are unioned in.
+    """
+    # Build passage index: toh_id -> [sp_id, ...]
+    toh_to_sps: dict[str, list[str]] = {}
+    com_to_sps: dict[str, list[str]] = {}
+    for p in merged_passages:
+        sp_id = p.get("passage_id", "")
+        for toh_id in p.get("supports_theories") or []:
+            toh_to_sps.setdefault(toh_id, []).append(sp_id)
+        for com_id in p.get("supports_commitments") or []:
+            com_to_sps.setdefault(com_id, []).append(sp_id)
+
+    # Populate theory.source_passage_refs
+    added_toh = 0
+    for t in merged_theories:
+        toh_id = t.get("theory_id", "")
+        existing = list(t.get("source_passage_refs") or [])
+        incoming = toh_to_sps.get(toh_id, [])
+        seen: set = set(existing)
+        merged_refs = list(existing)
+        for sp_id in incoming:
+            if sp_id and sp_id not in seen:
+                seen.add(sp_id)
+                merged_refs.append(sp_id)
+                added_toh += 1
+        t["source_passage_refs"] = merged_refs
+
+    # Populate commitment.related_source_passages
+    added_com = 0
+    for c in merged_commitments:
+        com_id = c.get("commitment_id", "")
+        existing = list(c.get("related_source_passages") or [])
+        incoming = com_to_sps.get(com_id, [])
+        seen = set(existing)
+        merged_refs = list(existing)
+        for sp_id in incoming:
+            if sp_id and sp_id not in seen:
+                seen.add(sp_id)
+                merged_refs.append(sp_id)
+                added_com += 1
+        c["related_source_passages"] = merged_refs
+
+    if added_toh or added_com:
+        warnings.append(
+            f"INFO: back-refs: synthesised {added_toh} theory ref(s) "
+            f"and {added_com} commitment ref(s) from passage supports_ fields."
+        )
+
+
+# ---------------------------------------------------------------------------
+# definition_status normalisation
+# ---------------------------------------------------------------------------
+
+# Valid values from the DefinitionStatus enum in app/models/case.py
+_VALID_DEFINITION_STATUSES = frozenset({
+    "defined", "discussed", "segmented", "left_open", "considered",
+})
+
+# Conservative normalisations for known invalid draft values.
+# Values not in this map and not in _VALID_DEFINITION_STATUSES are warned only.
+_DEFINITION_STATUS_NORM: dict[str, str] = {
+    "not_conclusive": "left_open",
+    "precedent_only": "discussed",
+    "possible_segmentation": "discussed",
+}
+
+
+def _normalize_definition_statuses(
+    product_markets: list[dict],
+    geographic_markets: list[dict],
+    warnings: list[str],
+) -> None:
+    """
+    Normalise or warn on definition_status values that do not match the schema enum.
+
+    Conservative rules:
+      - known safe mappings (not_conclusive, precedent_only, possible_segmentation)
+        are silently rewritten;
+      - 'unknown' and any other unrecognised values are warned but left unchanged
+        so a human reviewer makes the legal call.
+    """
+    invalid_warned: set[str] = set()
+
+    for market_list, kind in (
+        (product_markets, "product market"),
+        (geographic_markets, "geographic market"),
+    ):
+        for m in market_list:
+            status = m.get("definition_status", "")
+            if status in _VALID_DEFINITION_STATUSES:
+                continue
+            if status in _DEFINITION_STATUS_NORM:
+                new_status = _DEFINITION_STATUS_NORM[status]
+                m["definition_status"] = new_status
+                if status not in invalid_warned:
+                    warnings.append(
+                        f"INFO: definition_status '{status}' → '{new_status}' "
+                        f"(normalised in {kind} records)."
+                    )
+                    invalid_warned.add(status)
+            else:
+                if status not in invalid_warned:
+                    warnings.append(
+                        f"WARN: definition_status '{status}' in {kind} is not a "
+                        "valid schema value and has no automatic normalisation — "
+                        "manual review required."
+                    )
+                    invalid_warned.add(status)
+
+
+# ---------------------------------------------------------------------------
 # Validation
 # ---------------------------------------------------------------------------
 
@@ -673,6 +799,16 @@ def merge_drafts(
     # Strip _draft_idx from records with no cross-refs to rewrite
     for rec in merged_pms + merged_gms + merged_tohs:
         rec.pop("_draft_idx", None)
+
+    # ------------------------------------------------------------------
+    # 6b. Synthesise back-references (passage -> theory / commitment)
+    # ------------------------------------------------------------------
+    _synthesize_back_refs(merged_tohs, merged_coms, merged_sps, warnings)
+
+    # ------------------------------------------------------------------
+    # 6c. Normalise definition_status values
+    # ------------------------------------------------------------------
+    _normalize_definition_statuses(merged_pms, merged_gms, warnings)
 
     # ------------------------------------------------------------------
     # 7. Build merged draft
