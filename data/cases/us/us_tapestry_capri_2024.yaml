@@ -1,0 +1,729 @@
+case_id: us_tapestry_capri_2024
+case_name: FTC v. Tapestry / Capri
+authority: United States District Court for the Southern District of New York
+jurisdiction: US
+sector: luxury goods / fashion accessories
+outcome: blocked
+decision_date: '2024-10-24'
+parties:
+- name: Tapestry, Inc.
+  role: acquirer
+- name: Capri Holdings Limited
+  role: target
+source_documents:
+- doc_id: sdny_tapestry_capri_pi_opinion
+  title: 'Opinion and Order: FTC v. Tapestry, Inc. and Capri Holdings Limited (S.D.N.Y. Oct.
+    24, 2024)'
+  case_page_url: https://www.nysd.uscourts.gov/case/1:24-cv-03109
+  pdf_url: https://www.nysd.uscourts.gov/sites/default/files/2024-11/FTC%20V%20Tapestry.pdf
+  doc_type: court_opinion
+  retrieval_status: direct
+  published_date: '2024-10-24'
+product_markets_considered:
+- market_id: pm_1
+  name: Accessible-luxury handbags
+  definition_status: defined
+  notes: 'The Court formally defined accessible-luxury handbags as a relevant antitrust product
+    market, distinct from mass-market handbags and true-luxury handbags. The market was established
+    through both qualitative Brown Shoe analysis (four indicia for each boundary: peculiar characteristics/unique
+    production facilities, distinct prices, industry recognition, and sensitivity to price changes)
+    and quantitative HMT analysis conducted by Dr. Loren K. Smith. The candidate market was
+    defined using NPD''s ''Bridge'' and ''Contemporary'' brand categories, comprising over 200
+    brands. Handbags are defined as ''small to medium-sized bags used for carrying personal
+    items and money and have handles or a strap and are designed to be held in the hand or worn
+    over the shoulder.'' Accessible-luxury handbags are generally priced between $100 and $1,000.
+    The FTC proposed this market; Defendants argued for a single undifferentiated handbag market.
+    The Court found in the FTC''s favour.'
+- market_id: pm_2
+  name: Mass-market handbags (fast fashion / opening price point)
+  definition_status: considered
+  notes: Mass-market handbags are identified as a separate submarket from accessible-luxury
+    handbags but are not the central focus of the FTC's challenge. The Court considered this
+    segment as a boundary marker to define the accessible-luxury submarket. The Court found
+    mass-market and true-luxury handbags are not reasonably interchangeable with accessible-luxury
+    handbags.
+- market_id: pm_3
+  name: True-luxury handbags (luxury / pinnacle luxury / traditional European luxury)
+  definition_status: considered
+  notes: True-luxury handbags are identified as a separate submarket from accessible-luxury
+    handbags but are not the central focus. The Court used this as the upper boundary of the
+    accessible-luxury market. The Court found that true-luxury and mass-market handbags are
+    not reasonably interchangeable with accessible-luxury handbags.
+geographic_markets_considered:
+- market_id: gm_1
+  name: United States
+  definition_status: defined
+  notes: Both parties agreed that the relevant geographic market is the United States. The Court
+    noted this agreement and proceeded on that basis.
+theories_of_harm:
+- theory_id: toh_1
+  name: Horizontal unilateral effects — elimination of head-to-head competition between close
+    competitors (Coach, Kate Spade, Michael Kors)
+  theory_type: horizontal
+  theory_outcome: upheld
+  description: 'The Court found compelling qualitative and quantitative evidence that Coach,
+    Kate Spade, and Michael Kors are particularly close competitors. Post-merger, the elimination
+    of head-to-head competition would give Tapestry incentive to raise prices and reduce discounting.
+    Dr. Smith''s UPP analysis indicated an average price increase of 18% (baseline) or 13.1%
+    (conservative), and merger simulation indicated ~17% average price increase and ~$365 million
+    annual consumer harm. Internal documents showed the merging parties identified each other
+    as primary/closest competitors and engaged in conquesting and counter-conquesting. The Court
+    rejected defendants'' rebuttal arguments regarding: (1) low entry barriers; (2) brand autonomy
+    ensuring continued competition; (3) procompetitive rationale of revitalising Michael Kors;
+    and (4) consumers as price-setters for discretionary goods.'
+  verification:
+    status: source_linked
+  source_passage_refs:
+  - sp_26
+  - sp_27
+  - sp_28
+  - sp_29
+  - sp_30
+  - sp_31
+  - sp_32
+  - sp_33
+  - sp_34
+  - sp_35
+- theory_id: toh_2
+  name: Market concentration / structural anticompetitive effects — prima facie case under Section
+    7
+  theory_type: horizontal
+  theory_outcome: upheld
+  description: 'The FTC established a prima facie case based on post-merger market share (59%)
+    and HHI (3,646, delta 1,449). Defendants sought to rebut on grounds of: (1) low entry/expansion
+    barriers; (2) brand autonomy; (3) procompetitive rationale; and (4) consumer price control
+    (handbags as discretionary). The Court rejected all rebuttal arguments and found that the
+    prima facie case was not rebutted.'
+  verification:
+    status: source_linked
+  source_passage_refs:
+  - sp_36
+  - sp_37
+  - sp_38
+  - sp_39
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '1'
+  quote_snippet: The FTC argues that the merger likely will substantially lessen competition
+    in the market for accessible-luxury handbags, in violation of Section 7 of the Clayton Act,
+    15 U.S.C. § 18. Defendants deny that such a product market exists; in the alternative, Defendants
+    contest the FTC's claims as to the merger's likely anticompetitive effects.
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '20'
+  quote_snippet: The FTC argues that "'accessible luxury' handbags constitute a relevant product
+    market." PCOL ¶ 41.
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '21'
+  quote_snippet: The Court thus embarks on assessing the FTC's proposed relevant product market
+    of accessible-luxury handbags. The Court will first address the qualitative evidence relating
+    to market definition before turning to the quantitative evidence. As explained below, under
+    either approach, the Court finds that the FTC has successfully described a relevant market.
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '26'
+  quote_snippet: Accessible-luxury handbags are typically made with 'genuine materials' and,
+    in particular, '[g]enuine leather.'
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '21'
+  quote_snippet: The FTC argues that mass-market handbags and true-luxury handbags are not reasonably
+    interchangeable with accessible-luxury handbags and therefore are not part of the relevant
+    product market. PCOL ¶¶ 52-55; Tr. at 32:21-33:1 (FTC Opening).
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '27'
+  quote_snippet: In contrast, most mass-market handbags are made of lower-quality and nonleather
+    materials such as polyurethane ('PU'). For example, Christopher Steinmann, vice president,
+    divisional-merchandising manager at Macy's, testified that handbags in Macy's 'designer'
+    category for bags over $100 – a category that includes Coach, Kate Spade, and Michael Kors
+    – differ in their 'materials and construction' from handbags in Macy's 'mid-tier' category
+    for bags between $50 and $100.
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '21'
+  quote_snippet: According to Defendants, ''accessible luxury' is a generalized concept rather
+    than a separate relevant market,' DFOF ¶ 91, and all handbags should be considered together
+    as part of a single, undifferentiated market, see Opp. at 21-26.
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '15'
+  quote_snippet: Here, the parties agree that the relevant geographic market is the United States.
+    See Br. at 19-20; Opp. at 5 n.1; Tr. at 533:6-9 (Smith); id. at 1287:23-1288:1 (Scott Morton).
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '1'
+  quote_snippet: the Court GRANTS the FTC's motion to preliminarily enjoin the merger pending
+    the completion of the FTC's in-house administrative proceeding.
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '20'
+  quote_snippet: 'The central dispute concerns the FTC''s claim that within this broader market
+    of handbags are three distinct submarkets: "mass market" (also identified using terms such
+    as "fast fashion" or "opening price point"), "accessible luxury" (also identified using
+    terms such as "affordable luxury"), and "true luxury" (also identified using terms such
+    as "luxury," "pure luxury," "pinnacle luxury," "traditional luxury," "European luxury,"
+    and "traditional European luxury").'
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '21'
+  quote_snippet: Defendants disagree. In their view, the FTC's theory of the case is "completely
+    divorced from the marketplace realities." Opp. at 1. Defendants dispute that there is any
+    such thing as "accessible luxury," arguing instead that the FTC's market definition is no
+    more than "a very artificially curated selection of handbag brands" and "an exercise in
+    gerrymandering."
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '64'
+  quote_snippet: 'Here, four Brown Shoe indicia favor recognizing accessible-luxury handbags
+    as a different product market than mass-market handbags: peculiar characteristics, distinct
+    prices, industry recognition, and sensitivity to price changes. See 370 U.S. at 325. Likewise,
+    four Brown Shoe indicia favor recognizing accessible-luxury handbags as a different product
+    market than true-luxury handbags: unique production facilities, distinct prices, industry
+    recognition, and sensitivity to price changes. See id. Examining the indicia holistically,
+    and especially considering the highly compelling evidence of industry recognition, the Court
+    finds that accessible-luxury handbags are a relevant antitrust market distinct from mass-market
+    handbags and true-luxury handbags.'
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '64'
+  quote_snippet: The Court also finds that the FTC has defined a relevant antitrust market consisting
+    of affordable-luxury handbags based on a quantitative approach. In particular, the Court
+    finds persuasive the analysis and testimony of Dr. Loren K. Smith, the FTC's economic expert,
+    confirming that accessible-luxury handbags are a relevant product market through application
+    of the hypothetical-monopolist test (or HMT).
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '63'
+  quote_snippet: In sum, the Court finds that the handbag industry understands "accessible luxury"
+    as encompassing a distinct group of handbag brands characterized by "quality well made product[s]"
+    at a "lower cost," PX1704 at 1 (Crevoiserat) – in other words, "craft at scale," Tr. at
+    464:19 (Kahn). This finding weighs strongly in favor of recognizing accessible-luxury handbags
+    as a relevant market.
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '47'
+  quote_snippet: The evidence in the record shows that most accessible-luxury handbags are sold
+    for between $100 and $1,000, and the prices and pricing tactics for these handbags materially
+    distinguish them from mass-market and true-luxury handbags. This finding supports the FTC's
+    proposed product market.
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '34'
+  quote_snippet: In sum, the Court finds that accessible-luxury handbags have unique production
+    facilities as compared to true-luxury handbags. This finding supports recognizing accessible-luxury
+    handbags as distinct from true-luxury handbags.
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '67'
+  quote_snippet: Dr. Smith analyzed crossbody bags, satchels, shoulder bags, and totes as a
+    "cluster" market for his analysis, Smith Rep. ¶ 35; Tr. at 531:16-18, because the parties'
+    documents typically tracked relevant metrics at the handbag level, and because Tapestry
+    and Capri had similarly high sales shares in these categories.
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '68'
+  quote_snippet: Dr. Smith next identified a set of accessible-luxury handbag brands as his
+    candidate market in the HMT. Smith Rep. ¶ 50. Dr. Smith drew from market size data maintained
+    in the ordinary course by Tapestry, which identified and tracked a group of "Accessible
+    Luxury brands." Id. (citing PX1328).
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '73'
+  quote_snippet: Here, each of the calculated diversion ratios far exceeds the threshold aggregate-diversion
+    ratio of 17 percent needed to satisfy the hypothetical monopolist test. Smith Rep. ¶ 107
+    (diversion ratio from Coach calculated to be between 61 percent and 36 percent; diversion
+    ratio from Kate Spade calculated to be between 65 percent and 46 percent; diversion ratio
+    from Michael Kors calculated to be between 64 percent and 51 percent).
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '87'
+  quote_snippet: For these reasons, the Court finds that the FTC has defined a relevant market
+    based on a quantitative approach. The analysis conducted by Dr. Smith demonstrates that
+    the candidate accessible luxury handbag market passes the HMT by significant amounts, and
+    thus is an appropriate relevant market for antitrust purposes.
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '94'
+  quote_snippet: In sum, the Court rejects Defendant's arguments that the FTC's market definition
+    is fundamentally incompatible with the commercial realities of the handbag industry, and
+    that cross-shopping by handbag consumers precludes the existence of distinct handbag submarkets.
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '21'
+  quote_snippet: '"true luxury" (also identified using terms such as "luxury," "pure luxury,"
+    "pinnacle luxury," "traditional luxury," "European luxury," and "traditional European luxury")'
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '64'
+  quote_snippet: 'Likewise, four Brown Shoe indicia favor recognizing accessible-luxury handbags
+    as a different product market than true-luxury handbags: unique production facilities, distinct
+    prices, industry recognition, and sensitivity to price changes.'
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '159'
+  quote_snippet: In sum, compelling and significant ordinary-course evidence indicates that
+    Defendants are particularly close competitors.
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_1
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '161'
+  quote_snippet: Dr. Smith's UPP analysis indicates that after the merger Tapestry could raise
+    prices on Coach, Kate Spade, and Michael Kors handbags by an average of 18 percent in his
+    baseline case, or 13.1 percent in his more conservative sensitivity case.
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_1
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '161'
+  quote_snippet: Dr. Smith's merger simulation indicated an average price increase of approximately
+    17 percent following the merger, Smith Rep. ¶ 266 & tbl.11, which could take the form of
+    either a higher-priced or lower-quality handbag.
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_1
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '161'
+  quote_snippet: Dr. Smith's merger simulation indicates consumer harm from the merger of approximately
+    $365 million per year.
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_1
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '163'
+  quote_snippet: the Court finds that the FTC has offered evidence that the merger will likely
+    lead to unilateral anticompetitive effects.
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_1
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '164'
+  quote_snippet: the Court finds that the merging parties are close competitors, such that the
+    merger would result in the loss of head-to-head competition. The Court thus finds that there
+    is persuasive additional evidence of unilateral effects of the merger causing anticompetitive
+    harm.
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_1
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '145'
+  quote_snippet: As Dr. Smith observed, '[w]hat changes . . . is that after the merger, . .
+    . Tapestry would take into account that if it raises prices on Michael Kors, a significant
+    amount of those sales would be diverted to Coach and Kate Spade, and they would recapture
+    significant profit on those sales when they're diverted.'
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_1
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '144'
+  quote_snippet: The evidence reflects that Tapestry perceived the acquisition of Michael Kors
+    to be an opportunity to decrease Michael Kors's discounting and increase Michael Kors's
+    prices – a recognized form of anticompetitive effects.
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_1
+  supports_commitments: []
+- passage_id: sp_34
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '144'
+  quote_snippet: Moreover, given the substantial market power that it will possess after the
+    merger, Tapestry may also further reduce discounting by Coach and Kate Spade, as has been
+    Tapestry's goal in recent years.
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_1
+  supports_commitments: []
+- passage_id: sp_35
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '159'
+  quote_snippet: Defendants also both engaged in 'conquesting' and 'counter-conquesting' strategies.
+    'Conquesting' refers to one brand, for example, Kate Spade, 'paying to use the term "Michael
+    Kors handbags" in order for Kate Spade handbags to show up in the search.'
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_1
+  supports_commitments: []
+- passage_id: sp_36
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '107'
+  quote_snippet: Because the FTC has shown both a sufficiently (and significantly) high post-merger
+    market share (59 percent) and a sufficiently (and significantly) large post-merger HHI of
+    3,646 with a merger-induced change in HHI of 1,449, the Court finds that the FTC has established
+    a strong prima facie case under Section 7.
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_2
+  supports_commitments: []
+- passage_id: sp_37
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '108'
+  quote_snippet: 'Defendants seek to rebut the prima facie case on three principal grounds:
+    (1) barriers to market entry and expansion are low; (2) Tapestry''s emphasis on brand autonomy
+    will ensure continued competition between Coach, Kate Spade, and Michael Kors; and (3) the
+    merger has a procompetitive rationale of revitalizing the Michael Kors brand.'
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_2
+  supports_commitments: []
+- passage_id: sp_38
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '109'
+  quote_snippet: The Court disagrees with Defendants' argument that existing and potential competitors
+    will constrain the post-merger Tapestry's market power to such an extent as to undermine
+    the presumption of anticompetitive effects established by the FTC's prima facie case.
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_2
+  supports_commitments: []
+- passage_id: sp_39
+  source_document_id: sdny_tapestry_capri_pi_opinion
+  page: '147'
+  quote_snippet: the Court credits the strong evidence that the merger will lead to anticompetitive
+    harm based on the market dynamics discussed throughout this opinion.
+  extraction_method: pdf_extracted
+  review_status: spot_checked
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_2
+  supports_commitments: []
+metadata:
+  extraction_method: manually_added
+  review_status: unreviewed
+  overall_confidence: 0.75
+  created_date: '2026-06-03'
+  last_updated_date: '2026-06-03'
+  tags:
+  - handbags
+  - luxury-goods
+  - fashion
+  - accessible-luxury
+  - horizontal-merger
+  - blocked
+  - ftc
+  - sdny
+  - submarket
+case_type: merger
+remedies: []
+case_history:
+  status: final_no_known_challenge
+  events:
+  - event_type: procedural
+    event_date: '2024-04-22'
+    forum: FTC (administrative)
+    title: FTC files Part 3 administrative complaint
+    review_status: unreviewed
+    summary: |
+      FTC filed an administrative complaint challenging Tapestry's proposed $8.5bn acquisition of Capri Holdings, alleging the deal would harm competition in the accessible luxury handbag market.
+  - event_type: judgment
+    event_date: '2024-10-24'
+    forum: S.D.N.Y.
+    title: SDNY grants FTC preliminary injunction — merger blocked
+    outcome: blocked
+    review_status: unreviewed
+    summary: |
+      Judge Jennifer Rochon of the S.D.N.Y. granted the FTC's motion for a preliminary injunction, finding the FTC had demonstrated a likelihood of success on its claim that the merger would substantially lessen competition in the accessible luxury handbag market. The court accepted the FTC's narrow submarket definition and found the merger posed a substantial threat of irreparable harm. Tapestry and Capri appealed to the Second Circuit.
+  - event_type: procedural
+    event_date: '2024-11-14'
+    forum: N/A
+    title: Tapestry and Capri terminate merger agreement
+    review_status: unreviewed
+    summary: |
+      Following the PI grant, Tapestry and Capri mutually agreed to terminate their merger agreement. The deal was abandoned without any appeal decision on the merits.
+ai_summary: |
+  A federal district court in the Southern District of New York granted the FTC's preliminary injunction blocking Tapestry's $8.5bn acquisition of Capri Holdings in October 2024, in what became a landmark accessible luxury goods merger challenge. Judge Rochon accepted the FTC's narrow product market definition centred on "accessible luxury" handbags (approx. $100–$1,000, manufactured in Southeast Asia, relying on discounting, with genuine materials), finding that Coach, Kate Spade (Tapestry) and Michael Kors (Capri) were close competitors within that submarket. The court found the FTC demonstrated a likelihood of success on its Section 7 claim and that the merger would harm competition on multiple dimensions — price, discounting, promotions, innovation, design, and employee wages/benefits. Tapestry and Capri terminated the merger agreement on November 14, 2024, without pursuing the appeal. This case is notable for applying a narrow submarket approach to consumer goods outside traditional antitrust markets and for the FTC's emphasis on ordinary-course business documents as key evidence. [AI-generated summary — verify against source]
+procedure_stage: federal_district_court
+similar_cases: []
