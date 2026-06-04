@@ -665,6 +665,46 @@ class TestCLI:
         assert rc == 0
         assert out.exists()
 
+    def test_draft_flag_uses_explicit_path(self, tmp_path):
+        """--draft uses the supplied path directly, ignoring --focus lookup."""
+        draft = _minimal_draft()
+        seed = _minimal_seed()
+
+        # Write draft at a non-standard path (simulating a merged draft)
+        merged_dir = tmp_path / "drafts" / "eu"
+        merged_dir.mkdir(parents=True)
+        merged_path = merged_dir / "eu_test_case_2020.merged.draft.yaml"
+        merged_path.write_text(yaml.dump(draft, default_flow_style=False, allow_unicode=True))
+
+        # Write seed
+        self._write_seed(tmp_path, seed)
+
+        out = tmp_path / "out.yaml"
+        rc = main([
+            "--case-id", "eu_test_case_2020",
+            "--draft", str(merged_path),
+            "--output", str(out),
+            "--drafts-dir", str(tmp_path / "drafts"),
+            "--cases-dir", str(tmp_path / "cases"),
+        ])
+        assert rc == 0
+        assert out.exists()
+        loaded = yaml.safe_load(out.read_text())
+        assert loaded["case_id"] == "eu_test_case_2020"
+        assert loaded["procedure_stage"] == "phase1"
+
+    def test_draft_flag_fails_when_path_does_not_exist(self, tmp_path):
+        """--draft with a nonexistent path returns rc=1."""
+        seed = _minimal_seed()
+        self._write_seed(tmp_path, seed)
+        rc = main([
+            "--case-id", "eu_test_case_2020",
+            "--draft", str(tmp_path / "nonexistent.yaml"),
+            "--drafts-dir", str(tmp_path / "drafts"),
+            "--cases-dir", str(tmp_path / "cases"),
+        ])
+        assert rc == 1
+
     def test_not_set_source_role_warns_but_does_not_block(self, tmp_path, capsys):
         """Passages with source_role=not_set emit a warning but promotion succeeds."""
         draft = _minimal_draft()

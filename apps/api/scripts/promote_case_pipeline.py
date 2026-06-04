@@ -16,6 +16,13 @@ Fails fast on any blocking error. Promotion is skipped if draft integrity has
 any error or warning.
 
 Usage (from repo root):
+    # Promote an orchestrator-produced merged draft (preferred for controlled expansion)
+    apps/api/.venv/bin/python apps/api/scripts/promote_case_pipeline.py \\
+        --case-id eu_booking_etraveli_2023 \\
+        --draft data/drafts/eu/eu_booking_etraveli_2023.merged.draft.yaml \\
+        --overwrite
+
+    # Legacy focus-based promotion
     apps/api/.venv/bin/python apps/api/scripts/promote_case_pipeline.py \\
         --case-id eu_daimler_geely_smart_2020 \\
         --focus market_definition \\
@@ -35,12 +42,33 @@ import re
 import subprocess
 import sys
 from pathlib import Path
+from typing import Optional
 
 _SCRIPTS_DIR = Path(__file__).resolve().parent
 _API_DIR = _SCRIPTS_DIR.parent
 _REPO_ROOT = _API_DIR.parents[1]
 
 PYTHON = sys.executable
+
+_DRAFTS_DIR = _REPO_ROOT / "data" / "drafts"
+
+
+# ---------------------------------------------------------------------------
+# Draft path helpers
+# ---------------------------------------------------------------------------
+
+def _infer_jurisdiction(case_id: str) -> str:
+    for prefix, jur in (("eu_", "eu"), ("uk_", "uk"), ("us_", "us")):
+        if case_id.startswith(prefix):
+            return jur
+    return "eu"
+
+
+def find_merged_draft(case_id: str, drafts_dir: Path) -> Optional[Path]:
+    """Return the merged draft path if it exists, else None."""
+    jur = _infer_jurisdiction(case_id)
+    p = drafts_dir / jur / f"{case_id}.merged.draft.yaml"
+    return p if p.exists() else None
 
 
 # ---------------------------------------------------------------------------
@@ -116,9 +144,12 @@ def _print_summary(
     *,
     aborted: bool = False,
     dry_run: bool = False,
+    draft_path: Optional[str] = None,
 ) -> None:
     print(f"\n{'='*60}")
     print(f"Promotion Summary — {case_id}")
+    if draft_path:
+        print(f"Draft:  {draft_path}")
     if dry_run:
         print("(DRY RUN — no canonical changes written)")
     print(f"STATUS: {'ABORTED' if aborted else 'COMPLETE'}")
@@ -152,8 +183,14 @@ def main(argv: list[str] | None = None) -> int:
         help="Case ID, e.g. eu_daimler_geely_smart_2020",
     )
     parser.add_argument(
+        "--draft",
+        help="Explicit path to the draft YAML to promote (e.g. a merged draft). "
+             "When supplied, overrides auto-detection and --focus for draft lookup.",
+    )
+    parser.add_argument(
         "--focus", default="market_definition",
-        help="Extraction focus (default: market_definition)",
+        help="Extraction focus (default: market_definition). "
+             "Ignored when --draft is supplied or a merged draft is auto-detected.",
     )
     parser.add_argument(
         "--procedure-stage",
@@ -169,13 +206,35 @@ def main(argv: list[str] | None = None) -> int:
     )
     args = parser.parse_args(argv)
 
+    # ------------------------------------------------------------------
+    # Resolve draft path: explicit > auto-detected merged > focus-based
+    # ------------------------------------------------------------------
+    drafts_dir = _DRAFTS_DIR
+    effective_draft: Optional[str] = None
+
+    if args.draft:
+        effective_draft = args.draft
+        draft_source = f"explicit --draft"
+    else:
+        merged = find_merged_draft(args.case_id, drafts_dir)
+        if merged:
+            effective_draft = str(merged)
+            draft_source = "auto-detected merged draft"
+        else:
+            draft_source = f"focus={args.focus}"
+
     status: dict[str, str] = {}
 
     print(f"\n{'='*60}")
     print(f"CompMap Promotion Pipeline: {args.case_id}")
-    print(f"focus={args.focus}"
-          + (f"  procedure-stage={args.procedure_stage}" if args.procedure_stage else "")
-          + ("  [DRY RUN]" if args.dry_run else ""))
+    if effective_draft:
+        print(f"draft={effective_draft}  ({draft_source})")
+    else:
+        print(f"focus={args.focus}  (no merged draft found)")
+    if args.procedure_stage:
+        print(f"procedure-stage={args.procedure_stage}")
+    if args.dry_run:
+        print("[DRY RUN]")
     print(f"{'='*60}")
 
     # ------------------------------------------------------------------
@@ -192,7 +251,8 @@ def main(argv: list[str] | None = None) -> int:
             "Promotion aborted. Fix the draft before re-running.",
             file=sys.stderr,
         )
-        _print_summary(status, args.case_id, args.focus, aborted=True)
+        _print_summary(status, args.case_id, args.focus, aborted=True,
+                       draft_path=effective_draft)
         return 1
 
     status["draft_integrity"] = "PASS (0 errors, 0 warnings)"
@@ -204,8 +264,11 @@ def main(argv: list[str] | None = None) -> int:
     promote_cmd = [
         PYTHON, "apps/api/scripts/promote_draft_to_canonical.py",
         "--case-id", args.case_id,
-        "--focus", args.focus,
     ]
+    if effective_draft:
+        promote_cmd += ["--draft", effective_draft]
+    else:
+        promote_cmd += ["--focus", args.focus]
     if args.procedure_stage:
         promote_cmd += ["--procedure-stage", args.procedure_stage]
     if args.dry_run:
@@ -218,11 +281,13 @@ def main(argv: list[str] | None = None) -> int:
         status["promote"] = "PASS (dry run)" if args.dry_run else "PASS"
     except subprocess.CalledProcessError:
         status["promote"] = "FAIL"
-        _print_summary(status, args.case_id, args.focus, aborted=True, dry_run=args.dry_run)
+        _print_summary(status, args.case_id, args.focus, aborted=True, dry_run=args.dry_run,
+                       draft_path=effective_draft)
         return 1
 
     if args.dry_run:
-        _print_summary(status, args.case_id, args.focus, dry_run=True)
+        _print_summary(status, args.case_id, args.focus, dry_run=True,
+                       draft_path=effective_draft)
         return 0
 
     # ------------------------------------------------------------------
@@ -234,7 +299,8 @@ def main(argv: list[str] | None = None) -> int:
         status["validate_cases"] = "PASS"
     except subprocess.CalledProcessError:
         status["validate_cases"] = "FAIL"
-        _print_summary(status, args.case_id, args.focus, aborted=True)
+        _print_summary(status, args.case_id, args.focus, aborted=True,
+                       draft_path=effective_draft)
         return 1
 
     # ------------------------------------------------------------------
@@ -246,7 +312,8 @@ def main(argv: list[str] | None = None) -> int:
         status["source_links"] = "PASS"
     except subprocess.CalledProcessError:
         status["source_links"] = "FAIL"
-        _print_summary(status, args.case_id, args.focus, aborted=True)
+        _print_summary(status, args.case_id, args.focus, aborted=True,
+                       draft_path=effective_draft)
         return 1
 
     # ------------------------------------------------------------------
@@ -261,7 +328,8 @@ def main(argv: list[str] | None = None) -> int:
         status["canonical_integrity"] = "PASS"
     except subprocess.CalledProcessError:
         status["canonical_integrity"] = "FAIL"
-        _print_summary(status, args.case_id, args.focus, aborted=True)
+        _print_summary(status, args.case_id, args.focus, aborted=True,
+                       draft_path=effective_draft)
         return 1
 
     # ------------------------------------------------------------------
@@ -273,7 +341,8 @@ def main(argv: list[str] | None = None) -> int:
         status["graph_seed"] = "PASS"
     except subprocess.CalledProcessError:
         status["graph_seed"] = "FAIL"
-        _print_summary(status, args.case_id, args.focus, aborted=True)
+        _print_summary(status, args.case_id, args.focus, aborted=True,
+                       draft_path=effective_draft)
         return 1
 
     # ------------------------------------------------------------------
@@ -288,7 +357,8 @@ def main(argv: list[str] | None = None) -> int:
         ])
     except subprocess.CalledProcessError:
         status["learning_log"] = "FAIL"
-        _print_summary(status, args.case_id, args.focus, aborted=True)
+        _print_summary(status, args.case_id, args.focus, aborted=True,
+                       draft_path=effective_draft)
         return 1
 
     learning_log_path = (
@@ -309,12 +379,13 @@ def main(argv: list[str] | None = None) -> int:
         _run_check([PYTHON, "apps/api/scripts/apply_review_learning.py"])
     except subprocess.CalledProcessError:
         status["proposals"] = "FAIL"
-        _print_summary(status, args.case_id, args.focus, aborted=True)
+        _print_summary(status, args.case_id, args.focus, aborted=True,
+                       draft_path=effective_draft)
         return 1
 
     status["proposals"] = "data/review_learning/proposals/"
 
-    _print_summary(status, args.case_id, args.focus)
+    _print_summary(status, args.case_id, args.focus, draft_path=effective_draft)
     return 0
 
 

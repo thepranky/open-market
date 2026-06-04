@@ -371,7 +371,8 @@ def stage_extract(
 
         result = _run_subprocess(cmd, capture=True)
         if result.returncode != 0:
-            errors.append(f"focus={focus}: exit {result.returncode}: {result.stderr[:200]}")
+            error_output = (result.stderr or result.stdout or "").strip()[:300]
+            errors.append(f"focus={focus}: exit {result.returncode}: {error_output}")
             continue
 
         # Discover the draft written by this run

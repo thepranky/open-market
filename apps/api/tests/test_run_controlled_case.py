@@ -30,6 +30,7 @@ from run_controlled_case import (
     build_stage_plan,
     check_git_hygiene,
     stage_check_readiness,
+    stage_extract,
     stage_fetch_source,
     stage_merge_drafts,
     stage_plan_coverage,
@@ -657,6 +658,61 @@ class TestRunReport:
 # ---------------------------------------------------------------------------
 # check_git_hygiene — does not crash, returns list
 # ---------------------------------------------------------------------------
+
+class TestStageExtract:
+    """stage_extract records stderr and stdout in failure details."""
+
+    def test_failed_focus_records_stderr_in_details(self, tmp_path):
+        failed = subprocess.CompletedProcess(
+            [], 1,
+            stdout="",
+            stderr="ModuleNotFoundError: No module named 'app'",
+        )
+        with patch("run_controlled_case._run_subprocess", return_value=failed):
+            with patch.object(rcc, "_DRAFTS_DIR", tmp_path):
+                result, drafts = stage_extract(
+                    "eu_test_co_2023",
+                    ["market_definition"],
+                    dry_run=False, skip_llm=False, max_cost=None,
+                )
+        assert result.status == "error"
+        assert any("ModuleNotFoundError" in d for d in result.details)
+
+    def test_failed_focus_falls_back_to_stdout_when_stderr_empty(self, tmp_path):
+        """When stderr is blank, stdout is used instead so the error is actionable."""
+        failed = subprocess.CompletedProcess(
+            [], 1,
+            stdout="Traceback (most recent call last): ...\nValueError: bad input",
+            stderr="",
+        )
+        with patch("run_controlled_case._run_subprocess", return_value=failed):
+            with patch.object(rcc, "_DRAFTS_DIR", tmp_path):
+                result, drafts = stage_extract(
+                    "eu_test_co_2023",
+                    ["market_definition"],
+                    dry_run=False, skip_llm=False, max_cost=None,
+                )
+        assert result.status == "error"
+        assert any("ValueError" in d or "bad input" in d for d in result.details)
+
+    def test_skip_llm_returns_skip(self, tmp_path):
+        result, drafts = stage_extract(
+            "eu_test_co_2023",
+            ["market_definition"],
+            dry_run=False, skip_llm=True, max_cost=None,
+        )
+        assert result.status == "skip"
+        assert drafts == []
+
+    def test_dry_run_returns_ok(self, tmp_path):
+        result, drafts = stage_extract(
+            "eu_test_co_2023",
+            ["market_definition"],
+            dry_run=True, skip_llm=False, max_cost=None,
+        )
+        assert result.status == "ok"
+        assert drafts == []
+
 
 class TestCheckGitHygiene:
     def test_returns_list(self):

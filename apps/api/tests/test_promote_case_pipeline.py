@@ -19,7 +19,7 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from scripts.promote_case_pipeline import check_draft_integrity, main
+from scripts.promote_case_pipeline import check_draft_integrity, find_merged_draft, main
 
 # ---------------------------------------------------------------------------
 # Helpers
@@ -362,6 +362,141 @@ class TestDryRun:
 
         assert rc == 1
         run_mock.assert_not_called()
+
+
+class TestFindMergedDraft:
+    def test_returns_path_when_merged_draft_exists(self, tmp_path):
+        jur_dir = tmp_path / "eu"
+        jur_dir.mkdir(parents=True)
+        merged = jur_dir / "eu_test_case_2020.merged.draft.yaml"
+        merged.write_text("case_id: eu_test_case_2020\n")
+        result = find_merged_draft("eu_test_case_2020", tmp_path)
+        assert result == merged
+
+    def test_returns_none_when_merged_draft_absent(self, tmp_path):
+        (tmp_path / "eu").mkdir(parents=True)
+        result = find_merged_draft("eu_test_case_2020", tmp_path)
+        assert result is None
+
+    def test_returns_none_when_directory_absent(self, tmp_path):
+        result = find_merged_draft("eu_test_case_2020", tmp_path)
+        assert result is None
+
+
+class TestDraftFlagPassthrough:
+    """--draft is forwarded to promote_draft_to_canonical."""
+
+    def test_explicit_draft_passed_to_promote(self):
+        calls_made = []
+
+        def run_side_effect(cmd):
+            calls_made.append(cmd)
+            return _proc(0)
+
+        with (
+            patch("scripts.promote_case_pipeline._run_capture",
+                  return_value=_proc(0, _INTEGRITY_OUTPUT_PASS)),
+            patch("scripts.promote_case_pipeline._run", side_effect=run_side_effect),
+            patch("scripts.promote_case_pipeline.find_merged_draft", return_value=None),
+        ):
+            rc = main([
+                "--case-id", CASE_ID,
+                "--draft", "data/drafts/eu/eu_test_case_2020.merged.draft.yaml",
+            ])
+
+        assert rc == 0
+        promote_cmd = next(c for c in calls_made if "promote_draft_to_canonical" in c[1])
+        assert "--draft" in promote_cmd
+        assert "merged.draft.yaml" in " ".join(promote_cmd)
+        assert "--focus" not in promote_cmd
+
+    def test_merged_draft_autodetected_when_no_draft_flag(self, tmp_path):
+        """When no --draft is given but a merged draft exists, it is used."""
+        merged = tmp_path / "eu" / f"{CASE_ID}.merged.draft.yaml"
+        merged.parent.mkdir(parents=True)
+        merged.write_text("case_id: eu_test_case_2020\n")
+
+        calls_made = []
+
+        def run_side_effect(cmd):
+            calls_made.append(cmd)
+            return _proc(0)
+
+        with (
+            patch("scripts.promote_case_pipeline._run_capture",
+                  return_value=_proc(0, _INTEGRITY_OUTPUT_PASS)),
+            patch("scripts.promote_case_pipeline._run", side_effect=run_side_effect),
+            patch("scripts.promote_case_pipeline._DRAFTS_DIR", tmp_path),
+        ):
+            rc = main(["--case-id", CASE_ID])
+
+        assert rc == 0
+        promote_cmd = next(c for c in calls_made if "promote_draft_to_canonical" in c[1])
+        assert "--draft" in promote_cmd
+        assert "merged.draft.yaml" in " ".join(promote_cmd)
+
+    def test_focus_used_when_no_merged_draft_and_no_draft_flag(self, tmp_path):
+        """Legacy path: no --draft, no merged draft → --focus is passed."""
+        calls_made = []
+
+        def run_side_effect(cmd):
+            calls_made.append(cmd)
+            return _proc(0)
+
+        with (
+            patch("scripts.promote_case_pipeline._run_capture",
+                  return_value=_proc(0, _INTEGRITY_OUTPUT_PASS)),
+            patch("scripts.promote_case_pipeline._run", side_effect=run_side_effect),
+            patch("scripts.promote_case_pipeline.find_merged_draft", return_value=None),
+        ):
+            rc = main(["--case-id", CASE_ID, "--focus", FOCUS])
+
+        assert rc == 0
+        promote_cmd = next(c for c in calls_made if "promote_draft_to_canonical" in c[1])
+        assert "--focus" in promote_cmd
+        assert FOCUS in promote_cmd
+        assert "--draft" not in promote_cmd
+
+    def test_explicit_draft_overrides_merged_draft_autodetect(self, tmp_path):
+        """Explicit --draft takes priority over auto-detected merged draft."""
+        merged = tmp_path / "eu" / f"{CASE_ID}.merged.draft.yaml"
+        merged.parent.mkdir(parents=True)
+        merged.write_text("case_id: eu_test_case_2020\n")
+
+        explicit_draft = "data/drafts/eu/eu_test_case_2020.other.draft.yaml"
+        calls_made = []
+
+        def run_side_effect(cmd):
+            calls_made.append(cmd)
+            return _proc(0)
+
+        with (
+            patch("scripts.promote_case_pipeline._run_capture",
+                  return_value=_proc(0, _INTEGRITY_OUTPUT_PASS)),
+            patch("scripts.promote_case_pipeline._run", side_effect=run_side_effect),
+            patch("scripts.promote_case_pipeline._DRAFTS_DIR", tmp_path),
+        ):
+            rc = main(["--case-id", CASE_ID, "--draft", explicit_draft])
+
+        assert rc == 0
+        promote_cmd = next(c for c in calls_made if "promote_draft_to_canonical" in c[1])
+        assert explicit_draft in promote_cmd
+
+    def test_summary_shows_draft_path(self, capsys):
+        """Promotion summary must print the draft path being promoted."""
+        with (
+            patch("scripts.promote_case_pipeline._run_capture",
+                  return_value=_proc(0, _INTEGRITY_OUTPUT_PASS)),
+            patch("scripts.promote_case_pipeline._run", return_value=_proc(0)),
+            patch("scripts.promote_case_pipeline.find_merged_draft", return_value=None),
+        ):
+            main([
+                "--case-id", CASE_ID,
+                "--draft", "data/drafts/eu/eu_test_case_2020.merged.draft.yaml",
+            ])
+
+        captured = capsys.readouterr()
+        assert "merged.draft.yaml" in captured.out
 
 
 class TestSummaryOutput:

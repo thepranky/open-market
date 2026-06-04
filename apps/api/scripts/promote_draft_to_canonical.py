@@ -2,13 +2,20 @@
 """
 promote_draft_to_canonical.py — Convert a reviewed draft to a canonical case record.
 
-Reads data/drafts/{jurisdiction}/{case_id}.{focus}.draft.yaml, merges it with the
-existing seed/canonical at data/cases/{jurisdiction}/{case_id}.yaml, strips
-draft-only fields, adds required canonical fields, validates against the Pydantic
-CaseRecord schema, and writes the result.
+Reads data/drafts/{jurisdiction}/{case_id}.{focus}.draft.yaml (or an explicit path
+via --draft), merges it with the existing seed/canonical at
+data/cases/{jurisdiction}/{case_id}.yaml, strips draft-only fields, adds required
+canonical fields, validates against the Pydantic CaseRecord schema, and writes the
+result.
 
 Usage:
-    # Promote using seed metadata already in data/cases/
+    # Promote an orchestrator-produced merged draft (explicit path)
+    apps/api/.venv/bin/python apps/api/scripts/promote_draft_to_canonical.py \\
+        --case-id eu_booking_etraveli_2023 \\
+        --draft data/drafts/eu/eu_booking_etraveli_2023.merged.draft.yaml \\
+        --overwrite
+
+    # Promote using seed metadata already in data/cases/ (focus-based lookup)
     apps/api/.venv/bin/python apps/api/scripts/promote_draft_to_canonical.py \\
         --case-id eu_facebook_whatsapp_2014 \\
         --focus market_definition
@@ -310,8 +317,12 @@ def main(argv: Optional[list[str]] = None) -> int:
     )
     parser.add_argument("--case-id", required=True,
                         help="Case ID (e.g. eu_facebook_whatsapp_2014)")
+    parser.add_argument("--draft",
+                        help="Explicit path to the draft YAML to promote. "
+                             "When supplied, --focus is ignored for draft lookup.")
     parser.add_argument("--focus", default="market_definition",
-                        help="Extraction focus (default: market_definition)")
+                        help="Extraction focus (default: market_definition). "
+                             "Ignored when --draft is supplied.")
     parser.add_argument("--procedure-stage",
                         help="Override procedure_stage (phase1 | phase2). "
                              "Required when the seed does not have it.")
@@ -334,14 +345,25 @@ def main(argv: Optional[list[str]] = None) -> int:
     # ------------------------------------------------------------------
     # 1. Locate draft
     # ------------------------------------------------------------------
-    draft_path = find_draft(args.case_id, args.focus, drafts_dir)
-    if draft_path is None:
-        print(
-            f"ERROR: No draft found for '{args.case_id}' (focus={args.focus}) "
-            f"under {drafts_dir}",
-            file=sys.stderr,
-        )
-        return 1
+    if args.draft:
+        draft_path = Path(args.draft)
+        if not draft_path.is_absolute():
+            draft_path = _REPO_ROOT / draft_path
+        if not draft_path.exists():
+            print(
+                f"ERROR: Explicit draft path does not exist: {args.draft}",
+                file=sys.stderr,
+            )
+            return 1
+    else:
+        draft_path = find_draft(args.case_id, args.focus, drafts_dir)
+        if draft_path is None:
+            print(
+                f"ERROR: No draft found for '{args.case_id}' (focus={args.focus}) "
+                f"under {drafts_dir}",
+                file=sys.stderr,
+            )
+            return 1
 
     draft = yaml.safe_load(draft_path.read_text(encoding="utf-8"))
     print(f"Draft:     {draft_path}")
