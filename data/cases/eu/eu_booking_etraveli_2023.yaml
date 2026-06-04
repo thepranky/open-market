@@ -1,0 +1,896 @@
+case_id: eu_booking_etraveli_2023
+case_name: Booking Holdings / eTraveli Group
+authority: European Commission
+jurisdiction: EU
+sector: online travel / digital platforms
+outcome: blocked
+decision_date: '2023-09-25'
+parties: []
+source_documents:
+- doc_id: eu_booking_etraveli_2023_decision
+  title: Booking Holdings / eTraveli Group
+  pdf_url: https://ec.europa.eu/competition/mergers/cases1/202451/M_10615_10430872_121034_7.pdf
+  doc_type: merger_decision
+  retrieval_status: direct
+product_markets_considered:
+- market_id: pm_1
+  name: Hotel OTA services
+  definition_status: defined
+  notes: The Commission concluded that hotel OTA services constitute a separate product market,
+    distinct from flight OTA services, private/other accommodation OTA services, brick-and-mortar
+    travel agencies, MSS, and hotel TSPs (direct online channel). The Commission found that
+    flight and hotel OTA services belong to two separate markets, and further that hotel OTA
+    services form a separate market from private accommodation OTA services. Booking holds a
+    dominant position in this market in the EEA with market shares well above 50%.
+- market_id: pm_2
+  name: Flight OTA services
+  definition_status: defined
+  notes: The Commission concluded that flight OTA services constitute a separate product market,
+    distinct from hotel OTA services and from flight TSPs (airlines). ETG is the primary party
+    active in this market. The EEA flight OTA market is relatively fragmented, with eDreams
+    as market leader (20-30%), followed by ETG (10-20%) and Trip.com (10-20%).
+- market_id: pm_3
+  name: Private/other accommodation OTA services
+  definition_status: defined
+  notes: The Commission concluded that hotel OTA services and private accommodation OTA services
+    belong to separate markets. Airbnb is identified as a leading provider in private accommodation
+    OTA services. This market is ancillary to the main assessment, which focuses on hotel OTA
+    services.
+- market_id: pm_4
+  name: MSS (metasearch services)
+  definition_status: defined
+  notes: The Commission confirmed its previous decisional practice that OTAs belong to a distinct
+    product market from MSS. MSS show and compare prices from different providers and redirect
+    customers to OTA/TSP platforms, while OTAs allow customers to book directly. MSS are remunerated
+    on a CPC or CPA basis, while OTAs are remunerated through commissions.
+- market_id: pm_5
+  name: Brick-and-mortar travel agency services
+  definition_status: defined
+  notes: The Commission concluded that brick-and-mortar agencies and OTAs belong to separate
+    product markets, in line with previous practice. Key distinguishing factors include different
+    characteristics/functions, breadth of choice, visibility, commission levels, and business
+    models.
+- market_id: pm_6
+  name: Commercial affiliate agreements for OTA services
+  definition_status: defined
+  notes: The Commission assessed whether commercial affiliate agreements (where one OTA supplies
+    another a type of travel service at a fee) constitute a distinct product market. The Commission
+    concluded that commercial affiliate agreements are add-on services for OTA and do not constitute
+    a distinct market.
+- market_id: pm_7
+  name: Hotel OTA market
+  definition_status: defined
+  notes: The Commission refers to the hotel OTA market as the relevant market in which the competition
+    concerns arise. The conclusion section explicitly states the Transaction would cause a SIEC
+    by strengthening Booking's dominant position in this market.
+- market_id: pm_8
+  name: Flight OTA market
+  definition_status: considered
+  notes: The flight OTA market is referenced in the context of assessing claimed efficiencies.
+    The Commission notes that the alleged efficiency benefits relate to customers in the flight
+    OTA market, not the hotel OTA market where competition concerns arise. Not formally defined
+    but used as a working reference.
+geographic_markets_considered:
+- market_id: gm_1
+  name: EEA-wide hotel OTA market
+  definition_status: considered
+  notes: For the purposes of this merger control Decision, the Commission considers that the
+    geographic scope of the OTA market is likely to be EEA-wide. This applies to both the hotel
+    and flight OTA markets. The Commission found that the main OTAs provide services at the
+    EEA level with rather homogeneous offerings across Member States, language barriers have
+    reduced, and legislative frameworks are largely harmonised. The Commission also analysed
+    market shares at the individual Member State level as part of its market reconstruction.
+- market_id: gm_2
+  name: EEA
+  definition_status: considered
+  notes: The EEA is used as the relevant geographic scope throughout the commitments assessment
+    and conclusion. The Transaction is declared incompatible with the internal market and the
+    functioning of the EEA Agreement.
+theories_of_harm:
+- theory_id: toh_1
+  name: 'Conglomerate / vertical effects: cross-selling of hotel services to flight customers
+    strengthening Booking''s dominant position in hotel OTA market'
+  theory_type: conglomerate
+  theory_outcome: upheld
+  description: The Commission found that the Transaction would allow Booking to acquire additional
+    flight customers via eTraveli Group (ETG) and cross-sell accommodation to those customers,
+    leveraging brand strength and customer inertia to strengthen its dominant position in the
+    hotel OTA market. The Commission rejected both sets of proposed commitments (Initial and
+    Revised) as insufficient to eliminate this concern, and declared the Transaction incompatible
+    with the internal market.
+  verification:
+    status: source_linked
+  source_passage_refs:
+  - sp_16
+  - sp_17
+  - sp_31
+  - sp_35
+  - sp_36
+  - sp_37
+  - sp_38
+  - sp_39
+  - sp_40
+  - sp_41
+  - sp_42
+  - sp_43
+  - sp_44
+  - sp_45
+  - sp_46
+  - sp_47
+  - sp_48
+  - sp_49
+  - sp_50
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '17'
+  quote_snippet: The Commission assessed whether the provision of hotel OTA services belongs
+    to a separate market from the flight OTA services and concludes that flight and hotel OTA
+    services belong to two separate markets. The Commission also assessed whether hotel OTA
+    services and private accommodation OTA services belong to separate markets. It concludes
+    that this is the case and that hotel OTA services constitute a separate market within the
+    broader market of accommodation OTA services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '24'
+  quote_snippet: Therefore, for the purposes of the present Decision, the Commission considers
+    that (i) flight and accommodation OTA services belong to two separate products markets and
+    (ii) OTA accommodation services can be further segmented between hotel OTA services and
+    other (including private) accommodation services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '17'
+  quote_snippet: First, there is limited demand and supply substitutability for the online intermediation
+    of different travel services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '17'
+  quote_snippet: In the first place, there is no demand-side substitutability between the types
+    of services. A hotel would only be interested in the services provided by a hotel OTA, and
+    an airline by those provided by a flight OTA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '27'
+  quote_snippet: Evidence in the file, including evidence from the Parties, as well as feedback
+    from the Commission's market investigation, indicates that hotel OTAs and hotel TSPs (i.e.,
+    hotels selling their services online) belong to distinct product markets
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '30'
+  quote_snippet: Evidence in the file, including evidence from the Parties' submissions, as
+    well as feedback from the Commission's market investigation, suggests that flight OTAs and
+    flight TSPs (i.e., airlines, mostly selling their services online) belong to distinct product
+    markets
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '17'
+  quote_snippet: In the second place, there is limited supply-side substitutability between
+    the types of services. Not all OTAs are active or directly active in all verticals, meaning
+    that OTAs tend to reach a level of specialization in a specific vertical.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '17'
+  quote_snippet: The Commission also assessed whether hotel OTA services and private accommodation
+    OTA services belong to separate markets. It concludes that this is the case and that hotel
+    OTA services constitute a separate market within the broader market of accommodation OTA
+    services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '24'
+  quote_snippet: Similarly, the Commission considers that hotel OTA and private accommodation
+    OTA belong to two separate products markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '17'
+  quote_snippet: Third, contrary to what the Notifying Party argues, evidence in the file shows
+    that the hotel OTAs and private accommodation OTAs belong to separate markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '22'
+  quote_snippet: In the third place, feedback from the market investigation suggests that the
+    regulatory requirements for operating hotels are stricter than for other types of accommodation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '14'
+  quote_snippet: In its past decisional practice, the Commission considered that the market
+    for the intermediation of travel services could be segmented between online and brick-and-mortar
+    travel agencies, but ultimately left the market definition open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '17'
+  quote_snippet: First, the Commission investigated whether the Parties' main activities, i.e.,
+    hotel OTA services and flight OTA services, belong to the same market, in particular by
+    considering whether the market for OTA services should be segmented by type of travel service.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '25'
+  quote_snippet: In line with previous practice, the results of the Commission's investigation
+    indicates that OTAs belong to a distinct product market than brick-and-mortar travel agencies.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '14'
+  quote_snippet: In addition, the Commission considered whether MSS and OTA services formed
+    part of the same or separate markets, but left the market definition open, acknowledging,
+    that '(…) both aim to attract customers interested in organising their travel, [however]
+    they appear to offer different services and generally operate on the basis of different
+    business models'.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '8'
+  quote_snippet: The Commission preliminarily concluded that the Transaction raised serious
+    doubts as to its compatibility with the internal market with respect to the potential strengthening
+    of Booking's dominant position in the hotel OTA market in the EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories:
+  - toh_1
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '8'
+  quote_snippet: In the SO, the Commission preliminarily concluded that the Transaction would
+    significantly impede effective competition in a substantial part of the internal market
+    within the meaning of Article 2(3) of the Merger Regulation, by strengthening Booking's
+    already dominant market position.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_1
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '19'
+  quote_snippet: Third, contrary to what the Notifying Party argues, evidence in the file shows
+    that the hotel OTA and private accommodation OTAs belong to separate markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '25'
+  quote_snippet: In view of the foregoing, for the purposes of the present Decision, the Commission
+    considers that brick-and-mortar agencies and OTAs belong to separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '27'
+  quote_snippet: In view of the foregoing, for the purposes of the present Decision, the Commission
+    considers that hotel OTAs and hotel TSPs belong to separate markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '33'
+  quote_snippet: In view of the foregoing, for the purposes of the present Decision, the Commission
+    considers that MSS and OTAs belong to separate markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '73'
+  quote_snippet: Based on the results of the market reconstruction exercise, the Commission
+    has reached the conclusion that Booking holds market shares well-above 50% and, therefore,
+    indicative of a dominant market position, in the market for the provision of hotel OTA services
+    in the EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '57'
+  quote_snippet: 'The EEA flight OTA market is relatively fragmented. eDreams is the market
+    leader (20-30% share), followed by two other major flight OTAs having comparable size: ETG
+    ([10-20]%) and Trip.com (10-20%).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '33'
+  quote_snippet: The results of the market investigation confirmed the Commission's previous
+    decisional practice that OTAs belong to a distinct product market than MSS.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '34'
+  quote_snippet: Evidence in the file suggests that for a supplier that owns proprietary OTA
+    capabilities, commercial affiliate agreements are intended to generate incremental OTA revenue,
+    whereas for a supplier sourcing third-party proprietary OTA capabilities, commercial affiliate
+    agreements allow it to gain a share of revenue derived from visitors on its platform.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '35'
+  quote_snippet: For the purposes of the present merger control Decision, based on the results
+    of the market investigation, as well as evidence in its file, the Commission considers that
+    the geographic scope of the OTA market is likely to be EEA-wide. The conclusion applies
+    to both the hotel and flight OTA markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '35'
+  quote_snippet: First, the main OTAs provide their services at the EEA level and the services
+    they offer are rather homogeneous across Member States.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '36'
+  quote_snippet: Second, the majority of OTAs that expressed a view during the Phase I market
+    investigation considers that the OTA market is at least EEA-wide. They explain that OTAs
+    build their brands at an international level and they develop technologies and business
+    models that allow them to expand their geographic coverage across many different countries
+    in a short period of time.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '37'
+  quote_snippet: Within the EEA, [the OTA] considers that it is not difficult to serve every
+    European country as the licensing and legal framework are harmonised.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '265'
+  quote_snippet: the concerns raised by the Commission relate to the hotel OTA market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '301'
+  quote_snippet: the Commission considers that the Transaction would cause a significant impediment
+    to effective competition as a result of strengthening Booking's dominant position in the
+    market for hotel OTAs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_1
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '265'
+  quote_snippet: The efficiencies identified by the Notifying Party relate to customers in another
+    market, that of flight OTA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '301'
+  quote_snippet: The Transaction should therefore be declared incompatible with the internal
+    market and with the functioning of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_34
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '302'
+  quote_snippet: the Transaction is likely to significantly impede effective competition in
+    the EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_35
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '265'
+  quote_snippet: the concerns raised by the Commission relate to the hotel OTA market. The efficiencies
+    identified by the Notifying Party relate to customers in another market, that of flight
+    OTA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_1
+  supports_commitments: []
+- passage_id: sp_36
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '273'
+  quote_snippet: The competition concerns raised by the Transaction focus on the potential cross-selling
+    of hotel services to flight customers acquired by Booking as a result of the Transaction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_1
+  supports_commitments: []
+- passage_id: sp_37
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '302'
+  quote_snippet: with the Transaction, Booking is buying a main customer acquisition channel
+    and will be able to develop an ecosystem of travel services that leverages brand strength
+    and customer inertia.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_1
+  supports_commitments: []
+- passage_id: sp_38
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '302'
+  quote_snippet: the Transaction is likely to increase barriers to entry/expansion for rival
+    hotel OTAs and strengthen network effects.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_1
+  supports_commitments: []
+- passage_id: sp_39
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '302'
+  quote_snippet: the reduced contestability of Booking's market position is confirmed by its
+    expected to growth in share in the hotel OTA market as a result of the Transaction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_1
+  supports_commitments: []
+- passage_id: sp_40
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '301'
+  quote_snippet: the Transaction is likely to have a negative impact on hotels.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_1
+  supports_commitments: []
+- passage_id: sp_41
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '302'
+  quote_snippet: the Transaction is likely to have a negative impact on customers. This is because
+    Booking enjoys a high degree of customer loyalty and inertia … and Bookings' customer loyalty
+    is likely to increase post-Transaction … It is therefore likely that, post-Transaction,
+    more customers will pay higher prices.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_1
+  supports_commitments: []
+- passage_id: sp_42
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '269'
+  quote_snippet: According to the Notifying Party, the Initial Commitments aim at ensuring that
+    EEA customers that book a flight with Booking.com are presented with – and can select from
+    – a range of accommodation options from various other hotel OTAs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_1
+  supports_commitments: []
+- passage_id: sp_43
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '270'
+  quote_snippet: pursuant to the Initial Commitments, after the purchase of a flight on Booking.com's
+    platform, the order confirmation page would display a choice screen (the 'Carousel') containing
+    accommodation offers from competing hotel OTAs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_1
+  supports_commitments: []
+- passage_id: sp_44
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '270'
+  quote_snippet: The Carousel would be displayed on the desktop site, the mobile site and the
+    mobile application of the Booking.com branded flight platform. The Carousel would not be
+    displayed on other flight platforms controlled by Booking, particularly the ETG branded
+    flight platforms acquired through the Transaction (such as mytrip.com or gotogate.com).
+    Also, the Carousel would only be shown to flight customers located in the EEA, but not to
+    flight customers located outside the EEA and travelling to the EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_1
+  supports_commitments: []
+- passage_id: sp_45
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '271'
+  quote_snippet: The Initial Commitments would be subject to an initial implementation period
+    of up to three months and will remain in effect for five years after the closing of the
+    Transaction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_1
+  supports_commitments: []
+- passage_id: sp_46
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '297'
+  quote_snippet: the Commission concludes that the Initial Commitments are not comprehensive
+    and effective from all points of view and do not entirely eliminate the competition concerns
+    raised by the Transaction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_1
+  supports_commitments: []
+- passage_id: sp_47
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '298'
+  quote_snippet: The Carousel would no longer be limited to the Booking.com platform, but would
+    also be shown on the desktop site, mobile site or mobile application for the ETG brands
+    MyTrip, GotoGate / Flybillet, Trip, Flightnetwork, Travelstart, Seat24 and SuperSaver.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_1
+  supports_commitments: []
+- passage_id: sp_48
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '298'
+  quote_snippet: The Carousel would no longer be limited to customers located in the EEA, but
+    would instead be shown to all customers purchasing a flight to an EEA destination, irrespective
+    of their location.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_1
+  supports_commitments: []
+- passage_id: sp_49
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '301'
+  quote_snippet: the Commission concludes that the Revised Commitments do not eliminate the
+    competition concerns identified entirely – also in light of the outcome of the Market Test
+    – and when compared to the Initial Commitments raise further issues as to their overall
+    suitability.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_1
+  supports_commitments: []
+- passage_id: sp_50
+  source_document_id: eu_booking_etraveli_2023_decision
+  page: '301'
+  quote_snippet: For these reasons, the Revised Commitments do not render the concentration
+    compatible with the internal market and must be rejected.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_1
+  supports_commitments: []
+procedure_stage: phase2
+authority_reference: M.10615
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-03'
+  last_updated_date: '2026-06-03'
+  tags:
+  - online-travel
+  - hotel-ota
+  - flight-ota
+  - digital-platforms
+  - conglomerate-effects
+  - phase2
+  - blocked
