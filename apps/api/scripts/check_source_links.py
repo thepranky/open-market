@@ -4,11 +4,16 @@ QA utility — checks all source URLs in YAML case records for HTTP status,
 content-type, and redirects. Does not modify any data. Exit 0 if all OK,
 exit 1 if any broken links found.
 
+Court-opinion policy: for doc_type=court_opinion, a failing case_page_url is
+downgraded to a warning (not an error) when the same document's pdf_url passes.
+The PDF is the authoritative source; case_page_url is navigation metadata only.
+
 Usage:
     python scripts/check_source_links.py [--timeout 10] [--verbose]
 """
 import argparse
 import sys
+from dataclasses import dataclass, field
 from pathlib import Path
 
 import httpx
@@ -22,24 +27,52 @@ HEADERS = {
 }
 
 
-def collect_urls(record: dict) -> list[tuple[str, str]]:
-    """Return (url, label) pairs from a case record dict."""
-    pairs: list[tuple[str, str]] = []
+@dataclass
+class UrlSpec:
+    url: str
+    label: str
+    doc_type: str   # e.g. "court_opinion", "merger_decision", ""
+    field: str      # "pdf_url", "case_page_url", "url", etc.
+    doc_key: str    # "{case_id}/{doc_id}" for per-doc grouping
+
+
+def collect_url_specs(record: dict) -> list[UrlSpec]:
+    """Return UrlSpec entries for every URL in a case record."""
+    specs: list[UrlSpec] = []
     case_id = record.get("case_id", "?")
 
     for doc in record.get("source_documents", []):
         doc_id = doc.get("doc_id", "?")
-        for field in ("pdf_url", "case_page_url", "url"):
-            val = doc.get(field)
+        doc_type = doc.get("doc_type", "")
+        doc_key = f"{case_id}/{doc_id}"
+        for fld in ("pdf_url", "case_page_url", "url"):
+            val = doc.get(fld)
             if val:
-                pairs.append((val, f"{case_id} / {doc_id} / {field}"))
+                specs.append(UrlSpec(
+                    url=val,
+                    label=f"{case_id} / {doc_id} / {fld}",
+                    doc_type=doc_type,
+                    field=fld,
+                    doc_key=doc_key,
+                ))
 
-    for event in record.get("case_history", {}).get("events", []) if record.get("case_history") else []:
+    for event in (record.get("case_history") or {}).get("events") or []:
         val = event.get("source_url")
         if val:
-            pairs.append((val, f"{case_id} / case_history event / {event.get('event_type', '?')}"))
+            specs.append(UrlSpec(
+                url=val,
+                label=f"{case_id} / case_history event / {event.get('event_type', '?')}",
+                doc_type="",
+                field="source_url",
+                doc_key=f"{case_id}/_history",
+            ))
 
-    return pairs
+    return specs
+
+
+def collect_urls(record: dict) -> list[tuple[str, str]]:
+    """Compatibility shim: return (url, label) pairs. Used by tests."""
+    return [(s.url, s.label) for s in collect_url_specs(record)]
 
 
 def check_url(client: httpx.Client, url: str, timeout: int) -> dict:
@@ -62,57 +95,102 @@ def check_url(client: httpx.Client, url: str, timeout: int) -> dict:
         return {"status": None, "ok": False, "content_type": "", "final_url": url, "redirected": False, "error": str(e)}
 
 
-def main() -> int:
+def _is_court_opinion_case_page(spec: UrlSpec) -> bool:
+    return spec.doc_type == "court_opinion" and spec.field == "case_page_url"
+
+
+def classify_results(
+    results: list[tuple[UrlSpec, dict]],
+) -> tuple[list[tuple[UrlSpec, dict]], list[tuple[UrlSpec, dict]]]:
+    """
+    Split results into (errors, warnings).
+
+    Court-opinion policy: if a court_opinion case_page_url fails but the same
+    doc's pdf_url passed, downgrade to a warning rather than an error.
+    """
+    # Build a set of doc_keys whose pdf_url passed
+    pdf_passed: set[str] = {
+        spec.doc_key
+        for spec, res in results
+        if spec.field == "pdf_url" and res["ok"]
+    }
+
+    errors: list[tuple[UrlSpec, dict]] = []
+    warnings: list[tuple[UrlSpec, dict]] = []
+
+    for spec, res in results:
+        if res["ok"]:
+            continue
+        if _is_court_opinion_case_page(spec) and spec.doc_key in pdf_passed:
+            warnings.append((spec, res))
+        else:
+            errors.append((spec, res))
+
+    return errors, warnings
+
+
+def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Check source URLs in CompMap YAML case files")
     parser.add_argument("--timeout", type=int, default=15, help="Request timeout in seconds (default: 15)")
     parser.add_argument("--verbose", "-v", action="store_true", help="Print results for all URLs, not just failures")
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     yaml_files = sorted(DATA_DIR.rglob("*.yaml"))
     if not yaml_files:
         print(f"No YAML files found under {DATA_DIR}", file=sys.stderr)
         return 1
 
-    all_pairs: list[tuple[str, str]] = []
+    all_specs: list[UrlSpec] = []
     for path in yaml_files:
         with open(path) as f:
             record = yaml.safe_load(f)
-        all_pairs.extend(collect_urls(record))
+        all_specs.extend(collect_url_specs(record))
 
-    if not all_pairs:
+    if not all_specs:
         print("No URLs found in any case record.")
         return 0
 
-    print(f"Checking {len(all_pairs)} URL(s) across {len(yaml_files)} case file(s) …\n")
+    print(f"Checking {len(all_specs)} URL(s) across {len(yaml_files)} case file(s) …\n")
 
-    broken: list[tuple[str, str, dict]] = []
+    all_results: list[tuple[UrlSpec, dict]] = []
 
     with httpx.Client(follow_redirects=True) as client:
-        for url, label in all_pairs:
-            result = check_url(client, url, args.timeout)
-            ok_marker = "✓" if result["ok"] else "✗"
+        for spec in all_specs:
+            result = check_url(client, spec.url, args.timeout)
+            all_results.append((spec, result))
 
+            ok_marker = "✓" if result["ok"] else "✗"
             if args.verbose or not result["ok"]:
                 status_str = str(result["status"]) if result["status"] else result["error"]
                 redirect_note = f" → {result['final_url']}" if result["redirected"] else ""
                 ct = f"  [{result['content_type'].split(';')[0].strip()}]" if result["content_type"] else ""
                 print(f"  {ok_marker} [{status_str}]{ct}{redirect_note}")
-                print(f"    {label}")
-                print(f"    {url}")
+                print(f"    {spec.label}")
+                print(f"    {spec.url}")
                 print()
 
-            if not result["ok"]:
-                broken.append((url, label, result))
+    errors, warnings = classify_results(all_results)
 
-    if broken:
-        print(f"BROKEN LINKS ({len(broken)}):")
-        for url, label, res in broken:
+    if warnings:
+        print(f"WARNINGS ({len(warnings)}) — court_opinion case_page_url(s) failed but pdf_url passed; not blocking:")
+        for spec, res in warnings:
             err = res["error"] or res["status"]
-            print(f"  ✗ {err}  {label}")
-            print(f"    {url}")
+            print(f"  ⚠ {err}  {spec.label}")
+            print(f"    {spec.url}")
+            print(f"    court_opinion case_page_url failed, but pdf_url passed; not blocking")
+        print()
+
+    if errors:
+        print(f"BROKEN LINKS ({len(errors)}):")
+        for spec, res in errors:
+            err = res["error"] or res["status"]
+            print(f"  ✗ {err}  {spec.label}")
+            print(f"    {spec.url}")
         return 1
 
-    print(f"All {len(all_pairs)} link(s) OK.")
+    total = len(all_specs)
+    warn_note = f" ({len(warnings)} warning(s))" if warnings else ""
+    print(f"All {total} link(s) OK{warn_note}.")
     return 0
 
 
