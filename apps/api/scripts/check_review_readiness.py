@@ -53,6 +53,9 @@ _API_DIR = Path(__file__).resolve().parents[1]
 _REPO_ROOT = Path(__file__).resolve().parents[3]
 _DRAFTS_DIR = _REPO_ROOT / "data" / "drafts"
 
+sys.path.insert(0, str(_API_DIR / "scripts"))
+from pipeline_profile import PipelineProfile, select_profile
+
 # ---------------------------------------------------------------------------
 # Finding files
 # ---------------------------------------------------------------------------
@@ -272,10 +275,20 @@ def check_product_geo_balance(
     return issues
 
 
-def check_orphaned_passages(draft: dict) -> list[dict]:
-    """WARNING for passages not linked to any market, theory, or commitment."""
+def check_orphaned_passages(
+    draft: dict,
+    profile: Optional[PipelineProfile] = None,
+) -> list[dict]:
+    """WARNING for passages not linked to any market, theory, or commitment.
+
+    Profile-specific allow_roles are exempt from the orphan warning — e.g. US court
+    opinions allow 'conclusion' and 'background' passages to stand alone.
+    """
     issues: list[dict] = []
     passages = draft.get("source_passages", [])
+    allowed_orphan_roles: frozenset[str] = (
+        profile.allowed_orphan_roles() if profile is not None else frozenset()
+    )
     orphans = []
     for p in passages:
         linked = (
@@ -285,7 +298,9 @@ def check_orphaned_passages(draft: dict) -> list[dict]:
             or bool(p.get("supports_commitments"))
         )
         if not linked:
-            orphans.append(p.get("passage_id", "unknown"))
+            role = str(p.get("source_role") or "")
+            if role not in allowed_orphan_roles:
+                orphans.append(p.get("passage_id", "unknown"))
     if orphans:
         issues.append(
             {
@@ -394,6 +409,7 @@ def run_checks(
     draft: dict,
     plan: Optional[dict],
     draft_paths: list[Path],
+    profile: Optional[PipelineProfile] = None,
 ) -> list[dict]:
     issues: list[dict] = []
     issues.extend(check_geo_market_coverage(draft, plan))
@@ -401,7 +417,7 @@ def run_checks(
     issues.extend(check_source_role_not_set(draft))
     issues.extend(check_duplicate_quotes(draft))
     issues.extend(check_product_geo_balance(draft, plan))
-    issues.extend(check_orphaned_passages(draft))
+    issues.extend(check_orphaned_passages(draft, profile=profile))
     issues.extend(check_conclusion_as_sole_support(draft))
     issues.extend(check_planned_focus_coverage(draft, plan, draft_paths))
     return issues
@@ -567,9 +583,20 @@ def main(argv: list[str] | None = None) -> None:
         action="store_true",
         help="Write a human-review packet markdown file alongside the coverage plan.",
     )
+    parser.add_argument(
+        "--profile",
+        help="Pipeline profile ID (ec_decision | cma_report | us_court_opinion). "
+             "Inferred from case_id prefix when omitted.",
+    )
     args = parser.parse_args(argv)
 
     case_id = args.case_id
+
+    try:
+        profile: Optional[PipelineProfile] = select_profile(case_id, profile_id=args.profile)
+    except ValueError as exc:
+        print(f"WARNING: could not select profile: {exc}", file=sys.stderr)
+        profile = None
 
     # Resolve coverage plan
     if args.coverage_plan:
@@ -596,8 +623,10 @@ def main(argv: list[str] | None = None) -> None:
         sys.exit(2)
 
     draft = _merge_draft_data(draft_paths)
-    issues = run_checks(draft, plan, draft_paths)
+    issues = run_checks(draft, plan, draft_paths, profile=profile)
 
+    if profile is not None:
+        print(f"Profile: {profile.profile_id} ({profile.display_name})")
     print(_format_issues(issues))
 
     if args.packet:

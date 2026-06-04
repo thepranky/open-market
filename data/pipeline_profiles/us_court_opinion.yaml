@@ -1,0 +1,117 @@
+profile_id: us_court_opinion
+display_name: "US Federal Court Antitrust Opinion"
+
+jurisdictions: [us]
+procedure_stages: [federal_district_court, appellate, preliminary_injunction, unknown]
+doc_types: [court_opinion, preliminary_injunction_order, consent_decree]
+authority_patterns:
+  - "united states district court"
+  - "u.s. district court"
+  - "district court"
+  - "circuit court"
+  - "court of appeals"
+  - "federal trade commission"
+  - "ftc"
+  - "department of justice"
+  - "doj"
+
+focus_defaults:
+  - market_definition
+  - theories
+  - outcome_metadata
+
+coverage_keywords:
+  market_definition:
+    - relevant market
+    - brown shoe
+    - practical indicia
+    - hypothetical monopolist
+    - ssnip
+    - product market
+    - geographic market
+    - market definition
+    - submarket
+    - cross-elasticity
+    - reasonable interchangeability
+    - section 7
+    - clayton act
+  geographic_market:
+    - geographic market
+    - geographic area
+    - geographic scope
+    - geographic dimension
+    - relevant geographic
+    - national market
+    - local market
+  theories:
+    - market share and concentration
+    - hhi
+    - herfindahl
+    - structural presumption
+    - competitive effects
+    - competitive harm
+    - unilateral effects
+    - coordinated effects
+    - supply chain
+    - data and marketing
+    - pricing
+    - final analysis
+    - likelihood of success
+    - preliminary injunction
+    - section 7
+    - clayton act
+    - anticompetitive effects
+    - entry barriers
+    - head-to-head competition
+    - direct competition
+    - close substitutes
+    - competitive overlap
+    - merger guidelines
+    - philadelphia national bank
+  remedies:
+    - injunction
+    - enjoin
+    - divestiture
+    - remedy
+    - remedies
+    - consent decree
+    - settlement
+
+# Source-role mapping for US court opinions
+# Map court-document roles to the canonical source_role enum values
+source_role_mapping:
+  commission_assessment: >
+    Court analysis and legal findings: the court's own analysis of competitive effects,
+    market definition, or antitrust law. Also use for agency (FTC/DOJ) findings adopted
+    by the court. This is the primary role for judicial competitive-effects analysis.
+  conclusion: >
+    Court ruling, holding, or injunction conclusion: explicit judicial decision on
+    whether the merger violates Section 7, whether a preliminary injunction is granted,
+    or the court's bottom-line finding.
+  precedent: >
+    Cited cases and legal authorities: references to prior antitrust decisions
+    (e.g., Philadelphia National Bank, Brown Shoe) used as legal support.
+  notifying_party_view: >
+    FTC/DOJ arguments and expert evidence for the government; also defendants'
+    arguments and defence expert evidence. Distinguish in notes which party this
+    represents. Use notifying_party_view for government plaintiff arguments;
+    use it also for defendant arguments when no better enum is available.
+  market_investigation: >
+    Expert/customer/third-party testimony: evidence from economic experts, customer
+    witnesses, market participants, or academic studies introduced at trial.
+  background: >
+    Factual and industry background: descriptions of the parties, their products,
+    industry structure, transaction history, or procedural context.
+
+# Orphan-passage policy for US court opinions
+# Outcome/injunction passages often stand alone — allow them without linking warnings
+orphan_policy:
+  default: warn
+  allow_roles:
+    - conclusion
+    - background
+
+readiness:
+  geo_markets_required: true
+  theories_required: true
+  remedies_expected: false  # injunction outcome is captured as theory outcome, not as a remedy commitment

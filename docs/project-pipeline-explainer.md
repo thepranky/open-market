@@ -205,6 +205,40 @@ apps/api/.venv/bin/python apps/api/scripts/promote_case_pipeline.py \
 
 ---
 
+### Jurisdiction / document-type profiles
+
+The pipeline is a single shared engine with **jurisdiction/document-type profiles**. Profiles prevent the system from becoming a lowest-common-denominator generic extractor by supplying document-specific vocabularies and policies at each stage.
+
+**Why profiles exist:** The pipeline was originally tuned for EU Commission merger decisions, whose sections are labelled "COMPETITIVE ASSESSMENT", "THEORY OF HARM", "COMMITMENTS", etc. When a US federal court opinion was ingested (`us_tapestry_capri_2024`), section-path matching found zero theory sections because US opinions use headings like "Market Share and Concentration", "HHI Analysis", "Final Analysis", and "Likelihood of Success". Profiles fix this without building a separate US pipeline.
+
+**Profile files:** `data/pipeline_profiles/*.yaml`
+
+| Profile ID         | Jurisdiction | Document types                                      |
+|--------------------|--------------|-----------------------------------------------------|
+| `ec_decision`      | EU           | EC Phase I/II merger decisions                      |
+| `cma_report`       | UK           | CMA Phase 1/2 merger reports, provisional findings  |
+| `us_court_opinion` | US           | Federal district court opinions, preliminary injunctions |
+
+**What each profile controls:**
+- **Coverage keywords** — per-category section-heading terms used by `plan_coverage.py` to detect market-definition, geographic-market, theories, and remedies sections.
+- **Source-role mapping** — jurisdiction-adapted descriptions injected into extraction prompts (e.g. "court analysis and findings → commission_assessment").
+- **Orphan-passage policy** — roles that are allowed to be unlinked without a warning (e.g., US court `conclusion` and `background` passages that express an injunction outcome).
+- **Focus defaults** — which extraction passes apply to this document type.
+
+**How profiles are selected:**
+1. `--profile <id>` CLI override (highest priority).
+2. Inference from case YAML metadata (`jurisdiction` field).
+3. Inference from `case_id` prefix (`eu_` → `ec_decision`, `uk_` → `cma_report`, `us_` → `us_court_opinion`).
+
+**Where profiles are wired in:**
+- `plan_coverage.py --profile us_court_opinion` — uses US-specific theory keywords for coverage planning.
+- `check_review_readiness.py --profile us_court_opinion` — applies US-specific orphan policy (conclusion/background unlinked passages are not flagged).
+- `extract_case_from_source.py --profile us_court_opinion` — injects US-adapted source-role mapping into extraction prompts; triggers page-text fallback for theories focus when section-path matching finds nothing.
+
+**First profile-driven regression target:** `us_tapestry_capri_2024` — SDNY preliminary injunction opinion (169 pages). Do not promote until the profile-driven coverage plan detects pp. 94–169 as theory/competitive-effects coverage and readiness checks pass.
+
+---
+
 ## 4. Competition Law Framework Mapping
 
 The data model maps onto the standard competition law analysis framework as follows:

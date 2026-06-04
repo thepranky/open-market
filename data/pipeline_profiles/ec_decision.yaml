@@ -1,0 +1,68 @@
+profile_id: ec_decision
+display_name: "European Commission Merger Decision"
+
+# Jurisdictions and document types this profile matches
+jurisdictions: [eu]
+procedure_stages: [phase1, phase2, unknown]
+doc_types: [merger_decision, commission_decision]
+authority_patterns: ["european commission", "commission"]
+
+# Focus defaults — passed to extract_case_from_source.py when --focus is not explicit
+focus_defaults:
+  - market_definition
+  - theories
+  - remedies
+  - outcome_metadata
+
+# Coverage keywords — used by plan_coverage.py to classify section headings
+coverage_keywords:
+  market_definition:
+    - relevant market
+    - market definition
+    - product market
+    - market for the supply
+  geographic_market:
+    - geographic market
+    - geographic scope
+    - geographic dimension
+  theories:
+    - competitive assessment
+    - assessment of competitive effects
+    - competitive effects
+    - theory of harm
+    - theories of harm
+    - horizontal effects
+    - vertical effects
+    - conglomerate effects
+    - non-horizontal
+    - innovation competition
+    - coordinated effects
+  remedies:
+    - commitment
+    - remedy
+    - remedies
+    - divestment
+    - divestiture
+    - condition
+    - obligation
+
+# Source-role mapping guidance (injected into extraction prompts)
+source_role_mapping:
+  commission_assessment: "Commission actively analysing the market or competitive effect"
+  conclusion: "Commission's explicit conclusion on a market definition or competitive effect"
+  precedent: "Reference to a prior decision used as evidence (not a finding in this case)"
+  notifying_party_view: "Statement by the notifying parties, merging firms, or their advisers"
+  market_investigation: "Evidence from third-party responses, market testing, or surveys"
+  background: "Factual background, industry description, or procedural context"
+
+# Orphan-passage policy
+# "warn" = flag as warning; "allow" = suppress warning for these roles
+orphan_policy:
+  default: warn
+  allow_roles: []
+
+# Readiness expectations
+readiness:
+  geo_markets_required: true
+  theories_required: true
+  remedies_expected: false  # only if planned sections found

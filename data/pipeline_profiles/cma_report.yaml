@@ -1,0 +1,64 @@
+profile_id: cma_report
+display_name: "CMA Merger Report (Phase 2)"
+
+jurisdictions: [uk]
+procedure_stages: [phase1, phase2, unknown]
+doc_types: [merger_report, final_report, provisional_findings]
+authority_patterns: ["competition and markets authority", "cma", "competition commission"]
+
+focus_defaults:
+  - market_definition
+  - theories
+  - remedies
+  - outcome_metadata
+
+coverage_keywords:
+  market_definition:
+    - relevant market
+    - market definition
+    - product market
+    - frame of reference
+    - market for the supply
+  geographic_market:
+    - geographic market
+    - geographic scope
+    - geographic dimension
+    - geographic extent
+  theories:
+    - competitive assessment
+    - assessment of competitive effects
+    - competitive effects
+    - theory of harm
+    - theories of harm
+    - horizontal effects
+    - vertical effects
+    - conglomerate effects
+    - unilateral effects
+    - coordinated effects
+    - substantial lessening of competition
+    - slc
+  remedies:
+    - remedy
+    - remedies
+    - divestment
+    - divestiture
+    - undertaking
+    - behavioural remedy
+    - structural remedy
+
+source_role_mapping:
+  commission_assessment: "CMA actively analysing the market or competitive effect (treat CMA findings as commission_assessment)"
+  conclusion: "CMA's explicit conclusion on a market definition or competitive effect"
+  precedent: "Reference to a prior decision used as evidence (not a finding in this case)"
+  notifying_party_view: "Statement by the merging parties or their advisers"
+  market_investigation: "Evidence from third-party responses, customer surveys, or market testing"
+  background: "Factual background, industry description, or procedural context"
+
+orphan_policy:
+  default: warn
+  allow_roles: []
+
+readiness:
+  geo_markets_required: true
+  theories_required: true
+  remedies_expected: false

@@ -24,6 +24,7 @@ from check_review_readiness import (
     check_theory_coverage,
     run_checks,
 )
+from pipeline_profile import load_profile
 
 
 # ---------------------------------------------------------------------------
@@ -296,6 +297,38 @@ class TestOrphanedPassages:
         issues = check_orphaned_passages(draft)
         assert issues == []
 
+    def test_conclusion_orphan_suppressed_by_us_court_profile(self):
+        """US court opinion profile allows conclusion and background to be unlinked."""
+        us_profile = load_profile("us_court_opinion")
+        p = _passage("sp_1", "Court grants FTC's motion for a preliminary injunction.", role="conclusion")
+        draft = _draft(passages=[p])
+        issues = check_orphaned_passages(draft, profile=us_profile)
+        assert issues == []
+
+    def test_background_orphan_suppressed_by_us_court_profile(self):
+        us_profile = load_profile("us_court_opinion")
+        p = _passage("sp_1", "Tapestry and Capri are both luxury goods companies.", role="background")
+        draft = _draft(passages=[p])
+        issues = check_orphaned_passages(draft, profile=us_profile)
+        assert issues == []
+
+    def test_commission_assessment_orphan_still_warned_with_us_profile(self):
+        """commission_assessment passages are never in the allow-list."""
+        us_profile = load_profile("us_court_opinion")
+        p = _passage("sp_1", "The court finds HHI exceeds 2500.", role="commission_assessment")
+        draft = _draft(passages=[p])
+        issues = check_orphaned_passages(draft, profile=us_profile)
+        assert len(issues) == 1
+        assert issues[0]["code"] == "orphaned_passages"
+
+    def test_ec_profile_conclusion_orphan_is_warned(self):
+        """EC profile does not allow any orphan roles."""
+        ec_profile = load_profile("ec_decision")
+        p = _passage("sp_1", "Commission clears the transaction.", role="conclusion")
+        draft = _draft(passages=[p])
+        issues = check_orphaned_passages(draft, profile=ec_profile)
+        assert len(issues) == 1
+
 
 # ---------------------------------------------------------------------------
 # check_conclusion_as_sole_support
@@ -425,3 +458,42 @@ class TestRunChecks:
         assert "missing_theory_of_harm" in codes
         assert "source_role_not_set" in codes
         assert "duplicate_quote_snippet" in codes
+
+    def test_clean_us_style_packet_passes(self, tmp_path):
+        """
+        Simulates a clean US court-opinion draft:
+        - geo markets present
+        - theories present (with non-conclusion support)
+        - all source_roles assigned
+        - no duplicates
+        - conclusion + background passages allowed to be unlinked (US profile)
+        """
+        us_profile = load_profile("us_court_opinion")
+
+        conclusion_passage = _passage("sp_c", "Court grants preliminary injunction.", role="conclusion")
+        background_passage = _passage("sp_b", "Tapestry acquired Coach in 2019.", role="background")
+        market_passage = _passage(
+            "sp_1", "The relevant market is the market for affordable luxury handbags.",
+            role="commission_assessment", supports_markets=["pm_1"], supports_geo=["gm_1"]
+        )
+        theory_passage = _passage(
+            "sp_2", "HHI post-merger exceeds 2500, creating a structural presumption.",
+            role="commission_assessment", supports_theories=["toh_1"]
+        )
+
+        draft = _draft(
+            product_markets=[_product_market("pm_1")],
+            geo_markets=[_geo_market("gm_1")],
+            theories=[_theory("toh_1")],
+            passages=[conclusion_passage, background_passage, market_passage, theory_passage],
+        )
+        plan = _plan(geo_sections=1, theory_sections=1, remedies_sections=0)
+
+        md_path = tmp_path / "us_test_case.market_definition.draft.yaml"
+        th_path = tmp_path / "us_test_case.theories.draft.yaml"
+        md_path.write_text("case_id: test_case\n")
+        th_path.write_text("case_id: test_case\n")
+
+        issues = run_checks(draft, plan, [md_path, th_path], profile=us_profile)
+        errors = [i for i in issues if i["level"] == "error"]
+        assert errors == [], f"Expected no errors with US profile, got: {errors}"

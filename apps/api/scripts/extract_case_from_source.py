@@ -41,6 +41,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from app.utils.pdf_extractor import DEFAULT_CACHE_DIR, iter_pages, load_cache
 from check_source_integrity import quote_found_in_text
+from pipeline_profile import select_profile
 from repair_source_passages import _extract_section_map, _is_toc_page
 
 _CASES_DIR = Path(__file__).resolve().parents[3] / "data" / "cases"
@@ -690,11 +691,49 @@ def _select_market_def_fallback_chunks(
     return result
 
 
+def _select_theories_fallback_chunks(
+    chunks: list[ChunkInfo],
+    theory_terms: tuple[str, ...],
+    max_fallback_pages: int = _MAX_FALLBACK_PAGES,
+) -> list[ChunkInfo]:
+    """
+    Page-text fallback for theories focus when section-path matching finds nothing.
+
+    Scans page text for profile-specific theory terms.  Only used when a profile
+    is supplied and the section-path matching produced zero candidates.
+    Bounded by max_fallback_pages to avoid sending the whole document.
+    """
+    scored: list[tuple[int, ChunkInfo]] = []
+    for chunk in chunks:
+        if not chunk.pages:
+            continue
+        full = chunk.full_text.lower()
+        score = sum(1 for t in theory_terms if t in full)
+        if score > 0:
+            scored.append((score, chunk))
+
+    scored.sort(key=lambda x: x[0], reverse=True)
+
+    selected: list[ChunkInfo] = []
+    total = 0
+    for _, chunk in scored:
+        n = len(chunk.pages)
+        if total + n > max_fallback_pages:
+            break
+        chunk.selection_method = "page_text_fallback"
+        selected.append(chunk)
+        total += n
+
+    selected.sort(key=lambda c: min(c.page_numbers) if c.page_numbers else 0)
+    return selected
+
+
 def _select_relevant_chunks(
     chunks: list[ChunkInfo],
     max_total_pages: int = _MAX_INPUT_PAGES,
     focus: Optional[str] = None,
     full_market_def_pass: bool = False,
+    profile=None,
 ) -> list[ChunkInfo]:
     """
     Return relevant chunks up to *max_total_pages* total pages.
@@ -713,6 +752,11 @@ def _select_relevant_chunks(
     - When *full_market_def_pass* is True, page-text fallback is always merged with
       section-path results regardless of thresholds, up to max_total_pages.
 
+    When *focus* is 'theories' and a profile is supplied:
+    - Section-path matching is tried first.
+    - If zero chunks match, a page-text fallback using profile-specific theory terms
+      is used (bounded fallback — never sends the whole document).
+
     For other focus values, only section-path matching is used (no fallback).
     Without a focus, section-path relevance is used with a broad fallback to
     all non-empty chunks.
@@ -729,6 +773,16 @@ def _select_relevant_chunks(
                 chunks,
                 max_fallback_pages=min(max_total_pages, _MAX_FALLBACK_PAGES),
             )
+
+        # Profile-specific page-text fallback for theories focus.
+        if not candidates and focus == "theories" and profile is not None:
+            theory_terms = profile.keywords_for("theories")
+            if theory_terms:
+                return _select_theories_fallback_chunks(
+                    chunks,
+                    theory_terms=theory_terms,
+                    max_fallback_pages=min(max_total_pages, _MAX_FALLBACK_PAGES),
+                )
 
         if focus == "market_definition":
             candidate_page_count = sum(len(c.pages) for c in candidates)
@@ -1723,7 +1777,11 @@ def _format_chunks_for_prompt(chunks: list[ChunkInfo]) -> str:
     return ("\n\n" + sep + "\n\n").join(parts)
 
 
-def _build_extraction_prompt(chunks: list[ChunkInfo], case_context: dict) -> str:
+def _build_extraction_prompt(
+    chunks: list[ChunkInfo],
+    case_context: dict,
+    profile=None,
+) -> str:
     parties_str = ", ".join(
         f"{p.get('name', '')} ({p.get('role', '')})"
         for p in (case_context.get("parties") or [])
@@ -1734,12 +1792,22 @@ def _build_extraction_prompt(chunks: list[ChunkInfo], case_context: dict) -> str
         + "Parties: " + (parties_str or "?")
     )
     chunks_block = _format_chunks_for_prompt(chunks)
+    # Inject profile-specific source-role block when a profile is available.
+    # This replaces the static SOURCE ROLE CLASSIFICATION section in _EXTRACTION_TASK
+    # with jurisdiction/document-type-specific guidance.
+    profile_block = (
+        "\n\nDOCUMENT PROFILE: " + profile.display_name + "\n"
+        + profile.source_role_prompt_block()
+        if profile is not None
+        else ""
+    )
     return (
         "You are a competition law research assistant extracting structured "
         "information from merger decision text.\n\n"
         "CASE CONTEXT:\n" + context_block + "\n\n"
         "SUPPLIED SOURCE CHUNKS:\n" + chunks_block + "\n\n"
         + _EXTRACTION_TASK
+        + profile_block
     )
 
 
@@ -2394,6 +2462,7 @@ def _extract_section_batch(
     anthropic_client,
     debug_dir: Path,
     case_id: str,
+    profile=None,
 ) -> SectionBatchResult:
     """Run one Claude extraction call for a section batch; never raises.
 
@@ -2413,7 +2482,7 @@ def _extract_section_batch(
         f"{len(chunks)} chunks, {total_pages} pages, ~{approx_tokens:,} tokens"
     )
 
-    prompt = _build_extraction_prompt(chunks, case_context)
+    prompt = _build_extraction_prompt(chunks, case_context, profile=profile)
 
     # API call
     message = None
@@ -3915,6 +3984,7 @@ def extract_case(
     max_input_tokens: Optional[int] = None,
     full_market_def_pass: bool = False,
     page_range: Optional[tuple[int, int]] = None,
+    profile=None,
 ) -> ExtractionReport:
     """
     Load the existing YAML and PDF text cache, extract a draft record via Claude,
@@ -3994,7 +4064,7 @@ def extract_case(
 
     selected = _select_relevant_chunks(
         all_chunks, max_total_pages=max_input_pages, focus=focus,
-        full_market_def_pass=full_market_def_pass,
+        full_market_def_pass=full_market_def_pass, profile=profile,
     )
     if max_chunks is not None:
         selected = selected[:max_chunks]
@@ -4137,6 +4207,7 @@ def extract_case(
             batch = _extract_section_batch(
                 prefix, group_chunks, existing_record,
                 anthropic_client, _effective_debug_dir, case_id,
+                profile=profile,
             )
             report.section_batches.append(batch)
             if batch.error:
@@ -4207,7 +4278,7 @@ def extract_case(
         # Standard extraction path (all other focus modes)
         # -------------------------------------------------------------------
         else:
-            prompt = _build_extraction_prompt(selected, existing_record)
+            prompt = _build_extraction_prompt(selected, existing_record, profile=profile)
             try:
                 response_text = _call_claude(prompt, anthropic_client)
             except Exception as exc:
@@ -4528,6 +4599,14 @@ def main() -> int:
             "optionally --output for the draft YAML."
         ),
     )
+    parser.add_argument(
+        "--profile",
+        default=None,
+        help=(
+            "Pipeline profile ID (ec_decision | cma_report | us_court_opinion). "
+            "Inferred from case_id prefix when omitted."
+        ),
+    )
     args = parser.parse_args()
 
     cases_dir = Path(args.cases_dir)
@@ -4600,9 +4679,17 @@ def main() -> int:
     output_path = Path(args.output) if args.output and not no_output else None
     report_json = Path(args.report_json) if args.report_json and not no_output else None
 
+    try:
+        _profile = select_profile(args.case_id, profile_id=args.profile)
+    except ValueError as exc:
+        print(f"WARNING: could not select pipeline profile: {exc}", file=sys.stderr)
+        _profile = None
+
     print(f"Case:    {args.case_id}")
     print(f"YAML:    {yaml_path}")
     print(f"Cache:   {cache_dir}")
+    if _profile is not None:
+        print(f"Profile: {_profile.profile_id} ({_profile.display_name})")
     if args.focus:
         print(f"Focus:   {args.focus}")
     if args.section_prefix:
@@ -4637,6 +4724,7 @@ def main() -> int:
         max_section_batches=args.max_section_batches,
         max_cost=args.max_cost,
         max_input_tokens=args.max_input_tokens,
+        profile=_profile,
     )
 
     if rpt.error:

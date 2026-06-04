@@ -36,6 +36,7 @@ sys.path.insert(0, str(_API_DIR))
 sys.path.insert(0, str(Path(__file__).parent))
 
 from app.utils.pdf_extractor import DEFAULT_CACHE_DIR
+from pipeline_profile import PipelineProfile, select_profile
 from repair_source_passages import _extract_section_map, _is_toc_page
 
 _REPO_ROOT = Path(__file__).resolve().parents[3]
@@ -43,9 +44,9 @@ _CASES_DIR = _REPO_ROOT / "data" / "cases"
 _DRAFTS_DIR = _REPO_ROOT / "data" / "drafts"
 
 # ---------------------------------------------------------------------------
-# Section-type keyword classifiers
-# These operate on the full section_path (not just the leaf) because broad
-# parent headings like "RELEVANT MARKETS" are sufficient to classify children.
+# Default section-type keyword classifiers (EC-centric baseline).
+# Used when no profile is supplied.  When a profile IS supplied its keywords
+# fully replace the per-category defaults below.
 # ---------------------------------------------------------------------------
 
 _MARKET_DEF_KEYWORDS = (
@@ -86,17 +87,36 @@ _REMEDIES_KEYWORDS = (
 )
 
 
-def _classify_section_path(section_path: str) -> set[str]:
-    """Return a set of category labels for a section path."""
+def _classify_section_path(
+    section_path: str,
+    profile: Optional[PipelineProfile] = None,
+) -> set[str]:
+    """Return a set of category labels for a section path.
+
+    When a profile is supplied its keywords are used for each category;
+    the module-level defaults are used otherwise.
+    """
     lp = section_path.lower()
     categories: set[str] = set()
-    if any(kw in lp for kw in _GEO_MARKET_KEYWORDS):
+
+    if profile is not None:
+        geo_kw = profile.keywords_for("geographic_market") or _GEO_MARKET_KEYWORDS
+        mkt_kw = profile.keywords_for("market_definition") or _MARKET_DEF_KEYWORDS
+        th_kw = profile.keywords_for("theories") or _THEORIES_KEYWORDS
+        rem_kw = profile.keywords_for("remedies") or _REMEDIES_KEYWORDS
+    else:
+        geo_kw = _GEO_MARKET_KEYWORDS
+        mkt_kw = _MARKET_DEF_KEYWORDS
+        th_kw = _THEORIES_KEYWORDS
+        rem_kw = _REMEDIES_KEYWORDS
+
+    if any(kw in lp for kw in geo_kw):
         categories.add("geographic_market")
-    if any(kw in lp for kw in _MARKET_DEF_KEYWORDS):
+    if any(kw in lp for kw in mkt_kw):
         categories.add("market_definition")
-    if any(kw in lp for kw in _THEORIES_KEYWORDS):
+    if any(kw in lp for kw in th_kw):
         categories.add("theories")
-    if any(kw in lp for kw in _REMEDIES_KEYWORDS):
+    if any(kw in lp for kw in rem_kw):
         categories.add("remedies")
     return categories
 
@@ -108,6 +128,7 @@ def _classify_section_path(section_path: str) -> set[str]:
 
 def _group_sections(
     section_map: dict[int, str],
+    profile: Optional[PipelineProfile] = None,
 ) -> dict[str, list[dict]]:
     """
     Group consecutive page ranges by category.
@@ -130,7 +151,7 @@ def _group_sections(
         current_path: str = ""
         for pn in all_pages:
             sp = section_map.get(pn, "")
-            if category in _classify_section_path(sp):
+            if category in _classify_section_path(sp, profile=profile):
                 if not current_run or pn - current_run[-1] <= 2:
                     current_run.append(pn)
                     current_path = sp
@@ -236,21 +257,23 @@ def build_coverage_plan(
     source_cache: dict,
     case_id: str,
     section_map: Optional[dict[int, str]] = None,
+    profile: Optional[PipelineProfile] = None,
 ) -> dict:
     """
     Build and return a coverage plan dict from a source cache.
     Pure function — no I/O.
 
     section_map may be supplied directly (e.g. in tests) to bypass text parsing.
+    profile, if supplied, overrides the default EC-centric coverage keywords.
     """
     doc_id = source_cache.get("source_document_id", "unknown")
     total_pages = source_cache.get("page_count", len(source_cache.get("pages", [])))
     if section_map is None:
         section_map = _extract_section_map(source_cache)
 
-    sections = _group_sections(section_map)
+    sections = _group_sections(section_map, profile=profile)
 
-    return {
+    plan: dict = {
         "case_id": case_id,
         "generated_at": datetime.date.today().isoformat(),
         "source_doc_id": doc_id,
@@ -262,6 +285,9 @@ def build_coverage_plan(
             cat: len(entries) for cat, entries in sections.items()
         },
     }
+    if profile is not None:
+        plan["profile_id"] = profile.profile_id
+    return plan
 
 
 # ---------------------------------------------------------------------------
@@ -277,6 +303,11 @@ def main(argv: list[str] | None = None) -> None:
     src.add_argument("--case-id", help="Case ID (resolves source cache automatically)")
     src.add_argument("--source-cache", help="Path to source cache JSON file")
     parser.add_argument("--jurisdiction", help="Override jurisdiction folder (eu/uk/us)")
+    parser.add_argument(
+        "--profile",
+        help="Pipeline profile ID (ec_decision | cma_report | us_court_opinion). "
+             "Inferred from case_id prefix when omitted.",
+    )
     parser.add_argument("--dry-run", action="store_true", help="Print plan, do not write file")
     args = parser.parse_args(argv)
 
@@ -291,10 +322,16 @@ def main(argv: list[str] | None = None) -> None:
             print("       Run ingest_case.py first to populate the source cache.", file=sys.stderr)
             sys.exit(1)
 
+    try:
+        profile = select_profile(case_id, profile_id=args.profile)
+    except ValueError as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        sys.exit(1)
+
     with open(cache_path) as f:
         cache = json.load(f)
 
-    plan = build_coverage_plan(cache, case_id)
+    plan = build_coverage_plan(cache, case_id, profile=profile)
 
     yaml_text = _dump(plan)
 
@@ -308,6 +345,7 @@ def main(argv: list[str] | None = None) -> None:
     out_path = out_dir / f"{case_id}.coverage_plan.yaml"
     out_path.write_text(yaml_text)
     print(f"Coverage plan written to: {out_path}")
+    print(f"  profile:                  {profile.profile_id}")
     print(f"  market_definition sections: {plan['summary']['market_definition']}")
     print(f"  geographic_market sections: {plan['summary']['geographic_market']}")
     print(f"  theories sections:          {plan['summary']['theories']}")
