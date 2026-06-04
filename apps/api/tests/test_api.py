@@ -11,13 +11,15 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 REPO_ROOT = Path(__file__).parent.parent.parent.parent
 CASES_DIR = str(REPO_ROOT / "data" / "cases")
+INDEX_DIR = str(REPO_ROOT / "data" / "case_index")
 
 
 @pytest.fixture
 def client():
-    # Point the API at the real data directory
+    # Point the API at the real data directories
     with patch("app.core.config.settings") as mock_settings:
         mock_settings.data_cases_path = CASES_DIR
+        mock_settings.data_case_index_path = INDEX_DIR
         mock_settings.app_title = "CompMap API"
         mock_settings.app_version = "0.1.0"
         mock_settings.neo4j_uri = "bolt://localhost:7687"
@@ -25,8 +27,9 @@ def client():
         mock_settings.neo4j_password = "compmap_local"
         mock_settings.debug = False
 
-        from app.services import case_service
+        from app.services import case_service, index_case_service
         case_service.invalidate_cache()
+        index_case_service.invalidate_cache()
 
         from main import app
         with TestClient(app) as c:

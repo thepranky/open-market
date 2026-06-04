@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import settings
 from app.core.neo4j_client import close_driver
-from app.routers import cases, graph, health, search
+from app.routers import cases, graph, health, indexed_cases, search
 
 
 @asynccontextmanager
@@ -30,6 +30,7 @@ app.add_middleware(
 
 app.include_router(health.router)
 app.include_router(cases.router)
+app.include_router(indexed_cases.router)
 app.include_router(search.router)
 app.include_router(graph.router)
 

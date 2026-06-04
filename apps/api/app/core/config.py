@@ -9,6 +9,7 @@ class Settings(BaseSettings):
     neo4j_password: str = "compmap_local"
 
     data_cases_path: str = "/data/cases"
+    data_case_index_path: str = "/data/case_index"
 
     app_title: str = "CompMap API"
     app_version: str = "0.1.0"
