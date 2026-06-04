@@ -1,0 +1,28 @@
+case_id: uk_microsoft_activision_2023
+case_name: Microsoft / Activision Blizzard
+jurisdiction: UK
+authority: Competition and Markets Authority
+decision_date: "2023-10-13"
+sector: media_entertainment
+outcome: cleared_with_conditions
+case_type: merger
+source_url: https://www.gov.uk/cma-cases/microsoft-activision-blizzard-merger-inquiry
+ai_summary: >
+  The CMA initially blocked Microsoft's $69bn acquisition of Activision Blizzard in April
+  2023, citing concerns that Microsoft would withhold Call of Duty and other titles from
+  rival cloud gaming platforms. After Microsoft restructured the transaction to exclude
+  Activision's cloud streaming rights (licensed instead to Ubisoft), the CMA cleared the
+  restructured deal on 13 October 2023. The case is a landmark example of a blocked merger
+  being resurrected via structural deal redesign.
+parties:
+  - name: Microsoft
+    role: acquirer
+  - name: Activision Blizzard
+    role: target
+concept_refs:
+  - concept_id: sector_media
+    quality_level: indexed
+    provenance: manually_tagged
+  - concept_id: toh_vertical
+    quality_level: indexed
+    provenance: manually_tagged

@@ -1,0 +1,30 @@
+case_id: eu_meta_kustomer_2022
+case_name: Meta / Kustomer
+jurisdiction: EU
+authority: European Commission
+decision_date: "2022-01-27"
+sector: tech
+outcome: cleared_with_conditions
+case_type: merger
+source_url: https://competition-cases.ec.europa.eu/cases/M.10262
+ai_summary: >
+  The Commission cleared Meta's acquisition of Kustomer, a CRM software provider, subject
+  to conditions on 27 January 2022. The case raised concerns about Meta leveraging WhatsApp
+  data to foreclose rival CRM providers and about restricting Kustomer competitors' access
+  to the WhatsApp Business API. Remedies included interoperability and access commitments
+  for third-party CRM vendors on the WhatsApp Business platform.
+parties:
+  - name: Meta Platforms
+    role: acquirer
+  - name: Kustomer
+    role: target
+concept_refs:
+  - concept_id: sector_tech
+    quality_level: indexed
+    provenance: manually_tagged
+  - concept_id: toh_vertical
+    quality_level: indexed
+    provenance: manually_tagged
+  - concept_id: toh_conglomerate
+    quality_level: indexed
+    provenance: manually_tagged

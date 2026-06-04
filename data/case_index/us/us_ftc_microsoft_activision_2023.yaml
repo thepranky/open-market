@@ -1,0 +1,29 @@
+case_id: us_ftc_microsoft_activision_2023
+case_name: Microsoft / Activision Blizzard (FTC challenge)
+jurisdiction: US
+authority: FTC
+decision_date: "2023-07-11"
+sector: media_entertainment
+outcome: cleared
+case_type: merger
+source_url: https://www.ftc.gov/legal-library/browse/cases-proceedings/2310077-microsoft-corporation-activision-blizzard-inc
+ai_summary: >
+  The FTC sought a preliminary injunction in the Northern District of California to block
+  Microsoft's $69bn acquisition of Activision Blizzard, arguing Microsoft would withhold
+  Call of Duty from Sony PlayStation and rival cloud gaming services. On 11 July 2023 Judge
+  Corley denied the preliminary injunction, finding the FTC had not shown a likelihood of
+  success on the merits. The FTC declined to continue its appeal; the deal closed on
+  18 October 2023. Alongside the concurrent CMA inquiry, the case was the most significant
+  cross-border gaming merger review of 2023.
+parties:
+  - name: Microsoft
+    role: acquirer
+  - name: Activision Blizzard
+    role: target
+concept_refs:
+  - concept_id: sector_media
+    quality_level: indexed
+    provenance: manually_tagged
+  - concept_id: toh_vertical
+    quality_level: indexed
+    provenance: manually_tagged

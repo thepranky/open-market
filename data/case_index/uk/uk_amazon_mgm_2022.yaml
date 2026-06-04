@@ -1,0 +1,27 @@
+case_id: uk_amazon_mgm_2022
+case_name: Amazon / MGM
+jurisdiction: UK
+authority: Competition and Markets Authority
+decision_date: "2022-05-17"
+sector: media_entertainment
+outcome: cleared
+case_type: merger
+source_url: https://www.gov.uk/cma-cases/amazon-mgm-holdings-merger-inquiry
+ai_summary: >
+  The CMA cleared Amazon's $8.45bn acquisition of MGM Holdings on 17 May 2022 after a Phase
+  1 investigation. The CMA found no substantial lessening of competition in the supply of
+  streaming services, video-on-demand content licensing, or production of original content,
+  noting that MGM's library was licensed to multiple competing platforms and that Amazon
+  would not have sufficient incentive or ability to withhold MGM content from rivals.
+parties:
+  - name: Amazon
+    role: acquirer
+  - name: MGM Holdings
+    role: target
+concept_refs:
+  - concept_id: sector_media
+    quality_level: indexed
+    provenance: manually_tagged
+  - concept_id: toh_vertical
+    quality_level: indexed
+    provenance: manually_tagged

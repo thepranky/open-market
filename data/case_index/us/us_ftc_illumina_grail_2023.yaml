@@ -1,0 +1,29 @@
+case_id: us_ftc_illumina_grail_2023
+case_name: Illumina / GRAIL (FTC challenge)
+jurisdiction: US
+authority: FTC
+decision_date: "2023-12-06"
+sector: pharma_biotech
+outcome: abandoned
+case_type: merger
+source_url: https://www.ftc.gov/legal-library/browse/cases-proceedings/2110144-illumina-inc-grail-inc-matter
+ai_summary: >
+  The FTC challenged Illumina's acquisition of GRAIL, arguing Illumina—the dominant supplier
+  of next-generation sequencing instruments—would have the incentive and ability to foreclose
+  rival liquid biopsy test developers from access to sequencing technology. An FTC ALJ
+  initially ruled in Illumina's favour, but the FTC Commissioners reversed and ordered
+  divestiture. On 6 December 2023 the Fifth Circuit affirmed the FTC's divestiture order.
+  Illumina announced GRAIL's divestiture in December 2023, and the sale to a third party was
+  completed in 2024. The case is a landmark US vertical merger challenge in life sciences.
+parties:
+  - name: Illumina
+    role: acquirer
+  - name: GRAIL
+    role: target
+concept_refs:
+  - concept_id: sector_pharma
+    quality_level: indexed
+    provenance: manually_tagged
+  - concept_id: toh_vertical
+    quality_level: indexed
+    provenance: manually_tagged
