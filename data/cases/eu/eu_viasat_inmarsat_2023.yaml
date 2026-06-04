@@ -1,0 +1,1205 @@
+case_id: eu_viasat_inmarsat_2023
+case_name: Viasat / Inmarsat
+authority: European Commission
+jurisdiction: EU
+sector: satellite communications / broadband
+outcome: cleared
+decision_date: '2023-05-25'
+parties:
+- name: Viasat, Inc.
+  role: acquirer
+- name: Inmarsat Holdings Limited
+  role: target
+source_documents:
+- doc_id: eu_viasat_inmarsat_decision
+  title: 'Case M.10807 – Viasat / Inmarsat: Commission Decision'
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10807
+  pdf_url: https://ec.europa.eu/competition/mergers/cases1/202414/M_10807_9975023_3369_3.pdf
+  doc_type: decision
+  authority_reference: M.10807
+  retrieval_status: direct
+  published_date: '2023-05-25'
+product_markets_considered:
+- market_id: pm_1
+  name: Supply of satellite capacity (broadband satellite capacity)
+  definition_status: left_open
+  notes: Commission considers the relevant product market is likely the market for the supply
+    of broadband satellite capacity. The question of whether this is part of a broader market
+    (including narrowband) or should be further segmented (GEO/LEO, HTS/non-HTS, Ka-band/Ku-band)
+    is left open since no SIEC under any plausible definition. The market investigation confirmed
+    a separate market for the supply of satellite capacity at SNO level, distinguished from
+    SSP and VAR levels. Broadband vs narrowband segmentation confirmed. Segmentation by industry
+    segment, GEO vs NGSO/LEO, HTS vs non-HTS, and Ka-band vs Ku-band all left open.
+- market_id: pm_2
+  name: Supply of broadband IFC services to commercial aviation customers
+  definition_status: defined
+  notes: 'Commission concludes there is an overall market for broadband IFC services to commercial
+    aviation customers, including Ka- and Ku-band, GEO- and LEO-based solutions, and both short-haul
+    and long-haul flights (para 129). Possible further segmentation by satellite vs ATG/hybrid
+    technology left open. Commission confirmed: (1) broadband vs narrowband segmentation warranted;
+    (2) commercial vs business aviation segmentation warranted; (3) short-haul vs long-haul
+    segmentation not warranted; (4) Ka-band vs Ku-band not warranted; (5) GEO vs LEO not warranted;
+    (6) satellite vs ATG/hybrid left open.'
+- market_id: pm_3
+  name: Supply of IFC services to business aviation customers
+  definition_status: left_open
+  notes: Commission considers the relevant product market is likely the market for the supply
+    of IFC services to business aviation customers. Further segmentation questions (broadband
+    vs narrowband; large vs small business aircraft; aircraft size sub-segments) left open as
+    no SIEC under any plausible definition. Commission confirmed this market is separate from
+    commercial aviation IFC market.
+- market_id: pm_4
+  name: Supply of satellite connectivity services to maritime customers
+  definition_status: considered
+  notes: The Commission explicitly noted in footnote 147 (p.35) that the Transaction does not
+    lead to horizontally affected markets in other markets where the Parties' activities overlap,
+    citing maritime satellite connectivity as an example of a non-affected market alongside
+    EEA government customers. No market definition analysis or competitive assessment was conducted
+    for maritime connectivity. The Parties overlap here (Inmarsat is a major maritime connectivity
+    provider) but the overlap does not exceed the affected-market threshold or was otherwise
+    confirmed not to raise concerns.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Supply of satellite capacity — worldwide
+  definition_status: defined
+  notes: Commission concluded that the market for the supply of satellite capacity (and any
+    potential segments thereof, including broadband satellite capacity) is worldwide in scope
+    (para 81). Market investigation confirmed majority of market participants (both GEO and
+    LEO SNOs) supply satellite capacity globally and conditions of competition are sufficiently
+    homogenous at the worldwide level (para 80).
+- market_id: gm_2
+  name: Supply of broadband IFC services to commercial aviation customers — worldwide/EEA-wide
+    (left open)
+  definition_status: left_open
+  notes: Commission considers the market is likely worldwide in scope, but left open whether
+    the geographic scope is at least EEA-wide or worldwide, since the Transaction would not
+    significantly impede effective competition under any plausible definition (para 134). Majority
+    of customers confirmed procurement at worldwide level even for short-haul flights. Some
+    differences due to coverage offered by IFC suppliers depending on geographic region. Both
+    globally and in the EEA, the Parties exceed the 20% threshold.
+- market_id: gm_3
+  name: Supply of IFC services to business aviation customers — worldwide
+  definition_status: defined
+  notes: Commission concluded that the market for the supply of IFC services to business aviation
+    customers (and the potential segment of large business jets) is worldwide in scope (para
+    153). Market investigation confirmed procurement for both business aviation and large business
+    jets is worldwide in scope, with conditions of competition sufficiently homogeneous at the
+    worldwide level (para 152).
+theories_of_harm:
+- theory_id: toh_1
+  name: Horizontal non-coordinated effects in the market for IFC services to business aviation
+    customers
+  theory_type: horizontal
+  theory_outcome: dismissed
+  description: 'The Commission assessed SIEC from horizontal non-coordinated effects in the
+    global market for broadband IFC services to business aviation customers (and the potential
+    sub-segment for large business jets). Dismissed because: (i) the merged entity''s market
+    position is moderate ([20-30]% broadly, [30-40]% in large business jets sub-segment), with
+    Gogo ([60-70]%) and Iridium ([40-50]%) remaining as larger competitors; (ii) customers retain
+    switching ability due to credible alternatives (Iridium, Gogo, SES, IDAIR, Intelsat, Smart
+    Sky, SpaceX); (iii) market is nascent with likely new entry or partnerships within three
+    years. The Notifying Party also argued countervailing buyer power from VARs (Collins Aerospace,
+    Honeywell Aerospace, Satcom Direct).'
+  verification:
+    status: source_linked
+  source_passage_refs:
+  - sp_28
+  - sp_29
+  - sp_30
+  - sp_31
+  - sp_32
+- theory_id: toh_2
+  name: Vertical effects — satellite capacity (upstream) / IFC services to commercial and business
+    aviation (downstream)
+  theory_type: vertical
+  theory_outcome: dismissed
+  description: The Commission identified vertical links between the supply of satellite capacity
+    (upstream) and broadband IFC services to commercial and business aviation (downstream).
+    These links are pre-existing as both parties are vertically integrated SNOs/SSPs. The Commission
+    dismissed vertical concerns on the basis that the merged entity would not have a significant
+    degree of market power in the affected markets, and therefore would lack the ability to
+    foreclose downstream (input foreclosure) or upstream (customer foreclosure) rivals.
+  verification:
+    status: source_linked
+  source_passage_refs:
+  - sp_33
+  - sp_34
+  - sp_35
+  - sp_36
+- theory_id: toh_3
+  name: Conglomerate effects
+  theory_type: conglomerate
+  theory_outcome: dismissed
+  description: The Commission expressly stated the Transaction does not give rise to affected
+    markets related to a conglomerate relationship.
+  verification:
+    status: source_linked
+  source_passage_refs:
+  - sp_37
+- theory_id: toh_4
+  name: Horizontal non-coordinated effects — supply of satellite capacity and potential segments
+  theory_type: horizontal
+  theory_outcome: dismissed
+  description: 'The Commission assessed whether the merger would give rise to horizontal non-coordinated
+    effects in the global market for the supply of satellite capacity (narrowest: broadband
+    Ka-band HTS GEO satellite capacity). The theory was dismissed on three principal grounds:
+    (i) combined market shares are moderate today ([20-30]%) and the increment is limited; (ii)
+    the merged entity will not be pivotal and will not possess appreciable market power in the
+    near future, given high levels of spare/excess capacity among competitors; and (iii) a sufficient
+    number of credible alternatives exist post-Transaction (both GEO and LEO SNOs). The Notifying
+    Party also argued the capacity is largely captive, the market is fungible, entry barriers
+    are falling, and NGSO expansion will drive prices down. Market investigation respondents
+    confirmed neutral competitive impact.'
+  verification:
+    status: source_linked
+  source_passage_refs:
+  - sp_27
+  - sp_38
+  - sp_39
+  - sp_40
+  - sp_41
+  - sp_42
+  - sp_43
+  - sp_44
+  - sp_45
+  - sp_46
+  - sp_47
+- theory_id: toh_5
+  name: Horizontal non-coordinated effects in the market for broadband IFC services to commercial
+    aviation customers
+  theory_type: horizontal
+  theory_outcome: dismissed
+  description: 'The Commission assessed SIEC from horizontal non-coordinated effects in the
+    global and EEA-wide market for the supply of broadband IFC services to commercial aviation
+    customers (and potential segments thereof, including satellite-only excluding ATG/hybrid).
+    Dismissed on three principal grounds: (i) the merged entity''s market position remains moderate
+    — globally [30-40]% with [10-20]pp increment, Intelsat [20-30]% and Panasonic [20-30]% remaining
+    as significant competitors; at EEA level [30-40]% with [0-10]pp increment, below Panasonic
+    at [40-50]%; (ii) customers have sufficient switching possibilities post-Transaction, with
+    Intelsat, Panasonic, and Anuvu each constituting credible alternatives, and SpaceX at least
+    constraining the merged entity; (iii) the market is nascent with expected further entry
+    (OneWeb and other LEO operators) and partnerships, including hybrid GEO/LEO solutions. The
+    Notifying Party also argued that vertical integration is not critical to success, that the
+    market is highly dynamic and at an early stage, and that airlines have contractual remedies
+    and multi-sourcing leverage. The Commission also concluded Ka-band is not necessary to compete
+    and that non-vertically integrated providers (Panasonic, Anuvu) compete effectively by leasing
+    SNO capacity.'
+  verification:
+    status: source_linked
+  source_passage_refs:
+  - sp_48
+  - sp_56
+  - sp_57
+  - sp_58
+  - sp_59
+  - sp_60
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '16'
+  quote_snippet: The Parties' only overlap at the SNO level is in the supply of HTS GEO broadband
+    satellite capacity, and in particular Ka-band satellite capacity.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '18'
+  quote_snippet: The results of the market investigation confirmed the market segmentation previously
+    considered by the Commission based on the level of the supply chain, i.e. distinguishing
+    between SNOs, SSPs and VARs, and that therefore there exists a separate market for the supply
+    of satellite capacity.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '19'
+  quote_snippet: The results of the market investigation confirmed that the market for the supply
+    of satellite capacity should be segmented between broadband and narrowband satellite capacity,
+    with a majority of market participants (both GEO and LEO SNOs) considering that those products
+    were not substitutable because of different product characteristics and intended use on
+    the demand-side.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '20'
+  quote_snippet: In light of the above, the Commission considers that the relevant product market
+    in this case is likely the market for the supply of broadband satellite capacity. For the
+    purposes of this Decision, the question of whether the market for the supply of broadband
+    satellite capacity is part of a broader market for the supply of satellite capacity (including
+    both broadband and narrowband) or should be further segmented based on (i) GEO or LEO satellite
+    capacity, (ii) HTS or non-HTS capacity, and (iii) Ka-band or Ku-band capacity can be left
+    open, since the Transaction would not significantly impede effective competition under any
+    plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '26'
+  quote_snippet: the results of the market investigation confirmed that the supply of satellite
+    connectivity by SSPs can be segmented according to the industry of application. More specifically,
+    the majority of respondents to the market investigation who expressed a view confirmed there
+    is a separate market for the supply of satellite services to the aviation sector, for which
+    satellite connectivity services for other industry segments/end-uses (e.g. maritime, consumer
+    broadband internet) are not substitutable due to the specific requirements in the aviation
+    sector (such as geographic coverage, specific technical equipment, airworthiness certifications,
+    and others).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '27'
+  quote_snippet: for the purpose of this Decision, the Commission considers there is market
+    for the supply of IFC services to commercial aviation customers that is separate from the
+    market for the supply of IFC services to business aviation customers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '29'
+  quote_snippet: The Commission considers that IFC services based on LEO satellites and GEO
+    satellites are substitutable as they broadly serve the same customer needs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '29'
+  quote_snippet: The Commission therefore considers that there is no clear advantage of Ka-band-based
+    IFC solutions over Ku-band-based IFC solutions and that both frequencies are part of the
+    same market for the purposes of this Decision.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '27'
+  quote_snippet: The Commission agrees with the Notifying Party and notes indeed that from a
+    demand-side perspective, the nature and identity of customers differ. Furthermore, the types
+    of aircraft used in business and commercial aviation largely differ, as do the services
+    requested and coverage expected by each type of customer. From a supply-side perspective,
+    the IFC providers to each type of customer also differ to a large extent.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '20'
+  quote_snippet: The market investigation confirmed that the geographic scope of the market
+    for the supply of (broadband) satellite capacity is worldwide. The majority of market participants
+    (both GEO and LEO SNOs, including players with HTS capacity and players with non-HTS capacity,
+    as well as Ka-band and Ku-band capacity) indicated that they supply satellite capacity globally,
+    and also considered that the 'conditions of competition' (e.g. prices, consumption habits,
+    number and identity of suppliers, their market strength) are sufficiently homogenous at
+    the worldwide level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '21'
+  quote_snippet: for the purpose of this Decision, the Commission considers that the market
+    for the supply of satellite capacity (and any potential segments thereof, including the
+    supply of broadband satellite capacity) is worldwide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '30'
+  quote_snippet: The Notifying Party considers that in relation to aircraft intended to be used
+    for short-haul flights – which in Europe correspond to intra-European flights – it is meaningful
+    to consider the relevant market to be Europe-wide from the perspective of EEA customers.
+    Conversely, for the provision of IFC services to aircraft used on long-haul flights, the
+    Notifying Party believes a global market definition is more meaningful and indicative of
+    how competition takes place.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '20'
+  quote_snippet: the Commission considers that the relevant product market in this case is likely
+    the market for the supply of broadband satellite capacity. For the purposes of this Decision,
+    the question of whether the market for the supply of broadband satellite capacity is part
+    of a broader market for the supply of satellite capacity (including both broadband and narrowband)
+    or should be further segmented based on (i) GEO or LEO satellite capacity, (ii) HTS or non-HTS
+    capacity, and (iii) Ka-band or Ku-band capacity can be left open, since the Transaction
+    would not significantly impede effective competition under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '19'
+  quote_snippet: The results of the market investigation confirmed the market segmentation previously
+    considered by the Commission based on the level of the supply chain, i.e. distinguishing
+    between SNOs, SSPs and VARs, and that therefore there exists a separate market for the supply
+    of satellite capacity.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '19'
+  quote_snippet: A majority of market participants considered that the market should not be
+    segmented based on the downstream end-use/industry segment (e.g. aviation, maritime, land)
+    for which the satellite capacity is intended or used, as they considered that satellite
+    capacity can be used interchangeably across a range of industry segments/end-uses downstream.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '19'
+  quote_snippet: A majority of market participants considered the market should not be segmented
+    between GEO and NGSO/LEO satellite capacity. However, most market participants noted that
+    there are some product characteristic differences between GEO and NGSO/LEO satellite capacity
+    (e.g. latency, reliability, and price).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '19'
+  quote_snippet: The results of the market investigation were mixed as regards the question
+    whether the market for the supply of (broadband) satellite capacity should be segmented
+    between HTS and non-HTS capacity. Market participants indicated that these potential segmentations
+    were substitutable in some instances and not substitutable in other instances.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '20'
+  quote_snippet: The market investigation also provided mixed results regarding the question
+    whether the market for the supply of (broadband) satellite capacity should be segmented
+    between Ka-band and Ku-band satellite capacity. The majority of market participants indicated
+    that in some instances Ka-band and Ku-band satellite capacity are substitutable, but not
+    in other instances.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '30'
+  quote_snippet: for the purpose of this decision, the Commission concludes that the relevant
+    product market in this case is the overall market for the supply of broadband IFC services
+    to commercial aviation customers, including both Ka- and Ku-bands and both GEO- and LEO-based
+    solutions, and for both short-haul and long-haul flights. For the purpose of this Decision,
+    the question of whether that market should be further segmented according to whether the
+    IFC services are based on satellite technology or ATG technology or hybrid (satellite and
+    ATG) can be left open because the Transaction would not significantly impede effective competition
+    under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '27'
+  quote_snippet: The Commission agrees and considers that broadband and narrowband connectivity
+    are not substitutable as each serves different customer needs. Broadband connectivity solutions
+    have more bandwidth and can be used for more data-intensive applications, such as streaming
+    or video-conferences. Narrowband connectivity solutions are less susceptible to signal interference
+    and are used for less data-intensive tasks where resilience is critical, such as safety
+    communication.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '33'
+  quote_snippet: the Commission considers that the relevant product market in this case is likely
+    the market for the supply of IFC services to business aviation customers. However, for the
+    purposes of this Decision, the question of whether the market should be further segmented
+    based on the type of service provided (i.e., broadband or narrowband IFC services), the
+    aircraft type (i.e., large and small business aircraft) or aircraft size (i.e., from largest
+    to smallest within each type) can be left open, since the Transaction would not significantly
+    impede effective competition under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '33'
+  quote_snippet: The majority of respondents (including all customers) to the market investigation
+    confirmed the Notifying Party's proposed segmentation between narrowband and broadband connectivity
+    in relation to the market for the supply of IFC services to business aviation customers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '33'
+  quote_snippet: The market investigation was unclear as to whether the market for the supply
+    of IFC services to business aviation customers should be segmented based on the type (i.e.,
+    small and large business aircraft) or size (i.e., from largest to smallest within each type)
+    of aircraft. The responses from market participants were mixed, with the majority of the
+    respondents indicating that these potential segmentations were substitutable in some instances
+    and not substitutable in other instances.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '31'
+  quote_snippet: the Commission considers the market for the supply of broadband IFC services
+    to commercial aviation customers, including short-haul and long-haul flights, is likely
+    worldwide in scope. However, for the purposes of this Decision, the question of whether
+    the market for the supply of broadband IFC services to commercial aviation customers is
+    at least EEA-wide or worldwide in scope can be left open, since the Transaction would not
+    significantly impede effective competition under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.9
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '34'
+  quote_snippet: for the purpose of this Decision, the Commission considers that the market
+    for the supply of IFC services to business aviation customers (and the potential segment
+    of large business jets) is worldwide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.9
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '35'
+  quote_snippet: The Transaction does not lead to horizontally affected markets in any other
+    markets in which the Parties' activities overlap, such as the supply of satellite connectivity
+    services to maritime customers and to EEA government customers
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.9
+  last_checked_date: '2026-06-03'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '34'
+  quote_snippet: the Commission finds that the Transaction would not significantly impede effective
+    competition in the EEA, or in a substantial part of it, in particular as a result of horizontal
+    non-coordinated effects on the markets for (i) the supply of satellite capacity (and any
+    potential segments thereof, including the supply of broadband satellite capacity) globally
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_4
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '71'
+  quote_snippet: The Commission considers that the Transaction would not significantly impede
+    effective competition as a result of horizontal non-coordinated effects on the global market
+    for the supply of broadband IFC services to business aviation customers (and the potential
+    segment for the supply of broadband IFC services to large business jets, i.e. the only potential
+    segment in which the Parties overlap). This is in particular because (i) the Parties' market
+    position remains moderate (section 8.6.2.1), (ii) customer have sufficient possibilities
+    of switching supplier post-Transaction (section 8.6.2.2), and (iii) the market is nascent,
+    with a number of potential new entrants (section 8.6.2.3).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_1
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '71'
+  quote_snippet: the Notifying Party submits that the merged entity will have no market power
+    post-Transaction in the potential segment for the supply of broadband IFC services to large
+    business jets, in which the Parties' activities overlap. In this potential segment, the
+    Parties' combined market share ([30-40]%) will remain less than half the share of the market
+    leader Gogo ([60-70]%), who would remain in a position to thwart any attempt by the merged
+    entity to raise prices or decrease service quality.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_1
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '71'
+  quote_snippet: the Notifying Party argues that direct customers, which are typically VARs
+    and aircraft original equipment manufacturers ('OEMs'), have countervailing buyer power
+    and the merged entity would not be able to price discriminate. This is because operators
+    and end users are protected by price-intermediation by a layer of powerful buyers (VARs)
+    that negotiate directly with the Parties. Those are mainly Collins Aerospace, Honeywell
+    Aerospace and Satcom Direct.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_1
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '72'
+  quote_snippet: the majority of the customers consider the Parties, Gogo, Intelsat (FlexExec),
+    SES (Luxstream), and SpaceX (Starlink) to be the main existing competitors in the market
+    for IFC services to business aviation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_1
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '73'
+  quote_snippet: the Commission considers that the Transaction would not significantly impede
+    effective competition as a result of non-coordinated horizontal effects on the global market
+    for the supply of broadband IFC services to business aviation customers (and the potential
+    segment for the supply of broadband IFC services to large business jets).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_1
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '35'
+  quote_snippet: 'The Transaction also creates vertical links between the Parties'' activities
+    in the satellite communications industry, in the following vertically affected markets:
+    (a) The supply of satellite capacity globally (upstream) and the supply of broadband IFC
+    services to commercial aviation customers (and potential segments thereof) globally or in
+    the EEA (downstream); and (b) The supply of satellite capacity globally (upstream) and the
+    supply of broadband IFC services to business aviation customers (and potential segments
+    thereof) globally (downstream).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_2
+  supports_commitments: []
+- passage_id: sp_34
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '35'
+  quote_snippet: non-horizontal mergers pose no threat to effective competition unless the merged
+    entity has a significant degree of market power in at least one of the markets concerned,
+    because otherwise the merged entity would not have the ability to foreclose its downstream
+    rivals (i.e. input foreclosure) or upstream rivals (i.e. customer foreclosure).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_2
+  supports_commitments: []
+- passage_id: sp_35
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '35'
+  quote_snippet: the Commission considers that, as a result of the conclusions with regard to
+    the Commission's assessment of horizontal non-coordinated effects in these three affected
+    markets, the merged entity does not have a significant degree of market power in these three
+    affected markets, and so would not have the ability to foreclose downstream or upstream
+    rivals.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_2
+  supports_commitments: []
+- passage_id: sp_36
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '35'
+  quote_snippet: the Commission considers the Transaction would not significantly impede effective
+    competition in a substantial part of the internal market within the meaning of Article 2(3)
+    of the Merger Regulation as a result of vertical effects
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_2
+  supports_commitments: []
+- passage_id: sp_37
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '35'
+  quote_snippet: The Transaction does not give rise to affected markets related to a conglomerate
+    relationship.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_3
+  supports_commitments: []
+- passage_id: sp_38
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '45'
+  quote_snippet: The Notifying Party submitted that the Transaction will not give rise to competition
+    concerns in the market for the supply of satellite capacity.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_4
+  supports_commitments: []
+- passage_id: sp_39
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '47'
+  quote_snippet: The Commission considers that the Transaction would not significantly impede
+    effective competition as a result of horizontal non-coordinated effects on the global market
+    for the supply of satellite capacity (and any potential segments thereof). This is in particular
+    because, as set out in further detail below, (i) the Parties' current combined market shares
+    remain moderate and the increment limited (section 8.4.2.1), (ii) the Parties will not possess
+    any market power in the near future (section 8.4.2.2), and (iii) customers have sufficient
+    possibilities of switching supplier post-Transaction (section 8.4.2.3).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_4
+  supports_commitments: []
+- passage_id: sp_40
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '48'
+  quote_snippet: Based on market share data provided by the Notifying Party, as set out in section
+    8.3 above, the Commission notes that the Parties combined share of total capacity in this
+    potential global market is moderate in 2022, [20-30]%, with Viasat and Inmarsat accounting
+    for [10-20]% and [0-5]% respectively. The Commission also notes that the increment accounted
+    for by Inmarsat is limited. As noted by paragraph 18 of the Horizontal Merger Guidelines,
+    a combined market share of less than 25% is an indication that a concentration is not liable
+    to impede effective competition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_4
+  supports_commitments: []
+- passage_id: sp_41
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '48'
+  quote_snippet: the pre-merger HHI is approximately 1225, the post-merger HHI is approximately
+    1350 and the HHI delta is approximately 125. As noted by paragraph 20 of the Horizontal
+    Merger Guidelines, the Commission is also unlikely to identify horizontal competition concerns
+    in a merger with a post-merger HHI between 1 000 and 2 000 and a delta below 250.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_4
+  supports_commitments: []
+- passage_id: sp_42
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '48'
+  quote_snippet: Third party expert reports provided by the Parties estimate that 43% of total
+    broadband Ka-band HTS GEO satellite capacity is unfilled, i.e. is spare capacity.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_4
+  supports_commitments: []
+- passage_id: sp_43
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '50'
+  quote_snippet: The Commission's pivotality calculations, based on the figures for demand and
+    capacity, indicate that the merged entity will not be pivotal post-Transaction. Indeed,
+    excess supply in the market for the supply of broadband Ka-band HTS GEO satellite capacity
+    is […] times greater than the Parties' leased capacity downstream in 2022 and […] times
+    greater in 2025. As such, the merged entity's competitors could easily cover the entire
+    market demand, including the Parties' current customers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_4
+  supports_commitments: []
+- passage_id: sp_44
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '50'
+  quote_snippet: In light of the above, and for the purposes of this Decision, the Commission
+    considers that the merged entity will not possess any appreciable market power in this potential
+    market in the next few years.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_4
+  supports_commitments: []
+- passage_id: sp_45
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '51'
+  quote_snippet: All GEO SNO respondents considered that the Transaction would have a neutral
+    impact on competition in the supply of HTS GEO satellite capacity.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_4
+  supports_commitments: []
+- passage_id: sp_46
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '51'
+  quote_snippet: In light of the above, and for the purposes of this decision, the Commission
+    considers that a number of alternative suppliers exist and are a credible alternative to
+    the merged entity post-Transaction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_4
+  supports_commitments: []
+- passage_id: sp_47
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '51'
+  quote_snippet: the Commission considers that the Transaction would not significantly impede
+    effective competition as a result of horizontal non-coordinated effects on the global market
+    for the supply of satellite capacity (and any potential segments thereof, including the
+    supply of broadband satellite capacity).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_4
+  supports_commitments: []
+- passage_id: sp_48
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '36'
+  quote_snippet: the Commission will assess the potential horizontal non-coordinated effects
+    on the market for broadband IFC services to commercial aviation customers stemming from
+    the Transaction (section 8.5). Finally, the Commission will assess the potential horizontal
+    non-coordinated effects on the market for broadband IFC services to business aviation customers
+    stemming from the Transaction (section 8.6).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_5
+  supports_commitments: []
+- passage_id: sp_49
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '36'
+  quote_snippet: Under Article 2(2) and (3) of the Merger Regulation, the Commission must assess
+    whether a proposed concentration would significantly impede effective competition in the
+    internal market or in a substantial part of it, in particular through the creation or strengthening
+    of a dominant position.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_50
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '36'
+  quote_snippet: A merger may give rise to a significant impediment of effective competition
+    as a result of the creation or strengthening of a dominant position in the relevant market(s).
+    Moreover, mergers in oligopolistic markets involving the elimination of the important competitive
+    constraints that the parties previously exerted on each other, together with a reduction
+    of competitive pressure on the remaining competitors, may also result in a significant impediment
+    to effective competition, even in the absence of dominance.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_51
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '36'
+  quote_snippet: Paragraph 24 of the Horizontal Merger Guidelines, which sets out the economic
+    rationale underlying non-coordinated anti-competitive effects in horizontal mergers, states
+    that a merger may significantly impede effective competition in a market by removing important
+    competitive constraints on one or more firms who consequently have increased market power.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_52
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '37'
+  quote_snippet: The Horizontal Merger Guidelines list a number of factors which may influence
+    whether or not significant non-coordinated effects are likely to result from a merger, such
+    as the large market shares of the merging firms, the fact that the merging firms are close
+    competitors, the limited possibilities for customers to switch suppliers, or the fact that
+    the merger would eliminate an important competitive force.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_53
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '37'
+  quote_snippet: The extent of closeness of competition between the merging parties is one of
+    the factors relevant for the analysis of the likelihood of significant non-coordinated effects
+    of a merger.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_54
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '37'
+  quote_snippet: As regards entry, paragraph 68 of the Horizontal Merger Guidelines provides
+    that when entering a market is sufficiently easy, a merger is unlikely to pose any significant
+    anti-competitive risk. However, for entry to be considered a sufficient competitive constraint
+    on the merging parties, it must be shown to be likely, timely and sufficient to deter or
+    defeat any potential anti-competitive effects of the merger.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_55
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '37'
+  quote_snippet: To assess whether a concentration constitutes a significant impediment of effective
+    competition pursuant Article 2(3) of the Merger Regulation, the Commission must compare
+    the competitive conditions that would result from the concentration with the conditions
+    that would have prevailed without the concentration.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_56
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '56'
+  quote_snippet: The Commission considers that the Transaction would not significantly impede
+    effective competition as a result of horizontal non-coordinated effects on the global or
+    EEA-wide market for the supply of broadband IFC services to commercial aviation customers
+    (and potential segments thereof). This is in particular because, as set out in further detail
+    below, (i) the Parties' market position remains moderate (section 8.5.2.1), (ii) customers
+    have sufficient possibilities of switching supplier post-Transaction (section 8.5.2.2),
+    and (iii) the market is nascent with a number of potential new entrants (section 8.5.2.3).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.9
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_5
+  supports_commitments: []
+- passage_id: sp_57
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '57'
+  quote_snippet: at the global level of the market for the supply of broadband IFC services
+    to commercial aviation customers (including connectivity based on satellite, ATG and hybrid
+    technology), the merged entity would have a share of [30-40]% (in terms of committed aircraft)
+    with an increment of [10-20] percentage points. The Commission considers that the merged
+    entity's combined share would not allow the merged entity to significantly impede competition
+    in this market, despite the fact that it is the highest on the overall market for the supply
+    of broadband IFC services to commercial aviation at a worldwide level. The Commission notes
+    that after the Transaction, there will remain a number of competitors with a significant
+    share in the market, the highest being Intelsat with a market share of [20-30]% and Panasonic
+    with a market share of [20-30]%. Anuvu accounts for a smaller share of the market of [5-10]%.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.9
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_5
+  supports_commitments: []
+- passage_id: sp_58
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '70'
+  quote_snippet: the Commission concludes that the Transaction would not significantly impede
+    effective competition as a result of non-coordinated anti-competitive effects in the global
+    or EEA-wide market for the supply of broadband IFC services to commercial aviation customers
+    (and potential segments thereof, i.e. segmented according to whether the IFC services are
+    based on satellite technology or ATG technology or hybrid (satellite and ATG)).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.9
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_5
+  supports_commitments: []
+- passage_id: sp_59
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '69'
+  quote_snippet: the Commission considers that Intelsat, Panasonic and Anuvu each constitute
+    a credible alternative to the merged entity post-Transaction, and that SpaceX will at least
+    constrain the merged entity in IFC tenders post-Transaction, if not constitute a credible
+    alternative to the merged entity in the next three years in the market for the supply of
+    broadband IFC services to commercial aviation customers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.9
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_5
+  supports_commitments: []
+- passage_id: sp_60
+  source_document_id: eu_viasat_inmarsat_decision
+  page: '70'
+  quote_snippet: the market investigation confirmed that the market is very dynamic and will
+    be undergoing significant changes in the future, and that the majority of airlines are already
+    taking LEO potential entrants into account in their IFC tenders. [...] The Commission therefore
+    considers it likely that in the next three years, if not entry, at least partnerships with
+    potential new entrants will occur.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.9
+  last_checked_date: '2026-06-03'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories:
+  - toh_5
+  supports_commitments: []
+procedure_stage: phase2
+remedies: []
+case_type: merger
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.0
+  created_date: '2026-06-03'
+  last_updated_date: '2026-06-03'
+  tags:
+  - satellite-communications
+  - broadband
+  - inflight-connectivity
+  - phase2
+  - cleared
+authority_reference: M.10807
