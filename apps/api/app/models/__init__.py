@@ -20,6 +20,8 @@ from .case import (
     TheoryOfHarm,
     VerificationStatus,
 )
+from .case_index import CaseIndexEntry
+from .concept import ConceptNode, ConceptRef
 
 __all__ = [
     "CaseRecord",
@@ -42,4 +44,7 @@ __all__ = [
     "DefinitionStatus",
     "RetrievalStatus",
     "VerificationStatus",
+    "CaseIndexEntry",
+    "ConceptNode",
+    "ConceptRef",
 ]

@@ -10,3 +10,4 @@ CREATE CONSTRAINT theory_id IF NOT EXISTS FOR (t:TheoryOfHarm) REQUIRE t.theory_
 CREATE CONSTRAINT outcome_name IF NOT EXISTS FOR (o:Outcome) REQUIRE o.name IS UNIQUE;
 CREATE CONSTRAINT source_doc_id IF NOT EXISTS FOR (sd:SourceDocument) REQUIRE sd.doc_id IS UNIQUE;
 CREATE CONSTRAINT source_passage_id IF NOT EXISTS FOR (sp:SourcePassage) REQUIRE sp.passage_id IS UNIQUE;
+CREATE CONSTRAINT concept_id IF NOT EXISTS FOR (co:Concept) REQUIRE co.concept_id IS UNIQUE;

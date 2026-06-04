@@ -4,6 +4,8 @@ from typing import Any, Optional, Union
 
 from pydantic import BaseModel, Field, field_validator
 
+from .concept import ConceptRef
+
 
 class ExtractionMethod(str, Enum):
     ai_extracted = "ai_extracted"
@@ -218,6 +220,7 @@ class CaseRecord(BaseModel):
     ai_summary: Optional[str] = None
     case_history: Optional[CaseHistory] = None
     metadata: CaseMetadata
+    concept_refs: list[ConceptRef] = Field(default_factory=list)
 
     @field_validator("jurisdiction")
     @classmethod
