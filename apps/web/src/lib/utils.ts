@@ -137,3 +137,23 @@ export function formatDate(d: string): string {
 export function confidencePct(score: number): string {
   return `${Math.round(score * 100)}%`;
 }
+
+const CONCEPT_PREFIXES = ["toh_", "sector_", "proc_", "market_"] as const;
+
+export function formatConceptId(id: string): string {
+  let label = id;
+  for (const prefix of CONCEPT_PREFIXES) {
+    if (label.startsWith(prefix)) {
+      label = label.slice(prefix.length);
+      break;
+    }
+  }
+  return label.replace(/_/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());
+}
+
+export function conceptCategoryColor(conceptId: string): string {
+  if (conceptId.startsWith("toh_")) return "bg-blue-50 text-blue-700 border border-blue-200";
+  if (conceptId.startsWith("sector_")) return "bg-slate-100 text-slate-600 border border-slate-200";
+  if (conceptId.startsWith("proc_")) return "bg-purple-50 text-purple-700 border border-purple-200";
+  return "bg-gray-100 text-gray-600 border border-gray-200";
+}

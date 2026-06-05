@@ -1,4 +1,4 @@
-import type { CaseRecord, GraphNeighbourhood } from "./types";
+import type { CaseRecord, GraphNeighbourhood, IndexedCaseDetail } from "./types";
 
 /**
  * Server-side fetches run inside the Docker network and must use the
@@ -53,4 +53,27 @@ export async function searchCases(q: string): Promise<CaseRecord[]> {
 
 export async function getCaseGraph(caseId: string): Promise<GraphNeighbourhood> {
   return apiFetch<GraphNeighbourhood>(`/graph/case/${caseId}`);
+}
+
+export async function getIndexedCases(params?: {
+  jurisdiction?: string;
+  sector?: string;
+  outcome?: string;
+}): Promise<IndexedCaseDetail[]> {
+  const qs = new URLSearchParams();
+  if (params?.jurisdiction) qs.set("jurisdiction", params.jurisdiction);
+  if (params?.sector) qs.set("sector", params.sector);
+  if (params?.outcome) qs.set("outcome", params.outcome);
+  const query = qs.toString() ? `?${qs}` : "";
+  return apiFetch<IndexedCaseDetail[]>(`/indexed-cases${query}`);
+}
+
+export async function getIndexedCase(caseId: string): Promise<IndexedCaseDetail> {
+  return apiFetch<IndexedCaseDetail>(`/indexed-cases/${caseId}`);
+}
+
+export async function searchIndexedCases(q: string): Promise<IndexedCaseDetail[]> {
+  return apiFetch<IndexedCaseDetail[]>(
+    `/search/all?q=${encodeURIComponent(q)}&scope=indexed`
+  );
 }

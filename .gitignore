@@ -26,9 +26,9 @@ data/evals/gold/*.draft.yaml
 node_modules/
 apps/web/node_modules/
 
-# Node dependencies
-node_modules/
-apps/web/node_modules/
+# Next.js build output
+apps/web/.next/
+apps/web/out/
 
 # Generated auto-selected gold drafts
 data/evals/gold/*.auto.yaml

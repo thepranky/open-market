@@ -157,6 +157,29 @@ export interface CaseRecord {
   metadata: CaseMetadata;
 }
 
+export interface ConceptRef {
+  concept_id: string;
+  quality_level: string;  // "canonical" | "indexed"
+  provenance: string;     // "manually_tagged" | "ai_extracted" | "yaml_concept_field"
+}
+
+export interface IndexedCaseDetail {
+  data_layer: "indexed";
+  record_status: "indexed_metadata";
+  case_id: string;
+  case_name: string;
+  jurisdiction: Jurisdiction;
+  authority: string;
+  decision_date: string;
+  sector: string;
+  outcome: Outcome;
+  case_type: string;
+  source_url?: string;
+  ai_summary?: string;
+  parties: Party[];
+  concept_refs: ConceptRef[];
+}
+
 export interface GraphNeighbourhood {
   case: Record<string, unknown>;
   parties: Record<string, unknown>[];
