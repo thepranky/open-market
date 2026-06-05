@@ -140,15 +140,15 @@ The pipeline has two distinct parts: **manual legal judgment** and a **semi-auto
   4. FTC matter-URL slug must start with a recognisable matter ID (`2210077-` or `201-0144-`)
   5. HTTP liveness — HEAD with GET fallback; skipped with `--no-http`
 - **Outputs:** Pass / fail / warn report by `case_id`; exit 0 if no FAIL, exit 1 if any FAIL.
-- **Usage:**
+- **Run before committing any new or updated index entry:**
   ```bash
-  # domain + format checks only (no network):
+  # domain + format checks only (no network, fast):
   apps/api/.venv/bin/python apps/api/scripts/check_case_index_sources.py --no-http
 
-  # full check including HTTP liveness:
+  # full check including HTTP liveness (run at least once before first commit):
   apps/api/.venv/bin/python apps/api/scripts/check_case_index_sources.py
   ```
-- **Status:** Non-blocking — does not gate canonical promotion. Run before committing new or updated index entries.
+- **Status:** **Mandatory** before committing new or updated `data/case_index/` entries. Does not gate canonical promotion.
 
 ---
 
@@ -227,6 +227,32 @@ apps/api/.venv/bin/python apps/api/scripts/promote_case_pipeline.py \
 - **Benchmark config:** `data/evals/benchmark.market_definition.yaml`; CI-safe subset: `benchmark.market_definition.ci.yaml`.
 - **Example result (eu_microsoft_activision_2023):** Product market F1 = 1.0 (2/2 true positives, 0 false positives, 4 unjudged candidates outside the gold subset). Quote validity: 9/9 passed.
 - **Status:** Implemented for 6 market-definition eval fixtures. The benchmark runs 6/6 PASS at F1=1.000 and now serves as a regression suite for known-good promoted cases. Generated `data/evals/results/*` outputs should remain workflow artifacts, not committed product data.
+
+---
+
+### Broad index entry acceptance rules
+
+These rules apply to every `data/case_index/**/*.yaml` entry. They are the index equivalent of the promotion gate for canonical records.
+
+**Before committing a new or updated index entry, all of the following must be true:**
+
+1. **Source URL is official or explicitly null.**  
+   `source_url` must point to a domain on the official allowlist for the jurisdiction (EC competition portal, EUR-Lex, or `ec.europa.eu` for EU; `gov.uk` for UK; `ftc.gov`, `justice.gov`, or a `.uscourts.gov` subdomain for US).  
+   If no official public source exists, set `source_url: null` — do not leave a guessed or commentary URL in place.
+
+2. **Jurisdiction and authority match the source.**  
+   An entry filed under `jurisdiction: UK` with `authority: Competition and Markets Authority` must link to a CMA case page, not the EC portal or a press article. If the authority that actually reviewed the deal is different from what you assumed, fix the `jurisdiction` and `authority` fields — do not paper over the mismatch with a redirecting URL.
+
+3. **The deterministic checker passes (exit 0).**  
+   Run `check_case_index_sources.py --no-http` (domain + format checks) before staging, and `check_case_index_sources.py` (full HTTP liveness) at least once before the first commit of a new entry.
+
+4. **Concept refs are conservative, quality-labelled, and provenance-labelled.**  
+   Use `quality_level: indexed` (not `canonical`) and set `provenance` to `manually_tagged` or `ai_extracted` as appropriate. Only include concepts clearly supported by the public record; do not infer from company names alone.
+
+5. **No canonical proposition fields.**  
+   Index entries must not contain `product_markets_considered`, `geographic_markets_considered`, `theories_of_harm`, `commitments`, `source_passages`, `source_documents`, `metadata`, or any other field that belongs to `CaseRecord`. The schema (`extra="forbid"`) enforces this at load time, but the rule applies to intent as well.
+
+**Contrast with canonical gates:** Canonical records run Stages 3–7 (LLM extraction, quote validation, source integrity, schema validation, human review, and promotion pipeline). Index entries skip all of those and run only the Stage 5b source check. The index is intentionally lightweight — but source-first still applies.
 
 ---
 
