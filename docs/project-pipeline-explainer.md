@@ -128,6 +128,30 @@ The pipeline has two distinct parts: **manual legal judgment** and a **semi-auto
 
 ---
 
+### Stage 5b — Broad index source audit
+
+- **What:** Validates `source_url` fields in `data/case_index/**/*.yaml` entries. Catches wrong EC case numbers (e.g. M.10939 vs M.10806), dead CMA slugs, malformed FTC matter IDs, and non-official domains — the class of errors that caused the June 2026 URL audit.
+- **Script:** `apps/api/scripts/check_case_index_sources.py`
+- **Inputs:** `data/case_index/**/*.yaml`
+- **Checks per entry (in order):**
+  1. `source_url` present — WARN if null (null is a documented status, not a silent gap)
+  2. Domain on the official allowlist for the entry's jurisdiction (EU: `ec.europa.eu`/`eur-lex.europa.eu`/EC portal; UK: `gov.uk`; US: `ftc.gov`/`justice.gov`/`.uscourts.gov`)
+  3. EC competition-cases portal path must match `/cases/M.<digits>`
+  4. FTC matter-URL slug must start with a recognisable matter ID (`2210077-` or `201-0144-`)
+  5. HTTP liveness — HEAD with GET fallback; skipped with `--no-http`
+- **Outputs:** Pass / fail / warn report by `case_id`; exit 0 if no FAIL, exit 1 if any FAIL.
+- **Usage:**
+  ```bash
+  # domain + format checks only (no network):
+  apps/api/.venv/bin/python apps/api/scripts/check_case_index_sources.py --no-http
+
+  # full check including HTTP liveness:
+  apps/api/.venv/bin/python apps/api/scripts/check_case_index_sources.py
+  ```
+- **Status:** Non-blocking — does not gate canonical promotion. Run before committing new or updated index entries.
+
+---
+
 ### Stage 6 — Schema validation
 
 - **What:** Run Pydantic validation across all YAML files to confirm type correctness, enum values, required fields, and referential consistency between passages and source documents.
