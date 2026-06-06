@@ -1,0 +1,33 @@
+case_id: eu_microsoft_activision_2023
+case_name: Microsoft / Activision Blizzard
+jurisdiction: EU
+authority: European Commission
+decision_date: "2023-05-15"
+sector: tech
+outcome: cleared_with_conditions
+case_type: merger
+source_url: https://competition-cases.ec.europa.eu/cases/M.10646
+ai_summary: >
+  The Commission cleared Microsoft's $69bn acquisition of Activision Blizzard on 15 May 2023
+  subject to conditions. Concerns focused on Microsoft's ability and incentive to foreclose
+  rival console and cloud gaming platforms from access to Activision's key titles, principally
+  Call of Duty. The remedy required Microsoft to license all Activision content—including Call
+  of Duty—to rival cloud gaming services on equal terms for ten years, a first-of-its-kind
+  global cloud gaming interoperability commitment. The EC cleared the deal at a time when the
+  UK CMA had provisionally blocked it, illustrating divergent transatlantic outcomes on
+  vertical foreclosure in digital platform markets.
+parties:
+  - name: Microsoft
+    role: acquirer
+  - name: Activision Blizzard
+    role: target
+concept_refs:
+  - concept_id: sector_tech
+    quality_level: indexed
+    provenance: manually_tagged
+  - concept_id: sector_media
+    quality_level: indexed
+    provenance: manually_tagged
+  - concept_id: toh_vertical
+    quality_level: indexed
+    provenance: manually_tagged

@@ -1,0 +1,32 @@
+case_id: uk_nvidia_arm_2022
+case_name: Nvidia / Arm
+jurisdiction: UK
+authority: Competition and Markets Authority
+decision_date: "2022-02-08"
+sector: tech
+outcome: abandoned
+case_type: merger
+source_url: https://www.gov.uk/cma-cases/nvidia-slash-arm-merger-inquiry
+ai_summary: >
+  Nvidia announced the $40bn acquisition of Arm Holdings from SoftBank in September 2020.
+  The CMA opened a Phase 2 investigation in November 2021 and provisionally found in August
+  2021 that the transaction would harm competition across a range of chip design markets by
+  giving Nvidia the ability and incentive to foreclose rivals from access to Arm's chip
+  architectures, on which the global semiconductor industry depends. Nvidia abandoned the
+  acquisition on 8 February 2022, citing regulatory obstacles. The CMA inquiry was one of
+  several parallel reviews worldwide—FTC, EC, and China—each of which raised similar
+  vertical foreclosure concerns about Arm's open-licence model. The case is central to
+  debates about AI chip supply chains and the competitive significance of upstream
+  semiconductor IP licensing.
+parties:
+  - name: Nvidia
+    role: acquirer
+  - name: Arm Holdings
+    role: target
+concept_refs:
+  - concept_id: sector_tech
+    quality_level: indexed
+    provenance: manually_tagged
+  - concept_id: toh_vertical
+    quality_level: indexed
+    provenance: manually_tagged

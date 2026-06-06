@@ -1,0 +1,34 @@
+case_id: eu_google_fitbit_2020
+case_name: Google / Fitbit
+jurisdiction: EU
+authority: European Commission
+decision_date: "2020-12-17"
+sector: tech
+outcome: cleared_with_conditions
+case_type: merger
+source_url: https://competition-cases.ec.europa.eu/cases/M.9660
+ai_summary: >
+  The Commission cleared Google's $2.1bn acquisition of Fitbit on 17 December 2020 subject
+  to conditions. The case raised novel theory-of-harm concerns about data aggregation: the
+  Commission feared Google would combine Fitbit's personal health and fitness data with its
+  vast advertising data to further entrench its dominance in online advertising markets.
+  Additional concerns covered foreclosure of rival smartwatch manufacturers from Android APIs
+  and the Google Play Store. Remedies required Google to maintain a strict "data silo"
+  preventing Fitbit health data from being used for advertising, and to preserve equal access
+  to Android APIs for competing wearable manufacturers, both for ten years. The case is
+  a landmark in the EU's treatment of data as a competitive asset in digital mergers.
+parties:
+  - name: Google
+    role: acquirer
+  - name: Fitbit
+    role: target
+concept_refs:
+  - concept_id: sector_tech
+    quality_level: indexed
+    provenance: manually_tagged
+  - concept_id: toh_conglomerate
+    quality_level: indexed
+    provenance: manually_tagged
+  - concept_id: toh_vertical
+    quality_level: indexed
+    provenance: manually_tagged

@@ -1,0 +1,32 @@
+case_id: uk_amazon_deliveroo_2020
+case_name: Amazon / Deliveroo
+jurisdiction: UK
+authority: Competition and Markets Authority
+decision_date: "2020-08-04"
+sector: tech
+outcome: cleared
+case_type: merger
+source_url: https://www.gov.uk/cma-cases/amazon-deliveroo-merger-inquiry
+ai_summary: >
+  The CMA cleared Amazon's acquisition of a 16 per cent minority stake in Deliveroo on
+  4 August 2020 following a Phase 2 inquiry. The CMA had initially found a realistic prospect
+  of a substantial lessening of competition and opened a Phase 2 investigation in June 2019.
+  However, the CMA accepted that the COVID-19 pandemic had materially changed Deliveroo's
+  financial position, creating a genuine risk of business failure without the Amazon investment.
+  Applying the "failing firm" defence, the CMA cleared the investment, finding that Amazon
+  was the only credible investor and that Deliveroo's exit from the market would be worse for
+  competition than the acquisition. The case is a rare successful application of the failing
+  firm defence in a major digital markets inquiry, and illustrates how extraordinary economic
+  events can shift the competitive counterfactual in an ongoing Phase 2 review.
+parties:
+  - name: Amazon
+    role: acquirer
+  - name: Deliveroo
+    role: target
+concept_refs:
+  - concept_id: sector_tech
+    quality_level: indexed
+    provenance: manually_tagged
+  - concept_id: toh_horizontal
+    quality_level: indexed
+    provenance: manually_tagged

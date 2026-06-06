@@ -1,0 +1,31 @@
+case_id: us_ftc_meta_within_2023
+case_name: Meta / Within Unlimited (FTC challenge)
+jurisdiction: US
+authority: FTC
+decision_date: "2023-01-31"
+sector: tech
+outcome: cleared
+case_type: merger
+source_url: https://www.ftc.gov/legal-library/browse/cases-proceedings/221-0040-meta-platforms-incmark-zuckerbergwithin-unlimited-ftc-v
+ai_summary: >
+  The FTC filed an administrative complaint in December 2021 seeking to block Meta's $400m
+  acquisition of Within Unlimited, maker of the Supernatural VR fitness app. The FTC argued
+  that Meta was a potential entrant into the VR fitness app market and that the acquisition
+  eliminated a likely future competitor, applying nascent-competition theory. Judge Edward Davila
+  of the Northern District of California denied the FTC's request for a preliminary injunction
+  on 31 January 2023, finding that the FTC had not established a reasonable probability that
+  Meta would have entered the VR fitness market independently. The FTC dropped the case
+  and the deal closed. The case is a significant data point on the limits of potential-competition
+  theory in US digital merger enforcement.
+parties:
+  - name: Meta Platforms
+    role: acquirer
+  - name: Within Unlimited
+    role: target
+concept_refs:
+  - concept_id: sector_tech
+    quality_level: indexed
+    provenance: manually_tagged
+  - concept_id: toh_horizontal
+    quality_level: indexed
+    provenance: manually_tagged

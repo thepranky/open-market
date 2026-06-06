@@ -1,0 +1,32 @@
+case_id: us_doj_sabre_farelogix_2020
+case_name: Sabre / Farelogix (DOJ challenge)
+jurisdiction: US
+authority: DOJ
+decision_date: "2020-04-07"
+sector: tech
+outcome: cleared
+case_type: merger
+source_url: https://www.justice.gov/atr/case/us-v-sabre-corp-et-al
+ai_summary: >
+  The DOJ filed suit in August 2019 to block Sabre Corporation's $360m acquisition of
+  Farelogix, arguing that Farelogix's NDC-based airline direct distribution technology was
+  a nascent but significant threat to Sabre's dominant global distribution system (GDS)
+  business. Judge Leonard Stark of the District of Delaware dismissed the complaint on
+  7 April 2020, finding that the DOJ had not proven the relevant markets as pled and that
+  Farelogix's technology did not directly compete with Sabre's core GDS offering at that time.
+  In a striking divergence, the UK CMA simultaneously prohibited the same transaction in
+  April 2020 under UK merger law, finding that Farelogix threatened Sabre's GDS business.
+  The US outcome illustrates the difficulty of establishing nascent-competition theories
+  where the target's product is functionally adjacent rather than directly competing.
+parties:
+  - name: Sabre Corporation
+    role: acquirer
+  - name: Farelogix
+    role: target
+concept_refs:
+  - concept_id: sector_tech
+    quality_level: indexed
+    provenance: manually_tagged
+  - concept_id: toh_vertical
+    quality_level: indexed
+    provenance: manually_tagged

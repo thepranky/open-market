@@ -1,0 +1,32 @@
+case_id: us_doj_aetna_humana_2017
+case_name: Aetna / Humana (DOJ challenge)
+jurisdiction: US
+authority: DOJ
+decision_date: "2017-01-23"
+sector: pharma_biotech
+outcome: blocked
+case_type: merger
+source_url: https://www.justice.gov/atr/case/us-and-plaintiff-states-v-aetna-inc-and-humana-inc
+ai_summary: >
+  The DOJ filed suit in July 2016 to block Aetna's $37bn acquisition of Humana, arguing
+  that the merger would substantially lessen competition in Medicare Advantage health plans
+  in over 350 counties across the United States and in individual public health exchange plans
+  in multiple metropolitan areas. Judge John Bates of the DC District Court ruled for the
+  DOJ on 23 January 2017, finding that the parties were close competitors in Medicare Advantage
+  and that Aetna's proposed divestitures were insufficient to remedy the harm. Aetna appealed
+  unsuccessfully, and Humana terminated the merger. Decided alongside the concurrent Anthem/Cigna
+  challenge, the two cases together halted an attempt by the four major US health insurers to
+  consolidate to two, and set important precedents for geographic market definition in
+  government-sponsored health plan markets.
+parties:
+  - name: Aetna
+    role: acquirer
+  - name: Humana
+    role: target
+concept_refs:
+  - concept_id: sector_pharma
+    quality_level: indexed
+    provenance: manually_tagged
+  - concept_id: toh_horizontal
+    quality_level: indexed
+    provenance: manually_tagged

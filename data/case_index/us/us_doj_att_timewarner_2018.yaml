@@ -1,0 +1,32 @@
+case_id: us_doj_att_timewarner_2018
+case_name: AT&T / Time Warner (DOJ challenge)
+jurisdiction: US
+authority: DOJ
+decision_date: "2018-06-12"
+sector: media_entertainment
+outcome: cleared
+case_type: merger
+source_url: https://www.justice.gov/atr/case/us-v-att-inc-directv-group-holdings-llc-and-time-warner-inc
+ai_summary: >
+  The DOJ filed suit in November 2017 to block AT&T's $85bn acquisition of Time Warner,
+  arguing that the vertical combination of AT&T's DirecTV pay-TV distribution with Time
+  Warner's premium content—including HBO, CNN, TNT, and Warner Bros—would allow AT&T to
+  demand supra-competitive fees from rival distributors for Time Warner content and to
+  withhold content from competing streaming platforms. Judge Richard Leon ruled for AT&T
+  on 12 June 2018, finding that the DOJ had failed to prove the merger would substantially
+  lessen competition. The court rejected the DOJ's bargaining leverage model and found no
+  credible threat of content withholding. The deal closed on 14 June 2018. The case is the
+  defining US precedent on vertical merger analysis in media markets and set the template
+  for subsequent government defeats in vertical cases.
+parties:
+  - name: AT&T
+    role: acquirer
+  - name: Time Warner
+    role: target
+concept_refs:
+  - concept_id: sector_media
+    quality_level: indexed
+    provenance: manually_tagged
+  - concept_id: toh_vertical
+    quality_level: indexed
+    provenance: manually_tagged

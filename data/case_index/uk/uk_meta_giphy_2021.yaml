@@ -1,0 +1,34 @@
+case_id: uk_meta_giphy_2021
+case_name: Meta / Giphy
+jurisdiction: UK
+authority: Competition and Markets Authority
+decision_date: "2021-11-30"
+sector: tech
+outcome: blocked
+case_type: merger
+source_url: https://www.gov.uk/cma-cases/facebook-inc-giphy-inc-merger-inquiry
+ai_summary: >
+  The CMA issued a final decision on 30 November 2021 ordering Facebook (now Meta) to divest
+  Giphy, the animated GIF platform it had acquired in May 2020. The CMA found that the completed
+  merger significantly lessened competition in two ways: by eliminating Giphy as an independent
+  source of GIF supply available to rival social media platforms, and by strengthening Meta's
+  already dominant position in display advertising by foreclosing rivals from Giphy's advertising
+  API. Facebook appealed but the CMA's decision was substantially upheld by the Competition
+  Appeal Tribunal in 2022. Giphy was sold to Shutterstock in May 2023. The case is a landmark
+  application of UK merger control to a completed digital acquisition where the target had no
+  UK turnover but played a key competitive role in the digital ecosystem.
+parties:
+  - name: Meta Platforms
+    role: acquirer
+  - name: Giphy
+    role: target
+concept_refs:
+  - concept_id: sector_tech
+    quality_level: indexed
+    provenance: manually_tagged
+  - concept_id: toh_vertical
+    quality_level: indexed
+    provenance: manually_tagged
+  - concept_id: toh_conglomerate
+    quality_level: indexed
+    provenance: manually_tagged

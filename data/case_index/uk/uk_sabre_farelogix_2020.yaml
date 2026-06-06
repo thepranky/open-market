@@ -1,0 +1,32 @@
+case_id: uk_sabre_farelogix_2020
+case_name: Sabre / Farelogix
+jurisdiction: UK
+authority: Competition and Markets Authority
+decision_date: "2020-04-09"
+sector: tech
+outcome: blocked
+case_type: merger
+source_url: https://www.gov.uk/cma-cases/sabre-farelogix-merger-inquiry
+ai_summary: >
+  The CMA prohibited Sabre Corporation's $360m acquisition of Farelogix on 9 April 2020.
+  Sabre is the dominant global distribution system (GDS) connecting airlines to travel agents;
+  Farelogix is a technology provider that enables airlines to bypass GDS systems and sell
+  tickets directly to travel agents through NDC (New Distribution Capability) technology.
+  The CMA found that Farelogix posed a nascent but significant competitive threat to Sabre's
+  GDS model, and that Sabre would have both the incentive and ability to marginalise or
+  eliminate Farelogix's disruptive product. The prohibition decision was notable because a
+  US federal court had separately dismissed the DOJ's challenge to the same transaction weeks
+  earlier—a rare instance of divergent US-UK outcomes on the same deal, raising questions about
+  the CMA's jurisdiction over a deal with limited direct UK nexus.
+parties:
+  - name: Sabre Corporation
+    role: acquirer
+  - name: Farelogix
+    role: target
+concept_refs:
+  - concept_id: sector_tech
+    quality_level: indexed
+    provenance: manually_tagged
+  - concept_id: toh_vertical
+    quality_level: indexed
+    provenance: manually_tagged

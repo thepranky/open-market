@@ -1,0 +1,32 @@
+case_id: us_doj_unitedhealth_changehealthcare_2022
+case_name: UnitedHealth Group / Change Healthcare (DOJ challenge)
+jurisdiction: US
+authority: DOJ
+decision_date: "2022-09-20"
+sector: tech
+outcome: cleared_with_conditions
+case_type: merger
+source_url: https://www.justice.gov/atr/case/us-et-al-v-unitedhealth-group-inc-and-change-healthcare-inc
+ai_summary: >
+  The DOJ, joined by Minnesota and New York, filed suit in February 2022 to block UnitedHealth
+  Group's $13bn acquisition of Change Healthcare, the dominant processor of healthcare insurance
+  claims in the United States. The DOJ argued the combination would give UnitedHealth—the
+  largest US health insurer—access to competitively sensitive claims data submitted by rival
+  insurers, and would foreclose competitors in the market for first-pass claims editing software
+  where Change Healthcare's ClaimsXten product was dominant. Judge Carl Nichols of the DC
+  District Court denied the DOJ's injunction on 20 September 2022, but required UnitedHealth to
+  divest ClaimsXten to TPG Capital as a condition of approval. The merger closed in October 2022.
+  The case is significant for its treatment of data-access foreclosure theory and the first major
+  post-Illumina test of the DOJ's revived merger enforcement under Kanter.
+parties:
+  - name: UnitedHealth Group
+    role: acquirer
+  - name: Change Healthcare
+    role: target
+concept_refs:
+  - concept_id: sector_tech
+    quality_level: indexed
+    provenance: manually_tagged
+  - concept_id: toh_vertical
+    quality_level: indexed
+    provenance: manually_tagged

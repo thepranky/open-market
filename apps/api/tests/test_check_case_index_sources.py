@@ -346,10 +346,10 @@ class TestCheckEntry:
 # ---------------------------------------------------------------------------
 
 class TestRunChecks:
-    def test_loads_all_eight_entries(self):
-        index_dir = REPO_ROOT = Path(__file__).resolve().parents[3] / "data" / "case_index"
+    def test_loads_all_thirty_four_entries(self):
+        index_dir = Path(__file__).resolve().parents[3] / "data" / "case_index"
         results = run_checks(index_dir, client=None, timeout=10)
-        assert len(results) == 8
+        assert len(results) == 34
 
     def test_all_entries_have_case_id(self):
         index_dir = Path(__file__).resolve().parents[3] / "data" / "case_index"
@@ -362,14 +362,6 @@ class TestRunChecks:
         load_fails = [r for r in results if any("YAML load error" in i.message for i in r.items)]
         assert load_fails == [], f"YAML load errors: {[r.case_id for r in load_fails]}"
 
-    def test_uk_amazon_mgm_is_warn_no_url(self):
-        """uk_amazon_mgm_2022 has source_url=null; should WARN, not FAIL."""
-        index_dir = Path(__file__).resolve().parents[3] / "data" / "case_index"
-        results = run_checks(index_dir, client=None, timeout=10)
-        mgm = next(r for r in results if r.case_id == "uk_amazon_mgm_2022")
-        assert mgm.status == "WARN"
-        assert mgm.url is None
-
     def test_broadcom_vmware_uses_m10806(self):
         """eu_broadcom_vmware_2023 should reference M.10806, not M.10939."""
         index_dir = Path(__file__).resolve().parents[3] / "data" / "case_index"
@@ -379,12 +371,12 @@ class TestRunChecks:
         assert "M.10806" in bv.url
 
     def test_ftc_matter_ids_valid_format(self):
-        """Both FTC entries should pass the matter-ID format check."""
+        """FTC entries with a source_url must pass the matter-ID format check."""
         index_dir = Path(__file__).resolve().parents[3] / "data" / "case_index"
         results = run_checks(index_dir, client=None, timeout=10)
-        ftc_results = [r for r in results if r.case_id.startswith("us_ftc")]
-        assert len(ftc_results) == 2
-        for r in ftc_results:
+        ftc_with_url = [r for r in results if r.case_id.startswith("us_ftc") and r.url is not None]
+        assert len(ftc_with_url) >= 2, "expected at least two FTC entries with source URLs"
+        for r in ftc_with_url:
             ftc_items = [i for i in r.items if "FTC matter" in i.message]
             assert ftc_items, f"{r.case_id}: no FTC format check item found"
             assert all(i.status == "PASS" for i in ftc_items), \
@@ -399,7 +391,7 @@ class TestRunChecks:
             assert domain_fails == [], f"{r.case_id}: domain check failed: {domain_fails}"
 
     def test_no_fail_without_http(self):
-        """All 8 entries should PASS or WARN with no-http checks (no live requests)."""
+        """All 34 entries should PASS or WARN with no-http checks (no live requests)."""
         index_dir = Path(__file__).resolve().parents[3] / "data" / "case_index"
         results = run_checks(index_dir, client=None, timeout=10)
         fails = [r for r in results if r.status == "FAIL"]

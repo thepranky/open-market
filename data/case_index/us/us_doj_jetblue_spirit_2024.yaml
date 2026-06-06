@@ -1,0 +1,28 @@
+case_id: us_doj_jetblue_spirit_2024
+case_name: JetBlue / Spirit Airlines (DOJ challenge)
+jurisdiction: US
+authority: DOJ
+decision_date: "2024-01-16"
+sector: airlines
+outcome: blocked
+case_type: merger
+source_url: https://www.justice.gov/atr/case/us-and-plaintiff-states-v-jetblue-airways-corporation-and-spirit-airlines-inc
+ai_summary: >
+  The DOJ filed suit in March 2023 to block JetBlue's $3.8bn acquisition of Spirit Airlines,
+  arguing that Spirit—as the largest US ultra-low-cost carrier—exerted significant downward
+  price discipline on routes where it operated, and that its elimination would harm consumers
+  who depend on low fares. Judge William Young of the District of Massachusetts ruled for the
+  DOJ on 16 January 2024, finding that the merger would substantially lessen competition on
+  numerous overlap routes and that JetBlue's proposed divestitures were insufficient to preserve
+  Spirit's competitive constraint. JetBlue abandoned the transaction in March 2024. Spirit
+  subsequently filed for bankruptcy in November 2024. The case is notable for DOJ's successful
+  protection of the ultra-low-cost carrier segment as a distinct competitive category.
+parties:
+  - name: JetBlue Airways
+    role: acquirer
+  - name: Spirit Airlines
+    role: target
+concept_refs:
+  - concept_id: toh_horizontal
+    quality_level: indexed
+    provenance: manually_tagged

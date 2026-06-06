@@ -1,0 +1,31 @@
+case_id: uk_microsoft_nuance_2022
+case_name: Microsoft / Nuance Communications
+jurisdiction: UK
+authority: Competition and Markets Authority
+decision_date: "2022-04-13"
+sector: tech
+outcome: cleared
+case_type: merger
+source_url: https://www.gov.uk/cma-cases/microsoft-corporation-slash-nuance-communications-inc-merger-inquiry
+ai_summary: >
+  The CMA cleared Microsoft's $19.7bn acquisition of Nuance Communications on 13 April 2022
+  at Phase 1 without conditions. Nuance is a leading provider of AI-powered speech recognition
+  and clinical documentation software, particularly for healthcare providers in the US and UK.
+  The CMA found that while Microsoft and Nuance overlapped in some enterprise software markets,
+  the combination did not give rise to a substantial lessening of competition given the
+  presence of strong rival suppliers and the complementary rather than competing nature of the
+  parties' core products. The case is notable as one of the first major AI-healthcare
+  acquisitions to receive Phase 1 clearance, contrasting with the CMA's later stricter approach
+  to digital acquisitions.
+parties:
+  - name: Microsoft
+    role: acquirer
+  - name: Nuance Communications
+    role: target
+concept_refs:
+  - concept_id: sector_tech
+    quality_level: indexed
+    provenance: manually_tagged
+  - concept_id: toh_horizontal
+    quality_level: indexed
+    provenance: manually_tagged

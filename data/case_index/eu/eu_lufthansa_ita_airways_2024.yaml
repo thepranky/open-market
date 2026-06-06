@@ -1,0 +1,28 @@
+case_id: eu_lufthansa_ita_airways_2024
+case_name: Lufthansa / ITA Airways
+jurisdiction: EU
+authority: European Commission
+decision_date: "2024-07-04"
+sector: airlines
+outcome: cleared_with_conditions
+case_type: merger
+source_url: https://competition-cases.ec.europa.eu/cases/M.11071
+ai_summary: >
+  The Commission cleared Lufthansa's acquisition of a 41 per cent stake in ITA Airways,
+  the successor carrier to Alitalia, on 4 July 2024 subject to conditions. The transaction
+  was reviewed for its impact on overlapping short- and long-haul routes connecting Italy
+  with Germany, Austria, Switzerland, and Belgium, where ITA and Lufthansa competed directly
+  or through their respective codeshare networks. Remedies required Lufthansa to facilitate
+  new entrant or expanding carrier operations by releasing slots at Rome Fiumicino and Milan
+  Linate and to support rival carriers' route entry with transitional support measures. The
+  case is notable for the Commission's detailed remedies design in a flag-carrier consolidation
+  involving a recently restructured airline.
+parties:
+  - name: Lufthansa
+    role: acquirer
+  - name: ITA Airways
+    role: target
+concept_refs:
+  - concept_id: toh_horizontal
+    quality_level: indexed
+    provenance: manually_tagged

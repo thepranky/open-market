@@ -1,0 +1,31 @@
+case_id: uk_unitedhealth_emis_2023
+case_name: UnitedHealth / EMIS Group
+jurisdiction: UK
+authority: Competition and Markets Authority
+decision_date: "2023-03-14"
+sector: tech
+outcome: cleared_with_conditions
+case_type: merger
+source_url: https://www.gov.uk/cma-cases/unitedhealth-group-slash-emis-merger-inquiry
+ai_summary: >
+  The CMA cleared UnitedHealth Group's £1.24bn acquisition of EMIS Group, the leading
+  supplier of clinical software to UK GP practices, on 14 March 2023 subject to conditions.
+  The CMA's Phase 2 inquiry found that the merger raised concerns about UnitedHealth using
+  EMIS's privileged access to GP clinical data and software infrastructure to foreclose rival
+  population health management and medicines optimisation software providers. Remedies required
+  UnitedHealth to maintain EMIS's open data access APIs on fair, reasonable, and non-discriminatory
+  terms and to establish governance arrangements preventing EMIS's patient data from being
+  used to advantage UnitedHealth's adjacent health analytics business. The case is the CMA's
+  most detailed examination of data-driven vertical foreclosure in the UK health technology sector.
+parties:
+  - name: UnitedHealth Group
+    role: acquirer
+  - name: EMIS Group
+    role: target
+concept_refs:
+  - concept_id: sector_tech
+    quality_level: indexed
+    provenance: manually_tagged
+  - concept_id: toh_vertical
+    quality_level: indexed
+    provenance: manually_tagged

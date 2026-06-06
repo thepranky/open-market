@@ -1,0 +1,31 @@
+case_id: eu_telia_bonnier_2019
+case_name: Telia / Bonnier Broadcasting
+jurisdiction: EU
+authority: European Commission
+decision_date: "2019-11-12"
+sector: media_entertainment
+outcome: cleared_with_conditions
+case_type: merger
+source_url: https://competition-cases.ec.europa.eu/cases/M.9064
+ai_summary: >
+  The Commission cleared Telia Company's acquisition of Bonnier Broadcasting, the leading
+  free-to-air and pay-TV broadcaster in Sweden and Finland, on 12 November 2019 subject to
+  conditions. The transaction combined Sweden's dominant telecoms operator with the country's
+  leading television broadcaster. Concerns focused on Telia's ability to foreclose rival TV
+  distributors from access to Bonnier's popular channels and on Telia foreclosing rival content
+  providers from access to Telia's TV distribution platform. Remedies required Telia to supply
+  Bonnier channels on fair and non-discriminatory terms to competing distributors and to
+  maintain open platform access. The case is illustrative of vertical integration concerns
+  between telecoms infrastructure and premium content in Nordic media markets.
+parties:
+  - name: Telia Company
+    role: acquirer
+  - name: Bonnier Broadcasting
+    role: target
+concept_refs:
+  - concept_id: sector_media
+    quality_level: indexed
+    provenance: manually_tagged
+  - concept_id: toh_vertical
+    quality_level: indexed
+    provenance: manually_tagged

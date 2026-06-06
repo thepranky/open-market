@@ -1,0 +1,31 @@
+case_id: uk_amazon_irobot_2024
+case_name: Amazon / iRobot
+jurisdiction: UK
+authority: Competition and Markets Authority
+decision_date: "2024-01-29"
+sector: tech
+outcome: abandoned
+case_type: merger
+source_url: https://www.gov.uk/cma-cases/amazon-slash-irobot-merger-inquiry
+ai_summary: >
+  Amazon announced the acquisition of iRobot, the maker of Roomba robot vacuum cleaners,
+  in August 2022. The CMA opened a Phase 2 investigation in October 2023 amid concerns that
+  Amazon would leverage iRobot's in-home mapping data and market position to strengthen its
+  dominance in smart home platforms and voice-assistant-enabled device ecosystems. Amazon
+  abandoned the transaction on 29 January 2024, citing an inability to obtain regulatory
+  clearance in the EU—where the European Commission had issued a statement of objections in
+  November 2023—and the CMA also announced it would not proceed further following the
+  abandonment. The case illustrates how concurrent multi-jurisdiction reviews, particularly
+  an EC objections phase, can precipitate deal collapse before any final UK determination.
+parties:
+  - name: Amazon
+    role: acquirer
+  - name: iRobot
+    role: target
+concept_refs:
+  - concept_id: sector_tech
+    quality_level: indexed
+    provenance: manually_tagged
+  - concept_id: toh_conglomerate
+    quality_level: indexed
+    provenance: manually_tagged

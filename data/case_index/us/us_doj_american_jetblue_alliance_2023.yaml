@@ -1,0 +1,28 @@
+case_id: us_doj_american_jetblue_alliance_2023
+case_name: American Airlines / JetBlue Northeast Alliance (DOJ challenge)
+jurisdiction: US
+authority: DOJ
+decision_date: "2023-05-19"
+sector: airlines
+outcome: blocked
+case_type: merger
+source_url: https://www.justice.gov/atr/case/us-and-plaintiff-states-v-american-airlines-group-inc-and-jetblue-airways-corporation
+ai_summary: >
+  The DOJ filed suit in September 2021 to dissolve the Northeast Alliance (NEA), a revenue-sharing
+  and codeshare agreement between American Airlines and JetBlue covering flights to and from
+  Boston and New York's three major airports. The DOJ argued that the alliance was functionally
+  equivalent to a merger of the parties' operations in the Northeast, reducing head-to-head
+  competition on hundreds of routes. Judge William Young of the District of Massachusetts
+  ruled for the DOJ on 19 May 2023, holding that the NEA violated Section 1 of the Sherman Act.
+  The NEA was unwound in July 2023. The case is significant as a successful DOJ challenge
+  to a deep commercial alliance short of a full merger, and influenced JetBlue's subsequent
+  (unsuccessful) acquisition attempt of Spirit Airlines.
+parties:
+  - name: American Airlines
+    role: acquirer
+  - name: JetBlue Airways
+    role: target
+concept_refs:
+  - concept_id: toh_horizontal
+    quality_level: indexed
+    provenance: manually_tagged
