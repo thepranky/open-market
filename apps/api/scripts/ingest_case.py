@@ -897,6 +897,17 @@ def main() -> int:
                     schema_ok=False, schema_errors=[extraction_report.error],
                     integrity_errors=0, integrity_warnings=0, integrity_issues=[],
                 )
+                # "No chunks matched" means no market-analysis sections exist in the PDF
+                # (typically a 2-3 page simplified-procedure clearance notice).  These are
+                # not extraction failures — there is genuinely nothing to extract.  Exit 0
+                # so the bulk runner marks them as done and doesn't retry them.
+                if "No chunks matched" in extraction_report.error:
+                    total_pages = sum(
+                        r["pages"] for r in fetch_results
+                        if isinstance(r.get("pages"), int)
+                    )
+                    print(f"\nRESULT: SKIP — simplified procedure / no market-analysis sections ({total_pages} pages)")
+                    return 0
                 print(f"\nReview:     {report_path}")
                 return 1
             r = extraction_report.result

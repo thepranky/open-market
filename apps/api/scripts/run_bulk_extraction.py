@@ -104,7 +104,8 @@ def _build_queue(jurisdiction: str) -> list[dict]:
 def _run_case(case_id: str, jurisdiction: str, provider: str) -> tuple[str, str]:
     """
     Run ingest_case.py for one case. Returns (status, summary).
-    status: 'done' | 'failed'
+    status: 'done' | 'skipped' | 'failed'
+    'skipped' = simplified-procedure notice with no market-analysis content.
     """
     cmd = [
         sys.executable, str(_SCRIPT),
@@ -123,6 +124,8 @@ def _run_case(case_id: str, jurisdiction: str, provider: str) -> tuple[str, str]
             break
 
     if result.returncode == 0:
+        if "RESULT: SKIP" in summary:
+            return "skipped", summary
         return "done", summary
     else:
         # Grab last meaningful error line
@@ -174,9 +177,10 @@ def main() -> None:
     print(f"Index entries:    {total}")
     print(f"  Skippable:      {skippable}  (phase2 / no pdf / already canonical)")
     print(f"  To extract:     {len(runnable)}")
+    _terminal_statuses = ("done", "skipped")
     already_done = sum(
         1 for c in runnable
-        if state["cases"].get(c["case_id"], {}).get("status") in ("done",) and not args.force
+        if state["cases"].get(c["case_id"], {}).get("status") in _terminal_statuses and not args.force
     )
     pending = len(runnable) - already_done
     print(f"  Already done:   {already_done}")
@@ -187,7 +191,7 @@ def main() -> None:
         print("DRY RUN — first 20 pending cases:")
         shown = 0
         for c in runnable:
-            if state["cases"].get(c["case_id"], {}).get("status") == "done" and not args.force:
+            if state["cases"].get(c["case_id"], {}).get("status") in _terminal_statuses and not args.force:
                 continue
             print(f"  {c['case_id']}")
             shown += 1
@@ -196,7 +200,14 @@ def main() -> None:
                 break
         return
 
-    done_count = already_done
+    done_count = sum(
+        1 for c in runnable
+        if state["cases"].get(c["case_id"], {}).get("status") == "done" and not args.force
+    )
+    skip_count = sum(
+        1 for c in runnable
+        if state["cases"].get(c["case_id"], {}).get("status") == "skipped" and not args.force
+    )
     fail_count = sum(
         1 for c in runnable
         if state["cases"].get(c["case_id"], {}).get("status") == "failed"
@@ -207,7 +218,7 @@ def main() -> None:
         case_id = c["case_id"]
         prev = state["cases"].get(case_id, {})
 
-        if prev.get("status") == "done" and not args.force:
+        if prev.get("status") in _terminal_statuses and not args.force:
             continue
 
         if args.limit and processed >= args.limit:
@@ -215,8 +226,8 @@ def main() -> None:
             break
 
         processed += 1
-        pct = done_count / len(runnable) * 100 if runnable else 0
-        print(f"[{done_count+fail_count+1}/{len(runnable)}  {pct:.0f}%]  {case_id}")
+        pct = (done_count + skip_count) / len(runnable) * 100 if runnable else 0
+        print(f"[{done_count+skip_count+fail_count+1}/{len(runnable)}  {pct:.0f}%]  {case_id}")
 
         status, summary = _run_case(case_id, args.jurisdiction, args.provider)
 
@@ -231,6 +242,9 @@ def main() -> None:
         if status == "done":
             done_count += 1
             print(f"  ✓  {summary}")
+        elif status == "skipped":
+            skip_count += 1
+            print(f"  —  {summary}")
         else:
             fail_count += 1
             print(f"  ✗  {summary}")
@@ -240,7 +254,7 @@ def main() -> None:
 
     # Final summary
     print()
-    print(f"Run complete: {done_count} done, {fail_count} failed")
+    print(f"Run complete: {done_count} extracted, {skip_count} skipped (simplified), {fail_count} failed")
     print(f"State saved:  {_RUNS_DIR / run_id}.json")
 
     # Print failed cases for easy re-run
