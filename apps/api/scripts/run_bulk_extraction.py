@@ -113,15 +113,25 @@ def _run_case(case_id: str, jurisdiction: str, provider: str) -> tuple[str, str]
         "--from-index",
         "--provider", provider,
     ]
-    result = subprocess.run(cmd, capture_output=True, text=True, cwd=_REPO_ROOT)
+    try:
+        result = subprocess.run(
+            cmd, capture_output=True, text=True, cwd=_REPO_ROOT, timeout=360,
+        )
+    except subprocess.TimeoutExpired:
+        return "failed", "TIMEOUT — case exceeded 6 min limit (stalled PDF fetch or API call)"
+
     output = result.stdout + result.stderr
 
-    # Extract summary line from output
+    # Extract summary line — prefer RESULT: > Product markets: > ERROR:
     summary = ""
     for line in output.splitlines():
-        if "RESULT:" in line or "Product markets:" in line or "ERROR:" in line:
+        if "RESULT:" in line:
             summary = line.strip()
             break
+        if "Product markets:" in line and not summary:
+            summary = line.strip()
+        elif "ERROR:" in line and not summary:
+            summary = line.strip()
 
     if result.returncode == 0:
         if "RESULT: SKIP" in summary:
