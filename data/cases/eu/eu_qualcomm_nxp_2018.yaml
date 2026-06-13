@@ -1,0 +1,677 @@
+case_id: eu_qualcomm_nxp_2018
+case_name: Qualcomm / NXP Semiconductors
+authority: European Commission
+jurisdiction: EU
+sector: tech
+outcome: cleared_with_conditions
+procedure_stage: phase2
+decision_date: '2018-01-18'
+parties:
+- name: Qualcomm
+  role: acquirer
+- name: NXP Semiconductors
+  role: target
+source_documents:
+- doc_id: eu_qualcomm_nxp_2018_decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.8306
+  pdf_url: https://ec.europa.eu/competition/mergers/cases/decisions/m8306_3479_3.pdf
+  title: Qualcomm / NXP Semiconductors — Decision
+  doc_type: decision
+product_markets_considered:
+- market_id: pm_1
+  name: Non-cellular V2X radio chip for automotive safety applications
+  definition_status: left_open
+  notes: The Commission left open the exact product market definition for chips for
+    the safety function for automotive applications, including non-cellular V2X radio
+    chips, as the transaction did not raise competition concerns irrespective of the
+    precise market definition.
+- market_id: pm_2
+  name: Semiconductors for Internet of Things applications
+  definition_status: left_open
+  notes: The Commission left open the exact product market definition for IoT semiconductors
+    as the transaction did not raise competition concerns irrespective of the precise
+    market definition.
+- market_id: pm_3
+  name: Baseband chipsets
+  definition_status: left_open
+  notes: The Notifying Party argued against further segmentation of baseband chipsets
+    and the Commission noted that the exact product market definition could be left
+    open as the transaction would not result in any affected market for baseband chipsets.
+- market_id: pm_4
+  name: NFC chips (merchant market)
+  definition_status: defined
+  notes: The Commission concluded that NFC chips (including underlying technology)
+    sold on the merchant market constitute a separate product market, distinct from
+    alternative technologies like BTLE, QR codes, and MST.
+- market_id: pm_5
+  name: Embedded Secure Element (SE) chips (including SE OS)
+  definition_status: considered
+  notes: The Commission left open the exact product market definition for SE chips,
+    noting it could be wider to include HCE and TEE. However, the competitive assessment
+    was carried out on the possible product market of embedded SEs (including SE OS),
+    as NXP supplied only this type in combined NFC/SE solutions.
+- market_id: pm_6
+  name: Combined NFC/SE solutions
+  definition_status: defined
+  notes: The Commission considers the combined NFC/SE solution to constitute a distinct
+    product market, separate from standalone NFC chips and SE chips.
+- market_id: pm_7
+  name: Speech enhancement software
+  definition_status: defined
+  notes: The Commission considers speech enhancement software as a separate product
+    market, distinct from other components in a mobile device, with a narrower market
+    for solutions incorporating a Qualcomm baseband chipset possibly existing.
+- market_id: pm_8
+  name: Smart amplifier chips
+  definition_status: defined
+  notes: The Commission considers smart amplifier chips as a separate product market,
+    distinct from other mobile device components, with a narrower market for solutions
+    incorporating a Qualcomm baseband chipset possibly existing.
+- market_id: pm_9
+  name: Transit service technologies
+  definition_status: defined
+  notes: The Commission assessed market power in this market and concluded that the
+    merged entity would hold a dominant position, implying its definition as a relevant
+    market.
+- market_id: pm_10
+  name: Standard Essential Patents (SEPs) related to cellular and NFC technology
+  definition_status: defined
+  notes: In line with its previous decisions, the Commission considers each SEP related
+    to cellular and NFC technology as a separate market, noting that standard implementers
+    cannot design around them.
+- market_id: pm_11
+  name: Non-SEP IP related to NFC technology
+  definition_status: left_open
+  notes: The Commission considers that non-SEP IP related to NFC technology may be
+    viewed as a distinct product market from non-SEP IP related to other technologies,
+    but leaves the exact definition open.
+geographic_markets_considered:
+- market_id: gm_1
+  name: All relevant semiconductor products (automotive semiconductors, IoT semiconductors,
+    baseband chipsets, NFC, SE, and combined NFC/SE chips, smart amplifiers) — worldwide
+  definition_status: considered
+  notes: The Commission concluded that the geographic scope for all relevant semiconductor
+    product markets is likely worldwide, consistent with previous decisions and market
+    investigation findings.
+- market_id: gm_2
+  name: Speech enhancement software — worldwide
+  definition_status: left_open
+  notes: The Commission left open the exact geographic market definition for speech
+    enhancement software, noting that the transaction did not raise competition concerns
+    irrespective of its scope.
+- market_id: gm_3
+  name: Transit service technologies — worldwide
+  definition_status: considered
+  notes: The Commission concluded that the market for transit service technologies
+    is likely worldwide, based on the global offerings of leading technologies and
+    worldwide procurement by customers.
+- market_id: gm_4
+  name: Standard Essential Patents (SEPs) related to cellular and NFC technology —
+    at least EEA-wide
+  definition_status: considered
+  notes: The Commission maintained its previous conclusion that the market for the
+    licensing of SEPs is at least EEA-wide.
+- market_id: gm_5
+  name: Non-SEP IP related to NFC technology — at least EEA-wide
+  definition_status: left_open
+  notes: The Commission considered the market for the licensing of non-SEP IP relevant
+    for NFC technology is likely to be at least EEA-wide, but left the exact definition
+    open.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_qualcomm_nxp_2018_decision
+  page: '20'
+  quote_snippet: (56) For the purposes of this Decision, the exact product market
+    definition with regard to IoT semiconductors can be left open as the Transaction
+    does not raise competition concerns as regards its compatibility with the internal
+    market, irrespective of the precise product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_qualcomm_nxp_2018_decision
+  page: '18'
+  quote_snippet: (48) Similar to semiconductors for automotive applications, the market
+    for semiconductors for IoT applications can be segmented by (i) semiconductor
+    type; or (ii) by field of application/end-use.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_qualcomm_nxp_2018_decision
+  page: '20'
+  quote_snippet: '(55) Finally, overall, respondents to the market investigation also
+    subscribe to the segmentation of the market by end-use proposed by the Notifying
+    Party, although additional categories are also suggested. With regard to the segmentation
+    by field use-application, the market investigation provided mixed results. While
+    most of the customers consider that a distinction should, at least, be made for
+    semiconductors used in the following function blocks: (i) hearables (including
+    true wireless headsets), (ii) wearables (watches and fitness), (iii) drones and
+    smart cameras, (iv) smart cities, and (v) smart home (including home entertainment),
+    competitors'' replies were mixed. In particular, Renesas and Nordic highlight
+    that the market for standardised chips is generally a single market, and while
+    customers can choose to put the chips in different end applications, the chips
+    and the market for their sales is the same46. With regard to a potential segmentation
+    of semiconductors in the hearables IoT space, the market investigation did not
+    provide a clear indication on whether TWS headphones provide different functionalities
+    respect to other semiconductors in the hearables IoT space47.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_qualcomm_nxp_2018_decision
+  page: '22'
+  quote_snippet: (64) The Notifying Party argues against a further segmentation of
+    baseband chipsets based on the type of devices (smartphones versus other electronic
+    devices such as tablets), by the type of smartphone (high-end versus low-end smartphones),
+    by cellular technology (GSM, UMTS, CDMA, LTE)54, and by functionality (distinguishing
+    between stand-alone and integrated baseband chipsets). The Notifying Party considers
+    that in any event, the exact product market definition can be left open, as the
+    Transaction will not result in any affected market for baseband chipsets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_qualcomm_nxp_2018_decision
+  page: '38'
+  quote_snippet: (141) The Commission considers that other technologies which are
+    available to enable a mobile payment or transit ticketing transaction such as
+    BTLE, QR codes and MST are distinct from NFC and do not exert significant competitive
+    pressure over NFC. NFC chips (including the underlying technology) should therefore
+    be considered as a separate product market. Only NFC chips sold on the merchant
+    market should be included in the relevant product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_qualcomm_nxp_2018_decision
+  page: '31'
+  quote_snippet: (105) The Notifying Party considers that the precise product market
+    definition in relation to NFC chips can be left open as the Transaction would
+    not raise any competition concerns.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_qualcomm_nxp_2018_decision
+  page: '38'
+  quote_snippet: (138) For the purposes of this Decision, the Commission considers
+    that captive sales of NFC chips should be excluded from the relevant product market
+    as it is unlikely that such captive capacity can effectively constrain the merchant
+    market beyond the ability of device OEMs with internal production to limit their
+    reliance on third-party suppliers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_qualcomm_nxp_2018_decision
+  page: '45'
+  quote_snippet: (170) The Commission considers that while there are a number of elements
+    that support distinguishing SEs (including the SE OS) from other technologies,
+    in particular HCE and TEE, the question as to whether the relevant product market
+    should be wider than SEs to also include other technologies can be left open for
+    the purposes of this Decision. The competitive assessment will be carried out
+    on the possible product market of embedded SEs (including the SE OS), which is
+    the market where NXP holds the most market power. Embedded SE is the only type
+    of SEs currently supplied by NXP, and it supplies them only as part of the company's
+    combined NFC/SE solution, and not as a standalone product184. Carrying out the
+    competitive assessment by using a wider product market definition, namely one
+    which would comprise not only SE but also alternative technologies, in particular
+    HCE and TEE, would be unlikely to raise any additional concerns, considering in
+    particular the more limited market position of NXP on such wider product market185.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_qualcomm_nxp_2018_decision
+  page: '40'
+  quote_snippet: (150) For the purposes of this Decision, the exact product market
+    definition can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_qualcomm_nxp_2018_decision
+  page: '45'
+  quote_snippet: (171) The Commission considers that the NFC/SE combined solution
+    constitutes a distinct product market, separate from the market for standalone
+    NFC chips and SE chips (including SE OS).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_qualcomm_nxp_2018_decision
+  page: '45'
+  quote_snippet: (173) Device OEMs tend to opt for the combined solution, for which
+    there is a distinct demand from device OEMs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_qualcomm_nxp_2018_decision
+  page: '48'
+  quote_snippet: (194) The Commission therefore considers that speech enhancement
+    software constitutes a separate product market, distinct from other components
+    in a mobile device, including smart amplifier chips, and from other software products
+    performing different functions. For the purposes of this Decision, a narrower
+    product market consisting of speech enhancement software for mobile devices incorporating
+    a Qualcomm baseband chipset can also be considered, but whether such further segmentation
+    is warranted can be left open as the Transaction would not raise any concerns
+    as to its compatibility with the internal market in either case.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_qualcomm_nxp_2018_decision
+  page: '48'
+  quote_snippet: (193) With regard to speech enhancement software, the phase I market
+    investigation supports the notion that speech enhancement software solutions are
+    a distinct product and perform a distinct function from other components within
+    a mobile device194.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_qualcomm_nxp_2018_decision
+  page: '49'
+  quote_snippet: (198) The Commission therefore considers that smart amplifier chips
+    constitute a separate product market, distinct from other components in a mobile
+    device, including speech enhancement software. For the purposes of this Decision,
+    a narrower product market consisting of smart amplifier chips for mobile devices
+    incorporating a Qualcomm baseband chipset could also be identified, but whether
+    such further segmentation is warranted can be left open as the Transaction would
+    not raise any concerns as to its compatibility with the internal market in either
+    case.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_qualcomm_nxp_2018_decision
+  page: '49'
+  quote_snippet: (197) The phase I market investigation indicated that smart amplifier
+    chips constitute a distinct product performing a distinct function from other
+    components within a mobile device196.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_qualcomm_nxp_2018_decision
+  page: '95'
+  quote_snippet: (433) Based on the results of the phase I and phase II market investigation
+    and on the review of the Parties’ internal documents, the Commission considers
+    that the merged entity would hold a dominant position in the market for transit
+    service technologies given the importance of MIFARE, which is also important for
+    the deployment of transit services for mobile devices.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_qualcomm_nxp_2018_decision
+  page: '94'
+  quote_snippet: (426) In this Section, the Commission assesses whether the merged
+    entity would hold market power within the market for transit service technologies
+    and for the purpose of the deployment of transit services through mobile devices,
+    as the merged entity would control MIFARE, NXP’s proprietary technology for transit
+    services. Other technologies within this market include Calypso, CIPURSE and FeliCa.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_qualcomm_nxp_2018_decision
+  page: '57'
+  quote_snippet: (236) The Commission considers that, in line with its previous decisions,
+    each SEP related to cellular and NFC technology should be considered as a separate
+    market. The Commission also considers that non-SEP IP related to NFC technology
+    may be viewed as a distinct product market from non-SEP IP related to other technologies.
+    The exact product market definition for non-SEP IP relevant for the purpose of
+    NFC technology is, however, left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_qualcomm_nxp_2018_decision
+  page: '103'
+  quote_snippet: (486) In line with its decisional practice mentioned in Section 5.2.5
+    above, the Commission considers that – in relation to NFC technology – each of
+    NXP and Qualcomm hold market power with regard to their NFC SEPs since standard
+    implementers in principle cannot design around them and thus "a potential licensee
+    […] cannot switch to another supplier"477. The phase I and phase II market investigation
+    has not revealed any reason for departing from the previous Commission's case
+    practice478.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_qualcomm_nxp_2018_decision
+  page: '57'
+  quote_snippet: (236) The Commission considers that, in line with its previous decisions,
+    each SEP related to cellular and NFC technology should be considered as a separate
+    market. The Commission also considers that non-SEP IP related to NFC technology
+    may be viewed as a distinct product market from non-SEP IP related to other technologies.
+    The exact product market definition for non-SEP IP relevant for the purpose of
+    NFC technology is, however, left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_qualcomm_nxp_2018_decision
+  page: '56'
+  quote_snippet: (232) With regard to other IP that does not qualify as SEPs, the
+    Commission notes that both Qualcomm and NXP possess IP that is relevant for the
+    purpose of NFC technology. Given that NFC technology can be viewed as a separate
+    product market, the Commission considers that non-SEP IP related to NFC technology
+    may be viewed as a distinct product market from non-SEP IP related to other technologies
+    (as well as from SEP IP related to NFC). The Commission notes, however, that contrary
+    to SEPs, a non-SEP for a given functionality/product may in theory be substitutable
+    with another non-SEP which allows making that same functionality/product or even
+    with another non-SEP which allows making a substitutable functionality/product.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_qualcomm_nxp_2018_decision
+  page: '58'
+  quote_snippet: (242) For the purposes of this Decision, the Commission therefore
+    concludes that the geographic scope of the semiconductor product markets relevant
+    in this case, including semiconductors for automotive applications, semiconductors
+    for IoT applications, and semiconductors for mobile devices (baseband chipsets,
+    NFC, SE, and combined NFC/SE chips, and smart amplifiers) is likely worldwide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_qualcomm_nxp_2018_decision
+  page: '57'
+  quote_snippet: (238) The Notifying Party submits that the geographic market definition
+    in the Commission's previous cases, notably in NXP/Freescale, should also be retained
+    in this Decision and that the relevant geographic market for all semiconductors
+    should be considered as worldwide in scope. It is further argued that as market
+    conditions in the semiconductor industry have not changed materially, there is
+    no justification to define narrower markets than the worldwide market. In fact,
+    suppliers of semiconductors conduct business on a worldwide basis, with recourse
+    to manufacturing plants located around the world; suppliers compete on a worldwide
+    level; customers have cross-border sourcing strategies and also compete on a worldwide
+    level; no regulatory barriers to trade of semiconductors on a worldwide level
+    exist, there are no quotas, tariffs, or technical specifications that could hinder
+    cross-border trade; and transportation costs remain low, with minimal impact on
+    pricing.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_qualcomm_nxp_2018_decision
+  page: '58'
+  quote_snippet: (244) The Notifying Party agrees with that assessment and considers
+    that the market for software (including speech enhancement software) is worldwide
+    in scope based on the same justifications as for semiconductor devices, including
+    the fact that software may be uploaded/downloaded anywhere in the world and transport
+    costs are negligible or non-existent.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_qualcomm_nxp_2018_decision
+  page: '59'
+  quote_snippet: (251) The Commission concludes, therefore, that the market for transit
+    service technologies is likely worldwide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_qualcomm_nxp_2018_decision
+  page: '59'
+  quote_snippet: (249) The various leading transit service technologies such as MIFARE,
+    FeliCa, and Calypso are offered on a worldwide basis, although deployed to various
+    degrees in different regions. MIFARE is the leading worldwide transit service
+    technology, deployed in 750 cities worldwide252. FeliCa is primarily used in Japan,
+    but has also been deployed for transit systems elsewhere, including in Hong Kong,
+    India, Indonesia, Singapore253. Calypso, initially developed by a number of European
+    transit operators, is deployed across 125 cities in 25 countries, with primary
+    focus on certain European countries (including France, Belgium, Italy) but also
+    in Israel, Canada, Mexico, and several North African countries254.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_qualcomm_nxp_2018_decision
+  page: '60'
+  quote_snippet: (256) In its previous decisions, the Commission considered the market
+    for the licensing of SEPs as being at least EEA-wide259. For the purposes of this
+    decision, the Commission considers this conclusion to remain valid.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_qualcomm_nxp_2018_decision
+  page: '60'
+  quote_snippet: (258) For the purposes of this decision, the Commission considers
+    that the geographic market definition for non-SEP IP relevant for the purpose
+    of NFC technology can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_qualcomm_nxp_2018_decision
+  page: '60'
+  quote_snippet: (257) Similarly to SEPs, also the market for the licensing of non-SEP
+    IP relevant for the purpose of NFC technology is likely to be at least EEA-wide.
+    The Commission notes, in this context, that NXP has entered into worldwide NFC
+    IP licensing agreements with competitors ([…]) and customers ([…]) active in all
+    parts of the world260. NXP's MIFARE licensing agreements have similarly also a
+    worldwide scope and have been entered into with market players active in various
+    parts of the world.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_qualcomm_nxp_2018_decision
+  page: '12'
+  quote_snippet: (17) On 5 October 2017, the Notifying Party proposed formal commitments
+    to eliminate the Commission’s findings that the Transaction would give rise to
+    a significant impediment to effective competition. The Commission launched the
+    market test for the commitments on 6 October 2017.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_qualcomm_nxp_2018_decision
+  page: '13'
+  quote_snippet: 8 At the Advisory Committee all present Member States agreed that
+    that the Transaction must be declared compatible with the internal market in accordance
+    with Articles 2(2) and 8(2) of the Merger Regulation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-12'
+  last_updated_date: '2026-06-12'
+  tags: []

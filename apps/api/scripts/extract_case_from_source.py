@@ -36,8 +36,15 @@ from typing import Optional
 import yaml
 
 _API_DIR = Path(__file__).resolve().parents[1]
+_REPO_ROOT = _API_DIR.parents[1]
 sys.path.insert(0, str(_API_DIR))
 sys.path.insert(0, str(Path(__file__).parent))
+
+try:
+    from dotenv import load_dotenv as _load_dotenv
+    _load_dotenv(_REPO_ROOT / ".env", override=False)
+except ImportError:
+    pass
 
 from app.utils.pdf_extractor import DEFAULT_CACHE_DIR, iter_pages, load_cache
 from check_source_integrity import quote_found_in_text
@@ -90,7 +97,7 @@ _VALID_PROCEDURE_STAGES: frozenset[str] = frozenset({
 # Precise market definition status values (old values kept for backward compat).
 _VALID_MARKET_STATUSES: frozenset[str] = frozenset({
     "defined", "left_open", "discussed", "segmented", "unknown",      # legacy
-    "considered", "not_conclusive", "possible_segmentation", "precedent_only",  # new
+    "considered", "not_conclusive", "segmented", "precedent_only",  # new
 })
 
 # Passage source-role classification values.
@@ -104,7 +111,7 @@ _VALID_MARKET_IMPORTANCE: frozenset[str] = frozenset({
     "core_assessed",        # Commission formally assessed this as a key relevant market
     "assessed_no_overlap",  # Assessed but parties do not overlap here
     "ancillary",            # Related market mentioned but not the primary focus
-    "possible_segmentation",# Commission considered segmentation but left it open
+    "segmented",# Commission considered segmentation but left it open
     "precedent_only",       # Referenced from prior cases only, not assessed here
     "background",           # Mentioned in overview/background only, no formal analysis
     "incomplete_source",    # Conclusion expected but absent from supplied text chunks
@@ -127,7 +134,7 @@ _QUOTE_MIN_TRUNCATION_LEN = 50  # quotes shorter than this are never flagged
 # Strength ordering for geographic market definition statuses (higher = stronger).
 _GEO_STATUS_STRENGTH: dict[str, int] = {
     "defined": 6, "left_open": 5, "considered": 4,
-    "not_conclusive": 3, "possible_segmentation": 2, "precedent_only": 1, "unknown": 0,
+    "not_conclusive": 3, "segmented": 2, "precedent_only": 1, "unknown": 0,
 }
 
 _REQUIRED_SCHEMA_KEYS: frozenset[str] = frozenset({
@@ -261,7 +268,7 @@ _MAX_FALLBACK_CHUNKS: int = 8                # hard cap on number of fallback ch
 # If section-path selection yields fewer than this many pages for market_definition focus,
 # supplement with page-text fallback. Handles documents where footnote numbers are
 # misread as section headings, leaving relevant pages under unrecognised labels.
-_MARKET_DEF_SP_MIN_PAGES: int = 8
+_MARKET_DEF_SP_MIN_PAGES: int = 20
 # For long decisions (≥ this many non-TOC pages), also trigger supplemental fallback when
 # the section-path selection covers less than this fraction of the document.  Prevents
 # section-path matching from silently returning partial coverage on long pharma/tech
@@ -821,6 +828,20 @@ def _select_relevant_chunks(
         candidates = [c for c in chunks if _is_relevant_section(c.section_path) and c.pages]
         if not candidates:
             candidates = [c for c in chunks if c.pages]
+        elif (sum(len(c.pages) for c in candidates) < _MARKET_DEF_SP_MIN_PAGES
+              and total_non_toc_pages >= _MARKET_DEF_SP_MIN_PAGES):
+            # Few section-path matches on a substantive document (e.g. only appendix/
+            # questionnaire sections found while main body pages have footnote-numbered
+            # bookmarks with no relevant terms). Supplement with page-text fallback.
+            covered = {n for c in candidates for n in c.page_numbers}
+            for fb_chunk in _select_market_def_fallback_chunks(
+                chunks,
+                max_fallback_pages=min(max_total_pages, _MAX_FALLBACK_PAGES),
+            ):
+                if not covered.issuperset(set(fb_chunk.page_numbers)):
+                    candidates.append(fb_chunk)
+                    covered.update(fb_chunk.page_numbers)
+            candidates.sort(key=lambda c: min(c.page_numbers) if c.page_numbers else 0)
 
     selected: list[ChunkInfo] = []
     total = 0
@@ -1208,24 +1229,51 @@ Choose the most accurate definition_status for each market entry:
     Use this when the Commission adopts a market scope for its assessment without
     formally resolving the definition as a general legal matter.
   - "not_conclusive": Analysis performed but no conclusion reached
-  - "possible_segmentation": Segmentation was considered but not definitively resolved
+  - "segmented": Segmentation was considered but not definitively resolved
   - "precedent_only": Referenced from prior cases only, not assessed in this decision
   - "unknown": Status cannot be determined from the supplied text
 CRITICAL: Do NOT use "defined" if the text says the definition was "left open",
 "not necessary to conclude", or "inconclusive". Use "left_open" or "not_conclusive".
 CRITICAL — NO INFERRED CONCLUSIONS: If the supplied text does not contain the
 Commission's explicit conclusion on a market, set definition_status to "unknown"
+
+GEOGRAPHIC MARKETS — SCAN ALL PRODUCT MARKET SECTIONS:
+Many decisions address geographic scope separately for each product market rather than
+in a single dedicated geographic market section. You MUST scan every product market
+section for geographic scope language. For each product market where the authority
+addressed geographic scope (even briefly), create a corresponding geographic market
+entry. Common patterns:
+  - "The geographic market for X is national / EEA-wide / worldwide."
+  - "The geographic market for the supply of X is at least EEA-wide."
+  - "As regards geographic scope, the Commission notes that…"
+  - "The relevant geographic market is wider than national."
+Do NOT skip geographic markets just because they appear in product-market subsections
+rather than a dedicated geographic market section. If geographic scope is left open
+alongside the product market, set definition_status: left_open for the geo market too.
 and market_importance to "incomplete_source". Do NOT infer "left_open" by analogy
 with other markets or by guessing. Do NOT infer any conclusion from training data.
 Add a caveat naming the market and explaining that its conclusion is absent from
 the supplied chunks.
+
+GEOGRAPHIC MARKET NAMING CONVENTION:
+Name each geographic market entry to be self-identifying — include both the product
+scope and the geographic scope. Use the pattern:
+  '[Product market name] — [national/EEA-wide/worldwide] ([Country] affected)'
+Examples:
+  - 'Dry premix mortars — national (France affected)'
+  - 'Chemical-based concrete admixtures — national (France affected)'
+  - 'Multi-sided advertising platforms — EEA-wide'
+  - 'Wholesale supply of electricity — national (Germany affected)'
+NEVER name a geographic market entry with just a country or region (e.g. 'France',
+'EEA') — always prefix with the corresponding product market name so entries are
+distinguishable when multiple product markets share the same geographic scope.
 
 MARKET IMPORTANCE CLASSIFICATION:
 For every product and geographic market entry, set market_importance:
   - "core_assessed": Commission formally assessed this as a key relevant market.
   - "assessed_no_overlap": Commission assessed it but the parties do not compete here.
   - "ancillary": Related market discussed but not the primary analytical focus.
-  - "possible_segmentation": Segmentation analysis done but left open.
+  - "segmented": Segmentation analysis done but left open.
   - "precedent_only": Referenced from prior cases only; not assessed in this decision.
   - "background": Mentioned only in background or industry overview context.
   - "incomplete_source": The analysis exists but its conclusion is absent from the
@@ -1257,9 +1305,15 @@ They MAY be retained as:
   - Top-level source_passages with an empty or absent "supports" list (unlinked)
   - Evidence for the overall_outcome value
 
-Reason: market definition and merger outcome are related but distinct. A clearance
-conclusion does not itself prove that a particular product or geographic market was
-defined or considered.
+IMPORTANT DISTINCTION — market-definition conclusions vs. clearance conclusions:
+  - "The Commission concludes the relevant product market is X" → source_role: "conclusion",
+    SHOULD link to the market entry (supports_markets / supports_geographic_markets).
+    This is a finding about what the market IS.
+  - "The concentration is compatible with the internal market" → source_role: "conclusion",
+    MUST NOT link to any market entry. This is a finding about the merger OUTCOME.
+Only passages containing explicit clearance/authorization language are restricted.
+"Commission concludes", "Commission considers", "the relevant market is" are market
+definition language and belong linked to the market entry they define.
 
 VERBATIM QUOTES ONLY:
 Copy passage text EXACTLY as it appears in the source. Do NOT paraphrase, summarise,
@@ -1282,10 +1336,38 @@ passage solely to avoid artifacts.
 MARKET DEDUPLICATION AND HIERARCHY:
 Do not create multiple entries for the same market at different hierarchical levels.
   - If segmentation is considered (e.g. search ads vs. display ads within online advertising),
-    create one entry with definition_status "possible_segmentation" and explain in notes.
+    create one entry with definition_status "segmented" and explain in notes.
   - Distinguish the core market from geographic scope — do not create one entry per geography
     unless the Commission assessed them as genuinely separate relevant markets.
   - For each market, link all supporting passages via the nested "passages" array.
+
+PASSAGE COUNT LIMIT — QUALITY OVER QUANTITY (rule mdr_008):
+For each product market, geographic market, or theory of harm, include at most 3 source
+passages. Apply this priority order:
+  1. The passage that most directly states the authority's conclusion on that market/theory
+     (prefer "conclusion" or "commission_assessment" source_role).
+  2. The passage that most specifically defines the scope of the market or harm.
+  3. One further passage if it adds materially different content (e.g. a market investigation
+     finding that corroborates the authority's view).
+Do NOT include consecutive paragraphs that repeat the same point. If multiple consecutive
+paragraphs from the same section support the same proposition, use the single most
+informative excerpt.
+Do NOT include background or procedural paragraphs as supporting passages for a market
+definition unless they are the only available source.
+Thin passages — snippets too short or vague to independently support the linked
+proposition on their own (e.g. a three-word fragment, a section title, a pure cross-
+reference) — must be omitted or extended to include the surrounding analysis.
+
+DEDUPLICATE IDENTICAL QUOTES (rule mdr_007):
+If the same verbatim quote would support both a product market and a theory of harm,
+create ONE passage entry and include both in its supports list. Do not create duplicate
+entries for the same quote.
+
+CONCLUSION PASSAGES — NOT SOLE SUPPORT (rule mdr_006):
+A passage with source_role "conclusion" (the Commission's final verdict) can corroborate
+a market entry but must not be its ONLY supporting passage. Every market entry must have
+at least one "commission_assessment" or "market_investigation" passage showing the
+analytical reasoning, not just the conclusion.
 
 THEORIES OF HARM — INNOVATION AND R&D COMPETITION:
 Competition authorities sometimes assess mergers as reducing innovation rivalry rather
@@ -1446,7 +1528,7 @@ _MARKET_ITEM_SCHEMA = {
                 "(e.g. 'for the purpose of this decision' / 'for assessing the Transaction') — "
                 "lower precedential weight than defined, more concrete than left_open; "
                 "not_conclusive=analysis inconclusive; "
-                "possible_segmentation=segmentation considered, not resolved; "
+                "segmented=segmentation considered, not resolved; "
                 "precedent_only=from prior cases, not assessed here; unknown=cannot determine."
             ),
         },
@@ -1457,7 +1539,7 @@ _MARKET_ITEM_SCHEMA = {
                 "core_assessed=key market formally analysed by Commission; "
                 "assessed_no_overlap=assessed but parties don't overlap; "
                 "ancillary=related but not primary focus; "
-                "possible_segmentation=segmentation discussed but not resolved; "
+                "segmented=segmentation discussed but not resolved; "
                 "precedent_only=referenced from prior cases only; "
                 "background=background/overview mention only; "
                 "incomplete_source=conclusion expected but missing from supplied text."
@@ -1881,6 +1963,116 @@ def _call_claude_unit_assessment(prompt: str, anthropic_client) -> str:
         if getattr(block, "type", None) == "text":
             return block.text.strip()
     return ""
+
+
+# ---------------------------------------------------------------------------
+# Gemini calling functions
+# ---------------------------------------------------------------------------
+
+_GEMINI_MODEL = "gemini-2.5-flash"
+
+
+def _call_gemini(prompt: str, gemini_client) -> str:
+    """Call Gemini with JSON output mode; return JSON string.
+
+    *gemini_client* is a ``google.genai.Client`` instance.
+    Retries on 429 (free-tier rate limit) using the retry delay from the error.
+    """
+    import re as _re
+    import time as _time
+    from google.genai import types as _gtypes
+
+    for attempt in range(5):
+        try:
+            response = gemini_client.models.generate_content(
+                model=_GEMINI_MODEL,
+                contents=prompt,
+                config=_gtypes.GenerateContentConfig(
+                    response_mime_type="application/json",
+                    max_output_tokens=65536,
+                ),
+            )
+            return response.text.strip()
+        except Exception as exc:
+            msg = str(exc)
+            if "429" in msg or "RESOURCE_EXHAUSTED" in msg:
+                # Parse retry delay from error message ("retry in X.Xs")
+                m = _re.search(r"retry[^\d]*(\d+(?:\.\d+)?)\s*s", msg, _re.IGNORECASE)
+                suggested = float(m.group(1)) if m else 0
+                # Ensure at least 90s so the per-minute token bucket fully refills
+                delay = max(suggested + 2, 90 * (attempt + 1))
+                print(f"  Gemini rate limit — waiting {delay:.0f}s (attempt {attempt+1}/5)…")
+                _time.sleep(delay)
+                continue
+            if "503" in msg or "UNAVAILABLE" in msg:
+                delay = 30 * (attempt + 1)
+                print(f"  Gemini unavailable — waiting {delay:.0f}s (attempt {attempt+1}/5)…")
+                _time.sleep(delay)
+                continue
+            raise
+    raise RuntimeError("Gemini call failed after 5 attempts")
+
+
+def _call_gemini_repair(
+    bad_response: str,
+    validation_errors: list[str],
+    gemini_client,
+) -> str:
+    """Gemini repair pass; return corrected JSON string."""
+    violations = "\n".join(f"  - {e}" for e in validation_errors)
+    prompt = (
+        "A previous extraction call returned JSON that violates the schema. "
+        "Fix ONLY the format errors below — do NOT change any content values.\n\n"
+        "VIOLATIONS:\n" + violations + "\n\n"
+        "PREVIOUS RESPONSE TO FIX:\n" + bad_response + "\n\n"
+        "CRITICAL — every list field MUST be a real JSON array, never a string:\n"
+        "  WRONG: \"product_markets\": \"[{\\\"name\\\": \\\"X\\\"}]\"\n"
+        "  RIGHT: \"product_markets\": [{\"name\": \"X\", ...}]\n\n"
+        "Return the complete corrected JSON object."
+    )
+    return _call_gemini(prompt, gemini_client)
+
+
+# ---------------------------------------------------------------------------
+# Unified LLM client
+# ---------------------------------------------------------------------------
+
+class LLMClient:
+    """Thin adapter over Anthropic Claude and Google Gemini for extraction calls.
+
+    Usage::
+
+        # Anthropic
+        client = LLMClient("anthropic", anthropic.Anthropic(...))
+
+        # Gemini
+        from google import genai
+        client = LLMClient("gemini", genai.Client(api_key=...))
+    """
+
+    def __init__(self, provider: str, client) -> None:
+        if provider not in ("anthropic", "gemini"):
+            raise ValueError(f"Unknown provider {provider!r}; must be 'anthropic' or 'gemini'")
+        self.provider = provider
+        self._client = client
+
+    def call_extraction(self, prompt: str) -> str:
+        """Return JSON string matching the extraction schema."""
+        if self.provider == "anthropic":
+            return _call_claude(prompt, self._client)
+        return _call_gemini(prompt, self._client)
+
+    def call_unit_assessment(self, prompt: str) -> str:
+        """Return JSON string matching the unit_assessment schema."""
+        if self.provider == "anthropic":
+            return _call_claude_unit_assessment(prompt, self._client)
+        return _call_gemini(prompt, self._client)
+
+    def call_repair(self, bad_response: str, errors: list[str]) -> str:
+        """Return corrected JSON string."""
+        if self.provider == "anthropic":
+            return _call_claude_repair(bad_response, errors, self._client)
+        return _call_gemini_repair(bad_response, errors, self._client)
 
 
 def _validate_unit_assessment(
@@ -2459,12 +2651,12 @@ def _extract_section_batch(
     prefix: str,
     chunks: list[ChunkInfo],
     case_context: dict,
-    anthropic_client,
+    llm_client: "LLMClient",
     debug_dir: Path,
     case_id: str,
     profile=None,
 ) -> SectionBatchResult:
-    """Run one Claude extraction call for a section batch; never raises.
+    """Run one LLM extraction call for a section batch; never raises.
 
     Returns a SectionBatchResult with either a validated ExtractionResult or
     an error string.  Failed sections save rich debug JSON but do not abort
@@ -2484,10 +2676,11 @@ def _extract_section_batch(
 
     prompt = _build_extraction_prompt(chunks, case_context, profile=profile)
 
-    # API call
-    message = None
+    # API call — provider-agnostic via LLMClient
+    response_text = ""
+    message = None  # kept for debug-save compat (None is safe)
     try:
-        message = _call_claude_raw(prompt, anthropic_client)
+        response_text = llm_client.call_extraction(prompt)
     except Exception as exc:
         debug_path = _save_section_debug(
             debug_dir, debug_label, case_id, prefix, chunks, None,
@@ -2499,18 +2692,6 @@ def _extract_section_batch(
             result=None, error=f"API error in section {prefix}: {exc}",
             debug_path=debug_path,
         )
-
-    # Extract JSON string from message
-    response_text = ""
-    for block in message.content or []:
-        if getattr(block, "type", None) == "tool_use":
-            response_text = json.dumps(block.input)
-            break
-    if not response_text:
-        for block in message.content or []:
-            if getattr(block, "type", None) == "text":
-                response_text = getattr(block, "text", "").strip()
-                break
 
     # Parse JSON
     try:
@@ -2558,7 +2739,7 @@ def _extract_section_batch(
                 token_estimate=approx_tokens,
             )
             try:
-                repaired_text = _call_claude_repair(response_text, all_errors, anthropic_client)
+                repaired_text = llm_client.call_repair(response_text, all_errors)
                 repaired_raw = _parse_extraction_response(repaired_text, debug_dir=None, case_id="")
             except Exception as exc:
                 debug_path = _save_section_debug(
@@ -3414,10 +3595,10 @@ def _promotion_action(
     5. assessed_no_overlap (any status)            → keep_as_context_only (conservative)
     6. unknown status + no source refs             → hold_pending_source_check
     7. core_assessed + (defined|left_open|considered) + refs → promote_to_canonical
-    8. core_assessed + possible_segmentation + refs → promote_with_uncertainty (needs review)
+    8. core_assessed + segmented + refs → promote_with_uncertainty (needs review)
     9. core_assessed + other status                → manual_review
     10. core_assessed + no source refs             → manual_review
-    11. possible_segmentation (implicit)           → promote_with_uncertainty (needs review)
+    11. segmented (implicit)           → promote_with_uncertainty (needs review)
     12. has source refs but no recognised importance → manual_review
     13. fallback                                   → manual_review
 
@@ -3485,8 +3666,8 @@ def _promotion_action(
 
     # Rules 6–9: core_assessed (requires conclusive status + refs for promotion)
     if imp == "core_assessed":
-        # Rule 7: core_assessed + possible_segmentation → needs explicit review
-        if status == "possible_segmentation":
+        # Rule 7: core_assessed + segmented → needs explicit review
+        if status == "segmented":
             return (
                 "promote_with_uncertainty",
                 "Commission formally assessed this market but left segmentation open. "
@@ -3513,8 +3694,8 @@ def _promotion_action(
             "definition status; manual review required before canonical promotion.",
         )
 
-    # Rule 11: possible_segmentation (implicit importance classification)
-    if status == "possible_segmentation":
+    # Rule 11: segmented (implicit importance classification)
+    if status == "segmented":
         return (
             "promote_with_uncertainty",
             "Segmentation was considered but left open by the Commission. "
@@ -3974,7 +4155,8 @@ def extract_case(
     output_path: Optional[Path] = None,
     report_json: Optional[Path] = None,
     use_claude: bool = True,
-    anthropic_client=None,
+    llm_client: Optional["LLMClient"] = None,
+    anthropic_client=None,  # deprecated: use llm_client
     max_input_pages: int = _MAX_INPUT_PAGES,
     max_chunks: Optional[int] = None,
     debug_dir: Optional[Path] = None,
@@ -4142,10 +4324,14 @@ def extract_case(
     if not use_claude:
         return report
 
-    if anthropic_client is None:
+    # Backward compat: wrap a bare anthropic_client in LLMClient.
+    if llm_client is None and anthropic_client is not None:
+        llm_client = LLMClient("anthropic", anthropic_client)
+
+    if llm_client is None:
         report.error = (
-            "Claude client not available — pass anthropic_client or "
-            "set ANTHROPIC_API_KEY"
+            "No LLM client available — pass llm_client or anthropic_client, "
+            "or set ANTHROPIC_API_KEY / GOOGLE_API_KEY"
         )
         return report
 
@@ -4208,7 +4394,7 @@ def extract_case(
         for prefix, group_chunks in groups:
             batch = _extract_section_batch(
                 prefix, group_chunks, existing_record,
-                anthropic_client, _effective_debug_dir, case_id,
+                llm_client, _effective_debug_dir, case_id,
                 profile=profile,
             )
             report.section_batches.append(batch)
@@ -4249,9 +4435,9 @@ def extract_case(
         if focus == "unit_assessment":
             prompt = _build_unit_assessment_prompt(selected, existing_record)
             try:
-                response_text = _call_claude_unit_assessment(prompt, anthropic_client)
+                response_text = llm_client.call_unit_assessment(prompt)
             except Exception as exc:
-                report.error = f"Claude API error: {exc}"
+                report.error = f"LLM API error: {exc}"
                 return report
 
             try:
@@ -4282,9 +4468,9 @@ def extract_case(
         else:
             prompt = _build_extraction_prompt(selected, existing_record, profile=profile)
             try:
-                response_text = _call_claude(prompt, anthropic_client)
+                response_text = llm_client.call_extraction(prompt)
             except Exception as exc:
-                report.error = f"Claude API error: {exc}"
+                report.error = f"LLM API error: {exc}"
                 return report
 
             # Parse
@@ -4320,7 +4506,7 @@ def extract_case(
                     err_path = _effective_debug_dir / f"{case_id}_claude_raw_response.txt"
                     err_path.write_text(response_text, encoding="utf-8")
                     try:
-                        repaired_text = _call_claude_repair(response_text, all_errors, anthropic_client)
+                        repaired_text = llm_client.call_repair(response_text, all_errors)
                         repaired_raw = _parse_extraction_response(
                             repaired_text, debug_dir=None, case_id=""
                         )
@@ -4609,6 +4795,16 @@ def main() -> int:
             "Inferred from case_id prefix when omitted."
         ),
     )
+    parser.add_argument(
+        "--provider",
+        default="anthropic",
+        choices=["anthropic", "gemini"],
+        help=(
+            "LLM provider for extraction calls. "
+            "'anthropic' uses Claude (requires ANTHROPIC_API_KEY); "
+            "'gemini' uses Gemini 2.0 Flash (requires GOOGLE_API_KEY, free tier available)."
+        ),
+    )
     args = parser.parse_args()
 
     cases_dir = Path(args.cases_dir)
@@ -4658,24 +4854,37 @@ def main() -> int:
             print(f"\nDraft YAML:   {rpt.draft_yaml_path}")
         return 0 if not rpt.error else 1
 
-    # --inspect-chunks / --estimate-cost imply no Claude call and no file output
+    # --inspect-chunks / --estimate-cost imply no LLM call and no file output
     inspect_mode = args.inspect_chunks
     estimate_mode = args.estimate_cost
     use_claude = not args.no_claude and not inspect_mode and not estimate_mode
-    anthropic_client = None
+    llm_client = None
+
+    provider = getattr(args, "provider", "anthropic") or "anthropic"
 
     if use_claude:
-        try:
-            import anthropic as _anthropic
-            anthropic_client = _anthropic.Anthropic(
-                api_key=os.environ["ANTHROPIC_API_KEY"]
-            )
-        except (ImportError, KeyError):
-            print(
-                "anthropic package or ANTHROPIC_API_KEY not available — "
-                "falling back to --no-claude mode"
-            )
-            use_claude = False
+        if provider == "gemini":
+            try:
+                from google import genai as _genai
+                _gc = _genai.Client(api_key=os.environ["GOOGLE_API_KEY"])
+                llm_client = LLMClient("gemini", _gc)
+            except (ImportError, KeyError) as exc:
+                print(
+                    f"google-genai package or GOOGLE_API_KEY not available ({exc}) — "
+                    "falling back to --no-claude mode"
+                )
+                use_claude = False
+        else:
+            try:
+                import anthropic as _anthropic
+                _ac = _anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+                llm_client = LLMClient("anthropic", _ac)
+            except (ImportError, KeyError):
+                print(
+                    "anthropic package or ANTHROPIC_API_KEY not available — "
+                    "falling back to --no-claude mode"
+                )
+                use_claude = False
 
     no_output = inspect_mode or estimate_mode
     output_path = Path(args.output) if args.output and not no_output else None
@@ -4708,7 +4917,11 @@ def main() -> int:
             batch_desc += f", max {args.max_section_batches} batches"
         print(f"Mode:    {batch_desc}")
     else:
-        print(f"Claude:  {'enabled' if use_claude else 'disabled (section-analysis only)'}")
+        if use_claude:
+            label = f"enabled ({provider})"
+        else:
+            label = "disabled (section-analysis only)"
+        print(f"LLM:     {label}")
     print()
 
     rpt = extract_case(
@@ -4717,7 +4930,7 @@ def main() -> int:
         output_path=output_path,
         report_json=report_json,
         use_claude=use_claude,
-        anthropic_client=anthropic_client,
+        llm_client=llm_client,
         max_input_pages=args.max_pages,
         max_chunks=args.max_chunks,
         focus=args.focus,

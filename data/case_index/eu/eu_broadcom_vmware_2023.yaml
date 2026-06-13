@@ -2,29 +2,32 @@ case_id: eu_broadcom_vmware_2023
 case_name: Broadcom / VMware
 jurisdiction: EU
 authority: European Commission
-decision_date: "2023-07-12"
+decision_date: '2023-07-12'
 sector: tech
 outcome: cleared_with_conditions
 case_type: merger
 source_url: https://competition-cases.ec.europa.eu/cases/M.10806
-ai_summary: >
-  The Commission cleared Broadcom's $61bn acquisition of VMware subject to conditions on
-  12 July 2023. Concerns centred on Broadcom's ability to foreclose rival server hardware
-  vendors and software suppliers by tying VMware's virtualisation stack to Broadcom's
-  network adapters and storage controllers. Remedies required Broadcom to interoperate with
-  and not discriminate against competing hardware vendors for a ten-year period.
+ai_summary: 'The Commission cleared Broadcom''s $61bn acquisition of VMware subject
+  to conditions on 12 July 2023. Concerns centred on Broadcom''s ability to foreclose
+  rival server hardware vendors and software suppliers by tying VMware''s virtualisation
+  stack to Broadcom''s network adapters and storage controllers. Remedies required
+  Broadcom to interoperate with and not discriminate against competing hardware vendors
+  for a ten-year period.
+
+  '
 parties:
-  - name: Broadcom
-    role: acquirer
-  - name: VMware
-    role: target
+- name: Broadcom
+  role: acquirer
+- name: VMware
+  role: target
 concept_refs:
-  - concept_id: sector_tech
-    quality_level: indexed
-    provenance: manually_tagged
-  - concept_id: toh_vertical
-    quality_level: indexed
-    provenance: manually_tagged
-  - concept_id: toh_conglomerate
-    quality_level: indexed
-    provenance: manually_tagged
+- concept_id: sector_tech
+  quality_level: indexed
+  provenance: manually_tagged
+- concept_id: toh_vertical
+  quality_level: indexed
+  provenance: manually_tagged
+- concept_id: toh_conglomerate
+  quality_level: indexed
+  provenance: manually_tagged
+pdf_url: https://ec.europa.eu/competition/mergers/cases1/202520/M_10806_10624386_6538_3.pdf

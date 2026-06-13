@@ -2,33 +2,35 @@ case_id: eu_booking_etraveli_2023
 case_name: Booking.com / eTraveli
 jurisdiction: EU
 authority: European Commission
-decision_date: "2023-09-25"
+decision_date: '2023-09-25'
 sector: tech
 outcome: blocked
 case_type: merger
 source_url: https://competition-cases.ec.europa.eu/cases/M.10596
-ai_summary: >
-  The Commission prohibited Booking.com's acquisition of eTraveli, a leading online flight
-  booking agency, on 25 September 2023. This was the Commission's first prohibition grounded
-  in an "ecosystem entrenchment" theory: the Commission found that adding eTraveli's flight
-  traffic would significantly reinforce Booking.com's position as the unavoidable gateway
-  for online accommodation by channelling flight-booking consumers into Booking's hotel
-  ecosystem. The case extended EU merger control beyond conventional market-by-market overlap
-  analysis to capture platform strategies that strengthen a gatekeeper's cross-market
-  ecosystem dominance, signalling an important doctrinal shift ahead of Digital Markets Act
-  enforcement.
+ai_summary: 'The Commission prohibited Booking.com''s acquisition of eTraveli, a leading
+  online flight booking agency, on 25 September 2023. This was the Commission''s first
+  prohibition grounded in an "ecosystem entrenchment" theory: the Commission found
+  that adding eTraveli''s flight traffic would significantly reinforce Booking.com''s
+  position as the unavoidable gateway for online accommodation by channelling flight-booking
+  consumers into Booking''s hotel ecosystem. The case extended EU merger control beyond
+  conventional market-by-market overlap analysis to capture platform strategies that
+  strengthen a gatekeeper''s cross-market ecosystem dominance, signalling an important
+  doctrinal shift ahead of Digital Markets Act enforcement.
+
+  '
 parties:
-  - name: Booking.com
-    role: acquirer
-  - name: eTraveli
-    role: target
+- name: Booking.com
+  role: acquirer
+- name: eTraveli
+  role: target
 concept_refs:
-  - concept_id: sector_tech
-    quality_level: indexed
-    provenance: manually_tagged
-  - concept_id: toh_vertical
-    quality_level: indexed
-    provenance: manually_tagged
-  - concept_id: toh_conglomerate
-    quality_level: indexed
-    provenance: manually_tagged
+- concept_id: sector_tech
+  quality_level: indexed
+  provenance: manually_tagged
+- concept_id: toh_vertical
+  quality_level: indexed
+  provenance: manually_tagged
+- concept_id: toh_conglomerate
+  quality_level: indexed
+  provenance: manually_tagged
+pdf_url: https://ec.europa.eu/competition/mergers/cases1/202207/M_10596_8173757_55_3.pdf

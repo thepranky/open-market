@@ -1,0 +1,1494 @@
+case_id: eu_vodafone_liberty_global_2019
+case_name: Vodafone / Liberty Global (CE4 cable operations)
+authority: European Commission
+jurisdiction: EU
+sector: telecoms
+outcome: cleared_with_conditions
+procedure_stage: unknown
+decision_date: '2019-07-18'
+parties:
+- name: Vodafone
+  role: acquirer
+- name: Liberty Global
+  role: target
+source_documents:
+- doc_id: eu_vodafone_liberty_global_2019_decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.8864
+  pdf_url: https://ec.europa.eu/competition/mergers/cases/decisions/m8864_7363_3.pdf
+  title: Vodafone / Liberty Global (CE4 cable operations) — Decision
+  doc_type: decision
+product_markets_considered:
+- market_id: pm_1
+  name: Retail supply of fixed telephony services
+  definition_status: considered
+  notes: The Commission considered that the relevant product market encompasses the
+    retail provision of fixed telephony services both through fixed telephony lines
+    and through VoIP services. The question as to whether residential and non-residential
+    customers constitute separate markets or rather separate segments within the same
+    market was left open.
+- market_id: pm_2
+  name: Retail supply of fixed internet access services
+  definition_status: defined
+  notes: The market includes all product types, distribution modes, and speeds/bandwidths,
+    for residential and small business customers. It explicitly excludes fixed internet
+    services provided through mobile network infrastructure. Large business customers
+    are considered part of a separate market (retail business connectivity services).
+- market_id: pm_3
+  name: Retail supply of mobile telecommunications services
+  definition_status: defined
+  notes: The Commission concluded there is an overall retail market for mobile telecommunications
+    services, without further subdivision by type of service, tariff, or customer.
+    OTT services are excluded.
+- market_id: pm_4
+  name: Retail supply of TV services
+  definition_status: left_open
+  notes: The question whether the market for the supply of TV retail services should
+    be segmented (by technology, FTA/Pay TV, linear/non-linear, MDU/SDU in Germany)
+    was left open. The Commission considered that the Transaction would not significantly
+    impede effective competition irrespective of the exact product market definition.
+- market_id: pm_5
+  name: Retail supply of TV signal transmission to MDU customers in Germany
+  definition_status: defined
+  notes: The Commission concluded that retail supply of TV signal transmission services
+    to MDU (Multiple Dwelling Unit) customers constitutes a separate market from SDU
+    customers. Within the MDU market, it was determined that neither satellite, terrestrial,
+    nor IPTV are substitutes for retail TV signal transmission via cable and fibre
+    (FTTB/H).
+- market_id: pm_6
+  name: Retail supply of TV signal transmission to SDU customers in Germany
+  definition_status: left_open
+  notes: The Commission concluded that retail supply of TV signal transmission services
+    to SDU (Single Dwelling Unit) customers constitutes a separate market from MDU
+    customers. However, for SDU customers, the question of which technologies (cable
+    TV, IPTV, satellite, DVB-T, OTT) are included in the market was left open.
+- market_id: pm_7
+  name: Retail supply of multiple play services
+  definition_status: left_open
+  notes: The overall question as to whether there exist one or more multiple play
+    markets, which are distinct from each of the underlying individual telecommunications
+    services, was left open due to inconclusive market investigation results across
+    all countries.
+- market_id: pm_8
+  name: 2P bundles (fixed telephony and internet services) in Germany
+  definition_status: considered
+  notes: For Germany, the Commission committed to assessing the effects of the transaction
+    on specific multiple play bundles, including 2P bundles (fixed telephony and internet
+    services), even though the overall market definition for multiple play services
+    was left open.
+- market_id: pm_9
+  name: 3P bundles (fixed telephony, internet and TV services) in Germany
+  definition_status: considered
+  notes: For Germany, the Commission committed to assessing the effects of the transaction
+    on specific multiple play bundles, including 3P bundles combining fixed telephony,
+    internet and TV services.
+- market_id: pm_10
+  name: 3P bundles (fixed telephony, internet and mobile services) in Germany
+  definition_status: considered
+  notes: For Germany, the Commission committed to assessing the effects of the transaction
+    on specific multiple play bundles, including 3P bundles combining fixed telephony,
+    internet and mobile services.
+- market_id: pm_11
+  name: 4P bundles in Germany
+  definition_status: considered
+  notes: For Germany, the Commission committed to assessing the effects of the transaction
+    on specific multiple play bundles, including 4P bundles.
+- market_id: pm_12
+  name: Retail business connectivity services
+  definition_status: left_open
+  notes: The market for retail business connectivity services is for large business
+    customers, distinct from fixed internet access for residential/SMEs. The question
+    of whether it should be further segmented into broadband access for large business,
+    leased lines, and VPN services was left open.
+- market_id: pm_13
+  name: Retail internet hosting services
+  definition_status: left_open
+  notes: The product market definition for retail internet hosting services, including
+    potential segments like co-location, shared/dedicated hosting, managed services,
+    and content delivery services, was left open.
+- market_id: pm_14
+  name: Wholesale call termination services on fixed networks
+  definition_status: defined
+  notes: The Commission defined each of the Parties' individual fixed network as constituting
+    a separate product market for wholesale call termination services, as there is
+    no substitute for call termination on an individual network.
+- market_id: pm_15
+  name: Wholesale leased lines
+  definition_status: left_open
+  notes: The question whether the wholesale leased lines market should be further
+    segmented (trunk vs. terminating, bandwidth above/below 2 Mbit/s, active vs. passive
+    infrastructure) was left open, as the Transaction does not raise competition concerns
+    under any possible product market definition.
+- market_id: pm_16
+  name: Wholesale termination and hosting of calls to non-geographic numbers
+  definition_status: defined
+  notes: The Commission considered there is an overall wholesale market for termination
+    and hosting of calls to non-geographic numbers, distinct from other wholesale
+    termination services due to different regulatory regimes, and no further segmentation
+    was deemed necessary.
+- market_id: pm_17
+  name: Wholesale provision of domestic call transit services on fixed networks
+  definition_status: defined
+  notes: The Commission considered that there is a separate wholesale market for the
+    provision of domestic call transit services on fixed networks, distinct from the
+    international wholesale market for voice carrier services.
+- market_id: pm_18
+  name: Wholesale international carrier services
+  definition_status: left_open
+  notes: The exact product market definition for wholesale international carrier services
+    was left open, as the Transaction does not raise competition concerns under any
+    plausible market definition.
+- market_id: pm_19
+  name: Wholesale internet connectivity services
+  definition_status: left_open
+  notes: The question of whether the overall market for wholesale internet connectivity
+    services should be further segmented between transit and peering, as well as the
+    existence of a separate market for Tier 1 transit providers, was left open.
+- market_id: pm_20
+  name: Wholesale call termination services on mobile networks
+  definition_status: defined
+  notes: The Commission defined each individual mobile network as constituting a separate
+    wholesale market for call termination, as there is no substitute for call termination
+    on an individual network.
+- market_id: pm_21
+  name: Wholesale international roaming services
+  definition_status: defined
+  notes: The Commission retained its previous product market definition of a separate
+    wholesale market for international roaming, comprising both terminating and originating
+    calls.
+- market_id: pm_22
+  name: Wholesale supply and acquisition of TV channels — Czechia, Hungary, Romania
+  definition_status: left_open
+  notes: For Czechia, Hungary, and Romania, the question whether the market should
+    be further segmented (i) between FTA or Pay TV, (ii) Premium Pay TV or Basic Pay
+    TV, (iii) by genre, or (iv) between different types of infrastructures was left
+    open, as no competition concerns would arise.
+- market_id: pm_23
+  name: Wholesale supply and acquisition of TV channels (FTA vs. Pay TV) in Germany
+  definition_status: defined
+  notes: For Germany, the Commission concluded that the market for the wholesale supply
+    and acquisition of TV channels should be further divided between FTA and pay TV
+    channels. Other possible segmentations were left open.
+- market_id: pm_24
+  name: Wholesale TV signal transmission via cable in Germany
+  definition_status: defined
+  notes: The Commission concluded that the wholesale TV signal transmission market
+    via cable in Germany constitutes a separate product market, not substitutable
+    by satellite, IPTV, or DVB-T, given the specificities of the German market and
+    market investigation results. It would also consider a market including IPTV for
+    completeness.
+- market_id: pm_25
+  name: Intermediary TV signal delivery (cable and FTTB/H) in Germany
+  definition_status: defined
+  notes: The Commission concluded that the relevant product market includes both cable
+    and FTTB/H (fibre-to-the-building/home) for intermediary TV signal delivery, limited
+    to Level 3 operators. Other non-cable infrastructures like satellite and IPTV
+    are excluded.
+- market_id: pm_26
+  name: Licensing and acquisition of broadcasting rights for TV content
+  definition_status: left_open
+  notes: The question of whether the market should be subdivided by Pay TV/FTA, linear/non-linear
+    broadcast, exhibition window, or content type was left open across all countries,
+    as no competition concerns would arise under any possible definition. Exclusive
+    rights were not further considered.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Retail supply of fixed telephony services — national (Czechia, Germany, Romania,
+    Hungary affected)
+  definition_status: defined
+  notes: The Commission defined the relevant geographic market as national in scope
+    for each of Czechia, Germany, Romania, and Hungary, supported by market investigation
+    findings regarding national pricing strategies and regulation.
+- market_id: gm_2
+  name: Retail supply of fixed internet access services — national (Czechia, Germany,
+    Hungary, Romania affected)
+  definition_status: defined
+  notes: The Commission defined the relevant geographic market as national in scope
+    for each of Czechia, Germany, Hungary, and Romania, based on market investigation
+    findings supporting national competitive conditions and regulatory regimes.
+- market_id: gm_3
+  name: Retail supply of mobile telecommunications services — national (Czechia, Germany,
+    Hungary, Romania affected)
+  definition_status: defined
+  notes: The Commission considered the geographic scope to be national for each of
+    the territories where the parties operate mobile telecommunication services.
+- market_id: gm_4
+  name: Retail supply of TV services — national (Czechia, Germany, Romania, Hungary
+    affected)
+  definition_status: defined
+  notes: The Commission considered the relevant geographic market for the retail supply
+    of TV services to be national in scope for each of the territories where the parties
+    are active.
+- market_id: gm_5
+  name: Retail supply of TV signal transmission to SDU customers in Germany — left_open
+  definition_status: left_open
+  notes: For the retail supply of TV signals to SDU customers in Germany, the geographic
+    market definition was left open, as the Transaction would not significantly impede
+    effective competition irrespective of the definition.
+- market_id: gm_6
+  name: Retail supply of multiple play services — national (Czechia, Germany, Romania,
+    Hungary affected)
+  definition_status: defined
+  notes: The Commission considered that the geographic scope of any plausible retail
+    market for multiple play services would be national, corresponding to each of
+    the territories where the parties are active.
+- market_id: gm_7
+  name: Retail business connectivity services — national (Czechia, Germany, Romania,
+    Hungary affected)
+  definition_status: defined
+  notes: The Commission defined the relevant geographic market for retail business
+    connectivity services as national in scope for each of the territories where the
+    parties are active.
+- market_id: gm_8
+  name: Retail internet hosting services — left_open
+  definition_status: left_open
+  notes: The exact geographic market definition for retail internet hosting services
+    (national, EEA-wide, or worldwide) was left open, as the Transaction does not
+    raise competition concerns under any possible definition.
+- market_id: gm_9
+  name: Wholesale call termination services on fixed networks — national (Czechia,
+    Germany, Romania, Hungary affected)
+  definition_status: defined
+  notes: The Commission considered the geographic scope of the wholesale market for
+    call termination on a fixed network to be national, corresponding to each of the
+    territories where the parties are active.
+- market_id: gm_10
+  name: Wholesale leased lines — nationwide (Czechia, Germany, Romania, Hungary affected)
+  definition_status: defined
+  notes: The Commission considered the market for wholesale leased lines to be nationwide
+    in scope, corresponding to each of the territories where the parties are active.
+- market_id: gm_11
+  name: Wholesale termination and hosting of calls to non-geographic numbers — national
+    (Czechia, Germany affected)
+  definition_status: defined
+  notes: The Commission considered the geographic scope of the wholesale market for
+    termination and hosting of calls to non-geographic numbers to be national, corresponding
+    to Czechia and Germany.
+- market_id: gm_12
+  name: Wholesale provision of domestic call transit on fixed networks — national
+    (Czechia, Germany, Hungary affected)
+  definition_status: defined
+  notes: The Commission considered the geographic scope of the wholesale market for
+    domestic call transit on fixed networks to be national, corresponding to each
+    of Czechia, Germany, and Hungary.
+- market_id: gm_13
+  name: Wholesale international carrier services — global
+  definition_status: defined
+  notes: The Commission concluded that the geographic market for wholesale international
+    carrier services is global in scope.
+- market_id: gm_14
+  name: Wholesale internet connectivity services — left_open
+  definition_status: left_open
+  notes: The question of whether the geographic market definition for wholesale internet
+    connectivity services is global or regional was left open, as the Transaction
+    does not raise competition concerns under any possible geographic market definition.
+- market_id: gm_15
+  name: Wholesale call termination services on mobile networks — national (Czechia,
+    Germany, Hungary, Romania affected)
+  definition_status: defined
+  notes: The Commission considered the geographic scope of the wholesale market for
+    call termination on mobile networks to be national, corresponding to each of the
+    territories where the parties are active.
+- market_id: gm_16
+  name: Wholesale international roaming services — national (Czechia, Germany, Hungary,
+    Romania affected)
+  definition_status: defined
+  notes: The Commission considered the wholesale market for international roaming
+    services to be national in scope, corresponding to each of the territories where
+    the parties are active.
+- market_id: gm_17
+  name: Wholesale supply and acquisition of TV channels — national (Czechia, Germany,
+    Hungary, Romania affected)
+  definition_status: considered
+  notes: While the exact geographic scope (national or linguistically homogeneous
+    area) was left open, for the purpose of this Decision, the Commission committed
+    to analysing the impact of the Transaction at a national level for Czechia, Germany,
+    Hungary, and Romania, due to the parties' activities in these countries.
+- market_id: gm_18
+  name: Intermediary TV signal delivery (cable and FTTB/H) in Germany — regional
+  definition_status: defined
+  notes: The Commission defined the market for intermediary TV signal delivery in
+    Germany as regional in scope, limited to the area of the relevant Level 3 operator,
+    supported by market investigation findings that demand is local and can only be
+    satisfied by Level 3 operators in direct reach.
+- market_id: gm_19
+  name: Licensing and acquisition of broadcasting rights for TV content — national
+    (Czechia, Germany, Hungary, Romania affected)
+  definition_status: considered
+  notes: While the exact geographic scope (national or linguistically homogeneous
+    area) was left open, for the purpose of this Decision, the Commission committed
+    to analysing the impact of the Transaction at a national level for Czechia, Germany,
+    Hungary, and Romania.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '22'
+  quote_snippet: (35) The Notifying Party submits that the market for retail fixed
+    telephony services constitutes one single market without the need to distinguish
+    between type of call (local, national and international) or technology (traditional
+    fixed lines or Voice over internet Protocol ("VoIP")11). Nonetheless, it agrees
+    that the product market definition can be left open for the purposes of the assessment
+    of the Transaction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '23'
+  quote_snippet: (40) For the purposes of this Decision, the Commission considers
+    that the relevant product market encompasses the retail provision of fixed telephony
+    services both through fixed telephony lines and through VoIP services, while the
+    question as to whether residential and non-residential customers constitute separate
+    markets or rather separate segments within the same market can be left open as,
+    irrespective of the answer to that question, the Transaction would not significantly
+    impede effective competition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '25'
+  quote_snippet: (51) In line with the Notifying Party's submission and the results
+    of the market investigation26, the Commission considers that no distinction should
+    be made between the provision of fixed internet services to residential and small
+    business customers, while large business customers are part of a separate market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '26'
+  quote_snippet: (56) Therefore, for the purposes of this Decision, the Commission
+    considers that the relevant product market is the overall retail market for the
+    provision of fixed internet access services, including all product types, distribution
+    modes and speeds/bandwidths, to residential and small business customers, excluding
+    the supply of fixed internet services provided through mobile network infrastructure.36
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '25'
+  quote_snippet: (53) As regards the inclusion in the relevant market of fixed internet
+    services provided through mobile network infrastructure, the results of the market
+    investigation in this case clearly indicated that such services are not part of
+    the retail provision of fixed internet access services.28
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '28'
+  quote_snippet: (65) In previous cases concerning mobile telecommunications services,
+    the Commission has considered that there is an overall retail market for mobile
+    telecommunications services constituting a separate market from retail fixed telecommunications
+    services.44 The Commission did not further subdivide the overall retail mobile
+    market based on the type of service (voice calls, SMS, MMS, mobile internet data
+    services), or network technology.45
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '29'
+  quote_snippet: (67) Therefore, for the purposes of this Decision, the Commission
+    considers that there is an overall product market for the retail provision of
+    mobile telecommunications services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '31'
+  quote_snippet: (77) In previous decisions the Commission considered the retail provision
+    of FTA TV and Pay TV services as separate markets, but ultimately left open the
+    product market definition60. The Commission also considered whether retail TV
+    can be segmented further according to linear versus non-linear TV services61 and
+    distribution technologies (cable, OTT, satellite, IPTV or terrestrial).62 However,
+    the Commission has left open the market definition with regard to each of these
+    potential sub-segments.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '33'
+  quote_snippet: (83) For the purposes of this Decision, the question whether the
+    market for the supply of TV retail services should be segmented can be left open.
+    Irrespective of the exact product market definition, the Commission considers
+    that the Transaction would not significantly impede effective competition in relation
+    to the supply of retail TV services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '35'
+  quote_snippet: (97) While, most recently, the Commission has left the product market
+    definition for TV signal transmission open,79 in earlier decisions,80 the Commission
+    distinguished between a market for the retail supply of TV signal transmission
+    to SDUs and a market for the retail supply of TV signal transmission to MDUs,
+    usually housing associations.81
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '42'
+  quote_snippet: (135) With regard to retail TV signal transmission to SDU customers,
+    for the purposes of this Decision, it can be left open which technologies are
+    included in the market. Irrespective of the market definition, the Commission
+    considers that the Transaction would not significantly impede effective competition
+    in relation to the market for the retail supply of TV signal transmission to SDU
+    customers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '50'
+  quote_snippet: (161) In light of the above, the Commission considers that, for the
+    purposes of this Decision, the question as to whether there exist one or more
+    multiple play markets, which are distinct from each of the underlying individual
+    telecommunications services, can be left open. Irrespective of the exact product
+    market definition, the Commission considers that the Transaction would not significantly
+    impede effective competition in relation to the supply of any multiple play products,
+    with the only exception of the supply of retail internet access services bundled
+    with fixed telephony in Germany.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '47'
+  quote_snippet: (152) The results of the market investigation in this case are not
+    sufficiently conclusive to establish with the required degree of certainty the
+    existence of a separate market for multiple play bundles and which combinations
+    of services would be included in such market, if it were to exist. This conclusion
+    applies irrespective of the country being considered for the purposes of this
+    Decision.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '48'
+  quote_snippet: '(160) Therefore, with respect to Germany, the Commission will assess
+    the effects of the Transaction as regards the following possible multiple play
+    bundles: 2P bundles including both fixed telephony and internet services; 3P bundles
+    including fixed telephony, internet and TV services; 3P bundles including fixed
+    telephony, internet and mobile services; and 4P bundles.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '49'
+  quote_snippet: (157) As stated at recital (149)(b), in Germany 60% of fixed telephony
+    customers and 70% of fixed broadband customers are in fact purchasers of a 2P
+    product comprising fixed internet and telephone. Furthermore, respondents to the
+    market investigation clearly stated that, within 2P products comprising fixed
+    internet and telephone, the main driver of product differentiation and customers’
+    choice is fixed internet access services and that therefore the competitive dynamics
+    of fixed internet access services standalone and 2P products comprising fixed
+    internet and telephone are very similar.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '48'
+  quote_snippet: '(160) Therefore, with respect to Germany, the Commission will assess
+    the effects of the Transaction as regards the following possible multiple play
+    bundles: 2P bundles including both fixed telephony and internet services; 3P bundles
+    including fixed telephony, internet and TV services; 3P bundles including fixed
+    telephony, internet and mobile services; and 4P bundles.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '48'
+  quote_snippet: '(160) Therefore, with respect to Germany, the Commission will assess
+    the effects of the Transaction as regards the following possible multiple play
+    bundles: 2P bundles including both fixed telephony and internet services; 3P bundles
+    including fixed telephony, internet and TV services; 3P bundles including fixed
+    telephony, internet and mobile services; and 4P bundles.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '48'
+  quote_snippet: '(160) Therefore, with respect to Germany, the Commission will assess
+    the effects of the Transaction as regards the following possible multiple play
+    bundles: 2P bundles including both fixed telephony and internet services; 3P bundles
+    including fixed telephony, internet and TV services; 3P bundles including fixed
+    telephony, internet and mobile services; and 4P bundles.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '51'
+  quote_snippet: (171) In any event, for the purposes of this Decision, the Commission
+    considers that the question whether the market for the retail business connectivity
+    services should be further segmented into (i) broadband access for large business
+    customers, (ii) leased lines, and (iii) VPN services can be left open, as the
+    Transaction does not raise competition concerns under any possible product market
+    definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '52'
+  quote_snippet: '(180) In past decisions decision, the Commission has considered
+    four potential segments within the overall web-hosting market, based on the range
+    of different services and products offered: (i) the local (limited to the area
+    where the web-hosting centre is located) supply of basic co-location services
+    such as connectivity, power, and the facilities; (ii) the national supply of shared
+    and dedicated hosting consisting of hosting a customer''s web-site on the web
+    host''s servers and providing the necessary support applications; (iii) the national,
+    possibly cross-border regional, supply of managed services to outsource complex
+    enterprise applications and support infrastructure, including "front-end" and
+    "back-office" applications hosted on the providers'' platforms (so-called ASP),
+    and (iv) the national supply of content delivery services such as Streaming Content
+    Delivery Services and Static Content Delivery Products.181 However, the Commission
+    did not conclude on the exact market definition, that is on the question as to
+    whether the segments constitute separate markets or not.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_13
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '52'
+  quote_snippet: (182) Therefore, the Commission considers that, for the purpose of
+    this Decision, the product market definition can be left open, as the Transaction
+    does not raise competition concerns under any possible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_13
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '53'
+  quote_snippet: (191) In previous decisions, the Commission held that there is no
+    substitute for call termination on each individual network, since the network
+    operator transmitting a call outgoing from his network to another network can
+    reach the recipient only through the respective other network operator.184 The
+    commission did not consider it necessary to further segment the market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_14
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '53'
+  quote_snippet: (193) For the purposes of the present Decision, the Commission therefore
+    retains its previous product market definition and considers that each of the
+    Parties’ individual network constitutes a separate product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_14
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '54'
+  quote_snippet: (199) In previous decisions, the Commission has considered that the
+    market for wholesale leased lines could be further segmented between trunk and
+    terminating segments but ultimately left the market definition open.186 In the
+    past the Commission has also considered a further segmentation of the wholesale
+    leased lines market into terminating leased lines with bandwidth above and below
+    2 Mbit/s respectively but ultimately left the exact product market definition
+    open.187 The Commission has also considered a further segmentation of the wholesale
+    leased lines market into passive (dark fibre) and active infrastructure (traditional
+    managed leased lines, Ethernet services with guaranteed bandwidth) but finally
+    left the exact product market definition open.188
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_15
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '55'
+  quote_snippet: (201) The Commission considers that in this case the question whether
+    the product market should be further segmented according to (i) trunk vs. terminating
+    segments, (ii) terminating leased lines with bandwidth above vs. below 2 Mbit/s
+    or (iii) active vs. passive infrastructure can be left open, as the Transaction
+    does not raise competition concerns under any possible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_15
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '55'
+  quote_snippet: (209) In previous decisions, the Commission considered that there
+    is an overall wholesale market for termination and hosting of calls to non-geographic
+    numbers, without it being necessary to consider further possible segmentations.190
+    This market is distinct from the supply of other wholesale termination services
+    because of the different regulatory regimes.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_16
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '56'
+  quote_snippet: (211) For the purposes of this Decision, the Commission retains its
+    previous product market definition and considers that the relevant product market
+    is the overall wholesale market for termination and hosting of calls to non-geographic
+    numbers, without it being necessary to consider further possible segmentations.
+    In any event, the Commission considers that the Transaction does not raise competition
+    concerns on that market, irrespective of the exact product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_16
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '56'
+  quote_snippet: (217) In previous decisions, the Commission has considered that there
+    is a separate market for the wholesale provision of domestic call transit services
+    on fixed networks, distinct from the international wholesale market for voice
+    carrier services.192
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_17
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '57'
+  quote_snippet: (219) For the purposes of this Decision, the Commission retains its
+    previous product market definition and considers that the relevant product market
+    is the wholesale market for the provision of domestic call transit services on
+    fixed networks.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_17
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '57'
+  quote_snippet: (228) For the purposes of this Decision, the exact definition of
+    the product market can be left open, as the Transaction does not raise competition
+    concerns under any possible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_18
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '57'
+  quote_snippet: (226) In Vodafone/Cable & Wireless, the Commission found that the
+    wholesale market for international carrier services comprised the lease of transmission
+    capacity and the provision of related services to third party telecommunications
+    traffic carriers and service providers.194
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_18
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '61'
+  quote_snippet: (257) In view of the above, for the purposes of this Decision, the
+    Commission concludes that each individual mobile network constitutes a separate
+    wholesale market for call termination.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_20
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '62'
+  quote_snippet: (264) In this case, the results of the market investigation did not
+    provide reasons to depart from the Commission’s previous approach in this case.
+    For the purposes of this Decision, therefore, the Commission retains its previous
+    product market definition of a separate wholesale market for international roaming
+    comprising both terminating calls and originating calls.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_21
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_34
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '63'
+  quote_snippet: (273) With respect to Czechia, Hungary, and Romania, the results
+    of the market investigation did not provide reasons to depart from the Commission’s
+    previous approach in this case, which did not conclude on an exact product market
+    definition.216 Therefore, for those three countries, the Commission considers
+    that the question whether the market should be further segmented (i) between FTA
+    or Pay TV, (ii) Premium Pay TV or Basic Pay TV, (iii) by genre, or (iv) between
+    different types of infrastructures can be left open, as no competition concerns
+    would arise, irrespective of the product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_22
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_35
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '64'
+  quote_snippet: (276) In conclusion, the Commission considers that the market for
+    the wholesale supply and acquisition of TV channels in Germany should be further
+    divided between FTA and pay TV channels, in line with previous decisions. Furthermore,
+    any possible segmentation of the market by distribution technology in Germany
+    will be analysed in the assessment of the wholesale market for the supply of TV
+    signal transmission, considering that, as it will be explained in section VIII.C.2.11,
+    in Germany the market for the wholesale supply and acquisition of TV channels
+    and the market for the wholesale supply of TV signal transmission are closely
+    interconnected and the infrastructure aspect of the relationship between TV broadcasters
+    and TV retailers relates mainly to the carriage of the signal. Finally, with respect
+    to further distinctions in Germany, the Commission considers that for the purposes
+    of the present Decision it is not necessary to conclude on the exact product market
+    definition, as no competition concerns would arise, irrespective of the product
+    market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_23
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_36
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '66'
+  quote_snippet: (288) The Commission considers that the wholesale TV signal distribution
+    via cable in Germany still constitutes a separate market. This finding is supported
+    by the market investigation and by other evidence in the file.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_24
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_37
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '67'
+  quote_snippet: (293) Finally, practically all TV broadcasters that took part in
+    the market investigation submitted that, in case of a permanent price increase
+    of 5–10% of the cable TV distribution prices whereas the prices for each of the
+    other platforms remained unchanged, they would not consider changing their purchasing
+    patterns or even switching only a certain percentage of their distribution to
+    the other platform.241
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_24
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_38
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '71'
+  quote_snippet: (313) On the basis of these elements, for the purposes of the present
+    Decision, the Commission concludes that both cable and FTTB/H are part of the
+    relevant product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_25
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_39
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '71'
+  quote_snippet: (312) The substitutability of cable and FTTB/H is confirmed by several
+    suppliers of intermediary TV signal as well as Level 4 operators.260 Both groups
+    explain that they use cable and fibre FTTB/H for the retail supply of TV signal
+    transmission to MDU customers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_25
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_40
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '73'
+  quote_snippet: (325) For the purpose of this Decision, the Commission considers
+    that the question whether the market for the licensing and acquisition of audio
+    visual content broadcasting rights should be further subdivided between (i) Pay
+    TV or FTA, (ii) linear or non-linear broadcast, by (iii) exhibition window, or
+    (iv) content type, can be left open, as the Transaction does not raise competition
+    concerns under any possible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_26
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_41
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '72'
+  quote_snippet: '(321) In previous decisions, the Commission has considered sub-dividing
+    the market for the licensing and acquisition of individual content in the following
+    manner: (i) Pay TV versus FTA TV,265 (ii) linear versus non-linear broadcast,266
+    (iii) by exhibition window, in other words Subscription VOD, Transactional VOD,267
+    PPV, first Pay TV window, second Pay TV window,268 and FTA; and (iv) by content
+    type, in other words films, sports, and other TV content.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_26
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_42
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '23'
+  quote_snippet: (46) Therefore, for the purposes of this Decision, the Commission
+    considers that the relevant geographic market for the retail provision of fixed
+    telephony services is national in scope and corresponds to each of the territories
+    of Czechia, Germany, Romania and Hungary.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_43
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '23'
+  quote_snippet: (45) For Czechia, Hungary, and Romania, the market investigation
+    did not provide any reasons justifying a departure from the Commission’s precedents,
+    that is to say, a national scope of the market. This is because of the continuing
+    importance of national regulation in the telecommunications sector, the supply
+    of upstream wholesale services that works on a national basis, and the fact that
+    the pricing policies of telecommunications providers are predominantly national.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_44
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '24'
+  quote_snippet: (46) Therefore, for the purposes of this Decision, the Commission
+    considers that the relevant geographic market for the retail provision of fixed
+    telephony services is national in scope and corresponds to each of the territories
+    of Czechia, Germany, Romania and Hungary.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_45
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '27'
+  quote_snippet: (59) As regards Germany, in its Referral Request, the FCO argued
+    that the market is at most national in scope and underlined that the presence
+    of regional players should, at least, be reflected in the competitive assessment.39
+    Similarly, in the first phase investigation, the vast majority of respondents
+    stated that the market is national in scope, although certain respondents active
+    in Germany raised the possibility that the market is local in scope.40 This aspect
+    was further investigated in the second phase investigation. The second phase investigation
+    supports the view that the market for the retail supply of fixed internet access
+    services is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_46
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '28'
+  quote_snippet: (61) Therefore, for the purposes of the present Decision, the Commission
+    considers that the relevant geographic market for the retail provision of fixed
+    internet services is national in scope and corresponds to each of the territories
+    of Czechia, Germany, Hungary and Romania. Nonetheless, as regards Germany, since
+    the Parties' cable network footprints do not overlap and Unitymedia is only active
+    in the supply of fixed internet access services on the basis of its own network,
+    in the competitive assessment the Commission takes into account the different
+    extent to which, pre-Transaction, the Parties compete with each other in the different
+    regions of Germany, delimited by the Parties’ respective cable footprints.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_47
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '33'
+  quote_snippet: (88) Therefore, the Commission considers, for the purposes of this
+    Decision, that the relevant geographic market for the retail supply of TV services
+    is national in scope and corresponds to each of the territories of Czechia, Germany,
+    Romania and Hungary.77
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_48
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '43'
+  quote_snippet: (141) With regard to SDU customers, for the purposes of this Decision,
+    the market definition can be left open. Irrespective of the geographic market
+    definition, the Commission considers that the Transaction would not significantly
+    impede effective competition in relation to the supply of retail TV signal transmission
+    services to SDU customers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_49
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '43'
+  quote_snippet: (139) As regards the market for the retail supply of TV signals to
+    SDU customers, the Commission has previously left the precise definition open.127
+    The Commission notes that in previous decisions the FCO defined the market as
+    regional.128
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_50
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '50'
+  quote_snippet: (165) Therefore, for the purposes of this Decision, the Commission
+    considers that the geographic scope of any plausible retail market for multiple
+    play services would be national and corresponds to each of the territories of
+    Czechia, Germany, Romania and Hungary.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_51
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '50'
+  quote_snippet: (164) Most respondents to the market investigation of this case considered
+    that a possible market for multiple play (irrespective of what type of multiple
+    play bundles are included in such possible market) would be national in scope.171
+    In particular, respondents to the market investigation confirmed that, also in
+    relation to bundles, they apply a national pricing policy and that they do not
+    employ regional promotion schemes.172
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_52
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '52'
+  quote_snippet: (176) Therefore, for the purposes of this Decision, the Commission
+    considers that the relevant geographic market for the retail supply of business
+    connectivity is national in scope and corresponds to each of the territories of
+    Czechia, Germany, Romania and Hungary.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_53
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '51'
+  quote_snippet: (173) In previous decisions, the Commission has found that the retail
+    market for business connectivity was national in scope.179
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_54
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '53'
+  quote_snippet: (186) For the purpose of this Decision, the Commission considers
+    that the exact geographic market definition can be left open, as the Transaction
+    does not raise competition concerns under any possible geographic market definition.
+    Should the market be considered national in scope, it would correspond to each
+    of the territories of Czechia, Germany, Romania and Hungary.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_8
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_55
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '53'
+  quote_snippet: (184) In previous decisions, the Commission did not conclude on the
+    exact definition of the geographic market for retail internet hosting services,
+    whether it is national, EEA-wide or worldwide.182
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_8
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_56
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '54'
+  quote_snippet: (195) In line with previous decisions and taking into account that
+    nothing in the Commission's file would justify a departure from the previous position,
+    for the purposes of this Decision, the Commission considers the geographic scope
+    of the wholesale market for call termination on a fixed network to be national
+    and to correspond to each of the territories of Czechia, Germany, Romania and
+    Hungary.185
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_9
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_57
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '55'
+  quote_snippet: (203) In line with previous decisions and taking into account that
+    nothing in the Commission's file would justify a departure from the previous position189,
+    for the purposes of this Decision, the Commission considers that the market for
+    wholesale leased lines irrespective of its precise product market definition is
+    nationwide in scope and corresponds to each of the territories of Czechia, Germany,
+    Romania and Hungary.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_10
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_58
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '56'
+  quote_snippet: (213) In line with previous decisions and taking into account that
+    nothing in the Commission's file would justify a departure from the previous position,
+    for the purposes of this Decision, the Commission considers that the geographic
+    scope of the wholesale market for termination and hosting of calls to non-geographic
+    numbers is national and corresponds to each of the territories of Czechia and
+    Germany.191
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_11
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_59
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '57'
+  quote_snippet: (221) In line with the Commission's previous practice and taking
+    into account that nothing in the Commission’s file would justify a departure from
+    the previous position, for the purposes of this decision, the Commission considers
+    that the geographic scope of the wholesale market for domestic call transit on
+    fixed networks is national and corresponds to each of the territories of Czechia,
+    Germany and Hungary.193
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_12
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_60
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '58'
+  quote_snippet: (231) The results of the market investigation did not provide reasons
+    to depart from the Commission’s previous approach in this case. The Commission
+    therefore concludes that the geographic market for wholesale international carrier
+    services is global in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_13
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_61
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '58'
+  quote_snippet: (230) In previous decisions, the Commission found that the market
+    for wholesale international carrier services is worldwide in scope.195
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_13
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_62
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '61'
+  quote_snippet: (259) Because the results of the market investigation did not provide
+    reasons to depart from the Commission’s previous approach in this case208, the
+    Commission considers the geographic scope of this market to be national in scope
+    and corresponds to each of the territories of Czechia, Germany, Hungary and Romania.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_15
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_63
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '62'
+  quote_snippet: (266) In line with its past decisions211 and taking into account
+    that the results of the market investigation did not provide reasons to depart
+    from the Commission’s previous approach in this case, for the purposes of this
+    Decision, the Commission considers that the wholesale market for international
+    roaming services is national in scope and corresponds to each of the territories
+    of Czechia, Germany, Hungary and Romania.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_16
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_64
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '72'
+  quote_snippet: (317) Therefore, and in line with previous decisions, for the purposes
+    of the present Decision, the Commission considers that the market for the Intermediary
+    TV signal delivery is regional in scope, limited to the area of the relevant Level
+    3 operator.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_18
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_65
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '72'
+  quote_snippet: (316) Most respondents to the market investigation consider that
+    the intermediary market for signal delivery is regional in scope, limited to the
+    network area of the relevant Level 3 operator.264 This is, because the demand
+    of Level 4 operator is local and can only be satisfied by Level 3 operators active
+    in its direct reach.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_18
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_66
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '74'
+  quote_snippet: (331) However, because the Target Business is only active in Czechia,
+    Germany, Hungary, and Romania, and because Vodafone does not have any retail TV
+    activities in any other German-speaking countries (namely, Austria, or Switzerland)
+    or Czech-Slovak-speaking countries (namely, Slovakia), for the purpose of this
+    Decision, the Commission will analyse the impact of the Transaction on the market
+    for the licensing and acquisition of broadcasting rights for TV content at a national
+    level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_19
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_67
+  source_document_id: eu_vodafone_liberty_global_2019_decision
+  page: '74'
+  quote_snippet: (330) For the purpose of this Decision, the Commission considers
+    that the exact geographic scope of the market for the licensing and acquisition
+    of broadcasting rights for TV content can be left open (that is to say, national
+    or covering a linguistically homogeneous area), as the Transaction does not raise
+    competition concerns under any possible geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_19
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-12'
+  last_updated_date: '2026-06-12'
+  tags: []

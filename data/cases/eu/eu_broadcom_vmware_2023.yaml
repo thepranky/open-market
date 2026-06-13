@@ -1,0 +1,927 @@
+case_id: eu_broadcom_vmware_2023
+case_name: Broadcom / VMware
+authority: European Commission
+jurisdiction: EU
+sector: tech
+outcome: cleared_with_conditions
+procedure_stage: phase2
+decision_date: '2023-07-12'
+parties:
+- name: Broadcom
+  role: acquirer
+- name: VMware
+  role: target
+source_documents:
+- doc_id: eu_broadcom_vmware_2023_decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10806
+  pdf_url: https://ec.europa.eu/competition/mergers/cases1/202520/M_10806_10624386_6538_3.pdf
+  title: Broadcom / VMware — Decision
+  doc_type: decision
+product_markets_considered:
+- market_id: pm_1
+  name: IT Asset Management & Software Asset Management (ITAM & SAM)
+  definition_status: left_open
+  notes: The Commission left the exact product market definition for ITOM software
+    open but carried out its assessment on the narrowest possible market, which is
+    ITAM & SAM based on Gartner segmentation.
+- market_id: pm_2
+  name: System Infrastructure software
+  definition_status: left_open
+  notes: The Commission left the exact product market definition for System Infrastructure
+    software open but carried out its assessment on the narrowest possible market,
+    which includes ITACM and DSAC based on IDC segmentation.
+- market_id: pm_3
+  name: Network software
+  definition_status: left_open
+  notes: The Commission left the exact product market definition for Network software
+    open, noting no overlap between Network Management software and Network Infrastructure
+    software.
+- market_id: pm_4
+  name: Virtualization software
+  definition_status: segmented
+  notes: The Commission identified a broader market for virtualization software, which
+    it then segmented into a narrower market for server virtualization software.
+- market_id: pm_5
+  name: Server virtualization software
+  definition_status: defined
+  notes: This market excludes containerization software and includes both open-source
+    and proprietary virtualization software. It is further segmented based on deployment
+    model.
+- market_id: pm_6
+  name: Server virtualization software (on-premises and private cloud deployments)
+  definition_status: defined
+  notes: This market segment for server virtualization software is distinguished from
+    public cloud deployments based on demand and supply-side factors.
+- market_id: pm_7
+  name: Server virtualization software (public cloud deployments)
+  definition_status: defined
+  notes: This market segment for server virtualization software is distinguished from
+    on-premises and private cloud deployments based on demand and supply-side factors,
+    including security, data privacy, data sovereignty, and high barriers to switching.
+- market_id: pm_8
+  name: FC HBAs
+  definition_status: defined
+  notes: The Commission found FC HBAs to be a distinct product market, as other HBA
+    technologies are not valid alternatives due to technical complexity and disruption.
+- market_id: pm_9
+  name: Storage adapters
+  definition_status: defined
+  notes: The Commission defined a market for storage adapters without further segmentation,
+    confirming that they cannot be replaced by HBAs and that segmentation by protocol
+    is not necessary due to tri-mode adapters.
+- market_id: pm_10
+  name: NICs
+  definition_status: segmented
+  notes: The Commission identified a broader market for NICs and defined Ethernet
+    NICs as a narrower relevant product market within it.
+- market_id: pm_11
+  name: Ethernet NICs
+  definition_status: defined
+  notes: This market is defined within the broader NICs market, excluding non-Ethernet
+    NICs and SmartNICs. Segmentation by bandwidth speed (above/below 25 Gb/s) was
+    left open.
+- market_id: pm_12
+  name: SmartNICs
+  definition_status: defined
+  notes: The Commission concluded that the market for Ethernet NICs does not include
+    SmartNICs, implying a separate market for SmartNICs due to fundamental differences
+    in function, price, and required expertise.
+geographic_markets_considered:
+- market_id: gm_1
+  name: ITOM software — worldwide or at least EEA-wide
+  definition_status: left_open
+  notes: The Commission left the exact geographic market definition open but considered
+    it to be worldwide or at least EEA-wide based on precedents.
+- market_id: gm_2
+  name: System Infrastructure software — worldwide or at least EEA-wide
+  definition_status: left_open
+  notes: The Commission left the exact geographic market definition open, citing precedents
+    suggesting a worldwide or at least EEA-wide scope for storage software.
+- market_id: gm_3
+  name: Network software — worldwide or at least EEA-wide
+  definition_status: left_open
+  notes: The Commission left the exact geographic market definition open, based on
+    precedents indicating at least EEA-wide, if not global, for Network Management
+    software.
+- market_id: gm_4
+  name: Virtualization software — worldwide
+  definition_status: defined
+  notes: The Commission concluded that the geographic scope for the market for virtualization
+    software, and any segmentation thereof, is worldwide.
+- market_id: gm_5
+  name: FC HBAs — worldwide
+  definition_status: defined
+  notes: The Commission concluded that the geographic scope for the market for FC
+    HBAs is global, consistent with market investigation findings and previous decisions.
+- market_id: gm_6
+  name: Storage adapters — worldwide
+  definition_status: defined
+  notes: The Commission concluded that the geographic scope for the market for storage
+    adapters is worldwide, based on market investigation results showing global presence
+    of suppliers and customers, and uniform conditions of competition.
+- market_id: gm_7
+  name: NICs — worldwide
+  definition_status: defined
+  notes: The Commission concluded that the geographic scope for the market for NICs
+    is worldwide, consistent with market investigation findings and previous decisions.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '24'
+  quote_snippet: The Commission considers that, for the purposes of this Decision,
+    the exact product market definition with regard to the supply of ITOM software
+    can be left open, as the Transaction would not significantly impede effective
+    competition under the narrowest possible product market definition, for which
+    market share data is available, based on the Gartner segmentation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '24'
+  quote_snippet: The Commission has not identified any reasons in this case to deviate
+    from its precedents in which it defines the software industry market by reference
+    to functionality and end-users, and identifies the narrowest possible product
+    markets set out by existing market intelligence reports which have been provided
+    by the Notifying Party, notably Gartner and/or IDC.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '29'
+  quote_snippet: The Commission considers that, for the purposes of this Decision,
+    the exact product market definition with regard to the supply of System infrastructure
+    software can be left open, as the Transaction would not significantly impede effective
+    competition under the narrowest possible product market definition, for which
+    market share data is available, based on the IDC segmentation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '29'
+  quote_snippet: In Sections 8.3.4. and 3.3.5., the Commission carries out an assessment
+    on the basis of IDC’s ITACM and DSAC market and submarket.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '29'
+  quote_snippet: The Commission has not identified any reasons in this case to deviate
+    from its precedents in which it defines the software industry market by reference
+    to functionality and end-users as well as identifies the narrowest possible product
+    markets set out by existing market intelligence reports which have been provided
+    by the Notifying Party, notably Gartner and/or IDC.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '33'
+  quote_snippet: The Commission considers that, for the purposes of this Decision,
+    the exact product market definition with regard to the supply of Network software
+    can be left open, as the Transaction would not significantly impede effective
+    competition under any potential product market definition, for which market share
+    data is available, based on the IDC segmentation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '33'
+  quote_snippet: Given that here is no overlap between the Parties’ activities in
+    Network Management software and Network Infrastructure software, in Section 8.2.2.2.,
+    the Commission carries out an assessment on the basis of IDC’s Network software
+    market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '32'
+  quote_snippet: The Commission has not identified any reasons in this case to deviate
+    from its precedents in which it defines the software industry market by reference
+    to functionality and end-users as well as identifies the narrowest possible product
+    markets set out by existing market intelligence reports which have been provided
+    by the Notifying Party, notably Gartner and/or IDC.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '39'
+  quote_snippet: In light of the above, for the purposes of this Decision, the Commission
+    concludes that within a broader market for virtualization software, there is a
+    narrower relevant product market for server virtualization software.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '34'
+  quote_snippet: In previous decisions, the Commission considered a segmentation of
+    software based on (i) the different functionalities of the software and the sector
+    concerned, and (ii) the end uses offered by that particular software.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '35'
+  quote_snippet: The Notifying Party considers that the market for virtualization
+    software is a separate software market comprising all virtualization software
+    independent of its underlying components or hardware, its deployment environment,
+    and its open source or proprietary nature. The market excludes containerization
+    software.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '47'
+  quote_snippet: In light of the above, for the purposes of this Decision, the Commission
+    concludes that there is a market for server virtualization software (excluding
+    containerization software), which includes both open-source and proprietary virtualization
+    software, and which should be further segmented based on deployment model, i.e.,
+    depending on whether the software is deployed (i) on-premises and in the private
+    cloud, or (ii) in the public cloud.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '39'
+  quote_snippet: In light of the above, for the purposes of this Decision, the Commission
+    concludes that within a broader market for virtualization software, there is a
+    narrower relevant product market for server virtualization software.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '47'
+  quote_snippet: In light of the above, for the purposes of this Decision, the Commission
+    concludes that there is a market for server virtualization software (excluding
+    containerization software), which includes both open-source and proprietary virtualization
+    software, and which should be further segmented based on deployment model, i.e.,
+    depending on whether the software is deployed (i) on-premises and in the private
+    cloud, or (ii) in the public cloud.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '46'
+  quote_snippet: In light of the above, for the purposes of this Decision, the Commission
+    concludes that within the market for server virtualization software, there are
+    grounds to segment the market based on deployment model, i.e., into market segments
+    for virtualization software deployed (i) on-premises and in the private cloud,
+    and (ii) in the public cloud.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '40'
+  quote_snippet: First, with respect to the distinction between on-premises and private
+    cloud, several respondents to the market investigation indicated that they do
+    not draw a clear distinction between on-premises and private cloud deployments,
+    as opposed to the public cloud.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '47'
+  quote_snippet: In light of the above, for the purposes of this Decision, the Commission
+    concludes that there is a market for server virtualization software (excluding
+    containerization software), which includes both open-source and proprietary virtualization
+    software, and which should be further segmented based on deployment model, i.e.,
+    depending on whether the software is deployed (i) on-premises and in the private
+    cloud, or (ii) in the public cloud.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '46'
+  quote_snippet: In light of the above, for the purposes of this Decision, the Commission
+    concludes that within the market for server virtualization software, there are
+    grounds to segment the market based on deployment model, i.e., into market segments
+    for virtualization software deployed (i) on-premises and in the private cloud,
+    and (ii) in the public cloud.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '40'
+  quote_snippet: The Commission’s market investigation showed that server virtualization
+    software for the public cloud should not be included in the same market as the
+    market for server virtualization software for on-premises and private cloud deployments.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '49'
+  quote_snippet: In light of the above, for the purposes of this Decision, the Commission
+    concludes that there is a separate market for FC HBAs, without further segmentation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '49'
+  quote_snippet: Based on the above, the Commission confirms its preliminary finding
+    that, for the purposes of this Decision, the relevant product market is the market
+    for FC HBAs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '53'
+  quote_snippet: In light of the above, for the purposes of this Decision, the Commission
+    concludes that there is a market for storage adapters, without further segmentation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '53'
+  quote_snippet: Based on the above, the Commission confirms its preliminary finding
+    that, for the purposes of this Decision, the relevant product market is the market
+    for storage adapters.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '52'
+  quote_snippet: Although the results on whether storage adapters could be replaced
+    by HBAs were mixed, overall the Commission considers that storage adapters cannot
+    be replaced by HBAs as it is explained by a customer that “storage adapters provide
+    direct connection to SAS and/or SATA disk interfaces and an IP/Ethernet HBA would
+    not have that capability as a direct alternative”.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '60'
+  quote_snippet: In light of the above, for the purposes of this Decision, the Commission
+    reaches the conclusion that there is a separate market for the supply of NICs
+    which does not include SmartNICs. Within a broader market for the supply of NICs,
+    there is a narrower relevant product market for the supply of Ethernet NICs. The
+    question whether the market for the supply of NICs should be segmented based on
+    bandwidth speed between speeds above and below 25 Gb/s can be left open in this
+    Decision as the Transaction would not significantly impede effective competition
+    on the market for the supply of NICs irrespective of the precise market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '60'
+  quote_snippet: In light of the above, for the purposes of this Decision, the Commission
+    reaches the conclusion that there is a separate market for the supply of NICs
+    which does not include SmartNICs. Within a broader market for the supply of NICs,
+    there is a narrower relevant product market for the supply of Ethernet NICs. The
+    question whether the market for the supply of NICs should be segmented based on
+    bandwidth speed between speeds above and below 25 Gb/s can be left open in this
+    Decision as the Transaction would not significantly impede effective competition
+    on the market for the supply of NICs irrespective of the precise market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '57'
+  quote_snippet: The majority of respondents expressing an opinion considered that,
+    to a large extent, non-Ethernet NICs (e.g., InfiniBand NICS) do not constitute
+    an alternative for Ethernet NICs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '60'
+  quote_snippet: In light of the above, for the purposes of this Decision, the Commission
+    reaches the conclusion that there is a separate market for the supply of NICs
+    which does not include SmartNICs. Within a broader market for the supply of NICs,
+    there is a narrower relevant product market for the supply of Ethernet NICs. The
+    question whether the market for the supply of NICs should be segmented based on
+    bandwidth speed between speeds above and below 25 Gb/s can be left open in this
+    Decision as the Transaction would not significantly impede effective competition
+    on the market for the supply of NICs irrespective of the precise market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '60'
+  quote_snippet: In light of the above, for the purposes of this Decision, the Commission
+    concludes that the market for the supply of Ethernet NICs does not include SmartNICs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '59'
+  quote_snippet: While half of the respondents replied that SmartNICs and NICs are
+    not substitutable, the other half indicated that, at least for certain bandwidths,
+    SmartNICs do constitute an alternative to NICs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '25'
+  quote_snippet: The Commission considers that, for the purposes of this Decision,
+    the exact geographic market definition with regard to the supply of ITOM software,
+    or any segment thereof, can be left open, as the Transaction would not significantly
+    impede effective competition under any plausible geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '25'
+  quote_snippet: In previous decisions, the Commission left the geographic market
+    for infrastructure software (as well as any potential segmentations thereof) open,
+    but considered that it was worldwide or at least EEA-wide in scope, since customers
+    consider offers from vendors from all parts of the world, there are no technological
+    barriers that restrict vendors from supplying customers globally, and infrastructure
+    software are broadly identical across different countries.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '30'
+  quote_snippet: The Commission considers that, for the purposes of this Decision,
+    the exact geographic market definition with regard to the supply of System Infrastructure
+    software, or any segment thereof, can be left open, as the Transaction would not
+    significantly impede effective competition under the narrowest possible product
+    market definition for which market share data is available, based on the IDC segmentation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_34
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '29'
+  quote_snippet: In previous decisions, the Commission considered that the relevant
+    geographic market for storage software was worldwide or at least EEA-wide but
+    ultimately left the relevant geographic market open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_35
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '33'
+  quote_snippet: The Commission considers that, for the purposes of this Decision,
+    the exact geographic market definition with regard to the supply of Network software,
+    or any segment thereof, can be left open, as the Transaction would not significantly
+    impede effective competition under any potential product market definition, for
+    which market share data is available, based on the IDC segmentation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_36
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '33'
+  quote_snippet: In IBM/RedHat108, the Commission considered that the market for Network
+    Management software is at least EEA-wide, if not global, but ultimately left open
+    the exact geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_37
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '48'
+  quote_snippet: In light of the above and in line with its previous decisional practice,
+    for the purposes of this Decision, the Commission considers that the geographic
+    scope of the market for virtualization software, or any segmentation thereof,
+    is worldwide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_38
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '47'
+  quote_snippet: Based on the results of the market investigation, the Commission
+    considers that the market for virtualization software is global.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_39
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '47'
+  quote_snippet: In Dell / EMC, the Commission concluded that the relevant geographic
+    market for middleware and its market sub-segments (including virtualization software)
+    is worldwide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_40
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '50'
+  quote_snippet: For the reasons set out above, the Commission concludes that, for
+    the purposes of the assessment of the Transaction, the geographic scope of the
+    market for FC HBAs is global.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_41
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '50'
+  quote_snippet: Based on the results of the market investigation, the Commission
+    considers that the market for FC HBAs is worldwide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_42
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '50'
+  quote_snippet: In Broadcom / Brocade226, the Commission noted that the results of
+    its market investigation indicated that the market for FC HBAs is likely to be
+    worldwide. In particular, respondents consider that suppliers operate on a worldwide
+    basis, transport costs are not significant, location is not a factor for supplier
+    selection and price levels are similar across regions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_43
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '54'
+  quote_snippet: For the reasons set out above, the Commission concludes that, for
+    the purposes of the assessment of the Transaction, the geographic scope of the
+    market for storage adapters is worldwide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_44
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '54'
+  quote_snippet: Based on the results of the market investigation, the Commission
+    considers that the market for storage adapters is worldwide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_45
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '54'
+  quote_snippet: First, customers typically purchase storage adapters from suppliers
+    with a global presence. In the market investigation, the vast majority of respondents
+    expressing an opinion indicated that this is the case.254 Second, suppliers of
+    storage adapters indicated that they typically supply storage adapters on a global
+    level and that the conditions of competition do not differ depending on the location
+    of the datacentre of the customer.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_46
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '60'
+  quote_snippet: In the market investigation, the Commission investigated the geographic
+    scope of the market for NICs. The results of the market investigation indicated
+    that the scope of the market was worldwide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_47
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '60'
+  quote_snippet: In Nvidia / Mellanox, the Commission considered that the geographic
+    scope for the various markets for network interconnects products, including Ethernet
+    NICs, was worldwide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_48
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '60'
+  quote_snippet: The Notifying Party concurs with the geographic market defined by
+    the Commission. In the Notifying Party’s view, competition takes place worldwide,
+    manufacturing and supply chains span across the globe, customers purchase from
+    suppliers irrespective of their location, and transport costs and other barriers
+    to trade are low.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_49
+  source_document_id: eu_broadcom_vmware_2023_decision
+  page: '10'
+  quote_snippet: On 16 May 2023, the Notifying Party submitted commitments pursuant
+    to Article 8(2) second subparagraph of the Merger Regulation in order to address
+    the competition concerns identified by the Commission. Accordingly, the legal
+    deadline for the Commission decision was automatically extended by 15 working
+    days, pursuant to Article 10(3) first subparagraph of the Merger Regulation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-12'
+  last_updated_date: '2026-06-12'
+  tags: []

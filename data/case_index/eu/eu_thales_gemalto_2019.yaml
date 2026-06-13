@@ -2,29 +2,32 @@ case_id: eu_thales_gemalto_2019
 case_name: Thales / Gemalto
 jurisdiction: EU
 authority: European Commission
-decision_date: "2019-02-21"
+decision_date: '2019-02-21'
 sector: tech
 outcome: cleared_with_conditions
 case_type: merger
 source_url: https://competition-cases.ec.europa.eu/cases/M.8797
-ai_summary: >
-  The Commission cleared Thales's €4.8bn acquisition of Gemalto on 21 February 2019 subject
-  to conditions. Both parties were leading global suppliers of digital security products,
-  including SIM cards, hardware security modules (HSMs), payment credentials, and identity
-  management systems. The primary concern centred on general-purpose HSMs used by banks,
-  central banks, and critical infrastructure operators, where the combined entity would hold
-  a dominant position. Remedies required Thales to divest Gemalto's HSM business (subsequently
-  acquired by Entrust Datacard). The case is significant as an early example of cybersecurity
-  and critical infrastructure protection driving merger remedies in the tech sector.
+ai_summary: 'The Commission cleared Thales''s €4.8bn acquisition of Gemalto on 21
+  February 2019 subject to conditions. Both parties were leading global suppliers
+  of digital security products, including SIM cards, hardware security modules (HSMs),
+  payment credentials, and identity management systems. The primary concern centred
+  on general-purpose HSMs used by banks, central banks, and critical infrastructure
+  operators, where the combined entity would hold a dominant position. Remedies required
+  Thales to divest Gemalto''s HSM business (subsequently acquired by Entrust Datacard).
+  The case is significant as an early example of cybersecurity and critical infrastructure
+  protection driving merger remedies in the tech sector.
+
+  '
 parties:
-  - name: Thales
-    role: acquirer
-  - name: Gemalto
-    role: target
+- name: Thales
+  role: acquirer
+- name: Gemalto
+  role: target
 concept_refs:
-  - concept_id: sector_tech
-    quality_level: indexed
-    provenance: manually_tagged
-  - concept_id: toh_horizontal
-    quality_level: indexed
-    provenance: manually_tagged
+- concept_id: sector_tech
+  quality_level: indexed
+  provenance: manually_tagged
+- concept_id: toh_horizontal
+  quality_level: indexed
+  provenance: manually_tagged
+pdf_url: https://ec.europa.eu/competition/mergers/cases/decisions/m8797_2386_3.pdf

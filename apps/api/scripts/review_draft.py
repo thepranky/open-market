@@ -40,6 +40,12 @@ for _p in (str(_API_DIR), str(_SCRIPTS_DIR)):
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
+try:
+    from dotenv import load_dotenv as _load_dotenv
+    _load_dotenv(_REPO_ROOT / ".env", override=False)
+except ImportError:
+    pass
+
 _DRAFTS_DIR = _REPO_ROOT / "data" / "drafts"
 _DEFAULT_CACHE_DIR = _REPO_ROOT / "data" / "source_text"
 
@@ -52,7 +58,7 @@ _MODEL = "claude-sonnet-4-6"
 # claude-sonnet-4-6 pricing per token
 _INPUT_COST_PER_TOKEN = 3.0 / 1_000_000
 _OUTPUT_COST_PER_TOKEN = 15.0 / 1_000_000
-_MAX_OUTPUT_TOKENS = 4096
+_MAX_OUTPUT_TOKENS = 32768
 
 # How many chars of page text to include around each quote
 _CONTEXT_WINDOW_CHARS = 400
@@ -412,7 +418,8 @@ def _check_preflight(
             "Run ingest_case.py (Stages 1-4) before running LLM review."
         )
     content = review_md_path.read_text(encoding="utf-8")
-    if "**Status: PASS**" not in content:
+    passed = "**Status: PASS**" in content or "**Status: PASS (coverage warning)**" in content
+    if not passed:
         status_line = next(
             (line for line in content.splitlines() if "**Status:" in line), "unknown"
         )
@@ -678,6 +685,52 @@ def _call_claude_review(prompt: str, anthropic_client) -> dict:
     raise ValueError("Claude did not call the record_llm_review tool")
 
 
+_GEMINI_REVIEW_MODEL = "gemini-2.5-flash"
+
+
+def _call_gemini_review(prompt: str, gemini_client) -> dict:
+    """Call Gemini with JSON output mode; parse and return the review dict.
+
+    *gemini_client* is a ``google.genai.Client`` instance.
+    Retries up to 3 times on 503 UNAVAILABLE (free-tier demand spikes).
+    """
+    import time as _time
+    from google.genai import types as _gtypes
+    full_prompt = _REVIEW_SYSTEM_PROMPT + "\n\n" + prompt
+    last_exc: Exception = RuntimeError("no attempts made")
+    for attempt in range(3):
+        if attempt:
+            _time.sleep(15 * attempt)
+        try:
+            response = gemini_client.models.generate_content(
+                model=_GEMINI_REVIEW_MODEL,
+                contents=full_prompt,
+                config=_gtypes.GenerateContentConfig(
+                    response_mime_type="application/json",
+                    max_output_tokens=_MAX_OUTPUT_TOKENS,
+                ),
+            )
+            raw_text = response.text.strip()
+            try:
+                result = json.loads(raw_text)
+            except json.JSONDecodeError as exc:
+                raise ValueError(f"Gemini review returned invalid JSON: {exc}") from exc
+            if not isinstance(result, dict):
+                raise ValueError(f"Gemini review returned non-object JSON: {type(result)}")
+            # Gemini uses "triage_calibration" due to prompt wording; normalise to the
+            # canonical field name so _validate_review_output accepts it.
+            if "triage_calibration" in result and "triage_status" not in result:
+                result["triage_status"] = result.pop("triage_calibration")
+            return result
+        except Exception as exc:
+            last_exc = exc
+            msg = str(exc)
+            if "503" in msg or "UNAVAILABLE" in msg:
+                continue  # retry
+            raise
+    raise RuntimeError(f"Gemini review API call failed after 3 attempts: {last_exc}") from last_exc
+
+
 # ---------------------------------------------------------------------------
 # Output validation
 # ---------------------------------------------------------------------------
@@ -940,9 +993,11 @@ def run_llm_review(
     json_out: Path,
     md_out: Path,
     cache_dir: Path,
-    anthropic_client,
+    anthropic_client=None,
     max_cost: float = 0.50,
     skip_preflight: bool = False,
+    provider: str = "anthropic",
+    gemini_model=None,
 ) -> tuple[str, list[str]]:
     """
     Run the LLM review for a validated draft.
@@ -974,17 +1029,23 @@ def run_llm_review(
 
     print(f"  Estimated cost: ${estimated:.3f}")
 
+    model_label = _MODEL if provider == "anthropic" else _GEMINI_REVIEW_MODEL
     try:
-        review = _call_claude_review(prompt, anthropic_client)
+        if provider == "gemini":
+            if gemini_model is None:
+                raise RuntimeError("gemini_model must be provided when provider='gemini'")
+            review = _call_gemini_review(prompt, gemini_model)
+        else:
+            review = _call_claude_review(prompt, anthropic_client)
     except Exception as exc:
         raise RuntimeError(f"LLM review API call failed: {exc}") from exc
 
     validation_errors = _validate_review_output(review, known_passage_ids)
 
     generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
-    write_llm_review_json(json_out, review, case_id, focus, _MODEL, generated_at)
+    write_llm_review_json(json_out, review, case_id, focus, model_label, generated_at)
     write_llm_review_md(
-        md_out, review, case_id, focus, _MODEL, generated_at,
+        md_out, review, case_id, focus, model_label, generated_at,
         json_out, validation_errors,
     )
 
@@ -1009,6 +1070,15 @@ def main() -> int:
                         help="Max estimated API cost in USD (default: 0.50)")
     parser.add_argument("--cache-dir", default=str(_DEFAULT_CACHE_DIR),
                         help=f"PDF text cache directory (default: {_DEFAULT_CACHE_DIR})")
+    parser.add_argument(
+        "--provider",
+        default="anthropic",
+        choices=["anthropic", "gemini"],
+        help=(
+            "LLM provider. 'anthropic' uses Claude (ANTHROPIC_API_KEY); "
+            "'gemini' uses Gemini 2.0 Flash (GOOGLE_API_KEY, free tier)."
+        ),
+    )
     args = parser.parse_args()
 
     cache_dir = Path(args.cache_dir)
@@ -1044,23 +1114,45 @@ def main() -> int:
         print(f"ERROR: {err}", file=sys.stderr)
         return 1
 
-    # Load Anthropic client
-    try:
-        import anthropic as _anthropic
-        anthropic_client = _anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
-    except ImportError:
-        print(
-            "ERROR: anthropic package not installed. "
-            "Run: pip install anthropic",
-            file=sys.stderr,
-        )
-        return 1
-    except KeyError:
-        print(
-            "ERROR: ANTHROPIC_API_KEY environment variable not set.",
-            file=sys.stderr,
-        )
-        return 1
+    print(f"Provider:   {args.provider}")
+    print()
+
+    # Load LLM client
+    anthropic_client = None
+    gemini_model = None
+    if args.provider == "gemini":
+        try:
+            from google import genai as _genai
+            gemini_model = _genai.Client(api_key=os.environ["GOOGLE_API_KEY"])
+        except ImportError:
+            print(
+                "ERROR: google-genai package not installed. "
+                "Run: pip install google-genai",
+                file=sys.stderr,
+            )
+            return 1
+        except KeyError:
+            print(
+                "ERROR: GOOGLE_API_KEY environment variable not set.",
+                file=sys.stderr,
+            )
+    else:
+        try:
+            import anthropic as _anthropic
+            anthropic_client = _anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+        except ImportError:
+            print(
+                "ERROR: anthropic package not installed. "
+                "Run: pip install anthropic",
+                file=sys.stderr,
+            )
+            return 1
+        except KeyError:
+            print(
+                "ERROR: ANTHROPIC_API_KEY environment variable not set.",
+                file=sys.stderr,
+            )
+            return 1
 
     print("Running LLM review …")
     try:
@@ -1072,7 +1164,9 @@ def main() -> int:
             cache_dir=cache_dir,
             anthropic_client=anthropic_client,
             max_cost=args.max_cost,
-            skip_preflight=True,  # already checked above
+            skip_preflight=True,
+            provider=args.provider,
+            gemini_model=gemini_model,
         )
     except (ValueError, RuntimeError) as exc:
         print(f"ERROR: {exc}", file=sys.stderr)

@@ -2,31 +2,35 @@ case_id: eu_illumina_grail_2022
 case_name: Illumina / GRAIL
 jurisdiction: EU
 authority: European Commission
-decision_date: "2022-09-06"
+decision_date: '2022-09-06'
 sector: pharma_biotech
 outcome: annulled
 case_type: merger
 source_url: https://competition-cases.ec.europa.eu/cases/M.10188
-ai_summary: >
-  The Commission prohibited Illumina's acquisition of GRAIL on 6 September 2022 under
-  jurisdiction asserted via Article 22 referrals from France and other member states, despite
-  the deal not meeting EU turnover thresholds. Illumina closed the deal before the prohibition
-  (gun-jumping), resulting in separate fines. In September 2023 the ECJ ruled that the
-  Commission could not accept Art. 22 referrals from member states whose own national
-  thresholds were not triggered, nullifying the Commission's jurisdiction; the prohibition
-  was accordingly annulled. Illumina divested GRAIL in 2024.
+ai_summary: 'The Commission prohibited Illumina''s acquisition of GRAIL on 6 September
+  2022 under jurisdiction asserted via Article 22 referrals from France and other
+  member states, despite the deal not meeting EU turnover thresholds. Illumina closed
+  the deal before the prohibition (gun-jumping), resulting in separate fines. In September
+  2023 the ECJ ruled that the Commission could not accept Art. 22 referrals from member
+  states whose own national thresholds were not triggered, nullifying the Commission''s
+  jurisdiction; the prohibition was accordingly annulled. Illumina divested GRAIL
+  in 2024.
+
+  '
 parties:
-  - name: Illumina
-    role: acquirer
-  - name: GRAIL
-    role: target
+- name: Illumina
+  role: acquirer
+- name: GRAIL
+  role: target
 concept_refs:
-  - concept_id: sector_pharma
-    quality_level: indexed
-    provenance: manually_tagged
-  - concept_id: proc_art22_referral
-    quality_level: indexed
-    provenance: manually_tagged
-  - concept_id: toh_vertical
-    quality_level: indexed
-    provenance: manually_tagged
+- concept_id: sector_pharma
+  quality_level: indexed
+  provenance: manually_tagged
+- concept_id: proc_art22_referral
+  quality_level: indexed
+  provenance: manually_tagged
+- concept_id: toh_vertical
+  quality_level: indexed
+  provenance: manually_tagged
+pdf_url: null  # 2022 prohibition decision removed from EC portal after 2024 annulment; M_10188 URL resolves to 9-page General Court annulment ruling, not the original decision
+pdf_url_note: "Full prohibition decision (2022-09-06) no longer publicly available. The URL previously stored resolved to the 2024 General Court annulment judgment (9 pages). Entry based on public summaries only."

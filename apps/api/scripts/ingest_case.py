@@ -44,16 +44,26 @@ for _p in (str(_API_DIR), str(_SCRIPTS_DIR)):
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
+# Load .env from repo root so GOOGLE_API_KEY / ANTHROPIC_API_KEY are available
+# when the script is invoked directly (not via a shell that already exports them).
+try:
+    from dotenv import load_dotenv as _load_dotenv
+    _load_dotenv(_REPO_ROOT / ".env", override=False)
+except ImportError:
+    pass
+
 from app.utils.pdf_extractor import DEFAULT_CACHE_DIR, fetch_and_extract
 from check_source_integrity import Level, check_record
 from extract_case_from_source import (
     ExtractionReport,
+    LLMClient,
     _resolve_canonical_yaml,
     extract_case,
 )
 
 _CASES_DIR = _REPO_ROOT / "data" / "cases"
 _DRAFTS_DIR = _REPO_ROOT / "data" / "drafts"
+_INDEX_DIR = _REPO_ROOT / "data" / "case_index"
 
 # Valid enum values used in draft structural check
 _VALID_OUTCOMES = {
@@ -190,24 +200,20 @@ def stage_validate_draft(draft_record: dict) -> tuple[bool, list[str], list[str]
                 f"passage {pid}: source_document_id '{ref}' not found in source_documents"
             )
 
-        # Outcome passage linked to market: warn (not block).
+        # Clearance/outcome passage linked to market: warn (not block).
+        # Note: source_role='conclusion' passages MAY link to markets — "Commission concludes
+        # the relevant market is X" is a valid market-definition conclusion. Only warn when
+        # the quote itself contains clearance/authorization language.
         has_market_link = bool(
             (sp.get("supports_markets") or []) or (sp.get("supports_geographic_markets") or [])
         )
         if has_market_link:
             quote = sp.get("quote_snippet", "") or ""
-            role = sp.get("source_role", "") or ""
-            if role == "conclusion":
-                warnings.append(
-                    f"passage {pid}: source_role 'conclusion' must not support market entries "
-                    "(supports_markets / supports_geographic_markets). "
-                    "Outcome and market definition are distinct — remove the market linkage."
-                )
-            elif _passage_has_outcome_language(quote):
+            if _passage_has_outcome_language(quote):
                 warnings.append(
                     f"passage {pid}: quote contains outcome/clearance language but is linked "
                     "to a market entry. Remove supports_markets / supports_geographic_markets "
-                    "linkage and set source_role: conclusion."
+                    "and keep as an unlinked conclusion passage."
                 )
 
     return len(errors) == 0, errors, warnings
@@ -485,6 +491,8 @@ def stage_llm_review(
     report_path: Path,
     cache_dir: Path,
     max_cost: float,
+    provider: str = "anthropic",
+    gemini_client=None,
 ) -> tuple[Optional[str], Optional[Path], Optional[Path]]:
     """
     Run the optional LLM review / triage stage after Stage 4 passes.
@@ -502,14 +510,20 @@ def stage_llm_review(
     json_out = draft_path.parent / (draft_path.stem.replace(".draft", "") + ".llm_review.json")
     md_out = draft_path.parent / (draft_path.stem.replace(".draft", "") + ".llm_review.md")
 
-    try:
-        import anthropic as _anthropic
-        anthropic_client = _anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
-    except (ImportError, KeyError) as exc:
-        print(f"  WARN: LLM review skipped — {exc}")
-        return None, None, None
+    anthropic_client = None
+    if provider == "gemini":
+        if gemini_client is None:
+            print("  WARN: LLM review skipped — gemini_client not provided")
+            return None, None, None
+    else:
+        try:
+            import anthropic as _anthropic
+            anthropic_client = _anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+        except (ImportError, KeyError) as exc:
+            print(f"  WARN: LLM review skipped — {exc}")
+            return None, None, None
 
-    print("Stage 5a — LLM review")
+    print(f"Stage 5a — LLM review ({provider})")
     try:
         triage, validation_errors = _run_llm_review(
             draft_path=draft_path,
@@ -518,6 +532,8 @@ def stage_llm_review(
             md_out=md_out,
             cache_dir=cache_dir,
             anthropic_client=anthropic_client,
+            gemini_model=gemini_client,
+            provider=provider,
             max_cost=max_cost,
             skip_preflight=True,
         )
@@ -539,6 +555,84 @@ def stage_llm_review(
     print(f"  MD:      {md_out}")
     print()
     return triage, json_out, md_out
+
+
+# ---------------------------------------------------------------------------
+# --from-index helpers
+# ---------------------------------------------------------------------------
+
+def _load_index_entry(case_id: str) -> Optional[dict]:
+    """Find and load a case index YAML from data/case_index/."""
+    for entry_path in _INDEX_DIR.rglob(f"{case_id}.yaml"):
+        with open(entry_path) as fh:
+            return yaml.safe_load(fh)
+    return None
+
+
+def _resolve_pdf_url_from_ec_portal(
+    source_url: str, decision_date: str, timeout: int = 30
+) -> Optional[str]:
+    """
+    Resolve the decision PDF URL for EC Phase I (non-opposition) merger decisions.
+
+    Phase I decisions are published in EUR-Lex / cellar.  The CELEX identifier
+    follows the pattern 3{YEAR}M{CASE_NUMBER} (e.g. M.11115 decided 2023 →
+    32023M11115), and the cellar URL
+        http://publications.europa.eu/resource/celex/{CELEX}.ENG.pdf
+    content-negotiates to a PDF when requested with Accept: application/pdf.
+
+    Phase II decisions (cleared with conditions, blocked) are NOT in EUR-Lex;
+    their PDFs are on ec.europa.eu/competition/mergers/cases1/... — those
+    require --pdf-url.  Returns None if resolution fails.
+    """
+    import re as _re
+    m = _re.search(r"M\.(\d+)$", source_url)
+    if not m:
+        return None
+    case_number = m.group(1)
+    year = (decision_date or "")[:4]
+    if not year.isdigit():
+        return None
+    celex = f"3{year}M{case_number}"
+    cellar_url = f"http://publications.europa.eu/resource/celex/{celex}.ENG.pdf"
+    try:
+        _pdf_headers = {"Accept": "application/pdf, */*;q=0.5"}
+        with httpx.Client(follow_redirects=True, timeout=timeout) as client:
+            resp = client.head(cellar_url, headers=_pdf_headers)
+            if resp.status_code == 200 and "pdf" in resp.headers.get("content-type", ""):
+                return str(resp.url)  # resolved DOC_1 direct URL
+    except Exception:
+        pass
+    return None
+
+
+def _build_scaffold_from_index(index_entry: dict, pdf_url: str) -> dict:
+    """Build a minimal extraction-ready scaffold record from a case index entry."""
+    case_id = index_entry["case_id"]
+    return {
+        "case_id": case_id,
+        "case_name": index_entry.get("case_name", ""),
+        "jurisdiction": (index_entry.get("jurisdiction") or "unknown").upper(),
+        "authority": index_entry.get("authority", ""),
+        "sector": index_entry.get("sector", "unknown"),
+        "outcome": index_entry.get("outcome", "unknown"),
+        "decision_date": index_entry.get("decision_date", ""),
+        "case_type": index_entry.get("case_type", "merger"),
+        "parties": index_entry.get("parties", []),
+        "source_documents": [
+            {
+                "doc_id": f"{case_id}_decision",
+                "title": f"{index_entry.get('case_name', case_id)} — Decision",
+                "doc_type": "decision",
+                "case_page_url": index_entry.get("source_url", ""),
+                "pdf_url": pdf_url,
+            }
+        ],
+        "product_markets_considered": [],
+        "geographic_markets_considered": [],
+        "theories_of_harm": [],
+        "source_passages": [],
+    }
 
 
 # ---------------------------------------------------------------------------
@@ -603,6 +697,30 @@ def main() -> int:
             "Defaults to pp{START}-{END} when --page-range is used without this flag."
         ),
     )
+    parser.add_argument(
+        "--from-index",
+        action="store_true",
+        help=(
+            "Ingest a case that has an index entry but no canonical YAML. "
+            "Reads from data/case_index/ and builds a minimal scaffold for extraction. "
+            "Requires --pdf-url or an auto-resolvable EUR-Lex CELEX URL."
+        ),
+    )
+    parser.add_argument(
+        "--pdf-url",
+        default=None,
+        metavar="URL",
+        help=(
+            "Decision PDF URL for --from-index ingestion. "
+            "If omitted, the URL is derived automatically from the EUR-Lex CELEX pattern."
+        ),
+    )
+    parser.add_argument(
+        "--provider",
+        default="anthropic",
+        choices=["anthropic", "gemini"],
+        help="LLM provider to use for extraction (default: anthropic)",
+    )
     args = parser.parse_args()
 
     # Parse and validate --page-range
@@ -638,11 +756,46 @@ def main() -> int:
 
     cache_dir = Path(args.cache_dir)
 
-    # Resolve canonical YAML
-    yaml_path = _resolve_canonical_yaml(args.case_id, _CASES_DIR)
-    if yaml_path is None:
-        print(f"ERROR: No canonical YAML found for '{args.case_id}' under {_CASES_DIR}")
-        return 1
+    # Resolve canonical YAML (or build scaffold from index)
+    scaffold_path: Optional[Path] = None
+    if args.from_index:
+        index_entry = _load_index_entry(args.case_id)
+        if index_entry is None:
+            print(f"ERROR: No index entry found for '{args.case_id}' under {_INDEX_DIR}")
+            return 1
+        pdf_url: Optional[str] = args.pdf_url or index_entry.get("pdf_url")
+        if not pdf_url:
+            source_url = index_entry.get("source_url", "")
+            decision_date = index_entry.get("decision_date", "")
+            print(f"  Resolving PDF URL for {args.case_id}…", end=" ", flush=True)
+            pdf_url = _resolve_pdf_url_from_ec_portal(source_url, decision_date)
+            if pdf_url:
+                print("ok")
+            else:
+                print("failed (Phase II / not in EUR-Lex)")
+                print(
+                    f"ERROR: Could not auto-resolve PDF URL for '{args.case_id}'.\n"
+                    f"  Phase II decisions are not in EUR-Lex — find the PDF at: {source_url}\n"
+                    f"  Then re-run with: --from-index --pdf-url <url>"
+                )
+                return 1
+        scaffold = _build_scaffold_from_index(index_entry, pdf_url)
+        jur = (index_entry.get("jurisdiction") or "unknown").lower()
+        scaffold_dir = _DRAFTS_DIR / jur
+        scaffold_dir.mkdir(parents=True, exist_ok=True)
+        scaffold_path = scaffold_dir / f"{args.case_id}.scaffold.yaml"
+        with open(scaffold_path, "w", encoding="utf-8") as fh:
+            yaml.dump(scaffold, fh, allow_unicode=True, default_flow_style=False, sort_keys=False)
+        yaml_path = scaffold_path
+        print(f"  Index:    {_INDEX_DIR / jur / f'{args.case_id}.yaml'}")
+        print(f"  PDF URL:  {pdf_url}")
+        print(f"  Scaffold: {scaffold_path}")
+        print()
+    else:
+        yaml_path = _resolve_canonical_yaml(args.case_id, _CASES_DIR)
+        if yaml_path is None:
+            print(f"ERROR: No canonical YAML found for '{args.case_id}' under {_CASES_DIR}")
+            return 1
 
     with open(yaml_path) as fh:
         record = yaml.safe_load(fh)
@@ -691,6 +844,25 @@ def main() -> int:
     # -----------------------------------------------------------------------
     extraction_report = ExtractionReport(case_id=args.case_id, yaml_path=yaml_path)
 
+    # Build LLM client upfront — needed for both Stage 2 and Stage 5a (LLM review).
+    provider = args.provider
+    _gemini_raw_client = None
+    llm_client: Optional[LLMClient] = None
+    if provider == "gemini":
+        try:
+            from google import genai as _genai
+            _gemini_raw_client = _genai.Client(api_key=os.environ["GOOGLE_API_KEY"])
+            llm_client = LLMClient("gemini", _gemini_raw_client)
+        except (ImportError, KeyError) as exc:
+            print(f"  WARN: google-genai or GOOGLE_API_KEY not available ({exc})")
+    else:
+        try:
+            import anthropic as _anthropic
+            _ac = _anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+            llm_client = LLMClient("anthropic", _ac)
+        except (ImportError, KeyError):
+            pass  # handled per-stage below
+
     if args.no_claude:
         print("Stage 2 — Skipped (--no-claude)")
         if not draft_path.exists():
@@ -698,23 +870,17 @@ def main() -> int:
             return 0
         print(f"  Using existing draft: {draft_path}")
     else:
-        print("Stage 2 — Claude extraction")
-        anthropic_client = None
-        use_claude = True
-        try:
-            import anthropic as _anthropic
-            anthropic_client = _anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
-        except (ImportError, KeyError):
-            print("  WARN: anthropic package or ANTHROPIC_API_KEY not available — falling back to --no-claude mode")
-            use_claude = False
+        print(f"Stage 2 — LLM extraction ({provider})")
+        if llm_client is None:
+            print("  WARN: No LLM client available — falling back to --no-claude mode")
 
-        if use_claude:
+        if llm_client is not None:
             extraction_report = extract_case(
                 yaml_path,
                 cache_dir=cache_dir,
                 output_path=draft_path,
                 use_claude=True,
-                anthropic_client=anthropic_client,
+                llm_client=llm_client,
                 focus=args.focus,
                 max_cost=args.max_cost,
                 batch_by_section=args.batch_by_section,
@@ -778,6 +944,23 @@ def main() -> int:
     # Load the draft for subsequent stages
     draft_record = yaml.safe_load(draft_path.read_text(encoding="utf-8"))
 
+    # Patch protected index fields that the LLM may have set to 'unknown'.
+    # Index values (scraped from EC register) are authoritative for these.
+    if args.from_index and index_entry is not None:
+        patched = False
+        index_date = index_entry.get("decision_date", "")
+        if index_date and (not draft_record.get("decision_date") or draft_record.get("decision_date") == "unknown"):
+            draft_record["decision_date"] = index_date
+            patched = True
+        index_outcome = index_entry.get("outcome", "")
+        if index_outcome and index_outcome != "unknown" and draft_record.get("outcome") in ("unknown", "", None):
+            draft_record["outcome"] = index_outcome
+            patched = True
+        if patched:
+            with open(draft_path, "w", encoding="utf-8") as _fh:
+                yaml.dump(draft_record, _fh, allow_unicode=True, default_flow_style=False, sort_keys=False)
+            print("  Patched draft: restored decision_date/outcome from index")
+
     # -----------------------------------------------------------------------
     # Stage 3 — Structural validation
     # -----------------------------------------------------------------------
@@ -818,6 +1001,8 @@ def main() -> int:
             report_path=report_path,
             cache_dir=cache_dir,
             max_cost=args.max_cost,
+            provider=args.provider,
+            gemini_client=_gemini_raw_client,
         )
 
     # -----------------------------------------------------------------------

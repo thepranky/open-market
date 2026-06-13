@@ -2,27 +2,30 @@ case_id: eu_siemens_alstom_2019
 case_name: Siemens / Alstom
 jurisdiction: EU
 authority: European Commission
-decision_date: "2019-02-06"
+decision_date: '2019-02-06'
 sector: transport
 outcome: blocked
 case_type: merger
 source_url: https://competition-cases.ec.europa.eu/cases/M.8677
-ai_summary: >
-  The Commission prohibited the merger between Siemens and Alstom, Europe's two largest rail
-  manufacturers, on 6 February 2019. The proposed transaction would have merged the parties'
-  high-speed train and mainline signalling businesses. The Commission found that Siemens and
-  Alstom were the two closest competitors for very high-speed trains and for European Train
-  Control System (ETCS) signalling, and that the remedies offered—package deals for train and
-  signalling contracts—were insufficient to maintain effective competition. The decision was
-  politically contentious: the French and German governments argued the merger was necessary
-  to create a "European champion" capable of competing with CRRC of China, but the Commission
-  applied standard competition analysis and prohibited it.
+ai_summary: 'The Commission prohibited the merger between Siemens and Alstom, Europe''s
+  two largest rail manufacturers, on 6 February 2019. The proposed transaction would
+  have merged the parties'' high-speed train and mainline signalling businesses. The
+  Commission found that Siemens and Alstom were the two closest competitors for very
+  high-speed trains and for European Train Control System (ETCS) signalling, and that
+  the remedies offered—package deals for train and signalling contracts—were insufficient
+  to maintain effective competition. The decision was politically contentious: the
+  French and German governments argued the merger was necessary to create a "European
+  champion" capable of competing with CRRC of China, but the Commission applied standard
+  competition analysis and prohibited it.
+
+  '
 parties:
-  - name: Siemens
-    role: acquirer
-  - name: Alstom
-    role: target
+- name: Siemens
+  role: acquirer
+- name: Alstom
+  role: target
 concept_refs:
-  - concept_id: toh_horizontal
-    quality_level: indexed
-    provenance: manually_tagged
+- concept_id: toh_horizontal
+  quality_level: indexed
+  provenance: manually_tagged
+pdf_url: https://ec.europa.eu/competition/mergers/cases1/20219/m8677_9376_7.pdf

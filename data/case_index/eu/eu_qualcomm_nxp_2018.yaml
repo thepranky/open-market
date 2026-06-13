@@ -2,30 +2,33 @@ case_id: eu_qualcomm_nxp_2018
 case_name: Qualcomm / NXP Semiconductors
 jurisdiction: EU
 authority: European Commission
-decision_date: "2018-01-18"
+decision_date: '2018-01-18'
 sector: tech
 outcome: cleared_with_conditions
 case_type: merger
 source_url: https://competition-cases.ec.europa.eu/cases/M.8306
-ai_summary: >
-  The Commission cleared Qualcomm's $44bn acquisition of NXP Semiconductors on 18 January
-  2018 subject to conditions. The transaction would have combined Qualcomm's leading mobile
-  baseband chipsets with NXP's dominance in automotive semiconductors, NFC controllers, and
-  secure element chips used in contactless payments and transit cards. Concerns focused on
-  foreclosing rival chip makers from the MIFARE contactless technology ecosystem and on bundling
-  NXP's NFC chips with Qualcomm's mobile platforms. Remedies required perpetual licensing of
-  MIFARE and non-discrimination commitments on NFC chip access. Despite EU clearance, the deal
-  was abandoned on 26 July 2018 when MOFCOM failed to approve by the HSR deadline, an early
-  instance of Chinese regulatory leverage blocking a US semiconductor mega-deal.
+ai_summary: 'The Commission cleared Qualcomm''s $44bn acquisition of NXP Semiconductors
+  on 18 January 2018 subject to conditions. The transaction would have combined Qualcomm''s
+  leading mobile baseband chipsets with NXP''s dominance in automotive semiconductors,
+  NFC controllers, and secure element chips used in contactless payments and transit
+  cards. Concerns focused on foreclosing rival chip makers from the MIFARE contactless
+  technology ecosystem and on bundling NXP''s NFC chips with Qualcomm''s mobile platforms.
+  Remedies required perpetual licensing of MIFARE and non-discrimination commitments
+  on NFC chip access. Despite EU clearance, the deal was abandoned on 26 July 2018
+  when MOFCOM failed to approve by the HSR deadline, an early instance of Chinese
+  regulatory leverage blocking a US semiconductor mega-deal.
+
+  '
 parties:
-  - name: Qualcomm
-    role: acquirer
-  - name: NXP Semiconductors
-    role: target
+- name: Qualcomm
+  role: acquirer
+- name: NXP Semiconductors
+  role: target
 concept_refs:
-  - concept_id: sector_tech
-    quality_level: indexed
-    provenance: manually_tagged
-  - concept_id: toh_vertical
-    quality_level: indexed
-    provenance: manually_tagged
+- concept_id: sector_tech
+  quality_level: indexed
+  provenance: manually_tagged
+- concept_id: toh_vertical
+  quality_level: indexed
+  provenance: manually_tagged
+pdf_url: https://ec.europa.eu/competition/mergers/cases/decisions/m8306_3479_3.pdf
