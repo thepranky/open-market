@@ -1,0 +1,283 @@
+jurisdiction_id: "no"
+jurisdiction_name: Norway
+last_verified: "2026-06-14"
+
+authority:
+  name: Norwegian Competition Authority (Konkurransetilsynet)
+  abbreviation: NCA
+  url: https://www.konkurransetilsynet.no/en/mergers/
+  filing_url: https://www.konkurransetilsynet.no/en/mergers/notification-of-mergers/
+
+regime:
+  mandatory: true
+  suspensory: true   # § 19(2) Competition Act — standstill until NCA clearance or deadline lapses
+  voluntary: false
+
+legal_basis:
+  - citation: "Competition Act (Konkurranseloven) of 5 March 2004 No. 12, as amended — §§ 17–21 (merger control)"
+    url: "https://lovdata.no/lov/2004-03-05-12"
+    note: >
+      §§ 17–21 of the Competition Act (KRL) govern merger control in Norway. § 17 defines
+      concentrations. § 18 sets the notification obligation and thresholds. § 19 imposes
+      the standstill obligation. § 16 empowers the NCA to intervene against concentrations
+      that significantly impede effective competition (SIEC test introduced by 2016 reform).
+      Norway, as an EEA/EFTA state, coordinates with the EFTA Surveillance Authority
+      (ESA) for EEA-dimension transactions but has its own domestic regime.
+  - citation: "Regulation on Notification of Concentrations (Forskrift om melding av foretakssammenslutninger) OF-2004-04-26-673"
+    url: "https://lovdata.no/dokument/SF/forskrift/2004-04-26-673"
+    source_type: official_guidance
+    note: >
+      Implementing regulation specifying form and content of notifications. The NCA also
+      publishes guidance on turnover calculation and the notification obligation.
+
+filing:
+  deadline_from_signing_days: null   # no fixed deadline from signing; notify before implementation
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Parties must notify the NCA and receive clearance (or await deadline lapse) before
+    implementing the concentration (§ 19(2) KRL). There is no fixed deadline from
+    signing or public announcement; the obligation is to notify before completion.
+    In practice, parties notify when they have a binding agreement and the transaction
+    is sufficiently advanced. Pre-notification contacts with the NCA are common for
+    complex transactions; the NCA has an informal pre-notification procedure.
+
+review_periods:
+  phase_1:
+    days: 25
+    day_type: working
+    extendable_to_days: null
+    legal_basis: "§ 20(1) Konkurranseloven"
+    note: >
+      The NCA has 25 WORKING DAYS from receipt of a complete notification to decide
+      whether to open a Phase II investigation (intervene) or to clear the transaction.
+      If no decision within 25 working days, the concentration is deemed cleared. The
+      NCA may stop the clock by requesting additional information. Straightforward
+      transactions are often cleared within 10–15 working days.
+  phase_2:
+    days: 70
+    day_type: working
+    extendable_to_days: 100
+    legal_basis: "§ 20(2) Konkurranseloven"
+    note: >
+      If the NCA opens a Phase II investigation within the initial 25-working-day
+      Phase I period, it has a further 70 WORKING DAYS to reach a decision. This
+      is extendable by up to an additional 30 working days if the parties offer
+      remedies, bringing the maximum Phase II to 100 working days. The NCA may
+      clear, clear with conditions, or prohibit the concentration.
+
+fees:
+  structure: >
+    Filing fee (approximate): NOK 122,000 (standard notification).
+    (Fees may be updated; verify current amount via NCA website before filing.)
+  source: "Norwegian Competition Authority fee schedule"
+  source_type: authority_announcement
+  source_url: "https://www.konkurransetilsynet.no/en/mergers/notification-of-mergers/"
+  annual_adjustment: true
+
+# ── Scope / trigger events ────────────────────────────────────────────────────
+scope:
+  concentration_definition: >
+    A concentration of undertakings arises where a lasting change of control results
+    from: (a) the merger of two or more previously independent undertakings; (b) the
+    direct or indirect acquisition by one or more persons, or undertakings, of control
+    over the whole or part of one or more other undertakings; or (c) the creation of
+    a full-function joint venture (§ 17 KRL, aligned with EU Merger Regulation definition).
+  concentration_definition_source: "§ 17, Konkurranseloven (Competition Act, 2004:12)"
+  concentration_definition_url: "https://lovdata.no/lov/2004-03-05-12"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture   # full-function JVs with autonomous market presence
+  control_threshold: >
+    Decisive influence over strategic decisions (exclusive control or joint control).
+    Consistent with EU merger control definition. Passive minority stakes without
+    control rights do not trigger notification. Negative control (veto rights over
+    strategic decisions) may constitute sole or joint control.
+  intra_group_exempt: true
+  foreign_to_foreign_rule: >
+    Norwegian merger control applies if the Norwegian turnover thresholds are met,
+    regardless of where the parties are incorporated. Foreign-to-foreign transactions
+    are subject to notification if both conditions (combined worldwide > NOK 1bn AND
+    each of at least two parties Norwegian > NOK 100m) are met. Norway is an EEA/EFTA
+    state. If the transaction falls within the EEA Agreement merger jurisdiction
+    (i.e., under EFTA Surveillance Authority competence), the NCA may not have
+    independent jurisdiction (EEA one-stop-shop applies for EEA-dimension cases
+    reviewed by the EFTA Surveillance Authority).
+  substantive_test: "siec"
+  substantive_test_url: "https://lovdata.no/lov/2004-03-05-12"
+  substantive_test_note: >
+    Norway applies the SIEC test (§ 16 Konkurranseloven, as amended 2016): NCA may intervene against a concentration that significantly impedes effective competition in Norway, in particular by creating or strengthening a dominant position.
+  note: >
+    EEA ONE-STOP-SHOP: Transactions with an "EEA dimension" under the EEA Agreement
+    may be handled by the EFTA Surveillance Authority (ESA) or the European Commission
+    rather than the NCA. This applies where the transaction involves EFTA States and
+    thresholds triggering the EFTA merger regulations are met. Most large cross-border
+    transactions with Norwegian presence also have EU dimension and go to the European
+    Commission. Verify competence carefully for cross-border deals.
+
+# ── Gun-jumping / standstill ──────────────────────────────────────────────────
+gun_jumping:
+  automatic_void: false
+  voidable: true
+  max_fine_pct_turnover: 10.0
+  per_day_fine: null
+  criminal_sanctions: false
+  legal_basis: "§§ 19(2) and 29 Konkurranseloven"
+  legal_basis_url: "https://lovdata.no/lov/2004-03-05-12"
+  note: >
+    § 19(2) KRL prohibits implementation before NCA clearance. § 29 KRL allows the
+    NCA (or the King in Council) to impose fines of up to 10% of annual worldwide
+    turnover for implementing a concentration before clearance (gun-jumping) or for
+    failure to notify. The NCA may also order dissolution or divestiture of an
+    illegally implemented concentration. Periodic penalty payments may be imposed
+    to enforce compliance. Individuals may also be fined under § 29 KRL.
+
+# ── FDI / national security screening ────────────────────────────────────────
+fdi_screening:
+  applicable: true
+  regime_name: "Lov om nasjonal sikkerhet (National Security Act) + Lov om kontroll med eksport av strategiske varer (Export Control Act)"
+  authority: "Norwegian Ministry of Justice and Public Security; National Security Authority (Nasjonal sikkerhetsmyndighet, NSM)"
+  url: "https://www.nsm.no/en/themes/national-security/"
+  sectors_covered:
+    - national_security
+    - defense
+    - critical_infrastructure
+    - sensitive_information_systems
+    - energy
+    - telecommunications
+  note: >
+    Norway does not yet have a comprehensive, sector-agnostic FDI screening regime
+    equivalent to Regulation (EU) 2019/452. As an EEA member, Norway participates
+    in the EU FDI cooperation mechanism (Regulation 2019/452), but the EU Regulation
+    does not directly apply to Norway — Norway's government must decide whether and
+    how to implement equivalent national measures.
+    The National Security Act (Sikkerhetsloven, 2018) gives authorities broad powers
+    to review and block transactions involving "security-sensitive activities"
+    (classified information, critical national functions, critical infrastructure).
+    The Export Control Act controls transfers of strategic goods and technology.
+    A standalone FDI investment screening law was under political consideration
+    as of 2026 (the government proposed a new "investment screening act" covering
+    critical sectors broadly); verify whether enacted before relying on this note.
+    In practice, acquisitions in energy/oil, defence, and infrastructure sectors
+    routinely involve NSM consultation and potential government review.
+
+# ── Threshold tests ───────────────────────────────────────────────────────────
+threshold_tests:
+  # Norway has a single test with two cumulative conditions (AND logic).
+  # Both must be satisfied for mandatory notification under § 18 KRL.
+  # Thresholds are set in statute and not automatically indexed.
+  # Verify whether any legislative adjustment has occurred before filing.
+
+  - test_id: no_standard
+    description: "Combined worldwide >NOK 1bn AND each of ≥2 parties Norwegian >NOK 100m (§ 18 KRL)"
+    legal_basis: "§ 18(1), Konkurranseloven (Competition Act, 5 March 2004 No. 12)"
+    source_url: "https://www.konkurransetilsynet.no/en/mergers/when-must-you-notify/"
+    note: >
+      Both conditions must be met simultaneously (AND logic). The combined aggregate
+      worldwide turnover of all undertakings concerned must exceed NOK 1 billion in
+      the preceding financial year, AND each of at least two of the parties must
+      have Norwegian turnover exceeding NOK 100 million. Norwegian turnover =
+      revenues from sales of products and provision of services to customers in Norway.
+      These threshold values are set in statute and have been in place since 2013.
+      Verify whether any revision has occurred. Note that in September 2022 the NCA
+      published a consultation on lowering or revising thresholds; as of 2026
+      the thresholds remained as described.
+    annual_adjustment: false
+    effective_date: "2013-01-01"
+
+    conditions:
+      - condition_id: no_combined_worldwide
+        metric: revenue
+        scope: worldwide
+        party: combined
+        operator: ">"
+        value: 1000000000
+        currency: NOK
+        source: "§ 18(1)(a) Konkurranseloven"
+        source_type: primary_legislation
+        source_url: "https://lovdata.no/lov/2004-03-05-12"
+        verified_via:
+          - "https://iclg.com/practice-areas/merger-control"
+          - "https://www.konkurransetilsynet.no/en/mergers/when-must-you-notify/"
+        note: "NOK 1bn combined worldwide turnover of all parties in last financial year."
+
+      - condition_id: no_each_party_norwegian
+        metric: revenue
+        scope: domestic
+        party: each_of_at_least_two
+        operator: ">"
+        value: 100000000
+        currency: NOK
+        source: "§ 18(1)(b) Konkurranseloven"
+        source_type: primary_legislation
+        source_url: "https://lovdata.no/lov/2004-03-05-12"
+        verified_via:
+          - "https://iclg.com/practice-areas/merger-control"
+          - "https://www.konkurransetilsynet.no/en/mergers/when-must-you-notify/"
+        note: "NOK 100m individual Norwegian turnover for each of at least two of the parties."
+
+notes:
+  - >
+    EEA/EFTA STATUS: Norway is not an EU Member State but is part of the EEA Agreement.
+    For transactions with EEA-dimension (involving EU + EFTA states), the European
+    Commission generally has jurisdiction. The EFTA Surveillance Authority (ESA)
+    has jurisdiction for concentrations with "EFTA dimension" (affecting only EFTA
+    states). For most large cross-border transactions with Norway, the European
+    Commission will have jurisdiction rather than the NCA — verify competence.
+  - >
+    SUBSTANTIVE TEST: Norway applies an SIEC test (§ 16 KRL, as reformed in 2016):
+    the NCA may intervene against a concentration if it would significantly impede
+    effective competition in Norway, in particular as a result of the creation or
+    strengthening of a dominant position. This aligns with the EU Regulation 139/2004
+    substantive standard.
+  - >
+    THRESHOLD REVIEW: In September 2022, the NCA recommended changes to the notification
+    thresholds (potentially introducing a transaction value threshold for digital markets
+    and adjusting NOK-denominated thresholds for inflation). As of June 2026, these
+    changes had not been enacted. Monitor for legislative updates.
+  - >
+    FDI NOTE: Norway does not have a consolidated investment screening framework as of
+    this writing. The National Security Act provides broad powers but is not a systematic
+    FDI screening regime. A proposed Investment Screening Act was under governmental
+    review in 2025–2026; verify current status before advising on FDI aspects of
+    Norwegian transactions.
+
+# ── Source passages ────────────────────────────────────────────────────────────
+source_passages:
+
+  - passage_id: no_krl_s18
+    document_title: "Konkurranseloven (Competition Act, Act No. 12 of 5 March 2004)"
+    article_reference: "§ 18(1)"
+    document_url: "https://lovdata.no/lov/2004-03-05-12"
+    source_type: primary_legislation
+    quoted_text: >
+      "§ 18 Notification obligation
+      Concentrations as defined in § 17 shall be notified to the [Competition] Authority
+      prior to their implementation if:
+      a) the undertakings concerned have a combined aggregate worldwide turnover exceeding
+      one billion Norwegian kroner; and
+      b) each of at least two of the undertakings concerned has an aggregate turnover in
+      Norway exceeding one hundred million Norwegian kroner."
+    supports_conditions:
+      - no_combined_worldwide
+      - no_each_party_norwegian
+
+  - passage_id: no_krl_s19_20
+    document_title: "Konkurranseloven (Competition Act, Act No. 12 of 5 March 2004)"
+    article_reference: "§§ 19 and 20"
+    document_url: "https://lovdata.no/lov/2004-03-05-12"
+    source_type: primary_legislation
+    quoted_text: >
+      "§ 19 Suspensive effect
+      2. Concentrations that are subject to notification under § 18 may not be
+      implemented until the competition authority has cleared the concentration or
+      the period in § 20 first paragraph has elapsed without the competition authority
+      having decided to open an investigation.
+      § 20 Review periods
+      1. The competition authority must decide whether to open an investigation within
+      twenty-five working days of receiving a complete notification.
+      2. If the competition authority decides to open an investigation, it must conclude
+      the investigation within seventy working days of the decision."
+    supports_conditions: []

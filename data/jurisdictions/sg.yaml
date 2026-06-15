@@ -1,0 +1,270 @@
+jurisdiction_id: sg
+jurisdiction_name: Singapore
+last_verified: "2026-06-13"
+
+authority:
+  name: Competition and Consumer Commission of Singapore
+  abbreviation: CCCS
+  url: https://www.cccs.gov.sg/get-in-touch/for-businesses/notify-a-merger/overview
+  filing_url: https://www.cccs.gov.sg/get-in-touch/for-businesses/notify-a-merger/overview
+
+regime:
+  mandatory: false   # purely voluntary notification system
+  suspensory: false  # no standstill obligation; parties may complete without prior approval
+  voluntary: true
+
+legal_basis:
+  - citation: "Competition Act (Chapter 50B), Part V (ss. 54–68)"
+    url: "https://sso.agc.gov.sg/Act/CA2004"
+    note: >
+      Section 54 prohibits mergers that have resulted, or may be expected to result,
+      in a substantial lessening of competition (SLC) within any market in Singapore.
+      There are no mandatory pre-merger notification thresholds in the Act; notification
+      is entirely voluntary.
+  - citation: "CCCS Guidelines on the Substantive Assessment of Mergers (2016)"
+    url: "https://www.cccs.gov.sg/"
+    note: "Sets out the CCCS's indicative screening thresholds and substantive assessment framework."
+    source_type: official_guidance
+
+filing:
+  deadline_from_signing_days: null
+  deadline_from_closing_days: null
+  pre_closing_required: false
+  note: >
+    Singapore has no mandatory pre-merger notification requirement. Parties may complete
+    a transaction without notifying the CCCS. However, the CCCS retains the power to
+    investigate and unwind completed mergers that result in an SLC. If parties are
+    concerned that a merger may raise SLC issues, they are strongly encouraged to conduct
+    a self-assessment and consider voluntarily notifying the CCCS before completion.
+    Parties may also seek informal guidance from the CCCS via a pre-notification meeting.
+
+review_periods:
+  phase_1:
+    days: 30
+    day_type: working
+    extendable_to_days: null
+    legal_basis: "CCCS Guidelines on Merger Procedure (2016), para. 3.1"
+    note: >
+      Upon voluntary notification, the CCCS typically completes its initial review within
+      30 working days. This is a guideline, not a statutory deadline; for complex cases,
+      the CCCS may take longer.
+  phase_2:
+    days: 120
+    day_type: working
+    extendable_to_days: null
+    legal_basis: "CCCS Guidelines on Merger Procedure (2016), para. 3.4"
+    note: >
+      If a detailed review is opened (Phase 2), the CCCS targets completion within
+      120 working days. There is no statutory time limit on the CCCS's investigation.
+
+fees:
+  structure: >
+    Fees apply to voluntary merger notifications:
+    SGD 10,000 (Phase 1 notification)
+    SGD 20,000 (if Phase 2 review is opened)
+    These are guideline amounts; verify with CCCS.
+  source: "CCCS Guidelines on Merger Procedure (2016)"
+  source_type: official_guidance
+  source_url: "https://www.cccs.gov.sg/get-in-touch/for-businesses/notify-a-merger/overview"
+  annual_adjustment: false
+
+threshold_tests:
+  # Singapore has NO mandatory notification thresholds.
+  # The indicative thresholds below are from the CCCS Guidelines on Substantive
+  # Assessment of Mergers (2016) and represent safe harbour zones below which the
+  # CCCS is UNLIKELY to intervene — they are NOT notification triggers.
+  #
+  # Parties should self-assess using these thresholds to determine whether to voluntarily
+  # notify. If these thresholds are exceeded, voluntary notification is strongly advisable.
+  #
+  # Source: CCCS Guidelines on the Substantive Assessment of Mergers (2016), para. 3.3;
+  # CCCS official website (https://www.cccs.gov.sg).
+
+  - test_id: sg_high_market_share
+    description: "CCCS indicative screening — combined market share ≥ 40% (CCCS may investigate)"
+    legal_basis: "Competition Act (Chapter 50B), s. 54; CCCS Guidelines on Substantive Assessment of Mergers (2016), para. 3.3"
+    source_url: "https://www.cccs.gov.sg/"
+    note: >
+      Indicative threshold only — NOT a mandatory notification trigger. The CCCS is
+      unlikely to intervene where the merged entity will have a combined market share
+      below 40%. If the combined share meets or exceeds 40%, parties should assess
+      whether voluntary notification is appropriate.
+      TREAT AS ADVISORY — no filing obligation arises from this threshold alone.
+    annual_adjustment: false
+    effective_date: null
+    status: "indicative_only"
+
+    conditions:
+      - condition_id: sg_combined_market_share
+        metric: market_share
+        scope: domestic
+        party: combined
+        operator: ">="
+        value: 0.40
+        currency: null
+        source: "CCCS Guidelines on the Substantive Assessment of Mergers (2016), para. 3.3(a)"
+        source_type: official_guidance
+        note: >
+          40% combined market share in any Singapore market. This is the primary
+          indicative threshold below which the CCCS is unlikely to intervene.
+
+  - test_id: sg_moderate_concentration
+    description: "CCCS indicative screening — combined share 20–40% AND CR3 ≥ 70%"
+    legal_basis: "Competition Act (Chapter 50B), s. 54; CCCS Guidelines on Substantive Assessment of Mergers (2016), para. 3.3"
+    source_url: "https://www.cccs.gov.sg/"
+    note: >
+      Second indicative screening criterion — NOT a mandatory notification trigger.
+      Applies where the merged entity has 20–40% combined market share AND the three-firm
+      concentration ratio (CR3) in the market is 70% or more. Both conditions must be
+      met. If triggered, voluntary notification should be considered carefully.
+      TREAT AS ADVISORY — no filing obligation arises.
+    annual_adjustment: false
+    effective_date: null
+    status: "indicative_only"
+
+    conditions:
+      - condition_id: sg_moderate_combined_share
+        metric: market_share
+        scope: domestic
+        party: combined
+        operator: ">="
+        value: 0.20
+        currency: null
+        source: "CCCS Guidelines on the Substantive Assessment of Mergers (2016), para. 3.3(b)"
+        source_type: official_guidance
+        note: "Combined market share ≥ 20% (lower bound of the moderate concentration band)."
+
+notes:
+  - >
+    VOLUNTARY REGIME: Singapore is one of the few significant competition jurisdictions
+    with no mandatory pre-merger notification. Parties may complete transactions without
+    notifying the CCCS. However, the CCCS may investigate and unwind completed mergers
+    that result in an SLC, including through divestiture orders. This creates potential
+    post-completion risk that parties must manage through careful self-assessment.
+  - >
+    Self-assessment obligation: parties with overlapping Singapore activities should
+    conduct a structured self-assessment and document their analysis. If the indicative
+    thresholds are triggered (combined share ≥ 40%, or 20–40% with high CR3), voluntary
+    notification to the CCCS is strongly advisable to obtain legal certainty.
+  - >
+    Informal guidance: the CCCS encourages parties to seek informal guidance before
+    completing mergers with potential SLC concerns. Informal guidance is not binding
+    but gives practical comfort.
+  - >
+    Sector-specific regimes: telecoms (IMDA), media (IMDA), energy (EMA), financial
+    services (MAS), and aviation (CAAS) sectors have separate sector-level merger
+    review requirements. These may apply in addition to (or instead of) CCCS review.
+  - >
+    This jurisdiction appears on the screening results as 'voluntary — self-assess'
+    when the deal has Singapore operations, indicating that legal advice on a
+    self-assessment is recommended rather than that a mandatory filing is triggered.
+
+# ── Scope / trigger events ────────────────────────────────────────────────────
+scope:
+  concentration_definition: >
+    Competition Act 2004 (Cap. 50B) s. 54(1) prohibits mergers that have resulted,
+    or may be expected to result, in a substantial lessening of competition (SLC)
+    within any market in Singapore. "Merger" is broadly defined under s. 54(5) to
+    include: (a) the merger of two or more enterprises into one enterprise; (b) the
+    acquisition of the whole or part of the assets of another enterprise; and (c) the
+    acquisition of a controlling interest in another enterprise. There are no mandatory
+    notification thresholds — the regime is purely voluntary.
+  concentration_definition_source: "Competition Act 2004 (Cap. 50B), Sections 54–55"
+  concentration_definition_url: "https://sso.agc.gov.sg/Act/CA2004"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture
+  control_threshold: >
+    Acquisition of a "controlling interest" in another enterprise. Under CCCS guidelines,
+    control is assessed as the ability to influence materially the strategic commercial
+    behaviour of the merged entity. No specific percentage threshold is prescribed — control
+    is assessed on a case-by-case basis, taking into account board representation, veto
+    rights, and the ability to influence key business decisions.
+  intra_group_exempt: true
+  foreign_to_foreign_rule: >
+    Competition Act s. 54 applies to mergers that affect competition within any market
+    in Singapore, regardless of the nationality or incorporation of the parties. A
+    foreign-to-foreign transaction is subject to potential CCCS investigation if it
+    results or may result in an SLC in a Singapore market. Given the voluntary regime,
+    parties to foreign-to-foreign deals with Singapore operations should self-assess
+    and consider voluntary notification if the indicative thresholds are met.
+  substantive_test: "slc"
+  substantive_test_url: "https://sso.agc.gov.sg/Act/CA2004"
+  substantive_test_note: >
+    Competition Act s. 54(1): a merger is prohibited if "the merger has resulted, or
+    may be expected to result, in a substantial lessening of competition within any
+    market in Singapore." CCCS assesses unilateral and coordinated effects, entry
+    barriers, countervailing buyer power, and efficiencies. Indicative safe harbors:
+    combined market share below 40% (or 20–40% with CR3 below 70%) generally do not
+    raise concerns.
+  note: >
+    Singapore operates a purely voluntary notification regime — there is no mandatory
+    pre-merger filing obligation. However, parties that proceed without notifying the
+    CCCS bear the risk of post-completion investigation and potential divestiture
+    orders if the CCCS subsequently finds an SLC. Sector-specific regulators (MAS,
+    IMDA, EMA) have separate merger-review powers in regulated industries.
+
+# ── Gun-jumping / standstill obligation ───────────────────────────────────────
+gun_jumping:
+  automatic_void: false
+  voidable: true
+  max_fine_pct_turnover: 10.0
+  max_fine_fixed: 10000000
+  max_fine_currency: "SGD"
+  per_day_fine: null
+  criminal_sanctions: false
+  legal_basis: "Competition Act 2004 (Cap. 50B), Sections 54, 69"
+  legal_basis_url: "https://sso.agc.gov.sg/Act/CA2004"
+  note: >
+    Because Singapore's merger regime is voluntary with no mandatory standstill, there
+    is no "gun-jumping" prohibition in the traditional sense — parties may legally
+    complete a transaction before or without CCCS notification. However, if the CCCS
+    finds a completed merger has resulted in an SLC, it has broad powers under Part V
+    to issue directions including divestiture orders, behavioural remedies, and interim
+    measures. Breach of a CCCS direction is a civil offence attracting fines of up to
+    SGD 10 million or 10% of annual turnover in Singapore, whichever is higher
+    (s. 69). There are no criminal sanctions for failure to notify.
+
+# ── FDI / national security screening ────────────────────────────────────────
+fdi_screening:
+  applicable: false
+  note: >
+    Singapore has no formal general-purpose FDI screening or national security review
+    regime. Singapore's policy is broadly open to foreign investment. Sector-specific
+    licensing requirements exist for financial services (Monetary Authority of Singapore
+    — MAS), telecommunications and media (Infocomm Media Development Authority — IMDA),
+    and energy (Energy Market Authority — EMA), which include change-of-control
+    approval requirements. These operate as regulatory licensing conditions rather than
+    national security screening mechanisms. The Singapore Economic Development Board
+    (EDB) and Enterprise Singapore promote inward FDI without general restrictions.
+
+# ── Source passages (verbatim statutory text) ─────────────────────────────────
+source_passages:
+
+  - passage_id: sg_competition_act_s54_1
+    document_title: "Competition Act 2004 (Singapore Statutes Online, Cap. 50B)"
+    article_reference: "Section 54(1)"
+    document_url: "https://sso.agc.gov.sg/Act/CA2004"
+    source_type: primary_legislation
+    quoted_text: >
+      "Subject to section 55, mergers which have resulted, or may be expected to
+      result, in a substantial lessening of competition within any market in
+      Singapore are prohibited."
+    supports_conditions:
+      - sg_combined_market_share
+      - sg_moderate_combined_share
+
+  - passage_id: sg_competition_act_s54_5
+    document_title: "Competition Act 2004 (Singapore Statutes Online, Cap. 50B)"
+    article_reference: "Section 54(5)"
+    document_url: "https://sso.agc.gov.sg/Act/CA2004"
+    source_type: primary_legislation
+    quoted_text: >
+      "For the purposes of this Part, a merger occurs if — (a) two or more enterprises,
+      previously independent of one another, merge; (b) one or more persons or enterprises
+      acquire direct or indirect control of the whole or part of one or more other
+      enterprises; or (c) any other transaction or arrangement of a similar character to
+      those mentioned in paragraphs (a) and (b)."
+    supports_conditions: []

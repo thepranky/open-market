@@ -1,0 +1,275 @@
+jurisdiction_id: il
+jurisdiction_name: Israel
+last_verified: "2026-06-13"
+
+authority:
+  name: Israel Competition Authority (רשות התחרות הישראלית)
+  abbreviation: ICA
+  url: https://www.gov.il/en/departments/israel_competition_authority
+  filing_url: https://www.gov.il/en/departments/general/merger-control
+
+regime:
+  mandatory: true
+  suspensory: true   # parties must await Commissioner approval before implementing
+  voluntary: false
+
+legal_basis:
+  - citation: "Economic Competition Law, 5748-1988 (חוק התחרות הכלכלית), as amended by the Economic Competition Law Amendment No. 15 (2019)"
+    url: "https://www.gov.il/en/departments/legal_info/competition_law"
+    note: >
+      Primary legislation. The 2019 amendment (in force 2019) renamed the law from
+      the 'Restrictive Trade Practices Law' to the 'Economic Competition Law' and
+      restructured key provisions. Merger notification requirements are in Chapter E.
+  - citation: "Economic Competition Regulations (Concentration and Filing), as amended effective 18 May 2022"
+    url: "https://www.gov.il/en/departments/legal_info/concentration_regulations"
+    note: >
+      The specific ILS monetary threshold values are set by secondary regulations
+      (Takanot), not the primary law. The 2022 regulations updated the combined
+      turnover threshold to ILS 414,010,000 and the individual threshold to
+      ILS 22,510,000. These values were confirmed by multiple practitioner sources.
+    source_type: authority_announcement
+
+filing:
+  deadline_from_signing_days: null
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Parties must obtain the Commissioner's approval before implementing the merger.
+    There is no fixed deadline from signing; parties may file at any time after signing.
+    Filing must occur before completion. The Commissioner may impose conditions or refuse
+    approval. Gun-jumping is an offence. Pre-notification contacts are encouraged by the
+    ICA and common practice for complex transactions.
+
+review_periods:
+  phase_1:
+    days: 30
+    day_type: calendar
+    extendable_to_days: null
+    legal_basis: "Economic Competition Law, s. 24(a)"
+    note: >
+      The Commissioner must issue a decision within 30 calendar days of receipt of a
+      complete merger notification. If no decision is made within this period, the merger
+      is deemed approved. The Commissioner may request additional information (pausing
+      the clock) or extend the period with the parties' consent.
+  phase_2:
+    days: 90
+    day_type: calendar
+    extendable_to_days: null
+    legal_basis: "Economic Competition Law, s. 24(b)"
+    note: >
+      If the Commissioner notifies the parties within the 30-day Phase 1 period that
+      a detailed review is required, a further 90-calendar-day extension applies. The
+      Commissioner may conduct hearings and require submissions during this period.
+
+fees:
+  structure: none
+  note: "Israel does not charge merger notification fees."
+
+threshold_tests:
+  # Israel has a single threshold test with two AND'd conditions, plus a monopoly test.
+  #
+  # Test 1 (Turnover): combined Israeli sales > ILS 414,010,000 AND each of at least
+  # two parties Israeli sales > ILS 22,510,000. Both conditions must be met.
+  #
+  # Additional mandatory notification: parties must also notify if the merger would
+  # result in the combined entity holding a 'monopoly' position (more than 50% supply
+  # or acquisition share) in any relevant market, OR if one of the merging entities
+  # is already a monopoly in any relevant market in Israel.
+  #
+  # ILS threshold values confirmed via:
+  # - Global Legal Insights: Merger Control 2025 Israel (ILS 414,010,000 / ILS 22,510,000)
+  # - Lex Mundi Israel Merger Notification Guide (same values)
+  # - Economic Competition Regulations effective 18 May 2022.
+
+  - test_id: il_turnover
+    description: "Combined Israeli sales > ILS 414m AND each of at least two parties Israeli sales > ILS 22.5m"
+    legal_basis: "Economic Competition Law, Chapter E (s. 22); Economic Competition Regulations (Concentration and Filing) 2022"
+    source_url: "https://www.gov.il/en/departments/general/merger-control"
+    note: >
+      Both conditions must be met. 'Israeli sales' means revenues from sales of goods
+      or provision of services in Israel. Calculated from the most recently completed
+      financial year preceding the merger. A 'party' for the individual threshold means
+      each of the merging entities (at least two must exceed ILS 22.5m independently).
+    annual_adjustment: false
+    effective_date: "2022-05-18"
+
+    conditions:
+      - condition_id: il_combined_domestic
+        metric: revenue
+        scope: domestic
+        party: combined
+        operator: ">"
+        value: 414010000
+        currency: ILS
+        source: "Economic Competition Regulations (Concentration and Filing), effective 18 May 2022"
+        source_type: authority_announcement
+        verified_via:
+          - "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/israel/"
+          - "https://www.lexmundi.com/guides/merger-notification-guide/jurisdictions/middle-east/israel/"
+        note: "ILS 414,010,000 combined Israeli sales of all merging parties."
+
+      - condition_id: il_each_party_domestic
+        metric: revenue
+        scope: domestic
+        party: each_of_at_least_two
+        operator: ">"
+        value: 22510000
+        currency: ILS
+        source: "Economic Competition Regulations (Concentration and Filing), effective 18 May 2022"
+        source_type: authority_announcement
+        verified_via:
+          - "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/israel/"
+          - "https://www.lexmundi.com/guides/merger-notification-guide/jurisdictions/middle-east/israel/"
+        note: "ILS 22,510,000 Israeli sales for each of at least two of the merging parties independently."
+
+  - test_id: il_monopoly
+    description: "Monopoly test — merger creates or involves a monopoly in any Israeli market"
+    legal_basis: "Economic Competition Law, Chapter E (s. 22(a)(2))"
+    source_url: "https://www.gov.il/en/departments/general/merger-control"
+    note: >
+      Filing is also required if: (a) the merged entity would hold more than 50% of the
+      total supply or acquisition of an asset, or more than 50% of the total provision
+      or acquisition of a service in any relevant market in Israel; OR (b) one of the
+      merging parties already holds a monopoly in any relevant market in Israel.
+      This test is qualitative (market share-based) and applies regardless of the
+      turnover thresholds above.
+    annual_adjustment: false
+    effective_date: null
+
+    conditions:
+      - condition_id: il_monopoly_share
+        metric: market_share
+        scope: domestic
+        party: combined
+        operator: ">"
+        value: 0.50
+        currency: null
+        source: "Economic Competition Law, s. 22(a)(2)"
+        source_type: primary_legislation
+        note: >
+          More than 50% combined market share in any description of goods or services
+          in Israel. Alternatively, if either merging party already holds > 50%, notification
+          is required regardless of the other party's position.
+
+notes:
+  - >
+    Israeli 'sales turnover' (מחזור מכירות): revenues from sales of goods or services
+    in Israel, derived from Israeli customers or from activities in Israel. Does not
+    include revenues from exports or from non-Israeli customers.
+  - >
+    The ILS threshold values are set by secondary regulations and are periodically updated
+    by the Commissioner of Competition (formerly Director General of the Antitrust
+    Authority). Values effective since 18 May 2022. Verify before advising — the ICA
+    may update these values by notice.
+  - >
+    Monopoly notification: a monopoly under Israeli law is defined as a holder of more
+    than 50% of a relevant market. Even for transactions well below the turnover thresholds,
+    parties should assess whether either party holds a monopoly in any Israeli market
+    before concluding no filing is required.
+  - >
+    EU/EEA overlap: Israel is not an EU member state and is not subject to the EU Merger
+    Regulation. Transactions notifiable to the EC under the EU Merger Regulation must
+    still be separately assessed under Israeli merger control.
+  - >
+    Sector-specific oversight: financial institutions and communications companies are
+    subject to concurrent review by sectoral regulators (Bank of Israel, ISA, MoC) in
+    addition to ICA review.
+
+# ── Scope / trigger events ────────────────────────────────────────────────────
+scope:
+  concentration_definition: >
+    A merger under the Economic Competition Law 5748-1988 includes: (i) acquisition
+    of more than 50% of any class of means of control (shares, voting rights, rights
+    to appoint directors, or rights to profits) in a corporation; (ii) merger of two
+    or more corporations into one; or (iii) any other act by which effective control
+    over a company is acquired. The definition is narrower than many jurisdictions —
+    a 50%+ threshold applies rather than a decisive influence/control test.
+  concentration_definition_source: "Economic Competition Law 5748-1988, Chapter E (s. 22)"
+  concentration_definition_url: "https://www.gov.il/en/departments/legal_info/competition_law"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+  control_threshold: >
+    Acquisition of more than 50% of any class of means of control, or otherwise
+    acquiring effective control over a corporation. Joint ventures are assessed
+    case by case; full-function JVs may be treated as mergers if they meet the
+    50%+ or effective control criteria.
+  intra_group_exempt: true
+  substantive_test: "dominance"
+  substantive_test_url: "https://www.gov.il/en/departments/legal_info/competition_law"
+  substantive_test_note: >
+    The Commissioner of Competition applies a dominance-based test. Under the
+    Economic Competition Law, a merger may be prohibited if it would create a
+    monopoly (an entity holding more than 50% of a relevant market) or grant any
+    entity considerable power in a market. The test focuses on the competitive
+    structure of the market post-merger and the ability of the merged entity to
+    exercise unilateral market power.
+  note: >
+    Israel's merger definition (50%+ of means of control) is narrower than the
+    EU's decisive influence standard. Minority acquisitions below 50% generally
+    do not constitute a merger requiring notification unless effective control is
+    acquired. Sector-specific concurrent review applies for banks and communications.
+
+# ── Gun-jumping / standstill obligation ───────────────────────────────────────
+gun_jumping:
+  automatic_void: false
+  voidable: true
+  max_fine_pct_turnover: null
+  max_fine_fixed: 13800000
+  max_fine_currency: ILS
+  per_day_fine: null
+  criminal_sanctions: true
+  legal_basis: "Economic Competition Law 5748-1988, Chapter E (ss. 22–24)"
+  legal_basis_url: "https://www.gov.il/en/departments/legal_info/competition_law"
+  note: >
+    Parties must obtain the Commissioner's approval before implementing a merger
+    subject to mandatory notification. Implementing without approval is an offence
+    under the Economic Competition Law. Administrative fines may be imposed of up
+    to ILS 13.8 million (updated annually by the Commissioner). Criminal sanctions
+    are also available under the Law for certain competition violations — up to
+    3 years imprisonment for individuals — although gun-jumping prosecutions are
+    rare. The Commissioner may apply to the court to order dissolution of an
+    improperly implemented merger.
+
+# ── FDI / national security screening ────────────────────────────────────────
+fdi_screening:
+  applicable: true
+  regime_name: "Investment screening for national security; sector-specific licensing"
+  authority: "Ministry of Finance (securities); Bank of Israel (banking); ISA (financial services)"
+  url: "https://www.gov.il/en/departments/investment_promotion_center"
+  sectors_covered:
+    - banking
+    - financial_services
+    - defense
+    - national_security
+  note: >
+    Israel is generally open to foreign direct investment. There is no comprehensive
+    FDI security screening law equivalent to CFIUS or the UK NSI Act. However,
+    limited national security screening exists for investments in designated sensitive
+    areas: (i) Bank of Israel approval is required for acquisitions of 5%+ of a bank
+    and 25%+ of a bank requires enhanced review; (ii) Israel Securities Authority (ISA)
+    approval for changes of control in investment houses; (iii) informal national
+    security review may apply to defense-adjacent industries. These reviews are
+    cumulative with ICA merger control.
+
+# ── Source passages (verbatim statutory text) ─────────────────────────────────
+source_passages:
+
+  - passage_id: il_ecl_s22
+    document_title: "Economic Competition Law 5748-1988 (חוק התחרות הכלכלית), Chapter E"
+    article_reference: "Section 22(a)"
+    document_url: "https://www.gov.il/en/departments/legal_info/competition_law"
+    source_type: practitioner
+    quoted_text: >
+      "A merger of companies requires the prior approval of the Commissioner if: (1) the
+      combined annual Israeli sales of all companies party to the merger, in the year
+      preceding the merger, exceeded the amount prescribed by the Minister; or (2) as
+      a result of the merger, the combined market share of the merging companies in any
+      description of goods or services in Israel will constitute a monopoly, or one of
+      the companies party to the merger is already a monopoly in any description of goods
+      or services in Israel."
+    supports_conditions:
+      - il_combined_domestic
+      - il_each_party_domestic
+      - il_monopoly_share

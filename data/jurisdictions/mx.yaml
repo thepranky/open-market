@@ -1,0 +1,298 @@
+jurisdiction_id: mx
+jurisdiction_name: Mexico
+last_verified: "2026-06-13"
+
+authority:
+  name: National Antitrust Commission (Comisión Nacional Antimonopolio)
+  abbreviation: CNA
+  url: https://www.cofece.mx/
+  filing_url: https://www.cofece.mx/concentraciones/
+  note: >
+    The CNA replaced COFECE (Federal Economic Competition Commission) effective
+    July 16, 2025, pursuant to the reform of the Ley Federal de Competencia Económica
+    (LFCE) enacted by the Mexican Congress on July 15, 2025. COFECE's URL remains
+    active during transition. Verify current official CNA URL before filing.
+
+regime:
+  mandatory: true
+  suspensory: true   # parties must await CNA clearance before implementing
+  voluntary: false
+
+legal_basis:
+  - citation: "Ley Federal de Competencia Económica (LFCE), Artículos 86–98, as amended July 16, 2025"
+    url: "https://www.diputados.gob.mx/LeyesBiblio/pdf/LFCE.pdf"
+    note: >
+      The July 2025 reform (published in the Diario Oficial de la Federación 15 July 2025,
+      in force 16 July 2025) created the CNA, lowered some notification thresholds, and
+      eliminated certain exemptions. Previous threshold values (in force until July 2025)
+      were higher.
+  - citation: "Reglamento de la Ley Federal de Competencia Económica"
+    url: "https://www.diputados.gob.mx/LeyesBiblio/regley/Reg_LFCE.pdf"
+    note: "Implementing regulation. Subject to update following the 2025 reform."
+
+filing:
+  deadline_from_signing_days: null
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Parties must obtain CNA clearance before implementing the transaction. There is no
+    fixed deadline from signing. Filing must be made prior to closing. The CNA may require
+    additional information, stopping the review clock. Pre-notification contacts are
+    permitted and common for complex transactions.
+
+review_periods:
+  phase_1:
+    days: 60
+    day_type: calendar
+    extendable_to_days: null
+    legal_basis: "LFCE Article 93(1)"
+    note: >
+      The CNA has 60 calendar days from the date a complete notification is received
+      to issue a decision. The clock stops when additional information is requested.
+      Transactions that clearly do not raise competition concerns are routinely cleared
+      within 30 days.
+  phase_2:
+    days: 60
+    day_type: calendar
+    extendable_to_days: null
+    legal_basis: "LFCE Article 93(2)"
+    note: >
+      If the CNA opens a detailed investigation, a further 60 calendar days applies
+      from the completion of the Phase 1 period. The CNA may impose conditions or
+      require remedies during either phase.
+
+fees:
+  structure: >
+    Filing fee (2025, adjusted annually per UMA):
+    MXN 247,820
+    (effective January 2025; verify current year's amount at
+    https://www.cofece.mx/concentraciones/ — updated each January)
+  source: "LFCE Article 86; DOF annual UMA-based fee notice"
+  source_type: authority_announcement
+  source_url: "https://www.cofece.mx/concentraciones/"
+  annual_adjustment: true
+
+# ── Scope / trigger events ────────────────────────────────────────────────────
+scope:
+  concentration_definition: >
+    A concentration arises where two or more economic agents that were previously
+    independent combine their assets, rights, liabilities or operations, through
+    merger, acquisition of control, acquisition of shares or assets, joint ventures,
+    or any other act that results in a lasting change of control over the whole or
+    part of one or more economic agents (LFCE Art. 61).
+  concentration_definition_source: "Article 61, Ley Federal de Competencia Económica (LFCE)"
+  concentration_definition_url: "https://www.diputados.gob.mx/LeyesBiblio/pdf/LFCE.pdf"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture
+  control_threshold: >
+    Ability to exercise decisive influence over an economic agent's management,
+    strategic decisions, or the appointment of its governing body. Consistent
+    with the EU definition of decisive influence. Minority stakes without control
+    rights do not ordinarily trigger notification (though deal value may independently
+    trigger the transaction value test regardless of control).
+  intra_group_exempt: true
+  foreign_to_foreign_rule: >
+    Notification required if the deal value or acquired Mexico assets/combined Mexico
+    revenues meet the prescribed thresholds, regardless of the parties' nationality
+    or place of incorporation. The July 2025 reform removed the exemption for
+    transactions carried out entirely in foreign countries with no direct share
+    transfer in Mexico — foreign-to-foreign deals affecting Mexico are now caught.
+  substantive_test: "siec"
+  substantive_test_url: "https://www.diputados.gob.mx/LeyesBiblio/pdf/LFCE.pdf"
+  substantive_test_note: >
+    Mexico applies a substantive test under LFCE Art. 98: the CNA must prohibit a
+    concentration that has or may have the purpose or effect of diminishing,
+    harming, or impeding competition and free market access. In practice the CNA
+    applies a market power / dominance analysis broadly equivalent to the SIEC standard.
+  note: >
+    SECTOR CARVE-OUT: Telecommunications and broadcasting transactions are reviewed
+    concurrently by the IFT (Instituto Federal de Telecomunicaciones), which retains
+    independent sector-specific merger review jurisdiction separate from the CNA.
+    Dual notification may be required for telecom/broadcast acquisitions.
+
+# ── Gun-jumping / standstill ──────────────────────────────────────────────────
+gun_jumping:
+  automatic_void: true
+  voidable: true
+  max_fine_pct_turnover: null
+  max_fine_fixed: null
+  per_day_fine: null
+  criminal_sanctions: false
+  legal_basis: "LFCE Articles 93 and 127"
+  legal_basis_url: "https://www.diputados.gob.mx/LeyesBiblio/pdf/LFCE.pdf"
+  note: >
+    LFCE Art. 93 prohibits implementation of a notifiable concentration before
+    CNA clearance. Concentrations implemented without prior CNA authorisation are
+    void (LFCE Art. 93(4)). The CNA may impose fines denominated in UMA multiples
+    (LFCE Art. 127): for gun-jumping, fines up to 200,000 times the annual UMA
+    (approximately MXN 3.4 billion at 2025 UMA). The July 2025 reform increased
+    maximum fines significantly. Criminal sanctions are not available for gun-jumping
+    (administrative remedy only).
+
+# ── FDI / national security screening ────────────────────────────────────────
+fdi_screening:
+  applicable: false
+  note: >
+    Mexico does not have a general FDI investment screening regime equivalent to CFIUS
+    or the EU FDI Screening Regulation. Mexico's Constitution and specific sector laws
+    reserve certain activities for the Mexican state or restrict foreign investment
+    percentages (e.g., hydrocarbons, electricity generation, media, aviation, banking).
+    These sectoral restrictions are enforced through the Foreign Investment Law (Ley
+    de Inversión Extranjera) administered by the Ministry of Economy (SE). There is no
+    national security-based review process for general M&A. Transactions in restricted
+    sectors may require Comisión Nacional de Inversiones Extranjeras (CNIE) approval
+    if foreign investment exceeds statutory limits.
+
+# ── Source passages ────────────────────────────────────────────────────────────
+source_passages:
+
+  - passage_id: mx_lfce_art_86
+    document_title: "Ley Federal de Competencia Económica (LFCE), as amended July 16, 2025"
+    article_reference: "Article 86"
+    document_url: "https://www.diputados.gob.mx/LeyesBiblio/pdf/LFCE.pdf"
+    source_type: primary_legislation
+    quoted_text: >
+      "Article 86. The following concentrations shall be notified to [the CNA] prior
+      to their implementation: I. Those where the transaction value in Mexico exceeds
+      the equivalent of sixteen million times the daily value of the Unit of Measurement
+      and Update [UMA]; II. Those where the act or succession of acts implies the
+      direct or indirect accumulation in Mexico of assets or capital stock with a value
+      greater than the equivalent of seven million four hundred thousand times the daily
+      value of the UMA, provided that the annual sales or assets of the economic agents
+      involved in the transaction, jointly or separately, exceed the equivalent of forty
+      million times the daily value of the UMA."
+    supports_conditions:
+      - mx_tv_deal_value
+      - mx_acquired_assets_domestic
+      - mx_combined_domestic
+
+threshold_tests:
+  # Mexico's two notification triggers (LFCE Article 86; post-July 2025 reform values).
+  # Either trigger is sufficient to require notification.
+  #
+  # Test 1 (Transaction Value): the transaction value in Mexico exceeds a prescribed
+  # UMA-based threshold. For 2025, calculated using UMA of MXN 113.14/day.
+  # Note: this threshold value is recalculated annually per UMA. The 2025 value is
+  # confirmed via Pérez-Llorca client alert (January 2025).
+  #
+  # Test 2 (Assets/Capital + Combined): the acquiring party accumulates Mexico assets
+  # or capital stock exceeding the lower threshold AND the combined Mexico annual sales
+  # or assets of all parties exceed the upper threshold.
+  # Post-July 2025 reform: lowered from MXN 950m/5,430m to MXN 837m/4,525m.
+  #
+  # New authority: CNA replaced COFECE as of July 16, 2025.
+  # Source: Pérez-Llorca legal briefings (January 2025, July 2025); Greenberg Traurig
+  # client alert July 2025; Creel Abogados client alerts.
+
+  - test_id: mx_transaction_value
+    description: "Transaction value test — deal value in Mexico > MXN 1,810m (post-July 2025 reform, 2025 UMA-based)"
+    legal_basis: "LFCE Article 86(I) as amended July 2025"
+    source_url: "https://www.cofece.mx/concentraciones/"
+    note: >
+      Filing required if the transaction value in Mexico (directly or indirectly)
+      exceeds the prescribed UMA-based threshold. The July 2025 reform (effective July 16,
+      2025) REDUCED the multiplier from 18 million to 16 million times the daily UMA value.
+      At the 2025 UMA daily rate of MXN 113.14, this gives MXN 16,000,000 × 113.14 =
+      MXN 1,810,240,000. The prior (pre-reform) threshold based on 18M × daily UMA was
+      approximately MXN 2,036,520,000 — that figure is no longer in force.
+      The threshold changes each January when INEGI announces the new annual UMA rate.
+      Verify current-year amount before filing.
+    annual_adjustment: true
+    effective_date: "2025-07-16"
+
+    conditions:
+      - condition_id: mx_tv_deal_value
+        metric: deal_value
+        scope: domestic
+        party: combined
+        operator: ">"
+        value: 1810240000
+        currency: MXN
+        source: "LFCE Article 86(I) as amended by July 2025 reform; 16,000,000 × MXN 113.14 (2025 daily UMA)"
+        source_type: primary_legislation
+        verified_via:
+          - "https://natlawreview.com/article/cna-charge-thresholds-down-fines"
+          - "https://www.perezllorca.com/en-mx/news/legal-briefing/antitrust-2025-merger-filing-thresholds/"
+          - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/mexico"
+        note: >
+          MXN 1,810,240,000 (~USD 107m) at 2025 UMA. The July 2025 LFCE reform
+          reduced the multiplier from 18 million to 16 million times the daily UMA —
+          the MXN 2,036m figure that circulated in early-2025 practitioner alerts
+          reflects the pre-reform (pre-July 2025) threshold and is no longer applicable.
+          Recalculated each January per new INEGI annual UMA rate.
+
+  - test_id: mx_assets_and_combined
+    description: "Assets/capital + combined test — acquired Mexico assets > MXN 837m AND combined Mexico > MXN 4,525m"
+    legal_basis: "LFCE Article 86(II) as amended July 2025"
+    source_url: "https://www.cofece.mx/concentraciones/"
+    note: >
+      Second notification trigger. Both conditions must be met simultaneously.
+      Condition 1: the assets or capital stock in Mexico being acquired exceed the
+      lower threshold. Condition 2: the combined Mexican annual sales or assets of
+      all economic agents involved (combined/separately) exceed the upper threshold.
+      The July 2025 reform lowered these thresholds (from MXN 950m/5,430m to MXN 837m/
+      4,525m), meaning more transactions now require notification.
+    annual_adjustment: true
+    effective_date: "2025-07-16"
+
+    conditions:
+      - condition_id: mx_acquired_assets_domestic
+        metric: assets
+        scope: domestic
+        party: target_group
+        operator: ">"
+        value: 837236000
+        currency: MXN
+        source: "LFCE Article 86(II) as amended July 2025; post-reform confirmed by Pérez-Llorca July 2025"
+        source_type: primary_legislation
+        verified_via:
+          - "https://www.perezllorca.com/wp-content/uploads/2025/07/Legal-Briefing-Antitrust-Merger-Filing-Thresholds-after-the-Antitrust-Reform.pdf"
+          - "https://www.gtlaw.com/en/insights/2025/7/cambios-en-materia-reformas-a-la-ley-federal-de-competencia-economica"
+        note: >
+          MXN 837m assets or capital stock in Mexico being acquired. Lowered from MXN 950m
+          by the July 2025 reform. Subject to annual UMA adjustment.
+
+      - condition_id: mx_combined_domestic
+        metric: revenue
+        scope: domestic
+        party: combined
+        operator: ">"
+        value: 4525600000
+        currency: MXN
+        source: "LFCE Article 86(II) as amended July 2025; post-reform confirmed by Pérez-Llorca July 2025"
+        source_type: primary_legislation
+        verified_via:
+          - "https://www.perezllorca.com/wp-content/uploads/2025/07/Legal-Briefing-Antitrust-Merger-Filing-Thresholds-after-the-Antitrust-Reform.pdf"
+          - "https://www.gtlaw.com/en/insights/2025/7/cambios-en-materia-reformas-a-la-ley-federal-de-competencia-economica"
+        note: >
+          MXN 4,525m combined Mexican annual sales or assets of all economic agents jointly
+          or separately. Lowered from MXN 5,430m by the July 2025 reform. Subject to UMA adjustment.
+
+notes:
+  - >
+    NEW AUTHORITY: As of July 16, 2025, the CNA (Comisión Nacional Antimonopolio) has
+    replaced COFECE as Mexico's competition authority. The CNA operates under the
+    Ministry of Economy as a decentralised body. COFECE's portal may remain active
+    during transition; always verify the current filing portal before submitting.
+  - >
+    ANNUAL ADJUSTMENT: Threshold values are denominated in multiples of the annual
+    Unit of Measurement and Update (UMA — Unidad de Medida y Actualización) published
+    by INEGI each January. The specific MXN amounts change each year. The values in
+    this file reflect 2025 UMA-based calculations; verify current-year values at the
+    official portal before advising on or filing a notification.
+  - >
+    ELIMINATED EXEMPTIONS: The July 2025 reform removed two prior exemptions: (1) the
+    exemption for fund acquisitions with speculative purposes, and (2) the exemption for
+    transactions carried out in foreign countries not involving shares in Mexico. These
+    transactions may now require notification if the monetary thresholds are met.
+  - >
+    'Mexico' nexus: threshold is measured by assets located in Mexico and annual sales
+    originated in Mexico. Foreign entities are included only to the extent of their
+    Mexican operations.
+  - >
+    Sector-specific rules: telecommunications and broadcasting transactions are reviewed
+    concurrently by the IFT (Instituto Federal de Telecomunicaciones), which retains
+    its sector-specific merger control jurisdiction separate from the CNA.

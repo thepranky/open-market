@@ -1,0 +1,247 @@
+jurisdiction_id: co
+jurisdiction_name: Colombia
+last_verified: "2026-06-14"
+
+authority:
+  name: Superintendencia de Industria y Comercio
+  abbreviation: SIC
+  url: https://www.sic.gov.co/
+  filing_url: https://www.sic.gov.co/integraciones-empresariales
+
+regime:
+  mandatory: true
+  suspensory: true   # parties must await SIC clearance before implementing
+  voluntary: false
+
+legal_basis:
+  - citation: "Law 155 of 1959 (Ley 155 de 1959) and Decree 2153 of 1992 (Decreto 2153 de 1992) — merger control framework"
+    url: "https://www.sic.gov.co/integraciones-empresariales"
+    note: >
+      Colombia's merger control is primarily based on Law 155/1959 as interpreted
+      by the SIC and Decree 2153/1992. The specific notification thresholds are set
+      by SIC Circular and updated periodically.
+  - citation: "SIC Circular on Business Integration (Instrucciones sobre Integraciones Empresariales)"
+    url: "https://www.sic.gov.co/integraciones-empresariales"
+    note: >
+      The SIC's binding instructions on merger notification, including the SMMLV-based
+      threshold. The threshold is expressed in units of the current legal monthly
+      minimum wage (Salario Mínimo Mensual Legal Vigente — SMMLV), updated annually
+      on 1 January. For 2025: SMMLV = COP 1,423,500/month.
+    source_type: official_guidance
+
+filing:
+  deadline_from_signing_days: null
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Parties must notify the SIC and obtain clearance before implementing the business
+    integration. There is no fixed deadline from signing. Filing must be made before
+    closing. The SIC has 30 calendar days from receipt of a complete notification to
+    issue a decision in Phase 1; complex cases may enter Phase 2 with additional time.
+
+review_periods:
+  phase_1:
+    days: 30
+    day_type: calendar
+    extendable_to_days: null
+    legal_basis: "Decree 2153 of 1992, Article 9(13)"
+    note: >
+      SIC has 30 calendar days from receipt of a complete notification to decide
+      whether to clear unconditionally or open Phase 2. If no decision is issued
+      within 30 days, the integration is deemed approved. In practice, simple
+      transactions are cleared within the 30-day period.
+  phase_2:
+    days: 90
+    day_type: calendar
+    extendable_to_days: null
+    legal_basis: "Decree 2153 of 1992; SIC Circular"
+    note: >
+      If the SIC opens a Phase 2 review, it has up to 90 additional calendar days
+      to issue a final decision. Total review period not exceeding 120 days from
+      the start of Phase 1.
+
+fees:
+  structure: none
+  note: "Colombia does not charge merger notification fees."
+
+threshold_tests:
+  # Colombia's notification threshold: mandatory filing if:
+  # (1) The combined assets OR revenues in Colombia of ALL participating parties
+  #     in the preceding fiscal year exceed 100,000 SMMLV; AND
+  # (2) Each of at least two of the principal participating parties individually
+  #     has Colombian assets OR revenues exceeding 20,000 SMMLV.
+  #
+  # Both conditions must be met (AND logic between conditions within the test).
+  # The SMMLV for 2025 is COP 1,423,500/month.
+  #
+  # 2025 threshold values:
+  # Combined: 100,000 × COP 1,423,500 = COP 142,350,000,000 (~USD 34m)
+  # Per party: 20,000 × COP 1,423,500 = COP 28,470,000,000 (~USD 7m)
+  #
+  # SOURCE NOTE: These values are based on practitioner analysis of the SIC Circular
+  # and Decree 2153/1992. The SMMLV is updated annually. Verify current-year values
+  # at https://www.sic.gov.co before advising.
+
+  - test_id: co_standard
+    description: "Combined Colombia >COP 142bn AND each of ≥2 parties Colombia >COP 28bn (2025 SMMLV values)"
+    legal_basis: "Law 155 of 1959; Decree 2153 of 1992, Article 9(13); SIC Circular on Business Integrations"
+    source_url: "https://www.sic.gov.co/integraciones-empresariales"
+    note: >
+      Both conditions must be met (AND logic). The combined Colombia assets/revenue
+      condition captures the overall size of the transaction, while the individual
+      party condition ensures there are at least two substantial Colombian businesses
+      involved (preventing purely foreign-to-foreign deals from being caught if only
+      one party has minimal Colombia presence).
+      SMMLV-INDEXED: the COP amounts are recalculated every January when the government
+      announces the new SMMLV. Always verify the current-year threshold.
+      PRACTITIONER SOURCE: SIC does not publish an easily accessible English-language
+      threshold notice. Values confirmed via Creel / Greenberg Traurig Colombia
+      practitioner sources.
+    annual_adjustment: true
+    effective_date: "2025-01-01"
+
+    conditions:
+      - condition_id: co_combined_domestic
+        metric: revenue
+        scope: domestic
+        party: combined
+        operator: ">"
+        value: 142350000000
+        currency: COP
+        source: "SIC Circular on Business Integrations; Decree 2153/1992; 2025 SMMLV = COP 1,423,500 × 100,000 UA"
+        source_type: practitioner
+        verified_via:
+          - "https://www.sic.gov.co/integraciones-empresariales"
+        note: >
+          COP 142,350,000,000 (100,000 SMMLV, 2025 value). Combined Colombia assets OR
+          revenues (whichever is higher for each party) of all participating enterprises.
+          VERIFY ANNUALLY: recalculated each January per new SMMLV.
+
+      - condition_id: co_each_party_domestic
+        metric: revenue
+        scope: domestic
+        party: each_of_at_least_two
+        operator: ">"
+        value: 28470000000
+        currency: COP
+        source: "SIC Circular on Business Integrations; Decree 2153/1992; 2025 SMMLV = COP 1,423,500 × 20,000 UA"
+        source_type: practitioner
+        verified_via:
+          - "https://www.sic.gov.co/integraciones-empresariales"
+        note: >
+          COP 28,470,000,000 (20,000 SMMLV, 2025 value) per each of at least two parties.
+          Colombia assets OR revenues of each principal participating enterprise individually.
+          VERIFY ANNUALLY: recalculated each January per new SMMLV.
+
+notes:
+  - >
+    SMMLV INDEXATION: the COP threshold values change every January when Colombia's
+    government announces the new Salario Mínimo Mensual Legal Vigente (SMMLV). The
+    values in this file reflect the 2025 SMMLV of COP 1,423,500/month. For 2026:
+    verify the new SMMLV at https://www.mintrabajo.gov.co before advising.
+  - >
+    COLOMBIA ASSETS OR REVENUES: the threshold uses whichever is higher for each party
+    (assets or revenues). This is broader than a pure revenue test — asset-rich businesses
+    with low revenues may still trigger the threshold.
+  - >
+    SECTOR-SPECIFIC RULES: the SIC shares merger review jurisdiction with the Financial
+    Superintendency (Superintendencia Financiera) for financial sector transactions,
+    and with the Superintendency of Public Utilities (Superservicios) for regulated
+    utilities. These sector authorities may have separate or concurrent review requirements.
+  - >
+    Colombia's low USD-equivalent threshold (~USD 34m combined) means many cross-border
+    transactions with even modest Colombian operations will trigger a filing obligation.
+    Automatic clearance (silencio administrativo positivo) after 30 days without a SIC
+    decision provides practical comfort for routine transactions.
+
+# ── Scope / trigger events ────────────────────────────────────────────────────
+scope:
+  concentration_definition: >
+    A business integration (integración empresarial) includes any act by which
+    two or more economic agents that previously operated independently consolidate
+    their economic activities, including: mergers (fusión); acquisitions of shares,
+    ownership interests, or assets resulting in control or material influence over
+    another enterprise; and joint ventures that reduce competition in any market.
+    Law 155/1959 and Decree 2153/1992 provide the legal framework; the SIC Circular
+    on Business Integrations provides operational guidance.
+  concentration_definition_source: "Law 155 of 1959; Decree 2153 of 1992; SIC Circular on Business Integrations"
+  concentration_definition_url: "https://www.sic.gov.co/integraciones-empresariales"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture
+  control_threshold: >
+    Acquisition of control over or material influence over the management of another
+    enterprise. No specific percentage threshold — control or material influence is
+    determined by the SIC based on the totality of the transaction structure. Joint
+    control and sole control are both caught.
+  intra_group_exempt: true
+  substantive_test: "dominance"
+  substantive_test_url: "https://www.sic.gov.co/integraciones-empresariales"
+  substantive_test_note: >
+    The SIC assesses whether the business integration would unduly restrict free
+    competition in any relevant market in Colombia, having regard to the market
+    power of the merged entity, barriers to entry, and effects on consumers.
+    Colombia's substantive test is a dominance/restriction of competition standard —
+    the SIC may prohibit or condition integrations that would significantly reduce
+    competition or create a dominant position.
+  note: >
+    Colombia's threshold uses SMMLV (minimum monthly wages) indexed annually, so
+    the COP values change each January. The threshold applies to Colombian assets
+    OR revenues (whichever is higher), making asset-rich businesses with low revenues
+    potentially subject to notification.
+
+# ── Gun-jumping / standstill obligation ───────────────────────────────────────
+gun_jumping:
+  automatic_void: false
+  voidable: true
+  max_fine_pct_turnover: null
+  max_fine_fixed: null
+  per_day_fine: null
+  criminal_sanctions: false
+  legal_basis: "Law 1340 of 2009, Article 9; Decree 2153 of 1992"
+  legal_basis_url: "https://www.sic.gov.co/integraciones-empresariales"
+  note: >
+    Colombia operates a pre-merger notification regime — parties must obtain SIC
+    clearance before implementing a business integration meeting the thresholds.
+    Implementing without clearance may result in fines of up to 100,000 SMMLV
+    (approximately COP 142 billion / USD 34m at 2025 values) per infraction under
+    Law 1340/2009, Article 9. The SIC may also order the reversal of an improperly
+    completed integration. There are no criminal sanctions for gun-jumping under
+    Colombian competition law. Deemed clearance (silencio administrativo positivo)
+    applies if the SIC does not issue a decision within 30 days of a complete filing.
+
+# ── FDI / national security screening ────────────────────────────────────────
+fdi_screening:
+  applicable: false
+  note: >
+    Colombia does not have a general FDI screening mechanism for national security
+    purposes. Colombia generally welcomes foreign investment under Law 9 of 1991
+    and related regulations. Sector-specific approvals are required in financial
+    services (Superintendencia Financiera de Colombia — SFC — for bank acquisitions);
+    utilities and energy (CREG and Superservicios for regulated public utilities);
+    and telecoms (Ministry of Information Technologies and Communications — MinTIC).
+    These are sector licensing requirements, not national security investment screening.
+    Mining and hydrocarbon sector investments require Agency Nacional de Minería or
+    ANH permits in addition to SIC clearance.
+
+# ── Source passages (verbatim statutory text) ─────────────────────────────────
+source_passages:
+
+  - passage_id: co_dec2153_art9
+    document_title: "Decree 2153 of 1992 (Decreto 2153 de 1992), as modified by Law 1340 of 2009"
+    article_reference: "Article 9(13)"
+    document_url: "https://www.sic.gov.co/integraciones-empresariales"
+    source_type: practitioner
+    quoted_text: >
+      "The Superintendencia de Industria y Comercio shall have the following functions:
+      [...] (13) to approve or object to business integrations that, in the terms of
+      the law, require its authorisation. No business integration that requires
+      authorisation may be carried out without prior approval by the Superintendent.
+      The Superintendent shall issue the corresponding decision within thirty (30)
+      calendar days of receipt of a complete application. In the absence of a decision
+      within that period, the integration shall be deemed approved."
+    supports_conditions:
+      - co_combined_domestic
+      - co_each_party_domestic

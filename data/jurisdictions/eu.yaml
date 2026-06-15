@@ -1,0 +1,349 @@
+jurisdiction_id: eu
+jurisdiction_name: European Union
+last_verified: "2026-06-14"
+
+authority:
+  name: European Commission, Directorate-General for Competition
+  abbreviation: EC
+  url: https://competition-policy.ec.europa.eu/mergers_en
+  filing_url: https://competition-policy.ec.europa.eu/mergers/legislation_en
+
+regime:
+  mandatory: true
+  suspensory: true   # Article 7(1) EC Merger Regulation — standstill obligation
+  voluntary: false
+
+legal_basis:
+  - citation: "Council Regulation (EC) No 139/2004 on the control of concentrations between undertakings (EC Merger Regulation)"
+    url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32004R0139"
+  - citation: "Commission Consolidated Jurisdictional Notice under Council Regulation (EC) No 139/2004 (2008/C 95/01)"
+    url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A52008XC0416%2802%29"
+    source_type: official_guidance
+
+filing:
+  deadline_from_signing_days: null   # no fixed deadline from signing
+  deadline_from_closing_days: null
+  pre_closing_required: true         # suspensory — must receive clearance before closing
+  note: >
+    Notification must be made within one week of conclusion of the agreement, announcement
+    of a public bid, or acquisition of a controlling interest (Article 4(1)). In practice,
+    parties typically pre-notify informally before submitting a formal notification.
+
+review_periods:
+  phase_1:
+    days: 25
+    day_type: working
+    extendable_to_days: 35            # if remedies offered (Article 10(1))
+    legal_basis: "Article 10(1) EC Merger Regulation"
+  phase_2:
+    days: 90
+    day_type: working
+    extendable_to_days: 125           # 90 + up to 35 further working days
+    legal_basis: "Article 10(3) EC Merger Regulation"
+
+fees:
+  structure: none
+  note: "The European Commission does not charge filing fees."
+
+threshold_tests:
+  # Tests are OR'd — Community dimension exists if EITHER test is satisfied.
+  # The two-thirds rule (below) can cancel either test.
+
+  - test_id: eu_standard
+    description: "Standard Community dimension thresholds (Article 1(2))"
+    legal_basis: "Article 1(2), Council Regulation (EC) No 139/2004"
+    source_url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32004R0139#d1e203-1-1"
+    note: null
+    annual_adjustment: false
+    effective_date: "2004-05-01"
+
+    conditions:
+      - condition_id: eu_standard_combined_worldwide
+        metric: revenue
+        scope: worldwide
+        party: combined
+        operator: ">"
+        value: 5000000000
+        currency: EUR
+        source: "Article 1(2)(a)"
+        source_type: primary_legislation
+
+      - condition_id: eu_standard_each_party_eu
+        metric: revenue
+        scope: eu_eea
+        party: each_of_at_least_two
+        operator: ">"
+        value: 250000000
+        currency: EUR
+        source: "Article 1(2)(b)"
+        source_type: primary_legislation
+        note: >
+          Each of at least two of the undertakings concerned must individually exceed
+          €250m EU-wide turnover. It is not sufficient for only one party to meet this.
+
+    exclusions:
+      - exclusion_id: eu_two_thirds_rule
+        description: >
+          Two-thirds rule: if each of the undertakings concerned achieves more than
+          two-thirds of its aggregate EU-wide turnover within one and the same Member
+          State, the concentration does not have a Community dimension and falls to
+          be reviewed by national authorities.
+        source: "Article 1(2), final clause, Council Regulation (EC) No 139/2004"
+        source_type: primary_legislation
+        effect: excludes_jurisdiction
+
+  - test_id: eu_alternative
+    description: "Alternative Community dimension thresholds (Article 1(3))"
+    legal_basis: "Article 1(3), Council Regulation (EC) No 139/2004"
+    source_url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32004R0139#d1e203-1-1"
+    note: >
+      The Article 1(3) test was introduced to capture concentrations significant in
+      multiple Member States but below the Article 1(2) worldwide threshold. All four
+      conditions must be satisfied simultaneously.
+    annual_adjustment: false
+    effective_date: "2004-05-01"
+
+    conditions:
+      - condition_id: eu_alt_combined_worldwide
+        metric: revenue
+        scope: worldwide
+        party: combined
+        operator: ">"
+        value: 2500000000
+        currency: EUR
+        source: "Article 1(3)(a)"
+        source_type: primary_legislation
+
+      - condition_id: eu_alt_combined_per_ms
+        metric: revenue
+        scope: eu_member_state
+        party: combined
+        operator: ">"
+        value: 100000000
+        currency: EUR
+        source: "Article 1(3)(b)"
+        source_type: primary_legislation
+        qualifier:
+          type: count_of_countries
+          operator: ">="
+          count: 3
+          country_set: eu_member_states
+        note: >
+          The combined turnover of all parties must exceed €100m in each of at least
+          three EU Member States. The same three (or more) Member States must satisfy
+          both this condition and eu_alt_each_party_per_ms below.
+
+      - condition_id: eu_alt_each_party_per_ms
+        metric: revenue
+        scope: eu_member_state
+        party: each_of_at_least_two
+        operator: ">"
+        value: 25000000
+        currency: EUR
+        source: "Article 1(3)(b)"
+        source_type: primary_legislation
+        qualifier:
+          type: count_of_countries
+          operator: ">="
+          count: 3
+          country_set: eu_member_states
+          cross_reference: eu_alt_combined_per_ms   # must be the same Member States
+        note: >
+          In each of the same three (or more) Member States where the combined threshold
+          is met, each of at least two of the undertakings must individually exceed €25m.
+
+      - condition_id: eu_alt_each_party_eu
+        metric: revenue
+        scope: eu_eea
+        party: each_of_at_least_two
+        operator: ">"
+        value: 100000000
+        currency: EUR
+        source: "Article 1(3)(c)"
+        source_type: primary_legislation
+
+    exclusions:
+      - exclusion_id: eu_two_thirds_rule
+        description: >
+          Two-thirds rule applies identically to Article 1(3). If each undertaking
+          achieves more than two-thirds of its EU-wide turnover in one and the same
+          Member State, no Community dimension exists.
+        source: "Article 1(3), final clause, Council Regulation (EC) No 139/2004"
+        source_type: primary_legislation
+        effect: excludes_jurisdiction
+
+notes:
+  - >
+    Turnover is calculated in accordance with Article 5 and the Jurisdictional Notice.
+    Turnover of the acquiring group includes all entities over which the acquirer has
+    direct or indirect control; turnover of the target includes only the target and its
+    subsidiaries (not the seller's retained business).
+  - >
+    For joint ventures, both parents' turnover is counted for the worldwide test; only
+    the JV's own turnover counts for the EU-level tests (unless the JV has full-function
+    status and the parents are active in the same market).
+  - >
+    The one-stop-shop principle: if a Community dimension exists, the EC has exclusive
+    jurisdiction and Member States may not apply national merger control rules (subject
+    to Article 9 referral).
+
+# ── Scope / trigger events ────────────────────────────────────────────────────
+scope:
+  concentration_definition: >
+    A concentration is deemed to arise where a change of control on a lasting basis
+    results from: (a) the merger of two or more previously independent undertakings
+    or parts of undertakings; or (b) the acquisition, by one or more persons already
+    controlling at least one undertaking, or by one or more undertakings, of direct or
+    indirect control of the whole or parts of one or more other undertakings
+    (Article 3(1), EC Merger Regulation).
+  concentration_definition_source: "Article 3(1), Council Regulation (EC) No 139/2004"
+  concentration_definition_url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32004R0139"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture          # full-function JVs only (Article 3(4))
+  control_threshold: >
+    Exclusive control or joint control. Decisive influence over strategic decisions
+    (pricing, budget, business plan). Minority stakes generally do not constitute
+    control unless they confer decisive influence through veto rights over strategic
+    decisions (Article 3(2)).
+  intra_group_exempt: true
+  foreign_to_foreign_rule: >
+    The EUMR applies to all concentrations with a Community dimension regardless of
+    the location or nationality of the parties. A purely foreign-to-foreign deal
+    triggers EUMR notification if the Community-dimension thresholds are met based
+    on EU-wide revenues.
+  substantive_test: "siec"
+  substantive_test_url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32004R0139"
+  substantive_test_note: >
+    The EU Merger Regulation (EUMR, Reg. 139/2004, Art. 2) applies the SIEC test: a concentration is incompatible with the common market if it would significantly impede effective competition, in particular as a result of the creation or strengthening of a dominant position. The SIEC standard is broader than pure dominance and can capture oligopoly/coordinated effects cases.
+  note: >
+    Since March 2021 (Illumina/GRAIL), the Commission accepts Article 22 referrals
+    from Member States even where the referring state has no jurisdiction itself,
+    allowing the Commission to review deals below all national and EU thresholds in
+    exceptional cases involving nascent competition concerns.
+
+# ── Gun-jumping / standstill obligation ───────────────────────────────────────
+gun_jumping:
+  automatic_void: false
+  voidable: true
+  max_fine_pct_turnover: 10.0
+  per_day_fine: null
+  criminal_sanctions: false
+  legal_basis: "Articles 7(1), 14(2)(a), and 15(2)(a), Council Regulation (EC) No 139/2004"
+  legal_basis_url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32004R0139"
+  note: >
+    Article 7(1) prohibits implementation of a notifiable concentration before
+    notification or clearance (standstill obligation). Breach attracts fines up to
+    10% of aggregate worldwide turnover (Article 14(2)(a)) and periodic penalty
+    payments up to 5% of average daily worldwide turnover per day of breach
+    (Article 15(2)(a)). The Commission may also order interim measures and,
+    ultimately, order dissolution of the concentration. Transactions implemented
+    in breach of Article 7 are not automatically void under EU law, but the
+    Commission may declare them incompatible and order demerger (Article 8(4)).
+    Notable enforcement: Canon/Toshiba (€28m, 2019); Altice/PT Portugal (€124.5m, 2018).
+
+# ── FDI / national security screening ────────────────────────────────────────
+fdi_screening:
+  applicable: false
+  note: >
+    The EU does not have a unified FDI screening mechanism. EU Regulation 2019/452
+    (FDI Screening Regulation, in force since October 2020) establishes a cooperation
+    framework between Member States and the Commission, but individual Member States
+    operate their own national FDI screening regimes. Key national regimes to assess
+    alongside EU merger control include: Germany (Investment Screening under the
+    Foreign Trade and Payments Act — AWG/AWV §55, Ministry of Economy); France
+    (Decree No. 2019-1590, Ministry of Economy); Italy (Golden Power — Decree-Law
+    No. 21/2012, updated 2020); Spain (Royal Decree-Law 8/2020, MINECO);
+    Netherlands (Wet vifo since 2023, Ministry of Economic Affairs).
+    A revised, strengthened EU FDI Screening Regulation is expected in 2025–2026.
+
+# ── Source passages (verbatim statutory text) ─────────────────────────────────
+source_passages:
+
+  - passage_id: eu_reg_139_art_1_2
+    document_title: "Council Regulation (EC) No 139/2004 on the control of concentrations between undertakings (EC Merger Regulation)"
+    article_reference: "Article 1(2)"
+    document_url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32004R0139"
+    source_type: primary_legislation
+    quoted_text: >
+      "A concentration has a Community dimension where:
+      (a) the combined aggregate worldwide turnover of all the undertakings concerned is more
+      than EUR 5 000 million; and
+      (b) the aggregate Community-wide turnover of each of at least two of the undertakings
+      concerned is more than EUR 250 million,
+      unless each of the undertakings concerned achieves more than two-thirds of its aggregate
+      Community-wide turnover within one and the same Member State."
+    supports_conditions:
+      - eu_standard_combined_worldwide
+      - eu_standard_each_party_eu
+
+  - passage_id: eu_reg_139_art_1_3
+    document_title: "Council Regulation (EC) No 139/2004 on the control of concentrations between undertakings (EC Merger Regulation)"
+    article_reference: "Article 1(3)"
+    document_url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32004R0139"
+    source_type: primary_legislation
+    quoted_text: >
+      "A concentration that does not meet the thresholds laid down in paragraph 2 has a
+      Community dimension where:
+      (a) the combined aggregate worldwide turnover of all the undertakings concerned is more
+      than EUR 2 500 million;
+      (b) in each of at least three Member States, the combined aggregate turnover of all the
+      undertakings concerned is more than EUR 100 million;
+      (c) in each of at least three Member States included for the purpose of point (b), the
+      aggregate turnover of each of at least two of the undertakings concerned is more than
+      EUR 25 million; and
+      (d) the aggregate Community-wide turnover of each of at least two of the undertakings
+      concerned is more than EUR 100 million,
+      unless each of the undertakings concerned achieves more than two-thirds of its aggregate
+      Community-wide turnover within one and the same Member State."
+    supports_conditions:
+      - eu_alt_combined_worldwide
+      - eu_alt_combined_per_ms
+      - eu_alt_each_party_per_ms
+      - eu_alt_each_party_eu
+
+  - passage_id: eu_reg_139_art_3_1
+    document_title: "Council Regulation (EC) No 139/2004 on the control of concentrations between undertakings (EC Merger Regulation)"
+    article_reference: "Article 3(1)"
+    document_url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32004R0139"
+    source_type: primary_legislation
+    quoted_text: >
+      "A concentration shall be deemed to arise where a change of control on a lasting basis
+      results from:
+      (a) the merger of two or more previously independent undertakings or parts of undertakings,
+      or
+      (b) the acquisition, by one or more persons already controlling at least one undertaking,
+      or by one or more undertakings, whether by purchase of securities or assets, by contract
+      or by any other means, of direct or indirect control of the whole or parts of one or more
+      other undertakings."
+    supports_conditions: []
+
+  - passage_id: eu_reg_139_art_7_1
+    document_title: "Council Regulation (EC) No 139/2004 on the control of concentrations between undertakings (EC Merger Regulation)"
+    article_reference: "Article 7(1)"
+    document_url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32004R0139"
+    source_type: primary_legislation
+    quoted_text: >
+      "A concentration with a Community dimension as defined in Article 1, or which is to be
+      examined by the Commission pursuant to Article 4(5), shall not be implemented either
+      before its notification or until it has been declared compatible with the common market
+      pursuant to a decision under Articles 6(1)(b), 8(1) or 8(2), or on the basis of a
+      presumption according to Article 10(6)."
+    supports_conditions: []
+
+  - passage_id: eu_reg_139_art_14_2a
+    document_title: "Council Regulation (EC) No 139/2004 on the control of concentrations between undertakings (EC Merger Regulation)"
+    article_reference: "Article 14(2)(a)"
+    document_url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32004R0139"
+    source_type: primary_legislation
+    quoted_text: >
+      "The Commission may by decision impose on the persons referred to in Article 3(1)(b),
+      undertakings or associations of undertakings, fines not exceeding 10 % of the aggregate
+      worldwide turnover of the undertaking or undertakings concerned within the meaning of
+      Article 5 where, either intentionally or negligently, they:
+      (a) fail to notify a concentration in accordance with Articles 4 or 22(3) prior to its
+      implementation, unless they are expressly authorised to do so by Article 7(2) or by a
+      decision taken pursuant to Article 7(3)..."
+    supports_conditions: []

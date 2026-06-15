@@ -1,0 +1,257 @@
+jurisdiction_id: ng
+jurisdiction_name: Nigeria
+last_verified: "2026-06-14"
+
+authority:
+  name: Federal Competition and Consumer Protection Commission
+  abbreviation: FCCPC
+  url: https://fccpc.gov.ng/
+  filing_url: https://fccpc.gov.ng/mergers-acquisitions/
+
+regime:
+  mandatory: true
+  suspensory: true   # parties must await FCCPC approval before implementing a large merger
+  voluntary: false
+
+legal_basis:
+  - citation: "Federal Competition and Consumer Protection Act 2018 (FCCPA), Part VII (Sections 92–108)"
+    url: "https://fccpc.gov.ng/laws-and-regulations/"
+    note: >
+      Sections 92–108 establish the merger control regime. The FCCPA replaced the
+      Consumer Protection Council Act and introduced Nigeria's first comprehensive
+      competition law. FCCPC is the primary authority; the Securities and Exchange
+      Commission (SEC) has concurrent jurisdiction for capital market transactions.
+  - citation: "FCCPC Notice of Threshold for Merger Notification (2019)"
+    url: "https://fccpc.gov.ng/mergers-acquisitions/"
+    note: >
+      The FCCPC issued a Notice of Threshold in 2019 setting NGN 1 billion and
+      NGN 500 million as the applicable thresholds for large mergers. These values
+      have not been formally updated as of last verified date.
+    source_type: authority_announcement
+
+filing:
+  deadline_from_signing_days: null
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Large mergers must be notified to and approved by the FCCPC before implementation.
+    There is no fixed deadline from signing; notification must be made before the
+    merger is implemented. Small mergers (below the large merger thresholds) are not
+    subject to mandatory notification but the FCCPC may require notification of a
+    small merger within 6 months of implementation if it has competition concerns.
+
+review_periods:
+  phase_1:
+    days: 120
+    day_type: calendar
+    extendable_to_days: null
+    legal_basis: "FCCPA 2018, Section 94(3)"
+    note: >
+      The FCCPC must issue a decision within 120 calendar days of receipt of a
+      complete merger notification. The FCCPC may request additional information
+      (stopping the clock). In practice, many uncomplicated transactions are
+      cleared well within the 120-day period.
+  phase_2:
+    days: 120
+    day_type: calendar
+    extendable_to_days: null
+    legal_basis: "FCCPA 2018, Section 94"
+    note: >
+      There is no separate Phase 2 in the Nigerian regime; the 120-day period
+      covers both initial and detailed review. Complex transactions may approach
+      the full 120 days.
+
+fees:
+  structure: >
+    0.5% of the transaction value, subject to a minimum of NGN 1,000,000 and
+    a maximum of NGN 50,000,000.
+    (Verify current fee schedule with FCCPC)
+  source: "FCCPC Merger Fee Schedule"
+  source_type: official_guidance
+  source_url: "https://fccpc.gov.ng/mergers-acquisitions/"
+  annual_adjustment: false
+
+threshold_tests:
+  # Nigeria uses OR logic — notification is required if EITHER threshold is met.
+  # Both thresholds test Nigeria-domestic revenues only (in, into, or from Nigeria).
+  #
+  # Threshold 1: combined annual Nigeria turnover of ALL parties ≥ NGN 1 billion
+  # Threshold 2: annual Nigeria turnover of the TARGET alone ≥ NGN 500 million
+  #
+  # Source: FCCPA 2018, Sections 92–93; FCCPC Notice of Threshold for Merger
+  # Notification (2019); confirmed via ICLG Nigeria 2025 merger control chapter.
+
+  - test_id: ng_combined_turnover
+    description: "Combined Nigeria turnover of all parties ≥ NGN 1bn (FCCPA s. 92)"
+    legal_basis: "Federal Competition and Consumer Protection Act 2018, Section 92(1)(a)"
+    source_url: "https://fccpc.gov.ng/mergers-acquisitions/"
+    note: >
+      A 'large merger' requiring mandatory notification exists if the combined annual
+      turnover in Nigeria of the acquiring undertaking and the target in the financial
+      year preceding the merger equals or exceeds NGN 1 billion. Turnover is measured
+      'in, into or from Nigeria.'
+    annual_adjustment: false
+    effective_date: "2019-01-01"
+
+    conditions:
+      - condition_id: ng_combined_domestic
+        metric: revenue
+        scope: domestic
+        party: combined
+        operator: ">="
+        value: 1000000000
+        currency: NGN
+        source: "FCCPA 2018, Section 92(1)(a); FCCPC Notice of Threshold for Merger Notification (2019)"
+        source_type: authority_announcement
+        verified_via:
+          - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/nigeria"
+        note: >
+          NGN 1bn combined Nigeria annual turnover of the acquirer and target groups.
+          Note: NGN 1bn ≈ USD 625,000 at current exchange rates — a very low threshold
+          that catches many transactions with even modest Nigerian presence.
+
+  - test_id: ng_target_turnover
+    description: "Target Nigeria turnover alone ≥ NGN 500m (FCCPA s. 92)"
+    legal_basis: "Federal Competition and Consumer Protection Act 2018, Section 92(1)(b)"
+    source_url: "https://fccpc.gov.ng/mergers-acquisitions/"
+    note: >
+      Alternative large merger threshold: if the target's annual Nigeria turnover
+      alone (regardless of combined) equals or exceeds NGN 500 million, the merger
+      is notifiable. This captures acquisitions of medium-sized Nigerian businesses
+      even where the acquirer has no Nigerian revenues.
+    annual_adjustment: false
+    effective_date: "2019-01-01"
+
+    conditions:
+      - condition_id: ng_target_domestic
+        metric: revenue
+        scope: domestic
+        party: target_group
+        operator: ">="
+        value: 500000000
+        currency: NGN
+        source: "FCCPA 2018, Section 92(1)(b); FCCPC Notice of Threshold for Merger Notification (2019)"
+        source_type: authority_announcement
+        verified_via:
+          - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/nigeria"
+        note: >
+          NGN 500m target annual Nigeria turnover. Approximately USD 312,500 at current
+          exchange rates — one of the lowest absolute filing thresholds globally.
+          Verify current NGN/USD rate before relying on this for deal assessment.
+
+notes:
+  - >
+    VERY LOW THRESHOLDS IN USD TERMS: Due to naira depreciation, the NGN 1bn and
+    NGN 500m thresholds translate to approximately USD 625,000 and USD 312,500
+    respectively at 2025 exchange rates — far lower than the legal text implies.
+    Almost any transaction involving a business with Nigerian customers will trigger
+    these thresholds. Always flag Nigeria for review in any transaction involving
+    African operations.
+  - >
+    SEC concurrent jurisdiction: the Securities and Exchange Commission (SEC) has
+    jurisdiction over mergers involving listed companies or capital market transactions
+    under the Investments and Securities Act 2007 (ISA). SEC approval may be required
+    in addition to FCCPC approval for public company transactions.
+  - >
+    Small mergers: transactions below both NGN thresholds are 'small mergers' under
+    the FCCPA. The FCCPC may still require notification of a small merger within
+    6 months of implementation if it determines competition concerns exist.
+  - >
+    In-force date: the FCCPA entered into force in February 2019. The threshold notice
+    was issued shortly thereafter. The FCCPC has been operationally active since 2020.
+
+# ── Scope / trigger events ────────────────────────────────────────────────────
+scope:
+  concentration_definition: >
+    A merger under the Federal Competition and Consumer Protection Act 2018 (FCCPA)
+    includes any transaction whereby: (i) a person, directly or indirectly, acquires
+    or establishes direct or indirect control over the whole or part of a business
+    of another person; or (ii) two or more persons combine to form a new enterprise
+    and the combining enterprises cease to exist (s. 92, FCCPA). 'Control' includes
+    the ability to direct or cause the direction of management and policies of an
+    enterprise, whether through shareholding, voting power, contractual arrangements,
+    or other means.
+  concentration_definition_source: "Federal Competition and Consumer Protection Act 2018 (FCCPA), Section 92"
+  concentration_definition_url: "https://fccpc.gov.ng/laws-and-regulations/"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture
+  control_threshold: >
+    Ability to direct or cause the direction of management and policies of an enterprise,
+    whether through majority shareholding, voting rights, board appointment rights,
+    or other means. No specific percentage threshold — decisive influence is the
+    operative concept. Small mergers (below the thresholds) may still be reviewed
+    by the FCCPC within 6 months of implementation.
+  intra_group_exempt: true
+  substantive_test: "slc"
+  substantive_test_url: "https://fccpc.gov.ng/laws-and-regulations/"
+  substantive_test_note: >
+    Section 96 of the FCCPA directs the FCCPC to approve a merger unless it finds that
+    the merger is likely to substantially prevent or lessen competition, having regard
+    to all relevant factors including: market concentration, barriers to entry, the
+    availability of substitutes, the degree of countervailing power, and the dynamic
+    characteristics of the market. The FCCPC may also consider public interest factors
+    including employment effects and participation of historically disadvantaged persons.
+  note: >
+    Nigeria's thresholds (NGN 1bn combined / NGN 500m target) are very low in USD terms
+    (approximately USD 625,000 / USD 312,500 at 2025 exchange rates) due to naira
+    depreciation. Almost any transaction with Nigerian business involvement will cross
+    these thresholds. SEC concurrent jurisdiction applies to capital market transactions.
+
+# ── Gun-jumping / standstill obligation ───────────────────────────────────────
+gun_jumping:
+  automatic_void: false
+  voidable: true
+  max_fine_pct_turnover: 10.0
+  per_day_fine: null
+  criminal_sanctions: false
+  legal_basis: "FCCPA 2018, Sections 97 and 101"
+  legal_basis_url: "https://fccpc.gov.ng/laws-and-regulations/"
+  note: >
+    Large mergers must be notified to and approved by the FCCPC before implementation
+    (s. 97 FCCPA). Implementing a large merger without FCCPC approval is prohibited;
+    the FCCPC may impose fines of up to 10% of annual turnover in Nigeria for
+    contravention (s. 101 FCCPA). The FCCPC may also apply to court to set aside a
+    merger implemented in breach of the standstill obligation. There are no criminal
+    sanctions for gun-jumping under the FCCPA. Small mergers (below the thresholds)
+    may be implemented without notification.
+
+# ── FDI / national security screening ────────────────────────────────────────
+fdi_screening:
+  applicable: false
+  note: >
+    Nigeria does not have a general FDI screening mechanism for national security
+    purposes. Nigeria promotes foreign investment through the Nigerian Investment
+    Promotion Commission (NIPC) Act. There is no general FDI security review
+    equivalent to CFIUS or the UK NSI Act. However, sector-specific prior approvals
+    are required in: oil and gas (Nigerian Upstream Petroleum Regulatory Commission —
+    NUPRC — for oil asset transfers); banking (Central Bank of Nigeria — CBN — for
+    bank acquisitions above 5%); telecoms (Nigerian Communications Commission — NCC);
+    broadcasting (National Broadcasting Commission — NBC); and insurance (National
+    Insurance Commission — NAICOM). These are sector licensing requirements cumulative
+    with FCCPC merger control.
+
+# ── Source passages (verbatim statutory text) ─────────────────────────────────
+source_passages:
+
+  - passage_id: ng_fccpa_s96
+    document_title: "Federal Competition and Consumer Protection Act 2018 (FCCPA)"
+    article_reference: "Section 96"
+    document_url: "https://fccpc.gov.ng/laws-and-regulations/"
+    source_type: practitioner
+    quoted_text: >
+      "The Commission shall approve a merger if it is satisfied that the merger is
+      not likely to substantially prevent or lessen competition. In determining whether
+      a merger is likely to substantially prevent or lessen competition, the Commission
+      shall take into account all relevant factors, including but not limited to: (a) the
+      actual and potential level of import competition in the market; (b) the ease of
+      entry into the market; (c) the level and trends in concentration, and history of
+      collusion, in the market; (d) the degree of countervailing power in the market;
+      (e) the dynamic characteristics of the market, including growth, innovation, and
+      product differentiation; (f) whether the business or part of the business of a
+      party to the merger has failed or is likely to fail."
+    supports_conditions:
+      - ng_combined_domestic
+      - ng_target_domestic

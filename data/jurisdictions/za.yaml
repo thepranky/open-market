@@ -1,0 +1,354 @@
+jurisdiction_id: za
+jurisdiction_name: South Africa
+last_verified: "2026-06-13"
+
+authority:
+  name: Competition Commission of South Africa
+  abbreviation: CompCom
+  url: https://www.compcom.co.za/mergers-and-acquisitions/
+  filing_url: https://www.compcom.co.za/
+
+regime:
+  mandatory: true
+  suspensory: true   # parties must await Competition Commission (intermediate) or Tribunal (large) approval
+  voluntary: false
+
+legal_basis:
+  - citation: "Competition Act 89 of 1998 (as amended by the Competition Amendment Act 18 of 2018), ss. 11–16"
+    url: "https://www.compcom.co.za/"
+    note: >
+      Sections 11–16 define large and intermediate mergers and the mandatory notification
+      requirements. The Act distinguishes between intermediate mergers (notified to the
+      Competition Commission only) and large mergers (notified to both the Competition
+      Commission and the Competition Tribunal).
+  - citation: "Government Notice — Competition Threshold Notice (updated 1 May 2026)"
+    url: "https://www.compcom.co.za/mergers-and-acquisitions/merger-thresholds/"
+    note: >
+      The Minister of Trade, Industry and Competition adjusts threshold amounts by
+      Government Gazette notice, in consultation with the Competition Commission.
+      Current thresholds effective 1 May 2026. Previous thresholds (intermediate:
+      combined ZAR 600m/acquired ZAR 100m; large: ZAR 6.6bn/190m) were in force
+      2017–2026.
+    source_type: authority_announcement
+
+filing:
+  deadline_from_signing_days: null
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Parties to an intermediate or large merger must notify before implementation.
+    There is no fixed deadline from signing — notification may be given at any time
+    before completion. The parties must not implement until the relevant authority
+    clears the merger. For large mergers: simultaneous notification to Competition
+    Commission and Competition Tribunal is required.
+
+review_periods:
+  phase_1:
+    days: 20
+    day_type: working
+    extendable_to_days: null
+    legal_basis: "Competition Act 1998, s. 14(1)(b) (intermediate); s. 14A(2)(b) (large)"
+    note: >
+      Competition Commission has 20 business days (intermediate) or may defer to Tribunal
+      timetable (large). For large mergers: Competition Tribunal sets its own timetable
+      after receiving the Commission's recommendation (typically 60 business days total
+      from filing to Tribunal decision). In practice large mergers take 4–6 months.
+  phase_2:
+    days: 180
+    day_type: calendar
+    legal_basis: "Competition Act 1998, s. 16"
+    note: >
+      If the Commission recommends prohibition or conditional approval, the matter proceeds
+      to the Competition Tribunal for a formal hearing. There is no fixed statutory timetable
+      for the Tribunal phase; the 180-day figure is a practical estimate — contested large
+      mergers routinely run 6–12 months. Parties should not rely on a fixed timetable.
+
+fees:
+  structure: >
+    Intermediate mergers: ZAR 220,000
+    Large mergers: ZAR 735,000
+    (effective 1 May 2026; previously ZAR 165,000 and ZAR 550,000)
+  source: "Government Gazette No. 52199 (2 May 2026) — Competition Threshold Notice"
+  source_type: authority_announcement
+  source_url: "https://www.compcom.co.za/mergers-and-acquisitions/merger-thresholds/"
+  annual_adjustment: false
+
+threshold_tests:
+  # South Africa uses a two-tier threshold structure:
+  # Intermediate merger: meets both limbs of the lower threshold but falls below either
+  # limb of the higher threshold. Notified to Competition Commission only.
+  # Large merger: meets both limbs of the higher threshold. Notified to both Competition
+  # Commission and Competition Tribunal.
+  #
+  # A transaction that falls below BOTH limbs of the lower threshold is a 'small merger'
+  # and is not subject to mandatory notification (though parties may notify voluntarily,
+  # and the Commission may call it in within 6 months of implementation).
+  #
+  # 'Combined' = the combined position of the acquiring and transferred firms.
+  # The test uses combined OR acquired-firm TURNOVER OR ASSETS — whichever is higher.
+  # Modelled as separate revenue-based and assets-based tests (engine OR's tests).
+  #
+  # All 2026 threshold values confirmed via Werksmans Attorneys (May 2026 client alert)
+  # and Bowmans Law (May 2026 client alert). Effective 1 May 2026 (Government Gazette).
+
+  - test_id: za_intermediate_revenue
+    description: "Intermediate merger — combined SA revenue ≥ ZAR 1bn AND acquired firm SA revenue ≥ ZAR 200m"
+    legal_basis: "Competition Act 1998, s. 11(1)(a); Government Threshold Notice, effective 1 May 2026"
+    source_url: "https://www.compcom.co.za/mergers-and-acquisitions/merger-thresholds/"
+    note: >
+      Revenue-based limb of the intermediate threshold. If a transaction meets this test
+      but falls below the large merger thresholds, it is an intermediate merger requiring
+      Competition Commission approval only.
+    annual_adjustment: false
+    effective_date: "2026-05-01"
+
+    conditions:
+      - condition_id: za_int_combined_revenue
+        metric: revenue
+        scope: domestic
+        party: combined
+        operator: ">="
+        value: 1000000000
+        currency: ZAR
+        source: "Competition Threshold Notice, Government Gazette, effective 1 May 2026"
+        source_type: authority_announcement
+        verified_via:
+          - "https://werksmans.com/south-africa-merger-notification-thresholds-and-filing-fees-increase-from-1-may-2026/"
+          - "https://bowmanslaw.com/insights/south-africa-merger-notification-thresholds-and-filing-fees-adjusted-with-effect-from-1-may-2026/"
+        note: >
+          ZAR 1bn combined South African turnover (combined acquirer + acquired firm).
+          Raised from ZAR 600m (in force 2017–2026).
+
+      - condition_id: za_int_target_revenue
+        metric: revenue
+        scope: domestic
+        party: target_group
+        operator: ">="
+        value: 200000000
+        currency: ZAR
+        source: "Competition Threshold Notice, Government Gazette, effective 1 May 2026"
+        source_type: authority_announcement
+        verified_via:
+          - "https://werksmans.com/south-africa-merger-notification-thresholds-and-filing-fees-increase-from-1-may-2026/"
+          - "https://bowmanslaw.com/insights/south-africa-merger-notification-thresholds-and-filing-fees-adjusted-with-effect-from-1-may-2026/"
+        note: "ZAR 200m acquired firm South African turnover. Raised from ZAR 100m."
+
+  - test_id: za_intermediate_assets
+    description: "Intermediate merger — combined SA assets ≥ ZAR 1bn AND acquired firm SA assets ≥ ZAR 200m"
+    legal_basis: "Competition Act 1998, s. 11(1)(a); Government Threshold Notice, effective 1 May 2026"
+    source_url: "https://www.compcom.co.za/mergers-and-acquisitions/merger-thresholds/"
+    note: "Assets-based alternative limb of the intermediate threshold."
+    annual_adjustment: false
+    effective_date: "2026-05-01"
+
+    conditions:
+      - condition_id: za_int_combined_assets
+        metric: assets
+        scope: domestic
+        party: combined
+        operator: ">="
+        value: 1000000000
+        currency: ZAR
+        source: "Competition Threshold Notice, Government Gazette, effective 1 May 2026"
+        source_type: authority_announcement
+        verified_via:
+          - "https://werksmans.com/south-africa-merger-notification-thresholds-and-filing-fees-increase-from-1-may-2026/"
+        note: "ZAR 1bn combined South African total assets."
+
+      - condition_id: za_int_target_assets
+        metric: assets
+        scope: domestic
+        party: target_group
+        operator: ">="
+        value: 200000000
+        currency: ZAR
+        source: "Competition Threshold Notice, Government Gazette, effective 1 May 2026"
+        source_type: authority_announcement
+        verified_via:
+          - "https://werksmans.com/south-africa-merger-notification-thresholds-and-filing-fees-increase-from-1-may-2026/"
+        note: "ZAR 200m acquired firm South African total assets."
+
+  - test_id: za_large_revenue
+    description: "Large merger — combined SA revenue ≥ ZAR 9.5bn AND acquired firm SA revenue ≥ ZAR 280m"
+    legal_basis: "Competition Act 1998, s. 11(1)(b); Government Threshold Notice, effective 1 May 2026"
+    source_url: "https://www.compcom.co.za/mergers-and-acquisitions/merger-thresholds/"
+    note: >
+      Large mergers require notification to both the Competition Commission and the
+      Competition Tribunal. Revenue-based limb of the large merger threshold.
+    annual_adjustment: false
+    effective_date: "2026-05-01"
+
+    conditions:
+      - condition_id: za_large_combined_revenue
+        metric: revenue
+        scope: domestic
+        party: combined
+        operator: ">="
+        value: 9500000000
+        currency: ZAR
+        source: "Competition Threshold Notice, Government Gazette, effective 1 May 2026"
+        source_type: authority_announcement
+        verified_via:
+          - "https://werksmans.com/south-africa-merger-notification-thresholds-and-filing-fees-increase-from-1-may-2026/"
+          - "https://bowmanslaw.com/insights/south-africa-merger-notification-thresholds-and-filing-fees-adjusted-with-effect-from-1-may-2026/"
+        note: >
+          ZAR 9.5bn combined South African turnover. Raised from approximately ZAR 6.6bn.
+
+      - condition_id: za_large_target_revenue
+        metric: revenue
+        scope: domestic
+        party: target_group
+        operator: ">="
+        value: 280000000
+        currency: ZAR
+        source: "Competition Threshold Notice, Government Gazette, effective 1 May 2026"
+        source_type: authority_announcement
+        verified_via:
+          - "https://werksmans.com/south-africa-merger-notification-thresholds-and-filing-fees-increase-from-1-may-2026/"
+        note: "ZAR 280m acquired firm South African turnover. Raised from approximately ZAR 190m."
+
+  - test_id: za_large_assets
+    description: "Large merger — combined SA assets ≥ ZAR 9.5bn AND acquired firm SA assets ≥ ZAR 280m"
+    legal_basis: "Competition Act 1998, s. 11(1)(b); Government Threshold Notice, effective 1 May 2026"
+    source_url: "https://www.compcom.co.za/mergers-and-acquisitions/merger-thresholds/"
+    note: "Assets-based alternative limb of the large merger threshold."
+    annual_adjustment: false
+    effective_date: "2026-05-01"
+
+    conditions:
+      - condition_id: za_large_combined_assets
+        metric: assets
+        scope: domestic
+        party: combined
+        operator: ">="
+        value: 9500000000
+        currency: ZAR
+        source: "Competition Threshold Notice, Government Gazette, effective 1 May 2026"
+        source_type: authority_announcement
+        verified_via:
+          - "https://werksmans.com/south-africa-merger-notification-thresholds-and-filing-fees-increase-from-1-may-2026/"
+        note: "ZAR 9.5bn combined South African total assets."
+
+      - condition_id: za_large_target_assets
+        metric: assets
+        scope: domestic
+        party: target_group
+        operator: ">="
+        value: 280000000
+        currency: ZAR
+        source: "Competition Threshold Notice, Government Gazette, effective 1 May 2026"
+        source_type: authority_announcement
+        verified_via:
+          - "https://werksmans.com/south-africa-merger-notification-thresholds-and-filing-fees-increase-from-1-may-2026/"
+        note: "ZAR 280m acquired firm South African total assets."
+
+notes:
+  - >
+    'In, into or from South Africa': turnover and assets are measured only with respect
+    to South African activity — revenues generated by or from South Africa and assets
+    located in South Africa. Foreign revenues of South African entities are excluded.
+  - >
+    Voluntary notification of small mergers: parties to a small merger (below both
+    intermediate thresholds) may voluntarily notify the Commission. The Commission
+    may also call in a small merger for review within 6 months of implementation if
+    there is reason to believe it may substantially prevent or lessen competition.
+  - >
+    The Competition Amendment Act 2018 introduced a public interest test, requiring
+    the Competition Commission and Tribunal to consider employment, participation of
+    black South Africans in the economy, and the ability of small businesses to compete.
+    This applies in addition to the competition assessment and may result in conditions
+    or prohibition even if competition concerns are minimal.
+  - >
+    Foreign-to-foreign transactions: South African merger control applies to transactions
+    'in, into or from' South Africa. If neither party has South African operations or
+    assets, the thresholds will not be met and no notification is required.
+
+# ── Scope / trigger events ────────────────────────────────────────────────────
+scope:
+  concentration_definition: >
+    A merger occurs when one or more firms directly or indirectly acquire or establish
+    direct or indirect control over the whole or part of the business of another firm
+    (Competition Act 89 of 1998, s. 12(1)). Control includes: holding a majority of
+    voting rights; appointing or removing a majority of directors; the ability to
+    materially influence policy; and any other means of controlling or materially
+    influencing business decisions. The Act distinguishes between small, intermediate,
+    and large mergers based on the combined and acquired-firm turnover/assets thresholds.
+  concentration_definition_source: "Competition Act 89 of 1998, s. 12"
+  concentration_definition_url: "https://www.compcom.co.za/"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture
+  control_threshold: >
+    Direct or indirect control over the whole or part of a business. The Act uses a
+    broad definition of control including the ability to materially influence policy —
+    this is lower than a strict majority-shareholder test and can capture minority
+    stakes with material influence rights.
+  intra_group_exempt: true
+  substantive_test: "slc"
+  substantive_test_url: "https://www.compcom.co.za/"
+  substantive_test_note: >
+    The Competition Act requires the Competition Commission and Tribunal to determine
+    whether a merger is likely to substantially prevent or lessen competition, having
+    regard to market concentration, ease of entry, countervailing power, and other
+    factors. Distinctively, South African merger control also requires explicit
+    consideration of public interest factors including: the effect on employment,
+    the ability of small and medium businesses to effectively enter and participate
+    in the market, the ability of black-owned enterprises to compete, and the ability
+    of national industries to compete internationally.
+  note: >
+    South Africa's public interest test is a substantive distinct element — not merely
+    a political override — and has resulted in conditions or prohibitions in cases where
+    the competition assessment was otherwise favourable. Employment effects and BEE
+    ownership considerations are routinely assessed.
+
+# ── Gun-jumping / standstill obligation ───────────────────────────────────────
+gun_jumping:
+  automatic_void: false
+  voidable: true
+  max_fine_pct_turnover: 10.0
+  per_day_fine: null
+  criminal_sanctions: false
+  legal_basis: "Competition Act 89 of 1998, ss. 13A and 59"
+  legal_basis_url: "https://www.compcom.co.za/"
+  note: >
+    Large mergers may not be implemented before approval by the Competition Commission
+    and Competition Tribunal (s. 13A). Intermediate mergers must be notified before
+    implementation but may in principle be implemented after notification while review
+    is ongoing (though the Commission may impose an interim order). Implementing a
+    large merger without clearance can result in: (i) fines of up to 10% of the
+    merged entity's annual turnover in South Africa (s. 59 Competition Act); (ii)
+    the Tribunal may order the merger to be reversed. There are no criminal sanctions
+    for notification failures alone.
+
+# ── FDI / national security screening ────────────────────────────────────────
+fdi_screening:
+  applicable: false
+  note: >
+    South Africa does not have a general FDI screening mechanism for national security
+    purposes. The country is generally open to foreign direct investment. Sector-specific
+    approvals are required in financial services (South African Reserve Bank — SARB —
+    for bank acquisitions above specified thresholds), telecommunications and broadcasting
+    (ICASA), and mining (Department of Mineral Resources for certain transfer of mining
+    rights). These are not FDI screening regimes in the national security sense but
+    sector licensing requirements. The Competition Act's public interest provisions
+    (employment, BEE) serve a partial equivalent function in merger review.
+
+# ── Source passages (verbatim statutory text) ─────────────────────────────────
+source_passages:
+
+  - passage_id: za_compact_s12
+    document_title: "Competition Act 89 of 1998 (as amended by Competition Amendment Act 18 of 2018)"
+    article_reference: "Section 12(1)"
+    document_url: "https://www.compcom.co.za/"
+    source_type: practitioner
+    quoted_text: >
+      "For the purposes of this Act, a merger occurs when one or more firms directly
+      or indirectly acquire or establish direct or indirect control over the whole or
+      part of the business of another firm."
+    supports_conditions:
+      - za_int_combined_revenue
+      - za_int_target_revenue
+      - za_large_combined_revenue
+      - za_large_target_revenue

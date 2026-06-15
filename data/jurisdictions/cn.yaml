@@ -1,0 +1,284 @@
+jurisdiction_id: cn
+jurisdiction_name: China
+last_verified: "2024-01-01"
+
+authority:
+  name: State Administration for Market Regulation (国家市场监督管理总局)
+  abbreviation: SAMR
+  url: https://www.samr.gov.cn/
+  filing_url: https://www.samr.gov.cn/tzgg/
+
+regime:
+  mandatory: true
+  suspensory: true
+  voluntary: false
+
+legal_basis:
+  - citation: "Anti-Monopoly Law of the People's Republic of China (反垄断法), Articles 20–30, as amended 2022"
+    url: "https://www.samr.gov.cn/fldt/202208/t20220801_352216.html"
+    note: "2022 amendments increased penalties and introduced new provisions; threshold values set by separate regulation"
+  - citation: "Provisions of the State Council on Thresholds for the Notification of Concentrations of Undertakings (国务院关于经营者集中申报标准的规定), effective 26 January 2024"
+    url: "https://www.samr.gov.cn/tzgg/202401/t20240126_580287.html"
+    note: >
+      The 2024 Provisions replaced the 2008 original and significantly raised the
+      notification thresholds. Effective 26 January 2024. Source confirmed via
+      Skadden (January 2024) and Herbert Smith Freehills (February 2024) client alerts.
+
+filing:
+  deadline_from_signing_days: null
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Notification must be submitted before implementation of the concentration (AML Article 26).
+    SAMR will reject an incomplete filing; parties must not implement until cleared.
+    Pre-notification contacts with SAMR are common for complex transactions.
+
+review_periods:
+  phase_1:
+    days: 30
+    day_type: calendar
+    extendable_to_days: null
+    legal_basis: "AML Article 26(1)"
+    note: >
+      SAMR has 30 calendar days from acceptance of a complete notification to decide
+      whether to clear unconditionally or open Phase 2. Clock stops if SAMR requests
+      supplementary materials.
+  phase_2:
+    days: 90
+    day_type: calendar
+    extendable_to_days: 120
+    legal_basis: "AML Article 26(2)–(3)"
+    note: >
+      Phase 2 is 90 calendar days from the end of Phase 1, extendable to 120 days
+      in complex cases. A further extension of 60 days is possible with parties' consent
+      or in specified circumstances (AML Article 26(3)), making the maximum review period
+      approximately 210 days from filing acceptance.
+
+fees:
+  structure: none
+  note: "China does not charge merger filing fees."
+
+threshold_tests:
+  # China has ONE test with an internal OR in condition 1 (worldwide OR China combined),
+  # plus a mandatory condition 2 (each of at least two parties must have China revenue > RMB 800m).
+  # Structure confirmed: (worldwide > RMB 12bn OR China combined > RMB 4bn) AND (each of ≥2 parties China > RMB 800m)
+  # Source: Skadden client alert January 2024; Herbert Smith Freehills February 2024.
+  # All monetary values in Chinese Renminbi (RMB/CNY).
+
+  - test_id: cn_standard_worldwide_limb
+    description: "Worldwide turnover limb — combined global > RMB 12bn AND each of ≥2 parties China > RMB 800m"
+    legal_basis: "2024 Provisions of the State Council on Thresholds for Notification, Article 3(1); AML Article 26"
+    source_url: "https://www.samr.gov.cn/tzgg/202401/t20240126_580287.html"
+    note: >
+      This test and cn_standard_china_limb together implement the single statutory test,
+      which fires if EITHER worldwide combined exceeds RMB 12bn OR China combined exceeds
+      RMB 4bn, AND each of at least two parties has China turnover > RMB 800m.
+      Modelled as two OR'd threshold_tests sharing the same party condition because
+      the engine OR's tests. Both tests must include the party condition.
+    annual_adjustment: false
+    effective_date: "2024-01-26"
+
+    conditions:
+      - condition_id: cn_ww_combined
+        metric: revenue
+        scope: worldwide
+        party: combined
+        operator: ">"
+        value: 12000000000
+        currency: CNY
+        source: "2024 Provisions, Article 3(1)(a)"
+        source_type: primary_legislation
+        note: "RMB 12bn (~EUR 1.5bn). Raised from RMB 10bn under 2008 Provisions."
+
+      - condition_id: cn_ww_each_party_china
+        metric: revenue
+        scope: domestic
+        party: each_of_at_least_two
+        operator: ">"
+        value: 800000000
+        currency: CNY
+        source: "2024 Provisions, Article 3(2)"
+        source_type: primary_legislation
+        note: "Each of at least two parties must have China domestic turnover > RMB 800m. Raised from RMB 400m."
+
+  - test_id: cn_standard_china_limb
+    description: "China-only turnover limb — combined China > RMB 4bn AND each of ≥2 parties China > RMB 800m"
+    legal_basis: "2024 Provisions of the State Council on Thresholds for Notification, Article 3(1); AML Article 26"
+    source_url: "https://www.samr.gov.cn/tzgg/202401/t20240126_580287.html"
+    note: >
+      Alternative limb of the single statutory test. Captures significant domestic
+      deals by parties with lower global footprints. The party condition (RMB 800m
+      each) is identical to the worldwide limb test above.
+    annual_adjustment: false
+    effective_date: "2024-01-26"
+
+    conditions:
+      - condition_id: cn_china_combined
+        metric: revenue
+        scope: domestic
+        party: combined
+        operator: ">"
+        value: 4000000000
+        currency: CNY
+        source: "2024 Provisions, Article 3(1)(b)"
+        source_type: primary_legislation
+        note: "RMB 4bn combined China domestic. Raised from RMB 2bn."
+
+      - condition_id: cn_china_each_party
+        metric: revenue
+        scope: domestic
+        party: each_of_at_least_two
+        operator: ">"
+        value: 800000000
+        currency: CNY
+        source: "2024 Provisions, Article 3(2)"
+        source_type: primary_legislation
+        note: "Each of at least two parties China > RMB 800m (same condition as worldwide limb)."
+
+notes:
+  - >
+    Turnover in China (境内营业额) is calculated on revenues from sales of goods
+    or provision of services in the Chinese market to customers in China, regardless
+    of where the seller is incorporated. Special calculation rules apply to financial
+    institutions (banks, securities firms, insurance companies) per SAMR regulations.
+  - >
+    The AML applies to concentrations that 'eliminate or restrict competition' in China.
+    Even if thresholds are not met, SAMR retains the right to investigate concentrations
+    that may have significant competition concerns in China (AML Article 19, as amended 2022).
+  - >
+    Simplified procedure: SAMR operates an expedited review process (typically 15 days
+    Phase 1) for transactions that clearly do not raise competition concerns, including
+    horizontal overlaps below 15%, vertical relationships below 25%, and conglomerate
+    mergers where neither party exceeds 25% share in any relevant market.
+  - >
+    Foreign-to-foreign transactions are subject to Chinese merger control if the
+    thresholds are met, regardless of whether either party has Chinese subsidiaries
+    (the test is based on revenues in China, not Chinese incorporation).
+
+# ── Scope / trigger events ────────────────────────────────────────────────────
+scope:
+  concentration_definition: >
+    AML Article 20 (as amended 2022) defines a "concentration of undertakings"
+    (经营者集中) as: (a) a merger of undertakings; (b) acquisition of control over
+    another undertaking through the acquisition of shares or assets; or (c) acquisition
+    of control over another undertaking, or the ability to exert a decisive influence
+    over another undertaking, through a contract or other means (e.g., a joint venture
+    that results in control). Both full-function JVs and contractual control situations
+    are covered.
+  concentration_definition_source: "Anti-Monopoly Law of the People's Republic of China, Article 20 (as amended 2022)"
+  concentration_definition_url: "https://www.samr.gov.cn/fldt/202208/t20220801_352216.html"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture
+  control_threshold: >
+    Acquisition of "control" (控制权) over another undertaking, or acquisition of the
+    ability to exert a "decisive influence" (决定性影响) over another undertaking.
+    Control may be de jure (majority shareholding) or de facto (veto rights over
+    strategic decisions, board composition, etc.). Minority stakes conferring decisive
+    influence are covered. No specific percentage threshold is stated in the AML — SAMR
+    assesses control on a case-by-case basis.
+  intra_group_exempt: true
+  foreign_to_foreign_rule: >
+    China's AML applies to concentrations that "eliminate or restrict competition" in
+    China, regardless of the location or nationality of the parties. A foreign-to-foreign
+    transaction is subject to SAMR review if the notification thresholds (based on revenues
+    in China) are met. China's effects doctrine has been upheld in practice for major
+    cross-border deals.
+  substantive_test: "dominance"
+  substantive_test_url: "https://www.samr.gov.cn/fldt/202208/t20220801_352216.html"
+  substantive_test_note: >
+    AML Article 28 provides that SAMR shall prohibit a concentration that "has or may
+    have the effect of eliminating or restricting competition." In practice SAMR applies
+    a market power/dominance analysis examining HHI, market shares, entry barriers,
+    countervailing power, and efficiencies. The 2022 AML amendment strengthened SAMR's
+    investigatory powers and increased maximum penalties significantly.
+  note: >
+    China's 2022 AML amendment (effective 1 August 2022) introduced: (a) a transaction
+    value threshold for technology/platform concentrations below the standard revenue
+    thresholds (to be implemented by SAMR regulation — not yet fully in force as of 2024);
+    (b) increased fines for gun-jumping up to 10% of prior-year sales; and (c) SAMR's
+    ability to "call in" concentrations below thresholds in exceptional circumstances
+    (AML Art. 19, as amended).
+
+# ── Gun-jumping / standstill obligation ───────────────────────────────────────
+gun_jumping:
+  automatic_void: false
+  voidable: true
+  max_fine_pct_turnover: 10.0
+  max_fine_fixed: 5000000
+  max_fine_currency: "CNY"
+  per_day_fine: null
+  criminal_sanctions: false
+  legal_basis: "AML Articles 32, 58–59 (as amended 2022)"
+  legal_basis_url: "https://www.samr.gov.cn/fldt/202208/t20220801_352216.html"
+  note: >
+    AML Article 32 prohibits implementation of a notifiable concentration before
+    SAMR clearance. Under the 2022 AML amendment: (a) for concentrations implemented
+    in violation of the review obligation ("gun-jumping"), SAMR may impose a fine of
+    up to 10% of the previous year's sales revenue (Art. 58); (b) for failure to
+    notify (procedural violation without substantive concern), fines up to RMB 5 million
+    apply (Art. 59 — raised from the pre-2022 cap of RMB 500,000). SAMR may also order
+    dissolution of the concentration, disposal of shares/assets, or other structural
+    remedies. There are no criminal sanctions for merger notification violations.
+    Notable enforcement: SAMR has imposed gun-jumping fines on a number of transactions,
+    including tech-sector deals below the formal thresholds that were implemented without
+    prior notification.
+
+# ── FDI / national security screening ────────────────────────────────────────
+fdi_screening:
+  applicable: true
+  regime_name: "Security Review Rules for Foreign Investment (外商投资安全审查办法, 2021)"
+  authority: "NDRC and MOFCOM Joint Committee (国家发展改革委、商务部牵头的工作机制)"
+  url: "https://english.www.gov.cn/policies/latestreleases/202101/20/content_WS600787f8c6d0f72576942fcf.html"
+  sectors_covered:
+    - defense
+    - key_agriculture
+    - energy
+    - telecommunications
+    - internet
+    - financial_services
+    - critical_technology
+    - manufacturing
+  note: >
+    China's national security review for foreign investment is governed by the Security
+    Review Rules for Foreign Investment (2021), administered by a Joint Committee led by
+    NDRC and MOFCOM. Foreign investors acquiring control (directly or indirectly) of
+    enterprises in designated sensitive sectors must apply for national security review
+    before completion. Sectors include defense-related industries and enterprises; key
+    agriculture, energy, and natural resources; key infrastructure (telecoms, internet,
+    financial services); advanced technology and manufacturing with significant security
+    implications. This regime operates separately from SAMR merger review under the AML.
+    Once a national security review is initiated, SAMR clearance alone is insufficient to
+    permit completion.
+
+# ── Source passages (verbatim statutory text) ─────────────────────────────────
+source_passages:
+
+  - passage_id: cn_aml_art_26
+    document_title: "Anti-Monopoly Law of the People's Republic of China (as amended 2022)"
+    article_reference: "Article 26"
+    document_url: "https://www.samr.gov.cn/fldt/202208/t20220801_352216.html"
+    source_type: primary_legislation
+    quoted_text: >
+      "Undertakings conducting concentrations that reach the declaration threshold
+      specified by the State Council shall declare to the anti-monopoly law enforcement
+      agency of the State Council in advance; no concentration may be implemented
+      without declaration."
+    supports_conditions:
+      - cn_ww_combined
+      - cn_ww_each_party_china
+      - cn_china_combined
+      - cn_china_each_party
+
+  - passage_id: cn_aml_art_28
+    document_title: "Anti-Monopoly Law of the People's Republic of China (as amended 2022)"
+    article_reference: "Article 28"
+    document_url: "https://www.samr.gov.cn/fldt/202208/t20220801_352216.html"
+    source_type: primary_legislation
+    quoted_text: >
+      "Where a concentration of undertakings has or may have the effect of eliminating
+      or restricting competition, the anti-monopoly law enforcement agency of the State
+      Council shall make a decision to prohibit the concentration."
+    supports_conditions: []

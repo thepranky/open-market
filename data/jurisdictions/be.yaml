@@ -1,0 +1,270 @@
+jurisdiction_id: be
+jurisdiction_name: Belgium
+last_verified: "2026-06-14"
+
+authority:
+  name: Belgian Competition Authority (Autorité belge de la Concurrence / Belgische Mededingingsautoriteit)
+  abbreviation: BCA
+  url: https://www.belgiancompetition.be/en/mergers
+  filing_url: https://www.belgiancompetition.be/en/
+
+regime:
+  mandatory: true
+  suspensory: true   # Art. IV.10(2) CEL — standstill until BCA decision or deadline lapses
+  voluntary: false
+
+legal_basis:
+  - citation: "Code of Economic Law (Code de droit économique / Wetboek van Economisch Recht), Book IV (Competition), Articles IV.7–IV.77, as amended by the Act of 2 May 2019"
+    url: "https://www.belgiancompetition.be/en/"
+    note: >
+      Belgian merger control is codified in Book IV of the Code of Economic Law (CEL).
+      The Act of 2 May 2019 (in force 12 June 2019) introduced significant procedural
+      changes, including a two-phase system modelled on the EU Merger Regulation,
+      a new dominance + SIEC substantive test, and higher penalties for gun-jumping.
+      Article IV.7 defines concentrations; Article IV.8 sets out notification thresholds;
+      Article IV.10 imposes the standstill obligation; Articles IV.63–IV.69 govern
+      Phase I and Phase II procedures.
+  - citation: "Royal Decree of 22 June 2019 implementing Book IV CEL"
+    url: "https://www.belgiancompetition.be/en/"
+    source_type: official_guidance
+    note: "Implementing decree with procedural rules and notification forms."
+
+filing:
+  deadline_from_signing_days: null   # no fixed deadline from signing; must file before closing
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Parties must notify before implementing the concentration (Art. IV.10(2) CEL).
+    There is no fixed deadline from signing or announcement; notification must occur
+    and the BCA must issue a decision (or the deadline must lapse without one) before
+    closing. Pre-notification contacts with the BCA (pre-notification meeting) are
+    encouraged and are common practice for complex transactions.
+
+review_periods:
+  phase_1:
+    days: 40
+    day_type: working
+    extendable_to_days: null
+    legal_basis: "Article IV.63, Code of Economic Law"
+    note: >
+      BCA Competition College has 40 WORKING DAYS from the date of the "complete
+      notification" acknowledgment to issue a Phase I decision. If no decision is
+      issued within 40 working days, the concentration is deemed cleared. The clock
+      pauses during any request for additional information (stop-the-clock). Simple
+      transactions are often cleared in 20–30 working days.
+  phase_2:
+    days: 60
+    day_type: working
+    extendable_to_days: 80
+    legal_basis: "Article IV.66, Code of Economic Law"
+    note: >
+      If the BCA opens a Phase II investigation (an in-depth examination), it has
+      60 WORKING DAYS from the Phase II opening decision to issue a final decision.
+      This is extendable by 20 additional working days if the parties offer commitments
+      (remedies). Maximum Phase II: 80 working days. The Competition Council
+      (Conseil de la concurrence) makes the final decision in Phase II.
+
+fees:
+  structure: >
+    Flat filing fee: EUR 7,260 (approximate — verify current amount via BCA).
+    If the transaction opens a Phase II investigation, an additional fee may apply.
+    (Fees updated periodically; confirm at belgiancompetition.be before filing.)
+  source: "Royal Decree implementing Book IV CEL, fee schedule"
+  source_type: official_guidance
+  source_url: "https://www.belgiancompetition.be/en/"
+  annual_adjustment: false
+
+# ── Scope / trigger events ────────────────────────────────────────────────────
+scope:
+  concentration_definition: >
+    A concentration arises where a lasting change of control results from: (a) the merger
+    of two or more previously independent undertakings; (b) the acquisition, by one or more
+    persons or undertakings, of direct or indirect control over one or more other undertakings
+    or parts thereof; or (c) the creation of a full-function joint venture (Art. IV.7 CEL,
+    aligned with Art. 3 EU Merger Regulation).
+  concentration_definition_source: "Article IV.7, Code of Economic Law (Book IV)"
+  concentration_definition_url: "https://www.belgiancompetition.be/en/"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture   # full-function JVs with all functions of an autonomous entity
+  control_threshold: >
+    Exclusive control or joint control — the ability to exercise decisive influence over
+    the strategic commercial behaviour of an undertaking. Consistent with the EU merger
+    control definition. Passive minority shareholdings without control rights generally
+    do not trigger notification.
+  intra_group_exempt: true
+  foreign_to_foreign_rule: >
+    Belgian merger control applies if the Belgian turnover thresholds are met, regardless
+    of where the parties are incorporated. Foreign-to-foreign concentrations must be
+    notified to the BCA if both conditions (combined worldwide > EUR 100m AND each
+    of at least two parties Belgian > EUR 40m) are satisfied. If EU EUMR thresholds
+    are met, the EU one-stop-shop applies and BCA has no jurisdiction.
+  substantive_test: "siec"
+  substantive_test_url: "https://www.belgiancompetition.be/en/"
+  substantive_test_note: >
+    Belgium applies a hybrid SIEC/dominance test (Art. IV.9 Code of Economic Law, 2019 Act): BCA prohibits a concentration that would significantly impede effective competition in Belgium, in particular by creating or strengthening a dominant position.
+  note: >
+    BANK/INSURANCE SECTOR: Special turnover calculation rules apply for credit institutions
+    and insurance companies (Article IV.8 CEL para. 5, applying Art. 5(3) EUMR).
+    For banks, "turnover" is replaced by total income (interest income, fees, etc.) × 10%.
+    For insurance companies, gross premium income is used. Apply sector-specific rules
+    when one or more parties is a regulated financial institution.
+
+# ── Gun-jumping / standstill ──────────────────────────────────────────────────
+gun_jumping:
+  automatic_void: false
+  voidable: true
+  max_fine_pct_turnover: 10.0
+  per_day_fine: null
+  criminal_sanctions: false
+  legal_basis: "Articles IV.10(2) and IV.70, Code of Economic Law"
+  legal_basis_url: "https://www.belgiancompetition.be/en/"
+  note: >
+    Article IV.10(2) CEL prohibits implementation without BCA clearance. The BCA
+    Competition College may impose fines of up to 10% of the parties' combined
+    worldwide turnover for implementing a concentration before clearance (gun-jumping).
+    The BCA may also order suspension, dissolution, or divestiture of an illegally
+    implemented concentration. The 2019 reform significantly increased the maximum
+    penalties compared to the prior regime. Periodic penalty payments (astreintes)
+    may also be imposed to enforce standstill compliance.
+
+# ── FDI / national security screening ────────────────────────────────────────
+fdi_screening:
+  applicable: true
+  regime_name: "Investment Screening — Interfederal Screening Committee (Comité interfédéral de screening)"
+  authority: "Federal Public Service Economy (SPF Économie / FOD Economie) — Interfederal Screening Committee"
+  url: "https://economie.fgov.be/en/themes/enterprises"
+  sectors_covered:
+    - critical_infrastructure
+    - sensitive_technology
+    - defense
+    - national_security
+    - energy
+    - water
+    - food_security
+    - digital_infrastructure
+    - health
+    - financial_sector
+  note: >
+    Belgium introduced a mandatory FDI screening regime with the Royal Decree of
+    9 March 2023 (in force 1 July 2023), implementing Regulation (EU) 2019/452.
+    An interfederal screening committee (with both federal and regional competences)
+    reviews acquisitions of control or significant influence (≥10% in certain cases)
+    in undertakings in critical and strategic sectors. The regime covers non-EU/EFTA
+    investors and, in some sectors, EU investors. Screening runs in parallel with
+    the BCA merger control review. Parties must notify the committee before closing
+    for covered transactions; the committee has 40 working days (extendable) to decide.
+    Belgium is also integrated into the EU FDI cooperation mechanism (Regulation 2019/452).
+
+# ── Threshold tests ───────────────────────────────────────────────────────────
+threshold_tests:
+  # Belgium has a single test with two cumulative conditions (AND logic).
+  # Only if BOTH are met is notification mandatory to the BCA.
+  # If the EU EUMR thresholds are also met, the EU one-stop-shop applies instead.
+
+  - test_id: be_standard
+    description: "Combined worldwide >EUR 100m AND each of ≥2 parties Belgian >EUR 40m (Art. IV.8 CEL)"
+    legal_basis: "Article IV.8(1), Code of Economic Law (Book IV)"
+    source_url: "https://www.belgiancompetition.be/en/mergers"
+    note: >
+      Both conditions must be met simultaneously (AND logic). The combined aggregate
+      worldwide turnover of all parties must exceed EUR 100 million, AND each of at
+      least two of the parties must individually have Belgian (domestic) turnover
+      exceeding EUR 40 million. Belgian turnover means turnover from the sale of
+      goods or provision of services to customers in Belgium in the last financial year.
+      No notification is required if the EU thresholds are met (one-stop-shop).
+    annual_adjustment: false
+    effective_date: "2019-06-12"
+
+    conditions:
+      - condition_id: be_combined_worldwide
+        metric: revenue
+        scope: worldwide
+        party: combined
+        operator: ">"
+        value: 100000000
+        currency: EUR
+        source: "Article IV.8(1)(a) Code of Economic Law"
+        source_type: primary_legislation
+        source_url: "https://www.belgiancompetition.be/en/mergers"
+        verified_via:
+          - "https://iclg.com/practice-areas/merger-control"
+          - "https://www.gtlaw.com/en/insights/merger-control-belgium"
+        note: "EUR 100m combined worldwide turnover of all parties in last financial year."
+
+      - condition_id: be_each_party_belgian
+        metric: revenue
+        scope: domestic
+        party: each_of_at_least_two
+        operator: ">"
+        value: 40000000
+        currency: EUR
+        source: "Article IV.8(1)(b) Code of Economic Law"
+        source_type: primary_legislation
+        source_url: "https://www.belgiancompetition.be/en/mergers"
+        verified_via:
+          - "https://iclg.com/practice-areas/merger-control"
+          - "https://www.lexology.com/library/detail.aspx?g=belgium-merger-control"
+        note: >
+          EUR 40m Belgian domestic turnover for each of at least two of the parties.
+          Belgian turnover = revenues from sales/services to Belgian customers.
+
+notes:
+  - >
+    EU ONE-STOP-SHOP: If the EUMR thresholds (Art. 1(2) or Art. 1(3) Regulation 139/2004)
+    are met, the European Commission has exclusive jurisdiction; no BCA notification
+    is required. The BCA may request Art. 9 EUMR referral if Belgian competition
+    concerns are specifically localised.
+  - >
+    SUBSTANTIVE TEST: The 2019 reform introduced a hybrid SIEC test (significant
+    impediment to effective competition) alongside the traditional dominance test,
+    aligning Belgian law more closely with the EU Merger Regulation. The BCA can
+    prohibit a concentration if it would significantly impede effective competition
+    in Belgium, in particular by creating or strengthening a dominant position.
+  - >
+    REGIONAL DIMENSION: Belgium is a federal state and regional authorities
+    (Flanders, Wallonia, Brussels-Capital Region) have sector-specific competences
+    (e.g. energy). Certain transactions may require additional clearances from regional
+    regulators in parallel with the BCA process.
+  - >
+    BANK/INSURANCE: Special turnover rules apply (Art. IV.8 CEL para. 5). For banks:
+    Belgian turnover = (interest income + fee income + trading income) × 10%.
+    For insurance companies: Belgian turnover = gross premium income from Belgian
+    policyholders.
+
+# ── Source passages ────────────────────────────────────────────────────────────
+source_passages:
+
+  - passage_id: be_cel_iv8
+    document_title: "Code de droit économique (Code of Economic Law) — Livre IV (Competition)"
+    article_reference: "Article IV.8(1)"
+    document_url: "https://www.belgiancompetition.be/en/"
+    source_type: primary_legislation
+    quoted_text: >
+      "Article IV.8. — § 1. Concentrations of undertakings as referred to in Article IV.7
+      shall be notified to the Competition Authority prior to their implementation and
+      following conclusion of the agreement, announcement of a public bid, or acquisition
+      of a controlling interest, where in the most recent financial year:
+      1° the combined aggregate worldwide turnover of all undertakings concerned
+      exceeded 100 million euro; and
+      2° each of at least two of the undertakings concerned had an aggregate turnover
+      in Belgium exceeding 40 million euro;
+      provided that the thresholds set out in Article 1 of Regulation (EC) No 139/2004
+      are not met."
+    supports_conditions:
+      - be_combined_worldwide
+      - be_each_party_belgian
+
+  - passage_id: be_cel_iv10
+    document_title: "Code de droit économique (Code of Economic Law) — Livre IV (Competition)"
+    article_reference: "Article IV.10(2)"
+    document_url: "https://www.belgiancompetition.be/en/"
+    source_type: primary_legislation
+    quoted_text: >
+      "Article IV.10. — § 2. A concentration of undertakings subject to the notification
+      requirement referred to in Article IV.8 may not be implemented before being
+      declared compatible with the protection of economic competition by the Competition
+      College or before the expiry of the period referred to in Article IV.63, § 1."
+    supports_conditions: []

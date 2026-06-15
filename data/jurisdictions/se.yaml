@@ -1,0 +1,269 @@
+jurisdiction_id: se
+jurisdiction_name: Sweden
+last_verified: "2026-06-14"
+
+authority:
+  name: Swedish Competition Authority (Konkurrensverket)
+  abbreviation: KKV
+  url: https://www.konkurrensverket.se/en/mergers/
+  filing_url: https://www.konkurrensverket.se/en/mergers/notification-of-a-concentration/
+
+regime:
+  mandatory: true
+  suspensory: true   # § 4:17 KL — standstill until KKV decision or deadline lapses
+  voluntary: false
+
+legal_basis:
+  - citation: "Competition Act (Konkurrenslag 2008:579), Chapter 4 — Concentration of undertakings"
+    url: "https://www.konkurrensverket.se/globalassets/english/legislation/the-competition-act-2008_579.pdf"
+    note: >
+      Chapter 4 of the Competition Act (KL) governs merger control. Section 4:5 defines
+      concentrations. Section 4:6 sets the notification thresholds. Sections 4:16–4:28
+      govern the procedural review. Sweden applies an SIEC (significant impediment to
+      effective competition) substantive test. The Competition Authority (KKV) may
+      refer decisions to the Patent and Market Court (PMD) for prohibition or remedy orders.
+  - citation: "Competition Ordinance (Konkurrensförordning 2010:591)"
+    url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/konkurrensforordning-2010591_sfs-2010-591/"
+    source_type: official_guidance
+    note: "Implementing regulation. Specifies procedural rules and notification form requirements."
+
+filing:
+  deadline_from_signing_days: null   # no fixed deadline from signing; must file before closing
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Concentrations meeting the notification thresholds must be notified to KKV before
+    implementation (§ 4:17 KL). There is no fixed filing deadline from signing or
+    public announcement. The standstill obligation means the transaction may not
+    be completed before KKV issues a clearance decision or the Phase I review period
+    lapses without an intervention. Pre-notification contacts with KKV are common
+    for complex or politically sensitive transactions.
+
+review_periods:
+  phase_1:
+    days: 25
+    day_type: working
+    extendable_to_days: null
+    legal_basis: "§ 4:19(1) Konkurrenslag (2008:579)"
+    note: >
+      KKV has 25 WORKING DAYS from receipt of a complete notification to decide whether
+      to apply for a special review (Phase II) before the Patent and Market Court.
+      If KKV does not refer the case within 25 working days, the concentration is
+      automatically cleared. The clock may be stopped if KKV requests additional
+      information (§ 4:20 KL).
+  phase_2:
+    days: 90    # approximate — no fixed statutory deadline; PMD court proceedings typically 3–6 months
+    day_type: working
+    extendable_to_days: null
+    legal_basis: "§ 4:21–4:28 Konkurrenslag (2008:579); Patent and Market Court (PMD)"
+    note: >
+      There is NO FIXED STATUTORY PHASE II DEADLINE. The 90 working days shown here
+      is an approximation (typical Patent and Market Court proceedings run 3–6 months).
+      If KKV decides to apply to the Patent and Market Court (Patent- och
+      marknadsdomstolen, PMD) for a special review, the court examines the case and may
+      issue an injunction or prohibition. KKV must make any such application within 25
+      working days of the notification (the Phase I period). Court proceedings (special
+      review = Phase II equivalent) depend on complexity and scheduling; there is no
+      fixed statutory deadline for the court's decision.
+
+fees:
+  structure: none
+  note: "Sweden does not charge filing fees for merger notifications."
+
+# ── Scope / trigger events ────────────────────────────────────────────────────
+scope:
+  concentration_definition: >
+    A concentration of undertakings occurs where a lasting change of control results
+    from: (a) the merger of two or more previously independent undertakings; (b) the
+    acquisition, by one or more persons or undertakings, of control over one or more
+    other undertakings; or (c) the creation of a full-function joint venture (§ 4:5 KL,
+    aligned with Art. 3 EU Merger Regulation).
+  concentration_definition_source: "§ 4:5, Konkurrenslag (2008:579) (Competition Act)"
+  concentration_definition_url: "https://www.konkurrensverket.se/globalassets/english/legislation/the-competition-act-2008_579.pdf"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture   # full-function JVs with all functions of an autonomous entity
+  control_threshold: >
+    Decisive influence over strategic decisions (exclusive control or joint control).
+    Consistent with EU merger control definition. Passive minority shareholdings without
+    control rights generally do not trigger notification. Negative sole control (veto
+    rights over major decisions without positive control) may also constitute control.
+  intra_group_exempt: true
+  foreign_to_foreign_rule: >
+    Swedish merger control applies if the Swedish turnover thresholds are met, regardless
+    of where the parties are incorporated. Foreign-to-foreign transactions must be
+    notified if both conditions (combined Swedish > SEK 1bn AND each of at least two
+    parties Swedish > SEK 200m) are satisfied. If EU EUMR thresholds are met, EU
+    one-stop-shop applies and KKV has no jurisdiction.
+  substantive_test: "siec"
+  substantive_test_url: "https://www.konkurrensverket.se/globalassets/english/legislation/the-competition-act-2008_579.pdf"
+  substantive_test_note: >
+    Sweden applies the SIEC test (§ 4:1 Konkurrenslag 2008:579): KKV may intervene against a concentration that significantly impedes effective competition, in particular as a result of the creation or strengthening of a dominant position.
+  note: >
+    SUBSTANTIVE TEST: Sweden applies an SIEC test (§ 4:1 KL): KKV may intervene if
+    a concentration significantly impedes effective competition, in particular as a
+    result of the creation or strengthening of a dominant position. This aligns with
+    the EU SIEC standard adopted in Regulation 139/2004.
+    NOTE ON PROCEDURE: Unlike most EU Member States, Sweden does NOT have a binary
+    Phase I / Phase II operated entirely within the authority. Instead, if KKV
+    identifies serious concerns, it applies to the Patent and Market Court for a
+    "special review" — this is effectively a Phase II conducted before the court
+    rather than within KKV itself.
+
+# ── Gun-jumping / standstill ──────────────────────────────────────────────────
+gun_jumping:
+  automatic_void: false
+  voidable: true
+  max_fine_pct_turnover: null
+  max_fine_fixed: 50000000
+  max_fine_currency: SEK
+  per_day_fine: null
+  criminal_sanctions: false
+  legal_basis: "§ 4:17 and § 6:1 Konkurrenslag (2008:579)"
+  legal_basis_url: "https://www.konkurrensverket.se/globalassets/english/legislation/the-competition-act-2008_579.pdf"
+  note: >
+    § 4:17 KL imposes the standstill obligation — parties may not implement a notifiable
+    concentration before KKV's review period lapses or clearance is received. § 6:1 KL
+    allows KKV (or the Patent and Market Court) to impose a fine (konkurrensskadeavgift)
+    of up to SEK 50 million for implementing a concentration without notifying and awaiting
+    clearance. Additional fines of up to 10% of annual turnover may apply for other
+    competition law violations. Transactions in breach of standstill may be ordered
+    dissolved by the court.
+
+# ── FDI / national security screening ────────────────────────────────────────
+fdi_screening:
+  applicable: true
+  regime_name: "Lag (2023:560) om granskning av utländska direktinvesteringar — Foreign Direct Investments Screening Act"
+  authority: "Inspektionen för strategiska produkter (ISP) — Inspectorate of Strategic Products"
+  url: "https://www.isp.se/en/foreign-direct-investments/"
+  sectors_covered:
+    - critical_infrastructure
+    - sensitive_technology
+    - defense
+    - national_security
+    - energy
+    - water
+    - digital_infrastructure
+    - health
+    - electronic_communications
+    - financial_infrastructure
+  note: >
+    Sweden enacted the Foreign Direct Investments Act (Lag 2023:560, in force 1 December
+    2023) requiring mandatory notification to the ISP for non-EU/EFTA investors (and
+    EU/EFTA investors in some sectors) acquiring 10%, 20%, 25%, 50%, 75%, or 90%+
+    of a Swedish company active in critical or sensitive sectors. The ISP has 25 working
+    days (extendable to 3 months) to screen the transaction. The government can prohibit
+    or impose conditions on national security grounds. Sweden also participates in the
+    EU FDI Screening Regulation (2019/452) cooperation mechanism. The Protective Security
+    Act (Säkerhetsskyddslagen 2018:585) imposes additional clearance requirements for
+    transactions involving classified information or security-sensitive businesses.
+
+# ── Threshold tests ───────────────────────────────────────────────────────────
+threshold_tests:
+  # Sweden has a single two-condition test (AND logic).
+  # Both conditions must be met for notification to be mandatory.
+  # Thresholds are fixed in the statute and not indexed annually.
+
+  - test_id: se_standard
+    description: "Combined Swedish >SEK 1bn AND each of ≥2 parties Swedish >SEK 200m (§ 4:6 KL)"
+    legal_basis: "§ 4:6(1), Konkurrenslag (2008:579) (Competition Act)"
+    source_url: "https://www.konkurrensverket.se/en/mergers/when-is-a-concentration-notifiable/"
+    note: >
+      Both conditions must be satisfied simultaneously (AND logic). The combined
+      aggregate turnover in Sweden of all undertakings concerned must exceed SEK 1
+      billion in the preceding financial year, AND each of at least two of the
+      undertakings concerned must individually have turnover in Sweden exceeding
+      SEK 200 million. Swedish turnover = revenues from sales to customers in Sweden.
+      These thresholds have been in place since 2008 and are not automatically adjusted.
+    annual_adjustment: false
+    effective_date: "2008-11-01"
+
+    conditions:
+      - condition_id: se_combined_swedish
+        metric: revenue
+        scope: domestic
+        party: combined
+        operator: ">"
+        value: 1000000000
+        currency: SEK
+        source: "§ 4:6(1)(1) Konkurrenslag (2008:579)"
+        source_type: primary_legislation
+        source_url: "https://www.konkurrensverket.se/en/mergers/when-is-a-concentration-notifiable/"
+        verified_via:
+          - "https://iclg.com/practice-areas/merger-control"
+          - "https://www.konkurrensverket.se/en/mergers/"
+        note: "SEK 1bn combined Swedish turnover of all parties in last financial year."
+
+      - condition_id: se_each_party_swedish
+        metric: revenue
+        scope: domestic
+        party: each_of_at_least_two
+        operator: ">"
+        value: 200000000
+        currency: SEK
+        source: "§ 4:6(1)(2) Konkurrenslag (2008:579)"
+        source_type: primary_legislation
+        source_url: "https://www.konkurrensverket.se/en/mergers/when-is-a-concentration-notifiable/"
+        verified_via:
+          - "https://iclg.com/practice-areas/merger-control"
+          - "https://www.konkurrensverket.se/en/mergers/"
+        note: >
+          SEK 200m individual Swedish turnover for each of at least two of the parties.
+          Acquirer AND target must each exceed SEK 200m in Swedish turnover.
+
+notes:
+  - >
+    UNIQUE COURT STRUCTURE: Sweden's Phase II equivalent is a court-based process:
+    KKV applies to the Patent and Market Court (PMD) for a "special review" if it
+    identifies serious competition concerns. This differs from most EU Member States
+    where the authority itself conducts Phase II. This structure means there is no
+    internal KKV Phase II decision — the court makes the final Phase II ruling.
+  - >
+    THRESHOLD VALUES NOT INDEXED: Sweden's SEK 1bn / SEK 200m thresholds have been
+    in place since the Competition Act entered into force in 2008, and are fixed in
+    statute. KKV has periodically recommended raising the thresholds; as of 2026 this
+    had not occurred. These values have not been adjusted for inflation.
+  - >
+    EU ONE-STOP-SHOP: If EU EUMR thresholds (Art. 1(2) or Art. 1(3)) are met,
+    only the European Commission has jurisdiction. KKV may request Art. 9 EUMR
+    referral if Swedish market concerns are localised and significant.
+  - >
+    FDI / PROTECTIVE SECURITY ACT: Two separate parallel screening obligations may
+    apply. The FDI Act (ISP) covers critical and sensitive sector investments by
+    non-EU/EFTA (and some EU/EFTA) acquirers. The Protective Security Act imposes
+    additional obligations where the business handles classified information or is
+    otherwise security-sensitive.
+
+# ── Source passages ────────────────────────────────────────────────────────────
+source_passages:
+
+  - passage_id: se_kl_s4_6
+    document_title: "Konkurrenslag (2008:579) — Swedish Competition Act"
+    article_reference: "§ 4:6(1)"
+    document_url: "https://www.konkurrensverket.se/globalassets/english/legislation/the-competition-act-2008_579.pdf"
+    source_type: primary_legislation
+    quoted_text: >
+      "4 chapter 6 § — A concentration shall be notified to the Competition Authority
+      if:
+      1. the combined aggregate turnover in Sweden of all undertakings concerned
+      exceeded one billion Swedish kronor in the most recent financial year, and
+      2. each of at least two of the undertakings concerned had a turnover in Sweden
+      which exceeded two hundred million Swedish kronor in the most recent financial year."
+    supports_conditions:
+      - se_combined_swedish
+      - se_each_party_swedish
+
+  - passage_id: se_kl_s4_17
+    document_title: "Konkurrenslag (2008:579) — Swedish Competition Act"
+    article_reference: "§ 4:17"
+    document_url: "https://www.konkurrensverket.se/globalassets/english/legislation/the-competition-act-2008_579.pdf"
+    source_type: primary_legislation
+    quoted_text: >
+      "4 chapter 17 § — A concentration that is subject to a notification obligation
+      under § 6 may not be implemented before the Competition Authority has decided
+      that the concentration shall not be reviewed in accordance with § 19 or before
+      the period for such decision has expired without the Competition Authority having
+      decided to review the concentration."
+    supports_conditions: []

@@ -1,0 +1,263 @@
+jurisdiction_id: sa
+jurisdiction_name: Saudi Arabia
+last_verified: "2026-06-14"
+
+authority:
+  name: General Authority for Competition (هيئة المنافسة العامة)
+  abbreviation: GAC
+  url: https://www.gac.gov.sa/en/
+  filing_url: https://www.gac.gov.sa/en/economic-concentration/
+
+regime:
+  mandatory: true
+  suspensory: true   # parties must obtain GAC approval before implementing
+  voluntary: false
+
+legal_basis:
+  - citation: "Competition Law (نظام المنافسة), Royal Decree No. M/75 of 1 Ramadan 1440H (6 May 2019), Articles 12–14"
+    url: "https://www.gac.gov.sa/en/legislation/"
+    note: >
+      Primary competition legislation. Chapter 3 (Articles 12–14) establishes the
+      mandatory pre-merger notification requirement. Formerly known as Competition
+      Law No. M/24 of 2004; comprehensively revised in 2019.
+  - citation: "Implementing Regulations of the Competition Law, issued by the GAC, as amended"
+    url: "https://www.gac.gov.sa/en/legislation/"
+    note: "Sets out detailed procedural requirements and the specific SAR threshold values."
+  - citation: "GAC Economic Concentration Review Guidelines (5th edition, April 2025)"
+    url: "https://www.gac.gov.sa/en/economic-concentration/"
+    note: >
+      5th edition published 8 April 2025. Significant revision clarifying control thresholds,
+      JV treatment, and providing guidance on de minimis exemptions for investment funds
+      and JVs. Replaced the 4th edition (2022).
+    source_type: official_guidance
+
+filing:
+  deadline_from_signing_days: null
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Notification must be submitted to the GAC before the transaction is implemented.
+    There is no fixed deadline from signing. The GAC must issue its decision within
+    90 calendar days of receipt of a complete notification; this period may be
+    extended by a further 45 days. Parties may not close until the GAC clears the
+    transaction or the review period expires without action (deemed clearance).
+
+review_periods:
+  phase_1:
+    days: 90
+    day_type: calendar
+    extendable_to_days: 135
+    legal_basis: "Competition Law, Article 13; GAC Implementing Regulations"
+    note: >
+      GAC has 90 calendar days from receipt of a complete notification. If the GAC
+      issues a notice of extension, an additional 45 days applies. If no decision
+      is issued within the relevant period, the concentration is deemed approved.
+  phase_2:
+    days: 45
+    day_type: calendar
+    extendable_to_days: null
+    legal_basis: "Competition Law, Article 13; GAC Implementing Regulations"
+    note: "Extension period only; not a separate Phase 2 in the EU sense."
+
+fees:
+  structure: >
+    SAR 10,000 (flat filing fee)
+    (verify current amount with GAC)
+  source: "GAC Implementing Regulations"
+  source_type: primary_legislation
+  source_url: "https://www.gac.gov.sa/en/economic-concentration/"
+  annual_adjustment: false
+
+threshold_tests:
+  # Saudi Arabia uses AND logic — ALL THREE conditions must be met simultaneously.
+  # Filing is required only if the combined worldwide threshold, the combined Saudi
+  # threshold, AND the target worldwide threshold are ALL exceeded.
+  #
+  # Source: GAC Economic Concentration Review Guidelines (November 2023 / 5th edition
+  # April 2025); confirmed via Global Legal Insights Saudi Arabia chapter (2025);
+  # Baker McKenzie Saudi Arabia merger control overview.
+  # Legal basis: Competition Law Article 12; GAC Implementing Regulations.
+
+  - test_id: sa_standard
+    description: "Combined worldwide >SAR 200m AND combined Saudi >SAR 40m AND target worldwide >SAR 40m"
+    legal_basis: "Saudi Competition Law (Royal Decree No. M/75 of 2019), Article 12; GAC Implementing Regulations"
+    source_url: "https://www.gac.gov.sa/en/economic-concentration/"
+    note: >
+      All three conditions must be met (AND logic). The GAC will only review a
+      concentration if the parties cross each of these three thresholds.
+      Exception for JVs: the target worldwide threshold (SAR 40m) does not apply
+      to greenfield joint ventures. Saudi-only presence (e.g. via exports to Saudi
+      Arabia without a local subsidiary) can satisfy the combined Saudi threshold.
+    annual_adjustment: false
+    effective_date: null
+
+    conditions:
+      - condition_id: sa_combined_worldwide
+        metric: revenue
+        scope: worldwide
+        party: combined
+        operator: ">="
+        value: 200000000
+        currency: SAR
+        source: "Saudi Competition Law, Article 12; GAC Economic Concentration Review Guidelines (5th ed., April 2025)"
+        source_type: primary_legislation
+        verified_via:
+          - "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/saudi-arabia/"
+          - "https://www.bakermckenzie.com/en/insight/publications/2026/01/saudi-arabia-merger-control-activity-in-2025"
+        note: "SAR 200m (~USD 53m) combined worldwide annual revenues of all parties."
+
+      - condition_id: sa_combined_saudi
+        metric: revenue
+        scope: domestic
+        party: combined
+        operator: ">="
+        value: 40000000
+        currency: SAR
+        source: "Saudi Competition Law, Article 12; GAC Economic Concentration Review Guidelines (5th ed., April 2025)"
+        source_type: primary_legislation
+        verified_via:
+          - "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/saudi-arabia/"
+        note: >
+          SAR 40m (~USD 10.7m) combined annual Saudi revenues of all parties.
+          Includes revenues from exports to Saudi Arabia even without a local subsidiary.
+
+      - condition_id: sa_target_worldwide
+        metric: revenue
+        scope: worldwide
+        party: target_group
+        operator: ">="
+        value: 40000000
+        currency: SAR
+        source: "Saudi Competition Law, Article 12; GAC Economic Concentration Review Guidelines (5th ed., April 2025)"
+        source_type: primary_legislation
+        verified_via:
+          - "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/saudi-arabia/"
+        note: >
+          SAR 40m worldwide annual revenues of the target. Does not apply to greenfield JVs
+          (where there is no pre-existing target turnover). Verify treatment with GAC for
+          JVs involving existing operating entities.
+
+notes:
+  - >
+    GAC 5th Edition Guidelines (April 2025): revised the 'control' standard, expanded
+    guidance on JV treatment (greenfield JVs exempt from the target threshold), and
+    introduced clearer de minimis exemptions for investment fund acquisitions of
+    minority stakes. Always consult the current edition before advising.
+  - >
+    'Saudi annual revenues': revenues from activities or sales in Saudi Arabia,
+    including exports of goods or provision of services to Saudi customers. Local
+    establishment is not required for Saudi revenues to count. A foreign exporter
+    with SAR 40m+ Saudi sales could independently satisfy the Saudi threshold.
+  - >
+    Phase 5 GAC activity: the GAC reviewed 406 economic concentrations in 2025
+    (per Baker McKenzie January 2026 insight), indicating increased enforcement
+    activity. Expect thorough review for deals with significant Saudi market presence.
+  - >
+    Sector-specific rules: the Communications, Space & Technology Commission (CST)
+    and Saudi Central Bank (SAMA) have concurrent merger jurisdiction over telecoms
+    and financial sector transactions respectively, in addition to GAC review.
+
+# ── Scope / trigger events ────────────────────────────────────────────────────
+scope:
+  concentration_definition: >
+    An economic concentration includes any act resulting in the ownership or control
+    of shares, assets, rights, stocks, or any other ownership interests, or any
+    arrangement that results in enabling an enterprise to control or materially
+    influence the management, conduct, or affairs of another enterprise — including
+    mergers, acquisitions of controlling interests, and full-function joint ventures
+    (Saudi Competition Law, Royal Decree No. M/75, Articles 12–14; GAC Economic
+    Concentration Review Guidelines, 5th edition, April 2025).
+  concentration_definition_source: "Saudi Competition Law, Royal Decree No. M/75 of 2019, Article 12"
+  concentration_definition_url: "https://www.gac.gov.sa/en/legislation/"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture
+  control_threshold: >
+    Control means the ability to exercise decisive influence over the management,
+    strategy, or significant decisions of an enterprise. The GAC Guidelines
+    (5th edition, April 2025) clarify that minority stakes may constitute control
+    if accompanied by structural rights (e.g. veto rights over strategic decisions,
+    board appointment rights). Both sole and joint control are covered.
+  intra_group_exempt: true
+  substantive_test: "dominance"
+  substantive_test_url: "https://www.gac.gov.sa/en/legislation/"
+  substantive_test_note: >
+    The GAC applies a substantive test focused on whether the concentration would
+    result in a substantial reduction of competition or the creation or strengthening
+    of a dominant position in any relevant market in Saudi Arabia. Article 12 of the
+    Competition Law prohibits concentrations that substantially reduce competition.
+    The GAC's analytical approach resembles the EU SIEC test in practice, though the
+    statutory language uses a dominance/substantial competition reduction formulation.
+  note: >
+    Saudi Arabia has three mandatory threshold conditions that must ALL be met
+    simultaneously (AND logic): combined worldwide SAR 200m, combined Saudi SAR 40m,
+    AND target worldwide SAR 40m. Greenfield JVs are exempt from the target threshold.
+    Sector-specific concurrent approvals (SAMA for banking, CST for telecoms) apply
+    in addition to GAC merger control.
+
+# ── Gun-jumping / standstill obligation ───────────────────────────────────────
+gun_jumping:
+  automatic_void: false
+  voidable: true
+  max_fine_pct_turnover: 2.0
+  per_day_fine: null
+  criminal_sanctions: false
+  legal_basis: "Saudi Competition Law (Royal Decree No. M/75 of 2019), Article 27; GAC Implementing Regulations"
+  legal_basis_url: "https://www.gac.gov.sa/en/legislation/"
+  note: >
+    Parties to a notifiable economic concentration must obtain GAC approval before
+    implementation. Implementing a notifiable concentration without GAC clearance may
+    result in fines of up to 2% of annual revenues in the relevant market under
+    Article 27 of the Competition Law. The GAC may also order the unwinding of an
+    improperly completed concentration. There are no criminal sanctions for gun-jumping
+    under the Competition Law. The GAC has been increasingly active in enforcement.
+
+# ── FDI / national security screening ────────────────────────────────────────
+fdi_screening:
+  applicable: true
+  regime_name: "Foreign Investment Law (Royal Decree No. M/1 of 2000); National Investment Strategy"
+  authority: "Ministry of Investment of Saudi Arabia (MISA, formerly SAGIA)"
+  url: "https://www.misa.gov.sa/en/"
+  legislation_url: "https://www.gac.gov.sa/en/economic-concentration/"
+
+  sectors_covered:
+    - defense
+    - military_industries
+    - real_estate_makkah_madinah
+    - petroleum_exploration
+    - media
+    - petrol_distribution
+  note: >
+    Saudi Arabia's Foreign Investment Law (Royal Decree No. M/1 of 2000) and the
+    Ministry of Investment (MISA, formerly SAGIA) govern foreign direct investment.
+    MISA issues foreign investment licenses and maintains a 'negative list' of sectors
+    closed to or restricted for foreign investors, including: defense and military
+    industries; petroleum exploration; real estate in Mecca and Medina; postal and
+    courier services; telecommunications (below specified thresholds); security services;
+    and media. Foreign investors in most other sectors may now hold 100% ownership
+    following Saudi Vision 2030 liberalisation measures. FDI screening is not a formal
+    national-security vetting process (no CFIUS equivalent) but MISA licensing is
+    required before establishing a foreign-invested business in restricted sectors.
+
+# ── Source passages (verbatim statutory text) ─────────────────────────────────
+source_passages:
+
+  - passage_id: sa_complaw_art12
+    document_title: "Saudi Competition Law, Royal Decree No. M/75 of 1 Ramadan 1440H (6 May 2019)"
+    article_reference: "Article 12"
+    document_url: "https://www.gac.gov.sa/en/legislation/"
+    source_type: practitioner
+    quoted_text: >
+      "Any economic concentration shall be notified to the Authority prior to its
+      completion if: (1) the combined worldwide annual revenues of all parties to the
+      transaction is two hundred million Saudi riyals (SAR 200,000,000) or more;
+      and (2) the combined Saudi annual revenues of all parties to the transaction is
+      forty million Saudi riyals (SAR 40,000,000) or more; and (3) the worldwide
+      annual revenues of the party being acquired is forty million Saudi riyals
+      (SAR 40,000,000) or more."
+    supports_conditions:
+      - sa_combined_worldwide
+      - sa_combined_saudi
+      - sa_target_worldwide

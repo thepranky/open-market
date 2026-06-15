@@ -1,0 +1,233 @@
+jurisdiction_id: ar
+jurisdiction_name: Argentina
+last_verified: "2026-06-14"
+
+authority:
+  name: National Antitrust Commission (Comisión Nacional de Defensa de la Competencia)
+  abbreviation: CNDC
+  url: https://www.argentina.gob.ar/cndc
+  filing_url: https://www.argentina.gob.ar/cndc/control-de-concentraciones
+
+regime:
+  mandatory: true
+  suspensory: false  # post-closing notification is standard; pre-clearance optional but possible
+  voluntary: false
+
+legal_basis:
+  - citation: "Antitrust Law No. 27,442 (Ley de Defensa de la Competencia), Articles 7–16"
+    url: "https://www.argentina.gob.ar/normativa/nacional/ley-27442-310084"
+    note: >
+      Law 27,442 replaced Law 25,156 effective June 2018. Introduced a new
+      notification system combining a pre-clearance option and mandatory post-closing
+      notification. The 'Adjustable Unit' (Unidad de Ajuste — UA) mechanism ensures
+      annual updating of threshold values.
+  - citation: "Resolution 21/2025 of the Secretary of Industry and Trade (Secretaría de Industria y Comercio) — Adjustable Unit value for 2025"
+    url: "https://www.argentina.gob.ar/cndc/control-de-concentraciones"
+    note: >
+      Issued 25 February 2025. Sets the Adjustable Unit at ARS 1,102.28, making the
+      combined Argentina revenue threshold ARS 110,228,000,000 (USD ~104.7m at the
+      then-current exchange rate) for 2025. Updated annually per consumer price index.
+    source_type: authority_announcement
+
+filing:
+  deadline_from_signing_days: null
+  deadline_from_closing_days: null
+  pre_closing_required: false
+  note: >
+    Argentina's notification regime is primarily POST-CLOSING: parties may implement
+    the transaction and then notify within the prescribed period. However, parties may
+    elect to seek PRE-CLEARANCE (opción de notificación previa) before closing — this
+    suspends the transaction until the CNDC issues a decision.
+    The mandatory notification deadline is within the period set by the CNDC from the
+    date of implementation (typically within the preceding year of Argentina business volume).
+    Pre-clearance: deadline from signing to notification is not fixed; parties should
+    notify before closing if seeking pre-clearance.
+
+review_periods:
+  phase_1:
+    days: 45
+    day_type: working
+    extendable_to_days: null
+    legal_basis: "Antitrust Law 27,442, Article 14"
+    note: >
+      The CNDC has 45 business days from receipt of a complete notification to issue
+      its opinion (Phase 1). The opinion goes to the Secretary of Industry and Trade
+      for final decision. Phase 1 clearances are common for non-overlapping transactions.
+  phase_2:
+    days: 120
+    day_type: working
+    extendable_to_days: null
+    legal_basis: "Antitrust Law 27,442, Article 14"
+    note: >
+      If a detailed investigation is required, the CNDC has up to 120 business days
+      total from the filing date. In practice, complex transactions may take longer.
+
+fees:
+  structure: >
+    ARS 54,000 fixed filing fee
+    (denominated in ARS; verify current amount annually as this may be adjusted)
+  source: "Antitrust Law 27,442; CNDC fee schedule"
+  source_type: primary_legislation
+  source_url: "https://www.argentina.gob.ar/cndc/control-de-concentraciones"
+  annual_adjustment: true
+
+threshold_tests:
+  # Argentina has a single-limb notification threshold:
+  # Combined aggregate Argentina revenues of the acquiring group AND target group
+  # (or merging entities) in the preceding fiscal year must exceed 100,000,000
+  # Adjustable Units (UA).
+  #
+  # For 2025: UA = ARS 1,102.28 per Resolution 21/2025 (issued 25 February 2025)
+  # → 100,000,000 UA × ARS 1,102.28 = ARS 110,228,000,000 (~USD 104.7m)
+  #
+  # The UA is updated annually by the Secretary of Industry and Trade following
+  # consumer price index evolution. Always verify the current UA value before
+  # advising — Argentina's inflation makes this threshold change significantly year-on-year.
+  #
+  # Source: Antitrust Law 27,442, Article 8; Resolution 21/2025 (Secretary of Industry
+  # and Trade, 25 February 2025); Allende & Brea client alert March 2025.
+
+  - test_id: ar_combined_argentina
+    description: "Combined Argentina revenues > ARS 110,228,000,000 (100,000,000 UA × 2025 UA value)"
+    legal_basis: "Antitrust Law No. 27,442, Article 8(a)"
+    source_url: "https://www.argentina.gob.ar/cndc/control-de-concentraciones"
+    note: >
+      Notification required if the combined aggregate net sales in Argentina of ALL
+      parties to the transaction (acquirer group + target group) in the preceding
+      fiscal year exceed 100,000,000 Adjustable Units.
+      2025 value: ARS 110,228,000,000 per Resolution 21/2025 (25 February 2025).
+      THIS VALUE CHANGES ANNUALLY. Verify the current UA from the Secretary of
+      Industry and Trade (Secretaría de Industria y Comercio) before advising.
+      In prior years: 2024 (ARS ~75bn), 2023 (ARS ~51bn) — reflect Argentina's
+      very high inflation (80–140% p.a.). Always use the current-year value.
+    annual_adjustment: true
+    effective_date: "2025-02-25"
+
+    conditions:
+      - condition_id: ar_combined_argentina_revenue
+        metric: revenue
+        scope: domestic
+        party: combined
+        operator: ">"
+        value: 110228000000
+        currency: ARS
+        source: "Antitrust Law No. 27,442, Article 8(a); Resolution 21/2025 of the Secretary of Industry and Trade (25 February 2025)"
+        source_type: authority_announcement
+        verified_via:
+          - "https://allende.com/en/antitrust-competition/argentine-antitrust-authority-updates-merger-control-thresholds-and-monetary-penalties-3-02-25-2025/"
+          - "https://www.lexology.com/library/detail.aspx?g=a0b8b474-96d2-414e-8daf-333fde55a0b5"
+        note: >
+          ARS 110,228,000,000 (~USD 104.7m at Feb 2025 exchange rate) = 100,000,000
+          Adjustable Units × ARS 1,102.28/UA. Combined Argentina net sales of the
+          acquiring and target groups (or merging parties) in the preceding fiscal year.
+          VERIFY ANNUALLY: this value is recalculated each year per consumer price index.
+
+notes:
+  - >
+    POST-CLOSING DEFAULT: Argentina's regime is primarily post-closing — parties may
+    implement the transaction and notify afterwards. This is unusual among major
+    jurisdictions. Pre-clearance is available but optional; parties seeking legal
+    certainty before closing should elect pre-clearance.
+  - >
+    ANNUAL UPDATE: The Adjustable Unit (UA) is updated annually by consumer price index.
+    Given Argentina's persistent high inflation, the ARS nominal threshold rises sharply
+    each year while the real USD-equivalent remains roughly similar. Always verify the
+    current year's UA value at https://www.argentina.gob.ar/cndc before advising.
+  - >
+    COMBINED ARGENTINA ONLY: the threshold is based solely on combined Argentina revenues
+    of all parties — there is no worldwide revenue condition or target-specific minimum.
+    A transaction where the acquirer has substantial worldwide revenues but modest Argentina
+    presence may fall below the threshold even if it is globally significant.
+  - >
+    Penalties for non-notification: fines of up to ARS equivalent of 150,000,000 UA
+    (~ARS 165bn at 2025 UA value) for failure to notify. In practice the CNDC has
+    historically been lenient but has increased enforcement in recent years.
+
+# ── Scope / trigger events ────────────────────────────────────────────────────
+scope:
+  concentration_definition: >
+    An economic concentration includes any act by which two or more economic agents
+    that previously operated independently come to be under common control or
+    significantly influence each other's operations, including: mergers of previously
+    independent undertakings; acquisitions of shares or assets giving direct or
+    indirect control over another undertaking; and full-function joint ventures
+    (Law No. 27,442, Arts. 7–8). Control means the ability to directly or indirectly
+    exercise decisive influence over the management or activities of an enterprise.
+  concentration_definition_source: "Law No. 27,442 (Competition Defence Law, 2018), Articles 7–8"
+  concentration_definition_url: "https://www.argentina.gob.ar/normativa/nacional/ley-27442-310084"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture
+  control_threshold: >
+    Decisive influence, direct or indirect, over the management or strategic decisions
+    of an undertaking. No specific percentage threshold is stated — the operative
+    concept is the ability to exercise decisive influence. Minority stakes with
+    decisive influence rights may be caught.
+  intra_group_exempt: true
+  substantive_test: "siec"
+  substantive_test_url: "https://www.argentina.gob.ar/normativa/nacional/ley-27442-310084"
+  substantive_test_note: >
+    Law No. 27,442 (Art. 8) prohibits economic concentrations that significantly
+    restrict competition or tend to create, consolidate, or strengthen a dominant
+    position in a market to the detriment of general economic interest. The standard
+    is equivalent to a SIEC test — the CNDC and Secretary of Industry and Trade
+    assess whether effective competition is significantly impeded, including through
+    dominance effects.
+  note: >
+    Argentina's merger regime is primarily POST-CLOSING — parties may implement the
+    transaction and notify afterwards. Pre-clearance (opción de notificación previa)
+    is available but voluntary. The annual UA-based threshold changes significantly
+    each year due to high inflation; always verify the current-year value.
+
+# ── Gun-jumping / standstill obligation ───────────────────────────────────────
+gun_jumping:
+  automatic_void: true
+  voidable: false
+  max_fine_pct_turnover: null
+  max_fine_fixed: null
+  per_day_fine: null
+  criminal_sanctions: false
+  legal_basis: "Law No. 27,442, Article 10 and Article 13"
+  legal_basis_url: "https://www.argentina.gob.ar/normativa/nacional/ley-27442-310084"
+  note: >
+    If parties elect pre-clearance (opción de notificación previa under Art. 10),
+    the transaction must not be implemented before the CNDC issues its decision —
+    implementing during the pre-clearance period renders the act void and unenforceable
+    (Art. 13). In the standard post-closing regime, there is no standstill obligation,
+    but late or non-notification attracts administrative fines of up to 150,000,000 UA
+    (approximately ARS 165 billion at 2025 UA value). Concentrations implemented in
+    breach of a prohibition order are void under Argentine law. No criminal sanctions
+    apply for notification failures alone.
+
+# ── FDI / national security screening ────────────────────────────────────────
+fdi_screening:
+  applicable: false
+  note: >
+    Argentina does not have a general FDI screening mechanism for national security
+    purposes. Argentina is generally open to foreign direct investment under the
+    Foreign Investment Law (Law No. 21,382). Sector-specific restrictions or prior
+    authorisations apply in: media (limited foreign equity under Audiovisual Communication
+    Services Law No. 26,522); rural land (limits on foreign land ownership under Law
+    No. 26,737 — maximum 15% of national or provincial territory may be owned by
+    foreigners); telecoms (ENACOM licensing); banking and insurance (BCRA and SSN
+    authorisations). These are sector licensing requirements, not national security
+    investment screening.
+
+# ── Source passages (verbatim statutory text) ─────────────────────────────────
+source_passages:
+
+  - passage_id: ar_law27442_art8
+    document_title: "Law No. 27,442, Ley de Defensa de la Competencia (Competition Defence Law, 2018)"
+    article_reference: "Article 8(a)"
+    document_url: "https://www.argentina.gob.ar/normativa/nacional/ley-27442-310084"
+    source_type: practitioner
+    quoted_text: >
+      "Economic concentrations are subject to prior notification to the authority in the
+      following cases: (a) when the value of the business transaction exceeds the amount
+      resulting from one hundred million (100,000,000) Mobile Units (Unidades Móviles),
+      calculated as the aggregate of the annual net sales in the country of all the
+      economic agents involved in the transaction during the preceding fiscal year."
+    supports_conditions:
+      - ar_combined_argentina_revenue

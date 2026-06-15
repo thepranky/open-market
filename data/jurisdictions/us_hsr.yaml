@@ -1,0 +1,298 @@
+jurisdiction_id: us_hsr
+jurisdiction_name: United States (HSR Act)
+last_verified: "2026-02-17"
+
+authority:
+  name: Federal Trade Commission and Department of Justice, Antitrust Division
+  abbreviation: FTC/DOJ
+  url: https://www.ftc.gov/enforcement/premerger-notification-program
+  filing_url: https://www.ftc.gov/enforcement/merger-review
+
+regime:
+  mandatory: true
+  suspensory: true   # 30-day waiting period before closing (15 days for cash tender offers)
+  voluntary: false
+
+legal_basis:
+  - citation: "Hart-Scott-Rodino Antitrust Improvements Act of 1976, 15 U.S.C. § 18a"
+    url: "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section18a&num=0&edition=prelim"
+  - citation: "Premerger Notification Rules, 16 C.F.R. Parts 801–803"
+    url: "https://www.ecfr.gov/current/title-16/chapter-I/subchapter-H"
+
+filing:
+  deadline_from_signing_days: null   # no fixed deadline from signing
+  deadline_from_closing_days: null
+  pre_closing_required: true         # must wait for expiry of waiting period before closing
+  note: >
+    Parties must file before closing and observe the waiting period. Early termination
+    of the waiting period can be requested. The 30-day period is reduced to 15 days for
+    cash tender offers and bankruptcy sales. Filing fees range from $30,000 to $2.25m
+    depending on deal value (see fees below).
+
+review_periods:
+  phase_1:
+    days: 30
+    day_type: calendar
+    extendable_to_days: null
+    legal_basis: "15 U.S.C. § 18a(b)(1)"
+    note: "Reduced to 15 calendar days for cash tender offers (15 U.S.C. § 18a(b)(2))"
+  phase_2:
+    days: 30
+    day_type: calendar
+    extendable_to_days: null
+    legal_basis: "15 U.S.C. § 18a(e)(2)"
+    note: >
+      Phase 2 begins upon 'substantial compliance' with a Second Request. In practice,
+      Second Request investigations routinely take 6–18 months from issuance to
+      resolution; the statutory 30-day period begins only after compliance.
+
+fees:
+  structure: >
+    Tiered by deal value (2026 thresholds, effective 2026-02-17, adjusted annually):
+    Under $189.6m: $35,000
+    $189.6m–$586.9m: $110,000
+    $586.9m–$1.174bn: $275,000
+    $1.174bn–$2.347bn: $440,000
+    $2.347bn–$5.869bn: $875,000
+    Above $5.869bn: $2,460,000
+  source: "16 C.F.R. § 803.9; FTC Annual Threshold Revision effective 2026-02-17"
+  source_type: primary_legislation
+  source_url: "https://www.ftc.gov/news-events/news/press-releases/2026/01/ftc-announces-2026-update-jurisdictional-fee-thresholds-premerger-notification-filings"
+  source_type: official_guidance
+  annual_adjustment: true
+
+threshold_tests:
+  # The HSR Act uses a two-tier structure:
+  # Tier 1 (standard): size-of-transaction AND size-of-person tests must BOTH be met.
+  # Tier 2 (large transaction): size-of-transaction alone (no size-of-person test required).
+  #
+  # Thresholds are adjusted annually each February based on change in gross national product.
+  # Source: FTC press release 2026-01-xx; Federal Register notice; effective 2026-02-17.
+  # Primary source: https://www.ftc.gov/news-events/news/press-releases/2026/01/ftc-announces-2026-update-jurisdictional-fee-thresholds-premerger-notification-filings
+
+  - test_id: us_hsr_standard
+    description: "Standard filing threshold: size of transaction + size of person"
+    legal_basis: "15 U.S.C. § 18a(a)(2)(A); 16 C.F.R. § 801.10, § 801.1(a)"
+    source_url: "https://www.ftc.gov/news-events/news/press-releases/2026/01/ftc-announces-2026-update-jurisdictional-fee-thresholds-premerger-notification-filings"
+    note: >
+      Both the size-of-transaction condition AND the size-of-person conditions must be
+      met. The size-of-person test is waived for large transactions (see us_hsr_large).
+    annual_adjustment: true
+    effective_date: "2026-02-17"
+
+    conditions:
+      - condition_id: size_of_transaction
+        metric: deal_value
+        scope: worldwide
+        party: combined
+        operator: ">"
+        value: 133900000
+        currency: USD
+        source: "15 U.S.C. § 18a(a)(2); FTC Annual Threshold Revision effective 2026-02-17"
+        source_type: authority_announcement
+        verified_via:
+          - "https://www.ftc.gov/news-events/news/press-releases/2026/01/ftc-announces-2026-update-jurisdictional-fee-thresholds-premerger-notification-filings"
+        note: >
+          'Size of transaction' means the aggregate total amount of consideration
+          paid for the voting securities or assets being acquired, plus the value
+          of any debt assumed. Calculated per 16 C.F.R. § 801.10.
+
+      - condition_id: size_of_person_larger
+        metric: revenue_or_assets
+        scope: worldwide
+        party: acquirer_group
+        operator: ">"
+        value: 267800000
+        currency: USD
+        source: "16 C.F.R. § 801.1(a)(1); FTC Annual Threshold Revision effective 2026-02-17"
+        source_type: authority_announcement
+        verified_via:
+          - "https://www.ftc.gov/news-events/news/press-releases/2026/01/ftc-announces-2026-update-jurisdictional-fee-thresholds-premerger-notification-filings"
+        note: >
+          'Size of person' = larger of (a) annual net sales and (b) total assets.
+          The larger party (typically the acquirer) must exceed $267.8m.
+
+      - condition_id: size_of_person_smaller
+        metric: revenue_or_assets
+        scope: worldwide
+        party: target_group
+        operator: ">"
+        value: 26800000
+        currency: USD
+        source: "16 C.F.R. § 801.1(a)(2); FTC Annual Threshold Revision effective 2026-02-17"
+        source_type: authority_announcement
+        verified_via:
+          - "https://www.ftc.gov/news-events/news/press-releases/2026/01/ftc-announces-2026-update-jurisdictional-fee-thresholds-premerger-notification-filings"
+        note: >
+          The smaller party (typically the target) must exceed $26.8m. For acquisitions
+          of assets or non-corporate entities, different computation rules apply
+          under 16 C.F.R. §§ 801.11–801.14.
+
+    exceptions:
+      - exception_id: us_hsr_ordinary_course
+        description: >
+          Acquisitions of goods or realty in the ordinary course of business are
+          exempt, regardless of size (16 C.F.R. § 802.1).
+        source: "16 C.F.R. § 802.1"
+        source_type: primary_legislation
+      - exception_id: us_hsr_new_entity
+        description: >
+          Formation of a new entity where one party contributes only cash or cash
+          equivalents may be exempt. Specific analysis required.
+        source: "16 C.F.R. § 801.50"
+        source_type: primary_legislation
+
+  - test_id: us_hsr_large
+    description: "Large transaction — size-of-person test waived"
+    legal_basis: "15 U.S.C. § 18a(a)(2)(B); 16 C.F.R. § 801.1"
+    source_url: "https://www.ftc.gov/enforcement/merger-review"
+    note: >
+      If the transaction value exceeds the large transaction threshold, filing is
+      required regardless of the parties' sizes. No size-of-person test applies.
+    annual_adjustment: true
+    effective_date: "2026-02-17"
+
+    conditions:
+      - condition_id: large_transaction_value
+        metric: deal_value
+        scope: worldwide
+        party: combined
+        operator: ">"
+        value: 535500000
+        currency: USD
+        source: "15 U.S.C. § 18a(a)(2)(B); FTC Annual Threshold Revision effective 2026-02-17"
+        source_type: authority_announcement
+        verified_via:
+          - "https://www.ftc.gov/news-events/news/press-releases/2026/01/ftc-announces-2026-update-jurisdictional-fee-thresholds-premerger-notification-filings"
+
+scope:
+  concentration_definition: >
+    The HSR Act does not use the term "concentration" — it requires pre-merger
+    notification for acquisitions of voting securities, assets, or non-corporate
+    interests that meet the size-of-transaction threshold. The substantive
+    competition standard is found in Clayton Act § 7 (acquisitions that may
+    substantially lessen competition or tend to create a monopoly).
+  concentration_definition_source: "15 U.S.C. § 18a; Clayton Act 15 U.S.C. § 18"
+  concentration_definition_url: "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section18a&num=0&edition=prelim"
+  trigger_events:
+    - share_acquisition
+    - asset_acquisition
+    - merger
+    - joint_venture
+  control_threshold: >
+    No specific "control" threshold in HSR — filing is triggered by the size of
+    the transaction (consideration paid) combined with the size of the parties.
+    Acquisitions of any amount of voting securities, assets, or non-corporate
+    interests count if they cross the dollar thresholds.
+  intra_group_exempt: true
+  foreign_to_foreign_rule: >
+    Foreign-to-foreign transactions are exempt under the foreign commerce exemption
+    (16 C.F.R. §§ 802.50–802.52) unless the US nexus tests are met: for asset
+    acquisitions, the assets must be located in the US; for voting securities,
+    either the issuer must have US assets or sales above the applicable thresholds.
+  substantive_test: slc
+  substantive_test_url: "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section18a&num=0&edition=prelim"
+  substantive_test_note: >
+    The HSR Act is a notification statute only. The substantive test — whether an
+    acquisition may substantially lessen competition or tend to create a monopoly
+    — is set out in Clayton Act § 7 (15 U.S.C. § 18). The DOJ and FTC also apply
+    Sherman Act § 2 for monopolization concerns.
+  note: >
+    HSR imposes a pre-merger waiting period; it does not itself prohibit any
+    transaction. Enforcement of the SLC standard is via federal court action under
+    Clayton Act § 7 and FTC Act § 5.
+
+gun_jumping:
+  automatic_void: false
+  voidable: true
+  max_fine_pct_turnover: null
+  max_fine_fixed: 51744
+  max_fine_currency: USD
+  per_day_fine: 51744
+  criminal_sanctions: false
+  legal_basis: "15 U.S.C. § 18a(g)(1); FTC Civil Penalty Adjustment (2026)"
+  legal_basis_url: "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section18a&num=0&edition=prelim"
+  note: >
+    Civil penalty of $51,744 per day per violation (2026 figure, adjusted annually
+    via Federal Register pursuant to the Federal Civil Penalties Inflation Adjustment
+    Act). Each day of non-compliance constitutes a separate violation. The transaction
+    itself is not automatically void, but DOJ or FTC can seek a court injunction
+    unwinding or blocking the deal. Criminal sanctions do not apply to HSR filing
+    failures, though substantive antitrust violations (Sherman Act § 1/§ 2) carry
+    criminal penalties.
+
+fdi_screening:
+  applicable: true
+  regime_name: "Committee on Foreign Investment in the United States (CFIUS)"
+  authority: "CFIUS — chaired by the Secretary of the Treasury; includes DOD, DOS, DHS, DOJ, DOE, USTR, OSTP, and others"
+  url: "https://home.treasury.gov/policy-issues/international/the-committee-on-foreign-investment-in-the-united-states-cfius"
+  sectors_covered:
+    - "Defense and defense technology"
+    - "Critical infrastructure (energy, water, telecom, transportation)"
+    - "TID US businesses (critical technology, critical infrastructure, sensitive personal data)"
+    - "Real estate near military installations or sensitive government sites"
+    - "Semiconductor and advanced manufacturing"
+    - "Artificial intelligence and advanced computing"
+  note: >
+    Mandatory declaration required for foreign acquisitions of TID US businesses
+    (technology, infrastructure, data) and certain other covered transactions
+    (FIRRMA 2018, codified at 50 U.S.C. §§ 4565 et seq.; regulations at 31 C.F.R.
+    Parts 800–802). Voluntary notice available for non-mandatory covered transactions.
+    CFIUS review is entirely separate from and parallel to HSR notification.
+
+source_passages:
+  - passage_id: "us_hsr_18a_a"
+    document_title: "Hart-Scott-Rodino Antitrust Improvements Act of 1976, as codified at 15 U.S.C. § 18a"
+    article_reference: "15 U.S.C. § 18a(a)"
+    document_url: "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section18a&num=0&edition=prelim"
+    source_type: primary_legislation
+    quoted_text: >
+      "Except as exempted pursuant to subsection (c) of this section, no person shall
+      acquire, directly or indirectly, any voting securities or assets of any other
+      person, unless both persons (or in the case of a tender offer, the acquiring
+      person) file notification pursuant to rules under subsection (d)(1) of this
+      section and the waiting period described in subsection (b)(1) of this section
+      has expired, if — (2)(A) as a result of such acquisition, the acquiring person
+      would hold an aggregate total amount of the voting securities and assets of the
+      acquired person in excess of $50,000,000 (as adjusted and published for each
+      fiscal year beginning after September 30, 2004, in accordance with subsection
+      (a)(5) of this section)."
+    supports_conditions:
+      - size_of_transaction
+      - large_transaction_value
+
+  - passage_id: "us_hsr_18a_g1"
+    document_title: "Hart-Scott-Rodino Antitrust Improvements Act of 1976, as codified at 15 U.S.C. § 18a"
+    article_reference: "15 U.S.C. § 18a(g)(1)"
+    document_url: "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section18a&num=0&edition=prelim"
+    source_type: primary_legislation
+    quoted_text: >
+      "Any person, or any officer, director, or partner thereof, who fails to comply
+      with any provision of this section shall be liable to the United States for a
+      civil penalty of not more than $10,000 per day during which such person is in
+      violation of any provision of this section. Such penalty may be recovered in a
+      civil action brought by the United States."
+    supports_conditions:
+      - size_of_transaction
+      - size_of_person_larger
+      - size_of_person_smaller
+
+notes:
+  - >
+    Thresholds are adjusted annually in January/February based on the change in the
+    U.S. gross national product. Always verify the current thresholds at the FTC
+    website before filing or advising.
+  - >
+    Both the acquirer and the target must file separately (two filing fees). The
+    waiting period begins on the date the last filing is received by both agencies.
+  - >
+    'Acquiring person' and 'acquired person' are defined at the ultimate parent entity
+    level (16 C.F.R. § 801.1(a)(3)). Revenues and assets of all controlled entities
+    are aggregated.
+  - >
+    Foreign-to-foreign transactions may be exempt under the foreign commerce exemption
+    (16 C.F.R. § 802.50–802.52) if the US nexus tests are not met, even if the
+    size thresholds are satisfied.
+  - >
+    Minority stake acquisitions may be exempt under the investment-only exemption
+    (16 C.F.R. § 802.9) or the institutional investor exemption (16 C.F.R. § 802.64).

@@ -1,0 +1,325 @@
+jurisdiction_id: uk
+jurisdiction_name: United Kingdom
+last_verified: "2024-06-01"
+
+authority:
+  name: Competition and Markets Authority
+  abbreviation: CMA
+  url: https://www.gov.uk/government/organisations/competition-and-markets-authority
+  filing_url: https://www.gov.uk/guidance/mergers-how-to-notify-the-cma-of-a-merger
+
+regime:
+  mandatory: false   # UK merger control is voluntary
+  suspensory: false  # no automatic standstill; CMA can impose interim measures post-filing
+  voluntary: true
+
+legal_basis:
+  - citation: "Enterprise Act 2002, Part 3 (ss. 22–130), as amended"
+    url: "https://www.legislation.gov.uk/ukpga/2002/40/part/3"
+  - citation: "Digital Markets, Competition and Consumers Act 2024 (DMCC Act), Schedule 4"
+    url: "https://www.legislation.gov.uk/ukpga/2024/13/schedule/4"
+    note: "Introduced the strategic mergers (acquirer) threshold and other amendments"
+  - citation: "CMA Mergers: Guidance on the CMA's jurisdiction and procedure (CMA2revised, 2020)"
+    url: "https://www.gov.uk/government/publications/mergers-guidance-on-the-cmas-jurisdiction-and-procedure"
+    source_type: official_guidance
+
+filing:
+  deadline_from_signing_days: null
+  deadline_from_closing_days: null
+  pre_closing_required: false
+  note: >
+    The UK regime is voluntary — there is no obligation to notify and no standstill
+    obligation. However, the CMA can review completed mergers and has the power to
+    unwind them. The CMA can investigate up to four months after the merger is made
+    public or completed (whichever is later). In practice, parties in regulated sectors
+    or with significant UK market shares almost always notify to obtain legal certainty.
+    The CMA may also accept informal briefings before formal notification.
+
+review_periods:
+  phase_1:
+    days: 40
+    day_type: working
+    extendable_to_days: null
+    legal_basis: "Enterprise Act 2002, s. 34ZA"
+    note: >
+      The CMA must decide within 40 working days of notification whether to clear,
+      clear with undertakings in lieu, or refer to Phase 2. Clock can be stopped
+      for information requests.
+  phase_2:
+    days: 24
+    day_type: null
+    day_unit: "weeks"
+    extendable_to_days: 32
+    day_unit_extended: "weeks"
+    legal_basis: "Enterprise Act 2002, s. 39"
+    note: >
+      Phase 2 inquiry groups have 24 weeks (extendable to 32 weeks) from reference
+      to final report. Statutory deadline is strict; rarely extended.
+
+fees:
+  structure: >
+    Tiered by UK turnover of the target:
+    Under £10m: no fee
+    £10m–£19.99m: £40,000
+    £20m–£39.99m: £80,000
+    £40m–£69.99m: £120,000
+    £70m–£119.99m: £160,000
+    £120m and above: £160,000
+  source: "Enterprise Act 2002, Schedule 9 (as amended); current fee schedule"
+  source_type: primary_legislation
+  source_url: "https://www.gov.uk/guidance/mergers-how-to-notify-the-cma-of-a-merger-of-a-merger"
+  source_type: official_guidance
+  annual_adjustment: false
+
+threshold_tests:
+  # Tests are OR'd — a relevant merger situation exists if ANY test is satisfied.
+  # The CMA has jurisdiction to review if a relevant merger situation exists AND
+  # it has a reasonable chance of resulting in a substantial lessening of competition (SLC).
+
+  - test_id: uk_turnover
+    description: "UK turnover test"
+    legal_basis: "Enterprise Act 2002, s. 23(1)(b)"
+    source_url: "https://www.legislation.gov.uk/ukpga/2002/40/section/23"
+    note: >
+      The target's UK turnover must exceed the threshold. This test focuses on the
+      target only — the acquirer's UK turnover is irrelevant for this limb.
+    annual_adjustment: false
+    effective_date: null
+
+    conditions:
+      - condition_id: uk_turnover_target
+        metric: revenue
+        scope: uk
+        party: target_group
+        operator: ">"
+        value: 70000000
+        currency: GBP
+        source: "Enterprise Act 2002, s. 23(1)(b)"
+        source_type: primary_legislation
+        note: >
+          £70m threshold. Note: the DMCC Act 2024 gave the Secretary of State power
+          to update thresholds by secondary legislation. Verify current threshold at
+          https://www.legislation.gov.uk/ukpga/2002/40/section/23 before relying
+          on this figure. As of last_verified date this remains £70m.
+
+  - test_id: uk_share_of_supply
+    description: "UK share of supply test"
+    legal_basis: "Enterprise Act 2002, ss. 23(2)–23(4)"
+    source_url: "https://www.legislation.gov.uk/ukpga/2002/40/section/23"
+    note: >
+      The CMA has significant discretion in how it frames the description of goods
+      or services to which the share of supply test is applied. This makes the test
+      harder to apply mechanically — parties with any plausible overlap in a
+      description of goods/services in the UK should consider this test carefully.
+    annual_adjustment: false
+    effective_date: null
+
+    conditions:
+      - condition_id: uk_share_combined
+        metric: market_share
+        scope: uk
+        party: combined
+        operator: ">="
+        value: 0.25
+        currency: null
+        source: "Enterprise Act 2002, s. 23(2)(b)"
+        source_type: primary_legislation
+        note: >
+          The combined share must equal or exceed 25% in any description of goods
+          or services in the UK. The CMA defines the description broadly and is
+          not bound by a specific market definition framework.
+
+      - condition_id: uk_share_increment
+        metric: incremental_share
+        scope: uk
+        party: combined
+        operator: ">"
+        value: 0
+        currency: null
+        source: "Enterprise Act 2002, ss. 23(3)–23(4)"
+        source_type: primary_legislation
+        note: >
+          There must be an increment to the share as a result of the merger. A merger
+          between two parties where only one operates in the UK satisfies this if that
+          party has ≥25% share (the acquirer 'acquires' some of the market by virtue
+          of the combination). The CMA has found the increment satisfied in cases where
+          the target had minimal but non-zero UK activity.
+
+  - test_id: uk_strategic_acquirer
+    description: "Strategic acquirer (acquirer) threshold — DMCC Act 2024"
+    legal_basis: "Enterprise Act 2002, s. 23A (as inserted by DMCC Act 2024, Schedule 4, para. 2)"
+    source_url: "https://www.legislation.gov.uk/ukpga/2024/13/schedule/4"
+    note: >
+      New threshold introduced by the DMCC Act 2024 to capture acquisitions by
+      large strategic players below traditional revenue/share thresholds. Targets
+      'killer acquisitions' by digital and other large incumbents. This threshold
+      is NOT yet in force as of the last_verified date — commencement depends on
+      secondary legislation. Monitor CMA announcements for commencement date.
+      TREAT AS PENDING until confirmed in force.
+    annual_adjustment: false
+    effective_date: null   # not yet in force — set when commencement order published
+    status: "pending_commencement"
+
+    conditions:
+      - condition_id: strategic_acquirer_share
+        metric: market_share
+        scope: uk
+        party: acquirer_group
+        operator: ">="
+        value: 0.25
+        currency: null
+        source: "Enterprise Act 2002, s. 23A(2)(a) (as inserted by DMCC Act 2024)"
+        source_type: primary_legislation
+
+      - condition_id: strategic_acquirer_deal_value
+        metric: deal_value
+        scope: worldwide
+        party: combined
+        operator: ">="
+        value: 10000000
+        currency: GBP
+        source: "Enterprise Act 2002, s. 23A(2)(b) (as inserted by DMCC Act 2024)"
+        source_type: primary_legislation
+
+scope:
+  concentration_definition: >
+    A "relevant merger situation" exists where two or more enterprises cease to be
+    distinct (Enterprise Act 2002, s. 23). Enterprises cease to be distinct when
+    they are brought under common ownership or control, including where one party
+    acquires material influence over the policy of the other — a lower threshold
+    than the EU decisive influence standard.
+  concentration_definition_source: "Enterprise Act 2002, ss. 23, 26–29"
+  concentration_definition_url: "https://www.legislation.gov.uk/ukpga/2002/40/part/3"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture
+  control_threshold: >
+    Three levels: (1) material influence (lowest — can be as little as ~15-25%
+    depending on board representation and other factors); (2) de facto control
+    (ability to control policy in practice without majority); (3) legal control
+    (majority voting rights). CMA asserts jurisdiction from the material influence
+    level upward.
+  intra_group_exempt: true
+  foreign_to_foreign_rule: >
+    Applies if either party supplies goods/services in the UK or is incorporated
+    in the UK. Pure foreign-to-foreign transactions with no UK nexus fall outside
+    jurisdiction even if the turnover or share of supply thresholds are technically
+    met (Enterprise Act 2002, s. 23).
+  substantive_test: slc
+  substantive_test_url: "https://www.legislation.gov.uk/ukpga/2002/40/part/3"
+  substantive_test_note: >
+    The CMA applies a substantial lessening of competition (SLC) test
+    (Enterprise Act 2002, s. 35 for completed mergers, s. 36 for anticipated
+    mergers). The CMA considers a range of theories of harm including horizontal
+    unilateral effects, coordinated effects, and vertical/conglomerate effects.
+  note: >
+    The UK regime is voluntary — no mandatory filing or standstill obligation.
+    However, the CMA has a four-month window to open an investigation after
+    completion or public announcement. Phase 2 inquiries use a "balance of
+    probabilities" SLC standard.
+
+gun_jumping:
+  automatic_void: false
+  voidable: true
+  max_fine_pct_turnover: 5.0
+  max_fine_fixed: null
+  max_fine_currency: GBP
+  per_day_fine: null
+  criminal_sanctions: false
+  legal_basis: "Enterprise Act 2002, ss. 72–73 (IEOs), s. 94(6) (enforcement orders), s. 89 (penalty for breach)"
+  legal_basis_url: "https://www.legislation.gov.uk/ukpga/2002/40/part/3"
+  note: >
+    The UK has no mandatory pre-notification standstill, but the CMA may impose
+    an Initial Enforcement Order (IEO) on parties once a Phase 1 investigation
+    opens, requiring them to hold the businesses separate. Breach of an IEO or
+    other CMA enforcement order carries a fine of up to 5% of the worldwide
+    turnover of the infringing enterprise (Enterprise Act 2002, s. 94A). The CMA
+    can also unwind a completed merger after a Phase 2 finding of SLC. No criminal
+    sanctions attach to notification failure, but breach of an IEO is a civil
+    contempt if embodied in a court order.
+
+fdi_screening:
+  applicable: true
+  regime_name: "National Security and Investment (NSI) Act 2021"
+  authority: "Investment Security Unit (ISU), Cabinet Office"
+  url: "https://www.gov.uk/government/collections/national-security-and-investment-act"
+  sectors_covered:
+    - "Advanced materials"
+    - "Advanced robotics"
+    - "Artificial intelligence"
+    - "Civil nuclear"
+    - "Communications"
+    - "Computing hardware"
+    - "Critical suppliers to government"
+    - "Cryptographic authentication"
+    - "Data infrastructure"
+    - "Defence"
+    - "Energy"
+    - "Military and dual-use"
+    - "Quantum technologies"
+    - "Satellite and space technologies"
+    - "Suppliers to the emergency services"
+    - "Synthetic biology"
+    - "Transport"
+  note: >
+    Mandatory notification for acquisitions of 25%, 50%, or 75%+ of shares or
+    voting rights (or other qualifying thresholds) in entities active in any of
+    17 sensitive sectors. No minimum deal-value threshold for mandatory notification.
+    The Secretary of State may "call in" any qualifying acquisition (in or out of
+    the 17 sectors) for national security review within 5 years of closing or
+    6 months of becoming aware. Entirely separate from the CMA merger regime.
+
+source_passages:
+  - passage_id: "uk_ea2002_s23_1"
+    document_title: "Enterprise Act 2002"
+    article_reference: "Section 23(1)"
+    document_url: "https://www.legislation.gov.uk/ukpga/2002/40/section/23"
+    source_type: primary_legislation
+    quoted_text: >
+      "For the purposes of this Part, a relevant merger situation has been created if —
+      (a) two or more enterprises have ceased to be distinct enterprises at a time or in
+      circumstances falling within section 27; and (b) the value of the turnover in the
+      United Kingdom of the enterprise being taken over exceeds £70 million."
+    supports_conditions:
+      - uk_turnover_target
+
+  - passage_id: "uk_ea2002_s23_2"
+    document_title: "Enterprise Act 2002"
+    article_reference: "Section 23(2)–(4)"
+    document_url: "https://www.legislation.gov.uk/ukpga/2002/40/section/23"
+    source_type: primary_legislation
+    quoted_text: >
+      "For the purposes of this Part, a relevant merger situation has also been created if —
+      (a) two or more enterprises have ceased to be distinct enterprises at a time or in
+      circumstances falling within section 27; and (b) as a result, one or both of the
+      conditions mentioned in subsections (3) and (4) prevails or prevails to a greater
+      extent. (3) The condition mentioned in this subsection is that, in relation to the
+      supply of goods of any description, at least one-quarter of all the goods of that
+      description which are supplied in the United Kingdom are supplied by one and the
+      same person or are supplied to one and the same person."
+    supports_conditions:
+      - uk_share_combined
+      - uk_share_increment
+
+notes:
+  - >
+    Voluntary regime: parties can complete a merger without notifying the CMA. However,
+    the CMA can open an investigation up to four months after completion or public
+    announcement. If the CMA finds an SLC, it can require divestiture of an already-
+    completed deal. This creates significant risk in deals with UK overlaps.
+  - >
+    Interim measures: although there is no automatic standstill, the CMA can impose
+    interim measures on completed deals to prevent pre-emptive action while it
+    investigates. Parties should therefore conduct separate legal analysis of whether
+    to self-impose a hold-separate.
+  - >
+    Special public interest cases: the Secretary of State can intervene in cases
+    involving national security, media plurality, and financial stability, regardless
+    of whether the CMA tests are met (Enterprise Act 2002, ss. 42–58).
+  - >
+    Jurisdictional nexus: one party must be incorporated in the UK, or both parties
+    must supply goods/services in the UK (Enterprise Act 2002, s. 23). Pure foreign-
+    to-foreign deals with no UK activity are outside jurisdiction even if thresholds
+    are technically met.

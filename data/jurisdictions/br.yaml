@@ -1,0 +1,224 @@
+jurisdiction_id: br
+jurisdiction_name: Brazil
+last_verified: "2024-01-01"
+
+authority:
+  name: Conselho Administrativo de Defesa Econômica (Administrative Council for Economic Defence)
+  abbreviation: CADE
+  url: https://www.gov.br/cade/en
+  filing_url: https://www.gov.br/cade/en
+
+regime:
+  mandatory: true
+  suspensory: true
+  voluntary: false
+
+legal_basis:
+  - citation: "Lei No. 12.529, de 30 de novembro de 2011 (Competition Act), Article 88"
+    url: "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12529.htm"
+  - citation: "CADE Portaria Interministerial No. 994, de 30 de maio de 2012"
+    url: "https://www.gov.br/cade/en"
+    note: >
+      Ministerial Ordinance No. 994/2012 sets the specific monetary thresholds under
+      Article 88. These thresholds have not been updated since 2012. VERIFY whether
+      any updating ordinance has been issued.
+    source_type: official_guidance
+
+filing:
+  deadline_from_signing_days: null
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Filing must be made before completion (implementação) of the transaction. Brazil
+    has a strict suspensory regime — gun-jumping is subject to fines of BRL 60,000
+    to BRL 60m (Article 88, §3 Lei 12.529/2011). Pre-merger clearance is obtained
+    from CADE before closing. CADE encourages pre-filing contacts for complex deals.
+
+review_periods:
+  phase_1:
+    days: 240
+    day_type: calendar
+    extendable_to_days: null
+    legal_basis: "Article 88, §2 Lei 12.529/2011"
+    note: >
+      CADE has 240 calendar days from filing to issue a final decision. This is
+      the maximum period — straightforward cases are typically resolved much faster
+      through CADE's 'fast-track' procedure (typically 15–30 days). The 240-day
+      period can be extended by 90 days by reasoned decision.
+  phase_2:
+    days: 90
+    day_type: calendar
+    extendable_to_days: null
+    legal_basis: "Article 88, §2 Lei 12.529/2011"
+    note: "Extension of the standard period, at CADE's discretion."
+
+fees:
+  structure: >
+    Flat filing fee of BRL 85,000 (approximately USD 17,000). This fee applies
+    per filing; typically the acquirer files and pays.
+  source: "Article 23(V) Lei 12.529/2011; CADE Resolution No. 9/2014"
+  source_type: primary_legislation
+  source_url: "https://www.gov.br/cade/en"
+  annual_adjustment: false
+  note: "VERIFY current fee amount — may have been updated by CADE resolution."
+
+threshold_tests:
+  # Tests are structured as: one party exceeds BRL 750m AND another exceeds BRL 75m.
+  # Both conditions must be met by different parties (OR logic for which party meets which).
+
+  - test_id: br_standard
+    description: "Brazilian revenue thresholds (Article 88 Lei 12.529/2011 + Portaria 994/2012)"
+    legal_basis: "Article 88, caput, Lei No. 12.529/2011; Portaria Interministerial No. 994/2012"
+    source_url: "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12529.htm"
+    note: >
+      Filing is required when at least one party exceeds BRL 750m AND at least one
+      other party exceeds BRL 75m. The thresholds apply to Brazilian gross revenues
+      or billings in Brazil (faturamento bruto no Brasil ou volume de negócios no Brasil)
+      in the fiscal year prior to the transaction. These figures were set in 2012 and
+      as of last_verified have not been officially updated — verify current ordinance.
+    annual_adjustment: false
+    effective_date: "2012-05-30"
+
+    conditions:
+      - condition_id: br_large_party
+        metric: revenue
+        scope: domestic
+        party: either_party
+        operator: ">"
+        value: 750000000
+        currency: BRL
+        source: "Portaria Interministerial No. 994/2012, Article 1(I)"
+        source_type: primary_legislation
+        note: >
+          At least one of the undertakings concerned must have registered gross revenues
+          or volume of business in Brazil exceeding BRL 750m in the fiscal year prior
+          to the transaction. 'In Brazil' means revenues attributable to Brazilian
+          market activities.
+
+      - condition_id: br_smaller_party
+        metric: revenue
+        scope: domestic
+        party: each_party
+        operator: ">"
+        value: 75000000
+        currency: BRL
+        source: "Portaria Interministerial No. 994/2012, Article 1(II)"
+        source_type: primary_legislation
+        note: >
+          Uses each_party (min of acquirer, target domestic). If min > BRL 75m, both
+          parties have Brazilian revenues above BRL 75m, satisfying the requirement that
+          a second distinct party exceeds BRL 75m. In combination with br_large_party
+          (max > BRL 750m), this correctly captures the Brazilian two-party test.
+
+notes:
+  - >
+    Brazilian 'gross revenues in Brazil' (faturamento bruto no Brasil) includes revenues
+    of the entire economic group to which the party belongs, not just the direct entity.
+    All affiliates and subsidiaries generating revenues in Brazil must be aggregated.
+  - >
+    The Brazilian regime applies to concentrations between competitors (horizontal),
+    between firms in a supply chain (vertical), and conglomerate combinations, as long
+    as the revenue thresholds are met.
+  - >
+    CADE offers a 'fast-track' procedure for transactions with no horizontal overlaps
+    exceeding 20% or no vertical relationships exceeding 30% in any Brazilian market.
+    Fast-track cases are typically reviewed in 15–30 days.
+  - >
+    Brazil's filing fees (BRL 85,000) are relatively low by international standards.
+    However, CADE has broad powers to condition or block transactions — Brazilian
+    merger control is substantively rigorous, particularly in consumer-facing sectors.
+
+# ── Scope / trigger events ────────────────────────────────────────────────────
+scope:
+  concentration_definition: >
+    An act of economic concentration includes: (i) merger between two or more previously
+    independent undertakings; (ii) acquisition by one or more persons of direct or
+    indirect control over another undertaking; (iii) any corporate restructuring —
+    such as merger (fusão), incorporation (incorporação), or acquisition of equity
+    (aquisição de participações); or (iv) any other act or contract that may restrict
+    or distort competition or result in domination of a relevant market. Full-function
+    joint ventures are included (Article 90, Lei 12.529/2011).
+  concentration_definition_source: "Article 90, Lei No. 12.529/2011"
+  concentration_definition_url: "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12529.htm"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture
+  control_threshold: >
+    Acquisition of direct or indirect control over an undertaking. Control includes
+    the ability to exercise decisive influence over a company's management or strategy,
+    whether through shareholding, contractual arrangements, or other means. No specific
+    percentage threshold — decisive influence is the operative concept.
+  intra_group_exempt: true
+  substantive_test: "dominance_and_siec"
+  substantive_test_url: "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12529.htm"
+  substantive_test_note: >
+    CADE applies a substantial lessening of competition / dominant position test.
+    Article 88(6) of Lei 12.529/2011 directs CADE to approve a concentration unless
+    it finds that it would eliminate competition in a substantial part of the relevant
+    market, create or strengthen a dominant position, or may result in the domination
+    of a relevant market of goods or services. In practice CADE applies an analysis
+    equivalent to the SLC / SIEC standard used by the EC and US agencies.
+  note: >
+    Brazil's merger control regime applies to concentrations irrespective of where the
+    parties are incorporated, provided that at least one party meets the Brazilian
+    revenue threshold. Foreign-to-foreign deals with Brazilian revenue are caught.
+
+# ── Gun-jumping / standstill obligation ───────────────────────────────────────
+gun_jumping:
+  automatic_void: true
+  voidable: false
+  max_fine_pct_turnover: null
+  max_fine_fixed: 60000000
+  max_fine_currency: BRL
+  per_day_fine: null
+  criminal_sanctions: false
+  legal_basis: "Article 88, §3 and §4, Lei No. 12.529/2011"
+  legal_basis_url: "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12529.htm"
+  note: >
+    Article 88, §3 of Lei 12.529/2011 establishes a standstill obligation —
+    acts of concentration subject to mandatory notification must be submitted to
+    CADE before implementation (pre-merger notification). Article 88, §4 provides
+    that acts consummated prior to CADE's approval are void (nulos de pleno direito)
+    and do not produce effects. Administrative fines for gun-jumping range from
+    BRL 60,000 to BRL 60,000,000. CADE may impose additional daily fines during
+    the period of non-compliance. There are no criminal sanctions for gun-jumping
+    as such, but individuals responsible for the violation may face administrative
+    accountability proceedings.
+
+# ── FDI / national security screening ────────────────────────────────────────
+fdi_screening:
+  applicable: false
+  note: >
+    Brazil does not have a general FDI screening mechanism for national security
+    purposes. Brazil is generally open to foreign direct investment. However,
+    sector-specific restrictions and approvals apply: (i) Banco Central do Brasil
+    approval for acquisitions of financial institutions; (ii) ANATEL oversight for
+    telecoms sector changes of control; (iii) constitutional restrictions on foreign
+    ownership of rural land, border areas, and media companies (up to 30% foreign
+    capital in broadcasting under Lei 10.610/2002). These sector reviews are separate
+    from and cumulative with CADE merger control.
+
+# ── Source passages (verbatim statutory text) ─────────────────────────────────
+source_passages:
+
+  - passage_id: br_lei12529_art88
+    document_title: "Lei No. 12.529, de 30 de novembro de 2011 (Lei de Defesa da Concorrência)"
+    article_reference: "Article 88, caput"
+    document_url: "https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12529.htm"
+    source_type: practitioner
+    quoted_text: >
+      "Shall be submitted to CADE the acts of concentration that meet the following
+      requirements, cumulatively: I — at least one of the economic groups involved in
+      the operation registered, in the last balance sheet, gross revenues or total
+      volume of business in the country, in the year preceding the operation, equivalent
+      to or exceeding the value established by the National Ministry of Finance, not
+      less than BRL 750,000,000; and II — at least one other economic group involved
+      in the operation registered, in the last balance sheet, gross revenues or total
+      volume of business in the country, in the year preceding the operation, equivalent
+      to or exceeding the value established by the National Ministry of Finance, not
+      less than BRL 75,000,000."
+    supports_conditions:
+      - br_large_party
+      - br_smaller_party

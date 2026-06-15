@@ -1,0 +1,311 @@
+jurisdiction_id: es
+jurisdiction_name: Spain
+last_verified: "2026-06-14"
+
+authority:
+  name: Comisión Nacional de Mercados y la Competencia
+  abbreviation: CNMC
+  url: https://www.cnmc.es/ambitos-de-actuacion/concentraciones
+  filing_url: https://www.cnmc.es/ambitos-de-actuacion/concentraciones/notificacion
+
+regime:
+  mandatory: true
+  suspensory: true   # Art. 10 LDC — parties must obtain clearance before implementation
+  voluntary: false
+
+legal_basis:
+  - citation: "Ley 15/2007, de 3 de julio, de Defensa de la Competencia (LDC), Articles 7–10"
+    url: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-12946"
+    note: >
+      The Spanish Competition Act (Ley 15/2007 LDC) is the primary source. Article 7
+      defines concentrations. Article 8 sets the notification thresholds (two alternative
+      tests). Article 9 deals with the one-stop-shop (EU dimension). Article 10 imposes
+      the standstill obligation. Article 57 (as amended) sets out sanctions for breach.
+  - citation: "Real Decreto 261/2008, de 22 de febrero, por el que se aprueba el Reglamento de Defensa de la Competencia (RDC)"
+    url: "https://www.boe.es/buscar/act.php?id=BOE-A-2008-3616"
+    source_type: official_guidance
+    note: "Implementing regulation providing procedural detail and the notification forms (Formulario CO, Formulario CO Abreviado)."
+
+filing:
+  deadline_from_signing_days: null    # no fixed deadline from signing; must be before implementation
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Notification must be made prior to implementation of the concentration (Art. 10(1) LDC).
+    There is no fixed deadline from signing. In practice, parties file before closing to
+    ensure the Phase I period lapses or clearance is received before implementation.
+    Pre-notification contacts with CNMC (called 'pre-notificación') are common and
+    encouraged for complex cases. CNMC accepts simplified notifications (Formulario CO
+    Abreviado) for transactions without horizontal overlaps ≥15% or vertical links ≥25%.
+
+review_periods:
+  phase_1:
+    days: 30
+    day_type: calendar
+    extendable_to_days: null
+    legal_basis: "Article 34 Ley 15/2007 LDC"
+    note: >
+      CNMC has ONE MONTH (30 calendar days) from acceptance of a complete notification
+      to either clear the transaction or open Phase II. The clock stops if CNMC requests
+      additional information (a "stop-the-clock" mechanism). If no decision is issued
+      within Phase I, the concentration is deemed authorised (silencio administrativo
+      positivo). Average Phase I duration: approximately 20 working days for straightforward
+      transactions.
+  phase_2:
+    days: 60
+    day_type: calendar
+    extendable_to_days: 90    # CNMC may extend by up to one additional month for remedies
+    legal_basis: "Article 36 Ley 15/2007 LDC"
+    note: >
+      If CNMC opens Phase II (second phase / segunda fase), it has TWO MONTHS (60 calendar
+      days) from the Phase II opening decision to issue its final decision. The Minister
+      of Economy (not the CNMC) makes the final decision if CNMC proposes prohibition or
+      conditions — the CNMC produces a binding report but the Council of Ministers (or
+      the Minister acting under delegation) formally approves, conditions, or prohibits.
+      The CNMC issued its first-ever prohibition decision in 2025.
+
+fees:
+  structure: >
+    Ordinary form (Formulario CO):
+      Combined Spain turnover ≤ EUR 240m:   EUR 5,502.15
+      Combined Spain turnover ≤ EUR 480m:   EUR 11,004.31
+      Combined Spain turnover ≤ EUR 3bn:    EUR 22,008.62
+      Combined Spain turnover > EUR 3bn:    EUR 43,944 + EUR 11,004.31 per additional EUR 3bn (max EUR 109,806)
+    Abbreviated form (Formulario CO Abreviado): EUR 1,530.15
+    (Fees are indexed periodically; verify current amounts via CNMC.)
+  source: "Real Decreto 261/2008, Article 26; CNMC published fee schedule"
+  source_type: official_guidance
+  source_url: "https://www.cnmc.es/ambitos-de-actuacion/concentraciones/notificacion"
+  annual_adjustment: false
+
+# ── Scope / trigger events ────────────────────────────────────────────────────
+scope:
+  concentration_definition: >
+    A concentration arises where a lasting change of control results from: (a) the merger
+    of two or more previously independent undertakings; (b) the acquisition, by one or
+    more natural or legal persons already controlling at least one undertaking, or by one
+    or more undertakings, of direct or indirect control of the whole or parts of one or
+    more other undertakings, through purchase of securities or assets, contract or any
+    other means; or (c) the creation of full-function joint ventures (Art. 7(1) LDC).
+  concentration_definition_source: "Article 7(1), Ley 15/2007 de Defensa de la Competencia"
+  concentration_definition_url: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-12946"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture   # full-function JVs performing all functions of autonomous economic entity
+  control_threshold: >
+    Exclusive or joint control — the ability to exercise decisive influence over an
+    undertaking's strategic commercial decisions. Consistent with EU merger control
+    definition (Art. 3 EUMR). Minority shareholdings without control rights generally
+    do not trigger notification.
+  intra_group_exempt: true
+  foreign_to_foreign_rule: >
+    Spanish merger control applies to concentrations that affect competition in Spain
+    regardless of the parties' nationality or place of establishment. If the EU
+    thresholds are met, only the European Commission has jurisdiction (one-stop-shop);
+    no separate CNMC filing is required in that case (Art. 9 LDC).
+  substantive_test: "siec"
+  substantive_test_url: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-12946"
+  substantive_test_note: >
+    Spain applies the SIEC test (Art. 10 LDC 2007, as reformed): CNMC prohibits concentrations that significantly impede effective competition, in particular by creating or strengthening a dominant position. The 2007 LDC aligned Spain with the EU SIEC standard.
+  note: >
+    DE MINIMIS EXCEPTION: Notification is not required where the combined market share
+    of the undertakings concerned is below 25% in each of the relevant markets affected
+    by the concentration, and the acquired entity achieves a Spanish turnover of less
+    than EUR 10 million (Art. 8(3) LDC).
+
+# ── Gun-jumping / standstill ──────────────────────────────────────────────────
+gun_jumping:
+  automatic_void: false
+  voidable: true
+  max_fine_pct_turnover: 5.0
+  per_day_fine: null
+  criminal_sanctions: false
+  legal_basis: "Articles 10(1) and 63(1)(c), Ley 15/2007 LDC"
+  legal_basis_url: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-12946"
+  note: >
+    Article 10(1) LDC prohibits implementation without CNMC clearance. Article 63(1)(c)
+    LDC allows fines of up to 5% of total worldwide turnover in the financial year
+    preceding the infringement for implementing a concentration without prior clearance
+    (gun-jumping). CNMC may also order dissolution or unwinding of an illegally
+    implemented concentration and may impose periodic penalty payments to enforce
+    compliance. The CNMC granted standstill waivers only in very exceptional circumstances.
+
+# ── FDI / national security screening ────────────────────────────────────────
+fdi_screening:
+  applicable: true
+  regime_name: "Régimen de control de inversiones extranjeras en España — Foreign Investment Screening"
+  authority: "Dirección General de Comercio Internacional e Inversiones, Ministerio de Economía, Comercio y Empresa"
+  url: "https://www.mineco.gob.es/portal/site/mineco/inversion-extranjera"
+  sectors_covered:
+    - defense
+    - national_security
+    - critical_infrastructure
+    - sensitive_technology
+    - media
+    - energy
+    - financial_sector
+    - artificial_intelligence
+    - space
+  note: >
+    Spain introduced mandatory prior authorisation for foreign investments (non-EU/EFTA
+    investors and EU investors in some cases) in certain sensitive sectors via Royal
+    Decree-Law 8/2020 (COVID-19 emergency measure, subsequently extended and embedded
+    in the Law on Foreign Trade and Foreign Investment — Ley 19/2003 as amended). The
+    regime was significantly expanded in 2020–2021. Non-EU/EFTA investors must obtain
+    approval from the Council of Ministers (Cabinet) before completing acquisitions of
+    ≥10% equity in companies in sensitive sectors, or any acquisition giving material
+    influence. The screening obligation runs in parallel with CNMC merger control.
+    Spain also participates in the EU FDI Screening Regulation (2019/452) cooperation
+    mechanism.
+
+# ── Threshold tests ───────────────────────────────────────────────────────────
+threshold_tests:
+  # Two alternative notification triggers — EITHER is sufficient.
+  # Test 1: Market share test (Art. 8(1)(a) LDC) — combined Spain ≥ 30% in a market.
+  # Test 2: Turnover test (Art. 8(1)(b) LDC) — combined Spain > EUR 240m AND each ≥2 Spain > EUR 60m.
+  # De minimis exception: combined share < 25% AND acquired entity Spain turnover < EUR 10m.
+
+  - test_id: es_market_share
+    description: "Combined Spain market share ≥30% in any relevant market (Art. 8(1)(a) LDC)"
+    legal_basis: "Article 8(1)(a), Ley 15/2007 de Defensa de la Competencia"
+    source_url: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-12946"
+    note: >
+      Mandatory notification if the concentration results in the combined parties holding
+      OR increasing to ≥ 30% of a relevant product or service market in Spain or in a
+      substantial part of it. This is a self-assessed test based on the parties' preliminary
+      market definition and share estimates. Even if the combined share is below 30%
+      nationally, the test may be triggered if the 30% threshold is reached in a regional
+      market. The de minimis exception does NOT apply to the market share test if combined
+      share ≥ 25% — notification remains required.
+    annual_adjustment: false
+    effective_date: null
+    status: indicative_only
+
+    conditions:
+      - condition_id: es_combined_spain_share
+        metric: market_share
+        scope: domestic
+        party: combined
+        operator: ">="
+        value: 0.30
+        currency: null
+        source: "Article 8(1)(a) Ley 15/2007 LDC"
+        source_type: primary_legislation
+        source_url: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-12946"
+        verified_via:
+          - "https://www.antitrust-alliance.org/fiche/merger-control-investment-spain/"
+          - "https://iclg.com/practice-areas/merger-control"
+        note: >
+          30% combined Spain market share in any relevant product/service market.
+          Market definition and share estimates must be made by the parties at the time
+          of filing. Wide markets (e.g. EU-wide) where Spain share is below 30% do not
+          trigger this test, but sub-national regional markets where 30% is exceeded do.
+
+  - test_id: es_turnover
+    description: "Combined Spain >EUR 240m AND each of ≥2 parties Spain >EUR 60m (Art. 8(1)(b) LDC)"
+    legal_basis: "Article 8(1)(b), Ley 15/2007 de Defensa de la Competencia"
+    source_url: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-12946"
+    note: >
+      Alternative to the market share test. Notification required if the combined Spanish
+      turnover of all parties in the last financial year exceeded EUR 240 million AND
+      each of at least two parties individually had Spanish turnover exceeding EUR 60 million.
+      Both conditions must be met simultaneously (AND logic within test).
+    annual_adjustment: false
+    effective_date: null
+
+    conditions:
+      - condition_id: es_combined_spain_revenue
+        metric: revenue
+        scope: domestic
+        party: combined
+        operator: ">"
+        value: 240000000
+        currency: EUR
+        source: "Article 8(1)(b) Ley 15/2007 LDC"
+        source_type: primary_legislation
+        source_url: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-12946"
+        verified_via:
+          - "https://www.antitrust-alliance.org/fiche/merger-control-investment-spain/"
+          - "https://iclg.com/practice-areas/merger-control"
+        note: "EUR 240m combined Spanish turnover of all parties in last financial year."
+
+      - condition_id: es_each_party_spain
+        metric: revenue
+        scope: domestic
+        party: each_of_at_least_two
+        operator: ">"
+        value: 60000000
+        currency: EUR
+        source: "Article 8(1)(b) Ley 15/2007 LDC"
+        source_type: primary_legislation
+        source_url: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-12946"
+        verified_via:
+          - "https://www.antitrust-alliance.org/fiche/merger-control-investment-spain/"
+        note: "EUR 60m individual Spanish turnover for each of at least two parties."
+
+    exceptions:
+      - exception_id: es_de_minimis
+        description: >
+          No notification required if the acquired entity's Spanish turnover is less
+          than EUR 10 million AND the combined market share of the parties is below 50%
+          in all markets affected by the concentration (Art. 8(3) LDC).
+        source: "Article 8(3), Ley 15/2007 LDC"
+        effect: "exempts_notification"
+
+notes:
+  - >
+    TWO-TEST STRUCTURE: Spain has two ALTERNATIVE notification triggers — market share
+    and turnover. Only ONE needs to be satisfied. In practice, the turnover test (EUR 240m/
+    EUR 60m) is the more commonly triggered threshold for large transactions. The market
+    share test is self-assessed and requires parties to define their markets and estimate
+    shares at the time of filing.
+  - >
+    COUNCIL OF MINISTERS: The substantive assessment in Phase II is made by the CNMC,
+    but the final decision in Phase II can be referred to the Council of Ministers
+    (Government) on public interest grounds (Art. 60 LDC). The Government can authorise
+    a transaction that CNMC has proposed to prohibit, subject to conditions for reasons
+    of public interest.
+  - >
+    FIRST PROHIBITION: In 2025, the CNMC issued its first-ever prohibition decision in
+    the Minsait/GMV transaction — a significant development signalling increased CNMC
+    enforcement willingness.
+
+# ── Source passages ────────────────────────────────────────────────────────────
+source_passages:
+
+  - passage_id: es_ldc_art_8_1
+    document_title: "Ley 15/2007, de 3 de julio, de Defensa de la Competencia (Spanish Competition Act)"
+    article_reference: "Article 8(1)"
+    document_url: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-12946"
+    source_type: primary_legislation
+    quoted_text: >
+      "Article 8. Obligation to notify.
+      1. The concentrations described in Article 7 shall be notified to the Commission
+      [CNMC] prior to their implementation when the following circumstances occur:
+      a) That as a result of the operation, a market share equal to or greater than 30
+      per cent of the relevant national market for a product or service, or a narrower
+      local market, is acquired or increased; or
+      b) That the total aggregate turnover in Spain of all parties to the concentration
+      during the last financial year exceeds 240 million euros, provided that at least
+      two of the participants individually obtained a turnover in Spain greater than
+      60 million euros during that same period."
+    supports_conditions:
+      - es_combined_spain_share
+      - es_combined_spain_revenue
+      - es_each_party_spain
+
+  - passage_id: es_ldc_art_10
+    document_title: "Ley 15/2007, de 3 de julio, de Defensa de la Competencia (Spanish Competition Act)"
+    article_reference: "Article 10(1)"
+    document_url: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-12946"
+    source_type: primary_legislation
+    quoted_text: >
+      "Article 10. Suspension of the concentration.
+      1. Concentrations subject to the notification obligation provided for in this Law
+      may not be put into effect without having obtained authorisation from the
+      Competition Authority or, failing that, without the expiry of the periods provided
+      for in this Law without a resolution having been made, unless the Competition
+      Authority has, by reasoned decision, permitted implementation of the operation."
+    supports_conditions: []

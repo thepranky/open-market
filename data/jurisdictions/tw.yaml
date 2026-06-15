@@ -1,0 +1,369 @@
+jurisdiction_id: tw
+jurisdiction_name: Taiwan
+last_verified: "2026-06-14"
+
+authority:
+  name: Fair Trade Commission (公平交易委員會)
+  abbreviation: TFTC
+  url: https://www.ftc.gov.tw/internet/english/
+  filing_url: https://www.ftc.gov.tw/internet/english/doc/docDetail.aspx?uid=188
+
+regime:
+  mandatory: true
+  suspensory: true   # parties must await TFTC clearance before implementing
+  voluntary: false
+
+legal_basis:
+  - citation: "Fair Trade Act (公平交易法), Article 11, as amended"
+    url: "https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=J0150001"
+    note: >
+      Article 11 sets out the mandatory pre-merger notification requirements.
+      The Act has been amended several times; current notification thresholds
+      introduced by 2011 amendment and supplemented by TFTC regulations.
+  - citation: "Regulations on Thresholds and Calculation of Sales Amount for Merger Notification (企業結合申報銷售金額計算辦法), TFTC"
+    url: "https://www.ftc.gov.tw/internet/english/doc/docDetail.aspx?uid=1980"
+    note: >
+      Secondary regulations specifying how turnover thresholds are calculated,
+      including group consolidation and allocation of overseas revenues.
+    source_type: official_guidance
+
+filing:
+  deadline_from_signing_days: null
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Parties must submit the merger notification and await TFTC clearance before
+    implementing the transaction. There is no fixed deadline from signing. The TFTC
+    must issue a decision within 30 calendar days (extendable to 60 days for complex
+    cases, or 120 days in exceptional circumstances). Parties may complete the merger
+    after expiry of the review period without a prohibition decision.
+
+review_periods:
+  phase_1:
+    days: 30
+    day_type: calendar
+    extendable_to_days: 60
+    legal_basis: "Fair Trade Act, Article 12"
+    note: >
+      TFTC has 30 calendar days from receipt of a complete notification to issue a
+      decision. This period may be extended to 60 calendar days (or 120 days in
+      exceptional circumstances). If no decision is issued within the relevant period,
+      the merger is deemed approved.
+  phase_2:
+    days: 60
+    day_type: calendar
+    extendable_to_days: 120
+    legal_basis: "Fair Trade Act, Article 12(2)"
+    note: "Extension period for complex cases. 120-day maximum applies in exceptional cases only."
+
+fees:
+  structure: none
+  note: "Taiwan does not charge merger notification fees."
+
+threshold_tests:
+  # Taiwan's Article 11 Fair Trade Act uses OR logic — notification is required if
+  # ANY of the following conditions is met:
+  #
+  # Market share tests (OR'd with turnover tests):
+  # (1) Any participating enterprise will hold ≥ 1/3 market share post-merger
+  # (2) Any participating enterprise holds ≥ 1/4 market share PRE-merger
+  #
+  # Turnover tests (three scenarios, OR'd with each other):
+  # (3) General: combined global turnover > NTD 40bn AND each of ≥2 enterprises
+  #     has Taiwan turnover > NTD 2bn
+  # (4) Non-financial one-party: one enterprise Taiwan turnover > NTD 15bn AND
+  #     other enterprise Taiwan turnover > NTD 2bn
+  # (5) Financial enterprises: one enterprise annual turnover > NTD 30bn AND
+  #     other enterprise annual turnover > NTD 2bn
+  #
+  # Source: TFTC Fair Trade Act Article 11; ICLG Taiwan 2025 (confirmed via
+  # https://iclg.com/practice-areas/merger-control-laws-and-regulations/taiwan)
+
+  - test_id: tw_market_share_post_merger
+    description: "Any party will hold ≥ 1/3 Taiwan market share post-merger (FTA Article 11(1))"
+    legal_basis: "Fair Trade Act, Article 11(1)(1)"
+    source_url: "https://www.ftc.gov.tw/internet/english/doc/docDetail.aspx?uid=188"
+    note: >
+      Notification required if any enterprise participating in the combination will
+      hold one-third or more of the market in Taiwan as a result of the combination.
+      Market share is assessed in the relevant product and geographic market in Taiwan.
+    annual_adjustment: false
+    effective_date: null
+
+    conditions:
+      - condition_id: tw_post_combined_share
+        metric: market_share
+        scope: domestic
+        party: combined
+        operator: ">="
+        value: 0.3333
+        currency: null
+        source: "Fair Trade Act, Article 11(1)(1)"
+        source_type: primary_legislation
+        verified_via:
+          - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/taiwan"
+        note: "One-third (33.3%) combined Taiwan market share post-merger."
+
+  - test_id: tw_market_share_pre_merger
+    description: "Any party already holds ≥ 1/4 Taiwan market share pre-merger (FTA Article 11(1))"
+    legal_basis: "Fair Trade Act, Article 11(1)(2)"
+    source_url: "https://www.ftc.gov.tw/internet/english/doc/docDetail.aspx?uid=188"
+    note: >
+      Notification required if any enterprise participating in the combination already
+      holds one-quarter or more of the market in Taiwan BEFORE the combination.
+      This test fires even if the combined post-merger share would be lower.
+    annual_adjustment: false
+    effective_date: null
+
+    conditions:
+      - condition_id: tw_pre_either_party_share
+        metric: market_share
+        scope: domestic
+        party: either_party
+        operator: ">="
+        value: 0.25
+        currency: null
+        source: "Fair Trade Act, Article 11(1)(2)"
+        source_type: primary_legislation
+        verified_via:
+          - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/taiwan"
+        note: "25% Taiwan market share held by any one party BEFORE the merger."
+
+  - test_id: tw_turnover_general
+    description: "General turnover test: combined global >NTD 40bn AND each of ≥2 parties Taiwan >NTD 2bn"
+    legal_basis: "Fair Trade Act, Article 11(1)(3)(a)"
+    source_url: "https://www.ftc.gov.tw/internet/english/doc/docDetail.aspx?uid=188"
+    note: >
+      Primary turnover-based notification trigger for general (non-financial) enterprises.
+      Both conditions must be met AND at least two enterprises must independently meet
+      the Taiwan threshold.
+    annual_adjustment: false
+    effective_date: null
+
+    conditions:
+      - condition_id: tw_gen_combined_worldwide
+        metric: revenue
+        scope: worldwide
+        party: combined
+        operator: ">"
+        value: 40000000000
+        currency: TWD
+        source: "Fair Trade Act, Article 11(1)(3)(a)"
+        source_type: primary_legislation
+        verified_via:
+          - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/taiwan"
+        note: "NTD 40bn (~USD 1.25bn) combined global turnover of all participating enterprises."
+
+      - condition_id: tw_gen_each_party_taiwan
+        metric: revenue
+        scope: domestic
+        party: each_of_at_least_two
+        operator: ">"
+        value: 2000000000
+        currency: TWD
+        source: "Fair Trade Act, Article 11(1)(3)(a)"
+        source_type: primary_legislation
+        verified_via:
+          - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/taiwan"
+        note: "NTD 2bn (~USD 62m) Taiwan turnover for each of at least two participating enterprises."
+
+  - test_id: tw_turnover_oneparty_taiwan
+    description: "One-party Taiwan test: one enterprise Taiwan >NTD 15bn AND other Taiwan >NTD 2bn"
+    legal_basis: "Fair Trade Act, Article 11(1)(3)(b)"
+    source_url: "https://www.ftc.gov.tw/internet/english/doc/docDetail.aspx?uid=188"
+    note: >
+      Alternative turnover test for large domestic enterprises. Fires when one party
+      has very high Taiwan revenues even if the other is smaller.
+      Captures domestic deals by Taiwan's largest companies where the combined
+      worldwide threshold (NTD 40bn) might not be reached.
+    annual_adjustment: false
+    effective_date: null
+
+    conditions:
+      - condition_id: tw_large_one_party_taiwan
+        metric: revenue
+        scope: domestic
+        party: either_party
+        operator: ">"
+        value: 15000000000
+        currency: TWD
+        source: "Fair Trade Act, Article 11(1)(3)(b)"
+        source_type: primary_legislation
+        verified_via:
+          - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/taiwan"
+        note: "NTD 15bn (~USD 469m) Taiwan turnover for either party (the larger one)."
+
+      - condition_id: tw_small_one_party_taiwan
+        metric: revenue
+        scope: domestic
+        party: each_of_at_least_two
+        operator: ">"
+        value: 2000000000
+        currency: TWD
+        source: "Fair Trade Act, Article 11(1)(3)(b)"
+        source_type: primary_legislation
+        verified_via:
+          - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/taiwan"
+        note: >
+          NTD 2bn Taiwan turnover for the other (smaller) party. The each_of_at_least_two
+          type checks the minimum — if min(acquirer, target) > 2bn, both exceed 2bn,
+          which means the smaller party meets the threshold required by this sub-test.
+
+  - test_id: tw_turnover_financial
+    description: "Financial enterprise test: one enterprise turnover >NTD 30bn AND other Taiwan >NTD 2bn"
+    legal_basis: "Fair Trade Act, Article 11(1)(3)(c)"
+    source_url: "https://www.ftc.gov.tw/internet/english/doc/docDetail.aspx?uid=188"
+    note: >
+      Applies to mergers involving financial enterprises (banks, insurance companies,
+      securities firms). For financial enterprises, 'annual turnover' means total
+      income, net premiums, or equivalent financial metrics rather than sales revenue.
+    annual_adjustment: false
+    effective_date: null
+
+    conditions:
+      - condition_id: tw_fin_large_party
+        metric: revenue
+        scope: worldwide
+        party: either_party
+        operator: ">"
+        value: 30000000000
+        currency: TWD
+        source: "Fair Trade Act, Article 11(1)(3)(c)"
+        source_type: primary_legislation
+        verified_via:
+          - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/taiwan"
+        note: "NTD 30bn annual turnover for a financial enterprise (worldwide)."
+
+      - condition_id: tw_fin_other_party_taiwan
+        metric: revenue
+        scope: domestic
+        party: each_of_at_least_two
+        operator: ">"
+        value: 2000000000
+        currency: TWD
+        source: "Fair Trade Act, Article 11(1)(3)(c)"
+        source_type: primary_legislation
+        verified_via:
+          - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/taiwan"
+        note: "NTD 2bn Taiwan turnover for the other enterprise."
+
+notes:
+  - >
+    Taiwan turnover calculation: revenues from sales of products or provision of services
+    in Taiwan (including exports to Taiwan). For enterprises incorporated outside Taiwan,
+    only revenues attributable to the Taiwan market are counted. Consolidated group-level
+    figures are used including affiliates (per TFTC Regulations on turnover calculation).
+  - >
+    Exemptions (Article 11(3)): five statutory exemptions include: (1) financial holding
+    company mergers subject to Financial Holding Company Act; (2) government enterprise
+    mergers; (3) mergers within the same enterprise group (no change of control);
+    (4) insolvent enterprise rescue mergers; (5) mergers approved by other competent
+    authorities under sector legislation. Verify applicability with Taiwan counsel.
+  - >
+    NTD amounts are not adjusted annually. The TFTC periodically revises thresholds
+    via statutory amendment. Always confirm current thresholds with TFTC.
+  - >
+    The market share tests (tw_market_share_post_merger, tw_market_share_pre_merger)
+    are difficult to self-assess without Taiwan market share data. Parties with even
+    moderate Taiwan market positions (>25%) should seek TFTC guidance before completing
+    a transaction.
+
+# ── Scope / trigger events ────────────────────────────────────────────────────
+scope:
+  concentration_definition: >
+    A 'combination' (結合) under the Fair Trade Act (FTA) includes: (i) merger of two
+    or more enterprises; (ii) acquisition of shares or subscription for newly issued
+    shares of another enterprise, resulting in holding one-third or more of the total
+    voting shares or total shares of that enterprise; (iii) acquisition of the total
+    or a major part of the assets or operations of another enterprise; (iv) assignment
+    to or lease from another enterprise of its total or a major part of operations;
+    (v) regularly operating the business together with another enterprise or being
+    entrusted by another enterprise to operate its business; or (vi) directly or
+    indirectly controlling the business operation or appointment of personnel of
+    another enterprise (FTA, Art. 10).
+  concentration_definition_source: "Fair Trade Act (公平交易法), Article 10"
+  concentration_definition_url: "https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=J0150001"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture
+  control_threshold: >
+    Acquisition of one-third or more of total voting shares; OR acquisition of the
+    total or major part of assets/operations; OR direct or indirect control over the
+    business operation or appointment of personnel. The FTA uses both percentage and
+    qualitative control tests.
+  intra_group_exempt: true
+  substantive_test: "dominance"
+  substantive_test_url: "https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=J0150001"
+  substantive_test_note: >
+    Article 13 of the Fair Trade Act prohibits combinations that would substantially
+    restrain competition in a market or harm public interest. The TFTC applies a
+    market power / dominance analysis assessing concentration levels, market share
+    effects, barriers to entry, innovation dynamics, and likely competitive effects.
+    The standard is a 'substantial restraint of competition' test, which in practice
+    functions as a dominance-based assessment, though the TFTC may also consider
+    efficiency gains and public benefit offsets.
+  note: >
+    Taiwan's notification regime is mandatory (suspensory) and covers five alternative
+    threshold tests (market share, turnover, financial enterprises). Note that five
+    statutory exemptions in FTA Art. 11(3) may apply — including financial holding
+    company mergers and intra-group restructurings.
+
+# ── Gun-jumping / standstill obligation ───────────────────────────────────────
+gun_jumping:
+  automatic_void: true
+  voidable: false
+  max_fine_pct_turnover: null
+  max_fine_fixed: 25000000
+  max_fine_currency: TWD
+  per_day_fine: null
+  criminal_sanctions: false
+  legal_basis: "Fair Trade Act, Article 11 and Article 40"
+  legal_basis_url: "https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=J0150001"
+  note: >
+    Combinations meeting the notification thresholds must be reported to the TFTC
+    and clearance obtained before implementation (FTA Art. 11). Implementing a
+    notifiable combination without TFTC clearance may result in: (i) fines of up
+    to NTD 25 million per contravention (FTA Art. 40); (ii) the combination being
+    declared void. The TFTC may order the dissolution or divestiture of improperly
+    implemented combinations. There are no criminal sanctions for gun-jumping under
+    the Fair Trade Act.
+
+# ── FDI / national security screening ────────────────────────────────────────
+fdi_screening:
+  applicable: false
+  note: >
+    Taiwan does not have a formal national security FDI screening mechanism equivalent
+    to CFIUS (US) or the UK NSI Act. Taiwan is generally open to foreign direct
+    investment under the framework administered by the Investment Commission of the
+    Ministry of Economic Affairs (MOEA). However, sector-specific approvals and
+    ownership restrictions apply in: financial services (Financial Supervisory
+    Commission — FSC — for bank acquisitions); telecommunications (National
+    Communications Commission — NCC); broadcasting and media (NCC); and certain
+    industries with strategic significance. For investments from the People's Republic
+    of China (PRC), separate and more restrictive rules apply under the Act Governing
+    Relations between the People of the Taiwan Area and the Mainland Area — PRC-origin
+    investment in Taiwan requires Investment Commission approval and is restricted in
+    many sectors. These sector reviews are cumulative with TFTC merger control.
+
+# ── Source passages (verbatim statutory text) ─────────────────────────────────
+source_passages:
+
+  - passage_id: tw_fta_art11
+    document_title: "Fair Trade Act (公平交易法), Republic of China (Taiwan)"
+    article_reference: "Article 11(1)"
+    document_url: "https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=J0150001"
+    source_type: primary_legislation
+    quoted_text: >
+      "An enterprise which intends to combine with another enterprise shall notify the
+      central competent authority in advance when: (1) as a result of the combination,
+      the enterprise will hold one-third of the market; (2) one of the combining
+      enterprises holds one-fourth of the market; (3) the sales amount of one of the
+      combining enterprises for the preceding fiscal year surpasses the threshold
+      amount publicly announced by the central competent authority."
+    supports_conditions:
+      - tw_post_combined_share
+      - tw_pre_either_party_share
+      - tw_gen_combined_worldwide
+      - tw_gen_each_party_taiwan

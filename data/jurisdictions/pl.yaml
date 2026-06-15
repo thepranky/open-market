@@ -1,0 +1,315 @@
+jurisdiction_id: pl
+jurisdiction_name: Poland
+last_verified: "2026-06-13"
+
+authority:
+  name: "Office of Competition and Consumer Protection (Urzad Ochrony Konkurencji i Konsumentow)"
+  abbreviation: UOKiK
+  url: https://uokik.gov.pl/en/
+  filing_url: https://uokik.gov.pl/en/
+
+regime:
+  mandatory: true
+  suspensory: true   # parties must await UOKiK clearance before implementing
+  voluntary: false
+
+legal_basis:
+  - citation: "Act of 16 February 2007 on Competition and Consumer Protection (ustawa o ochronie konkurencji i konsumentow), Articles 13-18a, as amended"
+    url: "https://uokik.gov.pl/en/"
+    note: >
+      Primary legislation. The EUR 1bn worldwide / EUR 50m Polish turnover thresholds
+      are set directly in Article 13(1) of the Act. These are statutory values and
+      do not require separate implementing instruments.
+  - citation: "UOKiK Guidelines on the assessment of concentrations (revised October 2024, updated April 2025)"
+    url: "https://uokik.gov.pl/en/"
+    note: >
+      Updated guidelines effective October 2024 (further updated April 2025). Introduced
+      clarifications on the local effects test and a de facto safe harbour for extraterritorial
+      JVs with no current or foreseen Polish operations or effects.
+    source_type: official_guidance
+
+filing:
+  deadline_from_signing_days: null
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Parties must notify UOKiK and obtain clearance before implementing the transaction
+    (Article 13(1)). There is no fixed deadline from signing. Filing must be made before
+    implementation. Gun-jumping (implementing before clearance) is subject to significant
+    administrative fines. Parties typically notify within days to weeks of signing to
+    avoid delays to closing.
+
+review_periods:
+  phase_1:
+    days: 1
+    day_type: null
+    day_unit: "months"
+    extendable_to_days: null
+    legal_basis: "Act on Competition and Consumer Protection, Article 96(1)"
+    note: >
+      UOKiK has 1 month from receipt of a complete notification to issue a clearance
+      decision or open Phase 2. In practice, straightforward cases are often cleared
+      within 2-3 weeks.
+  phase_2:
+    days: 4
+    day_type: null
+    day_unit: "months"
+    extendable_to_days: null
+    legal_basis: "Act on Competition and Consumer Protection, Article 96(2)"
+    note: >
+      Phase 2 (detailed proceedings) runs for up to 4 months from the Phase 1 opening
+      decision. Complex cases involving significant overlaps may approach the full 4-month
+      period. UOKiK may request information, pausing the clock.
+
+fees:
+  structure: >
+    EUR 15,000 (flat fee per notification)
+    (payable in PLN at the NBP exchange rate on the filing date)
+  source: "Act on Competition and Consumer Protection, Article 94(1); Regulation on merger control fees"
+  source_type: primary_legislation
+  source_url: "https://uokik.gov.pl/en/"
+  annual_adjustment: false
+
+threshold_tests:
+  # Poland's notification thresholds are OR'd — filing is required if EITHER test is met.
+  # Both tests use the COMBINED turnover of all participating undertakings.
+  #
+  # De minimis exemption: even if the combined turnover thresholds are met, no notification
+  # is required for JV creation or mergers where NONE of the participating undertakings
+  # had Polish turnover exceeding EUR 10m in EITHER of the two financial years preceding
+  # the notification (Act, Article 14(1)).
+  #
+  # Source: Act of 16 February 2007 on Competition and Consumer Protection, Article 13(1);
+  # confirmed via Lexology/Dudkowiak & Putyra; White & Case Poland merger control guide;
+  # UOKiK revised guidelines April 2025.
+
+  - test_id: pl_worldwide
+    description: "Worldwide turnover test — combined worldwide > EUR 1bn (Article 13(1)(1))"
+    legal_basis: "Act on Competition and Consumer Protection, Article 13(1)(1)"
+    source_url: "https://uokik.gov.pl/en/"
+    note: >
+      Filing required if the combined worldwide turnover of all participating undertakings
+      in the preceding financial year exceeded EUR 1bn. This test captures large international
+      transactions where the Polish nexus may be indirect.
+      De minimis exemption applies: no filing if none of the participants had Polish
+      turnover > EUR 10m in either of the two preceding years (Article 14(1)).
+    annual_adjustment: false
+    effective_date: null
+
+    conditions:
+      - condition_id: pl_combined_worldwide
+        metric: revenue
+        scope: worldwide
+        party: combined
+        operator: ">"
+        value: 1000000000
+        currency: EUR
+        source: "Act on Competition and Consumer Protection, Article 13(1)(1)"
+        source_type: primary_legislation
+        verified_via:
+          - "https://www.lexology.com/library/detail.aspx?g=6355096a-076b-4534-a288-798be0fd90d5"
+          - "https://www.dudkowiak.com/m-i-a-in-poland/merger-control-in-poland.html"
+        note: >
+          EUR 1bn combined worldwide turnover of all participating undertakings. Calculated
+          from the last completed financial year preceding the notification.
+
+    exceptions:
+      - exception_id: pl_de_minimis
+        description: >
+          No notification required if none of the participating undertakings (or JV parties)
+          had Polish turnover exceeding EUR 10m in either of the two financial years preceding
+          the notification. Both limbs of the condition must be absent (all parties must be
+          below EUR 10m Polish for both years).
+        source: "Act on Competition and Consumer Protection, Article 14(1)"
+        source_type: primary_legislation
+
+  - test_id: pl_domestic
+    description: "Polish turnover test — combined Polish turnover > EUR 50m (Article 13(1)(2))"
+    legal_basis: "Act on Competition and Consumer Protection, Article 13(1)(2)"
+    source_url: "https://uokik.gov.pl/en/"
+    note: >
+      Filing required if the combined Polish turnover of all participating undertakings
+      in the preceding financial year exceeded EUR 50m. This test captures Poland-
+      centric deals by parties with smaller global footprints.
+      De minimis exemption applies identically to the worldwide test above.
+    annual_adjustment: false
+    effective_date: null
+
+    conditions:
+      - condition_id: pl_combined_domestic
+        metric: revenue
+        scope: domestic
+        party: combined
+        operator: ">"
+        value: 50000000
+        currency: EUR
+        source: "Act on Competition and Consumer Protection, Article 13(1)(2)"
+        source_type: primary_legislation
+        verified_via:
+          - "https://www.lexology.com/library/detail.aspx?g=6355096a-076b-4534-a288-798be0fd90d5"
+          - "https://www.dudkowiak.com/m-i-a-in-poland/merger-control-in-poland.html"
+        note: >
+          EUR 50m combined Polish turnover of all participating undertakings. Turnover
+          is calculated on revenues from Polish customers/activities.
+
+    exceptions:
+      - exception_id: pl_de_minimis
+        description: >
+          No notification required if none of the participating undertakings had Polish
+          turnover exceeding EUR 10m in either of the two preceding financial years.
+        source: "Act on Competition and Consumer Protection, Article 14(1)"
+        source_type: primary_legislation
+
+notes:
+  - >
+    'EU one-stop-shop': if a transaction meets the EU Merger Regulation thresholds,
+    the EC has exclusive jurisdiction and Polish national merger control does not apply
+    (subject to the two-thirds rule: if either party achieves more than two-thirds of
+    its EU-wide turnover in a single Member State, national merger control in that
+    state applies instead of EU review).
+  - >
+    Extraterritorial JV exemption (April 2025 guidelines): UOKiK has clarified that
+    JVs incorporated and operating entirely outside Poland with no foreseen Polish
+    operations or effects are not notifiable under Polish merger control, even if the
+    combined worldwide threshold (EUR 1bn) is met. This follows the UOKiK revised
+    guidelines published April 2025.
+  - >
+    Polish turnover calculation: revenues from sales of goods or services to Polish
+    customers (or from activities carried out in Poland). For acquisitions of parts of
+    a business, only the turnover attributable to the acquired business is counted on
+    the seller's side.
+  - >
+    UOKiK actively monitors gun-jumping and has imposed significant fines for implementing
+    transactions before clearance. Parties should not take any integration steps before
+    UOKiK clearance.
+
+# ── Scope / trigger events ────────────────────────────────────────────────────
+scope:
+  concentration_definition: >
+    A concentration within the meaning of the Act on Competition and Consumer Protection
+    arises through (Article 13(1)): (1) a merger of two or more independent undertakings;
+    (2) the acquisition, by one or more undertakings, of direct or indirect control over
+    the whole or part of one or more other undertakings, whether by purchase of shares,
+    assets, by contract, or by any other means; (3) the creation of a joint venture by
+    two or more undertakings, where the joint venture performs on a lasting basis all
+    functions of an autonomous economic entity. Control constitutes the ability to
+    exercise a decisive influence over the management of an undertaking.
+  concentration_definition_source: "Article 13(1), Act on Competition and Consumer Protection of 16 February 2007"
+  concentration_definition_url: "https://uokik.gov.pl/en/"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture
+  control_threshold: >
+    Decisive influence over the management of an undertaking, consistent with the EU
+    approach to control analysis. Acquisition of 25% or more of shares/voting rights
+    is presumed to confer a concentration in many cases (consistent with Article 13(1)(2)
+    referencing decisive influence). The full-function JV test mirrors the EU standard.
+  intra_group_exempt: true
+  foreign_to_foreign_rule: >
+    Polish merger control applies to concentrations that affect competition in Poland
+    regardless of the nationality or place of incorporation of the parties. Foreign-to-
+    foreign deals trigger notification if the combined Polish or worldwide turnover
+    thresholds are met. If EU Community dimension thresholds are satisfied, EC has
+    exclusive jurisdiction and Polish merger control does not apply.
+  substantive_test: "siec"
+  substantive_test_url: "https://uokik.gov.pl/en/"
+  substantive_test_note: >
+    Poland adopted the SIEC standard in the 2015 amendment to the Act on Competition
+    and Consumer Protection. Article 20(2) provides that UOKiK shall prohibit a
+    concentration that would significantly impede effective competition on the market,
+    in particular through the creation or strengthening of a dominant position. The
+    SIEC formulation is consistent with the EU standard and allows UOKiK to address
+    coordinated effects and non-dominance theories of harm beyond pure dominance cases.
+  note: >
+    The de minimis exemption under Article 14(1) is significant: even where combined
+    worldwide turnover exceeds EUR 1bn or combined Polish turnover exceeds EUR 50m, no
+    notification is required if none of the participating undertakings had Polish turnover
+    exceeding EUR 10m in either of the two preceding financial years. UOKiK revised its
+    guidelines in April 2025 to add a safe harbour for purely extraterritorial JVs.
+
+# ── Gun-jumping / standstill obligation ───────────────────────────────────────
+gun_jumping:
+  automatic_void: true
+  voidable: false
+  max_fine_pct_turnover: 10.0
+  max_fine_fixed: 10000
+  max_fine_currency: "EUR"
+  per_day_fine: 10000.0
+  criminal_sanctions: false
+  legal_basis: "Articles 97, 106 Act on Competition and Consumer Protection of 16 February 2007"
+  legal_basis_url: "https://uokik.gov.pl/en/"
+  note: >
+    Article 97(1) imposes the standstill obligation: undertakings intending to
+    concentrate must notify UOKiK and must not implement the concentration before
+    UOKiK issues a clearance decision. Concentrations implemented in breach of
+    Article 97 are invalid (Article 97(2)). Fines for gun-jumping: (1) periodic
+    penalty payments of up to EUR 10,000 per day for each day of breach (Article
+    106(1)(3)) — an unusual EUR-denominated fine in a PLN-jurisdiction, payable at
+    the NBP exchange rate; (2) a substantive fine of up to 10% of annual worldwide
+    turnover for implementing a concentration without prior notification (Article
+    106(1)(1)). No criminal sanctions apply to individuals. UOKiK has been an active
+    enforcer of gun-jumping rules and routinely monitors transactions for standstill
+    breaches.
+
+# ── FDI / national security screening ────────────────────────────────────────
+fdi_screening:
+  applicable: true
+  regime_name: "Act on Control of Certain Investments (Ustawa o kontroli niektorych inwestycji)"
+  authority: "Minister responsible for state assets / Council of Ministers"
+  url: "https://www.gov.pl/web/aktywa-panstwowe/kontrola-inwestycji"
+  sectors_covered:
+    - energy
+    - oil_and_gas
+    - telecommunications
+    - nuclear
+    - chemicals
+    - information_technology
+    - strategic_enterprises
+  note: >
+    Poland's FDI screening framework is established by the Act of 24 July 2015 on
+    Control of Certain Investments (as subsequently amended). The regime protects
+    entities in strategic sectors from acquisitions that could threaten national
+    security, public order, or the continuity of essential services. Non-EU investors
+    (and in some cases EU investors) acquiring 20% or more of the voting rights or
+    the ability to exercise decisive influence over a protected entity require prior
+    approval from the Council of Ministers or the Minister responsible for state
+    assets. The list of protected entities is maintained by the relevant Minister.
+    Poland's regime is separate from its EU Merger Regulation obligations — both
+    may apply simultaneously. Poland has also implemented the EU FDI Screening
+    Regulation (2019/452) coordination mechanism.
+
+# ── Source passages (verbatim statutory text) ─────────────────────────────────
+source_passages:
+
+  - passage_id: pl_act_art13_1
+    document_title: "Act of 16 February 2007 on Competition and Consumer Protection"
+    article_reference: "Article 13(1)"
+    document_url: "https://uokik.gov.pl/en/"
+    source_type: primary_legislation
+    quoted_text: >
+      "Article 13. 1. The obligation to notify the President of the Office of the
+      intention of concentration arises where:
+      1) the combined worldwide turnover of undertakings participating in the
+      concentration in the financial year preceding the year of the notification
+      exceeds EUR 1,000,000,000; or
+      2) the turnover in the territory of the Republic of Poland of undertakings
+      participating in the concentration in the financial year preceding the year
+      of the notification exceeds EUR 50,000,000."
+    supports_conditions:
+      - pl_combined_worldwide
+      - pl_combined_domestic
+
+  - passage_id: pl_act_art14_1
+    document_title: "Act of 16 February 2007 on Competition and Consumer Protection"
+    article_reference: "Article 14(1)"
+    document_url: "https://uokik.gov.pl/en/"
+    source_type: primary_legislation
+    quoted_text: >
+      "Article 14. 1. The obligation referred to in Article 13 shall not apply to a
+      concentration where the turnover in the territory of the Republic of Poland
+      of none of the undertakings participating in the concentration exceeded
+      EUR 10,000,000 in either of the two financial years preceding the year of
+      the notification."
+    supports_conditions: []

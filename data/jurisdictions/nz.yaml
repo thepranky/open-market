@@ -1,0 +1,233 @@
+jurisdiction_id: nz
+jurisdiction_name: New Zealand
+last_verified: "2026-06-14"
+
+authority:
+  name: Commerce Commission New Zealand (Te Komihana Tūāhuatanga o Aotearoa)
+  abbreviation: ComCom
+  url: https://comcom.govt.nz/
+  filing_url: https://comcom.govt.nz/clearances-and-authorisations/
+
+regime:
+  mandatory: false   # no mandatory pre-merger notification requirement
+  suspensory: false  # no standstill; parties may complete without prior clearance
+  voluntary: true
+
+legal_basis:
+  - citation: "Commerce Act 1986 (NZ), Section 47 — Prohibition of certain mergers"
+    url: "https://www.legislation.govt.nz/act/public/1986/0005/latest/DLM88261.html"
+    note: >
+      Section 47 prohibits acquisitions that have, or are likely to have, the effect of
+      substantially lessening competition (SLC) in a market in New Zealand. There is no
+      separate mandatory pre-merger notification provision in the Commerce Act.
+  - citation: "Commerce Commission Mergers and Acquisitions Guidelines (2022)"
+    url: "https://comcom.govt.nz/regulated-industries"
+    note: >
+      Sets out the Commission's analytical framework, safe harbours, and indicative
+      market concentration thresholds. Not binding law; represents Commission practice.
+    source_type: official_guidance
+
+filing:
+  deadline_from_signing_days: null
+  deadline_from_closing_days: null
+  pre_closing_required: false
+  note: >
+    New Zealand has NO mandatory pre-merger notification requirement. Parties may
+    complete a transaction without notifying the Commission. However, the Commission
+    can investigate completed mergers and, if it finds an SLC, may seek a Court order
+    requiring divestiture or unwinding. Parties with material New Zealand market overlaps
+    should consider applying voluntarily for clearance (faster, informal) or authorisation
+    (formal, weighing public benefits) before completion to obtain legal certainty.
+
+review_periods:
+  phase_1:
+    days: 40
+    day_type: working
+    extendable_to_days: null
+    legal_basis: "Commerce Commission Mergers and Acquisitions Guidelines (2022)"
+    note: >
+      Target timeline for clearance applications (voluntary). The Commission aims to
+      issue a decision within 40 working days of receipt of a complete clearance
+      application. Complex cases may take longer. This is a target, not a statutory
+      deadline.
+  phase_2:
+    days: 120
+    day_type: working
+    extendable_to_days: null
+    legal_basis: "Commerce Act 1986, Part V (Authorisation)"
+    note: >
+      Authorisation applications (involving weighing public benefits against competition
+      detriments) typically take 6–12 months. The Commission issues a draft determination
+      and a final determination. There is no fixed statutory timetable.
+
+fees:
+  structure: >
+    Clearance application: NZD 36,296 (indicative; subject to change)
+    Authorisation application: NZD 103,690+ depending on complexity
+    (verify current fee schedule at comcom.govt.nz)
+  source: "Commerce Commission fee schedule"
+  source_type: official_guidance
+  source_url: "https://comcom.govt.nz/clearances-and-authorisations/"
+  annual_adjustment: false
+
+threshold_tests:
+  # New Zealand has NO mandatory notification thresholds.
+  # The indicative safe harbours below are from the Commerce Commission's Mergers and
+  # Acquisitions Guidelines (2022) — they represent zones where the Commission is
+  # UNLIKELY to intervene, not mandatory notification triggers.
+  #
+  # If either safe harbour is breached, voluntary clearance application should be
+  # seriously considered.
+  #
+  # Source: Commerce Commission Mergers and Acquisitions Guidelines (2022); Commerce Act
+  # 1986, Section 47.
+
+  - test_id: nz_combined_market_share
+    description: "Indicative safe harbour — combined NZ market share < 40% (Commission unlikely to intervene)"
+    legal_basis: "Commerce Act 1986, s. 47; Commerce Commission Mergers and Acquisitions Guidelines (2022)"
+    source_url: "https://comcom.govt.nz/regulated-industries"
+    note: >
+      NOT a mandatory notification trigger. The Commission is generally unlikely to
+      intervene if the merged entity's combined market share is below 40%. If the
+      combined post-merger share meets or exceeds 40%, parties should seriously consider
+      voluntary clearance. TREAT AS ADVISORY — no filing obligation arises.
+    annual_adjustment: false
+    effective_date: null
+    status: "indicative_only"
+
+    conditions:
+      - condition_id: nz_combined_share
+        metric: market_share
+        scope: domestic
+        party: combined
+        operator: ">="
+        value: 0.40
+        currency: null
+        source: "Commerce Commission Mergers and Acquisitions Guidelines (2022)"
+        source_type: official_guidance
+        note: >
+          40% combined NZ market share is the key indicative threshold above which
+          the Commission is more likely to scrutinise a transaction. Not a statutory
+          notification trigger.
+
+notes:
+  - >
+    VOLUNTARY REGIME: New Zealand, like Singapore and the UK (for some deals), has no
+    mandatory pre-merger notification. Parties may complete mergers without Commission
+    approval. However, the Commission can investigate and seek Court orders to unwind
+    completed mergers (Commerce Act 1986, s. 47). Divestiture risk is real for parties
+    with significant NZ market overlaps who do not obtain prior clearance.
+  - >
+    CLEARANCE vs AUTHORISATION: Clearance (informal) is faster (~40 working days) and
+    is granted if the merger does not have, or is not likely to have, an SLC effect.
+    Authorisation (formal) can be granted even where an SLC exists if the public benefits
+    outweigh the detriment. Most parties seek clearance.
+  - >
+    MARKET DEFINITION: The Commission uses a fairly standard SSNIP-based market definition.
+    New Zealand's small domestic markets mean that even modest combined revenues can result
+    in high market shares. Sectors frequently scrutinised include retail, media, banking,
+    and agriculture.
+  - >
+    TIMING RISK: In the absence of a mandatory regime, parties risk implementing a merger
+    and then facing a Commission investigation. The Commission has no statutory time limit
+    on investigating completed mergers (though in practice it typically acts within
+    12 months of the merger becoming public knowledge).
+
+# ── Scope / trigger events ────────────────────────────────────────────────────
+scope:
+  concentration_definition: >
+    Section 47 of the Commerce Act 1986 prohibits the acquisition of assets of a
+    business or shares in a company that has, or would be likely to have, the effect
+    of substantially lessening competition in a market. There is no formal
+    'concentration' definition in New Zealand merger control — the test is applied
+    directly to the acquisition (whether of shares, assets, or business). Any
+    acquisition capable of substantially lessening competition is captured regardless
+    of form or structure.
+  concentration_definition_source: "Commerce Act 1986 (New Zealand), Section 47"
+  concentration_definition_url: "https://www.legislation.govt.nz/act/public/1986/0005/latest/DLM88261.html"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture
+  control_threshold: >
+    No specific control threshold — the test is whether the acquisition substantially
+    lessens competition. Both full and partial acquisitions are covered. Minority
+    acquisitions that reduce competitive incentives or provide access to competitively
+    sensitive information may be caught in appropriate circumstances.
+  intra_group_exempt: true
+  substantive_test: "slc"
+  substantive_test_url: "https://www.legislation.govt.nz/act/public/1986/0005/latest/DLM88261.html"
+  substantive_test_note: >
+    Section 47 of the Commerce Act 1986 applies the substantial lessening of competition
+    (SLC) test. An acquisition contravenes the Act if it has, or would be likely to have,
+    the effect of substantially lessening competition in a market in New Zealand. The
+    Commerce Commission may grant clearance (if satisfied the acquisition will not SLC)
+    or authorisation (where an SLC would exist but public benefits outweigh competitive
+    detriments). There is no mandatory pre-notification requirement.
+  note: >
+    New Zealand is a voluntary notification regime. Parties may complete without prior
+    clearance but risk Commission investigation and court-ordered divestiture. Clearance
+    provides legal certainty in approximately 40 working days. New Zealand's small
+    domestic market means combined shares can be high even for modest-sized transactions.
+
+# ── Gun-jumping / standstill obligation ───────────────────────────────────────
+gun_jumping:
+  automatic_void: false
+  voidable: true
+  max_fine_pct_turnover: null
+  max_fine_fixed: 10000000
+  max_fine_currency: NZD
+  per_day_fine: null
+  criminal_sanctions: false
+  legal_basis: "Commerce Act 1986 (NZ), Sections 47 and 82"
+  legal_basis_url: "https://www.legislation.govt.nz/act/public/1986/0005/latest/DLM88261.html"
+  note: >
+    New Zealand has no mandatory pre-merger notification and no standstill obligation.
+    Parties may complete transactions without Commission clearance. If a completed
+    acquisition is found to have, or to be likely to have, an SLC effect, the Commission
+    may seek a High Court order requiring divestiture or other remedies (s. 82). Fines
+    for breach of s. 47 are up to NZD 10 million per contravention or, for a body
+    corporate, the greater of NZD 10 million, three times the value of commercial gain,
+    or 10% of annual turnover. There are no criminal sanctions and no gun-jumping
+    concept in the mandatory-notification sense.
+
+# ── FDI / national security screening ────────────────────────────────────────
+fdi_screening:
+  applicable: true
+  regime_name: "Overseas Investment Act 2005 (OIA)"
+  authority: "Overseas Investment Office (OIO), within Toitū Te Whenua Land Information New Zealand"
+  url: "https://www.linz.govt.nz/overseas-investment"
+  sectors_covered:
+    - sensitive_land
+    - significant_business_assets
+    - fishing_quota
+    - media
+    - national_security
+  note: >
+    The Overseas Investment Act 2005 (OIA) applies to overseas persons acquiring
+    'sensitive' New Zealand assets. Sensitive assets include: (i) certain land
+    (including farm land, residential land, and land contiguous with foreshore/seabed);
+    (ii) significant business assets (acquisitions of businesses with NZD 100m+
+    New Zealand assets or NZD 100m+ annual turnover in New Zealand); (iii) fishing
+    quota; and (iv) specified media interests. OIA consent must be obtained from the
+    Overseas Investment Office (OIO) before the acquisition is completed. National
+    interest assessments apply for acquisitions by overseas governments or strategic
+    investors. The 2021 amendments strengthened national security provisions. OIA
+    review is separate from and cumulative with Commerce Commission merger control
+    processes.
+
+# ── Source passages (verbatim statutory text) ─────────────────────────────────
+source_passages:
+
+  - passage_id: nz_commerce_s47
+    document_title: "Commerce Act 1986 (New Zealand)"
+    article_reference: "Section 47"
+    document_url: "https://www.legislation.govt.nz/act/public/1986/0005/latest/DLM88261.html"
+    source_type: primary_legislation
+    quoted_text: >
+      "No person shall acquire assets of a business or shares if that acquisition would
+      have, or would be likely to have, the effect of substantially lessening competition
+      in a market."
+    supports_conditions:
+      - nz_combined_share

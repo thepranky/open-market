@@ -1,0 +1,407 @@
+jurisdiction_id: au
+jurisdiction_name: Australia
+last_verified: "2026-06-13"
+
+authority:
+  name: Australian Competition and Consumer Commission
+  abbreviation: ACCC
+  url: https://www.accc.gov.au/business/mergers-and-acquisitions
+  filing_url: https://www.accc.gov.au/business/mergers-and-acquisitions/merger-control-regime
+
+regime:
+  mandatory: true
+  suspensory: true   # parties cannot complete without ACCC clearance (or waiver)
+  voluntary: false
+
+legal_basis:
+  - citation: "Treasury Laws Amendment (Mergers and Acquisitions Reform) Act 2024 (Cth)"
+    url: "https://www.legislation.gov.au/C2024A00153"
+    note: >
+      Passed 28 November 2024. Most substantial overhaul of Australian merger law in
+      50+ years. Mandatory regime commenced 1 January 2026. Asset acquisition and
+      control thresholds commenced 1 April 2026.
+  - citation: "Competition and Consumer (Notification of Acquisitions) Determination 2025, as amended"
+    url: "https://www.legislation.gov.au/F2025L01234"
+    note: >
+      Legislative instrument specifying threshold values. Amended by the Competition
+      and Consumer (Notification of Acquisitions) Amendment (2025 Measures No. 1)
+      Determination 2025. These instruments set the specific AUD figures.
+  - citation: "Competition and Consumer Act 2010 (Cth), Part VII Division 2A (ss. 51AC–51AZB)"
+    url: "https://www.legislation.gov.au/C2004A00110"
+    note: "The Competition and Consumer Act provisions as amended by the 2024 Reform Act."
+
+filing:
+  deadline_from_signing_days: null
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Parties must notify the ACCC and obtain clearance (or a waiver) before completing
+    a notifiable acquisition. Unlike the prior regime, there is no fixed filing deadline
+    from signing — parties may file at any time after execution. A minimum waiting period
+    of 14 calendar days applies after ACCC clearance before completion. The ACCC may
+    grant waivers of the 14-day period for urgent transactions.
+
+review_periods:
+  phase_1:
+    days: 30
+    day_type: calendar
+    extendable_to_days: null
+    legal_basis: "Competition and Consumer Act 2010, s. 51AC (as amended)"
+    note: >
+      Standard review: ACCC has 30 calendar days from acceptance of a complete notification
+      to decide whether to clear or open a detailed review (Phase 2). Clock may stop for
+      information requests. Many transactions are cleared within the 30-day Phase 1.
+  phase_2:
+    days: 90
+    day_type: calendar
+    extendable_to_days: null
+    legal_basis: "Competition and Consumer Act 2010, s. 51AH (as amended)"
+    note: >
+      Detailed review: up to 90 additional calendar days. The ACCC publishes a statement
+      of issues at the start of Phase 2 and a provisional determination before its
+      final determination. Parties may offer undertakings at any point.
+
+fees:
+  structure: >
+    Tiered by global transaction value (AUD):
+    Under AUD 1bn: AUD 30,000
+    AUD 1bn–AUD 5bn: AUD 100,000
+    Above AUD 5bn: AUD 250,000
+    (fees set by legislative instrument; verify current amounts with ACCC)
+  source: "Competition and Consumer (Notification of Acquisitions) Determination 2025"
+  source_type: primary_legislation
+  source_url: "https://www.accc.gov.au/business/mergers-and-acquisitions/thresholds-for-notifying-acquisitions"
+  annual_adjustment: false
+
+threshold_tests:
+  # Australia's new mandatory regime (from 1 January 2026) uses a tiered threshold
+  # structure based on acquirer size. All tests are OR'd.
+  #
+  # Threshold structure:
+  # A) Large Merged Firm: Combined Australian revenue >= AUD 200m
+  #    AND (target Australian revenue >= AUD 50m OR global deal value >= AUD 250m)
+  #    — modelled as two OR'd tests (au_large_merged_revenue, au_large_merged_deal_value)
+  #
+  # B) Very Large Acquirer: Acquirer Australian revenue >= AUD 500m
+  #    AND (target Australian revenue >= AUD 10m OR global deal value >= AUD 50m)
+  #    — modelled as two OR'd tests (au_very_large_revenue, au_very_large_deal_value)
+  #
+  # C) Asset Acquisitions (from 1 April 2026): separate thresholds per acquirer tier;
+  #    au_asset_large and au_asset_very_large cover these cases.
+  #
+  # Source: ACCC official thresholds page; Competition and Consumer (Notification of
+  # Acquisitions) Determination 2025. All confirmed at
+  # https://www.accc.gov.au/business/mergers-and-acquisitions/thresholds-for-notifying-acquisitions
+
+  - test_id: au_large_merged_revenue
+    description: "Large merged firm — combined AU revenue ≥ AUD 200m AND target AU revenue ≥ AUD 50m"
+    legal_basis: "Competition and Consumer (Notification of Acquisitions) Determination 2025"
+    source_url: "https://www.accc.gov.au/business/mergers-and-acquisitions/thresholds-for-notifying-acquisitions"
+    note: >
+      Primary threshold for acquisitions of shares or businesses. 'Combined Australian
+      revenue' means the combined revenue of the acquirer group and the target group
+      from Australian operations. 'Australian revenue' is calculated from the most
+      recently completed financial year.
+    annual_adjustment: false
+    effective_date: "2026-01-01"
+
+    conditions:
+      - condition_id: au_lm_combined_au_revenue
+        metric: revenue
+        scope: domestic
+        party: combined
+        operator: ">="
+        value: 200000000
+        currency: AUD
+        source: "Competition and Consumer (Notification of Acquisitions) Determination 2025"
+        source_type: primary_legislation
+        verified_via:
+          - "https://www.accc.gov.au/business/mergers-and-acquisitions/thresholds-for-notifying-acquisitions"
+        note: "AUD 200m combined Australian revenue."
+
+      - condition_id: au_lm_target_au_revenue
+        metric: revenue
+        scope: domestic
+        party: target_group
+        operator: ">="
+        value: 50000000
+        currency: AUD
+        source: "Competition and Consumer (Notification of Acquisitions) Determination 2025"
+        source_type: primary_legislation
+        verified_via:
+          - "https://www.accc.gov.au/business/mergers-and-acquisitions/thresholds-for-notifying-acquisitions"
+        note: "AUD 50m target Australian revenue."
+
+  - test_id: au_large_merged_deal_value
+    description: "Large merged firm — combined AU revenue ≥ AUD 200m AND global deal value ≥ AUD 250m"
+    legal_basis: "Competition and Consumer (Notification of Acquisitions) Determination 2025"
+    source_url: "https://www.accc.gov.au/business/mergers-and-acquisitions/thresholds-for-notifying-acquisitions"
+    note: >
+      Alternative limb of the large merged firm threshold, capturing high-value acquisitions
+      where the target may have low current Australian revenues. Fires together with the
+      combined revenue condition.
+    annual_adjustment: false
+    effective_date: "2026-01-01"
+
+    conditions:
+      - condition_id: au_lm_deal_combined_au_revenue
+        metric: revenue
+        scope: domestic
+        party: combined
+        operator: ">="
+        value: 200000000
+        currency: AUD
+        source: "Competition and Consumer (Notification of Acquisitions) Determination 2025"
+        source_type: primary_legislation
+        verified_via:
+          - "https://www.accc.gov.au/business/mergers-and-acquisitions/thresholds-for-notifying-acquisitions"
+        note: "AUD 200m combined Australian revenue (same as au_lm_combined_au_revenue)."
+
+      - condition_id: au_lm_deal_value
+        metric: deal_value
+        scope: worldwide
+        party: combined
+        operator: ">="
+        value: 250000000
+        currency: AUD
+        source: "Competition and Consumer (Notification of Acquisitions) Determination 2025"
+        source_type: primary_legislation
+        verified_via:
+          - "https://www.accc.gov.au/business/mergers-and-acquisitions/thresholds-for-notifying-acquisitions"
+        note: "AUD 250m global transaction value."
+
+  - test_id: au_very_large_acquirer_revenue
+    description: "Very large acquirer — acquirer AU revenue ≥ AUD 500m AND target AU revenue ≥ AUD 10m"
+    legal_basis: "Competition and Consumer (Notification of Acquisitions) Determination 2025"
+    source_url: "https://www.accc.gov.au/business/mergers-and-acquisitions/thresholds-for-notifying-acquisitions"
+    note: >
+      Captures acquisitions by large domestic groups of targets with small but meaningful
+      Australian operations. The AUD 500m acquirer threshold identifies 'very large' acquirers
+      subject to a lower target size threshold (AUD 10m vs AUD 50m).
+    annual_adjustment: false
+    effective_date: "2026-01-01"
+
+    conditions:
+      - condition_id: au_vla_acquirer_revenue
+        metric: revenue
+        scope: domestic
+        party: acquirer_group
+        operator: ">="
+        value: 500000000
+        currency: AUD
+        source: "Competition and Consumer (Notification of Acquisitions) Determination 2025"
+        source_type: primary_legislation
+        verified_via:
+          - "https://www.accc.gov.au/business/mergers-and-acquisitions/thresholds-for-notifying-acquisitions"
+        note: "AUD 500m acquirer group Australian revenue."
+
+      - condition_id: au_vla_target_revenue
+        metric: revenue
+        scope: domestic
+        party: target_group
+        operator: ">="
+        value: 10000000
+        currency: AUD
+        source: "Competition and Consumer (Notification of Acquisitions) Determination 2025"
+        source_type: primary_legislation
+        verified_via:
+          - "https://www.accc.gov.au/business/mergers-and-acquisitions/thresholds-for-notifying-acquisitions"
+        note: "AUD 10m target Australian revenue."
+
+  - test_id: au_very_large_acquirer_deal_value
+    description: "Very large acquirer — acquirer AU revenue ≥ AUD 500m AND global deal value ≥ AUD 50m"
+    legal_basis: "Competition and Consumer (Notification of Acquisitions) Determination 2025"
+    source_url: "https://www.accc.gov.au/business/mergers-and-acquisitions/thresholds-for-notifying-acquisitions"
+    note: >
+      Deal value alternative for very large acquirers. Also covers asset acquisitions
+      by very large acquirers (same threshold applies from 1 April 2026 for assets).
+    annual_adjustment: false
+    effective_date: "2026-01-01"
+
+    conditions:
+      - condition_id: au_vla_deal_acquirer_revenue
+        metric: revenue
+        scope: domestic
+        party: acquirer_group
+        operator: ">="
+        value: 500000000
+        currency: AUD
+        source: "Competition and Consumer (Notification of Acquisitions) Determination 2025"
+        source_type: primary_legislation
+        verified_via:
+          - "https://www.accc.gov.au/business/mergers-and-acquisitions/thresholds-for-notifying-acquisitions"
+        note: "AUD 500m acquirer group Australian revenue."
+
+      - condition_id: au_vla_deal_value
+        metric: deal_value
+        scope: worldwide
+        party: combined
+        operator: ">="
+        value: 50000000
+        currency: AUD
+        source: "Competition and Consumer (Notification of Acquisitions) Determination 2025"
+        source_type: primary_legislation
+        verified_via:
+          - "https://www.accc.gov.au/business/mergers-and-acquisitions/thresholds-for-notifying-acquisitions"
+        note: "AUD 50m global transaction value."
+
+notes:
+  - >
+    Mandatory regime started 1 January 2026. Prior to this, Australia operated a voluntary
+    informal clearance system under s. 50 CCA. Parties may still seek informal guidance
+    ('pre-lodgement meetings') before filing.
+  - >
+    'Australian revenue' means revenue derived from Australian customers or from activities
+    carried on in Australia during the most recent financial year. Foreign entities selling
+    into Australia count their Australian-sourced revenues.
+  - >
+    Creeping/serial acquisitions: the ACCC can aggregate acquisitions of the same target
+    over a rolling 3-year window. If cumulative Australian revenue from a series of smaller
+    acquisitions would meet the target revenue threshold (AUD 50m for large merged firm,
+    AUD 10m for very large acquirer), notification may be required even if each individual
+    deal is sub-threshold.
+  - >
+    Waiver mechanism: the ACCC may grant waivers for transactions that clearly do not raise
+    competition concerns, typically within 5 business days of a waiver request. Waivers
+    eliminate the need for formal notification.
+  - >
+    Asset acquisition thresholds: from 1 April 2026, acquisitions of assets (not comprising
+    all/substantially all of a business) require notification if the acquirer group has
+    AUD 200m+ Australian revenue AND global deal value ≥ AUD 200m (large acquirer), or
+    AUD 500m+ Australian revenue AND global deal value ≥ AUD 50m (very large acquirer).
+  - >
+    Control and asset thresholds were delayed from 1 January to 1 April 2026 by government
+    announcement on 1 December 2025.
+
+# ── Scope / trigger events ────────────────────────────────────────────────────
+scope:
+  concentration_definition: >
+    Competition and Consumer Act 2010 (CCA) s. 50(1) prohibits acquisitions of shares
+    in the capital of a body corporate, or of assets of a person, where the acquisition
+    would have the effect, or be likely to have the effect, of substantially lessening
+    competition in any market. Under the 2024 reform (Treasury Laws Amendment (Mergers
+    and Acquisitions Reform) Act 2024), new mandatory notification provisions were
+    inserted as Division 2A of Part VII (ss. 51AC–51AZB). The concept of "acquisition"
+    covers acquisitions of shares in bodies corporate and acquisitions of assets of
+    persons — not limited to majority acquisitions; any acquisition that causes SLC is
+    prohibited.
+  concentration_definition_source: >
+    Competition and Consumer Act 2010 (Cth), s. 50(1); Treasury Laws Amendment
+    (Mergers and Acquisitions Reform) Act 2024 (Cth), Division 2A
+  trigger_events:
+    - share_acquisition
+    - asset_acquisition
+    - merger
+  control_threshold: >
+    No specific control percentage threshold in CCA s. 50 — any acquisition of shares
+    or assets that substantially lessens competition is prohibited, regardless of the
+    resulting ownership level. For notification threshold purposes, the mandatory regime
+    applies based on combined Australian revenue and target revenue (or deal value),
+    not on a control percentage. Intra-group acquisitions where competition is not
+    affected are exempt.
+  intra_group_exempt: true
+  foreign_to_foreign_rule: >
+    CCA s. 50 applies to acquisitions of bodies corporate incorporated outside Australia
+    if the body carries on business in Australia, and to acquisitions of assets located
+    outside Australia if the assets are used in carrying on business in Australia
+    (CCA s. 50(2)). The mandatory notification thresholds are based on Australian revenue
+    of the merged group, so foreign-to-foreign transactions with Australian operations
+    above the revenue thresholds will require notification.
+  substantive_test: "slc"
+  substantive_test_url: "https://www.legislation.gov.au/C2024A00153"
+  substantive_test_note: >
+    CCA s. 50(1): an acquisition is prohibited if it "would have the effect, or be
+    likely to have the effect, of substantially lessening competition in any market."
+    The ACCC assesses competitive effects including unilateral effects (market shares,
+    concentration, closeness of competition), coordinated effects, entry and expansion,
+    efficiencies, and countervailing power. The "substantially lessening competition"
+    standard has been applied consistently since 1992.
+  note: >
+    Australia's new mandatory regime commenced 1 January 2026 (Treasury Laws Amendment
+    (Mergers and Acquisitions Reform) Act 2024). Prior to this, Australia operated a
+    voluntary informal clearance system under CCA s. 50. The new regime introduces
+    mandatory pre-notification with a standstill for acquisitions above thresholds,
+    tiered filing fees, a 30-day Phase 1 / 90-day Phase 2 review structure, and a
+    waiver mechanism for clearly non-problematic deals.
+
+# ── Gun-jumping / standstill obligation ───────────────────────────────────────
+gun_jumping:
+  automatic_void: false
+  voidable: true
+  max_fine_pct_turnover: null
+  max_fine_fixed: 50000000
+  max_fine_currency: "AUD"
+  per_day_fine: null
+  criminal_sanctions: false
+  legal_basis: "Competition and Consumer Act 2010 (Cth), ss. 51AC, 51AZA (as inserted by Treasury Laws Amendment (Mergers and Acquisitions Reform) Act 2024)"
+  legal_basis_url: "https://www.legislation.gov.au/C2024A00153"
+  note: >
+    Under the mandatory regime effective 1 January 2026, parties to a notifiable
+    acquisition must obtain ACCC clearance (or a waiver) before completion. Completing
+    a notifiable acquisition without clearance is prohibited and attracts civil penalties
+    of up to AUD 50 million per contravention for body corporates (or 3 times the
+    benefit obtained, or 30% of adjusted turnover if greater). The ACCC may seek
+    divestiture orders from the Federal Court for completed acquisitions that
+    substantially lessen competition. There are no criminal sanctions for gun-jumping.
+    Under the old pre-2026 voluntary regime, there was no standstill obligation and
+    no gun-jumping prohibition.
+
+# ── FDI / national security screening ────────────────────────────────────────
+fdi_screening:
+  applicable: true
+  regime_name: "Foreign Acquisitions and Takeovers Act 1975 (FATA) — Foreign Investment Review Board (FIRB)"
+  authority: "Foreign Investment Review Board (FIRB), administered by the Australian Treasury"
+  url: "https://firb.gov.au/"
+  sectors_covered:
+    - agriculture
+    - agribusiness
+    - media
+    - telecommunications
+    - defense
+    - critical_infrastructure
+    - residential_real_estate
+    - critical_technology
+    - data
+  note: >
+    Australia's foreign investment screening is administered under the Foreign
+    Acquisitions and Takeovers Act 1975 (FATA) by FIRB (within the Treasury). Foreign
+    persons must obtain FIRB approval before acquiring substantial interests (generally
+    20% or more) in Australian businesses above monetary thresholds. Thresholds vary
+    by acquirer nationality (lower thresholds apply to acquirers from non-FTA countries
+    and government-related entities, including SOEs), sector (zero-dollar thresholds for
+    national security businesses and sensitive land), and deal type. Critical
+    infrastructure (ports, electricity grids, water, telecoms) and critical technology
+    assets face heightened scrutiny. FIRB operates entirely separately from ACCC merger
+    review and both approvals may be required for a single transaction.
+
+# ── Source passages (verbatim statutory text) ─────────────────────────────────
+source_passages:
+
+  - passage_id: au_cca_s50_1
+    document_title: "Competition and Consumer Act 2010 (Cth)"
+    article_reference: "Section 50(1)"
+    document_url: "https://www.legislation.gov.au/C2004A00110"
+    source_type: primary_legislation
+    quoted_text: >
+      "A person must not directly or indirectly: (a) acquire shares in the capital of a
+      body corporate; or (b) acquire any assets of a person; if the acquisition would
+      have the effect, or be likely to have the effect, of substantially lessening
+      competition in any market in Australia."
+    supports_conditions:
+      - au_lm_combined_au_revenue
+      - au_lm_target_au_revenue
+      - au_vla_acquirer_revenue
+      - au_vla_target_revenue
+
+  - passage_id: au_cca_s50_2
+    document_title: "Competition and Consumer Act 2010 (Cth)"
+    article_reference: "Section 50(2)"
+    document_url: "https://www.legislation.gov.au/C2004A00110"
+    source_type: primary_legislation
+    quoted_text: >
+      "Without limiting subsection (1), the acquisition of shares in, or assets of,
+      a body corporate that is incorporated outside Australia, or the acquisition of
+      assets that are outside Australia, does not contravene subsection (1) unless
+      the body or the person whose assets are acquired carries on business in
+      Australia, or the assets are used in carrying on business in Australia."
+    supports_conditions: []

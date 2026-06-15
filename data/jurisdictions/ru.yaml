@@ -1,0 +1,321 @@
+jurisdiction_id: ru
+jurisdiction_name: Russia
+last_verified: "2026-06-14"
+
+authority:
+  name: Federal Antimonopoly Service (Федеральная антимонопольная служба)
+  abbreviation: FAS
+  url: https://fas.gov.ru/
+  filing_url: https://fas.gov.ru/merger-control/
+  note: >
+    WARNING: Russia is subject to extensive international sanctions. Cross-border
+    transactions involving Russia may be subject to export controls, asset freeze
+    regulations, and investment restrictions in the EU, US, UK, and other jurisdictions.
+    Obtain specialist sanctions advice before proceeding with any transaction that
+    triggers Russian merger notification.
+
+regime:
+  mandatory: true
+  suspensory: true   # parties must await FAS approval before implementing
+  voluntary: false
+
+legal_basis:
+  - citation: "Federal Law No. 135-FZ of 26 July 2006 'On Protection of Competition' (Закон о защите конкуренции), Articles 27–29"
+    url: "https://fas.gov.ru/merger-control/"
+    note: >
+      Articles 27–29 set out three categories of pre-approval transactions: (1) mergers
+      and consolidations; (2) acquisitions of shares, assets, or control; (3) creation
+      of new commercial organisations by established commercial organisations. Thresholds
+      apply to all three categories. Amended multiple times; most recent significant
+      amendments in 2022.
+
+filing:
+  deadline_from_signing_days: null
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Pre-clearance from the FAS is required before implementation of the concentration.
+    There is no fixed deadline from signing. The FAS must issue a decision within
+    30 calendar days of receipt of a complete notification (extendable to 60 days
+    for complex cases, and further extendable if the FAS issues an information
+    request). Gun-jumping is subject to administrative fines and the transaction
+    may be declared invalid.
+
+review_periods:
+  phase_1:
+    days: 30
+    day_type: calendar
+    extendable_to_days: 60
+    legal_basis: "Federal Law No. 135-FZ, Article 33"
+    note: >
+      FAS has 30 calendar days from receipt of a complete filing to issue a decision.
+      May be extended to 60 days for complex cases. If additional information is
+      requested, the clock stops until information is provided. If no decision is
+      issued within the review period, the concentration is deemed approved.
+  phase_2:
+    days: 60
+    day_type: calendar
+    extendable_to_days: null
+    legal_basis: "Federal Law No. 135-FZ, Article 33(4)"
+    note: "Extension period only; the FAS does not have a separate formal Phase 2."
+
+fees:
+  structure: none
+  note: "Russia does not charge merger notification fees."
+
+threshold_tests:
+  # Russia uses two cumulative conditions for pre-approval (Article 28 — share/asset
+  # acquisitions; Article 27 — mergers/consolidations):
+  #
+  # Test 1 (Assets — global): Combined book value of assets of the acquirer group AND
+  # target group (on last balance sheet) EXCEEDS RUB 7bn. OR combined revenues of
+  # acquirer group + target group EXCEED RUB 10bn.
+  # PLUS: Book value of assets of the entity being acquired EXCEEDS RUB 400m.
+  #
+  # Test 2 (Russia nexus): The entity being acquired (or one of the merger parties)
+  # must have assets or revenues in Russia exceeding the applicable thresholds.
+  #
+  # NOTE: Following 2022 sanctions and legislative amendments, Russia tightened
+  # enforcement and modified the foreign-to-foreign exemption. FAS jurisdiction
+  # assertions over purely foreign transactions have increased. The thresholds
+  # below reflect the statutory text; verify current enforcement stance with
+  # Russian counsel before relying on this analysis.
+  #
+  # All values are PRACTITIONER-sourced from published law firm analyses of
+  # Federal Law No. 135-FZ. Verify against current FAS guidance.
+
+  - test_id: ru_assets_based
+    description: "Combined worldwide group assets >RUB 7bn AND acquired entity assets >RUB 400m"
+    legal_basis: "Federal Law No. 135-FZ, Article 28(1)"
+    source_url: "https://fas.gov.ru/merger-control/"
+    note: >
+      Pre-approval required if the combined book value of assets of all group members
+      of the acquirer AND the target (on the last balance sheet) exceeds RUB 7 billion
+      AND the book value of assets of the entity being acquired exceeds RUB 400 million.
+      'Group members' includes all entities under common control (affiliates).
+      VERIFY: thresholds confirmed via practitioner sources. FAS has not published
+      updated official English-language guidance post-2022.
+    annual_adjustment: false
+    effective_date: null
+
+    conditions:
+      - condition_id: ru_combined_worldwide_assets
+        metric: assets
+        scope: worldwide
+        party: combined
+        operator: ">"
+        value: 7000000000
+        currency: RUB
+        source: "Federal Law No. 135-FZ, Article 28(1)(1)"
+        source_type: primary_legislation
+        verified_via:
+          - "https://fas.gov.ru/merger-control/"
+        note: >
+          RUB 7bn (~EUR 70m) combined worldwide book value of assets of acquirer group
+          AND target group on last balance sheet. Includes all affiliated entities.
+
+      - condition_id: ru_target_assets
+        metric: assets
+        scope: worldwide
+        party: target_group
+        operator: ">"
+        value: 400000000
+        currency: RUB
+        source: "Federal Law No. 135-FZ, Article 28(1)(2)"
+        source_type: primary_legislation
+        verified_via:
+          - "https://fas.gov.ru/merger-control/"
+        note: >
+          RUB 400m (~EUR 4m) book value of assets of the entity being acquired (target).
+          This is the minimum target size for the assets-based test to fire.
+
+  - test_id: ru_revenue_based
+    description: "Combined worldwide group revenues >RUB 10bn AND acquired entity assets >RUB 400m"
+    legal_basis: "Federal Law No. 135-FZ, Article 28(1)"
+    source_url: "https://fas.gov.ru/merger-control/"
+    note: >
+      Alternative to the assets test: pre-approval required if combined revenues of
+      all group members of the acquirer AND target exceed RUB 10bn (instead of assets
+      exceeding RUB 7bn), AND the target entity's assets still exceed RUB 400m.
+      Either the assets test or the revenue test can trigger the obligation.
+    annual_adjustment: false
+    effective_date: null
+
+    conditions:
+      - condition_id: ru_combined_worldwide_revenue
+        metric: revenue
+        scope: worldwide
+        party: combined
+        operator: ">"
+        value: 10000000000
+        currency: RUB
+        source: "Federal Law No. 135-FZ, Article 28(1)(1)"
+        source_type: primary_legislation
+        verified_via:
+          - "https://fas.gov.ru/merger-control/"
+        note: >
+          RUB 10bn (~EUR 100m) combined worldwide revenues of acquirer group + target group.
+          Revenue measured from the most recently completed financial year.
+
+      - condition_id: ru_rev_target_assets
+        metric: assets
+        scope: worldwide
+        party: target_group
+        operator: ">"
+        value: 400000000
+        currency: RUB
+        source: "Federal Law No. 135-FZ, Article 28(1)(2)"
+        source_type: primary_legislation
+        verified_via:
+          - "https://fas.gov.ru/merger-control/"
+        note: "RUB 400m target entity assets (same threshold as in assets-based test)."
+
+notes:
+  - >
+    SANCTIONS WARNING: Russia is subject to comprehensive international sanctions
+    (EU, US, UK, Canada, Australia, Japan, others). Cross-border transactions
+    involving Russian entities may be prohibited or restricted independent of merger
+    control thresholds. Always obtain specialist sanctions counsel before proceeding.
+  - >
+    POST-2022 ENFORCEMENT: Following the 2022 invasion of Ukraine, Russia amended its
+    competition law to restrict foreign entities from exiting Russian investments without
+    FAS (and other authority) approval. Disposals of Russian assets or stakes may also
+    require FAS review regardless of whether the standard acquisition thresholds are met.
+  - >
+    FOREIGN-TO-FOREIGN TRANSACTIONS: The FAS has jurisdiction over foreign-to-foreign
+    deals if the acquired entity has Russian assets or revenues exceeding the thresholds.
+    The 'Russian nexus' test is broadly interpreted.
+  - >
+    SOURCE RELIABILITY: FAS official English-language guidance is limited. The threshold
+    values in this file are confirmed via analysis of Federal Law No. 135-FZ Articles 27–29
+    and practitioner sources. Given Russia's sanctions status, English-language updates
+    are infrequent. Verify with Russian legal counsel before advising on any transaction.
+  - >
+    These thresholds are flagged as `primary_legislation` because they derive directly
+    from the statutory text of FZ-135, but the specific values should be verified via
+    current Russian legal sources given the difficulty of accessing authoritative
+    post-sanctions English guidance.
+
+# ── Scope / trigger events ────────────────────────────────────────────────────
+scope:
+  concentration_definition: >
+    Transactions requiring FAS pre-approval include: (i) merger (sliyanie) of commercial
+    organisations; (ii) accession (prisoedinenie) of one commercial organisation to
+    another; (iii) acquisition of shares, ownership interests, or assets of a commercial
+    organisation that crosses the applicable thresholds; and (iv) acquisition of rights
+    enabling one person to determine the terms of commercial activity or decisions of
+    another commercial organisation (Federal Law No. 135-FZ, Arts. 27–29). Control
+    (Article 4(17) 135-FZ) means the ability to determine the decisions of a legal entity
+    directly or through other legal entities.
+  concentration_definition_source: "Federal Law No. 135-FZ 'On Protection of Competition' (2006), Articles 27–29"
+  concentration_definition_url: "https://fas.gov.ru/merger-control/"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture
+  control_threshold: >
+    Ability to determine the decisions of a legal entity, directly or through other
+    legal entities (Art. 4(17) 135-FZ). The threshold is operative where crossing
+    25%, 50%, or 75% of shares/voting rights in Russian joint stock companies. For
+    limited liability companies, acquisition of voting rights that enable determination
+    of decisions is the test. Both direct and indirect control are captured.
+  intra_group_exempt: true
+  foreign_to_foreign_rule: >
+    The FAS has asserted jurisdiction over foreign-to-foreign transactions where the
+    entity being acquired (or the relevant business) has assets or revenues in Russia
+    exceeding the applicable thresholds. Following 2022 legislative amendments, FAS
+    oversight of foreign parties' disposal of Russian investments has also been expanded.
+  substantive_test: "dominance"
+  substantive_test_url: "https://fas.gov.ru/merger-control/"
+  substantive_test_note: >
+    Article 33(1) of 135-FZ requires the FAS to assess whether the transaction would
+    result in the restriction of competition, including through the creation or
+    strengthening of the dominant position of an economic entity. A dominant position
+    exists where an entity holds 50%+ market share (or 35%+ in specific circumstances).
+    The FAS may impose conditions to maintain competition, or prohibit a transaction
+    if it would restrict competition and no remedies are possible.
+  note: >
+    SANCTIONS WARNING: Russia is under comprehensive international sanctions. All
+    transactions involving Russian entities must be assessed for sanctions compliance
+    before any merger control analysis. Following the 2022 invasion of Ukraine,
+    Russia also enacted legislation restricting foreign entities from exiting Russian
+    investments without additional government approvals separate from merger control.
+
+# ── Gun-jumping / standstill obligation ───────────────────────────────────────
+gun_jumping:
+  automatic_void: true
+  voidable: false
+  max_fine_pct_turnover: null
+  max_fine_fixed: 500000
+  max_fine_currency: RUB
+  per_day_fine: null
+  criminal_sanctions: false
+  legal_basis: "Federal Law No. 135-FZ, Article 34"
+  legal_basis_url: "https://fas.gov.ru/merger-control/"
+  note: >
+    Transactions requiring FAS pre-approval that are implemented without FAS consent
+    are void (nichtozhnye) under Article 34 of 135-FZ. Administrative fines for
+    implementing without FAS approval are up to RUB 500,000 per infraction (relatively
+    low by international standards — the primary sanction is transaction voidance rather
+    than financial penalties). There are no criminal sanctions for gun-jumping under
+    competition law. Note: given the very low fine ceiling, regulatory void is the
+    more significant consequence. The FAS may also impose remedies or require
+    divestiture of improperly acquired assets.
+
+# ── FDI / national security screening ────────────────────────────────────────
+fdi_screening:
+  applicable: true
+  regime_name: "Federal Law No. 57-FZ on Foreign Investments in Strategic Enterprises (2008)"
+  authority: "Government Commission for Control of Foreign Investments (chaired by Prime Minister)"
+  url: "https://fas.gov.ru/"
+  sectors_covered:
+    - defense
+    - strategic_natural_resources
+    - telecommunications_infrastructure
+    - nuclear_energy
+    - broadcasting_media
+    - aviation
+    - maritime_transport
+    - financial_services_strategic
+    - cryptography
+  note: >
+    Federal Law No. 57-FZ (2008) requires prior approval from the Government Commission
+    for Control of Foreign Investments for non-Russian investors acquiring control over
+    entities in one of approximately 45 'strategic sectors.' Acquiring 50%+ of a
+    strategic entity requires approval; for 'subsoil entities' (natural resources), even
+    25%+ may trigger approval. Sectors include: defence, subsoil resources, nuclear
+    energy, natural monopolies, communications infrastructure, media, aviation, maritime,
+    banking (with CDFC/CBR co-review), and cryptography. This is separate from FAS
+    merger control and applies cumulatively. NOTE: Given comprehensive international
+    sanctions on Russia, these provisions are largely academic for Western investors —
+    sanctions counsel is essential before any transaction involving Russian entities.
+
+# ── Source passages (verbatim statutory text) ─────────────────────────────────
+source_passages:
+
+  - passage_id: ru_fz135_art28
+    document_title: "Federal Law No. 135-FZ 'On Protection of Competition' (26 July 2006), as amended"
+    article_reference: "Article 28(1)"
+    document_url: "https://fas.gov.ru/merger-control/"
+    source_type: practitioner
+    quoted_text: >
+      "Prior consent of the antimonopoly authority shall be required for the following
+      transactions with shares (stakes), rights and/or assets: acquisition by a person
+      (group of persons) of voting shares of a joint-stock company if, as a result of
+      such acquisition, such person (group of persons) shall obtain the right to dispose
+      of more than twenty-five per cent, fifty per cent, or seventy-five per cent of
+      the voting shares of a joint-stock company, provided that before this transaction
+      such person (group of persons) did not dispose of the voting shares of the said
+      joint-stock company or disposed of less than twenty-five per cent of the voting
+      shares of the joint-stock company — if the total value of assets of such persons
+      (groups of persons) according to their latest balance sheets exceeds seven billion
+      rubles, or if their aggregate revenue from sale of goods for the calendar year
+      preceding the year of the transaction exceeds ten billion rubles, and if the total
+      value of the assets of the joint-stock company and its group of persons according
+      to the latest balance sheet exceeds four hundred million rubles."
+    supports_conditions:
+      - ru_combined_worldwide_assets
+      - ru_target_assets
+      - ru_combined_worldwide_revenue
+      - ru_rev_target_assets

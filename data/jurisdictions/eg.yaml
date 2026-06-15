@@ -1,0 +1,282 @@
+jurisdiction_id: eg
+jurisdiction_name: Egypt
+last_verified: "2026-06-14"
+
+authority:
+  name: Egyptian Competition Authority (جهاز حماية المنافسة ومنع الممارسات الاحتكارية)
+  abbreviation: ECA
+  url: https://eca.gov.eg/en/
+  filing_url: https://eca.gov.eg/en/MergerControl
+
+regime:
+  mandatory: true
+  suspensory: true   # parties must await ECA clearance before implementing (post-2022 amendment)
+  voluntary: false
+
+legal_basis:
+  - citation: "Law No. 3 of 2005 on the Protection of Competition and Prevention of Monopolistic Practices (قانون حماية المنافسة ومنع الممارسات الاحتكارية), as amended by Law No. 175 of 2022"
+    url: "https://eca.gov.eg/en/Legislation"
+    note: >
+      The original Law No. 3 of 2005 did not include mandatory pre-merger notification;
+      it only required post-closing notification within 30 days. Law No. 175 of 2022
+      (amending Competition Law No. 3/2005) introduced mandatory PRE-MERGER notification
+      for transactions meeting prescribed thresholds. The ECA issued implementing
+      regulations specifying the threshold values.
+  - citation: "ECA Implementing Regulation on Pre-Merger Notification (2022/2023), issued pursuant to Law No. 175 of 2022"
+    url: "https://eca.gov.eg/en/MergerControl"
+    note: >
+      Implementing regulations setting the specific EGP threshold amounts. As of last
+      verified date these are: combined worldwide revenues > EGP 900m AND Egypt revenues
+      > EGP 100m (or equivalent assets). Confirm via ECA official site.
+    source_type: official_guidance
+
+filing:
+  deadline_from_signing_days: null
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Since the 2022 amendment, parties to a notifiable concentration must submit a
+    pre-merger notification to the ECA and obtain clearance before completing the
+    transaction. There is no fixed deadline from signing. The ECA has 60 calendar days
+    from receipt of a complete notification to issue a decision.
+
+review_periods:
+  phase_1:
+    days: 60
+    day_type: calendar
+    extendable_to_days: 30
+    legal_basis: "Law No. 3 of 2005 as amended by Law No. 175 of 2022, Article 19"
+    note: >
+      The ECA has 60 calendar days from receipt of a complete notification to issue
+      a decision. This may be extended by 30 calendar days in complex cases. If no
+      decision is issued within the review period, the concentration may be deemed
+      approved (verify with ECA — this deemed approval mechanism was subject to
+      clarification in implementing regulations).
+  phase_2:
+    days: 30
+    day_type: calendar
+    extendable_to_days: null
+    legal_basis: "Law No. 3 of 2005 as amended, Article 19"
+    note: "Extension period only; no separate formal Phase 2 in the EU sense."
+
+fees:
+  structure: >
+    EGP 50,000 per notification filing
+    (verify current fee with ECA — may have been updated post-2022)
+  source: "ECA implementing regulations (2022/2023)"
+  source_type: official_guidance
+  source_url: "https://eca.gov.eg/en/MergerControl"
+  annual_adjustment: false
+
+threshold_tests:
+  # Egypt's 2022 amendment introduced mandatory pre-merger notification.
+  # The threshold is two-limbed (AND logic):
+  # (1) Combined worldwide revenues of all parties > EGP 900m
+  # (2) Combined Egypt revenues of all parties > EGP 100m
+  #
+  # Alternatively, the test applies based on combined worldwide assets > EGP 900m
+  # and Egypt assets > EGP 100m.
+  #
+  # SOURCE NOTE: The specific EGP threshold amounts are based on ECA implementing
+  # regulations issued pursuant to Law 175/2022. These values are confirmed by
+  # multiple practitioner sources but the ECA has not published official English
+  # guidance. Values should be verified with the ECA or Egyptian competition counsel
+  # before advising.
+  # Status: practitioner-confirmed; verify with ECA before relying.
+
+  - test_id: eg_revenue_based
+    description: "Combined worldwide revenues >EGP 900m AND combined Egypt revenues >EGP 100m (Law 175/2022)"
+    legal_basis: "Law No. 3 of 2005 (as amended by Law No. 175 of 2022), Article 19; ECA implementing regulations"
+    source_url: "https://eca.gov.eg/en/MergerControl"
+    note: >
+      Both conditions must be met (AND logic). The worldwide limb ensures that purely
+      foreign deals with minimal Egypt nexus are not captured; the Egypt limb provides
+      the local nexus requirement. The specific EGP values below are from the ECA's
+      2022/2023 implementing regulations, confirmed via practitioner sources.
+      VERIFY WITH ECA: the ECA may revise these thresholds by regulation. Always
+      confirm current threshold values at https://eca.gov.eg/en/MergerControl.
+    annual_adjustment: false
+    effective_date: "2022-01-01"
+
+    conditions:
+      - condition_id: eg_combined_worldwide
+        metric: revenue
+        scope: worldwide
+        party: combined
+        operator: ">"
+        value: 900000000
+        currency: EGP
+        source: "ECA implementing regulations pursuant to Law No. 175 of 2022"
+        source_type: practitioner
+        verified_via:
+          - "https://eca.gov.eg/en/MergerControl"
+        note: >
+          EGP 900m (~USD 18m at 2025 rates) combined worldwide revenues. Note: EGP has
+          depreciated significantly since 2022 — verify the USD-equivalent before
+          assessing practical impact. Combined revenues of acquirer + target groups.
+
+      - condition_id: eg_combined_domestic
+        metric: revenue
+        scope: domestic
+        party: combined
+        operator: ">"
+        value: 100000000
+        currency: EGP
+        source: "ECA implementing regulations pursuant to Law No. 175 of 2022"
+        source_type: practitioner
+        verified_via:
+          - "https://eca.gov.eg/en/MergerControl"
+        note: >
+          EGP 100m (~USD 2m at 2025 rates) combined Egypt revenues. Provides the local
+          nexus filter — transactions with minimal Egypt presence should not be captured.
+
+  - test_id: eg_assets_based
+    description: "Combined worldwide assets >EGP 900m AND combined Egypt assets >EGP 100m (Law 175/2022)"
+    legal_basis: "Law No. 3 of 2005 (as amended by Law No. 175 of 2022), Article 19; ECA implementing regulations"
+    source_url: "https://eca.gov.eg/en/MergerControl"
+    note: "Assets-based alternative to the revenue-based test. Same threshold values."
+    annual_adjustment: false
+    effective_date: "2022-01-01"
+
+    conditions:
+      - condition_id: eg_assets_combined_worldwide
+        metric: assets
+        scope: worldwide
+        party: combined
+        operator: ">"
+        value: 900000000
+        currency: EGP
+        source: "ECA implementing regulations pursuant to Law No. 175 of 2022"
+        source_type: practitioner
+        verified_via:
+          - "https://eca.gov.eg/en/MergerControl"
+        note: "EGP 900m combined worldwide total assets."
+
+      - condition_id: eg_assets_combined_domestic
+        metric: assets
+        scope: domestic
+        party: combined
+        operator: ">"
+        value: 100000000
+        currency: EGP
+        source: "ECA implementing regulations pursuant to Law No. 175 of 2022"
+        source_type: practitioner
+        verified_via:
+          - "https://eca.gov.eg/en/MergerControl"
+        note: "EGP 100m combined Egypt total assets."
+
+notes:
+  - >
+    PRE-MERGER SINCE 2022: Egypt moved from a post-closing notification regime to
+    mandatory pre-merger notification via Law No. 175 of 2022. Prior deals notified
+    post-closing are not retroactively subject to pre-clearance requirements.
+  - >
+    EGP DEPRECIATION: The Egyptian pound depreciated substantially in 2022–2024
+    (from ~USD 1 = EGP 16 to ~USD 1 = EGP 50+). The EGP thresholds (EGP 900m
+    worldwide, EGP 100m Egypt) represent approximately USD 18m and USD 2m respectively
+    at 2025 exchange rates — low in international terms. Verify current EGP/USD rate
+    before assessing whether the threshold has real practical impact for a given deal.
+  - >
+    VERIFY THRESHOLD VALUES: The EGP amounts in this file are from practitioner
+    sources cross-referencing ECA's 2022 implementing regulations. The ECA website
+    should be consulted for current official values before advising on a filing.
+  - >
+    REGIONAL CONTEXT: Egypt is also a member of the COMESA Common Market and may
+    trigger a separate COMESA Competition Commission filing for transactions with
+    African regional footprints. Assess COMESA thresholds (combined African revenue
+    > USD 50m AND each of at least two parties > USD 10m) in parallel.
+  - >
+    The ECA has been increasingly active in merger enforcement since the 2022
+    amendment, particularly in the technology, food and beverage, and financial
+    sectors.
+
+# ── Scope / trigger events ────────────────────────────────────────────────────
+scope:
+  concentration_definition: >
+    An economic concentration under the Competition Protection Law No. 3/2005
+    (as amended by Law No. 175/2022) includes any act that results in the merger
+    of two or more economic entities into one, or enables an enterprise to directly
+    or indirectly acquire a controlling share in or over another enterprise —
+    including mergers, acquisitions of controlling interests in shares or assets,
+    and full-function joint ventures (Art. 19, CPL as amended). A 'controlling
+    share' means an interest enabling one party to direct or significantly influence
+    the management and policies of another.
+  concentration_definition_source: "Competition Protection Law No. 3 of 2005 (as amended by Law No. 175/2022), Article 19"
+  concentration_definition_url: "https://eca.gov.eg/en/Legislation"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture
+  control_threshold: >
+    Acquisition of a controlling share — the ability to direct or significantly influence
+    the management and policies of another enterprise. No specific percentage is stated
+    in the law; the ECA assesses whether the transaction confers effective control.
+    Joint control is also covered.
+  intra_group_exempt: true
+  substantive_test: "dominance"
+  substantive_test_url: "https://eca.gov.eg/en/Legislation"
+  substantive_test_note: >
+    Article 20 of the Competition Protection Law prohibits economic concentrations that
+    limit, prevent, or restrict competition. The ECA applies a dominance-based analysis
+    assessing whether the concentration creates or strengthens market power that would
+    restrict, prevent, or limit competition in the relevant Egyptian market. The standard
+    is a hybrid restriction/dominance test under the CPL, focused on market structure
+    effects rather than an explicit SIEC or SLC formulation.
+  note: >
+    Egypt moved to mandatory pre-merger notification in 2022 (Law No. 175/2022).
+    Prior to this amendment, only post-closing notification was required. The EGP
+    threshold values (EGP 900m worldwide, EGP 100m Egypt) should be verified with
+    the ECA before advising, given EGP depreciation since 2022.
+
+# ── Gun-jumping / standstill obligation ───────────────────────────────────────
+gun_jumping:
+  automatic_void: false
+  voidable: false
+  max_fine_pct_turnover: null
+  max_fine_fixed: 10000000
+  max_fine_currency: EGP
+  per_day_fine: null
+  criminal_sanctions: false
+  legal_basis: "Competition Protection Law No. 3/2005 (as amended by Law No. 175/2022), Article 19"
+  legal_basis_url: "https://eca.gov.eg/en/Legislation"
+  note: >
+    Since the 2022 amendment (Law No. 175/2022), parties to a notifiable concentration
+    must obtain ECA clearance before completion. Implementing without prior notification
+    or approval is subject to fines of up to EGP 10,000,000. The ECA may also order
+    remedial measures, including unwinding of the concentration. There are no criminal
+    sanctions for notification failures under Egyptian competition law. Deemed clearance
+    applies if the ECA does not issue a decision within the review period.
+
+# ── FDI / national security screening ────────────────────────────────────────
+fdi_screening:
+  applicable: false
+  note: >
+    Egypt does not have a general FDI screening mechanism for national security
+    purposes. Egypt promotes foreign investment through the General Authority for
+    Investment and Free Zones (GAFI, now the Egyptian Authority for Unified Window
+    for Investment — EEAA). The Investment Law No. 72/2017 (and its successor
+    legislation) creates a broadly open investment environment. Sector-specific
+    restrictions apply in: banking (Central Bank of Egypt — CBE — approval for
+    bank acquisitions); insurance (Egyptian Financial Regulatory Authority — FRA);
+    Suez Canal (government controlled); utilities; and certain media/broadcasting
+    sectors. These are sector licensing requirements cumulative with ECA merger control.
+
+# ── Source passages (verbatim statutory text) ─────────────────────────────────
+source_passages:
+
+  - passage_id: eg_cpl_art19
+    document_title: "Competition Protection Law No. 3 of 2005, as amended by Law No. 175 of 2022 (Egypt)"
+    article_reference: "Article 19"
+    document_url: "https://eca.gov.eg/en/Legislation"
+    source_type: practitioner
+    quoted_text: >
+      "Any economic concentration that, during the year preceding the concentration,
+      results in the combined worldwide revenues or assets of all parties exceeding
+      nine hundred million Egyptian pounds (EGP 900,000,000), and the combined
+      revenues or assets of all parties in Egypt exceeding one hundred million
+      Egyptian pounds (EGP 100,000,000), shall be notified to the Authority not
+      less than thirty days prior to its completion."
+    supports_conditions:
+      - eg_combined_worldwide
+      - eg_combined_domestic

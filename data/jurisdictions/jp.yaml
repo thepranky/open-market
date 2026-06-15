@@ -1,0 +1,304 @@
+jurisdiction_id: jp
+jurisdiction_name: Japan
+last_verified: "2024-01-01"
+
+authority:
+  name: Japan Fair Trade Commission (公正取引委員会)
+  abbreviation: JFTC
+  url: https://www.jftc.go.jp/en/mergers_and_acquisitions/index.html
+  filing_url: https://www.jftc.go.jp/en/mergers_and_acquisitions/prior_notification/index.html
+
+regime:
+  mandatory: true
+  suspensory: true
+  voluntary: false
+
+legal_basis:
+  - citation: "Act on Prohibition of Private Monopolization and Maintenance of Fair Trade (AMA), Articles 10, 11, 15, 15-2, 15-3, 16"
+    url: "https://www.jftc.go.jp/en/legislation_gls/amended_ama.html"
+  - citation: "Cabinet Office Ordinance on Prior Notification of Business Combination (Cabinet Office Ordinance No. 38 of 1998, as amended)"
+    url: "https://www.jftc.go.jp/en/legislation_gls/index.html"
+    note: "Sets the specific threshold values; amended periodically"
+  - citation: "Guidelines to Application of the Antimonopoly Act Concerning Review of Business Combination (2011, revised)"
+    url: "https://www.jftc.go.jp/en/mergers_and_acquisitions/guidelines/index.html"
+    source_type: official_guidance
+
+filing:
+  deadline_from_signing_days: null
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Prior notification must be submitted before implementation. For share acquisitions
+    (Article 10 AMA), the filing must be made at least 30 days before the acquisition
+    date. A shorter 20-day waiting period applies in some cases. For mergers (Article 15)
+    and business transfers (Article 16), similar pre-notification rules apply.
+
+review_periods:
+  phase_1:
+    days: 30
+    day_type: calendar
+    extendable_to_days: null
+    legal_basis: "AMA Articles 10(8), 15(2)"
+    note: >
+      The initial review period is 30 calendar days from submission of a complete
+      notification. The JFTC may request additional information (secondary request),
+      which extends the review period to 120 calendar days from submission of the
+      secondary information.
+  phase_2:
+    days: 120
+    day_type: calendar
+    extendable_to_days: null
+    legal_basis: "AMA Article 10(9)"
+    note: "Total review period from initial filing, inclusive of secondary request period."
+
+fees:
+  structure: none
+  note: "Japan does not charge merger filing fees."
+
+threshold_tests:
+  # Japan has separate thresholds for different transaction types.
+  # Tests are OR'd across transaction types based on which applies.
+
+  - test_id: jp_share_acquisition
+    description: "Share acquisition thresholds (AMA Article 10)"
+    legal_basis: "AMA Article 10(2); Cabinet Office Ordinance, Article 3"
+    source_url: "https://www.jftc.go.jp/en/mergers_and_acquisitions/prior_notification/index.html"
+    note: >
+      Applies to acquisitions of shares (voting securities) in another company.
+      Domestic net sales (国内売上高) = net sales from transactions with customers
+      in Japan, regardless of the seller's location. VERIFY current threshold values
+      against the Cabinet Office Ordinance — these have been updated periodically.
+    annual_adjustment: false
+    effective_date: null
+
+    conditions:
+      - condition_id: jp_share_acquirer_domestic
+        metric: revenue
+        scope: domestic
+        party: acquirer_group
+        operator: ">"
+        value: 20000000000
+        currency: JPY
+        source: "Cabinet Office Ordinance, Article 3(1)"
+        source_type: primary_legislation
+        note: >
+          Acquiring group's domestic net sales must exceed JPY 20bn (approximately
+          EUR 125m at 2024 rates).
+
+      - condition_id: jp_share_target_domestic
+        metric: revenue
+        scope: domestic
+        party: target_group
+        operator: ">"
+        value: 5000000000
+        currency: JPY
+        source: "Cabinet Office Ordinance, Article 3(2)"
+        source_type: primary_legislation
+        note: >
+          Target group's domestic net sales must exceed JPY 5bn (approximately EUR 31m).
+
+  - test_id: jp_merger
+    description: "Merger thresholds (AMA Article 15)"
+    legal_basis: "AMA Article 15(2); Cabinet Office Ordinance, Article 5"
+    source_url: "https://www.jftc.go.jp/en/mergers_and_acquisitions/prior_notification/index.html"
+    note: >
+      Applies to legal mergers (合併) between companies. For amalgamation-style
+      mergers, the JFTC applies the same thresholds as for share acquisitions
+      but using the merged entity's projected revenues.
+    annual_adjustment: false
+    effective_date: null
+
+    conditions:
+      - condition_id: jp_merger_large_party
+        metric: revenue
+        scope: domestic
+        party: either_party
+        operator: ">"
+        value: 20000000000
+        currency: JPY
+        source: "Cabinet Office Ordinance, Article 5(1)"
+        source_type: primary_legislation
+
+      - condition_id: jp_merger_other_party
+        metric: revenue
+        scope: domestic
+        party: either_party
+        operator: ">"
+        value: 5000000000
+        currency: JPY
+        source: "Cabinet Office Ordinance, Article 5(2)"
+        source_type: primary_legislation
+
+  - test_id: jp_business_transfer
+    description: "Business transfer / asset acquisition thresholds (AMA Article 16)"
+    legal_basis: "AMA Article 16(2); Cabinet Office Ordinance, Article 7"
+    source_url: "https://www.jftc.go.jp/en/mergers_and_acquisitions/prior_notification/index.html"
+    note: >
+      Applies to acquisitions of all or part of another company's business (営業譲受)
+      or assets (事業用固定資産の譲受). The thresholds are higher for the acquirer
+      under this test than for share acquisitions.
+    annual_adjustment: false
+    effective_date: null
+
+    conditions:
+      - condition_id: jp_asset_acquirer_domestic
+        metric: revenue
+        scope: domestic
+        party: acquirer_group
+        operator: ">"
+        value: 30000000000
+        currency: JPY
+        source: "Cabinet Office Ordinance, Article 7(1)"
+        source_type: primary_legislation
+        note: "Acquirer group domestic net sales > JPY 30bn."
+
+      - condition_id: jp_asset_transferred_domestic
+        metric: revenue
+        scope: domestic
+        party: target_group
+        operator: ">"
+        value: 3000000000
+        currency: JPY
+        source: "Cabinet Office Ordinance, Article 7(2)"
+        source_type: primary_legislation
+        note: "Net sales of the business/assets being transferred > JPY 3bn."
+
+notes:
+  - >
+    'Domestic net sales' (国内売上高) is calculated as sales to customers located in
+    Japan. For goods, this means delivery location in Japan; for services, place of
+    provision in Japan. All controlled subsidiaries and affiliates must be included.
+  - >
+    The reporting threshold for share acquisitions uses the group's total domestic
+    sales including all subsidiaries — a foreign company with Japanese subsidiaries
+    must include Japanese subsidiary revenues in the acquirer's domestic sales figure.
+  - >
+    For acquisitions of less than 20% of voting shares by a financial institution for
+    investment purposes only, a separate (lighter) notification regime applies under
+    AMA Article 11.
+  - >
+    Japan does not have a formal Phase 1 / Phase 2 distinction in the same way as
+    the EU or US. The initial 30-day period is equivalent to Phase 1; if the JFTC
+    issues a secondary information request, the extended 120-day period is the equivalent
+    of an in-depth review.
+
+# ── Scope / trigger events ────────────────────────────────────────────────────
+scope:
+  concentration_definition: >
+    Japan regulates business combinations across multiple provisions of the
+    Antimonopoly Act (AMA): share acquisitions (Art. 10), interlocking directorates
+    (Art. 13), mergers (Art. 15), share transfers in company splits (Art. 15-2), and
+    business transfers/asset acquisitions (Art. 16). A concentration arises when any
+    of these transactions results in a change in competitive structure that may
+    substantially restrain competition in a particular field of trade.
+  concentration_definition_source: >
+    AMA Articles 10, 15, 15-2, 16; JFTC Guidelines to Application of the Antimonopoly
+    Act Concerning Review of Business Combination (2011, revised)
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture
+  control_threshold: >
+    No single statutory "control" concept — notification thresholds are revenue-based.
+    However, the substantive review considers whether the acquirer obtains de facto
+    control or decisive influence over the target. Minority shareholdings may be
+    reviewed where they confer material influence over business decisions.
+  intra_group_exempt: true
+  foreign_to_foreign_rule: >
+    AMA applies based on domestic net sales (transactions with customers in Japan),
+    not on the nationality or location of the parties. A purely foreign-to-foreign
+    transaction is subject to prior notification if the acquirer group's domestic net
+    sales exceed JPY 20bn and the target group's domestic net sales exceed JPY 5bn.
+  substantive_test: "dominance"
+  substantive_test_url: "https://www.jftc.go.jp/en/legislation_gls/amended_ama.html"
+  substantive_test_note: >
+    AMA Article 10(2) prohibits share acquisitions that will "substantially restrain
+    competition in any particular field of trade." The same "substantial restraint"
+    standard applies under Arts. 15, 15-2, and 16. In practice the JFTC employs
+    HHI/market-share analysis with safe harbor thresholds broadly comparable to an
+    SLC test, but the standard is framed in market-power/dominance terms.
+  note: >
+    The JFTC Merger Guidelines (2011, as revised) apply the AMA substantive test
+    through a multi-factor analysis including market concentration (HHI), competitive
+    constraints from imports, new entry, buyer power, and efficiencies. Safe harbors:
+    post-merger HHI ≤ 2,500 and HHI delta ≤ 250 generally safe (or HHI ≤ 1,500
+    regardless of delta).
+
+# ── Gun-jumping / standstill obligation ───────────────────────────────────────
+gun_jumping:
+  automatic_void: false
+  voidable: true
+  max_fine_pct_turnover: null
+  max_fine_fixed: 2000000
+  max_fine_currency: "JPY"
+  per_day_fine: 1000000
+  criminal_sanctions: true
+  legal_basis: "AMA Articles 17-2, 90"
+  legal_basis_url: "https://www.jftc.go.jp/en/legislation_gls/amended_ama.html"
+  note: >
+    AMA Article 17-2 prohibits implementation of a notifiable concentration before
+    the 30-day waiting period (or extended period) has elapsed. Breach can attract:
+    (a) an administrative order to unwind the transaction; (b) a per-day fine of up
+    to JPY 1 million for continued violation (Art. 17-2(4)); and (c) criminal
+    sanctions under AMA Art. 90 — imprisonment of up to 3 years or a fine of up to
+    JPY 2 million for individuals, or a corporate fine of up to JPY 300 million under
+    the dual penalty provision. Criminal sanctions for merger notification violations
+    are rarely imposed in practice.
+
+# ── FDI / national security screening ────────────────────────────────────────
+fdi_screening:
+  applicable: true
+  regime_name: "Foreign Exchange and Foreign Trade Act (FEFTA) — Inward Direct Investment Screening"
+  authority: "Ministry of Economy, Trade and Industry (METI) and Ministry of Finance (MOF)"
+  url: "https://www.meti.go.jp/english/policy/external_economy/trade_control/01_overview/fefta.html"
+  sectors_covered:
+    - defense
+    - nuclear
+    - space
+    - semiconductor_manufacturing
+    - AI
+    - cybersecurity
+    - airports
+    - maritime
+    - telecommunications
+    - pharmaceuticals
+  note: >
+    Under FEFTA (as amended 2019–2020), non-residents acquiring 1% or more of shares
+    in companies in designated sensitive sectors must file a prior notification with METI
+    and MOF before completion. The 1% threshold was introduced in 2020 (previously 10%)
+    to tighten screening. The designated sector list was significantly expanded to include
+    semiconductor manufacturing, AI, and cybersecurity. Screening operates separately from
+    and in parallel with JFTC merger review.
+
+# ── Source passages (verbatim statutory text) ─────────────────────────────────
+source_passages:
+
+  - passage_id: jp_ama_art_10_1
+    document_title: "Act on Prohibition of Private Monopolization and Maintenance of Fair Trade (Antimonopoly Act)"
+    article_reference: "Article 10(1)"
+    document_url: "https://www.jftc.go.jp/en/legislation_gls/amended_ama.html"
+    source_type: primary_legislation
+    quoted_text: >
+      "No company shall acquire or hold shares in another company where the effect of
+      such acquisition or holding may be to substantially restrain competition in any
+      particular field of trade."
+    supports_conditions:
+      - jp_share_acquirer_domestic
+      - jp_share_target_domestic
+
+  - passage_id: jp_ama_art_10_2
+    document_title: "Act on Prohibition of Private Monopolization and Maintenance of Fair Trade (Antimonopoly Act)"
+    article_reference: "Article 10(2)"
+    document_url: "https://www.jftc.go.jp/en/legislation_gls/amended_ama.html"
+    source_type: primary_legislation
+    quoted_text: >
+      "A company that intends to acquire shares in another company shall, when the
+      total domestic sales of the company group to which it belongs exceed the amount
+      specified by Cabinet Order, and when the total domestic sales of the company
+      group of the company in which shares will be acquired exceed the amount specified
+      by Cabinet Order, give prior notification of the acquisition to the Fair Trade
+      Commission pursuant to the provisions of Cabinet Office Ordinance."
+    supports_conditions:
+      - jp_share_acquirer_domestic
+      - jp_share_target_domestic

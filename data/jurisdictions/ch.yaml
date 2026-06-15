@@ -1,0 +1,287 @@
+jurisdiction_id: ch
+jurisdiction_name: Switzerland
+last_verified: "2026-06-14"
+
+authority:
+  name: Swiss Competition Commission (Wettbewerbskommission / Commission de la concurrence)
+  abbreviation: WEKO
+  url: https://www.weko.admin.ch/weko/en/home.html
+  filing_url: https://www.weko.admin.ch/weko/en/home/mergers.html
+
+regime:
+  mandatory: true
+  suspensory: true   # Art. 16(2) CartA — parties may not implement during Phase I or Phase II without exemption
+  voluntary: false
+
+legal_basis:
+  - citation: "Bundesgesetz über Kartelle und andere Wettbewerbsbeschränkungen (KG / CartA) of 6 October 1995, as amended — Article 9 (notification duty) and Article 10 (assessment)"
+    url: "https://www.fedlex.admin.ch/eli/cc/1996/546_546_546/en"
+    note: >
+      The Swiss Cartel Act (KG/CartA) is the primary source. Article 9 sets out the
+      notification thresholds. Article 10 governs the substantive assessment (dominance
+      test — prohibition if the concentration creates or strengthens a dominant position).
+      Switzerland is currently undertaking a partial revision to introduce the SIEC test;
+      as of June 2026 the reform was under parliamentary consideration.
+  - citation: "Verordnung über die Kontrolle von Unternehmenszusammenschlüssen (VKU / Merger Ordinance) of 17 June 1996"
+    url: "https://www.fedlex.admin.ch/eli/cc/1996/1762_1762_1762/en"
+    source_type: official_guidance
+    note: "Implementing ordinance setting out procedural requirements and notification forms."
+
+filing:
+  deadline_from_signing_days: 30    # Art. 9(6) KG: must notify within 1 month of binding agreement/announcement
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Parties must file notification within ONE MONTH of the conclusion of the agreement,
+    the announcement of a public bid, or the acquisition of a controlling interest
+    (Art. 9(6) KG). The transaction must not be implemented before WEKO issues its
+    Phase I decision or the Phase I deadline lapses without an investigation being opened.
+    WEKO may grant exemptions to the standstill obligation in exceptional circumstances
+    (Art. 16(2) KG). Pre-notification contacts with WEKO are permitted but not formally
+    structured as in the EU system.
+
+review_periods:
+  phase_1:
+    days: 31
+    day_type: calendar
+    extendable_to_days: null
+    legal_basis: "Article 32(1) KG / CartA"
+    note: >
+      WEKO has ONE CALENDAR MONTH from receipt of complete notification to decide whether
+      to open an in-depth investigation. If no decision within one month, the concentration
+      is deemed cleared. In practice, straightforward transactions are cleared within
+      2–3 weeks.
+  phase_2:
+    days: 120
+    day_type: calendar
+    extendable_to_days: null
+    legal_basis: "Article 33(1) KG / CartA"
+    note: >
+      If WEKO opens an in-depth investigation, it has FOUR MONTHS from that decision
+      to complete its assessment. The total maximum period (Phase I + Phase II) is
+      five months. The clock stops if the parties do not comply with information requests
+      (Art. 33(3) KG). At the end of Phase II, WEKO either clears, clears with conditions,
+      or prohibits the concentration.
+
+fees:
+  structure: >
+    Hourly rates: CHF 100–CHF 400 per hour depending on seniority of case handler.
+    Phase I reviews typically result in charges of CHF 3,000–CHF 20,000.
+    Phase II investigations: CHF 50,000–CHF 200,000+. Billed at conclusion of procedure.
+    (New hourly billing system in force since 1 January 2025; prior system used fixed fees.)
+  source: "Article 53a KG; WEKO fee schedule"
+  source_type: official_guidance
+  source_url: "https://www.weko.admin.ch/weko/en/home/mergers.html"
+  annual_adjustment: false
+
+# ── Scope / trigger events ────────────────────────────────────────────────────
+scope:
+  concentration_definition: >
+    A concentration of undertakings occurs when: (a) two or more previously independent
+    undertakings merge; (b) one or more undertakings acquire control of another undertaking
+    or part thereof, whether by purchase of securities or assets, by contract or by any
+    other means; or (c) full-function joint ventures are created (Art. 4(3) KG).
+  concentration_definition_source: "Article 4(3), Federal Cartel Act (KG)"
+  concentration_definition_url: "https://www.fedlex.admin.ch/eli/cc/1996/546_546_546/en"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture   # full-function JVs acquiring joint control (Art. 4(3)(c) KG)
+    - minority_stake  # where minority stake confers de facto control via contract or veto rights
+  control_threshold: >
+    Decisive influence over strategic decisions (exclusive control or joint control).
+    Minority shareholdings without control (passive investment) do not trigger the
+    notification obligation. However, minority stakes conferring veto rights over
+    budget, business plan, or major decisions may constitute control.
+  intra_group_exempt: true
+  foreign_to_foreign_rule: >
+    Switzerland uses a turnover-based nexus: if the combined worldwide or Swiss turnover
+    thresholds are met, the obligation arises regardless of where the parties are
+    incorporated. Pure foreign-to-foreign deals are caught if the Swiss revenue thresholds
+    are met. Switzerland is not part of the EU one-stop-shop system.
+  substantive_test: "dominance"
+  substantive_test_url: "https://www.fedlex.admin.ch/eli/cc/1996/546_546_546/en"
+  substantive_test_note: >
+    Switzerland applies a dominance test (Art. 10 KG/CartA): WEKO must prohibit or condition
+    a concentration that creates or strengthens a dominant position capable of eliminating
+    effective competition. A SIEC reform aligning with the EU standard was under parliamentary
+    consideration as of June 2026 but not yet enacted.
+  note: >
+    An additional notification trigger applies where WEKO has, in a prior final and
+    binding decision, found that one of the merging parties holds a dominant position
+    in a Swiss market — the transaction must be notified regardless of turnover (Art. 9(4) KG).
+    MEDIA/TELECOMS: Lower thresholds apply to concentrations involving press or
+    periodical publishers or providers of telecommunications services: combined worldwide
+    ≥ CHF 400m (or combined Swiss ≥ CHF 100m) AND each_of_at_least_two Swiss ≥ CHF 20m.
+
+# ── Gun-jumping / standstill ──────────────────────────────────────────────────
+gun_jumping:
+  automatic_void: false
+  voidable: true
+  max_fine_pct_turnover: null
+  max_fine_fixed: 1000000
+  max_fine_currency: CHF
+  per_day_fine: null
+  criminal_sanctions: false
+  legal_basis: "Articles 16(2) and 50 KG / CartA"
+  legal_basis_url: "https://www.fedlex.admin.ch/eli/cc/1996/546_546_546/en"
+  note: >
+    Article 16(2) KG prohibits implementation before WEKO clearance. Article 50 KG allows
+    WEKO to impose fines of up to CHF 1 million for procedural violations (including
+    gun-jumping). More serious sanctions may be imposed under Art. 49a(3)(b) KG for
+    acting in breach of WEKO orders. In practice, WEKO has imposed fines for gun-jumping
+    in several cases. Transactions implemented without clearance may be ordered to be
+    dissolved by WEKO under Art. 36(1) KG.
+
+# ── FDI / national security screening ────────────────────────────────────────
+fdi_screening:
+  applicable: false
+  note: >
+    Switzerland does not currently have a formal, sector-agnostic FDI screening regime.
+    The Federal Council has consulted on draft legislation for investment screening
+    (Investitionsprüfung) targeting foreign investments in critical infrastructure and
+    sensitive sectors; as of June 2026, no such law had been enacted. For defence and
+    armaments sector transactions, separate approval under the Federal Act on War
+    Material (KMG) and the Control of Goods Act (GKG) may be required. Switzerland
+    is not subject to the EU FDI Screening Regulation (Regulation 2019/452).
+
+# ── Threshold tests ───────────────────────────────────────────────────────────
+threshold_tests:
+  # Art. 9(1) KG: two alternative limbs for the first condition (OR), both requiring
+  # the same second condition. Modelled as two tests that the engine ORs.
+
+  - test_id: ch_worldwide_turnover
+    description: "Combined worldwide ≥ CHF 2bn AND each of ≥2 parties Swiss ≥ CHF 100m (Art. 9(1)(a))"
+    legal_basis: "Article 9(1)(a) and 9(1)(b), Federal Cartel Act (KG)"
+    source_url: "https://www.fedlex.admin.ch/eli/cc/1996/546_546_546/en"
+    note: >
+      The primary test. If the combined aggregate worldwide turnover of all parties
+      in the last financial year was at least CHF 2 billion, AND at least two parties
+      each had Swiss turnover of at least CHF 100 million, notification is mandatory.
+    annual_adjustment: false
+    effective_date: null
+
+    conditions:
+      - condition_id: ch_ww_combined_worldwide
+        metric: revenue
+        scope: worldwide
+        party: combined
+        operator: ">="
+        value: 2000000000
+        currency: CHF
+        source: "Article 9(1)(a) KG"
+        source_type: primary_legislation
+        source_url: "https://www.fedlex.admin.ch/eli/cc/1996/546_546_546/en"
+        note: "CHF 2bn combined worldwide turnover of all parties in last financial year."
+
+      - condition_id: ch_ww_each_party_swiss
+        metric: revenue
+        scope: domestic
+        party: each_of_at_least_two
+        operator: ">="
+        value: 100000000
+        currency: CHF
+        source: "Article 9(1)(b) KG"
+        source_type: primary_legislation
+        source_url: "https://www.fedlex.admin.ch/eli/cc/1996/546_546_546/en"
+        note: "Each of at least two parties must individually have Swiss turnover ≥ CHF 100m."
+
+  - test_id: ch_swiss_combined_turnover
+    description: "Combined Swiss ≥ CHF 500m AND each of ≥2 parties Swiss ≥ CHF 100m (Art. 9(1)(a) alternative)"
+    legal_basis: "Article 9(1)(a) and 9(1)(b), Federal Cartel Act (KG)"
+    source_url: "https://www.fedlex.admin.ch/eli/cc/1996/546_546_546/en"
+    note: >
+      Alternative to the CHF 2bn worldwide test. If combined Swiss turnover of all
+      parties was at least CHF 500 million (even if worldwide combined is below CHF 2bn),
+      and each of at least two parties had Swiss turnover ≥ CHF 100m, notification is required.
+    annual_adjustment: false
+    effective_date: null
+
+    conditions:
+      - condition_id: ch_ch_combined_swiss
+        metric: revenue
+        scope: domestic
+        party: combined
+        operator: ">="
+        value: 500000000
+        currency: CHF
+        source: "Article 9(1)(a) KG (Swiss turnover alternative)"
+        source_type: primary_legislation
+        source_url: "https://www.fedlex.admin.ch/eli/cc/1996/546_546_546/en"
+        note: "CHF 500m combined Swiss turnover of all parties in last financial year."
+
+      - condition_id: ch_ch_each_party_swiss
+        metric: revenue
+        scope: domestic
+        party: each_of_at_least_two
+        operator: ">="
+        value: 100000000
+        currency: CHF
+        source: "Article 9(1)(b) KG"
+        source_type: primary_legislation
+        source_url: "https://www.fedlex.admin.ch/eli/cc/1996/546_546_546/en"
+        note: "Each of at least two parties must individually have Swiss turnover ≥ CHF 100m."
+
+notes:
+  - >
+    SUBSTANTIVE TEST: Switzerland applies a dominance test (Art. 10 KG): a concentration
+    must be prohibited or cleared with conditions if it creates or strengthens a dominant
+    position capable of eliminating effective competition. Switzerland has not yet adopted
+    the SIEC (significant impediment to effective competition) test used in the EU — a
+    legislative reform to introduce SIEC is under parliamentary consideration as of 2026.
+  - >
+    MEDIA/TELECOMS EXCEPTION: Lower notification thresholds apply if one party is a
+    newspaper/periodical publisher or telecoms service provider: combined worldwide ≥ CHF 400m
+    (or combined Swiss ≥ CHF 100m) AND each_of_at_least_two Swiss ≥ CHF 20m (Art. 9(2)(a) KG).
+  - >
+    DOMINANCE TRIGGER: Even if no turnover threshold is met, notification is mandatory
+    if WEKO has previously found one of the merging parties dominant in a Swiss market
+    and the transaction relates to that market or adjacent markets (Art. 9(4) KG).
+  - >
+    ONE-STOP-SHOP: Switzerland is NOT part of the EU merger control system. Even if a
+    transaction has EU Community dimension and is cleared by the European Commission,
+    a separate Swiss notification may be required if Swiss thresholds are met.
+    Switzerland and the EU do not have a cooperation agreement on merger control.
+  - >
+    FDI REFORM PENDING: Switzerland is developing a national investment screening
+    framework. Transactions in sensitive sectors should be monitored for new developments.
+
+# ── Source passages (verbatim statutory text) ─────────────────────────────────
+source_passages:
+
+  - passage_id: ch_kg_art_9_1
+    document_title: "Bundesgesetz über Kartelle und andere Wettbewerbsbeschränkungen (Kartellgesetz, KG) / Federal Act on Cartels and Other Restraints of Competition (Cartel Act, CartA)"
+    article_reference: "Article 9(1)"
+    document_url: "https://www.fedlex.admin.ch/eli/cc/1996/546_546_546/en"
+    source_type: primary_legislation
+    quoted_text: >
+      "Article 9 — Duty to notify
+      1 Concentrations of undertakings must be notified to the Competition Commission
+      prior to their implementation if, in the last financial year before the concentration:
+      a. the undertakings concerned together achieved either a worldwide turnover of at
+      least 2 billion Swiss francs or a turnover in Switzerland of at least 500 million
+      Swiss francs; and
+      b. at least two of the undertakings concerned each achieved turnover in Switzerland
+      of at least 100 million Swiss francs."
+    supports_conditions:
+      - ch_ww_combined_worldwide
+      - ch_ww_each_party_swiss
+      - ch_ch_combined_swiss
+      - ch_ch_each_party_swiss
+
+  - passage_id: ch_kg_art_32_33
+    document_title: "Federal Act on Cartels and Other Restraints of Competition (CartA)"
+    article_reference: "Articles 32 and 33"
+    document_url: "https://www.fedlex.admin.ch/eli/cc/1996/546_546_546/en"
+    source_type: primary_legislation
+    quoted_text: >
+      "Article 32 — Phase I review
+      1 After receiving a complete notification, the Competition Commission has one month
+      to decide whether to initiate a proceeding for an in-depth investigation.
+      If no decision is reached within this period, the concentration is deemed to be
+      authorised.
+      Article 33 — Phase II (In-depth investigation)
+      1 The in-depth investigation must be concluded within four months of the
+      decision to initiate it."
+    supports_conditions: []

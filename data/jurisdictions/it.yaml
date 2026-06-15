@@ -1,0 +1,310 @@
+jurisdiction_id: it
+jurisdiction_name: Italy
+last_verified: "2026-06-14"
+
+authority:
+  name: Autorità Garante della Concorrenza e del Mercato
+  abbreviation: AGCM
+  url: https://en.agcm.it/en/
+  filing_url: https://en.agcm.it/en/notification-forms
+
+regime:
+  mandatory: true
+  suspensory: true   # parties must notify before closing and await AGCM decision
+  voluntary: false
+
+legal_basis:
+  - citation: "Law No. 287 of 10 October 1990 (Legge Antitrust), Article 16 — as amended by Article 32 of Law No. 118 of 5 August 2022"
+    url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1990-10-10;287"
+    note: >
+      Article 16 of Law 287/1990 is the core merger control provision. The 2022 amendment
+      (Law 118/2022, Art. 32) introduced two significant changes effective October 2022:
+      (1) the individual threshold was changed from "turnover of the target" to "turnover
+      of each of at least two of the undertakings concerned," aligning more closely with
+      the EU model; and (2) a call-in power was introduced allowing AGCM to request
+      notification of below-threshold transactions in exceptional circumstances.
+      Thresholds are adjusted annually (typically in March) based on the national GDP
+      price deflator index (Art. 16(1) Law 287/1990).
+  - citation: "AGCM Annual Threshold Update — Bulletin"
+    url: "https://en.agcm.it/en/turnover-thresholds"
+    source_type: authority_announcement
+    note: >
+      AGCM publishes updated threshold values each spring. As of March 2025: combined
+      Italian turnover > EUR 582 million AND each of at least two parties Italian
+      > EUR 35 million. Verify current-year values via AGCM website before filing.
+
+filing:
+  deadline_from_signing_days: null    # no fixed deadline from signing
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Parties must notify the AGCM before completing the concentration (Art. 16(3) Law
+    287/1990). There is no fixed filing deadline from signing. Filing must occur and
+    Phase I must expire (or clearance received) before implementation. AGCM has 30
+    working days from receipt of a complete notification to issue its Phase I decision.
+    If no decision within 30 working days, the concentration is deemed authorised
+    (silenzio-assenso). Pre-notification contacts with AGCM are permitted.
+
+review_periods:
+  phase_1:
+    days: 30
+    day_type: working
+    extendable_to_days: null
+    legal_basis: "Article 16(3), Law No. 287/1990"
+    note: >
+      AGCM has 30 WORKING DAYS from receipt of a complete notification to decide whether
+      to clear the transaction or open an in-depth investigation. If no decision within
+      30 working days, the concentration is deemed authorised by operation of law
+      (silenzio-assenso / positive silence). AGCM also has the power to request additional
+      information, which pauses the clock until information is received.
+  phase_2:
+    days: 45
+    day_type: working
+    extendable_to_days: 75    # up to 30 additional working days for remedy submissions
+    legal_basis: "Article 16(6), Law No. 287/1990"
+    note: >
+      If AGCM opens a Phase II investigation, it has 45 WORKING DAYS from the Phase II
+      opening decision to complete the assessment. If the parties submit undertakings
+      (remedies), the deadline is extended by up to 30 additional working days.
+      Total maximum Phase II: 75 working days from Phase II opening. AGCM may clear,
+      clear with conditions, or prohibit.
+
+fees:
+  structure: >
+    Filing fees (approximate, indexed — verify current amounts with AGCM):
+    Simplified notification (Formulario B): EUR 10,000
+    Ordinary notification (Formulario A): EUR 35,000
+    Phase II investigation: up to EUR 75,000
+    (Fees are set by AGCM administrative regulation and updated periodically.)
+  source: "AGCM Fee Regulation; Law No. 287/1990 Art. 16"
+  source_type: official_guidance
+  source_url: "https://en.agcm.it/en/"
+  annual_adjustment: false
+
+# ── Scope / trigger events ────────────────────────────────────────────────────
+scope:
+  concentration_definition: >
+    A concentration arises where a lasting change of control results from: (a) a merger
+    of two or more previously independent undertakings; (b) the acquisition, by one or
+    more persons or undertakings, of direct or indirect control over one or more undertakings
+    or parts thereof; or (c) the creation of a full-function joint venture.
+    (Art. 5, Law 287/1990 — aligned with EU Merger Regulation Art. 3.)
+  concentration_definition_source: "Article 5, Law No. 287/1990 (Italian Competition Law)"
+  concentration_definition_url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1990-10-10;287"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture   # full-function JVs performing all functions of autonomous economic entity
+  control_threshold: >
+    Sole control or joint control — decisive influence over the strategic commercial
+    decisions of an undertaking. Consistent with EU merger control definition.
+    Minority shareholdings without control rights (passive investments) do not trigger
+    the notification obligation.
+  intra_group_exempt: true
+  foreign_to_foreign_rule: >
+    Italian merger control applies where the Italian turnover thresholds are met regardless
+    of where the parties are incorporated. Foreign-to-foreign transactions are subject
+    to notification if the combined and individual Italian turnover thresholds are both exceeded.
+    If EU merger regulation thresholds are met, the EU one-stop-shop applies and AGCM has
+    no jurisdiction (unless an Art. 9 EUMR referral is made).
+  substantive_test: "dominance"
+  substantive_test_url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1990-10-10;287"
+  substantive_test_note: >
+    Italy applies a dominance test (Art. 6 Law 287/1990): AGCM prohibits a concentration that creates or strengthens a dominant position such that effective competition in the national market or a substantial part of it is eliminated or significantly reduced on a lasting basis.
+  note: >
+    CALL-IN POWER: Since October 2022 (Law 118/2022), AGCM has power to request
+    notification of below-threshold transactions if there are indications that competition
+    in a market may be significantly impeded. AGCM must exercise this power within 6 months
+    of the concentration and must provide reasoned grounds. Italy was among the first EU
+    Member States to introduce such a "call-in" mechanism. Multiple sub-threshold
+    transactions have been reviewed under this power since 2022, particularly in the
+    digital and pharmaceutical sectors.
+
+# ── Gun-jumping / standstill ──────────────────────────────────────────────────
+gun_jumping:
+  automatic_void: false
+  voidable: true
+  max_fine_pct_turnover: null
+  max_fine_fixed: 51645
+  max_fine_currency: EUR
+  per_day_fine: null
+  criminal_sanctions: false
+  legal_basis: "Articles 16(3) and 19(1), Law No. 287/1990"
+  legal_basis_url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1990-10-10;287"
+  note: >
+    Law 287/1990 imposes a standstill obligation: parties must await AGCM clearance
+    (or expiry of the Phase I period) before completing the transaction. Article 19(1)
+    allows AGCM to impose fines of up to EUR 51,645 (indexed) for failure to notify
+    prior to implementation — note this is a relatively low fixed maximum compared to
+    the EU's 10%-of-turnover cap. However, AGCM also has power to order suspension,
+    dissolution, and unwinding of illegally implemented concentrations. The fixed fine
+    cap has been criticised as an insufficient deterrent; legislative reform to increase
+    gun-jumping penalties has been discussed. Fines of up to 1% of worldwide turnover
+    may also apply for procedural violations (inaccurate information in notifications).
+
+# ── FDI / national security screening ────────────────────────────────────────
+fdi_screening:
+  applicable: true
+  regime_name: "Golden Power — Poteri speciali del Governo nelle imprese strategiche"
+  authority: "Presidency of the Council of Ministers (Presidenza del Consiglio dei Ministri) — Coordination Unit"
+  url: "https://en.agcm.it/en/"
+  sectors_covered:
+    - defense
+    - national_security
+    - energy
+    - transport
+    - telecommunications
+    - broadband_electronic_communications
+    - strategic_data_processing
+    - financial_sector
+    - water
+    - health
+    - food_security
+    - artificial_intelligence
+    - semiconductors
+    - advanced_manufacturing
+  note: >
+    Italy's Golden Power regime (originally Decree-Law No. 21/2012, significantly expanded
+    by Decree-Law No. 23/2020 and subsequent amendments) requires prior notification and
+    approval from the Italian Government for acquisitions of control or significant equity
+    stakes in companies operating in strategic sectors. The notification obligation applies
+    to both EU and non-EU acquirers for defence/national security sectors, and to non-EU
+    acquirers for all other strategic sectors. The government has 45 working days to assess
+    and can impose conditions, veto, or nullify transactions. The scope was dramatically
+    expanded post-2020 to cover 5G/telecoms, AI, semiconductors, energy, financial
+    infrastructure, and other sectors. Italy is one of the most active EU Member States
+    in exercising Golden Power. This obligation runs in parallel with AGCM merger control.
+
+# ── Threshold tests ───────────────────────────────────────────────────────────
+threshold_tests:
+  # Italy's merger control has a single test with two cumulative (AND) conditions.
+  # Both must be met for notification to be mandatory.
+  # Thresholds are updated annually (typically in March) via AGCM Bulletin.
+  # Values below reflect the March 2025 update (EUR 582m / EUR 35m).
+  # VERIFY CURRENT-YEAR VALUES at https://en.agcm.it before filing.
+
+  - test_id: it_standard
+    description: "Combined Italian >EUR 582m AND each of ≥2 parties Italian >EUR 35m (March 2025 values, Art. 16 Law 287/1990)"
+    legal_basis: "Article 16(1), Law No. 287/1990, as amended by Article 32 of Law No. 118/2022"
+    source_url: "https://en.agcm.it/en/turnover-thresholds"
+    note: >
+      Both conditions must be met simultaneously (AND logic). Turnover is calculated
+      based on Italian operations only (revenues from the sale of goods/provision of
+      services in Italy). The individual-party threshold was changed in October 2022
+      from "turnover of the target" to "turnover of each of at least two of the parties"
+      — meaning BOTH the acquirer AND the target must individually exceed EUR 35m in Italy.
+      Thresholds update annually in March based on the Italian GDP price deflator.
+      The EUR 582m / EUR 35m values below reflect the March 2025 update.
+      VERIFY CURRENT VALUES before relying on this data.
+    annual_adjustment: true
+    effective_date: "2025-03-24"
+
+    conditions:
+      - condition_id: it_combined_italian
+        metric: revenue
+        scope: domestic
+        party: combined
+        operator: ">"
+        value: 582000000
+        currency: EUR
+        source: "Article 16(1)(a) Law 287/1990 — March 2025 AGCM threshold update"
+        source_type: authority_announcement
+        source_url: "https://en.agcm.it/en/turnover-thresholds"
+        verified_via:
+          - "https://natlawreview.com/article/italian-merger-control-thresholds-update"
+          - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/italy"
+        note: >
+          EUR 582m combined Italian turnover of all parties (March 2025 value).
+          Adjusted annually in March; verify current year's threshold at AGCM website.
+          The 2024 (March 2024) threshold was EUR 567m/EUR 35m; the 2025 update
+          increased the combined threshold to EUR 582m reflecting GDP deflator movement.
+
+      - condition_id: it_each_party_italian
+        metric: revenue
+        scope: domestic
+        party: each_of_at_least_two
+        operator: ">"
+        value: 35000000
+        currency: EUR
+        source: "Article 16(1)(b) Law 287/1990 as amended by Art. 32 Law 118/2022 — March 2025 update"
+        source_type: authority_announcement
+        source_url: "https://en.agcm.it/en/turnover-thresholds"
+        verified_via:
+          - "https://natlawreview.com/article/italian-merger-control-thresholds-update"
+          - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/italy"
+        note: >
+          EUR 35m Italian turnover for each of at least two of the parties. Since the
+          October 2022 reform (Law 118/2022 Art. 32), BOTH the acquirer AND target
+          must each individually exceed EUR 35m in Italy — it is no longer sufficient
+          for only the target to exceed the individual threshold. This change increased
+          the number of notifiable transactions by capturing deals where both parties
+          have meaningful Italian presence.
+
+notes:
+  - >
+    ANNUAL THRESHOLD UPDATE: The EUR 582m / EUR 35m values reflect the March 2025 AGCM
+    update. The AGCM publishes new threshold values each March based on the Italian GDP
+    price deflator for the preceding year. Always verify current-year thresholds at the
+    AGCM's website (en.agcm.it) before advising on a filing obligation.
+  - >
+    2022 REFORM: The October 2022 amendment (Law 118/2022, Art. 32) made two key changes:
+    (1) changed the individual threshold from "the turnover of the undertaking being acquired"
+    to "the turnover of each of at least two of the undertakings concerned"; (2) introduced
+    a below-threshold call-in power. The individual threshold change has significantly
+    increased the scope of notifiable transactions involving acquirers with substantial
+    Italian operations.
+  - >
+    CALL-IN POWER: AGCM may require notification of below-threshold concentrations (within
+    6 months of the transaction) if there are reasonable grounds to believe competition
+    could be significantly impeded. This has been used in digital/tech and pharma sectors.
+    Review post-closing for deals not meeting the thresholds but involving significant
+    Italian market positions.
+  - >
+    GOLDEN POWER: Italy's Golden Power regime is one of the most expansive in Europe
+    and runs on a separate track from AGCM merger control. For any transaction involving
+    a company with Italian strategic assets, assess both the AGCM notification obligation
+    and the Golden Power notification obligation (which applies to both the parties' Italian
+    operations and often to foreign holding companies).
+  - >
+    SUBSTANTIVE TEST: Italy applies a dominance test (significant impediment to competition —
+    substantially aligned with SIEC since Law 118/2022 alignment): AGCM prohibits a
+    concentration that creates or strengthens a dominant position such that effective
+    competition in the national market or a relevant part of it is eliminated or significantly
+    reduced on a lasting basis.
+
+# ── Source passages ────────────────────────────────────────────────────────────
+source_passages:
+
+  - passage_id: it_law287_art16_1
+    document_title: "Legge n. 287/1990 — Norme per la tutela della concorrenza e del mercato (Italian Competition Law)"
+    article_reference: "Article 16(1) (as amended by Article 32, Law No. 118/2022)"
+    document_url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1990-10-10;287"
+    source_type: primary_legislation
+    quoted_text: >
+      "Article 16 — Obligation to notify
+      1. Concentrations as defined in Article 5 shall be notified to the Authority before
+      their implementation, where:
+      (a) the combined aggregate turnover in Italy of all the undertakings concerned
+      exceeds the threshold established and updated by the Authority pursuant to paragraph 2;
+      (b) the aggregate turnover in Italy of each of at least two of the undertakings
+      concerned exceeds the threshold established and updated by the Authority pursuant
+      to paragraph 2.
+      2. The thresholds referred to in paragraph 1 are updated annually by the Authority
+      on the basis of changes in the national gross domestic product price deflator index."
+    supports_conditions:
+      - it_combined_italian
+      - it_each_party_italian
+
+  - passage_id: it_law287_art16_3
+    document_title: "Legge n. 287/1990 — Norme per la tutela della concorrenza e del mercato (Italian Competition Law)"
+    article_reference: "Article 16(3)"
+    document_url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1990-10-10;287"
+    source_type: primary_legislation
+    quoted_text: >
+      "3. The Authority shall carry out its examination within thirty days of the
+      notification referred to in paragraph 1 or of the day on which it receives
+      the documents required under this Law. If such documents have not been produced
+      within the period set by the Authority, the transaction shall be deemed to be
+      approved at the expiry of thirty days from the notification."
+    supports_conditions: []

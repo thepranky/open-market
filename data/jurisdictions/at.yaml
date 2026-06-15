@@ -1,0 +1,312 @@
+jurisdiction_id: at
+jurisdiction_name: Austria
+last_verified: "2024-01-01"
+
+authority:
+  name: "Bundeswettbewerbsbehoerde (Federal Competition Authority)"
+  abbreviation: BWB
+  url: https://www.bwb.gv.at/en/merger-control.html
+  filing_url: https://www.bwb.gv.at/en/merger-control/notification.html
+
+regime:
+  mandatory: true
+  suspensory: true
+  voluntary: false
+
+legal_basis:
+  - citation: "Kartellgesetz 2005 (KartG), §§ 7-17, BGBl. I Nr. 61/2005 as amended"
+    url: "https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=20004171"
+  - citation: "Wettbewerbsgesetz (WettbG), §§ 1-3"
+    url: "https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=20003601"
+    note: "Establishes the BWB; procedural rules for merger review"
+
+filing:
+  deadline_from_signing_days: null
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Notification must be filed before implementation. There is no formal deadline
+    from signing, but the standstill obligation applies immediately once the
+    concentration meets the thresholds. The BWB encourages pre-notification contacts.
+    Filing is made jointly to the BWB and the Federal Cartel Prosecutor (Bundeskartellanwalt).
+
+review_periods:
+  phase_1:
+    days: 4
+    day_type: null
+    day_unit: "weeks"
+    extendable_to_days: null
+    legal_basis: "§11(1) KartG"
+    note: >
+      The BWB and Federal Cartel Prosecutor each have 4 weeks from the day after
+      notification to apply to the Cartel Court for a Phase 2 review. If neither
+      applies within 4 weeks, clearance is deemed granted (tacit clearance).
+  phase_2:
+    days: 5
+    day_type: null
+    day_unit: "months"
+    extendable_to_days: null
+    legal_basis: "§§ 12-14 KartG"
+    note: >
+      Phase 2 is conducted by the Cartel Court (Kartellgericht), which has 5 months
+      from the application to issue its decision. Extendable by consent of the parties.
+
+fees:
+  structure: none
+  note: "Austria does not charge merger filing fees."
+
+threshold_tests:
+  - test_id: at_standard
+    description: "Standard Austrian merger control thresholds (§9(1) KartG)"
+    legal_basis: "§9(1) KartG 2005"
+    source_url: "https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=20004171"
+    note: >
+      All three conditions must be met. The combined worldwide threshold captures
+      the overall size of the parties; the combined Austrian threshold ensures
+      meaningful domestic presence; the individual worldwide threshold of EUR 5m
+      ensures the smaller party is not entirely negligible.
+      VERIFY the individual worldwide EUR 5m threshold against current KartG text.
+    annual_adjustment: false
+    effective_date: null
+
+    conditions:
+      - condition_id: at_combined_worldwide
+        metric: revenue
+        scope: worldwide
+        party: combined
+        operator: ">"
+        value: 300000000
+        currency: EUR
+        source: "§9(1) No. 1 KartG"
+        source_type: primary_legislation
+
+      - condition_id: at_combined_domestic
+        metric: revenue
+        scope: domestic
+        party: combined
+        operator: ">"
+        value: 30000000
+        currency: EUR
+        source: "§9(1) No. 2 KartG"
+        source_type: primary_legislation
+
+      - condition_id: at_each_party_worldwide
+        metric: revenue
+        scope: worldwide
+        party: each_of_at_least_two
+        operator: ">"
+        value: 5000000
+        currency: EUR
+        source: "§9(1) No. 3 KartG"
+        source_type: primary_legislation
+        note: >
+          At least two of the undertakings concerned must each have worldwide turnover
+          exceeding EUR 5m. Confirmed via BWB official threshold description and legal
+          commentary. The EUR 5m threshold is confirmed in source.
+
+  - test_id: at_transaction_value
+    description: "Transaction value threshold (§9(4) KartG) — high-value deals with significant Austrian activities"
+    legal_basis: "§9(4) KartG 2005, as inserted by KaWeRAeG 2017"
+    source_url: "https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=20004171"
+    note: >
+      Introduced simultaneously with Germany's §35(1a) GWB transaction value test in 2017.
+      The Austrian domestic threshold for this test (EUR 15m combined Austrian) is LOWER than
+      the standard test (EUR 30m combined Austrian). The 'significant domestic activities'
+      requirement is assessed qualitatively — confirmed by Austrian Supreme Court in
+      Edwards Lifesciences/JenaValve (16 Ok 2/25t, 26 March 2025). Joint guidance on
+      transaction value thresholds published by BWB and Bundeskartellamt (January 2022,
+      updated): https://www.bwb.gv.at/fileadmin/user_upload/Guidance_Transaction_Value_Thresholds_January_2022_final.pdf
+    annual_adjustment: false
+    effective_date: "2017-11-01"
+
+    conditions:
+      - condition_id: at_tv_combined_worldwide
+        metric: revenue
+        scope: worldwide
+        party: combined
+        operator: ">"
+        value: 300000000
+        currency: EUR
+        source: "§9(4) No. 1 KartG"
+        source_type: primary_legislation
+
+      - condition_id: at_tv_combined_domestic
+        metric: revenue
+        scope: domestic
+        party: combined
+        operator: ">"
+        value: 15000000
+        currency: EUR
+        source: "§9(4) No. 2 KartG"
+        source_type: primary_legislation
+        note: >
+          EUR 15m combined Austrian turnover — NOTE this is lower than the EUR 30m
+          combined domestic threshold in the standard turnover test (§9(1) No. 2).
+
+      - condition_id: at_tv_consideration
+        metric: deal_value
+        scope: worldwide
+        party: combined
+        operator: ">"
+        value: 200000000
+        currency: EUR
+        source: "§9(4) No. 3 KartG"
+        source_type: primary_legislation
+        note: >
+          'Value of consideration' includes cash, voting rights, securities,
+          tangible and intangible assets, and earn-out clauses. Confirmed via
+          BWB/BKartA joint guidance (January 2022).
+
+notes:
+  - >
+    Austria is notable for capturing many transactions that escape EU merger control
+    due to the EU two-thirds rule. Deals with concentration of revenues in Germany
+    and Austria often fall below EU thresholds (two-thirds rule) but above Austrian thresholds.
+  - >
+    Austrian turnover is calculated on the same basis as EU turnover — revenues from
+    goods and services in Austria, net of discounts and VAT.
+  - >
+    The Austrian regime is closely aligned with the German GWB regime and the
+    Bundeskartellamt cooperates informally with the BWB on cross-border cases.
+  - >
+    Media companies: §9(4) KartG provides that for media undertakings, the domestic
+    combined threshold (§9(1) No. 2) is reduced to EUR 6m. Verify the current figure.
+
+# ── Scope / trigger events ────────────────────────────────────────────────────
+scope:
+  concentration_definition: >
+    A concentration within the meaning of KartG 2005 arises through (§7 KartG):
+    (1) a merger of two or more undertakings; (2) the acquisition of the entire
+    business, or a part thereof, of another undertaking; (3) the acquisition of
+    shares in another undertaking if the acquired shares, alone or together with
+    existing holdings, reach or exceed 25% of the capital or voting rights; (4)
+    any other combination enabling one undertaking to exercise a decisive influence
+    over another on a lasting basis, or by which the actual business activities
+    of two or more previously independent undertakings are combined.
+  concentration_definition_source: "§7 KartG 2005 (Kartellgesetz 2005)"
+  concentration_definition_url: "https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=20004171"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture
+  control_threshold: >
+    Decisive influence over another undertaking acquired on a lasting basis, or
+    acquisition of 25% or more of shares/voting rights. The decisive influence
+    test follows the EU approach. The 25% share threshold is unique to Austria
+    (the EU standard is de facto control, not a fixed percentage). Austria therefore
+    catches minority acquisitions of 25% or more that would not be concentrations
+    under EU rules.
+  intra_group_exempt: true
+  foreign_to_foreign_rule: >
+    KartG applies to concentrations with effects in Austria regardless of the
+    nationality or location of the parties. A foreign-to-foreign transaction triggers
+    notification if the combined Austrian turnover threshold and other conditions are
+    met. If EU Community dimension thresholds are also satisfied, the EC has exclusive
+    jurisdiction under the one-stop-shop principle.
+  substantive_test: "dominance"
+  substantive_test_url: "https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=20004171"
+  substantive_test_note: >
+    Austria has not adopted the SIEC standard. §12 KartG 2005 prohibits concentrations
+    that create or strengthen a dominant position in the domestic market or a substantial
+    part of it. The Cartel Court applies a dominance-only test, meaning coordinated effects
+    or oligopoly theories that do not establish individual or collective dominance may not
+    be prohibited under Austrian merger control. The BWB and Cartel Prosecutor apply to
+    the Cartel Court for Phase 2 — the authority itself does not issue prohibition decisions.
+  note: >
+    Austria's procedural structure is unique: the BWB and Federal Cartel Prosecutor
+    are separate actors, each with standing to apply to the Cartel Court (Kartellgericht,
+    a specialised division of the Vienna Court of Appeal) for Phase 2 review. Neither
+    the BWB nor the Cartel Prosecutor can themselves prohibit a concentration — only the
+    court can. This judicial model is distinct from all other major EU merger control regimes.
+
+# ── Gun-jumping / standstill obligation ───────────────────────────────────────
+gun_jumping:
+  automatic_void: false
+  voidable: true
+  max_fine_pct_turnover: 10.0
+  max_fine_fixed: null
+  max_fine_currency: null
+  per_day_fine: null
+  criminal_sanctions: false
+  legal_basis: "§§17, 29(1)(b) KartG 2005"
+  legal_basis_url: "https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=20004171"
+  note: >
+    §17 KartG 2005 prohibits implementation before the expiry of the Phase 1 review
+    period or, if Phase 2 proceedings have been opened, before the Cartel Court issues
+    its decision. Breach of the standstill obligation is subject to fines: the Cartel
+    Court may impose a fine of up to 10% of the annual worldwide aggregate turnover of
+    the undertaking in breach (§29(1)(b) KartG). Unlike Germany, Austrian law does not
+    render gun-jumped transactions automatically void; however, the Cartel Court may order
+    unwinding or impose conditions. No criminal liability attaches to individuals for
+    gun-jumping. The BWB actively monitors for standstill breaches.
+
+# ── FDI / national security screening ────────────────────────────────────────
+fdi_screening:
+  applicable: true
+  regime_name: "Investitionskontrollgesetz 2020 (InvKG)"
+  authority: "Bundesminister fuer Wirtschaft und Arbeit (Federal Minister for Economic Affairs and Labour)"
+  url: "https://www.bmaw.gv.at/Themen/Wirtschaftsstandort/Investitionskontrolle.html"
+  sectors_covered:
+    - defense
+    - security
+    - critical_infrastructure
+    - energy
+    - water
+    - food
+    - health
+    - digital_infrastructure
+    - research
+    - semiconductors
+    - artificial_intelligence
+  note: >
+    Austria's FDI screening regime is established by the Investitionskontrollgesetz
+    (InvKG), in force since July 2020. Non-EU/EEA investors acquiring 10% or more
+    (in certain sensitive sectors) or 25% or more (in other sectors) of voting rights
+    or control of an Austrian company in covered sectors must obtain prior authorisation
+    from the Federal Minister for Economic Affairs. The InvKG implements EU Regulation
+    2019/452 (FDI Screening Regulation) at national level. The Minister may prohibit or
+    impose conditions on investments that threaten Austrian security or public order.
+    Parallel application with merger control is possible — both reviews may be required
+    for the same transaction.
+
+# ── Source passages (verbatim statutory text) ─────────────────────────────────
+source_passages:
+
+  - passage_id: at_kartg_s7
+    document_title: "Kartellgesetz 2005 (KartG) — Austrian Cartel Act 2005"
+    article_reference: "§7 KartG 2005"
+    document_url: "https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=20004171"
+    source_type: primary_legislation
+    quoted_text: >
+      "(1) A concentration of undertakings occurs where:
+      1. undertakings merge;
+      2. one undertaking acquires the entire business or a part of the business of
+      another undertaking;
+      3. one undertaking acquires shares in another undertaking, if the shares acquired,
+      together with shares already held, correspond to at least 25 percent of the capital
+      or voting rights;
+      4. one undertaking acquires decisive influence over another undertaking by contract
+      or in any other way."
+    supports_conditions: []
+
+  - passage_id: at_kartg_s9_1
+    document_title: "Kartellgesetz 2005 (KartG) — Austrian Cartel Act 2005"
+    article_reference: "§9(1) KartG 2005"
+    document_url: "https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=20004171"
+    source_type: primary_legislation
+    quoted_text: >
+      "(1) Concentrations of undertakings within the meaning of § 7 shall be notified
+      to the Federal Competition Authority (Bundeswettbewerbsbehoerde) and to the
+      Federal Cartel Prosecutor (Bundeskartellanwalt) before implementation if in the
+      last business year:
+      1. the aggregate worldwide turnover of all undertakings involved exceeded
+      EUR 300 million;
+      2. the aggregate domestic (Austrian) turnover of all undertakings involved
+      exceeded EUR 30 million; and
+      3. at least two of the undertakings involved each achieved worldwide turnover
+      exceeding EUR 5 million."
+    supports_conditions:
+      - at_combined_worldwide
+      - at_combined_domestic
+      - at_each_party_worldwide

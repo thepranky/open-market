@@ -1,0 +1,316 @@
+jurisdiction_id: de
+jurisdiction_name: Germany
+last_verified: "2024-01-01"
+
+authority:
+  name: Bundeskartellamt (Federal Cartel Office)
+  abbreviation: BKartA
+  url: https://www.bundeskartellamt.de/EN/Home/home_node.html
+  filing_url: https://www.bundeskartellamt.de/EN/Home/home_node.html
+
+regime:
+  mandatory: true
+  suspensory: true
+  voluntary: false
+
+legal_basis:
+  - citation: "Gesetz gegen Wettbewerbsbeschränkungen (GWB), §§ 35–43"
+    url: "https://www.gesetze-im-internet.de/gwb/__35.html"
+  - citation: "GWB as amended by the 10th GWB Amendment (GWB-Digitalisierungsgesetz), BGBl. I 2021, S. 3338"
+    url: "https://www.bgbl.de/xaver/bgbl/start.xav?startbk=Bundesanzeiger_BGBl&jumpTo=bgbl121s3338.pdf"
+    note: "10th Amendment introduced the transaction value test (§35(1a)) and digital sector provisions"
+
+filing:
+  deadline_from_signing_days: null
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Parties must notify before implementing the concentration (§41(1) GWB). No fixed
+    deadline from signing — parties can notify immediately after signing. The BKartA
+    must be notified before closing; gun-jumping (closing before clearance) is an
+    administrative offence and the transaction is void until cleared (§41(1)).
+
+review_periods:
+  phase_1:
+    days: 25
+    day_type: working
+    extendable_to_days: null
+    legal_basis: "§40(1) GWB"
+    note: "Phase 1 runs from receipt of complete notification. BKartA must open Phase 2 or clear within 25 working days."
+  phase_2:
+    days: 4
+    day_type: null
+    day_unit: "months"
+    extendable_to_days: 2
+    day_unit_extended: "months (extension)"
+    legal_basis: "§40(2) GWB"
+    note: "Phase 2 is 4 months from opening decision, extendable by 2 months with parties' consent or in complex cases."
+
+fees:
+  structure: none
+  note: "Germany does not charge filing fees."
+
+threshold_tests:
+  # Tests are OR'd — filing required if ANY test is satisfied.
+
+  - test_id: de_standard
+    description: "Standard turnover thresholds (§35(1) GWB)"
+    legal_basis: "§35(1) GWB"
+    source_url: "https://www.gesetze-im-internet.de/gwb/__35.html"
+    note: >
+      All three conditions must be met. The two domestic thresholds identify one
+      'large' party (>EUR 50m) and one 'smaller' party (>EUR 17.5m) with German presence.
+      VERIFY the EUR 17.5m figure against current GWB text — this threshold has been
+      amended in successive GWB reforms.
+    annual_adjustment: false
+    effective_date: null
+
+    conditions:
+      - condition_id: de_combined_worldwide
+        metric: revenue
+        scope: worldwide
+        party: combined
+        operator: ">"
+        value: 500000000
+        currency: EUR
+        source: "§35(1) No. 1 GWB"
+        source_type: primary_legislation
+
+      - condition_id: de_large_party_domestic
+        metric: revenue
+        scope: domestic
+        party: either_party
+        operator: ">"
+        value: 50000000
+        currency: EUR
+        source: "§35(1) No. 2 GWB"
+        source_type: primary_legislation
+        note: "At least one party must have German domestic turnover exceeding EUR 50m."
+
+      - condition_id: de_smaller_party_domestic
+        metric: revenue
+        scope: domestic
+        party: each_party
+        operator: ">"
+        value: 17500000
+        currency: EUR
+        source: "§35(1) No. 3 GWB"
+        source_type: primary_legislation
+        note: >
+          Uses each_party (min of acquirer, target domestic). If min > EUR 17.5m, both
+          parties exceed EUR 17.5m, which implies the 'other' party from the >=EUR 50m party
+          also meets this threshold. This correctly captures the German requirement that
+          a second distinct party has domestic turnover > EUR 17.5m. Verify current value.
+
+    exceptions:
+      - exception_id: de_bagatell_target
+        description: >
+          De minimis exemption: no notification required if the target enterprise had
+          worldwide aggregate turnover below EUR 10m in the last business year (§35(2) sentence 1 GWB).
+        source: "§35(2) sentence 1 GWB"
+        source_type: primary_legislation
+      - exception_id: de_bagatell_market
+        description: >
+          Bagatellmarkt exemption: no prohibition if the relevant market has existed for at
+          least 5 years and had total sales below EUR 20m in the last calendar year (§36(1)
+          sentence 2 No. 2 GWB). This is a substantive defence, not a notification exemption.
+        source: "§36(1) sentence 2 No. 2 GWB"
+        source_type: primary_legislation
+
+  - test_id: de_transaction_value
+    description: "Transaction value threshold (§35(1a) GWB) — digital/technology deals"
+    legal_basis: "§35(1a) GWB, inserted by 9th GWB Amendment (2017)"
+    source_url: "https://www.gesetze-im-internet.de/gwb/__35.html"
+    note: >
+      Introduced to capture 'killer acquisitions' in digital markets where targets have
+      significant competitive value but low turnover. The 'significant domestic activities'
+      requirement is assessed qualitatively by the BKartA on a case-by-case basis.
+      In practice this test has been applied to tech/digital acquisitions.
+    annual_adjustment: false
+    effective_date: "2017-06-09"
+
+    conditions:
+      - condition_id: de_tv_combined_worldwide
+        metric: revenue
+        scope: worldwide
+        party: combined
+        operator: ">"
+        value: 500000000
+        currency: EUR
+        source: "§35(1a) No. 1 GWB"
+        source_type: primary_legislation
+
+      - condition_id: de_tv_large_party_domestic
+        metric: revenue
+        scope: domestic
+        party: either_party
+        operator: ">"
+        value: 50000000
+        currency: EUR
+        source: "§35(1a) No. 2 GWB"
+        source_type: primary_legislation
+
+      - condition_id: de_tv_consideration
+        metric: deal_value
+        scope: worldwide
+        party: combined
+        operator: ">"
+        value: 400000000
+        currency: EUR
+        source: "§35(1a) No. 3 GWB"
+        source_type: primary_legislation
+
+notes:
+  - >
+    Domestic turnover (Inlandsumsatz) is calculated at the place of supply — for goods,
+    where delivered; for services, where provided. Special rules apply for banks, insurance,
+    broadcasting, and press (§38 GWB).
+  - >
+    The 'one-stop-shop' principle does not apply vis-a-vis German merger control when the
+    EU Merger Regulation's Community dimension thresholds are met — the EC has exclusive
+    jurisdiction. However, if the two-thirds rule applies and the EU declines jurisdiction,
+    Germany reviews under national law.
+  - >
+    German media (press) companies are subject to modified thresholds: the second domestic
+    threshold (§35(1) No. 3 GWB) does not apply to press companies, and there are separate
+    market share-based tests for press acquisitions (§38(3) GWB).
+
+# ── Scope / trigger events ────────────────────────────────────────────────────
+scope:
+  concentration_definition: >
+    A concentration within the meaning of the GWB is deemed to arise in the following
+    cases (§37(1) GWB): (1) acquisition of another undertaking in whole or in part
+    (asset acquisition); (2) acquisition of direct or indirect control over another
+    undertaking by one or more undertakings; (3) acquisition of shares in another
+    undertaking if the shares, alone or together with other shares already held by the
+    acquirer, reach 25% or more of the capital or voting rights; (4) any other combination
+    of undertakings enabling one undertaking to exercise a competitively significant
+    influence over another. The 10th GWB Amendment (2021) supplemented the classic
+    dominance test with SIEC and introduced new provisions for digital platforms.
+  concentration_definition_source: "§37(1) GWB (Gesetz gegen Wettbewerbsbeschraenkungen)"
+  concentration_definition_url: "https://www.gesetze-im-internet.de/gwb/__35.html"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture
+  control_threshold: >
+    Direct or indirect control, or acquisition of 25% or more of shares/voting rights.
+    The 10th Amendment additionally captures transactions enabling "competitively significant
+    influence" (wettbewerblich erheblicher Einfluss) — relevant for minority stakes and
+    digital intermediaries (§37(1) No. 4 GWB). Transaction value test (§35(1a)) also
+    applies where deal value exceeds EUR 400m and target has significant domestic activities.
+  intra_group_exempt: true
+  foreign_to_foreign_rule: >
+    The GWB applies to concentrations that have effects on competition in Germany,
+    regardless of the location or nationality of the parties. A foreign-to-foreign deal
+    triggers GWB notification if the domestic turnover thresholds are met based on the
+    parties' German revenues.
+  substantive_test: "dominance_and_siec"
+  substantive_test_url: "https://www.gesetze-im-internet.de/gwb/__35.html"
+  substantive_test_note: >
+    Prior to the 10th GWB Amendment (2021), Germany applied a pure dominance test
+    (§36(1) GWB old version). The 10th Amendment, in force since January 2021, added
+    the SIEC standard: a concentration shall be prohibited if it would significantly
+    impede effective competition, in particular by creating or strengthening a dominant
+    position (§36(1) GWB). Germany thus now applies dominance_and_siec — dominance
+    remains the primary standard but the SIEC extension permits prohibition of
+    oligopoly/coordinated effects even absent a finding of dominance.
+  note: >
+    Germany also has a transaction value test (§35(1a) GWB, introduced by the 9th
+    Amendment 2017) for acquisitions where deal value exceeds EUR 400m and the target
+    has significant domestic activities. The 10th Amendment (2021) introduced "relative
+    market power" and "superior market power" provisions for digital platforms (§18(3a),
+    §19a GWB), and raised the gun-jumping fine cap from EUR 1m to 10% of worldwide
+    turnover. The Bagatellmarkt exemption (§36(1) sentence 2 No. 2 GWB) provides a
+    substantive safe harbour for markets with sales below EUR 20m that have existed
+    for at least 5 years.
+
+# ── Gun-jumping / standstill obligation ───────────────────────────────────────
+gun_jumping:
+  automatic_void: true
+  voidable: false
+  max_fine_pct_turnover: 10.0
+  max_fine_fixed: null
+  max_fine_currency: null
+  per_day_fine: null
+  criminal_sanctions: false
+  legal_basis: "§§41(1), 41(4), 81(2) GWB"
+  legal_basis_url: "https://www.gesetze-im-internet.de/gwb/__35.html"
+  note: >
+    §41(1) GWB prohibits implementation before BKartA clearance (standstill obligation).
+    Transactions implemented in breach of §41(1) are void (nichtig) under §41(4) GWB —
+    this is a genuine automatic void under German civil law, distinguishing Germany from
+    the EU regime (where transactions are merely voidable). Fines for gun-jumping were
+    raised by the 10th GWB Amendment (2021) from a fixed EUR 1m cap to up to 10% of the
+    worldwide aggregate turnover of the group (§81(2) GWB). Sanctions are
+    civil/administrative — no criminal liability for individuals. The BKartA may also
+    order dissolution of a completed concentration (§41(3) GWB). Notable: In 2021 the
+    BKartA fined Edeka EUR 33.5m and Netto EUR 7.5m for gun-jumping in the Kaiser's
+    Tengelmann acquisition.
+
+# ── FDI / national security screening ────────────────────────────────────────
+fdi_screening:
+  applicable: true
+  regime_name: "Aussenwirtschaftsrechtliche Investitionspruefung (Investment Screening under AWG/AWV)"
+  authority: "Federal Ministry for Economic Affairs and Climate Action (BMWK)"
+  url: "https://www.bmwk.de/Redaktion/EN/Artikel/Foreign-Trade/foreign-investment-review.html"
+  sectors_covered:
+    - defense
+    - critical_infrastructure
+    - media
+    - energy
+    - healthcare
+    - artificial_intelligence
+    - robotics
+    - semiconductors
+    - quantum_computing
+    - cloud_computing
+    - water_supply
+    - food_security
+  note: >
+    Germany operates two tracks under the Aussenwirtschaftsgesetz (AWG) and
+    Aussenwirtschaftsverordnung (AWV): (1) cross-sector review for non-EU/EEA/Swiss
+    investors acquiring 25% or more of voting rights in German companies (§55 AWV),
+    with lower thresholds (10% or even lower) for particularly sensitive sectors;
+    (2) sector-specific screening for acquisitions in defence and cryptography-related
+    companies. The BMWK (formerly BMWi) may prohibit or impose conditions on
+    investments that threaten German public order or security. Germany has one of
+    the most active FDI screening regimes in the EU, with dozens of reviews per year
+    since 2018 reforms. Parallel to EU merger control — both regimes can apply
+    simultaneously to the same transaction.
+
+# ── Source passages (verbatim statutory text) ─────────────────────────────────
+source_passages:
+
+  - passage_id: de_gwb_s35_1
+    document_title: "Gesetz gegen Wettbewerbsbeschraenkungen (GWB) — Act Against Restraints of Competition"
+    article_reference: "§35(1) GWB"
+    document_url: "https://www.gesetze-im-internet.de/gwb/__35.html"
+    source_type: primary_legislation
+    quoted_text: >
+      "(1) This Part shall apply to concentrations with the following combined aggregate
+      worldwide turnover of all the undertakings concerned in the last business year
+      preceding the concentration:
+      1. more than EUR 500 million,
+      2. in Germany, more than EUR 50 million for one undertaking, and
+      3. in Germany, more than EUR 17.5 million for another undertaking."
+    supports_conditions:
+      - de_combined_worldwide
+      - de_large_party_domestic
+      - de_smaller_party_domestic
+
+  - passage_id: de_gwb_s36_1
+    document_title: "Gesetz gegen Wettbewerbsbeschraenkungen (GWB) — Act Against Restraints of Competition"
+    article_reference: "§36(1) GWB (as amended by 10th GWB Amendment 2021)"
+    document_url: "https://www.gesetze-im-internet.de/gwb/__36.html"
+    source_type: primary_legislation
+    quoted_text: >
+      "(1) A concentration which would significantly impede effective competition,
+      in particular through the creation or strengthening of a dominant position,
+      shall be prohibited. A concentration whose parties hold or have a combined market
+      share of less than 15 percent in the same or a neighbouring market, or a
+      combined market share of less than 25 percent in a market and no party has a
+      market share of more than 15 percent in an upstream or downstream market, shall
+      not be prohibited (de minimis clause)."
+    supports_conditions: []

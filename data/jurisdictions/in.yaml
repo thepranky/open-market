@@ -1,0 +1,406 @@
+jurisdiction_id: in
+jurisdiction_name: India
+last_verified: "2026-06-13"
+
+authority:
+  name: Competition Commission of India
+  abbreviation: CCI
+  url: https://www.cci.gov.in/combination
+  filing_url: https://www.cci.gov.in/combination/filing
+
+regime:
+  mandatory: true
+  suspensory: true
+  voluntary: false
+
+legal_basis:
+  - citation: "Competition Act, 2002 (No. 12 of 2003), Part V (Sections 5–6), as amended by the Competition (Amendment) Act 2023 (No. 13 of 2023)"
+    url: "https://www.indiacode.nic.in/handle/123456789/2197"
+    note: >
+      The 2023 Amendment Act introduced the Deal Value Threshold (DVT) and the
+      'substantial business operations in India' nexus test. Effective for DVT:
+      10 September 2024 (MCA notification).
+  - citation: "CCI (Procedure in Regard to the Transaction of Business Relating to Combinations) Regulations, 2024"
+    url: "https://www.cci.gov.in/combination/regulations"
+    note: >
+      Combination Regulations 2024, effective 10 September 2024. Replaced the 2011
+      Combination Regulations. Sets out procedural requirements and substantive
+      thresholds including the 'substantial business operations' criteria for DVT.
+  - citation: "Companies Act, 2013 — Schedule for de minimis exemption threshold values"
+    url: "https://www.mca.gov.in/content/mca/global/en/mca/master-data/GI.html"
+    source_type: authority_announcement
+    note: >
+      The specific INR values for the de minimis exemption (target assets ≤ INR 450 crore,
+      turnover ≤ INR 1,250 crore) and the notification thresholds themselves are set
+      by Ministry of Corporate Affairs (MCA) notification rather than the Competition
+      Act directly. Subject to periodic revision by MCA.
+
+filing:
+  deadline_from_signing_days: 30
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Notice of a combination must be given to the CCI within 30 calendar days of the
+    earlier of: (a) approval of the proposal for the merger or acquisition by the
+    Board of Directors or Shareholders; or (b) the acquisition of shares, voting rights,
+    assets, or control. Parties must not implement the combination until CCI approves
+    or the statutory time limit expires without action (deemed approval).
+
+review_periods:
+  phase_1:
+    days: 30
+    day_type: calendar
+    extendable_to_days: null
+    legal_basis: "Competition Act 2002, s. 6(2A)"
+    note: >
+      CCI has 30 calendar days from receipt of notice to form a prima facie opinion
+      or issue a show cause notice for Phase 2. If no order is made within 30 days
+      the combination is deemed approved ('Green Channel' self-certification also
+      available for transactions with no overlaps — cleared on filing).
+  phase_2:
+    days: 90
+    day_type: working
+    extendable_to_days: null
+    legal_basis: "Competition Act 2002, s. 31"
+    note: >
+      Phase 2 runs from the show cause notice. The CCI must pass an order within
+      210 calendar days of the receipt of notice (extended from 180 days by the
+      2023 Amendment). In practice the CCI aims to conclude within 90 working days.
+
+fees:
+  structure: >
+    Filing fees (prescribed by CCI Combination Regulations 2024):
+    Mergers: INR 30,00,000 (INR 30 lakh)
+    Acquisitions: INR 20,00,000 (INR 20 lakh)
+    All other combinations: INR 10,00,000 (INR 10 lakh)
+  source: "CCI (Combinations) Regulations 2024, Schedule II"
+  source_type: primary_legislation
+  source_url: "https://www.cci.gov.in/combination/regulations"
+  annual_adjustment: false
+
+threshold_tests:
+  # India has three tiers of notification triggers (any one triggers filing obligation):
+  # 1. Parties Test (India nexus): combined Indian assets OR combined Indian turnover
+  # 2. Group Test (worldwide nexus): group worldwide assets OR group worldwide turnover
+  # 3. Deal Value Threshold (DVT): deal value > INR 2,000 crore with India operations
+  #
+  # De minimis exemption applies to Parties Test and Group Test (NOT to DVT):
+  # Exempt if the target enterprise has Indian assets ≤ INR 450 crore AND
+  # Indian turnover ≤ INR 1,250 crore (both conditions must be met for the exemption).
+  #
+  # All values: 1 crore = 10,000,000 (10 million) INR.
+  # Sources: Competition Act 2002 as amended by Competition (Amendment) Act 2023;
+  # CCI Combination Regulations 2024. Specific INR values confirmed via Trilegal
+  # client alert September 2024.
+
+  - test_id: in_parties_assets
+    description: "Parties Test — combined Indian assets (Competition Act s. 5(a)(i))"
+    legal_basis: "Competition Act 2002, s. 5(a)(i) read with CCI Regulations 2024"
+    source_url: "https://www.cci.gov.in/combination/regulations"
+    note: >
+      Filing required if combined Indian assets of the merging parties exceed INR 2,000
+      crore (INR 20bn). De minimis exemption: no filing if target Indian assets ≤ INR
+      450 crore AND target Indian turnover ≤ INR 1,250 crore (both must be met).
+    annual_adjustment: false
+    effective_date: "2024-09-10"
+
+    conditions:
+      - condition_id: in_parties_combined_assets_domestic
+        metric: assets
+        scope: domestic
+        party: combined
+        operator: ">"
+        value: 20000000000
+        currency: INR
+        source: "Competition Act 2002, s. 5(a)(i); MCA notification September 2024"
+        source_type: authority_announcement
+        verified_via:
+          - "https://trilegal.com/wp-content/uploads/2024/09/Trilegal-Update_New-Era-for-Indian-Merger-Control-Begins-on-10-September-2024.pdf"
+        note: "INR 2,000 crore (~USD 240m). Combined Indian assets of all transaction parties."
+
+    exceptions:
+      - exception_id: in_de_minimis_target
+        description: >
+          De minimis exemption: no notification required if the target's Indian assets do not exceed
+          INR 450 crore AND the target's Indian turnover does not exceed INR 1,250 crore
+          (both limbs must be met for the exemption to apply).
+        source: "Competition Act 2002, s. 5 Proviso (1); CCI Regulations 2024"
+        source_type: primary_legislation
+
+  - test_id: in_parties_turnover
+    description: "Parties Test — combined Indian turnover (Competition Act s. 5(a)(ii))"
+    legal_basis: "Competition Act 2002, s. 5(a)(ii) read with CCI Regulations 2024"
+    source_url: "https://www.cci.gov.in/combination/regulations"
+    note: >
+      Alternative limb of the Parties Test. De minimis exemption applies identically
+      to the assets limb above.
+    annual_adjustment: false
+    effective_date: "2024-09-10"
+
+    conditions:
+      - condition_id: in_parties_combined_turnover_domestic
+        metric: revenue
+        scope: domestic
+        party: combined
+        operator: ">"
+        value: 60000000000
+        currency: INR
+        source: "Competition Act 2002, s. 5(a)(ii); MCA notification September 2024"
+        source_type: authority_announcement
+        verified_via:
+          - "https://trilegal.com/wp-content/uploads/2024/09/Trilegal-Update_New-Era-for-Indian-Merger-Control-Begins-on-10-September-2024.pdf"
+        note: "INR 6,000 crore (~USD 720m). Combined Indian turnover of all transaction parties."
+
+    exceptions:
+      - exception_id: in_de_minimis_target
+        description: >
+          De minimis exemption: no notification required if the target's Indian assets ≤ INR 450
+          crore AND the target's Indian turnover ≤ INR 1,250 crore.
+        source: "Competition Act 2002, s. 5 Proviso (1); CCI Regulations 2024"
+        source_type: primary_legislation
+
+  - test_id: in_group_assets
+    description: "Group Test — either party's group worldwide assets (Competition Act s. 5(b)(i))"
+    legal_basis: "Competition Act 2002, s. 5(b)(i) read with CCI Regulations 2024"
+    source_url: "https://www.cci.gov.in/combination/regulations"
+    note: >
+      The Group Test captures transactions where either party belongs to a large business
+      group (including affiliates and holding companies). 'Group' is defined under
+      Competition Act s. 2(b). De minimis exemption applies.
+    annual_adjustment: false
+    effective_date: "2024-09-10"
+
+    conditions:
+      - condition_id: in_group_either_party_ww_assets
+        metric: assets
+        scope: worldwide
+        party: either_party
+        operator: ">"
+        value: 80000000000
+        currency: INR
+        source: "Competition Act 2002, s. 5(b)(i); MCA notification September 2024"
+        source_type: authority_announcement
+        verified_via:
+          - "https://trilegal.com/wp-content/uploads/2024/09/Trilegal-Update_New-Era-for-Indian-Merger-Control-Begins-on-10-September-2024.pdf"
+        note: >
+          INR 8,000 crore (~USD 960m). Worldwide assets of the enterprise group of
+          either the acquirer or the target (whichever is larger).
+
+    exceptions:
+      - exception_id: in_de_minimis_target
+        description: >
+          De minimis exemption: no notification required if the target's Indian assets ≤ INR
+          450 crore AND the target's Indian turnover ≤ INR 1,250 crore.
+        source: "Competition Act 2002, s. 5 Proviso (1); CCI Regulations 2024"
+        source_type: primary_legislation
+
+  - test_id: in_group_turnover
+    description: "Group Test — either party's group worldwide turnover (Competition Act s. 5(b)(ii))"
+    legal_basis: "Competition Act 2002, s. 5(b)(ii) read with CCI Regulations 2024"
+    source_url: "https://www.cci.gov.in/combination/regulations"
+    note: "Alternative worldwide limb of the Group Test. De minimis exemption applies."
+    annual_adjustment: false
+    effective_date: "2024-09-10"
+
+    conditions:
+      - condition_id: in_group_either_party_ww_turnover
+        metric: revenue
+        scope: worldwide
+        party: either_party
+        operator: ">"
+        value: 240000000000
+        currency: INR
+        source: "Competition Act 2002, s. 5(b)(ii); MCA notification September 2024"
+        source_type: authority_announcement
+        verified_via:
+          - "https://trilegal.com/wp-content/uploads/2024/09/Trilegal-Update_New-Era-for-Indian-Merger-Control-Begins-on-10-September-2024.pdf"
+        note: "INR 24,000 crore (~USD 2.9bn). Worldwide turnover of the enterprise group of either party."
+
+    exceptions:
+      - exception_id: in_de_minimis_target
+        description: >
+          De minimis exemption: no notification required if the target's Indian assets ≤ INR
+          450 crore AND the target's Indian turnover ≤ INR 1,250 crore.
+        source: "Competition Act 2002, s. 5 Proviso (1); CCI Regulations 2024"
+        source_type: primary_legislation
+
+  - test_id: in_deal_value
+    description: "Deal Value Threshold (DVT) — transaction value > INR 2,000 crore with India nexus"
+    legal_basis: "Competition Act 2002, s. 5(d) (as inserted by Competition (Amendment) Act 2023 s. 7); CCI Regulations 2024"
+    source_url: "https://www.cci.gov.in/combination/regulations"
+    note: >
+      Introduced to capture high-value acquisitions of digital/data-driven targets with
+      low current revenues ('killer acquisitions'). Two conditions: (1) deal value >
+      INR 2,000 crore, AND (2) target has 'substantial business operations in India'
+      as assessed by the CCI under Regulation 5A of the Combination Regulations 2024
+      (includes user base, volume of transactions, and revenue thresholds in India).
+      The de minimis exemption does NOT apply to the DVT.
+    annual_adjustment: false
+    effective_date: "2024-09-10"
+
+    conditions:
+      - condition_id: in_dvt_deal_value
+        metric: deal_value
+        scope: worldwide
+        party: combined
+        operator: ">"
+        value: 20000000000
+        currency: INR
+        source: "Competition Act 2002, s. 5(d); Competition (Amendment) Act 2023"
+        source_type: primary_legislation
+        verified_via:
+          - "https://www.morganlewis.com/pubs/2024/09/competition-commission-of-india-provides-updated-deal-value-threshold"
+          - "https://trilegal.com/wp-content/uploads/2024/09/Trilegal-Update_New-Era-for-Indian-Merger-Control-Begins-on-10-September-2024.pdf"
+        note: >
+          INR 2,000 crore (~USD 240m). This is the consideration paid, including assumed
+          liabilities and the value of any non-cash consideration.
+
+notes:
+  - >
+    Indian 'domestic' revenue and assets means revenue from, and assets located in,
+    India. For foreign entities, only the Indian portion of turnover and assets counts
+    toward the Parties Test domestic thresholds.
+  - >
+    Green Channel: Combinations involving no horizontal, vertical, or complementary
+    overlaps between the parties may be self-certified and are deemed approved on
+    filing. Parties must submit a declaration under the Combination Regulations 2024.
+  - >
+    The CCI may also review combinations that fall below the notification thresholds
+    if they have an 'appreciable adverse effect on competition' in India
+    (Competition Act s. 6(3)), although this is rarely exercised in practice.
+  - >
+    De minimis exemption values (INR 450 crore / INR 1,250 crore) are set by MCA
+    notification and may be revised periodically. Always verify at
+    https://www.cci.gov.in/combination before advising.
+  - >
+    Sector-specific rules apply to financial sector mergers (banking, insurance) where
+    the sectoral regulator (RBI, IRDAI) retains concurrent jurisdiction alongside the CCI.
+
+# ── Scope / trigger events ────────────────────────────────────────────────────
+scope:
+  concentration_definition: >
+    A "combination" under Competition Act 2002 s. 5 includes: (a) acquisition of
+    shares, voting rights, or assets of an enterprise; (b) acquisition of control
+    over an enterprise; and (c) merger or amalgamation of enterprises. The 2023
+    Amendment Act (s. 5(d)) added a deal value threshold for acquisitions that do not
+    otherwise meet the asset/turnover tests but where the consideration exceeds INR
+    2,000 crore and the target has substantial business operations in India.
+  concentration_definition_source: "Competition Act 2002, Section 5 (as amended by Competition (Amendment) Act 2023)"
+  concentration_definition_url: "https://www.indiacode.nic.in/handle/123456789/2197"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture
+  control_threshold: >
+    India uses "material influence" as its control standard — a lower threshold than
+    the EU's "decisive influence." Material influence means the ability to exercise
+    material influence over the management, affairs, or decisions of an enterprise,
+    including by virtue of shareholding, management rights, shareholders' agreements,
+    voting agreements, or in any other manner (CCI Combination Regulations 2024).
+    This is wider than the EUMR and can capture minority shareholdings conferring
+    board representation or veto rights over ordinary commercial decisions.
+  intra_group_exempt: true
+  foreign_to_foreign_rule: >
+    Competition Act applies to combinations that have, or are likely to have, an
+    appreciable adverse effect on competition (AAEC) in India (s. 6). Thresholds are
+    based on assets and turnover in India for the parties test, and worldwide assets/
+    turnover for the group test. A purely foreign-to-foreign transaction triggers
+    notification if the parties-test domestic thresholds or the group-test worldwide
+    thresholds are met, regardless of the parties' nationality.
+  substantive_test: "slc"
+  substantive_test_url: "https://www.indiacode.nic.in/handle/123456789/2197"
+  substantive_test_note: >
+    Competition Act s. 6(1) read with s. 20 prohibits combinations that cause or are
+    likely to cause an "appreciable adverse effect on competition" (AAEC) in India.
+    The AAEC test is functionally similar to an SLC test. CCI s. 20 factors include:
+    market share and concentration levels, barriers to entry, countervailing power,
+    likelihood of foreclosure, and consumer welfare effects.
+  note: >
+    The Competition (Amendment) Act 2023 introduced: (a) the deal value threshold
+    (INR 2,000 crore + India operations nexus, effective 10 September 2024); (b) a
+    Green Channel for zero-overlap combinations (deemed approved on filing); (c)
+    extended CCI review period to 210 calendar days maximum; and (d) harmonised
+    combination regulations (CCI Combination Regulations 2024).
+
+# ── Gun-jumping / standstill obligation ───────────────────────────────────────
+gun_jumping:
+  automatic_void: true
+  voidable: false
+  max_fine_pct_turnover: 1.0
+  max_fine_fixed: null
+  max_fine_currency: null
+  per_day_fine: null
+  criminal_sanctions: false
+  legal_basis: "Competition Act 2002, Sections 43A, 6(2)"
+  legal_basis_url: "https://www.indiacode.nic.in/handle/123456789/2197"
+  note: >
+    Competition Act s. 6(2) requires that parties give notice of a combination to the
+    CCI before implementation. Under s. 43A (as amended by Competition (Amendment) Act
+    2023), failure to notify or implementation before CCI approval attracts a penalty
+    of up to 1% of the total assets or turnover (whichever is higher) of the combination.
+    Combinations implemented without CCI notification or before approval may be declared
+    void by the CCI. There are no criminal sanctions for gun-jumping under the Competition
+    Act. The CCI has actively enforced the standstill obligation, including on foreign
+    parties whose transactions had Indian elements.
+
+# ── FDI / national security screening ────────────────────────────────────────
+fdi_screening:
+  applicable: true
+  regime_name: "Foreign Exchange Management Act (FEMA) — FDI Policy and Press Note 3/2020"
+  authority: "Department for Promotion of Industry and Internal Trade (DPIIT), Ministry of Home Affairs (MHA) for security-sensitive sectors"
+  url: "https://dpiit.gov.in/foreign-direct-investment"
+  sectors_covered:
+    - defense
+    - atomic_energy
+    - multi_brand_retail
+    - media
+    - broadcasting
+    - pharmaceuticals
+    - financial_services
+    - real_estate
+  note: >
+    India's FDI framework under FEMA and the Consolidated FDI Policy (revised
+    periodically by DPIIT) restricts or requires government approval for FDI in
+    numerous sectors. Press Note 3/2020 (April 2020) amended the Consolidated FDI
+    Policy to require government approval for all FDI (regardless of sector) from
+    entities in countries that share a land border with India — this primarily targets
+    investment from China, Pakistan, Bangladesh, Nepal, Bhutan, Myanmar, and
+    Afghanistan. Defense sector FDI above 74% requires government approval; up to 74%
+    is permitted under the automatic route. The FDI screening framework operates
+    entirely separately from CCI merger control.
+
+# ── Source passages (verbatim statutory text) ─────────────────────────────────
+source_passages:
+
+  - passage_id: in_competition_act_s5_a
+    document_title: "Competition Act, 2002 (No. 12 of 2003), as amended by Competition (Amendment) Act 2023"
+    article_reference: "Section 5(a)"
+    document_url: "https://www.indiacode.nic.in/handle/123456789/2197"
+    source_type: primary_legislation
+    quoted_text: >
+      "The acquisition of one or more enterprises by one or more persons or merger or
+      amalgamation of enterprises shall be a combination of such enterprises and persons
+      or enterprises, if — (a) any acquisition where — (i) the parties to the acquisition,
+      being the enterprise whose control, shares, voting rights or assets have been acquired
+      or are being acquired and the enterprise making acquisition, have, — (A) either, in
+      India, the assets of the value of more than rupees two thousand crores or turnover
+      more than rupees six thousand crores."
+    supports_conditions:
+      - in_parties_combined_assets_domestic
+      - in_parties_combined_turnover_domestic
+
+  - passage_id: in_competition_act_s6_1
+    document_title: "Competition Act, 2002 (No. 12 of 2003), as amended by Competition (Amendment) Act 2023"
+    article_reference: "Section 6(1)"
+    document_url: "https://www.indiacode.nic.in/handle/123456789/2197"
+    source_type: primary_legislation
+    quoted_text: >
+      "No person or enterprise shall enter into a combination which causes or is likely
+      to cause an appreciable adverse effect on competition within the relevant market in
+      India and such a combination shall be void."
+    supports_conditions:
+      - in_parties_combined_assets_domestic
+      - in_parties_combined_turnover_domestic
+      - in_group_either_party_ww_assets
+      - in_group_either_party_ww_turnover

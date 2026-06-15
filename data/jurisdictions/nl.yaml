@@ -1,0 +1,234 @@
+jurisdiction_id: nl
+jurisdiction_name: Netherlands
+last_verified: "2026-06-14"
+
+authority:
+  name: Authority for Consumers and Markets (Autoriteit Consument & Markt)
+  abbreviation: ACM
+  url: https://www.acm.nl/en/markets/antitrust/mergers
+  filing_url: https://www.acm.nl/en/markets/antitrust/mergers/merger-notification
+
+regime:
+  mandatory: true
+  suspensory: true   # parties must await ACM decision before closing
+  voluntary: false
+
+legal_basis:
+  - citation: "Mededingingswet (Competition Act), Articles 27–40, as amended"
+    url: "https://wetten.overheid.nl/BWBR0008691"
+    note: >
+      Chapter 5 of the Mededingingswet (Mw) governs merger control. Article 29 sets
+      the notification obligation; Articles 30–40 govern procedure, assessment and remedies.
+      The EU one-stop-shop principle applies: if the transaction has an EU Community
+      dimension (EUMR applies), no separate Dutch notification is required.
+  - citation: "Besluit concentraties (Decree on Concentrations)"
+    url: "https://wetten.overheid.nl/BWBR0009812"
+    source_type: official_guidance
+    note: "Implementing decree detailing notification requirements and ACM procedural rules."
+  - citation: "Wet veiligheidstoets investeringen, fusies en overnames (Wet vifo) — FDI Screening Act"
+    url: "https://wetten.overheid.nl/BWBR0045744"
+    source_type: primary_legislation
+    note: >
+      Separate FDI screening regime (in force since June 2023) operated by the Bureau
+      Toetsing Investeringen (BTI), Ministry of Economic Affairs. Applies to acquisitions
+      of control in undertakings operating in critical processes or sensitive technology
+      sectors. Runs in parallel with ACM merger control review.
+
+filing:
+  deadline_from_signing_days: null    # no fixed deadline from signing; must be before closing
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Parties must file notification and receive Phase I clearance (or Phase II where
+    applicable) before implementing the transaction. There is no fixed filing deadline
+    from signing. Filing must occur before the concentration is given effect (Art. 34 Mw).
+    Pre-notification contacts with ACM are possible and common for complex transactions.
+    ACM publishes a "quick assessment" procedure for straightforward transactions
+    (typical clearance in ~2 weeks).
+
+review_periods:
+  phase_1:
+    days: 28
+    day_type: working
+    extendable_to_days: null
+    legal_basis: "Article 37(1) Mededingingswet"
+    note: >
+      ACM has FOUR WEEKS (28 calendar days, treated as approximately 4 working weeks)
+      from receipt of complete notification to decide whether to open a Phase II
+      investigation. If no decision within four weeks, the concentration is deemed
+      approved. Simple transactions are often cleared within 10–14 working days via
+      ACM's quick-assessment track.
+  phase_2:
+    days: 91
+    day_type: calendar
+    extendable_to_days: 119   # up to 17 weeks if remedies offered
+    legal_basis: "Article 37(2) Mededingingswet"
+    note: >
+      If ACM issues a Phase II decision (licence requirement), parties have 13 weeks
+      (91 days) to apply for a licence (permit). ACM then has 13 weeks to decide,
+      extendable to 17 weeks if remedies are submitted. Total Phase II maximum:
+      approximately 13 + 17 = 30 weeks from Phase II opening in complex cases.
+
+fees:
+  structure: none
+  note: "The Netherlands does not charge merger notification fees."
+
+# ── Scope / trigger events ────────────────────────────────────────────────────
+scope:
+  concentration_definition: >
+    A concentration arises where: (a) two or more previously independent undertakings
+    merge; (b) one or more persons who already control at least one undertaking, or
+    one or more undertakings, acquire direct or indirect control of the whole or parts
+    of one or more other undertakings; or (c) full-function joint ventures are created
+    (Art. 27 Mw, aligned with EU Merger Regulation Art. 3).
+  concentration_definition_source: "Article 27, Mededingingswet (Competition Act)"
+  concentration_definition_url: "https://wetten.overheid.nl/BWBR0008691"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture   # full-function JVs acquiring joint control
+  control_threshold: >
+    Decisive influence over strategic decisions — exclusive control or joint control.
+    Consistent with EU definition under the EC Merger Regulation (Art. 3 EUMR).
+    Passive minority shareholdings without control rights do not trigger the obligation.
+  intra_group_exempt: true
+  foreign_to_foreign_rule: >
+    Dutch merger control applies to concentrations with Dutch turnover nexus regardless
+    of the parties' nationality or domicile. If the EU thresholds are met, the EU
+    one-stop-shop applies and no separate ACM filing is required.
+  substantive_test: "siec"
+  substantive_test_url: "https://wetten.overheid.nl/BWBR0008691"
+  substantive_test_note: >
+    The Netherlands applies the SIEC test (Art. 37 Mededingingswet, aligned with the EU Merger Regulation): ACM may prohibit a concentration that significantly impedes effective competition, in particular by creating or strengthening a dominant position.
+  note: >
+    HEALTHCARE SECTOR: The Dutch Healthcare Authority (NZa) has separate, lower
+    notification thresholds under the Wet marktordening gezondheidszorg (WMG) for
+    healthcare provider mergers. Healthcare M&A may require parallel NZa and ACM
+    notification; assess both regimes in healthcare sector transactions.
+    CALL-IN POWER: As of 2026, the Dutch Parliament was advancing legislation to grant
+    ACM call-in powers to review below-threshold transactions where at least one party
+    has Dutch turnover ≥ EUR 30m. This is not yet in force as of this filing date.
+
+# ── Gun-jumping / standstill ──────────────────────────────────────────────────
+gun_jumping:
+  automatic_void: false
+  voidable: true
+  max_fine_pct_turnover: 10.0
+  per_day_fine: null
+  criminal_sanctions: false
+  legal_basis: "Articles 34, 40, and 56 Mededingingswet"
+  legal_basis_url: "https://wetten.overheid.nl/BWBR0008691"
+  note: >
+    Article 34 Mw prohibits implementation of a notifiable concentration before
+    obtaining ACM clearance. ACM may impose fines of up to 10% of annual worldwide
+    turnover for gun-jumping (Art. 56(1) Mw). ACM may also impose periodic penalty
+    payments to enforce standstill obligations and may require dissolution of an
+    illegally implemented concentration under Art. 40 Mw.
+
+# ── FDI / national security screening ────────────────────────────────────────
+fdi_screening:
+  applicable: true
+  regime_name: "Wet veiligheidstoets investeringen, fusies en overnames (Wet vifo) — Investment Screening Act"
+  authority: "Bureau Toetsing Investeringen (BTI), Ministry of Economic Affairs and Climate Policy"
+  url: "https://www.bureautoesinginvesteringen.nl"
+  legislation_url: "https://wetten.overheid.nl/BWBR0045744"
+
+  sectors_covered:
+    - critical_infrastructure
+    - sensitive_technology
+    - strategic_minerals
+    - telecommunications
+    - energy
+    - transport_hubs
+  note: >
+    The Wet vifo (in force since 1 June 2023) requires prior notification to the BTI
+    for acquisitions of control or significant influence (10%, 20%, 25% or more of voting
+    rights) in undertakings active in "critical processes" or working with "sensitive
+    technology." BTI has 8 weeks (extendable to 6 months) to assess the transaction.
+    Applies retroactively (from November 2, 2022 to June 1, 2023 — parties in that
+    window had 8 months to notify). BTI can impose conditions, restrict activities, or
+    prohibit the transaction for national security reasons. Runs in parallel with ACM
+    merger control — both regimes must be cleared before closing.
+
+# ── Threshold tests ───────────────────────────────────────────────────────────
+threshold_tests:
+
+  - test_id: nl_standard
+    description: "Combined worldwide >EUR 150m AND each of ≥2 parties Dutch >EUR 30m (Art. 29 Mw)"
+    legal_basis: "Article 29(1)(a) and 29(1)(b), Mededingingswet (Competition Act)"
+    source_url: "https://wetten.overheid.nl/BWBR0008691"
+    note: >
+      Mandatory notification if the combined worldwide turnover of all parties exceeds
+      EUR 150 million in the preceding financial year AND each of at least two parties
+      has Dutch turnover exceeding EUR 30 million. If EU thresholds are also met,
+      only the EC (not ACM) has jurisdiction (one-stop-shop).
+    annual_adjustment: false
+    effective_date: null
+
+    conditions:
+      - condition_id: nl_combined_worldwide
+        metric: revenue
+        scope: worldwide
+        party: combined
+        operator: ">"
+        value: 150000000
+        currency: EUR
+        source: "Article 29(1)(a) Mededingingswet"
+        source_type: primary_legislation
+        source_url: "https://wetten.overheid.nl/BWBR0008691"
+        verified_via:
+          - "https://www.acm.nl/en/markets/antitrust/mergers"
+          - "https://iclg.com/practice-areas/merger-control"
+        note: "EUR 150m combined worldwide turnover of all merging parties in last financial year."
+
+      - condition_id: nl_each_party_dutch
+        metric: revenue
+        scope: domestic
+        party: each_of_at_least_two
+        operator: ">"
+        value: 30000000
+        currency: EUR
+        source: "Article 29(1)(b) Mededingingswet"
+        source_type: primary_legislation
+        source_url: "https://wetten.overheid.nl/BWBR0008691"
+        verified_via:
+          - "https://www.acm.nl/en/markets/antitrust/mergers"
+        note: "Each of at least two parties must individually have Dutch turnover > EUR 30m."
+
+notes:
+  - >
+    EU ONE-STOP-SHOP: If the EUMR thresholds (Art. 1(2) or Art. 1(3) of Regulation 139/2004)
+    are met, the European Commission has exclusive jurisdiction and no separate ACM
+    notification is required. The ACM may request an Art. 9 EUMR referral if Dutch
+    competition concerns are significant.
+  - >
+    HEALTHCARE: The NZa (Netherlands Healthcare Authority) applies separate, lower
+    thresholds for healthcare provider concentrations under the WMG. Healthcare sector
+    transactions require parallel assessment of both ACM (competition) and NZa (market
+    ordering) requirements.
+  - >
+    CALL-IN POWER (pending): Legislation was advancing in 2026 to allow ACM to
+    "call in" certain below-threshold transactions involving a party with Dutch
+    turnover ≥ EUR 30m, targeting serial acquisitions and "killer" acquisitions.
+    Verify whether this is in force before advising on below-threshold deals.
+
+# ── Source passages ────────────────────────────────────────────────────────────
+source_passages:
+
+  - passage_id: nl_mw_art_29
+    document_title: "Mededingingswet (Dutch Competition Act)"
+    article_reference: "Article 29(1)"
+    document_url: "https://wetten.overheid.nl/BWBR0008691"
+    source_type: primary_legislation
+    quoted_text: >
+      "Article 29
+      1. A concentration shall be notified to the Authority for Consumers and Markets
+      before it is given effect, where in the previous financial year:
+      a. the combined aggregate worldwide turnover of the undertakings concerned exceeded
+      150 million euros; and
+      b. each of at least two of the undertakings concerned achieved a turnover in the
+      Netherlands of more than 30 million euros."
+    supports_conditions:
+      - nl_combined_worldwide
+      - nl_each_party_dutch

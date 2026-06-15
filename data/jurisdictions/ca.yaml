@@ -1,0 +1,287 @@
+jurisdiction_id: ca
+jurisdiction_name: Canada
+last_verified: "2024-06-20"
+
+authority:
+  name: Competition Bureau Canada
+  abbreviation: CBCA
+  url: https://www.competitionbureau.gc.ca/eic/site/cb-bc.nsf/eng/home
+  filing_url: https://www.competitionbureau.gc.ca/eic/site/cb-bc.nsf/eng/04122.html
+
+regime:
+  mandatory: true
+  suspensory: true
+  voluntary: false
+
+legal_basis:
+  - citation: "Competition Act, R.S.C. 1985, c. C-34, Part IX (ss. 108–124)"
+    url: "https://laws-lois.justice.gc.ca/eng/acts/C-34/page-21.html"
+  - citation: "Competition Act as amended by Bill C-59 (Budget Implementation Act, 2024, No. 1) — new criminal merger provisions"
+    url: "https://laws-lois.justice.gc.ca/eng/acts/C-34/"
+    note: >
+      Bill C-59 (June 2024) introduced significant amendments including new criminal
+      penalties for gun-jumping and enhanced Bureau powers. Verify current text for
+      the most recent amendments.
+  - citation: "Merger Review Process Guidelines (2011, revised)"
+    url: "https://www.competitionbureau.gc.ca/eic/site/cb-bc.nsf/eng/02732.html"
+    source_type: official_guidance
+
+filing:
+  deadline_from_signing_days: null
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Parties must file a pre-merger notification and observe the waiting period
+    before completing the transaction (s. 123 Competition Act). The waiting period
+    is 30 calendar days from the date a complete notification is submitted by both
+    parties. The Bureau may grant early termination of the waiting period. Filing
+    fees are payable at submission.
+
+review_periods:
+  phase_1:
+    days: 30
+    day_type: calendar
+    extendable_to_days: null
+    legal_basis: "s. 123(1) Competition Act"
+    note: >
+      Initial 30-day waiting period. The Bureau may issue a Supplementary Information
+      Request (SIR), which triggers an additional 30-day period from substantial
+      compliance. This is the Canadian equivalent of a Second Request.
+  phase_2:
+    days: 30
+    day_type: calendar
+    extendable_to_days: null
+    legal_basis: "s. 123(3) Competition Act"
+    note: >
+      After substantial compliance with a SIR, the second 30-day waiting period begins.
+      In practice, Bureau reviews of complex transactions routinely extend beyond the
+      statutory minimums — parties are expected to cooperate in extended review.
+
+fees:
+  structure: >
+    Flat filing fee of CAD $82,761 (2024 value, adjusted annually based on Consumer
+    Price Index). Both the acquirer and target must each pay the filing fee — total
+    CAD $165,522 per transaction (2024).
+  source: "Competition Act, s. 115; Notifiable Transactions Regulations, SOR/87-348"
+  source_type: primary_legislation
+  source_url: "https://laws-lois.justice.gc.ca/eng/regulations/SOR-87-348/"
+  annual_adjustment: true
+
+threshold_tests:
+  # Canada uses an AND structure: size-of-parties AND size-of-transaction.
+  # Either revenues or assets can satisfy each limb (OR within each condition).
+  # Modelled as two alternative tests: one revenue-based, one assets-based.
+  # Current values for 2024 — VERIFY annually at:
+  # https://www.competitionbureau.gc.ca/eic/site/cb-bc.nsf/eng/04122.html
+
+  - test_id: ca_revenue_based
+    description: "Pre-merger notification — revenue limb (s. 109 Competition Act)"
+    legal_basis: "Competition Act, s. 109(1); Notifiable Transactions Regulations"
+    source_url: "https://laws-lois.justice.gc.ca/eng/acts/C-34/page-21.html"
+    note: >
+      Filing required if combined Canadian revenues exceed CAD $400m AND target
+      Canadian revenues exceed CAD $93m. Both thresholds adjusted annually.
+    annual_adjustment: true
+    effective_date: "2024-01-01"
+
+    conditions:
+      - condition_id: ca_rev_party_size
+        metric: revenue
+        scope: domestic
+        party: combined
+        operator: ">"
+        value: 400000000
+        currency: CAD
+        source: "Competition Act, s. 109(1)(a)"
+        source_type: primary_legislation
+        note: "Combined annual gross revenues from sales in or from Canada of all parties and affiliates."
+
+      - condition_id: ca_rev_transaction_size
+        metric: revenue
+        scope: domestic
+        party: target_group
+        operator: ">"
+        value: 93000000
+        currency: CAD
+        source: "Competition Act, s. 109(1)(b); Notifiable Transactions Regulations (2024 adjusted value)"
+        source_type: authority_announcement
+        verified_via:
+          - "https://www.canada.ca/en/competition-bureau/news/2026/03/pre-merger-competition-bureau-notification-threshold-to-remain-at-93m-in-2026.html"
+        note: "Annual gross revenues from sales in or from Canada of the target (business being acquired). VERIFY 2024 value."
+
+  - test_id: ca_assets_based
+    description: "Pre-merger notification — assets limb (s. 109 Competition Act)"
+    legal_basis: "Competition Act, s. 109(1); Notifiable Transactions Regulations"
+    source_url: "https://laws-lois.justice.gc.ca/eng/acts/C-34/page-21.html"
+    note: >
+      Alternative assets-based test. Filing required if combined Canadian assets
+      exceed CAD $400m AND target Canadian assets exceed CAD $93m.
+    annual_adjustment: true
+    effective_date: "2024-01-01"
+
+    conditions:
+      - condition_id: ca_assets_party_size
+        metric: assets
+        scope: domestic
+        party: combined
+        operator: ">"
+        value: 400000000
+        currency: CAD
+        source: "Competition Act, s. 109(1)(a)"
+        source_type: primary_legislation
+        note: "Combined assets in Canada of all parties and affiliates."
+
+      - condition_id: ca_assets_transaction_size
+        metric: assets
+        scope: domestic
+        party: target_group
+        operator: ">"
+        value: 93000000
+        currency: CAD
+        source: "Competition Act, s. 109(1)(b); Notifiable Transactions Regulations (2024 adjusted value)"
+        source_type: authority_announcement
+        verified_via:
+          - "https://www.canada.ca/en/competition-bureau/news/2026/03/pre-merger-competition-bureau-notification-threshold-to-remain-at-93m-in-2026.html"
+        note: "Assets in Canada of the target. VERIFY 2024 value."
+
+scope:
+  concentration_definition: >
+    A "merger" under the Competition Act is defined in s. 91 as the acquisition
+    or establishment, directly or indirectly, by one or more persons, whether by
+    purchase or lease of shares or assets, by amalgamation or by combination or
+    otherwise, of control over or significant interest in the whole or a part of
+    a business of a competitor, supplier, customer or other person. The key
+    concept is "control in fact" — actual ability to materially influence the
+    strategic decisions of the business.
+  concentration_definition_source: "Competition Act, R.S.C. 1985, c. C-34, s. 91"
+  concentration_definition_url: "https://laws-lois.justice.gc.ca/eng/acts/C-34/page-21.html"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture
+  control_threshold: >
+    Acquisition of "control or significant interest." The notification threshold
+    in Part IX is based on share percentages: more than 20% of voting shares of
+    a public company, or more than 35% of voting shares of a private company
+    (s. 110). The broader s. 92 review (SLC) applies to any acquisition of
+    "significant interest" regardless of percentage.
+  intra_group_exempt: true
+  foreign_to_foreign_rule: >
+    Applies if the target has Canadian revenues or assets above the threshold
+    (s. 109 Competition Act). Foreign acquirers of Canadian businesses must
+    separately comply with the Investment Canada Act.
+  substantive_test: slc
+  substantive_test_url: "https://laws-lois.justice.gc.ca/eng/acts/C-34/page-21.html"
+  substantive_test_note: >
+    Section 92 Competition Act: the Bureau may apply to the Competition Tribunal
+    to remedy a merger that prevents or lessens, or is likely to prevent or
+    lessen, competition substantially. The test is a "substantial prevention or
+    lessening of competition" (SPLC) — functionally equivalent to SLC. The
+    Tribunal can order divestiture or behavioural remedies.
+  note: >
+    Canada has a dual-track system: Part IX (notification, ss. 108–124) and
+    s. 92 (substantive merger review). Below-threshold deals can still be
+    challenged under s. 92 within one year of closing (extended to 3 years for
+    certain transactions by Bill C-59, 2024 amendments).
+
+gun_jumping:
+  automatic_void: false
+  voidable: false
+  max_fine_pct_turnover: null
+  max_fine_fixed: 10000
+  max_fine_currency: CAD
+  per_day_fine: 10000
+  criminal_sanctions: true
+  legal_basis: "Competition Act, ss. 65, 100–104, 123; Bill C-59 (2024) criminal amendments"
+  legal_basis_url: "https://laws-lois.justice.gc.ca/eng/acts/C-34/page-21.html"
+  note: >
+    Failure to notify a notifiable transaction: fine of up to CAD $10,000 per
+    day for each day the contravention continues (s. 65 Competition Act). Closing
+    before expiry of the waiting period: the Bureau can seek a court order
+    unwinding the transaction (ss. 100–104). Bill C-59 (June 2024) introduced
+    new criminal provisions for completed mergers that substantially prevent or
+    lessen competition (s. 92.1 as amended), carrying imprisonment of up to
+    14 years or fines at the court's discretion. Pre-closing gun-jumping (closing
+    without filing or during waiting period) is a civil matter. Criminal liability
+    under the new provisions is for the substantive SPLC harm, not mere
+    notification failure.
+
+fdi_screening:
+  applicable: true
+  regime_name: "Investment Canada Act (ICA)"
+  authority: "Innovation, Science and Economic Development Canada (ISED); Global Affairs Canada (cultural businesses)"
+  url: "https://ised-isde.canada.ca/site/investment-canada-act/en"
+  sectors_covered:
+    - "All sectors (net benefit review above threshold)"
+    - "Cultural businesses (lower threshold; separate regime)"
+    - "National security sensitive sectors (any value): defence, critical infrastructure, critical minerals, advanced technology, personal data businesses"
+    - "Uranium mining"
+    - "Financial services"
+    - "Transportation"
+  note: >
+    Two parallel tracks: (1) Net benefit review for direct acquisitions of control
+    by WTO investors above CAD $1.326bn (2024) in non-cultural businesses, with
+    lower thresholds for state-owned enterprises and non-WTO investors.
+    (2) National security review: any acquisition by a foreign investor in a
+    sensitive sector regardless of value; the Minister may review and block or
+    impose conditions. Entirely separate from Competition Act merger notification.
+
+source_passages:
+  - passage_id: "ca_comp_act_s109_1"
+    document_title: "Competition Act, R.S.C. 1985, c. C-34"
+    article_reference: "Section 109(1)"
+    document_url: "https://laws-lois.justice.gc.ca/eng/acts/C-34/page-21.html"
+    source_type: primary_legislation
+    quoted_text: >
+      "Subject to sections 111 and 113, where parties to a proposed transaction
+      are required to notify the Commissioner under this Part, they shall do so
+      before the transaction is completed if the aggregate value of the assets in
+      Canada, or the gross revenues from sales in or from Canada generated from
+      those assets, that would be acquired directly or indirectly in the
+      transaction, in the case of an acquisition of shares, exceeds the
+      threshold amount, and the combined aggregate value of the assets in Canada,
+      or the gross revenues from sales in or from Canada generated from those
+      assets, of the parties to the transaction and their affiliates, as
+      determined in accordance with the regulations, exceeds four hundred million
+      dollars."
+    supports_conditions:
+      - ca_rev_party_size
+      - ca_rev_transaction_size
+      - ca_assets_party_size
+      - ca_assets_transaction_size
+
+  - passage_id: "ca_comp_act_s92"
+    document_title: "Competition Act, R.S.C. 1985, c. C-34"
+    article_reference: "Section 92(1)"
+    document_url: "https://laws-lois.justice.gc.ca/eng/acts/C-34/page-19.html"
+    source_type: primary_legislation
+    quoted_text: >
+      "Where, on application by the Commissioner, the Tribunal finds that a merger
+      or proposed merger prevents or lessens, or is likely to prevent or lessen,
+      competition substantially, the Tribunal may, subject to sections 94 to 96,
+      (a) in the case of a proposed merger, issue an order in the form referred
+      to in subsection (2); or (b) in the case of a completed merger, issue an
+      order dissolving the merger or an order in the form referred to in
+      subsection (2)."
+    supports_conditions:
+      - ca_rev_party_size
+      - ca_assets_party_size
+
+notes:
+  - >
+    Both parties must file separately. The waiting period begins on the date the
+    Bureau receives complete filings from both parties.
+  - >
+    Notifiable transactions include acquisitions of shares (if acquirer would hold
+    more than 20% of public company or 35% of private company post-closing),
+    acquisitions of assets, and amalgamations (s. 110 Competition Act).
+  - >
+    The Bureau can challenge a transaction under s. 92 Competition Act (substantial
+    prevention or lessening of competition) regardless of whether it was notified.
+    Non-notifiable transactions are not immune from challenge.
+  - >
+    Canada does not have an FDI screening regime per se for general transactions;
+    however, the Investment Canada Act applies separately to foreign acquisitions
+    of Canadian businesses above certain asset thresholds and in sensitive sectors
+    (including cultural, national security).

@@ -1,0 +1,293 @@
+jurisdiction_id: tr
+jurisdiction_name: Turkey (Türkiye)
+last_verified: "2026-06-13"
+
+authority:
+  name: Turkish Competition Authority (Rekabet Kurumu)
+  abbreviation: TCA
+  url: https://www.rekabet.gov.tr/en
+  filing_url: https://www.rekabet.gov.tr/en/Sayfa/Birlesme-ve-devralmalar
+
+regime:
+  mandatory: true
+  suspensory: true   # standstill obligation; cannot complete before clearance
+  voluntary: false
+
+legal_basis:
+  - citation: "Law on the Protection of Competition No. 4054 (Rekabetin Korunması Hakkında Kanun), Articles 7–10"
+    url: "https://www.rekabet.gov.tr/en/Sayfa/legislation"
+    note: "Primary legislation establishing merger control jurisdiction."
+  - citation: "Communiqué No. 2010/4 on Mergers and Acquisitions Requiring the Approval of the Turkish Competition Board, as amended by Communiqué No. 2026/2"
+    url: "https://www.rekabet.gov.tr/en/Sayfa/Birlesme-ve-devralmalar"
+    note: >
+      Communiqué No. 2026/2 entered into force on 11 February 2026 (publication in the
+      Official Gazette). Raised turnover thresholds, introduced the worldwide-limb test
+      for acquisitions, and established dedicated rules for technology undertakings.
+      Replaces the 2022 threshold update (combined TRY 750m / individual TRY 250m).
+
+filing:
+  deadline_from_signing_days: null
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Parties must notify the TCA and obtain clearance before implementing the transaction.
+    There is no fixed deadline from signing. Pre-notification contacts with the TCA are
+    common. The standstill obligation means the transaction cannot be implemented during
+    the review period. The TCA may grant exemptions from the standstill obligation in
+    exceptional circumstances.
+
+review_periods:
+  phase_1:
+    days: 30
+    day_type: calendar
+    extendable_to_days: null
+    legal_basis: "Law No. 4054, Article 10"
+    note: >
+      The TCA has 30 calendar days from receipt of a complete notification to decide
+      whether to clear unconditionally, open Phase 2, or clear with conditions. If
+      no decision is made within 30 days, the transaction is deemed approved.
+  phase_2:
+    days: 6
+    day_type: null
+    day_unit: "months"
+    extendable_to_days: null
+    legal_basis: "Law No. 4054, Article 10(3)"
+    note: >
+      Phase 2 (detailed review) is 6 months from the end of Phase 1. The TCA rarely
+      uses the full period; most complex transactions are resolved within 3–4 months.
+
+fees:
+  structure: none
+  note: "Turkey does not charge merger notification fees."
+
+threshold_tests:
+  # Turkey's 2026 threshold structure (Communiqué No. 2026/2, effective 11 February 2026):
+  #
+  # Test 1 (Standard): Combined Turkish turnover > TRY 3bn AND Turkish turnover of at
+  # least two parties each > TRY 1bn.
+  #
+  # Test 2 (Acquisition worldwide limb): (For acquisition transactions only) Turkish
+  # turnover of the transferred business/assets > TRY 1bn AND worldwide turnover of at
+  # least one other party > TRY 9bn.
+  #
+  # Technology undertakings exception: Where a party is a 'technology undertaking'
+  # (active in digital platforms, software, fintech, biotech, health tech, etc. with
+  # established Türkiye operations), the TRY 1bn individual threshold for that party
+  # is reduced to TRY 250m.
+  #
+  # Previous thresholds (2022–February 2026): combined Turkish > TRY 750m AND each of
+  # at least two parties Turkish > TRY 250m; OR worldwide of at least one party > TRY 3bn
+  # AND Turkish of at least one other party > TRY 250m.
+  #
+  # Source: TCA Communiqué No. 2026/2; confirmed via Mondaq (February 2026), Esin
+  # Attorney Partnership (February 2026), Pekin Law (February 2026).
+
+  - test_id: tr_standard
+    description: "Standard threshold — combined Turkish turnover > TRY 3bn AND at least two parties Turkish > TRY 1bn each"
+    legal_basis: "Law No. 4054, Article 7; Communiqué No. 2010/4, Article 7(1)(a) as amended by Communiqué No. 2026/2"
+    source_url: "https://www.rekabet.gov.tr/en/Sayfa/Birlesme-ve-devralmalar"
+    note: >
+      Primary test applicable to mergers and acquisitions. The 'at least two parties'
+      condition means that each of at least two transaction parties must independently
+      have Turkish turnover exceeding TRY 1bn. For technology undertakings (defined in
+      Article 7(3) of the amended Communiqué), the TRY 1bn threshold for that party
+      is reduced to TRY 250m. Modelled using each_of_at_least_two party type.
+    annual_adjustment: false
+    effective_date: "2026-02-11"
+
+    conditions:
+      - condition_id: tr_std_combined_domestic
+        metric: revenue
+        scope: domestic
+        party: combined
+        operator: ">"
+        value: 3000000000
+        currency: TRY
+        source: "Communiqué No. 2010/4 (as amended by No. 2026/2), Article 7(1)(a)(i)"
+        source_type: primary_legislation
+        verified_via:
+          - "https://www.mondaq.com/turkey/antitrust-eu-competition/1745568/t%C3%BCrkiye-updates-its-merger-control-regime"
+          - "https://www.esin.av.tr/2026/02/12/the-turkish-merger-control-communique-has-been-amended/"
+        note: "TRY 3bn combined Turkish turnover of all transaction parties."
+
+      - condition_id: tr_std_each_party_domestic
+        metric: revenue
+        scope: domestic
+        party: each_of_at_least_two
+        operator: ">"
+        value: 1000000000
+        currency: TRY
+        source: "Communiqué No. 2010/4 (as amended by No. 2026/2), Article 7(1)(a)(ii)"
+        source_type: primary_legislation
+        verified_via:
+          - "https://www.mondaq.com/turkey/antitrust-eu-competition/1743600/merger-control-in-t%C3%BCrkiye-notification-requirements-and-new-thresholds-after-the-11022026-amendments"
+          - "https://www.esin.av.tr/2026/02/12/the-turkish-merger-control-communique-has-been-amended/"
+        note: >
+          TRY 1bn Turkish turnover for each of at least two parties. For technology
+          undertakings qualifying under Article 7(3), this threshold is reduced to
+          TRY 250m for that undertaking.
+
+  - test_id: tr_acquisition_worldwide
+    description: "Acquisition worldwide limb — transferred business Turkish > TRY 1bn AND one other party worldwide > TRY 9bn"
+    legal_basis: "Law No. 4054, Article 7; Communiqué No. 2010/4, Article 7(1)(b) as amended by Communiqué No. 2026/2"
+    source_url: "https://www.rekabet.gov.tr/en/Sayfa/Birlesme-ve-devralmalar"
+    note: >
+      Second alternative test applicable to acquisition transactions (not mergers).
+      Captures global players acquiring smaller Turkish businesses. The 'transferred
+      business' turnover refers to the Turkish turnover of the entity/assets being
+      acquired. Technology undertakings: TRY 1bn reduced to TRY 250m for the target.
+    annual_adjustment: false
+    effective_date: "2026-02-11"
+
+    conditions:
+      - condition_id: tr_acq_target_domestic
+        metric: revenue
+        scope: domestic
+        party: target_group
+        operator: ">"
+        value: 1000000000
+        currency: TRY
+        source: "Communiqué No. 2010/4 (as amended by No. 2026/2), Article 7(1)(b)(i)"
+        source_type: primary_legislation
+        verified_via:
+          - "https://www.mondaq.com/turkey/antitrust-eu-competition/1743600/merger-control-in-t%C3%BCrkiye-notification-requirements-and-new-thresholds-after-the-11022026-amendments"
+        note: >
+          TRY 1bn Turkish turnover of the transferred business or assets. For technology
+          undertaking targets, reduced to TRY 250m.
+
+      - condition_id: tr_acq_acquirer_worldwide
+        metric: revenue
+        scope: worldwide
+        party: acquirer_group
+        operator: ">"
+        value: 9000000000
+        currency: TRY
+        source: "Communiqué No. 2010/4 (as amended by No. 2026/2), Article 7(1)(b)(ii)"
+        source_type: primary_legislation
+        verified_via:
+          - "https://www.mondaq.com/turkey/antitrust-eu-competition/1743600/merger-control-in-t%C3%BCrkiye-notification-requirements-and-new-thresholds-after-the-11022026-amendments"
+        note: "TRY 9bn worldwide turnover of at least one other party to the acquisition."
+
+notes:
+  - >
+    Effective date: Communiqué No. 2026/2 entered into force on 11 February 2026.
+    Transactions signed before this date but not yet notified are subject to the
+    prior Communiqué (2022 thresholds: combined TRY 750m; individual TRY 250m;
+    worldwide alternative: one party worldwide > TRY 3bn AND one other Turkish > TRY 250m).
+  - >
+    Technology undertakings: the TCA defines 'technology undertaking' in Article 7(3)
+    of the amended Communiqué as entities active in digital platforms, software, financial
+    technologies, biotechnology, pharmacology, agricultural chemicals, health technologies,
+    semiconductors, electronic systems, or internet-of-things businesses, with established
+    Türkiye operations. For these parties, the individual TRY 1bn threshold is reduced
+    to TRY 250m (within the relevant test). Users should assess whether a party qualifies
+    before concluding no filing is required.
+  - >
+    'Turkish turnover' (Türkiye cirosu) is calculated from revenues generated in Turkey
+    in the most recent financial year. For financial institutions, special calculation
+    rules apply under Article 8 of the Communiqué.
+  - >
+    TRY amounts are not adjusted annually but may be revised by new Communiqué. Always
+    verify at the TCA official website before advising on Turkish filings.
+  - >
+    Transitional mechanism: for transactions under review under the prior Communiqué
+    when No. 2026/2 entered into force, the TCA applies a practical transition — parties
+    in pre-notification discussions may proceed under either the old or new rules with
+    TCA agreement.
+
+# ── Scope / trigger events ────────────────────────────────────────────────────
+scope:
+  concentration_definition: >
+    A concentration arises from: (i) merger of two or more previously independent
+    undertakings; (ii) acquisition of direct or indirect control over the whole or
+    part of one or more undertakings by one or more persons or undertakings, whether
+    by purchase of shares, assets, by contract or any other means (Law No. 4054,
+    Article 7). Full-function joint ventures that perform on a lasting basis all
+    the functions of an autonomous economic entity are also treated as concentrations.
+  concentration_definition_source: "Law No. 4054 on the Protection of Competition, Article 7"
+  concentration_definition_url: "https://www.rekabet.gov.tr/en/Sayfa/legislation"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture
+  control_threshold: >
+    Ability to exercise decisive influence over the activities of an undertaking.
+    Decisive influence may arise through ownership, rights over assets, contractual
+    arrangements, or other means. Sole and joint control are both caught.
+  intra_group_exempt: true
+  substantive_test: "siec"
+  substantive_test_url: "https://www.rekabet.gov.tr/en/Sayfa/legislation"
+  substantive_test_note: >
+    Following the 2022 amendment to Law No. 4054, Turkey introduced the SIEC
+    (Significant Impediment to Effective Competition) test replacing the previous
+    pure dominance standard. Article 7 of Law No. 4054 now prohibits concentrations
+    that significantly impede effective competition in the Turkish market or in a
+    substantial part thereof, in particular as a result of the creation or
+    strengthening of a dominant position.
+  note: >
+    Prior to the 2022 amendment, Turkish merger control applied the dominance test
+    only. The SIEC test is now the operative standard, aligning Turkey with the EU
+    approach and allowing the TCA to challenge oligopolistic/coordinated effects cases
+    without requiring proof of dominance.
+
+# ── Gun-jumping / standstill obligation ───────────────────────────────────────
+gun_jumping:
+  automatic_void: false
+  voidable: true
+  max_fine_pct_turnover: 0.1
+  per_day_fine: null
+  criminal_sanctions: false
+  legal_basis: "Law No. 4054, Article 11"
+  legal_basis_url: "https://www.rekabet.gov.tr/en/Sayfa/legislation"
+  note: >
+    Concentrations subject to mandatory notification must not be implemented before
+    TCA approval (standstill obligation). Breach may result in: (i) administrative
+    fines of up to 0.1% of the Turkish annual turnover of the undertakings concerned
+    per day of non-compliance (Article 11 Law No. 4054); (ii) the TCA may declare
+    the concentration invalid or order its dissolution; (iii) the TCA may impose
+    periodic penalty payments to compel compliance. There are no criminal sanctions
+    for gun-jumping under Turkish competition law.
+
+# ── FDI / national security screening ────────────────────────────────────────
+fdi_screening:
+  applicable: true
+  regime_name: "Foreign Direct Investment Law No. 4875/2003"
+  authority: "Ministry of Industry and Technology (general coordination); sector-specific ministries"
+  url: "https://www.invest.gov.tr/en/"
+  sectors_covered:
+    - defense
+    - aviation
+    - maritime
+    - broadcasting_media
+    - financial_services
+  note: >
+    Turkey operates a generally open FDI regime under Foreign Direct Investment Law
+    No. 4875/2003. There is no general national security screening mechanism equivalent
+    to CFIUS (US) or the UK NSI regime. However, sector-specific prior approvals are
+    required: (i) defense industry investments require Ministry of National Defense
+    approval; (ii) civil aviation requires SHGM authorization; (iii) maritime requires
+    Ministry of Transport; (iv) broadcasting and media require RTÜK (Radio and Television
+    Supreme Council) approval; (v) banking and financial services require BDDK
+    (Banking Regulation and Supervision Agency) approval. These sector approvals are
+    cumulative with TCA merger control clearance.
+
+# ── Source passages (verbatim statutory text) ─────────────────────────────────
+source_passages:
+
+  - passage_id: tr_law4054_art7
+    document_title: "Law No. 4054 on the Protection of Competition (Rekabetin Korunması Hakkında Kanun), as amended 2022"
+    article_reference: "Article 7"
+    document_url: "https://www.rekabet.gov.tr/en/Sayfa/legislation"
+    source_type: practitioner
+    quoted_text: >
+      "It is illegal and prohibited for one or more undertakings to acquire the whole
+      or a part of another undertaking, or to merge with another undertaking, in order
+      to create a dominant position or strengthen an already existing dominant position
+      and thus significantly impede effective competition in a market for goods or
+      services within the whole or a part of the country. In such cases, the Board
+      shall take all necessary measures to restore competition, and may impose
+      administrative fines."
+    supports_conditions:
+      - tr_std_combined_domestic
+      - tr_std_each_party_domestic

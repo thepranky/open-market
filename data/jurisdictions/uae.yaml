@@ -1,0 +1,254 @@
+jurisdiction_id: uae
+jurisdiction_name: United Arab Emirates
+last_verified: "2026-06-14"
+
+authority:
+  name: Ministry of Economy (وزارة الاقتصاد)
+  abbreviation: MoE
+  url: https://www.economy.gov.ae/English/BusinessLegislation/Pages/CompetitionLaw.aspx
+  filing_url: https://www.economy.gov.ae/English/BusinessLegislation/Pages/CompetitionLaw.aspx
+
+regime:
+  mandatory: true
+  suspensory: true   # notification required at least 90 days before completion
+  voluntary: false
+
+legal_basis:
+  - citation: "Federal Decree-Law No. 36 of 2023 on Competition, Chapter 4 (Articles 14–20)"
+    url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023PC0845"
+    note: >
+      Primary competition legislation replacing Federal Law No. 4 of 2012.
+      Chapter 4 establishes the mandatory merger control regime. The law entered
+      into force on 31 March 2024.
+  - citation: "Cabinet Resolution No. 3 of 2025 — Executive Regulations specifying merger notification thresholds"
+    url: "https://www.economy.gov.ae/English/BusinessLegislation/Pages/CompetitionLaw.aspx"
+    note: >
+      Sets the specific AED and market share threshold values for mandatory merger
+      notification. Came into effect on 31 March 2025. Issued by the Cabinet of the UAE.
+    source_type: authority_announcement
+
+filing:
+  deadline_from_signing_days: null
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Notification must be submitted to the Ministry of Economy at least 90 calendar days
+    before completion of the transaction. The MoE has 90 calendar days from receipt of a
+    complete notification to issue a decision, extendable by a further 45 calendar days
+    in complex cases. Parties may not implement the transaction until MoE clearance is
+    obtained or the review period expires without action.
+
+review_periods:
+  phase_1:
+    days: 90
+    day_type: calendar
+    extendable_to_days: 135
+    legal_basis: "Federal Decree-Law No. 36 of 2023, Article 16"
+    note: >
+      The MoE has 90 calendar days from receipt of a complete notification to issue a
+      decision. This period may be extended by 45 calendar days if the MoE deems a
+      more detailed review necessary. If no decision is made within the relevant period,
+      the merger is deemed approved.
+  phase_2:
+    days: 45
+    day_type: calendar
+    extendable_to_days: null
+    legal_basis: "Federal Decree-Law No. 36 of 2023, Article 16(2)"
+    note: "Extension period; runs after the initial 90-day Phase 1 if MoE issues an extension notice."
+
+fees:
+  structure: none
+  note: "The UAE does not currently charge merger notification fees."
+
+threshold_tests:
+  # UAE uses OR logic — notification is mandatory if EITHER threshold is met.
+  # The relevant market for both thresholds is the UAE domestic market.
+  #
+  # Threshold 1 (Turnover): combined annual UAE sales of all parties > AED 300m
+  # Threshold 2 (Market Share): combined UAE market share > 40%
+  #
+  # Both tests look only at UAE-domestic activity. Worldwide revenues/assets are
+  # not a trigger on their own.
+  #
+  # Source: Cabinet Resolution No. 3 of 2025; confirmed via Morgan Lewis (June 2025
+  # client alert), Greenberg Traurig (February 2025), White & Case (March 2025).
+  # Effective date: 31 March 2025.
+
+  - test_id: uae_turnover
+    description: "UAE combined annual sales > AED 300m in the relevant UAE market"
+    legal_basis: "Federal Decree-Law No. 36 of 2023, Article 14; Cabinet Resolution No. 3 of 2025"
+    source_url: "https://www.economy.gov.ae/English/BusinessLegislation/Pages/CompetitionLaw.aspx"
+    note: >
+      Filing required if the combined annual sales of all parties to the transaction
+      in the relevant market in the UAE exceeded AED 300m during the latest fiscal year.
+      'Relevant market' is defined by the MoE; parties should apply a conservative
+      (broad) definition when self-assessing.
+    annual_adjustment: false
+    effective_date: "2025-03-31"
+
+    conditions:
+      - condition_id: uae_combined_domestic_revenue
+        metric: revenue
+        scope: domestic
+        party: combined
+        operator: ">"
+        value: 300000000
+        currency: AED
+        source: "Cabinet Resolution No. 3 of 2025; Federal Decree-Law No. 36 of 2023, Article 14"
+        source_type: authority_announcement
+        verified_via:
+          - "https://www.morganlewis.com/pubs/2025/06/new-uae-merger-control-thresholds-now-effective"
+          - "https://www.gtlaw.com/en/insights/2025/2/uae-introduces-merger-control-thresholds"
+          - "https://www.whitecase.com/insight-alert/uae-announces-new-thresholds-merger-filings"
+        note: >
+          AED 300m (~USD 81.7m) combined annual UAE sales. Measured in the relevant UAE
+          market during the last fiscal year.
+
+  - test_id: uae_market_share
+    description: "UAE combined market share > 40% in the relevant UAE market"
+    legal_basis: "Federal Decree-Law No. 36 of 2023, Article 14; Cabinet Resolution No. 3 of 2025"
+    source_url: "https://www.economy.gov.ae/English/BusinessLegislation/Pages/CompetitionLaw.aspx"
+    note: >
+      Filing required if the combined market share of all parties to the transaction
+      in the relevant UAE market exceeds 40% of total transactions during the last
+      fiscal year. The MoE has discretion to define the relevant market broadly.
+      A 40% share also constitutes a 'dominant position' under the law.
+    annual_adjustment: false
+    effective_date: "2025-03-31"
+
+    conditions:
+      - condition_id: uae_combined_market_share
+        metric: market_share
+        scope: domestic
+        party: combined
+        operator: ">"
+        value: 0.40
+        currency: null
+        source: "Cabinet Resolution No. 3 of 2025; Federal Decree-Law No. 36 of 2023, Article 2 and Article 14"
+        source_type: authority_announcement
+        verified_via:
+          - "https://www.morganlewis.com/pubs/2025/06/new-uae-merger-control-thresholds-now-effective"
+          - "https://www.gtlaw.com/en/insights/2025/2/uae-introduces-merger-control-thresholds"
+        note: "40% combined UAE market share. Same threshold as the statutory dominance definition."
+
+notes:
+  - >
+    NEW REGIME: The UAE's mandatory merger control regime only became operational on
+    31 March 2025. Prior to this date, the UAE had no mandatory pre-merger notification
+    requirement. The UAE is a significant omission from many global merger screening
+    tools — ensure this jurisdiction is assessed for all deals with UAE operations.
+  - >
+    'Relevant market in the UAE': both thresholds are assessed relative to the UAE
+    domestic market. The MoE has not yet published formal market definition guidelines;
+    parties should use a conservative (broad) market definition pending further guidance.
+  - >
+    Filing timeline: notification must be submitted at least 90 calendar days before
+    closing. This is an advance notice requirement, not a post-signing deadline. Deal
+    timelines in the UAE should be planned accordingly.
+  - >
+    Free zones: it is currently unclear whether activity in UAE free zones (e.g.
+    DIFC, ADGM) counts toward the AED 300m UAE domestic sales threshold. Both the
+    DIFC and ADGM have their own competition frameworks. Parties with significant
+    free zone operations should seek UAE law advice.
+  - >
+    Penalties for non-notification: a fine of 2–10% of annual revenues, or between
+    AED 500,000 and AED 5m if revenues cannot be calculated (Federal Decree-Law
+    No. 36 of 2023, Article 22).
+
+# ── Scope / trigger events ────────────────────────────────────────────────────
+scope:
+  concentration_definition: >
+    An economic concentration is any act that results in the transfer or control of
+    ownership of assets, stocks, shares, or rights, or acquisition of control over
+    one or more enterprises — including mergers, acquisitions, and full-function joint
+    ventures — that may have a direct impact on competition in the UAE market
+    (Federal Decree-Law No. 36 of 2023, Article 14). Control means the ability to
+    exercise decisive influence over the activities of an enterprise.
+  concentration_definition_source: "Federal Decree-Law No. 36 of 2023, Article 14"
+  concentration_definition_url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023PC0845"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture
+  control_threshold: >
+    Decisive influence over the activities of an enterprise, whether through ownership,
+    voting rights, contractual arrangements, or other means. Both sole and joint control
+    are captured. The Ministry of Economy applies a substantive assessment of actual
+    influence rather than a fixed percentage threshold.
+  intra_group_exempt: true
+  substantive_test: "dominance"
+  substantive_test_url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023PC0845"
+  substantive_test_note: >
+    The UAE Ministry of Economy assesses whether the economic concentration creates or
+    strengthens a dominant position that significantly restricts, limits, or harms
+    competition in the UAE market or a substantial part thereof. A dominant position
+    is defined as holding more than 40% of the relevant UAE market (Cabinet Resolution
+    No. 3 of 2025, also the notification market share threshold).
+  note: >
+    The UAE mandatory merger control regime only became operational on 31 March 2025.
+    Transactions with UAE nexus should be assessed under both the turnover (AED 300m)
+    and market share (40%) thresholds — notification is required if EITHER is met.
+
+# ── Gun-jumping / standstill obligation ───────────────────────────────────────
+gun_jumping:
+  automatic_void: false
+  voidable: false
+  max_fine_pct_turnover: 10.0
+  max_fine_fixed: 5000000
+  max_fine_currency: AED
+  per_day_fine: null
+  criminal_sanctions: false
+  legal_basis: "Federal Decree-Law No. 36 of 2023, Article 22"
+  legal_basis_url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52023PC0845"
+  note: >
+    Parties must not implement a notifiable economic concentration before submitting
+    a notification to the Ministry of Economy at least 90 calendar days before
+    completion and receiving clearance (or the review period expiring without action).
+    Implementing without notification is subject to fines of 2–10% of annual revenues
+    in the UAE market, or between AED 500,000 and AED 5,000,000 if revenues cannot be
+    determined (Article 22). There are no criminal sanctions for notification failures.
+
+# ── FDI / national security screening ────────────────────────────────────────
+fdi_screening:
+  applicable: true
+  regime_name: "Foreign Direct Investment Law, Federal Law No. 19 of 2018"
+  authority: "Ministry of Investment (formerly Ministry of Economy FDI unit)"
+  url: "https://www.investinuae.ae"
+  sectors_covered:
+    - defense
+    - banking
+    - insurance
+    - media
+    - publishing
+    - oil_and_gas
+  note: >
+    The UAE Foreign Direct Investment Law (Federal Law No. 19/2018) introduced a
+    framework allowing 100% foreign ownership in designated sectors listed on a
+    'positive list' (also called the FDI list). Outside positive-list sectors,
+    ownership caps and prior approval requirements apply. Key restricted sectors
+    include: defense (Ministry of Defense approval), banking and insurance (Central
+    Bank of UAE approval), media and publishing (National Media Authority), and
+    oil and gas (ADNOC or OPEC-related approvals). Each UAE Emirate (Dubai,
+    Abu Dhabi) also maintains its own investment licensing regimes for free zone
+    entities. Assess sector-specific FDI restrictions in addition to Ministry of
+    Economy merger control clearance.
+
+# ── Source passages (verbatim statutory text) ─────────────────────────────────
+source_passages:
+
+  - passage_id: uae_fdl36_art14
+    document_title: "Federal Decree-Law No. 36 of 2023 on Competition"
+    article_reference: "Article 14"
+    document_url: "https://www.economy.gov.ae/English/BusinessLegislation/Pages/CompetitionLaw.aspx"
+    source_type: practitioner
+    quoted_text: >
+      "Any economic concentration that results in the combined annual sales of the
+      parties to the transaction in the relevant market in the UAE exceeding the
+      threshold prescribed by the Cabinet, or that results in a combined UAE market
+      share of the parties exceeding forty per cent (40%) of total transactions in
+      the relevant market, must be notified to the Ministry of Economy before
+      implementation."
+    supports_conditions:
+      - uae_combined_domestic_revenue
+      - uae_combined_market_share

@@ -1,0 +1,297 @@
+jurisdiction_id: fr
+jurisdiction_name: France
+last_verified: "2026-06-13"
+
+authority:
+  name: "Autorite de la concurrence"
+  abbreviation: AdlC
+  url: https://www.autoritedelaconcurrence.fr/en/mergers
+  filing_url: https://www.autoritedelaconcurrence.fr/en/article/procedures-merger-control
+
+regime:
+  mandatory: true
+  suspensory: true
+  voluntary: false
+
+legal_basis:
+  - citation: "Code de commerce, Articles L. 430-1 to L. 430-10"
+    url: "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000005634379/LEGISCTA000006161935/"
+  - citation: "Lignes directrices de l'Autorite de la concurrence relatives au controle des concentrations (2020)"
+    url: "https://www.autoritedelaconcurrence.fr/fr/document/lignes-directrices-de-lautorite-de-la-concurrence-relatives-au-controle-des-concentrations"
+    source_type: official_guidance
+
+filing:
+  deadline_from_signing_days: null
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Filing must be made before implementation of the concentration (Article L. 430-3
+    Code de commerce). No fixed deadline from signing, but parties cannot complete
+    prior to clearance. Pre-notification discussions with the AdlC are strongly
+    encouraged and customary for complex transactions.
+
+review_periods:
+  phase_1:
+    days: 25
+    day_type: working
+    extendable_to_days: 35
+    legal_basis: "Article L. 430-5 Code de commerce"
+    note: "25 working days from notification; extended to 35 working days if parties offer commitments in Phase 1."
+  phase_2:
+    days: 65
+    day_type: working
+    extendable_to_days: 20
+    legal_basis: "Article L. 430-7 Code de commerce"
+    note: >
+      65 working days from Phase 2 opening decision; extendable by 20 working days
+      if the parties offer commitments during Phase 2. Clock can be suspended for
+      information requests or parties' own request (once, up to 15 working days).
+
+fees:
+  structure: none
+  note: "France does not charge merger filing fees."
+
+threshold_tests:
+  # Tests are OR'd — filing required if EITHER the standard OR the retail test is satisfied.
+
+  # NOTE ON PENDING THRESHOLD INCREASES:
+  # France's Loi de simplification (Simplification Bill) was adopted on 15 April 2026.
+  # Article 8 of that law raises the general thresholds from EUR 150m/EUR 50m to EUR 250m/EUR 80m,
+  # and the retail thresholds from EUR 75m/EUR 15m to EUR 100m/EUR 20m. The new thresholds enter
+  # into force on the first day of the fourth month following publication of the law —
+  # expected approximately August 2026. As of June 2026 the OLD thresholds below remain
+  # in force. UPDATE this file once the law is published in the Journal officiel and
+  # the exact commencement date is confirmed.
+  # Source: https://www.clearyantitrustwatch.com/2025/04/france-set-to-increase-merger-control-notification-thresholds/
+
+  - test_id: fr_standard
+    description: "Standard merger control thresholds (Article L. 430-2 I Code de commerce)"
+    legal_basis: "Article L. 430-2 I, Code de commerce"
+    source_url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006233997/"
+    note: >
+      The French regime applies to concentrations not subject to EU merger control
+      (one-stop-shop). If EU Community dimension thresholds are met, the EC has
+      exclusive jurisdiction. French turnover is calculated net of taxes and
+      intra-group transactions. PENDING INCREASE: thresholds rise to EUR 250m/EUR 80m
+      approximately August 2026 per Loi de simplification (15 April 2026).
+    annual_adjustment: false
+    effective_date: "2004-01-01"
+
+    conditions:
+      - condition_id: fr_combined_worldwide
+        metric: revenue
+        scope: worldwide
+        party: combined
+        operator: ">"
+        value: 150000000
+        currency: EUR
+        source: "Article L. 430-2 I (1 degrees) Code de commerce"
+        source_type: primary_legislation
+
+      - condition_id: fr_each_party_domestic
+        metric: revenue
+        scope: domestic
+        party: each_of_at_least_two
+        operator: ">"
+        value: 50000000
+        currency: EUR
+        source: "Article L. 430-2 I (2 degrees) Code de commerce"
+        source_type: primary_legislation
+        note: >
+          Each of at least two parties must individually have French aggregate turnover
+          exceeding EUR 50m. French turnover = turnover achieved in France, regardless of
+          where the party is incorporated.
+
+  - test_id: fr_retail
+    description: "Retail sector thresholds (Article L. 430-2 II Code de commerce)"
+    legal_basis: "Article L. 430-2 II, Code de commerce"
+    source_url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006233997/"
+    note: >
+      Lower thresholds applying specifically to transactions involving retail trade
+      in food products, non-food consumer goods, and food services in France. Applies
+      regardless of the parties' other activities. PENDING INCREASE: thresholds rise
+      to EUR 100m/EUR 20m approximately August 2026 per Loi de simplification (15 April 2026).
+    annual_adjustment: false
+    effective_date: "2004-01-01"
+
+    conditions:
+      - condition_id: fr_retail_combined_worldwide
+        metric: revenue
+        scope: worldwide
+        party: combined
+        operator: ">"
+        value: 75000000
+        currency: EUR
+        source: "Article L. 430-2 II (1 degrees) Code de commerce"
+        source_type: primary_legislation
+
+      - condition_id: fr_retail_each_party_domestic
+        metric: revenue
+        scope: domestic
+        party: each_of_at_least_two
+        operator: ">"
+        value: 15000000
+        currency: EUR
+        source: "Article L. 430-2 II (2 degrees) Code de commerce"
+        source_type: primary_legislation
+        note: >
+          Each of at least two parties must have French turnover > EUR 15m. Applies only
+          to parties active in retail trade (commerce de detail) in France.
+
+notes:
+  - >
+    The retail thresholds (fr_retail) apply only to concentrations where at least
+    one party operates retail establishments in France. 'Retail' is broadly interpreted
+    to include supermarkets, hypermarkets, hard discounters, and similar formats.
+  - >
+    French turnover (chiffre d'affaires realise en France) excludes inter-group sales
+    and VAT. For financial institutions, special computation rules apply under Article
+    L. 430-2 III Code de commerce.
+  - >
+    The Minister of Economy retains concurrent powers in the retail sector to issue
+    injunctions in Phase 1, even for concentrations cleared by the AdlC (Article L.
+    430-7-1 Code de commerce).
+  - >
+    French overseas territories (DOM-TOM) have separate merger control regimes under
+    specific provisions — transactions primarily affecting overseas territories may
+    be subject to different rules.
+
+# ── Scope / trigger events ────────────────────────────────────────────────────
+scope:
+  concentration_definition: >
+    A concentration is deemed to arise when: (a) two or more previously independent
+    undertakings merge; (b) one or more persons already controlling at least one
+    undertaking, or one or more undertakings, acquire direct or indirect control of
+    the whole or part of one or more other undertakings; or (c) a full-function joint
+    venture is created that performs on a lasting basis all functions of an autonomous
+    economic entity (Article L. 430-1 Code de commerce). Control is deemed acquired
+    where a person or undertaking has the ability to exercise a decisive influence
+    over another undertaking.
+  concentration_definition_source: "Article L. 430-1, Code de commerce"
+  concentration_definition_url: "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000005634379/LEGISCTA000006161935/"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture
+  control_threshold: >
+    Decisive influence over an undertaking, acquired directly or indirectly. Minority
+    stakes do not constitute control unless they confer, through contractual or other
+    means, the ability to exercise decisive influence over strategic decisions. The
+    AdlC follows the EU Jurisdictional Notice approach to control analysis.
+  intra_group_exempt: true
+  foreign_to_foreign_rule: >
+    The French regime applies to concentrations with effects in France regardless of
+    the nationality of the parties. A foreign-to-foreign transaction triggers notification
+    if French turnover thresholds are met. If the EU Community dimension thresholds
+    are also met, the EC has exclusive jurisdiction (one-stop-shop).
+  substantive_test: "siec"
+  substantive_test_url: "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000005634379/LEGISCTA000006161935/"
+  substantive_test_note: >
+    France reformed its substantive test from dominance to SIEC in the 2008 Loi de
+    modernisation de l'economie (LME). Article L. 430-6 Code de commerce now prohibits
+    concentrations that would significantly impede effective competition, in particular
+    by creating or strengthening a dominant position. The SIEC standard allows the
+    AdlC to address coordinated effects and oligopoly concerns beyond pure dominance.
+  note: >
+    Pending threshold increase: France's Loi de simplification (15 April 2026) will
+    raise general thresholds from EUR 150m/EUR 50m to EUR 250m/EUR 80m and retail
+    thresholds from EUR 75m/EUR 15m to EUR 100m/EUR 20m, expected to enter into force
+    approximately August 2026. The Minister of Economy retains concurrent powers in
+    certain retail sector cases (Article L. 430-7-1).
+
+# ── Gun-jumping / standstill obligation ───────────────────────────────────────
+gun_jumping:
+  automatic_void: true
+  voidable: false
+  max_fine_pct_turnover: 5.0
+  max_fine_fixed: 1500000
+  max_fine_currency: "EUR"
+  per_day_fine: null
+  criminal_sanctions: false
+  legal_basis: "Articles L. 430-4, L. 430-8 Code de commerce"
+  legal_basis_url: "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000005634379/LEGISCTA000006161935/"
+  note: >
+    Article L. 430-4 Code de commerce imposes the standstill obligation: concentrations
+    subject to notification must not be implemented before obtaining AdlC clearance,
+    unless a derogation is expressly granted. Article L. 430-8 provides sanctions for
+    breach: fines up to 5% of the party's annual net turnover in France (or up to
+    EUR 1.5m for individuals). Concentrations implemented without clearance (absent
+    a derogation) are null and void under French civil law. The AdlC may also impose
+    periodic penalty payments and order dissolution. No criminal liability attaches to
+    gun-jumping under French merger control law.
+
+# ── FDI / national security screening ────────────────────────────────────────
+fdi_screening:
+  applicable: true
+  regime_name: "Controle des investissements etrangers en France (IEF)"
+  authority: "Ministere de l'Economie et des Finances — Direction Generale du Tresor (DGT)"
+  url: "https://www.tresor.economie.gouv.fr/Institutionnel/gouvernance-economique/le-controle-des-investissements-etrangers-en-france"
+  sectors_covered:
+    - defense
+    - dual_use_technologies
+    - critical_infrastructure
+    - energy
+    - water
+    - transport
+    - telecommunications
+    - health
+    - media
+    - data_processing
+    - artificial_intelligence
+    - space
+    - semiconductors
+    - food_security
+    - finance
+  note: >
+    France's FDI screening regime is established under Article L. 151-3 of the Code
+    monetaire et financier, implemented by Decret n° 2019-1590 (31 December 2019)
+    and subsequent arretees. Non-EU investors (and, in some sectors, EU investors)
+    must obtain prior authorisation from the DGT before acquiring control of, or
+    a stake of 25% or more voting rights in, a French company operating in sensitive
+    sectors. Since 2020, the threshold for certain sectors has been reduced to 10%.
+    The regime is separate from merger control — both may apply simultaneously. The
+    Minister of Economy may impose conditions or prohibit the investment outright.
+    France uses a broad definition of "activities essential to the national interest"
+    and has significantly expanded the scope of screened sectors since 2014.
+
+# ── Source passages (verbatim statutory text) ─────────────────────────────────
+source_passages:
+
+  - passage_id: fr_code_commerce_l430_1
+    document_title: "Code de commerce — Commercial Code of France"
+    article_reference: "Article L. 430-1"
+    document_url: "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000005634379/LEGISCTA000006161935/"
+    source_type: primary_legislation
+    quoted_text: >
+      "I. - The present title applies to concentrations between undertakings.
+      II. - A concentration is deemed to arise when:
+      1. Two or more previously independent undertakings merge;
+      2. One or more persons, already controlling at least one undertaking, or one or
+      more undertakings, acquire, whether by purchase of securities or assets, by
+      contract or by any other means, direct or indirect control of the whole or parts
+      of one or more other undertakings;
+      3. One or more undertakings jointly acquire direct or indirect control of the
+      whole or parts of one or more other undertakings.
+      III. - Control is constituted by rights, contracts or any other means which,
+      either separately or in combination and having regard to the considerations of
+      fact or law involved, confer the possibility of exercising a decisive influence
+      on an undertaking, and in particular: ownership or the right to use all or part
+      of the assets of an undertaking; rights or contracts which confer decisive
+      influence on the composition, voting or decisions of the organs of an undertaking."
+    supports_conditions: []
+
+  - passage_id: fr_code_commerce_l430_2_i
+    document_title: "Code de commerce — Commercial Code of France"
+    article_reference: "Article L. 430-2 I"
+    document_url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006233997/"
+    source_type: primary_legislation
+    quoted_text: >
+      "I. - This title applies to concentrations that satisfy the following conditions:
+      1. The combined aggregate worldwide turnover of all the undertakings concerned
+      exceeds EUR 150 million;
+      2. The aggregate turnover achieved individually in France by at least two of
+      the undertakings concerned exceeds EUR 50 million."
+    supports_conditions:
+      - fr_combined_worldwide
+      - fr_each_party_domestic
