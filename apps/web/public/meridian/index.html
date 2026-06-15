@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Meridian — Market Definition Research</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          canvas: 'var(--canvas)',
+          surface: 'var(--surface)',
+          raised: 'var(--raised)',
+          line: 'var(--line)',
+          'line-strong': 'var(--line-strong)',
+          ink: 'var(--ink)',
+          muted: 'var(--muted)',
+          faint: 'var(--faint)',
+          brand: { DEFAULT: 'var(--brand)', hover: 'var(--brand-hover)', soft: 'var(--brand-soft)', ink: 'var(--brand-ink)', fg: 'var(--brand-fg)' },
+          pos: { DEFAULT: 'var(--pos)', soft: 'var(--pos-soft)', ink: 'var(--pos-ink)' },
+          ai: { DEFAULT: 'var(--ai)', soft: 'var(--ai-soft)', ink: 'var(--ai-ink)' },
+          neg: { DEFAULT: 'var(--neg)', soft: 'var(--neg-soft)', ink: 'var(--neg-ink)' },
+          seg: { DEFAULT: 'var(--seg)', soft: 'var(--seg-soft)', ink: 'var(--seg-ink)' },
+          slatey: { DEFAULT: 'var(--slatey)', soft: 'var(--slatey-soft)', ink: 'var(--slatey-ink)' },
+        },
+        fontFamily: {
+          sans: ['"IBM Plex Sans"', 'system-ui', 'sans-serif'],
+          serif: ['"IBM Plex Serif"', 'Georgia', 'serif'],
+          mono: ['"IBM Plex Mono"', 'ui-monospace', 'monospace'],
+        },
+        maxWidth: { content: '1240px', reading: '1000px' },
+        boxShadow: {
+          card: '0 1px 2px rgba(16,27,43,0.04), 0 1px 3px rgba(16,27,43,0.06)',
+          raised: '0 4px 16px rgba(16,27,43,0.10), 0 1px 3px rgba(16,27,43,0.06)',
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  :root {
+    --canvas: #F3F5F8;
+    --surface: #FFFFFF;
+    --raised: #FFFFFF;
+    --line: #E3E8EE;
+    --line-strong: #CCD4DE;
+    --ink: #0F1A29;
+    --muted: #54616F;
+    --faint: #8A94A1;
+
+    --brand: #1E4E89;
+    --brand-hover: #173E6E;
+    --brand-soft: #E9EFF7;
+    --brand-ink: #1E4E89;
+    --brand-fg: #FFFFFF;
+
+    --pos: #1E7A45;
+    --pos-soft: #E5F1E9;
+    --pos-ink: #176236;
+
+    --ai: #A4660A;
+    --ai-soft: #F7EEDF;
+    --ai-ink: #855107;
+
+    --neg: #B42318;
+    --neg-soft: #FAE9E7;
+    --neg-ink: #8F1C13;
+
+    --seg: #2E63AE;
+    --seg-soft: #E7EEF8;
+    --seg-ink: #244F8C;
+
+    --slatey: #5A6675;
+    --slatey-soft: #EDF0F4;
+    --slatey-ink: #46515F;
+  }
+
+  .dark {
+    --canvas: #0A121C;
+    --surface: #111C29;
+    --raised: #16222F;
+    --line: #233242;
+    --line-strong: #344456;
+    --ink: #E8EDF3;
+    --muted: #99A6B3;
+    --faint: #69768; /* fallback */
+    --faint: #697684;
+
+    --brand: #5C92D6;
+    --brand-hover: #76A5E0;
+    --brand-soft: #16273B;
+    --brand-ink: #9DC1ED;
+    --brand-fg: #08121E;
+
+    --pos: #45B079;
+    --pos-soft: #122319;
+    --pos-ink: #7FD2A3;
+
+    --ai: #D6973F;
+    --ai-soft: #271C0D;
+    --ai-ink: #E8B574;
+
+    --neg: #E06B5F;
+    --neg-soft: #2A1410;
+    --neg-ink: #ED938A;
+
+    --seg: #5E92D6;
+    --seg-soft: #142339;
+    --seg-ink: #9BBFEA;
+
+    --slatey: #93A0AD;
+    --slatey-soft: #1A2633;
+    --slatey-ink: #B3BFCB;
+  }
+
+  html, body { margin: 0; background: var(--canvas); }
+  body { font-family: 'IBM Plex Sans', system-ui, sans-serif; color: var(--ink); -webkit-font-smoothing: antialiased; }
+  ::selection { background: var(--brand-soft); }
+
+  /* Restrained focus ring */
+  .focus-ring:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+
+  /* thin scrollbars in graph columns */
+  .thin-scroll::-webkit-scrollbar { width: 8px; height: 8px; }
+  .thin-scroll::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 4px; }
+  .thin-scroll::-webkit-scrollbar-track { background: transparent; }
+
+  /* subtle striped placeholder for imagery */
+  .placeholder-stripe {
+    background-image: repeating-linear-gradient(135deg, var(--line) 0, var(--line) 1px, transparent 1px, transparent 9px);
+  }
+
+  @keyframes meridian-fade-up { from { transform: translateY(10px); } to { transform: none; } }
+  .anim-up { animation: meridian-fade-up .45s cubic-bezier(.2,.6,.2,1); }
+  @media (prefers-reduced-motion: reduce) { .anim-up { animation: none; } }
+</style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <script type="text/babel" src="data.jsx"></script>
+  <script type="text/babel" src="ui.jsx"></script>
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="page-home.jsx"></script>
+  <script type="text/babel" src="page-explore.jsx"></script>
+  <script type="text/babel" src="page-case.jsx"></script>
+  <script type="text/babel" src="page-graph.jsx"></script>
+  <script type="text/babel" src="page-system.jsx"></script>
+  <script type="text/babel" src="app.jsx"></script>
+</body>
+</html>
