@@ -3,12 +3,87 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #0f172a;
+  --canvas: #F3F5F8;
+  --surface: #FFFFFF;
+  --raised: #FFFFFF;
+  --line: #E3E8EE;
+  --line-strong: #CCD4DE;
+  --ink: #0F1A29;
+  --muted: #54616F;
+  --faint: #8A94A1;
+
+  --brand: #1E4E89;
+  --brand-hover: #173E6E;
+  --brand-soft: #E9EFF7;
+  --brand-ink: #1E4E89;
+  --brand-fg: #FFFFFF;
+
+  --pos: #1E7A45;
+  --pos-soft: #E5F1E9;
+  --pos-ink: #176236;
+
+  --ai: #A4660A;
+  --ai-soft: #F7EEDF;
+  --ai-ink: #855107;
+
+  --neg: #B42318;
+  --neg-soft: #FAE9E7;
+  --neg-ink: #8F1C13;
+
+  --seg: #2E63AE;
+  --seg-soft: #E7EEF8;
+  --seg-ink: #244F8C;
+
+  --slatey: #5A6675;
+  --slatey-soft: #EDF0F4;
+  --slatey-ink: #46515F;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+.dark {
+  --canvas: #0A121C;
+  --surface: #111C29;
+  --raised: #16222F;
+  --line: #233242;
+  --line-strong: #344456;
+  --ink: #E8EDF3;
+  --muted: #99A6B3;
+  --faint: #697684;
+
+  --brand: #5C92D6;
+  --brand-hover: #76A5E0;
+  --brand-soft: #16273B;
+  --brand-ink: #9DC1ED;
+  --brand-fg: #08121E;
+
+  --pos: #45B079;
+  --pos-soft: #122319;
+  --pos-ink: #7FD2A3;
+
+  --ai: #D6973F;
+  --ai-soft: #271C0D;
+  --ai-ink: #E8B574;
+
+  --neg: #E06B5F;
+  --neg-soft: #2A1410;
+  --neg-ink: #ED938A;
+
+  --seg: #5E92D6;
+  --seg-soft: #142339;
+  --seg-ink: #9BBFEA;
+
+  --slatey: #93A0AD;
+  --slatey-soft: #1A2633;
+  --slatey-ink: #B3BFCB;
+}
+
+html, body { margin: 0; background: var(--canvas); }
+body { -webkit-font-smoothing: antialiased; color: var(--ink); }
+::selection { background: var(--brand-soft); }
+
+.thin-scroll::-webkit-scrollbar { width: 8px; height: 8px; }
+.thin-scroll::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 4px; }
+.thin-scroll::-webkit-scrollbar-track { background: transparent; }
+
+.placeholder-stripe {
+  background-image: repeating-linear-gradient(135deg, var(--line) 0, var(--line) 1px, transparent 1px, transparent 9px);
 }

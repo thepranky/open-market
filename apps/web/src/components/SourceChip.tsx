@@ -1,134 +1,83 @@
 "use client";
 
 import { useState } from "react";
-import { cn, confidencePct, reviewStatusLabel } from "@/lib/utils";
+import { formatDate } from "@/lib/utils";
 import type { SourcePassage, SourceDocument } from "@/lib/types";
 
-function passageLocator(sp: SourcePassage): string {
-  if (sp.paragraph) return `¶${sp.paragraph}`;
-  if (sp.page) return `p.${sp.page}`;
-  if (sp.section) return sp.section.split(" ").slice(0, 2).join(" ");
-  return sp.passage_id;
+function passageLocator(sp: SourcePassage): { page?: string; para?: string } {
+  return { page: sp.page ?? undefined, para: sp.paragraph ?? undefined };
 }
 
-function chipClass(status: string): string {
-  switch (status) {
-    case "lawyer_reviewed":
-      return "bg-green-100 text-green-800 border-green-300 hover:bg-green-200";
-    case "spot_checked":
-      return "bg-yellow-100 text-yellow-800 border-yellow-300 hover:bg-yellow-200";
-    default:
-      return "bg-red-100 text-red-700 border-red-200 hover:bg-red-200";
-  }
-}
-
-// Resolution order: pdf_url → case_page_url → url (direct only) → url (fallback) → null
-function sourceLink(
-  doc: SourceDocument,
-  page?: string
-): { href: string; label: string; isFallback: boolean } | null {
+function sourceLink(doc: SourceDocument, page?: string): { href: string; label: string } | null {
   if (doc.pdf_url) {
     const href = page ? `${doc.pdf_url}#page=${page}` : doc.pdf_url;
-    return { href, label: page ? `Open PDF (p.${page})` : "Open PDF", isFallback: false };
+    return { href, label: page ? `Open PDF (p.${page})` : "Open PDF" };
   }
-  if (doc.case_page_url) {
-    return { href: doc.case_page_url, label: "Open case page", isFallback: false };
-  }
-  if (doc.url) {
-    if (doc.retrieval_status === "direct") {
-      return { href: doc.url, label: "Open source", isFallback: false };
-    }
-    if (doc.retrieval_status === "fallback") {
-      return { href: doc.url, label: "Open source", isFallback: true };
-    }
+  if (doc.case_page_url) return { href: doc.case_page_url, label: "Open case page" };
+  if (doc.url && (doc.retrieval_status === "direct" || doc.retrieval_status === "fallback")) {
+    return { href: doc.url, label: "Open source" };
   }
   return null;
 }
 
-export function SourceChip({
-  passage,
-  doc,
-}: {
-  passage: SourcePassage;
-  doc?: SourceDocument;
-}) {
+export function SourceChip({ passage, doc }: { passage: SourcePassage; doc?: SourceDocument }) {
   const [open, setOpen] = useState(false);
-  const locator = passageLocator(passage);
-  const link = doc ? sourceLink(doc, passage.page ?? undefined) : null;
+  const { page, para } = passageLocator(passage);
+  const link = doc ? sourceLink(doc, page) : null;
 
-  if (!doc && process.env.NODE_ENV === "development") {
-    console.debug(
-      `[SourceChip] passage ${passage.passage_id} references source_document_id=${passage.source_document_id} which was not found in docMap`
-    );
-  }
+  const label = [page && `p.${page}`, para && `¶${para}`].filter(Boolean).join(" ") || passage.passage_id.slice(-6);
 
   return (
     <span className="relative inline-block">
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
-        className={cn(
-          "inline-flex items-center px-1.5 py-0.5 rounded border text-xs font-mono transition-colors cursor-pointer",
-          chipClass(passage.review_status)
-        )}
-        title={`${reviewStatusLabel(passage.review_status)} · ${confidencePct(passage.confidence_score)} confidence`}
+        title="View source passage"
         aria-expanded={open}
+        className="group inline-flex items-center gap-1 rounded-[4px] border border-brand-soft bg-brand-soft px-1.5 py-[2px] font-mono text-[11px] font-medium text-brand-ink leading-none hover:border-brand transition-colors"
+        style={{ borderColor: "color-mix(in srgb, var(--brand) 25%, transparent)" }}
       >
-        {locator}
+        {label}
+        <svg width={11} height={11} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="opacity-0 -ml-1 group-hover:opacity-100 group-hover:ml-0 transition-all" aria-hidden="true">
+          <path d="M4 10h12M11 5l5 5-5 5" />
+        </svg>
       </button>
 
       {open && (
-        <div className="absolute top-full left-0 z-30 mt-1 w-80 bg-white border border-slate-200 rounded-lg shadow-lg p-3 text-sm">
+        <div className="absolute top-full left-0 z-30 mt-1 w-80 bg-surface border border-line rounded-xl shadow-raised p-4 text-sm">
           <button
             type="button"
             onClick={() => setOpen(false)}
-            className="float-right text-slate-400 hover:text-slate-600 text-xs ml-2 leading-none"
+            className="float-right text-faint hover:text-ink text-xs ml-2 leading-none"
             aria-label="Close"
           >
             ✕
           </button>
 
-          <blockquote className="text-slate-700 italic text-xs leading-relaxed border-l-2 border-brand-300 pl-2 mb-2 pr-5">
-            &ldquo;{passage.quote_snippet.trim()}&rdquo;
-          </blockquote>
+          <div className="flex items-center gap-2 mb-1">
+            {page && <span className="font-mono text-[12px] font-semibold text-brand-ink bg-brand-soft rounded-[4px] px-1.5 py-[2px]">p.{page}</span>}
+            {para && <span className="font-mono text-[12px] text-faint">¶{para}</span>}
+          </div>
 
           {doc && (
-            <div className="text-xs font-medium text-slate-700 mb-1.5 truncate">
-              {doc.title}
-            </div>
+            <div className="text-[12.5px] text-faint mb-3 truncate">{doc.title}</div>
           )}
 
-          <div className="flex flex-wrap gap-x-2 gap-y-1 text-xs text-slate-500 mb-2">
-            {passage.page && <span>p.{passage.page}</span>}
-            {passage.paragraph && <span>¶{passage.paragraph}</span>}
-            {passage.section && (
-              <span className="text-slate-400">{passage.section}</span>
-            )}
-          </div>
-
-          <div className="mb-2">
-            <span className="px-1.5 py-0.5 rounded text-xs bg-slate-100 text-slate-600">
-              {confidencePct(passage.confidence_score)} confidence
-            </span>
-          </div>
+          <blockquote className="text-[14px] leading-relaxed text-ink font-serif border-l-2 border-brand-soft pl-3 mb-3 pr-5" style={{ borderColor: "var(--brand-soft)" }}>
+            &ldquo;{passage.quote_snippet.trim()}&rdquo;
+          </blockquote>
 
           {link ? (
             <a
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className={cn(
-                "inline-flex items-center gap-1 text-xs px-2 py-1 rounded border",
-                link.isFallback
-                  ? "border-orange-200 text-orange-700 bg-orange-50 hover:bg-orange-100"
-                  : "border-brand-200 text-brand-700 bg-brand-50 hover:bg-brand-100"
-              )}
+              className="inline-flex items-center gap-1 text-[12px] px-2.5 py-1.5 rounded-[6px] bg-surface border border-line-strong text-brand-ink hover:border-brand transition-colors"
             >
               {link.label} ↗
-              {link.isFallback && <span className="text-orange-500 ml-1">(fallback)</span>}
             </a>
           ) : (
-            <span className="text-xs text-slate-400">Source unavailable</span>
+            <span className="text-[12px] text-faint">Source unavailable</span>
           )}
         </div>
       )}

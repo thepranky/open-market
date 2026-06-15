@@ -1,53 +1,38 @@
 import { cn, caseHistoryStatusColor, caseHistoryStatusLabel, formatDate } from "@/lib/utils";
 import type { CaseHistory, CaseHistoryEvent } from "@/lib/types";
+import { Badge } from "./Badge";
 
-function HistoryEvent({ event }: { event: CaseHistoryEvent }) {
+function HistoryEvent({ event, isLast }: { event: CaseHistoryEvent; isLast: boolean }) {
   return (
-    <div className="relative pl-4 pb-4 last:pb-0">
-      <span className="absolute left-0 top-1.5 w-2 h-2 rounded-full bg-slate-300 ring-2 ring-white" />
-      <div className="text-xs text-slate-400 mb-0.5">
+    <li className="relative">
+      <span className={cn(
+        "absolute -left-4 top-1 w-[7px] h-[7px] rounded-full ring-2 ring-surface",
+        isLast ? "bg-brand" : "bg-line-strong",
+      )} />
+      <div className="font-mono text-[11.5px] text-faint">
         {event.event_date ? formatDate(event.event_date) : "Date unknown"}
-        {event.forum && (
-          <span className="ml-2 text-slate-500">{event.forum}</span>
-        )}
-        {event.case_number && (
-          <span className="ml-1 text-slate-400">({event.case_number})</span>
-        )}
+        {event.forum && <span className="ml-2 text-muted">{event.forum}</span>}
+        {event.case_number && <span className="ml-1">({event.case_number})</span>}
       </div>
-      <div className="text-sm font-medium text-slate-700 mb-0.5">{event.title}</div>
+      <div className="text-[13.5px] text-ink leading-snug mt-0.5">{event.title}</div>
       {event.outcome && (
-        <div className="text-xs text-slate-500 mb-1">
-          Outcome: <span className="capitalize">{event.outcome.replace(/_/g, " ")}</span>
-        </div>
+        <div className="text-[12px] text-muted mt-0.5 capitalize">{event.outcome.replace(/_/g, " ")}</div>
       )}
       {event.summary && (
-        <p className="text-xs text-slate-600 leading-relaxed mb-1">
-          {event.summary}
-        </p>
+        <p className="text-[12.5px] text-muted leading-relaxed mt-1">{event.summary}</p>
       )}
-      <div className="flex flex-wrap gap-1.5 items-center">
-        {event.source_url && (
-          <a
-            href={event.source_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs text-brand-600 hover:underline"
-          >
-            Source ↗
-          </a>
-        )}
-      </div>
-    </div>
+      {event.source_url && (
+        <a href={event.source_url} target="_blank" rel="noopener noreferrer"
+          className="text-[12px] text-brand-ink hover:underline mt-1 inline-block">
+          Source ↗
+        </a>
+      )}
+    </li>
   );
 }
 
-export function CaseHistoryPanel({
-  history,
-}: {
-  history?: CaseHistory | null;
-}) {
+export function CaseHistoryPanel({ history }: { history?: CaseHistory | null }) {
   const status = history?.status ?? "unknown";
-  // Sort newest-first; events without a date fall to the bottom
   const events = [...(history?.events ?? [])].sort((a, b) => {
     if (!a.event_date && !b.event_date) return 0;
     if (!a.event_date) return 1;
@@ -56,28 +41,24 @@ export function CaseHistoryPanel({
   });
 
   return (
-    <div className="bg-slate-50 border border-slate-200 rounded-xl p-5">
-      <h3 className="text-sm font-semibold text-slate-700 mb-3">Case history</h3>
+    <div className="bg-surface border border-line rounded-xl p-5">
+      <p className="text-[11px] font-semibold uppercase tracking-[0.07em] text-faint mb-3">Case history</p>
 
-      <div className="mb-3">
-        <span
-          className={cn(
-            "inline-flex items-center px-2 py-0.5 rounded text-xs font-medium",
-            caseHistoryStatusColor(status)
-          )}
-        >
+      <div className="mb-4">
+        <span className={cn("inline-flex items-center px-2 py-[3px] rounded-[5px] text-[12px] font-medium leading-none", caseHistoryStatusColor(status))}>
           {caseHistoryStatusLabel(status)}
         </span>
       </div>
 
       {events.length > 0 ? (
-        <div className="border-l-2 border-slate-200 ml-1 mt-3">
+        <ol className="relative space-y-4 pl-4">
+          <span className="absolute left-[3px] top-1.5 bottom-1.5 w-px bg-line" />
           {events.map((event, i) => (
-            <HistoryEvent key={i} event={event} />
+            <HistoryEvent key={i} event={event} isLast={i === 0} />
           ))}
-        </div>
+        </ol>
       ) : (
-        <p className="text-xs text-slate-400">No case events recorded.</p>
+        <p className="text-[12.5px] text-faint">No events recorded.</p>
       )}
     </div>
   );
