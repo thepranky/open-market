@@ -1,0 +1,498 @@
+case_id: eu_ec_m10733_2022
+case_name: M.10733
+authority: European Commission
+jurisdiction: EU
+sector: transport
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2022-07-25'
+parties: []
+source_documents:
+- doc_id: eu_ec_m10733_2022_decision
+  title: M.10733 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10733
+  pdf_url: http://publications.europa.eu/resource/cellar/a73ecf71-eb47-11ed-a05c-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Freight forwarding services
+  definition_status: left_open
+  notes: 'The Commission considered possible sub-segmentations: (i) domestic vs. cross-border
+    freight forwarding and (ii) by modes of transport (air, land, sea). The exact definition
+    was left open as the transaction would not raise serious doubts under any plausible market
+    definition.'
+- market_id: pm_2
+  name: Contract logistics services
+  definition_status: left_open
+  notes: 'The Commission considered segmentations: (i) cross-border vs. domestic, (ii) by type
+    of good handled or industry serviced, and (iii) into lead logistics providers (LLPs) and
+    traditional logistics providers (3PLs). A potential market for Finished Vehicle Logistics
+    (FVL) services was also considered, with further segmentations. The exact definition was
+    left open as the transaction would not raise serious doubts under any plausible market definition.'
+- market_id: pm_3
+  name: Container liner shipping services
+  definition_status: considered
+  notes: The market involves regular, scheduled services for cargo carriage by container, distinguished
+    from non-liner and non-containerised transport. The Commission further distinguished between
+    deep-sea and short-sea container shipping services.
+- market_id: pm_4
+  name: Deep-sea container liner shipping services
+  definition_status: considered
+  notes: This market involves regular, scheduled services for sea transportation of containerised
+    cargo. A narrower market for the transport of refrigerated (reefer) goods was considered
+    but left open.
+- market_id: pm_5
+  name: Short-sea container liner shipping services
+  definition_status: considered
+  notes: This market provides regular, scheduled intra-continental container shipping services.
+    The Commission considered but left open sub-segmentations between reefer/dry container shipping
+    and between Roll on-Roll off (Ro-Ro) and Lift on-Lift off (Lo-Lo) shipping services.
+- market_id: pm_6
+  name: Ro-Ro shipping services
+  definition_status: considered
+  notes: Ro-Ro shipping services correspond to the transport of wheeled cargo on ships using
+    a loading ramp. This was considered a potential separate relevant product market, distinct
+    from Lo-Lo vessels.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Freight forwarding services — national/wider (geographic scope left open)
+  definition_status: left_open
+  notes: The Commission previously left open whether the market should be national or wider
+    (trans-national/EEA-wide), citing language and regulatory barriers vs. a trend for trans-national
+    networks. Sea freight forwarding was previously defined as at least national.
+- market_id: gm_2
+  name: Contract logistics services — EEA-wide/national (geographic scope left open)
+  definition_status: left_open
+  notes: The Commission previously found the contract logistics market to be EEA-wide, leaving
+    open a possible segmentation into national markets. For FVL, it considered EEA-wide or national
+    scope.
+- market_id: gm_3
+  name: Deep-sea container liner shipping services — individual legs of trade
+  definition_status: defined
+  notes: The geographic market is defined on the basis of individual legs of trade (e.g., Northern
+    Europe – North America eastbound and westbound separately).
+- market_id: gm_4
+  name: Short-sea container liner shipping services — single trades/corridors or single legs
+    of trade (geographic scope left open)
+  definition_status: left_open
+  notes: The Commission considered defining this market based on either single trades or corridors,
+    or single legs of trade. For Ro-Ro shipping services, it considered single trades. The exact
+    geographic definition was left open.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m10733_2022_decision
+  page: '3'
+  quote_snippet: In previous decisions, the Commission defined the freight forwarding services
+    market as ‘the organisation of transportation of items (possibly including activities such
+    as customs clearance, warehousing, ground services, etc.) on behalf of customers according
+    to their needs’.5 The Commission also considered possible sub-segmentations of the freight
+    forwarding product market, namely (i) between domestic freight forwarding and cross-border
+    freight forwarding and, (ii) depending on the modes of transport (i.e. freight forwarding
+    by air, land and sea).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m10733_2022_decision
+  page: '3'
+  quote_snippet: The market investigation did not provide indications that the Commission should
+    deviate from the market delineations considered in previous decisions.7
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m10733_2022_decision
+  page: '4'
+  quote_snippet: |
+    The precise product and geographic market definition can be left open as the Transaction does not raise serious doubts on any plausible market definition, including the narrowest plausible markets:
+    (a) Product markets: the freight forwarding services markets by reference to: the (i) type of operations, whether domestic or cross-border; and the (ii) means of transportation, whether by air, land and sea;
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m10733_2022_decision
+  page: '4'
+  quote_snippet: In previous decisions, the Commission has considered that contract logistics
+    services is the part of the supply chain process that plans, implements and controls the
+    efficient, effective flow and storage of goods, services and related information from the
+    point of origin to the point of consumption in order to meet customers’ requirements.11
+    The focal point of contract logistics is the management of the flow of goods for customers
+    either across the total supply chain or an element of it.12
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m10733_2022_decision
+  page: '5'
+  quote_snippet: |
+    The precise product and geographic market definition can be left open as the Transaction does not raise serious doubts on any plausible market definition, including the narrowest plausible markets:
+    (a) Product markets: the contract logistics services markets by reference to (i) the type of operations, whether domestic or cross-border; (ii) the type of good handled or the industry serviced; and (iii) the type of logistics provider (LLPs and 3PLs), as well as the FVL segment by reference to (i) the type of vehicles; (ii) the mode of transport; and (iii) the type of operations, whether collection of finished cars, compound services or regional delivery of finished cars.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m10733_2022_decision
+  page: '6'
+  quote_snippet: Within a container services market, the Commission has defined a separate product
+    market for short-sea container shipping, distinct from deep-sea container shipping.22 Unlike
+    deep-sea container liner shipping, short-sea container liner shipping involves the provision
+    of intracontinental (usually coastal trade) services.23
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m10733_2022_decision
+  page: '9'
+  quote_snippet: Moreover, the Transaction gives rise to vertically affected markets due to
+    (i) CMA CGM’s activities in the upstream market for container liner shipping services and
+    (ii) GEFCO’s activities in the downstream market for sea freight forwarding services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m10733_2022_decision
+  page: '6'
+  quote_snippet: Deep-sea container liner shipping services involve the offer of regular, scheduled
+    services for the sea transportation of containerised cargo.24
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m10733_2022_decision
+  page: '7'
+  quote_snippet: |
+    The Commission will assess the effects of the Transaction on the following markets:
+    (a) Product markets: market for (i) deep-sea container liner shipping services and (ii) the plausible reefer container liner shipping sub-segment;
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m10733_2022_decision
+  page: '7'
+  quote_snippet: Short-sea container liner shipping involves the provision of regular, scheduled
+    intra-continental (usually coastal trade) services for the carriage of cargo by container
+    liner shipping companies.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m10733_2022_decision
+  page: '7'
+  quote_snippet: In its prior decisional practice related to short-sea shipping services, the
+    Commission concluded, as regards the type of cargo transported, that short-sea container
+    shipping services should be distinguished from non-containerised shipping, such as bulk
+    shipping.30 The Commission also left open whether there should be a sub-segmentation between
+    reefer (refrigerated) and dry (non-refrigerated) container shipping services.31
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m10733_2022_decision
+  page: '7'
+  quote_snippet: Furthermore, the Commission has considered but ultimately left open whether
+    the transport of wheeled cargo (Roll on-Roll off shipping) and short-sea container shipping
+    services (Lift on-Lift off shipping) should be considered as belonging to the same product
+    market.32
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m10733_2022_decision
+  page: '8'
+  quote_snippet: Roll on-Roll off (‘Ro-Ro’) shipping services correspond to the transport of
+    wheeled cargo (lorries, cars, etc.) on ships33 with vessels which take on cargo via a loading
+    ramp fitted as part of the vessel. In previous decisions, the Commission has considered
+    that Ro-Ro shipping services constitute a potential separate relevant product market which
+    excludes shipping services provided by Lift on-Lift off (‘Lo-Lo’) vessels, that is vessels
+    which use dock mounted cranes to lift and stack containers on the vessel.34 Ro-Ro shipping
+    requires specific port facilities (access ramp, vehicle storage areas, etc.) and ships distinct
+    from the vessels and facilities used for container cargo.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m10733_2022_decision
+  page: '8'
+  quote_snippet: Given that the Transaction would not raise serious doubts as to its compatibility
+    with the internal market under any plausible market definition, the Commission will leave
+    open the exact product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m10733_2022_decision
+  page: '9'
+  quote_snippet: Moreover, the Transaction also gives rise to vertically affected markets due
+    to (i) CMA CGM’s activities in the upstream market for Ro-Ro shipping services and (ii)
+    GEFCO’s activities in the downstream market for FVL services.38
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m10733_2022_decision
+  page: '3'
+  quote_snippet: In its previous decisions, the Commission has left open whether the freight
+    forwarding services market or subdivisions thereof should be considered national in scope,
+    due to language and regulatory barriers, or wider in view of a trend by major competitors
+    to create trans-national or even EEA-wide networks.8 The Commission ultimately defined the
+    market for sea freight forwarding as at least national.9
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m10733_2022_decision
+  page: '3'
+  quote_snippet: The market investigation did not provide indications that the Commission should
+    deviate from the geographic scope considered in previous decisions.10
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m10733_2022_decision
+  page: '4'
+  quote_snippet: |
+    The precise product and geographic market definition can be left open as the Transaction does not raise serious doubts on any plausible market definition, including the narrowest plausible markets:
+    (b) Geographic market: the national markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m10733_2022_decision
+  page: '5'
+  quote_snippet: Concerning the geographic scope of the market, the Commission previously found
+    that the contract logistics market is EEA-wide, leaving open a possible segmentation into
+    national markets.18 On a potential FVL segment, the Commission considered that such a segment
+    could be either of EEA-wide or national scope but ultimately left open the geographic market
+    definition.19
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m10733_2022_decision
+  page: '5'
+  quote_snippet: The market investigation did not provide indications that the Commission should
+    deviate from the geographic scope considered in previous decisions.20
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m10733_2022_decision
+  page: '5'
+  quote_snippet: Given that the Transaction would not raise serious doubts as to its compatibility
+    with the internal market under any plausible market definition, the exact geographic market
+    definition can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m10733_2022_decision
+  page: '7'
+  quote_snippet: In the present case, in line with the Commission’s most recent decisional practice,
+    the geographic market for deep-sea container liner shipping services is defined on the basis
+    of individual legs of trade.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_ec_m10733_2022_decision
+  page: '7'
+  quote_snippet: The geographic scope of deep-sea container liner shipping services is defined
+    on the basis of legs of trades.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_ec_m10733_2022_decision
+  page: '8'
+  quote_snippet: In its prior decisional practice, the Commission considered that the relevant
+    geographic market for short-sea container liner shipping services should be defined on the
+    basis of (i) either single trades or corridors, defined by the range of ports which are
+    served at both ends of the service;35 or (ii) single legs of trade.36
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_ec_m10733_2022_decision
+  page: '8'
+  quote_snippet: On the geographic scope of the market for Ro-Ro shipping services, the Commission
+    has considered that it must be defined in the same way as for containerised liner shipping
+    services, that is on the basis of single trades defined by the range of ports which are
+    served at both ends of the services.37
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_ec_m10733_2022_decision
+  page: '8'
+  quote_snippet: Given that the Transaction would not raise serious doubts as to its compatibility
+    with the internal market under any plausible market definition, the Commission will leave
+    open the exact geographic market definition and in particular the question whether this
+    market should be defined on the basis of single trades or corridors or single legs of trade.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

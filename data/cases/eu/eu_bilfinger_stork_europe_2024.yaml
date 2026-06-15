@@ -1,0 +1,372 @@
+case_id: eu_bilfinger_stork_europe_2024
+case_name: BILFINGER / STORK EUROPE
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2024-02-13'
+parties:
+- name: BILFINGER
+  role: acquirer
+- name: STORK EUROPE
+  role: target
+source_documents:
+- doc_id: eu_bilfinger_stork_europe_2024_decision
+  title: BILFINGER / STORK EUROPE — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11298
+  pdf_url: http://publications.europa.eu/resource/cellar/1c77205f-e4fa-11ee-8b2b-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Industrial services
+  definition_status: left_open
+  notes: The Commission previously considered segmenting the market for industrial services
+    between installation services and maintenance services, and further sub-segmenting by industrial
+    sectors such as oil & gas, energy, chemical, and life sciences. However, for the purpose
+    of this case, the exact product market definition was left open, while the competitive assessment
+    was conducted based on the narrowest plausible markets.
+- market_id: pm_2
+  name: Installation services in the oil & gas sector
+  definition_status: considered
+  notes: For the purpose of this case, the competitive assessment was conservatively conducted
+    based on this narrow market definition.
+- market_id: pm_3
+  name: Maintenance services in the oil & gas sector
+  definition_status: considered
+  notes: For the purpose of this case, the competitive assessment was conservatively conducted
+    based on this narrow market definition.
+- market_id: pm_4
+  name: Maintenance services in the energy sector
+  definition_status: considered
+  notes: For the purpose of this case, the competitive assessment was conservatively conducted
+    based on this narrow market definition. Table 3 refers to this market as 'Maintenance, Power
+    plants'.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Geographic market for industrial services
+  definition_status: left_open
+  notes: The Commission previously considered that the markets for industrial services could
+    be EEA-wide or national, but ultimately left the exact geographic market definition open.
+    Market investigation indicated that geographic scope might differ for installation services
+    (potentially broader) and maintenance services (customer proximity more important). For
+    the purpose of this case, the competitive assessment was conservatively conducted at a national
+    level.
+- market_id: gm_2
+  name: Installation services in the oil & gas sector — national (the Netherlands affected)
+  definition_status: considered
+  notes: For the purpose of this case, the competitive assessment was conservatively conducted
+    based on a national geographic scope, specifically the Netherlands, for this market.
+- market_id: gm_3
+  name: Maintenance services in the oil & gas sector — national (the Netherlands affected)
+  definition_status: considered
+  notes: For the purpose of this case, the competitive assessment was conservatively conducted
+    based on a national geographic scope, specifically the Netherlands, for this market.
+- market_id: gm_4
+  name: Maintenance services in the energy sector — national (the Netherlands affected)
+  definition_status: considered
+  notes: For the purpose of this case, the competitive assessment was conservatively conducted
+    based on a national geographic scope, specifically the Netherlands, for this market.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_bilfinger_stork_europe_2024_decision
+  page: '3'
+  quote_snippet: In a previous decision the Commission has considered segmenting the market
+    for industrial services between installation services and maintenance services. Installation
+    is the first setup of a piece of industrial equipment (such as static or rotary mechanical
+    equipment, piping, electrical equipment and instrumentation, insulation, painting and scaffolding,
+    etc.) in a production plant, while maintenance is the ongoing inspection and servicing of
+    industrial equipment. The Commission has also considered further sub-segmenting those market
+    according to industrial sectors, such as oil & gas, energy, chemical, life sciences.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_bilfinger_stork_europe_2024_decision
+  page: '4'
+  quote_snippet: In any event, for the purpose of this case, the exact product market definition
+    can be left open given that the Transaction will not lead to competitive concerns for industrial
+    services under any plausible definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_bilfinger_stork_europe_2024_decision
+  page: '4'
+  quote_snippet: For the purpose of this case, and in line with the Commission’s precedent,
+    the competitive assessment will be conservatively conducted based on the narrowest plausible
+    markets, that is the markets for installation services in each separate industrial sector
+    and, separately, for maintenance services in each separate industrial sector.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_bilfinger_stork_europe_2024_decision
+  page: '4'
+  quote_snippet: For the purpose of this case, and in line with the Commission’s precedent,
+    the competitive assessment will be conservatively conducted based on the narrowest plausible
+    markets, that is the markets for installation services in each separate industrial sector
+    and, separately, for maintenance services in each separate industrial sector.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_bilfinger_stork_europe_2024_decision
+  page: '5'
+  quote_snippet: |
+    Based on the market definition described above, the Transaction gives rise to the following affected markets:
+    (a) Installation services in the oil & gas sector in the Netherlands,
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_bilfinger_stork_europe_2024_decision
+  page: '4'
+  quote_snippet: For the purpose of this case, and in line with the Commission’s precedent,
+    the competitive assessment will be conservatively conducted based on the narrowest plausible
+    markets, that is the markets for installation services in each separate industrial sector
+    and, separately, for maintenance services in each separate industrial sector.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_bilfinger_stork_europe_2024_decision
+  page: '5'
+  quote_snippet: |
+    Based on the market definition described above, the Transaction gives rise to the following affected markets:
+    (...) (b) Maintenance services in the oil & gas sector in the Netherlands, (...)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_bilfinger_stork_europe_2024_decision
+  page: '4'
+  quote_snippet: For the purpose of this case, and in line with the Commission’s precedent,
+    the competitive assessment will be conservatively conducted based on the narrowest plausible
+    markets, that is the markets for installation services in each separate industrial sector
+    and, separately, for maintenance services in each separate industrial sector.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_bilfinger_stork_europe_2024_decision
+  page: '5'
+  quote_snippet: |
+    Based on the market definition described above, the Transaction gives rise to the following affected markets:
+    (...) (c) Maintenance services in the energy sector in the Netherlands.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_bilfinger_stork_europe_2024_decision
+  page: '4'
+  quote_snippet: The Commission has previously considered that the above-mentioned markets could
+    be EEA-wide or national markets, but ultimately left open the exact geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_bilfinger_stork_europe_2024_decision
+  page: '5'
+  quote_snippet: In any event, for the purpose of this case, the exact geographic market definition
+    can be left open given that the Transaction will not lead to competitive concerns for industrial
+    services under any plausible definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_bilfinger_stork_europe_2024_decision
+  page: '5'
+  quote_snippet: For the purpose of this case, and in line with the Commission’s precedent,
+    the competitive assessment will be conservatively conducted based on the narrowest plausible
+    markets, that is at a national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_bilfinger_stork_europe_2024_decision
+  page: '5'
+  quote_snippet: For the purpose of this case, and in line with the Commission’s precedent,
+    the competitive assessment will be conservatively conducted based on the narrowest plausible
+    markets, that is at a national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_bilfinger_stork_europe_2024_decision
+  page: '5'
+  quote_snippet: |
+    Based on the market definition described above, the Transaction gives rise to the following affected markets:
+    (a) Installation services in the oil & gas sector in the Netherlands,
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_bilfinger_stork_europe_2024_decision
+  page: '5'
+  quote_snippet: For the purpose of this case, and in line with the Commission’s precedent,
+    the competitive assessment will be conservatively conducted based on the narrowest plausible
+    markets, that is at a national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_bilfinger_stork_europe_2024_decision
+  page: '5'
+  quote_snippet: |
+    Based on the market definition described above, the Transaction gives rise to the following affected markets:
+    (...) (b) Maintenance services in the oil & gas sector in the Netherlands, (...)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_bilfinger_stork_europe_2024_decision
+  page: '5'
+  quote_snippet: For the purpose of this case, and in line with the Commission’s precedent,
+    the competitive assessment will be conservatively conducted based on the narrowest plausible
+    markets, that is at a national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_bilfinger_stork_europe_2024_decision
+  page: '5'
+  quote_snippet: |
+    Based on the market definition described above, the Transaction gives rise to the following affected markets:
+    (...) (c) Maintenance services in the energy sector in the Netherlands.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_bilfinger_stork_europe_2024_decision
+  page: '6'
+  quote_snippet: In light of these considerations, the Commission concludes that the Transaction
+    does not give rise serious doubts as to its compatibility with the internal market or the
+    functioning of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+ai_summary: null
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []
+case_type: merger

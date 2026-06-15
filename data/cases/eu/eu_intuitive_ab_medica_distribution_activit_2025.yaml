@@ -1,0 +1,315 @@
+case_id: eu_intuitive_ab_medica_distribution_activit_2025
+case_name: INTUITIVE / AB MEDICA (DISTRIBUTION ACTIVITIES OF INTUITIVE PRODUCTS
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2025-10-09'
+parties:
+- name: INTUITIVE
+  role: acquirer
+- name: AB MEDICA (DISTRIBUTION ACTIVITIES OF INTUITIVE PRODUCTS
+  role: target
+source_documents:
+- doc_id: eu_intuitive_ab_medica_distribution_activit_2025_decision
+  title: INTUITIVE / AB MEDICA (DISTRIBUTION ACTIVITIES OF INTUITIVE PRODUCTS — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11900
+  pdf_url: http://publications.europa.eu/resource/cellar/ae4da04e-13bf-11f1-8870-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Market for the manufacture and sale of surgical equipment
+  definition_status: segmented
+  notes: The Commission investigated potential segmentation between open surgery equipment,
+    laparoscopic equipment, and robotically-assisted surgery (RAS) equipment. While significant
+    differences were found, the exact market definition for these segments was left open. The
+    Commission stated it would assess the transaction on the narrowest plausible market segment,
+    the manufacture and supply of RAS equipment.
+- market_id: pm_2
+  name: Market for the manufacture and supply of RAS equipment
+  definition_status: considered
+  notes: For the purposes of its competitive assessment, and on a conservative basis, the Commission
+    decided to assess the impact of the Transaction on the market for the manufacture and supply
+    of RAS equipment as the narrowest plausible segmentation, noting that under broader definitions,
+    the parties' position would be less significant.
+- market_id: pm_3
+  name: Market for the wholesale distribution of medical devices
+  definition_status: left_open
+  notes: The Commission considered the wholesale distribution of all medical devices as a relevant
+    product market, aligning with its past practice and the Notifying Party's view. However,
+    it noted specific requirements (transport, training) for distributing RAS equipment. Ultimately,
+    the exact market definition was left open as the transaction would not raise serious doubts
+    regardless of the definition.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Market for the manufacture and sale of surgical equipment — national (EEA affected)
+  definition_status: left_open
+  notes: The Commission's market investigation indicated that competition for the sale of RAS
+    equipment occurs primarily at a national level, with pricing, contractual conditions, reimbursement,
+    and tender processes determined country-by-country. Despite this, the exact geographic market
+    definition was left open, as competitive concerns would not arise regardless of whether
+    it was defined as national or EEA-wide.
+- market_id: gm_2
+  name: Market for the wholesale distribution of medical devices — national (EEA affected)
+  definition_status: considered
+  notes: The Commission confirmed its past practice and market investigation findings that the
+    market for the distribution of medical devices is national in scope, primarily due to distributors
+    being active in one country. While some evidence suggested broader distribution, the Commission
+    decided to conduct its assessment at the national level.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_intuitive_ab_medica_distribution_activit_2025_decision
+  page: '5'
+  quote_snippet: In this respect, the market investigation indicated that the manufacture and
+    supply of open surgery equipment is unlikely to be part of the same relevant market as the
+    manufacture and supply of keyhole surgery equipment, for the following reasons.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_intuitive_ab_medica_distribution_activit_2025_decision
+  page: '6'
+  quote_snippet: In any event, the question of whether the manufacture and supply of open surgery
+    equipment may form part of the same relevant market as the manufacture and supply of keyhole
+    surgery equipment can be left open, as in either case the Transaction does not give rise
+    to serious doubts as to its compatibility with the internal market and with the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_intuitive_ab_medica_distribution_activit_2025_decision
+  page: '8'
+  quote_snippet: In any event, the question of whether the manufacture and supply of laparoscopic
+    equipment may form part of the same relevant market as the manufacture and supply of RAS
+    equipment can be left open, as can the question of any possible segmentation of the relevant
+    market for RAS equipment, as in either case the Transaction does not give rise to serious
+    doubts as to its compatibility with the internal market and with the EEA Agreement. For
+    the purposes of this Decision, and on a conservative basis, the Commission will assess the
+    impact of the Transaction on the narrowest plausible market segmentation in the context
+    of this Transaction, namely the market for the manufacture and supply of RAS equipment,
+    as under any broader product market definitions the Parties would hold a less significant
+    position as they do not supply equipment for open surgery or laparoscopy other than RAS
+    equipment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_intuitive_ab_medica_distribution_activit_2025_decision
+  page: '6'
+  quote_snippet: In this respect, the market investigation indicated that the manufacture and
+    supply of laparoscopic equipment is unlikely to be part of the same relevant market as the
+    manufacture and supply of RAS equipment, for the following reasons.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_intuitive_ab_medica_distribution_activit_2025_decision
+  page: '7'
+  quote_snippet: As mentioned in section 4.1.1.1.3.1 above, the price difference between laparoscopic
+    equipment and RAS equipment is not negligeable per the Notifying Party’s submission. This
+    was further confirmed during the market investigation where the majority of market participants
+    found that RAS equipment is significantly more expensive than laparoscopic equipment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_intuitive_ab_medica_distribution_activit_2025_decision
+  page: '8'
+  quote_snippet: In any event, the question of whether the manufacture and supply of laparoscopic
+    equipment may form part of the same relevant market as the manufacture and supply of RAS
+    equipment can be left open, as can the question of any possible segmentation of the relevant
+    market for RAS equipment, as in either case the Transaction does not give rise to serious
+    doubts as to its compatibility with the internal market and with the EEA Agreement. For
+    the purposes of this Decision, and on a conservative basis, the Commission will assess the
+    impact of the Transaction on the narrowest plausible market segmentation in the context
+    of this Transaction, namely the market for the manufacture and supply of RAS equipment,
+    as under any broader product market definitions the Parties would hold a less significant
+    position as they do not supply equipment for open surgery or laparoscopy other than RAS
+    equipment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_intuitive_ab_medica_distribution_activit_2025_decision
+  page: '8'
+  quote_snippet: In its past decisional practice, the Commission has identified the market for
+    the wholesale distribution of ‘medical devices’ (including “medical products, durable goods,
+    operating equipment and instruments”).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_intuitive_ab_medica_distribution_activit_2025_decision
+  page: '9'
+  quote_snippet: Specifically, the vast majority of responding market participants agreed that
+    there is a relevant product market for the wholesale distribution of all medical devices
+    (including medical products, durable goods, and operating equipment and instruments).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_intuitive_ab_medica_distribution_activit_2025_decision
+  page: '10'
+  quote_snippet: In any event, for the purposes of this decision, the exact definition of the
+    relevant product market can be left open, as the Transaction would not raise serious doubts
+    as to its compatibility with the single market regardless of the product market definition
+    applied.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_intuitive_ab_medica_distribution_activit_2025_decision
+  page: '10'
+  quote_snippet: With respect to other medical devices, however, generally, the Commission has
+    previously found that the markets were national for several reasons including the different
+    reimbursement schemes from one country to the other, the procurement processes that are
+    usually issued at national level (e.g. public tenders), the price variations between countries,
+    and the presence of different market participants in each country.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_intuitive_ab_medica_distribution_activit_2025_decision
+  page: '10'
+  quote_snippet: Indeed, the majority of responding market participants submitted that competition
+    for the sale of RAS equipment occurs primarily at national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_intuitive_ab_medica_distribution_activit_2025_decision
+  page: '11'
+  quote_snippet: In light of the above, the geographic scope of the market for the manufacture
+    and sale of surgical equipment (and its sub-segmentations) is likely national. However,
+    for the purposes of this decision, the exact definition of the relevant geographic market
+    can be left open, as the Transaction would not raise competitive concerns regardless of
+    the geographic market definition applied (EEA or national).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_intuitive_ab_medica_distribution_activit_2025_decision
+  page: '11'
+  quote_snippet: The Commission has previously defined the geographic market for the distribution
+    of medical devices as national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_intuitive_ab_medica_distribution_activit_2025_decision
+  page: '11'
+  quote_snippet: The majority of the respondents to the market investigation confirmed the Commission’s
+    past practice and considered the market for the distribution of medical device to be national
+    in scope as distributors are mostly active in one country.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_intuitive_ab_medica_distribution_activit_2025_decision
+  page: '11'
+  quote_snippet: In any event, for the purposes of this decision, the Commission does not find
+    sufficient evidence to deviate from its past practice and will conduct its assessment at
+    the national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

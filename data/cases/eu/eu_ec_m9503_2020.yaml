@@ -1,0 +1,390 @@
+case_id: eu_ec_m9503_2020
+case_name: M.9503
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2020-01-30'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9503_2020_decision
+  title: M.9503 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9503
+  pdf_url: http://publications.europa.eu/resource/cellar/cae631bb-5c64-11ea-8b81-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Air compressors
+  definition_status: left_open
+  notes: The Commission considered air compressors and gas compressors to be separate markets.
+    For air compressors, the Commission considered potential sub-segmentations by output pressure
+    (low, medium, high), oil-free vs. oil-lubricated, stationary vs. portable, and by technology.
+    The exact definitions for these sub-segments were left open. A segmentation by application
+    was considered not warranted and rejected.
+- market_id: pm_2
+  name: Vacuum pumps
+  definition_status: left_open
+  notes: The Commission considered vacuum pumps to be a distinct product market from compressors.
+    Potential sub-segmentations between oil-injected and oil-free vacuum pumps and by type of
+    technology were considered but left open. A segmentation by application was considered not
+    warranted and rejected.
+- market_id: pm_3
+  name: Air ends
+  definition_status: left_open
+  notes: The Commission noted prior decisional practice regarding a relevant product market
+    for air ends, with plausible segmentation between oil-free and oil-lubricated. The market
+    investigation suggested plausible segmentation between oil-injected vs. oil-free, by output
+    pressure, and potentially by technology. Segmentation by application was considered not
+    warranted and rejected.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Air compressors — EEA-wide or worldwide
+  definition_status: left_open
+  notes: The Commission previously considered the market for air compressors to be at least
+    EEA-wide, and possibly global, but left the definition open. The market investigation showed
+    mixed results, indicating it could be EEA-wide or worldwide. Ultimately, the exact definition
+    was left open.
+- market_id: gm_2
+  name: Vacuum pumps — EEA-wide or worldwide
+  definition_status: left_open
+  notes: The Commission had no previous analysis of the market for vacuum pumps. The market
+    investigation indicated a worldwide market. The Commission ultimately left the exact geographic
+    market definition open between EEA and worldwide.
+- market_id: gm_3
+  name: Air ends — EEA-wide or worldwide
+  definition_status: left_open
+  notes: Previous Commission decisions considered the market for air ends to be national or
+    EEA-wide, with a later decision considering it at least EEA-wide. The market investigation
+    responses pointed to a worldwide market, and the Commission considered it at least EEA-wide
+    and probably worldwide, but ultimately left the exact geographic scope open.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9503_2020_decision
+  page: '3'
+  quote_snippet: The Commission considers that air compressors and gas compressors constitute
+    separate markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9503_2020_decision
+  page: '3'
+  quote_snippet: As will be explained, the Commission considers there can be a further potential
+    sub-segmentation (i) between low, medium and high output pressure air compressors, (ii)
+    between oil-free and oil-lubricated air compressors, (iii) between stationary and portable
+    air compressors and (iv) between air compressors based on different technologies.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9503_2020_decision
+  page: '6'
+  quote_snippet: In conclusion, the Commission will analyse the Transaction on the basis of
+    all plausible product markets and combinations of them (as listed below), but will leave
+    the market definition open (except on a potential segmentation by application that will
+    not be discussed as explained in paragraph (24)) as the Transaction does not raise concerns
+    on any plausible market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9503_2020_decision
+  page: '8'
+  quote_snippet: First, the Commission considers that insofar as compressors and vacuum pumps
+    are different in terms of their end use, i.e. one removes air or gas, while the other releases
+    it, compressors and vacuum pumps constitute distinct product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9503_2020_decision
+  page: '8'
+  quote_snippet: The Commission considers that whether the vacuum pump market must be further
+    segmented can be left open but will consider plausible market distinctions (i) between oil-injected
+    and oil-free vacuum pumps and (ii) by type of technology.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9503_2020_decision
+  page: '9'
+  quote_snippet: In conclusion, the Commission will analyse the Transaction on the basis of
+    the plausible product markets, but will leave the market definition open (except for a potential
+    split by application, which has been rejected and will not be further discussed) as the
+    Transaction does not raise concerns on any plausible market.43
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9503_2020_decision
+  page: '10'
+  quote_snippet: The market investigation suggested a plausible segmentation between (i) oil-injected
+    vs. oil-free and (ii) by output pressure and potentially also by (iii) technology.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9503_2020_decision
+  page: '11'
+  quote_snippet: In conclusion, the Commission will analyse the Transaction on the basis of
+    the following plausible product markets, but will leave the market definition open (except
+    for a potential split by application, which is not warranted) as the Transaction does not
+    raise concerns on any plausible market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9503_2020_decision
+  page: '6'
+  quote_snippet: The Commission has previously considered the markets for air compressors to
+    be at least EEA-wide, and maybe even global, given the large trade flows and low transportation
+    costs, but has left the definition open.26
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9503_2020_decision
+  page: '6'
+  quote_snippet: The market investigation has shown mixed results, according to which the market
+    for air compressors could be EEA-wide or worldwide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9503_2020_decision
+  page: '7'
+  quote_snippet: In any case, the exact definition of the air compressor market can be left
+    open between the EEA and worldwide, as the Transaction does not give rise to serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA Agreement
+    even on the narrowest plausible markets on any of the two plausible geographic market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9503_2020_decision
+  page: '9'
+  quote_snippet: As explained in paragraph (33), the Commission has not previously analysed
+    a vacuum pumps market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9503_2020_decision
+  page: '9'
+  quote_snippet: The results of the market investigation point to a worldwide market.45 The
+    majority of competitors do not consider technical specifications or regulatory requirements
+    as limiting the number of competitors in the EEA.46 The vast majority of customers also
+    consider this market global, due to the fact that vacuum pumps are a mature technology,
+    market players have a global footprint and production and delivery is global.47
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m9503_2020_decision
+  page: '9'
+  quote_snippet: In any case, the exact product and geographic market definition can be left
+    open between the EEA and worldwide, as the Transaction will not give rise to serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA Agreement
+    even on any of the two plausible geographic market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m9503_2020_decision
+  page: '11'
+  quote_snippet: In Ingersoll-Rand / Man, the Commission left open whether these are national
+    or EEA-wide markets. The Commission acknowledged that there are nearly no trade barriers
+    between the European countries concerned, however it took account of (i) existing strong
+    national preferences in the market relations between compressor and air end suppliers and
+    users, and (ii) the importance for customers of the reliability of products and good after-sales
+    service.60 However, in the subsequent case Alchemy / Compare, the Commission considered
+    that the market for compressor air ends is at least EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m9503_2020_decision
+  page: '12'
+  quote_snippet: The replies of the majority of competitors and customers of the market investigation
+    point to a worldwide market,61 because market players have a global footprint and production
+    and delivery are global.62
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m9503_2020_decision
+  page: '12'
+  quote_snippet: In any case, the exact geographic scope of the air ends market can be left
+    open between the EEA and worldwide, as the Transaction does not give rise to serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA Agreement
+    on any of the two plausible geographic market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m9503_2020_decision
+  page: '1'
+  quote_snippet: |
+    Subject: Case M.9503 – Gardner Denver/Ingersoll Industrials
+    Commission decision pursuant to Article 6(1)(b) of Council Regulation
+    No 139/20041 and Article 57 of the Agreement on the European Economic
+    Area2
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m9503_2020_decision
+  page: '16'
+  quote_snippet: For the reasons set out in paragraph (85), the Transaction does not give rise
+    to concerns in the air compressor market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m9503_2020_decision
+  page: '22'
+  quote_snippet: For the reasons set out in paragraph (95), the Transaction does not give rise
+    to concerns in the vacuum pumps market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m9503_2020_decision
+  page: '26'
+  quote_snippet: The Commission considers them sufficient to ensure that the Transaction will
+    not
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

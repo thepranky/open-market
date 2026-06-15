@@ -1,0 +1,412 @@
+case_id: eu_ald_leaseplan_2022
+case_name: ALD / LEASEPLAN
+authority: European Commission
+jurisdiction: EU
+sector: business_services
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2022-11-25'
+parties:
+- name: ALD
+  role: acquirer
+- name: LEASEPLAN
+  role: target
+source_documents:
+- doc_id: eu_ald_leaseplan_2022_decision
+  title: ALD / LEASEPLAN — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10638
+  pdf_url: http://publications.europa.eu/resource/cellar/b485df8a-724b-11ee-9220-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Operational leasing
+  definition_status: defined
+  notes: The Commission defines one market for operational leasing, which includes fleet management
+    services, as supported by market investigation respondents and prior decisions. It distinguishes
+    it from financial leasing.
+- market_id: pm_2
+  name: Financial leasing
+  definition_status: defined
+  notes: The Commission distinguishes financial leasing from operational leasing, noting different
+    regulatory regimes, expertise, supplier specialization, and customer interest. Financial
+    leasing requires a banking licence in many EEA Member States.
+- market_id: pm_3
+  name: Operational leasing of vehicles of up to 3.5 tons
+  definition_status: considered
+  notes: While the Commission previously left open the segmentation by vehicle weight, the market
+    investigation in this case confirmed that operational leasing of vehicles up to 3.5 tons
+    constitutes a distinct market from heavier vehicles. The assessment focuses on this segment
+    as the Parties are almost exclusively active in it.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Operational leasing — national
+  definition_status: defined
+  notes: The Commission confirms that the relevant geographic market for operational leasing
+    services is national in scope, based on national tax regulations, registration, and insurance
+    requirements that make cross-border leasing difficult.
+- market_id: gm_2
+  name: Financial leasing — national
+  definition_status: considered
+  notes: Based on market investigation, the Commission noted that financial leasing markets
+    are national in scope due to national tax and regulatory factors, though the primary focus
+    of the decision's assessment is operational leasing.
+- market_id: gm_3
+  name: Operational leasing — national (Czechia affected)
+  definition_status: defined
+  notes: The Commission explicitly refers to the 'Czech market for operational leasing' in its
+    competitive assessment, consistent with its overall finding of national geographic markets
+    for operational leasing.
+- market_id: gm_4
+  name: Operational leasing — national (Finland affected)
+  definition_status: defined
+  notes: The Commission refers to the 'Finnish operational leasing market' in its competitive
+    assessment, consistent with its overall finding of national geographic markets for operational
+    leasing.
+- market_id: gm_5
+  name: Operational leasing — national (Ireland affected)
+  definition_status: defined
+  notes: The Commission refers to the 'Irish market for operational leasing' in its competitive
+    assessment, consistent with its overall finding of national geographic markets for operational
+    leasing.
+- market_id: gm_6
+  name: Operational leasing — national (Luxembourg affected)
+  definition_status: defined
+  notes: The Commission refers to 'operational leasing in Luxembourg' in its competitive assessment,
+    consistent with its overall finding of national geographic markets for operational leasing.
+- market_id: gm_7
+  name: Operational leasing — national (Norway affected)
+  definition_status: defined
+  notes: The Commission refers to the 'Norwegian operational leasing market' in its competitive
+    assessment, consistent with its overall finding of national geographic markets for operational
+    leasing.
+- market_id: gm_8
+  name: Operational leasing — national (Portugal affected)
+  definition_status: defined
+  notes: The Commission refers to the 'Portuguese operational leasing market' in its competitive
+    assessment, consistent with its overall finding of national geographic markets for operational
+    leasing.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ald_leaseplan_2022_decision
+  page: '4'
+  quote_snippet: In light of these findings, the Commission considers that is appropriate to
+    distinguish between the markets for operational and financial leasing.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ald_leaseplan_2022_decision
+  page: '4'
+  quote_snippet: 'The majority of the respondents to the market investigation that expressed
+    a view, indicated that there is a single product market for operational leasing and management
+    services which is not appropriate to segment into: i) ‘funded’ services (operational leasing)
+    and ii) ‘unfunded’ services (standalone fleet management services)'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ald_leaseplan_2022_decision
+  page: '5'
+  quote_snippet: In light of these findings, the Commission considers it appropriate to define
+    one market for operational leasing.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ald_leaseplan_2022_decision
+  page: '4'
+  quote_snippet: In light of these findings, the Commission considers that is appropriate to
+    distinguish between the markets for operational and financial leasing.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ald_leaseplan_2022_decision
+  page: '3'
+  quote_snippet: 'The majority of respondents to the market investigation that expressed a view
+    consider that operational and financial leasing are two distinct markets because: i) different
+    regulatory regimes apply to operational and financial leasing ii) operational and financial
+    leasing require different expertise and capabilities iii) lessors generally specialize either
+    in operational or financial leasing and iv) customers are interested in either operational
+    or financial leasing and do not generally see them as alternatives to each other.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ald_leaseplan_2022_decision
+  page: '3'
+  quote_snippet: In contrast to operational leasing, the provision of financial leasing requires
+    the issuance of a banking licence in many EEA Member States.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ald_leaseplan_2022_decision
+  page: '5'
+  quote_snippet: 'The vast majority of the respondents to the market investigation expressed
+    a view that operational leasing of passenger and commercial vehicles of up to 3.5 tons constitute
+    a distinct product market of heavier vehicles because: the different weight categories require
+    lessors to have different expertise and capabilities (ii) different lessors offer the different
+    weight categories and (iii) customers do not see vehicles in the different weight categories
+    as alternatives to each other.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ald_leaseplan_2022_decision
+  page: '6'
+  quote_snippet: In the present case, the assessment of the effects of the Transaction focuses
+    on vehicles of up to 3.5 tons because the Parties are almost exclusively active in this
+    market segment (vehicles of above 3.5 tons represent less than […]% of the Parties’ volumes
+    in operational leasing across 20 EEA overlap Member States).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ald_leaseplan_2022_decision
+  page: '7'
+  quote_snippet: The majority of the respondents to the market investigation that expressed
+    a view confirmed that the leasing markets, both operational and financial, are national
+    in scope due to national tax regulations as well as registration and insurance requirements,
+    which make cross-border leasing difficult.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ald_leaseplan_2022_decision
+  page: '7'
+  quote_snippet: The Commission thus considers it appropriate to define the relevant geographical
+    market for operational leasing services as national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ald_leaseplan_2022_decision
+  page: '7'
+  quote_snippet: The majority of the respondents to the market investigation that expressed
+    a view confirmed that the leasing markets, both operational and financial, are national
+    in scope due to national tax regulations as well as registration and insurance requirements,
+    which make cross-border leasing difficult.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ald_leaseplan_2022_decision
+  page: '20'
+  quote_snippet: Based on the results of the market investigation and all the evidence available
+    to it, the Commission preliminarily finds that the Transaction raises serious doubts as
+    to its compatibility with the internal market in respect of operational leasing in Czechia.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ald_leaseplan_2022_decision
+  page: '21'
+  quote_snippet: The Commission concludes that the Transaction raises serious doubts as to its
+    compatibility with the internal market in respect of the Finnish operational leasing market
+    for the following reasons.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ald_leaseplan_2022_decision
+  page: '25'
+  quote_snippet: The Parties are close competitors on the Irish market for operational leasing
+    services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ald_leaseplan_2022_decision
+  page: '28'
+  quote_snippet: Therefore, based on the results of the market investigation and all the evidence
+    available to it, the Commission finds that the Transaction raises serious doubts as to its
+    compatibility with the internal market in respect of operational leasing in Luxembourg.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ald_leaseplan_2022_decision
+  page: '28'
+  quote_snippet: The Commission concludes that the Transaction raises serious doubts as to its
+    compatibility with the internal market in respect of the Norwegian operational leasing market
+    for the following reasons.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ald_leaseplan_2022_decision
+  page: '30'
+  quote_snippet: The Commission concludes that the Transaction raises serious doubts as to its
+    compatibility with the internal market in respect of the Portuguese operational leasing
+    market for the following reasons.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_8
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ald_leaseplan_2022_decision
+  page: '1'
+  quote_snippet: Commission decision pursuant to Article 6(1)(b) in conjunction with Article
+    6(2) of Council Regulation No 139/20041 and Article 57 of the Agreement on the European
+    Economic Area2
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ald_leaseplan_2022_decision
+  page: '1'
+  quote_snippet: Brussels, 25.11.2022
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ald_leaseplan_2022_decision
+  page: '1'
+  quote_snippet: 'Subject: Case M.10638 – ALD / LEASEPLAN'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ald_leaseplan_2022_decision
+  page: '38'
+  quote_snippet: For the above reasons, the Commission has decided not to oppose the notified
+    operation as modified by the commitments annexed to the present decision and to declare
+    it compatible with the internal market and with the functioning of the EEA Agreement, subject
+    to full compliance with the conditions in Section B of the commitments annexed to the present
+    decision and with the obligations contained in the other sections of the said commitments.
+    This decision is adopted in application of Article 6(1)(b) in conjunction with Article 6(2)
+    of the Merger Regulation and Article 57 of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

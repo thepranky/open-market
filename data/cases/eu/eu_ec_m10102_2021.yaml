@@ -1,0 +1,439 @@
+case_id: eu_ec_m10102_2021
+case_name: M.10102
+authority: European Commission
+jurisdiction: EU
+sector: financial
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2021-08-12'
+parties: []
+source_documents:
+- doc_id: eu_ec_m10102_2021_decision
+  title: M.10102 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10102
+  pdf_url: http://publications.europa.eu/resource/cellar/279b3371-989e-11ec-8d29-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Life insurance
+  definition_status: left_open
+  notes: The Commission considered segmentations for pure risk protection products, pension
+    products, savings/investment products, life insurance for individuals and group customers,
+    and unit-linked (and index-linked) versus non-unit-linked (and non-index-linked) products.
+    However, the exact product market definition was left open.
+- market_id: pm_2
+  name: Non-life insurance
+  definition_status: left_open
+  notes: The Commission considered segmentations for accident and sickness, motor vehicle, property,
+    liability, marine, aviation and transport (MAT), credit and suretyship, and travel insurance.
+    Additional segmentations based on national insurance classifications or between individual
+    and group customers were also considered. However, the exact product market definition was
+    left open.
+- market_id: pm_3
+  name: Reinsurance
+  definition_status: left_open
+  notes: The Commission has considered a separate market for reinsurance (distinguished from
+    the markets for the provision of life and non-life insurance) but left open whether it should
+    be further segmented between life and non-life reinsurance.
+- market_id: pm_4
+  name: Insurance distribution
+  definition_status: left_open
+  notes: The Commission analysed whether the market for insurance distribution comprises only
+    outward distribution channels or also includes direct sales. It also considered a distinction
+    between distribution of life and non-life insurance products, and a potential separate market
+    for insurance broking. These questions were ultimately left open.
+- market_id: pm_5
+  name: Asset management
+  definition_status: left_open
+  notes: The Commission considered the possibility of a relevant product market for asset management,
+    including creation/management of mutual funds for retail, tailor-made funds for corporate/institutional
+    customers, and portfolio management for private investors/pension funds/institutions. It
+    also considered separate markets for each of these product types and judged asset management
+    services for private individuals to be distinct from other asset management services. The
+    definition was left open.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Life insurance — national (Hungary/Romania affected)
+  definition_status: considered
+  notes: null
+- market_id: gm_2
+  name: Non-life insurance — national (Hungary affected)
+  definition_status: considered
+  notes: For certain non-life insurance products, including MAT insurance and generally large
+    risk insurance, the Commission considered the market is likely to be wider than national
+    in scope.
+- market_id: gm_3
+  name: Reinsurance — worldwide
+  definition_status: considered
+  notes: null
+- market_id: gm_4
+  name: Insurance distribution — EEA-wide or worldwide
+  definition_status: left_open
+  notes: The Commission previously considered insurance distribution to be national in scope
+    but ultimately left it open. For brokerage services in relation to large commercial or specialty
+    risks, the Commission considered such segments to be EEA-wide or worldwide.
+- market_id: gm_5
+  name: Asset management — national or EEA-wide
+  definition_status: left_open
+  notes: null
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m10102_2021_decision
+  page: '5'
+  quote_snippet: The Commission has ultimately always left open the definition of the relevant
+    product market for life insurance.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m10102_2021_decision
+  page: '6'
+  quote_snippet: In any event, the Commission considers that, for the purposes of the present
+    decision, the exact scope of the product market definition for the supply of life insurance
+    products can be left open, since the Transaction does not raise serious doubts as to its
+    compatibility with the internal market under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m10102_2021_decision
+  page: '6'
+  quote_snippet: The market investigation indicated that life insurance products are characterised
+    by a high degree of supply-side substitutability. In particular, all responding competitors
+    active in Hungary that expressed a view and the majority of responding competitors active
+    in Romania indicated that competition primarily takes place at the overall level of life
+    insurance, since most insurers offer policies covering all life risks (and categories).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m10102_2021_decision
+  page: '7'
+  quote_snippet: The Commission has ultimately always left open the definition of the relevant
+    product market for non-life insurance.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m10102_2021_decision
+  page: '8'
+  quote_snippet: In any event, the Commission considers that, for the purposes of the present
+    decision, the exact scope of the product market definition for the supply of non-life insurance
+    products can be left open, since the Transaction does not raise serious doubts as to its
+    compatibility with the internal market under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m10102_2021_decision
+  page: '7'
+  quote_snippet: The market investigation indicated that non-life insurance products are characterised
+    by a high degree of supply-side substitutability. Competitors of the Parties in Hungary
+    and Romania that responded to the market investigation overwhelmingly believe that competition
+    primarily takes place at the overall level of non-life insurance, since most insurers offer
+    policies covering all non-life risks.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m10102_2021_decision
+  page: '8'
+  quote_snippet: The Commission considers that, for the purposes of the present decision, the
+    exact scope of the product market definition for the supply of reinsurance can be left open,
+    since the Transaction does not raise serious doubts as to its compatibility with the internal
+    market under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m10102_2021_decision
+  page: '8'
+  quote_snippet: The Commission held in previous decisions that reinsurance consists in providing
+    insurance cover to another insurer for some or all of the liabilities assumed under its
+    insurance policies, in order to transfer risk from the insurer to the reinsurer. The Commission
+    has considered a separate market for reinsurance (distinguished from the markets for the
+    provision of life and non-life insurance) but has left open the question of whether the
+    reinsurance market should be further segmented between life and non-life reinsurance.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m10102_2021_decision
+  page: '9'
+  quote_snippet: The Commission considers that, for the purposes of the present decision, the
+    exact scope of the product market definition for the supply of insurance distribution can
+    be left open, since the Transaction does not raise serious doubts as to its compatibility
+    with the internal market under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m10102_2021_decision
+  page: '8'
+  quote_snippet: In previous cases, the Commission has analysed whether the market for insurance
+    distribution comprises only outward distribution channels or whether it should also be considered
+    to include the sales force and office networks of the insurer (that is to say direct sales).
+    This question was ultimately left open. The Commission has also considered whether a distinction
+    could be made between the markets for the distribution of life and non-life insurance products,
+    as well as whether there was a potential separate market for insurance broking, but ultimately
+    left open the relevant product market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m10102_2021_decision
+  page: '9'
+  quote_snippet: The Commission considers that, for the purposes of the present decision, the
+    exact scope of the product market definition for the provision of asset management services
+    can be left open, since the Transaction does not raise serious doubts as to its compatibility
+    with the internal market under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m10102_2021_decision
+  page: '9'
+  quote_snippet: In previous cases, the Commission has considered the possibility of there being
+    a relevant product market for asset management, which would include the creation and management
+    of mutual funds for retail clients and tailor-made funds for corporate and institutional
+    customers, and portfolio management for private investors, pension funds and institutions.
+    The Commission further considered the possible existence of separate relevant product markets
+    for each of the types of products mentioned above.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m10102_2021_decision
+  page: '10'
+  quote_snippet: The Commission has considered that the sector for life insurance products and
+    its segments are likely to be national in scope, as a result of national distribution channels,
+    established market structures, fiscal constraints and specific regulatory systems among
+    Member States.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m10102_2021_decision
+  page: '10'
+  quote_snippet: The Commission’s investigation did not indicate any reason to depart from its
+    previous approach in the present case.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m10102_2021_decision
+  page: '10'
+  quote_snippet: The Commission has considered that the sector for non-life insurance products
+    and its segments are likely to be national in scope. For certain non-life insurance products,
+    including MAT insurance and generally large risk insurance, the Commission considered the
+    market is likely to be wider than national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m10102_2021_decision
+  page: '10'
+  quote_snippet: The Commission’s investigation did not indicate any reason to depart from its
+    previous approach in the present case.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m10102_2021_decision
+  page: '10'
+  quote_snippet: The Commission has consistently held in its decisional practice that the relevant
+    geographic market for reinsurance is worldwide in scope due to the need to pool risks on
+    a global basis.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m10102_2021_decision
+  page: '10'
+  quote_snippet: The Commission’s investigation did not indicate any reason to depart from its
+    previous approach in the present case.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m10102_2021_decision
+  page: '11'
+  quote_snippet: In any event, the Commission considers that, for the purposes of the present
+    decision, the exact scope of the geographic market definition for the provision of insurance
+    distribution can be left open between EEA-wide and worldwide, since the Transaction does
+    not raise serious doubts as to its compatibility with the internal market under any plausible
+    geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m10102_2021_decision
+  page: '11'
+  quote_snippet: The Commission has previously considered insurance distribution to be national
+    in scope but ultimately left the exact definition of the relevant geographic market open.
+    For certain segments, in particular if they related to brokerage services in relation to
+    large commercial or specialty risks, the Commission has considered such segments to be EEA-wide
+    or worldwide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m10102_2021_decision
+  page: '11'
+  quote_snippet: In any event, the Commission considers that, for the purposes of the present
+    decision, the exact scope of the geographic market definition can be left open between national
+    or EEA-wide, since the Transaction does not raise serious doubts as to its compatibility
+    with the internal market under any plausible geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m10102_2021_decision
+  page: '11'
+  quote_snippet: The Commission has previously considered asset management to be national or
+    EEA-wide in scope but ultimately left the exact definition of the relevant geographic market
+    open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

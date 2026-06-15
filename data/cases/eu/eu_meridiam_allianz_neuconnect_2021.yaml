@@ -1,0 +1,256 @@
+case_id: eu_meridiam_allianz_neuconnect_2021
+case_name: MERIDIAM / ALLIANZ / NEUCONNECT
+authority: European Commission
+jurisdiction: EU
+sector: energy
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2021-12-17'
+parties:
+- name: MERIDIAM
+  role: acquirer
+- name: ALLIANZ
+  role: acquirer
+- name: NEUCONNECT
+  role: target
+source_documents:
+- doc_id: eu_meridiam_allianz_neuconnect_2021_decision
+  title: MERIDIAM / ALLIANZ / NEUCONNECT — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10387
+  pdf_url: http://publications.europa.eu/resource/cellar/eb6b7cb0-8756-11ec-8c40-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Provision of transnational interconnector capacity for electricity transmission
+  definition_status: considered
+  notes: The Commission considered this market definition for the purposes of this decision,
+    building on previous case practice.
+- market_id: pm_2
+  name: Generation and wholesale supply of electricity
+  definition_status: left_open
+  notes: The Commission left open whether to segment this market between conventional and renewable
+    generation, as no competition concerns would arise under either definition.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Provision of transnational interconnector capacity for electricity transmission — specific
+    interconnector line (Germany-UK affected)
+  definition_status: left_open
+  notes: The Commission considered the narrowest scope (the specific interconnector line) but
+    left the definition open, as no competition concerns would arise even under this narrow
+    definition.
+- market_id: gm_2
+  name: Provision of transnational interconnector capacity for electricity transmission — wider
+    interconnection lines (EU affected)
+  definition_status: left_open
+  notes: The Notifying Parties proposed a wider geographic scope, but the Commission left the
+    definition open as no competition concerns would arise regardless.
+- market_id: gm_3
+  name: Generation and wholesale supply of electricity — national (Germany affected)
+  definition_status: left_open
+  notes: The Commission generally defines this market as national but left open whether it could
+    be wider for Germany, as no competition concerns would arise even under a national definition.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_meridiam_allianz_neuconnect_2021_decision
+  page: '5'
+  quote_snippet: Within the market for electricity transmission, the Commission has previously
+    also considered a separate product market for the provision of interconnector capacities
+    involving a “cross-border flow” of electricity between different countries.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_meridiam_allianz_neuconnect_2021_decision
+  page: '5'
+  quote_snippet: In this light, and for the purposes of this decision, the Commission considers
+    that the relevant product market is the market for the provision of transnational interconnector
+    capacity for electricity transmission.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_meridiam_allianz_neuconnect_2021_decision
+  page: '5'
+  quote_snippet: The Commission has a consolidated case practice of defining the market for
+    the generation and wholesale supply of electricity as encompassing the trading on the wholesale
+    market of the generated electricity within a certain geographic market as well as the electricity
+    that is physically imported into this geographic market via interconnectors, irrespective
+    of the source of generated electricity (such as nuclear, lignite, wind, solar, etc.).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_meridiam_allianz_neuconnect_2021_decision
+  page: '6'
+  quote_snippet: The Commission considers that in this particular case the market definition
+    can ultimately be left open as no competition concerns would arise whether the market is
+    defined as encompassing both conventional and renewable generation falling under the EEG
+    or whether a separate market were to exist for conventional generation (including renewables
+    not covered by the EEG-scheme) on the one hand and renewable generation falling under the
+    EEG on the other.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_meridiam_allianz_neuconnect_2021_decision
+  page: '6'
+  quote_snippet: The Commission has previously considered that the geographic scope of the market
+    for the provision of transnational interconnector capacity for electricity transmission
+    would in principle be limited to the respective interconnector line, rendering the operator
+    of such an interconnector a natural monopolist. While the Commission found that it is in
+    principle possible for market participants to substitute certain interconnectors when booking
+    interconnector capacity by using others, this will normally lead to an increase in the number
+    of interconnectors used to complete the specific transmission booking path (e.g. transmitting
+    electricity through NeuConnect vs. Germany-the Netherlands-the UK). As the Notifying Parties
+    confirm, when the Project will enter into operation in 2026, it will be the sole interconnector
+    between Germany and the United Kingdom, and as such no direct substitute exists.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_meridiam_allianz_neuconnect_2021_decision
+  page: '7'
+  quote_snippet: The Commission considers that for the purposes of this decision it can be left
+    open whether the market for the provision of transnational interconnector capacity for electricity
+    transmission only encompasses the respective interconnector line, or whether other interconnection
+    lines connecting two electricity grids through an intermediate grid should be considered
+    as part of the same geographic market, as no competition concerns would arise even under
+    the narrowest geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_meridiam_allianz_neuconnect_2021_decision
+  page: '6'
+  quote_snippet: The Notifying Parties submit that the relevant geographic market for the provision
+    of transnational interconnector capacity should not be limited to the respective interconnector
+    line. According to the Notifying Parties, the harmonized legal framework at EU level combined
+    with a high degree of market transparency results in significant demand-side substitution
+    between interconnectors at EU level. In this respect, the Notifying Parties submit that
+    planned interconnectors between Belgium or the Netherlands on the one side and the UK on
+    the other side will be substitutable with the Project in the future, since Belgium and the
+    Netherlands also have interconnector lines to Germany.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_meridiam_allianz_neuconnect_2021_decision
+  page: '7'
+  quote_snippet: The Commission considers that for the purposes of this decision it can be left
+    open whether the market for the provision of transnational interconnector capacity for electricity
+    transmission only encompasses the respective interconnector line, or whether other interconnection
+    lines connecting two electricity grids through an intermediate grid should be considered
+    as part of the same geographic market, as no competition concerns would arise even under
+    the narrowest geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_meridiam_allianz_neuconnect_2021_decision
+  page: '7'
+  quote_snippet: The Commission has generally defined the market for the generation and wholesale
+    supply of electricity as national in scope. However, the Commission has also recognised
+    that in some instances the presence of a sufficiently large interconnection capacity between
+    Member States may justify broadening the geographic scope of the market. This could also
+    be the case if two Member States belong to the same bidding area, meaning areas in which
+    market participants are able to exchange electricity without the need for attribution of
+    cross-zonal capacity.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_meridiam_allianz_neuconnect_2021_decision
+  page: '7'
+  quote_snippet: For the purpose of this decision, the question whether, with respect to Germany,
+    the geographic market for the generation and wholesale supply of electricity should be defined
+    as wider than the German territory due to possible present or future interconnections and
+    the existence of common bidding zones with other territories, can ultimately be left open
+    as no competition concerns would arise even if the geographic market were limited to Germany
+    alone.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_meridiam_allianz_neuconnect_2021_decision
+  page: '10'
+  quote_snippet: The market investigation confirmed that the proposed transaction will not have
+    a negative impact on the competitive situation of the market for the generation and supply
+    of electricity in Germany, as the Notifying Parties will not have the ability to foreclose
+    competitors or customers through NeuConnect.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

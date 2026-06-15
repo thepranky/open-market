@@ -1,0 +1,599 @@
+case_id: eu_hitachi_rail_ground_transportation_systems_2023
+case_name: HITACHI RAIL / GROUND TRANSPORTATION SYSTEMS
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase2
+decision_date: '2023-10-20'
+parties:
+- name: HITACHI RAIL
+  role: acquirer
+- name: GROUND TRANSPORTATION SYSTEMS
+  role: target
+source_documents:
+- doc_id: eu_hitachi_rail_ground_transportation_systems_2023_decision
+  title: HITACHI RAIL / GROUND TRANSPORTATION SYSTEMS — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10507
+  pdf_url: http://publications.europa.eu/resource/cellar/974638ed-ea0d-11ee-bf53-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Standalone interlocking projects
+  definition_status: defined
+  notes: The Commission concluded that standalone interlocking projects constitute a distinct
+    product market, and there was no need to further segment this market by type of technology
+    (non-electronic or computer-based).
+- market_id: pm_2
+  name: ATP wayside projects
+  definition_status: defined
+  notes: The Commission concluded that ATP wayside projects should be distinguished from OBU
+    projects, and further segmented them into legacy vs. ETCS projects, and overlay vs. resignalling
+    projects.
+- market_id: pm_3
+  name: OCS projects
+  definition_status: defined
+  notes: The Commission concluded that OCS projects form a distinct product market without further
+    segmentation by type, level, or project size.
+- market_id: pm_4
+  name: CBTC systems for metros
+  definition_status: considered
+  notes: The Commission considered this product market for its assessment, confirming the relevance
+    of previous decisions' definitions which distinguished metro and light rail projects, and
+    within metros, conventional and CBTC systems.
+- market_id: pm_5
+  name: ATP OBU projects
+  definition_status: left_open
+  notes: The Commission distinguished ATP OBU projects from ATP wayside projects and segmented
+    them between ETCS and legacy systems. However, a further segmentation between sales to rolling
+    stock OEMs and sales to rolling stock operators was considered but ultimately left open
+    as the transaction did not raise serious doubts under any plausible definition.
+- market_id: pm_6
+  name: Rolling stock
+  definition_status: defined
+  notes: 'The Commission maintained its previous distinctions: mainline trains (further segmented
+    by intercity/regional, locomotive-hauled/self-propelled, and traction technology) and urban
+    trains (further segmented by metros, trams, automated people movers).'
+geographic_markets_considered:
+- market_id: gm_1
+  name: Standalone interlocking projects — national (France, Germany, Italy affected)
+  definition_status: defined
+  notes: The market for standalone interlocking projects was concluded to be national in scope
+    due to adaptation requirements for national systems and signalling rules, and national features
+    in demand-side considerations.
+- market_id: gm_2
+  name: Legacy ATP wayside overlay projects — national
+  definition_status: defined
+  notes: The Commission confirmed its previous findings that markets for legacy ATP wayside
+    projects are national in scope.
+- market_id: gm_3
+  name: Legacy ATP wayside resignalling projects — national
+  definition_status: defined
+  notes: The Commission confirmed its previous findings that markets for legacy ATP wayside
+    projects are national in scope.
+- market_id: gm_4
+  name: ETCS ATP wayside overlay projects — national
+  definition_status: defined
+  notes: Contrary to previous decisions, the market investigation in this case strongly suggested
+    that ETCS ATP wayside overlay projects are national in scope due to national infrastructure
+    managers, country-by-country bidding strategies, and specific national characteristics for
+    operation and interfaces with OCS and legacy systems.
+- market_id: gm_5
+  name: ETCS ATP wayside resignalling projects — national
+  definition_status: defined
+  notes: Contrary to previous decisions, the market investigation in this case strongly suggested
+    that ETCS ATP wayside resignalling projects are national in scope, noting that the standardisation
+    trend has not fully materialised and strong national elements remain.
+- market_id: gm_6
+  name: OCS projects — national/EEA-wide
+  definition_status: left_open
+  notes: While market investigation results suggested national features (differences in homologation,
+    prices, performance, interoperability), the exact geographic market definition was left
+    open as the transaction did not raise serious doubts under any plausible definition.
+- market_id: gm_7
+  name: CBTC systems for metros — EEA-wide/wider
+  definition_status: left_open
+  notes: The market investigation confirmed that the CBTC systems market is likely at least
+    EEA-wide, with some global features. However, it was left open whether the market is wider
+    than EEA (including UK and Switzerland) as the transaction did not raise serious doubts.
+- market_id: gm_8
+  name: ETCS OBU projects — EEA-wide/wider
+  definition_status: left_open
+  notes: Previous decisions considered ETCS OBU projects EEA-wide due to EU-wide standards and
+    interoperability. Current market investigation also suggested EEA-wide scope. However, the
+    exact geographic market definition was left open as the transaction did not raise serious
+    doubts under any plausible definition.
+- market_id: gm_9
+  name: Legacy OBU projects — national
+  definition_status: left_open
+  notes: Previous decisions defined legacy OBU projects as national due to strong barriers to
+    entry and non-standardized systems. Current market investigation confirmed national features.
+    The exact geographic market definition was left open as the transaction did not raise serious
+    doubts under any plausible definition.
+- market_id: gm_10
+  name: Mainline rolling stock — national/EEA-wide (including Switzerland)
+  definition_status: considered
+  notes: The Commission considered competitive assessment at both EEA-wide (including Switzerland)
+    and national levels, as previous market investigations were inconclusive regarding the exact
+    geographic scope.
+- market_id: gm_11
+  name: Urban rolling stock — EEA-wide
+  definition_status: considered
+  notes: Based on previous decisions, the Commission considered the market for urban rolling
+    stock to be EEA in scope for its assessment.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_hitachi_rail_ground_transportation_systems_2023_decision
+  page: '8'
+  quote_snippet: (28) Within standalone interlocking projects, the Commission considered that
+    there was no need to define separate product markets by type of technology (i.e. non-electronic
+    or computer-based).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_hitachi_rail_ground_transportation_systems_2023_decision
+  page: '9'
+  quote_snippet: (34) In view of the foregoing, the Commission concludes that standalone interlocking
+    projects constitute a distinct product market without there being the need to further segment
+    this market by type of technology (i.e. between non-electronic interlockings and computer-based
+    interlockings).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_hitachi_rail_ground_transportation_systems_2023_decision
+  page: '19'
+  quote_snippet: (79) Within ATP wayside projects, the Commission distinguished separate markets
+    for conventional (i.e. legacy) systems and ETCS systems.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_hitachi_rail_ground_transportation_systems_2023_decision
+  page: '19'
+  quote_snippet: '(80) Within ATP wayside projects (both for legacy and ETCS projects), the
+    Commission distinguished separate markets for: (a) Overlay projects: these projects relate
+    to the separate procurement of ATP wayside systems as standalone subsystems (i.e. without
+    interlockings) placed over a pre-existing interlocking infrastructure; (b) Resignalling
+    projects: these projects relate to the joint procurement of ATP wayside systems and interlockings
+    as part of a bundled project.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_hitachi_rail_ground_transportation_systems_2023_decision
+  page: '20'
+  quote_snippet: (86) In view of the foregoing, the Commission concludes that the markets for
+    ATP wayside and OBU projects should be distinguished. Within each of these markets, the
+    Commission takes the view that further distinctions, (i) between legacy and ETCS projects
+    and (ii) between overlay and resignalling projects are warranted.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_hitachi_rail_ground_transportation_systems_2023_decision
+  page: '33'
+  quote_snippet: (135) In previous decisions, the Commission considered OCS as a separate sub-system
+    of railway signalling projects in light of the specific demand for such projects.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_hitachi_rail_ground_transportation_systems_2023_decision
+  page: '34'
+  quote_snippet: (138) The results of the market investigation confirmed the relevance of a
+    distinction between OCS projects and other markets for mainline signalling projects. A majority
+    of customers who expressed a view confirmed that they purchase OCS individually.189 In addition,
+    the market investigation did not elicit any element suggesting that a further distinction
+    should be made within OCS projects by types or levels of OCS projects, or according to the
+    project size.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_hitachi_rail_ground_transportation_systems_2023_decision
+  page: '34'
+  quote_snippet: (139) In view of the above, the Commission considers that there is no need
+    to define separate markets for OCS projects based on the different levels of OCS or on the
+    project size. As a result, the Commission will assess the effect of the Transaction on a
+    market for OCS without further segmentation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_hitachi_rail_ground_transportation_systems_2023_decision
+  page: '37'
+  quote_snippet: (153) The Commission will consider the relevant product market of CBTC systems
+    for metros (“CBTC systems market”), where the Transaction gives rise to an affected market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_hitachi_rail_ground_transportation_systems_2023_decision
+  page: '43'
+  quote_snippet: (183) As previously explained,244 the Commission considered in previous decisions
+    that ATP projects should be segmented between ATP wayside and ATP OBU projects, each constituting
+    a separate product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_hitachi_rail_ground_transportation_systems_2023_decision
+  page: '43'
+  quote_snippet: (184) Within ATP OBU projects, the Commission distinguished separate markets
+    for conventional (i.e. legacy) systems and ETCS systems.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_hitachi_rail_ground_transportation_systems_2023_decision
+  page: '47'
+  quote_snippet: (199) In its previous decisions, the Commission distinguished mainline trains
+    (running at speeds below 250 km/h) from high-speed trains (running at speeds above 250 km/h),
+    very high-speed trains (running at speeds above 300 km/h) and urban trains (running on urban
+    networks and covering mass transit within cities).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_hitachi_rail_ground_transportation_systems_2023_decision
+  page: '47'
+  quote_snippet: (203) The outcome of the market investigation does not contradict the Commission’s
+    precedents nor give any reasons to depart from them.270 This is also confirmed by the internal
+    documents of the Parties, such as market studies used by the Parties in their usual course
+    of business.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_hitachi_rail_ground_transportation_systems_2023_decision
+  page: '9'
+  quote_snippet: (35) In previous decisions, the Commission considered the market for interlocking
+    projects to be national in scope because interlockings must be adapted to conform to national
+    systems and signalling rules, and certain demand-side considerations present national features.49
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_hitachi_rail_ground_transportation_systems_2023_decision
+  page: '21'
+  quote_snippet: (90) The market investigation did not elicit any element that would put into
+    question the previous findings of the Commission according to which the markets for legacy
+    ATP wayside projects are national in scope. The results of the investigation in the case
+    at hand, however, strongly suggest that the markets for ETCS ATP wayside projects (including
+    both overlay projects and resignalling projects) are also national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_hitachi_rail_ground_transportation_systems_2023_decision
+  page: '22'
+  quote_snippet: (93) These examples support the conclusion that suppliers adopt a country-by-country
+    bidding strategy in ETCS ATP wayside overlay and resignalling projects, probably due to
+    the existence of significant barriers to entry (as explained in further detail below).122
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_hitachi_rail_ground_transportation_systems_2023_decision
+  page: '21'
+  quote_snippet: (90) The market investigation did not elicit any element that would put into
+    question the previous findings of the Commission according to which the markets for legacy
+    ATP wayside projects are national in scope. The results of the investigation in the case
+    at hand, however, strongly suggest that the markets for ETCS ATP wayside projects (including
+    both overlay projects and resignalling projects) are also national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_hitachi_rail_ground_transportation_systems_2023_decision
+  page: '34'
+  quote_snippet: (140) In Alstom / Bombardier, the Commission noted that the market investigation
+    elicited mixed results concerning the definition of the relevant geographic market for OCS
+    projects.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_hitachi_rail_ground_transportation_systems_2023_decision
+  page: '45'
+  quote_snippet: (191) In Siemens / Alstom, the Commission considered that the relevant geographic
+    markets for ETCS OBU projects were EEA-wide, noting in particular that the adoption of EU-wide
+    authorisation procedures and standards, and in particular of ERTMS, was developing homogeneous
+    conditions for competition between mainline signalling suppliers within the EEA.257
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_8
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_hitachi_rail_ground_transportation_systems_2023_decision
+  page: '46'
+  quote_snippet: (196) From a demand-side perspective, several elements suggest that the markets
+    for ATP OBU projects are more likely to be EEA-wide than the markets for ATP wayside projects.
+    This is because unlike ATP wayside projects for which customers are national infrastructure
+    managers, the customers for ATP OBU projects include rolling stock OEMs which are active
+    across the EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_8
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_hitachi_rail_ground_transportation_systems_2023_decision
+  page: '46'
+  quote_snippet: (198) In any event, the exact geographic market definition can be left open
+    as the Transaction does not give rise to serious doubts for the supply of ETCS or legacy
+    ATP OBU projects under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_8
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_hitachi_rail_ground_transportation_systems_2023_decision
+  page: '45'
+  quote_snippet: '(193) As for legacy OBU projects, like in Siemens / Alstom, the Commission
+    defined this market as national in scope due to the existence of strong barriers to entry,
+    including: (i) the existence of adaptation costs to meet the country specific operating
+    rules, (ii) sufficient volume to cover the cost of country adaptation, and (iii) homologation
+    processes.260 Furthermore, the market investigation in this case showed that legacy OBUs
+    are not standardized, as they differ from one country to another.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_9
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_hitachi_rail_ground_transportation_systems_2023_decision
+  page: '46'
+  quote_snippet: (197) The situation is different however for legacy ATP OBU projects as these
+    projects use different technologies between Member States and thus present strong national
+    features.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_9
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_hitachi_rail_ground_transportation_systems_2023_decision
+  page: '46'
+  quote_snippet: (198) In any event, the exact geographic market definition can be left open
+    as the Transaction does not give rise to serious doubts for the supply of ETCS or legacy
+    ATP OBU projects under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_9
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_hitachi_rail_ground_transportation_systems_2023_decision
+  page: '48'
+  quote_snippet: (207) From a geographic point of view, with respect to mainline trains, the
+    market investigation in Alstom / Bombardier was inconclusive as to whether the relevant
+    product markets are national or EEA-wide (including Switzerland).274
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_10
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_hitachi_rail_ground_transportation_systems_2023_decision
+  page: '48'
+  quote_snippet: (208) As for urban trains, the Commission considered in Alstom / Bombardier
+    that the market for metros is EEA-wide despite the fact that some national manufacturers
+    may have a stronger position in their respective countries.276
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_11
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_hitachi_rail_ground_transportation_systems_2023_decision
+  page: '32'
+  quote_snippet: (133) In view of the above, the Commission concludes that the Transaction does
+    not give rise to serious doubts as to its compatibility with the internal market for ETCS
+    ATP wayside resignalling projects in Spain.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_hitachi_rail_ground_transportation_systems_2023_decision
+  page: '38'
+  quote_snippet: (159) For the following reasons, the Commission considers that the Transaction
+    does not give rise to serious doubts as to its compatibility with the internal market in
+    relation to non-coordinated horizontal effects in the EEA (or the EEA, including the UK
+    and Switzerland) in the CBTC systems market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_hitachi_rail_ground_transportation_systems_2023_decision
+  page: '66'
+  quote_snippet: (298) In the Form RM submitted together with the Initial Commitments (the ‘Initial
+    Form RM’), the Notifying Party stated that the Initial Commitments had the scale and scope
+    to eliminate entirely the Commission's serious doubts, given that they removed the overlaps
+    between the parties in the markets for which the Commission had raised competition concerns,
+    creating a new competitor in such markets and beyond.352
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_hitachi_rail_ground_transportation_systems_2023_decision
+  page: '76'
+  quote_snippet: |
+    CASE COMP/M.10507
+    20 October 2023
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

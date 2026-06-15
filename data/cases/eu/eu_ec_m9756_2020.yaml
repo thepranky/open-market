@@ -1,0 +1,384 @@
+case_id: eu_ec_m9756_2020
+case_name: M.9756
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2020-06-23'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9756_2020_decision
+  title: M.9756 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9756
+  pdf_url: http://publications.europa.eu/resource/cellar/05939363-04c8-11eb-a511-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Carboxymethyl cellulose (CMC)
+  definition_status: left_open
+  notes: The Commission considered segmenting CMC by purity grade (technical, intermediate-purity,
+    high-purity) and by application, but ultimately left the product market definition open,
+    as the transaction did not raise competition concerns under any definition. Segmentation
+    by application was deemed not relevant due to supply-side substitutability.
+- market_id: pm_2
+  name: Sodium hydroxide (caustic soda)
+  definition_status: left_open
+  notes: The Commission considered whether to segment caustic soda by its form (liquid or solid)
+    but left the product market definition open as the transaction did not raise competition
+    concerns.
+- market_id: pm_3
+  name: Monochloroacetic acid (MCA)
+  definition_status: defined
+  notes: The Commission confirmed its past precedent that MCA constitutes a separate product
+    market without further segmentation.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Carboxymethyl cellulose (CMC) — wider than EEA-wide
+  definition_status: left_open
+  notes: The Commission considered geographic markets for CMC as EEA-wide, EMEA (Europe, Middle
+    East and Africa, plus China), or worldwide, but left the definition open. Market investigation
+    suggested a market larger than EEA, including Chinese and Turkish suppliers, but excluding
+    North/South America. Logistic factors and higher transport costs were mentioned as potential
+    barriers.
+- market_id: gm_2
+  name: Sodium hydroxide (caustic soda) — wider than EEA-wide
+  definition_status: left_open
+  notes: The Commission considered geographic markets for caustic soda ranging from North-West
+    Europe to EEA-wide or worldwide. The market investigation did not contradict precedents,
+    and the definition was left open.
+- market_id: gm_3
+  name: Monochloroacetic acid (MCA) — wider than Western Europe
+  definition_status: left_open
+  notes: The Commission considered geographic markets for MCA as regional (Western Europe),
+    EEA-wide, or combined EEA and USA. While past precedents suggested Western Europe, recent
+    developments indicate a wider scope, but the definition was ultimately left open.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9756_2020_decision
+  page: '4'
+  quote_snippet: The Notifying Party submits that the relevant product market should be defined
+    as the overall market for the manufacture and supply of CMC. The Notifying Party acknowledges
+    that there are certain demand-side substitutability limitations that could justify a further
+    segmentation between the technical and purified CMC grades. However, the Notifying Party
+    takes the view that there is a strong degree of supply-side substitutability between different
+    purity grades of CMC.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9756_2020_decision
+  page: '5'
+  quote_snippet: The results of the market investigation were somewhat mixed as to the question
+    whether the different purity grades of CMC (technical, intermediate-purity and high-purity)
+    are substitutable from a demand perspective. While about a third of responding customers
+    indicated there is no substitutability at all between the three different grades, two other
+    fractions, almost equal in strength as the first one indicate either that intermediate-purity
+    CMC can be substituted with high-purity CMC, but not with technical CMC, or that all purity
+    grades can be substituted. The market investigation therefore shows that customers clearly
+    distinguish technical CMC from higher purity grades of CMC. However, the results of the
+    market investigation do not allow the Commission to conclude regarding the ability of customers
+    to substitute high-purity CMC with intermediate-purity CMC. At the same time, there are
+    indications that there is no supply-side substitutability between the different purity grades
+    of CMC.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9756_2020_decision
+  page: '6'
+  quote_snippet: Ultimately, for assessing the Transaction, Commission considers that a potential
+    segmentation of CMC by application would not be relevant. As regards a potential segmentation
+    of CMC by grade, the Commission considers that the exact scope of the product market definition
+    can be left open between CMC as a single product or segmented between technical and purified
+    CMC or segmented between technical, intermediate-purity and high-purity, since the Transaction
+    does not give rise to serious doubts as to its compatibility with the internal market under
+    any of the various combinations of the above-mentioned alternative market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9756_2020_decision
+  page: '8'
+  quote_snippet: The Commission has previously considered caustic soda to constitute a separate
+    product market. It has ultimately left open whether liquid and solid caustic soda constitute
+    two separate product markets, but found that any further segmentation within liquid or solid
+    caustic soda would not be appropriate, given that most producers can easily produce different
+    concentrations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9756_2020_decision
+  page: '8'
+  quote_snippet: The Notifying Party submits that the caustic soda segment is a separate market,
+    distinct from other chemical products, but that any further division of the caustic soda
+    market by its form, that is to say liquid or solid, is not appropriate, due to supply-side
+    substitutability.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9756_2020_decision
+  page: '8'
+  quote_snippet: In any event, the Commission considers that, for the purpose of the present
+    case, the exact scope of the product market definition for caustic soda can be left open,
+    since the Transaction does not raise serious doubts as to its compatibility with the internal
+    market, regardless of the product market definition (that is to say an overall market for
+    caustic soda or a segmentation by form).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9756_2020_decision
+  page: '9'
+  quote_snippet: In the past, the Commission has found that MCA may be considered as a separate
+    product market in its main applications, where it has no substitutes. The Commission has
+    not endorsed a further sub-segmentation of the MCA market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9756_2020_decision
+  page: '9'
+  quote_snippet: The Notifying Party agrees with the Commission precedents that MCA should be
+    considered as a separate product market, without further segmentation. The Notifying Party
+    also submits that the precise product definition for MCA can be left open in this case,
+    as the Transaction will not lead to any competition concerns under any market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9756_2020_decision
+  page: '10'
+  quote_snippet: As a result, the Commission considers that, for the purpose of the present
+    case, MCA should be considered as a separate product market, without further segmentation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9756_2020_decision
+  page: '6'
+  quote_snippet: The Notifying Party submits that the relevant geographic market is global in
+    scope. It argues that the costs of shipping CMC overseas are low, the non-hazardous nature
+    of CMC makes it suitable for worldwide shipment, and there are no regulatory barriers to
+    selling in the EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9756_2020_decision
+  page: '7'
+  quote_snippet: The market investigation revealed that a majority of customers would consider
+    procuring CMC outside the EEA in case of a small but significant non-transitory increase
+    in CMC prices in the EEA. Consistent with this, a majority of customers mentioned that they
+    consider CMC supplied by Chinese and Turkish suppliers, but not suppliers from North or
+    South America, as a credible alternative to CMC supplied by Nouryon or CP Kelco for the
+    supply of CMC for their plants in the EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9756_2020_decision
+  page: '7'
+  quote_snippet: In light of the above, the Commission considers that the relevant geographic
+    market for CMC is more likely to be wider than EEA-wide, possibly encompassing Europe, Middle
+    East and Africa (EMEA), and including CMC producers from China as well, but not North and
+    South America. For the avoidance of doubt, throughout all this decision, the term “worldwide”
+    will be deemed to encompass the entire world, including North and South America; while “EMEA”
+    will be used when referring to the geographic zone comprising Europe, Middle East and Africa,
+    plus China. In any event, for the purposes of assessing the Transaction, the exact scope
+    of the geographic market definition can be left open since under both an EEA-wide or larger
+    geographic market definition (EMEA, or world-wide), the Transaction does not give rise to
+    serious doubts as to its compatibility with the internal market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9756_2020_decision
+  page: '8'
+  quote_snippet: In the past, the Commission considered that the geographic market for caustic
+    soda was at least North-West Europe (Belgium, Luxembourg, Netherlands, Denmark, France,
+    Ireland, Sweden, Norway and the United Kingdom) and might even be EEA-wide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m9756_2020_decision
+  page: '9'
+  quote_snippet: In any event, the Commission considers that, for the purpose of the present
+    case, the exact scope of the geographic market definition for caustic soda and its sub-segments
+    can be left open, since the Transaction does not raise serious doubts as to its compatibility
+    with the internal market, regardless of the geographic market definition (that is to say
+    North West- Europe, EEA or worldwide).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m9756_2020_decision
+  page: '10'
+  quote_snippet: In the past, the Commission has examined MCA on a regional basis (Western Europe).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m9756_2020_decision
+  page: '10'
+  quote_snippet: The Notifying Party argues that at present the geographic market definition
+    should be at least EEA-wide since there are ample flows of MCA across the EEA, transport
+    costs are low and there are no significant price differentials across the EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m9756_2020_decision
+  page: '10'
+  quote_snippet: In any event, the Commission considers that, for the purpose of the present
+    case, the exact scope of the geographic market definition for MCA can be left open, since
+    the Transaction does not raise serious doubts as to its compatibility with the internal
+    market, regardless of the geographic market definition (that is to say regional (Western
+    Europe), EEA-wide or the combined EEA and USA market).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m9756_2020_decision
+  page: '1'
+  quote_snippet: |
+    Subject: Case M.9756 – NOURYON / CP KELCO
+    Commission decision pursuant to Article 6(1)(b) of Council Regulation
+    No 139/20041 and Article 57 of the Agreement on the European Economic
+    Area2
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m9756_2020_decision
+  page: '29'
+  quote_snippet: In the light of the considerations in paragraphs (100) to (129) the Commission
+    concludes that the Transaction does not raise serious doubts as to its compatibility with
+    the internal market due to vertical effects.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

@@ -1,0 +1,224 @@
+case_id: eu_ec_m10238_2021
+case_name: M.10238
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2021-06-23'
+parties: []
+source_documents:
+- doc_id: eu_ec_m10238_2021_decision
+  title: M.10238 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10238
+  pdf_url: http://publications.europa.eu/resource/cellar/dd00d9e9-f8ed-11eb-b520-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Finished Dose Pharmaceuticals - Ophthalmological anti-infectives (ATC3 class S1A)
+  definition_status: left_open
+  notes: The Commission considered the ATC3 class S1A (Ophthalmological anti-infectives) as
+    relevant for this transaction, consistent with its approach of dividing pharmaceutical products
+    into therapeutic classes. While previous decisions and the current assessment used ATC3
+    as a starting point, the exact market definition was ultimately left open as the transaction
+    did not raise serious doubts under any plausible product market definition. An alternative
+    market definition combining S1A and ATC4 S1C1 (ophthalmological anti-inflammatory and anti-infective
+    combinations containing corticosteroids), considered in the past, was deemed not relevant
+    for this transaction as the Parties are not active in S1C1.
+- market_id: pm_2
+  name: Contract manufacturing organisation (CMO) services
+  definition_status: left_open
+  notes: The Commission defined CMO services as arrangements where a manufacturer provides upstream
+    manufacturing services of Finished Dose Pharmaceuticals (FDPs) under contract for a third
+    party. In previous decisions, the market definition for CMO services was left open, specifically
+    whether it should be an overall market or segmented. For the purpose of the assessment of
+    this transaction, the segment of sterile liquid pharmaceuticals was identified as relevant.
+    However, the exact product market definition for CMO services, including any segments, was
+    ultimately left open as the transaction did not raise serious doubts regardless of the market
+    definition considered.
+- market_id: pm_3
+  name: Contract manufacturing organisation (CMO) services for sterile liquid pharmaceuticals
+  definition_status: left_open
+  notes: This specific segment of CMO services was considered relevant for the assessment of
+    the transaction, given Leo Pharma's activity in producing anti-infective eye drops. However,
+    consistent with the broader CMO services market, the exact product market definition was
+    ultimately left open by the Commission.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Finished Dose Pharmaceuticals - national (Sweden affected)
+  definition_status: defined
+  notes: For Finished Dose Pharmaceuticals (FDPs), the Commission adhered to its previous decisions,
+    defining the relevant geographic market as national in scope. This applied to the distribution
+    of ophthalmological anti-infectives (ATC3 class S1A), where Advanz's market share exceeded
+    30% in Sweden, making it a focus of the vertical assessment.
+- market_id: gm_2
+  name: Contract manufacturing organisation (CMO) services - worldwide or at least EEA-wide
+  definition_status: left_open
+  notes: The Commission noted that previous decisions found the relevant geographic market for
+    CMO services to be worldwide or at least EEA-wide, given that these services are generally
+    procured globally irrespective of where the products are marketed. For this transaction,
+    the exact geographic market definition was left open as neither of these plausible alternatives
+    affected the outcome of the competitive assessment.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m10238_2021_decision
+  page: '4'
+  quote_snippet: The ATC3 class relevant for this Transaction is S1A (Ophthalmological anti-infectives).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m10238_2021_decision
+  page: '4'
+  quote_snippet: In previous decisions, the Commission considered that the appropriate level
+    for market definition of ophthalmological anti-infectives (S1A) is ATC3, but ultimately
+    left the product market definition open.8
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m10238_2021_decision
+  page: '4'
+  quote_snippet: In the present case, the exact market definition can be left open since the
+    transaction does not give rise to serious doubts as to its compatibility with the internal
+    market or the functioning of the EEA agreement under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m10238_2021_decision
+  page: '5'
+  quote_snippet: For the purpose of the assessment of the transaction, the relevant segment
+    of the upstream CMO services product market is the one of sterile liquid pharmaceuticals,
+    as Leo Pharma produces anti-infective eye drops.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m10238_2021_decision
+  page: '5'
+  quote_snippet: In any event, for the purposes of this Decision, it is not necessary to conclude
+    on the exact product market definition for CMO services as, regardless of the market definition
+    considered, the transaction does not give rise to serious doubts as to its compatibility
+    with the internal market and the functioning of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m10238_2021_decision
+  page: '5'
+  quote_snippet: For the purpose of the assessment of the transaction, the relevant segment
+    of the upstream CMO services product market is the one of sterile liquid pharmaceuticals,
+    as Leo Pharma produces anti-infective eye drops.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m10238_2021_decision
+  page: '5'
+  quote_snippet: In any event, for the purposes of this Decision, it is not necessary to conclude
+    on the exact product market definition for CMO services as, regardless of the market definition
+    considered, the transaction does not give rise to serious doubts as to its compatibility
+    with the internal market and the functioning of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m10238_2021_decision
+  page: '4'
+  quote_snippet: According to previous Commission decisions, the relevant geographic market
+    for FDPs is national in scope.10 The Commission does not find any reason to depart from
+    this approach in the present case.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m10238_2021_decision
+  page: '5'
+  quote_snippet: In previous decisions, the Commission found that the relevant geographic market
+    for CMO services is worldwide or at least EEA-wide, as CMO services are generally procured
+    anywhere in the world, regardless of the country where the pharmaceutical products are subsequently
+    marketed.12 Neither of the plausible alternative geographic market definitions (worldwide
+    or EEA-wide) affects the outcome of the competitive assessment of the Transaction as to
+    its compatibility with the internal market or the functioning of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m10238_2021_decision
+  page: '3'
+  quote_snippet: The notified Transaction therefore has a Union dimension by virtue of Article
+    1(2) of the Merger Regulation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+ai_summary: null
+case_type: merger
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

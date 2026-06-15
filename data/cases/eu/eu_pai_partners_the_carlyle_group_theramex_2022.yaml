@@ -1,0 +1,210 @@
+case_id: eu_pai_partners_the_carlyle_group_theramex_2022
+case_name: PAI PARTNERS / THE CARLYLE GROUP / THERAMEX
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2022-07-12'
+parties:
+- name: PAI PARTNERS
+  role: acquirer
+- name: THE CARLYLE GROUP
+  role: acquirer
+- name: THERAMEX
+  role: target
+source_documents:
+- doc_id: eu_pai_partners_the_carlyle_group_theramex_2022_decision
+  title: PAI PARTNERS / THE CARLYLE GROUP / THERAMEX — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10749
+  pdf_url: http://publications.europa.eu/resource/cellar/473b4702-bd00-11ed-8912-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Finished dose pharmaceuticals (“FDPs”)
+  definition_status: considered
+  notes: ''
+- market_id: pm_2
+  name: Bone calcium regulators - Bisphosphonates for osteoporosis and related disorders (ATC4
+    level M5B3)
+  definition_status: left_open
+  notes: ''
+- market_id: pm_3
+  name: CDMO services
+  definition_status: left_open
+  notes: ''
+geographic_markets_considered:
+- market_id: gm_1
+  name: Finished dose pharmaceuticals (“FDPs”) — national
+  definition_status: defined
+  notes: ''
+- market_id: gm_2
+  name: CDMO services — EEA-wide
+  definition_status: left_open
+  notes: ''
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_pai_partners_the_carlyle_group_theramex_2022_decision
+  page: '3'
+  quote_snippet: (9) The Transaction gives rise to affected markets in relation to the manufacturing
+    of finished dose pharmaceuticals (“FDPs”)8 and the provision of contract development and
+    manufacturing organization (“CDMO”) services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_pai_partners_the_carlyle_group_theramex_2022_decision
+  page: '4'
+  quote_snippet: (14) For the purposes of the present Decision, it is not necessary to depart
+    from the Commission’s previous decisional practice with respect to the product market definition
+    for FDPs concerning the FDP categories in which the Parties overlap.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_pai_partners_the_carlyle_group_theramex_2022_decision
+  page: '4'
+  quote_snippet: (15) Specifically, the exact product market definition for bone calcium regulators
+    can be left open since the Transaction does not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement even under the narrowest
+    plausible market defined at the ATC4 class M5B3.22
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_pai_partners_the_carlyle_group_theramex_2022_decision
+  page: '5'
+  quote_snippet: (19) Contract development and manufacturing organisations (“CDMOs”) provide
+    manufacturing services for FDPs and active pharmaceutical ingredients (“API”s) to third-party
+    pharmaceutical companies.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_pai_partners_the_carlyle_group_theramex_2022_decision
+  page: '5'
+  quote_snippet: (20) In the past, the Commission distinguished (i) a CDMO market for FDPs and
+    (ii) a CDMO market for APIs.25 As regards the CDMO market for FDPs, further segmentation
+    was considered based on (i) the pharmaceutical form manufactured (e.g., solids, semi-solids,
+    injectables); (ii) the conditions of manufacture (e.g., toxicity, sterile environment);
+    (iii) the type of API used for its production and the delivery mechanism used (e.g., swallowing,
+    intravenous, injection, etc.).26 The Commission also examined whether there is a separate
+    market for contract manufacturing organization (“CMO”) services but eventually left the
+    question open.27
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_pai_partners_the_carlyle_group_theramex_2022_decision
+  page: '5'
+  quote_snippet: (23) In this case, the exact product market definition for CDMOs can be left
+    open since the Transaction does not give rise to serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA agreement under any plausible market
+    definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_pai_partners_the_carlyle_group_theramex_2022_decision
+  page: '5'
+  quote_snippet: (16) For FDPs, the Commission consistently defines relevant markets at national
+    level.23 The Notifying Parties do not contest such an approach.24
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_pai_partners_the_carlyle_group_theramex_2022_decision
+  page: '5'
+  quote_snippet: (18) Therefore, for the purposes of this decision, the Commission considers
+    the geographic scope of the different plausible markets for FDPs to be national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_pai_partners_the_carlyle_group_theramex_2022_decision
+  page: '6'
+  quote_snippet: (24) The Commission has previously considered the geographic scope of all plausible
+    CDMO services markets as at least EEA-wide.29 The Notifying Parties do not contest such
+    an approach.30
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_pai_partners_the_carlyle_group_theramex_2022_decision
+  page: '6'
+  quote_snippet: (26) In this case, the exact geographic market definition for CDMOs can be
+    left open since the Transaction does not give rise to serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA agreement under any plausible geographic
+    market definition for CDMOs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

@@ -1,0 +1,611 @@
+case_id: eu_ec_m9798_2020
+case_name: M.9798
+authority: European Commission
+jurisdiction: EU
+sector: retail
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2020-09-30'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9798_2020_decision
+  title: M.9798 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9798
+  pdf_url: http://publications.europa.eu/resource/cellar/2e54efd4-4058-11eb-b27b-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: VCTs for LVs (OEM/OES channel)
+  definition_status: left_open
+  notes: The Commission left open whether the relevant product market should comprise VCTs as
+    a whole or whether a sub-segmentation by component (phasers, center bolts and solenoids)
+    or by type of VCT (hydraulic and electric phaser VCTs) or by type of engine (diesel v gasoline)
+    is necessary.
+- market_id: pm_2
+  name: Ignition coils for LVs (OEM/OES and IAM channels)
+  definition_status: left_open
+  notes: The Commission left open whether ignition coils overall constitute a relevant product
+    market, or whether a further sub-segmentation between COP ignition coils and coil pack ignition
+    coils should apply.
+- market_id: pm_3
+  name: EGR valves for LVs (IAM channel)
+  definition_status: left_open
+  notes: The Commission left open whether the relevant product market should comprise EGR valves
+    as a whole, whether sub-segmentations depending on the type of engine (gasoline/diesel)
+    and valve (pressure or electronically controlled) are necessary or whether EGR valves should
+    be part of a broader market of EGR systems.
+- market_id: pm_4
+  name: Glow plugs for LVs (IAM channel)
+  definition_status: left_open
+  notes: The Commission considers glow plugs and GPCMs to constitute separate product markets.
+    Within glow plugs, the exact market definition was left open as encompassing the market
+    for glow-plugs overall, or as being further sub-segmented between metallic glow plugs and
+    ceramic glow plugs.
+- market_id: pm_5
+  name: GPCMs for LVs (IAM channel)
+  definition_status: defined
+  notes: The Commission considers glow plugs and GPCMs to constitute separate product markets.
+    The sale of GPCMs alone does not give rise to any affected market in the IAM channel.
+geographic_markets_considered:
+- market_id: gm_1
+  name: VCTs for LVs (OEM/OES channel) — EEA-wide or worldwide
+  definition_status: left_open
+  notes: ''
+- market_id: gm_2
+  name: Ignition coils for LVs (OEM/OES channel) — EEA-wide or worldwide
+  definition_status: left_open
+  notes: ''
+- market_id: gm_3
+  name: Ignition coils for LVs (IAM channel) — National or EEA-wide
+  definition_status: left_open
+  notes: ''
+- market_id: gm_4
+  name: EGR valves for LVs (IAM channel) — National or EEA-wide
+  definition_status: left_open
+  notes: ''
+- market_id: gm_5
+  name: Glow plugs for LVs (IAM channel) — National or EEA-wide
+  definition_status: left_open
+  notes: ''
+- market_id: gm_6
+  name: GPCMs for LVs (IAM channel) — National or EEA-wide
+  definition_status: left_open
+  notes: The geographic market for GPCMs is not explicitly defined in the provided text. However,
+    as it is a component sold in the IAM channel, the Commission's general geographic market
+    definition for automotive components in the IAM channel (national or EEA-wide) is applied.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9798_2020_decision
+  page: '7'
+  quote_snippet: (28) For the purpose of this decision, it can be left open whether the relevant
+    product market should comprise VCTs as a whole or whether a sub-segmentation by component
+    (phasers, center bolts and solenoids) or by type of VCT (hydraulic and electric phaser VCTs)
+    or by type of engine (diesel v gasoline) is necessary, since the proposed Transaction does
+    not raise serious doubts as to its compatibility with the internal market under either product
+    market definition adopted.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9798_2020_decision
+  page: '6'
+  quote_snippet: (25) The market investigation indicates that customers often purchase phasers,
+    center bolts and solenoids separately, which would suggest the existence of a separate product
+    market for each of these components.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9798_2020_decision
+  page: '7'
+  quote_snippet: (26) The Commission has not investigated whether hydraulic and electric VCTs
+    or VCTs for diesel or gasoline engines should be considered part of the same product market
+    since the Parties’ activities only overlap in the sale of hydraulic VCTs for gasoline engines
+    and since the Parties have provided market shares for this segment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9798_2020_decision
+  page: '9'
+  quote_snippet: (37) For the purpose of the present decision, it can ultimately be left open
+    whether ignition coils overall constitute a relevant product market, or whether a further
+    sub-segmentation between (i) COP ignition coils and (ii) coil pack ignition coils should
+    apply, as the proposed Transaction does not raise serious doubts as to its compatibility
+    with the internal market under either delineation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9798_2020_decision
+  page: '8'
+  quote_snippet: (34) The Commission has not specifically considered a product market for ignition
+    coils for use in the automotive sector.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9798_2020_decision
+  page: '8'
+  quote_snippet: (35) The majority of customers responding to the Commission’s market investigation
+    consider that a further sub-segmentation within ignition coils does not apply. However,
+    the majority of ignition coil manufacturers responding to the Commission’s market investigation
+    consider that ignition coils could be further sub-segmented into brick ignition coils and
+    plug top ignition coil; pencil coil, top coil and modules; rectangular shaped coils and
+    stick shaped coils; plug-top coil, coil near plug, pencil coil, coil pack; lamination stacks;
+    and pencil type, COP). The majority of ignition coil manufacturers also confirmed that they
+    produced all different types.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9798_2020_decision
+  page: '10'
+  quote_snippet: (46) In any case, for the purpose of the present decision, it can be left open
+    whether the relevant product market should comprise EGR valves as a whole, whether sub-segmentations
+    depending on the type of engine (gasoline/diesel) and valve (pressure or electronically
+    controlled) are necessary or whether EGR valves should be part of a broader market of EGR
+    systems since the proposed Transaction does not raise serious doubts as to its compatibility
+    with the internal market regardless of the exact product market definition adopted.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9798_2020_decision
+  page: '10'
+  quote_snippet: (44) The Commission has previously identified a product market for EGR in general,
+    without distinction between systems, valves or other components. Therefore, the Commission
+    has not previously defined the product market for EGR valves.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9798_2020_decision
+  page: '10'
+  quote_snippet: (45) The market investigation shows that a vast majority of customers purchase
+    EGR valves separately, and not as part of the EGR system, which suggests that valves could
+    be viewed as a separate product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9798_2020_decision
+  page: '12'
+  quote_snippet: (59) In view of the results of the market investigation, and of the views expressed
+    by the Notifying Party, for the purposes of this decision, the Commission considers that
+    (i) glow plugs and (ii) GPCMs constitute separate product markets. For the purposes of this
+    decision, the exact product market definition within glow plugs can ultimately be left open
+    as either encompassing the market for glow-plugs overall, or as being further sub-segmented
+    between (i) metallic glow plugs and (ii) ceramic glow plugs, as the proposed Transaction
+    does not raise serious doubts as to its compatibility with the internal market under either
+    delineation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9798_2020_decision
+  page: '12'
+  quote_snippet: (57) The majority of respondents to the market investigation confirmed that
+    they usually purchase glow plugs and GPCMs separately (either from the same or a different
+    supplier), which would suggest the existence of separate product market for each of these
+    components.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9798_2020_decision
+  page: '12'
+  quote_snippet: (58) Within glow plugs, the majority of customers responding to the Commission’s
+    market investigation consider that a further sub-segmentation does not apply and that the
+    same suppliers produce all types, while one customer outlines a further sub-segmentation
+    between ceramic and metallic glow plugs. However, the majority of manufacturers of glow
+    plugs responding to the Commission’s market investigation consider that a further sub-segmentation
+    is applicable between ceramic and metallic glow plugs (as indicated by one of the respondents
+    “[b]oth types have different heating behavior, different supply voltage” and because they
+    are based in a “completely different technology […] [a] switch from one type to the other
+    is not easily possible”). The majority of manufacturers of glow plugs also confirm that
+    they produce both metallic and ceramic glow plugs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9798_2020_decision
+  page: '12'
+  quote_snippet: (59) In view of the results of the market investigation, and of the views expressed
+    by the Notifying Party, for the purposes of this decision, the Commission considers that
+    (i) glow plugs and (ii) GPCMs constitute separate product markets. For the purposes of this
+    decision, the exact product market definition within glow plugs can ultimately be left open
+    as either encompassing the market for glow-plugs overall, or as being further sub-segmented
+    between (i) metallic glow plugs and (ii) ceramic glow plugs, as the proposed Transaction
+    does not raise serious doubts as to its compatibility with the internal market under either
+    delineation. The sale of GPCMs alone does not give rise to any affected market in the IAM
+    channel, therefore this market will not be discussed any further.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m9798_2020_decision
+  page: '12'
+  quote_snippet: (57) The majority of respondents to the market investigation confirmed that
+    they usually purchase glow plugs and GPCMs separately (either from the same or a different
+    supplier), which would suggest the existence of separate product market for each of these
+    components.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m9798_2020_decision
+  page: '4'
+  quote_snippet: (13) For the purposes of this decision, the exact geographic market definition
+    for the sale of automotive components in the OEM/OES channel, including VCTs and ignition
+    coils, can ultimately be left open as being at least EEA-wide or possibly worldwide, as
+    the proposed Transaction does not raise serious doubts as to its compatibility with the
+    internal market under either geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m9798_2020_decision
+  page: '4'
+  quote_snippet: (11) In previous decisions, the Commission has found the geographic scope of
+    the market for the sale of automotive components to OEM/OESs to be at least EEA-wide, and
+    possibly worldwide, but has left open the precise definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m9798_2020_decision
+  page: '4'
+  quote_snippet: (12) Respondents to the Commission’s market investigation did not raise any
+    specificity with regard to the geographic market scope of those OEM/OES components affected
+    by the present Transaction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m9798_2020_decision
+  page: '4'
+  quote_snippet: (13) For the purposes of this decision, the exact geographic market definition
+    for the sale of automotive components in the OEM/OES channel, including VCTs and ignition
+    coils, can ultimately be left open as being at least EEA-wide or possibly worldwide, as
+    the proposed Transaction does not raise serious doubts as to its compatibility with the
+    internal market under either geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m9798_2020_decision
+  page: '4'
+  quote_snippet: (11) In previous decisions, the Commission has found the geographic scope of
+    the market for the sale of automotive components to OEM/OESs to be at least EEA-wide, and
+    possibly worldwide, but has left open the precise definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m9798_2020_decision
+  page: '4'
+  quote_snippet: (12) Respondents to the Commission’s market investigation did not raise any
+    specificity with regard to the geographic market scope of those OEM/OES components affected
+    by the present Transaction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m9798_2020_decision
+  page: '5'
+  quote_snippet: (16) For the purposes of this decision, the exact geographic market definition
+    for the sale of automotive components in the IAM channel, including ignition coils, EGR
+    valves and glow plugs, can ultimately be left open as being national or EEA-wide, as the
+    proposed Transaction does not raise serious doubts as to its compatibility with the internal
+    market under either geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m9798_2020_decision
+  page: '5'
+  quote_snippet: (14) As regards the sales of automotive components to the IAM channel, the
+    Commission has previously found the geographic markets to be at least national in scope.
+    The Notifying Party considers that it is now more accurate to view these markets as EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_ec_m9798_2020_decision
+  page: '5'
+  quote_snippet: (15) Respondents to the Commission’s market investigation did not raise any
+    specificity with regard to the geographic market scope of those IAM components affected
+    by the present Transaction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_ec_m9798_2020_decision
+  page: '5'
+  quote_snippet: (16) For the purposes of this decision, the exact geographic market definition
+    for the sale of automotive components in the IAM channel, including ignition coils, EGR
+    valves and glow plugs, can ultimately be left open as being national or EEA-wide, as the
+    proposed Transaction does not raise serious doubts as to its compatibility with the internal
+    market under either geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_ec_m9798_2020_decision
+  page: '5'
+  quote_snippet: (14) As regards the sales of automotive components to the IAM channel, the
+    Commission has previously found the geographic markets to be at least national in scope.
+    The Notifying Party considers that it is now more accurate to view these markets as EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_ec_m9798_2020_decision
+  page: '5'
+  quote_snippet: (15) Respondents to the Commission’s market investigation did not raise any
+    specificity with regard to the geographic market scope of those IAM components affected
+    by the present Transaction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_ec_m9798_2020_decision
+  page: '5'
+  quote_snippet: (16) For the purposes of this decision, the exact geographic market definition
+    for the sale of automotive components in the IAM channel, including ignition coils, EGR
+    valves and glow plugs, can ultimately be left open as being national or EEA-wide, as the
+    proposed Transaction does not raise serious doubts as to its compatibility with the internal
+    market under either geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_ec_m9798_2020_decision
+  page: '5'
+  quote_snippet: (14) As regards the sales of automotive components to the IAM channel, the
+    Commission has previously found the geographic markets to be at least national in scope.
+    The Notifying Party considers that it is now more accurate to view these markets as EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_ec_m9798_2020_decision
+  page: '5'
+  quote_snippet: (15) Respondents to the Commission’s market investigation did not raise any
+    specificity with regard to the geographic market scope of those IAM components affected
+    by the present Transaction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_ec_m9798_2020_decision
+  page: '5'
+  quote_snippet: (16) For the purposes of this decision, the exact geographic market definition
+    for the sale of automotive components in the IAM channel, including ignition coils, EGR
+    valves and glow plugs, can ultimately be left open as being national or EEA-wide, as the
+    proposed Transaction does not raise serious doubts as to its compatibility with the internal
+    market under either geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_ec_m9798_2020_decision
+  page: '1'
+  quote_snippet: |
+    Subject: Case M.9798 – BorgWarner/Delphi Technologies
+    Commission decision pursuant to Article 6(1)(b) of Council Regulation
+    No 139/20041 and Article 57 of the Agreement on the European Economic
+    Area2
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_ec_m9798_2020_decision
+  page: '35'
+  quote_snippet: (111) For the above reasons, the European Commission has decided not to oppose
+    the notified operation and to declare it compatible with the internal market and with the
+    EEA Agreement. This decision is adopted in application of Article 6(1)(b) of the Merger
+    Regulation and Article 57 of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

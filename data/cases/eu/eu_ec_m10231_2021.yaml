@@ -1,0 +1,218 @@
+case_id: eu_ec_m10231_2021
+case_name: M.10231
+authority: European Commission
+jurisdiction: EU
+sector: business_services
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2021-07-26'
+parties: []
+source_documents:
+- doc_id: eu_ec_m10231_2021_decision
+  title: M.10231 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10231
+  pdf_url: http://publications.europa.eu/resource/cellar/9f3b5275-f8eb-11eb-b520-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Dry leasing of aircraft
+  definition_status: defined
+  notes: ''
+- market_id: pm_2
+  name: Wet leasing of aircraft
+  definition_status: considered
+  notes: ''
+- market_id: pm_3
+  name: Dry leasing segmented by type of leasing (Sale and lease back vs. direct leasing)
+  definition_status: left_open
+  notes: ''
+- market_id: pm_4
+  name: Dry leasing segmented by type of aircraft (wide-body, narrow-body, regional)
+  definition_status: left_open
+  notes: ''
+geographic_markets_considered:
+- market_id: gm_1
+  name: Dry leasing of aircraft — worldwide
+  definition_status: defined
+  notes: ''
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m10231_2021_decision
+  page: '6'
+  quote_snippet: (25) On the basis of the above, the Commission concludes that there is a separate
+    market for dry leasing.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m10231_2021_decision
+  page: '5'
+  quote_snippet: (19) The market investigation in this case suggested that dry leasing may be
+    further segmented according to types of lease.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m10231_2021_decision
+  page: '4'
+  quote_snippet: '(17) In previous decisions, the Commission considered two distinct markets
+    for aircraft leasing:15 (a) Wet leasing: by which the aircraft is leased with its crew,
+    maintenance and insurance. These are typically short term transactions between two airlines.16
+    The Parties are not active in wet leasing.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m10231_2021_decision
+  page: '6'
+  quote_snippet: (25) On the basis of the above, the Commission concludes that there is a separate
+    market for dry leasing. It can be left open whether the market for dry leasing should be
+    further segmented between type of leasing or type of aircraft, as the Transaction does not
+    raise competition concerns under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m10231_2021_decision
+  page: '5'
+  quote_snippet: (21) From the supply side, direct leasing represents higher risk for lessors
+    compared to SLBs because, unlike with SLBs, with direct leasing the lessor bears the risk
+    of finding a lessee for the aircraft.26 In addition, ordering aircraft directly from airframers
+    is highly complicated and requires very specific expertise that only a minority of lessors
+    have.27 While more than 150 lessors are active in SLB, only about 15-20 are regularly active
+    in direct dry leasing.28
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m10231_2021_decision
+  page: '6'
+  quote_snippet: (25) On the basis of the above, the Commission concludes that there is a separate
+    market for dry leasing. It can be left open whether the market for dry leasing should be
+    further segmented between type of leasing or type of aircraft, as the Transaction does not
+    raise competition concerns under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m10231_2021_decision
+  page: '4'
+  quote_snippet: '(18) The Commission also considered a segmentation of dry leasing according
+    to aircraft size: wide-body (200-400 seats), narrow-body (100-200 seats) and regional aircraft,
+    which can be sub-divided further to aircraft of 30-50 seats and aircraft of 70-90 seats.20'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m10231_2021_decision
+  page: '6'
+  quote_snippet: (24) Specifically in relation to direct dry leasing, market participants explained
+    that direct leasing of wide body aircraft represent a higher risk to lessors compared to
+    leasing of narrow body aircraft. Wide body aircraft are three times more expensive than
+    narrow body aircraft and demand for them is much smaller than for narrow body aircraft.
+    Consequently, it is more difficult for lessors to find a lessee for wide body aircraft.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m10231_2021_decision
+  page: '6'
+  quote_snippet: (26) In previous decisions, the Commission considered the geographic scope
+    of the market for aircraft dry leasing to be worldwide.31
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m10231_2021_decision
+  page: '6'
+  quote_snippet: (26) The Parties agree with the Commission’s approach.32 The market participants
+    also confirmed this approach in the market investigation in this case.33
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m10231_2021_decision
+  page: '18'
+  quote_snippet: (56) For the above reasons, the European Commission has decided not to oppose
+    the notified operation and to declare it compatible with the internal market and with the
+    EEA Agreement. This decision is adopted in application of Article 6(1)(b) of the Merger
+    Regulation and Article 57 of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []
+case_type: merger
+ai_summary: null

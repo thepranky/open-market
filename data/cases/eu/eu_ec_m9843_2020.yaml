@@ -1,0 +1,292 @@
+case_id: eu_ec_m9843_2020
+case_name: M.9843
+authority: European Commission
+jurisdiction: EU
+sector: tech
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2020-07-07'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9843_2020_decision
+  title: M.9843 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9843
+  pdf_url: http://publications.europa.eu/resource/cellar/979c6052-6075-11eb-8146-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: colocation services provided by third party data centres
+  definition_status: defined
+  notes: The Commission defined this market as colocation services provided by third party data
+    centres, excluding in-house data centres, and found no need to sub-divide it further based
+    on carrier-owned/carrier-neutral, wholesale/retail, or customer type. It also noted that
+    interconnection and managed IT services are typically part of these services and do not
+    constitute separate markets.
+- market_id: pm_2
+  name: retail business connectivity services
+  definition_status: left_open
+  notes: The Commission considered various sub-segments, including Internet access, leased lines
+    (DIA), and VPN services, and also a distinction between residential and B2B customers, but
+    ultimately left the precise product market definition open.
+- market_id: pm_3
+  name: IT outsourcing
+  definition_status: left_open
+  notes: The Commission considered potential segmentation into public cloud computing services,
+    IaaS, infrastructure outsourcing services (with further sub-segments), and application outsourcing
+    services, but ultimately left the precise market definition open.
+geographic_markets_considered:
+- market_id: gm_1
+  name: colocation services provided by third party data centres — metropolitan area (around
+    50 km from city centre) (UK affected)
+  definition_status: defined
+  notes: The Commission defined the relevant geographic market as each metropolitan area corresponding
+    to a radius of around 50 km from the city centre, based on customer targeting, IT team access,
+    network operator concentration, and DWDM connectivity requirements.
+- market_id: gm_2
+  name: retail business connectivity services — national or EEA-wide (UK affected)
+  definition_status: left_open
+  notes: The Commission considered national scope based on precedents, but ultimately left the
+    precise geographic market definition open as the transaction did not raise concerns regardless
+    of whether it was national or EEA-wide.
+- market_id: gm_3
+  name: IT outsourcing — national or EEA-wide (UK affected)
+  definition_status: left_open
+  notes: The Commission noted precedents considering both EEA-wide and national markets due
+    to customisation and local service requirements, but ultimately left the precise geographic
+    market definition open as the transaction did not raise concerns regardless of scope.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9843_2020_decision
+  page: '5'
+  quote_snippet: (19) The Commission has previously11 defined a market for colocation services
+    provided by third party data centres (excluding in-house data centres).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9843_2020_decision
+  page: '6'
+  quote_snippet: (22) The Commission considers that in the present case the relevant product
+    market is colocation services provided by third party data centres (excluding in-house data
+    centres) as nothing in the case file suggests a need to depart from the Commission’s precedents.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9843_2020_decision
+  page: '8'
+  quote_snippet: (34) The Commission considers that in the present case the exact delineation
+    of the relevant product market for the provision of retail business connectivity services
+    can be left open since the proposed transaction does not give rise to competition concerns
+    under any alternative market definition.23
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9843_2020_decision
+  page: '9'
+  quote_snippet: (37) For the purpose of this Decision, the precise scope of the market for
+    retail supply of business connectivity services can be left open as the Transaction does
+    not give rise to serious doubts as regards its compatibility with the internal market irrespective
+    of whether there is an overall market for retail supply of business connectivity services,
+    or whether this overall market is segmented on the basis of the type of customer (residential
+    or B2B customers), or segmented into (i) Internet access services; (ii) leased lines (also
+    known as dedicated internet access (DIA)); and (iii) VPN services, or into (i) services
+    provided to residential customers and (ii) those provided to B2B customers, on a national
+    or an EEA wide market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9843_2020_decision
+  page: '9'
+  quote_snippet: (38) In previous decisions,26 the Commission has considered a segment of the
+    IT services market that encompasses IT outsourcing, which could be further segmented into
+    (i) public cloud computing services; (ii) Infrastructure as a Service (“IaaS”); (iii) infrastructure
+    outsourcing services (including potential further sub-segments for data centre services,
+    network outsourcing, end-user device outsourcing and help desk outsourcing); and (iv) application
+    outsourcing services. The Commission ultimately left open the market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9843_2020_decision
+  page: '10'
+  quote_snippet: (45) For the purpose of this Decision, the precise scope of the market for
+    IT outsourcing can be left open as the Transaction does not give rise to serious doubts
+    as regards its compatibility with the internal market irrespective of whether there is an
+    overall market for IT outsourcing or whether the overall market is further segmented into
+    (i) public cloud computing services; (ii) IaaS; (iii) infrastructure outsourcing services
+    (including potential further sub-segments for data centre services, network outsourcing,
+    end-user device outsourcing and help desk outsourcing); and (iv) application outsourcing
+    services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9843_2020_decision
+  page: '6'
+  quote_snippet: (23) The Commission has previously defined the relevant geographic market for
+    colocation services provided by third party data centres as each metropolitan area corresponding
+    to a radius of around 50 km from the centre of the city concerned.15
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9843_2020_decision
+  page: '8'
+  quote_snippet: (35) In previous decisions, the Commission considered the retail supply of
+    business connectivity services to be national in scope.24 In another decision, when considering
+    the geographic scope for B2B telecommunications services, including business connectivity
+    services, the Commission found that the geographic market was likely to be national in scope
+    (especially from the demand side), but left the geographic market definition open.25
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9843_2020_decision
+  page: '8'
+  quote_snippet: (36) The Commission considers that in the present case, the precise geographic
+    market definition can be left open since the Transaction does not give rise to any serious
+    doubts as regards its compatibility with the internal market regardless of whether the market
+    is national or EEA-wide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9843_2020_decision
+  page: '9'
+  quote_snippet: (37) For the purpose of this Decision, the precise scope of the market for
+    retail supply of business connectivity services can be left open as the Transaction does
+    not give rise to serious doubts as regards its compatibility with the internal market irrespective
+    of whether there is an overall market for retail supply of business connectivity services,
+    or whether this overall market is segmented on the basis of the type of customer (residential
+    or B2B customers), or segmented into (i) Internet access services; (ii) leased lines (also
+    known as dedicated internet access (DIA)); and (iii) VPN services, or into (i) services
+    provided to residential customers and (ii) those provided to B2B customers, on a national
+    or an EEA wide market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9843_2020_decision
+  page: '10'
+  quote_snippet: (42) The Commission has previously considered both EEA-wide28 and national29
+    markets. The Commission’s market investigation showed in those cases that IT solutions are
+    often customised according to language and local business particularities whilst IT service
+    suppliers need to also provide logistics, marketing, sales branches, distribution network
+    and after sales maintenance services at national level.30 However, the Commission ultimately
+    left the relevant geographic market definition open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9843_2020_decision
+  page: '10'
+  quote_snippet: (44) n the present case, the precise geographic market definition can be left
+    open since the Transaction does not give rise to any serious doubts as regards its compatibility
+    with the internal market regardless of whether the market is national or EEA-wide in scope.31
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9843_2020_decision
+  page: '10'
+  quote_snippet: (45) For the purpose of this Decision, the precise scope of the market for
+    IT outsourcing can be left open as the Transaction does not give rise to serious doubts
+    as regards its compatibility with the internal market irrespective of whether there is an
+    overall market for IT outsourcing or whether the overall market is further segmented into
+    (i) public cloud computing services; (ii) IaaS; (iii) infrastructure outsourcing services
+    (including potential further sub-segments for data centre services, network outsourcing,
+    end-user device outsourcing and help desk outsourcing); and (iv) application outsourcing
+    services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

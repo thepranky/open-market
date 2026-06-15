@@ -1,0 +1,237 @@
+case_id: eu_icg_holding_uriach_uriach_2024
+case_name: ICG / HOLDING URIACH / URIACH / INELDEA
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2024-07-15'
+parties:
+- name: ICG
+  role: acquirer
+- name: HOLDING URIACH
+  role: acquirer
+- name: URIACH
+  role: acquirer
+- name: INELDEA
+  role: target
+source_documents:
+- doc_id: eu_icg_holding_uriach_uriach_2024_decision
+  title: ICG / HOLDING URIACH / URIACH / INELDEA — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11532
+  pdf_url: http://publications.europa.eu/resource/cellar/3429ede9-91f6-11ef-a130-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: OTC products
+  definition_status: considered
+  notes: The Commission typically takes into account the OTC classification (OTC 2 to OTC 4
+    levels, and specific formulation/ingredients). While specific upstream markets that are
+    vertically affected were left open, the general approach to market definition for OTC products
+    involving these classifications was consistently considered for analysis.
+- market_id: pm_2
+  name: Retail supply of beauty, health and well-being products
+  definition_status: left_open
+  notes: While the Commission has in the past considered a broad market with potential sub-segments
+    for the retail supply of beauty, health and well-being products, for the purpose of this
+    decision, the precise product market definition was left open as no competition concerns
+    arose.
+geographic_markets_considered:
+- market_id: gm_1
+  name: OTC products — national (Spain and France affected)
+  definition_status: defined
+  notes: null
+- market_id: gm_2
+  name: Retail supply of beauty, health and well-being products — geographic scope (Spain and
+    France affected)
+  definition_status: left_open
+  notes: The Commission noted that previous decisions considered geographic scope to be local
+    or regional, but also acknowledged indications for a national scope. However, for this decision,
+    the precise geographic market definition was left open as no competition concerns arose.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_icg_holding_uriach_uriach_2024_decision
+  page: '5'
+  quote_snippet: When defining the market for OTC FDPs, OTC non-medicated products and other
+    OTC consumer healthcare products, the Commission typically takes into account the Consumer
+    Health Classification (“OTC classification”) of the European Pharmaceutical Marketing Research
+    Association maintained by IQVIA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_icg_holding_uriach_uriach_2024_decision
+  page: '5'
+  quote_snippet: In previous decisions dealing with OTC products, the Commission has referred
+    to the OTC 3 level as the starting point for defining the relevant product market in OTC
+    markets.10 However, the Commission has recognised that it is sometimes necessary to carry
+    out analyses at the narrower classification level OTC 4,11 or possibly even at the level
+    of the specific formulation/ingredients of the different products.12
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_icg_holding_uriach_uriach_2024_decision
+  page: '9'
+  quote_snippet: The Commission therefore considers all national markets at either OTC 3, OTC
+    4 or narrower level based on a specific formulation/ingredient as plausible product markets,
+    and on that basis identified 4 plausible markets that give rise to vertically affected links
+    (namely 1A1 – Antinauseants (paediatrics) in Spain, 11A1M - Antinauseants (mixed / oral)
+    in Spain, 3C1C – Fibre laxatives (capsules) in Spain, and 4D1M - Plain Vitamin C (Mixed/Oral)
+    in France).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_icg_holding_uriach_uriach_2024_decision
+  page: '9'
+  quote_snippet: The Commission has in the past considered a broad market for the retail supply
+    of beauty, health and well-being products but acknowledged potential sub-segments.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_icg_holding_uriach_uriach_2024_decision
+  page: '10'
+  quote_snippet: In any case, the precise product market definition for the market for retail
+    sale of beauty, health and well-being products can be left open because no competition concerns
+    arise under any plausible relevant market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_icg_holding_uriach_uriach_2024_decision
+  page: '5'
+  quote_snippet: The Commission has consistently held that the relevant geographic markets for
+    pharmaceutical products, including OTC products, is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_icg_holding_uriach_uriach_2024_decision
+  page: '6'
+  quote_snippet: The market investigation did not provide any indications that would require
+    the Commission to depart from its previous decisional practice on the geographic scope of
+    the different plausible markets for OTC products. Therefore, for the purposes of this decision,
+    the Commission considers the geographic scope of the different plausible markets for OTC
+    products to be national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_icg_holding_uriach_uriach_2024_decision
+  page: '9'
+  quote_snippet: As explained above, the Commission consistently defines the different plausible
+    markets for OTC products as national in scope. The market investigation did not provide
+    any indications that would require the Commission to depart from its previous decisional
+    practice on the geographic scope of the different plausible product markets that are vertically
+    affected. Therefore, for the purposes of this decision, the Commission considers the geographic
+    scope of the different plausible upstream markets to be national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_icg_holding_uriach_uriach_2024_decision
+  page: '10'
+  quote_snippet: In previous decisions, the Commission has considered that the geographic scope
+    of the retail supply of daily consumer goods, including beauty, health and well-being products,
+    is local or regional, since it is likely that local market conditions are taken into account
+    for pricing purposes and are relevant for individual consumers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_icg_holding_uriach_uriach_2024_decision
+  page: '10'
+  quote_snippet: However, the Commission has acknowledged that there are indications to conclude
+    that the geographic scope could also be national. With regard to beauty, health and well-being
+    product these indications include factors, such as the range of products, image, store layout,
+    service level, marketing and prices when they are decided and advertised by the market players
+    on a national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_icg_holding_uriach_uriach_2024_decision
+  page: '10'
+  quote_snippet: In any case, the precise geographic market definition for the market for retail
+    sale of beauty, health and well-being products can be left open because no competition concerns
+    arise under any plausible relevant market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

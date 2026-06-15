@@ -1,0 +1,231 @@
+case_id: eu_ec_m10118_2021
+case_name: M.10118
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2021-03-19'
+parties: []
+source_documents:
+- doc_id: eu_ec_m10118_2021_decision
+  title: M.10118 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10118
+  pdf_url: http://publications.europa.eu/resource/cellar/75a5ba3b-ae89-11eb-9767-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Manufacture and supply of S-PVC compounds
+  definition_status: left_open
+  notes: The Commission left open whether this constitutes a single market or distinct markets
+    for dry blend and gelled S-PVC compounds.
+- market_id: pm_2
+  name: Manufacture and supply of closures
+  definition_status: left_open
+  notes: The Commission left open whether the market for aluminium closures constitutes a separate
+    market from other types of closures, and whether segmentation based on end-use is appropriate.
+    Segmentation by material (aluminium vs. plastic) and end-use (e.g. for beverages, or for
+    wine bottles) was considered based on past cases and market investigation.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Manufacture and supply of S-PVC compounds — EEA-wide or regional
+  definition_status: left_open
+  notes: The Commission left open whether the geographic scope of this market is EEA-wide or
+    regional.
+- market_id: gm_2
+  name: Manufacture and supply of closures — EEA-wide or broader
+  definition_status: left_open
+  notes: The Commission left open whether the geographic scope of this market is EEA-wide or
+    broader (e.g., worldwide).
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m10118_2021_decision
+  page: '3'
+  quote_snippet: (9) Investindustrial is active in the manufacture and supply of gelled and
+    dry blend S- PVC compounds that are used to produce PVC liners.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m10118_2021_decision
+  page: '4'
+  quote_snippet: (12) Because the Transaction does not raise serious doubts as to its compatibility
+    with the internal market under any plausible product market definition, it can be left open
+    for the purpose of this case whether the market for the manufacture and supply of S-PVC
+    compounds constitutes a single market or whether distinct markets should be identified for
+    dry blend compounds and gelled compounds.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m10118_2021_decision
+  page: '4'
+  quote_snippet: (13) Guala is active in the manufacture and supply of closures for beverages
+    and food. In particular, Guala produces aluminium closures for wine and other beverages
+    that use PVC liners produced with gelled and dry blend S-PVC compounds.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m10118_2021_decision
+  page: '6'
+  quote_snippet: (18) In any event, because the Transaction does not raise serious doubts as
+    to its compatibility with the internal market under all plausible market definitions, it
+    can be left open for the purpose of this case whether the market for the manufacture and
+    supply of aluminium closures constitutes a separate market from other types of closures.
+    It can moreover be left open whether it is appropriate to consider a segmentation of closures
+    on the basis of their end-use.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m10118_2021_decision
+  page: '6'
+  quote_snippet: (19) The Notifying Party submits that, while there is no need to define the
+    exact scope of the market in this case, the geographic dimension of the market is at least
+    EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m10118_2021_decision
+  page: '6'
+  quote_snippet: (20) In previous decisions, the Commission considered, although ultimately
+    left open, whether the market is EEA-wide or regional in scope.19
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m10118_2021_decision
+  page: '6'
+  quote_snippet: (21) Nothing in the market investigation has called into question the Commission’s
+    previous decision-making practice as regards the geographic definition of the relevant market.
+    Because the Transaction does not raise serious doubts as to its compatibility with the internal
+    market under all plausible market definitions, it can be left open for the purpose of this
+    case whether the geographic scope of this market is EEA-wide or regional.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m10118_2021_decision
+  page: '6'
+  quote_snippet: (22) The Notifying Party agrees with the previous Commission decisions20 finding
+    that the market for the production and supply of closures is at least EEA-wide if not worldwide.21
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m10118_2021_decision
+  page: '7'
+  quote_snippet: (23) This definition is supported by the market investigation, which suggests
+    that the market for the manufacture and supply of closures is at least EEA-wide.22 This
+    is particularly the case for aluminium closures, which are generally sold across the EEA.23
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m10118_2021_decision
+  page: '7'
+  quote_snippet: (24) Because the Transaction does not raise serious doubts as to its compatibility
+    with the internal market under all plausible market definitions, it can be left open for
+    the purpose of this case whether the geographic scope of this market is EEA-wide or broader.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m10118_2021_decision
+  page: '3'
+  quote_snippet: (7) The Transaction does not give rise to horizontal overlaps.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m10118_2021_decision
+  page: '7'
+  quote_snippet: (26) Investindustrial’s shares for the manufacture and supply of S-PVC compounds
+    are well below 30% under all plausible market definitions. Likewise Guala’s shares are below
+    30% for the production of aluminium closures (across all end-uses) as well as for the production
+    of closures for specific end-uses (across all materials). Therefore, on this basis, the
+    Transaction does not give rise to vertically affected markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

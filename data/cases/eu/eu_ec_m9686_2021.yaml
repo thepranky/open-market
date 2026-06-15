@@ -1,0 +1,861 @@
+case_id: eu_ec_m9686_2021
+case_name: M.9686
+authority: European Commission
+jurisdiction: EU
+sector: retail
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2021-02-11'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9686_2021_decision
+  title: M.9686 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9686
+  pdf_url: http://publications.europa.eu/resource/cellar/cb62c5e2-d049-11eb-ac72-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Formulated crop protection products — by pest(s) targeted and crop
+  definition_status: considered
+  notes: The Commission's precedents segmented relevant product markets for formulated crop
+    protection products on the basis of the pest(s) targeted and then by crop. This segmentation
+    applies to fungicides, herbicides, insecticides, PGRs, and seed treatment. The market investigation
+    confirmed this general approach, further segmenting fungicides and insecticides by mode
+    of application, and herbicides by time of application and agricultural/non-agricultural
+    uses.
+- market_id: pm_2
+  name: Molluscicides
+  definition_status: defined
+  notes: The Commission previously considered molluscicides to constitute a distinct product
+    market, and this was confirmed by the market investigation.
+- market_id: pm_3
+  name: Paraffinic oils for virus control
+  definition_status: defined
+  notes: The Commission concluded that paraffinic oils for virus control constitute a separate
+    product market from insecticides, a view supported by the Notifying Party and market investigation
+    findings. Vegetable oils are not considered close substitutes.
+- market_id: pm_4
+  name: Paraffinic oils for virus control in seed potatoes
+  definition_status: defined
+  notes: The Commission concluded that the market for paraffinic oils for virus control should
+    be further segmented by crop, specifically distinguishing between seed potatoes and flower
+    bulbs, due to different product registrations and competitive conditions.
+- market_id: pm_5
+  name: Paraffinic oils for virus control in flower bulbs
+  definition_status: defined
+  notes: The Commission concluded that the market for paraffinic oils for virus control should
+    be further segmented by crop, specifically distinguishing between flower bulbs and seed
+    potatoes, due to different product registrations and competitive conditions.
+- market_id: pm_6
+  name: Plant growth regulators (PGRs) for potatoes
+  definition_status: considered
+  notes: The Notifying Party suggested segmenting potato PGRs by time of application (pre- vs.
+    post-harvest) and, within post-harvest, by preventative vs. curative products. The Commission's
+    market investigation supported the pre- vs. post-harvest segmentation but did not support
+    the preventative vs. curative distinction for post-harvest products.
+- market_id: pm_7
+  name: Pre-harvest potato plant growth regulators (PGRs)
+  definition_status: defined
+  notes: The Commission concluded, based on market investigation, that potato PGRs should be
+    segmented into pre-harvest and post-harvest categories, without further sub-segmentation
+    within post-harvest products.
+- market_id: pm_8
+  name: Post-harvest potato plant growth regulators (PGRs)
+  definition_status: defined
+  notes: The Commission concluded, based on market investigation, that potato PGRs should be
+    segmented into pre-harvest and post-harvest categories, without further sub-segmentation
+    within post-harvest products (such as preventative vs. curative).
+- market_id: pm_9
+  name: Potato desiccants
+  definition_status: defined
+  notes: The Commission considered Beloukha to be a potato desiccant based on registration,
+    marketing, sales, and market investigation results, assessing the overlap in this market.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Formulated crop protection products — national (various countries affected)
+  definition_status: defined
+  notes: The Commission consistently found the geographic market for crop protection products
+    to be national, based on national authorisation, data requirements, varying demands for
+    distributors, and national price differences. This was confirmed by the market investigation
+    for various product types in this case.
+- market_id: gm_2
+  name: Paraffinic oils for virus control in seed potatoes — national (Netherlands affected)
+  definition_status: defined
+  notes: The geographic market for paraffinic oils for virus control in seed potatoes was confirmed
+    to be national, specifically for the Netherlands, in line with general findings for crop
+    protection products.
+- market_id: gm_3
+  name: Paraffinic oils for virus control in flower bulbs — national (Netherlands affected)
+  definition_status: defined
+  notes: The geographic market for paraffinic oils for virus control in flower bulbs was confirmed
+    to be national, specifically for the Netherlands, consistent with general findings for crop
+    protection products.
+- market_id: gm_4
+  name: Post-harvest potato plant growth regulators (PGRs) — national (Germany, Poland, Denmark,
+    Sweden, Finland, Norway affected)
+  definition_status: defined
+  notes: The geographic markets for post-harvest potato PGRs were confirmed to be national,
+    in line with general findings for crop protection products. The transaction gave rise to
+    affected markets in Germany, Poland, Denmark, Sweden, and loss of potential competition
+    in Finland and Norway.
+- market_id: gm_5
+  name: Pre-harvest potato plant growth regulators (PGRs) — national (Germany affected)
+  definition_status: defined
+  notes: The geographic market for pre-harvest potato PGRs in Germany was found to be national,
+    in line with general findings for crop protection products.
+- market_id: gm_6
+  name: Potato desiccants — national (Netherlands affected)
+  definition_status: defined
+  notes: The geographic market for potato desiccants was confirmed to be national, specifically
+    for the Netherlands, consistent with general findings for crop protection products.
+- market_id: gm_7
+  name: Vine fungicides for downy mildew — national (Austria affected)
+  definition_status: defined
+  notes: The geographic market for vine fungicides for downy mildew in Austria was found to
+    be national.
+- market_id: gm_8
+  name: Vine fungicides for downy mildew — national (Germany affected)
+  definition_status: defined
+  notes: The geographic market for vine fungicides for downy mildew in Germany was found to
+    be national.
+- market_id: gm_9
+  name: Potato fungicides for late blight — national (Belgium affected)
+  definition_status: defined
+  notes: The geographic market for potato fungicides for late blight in Belgium was found to
+    be national.
+- market_id: gm_10
+  name: Potato fungicides for late blight — national (Germany affected)
+  definition_status: defined
+  notes: The geographic market for potato fungicides for late blight in Germany was found to
+    be national.
+- market_id: gm_11
+  name: Potato fungicides for late blight — national (Netherlands affected)
+  definition_status: defined
+  notes: The geographic market for potato fungicides for late blight in the Netherlands was
+    found to be national.
+- market_id: gm_12
+  name: Potato fungicides for late blight — national (United Kingdom affected)
+  definition_status: defined
+  notes: The geographic market for potato fungicides for late blight in the United Kingdom was
+    found to be national.
+- market_id: gm_13
+  name: Cross spectrum – pre emergence - herbicides for vegetable crops — national (Netherlands
+    affected)
+  definition_status: defined
+  notes: The geographic market for cross spectrum – pre emergence - herbicides for vegetable
+    crops in the Netherlands was found to be national.
+- market_id: gm_14
+  name: Sucking pests insecticides for stone fruit — national (Spain affected)
+  definition_status: defined
+  notes: The geographic market for sucking pests insecticides for stone fruit in Spain was found
+    to be national.
+- market_id: gm_15
+  name: Sucking pests insecticides for potato — national (Netherlands affected)
+  definition_status: defined
+  notes: The geographic market for sucking pests insecticides for potato in the Netherlands
+    was found to be national.
+- market_id: gm_16
+  name: Pre-harvest potato plant growth regulators (PGRs) — national (Germany affected)
+  definition_status: defined
+  notes: The geographic market for pre-harvest potato PGRs in Germany was found to be national,
+    in line with general findings for crop protection products.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '3'
+  quote_snippet: In past cases, the Commission found that the relevant product markets for formulated
+    crop protection products can be segmented on the basis of the pest(s) targeted and then
+    by crop where each such combination constitutes a separate relevant product market. This
+    applies to fungicides, herbicides, insecticides (including acaricides), PGRs and seed treatment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '7'
+  quote_snippet: The outcome of the market investigation has confirmed the Commission’s precedents
+    defining the relevant product market for crop protection products on the basis of crop/target
+    pest combinations (e.g. for fungicides, herbicides, and insecticides), while molluscicides
+    constitute a single product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '7'
+  quote_snippet: Moreover, the outcome of the market investigation has also confirmed that as
+    regards fungicides and insecticides, the markets should be further segmented according to
+    the mode of application, distinguishing between foliar and soil applications. In addition,
+    the outcome of the market investigation has confirmed that, as regards herbicides, the market
+    should be further segmented according to the time of application and whether they are used
+    for agricultural or non-agricultural applications.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '5'
+  quote_snippet: Further, the Commission considered that molluscicides constitute a distinct
+    product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '7'
+  quote_snippet: The outcome of the market investigation has confirmed the Commission’s precedents
+    defining the relevant product market for crop protection products on the basis of crop/target
+    pest combinations (e.g. for fungicides, herbicides, and insecticides), while molluscicides
+    constitute a single product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '5'
+  quote_snippet: Molluscicides are crop protection products designed to combat snails and other
+    types of molluscs. They generally consist of chemically treated baits which are spread onto
+    the soil. In case M.2547 – Bayer / Aventis Crop Science (2002), paragraph 527, the Commission
+    considered that molluscicides form a separate product market as they cannot be substituted
+    by other insecticides and that a breakdown by type of crop would not be appropriate since
+    the formulation of molluscicides does not vary according to the plants affected.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '6'
+  quote_snippet: As regards paraffinic oils for virus control, the Notifying Party submits that
+    this should be a separate market from insecticides. The Notifying Party considers that paraffinic
+    oils and insecticides operate in different ways and are used for different purposes. According
+    to the Notifying Party, paraffinic oils have a different mode of action to insecticides,
+    as the former do not kill the pests, but are used to avoid that they transmit the virus
+    they may carry.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '7'
+  quote_snippet: The results of the market investigation support the Notifying Party’s view
+    that paraffinic oils for virus control constitute a separate product market from insecticides.
+    The majority of competitors expressing an opinion consider that paraffinic oils for virus
+    control should constitute a separate market. Customers point at these products’ particularities
+    and the lack of alternative products. The results of the market investigation did not contradict
+    the Notifying Party’s claim that vegetable oils are not close substitutes to paraffinic
+    oils.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '7'
+  quote_snippet: The Commission considers this distinction relevant and considers the markets
+    for paraffinic oils for virus control in (i) seed potatoes and (ii) flower bulbs as separate
+    markets. This is because not all paraffinic oils for virus control are registered for use
+    on both flower bulbs and seed potatoes. Competitive conditions appear to be different, as
+    customers are faced with different alternative suppliers depending on whether they want
+    to treat flower bulbs or seed potatoes, as can be seen in Table 3 and Table 4 below.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '7'
+  quote_snippet: The Commission considers this distinction relevant and considers the markets
+    for paraffinic oils for virus control in (i) seed potatoes and (ii) flower bulbs as separate
+    markets. This is because not all paraffinic oils for virus control are registered for use
+    on both flower bulbs and seed potatoes. Competitive conditions appear to be different, as
+    customers are faced with different alternative suppliers depending on whether they want
+    to treat flower bulbs or seed potatoes, as can be seen in Table 3 and Table 4 below.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '6'
+  quote_snippet: 'The Notifying Party considers the following sub-segmentations to be appropriate:
+    (a) First, based on time of application, between pre- and post-harvest, (b) Second, within
+    post-harvest, between products that prevent sprouting and those that act on the sprouts
+    once they have appeared (referred to as preventative and curative products, respectively).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '8'
+  quote_snippet: The results of the market investigation support a sub-segmentation of potato
+    PGRs based on crop and on time of application between pre- and post-harvest potato PGRs,
+    as suggested by the Notifying Party.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '8'
+  quote_snippet: As regards a sub-segmentation between post-harvest products that prevent sprouting
+    and products that burn off sprouts (preventive versus curative products) suggested by the
+    Notifying Party, this is not supported by the market investigation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '12'
+  quote_snippet: In light of the results of its investigation, the Commission concludes that,
+    for the purposes of assessing the Transaction, the relevant product market in relation to
+    PGRs should be segmented between pre-harvest potato PGRs and post-harvest potato PGRs without
+    the need for further sub-segmentations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '12'
+  quote_snippet: In light of the results of its investigation, the Commission concludes that,
+    for the purposes of assessing the Transaction, the relevant product market in relation to
+    PGRs should be segmented between pre-harvest potato PGRs and post-harvest potato PGRs without
+    the need for further sub-segmentations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '8'
+  quote_snippet: As regards a sub-segmentation between post-harvest products that prevent sprouting
+    and products that burn off sprouts (preventive versus curative products) suggested by the
+    Notifying Party, this is not supported by the market investigation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '8'
+  quote_snippet: A majority of both customers and competitors expressing an opinion do not consider
+    that post-harvest products should be segmented between products used before sprouting and
+    products used after sprouting.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '42'
+  quote_snippet: In particular, as the Notifying Party acknowledged, Beloukha has been registered
+    and, at least initially, promoted, as a potato desiccant in the Netherlands.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '42'
+  quote_snippet: Overall, a majority of all respondents that expressed a view consider that
+    Beloukha is used as a potato desiccant.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '42'
+  quote_snippet: Based on these results and on the fact that Beloukha has been registered, marketed
+    and sold as a potato desiccant, the Commission considers that this product belongs to the
+    potato desiccant market and has therefore assessed the overlap that the proposed Transaction
+    raises in the potato desiccant market in the Netherlands.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '12'
+  quote_snippet: In previous decisions, the Commission has considered that the geographic market
+    definition for crop protection products is national. This is because their authorisation
+    is still regulated at the national level, each Member State remains responsible for maintaining
+    specific national data requirements, distributors of crop protection products usually are
+    adapted to varying demands of their customers in different Member States and pricing data
+    indicated national differences in price levels and evolution for the same products.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '12'
+  quote_snippet: The vast majority of competitors and customers expressing an opinion agree
+    with the Commission that the geographic market definition for crop protection products is
+    national in scope. This includes the markets for fungicides, herbicides, insecticides, molluscicides,
+    potato desiccants, paraffinic oils for virus control and PGRs for potatoes.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '12'
+  quote_snippet: The vast majority of competitors and customers expressing an opinion agree
+    with the Commission that the geographic market definition for crop protection products is
+    national in scope. This includes the markets for fungicides, herbicides, insecticides, molluscicides,
+    potato desiccants, paraffinic oils for virus control and PGRs for potatoes.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '12'
+  quote_snippet: The vast majority of competitors and customers expressing an opinion agree
+    with the Commission that the geographic market definition for crop protection products is
+    national in scope. This includes the markets for fungicides, herbicides, insecticides, molluscicides,
+    potato desiccants, paraffinic oils for virus control and PGRs for potatoes.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '12'
+  quote_snippet: The vast majority of competitors and customers expressing an opinion agree
+    with the Commission that the geographic market definition for crop protection products is
+    national in scope. This includes the markets for fungicides, herbicides, insecticides, molluscicides,
+    potato desiccants, paraffinic oils for virus control and PGRs for potatoes.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '20'
+  quote_snippet: 'The Parties’ activities in the EEA overlap in the area of PGRs for potatoes.
+    Based on the Parties’ activities in 2020, the Transaction gives rise to four affected markets
+    for post-harvest potato PGRs: in Germany, Poland, Denmark and Sweden. In addition, the Transaction
+    would lead to a loss of potential competition in the markets for post-harvest potato PGRs
+    in Finland and Norway.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '12'
+  quote_snippet: The vast majority of competitors and customers expressing an opinion agree
+    with the Commission that the geographic market definition for crop protection products is
+    national in scope. This includes the markets for fungicides, herbicides, insecticides, molluscicides,
+    potato desiccants, paraffinic oils for virus control and PGRs for potatoes.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '12'
+  quote_snippet: The vast majority of competitors and customers expressing an opinion agree
+    with the Commission that the geographic market definition for crop protection products is
+    national in scope. This includes the markets for fungicides, herbicides, insecticides, molluscicides,
+    potato desiccants, paraffinic oils for virus control and PGRs for potatoes.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '12'
+  quote_snippet: The vast majority of competitors and customers expressing an opinion agree
+    with the Commission that the geographic market definition for crop protection products is
+    national in scope. This includes the markets for fungicides, herbicides, insecticides, molluscicides,
+    potato desiccants, paraffinic oils for virus control and PGRs for potatoes.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '12'
+  quote_snippet: The vast majority of competitors and customers expressing an opinion agree
+    with the Commission that the geographic market definition for crop protection products is
+    national in scope. This includes the markets for fungicides, herbicides, insecticides, molluscicides,
+    potato desiccants, paraffinic oils for virus control and PGRs for potatoes.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_8
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '12'
+  quote_snippet: The vast majority of competitors and customers expressing an opinion agree
+    with the Commission that the geographic market definition for crop protection products is
+    national in scope. This includes the markets for fungicides, herbicides, insecticides, molluscicides,
+    potato desiccants, paraffinic oils for virus control and PGRs for potatoes.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_9
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '12'
+  quote_snippet: The vast majority of competitors and customers expressing an opinion agree
+    with the Commission that the geographic market definition for crop protection products is
+    national in scope. This includes the markets for fungicides, herbicides, insecticides, molluscicides,
+    potato desiccants, paraffinic oils for virus control and PGRs for potatoes.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_10
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '12'
+  quote_snippet: The vast majority of competitors and customers expressing an opinion agree
+    with the Commission that the geographic market definition for crop protection products is
+    national in scope. This includes the markets for fungicides, herbicides, insecticides, molluscicides,
+    potato desiccants, paraffinic oils for virus control and PGRs for potatoes.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_11
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_34
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '12'
+  quote_snippet: The vast majority of competitors and customers expressing an opinion agree
+    with the Commission that the geographic market definition for crop protection products is
+    national in scope. This includes the markets for fungicides, herbicides, insecticides, molluscicides,
+    potato desiccants, paraffinic oils for virus control and PGRs for potatoes.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_12
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_35
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '12'
+  quote_snippet: The vast majority of competitors and customers expressing an opinion agree
+    with the Commission that the geographic market definition for crop protection products is
+    national in scope. This includes the markets for fungicides, herbicides, insecticides, molluscicides,
+    potato desiccants, paraffinic oils for virus control and PGRs for potatoes.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_13
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_36
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '12'
+  quote_snippet: The vast majority of competitors and customers expressing an opinion agree
+    with the Commission that the geographic market definition for crop protection products is
+    national in scope. This includes the markets for fungicides, herbicides, insecticides, molluscicides,
+    potato desiccants, paraffinic oils for virus control and PGRs for potatoes.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_14
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_37
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '12'
+  quote_snippet: The vast majority of competitors and customers expressing an opinion agree
+    with the Commission that the geographic market definition for crop protection products is
+    national in scope. This includes the markets for fungicides, herbicides, insecticides, molluscicides,
+    potato desiccants, paraffinic oils for virus control and PGRs for potatoes.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_15
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_38
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '12'
+  quote_snippet: The vast majority of competitors and customers expressing an opinion agree
+    with the Commission that the geographic market definition for crop protection products is
+    national in scope. This includes the markets for fungicides, herbicides, insecticides, molluscicides,
+    potato desiccants, paraffinic oils for virus control and PGRs for potatoes.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_16
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_39
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '3'
+  quote_snippet: 'The undertakings concerned have a combined aggregate world-wide turnover of
+    more than EUR 5 000 million7 [Mitsui: […], Belchim: […]. Each of them has an EU-wide turnover
+    in excess of EUR 250 million [Mitsui: […], Belchim: […] and they do not achieve more than
+    two-thirds of their aggregate EU-wide turnover within one and the same Member State. The
+    notified operation therefore has a Union dimension pursuant to Article 1(2) of the Merger
+    Regulation.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_40
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '16'
+  quote_snippet: In the following sub-sections, the Commission (i) analyses the horizontally
+    affected markets where the Commission considers that the Transaction would raise serious
+    doubts in the absence of the remedies presented by the Notifying Party; and (ii) the markets
+    where the Transaction does not raise serious doubts including horizontally affected markets
+    and markets where conglomerate effects could rise.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_41
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '49'
+  quote_snippet: In order to address the serious doubts raised by the Transaction with a view
+    to rendering the concentration compatible with the internal market, the Notifying Party
+    has modified the notified Transaction by submitting to the Commission certain commitments.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_42
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '49'
+  quote_snippet: On 21 January 2021, the Notifying Party submitted the following commitments
+    pursuant to Article 6(2) of the Merger Regulation (the ‘Commitments’).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_43
+  source_document_id: eu_ec_m9686_2021_decision
+  page: '51'
+  quote_snippet: The Commission therefore concludes that the Commitments are sufficient to remove
+    entirely the concerns identified in the potato PGRs markets in Germany, Poland, Denmark,
+    Sweden, Finland and Sweden, as well as, in the Dutch markets of paraffinic oils for virus
+    control in seed potatoes and flower bulbs. Moreover, the Commission considers that the Commitments
+    are able to create a lasting situation ensuring that the identified concerns will not materialise.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

@@ -1,0 +1,925 @@
+case_id: eu_pttgc_allnex_2021
+case_name: PTTGC / Allnex
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2021-12-06'
+parties:
+- name: PTTGC
+  role: acquirer
+- name: Allnex
+  role: target
+source_documents:
+- doc_id: eu_pttgc_allnex_2021_decision
+  title: PTTGC / Allnex — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10432
+  pdf_url: http://publications.europa.eu/resource/cellar/727370aa-7908-11ec-9136-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Coating resins (segmented by delivery technology and chemistry)
+  definition_status: defined
+  notes: The Commission concluded that separate coating resins markets exist segmented by delivery
+    technology and chemistry. The vertically affected product markets are radcure waterborne
+    ultra-violet polyurethane dispersion ("UV PUD") and polyester powders. The segmentation
+    by industrial application was left open.
+- market_id: pm_2
+  name: Crosslinkers (segmented by delivery technology and chemistry)
+  definition_status: defined
+  notes: The Commission concluded that separate crosslinkers markets exist segmented by delivery
+    technology and chemistry. The only vertically affected market within crosslinkers is crosslinkers
+    amino resins. Segmentation by industrial application was left open.
+- market_id: pm_3
+  name: Diisocyanates
+  definition_status: defined
+  notes: The Commission considered separate markets for Hexamethylene diisocyanate (HDI), Isophorone
+    diisocyanate (IPDI), 4,4′-Dicyclohexylmethane diisocyanate (H12MDI), Toluene diisocyanate
+    (TDI), Methylene diphenyl diisocyanate (MDI), and Monomeric MDI (mMDI). HDI derivatives
+    also constitute a separate market from HDI. The affected markets are HDI and IPDI.
+- market_id: pm_4
+  name: Methyl methacrylate (MMA)
+  definition_status: defined
+  notes: The Commission considered MMA and MMA derivatives to constitute separate product markets.
+    PTTGC does not sell MMA derivatives, and the assessment applied to the narrower market for
+    MMA.
+- market_id: pm_5
+  name: Styrene monomer
+  definition_status: defined
+  notes: The Commission considered styrene monomer to be a separate relevant product market
+    without further segmentation.
+- market_id: pm_6
+  name: Glycerol
+  definition_status: considered
+  notes: The Commission left open whether all polyhydric alcohols or glycerol constitutes a
+    separate product market but performed its competitive assessment on the narrowest plausible
+    basis, a separate market for glycerol.
+- market_id: pm_7
+  name: Purified terephthalic acid (PTA)
+  definition_status: considered
+  notes: The Commission left open whether the relevant market is PTA or a broader market including
+    di-methyl terephthalate (DMT), but performed its competitive assessment on the narrowest
+    plausible basis, a market for PTA, as PTTGC does not produce DMT.
+- market_id: pm_8
+  name: Mono-ethylene glycol (MEG)
+  definition_status: considered
+  notes: The Commission considered separate markets for MEG, DEG, and TEG, or a broader market
+    of ethylene glycol, but performed its competitive assessment on the narrowest basis, separate
+    markets for MEG and DEG.
+- market_id: pm_9
+  name: Di-ethylene glycol (DEG)
+  definition_status: considered
+  notes: The Commission considered separate markets for MEG, DEG, and TEG, or a broader market
+    of ethylene glycol, but performed its competitive assessment on the narrowest basis, separate
+    markets for MEG and DEG.
+- market_id: pm_10
+  name: Xylene
+  definition_status: considered
+  notes: The Commission left open whether xylene constitutes a separate market or is part of
+    a broader market for gasoline additives, but performed its competitive assessment on the
+    narrowest basis, xylene.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Coating resins — EEA-wide or worldwide
+  definition_status: left_open
+  notes: The Commission's previous decisional practice considered the geographic market for
+    coating resins to be either EEA-wide or worldwide. For the purpose of this Decision, it
+    was left open as the transaction does not give rise to serious doubts under either scope.
+- market_id: gm_2
+  name: Crosslinkers amino resins — EEA-wide or worldwide
+  definition_status: left_open
+  notes: The Commission previously considered the geographic market for crosslinkers amino resins
+    to be either EEA-wide or worldwide. For the purpose of this decision, it was left open as
+    the transaction does not give rise to serious doubts under either scope.
+- market_id: gm_3
+  name: Diisocyanates (HDI and IPDI) — EEA-wide or worldwide
+  definition_status: left_open
+  notes: The Commission previously considered the geographic market for HDI and IPDI to be either
+    EEA-wide or worldwide. For the purpose of this decision, it was left open as the transaction
+    does not give rise to serious doubts under either scope.
+- market_id: gm_4
+  name: Methyl methacrylate (MMA) — EEA-wide or worldwide
+  definition_status: left_open
+  notes: The Commission previously considered the geographic market for MMA to be either EEA-wide
+    or worldwide. For the purpose of this decision, it was left open as the transaction does
+    not give rise to serious doubts under either scope.
+- market_id: gm_5
+  name: Styrene monomer — EEA-wide or worldwide
+  definition_status: left_open
+  notes: The Commission previously considered the geographic market for styrene to be either
+    EEA-wide or worldwide. For the purpose of this decision, it was left open as the transaction
+    does not give rise to serious doubts under either scope.
+- market_id: gm_6
+  name: Glycerol — EEA-wide or worldwide
+  definition_status: left_open
+  notes: The Commission previously considered the geographic market for glycerol to be either
+    EEA-wide or worldwide. For the purpose of this decision, it was left open as the transaction
+    does not give rise to serious doubts under either scope.
+- market_id: gm_7
+  name: Purified terephthalic acid (PTA) — EEA-wide or worldwide
+  definition_status: left_open
+  notes: The Commission previously considered the geographic market for PTA to be either EEA-wide
+    or worldwide. For the purpose of this decision, it was left open as the transaction does
+    not give rise to serious doubts under either scope.
+- market_id: gm_8
+  name: Ethylene glycols (MEG and DEG) — EEA-wide or worldwide
+  definition_status: left_open
+  notes: The Commission previously considered the geographic market for ethylene glycols (including
+    MEG and DEG) to be either EEA-wide or worldwide. For the purpose of this decision, it was
+    left open as the transaction does not give rise to serious doubts under either scope.
+- market_id: gm_9
+  name: Xylene — EEA-wide or worldwide
+  definition_status: left_open
+  notes: The Commission previously considered the geographic market for xylene to be either
+    EEA-wide or worldwide. For the purpose of this decision, it was left open as the transaction
+    does not give rise to serious doubts under either scope.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '6'
+  quote_snippet: The Commission has previously considered a segmentation of the relevant product
+    market for the supply of coating resins by (i) delivery technology, (ii) chemistry and (iii)
+    industrial application.6
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '7'
+  quote_snippet: For the purposes of this Decision, it is not necessary to further explore a
+    narrower product market by industrial application, as the focus of the competitive assessment
+    is potential customer foreclosure and Allnex’s shares of demand are already minimal considering
+    the current broader product markets downstream (see Table 4 to Table 6 below). Under such
+    a potential narrower product market, for which the input products would be the same, the
+    same arguments would apply and the possibility of customer foreclosure would be even more
+    remote. The issue of a potential segmentation of coating resins by industrial application
+    can therefore be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '7'
+  quote_snippet: Therefore, based on the Commission’s previous decisions, its market investigation,
+    and the Notifying Party’s arguments, the Commission considers that for the purpose of this
+    Decision separate coating resins markets exist segmented by delivery technology and chemistry.
+    The vertically affected product markets within coating resins are therefore (i) radcure
+    waterborne ultra-violet polyurethane dispersion (“UV PUD”) and (ii) polyester powders.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '8'
+  quote_snippet: For the purpose of this Decision, it is not necessary to further explore narrower
+    product markets by industrial application, as the focus of the competitive assessment is
+    potential customer foreclosure and Allnex’s shares of demand are already minimal considering
+    the current broader product markets downstream (see Table 4 to Table 6 below). Under such
+    a potential narrower product market, for which the input products would be the same, the
+    same arguments would apply and the possibility of customer foreclosure would be even more
+    remote. The issue of a potential segmentation of crosslinkers by industrial application
+    can therefore be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '8'
+  quote_snippet: Therefore, based on the Commission’s previous decisions, its market investigation
+    and the Notifying Party’s arguments, the Commission considers that for the purpose of this
+    Decision separate crosslinkers exist segmented by delivery technology and chemistry. The
+    only vertically affected market within crosslinkers is thus crosslinkers amino resins.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '9'
+  quote_snippet: In a recent decision concerning coating resins, the Commission considered that
+    there are separate markets for the following types of diisocyanates:14 (a) Hexamethylene
+    diisocyanate (“HDI”); (b) Isophorone diisocyanate (“IPDI”); (c) 4,4′-Dicyclohexylmethane
+    diisocyanate (“H MDI”); 12 (d) Toluene diisocyanate (“TDI”); (e) Methylene diphenyl diisocyanate
+    (“MDI”); and (f) Monomeric MDI (“mMDI”).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '9'
+  quote_snippet: The Commission additionally considered that HDI derivatives constitute a separate
+    market from HDI.15
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '9'
+  quote_snippet: 'Therefore, based on the Commission’s previous decisions, its market investigation
+    and the Notifying Party’s arguments, the Commission considers that for the purpose of this
+    Decision separate diisocyanate markets exist as set out in paragraph (23). The Transaction
+    therefore gives rise to the following affected markets within diisocyanates: (i) HDI and
+    (ii) IPDI.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '10'
+  quote_snippet: The Commission previously considered that MMA forms a separate product market.19
+    While the Commission ultimately left the matter open, it indicated that there was likely
+    to be a distinct product market for the supply of MMA and MMA derivatives.20 PTTGC does
+    not sell MMA derivatives.21
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '10'
+  quote_snippet: Therefore, based on the Commission’s previous decisions, its market investigation
+    and the Notifying Party’s arguments, the Commission considers that for the purpose of this
+    Decision MMA and MMA derivatives constitute separate product markets. The Transaction therefore
+    gives rise to an affected market for MMA. In any event, as PTTGC does not sell MMA derivatives
+    and the Transaction does not raise serious doubts for the narrower market for MMA, the Commission’s
+    assessment would also apply to the broader market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '11'
+  quote_snippet: The Commission has previously considered that styrene monomer constitutes a
+    separate relevant product market as there is no substitute for styrene in the manufacture
+    of polystyrene and expanded polystyrene and other styrene derivatives.25
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '11'
+  quote_snippet: Therefore, based on the Commission’s previous decisions, its market investigation
+    and the Notifying Party’s arguments, the Commission considers that for the purpose of this
+    Decision styrene constitutes a product market without further segmentation. The Transaction
+    therefore gives rise to an affected market for styrene.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '12'
+  quote_snippet: In previous decisions, the Commission has left open whether all polyhydric
+    alcohols are part of one and the same market or each polyhydric alcohol (such as glycerol)
+    constitutes a separate product market.29
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '12'
+  quote_snippet: For the purpose of the current Decision, it can be left open whether the appropriate
+    market definition is polyhydric alcohols, or whether a separate product market for glycerol
+    is appropriate, as the Transaction does not give rise to serious doubts for either product
+    market definition and PTTGC’s market share is similarly low for both product markets. Additionally,
+    the market investigation gave no grounds to depart from the Commission’s decisional practice.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '12'
+  quote_snippet: Therefore, based on the Commission’s previous decisions, its market investigation
+    and the Notifying Party’s arguments, the Commission will perform its competitive assessment
+    on the narrowest plausible basis, i.e. a separate market for glycerol. In any event, as
+    the Transaction does not give rise to serious doubts for glycerol, the Commission’s competitive
+    assessment would apply for a broader market for polyhydric alcohols as well, as PTTGC’s
+    market share is similarly low, and Allnex’s share of demand would be even lower than for
+    glycerol.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '13'
+  quote_snippet: In previous decisions, the Commission left open whether the relevant product
+    market is the market for the production and supply of PTA, or a broader market including
+    the production and the supply of di-methyl terephthalate (“DMT”).33 PTTGC does not produce
+    DMT34; therefore, the matter is not relevant for the current Decision.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '13'
+  quote_snippet: Therefore, based on the Commission’s previous decisions, its market investigation
+    and the Notifying Party’s arguments, the Commission will perform its competitive assessment
+    on the narrowest plausible basis, i.e. a product market for PTA. In any event, as PTTGC
+    does not produce DMT, and the Transaction does not raise serious doubts for the narrower
+    market for PTA, the Commission’s assessment would also apply to the broader market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '14'
+  quote_snippet: The Commission has previously considered separate markets for MEG, DEG and
+    TEG, but left open whether they constitute separate product markets or form part of a broader
+    market of ethylene glycol.38
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '14'
+  quote_snippet: All ethylene glycols, MEG, DEG and TEG, result from a single production process
+    which yields roughly 90% MEG, 8-9% DEG and 1% TEG. Therefore, any producer of ethylene glycols
+    typically supplies all three products. The Transaction does not give rise to serious doubts
+    even on the narrowest basis of separate markets for each of MEG and DEG (no affected links
+    arise for TEG). Therefore, for the purpose of the current Decision, it can be left open
+    whether the appropriate market definition is ethylene glycol, or whether separate product
+    markets for MEG and DEG are appropriate.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '14'
+  quote_snippet: The Commission will perform its competitive analyses on the narrowest basis,
+    i.e. separate markets for MEG and DEG.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '14'
+  quote_snippet: The Commission has previously considered separate markets for MEG, DEG and
+    TEG, but left open whether they constitute separate product markets or form part of a broader
+    market of ethylene glycol.38
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '14'
+  quote_snippet: All ethylene glycols, MEG, DEG and TEG, result from a single production process
+    which yields roughly 90% MEG, 8-9% DEG and 1% TEG. Therefore, any producer of ethylene glycols
+    typically supplies all three products. The Transaction does not give rise to serious doubts
+    even on the narrowest basis of separate markets for each of MEG and DEG (no affected links
+    arise for TEG). Therefore, for the purpose of the current Decision, it can be left open
+    whether the appropriate market definition is ethylene glycol, or whether separate product
+    markets for MEG and DEG are appropriate.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '14'
+  quote_snippet: The Commission will perform its competitive analyses on the narrowest basis,
+    i.e. separate markets for MEG and DEG.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '14'
+  quote_snippet: In the area of aromatic solvents, the Commission has in the past left open
+    whether xylene constitutes a separate market or should be regarded as part of the overall
+    market for gasoline additives.42
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '15'
+  quote_snippet: Based on the Commission’s previous decisions, its market investigation and
+    the Notifying Party’s arguments, the Commission considers that, for the purpose of the current
+    Decision, the appropriate product market definition can be left open between a market for
+    xylene or a broader market for gasoline additives. The Transaction does not give rise to
+    serious doubts even for the narrower product market of xyelene, for which a vertical link
+    exists.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '7'
+  quote_snippet: The Commission has previously considered that the appropriate geographic market
+    for coating resins is either EEA-wide or worldwide.8 In line with the Commission’s previous
+    decisional practice, the Notifying Party considers that the appropriate geographic scope
+    is likely worldwide and at least EEA-wide.9 The Commission’s market investigation did not
+    give any grounds to depart from the Commission’s recent decisional practice, and for the
+    purpose of the current decision, it can be left open whether the appropriate geographic
+    scope is worldwide or EEA-wide, as the Transaction does not give rise to serious doubts
+    under either geographic scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '8'
+  quote_snippet: The Commission has previously considered that the appropriate geographic market
+    for crosslinkers amino resins is either EEA-wide or worldwide.13 The Notifying Party does
+    not express a view on the appropriate geographic scope. The Commission’s market investigation
+    did not give any grounds to depart from the Commission’s decisional practice, and for the
+    purpose of the current decision, it can be left open whether the appropriate geographic
+    scope is worldwide or EEA-wide, as the Transaction does not give rise to serious doubts
+    under either geographic scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '9'
+  quote_snippet: The Commission has previously considered that the appropriate geographic market
+    for HDI and IPDI is either EEA-wide or worldwide.17 The Notifying Party agrees with this
+    assessment.18 The Commission’s market investigation did not give any grounds to depart from
+    the Commission’s recent decisional practice, and for the purpose of the current decision,
+    it can be left open whether the appropriate geographic scope is worldwide or EEA-wide, as
+    the Transaction does not give rise to serious doubts under either geographic scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '10'
+  quote_snippet: The Commission has previously considered that the appropriate geographic market
+    for MMA is either EEA-wide or worldwide.23 The Notifying Party agrees with this assessment.24
+    The Commission’s market investigation did not give any grounds to depart from the Commission’s
+    decisional practice, and for the purpose of the current decision, it can be left open whether
+    the appropriate geographic scope is worldwide or EEA-wide, as the Transaction does not give
+    rise to serious doubts under either geographic scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '11'
+  quote_snippet: The Commission has previously considered that the appropriate geographic market
+    for styrene is either EEA-wide or worldwide.27 The Notifying Party considers that the appropriate
+    geographic scope for styrene is global, but submits that the appropriate geographic market
+    definition can be left open between worldwide and EEA-wide as the Transaction does not give
+    rise to competitive concerns for either geographic scope.28
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '11'
+  quote_snippet: The Commission’s market investigation did not give any grounds to depart from
+    the Commission’s decisional practice, and for the purpose of the current decision, it can
+    be left open whether the appropriate geographic scope is worldwide or EEA-wide, as the Transaction
+    does not give rise to serious doubts under either geographic scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '12'
+  quote_snippet: The Commission has previously considered that the appropriate geographic market
+    for glycerol is either EEA-wide or worldwide.31 The Notifying Party considers that the appropriate
+    geographic scope for glycerol is likely global, but submits that the appropriate geographic
+    market definition can be left open between worldwide and EEA-wide as the Transaction does
+    not give rise to competitive concerns for either geographic scope.32
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '12'
+  quote_snippet: The Commission’s market investigation did not give any grounds to depart from
+    the Commission’s decisional practice, and for the purpose of the current decision, it can
+    be left open whether the appropriate geographic scope is worldwide or EEA-wide, as the Transaction
+    does not give rise to serious doubts under either geographic scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_34
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '13'
+  quote_snippet: The Commission has previously considered that the appropriate geographic market
+    for PTA is either EEA-wide or worldwide.36 The Notifying Party agrees with this assessment.37
+    The Commission’s market investigation did not give any grounds to depart from the Commission’s
+    decisional practice, and for the purpose of the current decision, it can be left open whether
+    the appropriate geographic scope is worldwide or EEA-wide, as the Transaction does not give
+    rise to serious doubts under either geographic scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_35
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '14'
+  quote_snippet: The Commission has previously considered that the appropriate geographic market
+    for ethylene glycols (including MEG and DEG) is either EEA-wide or worldwide.40 The Notifying
+    Party agrees with this assessment.41 The Commission’s market investigation did not give
+    any grounds to depart from the Commission’s decisional practice, and for the purpose of
+    the current decision, it can be left open whether the appropriate geographic scope is worldwide
+    or EEA-wide, as the Transaction does not give rise to serious doubts under either geographic
+    scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_8
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_36
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '15'
+  quote_snippet: The Commission has previously considered that the appropriate geographic market
+    for xylene is either EEA-wide or worldwide.46 The Notifying Party considers that the appropriate
+    geographic scope for xylene is global, but submits that the appropriate geographic market
+    definition can be left open between worldwide and EEA-wide, as the Transaction does not
+    give rise to competitive concerns for either geographic scope.47
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_9
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_37
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '15'
+  quote_snippet: The Commission’s market investigation did not give any grounds to depart from
+    the Commission’s decisional practice, and for the purpose of the current decision, it can
+    be left open whether the appropriate geographic scope is worldwide or EEA-wide, as the Transaction
+    does not give rise to serious doubts under either geographic scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_9
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_38
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '7'
+  quote_snippet: for the purpose of the current decision, it can be left open whether the appropriate
+    geographic scope is worldwide or EEA-wide, as the Transaction does not give rise to serious
+    doubts under either geographic scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_39
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '8'
+  quote_snippet: for the purpose of the current decision, it can be left open whether the appropriate
+    geographic scope is worldwide or EEA-wide, as the Transaction does not give rise to serious
+    doubts under either geographic scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_40
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '9'
+  quote_snippet: for the purpose of the current decision, it can be left open whether the appropriate
+    geographic scope is worldwide or EEA-wide, as the Transaction does not give rise to serious
+    doubts under either geographic scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_41
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '10'
+  quote_snippet: for the purpose of the current decision, it can be left open whether the appropriate
+    geographic scope is worldwide or EEA-wide, as the Transaction does not give rise to serious
+    doubts under either geographic scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_42
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '11'
+  quote_snippet: for the purpose of the current decision, it can be left open whether the appropriate
+    geographic scope is worldwide or EEA-wide, as the Transaction does not give rise to serious
+    doubts under either geographic scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_43
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '12'
+  quote_snippet: for the purpose of the current decision, it can be left open whether the appropriate
+    geographic scope is worldwide or EEA-wide, as the Transaction does not give rise to serious
+    doubts under either geographic scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_44
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '13'
+  quote_snippet: for the purpose of the current decision, it can be left open whether the appropriate
+    geographic scope is worldwide or EEA-wide, as the Transaction does not give rise to serious
+    doubts under either geographic scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_45
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '14'
+  quote_snippet: for the purpose of the current decision, it can be left open whether the appropriate
+    geographic scope is worldwide or EEA-wide, as the Transaction does not give rise to serious
+    doubts under either geographic scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_46
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '15'
+  quote_snippet: for the purpose of the current decision, it can be left open whether the appropriate
+    geographic scope is worldwide or EEA-wide, as the Transaction does not give rise to serious
+    doubts under either geographic scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_47
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '7'
+  quote_snippet: The Transaction does not give rise to serious doubts under either geographic
+    scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_48
+  source_document_id: eu_pttgc_allnex_2021_decision
+  page: '16'
+  quote_snippet: The Transaction does not give rise to products that are horizontally affected,
+    as PTTGC and Allnex are not active in the same product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+case_type: merger
+ai_summary: null
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

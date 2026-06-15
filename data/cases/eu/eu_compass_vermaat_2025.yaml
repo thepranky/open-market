@@ -1,0 +1,585 @@
+case_id: eu_compass_vermaat_2025
+case_name: COMPASS / VERMAAT
+authority: European Commission
+jurisdiction: EU
+sector: hospitality
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2025-12-09'
+parties:
+- name: COMPASS
+  role: acquirer
+- name: VERMAAT
+  role: target
+source_documents:
+- doc_id: eu_compass_vermaat_2025_decision
+  title: COMPASS / VERMAAT — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.12122
+  pdf_url: http://publications.europa.eu/resource/cellar/1b21cf13-37d8-11f1-be39-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Contract foodservices
+  definition_status: defined
+  notes: The Commission's past decisional practice and current market investigation confirm
+    the existence of a distinct product market for contract foodservices, separate from concession
+    foodservices.
+- market_id: pm_2
+  name: Contract foodservices — segmented by customer activity (B&I, Healthcare, Education,
+    DOR)
+  definition_status: left_open
+  notes: The Commission's market investigation confirmed that segmentation along customer activities
+    is warranted due to differing market dynamics and competitive landscapes. However, given
+    the transaction does not raise competition concerns under any definition, the question of
+    further segmentation is left open.
+- market_id: pm_3
+  name: In-house foodservices
+  definition_status: defined
+  notes: The Commission concluded that in-house (self-operated) foodservices should be excluded
+    from the market for contract foodservices, as there is very limited substitution and they
+    are not contestable by third-party providers.
+- market_id: pm_4
+  name: Ready-to-eat vendors, restaurants, and delivery services
+  definition_status: defined
+  notes: The Commission concluded that these services do not belong in the contract foodservices
+    market because they do not compete for tenders to service business customers at their premises,
+    although they can act as out-of-market constraints.
+- market_id: pm_5
+  name: Contract foodservices in B&I sector — segmented by 'premium' and 'standard' services
+  definition_status: left_open
+  notes: The Commission considered a possible segmentation between 'premium' (white-collar)
+    and 'standard' (blue-collar) services within the B&I sector, noting differences in customer
+    expectations and spending. However, suppliers often serve both segments, and the question
+    was left open as it did not affect the compatibility conclusion.
+- market_id: pm_6
+  name: Contract foodservices in Education sector — segmented by 'private' and 'public' schools
+  definition_status: defined
+  notes: A possible segmentation based on private versus public schools in the Education sector
+    was raised but not supported by the market investigation, which confirmed no demand-side
+    difference. The Commission concluded against this segmentation.
+- market_id: pm_7
+  name: Contract foodservices in Education and B&I sectors — segmented by contract size
+  definition_status: left_open
+  notes: The Commission considered whether contract size could be a segmentation factor, noting
+    that not all competitors can cater for large contracts. However, evidence also suggested
+    smaller players can compete, sometimes jointly, and large customers may split contracts.
+    The question was left open as it did not affect the compatibility conclusion.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Contract foodservices — national (overall affected)
+  definition_status: defined
+  notes: The Commission concluded that the market for the provision of contract foodservices
+    and its relevant segments are national in scope, consistent with its prior decisional practice.
+- market_id: gm_2
+  name: Contract foodservices — national (Netherlands affected)
+  definition_status: defined
+  notes: The market investigation confirmed that the Netherlands constitutes a distinct national
+    geographic market for contract foodservices, separate from Belgium, due to factors like
+    different legal/tax requirements and customer demand.
+- market_id: gm_3
+  name: Contract foodservices — national (Germany affected)
+  definition_status: defined
+  notes: The market investigation confirmed that Germany constitutes a distinct national geographic
+    market for contract foodservices. The assessment of affected markets specifically includes
+    the B&I sector in Germany.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_compass_vermaat_2025_decision
+  page: '5'
+  quote_snippet: In its prior decisional practice, the Commission considered a distinct product
+    market for contract foodservices (which is separate from that of concession foodservices)
+    ( 22 ) for the “provision of foodservice[s] outside the home, performed by third parties
+    [i.e., outsourced], typically on the premises of public or private sector clients and involving
+    the supply of food and drink to customers for whom that service is not the primary reason
+    for their presence on the premises”. (23)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_compass_vermaat_2025_decision
+  page: '13'
+  quote_snippet: In light of the above, the Commission concludes that there exists a market
+    for the provision of contract foodservices.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_compass_vermaat_2025_decision
+  page: '5'
+  quote_snippet: The Commission left open whether the market for the provision of contract foodservices
+    should be further segmented according to sectors in which the customers of contract foodservices
+    are active, for example B&I, Healthcare, Education, and DOR. (24)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_compass_vermaat_2025_decision
+  page: '6'
+  quote_snippet: The Commission’s market investigation and the evidence available in the Commission’s
+    file confirm that a segmentation of the market for the provision of contract foodservices
+    along to the activities/industry of the customer is warranted.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_compass_vermaat_2025_decision
+  page: '13'
+  quote_snippet: Moreover, the Commission leaves open whether the market for the provision of
+    contract foodservices should be segmented along the activities of customers, between B&I,
+    Healthcare, Education, and DOR etc., as the Transaction does not raise serious doubts as
+    to its compatibility with the internal market and the functioning of the EEA Agreement under
+    any possible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_compass_vermaat_2025_decision
+  page: '7'
+  quote_snippet: Furthermore, the Commission’s market investigation and the evidence available
+    in the Commission’s file confirm that the market for the provision of contract foodservices
+    only consists of outsourced supply, and that therefore, insourced (in-house) supply should
+    be excluded from the market definition and subsequent competitive assessment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_compass_vermaat_2025_decision
+  page: '7'
+  quote_snippet: On the other hand, the Commission’s market investigation shows that in practice
+    there is very limited substitution between the two services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_compass_vermaat_2025_decision
+  page: '14'
+  quote_snippet: In addition, the Commission concludes that the market for the provision of
+    contract foodservices should not include in-house services or other ready-to eat vendors,
+    restaurants, and delivery services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_compass_vermaat_2025_decision
+  page: '7'
+  quote_snippet: The results of the Commission’s market investigation and the evidence available
+    in the Commission’s file confirm that ready-to eat food vendors, restaurants, and delivery
+    services do not belong in the contract foodservices market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_compass_vermaat_2025_decision
+  page: '8'
+  quote_snippet: First, as explained in paragraph (13) above, contract foodservices are procured
+    mainly through calls for tender, where contract foodservices providers are invited to bid
+    in order to win a contract with a customer. In this context, other ready-to-eat vendors,
+    restaurants and delivery services do not compete for tenders in order to service business
+    customers at the latter’s premises.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_compass_vermaat_2025_decision
+  page: '14'
+  quote_snippet: In addition, the Commission concludes that the market for the provision of
+    contract foodservices should not include in-house services or other ready-to eat vendors,
+    restaurants, and delivery services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_compass_vermaat_2025_decision
+  page: '9'
+  quote_snippet: On the basis of the results of the Commission’s market investigation and of
+    some other evidence available in the Commission’s file the Commission has considered a possible
+    segmentation of the market for the provision of contract foodservices to B&I customers between
+    “premium” (or white-collar) and “standard” (or blue-collar) services. (44)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_compass_vermaat_2025_decision
+  page: '10'
+  quote_snippet: On the other hand, it was also remarked that suppliers of contract foodservices
+    mostly serve both “premium” and “standard” segments, and it is relatively easy to adapt
+    the business model and switch within the B&I market. (51)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_compass_vermaat_2025_decision
+  page: '14'
+  quote_snippet: Finally, the Commission leaves open whether (i) the market for the provision
+    of contract foodservices should be segmented based on contract size and (ii) the B&I market
+    should be segmented between “premium” and “standard” as the Transaction does not raise serious
+    doubts as to its compatibility with the internal market and the functioning of the EEA Agreement
+    under any possible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_compass_vermaat_2025_decision
+  page: '12'
+  quote_snippet: However, neither the results of the Commission’s market investigation, nor
+    the evidence available in the Commission’s file support this possible delineation. (63)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_compass_vermaat_2025_decision
+  page: '12'
+  quote_snippet: In particular, the majority of the customers in the Education sector that expressed
+    a view in the Commission’s market investigation confirm that there is no difference in the
+    demand of public and private schools. (64)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_compass_vermaat_2025_decision
+  page: '14'
+  quote_snippet: Similarly, the Commission concludes that the market for the provision of contract
+    foodservices in the Education sector should not be segmented between public and private
+    schools.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_compass_vermaat_2025_decision
+  page: '12'
+  quote_snippet: Finally, on the basis of the results of the Commission’s market investigation
+    and some other evidence available in the Commission’s file, the Commission has also considered
+    whether the market for the provision of contract foodservices to both B&I and Education
+    customers could be segmented based on the contract size.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_compass_vermaat_2025_decision
+  page: '12'
+  quote_snippet: most B&I customers from Germany and the Netherlands that expressed a view to
+    the Commission’s market investigation, noted that not all contract foodservice providers
+    can cater large contracts, in terms of volume demanded.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_compass_vermaat_2025_decision
+  page: '14'
+  quote_snippet: Finally, the Commission leaves open whether (i) the market for the provision
+    of contract foodservices should be segmented based on contract size and (ii) the B&I market
+    should be segmented between “premium” and “standard” as the Transaction does not raise serious
+    doubts as to its compatibility with the internal market and the functioning of the EEA Agreement
+    under any possible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_compass_vermaat_2025_decision
+  page: '14'
+  quote_snippet: In its previous decisions, the Commission found that the market for the provision
+    of contract foodservices is national in scope. (76)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_compass_vermaat_2025_decision
+  page: '14'
+  quote_snippet: The Commission’s market investigation confirms that the market for the provision
+    of contract foodservices and its relevant segments are national in scope, and that, contrary
+    to the Notifying Party’s submission, Belgium and the Netherlands constitute distinct geographic
+    markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_compass_vermaat_2025_decision
+  page: '15'
+  quote_snippet: In light of the above, Commission concludes that the market for the provision
+    of contract foodservices and its relevant segments are national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_compass_vermaat_2025_decision
+  page: '14'
+  quote_snippet: The Commission’s market investigation confirms that the market for the provision
+    of contract foodservices and its relevant segments are national in scope, and that, contrary
+    to the Notifying Party’s submission, Belgium and the Netherlands constitute distinct geographic
+    markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_compass_vermaat_2025_decision
+  page: '14'
+  quote_snippet: In this context, several competitors consider it impossible to conduct operations
+    in Belgium from their premises in the Netherlands, due to different legal and tax requirements,
+    differentiated customer demand, and other logistical issues related to the centralised preparation
+    of food. (78)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_compass_vermaat_2025_decision
+  page: '15'
+  quote_snippet: Furthermore, none of the customers that expressed a view to the Commission’s
+    market investigation procure contract foodservices combined for their premises in the Netherlands
+    and Belgium (79).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_compass_vermaat_2025_decision
+  page: '14'
+  quote_snippet: The Commission’s market investigation confirms that the market for the provision
+    of contract foodservices and its relevant segments are national in scope, and that, contrary
+    to the Notifying Party’s submission, Belgium and the Netherlands constitute distinct geographic
+    markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_compass_vermaat_2025_decision
+  page: '16'
+  quote_snippet: |
+    The Transaction gives rise to the three following affected markets:
+    (a) contract foodservices in the B&I sector in the Netherlands;
+    (b) contract foodservices in the B&I sector in Germany; and,
+    (c) contract foodservices in the Education sector in the Netherlands.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_compass_vermaat_2025_decision
+  page: '24'
+  quote_snippet: Additionally, according to a competitor “(…) [it] perceives the German contract
+    foodservices market as having a low entry barrier, due to the low or, at times, no investment
+    required to win tenders.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_compass_vermaat_2025_decision
+  page: '15'
+  quote_snippet: Pursuant to Article 6(1)(b) of the Merger Regulation, where the Commission
+    finds that the notified concentration does not raise serious doubts as to its compatibility
+    with the internal market, the Commission shall decide not to oppose the concentration and
+    declares it compatible with the internal market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_compass_vermaat_2025_decision
+  page: '12'
+  quote_snippet: as the Transaction does not raise serious doubts as to its compatibility with
+    the internal market and the functioning of the EEA Agreement under any possible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_compass_vermaat_2025_decision
+  page: '14'
+  quote_snippet: as the Transaction does not raise serious doubts as to its compatibility with
+    the internal market and the functioning of the EEA Agreement under any possible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

@@ -1,0 +1,520 @@
+case_id: eu_pfizer_seagen_2023
+case_name: PFIZER / SEAGEN
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2023-10-19'
+parties:
+- name: PFIZER
+  role: acquirer
+- name: SEAGEN
+  role: target
+source_documents:
+- doc_id: eu_pfizer_seagen_2023_decision
+  title: PFIZER / SEAGEN — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11177
+  pdf_url: http://publications.europa.eu/resource/cellar/626ed747-50ad-11ef-acbc-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Treatment of Bladder Cancer (overall segmentation)
+  definition_status: left_open
+  notes: The Commission acknowledged the segmentation of bladder cancer into non-muscle invasive
+    (NMIBC), muscle-invasive (MIBC), and metastatic urothelial carcinoma (mUC) based on cancer
+    invasiveness. While confirming this distinction, the exact market definition was left open
+    for the overall market.
+- market_id: pm_2
+  name: Treatment of Non-Muscle Invasive Bladder Cancer (NMIBC)
+  definition_status: considered
+  notes: For the purpose of its competitive assessment, the Commission considered the market
+    for the treatment of NMIBC, as this was the specific area of overlap between the parties'
+    activities.
+- market_id: pm_3
+  name: Treatment of Breast Cancer (overall segmentation)
+  definition_status: left_open
+  notes: The Commission recognized the distinction between HER2+ and HER2- breast cancers, and
+    HR+ and HR- breast cancers, confirming that treatment options for these categories are different
+    and not substitutable. However, the exact market definition for the overall breast cancer
+    treatment market was left open.
+- market_id: pm_4
+  name: Treatment of HER2+ Breast Cancer
+  definition_status: considered
+  notes: The Commission conducted its competitive assessment at the market level for the treatment
+    of HER2+ breast cancer, as this was the area of overlap between the parties' activities.
+- market_id: pm_5
+  name: Treatment of Cervical Cancer (overall segmentation)
+  definition_status: left_open
+  notes: The Commission's market investigation confirmed the segmentation of cervical cancers
+    into early-stage, locally advanced, and metastatic/recurrent. While treatment options varied
+    significantly across these categories, the exact market definition for the overall cervical
+    cancer treatment market was left open.
+- market_id: pm_6
+  name: Treatment of Metastatic and Recurrent Cervical Cancer
+  definition_status: considered
+  notes: The Commission decided to conduct its competitive assessment at the market level for
+    the treatment of metastatic and recurrent cervical cancer, identifying this as the area
+    of overlap between the parties' activities.
+- market_id: pm_7
+  name: Treatment of Colorectal Cancer (overall segmentation)
+  definition_status: left_open
+  notes: The Commission's market investigation confirmed the segmentation of colorectal cancers
+    into lower-stage (1-3) and metastatic (mCRC). While treatment options varied significantly
+    across these stages, the exact market definition for the overall colorectal cancer treatment
+    market was left open.
+- market_id: pm_8
+  name: Treatment of Metastatic Colorectal Cancer (mCRC)
+  definition_status: considered
+  notes: The Commission conducted its competitive assessment at the market level for the treatment
+    of mCRC, as this was the identified area of overlap between the parties' activities.
+- market_id: pm_9
+  name: Treatment of Leukaemia (overall segmentation)
+  definition_status: left_open
+  notes: 'The Commission confirmed the distinction between four main categories of leukaemia:
+    acute myeloid leukaemia (AML), acute lymphoblastic leukaemia (ALL), chronic myeloid leukaemia
+    (CML), and chronic lymphocytic leukaemia (CLL), as treatment options for these categories
+    differ. However, the exact product market definition for overall leukaemia treatments was
+    left open.'
+- market_id: pm_10
+  name: Treatment of Acute Myeloid Leukaemia (AML)
+  definition_status: considered
+  notes: The Commission conducted its competitive assessment at the market level for AML, which
+    was identified as the area of overlap between the parties' activities.
+- market_id: pm_11
+  name: Treatment of Lymphoma (overall segmentation)
+  definition_status: left_open
+  notes: The Commission confirmed the distinction between Hodgkin lymphomas (HL) and non-Hodgkin
+    lymphomas (NHL). While this segmentation and possible further sub-segmentation were supported,
+    the exact product market definition for overall lymphoma treatments was left open.
+- market_id: pm_12
+  name: Treatment of Systemic Anaplastic Large Cell Lymphoma (ALCL)
+  definition_status: considered
+  notes: The Commission conducted its competitive assessment at the market level for ALCL, which
+    was an identified area of overlap.
+- market_id: pm_13
+  name: Treatment of Diffuse Large B-Cell Lymphoma (DLBCL)
+  definition_status: considered
+  notes: The Commission conducted its competitive assessment at the market level for DLBCL,
+    which was an identified area of overlap.
+- market_id: pm_14
+  name: Treatment of Lung Cancer (overall segmentation)
+  definition_status: left_open
+  notes: The Commission confirmed the distinction between non-small-cell lung cancer (NSCLC)
+    and small-cell lung cancer (SCLC), and further noted that within NSCLC, treatments typically
+    differ based on gene mutations. However, the exact market definition for overall lung cancer
+    treatments, including further sub-segmentations, was left open.
+- market_id: pm_15
+  name: Treatment of Non-Small-Cell Lung Cancer (NSCLC)
+  definition_status: left_open
+  notes: Although the overall market definition for lung cancer, including specific segmentation
+    for NSCLC, was left open, the competitive assessment focused on overlaps in the NSCLC segment,
+    implying this as a key area of analysis.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Marketed pharmaceutical products — national
+  definition_status: considered
+  notes: The Commission generally considered the geographic market for marketed pharmaceutical
+    products to be national in scope for the purpose of this decision.
+- market_id: gm_2
+  name: Pipeline pharmaceutical products — global or, at least, EEA-wide
+  definition_status: considered
+  notes: The Commission generally considered the geographic market for pipeline pharmaceutical
+    products to be global or, at least, EEA-wide in scope for the purpose of this decision.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_pfizer_seagen_2023_decision
+  page: '13'
+  quote_snippet: In light of the above, the Commission takes the view that, a distinction should
+    be made between NMIBC, MIBC, and mUC. In conclusion, in the present case, the exact market
+    definition, i.e., whether the market shall be segmented by cancer stage, by line of treatment,
+    by MoA or by MoD, can be left open as the Transaction does not raise serious doubts as to
+    its compatibility with the internal market under any plausible market definition. For the
+    purposes of this decision, the Commission will conduct its competitive assessment at the
+    market level where the Parties’ activities overlap, namely the market for the treatment
+    of NMIBC.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_pfizer_seagen_2023_decision
+  page: '13'
+  quote_snippet: The results of the Commission’s market investigation confirmed the Parties’
+    suggested segmentation of bladder cancer into NMIBC, MIBC and mUC. The majority of both
+    competitors and KOLs indicated that NMIBC, MIBC and mUC require different treatments and
+    that these treatments are not substitutable, as treatments for these categories are generally
+    not interchangeable due to differences in cancer progression and invasiveness and each form
+    may respond differently to various types of therapies.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_pfizer_seagen_2023_decision
+  page: '13'
+  quote_snippet: For the purposes of this decision, the Commission will conduct its competitive
+    assessment at the market level where the Parties’ activities overlap, namely the market
+    for the treatment of NMIBC.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_pfizer_seagen_2023_decision
+  page: '18'
+  quote_snippet: In light of the above, the Commission takes the view that, a distinction should
+    be made between HER2+ and HER2- breast cancer. In the present case, the exact market definition,
+    i.e., whether the market shall be segmented by hormone receptor, cancer stage, by line of
+    treatment, by MoA or by MoD, can be left open as the Transaction does not raise serious
+    doubts as to its compatibility with the internal market under any plausible market definition.
+    For the purposes of this decision, the Commission will conduct its competitive assessment
+    at the market level where the Parties’ activities overlap, namely the market for the treatment
+    of HER2+.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_pfizer_seagen_2023_decision
+  page: '17'
+  quote_snippet: 'The majority of competitors and KOLs confirmed that breast cancers can be
+    broadly categorised as follows: (a) breast cancers that over-express the protein human epidermal
+    growth factor receptor 2 (“HER2+”, HER2 positive) and those that do not (“HER2-”, HER2 negative);
+    and (b) breast cancers that over-express hormone receptors (“HR+”) and those that do not
+    (“HR-”). Both competitors and KOLs also confirmed that treatment options for these different
+    categories of breast cancer would be different and not substitutable.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_pfizer_seagen_2023_decision
+  page: '18'
+  quote_snippet: For the purposes of this decision, the Commission will conduct its competitive
+    assessment at the market level where the Parties’ activities overlap, namely the market
+    for the treatment of HER2+.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_pfizer_seagen_2023_decision
+  page: '25'
+  quote_snippet: In conclusion, in the present case, the exact market definition, i.e., whether
+    the market shall be segmented by cancer stage, by line of treatment, by MoA or by MoD, can
+    be left open as the Transaction does not raise serious doubts as to its compatibility with
+    the internal market under any plausible market definition. For the purposes of this decision,
+    the Commission will conduct its competitive assessment at the market level where the Parties’
+    activities may overlap, namely the market for the treatment of metastatic and recurrent
+    cervical cancer.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_pfizer_seagen_2023_decision
+  page: '25'
+  quote_snippet: The market investigation results appear to confirm that cervical cancers can
+    be broadly categorised as (i) early-stage cervical cancers; (ii) locally advanced cervical
+    cancers; and (iii) metastatic and recurrent cervical cancers. Treatment options would vary
+    significantly depending on these different categories of cervical cancer.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_pfizer_seagen_2023_decision
+  page: '25'
+  quote_snippet: For the purposes of this decision, the Commission will conduct its competitive
+    assessment at the market level where the Parties’ activities may overlap, namely the market
+    for the treatment of metastatic and recurrent cervical cancer.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_pfizer_seagen_2023_decision
+  page: '40'
+  quote_snippet: In light of the above, the Commission takes the view that, for the purpose
+    of market definition regarding targeted therapies, a distinction should be made between
+    the four types of leukaemia (AML, ALL, CML, CLL). In the present case, however, the exact
+    product market definition, including possible further sub-segmentations, i.e., whether the
+    market should be further segmented by cancer stage, by line of treatment, by MoA or by MoD,
+    can be left open as the Transaction does not raise serious doubts as to its compatibility
+    with the internal market under any plausible market definition. For the purposes of this
+    decision, the Commission will conduct its competitive assessment at the market level where
+    the Parties’ activities may overlap, namely AML.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_pfizer_seagen_2023_decision
+  page: '40'
+  quote_snippet: 'The results of the market investigation confirmed the Commission’s decisional
+    practice and the Parties’ submissions. A majority of competitors and KOLs agreed with the
+    Commission decision practice that a distinction should be drawn between four main categories
+    of leukaemia: AML, ALL, CML, and CLL because treatment options for these categories of leukaemia
+    differ from each other.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_pfizer_seagen_2023_decision
+  page: '40'
+  quote_snippet: For the purposes of this decision, the Commission will conduct its competitive
+    assessment at the market level where the Parties’ activities may overlap, namely AML.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_pfizer_seagen_2023_decision
+  page: '46'
+  quote_snippet: While the HL and NHL segmentation, as well as a possible further sub-segmentation
+    by type of NHL, is supported by the results of the market investigation, the exact product
+    market definition, including whether the market should be further segmented by cancer stage,
+    by line of treatment, by MoA or by MoD, can be left open as the Transaction does not raise
+    serious doubts as to its compatibility with the internal market under any plausible market
+    definition. For the purposes of this decision, the Commission will therefore conduct its
+    competitive assessment at the market level where the Parties’ activities may overlap, namely
+    ALCL and DLBCL.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_pfizer_seagen_2023_decision
+  page: '46'
+  quote_snippet: The results of the market investigation confirmed the Commission’s decisional
+    practice and the Parties’ submissions. A majority of competitors and KOLs agreed with the
+    Commission decision practice that a distinction should be drawn between HL and NHL and that
+    treatment options for these categories differ from each other.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_pfizer_seagen_2023_decision
+  page: '46'
+  quote_snippet: For the purposes of this decision, the Commission will therefore conduct its
+    competitive assessment at the market level where the Parties’ activities may overlap, namely
+    ALCL and DLBCL.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_pfizer_seagen_2023_decision
+  page: '46'
+  quote_snippet: For the purposes of this decision, the Commission will therefore conduct its
+    competitive assessment at the market level where the Parties’ activities may overlap, namely
+    ALCL and DLBCL.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_13
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_pfizer_seagen_2023_decision
+  page: '51'
+  quote_snippet: For the purpose of this decision, it can be left open whether the market for
+    lung cancer can be distinguished only between NSCLC and SCLC or whether there is also potential
+    separate product markets for NSCLS differ depending on the type of gene mutation that treatment
+    targets (e.g. EGFR, ALK, ROS, and BRAF genes) or by cancer stage, by line of treatment,
+    by MoA or by MoD, as the Transaction does not give rise to serious doubts as to its compatibility
+    with the internal market and the functioning of the EEA Agreement under any plausible market
+    definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_14
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_pfizer_seagen_2023_decision
+  page: '51'
+  quote_snippet: The results of the market investigation confirmed the proposed distinction
+    between NSCLC and SCLC because treatment options for these categories of lung cancer differ
+    from each other.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_14
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_pfizer_seagen_2023_decision
+  page: '51'
+  quote_snippet: In addition, the majority of both competitors and KOLs confirmed that, within
+    NSCLS, treatments typically differ depending on the type of gene mutation that the treatment
+    targets (e.g., the epidermal growth factor receptor (“EGFR”), anaplastic lymphoma kinase
+    (“ALK”), ROS proto-oncogene 1 (“ROS1”), and BRAF genes).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_14
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_pfizer_seagen_2023_decision
+  page: '51'
+  quote_snippet: For the purpose of this decision, it can be left open whether the market for
+    lung cancer can be distinguished only between NSCLC and SCLC or whether there is also potential
+    separate product markets for NSCLS differ depending on the type of gene mutation that treatment
+    targets (e.g. EGFR, ALK, ROS, and BRAF genes) or by cancer stage, by line of treatment,
+    by MoA or by MoD, as the Transaction does not give rise to serious doubts as to its compatibility
+    with the internal market and the functioning of the EEA Agreement under any plausible market
+    definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_15
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_pfizer_seagen_2023_decision
+  page: '12'
+  quote_snippet: Therefore, for the purpose of this decision, the Commission considers that
+    the geographic market for marketed pharmaceutical products is national in scope and for
+    pipeline products is global or, at least, EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_pfizer_seagen_2023_decision
+  page: '12'
+  quote_snippet: Therefore, for the purpose of this decision, the Commission considers that
+    the geographic market for marketed pharmaceutical products is national in scope and for
+    pipeline products is global or, at least, EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_pfizer_seagen_2023_decision
+  page: '16'
+  quote_snippet: In light of the above and of all available evidence, the Commission concludes
+    that the Transaction does not raise serious doubts as to its compatibility with the internal
+    market as regards the treatment of bladder cancer and NMIBC in particular.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

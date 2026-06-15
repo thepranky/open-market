@@ -1,0 +1,403 @@
+case_id: eu_aam_dowlais_2025
+case_name: AAM / DOWLAIS
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2025-10-01'
+parties:
+- name: AAM
+  role: acquirer
+- name: DOWLAIS
+  role: target
+source_documents:
+- doc_id: eu_aam_dowlais_2025_decision
+  title: AAM / DOWLAIS — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11981
+  pdf_url: http://publications.europa.eu/resource/cellar/fabe833f-caa1-11f0-8da2-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Manufacture and supply of Front Drive Units (FDUs) for light vehicles (excluding in-house
+    production)
+  definition_status: considered
+  notes: The Commission assessed the effects of the transaction on this market, which is considered
+    the narrowest plausible definition. The overall product market definition for driveline
+    products was left open. The market is segmented to exclude in-house production.
+- market_id: pm_2
+  name: Manufacture and supply of Power Transfer Units (PTUs) for light vehicles (excluding
+    in-house production)
+  definition_status: considered
+  notes: The Commission assessed the effects of the transaction on this market, which is considered
+    the narrowest plausible definition. The overall product market definition for driveline
+    products was left open. The market is segmented to exclude in-house production.
+- market_id: pm_3
+  name: Manufacture and supply of Rear Drive Modules (RDMs) for light vehicles (excluding in-house
+    production)
+  definition_status: considered
+  notes: The Commission assessed the effects of the transaction on this market, which is considered
+    the narrowest plausible definition. The overall product market definition for driveline
+    products was left open. The market is segmented to exclude in-house production.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Manufacture and supply of Front Drive Units (FDUs) for light vehicles (excluding in-house
+    production) — worldwide
+  definition_status: considered
+  notes: The exact geographic market definition was left open, but the Commission assessed the
+    effects of the transaction on a worldwide basis for these components.
+- market_id: gm_2
+  name: Manufacture and supply of Power Transfer Units (PTUs) for light vehicles (excluding
+    in-house production) — worldwide
+  definition_status: considered
+  notes: The exact geographic market definition was left open, but the Commission assessed the
+    effects of the transaction on a worldwide basis for these components.
+- market_id: gm_3
+  name: Manufacture and supply of Rear Drive Modules (RDMs) for light vehicles (excluding in-house
+    production) — worldwide
+  definition_status: considered
+  notes: The exact geographic market definition was left open, but the Commission assessed the
+    effects of the transaction on a worldwide basis for these components.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_aam_dowlais_2025_decision
+  page: '7'
+  quote_snippet: The Commission will assess the effects of the Transaction by reference to the
+    narrowest plausible relevant market definition resulting in affected markets, i.e., the
+    markets for the manufacture and supply of each of (i) FDUs, (ii) PTUs, and (iii) RDMs (all
+    excluding in-house production).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_aam_dowlais_2025_decision
+  page: '3'
+  quote_snippet: An FDU is used in 4WD vehicles which have their primary drive power in the
+    rear. FDUs direct power from the rear of the vehicle to the front of the vehicle when 4WD
+    mode is engaged. FDUs vary in size and durability based on the vehicle architecture, size,
+    and purpose of the vehicle. FDUs are only used in 4WD vehicles (which, in turn, are only
+    produced with longitudinal engine layouts).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_aam_dowlais_2025_decision
+  page: '6'
+  quote_snippet: The Commission’s market investigation in this case did not reveal reasons justifying
+    a further segmentation of the markets for FDUs, PTUs, and RDMs. In particular, the market
+    investigation in this case did not yield any indication that a segmentation based on the
+    type of vehicle (e.g., heavy, medium, or light vehicle) is necessary.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_aam_dowlais_2025_decision
+  page: '7'
+  quote_snippet: The Commission will assess the effects of the Transaction by reference to the
+    narrowest plausible relevant market definition resulting in affected markets, i.e., the
+    markets for the manufacture and supply of each of (i) FDUs, (ii) PTUs, and (iii) RDMs (all
+    excluding in-house production).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_aam_dowlais_2025_decision
+  page: '3'
+  quote_snippet: A PTU is used in FWD AWD vehicles to direct power to the RDM via a propshaft.
+    It is attached to a vehicle’s transmission. The PTU will commonly include a disconnect system,
+    which allows the AWD vehicle to switch between directing power to both the front and rear
+    wheels and directing power solely to the front wheels. PTUs are only used in AWD vehicles
+    which have a transverse engine layout.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_aam_dowlais_2025_decision
+  page: '6'
+  quote_snippet: The Commission’s market investigation in this case did not reveal reasons justifying
+    a further segmentation of the markets for FDUs, PTUs, and RDMs. In particular, the market
+    investigation in this case did not yield any indication that a segmentation based on the
+    type of vehicle (e.g., heavy, medium, or light vehicle) is necessary.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_aam_dowlais_2025_decision
+  page: '7'
+  quote_snippet: The Commission will assess the effects of the Transaction by reference to the
+    narrowest plausible relevant market definition resulting in affected markets, i.e., the
+    markets for the manufacture and supply of each of (i) FDUs, (ii) PTUs, and (iii) RDMs (all
+    excluding in-house production).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_aam_dowlais_2025_decision
+  page: '4'
+  quote_snippet: An RDM connects to the vehicle’s propshaft and transmits power to the rear
+    wheels. RDMs are secondary rear axles found in AWD vehicles (which typically have transverse
+    rather than longitudinal layouts) and are used where it is only necessary to put some of
+    the engine’s torque through the back wheels. RDMs are used in AWD vehicles with either a
+    transverse or longitudinal engine layout.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_aam_dowlais_2025_decision
+  page: '6'
+  quote_snippet: Finally, a segmentation of the market for the manufacture and supply of RDMs
+    between RDMs for vehicles with either a transverse or longitudinal engine layout does not
+    appear necessary. Most market participants consider that, (i) from a demand-side substitutability
+    perspective, RDMs for use in vehicles with transverse or longitudinal engine layouts serve
+    the same function and have similar designs and, (ii) from a supply-side perspective, a supplier
+    of RDMs used in vehicles with longitudinal engine layouts would be able to easily compete
+    for contracts for the supply of RDMs used in vehicles with transverse engine layouts (and
+    vice-versa).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_aam_dowlais_2025_decision
+  page: '9'
+  quote_snippet: The Commission will assess the effects of the Transaction by reference to the
+    relevant market delimitation resulting in affected markets, i.e., the worldwide level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_aam_dowlais_2025_decision
+  page: '8'
+  quote_snippet: The market investigation provided indications that the geographic markets for
+    the manufacture and supply of FDUs, PTUs, and RDMs might be wider than the EEA. Virtually
+    all the responding OEMs and the Parties’ competitors who expressed an opinion consider that
+    competition regarding these components takes place at the worldwide level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_aam_dowlais_2025_decision
+  page: '8'
+  quote_snippet: At the same time, the investigation indicates that a strong regional angle
+    to procurement remains. Most OEMs submitted they eventually select suppliers for FDUs, PTUs,
+    and RDMs who own plants closely located to their own vehicle plants, mostly for cost reasons.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_aam_dowlais_2025_decision
+  page: '9'
+  quote_snippet: The Commission will assess the effects of the Transaction by reference to the
+    relevant market delimitation resulting in affected markets, i.e., the worldwide level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_aam_dowlais_2025_decision
+  page: '8'
+  quote_snippet: The market investigation provided indications that the geographic markets for
+    the manufacture and supply of FDUs, PTUs, and RDMs might be wider than the EEA. Virtually
+    all the responding OEMs and the Parties’ competitors who expressed an opinion consider that
+    competition regarding these components takes place at the worldwide level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_aam_dowlais_2025_decision
+  page: '8'
+  quote_snippet: At the same time, the investigation indicates that a strong regional angle
+    to procurement remains. Most OEMs submitted they eventually select suppliers for FDUs, PTUs,
+    and RDMs who own plants closely located to their own vehicle plants, mostly for cost reasons.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_aam_dowlais_2025_decision
+  page: '9'
+  quote_snippet: The Commission will assess the effects of the Transaction by reference to the
+    relevant market delimitation resulting in affected markets, i.e., the worldwide level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_aam_dowlais_2025_decision
+  page: '8'
+  quote_snippet: The market investigation provided indications that the geographic markets for
+    the manufacture and supply of FDUs, PTUs, and RDMs might be wider than the EEA. Virtually
+    all the responding OEMs and the Parties’ competitors who expressed an opinion consider that
+    competition regarding these components takes place at the worldwide level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_aam_dowlais_2025_decision
+  page: '8'
+  quote_snippet: At the same time, the investigation indicates that a strong regional angle
+    to procurement remains. Most OEMs submitted they eventually select suppliers for FDUs, PTUs,
+    and RDMs who own plants closely located to their own vehicle plants, mostly for cost reasons.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_aam_dowlais_2025_decision
+  page: '7'
+  quote_snippet: for the purposes of this decision it will be left open whether the relevant
+    product market includes OEMs’ in-house production. This is because, even in the most conservative
+    hypothesis – i.e., excluding in-house production from the relevant markets –, the Transaction
+    does not raise serious doubts as to its compatibility with the internal market or the functioning
+    of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_aam_dowlais_2025_decision
+  page: '7'
+  quote_snippet: For the purposes of the present decision, the exact product market definition
+    as regards the manufacture and supply of driveline products may be left open, given that
+    the Transaction does not raise serious doubts as to its compatibility with the internal
+    market or the functioning of the EEA Agreement under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_aam_dowlais_2025_decision
+  page: '8'
+  quote_snippet: Given the mixed results of the Commission’s market investigation, the exact
+    geographic market definition may be left open for purposes of the present decision, given
+    that the Transaction does not raise serious doubts as to its compatibility with the internal
+    market or the functioning of the EEA Agreement with respect to the manufacture and supply
+    of FDUs, PTUs, and RDMs under any plausible geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

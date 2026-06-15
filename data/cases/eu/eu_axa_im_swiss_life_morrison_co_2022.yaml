@@ -1,0 +1,429 @@
+case_id: eu_axa_im_swiss_life_morrison_co_2022
+case_name: AXA IM / SWISS LIFE / MORRISON & CO / LYNTIA NETWORKS
+authority: European Commission
+jurisdiction: EU
+sector: tech
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2022-11-11'
+parties:
+- name: AXA IM
+  role: acquirer
+- name: SWISS LIFE
+  role: acquirer
+- name: MORRISON & CO
+  role: acquirer
+- name: LYNTIA NETWORKS
+  role: target
+source_documents:
+- doc_id: eu_axa_im_swiss_life_morrison_co_2022_decision
+  title: AXA IM / SWISS LIFE / MORRISON & CO / LYNTIA NETWORKS — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10875
+  pdf_url: http://publications.europa.eu/resource/cellar/2cc9e2d8-6740-11ee-9220-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Wholesale supply of leased lines
+  definition_status: left_open
+  notes: The Commission considered various possible segmentations (network layer, speed, passive/active
+    nature of the line, leased lines with traditional interfaces vs. Ethernet services, and
+    transmission means), but ultimately left the exact product market definition open as the
+    transaction did not raise competitive concerns under any plausible definition. Past CNMC
+    decisions in Spain had segmented the market between managed wholesale leased lines ('lit
+    fibre') and dark fibre.
+- market_id: pm_2
+  name: Wholesale supply of dark fibre
+  definition_status: considered
+  notes: This market was considered as a "narrowly defined sub-segment" or "potential sub-segment"
+    of the wholesale supply of leased lines. The Commission specifically assessed this sub-segment
+    for vertical relationships, noting that Lyntia's market share exceeded 30% in Spain and
+    the metropolitan area of Madrid.
+- market_id: pm_3
+  name: Wholesale supply of lit fibre
+  definition_status: considered
+  notes: This market was considered as a "potential sub-segment" of the wholesale supply of
+    leased lines. Lyntia’s market share on this market in Spain did not exceed 5% by revenue
+    in 2021.
+- market_id: pm_4
+  name: Supply of colocation services provided by third party data centres
+  definition_status: considered
+  notes: The Commission adopted its previous decisional practice, defining a market for colocation
+    services provided by third-party data centres (excluding in-house data centres) and noting
+    it was not appropriate to sub-divide it further (e.g., by carrier-owned/neutral, wholesale/retail,
+    or customer type).
+geographic_markets_considered:
+- market_id: gm_1
+  name: Wholesale supply of leased lines — national / narrower (Spain affected)
+  definition_status: left_open
+  notes: The Commission left open whether the geographic market should be national or narrower
+    (limited to a metropolitan area) as the transaction did not give rise to serious doubts
+    under any plausible definition. Previous Commission decisions considered it national, while
+    the CNMC in Spain considered managed lines national and dark fibre potentially national
+    interurban and metropolitan.
+- market_id: gm_2
+  name: Wholesale supply of dark fibre — national (Spain affected)
+  definition_status: considered
+  notes: This geographic scope was considered for the "potential sub-segment" of dark fibre,
+    where Lyntia's market share exceeded 30% and vertical concerns were assessed.
+- market_id: gm_3
+  name: Wholesale supply of dark fibre — metropolitan area (Madrid affected)
+  definition_status: considered
+  notes: This geographic scope, specifically the Madrid metropolitan area, was considered for
+    the "potential sub-segment" of dark fibre, where Lyntia's market share exceeded 30% and
+    vertical concerns were assessed, particularly regarding Data4's activities in Madrid.
+- market_id: gm_4
+  name: Supply of colocation services provided by third party data centres — metropolitan area
+    (Spain affected)
+  definition_status: considered
+  notes: The Commission adopted its previous decisional practice defining the geographic scope
+    as each metropolitan area, corresponding to a radius of around 50 km from the city centre.
+    Madrid is the specific metropolitan area where AXA's Data4 is active.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_axa_im_swiss_life_morrison_co_2022_decision
+  page: '3'
+  quote_snippet: In previous decisions, the Commission considered possible segmentations of
+    the market for the wholesale supply of leased lines according to (i) network layer (trunk
+    vs. terminating (i.e., backhaul) segments of leased lines); (ii) speed (terminating leased
+    lines with bandwidth below 2 Mbps vs. above 2 Mbps); (iii) passive or active nature of the
+    line (the distinction corresponding to dark fibre on the one hand and managed leased lines
+    and Ethernet services with guaranteed bandwidth on the other); (iv) leased lines with traditional
+    interfaces vs. Ethernet services with guaranteed bandwidth; and (v) transmission means (wireless,
+    fibre, copper lines), but ultimately left open the exact product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_axa_im_swiss_life_morrison_co_2022_decision
+  page: '3'
+  quote_snippet: In Spain, the national competition authority (“CNMC”) most recently reviewed
+    the market in a case concerning Lyntia.6 It concluded that the market for the wholesale
+    supply of leased lines should be segmented between (i) managed wholesale leased lines (“lit
+    fibre”) and (ii) dark fibre.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_axa_im_swiss_life_morrison_co_2022_decision
+  page: '4'
+  quote_snippet: The Commission’s investigation did not provide any indications that it would
+    be appropriate for the Commission to depart from its previous decisional practice. In this
+    case, the question whether the market for the wholesale supply of leased lines should be
+    further segmented according to (i) network layer (trunk vs. terminating (i.e., backhaul)
+    segments of leased lines); (ii) speed (terminating leased lines with bandwidth below 2 Mbps
+    vs. above 2 Mbps); (iii) passive or active nature of the line (the distinction corresponding
+    to dark fibre on the one hand and managed leased lines and Ethernet services with guaranteed
+    bandwidth on the other); (iv) leased lines with traditional interfaces vs. Ethernet services
+    with guaranteed bandwidth; and (v) transmission means (wireless, fibre, copper lines), can
+    be left open since the Transaction does not give rise to serious doubts as to its compatibility
+    with the internal market under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_axa_im_swiss_life_morrison_co_2022_decision
+  page: '6'
+  quote_snippet: Lyntia’s market share exceeded 30% only on the potential sub-segment of the
+    wholesale supply of leased lines, the supply of dark fibre, on the potential national market
+    (Spain) and on the potential geographic market encompassing the metropolitan area of Madrid.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_axa_im_swiss_life_morrison_co_2022_decision
+  page: '9'
+  quote_snippet: This vertical relationship is affected within the meaning of the Merger Regulation,
+    as the Parties exceed the 30% threshold on the upstream market for the potential sub-segment
+    of the wholesale supply of dark fibre in Spain (Lyntia, [30-40]%) and the metropolitan area
+    of Madrid (Lyntia, [30-40]%).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_axa_im_swiss_life_morrison_co_2022_decision
+  page: '3'
+  quote_snippet: In Spain, the national competition authority (“CNMC”) most recently reviewed
+    the market in a case concerning Lyntia.6 It concluded that the market for the wholesale
+    supply of leased lines should be segmented between (i) managed wholesale leased lines (“lit
+    fibre”) and (ii) dark fibre.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_axa_im_swiss_life_morrison_co_2022_decision
+  page: '3'
+  quote_snippet: In Spain, the national competition authority (“CNMC”) most recently reviewed
+    the market in a case concerning Lyntia.6 It concluded that the market for the wholesale
+    supply of leased lines should be segmented between (i) managed wholesale leased lines (“lit
+    fibre”) and (ii) dark fibre.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_axa_im_swiss_life_morrison_co_2022_decision
+  page: '5'
+  quote_snippet: The Notifying Parties identify the overall market for the supply of colocation
+    services provided by third party data centres as the relevant product market in this case,
+    without any further segmentations.14
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_axa_im_swiss_life_morrison_co_2022_decision
+  page: '5'
+  quote_snippet: Nothing in the Commission’s files indicates that it would be appropriate to
+    depart from the Commission’s previous decisional practice with regard to the product market
+    definition of the market for colocation services provided by third party data centres.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_axa_im_swiss_life_morrison_co_2022_decision
+  page: '4'
+  quote_snippet: The Commission previously considered that the market for the wholesale supply
+    of leased lines is national in scope.8
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_axa_im_swiss_life_morrison_co_2022_decision
+  page: '4'
+  quote_snippet: In Spain, the CNMC has previously considered that the managed lines market
+    is national while the dark fibre market could be segmented between a national interurban
+    market and several metropolitan markets.9
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_axa_im_swiss_life_morrison_co_2022_decision
+  page: '4'
+  quote_snippet: The Commission’s investigation did not provide any indications that it would
+    be appropriate for the Commission to depart from its previous decisional practice. In this
+    case, the question whether the geographic market should be defined as national or narrower
+    (limited to a metropolitan area) can be left open since the Transaction does not give rise
+    to serious doubts as to its compatibility with the internal market under any plausible geographic
+    market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_axa_im_swiss_life_morrison_co_2022_decision
+  page: '9'
+  quote_snippet: This vertical relationship is affected within the meaning of the Merger Regulation,
+    as the Parties exceed the 30% threshold on the upstream market for the potential sub-segment
+    of the wholesale supply of dark fibre in Spain (Lyntia, [30-40]%) and the metropolitan area
+    of Madrid (Lyntia, [30-40]%).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_axa_im_swiss_life_morrison_co_2022_decision
+  page: '6'
+  quote_snippet: Lyntia’s market share exceeded 30% only on the potential sub-segment of the
+    wholesale supply of leased lines, the supply of dark fibre, on the potential national market
+    (Spain) and on the potential geographic market encompassing the metropolitan area of Madrid.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_axa_im_swiss_life_morrison_co_2022_decision
+  page: '9'
+  quote_snippet: This vertical relationship is affected within the meaning of the Merger Regulation,
+    as the Parties exceed the 30% threshold on the upstream market for the potential sub-segment
+    of the wholesale supply of dark fibre in Spain (Lyntia, [30-40]%) and the metropolitan area
+    of Madrid (Lyntia, [30-40]%).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_axa_im_swiss_life_morrison_co_2022_decision
+  page: '6'
+  quote_snippet: Lyntia’s market share exceeded 30% only on the potential sub-segment of the
+    wholesale supply of leased lines, the supply of dark fibre, on the potential national market
+    (Spain) and on the potential geographic market encompassing the metropolitan area of Madrid.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_axa_im_swiss_life_morrison_co_2022_decision
+  page: '5'
+  quote_snippet: The Commission previously defined the geographic scope of the market for the
+    supply of colocation services provided by third party data centres as each metropolitan
+    area corresponding to a radius of around 50 km from the centre of the city concerned.15
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_axa_im_swiss_life_morrison_co_2022_decision
+  page: '6'
+  quote_snippet: Data4 is only active in the Madrid metropolitan area, while Lyntia has four
+    data centres located in Huelva, Jaen, Seville and Zaragoza. Form CO, paragraph 95.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_axa_im_swiss_life_morrison_co_2022_decision
+  page: '6'
+  quote_snippet: Nothing in the Commission’s files indicates that it would be appropriate to
+    depart from the Commission’s previous decisional practice with regard to the geographic
+    market definition of the market for the supply of colocation services provided by third
+    party data centres, which is considered to be at most corresponding to a radius of around
+    50 km from the centre of the city concerned.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_axa_im_swiss_life_morrison_co_2022_decision
+  page: '4'
+  quote_snippet: In this case, the question whether the market for the wholesale supply of leased
+    lines should be further segmented [...] can be left open since the Transaction does not
+    give rise to serious doubts as to its compatibility with the internal market under any plausible
+    product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_axa_im_swiss_life_morrison_co_2022_decision
+  page: '4'
+  quote_snippet: In this case, the question whether the geographic market should be defined
+    as national or narrower (limited to a metropolitan area) can be left open since the Transaction
+    does not give rise to serious doubts as to its compatibility with the internal market under
+    any plausible geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []
+case_type: merger
+ai_summary: null

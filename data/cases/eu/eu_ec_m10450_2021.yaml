@@ -1,0 +1,137 @@
+case_id: eu_ec_m10450_2021
+case_name: M.10450
+authority: European Commission
+jurisdiction: EU
+sector: tech
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2021-11-10'
+parties: []
+source_documents:
+- doc_id: eu_ec_m10450_2021_decision
+  title: M.10450 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10450
+  pdf_url: http://publications.europa.eu/resource/cellar/9f9064f9-6d34-11ec-9136-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: wholesale supply of fixed internet access services
+  definition_status: considered
+  notes: The Commission assessed the competitive effects of the transaction on this market,
+    referencing prior decisions for its definition.
+- market_id: pm_2
+  name: wholesale supply of fixed backhaul services
+  definition_status: considered
+  notes: The Commission assessed the competitive effects of the transaction on this market,
+    referencing prior decisions for its definition.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Wholesale supply of fixed internet access services — national (Italy affected)
+  definition_status: considered
+  notes: null
+- market_id: gm_2
+  name: Wholesale supply of fixed backhaul services — national (Italy affected)
+  definition_status: considered
+  notes: null
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m10450_2021_decision
+  page: '8'
+  quote_snippet: Open Fiber is active in the market for the wholesale supply of fixed internet
+    access services in Italy28 and in the market for the wholesale supply of fixed backhaul
+    services in Italy.29
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m10450_2021_decision
+  page: '8'
+  quote_snippet: None of MIRA’s (or Macquarie’s) portfolio companies is active in market for
+    the wholesale supply of fixed internet access services in Italy or in the market for the
+    wholesale supply of fixed backhaul services in Italy, or in a product market which is upstream
+    or downstream from those markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m10450_2021_decision
+  page: '8'
+  quote_snippet: Open Fiber is active in the market for the wholesale supply of fixed internet
+    access services in Italy28 and in the market for the wholesale supply of fixed backhaul
+    services in Italy.29
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m10450_2021_decision
+  page: '8'
+  quote_snippet: None of MIRA’s (or Macquarie’s) portfolio companies is active in market for
+    the wholesale supply of fixed internet access services in Italy or in the market for the
+    wholesale supply of fixed backhaul services in Italy, or in a product market which is upstream
+    or downstream from those markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m10450_2021_decision
+  page: '8'
+  quote_snippet: Open Fiber is active in the market for the wholesale supply of fixed internet
+    access services in Italy28 and in the market for the wholesale supply of fixed backhaul
+    services in Italy.29
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m10450_2021_decision
+  page: '8'
+  quote_snippet: Open Fiber is active in the market for the wholesale supply of fixed internet
+    access services in Italy28 and in the market for the wholesale supply of fixed backhaul
+    services in Italy.29
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

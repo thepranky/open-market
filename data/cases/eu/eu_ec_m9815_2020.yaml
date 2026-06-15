@@ -1,0 +1,251 @@
+case_id: eu_ec_m9815_2020
+case_name: M.9815
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2020-06-18'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9815_2020_decision
+  title: M.9815 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9815
+  pdf_url: http://publications.europa.eu/resource/cellar/70d95e20-c73c-11ea-adf7-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Wholesale supply of bearings
+  definition_status: left_open
+  notes: The Commission considered segmenting the market based on bearing type, application,
+    or customer (OEM/OES vs. IAM/MRO), but ultimately left the precise definition open.
+- market_id: pm_2
+  name: Repair and maintenance of elevators and escalators
+  definition_status: left_open
+  notes: The Commission considered segmentation into combined elevator and escalator repair/maintenance,
+    or separate markets for each, but left the precise definition open.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Wholesale supply of bearings — EEA-wide
+  definition_status: left_open
+  notes: The Commission considered the market to be at least EEA-wide but left the precise geographic
+    definition open.
+- market_id: gm_2
+  name: Repair and maintenance of elevators and escalators — national
+  definition_status: left_open
+  notes: The Commission considered the market to be national in scope, consistent with prior
+    decisions and market feedback, but left the precise definition open.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9815_2020_decision
+  page: '2'
+  quote_snippet: The relevant upstream market therefore relates to the wholesale supply of bearings.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9815_2020_decision
+  page: '4'
+  quote_snippet: The Commission has also considered that the above markets could be divided
+    into separate markets according to the application for which the bearings are used or the
+    type of customers purchasing those bearings (e.g. automotive vs industrial applications;
+    OEM/OES vs Independent Aftermarket (“IAM”))14.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9815_2020_decision
+  page: '4'
+  quote_snippet: In any event, for the purpose of this Decision, it can be left open whether
+    the market for the wholesale supply of bearing may be segmented based on the type of bearing,
+    application or customer, as the Transaction does not give rise to serious doubts as to its
+    compatibility with the internal market or the functioning of the EEA Agreement regardless
+    of the precise product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9815_2020_decision
+  page: '3'
+  quote_snippet: The relevant downstream markets therefore relate to elevator and escalator
+    repair and maintenance.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9815_2020_decision
+  page: '6'
+  quote_snippet: 'In light of the feedback from market participants and the information available
+    to it, the Commission concludes that the product market for the repair and maintenance of
+    elevators and escalators could be segmented into (i) repair and maintenance services for
+    elevators and escalators (combined); and (ii) repair and maintenance services for each of:
+    (i) elevators; and (ii) escalators.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9815_2020_decision
+  page: '6'
+  quote_snippet: In any case, for the purpose of this Decision, it can be left open whether
+    the relevant market for the repair and maintenance of elevators and escalators may be subsegmented
+    based on the number and types of portfolio services, as the Transaction does not give rise
+    to serious doubts as to its compatibility with the internal market regardless of the precise
+    product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9815_2020_decision
+  page: '4'
+  quote_snippet: The Parties submit that the relevant geographic market is at least EEA-wide
+    in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9815_2020_decision
+  page: '5'
+  quote_snippet: In any event, for the purpose of this Decision, the Commission considers the
+    geographic market to be at least EEA-wide in scope, but leaves the precise geographic market
+    definition open, as the Transaction does not give rise to serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement under any of these plausible
+    geographic market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9815_2020_decision
+  page: '6'
+  quote_snippet: In a previous decision, the Commission found the geographic market of maintenance
+    and modernisation services for escalators to be national in scope.27
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9815_2020_decision
+  page: '6'
+  quote_snippet: 'Feedback from market participants indicated that customer preferences and
+    regulations for services provided on escalators vary among countries and that national presence
+    is required. An escalator MRO provider stated: “the Company regards the market for maintenance
+    of escalators as different on a national basis as customer preferences and regulations vary
+    from country to country and market presence in each country is necessary to make the business
+    profitable”28.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9815_2020_decision
+  page: '7'
+  quote_snippet: In any event, for the purpose of this Decision, the Commission considers the
+    geographic market for the repair and maintenance of escalators and elevators to be national
+    in scope, but leaves the precise geographic market definition open, as the Transaction does
+    not give rise to serious doubts as to its compatibility with the internal market or the
+    functioning of the EEA Agreement under any of these plausible geographic market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9815_2020_decision
+  page: '3'
+  quote_snippet: The Parties suggest that the relevant product market is rolling bearings, with
+    possible further sub-segments for ball and roller bearings, possibly also further sub-segmented
+    for industrial use6.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9815_2020_decision
+  page: '11'
+  quote_snippet: In light of the considerations in paragraphs (38) to (57) above as well as
+    all evidence available to it, the Commission considers that, the Transaction will not give
+    rise to serious doubts as to its compatibility with the internal market or the functioning
+    of the EEA Agreement due to vertical non-coordinated effects under any plausible market
+    definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

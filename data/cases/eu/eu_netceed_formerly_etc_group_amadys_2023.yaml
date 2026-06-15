@@ -1,0 +1,352 @@
+case_id: eu_netceed_formerly_etc_group_amadys_2023
+case_name: NETCEED (FORMERLY ETC GROUP) / AMADYS
+authority: European Commission
+jurisdiction: EU
+sector: retail
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2023-07-18'
+parties:
+- name: NETCEED (FORMERLY ETC GROUP)
+  role: acquirer
+- name: AMADYS
+  role: target
+source_documents:
+- doc_id: eu_netceed_formerly_etc_group_amadys_2023_decision
+  title: NETCEED (FORMERLY ETC GROUP) / AMADYS — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11125
+  pdf_url: http://publications.europa.eu/resource/cellar/9ab7014c-d9fa-11ee-b9d9-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: supply of telecommunications equipment
+  definition_status: segmented
+  notes: In previous cases, the Commission found that the market for the supply of telecommunications
+    equipment can be segmented into active and passive equipment.
+- market_id: pm_2
+  name: supply of passive telecommunication equipment
+  definition_status: left_open
+  notes: The Commission considers that, for the purpose of this decision, the supply of passive
+    telecommunication equipment constitutes a plausible product market. However, it can be left
+    open whether this market should be broader (including active telecommunication equipment)
+    or further segmented by type of network (carrier or enterprise), by component (fibre, copper,
+    coax, mobile), or by operator type (OEMs, distributors), as the Transaction does not raise
+    serious doubts irrespective of the market definition.
+- market_id: pm_3
+  name: manufacture and supply of passive equipment for carrier networks
+  definition_status: considered
+  notes: In previous cases, the Commission segmented the market between manufacture and supply
+    of passive equipment for carrier networks and for enterprise networks. Potential further
+    sub-segments (fibre, copper, coaxial cable components) were considered but ultimately left
+    open in these previous decisions.
+- market_id: pm_4
+  name: manufacture and supply of passive equipment for enterprise networks
+  definition_status: considered
+  notes: In previous cases, the Commission segmented the market between manufacture and supply
+    of passive equipment for carrier networks and for enterprise networks. Potential further
+    sub-segments (copper, fibre components) were considered but ultimately left open in these
+    previous decisions.
+- market_id: pm_5
+  name: supply of passive coaxial cable telecommunications equipment to carrier networks by
+    distributors
+  definition_status: considered
+  notes: This is the narrowest plausible segment on which the Commission focused its competitive
+    assessment, given that the lack of concerns on this segment implied a lack of concerns on
+    broader product and/or geographic markets.
+geographic_markets_considered:
+- market_id: gm_1
+  name: supply of passive telecommunications equipment — at least EEA-wide
+  definition_status: considered
+  notes: Based on previous decisions and market investigation, the Commission concluded that
+    the market for the supply of passive telecommunications equipment is at least EEA-wide.
+- market_id: gm_2
+  name: supply of active and passive telecommunication equipment or potential product market
+    segments of this market — at least EEA-wide
+  definition_status: considered
+  notes: The Commission considered the geographic scope of the broader market, including active
+    and passive equipment and all potential product market segments, to be at least EEA-wide.
+- market_id: gm_3
+  name: supply of passive coaxial cable telecommunications equipment to carrier networks by
+    distributors — EEA-wide
+  definition_status: considered
+  notes: The competitive assessment focused on this market with an EEA-wide geographic scope.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_netceed_formerly_etc_group_amadys_2023_decision
+  page: '3'
+  quote_snippet: In previous cases,6 the Commission found that the market for the supply of
+    telecommunications equipment can be segmented into active and passive equipment7.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_netceed_formerly_etc_group_amadys_2023_decision
+  page: '3'
+  quote_snippet: Therefore, the only relevant market is the market for the supply of passive
+    telecommunications equipment (possibly also including active telecommunication equipment)
+    or a potential subsegment of that market narrowed by type of equipment and/or by type of
+    suppliers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_netceed_formerly_etc_group_amadys_2023_decision
+  page: '4'
+  quote_snippet: In any event, in line with the Notifying Party’s submission and the results
+    of the market investigation, the Commission considers that, for the purpose of this decision,
+    the supply of passive telecommunication equipment constitutes a plausible product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_netceed_formerly_etc_group_amadys_2023_decision
+  page: '4'
+  quote_snippet: For the purpose of this decision, it can be left open whether the product market
+    should be broader (also including active telecommunication equipment) or further segmented
+    by (i) type of network (carrier or enterprise) and/or (ii) by component (fibre, copper,
+    coax, mobile) and/or (iii) by operator type (OEMs, distributors) as the Transaction does
+    not give rise to serious doubts as to its compatibility with the internal market irrespective
+    of the relevant product market considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_netceed_formerly_etc_group_amadys_2023_decision
+  page: '3'
+  quote_snippet: Furthermore, in relation to passive components, the Commission found that the
+    market should be segmented between (i) the manufacture and supply of passive equipment for
+    carrier networks and (ii) the manufacture and supply of passive equipment for enterprise
+    networks8.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_netceed_formerly_etc_group_amadys_2023_decision
+  page: '3'
+  quote_snippet: 'With regard to the market for the manufacture and supply of passive equipment
+    for carrier networks, the Commission considered the following potential further sub-segments,
+    but ultimately left the market definition open: fibre components, copper components and
+    coaxial cable components (possibly further segmented by cable specificities).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_netceed_formerly_etc_group_amadys_2023_decision
+  page: '3'
+  quote_snippet: Furthermore, in relation to passive components, the Commission found that the
+    market should be segmented between (i) the manufacture and supply of passive equipment for
+    carrier networks and (ii) the manufacture and supply of passive equipment for enterprise
+    networks8.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_netceed_formerly_etc_group_amadys_2023_decision
+  page: '3'
+  quote_snippet: 'With regard to the market for the manufacture and supply of passive equipment
+    for enterprise networks, the Commission considered the following potential further sub-segments,
+    but ultimately left the market definition open: copper components and fibre components (possibly
+    further segmented by cable specificities).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_netceed_formerly_etc_group_amadys_2023_decision
+  page: '6'
+  quote_snippet: In this section, the Commission assesses the Transaction’s impact on competition
+    on the narrowest plausible segment that would be affected by the Transaction, namely the
+    supply of passive coaxial cable telecommunications equipment to carrier networks by distributors
+    in the EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_netceed_formerly_etc_group_amadys_2023_decision
+  page: '6'
+  quote_snippet: Indeed, considering an EEA-wide geographic scope,18 the Transaction only gives
+    rise to one horizontally affected market:19 the supply of passive coaxial cable telecommunications
+    equipment to carrier networks by distributors in the EEA,20 where the Parties’ combined
+    market share reaches [20-30]% with an increment of [5-10]% from Amadys in 2022.21
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_netceed_formerly_etc_group_amadys_2023_decision
+  page: '9'
+  quote_snippet: In the following table, the Commission presents the market shares of the Parties
+    to the Transaction and their competitors, in the market for the supply of passive coaxial
+    cable telecommunications equipment to carrier networks by distributors in the EEA, the only
+    market affected by the Transaction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_netceed_formerly_etc_group_amadys_2023_decision
+  page: '5'
+  quote_snippet: In previous decisions,14 the Commission considered, but ultimately left open,
+    that the market for the supply of passive telecommunications equipment (including all plausible
+    segments) should be at least EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_netceed_formerly_etc_group_amadys_2023_decision
+  page: '5'
+  quote_snippet: Therefore, overall, the market investigation strongly supports the conclusions
+    drawn in previous Commission decisions that the market for the supply of passive telecommunications
+    is at least EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_netceed_formerly_etc_group_amadys_2023_decision
+  page: '5'
+  quote_snippet: On the basis of the above and based on the results of the market investigation,
+    the Commission considers the geographic scope of the market for the supply of active and
+    passive telecommunication equipment or potential product market segments of this market
+    to be at least EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_netceed_formerly_etc_group_amadys_2023_decision
+  page: '6'
+  quote_snippet: In this section, the Commission assesses the Transaction’s impact on competition
+    on the narrowest plausible segment that would be affected by the Transaction, namely the
+    supply of passive coaxial cable telecommunications equipment to carrier networks by distributors
+    in the EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_netceed_formerly_etc_group_amadys_2023_decision
+  page: '6'
+  quote_snippet: Indeed, considering an EEA-wide geographic scope,18 the Transaction only gives
+    rise to one horizontally affected market:19 the supply of passive coaxial cable telecommunications
+    equipment to carrier networks by distributors in the EEA,20 where the Parties’ combined
+    market share reaches [20-30]% with an increment of [5-10]% from Amadys in 2022.21
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_netceed_formerly_etc_group_amadys_2023_decision
+  page: '12'
+  quote_snippet: For the above reasons, the European Commission has decided not to oppose the
+    notified operation and to declare it compatible with the internal market and with the EEA
+    Agreement. This decision is adopted in application of Article 6(1)(b) of the Merger Regulation
+    and Article 57 of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+ai_summary: null
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []
+case_type: merger

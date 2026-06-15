@@ -1,0 +1,969 @@
+case_id: eu_ec_m9802_2020
+case_name: M.9802
+authority: European Commission
+jurisdiction: EU
+sector: tech
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2020-08-12'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9802_2020_decision
+  title: M.9802 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9802
+  pdf_url: http://publications.europa.eu/resource/cellar/739cce33-7a84-11eb-9ac9-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Production of AV content
+  definition_status: considered
+  notes: The Commission concluded that, for the purpose of this decision, it is appropriate
+    to consider as relevant the market for the non-captive production of AV content. The question
+    whether this market needs to be further sub-segmented on the basis of content type, exhibition
+    windows, scripted and non-scripted content, or between commissioned AV production or AV
+    production for-hire was left open.
+- market_id: pm_2
+  name: Licensing of broadcasting rights for pre-existing individual AV content
+  definition_status: considered
+  notes: The Commission considered that a relevant market for the licensing of broadcasting
+    rights for pre-existing individual AV content has to be considered. The question whether
+    this market needs to be further sub-segmented on the basis of content type, exhibition windows,
+    scripted and non-scripted content, and premium and non-premium content was left open.
+- market_id: pm_3
+  name: Wholesale supply of FTA/basic pay TV channels
+  definition_status: considered
+  notes: The Commission concluded that the wholesale supply of FTA/basic pay TV channels should
+    be considered as a separate product market, including its ancillary services. This market
+    should not be further segmented based on the distribution technology. The question whether
+    this market can be further segmented by genre was left open.
+- market_id: pm_4
+  name: Wholesale supply of premium pay TV channels
+  definition_status: considered
+  notes: The Commission concluded that the wholesale supply of premium pay TV channels should
+    be considered as a separate product market, including its ancillary services. This market
+    should not be further segmented based on the distribution technology. The question whether
+    this market can be further segmented by genre was left open.
+- market_id: pm_5
+  name: Retail supply of AV services
+  definition_status: left_open
+  notes: The Commission left open the question as to whether the market for the retail supply
+    of AV services should be segmented according to the type of AV services (FTA/basic pay AV
+    services versus premium pay AV services, and/or linear versus non-linear services), and/or
+    according to the distribution technology.
+- market_id: pm_6
+  name: Retail supply of fixed internet access services
+  definition_status: left_open
+  notes: The Commission concluded that the exact scope of the product market definition in relation
+    to the provision of retail fixed internet access services can be left open. It considered
+    but ultimately left open possible segmentations according to product type (narrowband, broadband,
+    dedicated access), distribution technology (xDSL, fibre, cable), and customer type (residential,
+    small business, larger business, public authorities).
+- market_id: pm_7
+  name: Retail supply of mobile telecommunication services
+  definition_status: defined
+  notes: The Commission concluded that the relevant product market is the overall retail market
+    for mobile telecommunications services, without any further segmentations according to the
+    type of services (voice calls, SMS, MMS, mobile internet data), the type of customers (pre-paid/post-paid,
+    private/business), or the network technology (2G/3G/4G).
+- market_id: pm_8
+  name: Retail supply of multiple play bundles
+  definition_status: left_open
+  notes: The Commission left open the question as to whether there exist one or more multiple
+    play markets which are distinct from each of the underlying individual telecommunications
+    services. It noted the possibility of several possible markets, such as a market for fixed
+    bundles (dual play, triple play) and another separate market for fixed-mobile convergence
+    bundles (quadruple play).
+- market_id: pm_9
+  name: TV advertising
+  definition_status: defined
+  notes: The Commission concluded that the market for TV advertising constitutes a separate
+    market from radio and online advertising. The question whether the market for TV advertising
+    includes both Pay and FTA TV channels and/or AVOD services or whether it can be divided
+    into those two segments was left open.
+- market_id: pm_10
+  name: Radio advertising
+  definition_status: defined
+  notes: The Commission concluded that the market for radio advertising constitutes a separate
+    market from TV and online advertising.
+- market_id: pm_11
+  name: Online advertising
+  definition_status: defined
+  notes: The Commission concluded that the market for online advertising constitutes a separate
+    market from TV and radio advertising.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Production of AV content — national or regional (Flanders or Flanders and Brussels Capital
+    Region affected)
+  definition_status: left_open
+  notes: The Commission considered that the question whether the geographic scope of the market
+    for the production of TV content was national or regional (the Flemish Region or the combination
+    of the Flemish Region and the Brussels Capital Region) could be left open.
+- market_id: gm_2
+  name: Licensing of broadcasting rights for pre-existing individual AV content — national or
+    by linguistic area (Dutch-speaking areas of Belgium affected)
+  definition_status: left_open
+  notes: The Commission concluded that the question whether the relevant geographic market for
+    the licensing of individual broadcasting rights for AV content is national or by linguistic
+    area (the Dutch-speaking areas of Belgium) can be left open.
+- market_id: gm_3
+  name: Wholesale supply of TV channels — Telenet's footprint, regional or national (Belgium
+    affected)
+  definition_status: left_open
+  notes: The Commission concluded that the relevant geographic market for the wholesale supply
+    of TV channels (including all possible sub-segments) is either the local footprint of Telenet's
+    cable network, or its enlarged regional or national scopes, and the exact definition was
+    left open.
+- market_id: gm_4
+  name: Retail supply of fixed internet access services — national (Belgium affected)
+  definition_status: defined
+  notes: The Commission concluded that, for the purpose of this decision, the relevant market
+    for the provision of fixed internet services is national in scope, consistent with its previous
+    practice.
+- market_id: gm_5
+  name: Retail supply of mobile telecommunication services — national (Belgium affected)
+  definition_status: defined
+  notes: The Commission concluded that, for the purpose of this decision, the relevant market
+    for the retail provision of mobile telecommunications services is national in scope, consistent
+    with its previous practice.
+- market_id: gm_6
+  name: TV advertising — national or regional (Flemish region, potentially including Brussels-capital
+    region affected)
+  definition_status: left_open
+  notes: The Commission previously considered that the geographic markets for TV advertising
+    is either national or regional (along linguistic lines; in Belgium concerning the Flemish
+    region, potentially including the Brussels-capital region).
+- market_id: gm_7
+  name: Radio advertising — national or regional (Flemish region, potentially including Brussels-capital
+    region affected)
+  definition_status: left_open
+  notes: The Commission previously considered that the geographic markets for radio advertising
+    is either national or regional (along linguistic lines; in Belgium concerning the Flemish
+    region, potentially including the Brussels-capital region).
+- market_id: gm_8
+  name: Online advertising — national or regional (Flemish region, potentially including Brussels-capital
+    region affected)
+  definition_status: left_open
+  notes: The Commission previously considered that the geographic markets for online advertising
+    is either national or regional (along linguistic lines; in Belgium concerning the Flemish
+    region, potentially including the Brussels-capital region).
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '6'
+  quote_snippet: In light of the above, the Commission concludes that, for the purpose of this
+    decision and in line with its previous practice, it is appropriate to consider as relevant
+    the market for the non-captive production of AV content, while the question whether that
+    relevant product marked needs to be further sub-segmented on the basis of content type or
+    exhibition windows, or between scripted and non-scripted content, and between commissioned
+    AV production or AV production for-hire can be left open, since the Transaction does not
+    raise serious doubts as to its compatibility with the internal market or the functioning
+    of the EEA Agreement under any such plausible product market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '5'
+  quote_snippet: The Commission has consistently considered that the production of AV content
+    should be distinguished from the licensing of broadcasting rights for AV content.10 The
+    Commission has also found the product market for the production of TV content to be limited
+    to non-captive TV production, thereby excluding content produced by TV broadcasters for
+    use on their own channels.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '6'
+  quote_snippet: A majority of respondents to the market investigation indicated that, in Belgium,
+    the distinction between the market for the production of AV content on the one hand, and
+    the market for the licensing of broadcasting rights for pre-existing individual AV content
+    on the other hand is at present appropriate.15 In addition, nothing in the Commission’s
+    file gives reasons to depart from the previous approach of considering that the product
+    market for the production of AV content is limited to non-captive AV production.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '9'
+  quote_snippet: In light of the above, the Commission considers that, for the purpose of this
+    decision and in line with the previous practice, a relevant market for the licensing of
+    broadcasting rights for pre-existing individual AV content has to be considered, while the
+    question whether this relevant product marked needs to be further sub-segmented on the basis
+    of content type or exhibition windows, or between scripted and non-scripted content, and
+    between premium and non-premium content can be left open, since the Transaction does not
+    raise serious doubts as to its compatibility with the internal market or the functioning
+    of the EEA Agreement under any such plausible product market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '12'
+  quote_snippet: In light of the above, the Commission concludes that, for the purpose of this
+    decision and in line with its precdents, the wholesale supply of FTA/basic pay TV channels,
+    and of premium pay TV channels should be considered as constituting two separate product
+    markets, each including its ancillary services. The Commission also considers that each
+    of these markets should not be further segmented based on the distribution technology of
+    the channel in question. In that respect, the question whether these markets can be further
+    segmented by genre can be left open, since the Transaction does not raise serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA Agreement
+    under any such plausible product market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '10'
+  quote_snippet: In its decision of 24 February 2015 in case M.7194 – Liberty Global/Corelio/W&W/De
+    Vijver Media, the Commission has considered that, given that (i) FTA channels were mostly
+    supplied together with basic pay TV channels, and (ii) the competitive assessment would
+    remain the same even if FTA channels were regarded as belonging to a separate product market
+    from that of basic pay TV, it was not necessary to make a distinction between FTA and basic
+    pay TV channels on the market for wholesale supply of TV channels in that case.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '11'
+  quote_snippet: A majority of respondents to the market investigation indicated that it remains
+    appropriate to segment the wholesale supply of TV channels between FTA and basic pay TV
+    channels on the one hand, and premium pay TV channels on the other hand in Belgium.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '12'
+  quote_snippet: In light of the above, the Commission concludes that, for the purpose of this
+    decision and in line with its precdents, the wholesale supply of FTA/basic pay TV channels,
+    and of premium pay TV channels should be considered as constituting two separate product
+    markets, each including its ancillary services. The Commission also considers that each
+    of these markets should not be further segmented based on the distribution technology of
+    the channel in question. In that respect, the question whether these markets can be further
+    segmented by genre can be left open, since the Transaction does not raise serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA Agreement
+    under any such plausible product market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '10'
+  quote_snippet: The Commission further stated that within the pay TV channels market, there
+    could be different segments for (i) basic pay TV channels; and (ii) premium pay TV channels,41
+    for which end customers pay a premium in addition to their basic subscription fee.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '11'
+  quote_snippet: A majority of respondents to the market investigation indicated that it remains
+    appropriate to segment the wholesale supply of TV channels between FTA and basic pay TV
+    channels on the one hand, and premium pay TV channels on the other hand in Belgium.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '14'
+  quote_snippet: In light of the above, the Commission concludes that, for the purpose of this
+    decision and in line with its previous practice, the question as to whether the market for
+    the retail supply of AV services should be segmented according to the type of AV services
+    (FTA/basic pay AV services versus premium pay AV services, and/or linear versus non-linear
+    services), and/or according to the distribution technology can be left open, since the Transaction
+    does not raise serious doubts as to its compatibility with the internal market or the functioning
+    of the EEA Agreement under any such plausible product market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '13'
+  quote_snippet: 'In its past decisional practice, the Commission considered the retail supply
+    of FTA TV and pay TV as separate markets, but ultimately left open the product market definition.54
+    The Commission also considered whether pay TV could be segmented further according to: (i)
+    linear vs non-linear pay TV services;55 (ii) premium vs basic pay TV services.56 However,
+    the Commission left open the market definition with regard to each of these potential sub-segments.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '14'
+  quote_snippet: A majority of respondents to the market investigation indicated that the retail
+    provision of FTA/basic pay AV services currently constitutes a market separate from the
+    retail provision of premium pay AV services in Belgium.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '16'
+  quote_snippet: In light of the foregoing, the Commission does not depart from its previous
+    assessment, and concludes, for the purposes of this Decision, that the exact scope of the
+    product market definition in relation to the provision of retail fixed internet access services
+    can be left open, as the Transaction does not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement under any plausible product
+    market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '16'
+  quote_snippet: With regard to a possible segmentation of the market for the retail provision
+    of fixed internet access services according to product and customer type or according to
+    distribution technology (that is to say, xDSL, cable or fibre), nothing in the Commission’s
+    file provided reason to depart from its approach in previous cases.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '18'
+  quote_snippet: In light of the foregoing, the Commission concludes that it is appropriate
+    to not depart from its previous practice, and considers that, for the purpose of this decision,
+    the relevant product market is the overall retail market for mobile telecommunications services
+    without any further segmentations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '17'
+  quote_snippet: The Commission has previously considered that there is an overall retail market
+    for mobile telecommunications services constituting a separate market from retail fixed
+    telecommunication services.72 The Commission did not further segment the overall retail
+    mobile market based on the type of service (voice calls, SMS, MMS, mobile internet data
+    services), or the type of network technology (for example, 2G/3G/4G).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '18'
+  quote_snippet: Nothing in the Commission's file indicated that the market for retail supply
+    of mobile telecommunications services should be further segmented according to the type
+    of services, the type of customers or the network technology used.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '19'
+  quote_snippet: In light of the foregoing, the Commission concludes that it is appropriate
+    not to depart from its previous decisional practice, and considers that, for the purpose
+    of this decision, the question as to whether there exist one or more multiple play markets
+    which are distinct from each of the underlying individual telecommunications services can
+    be left open, since the Transaction does not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement under any such plausible
+    product market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '19'
+  quote_snippet: In previous decisions, the Commission has considered but ultimately left open
+    the question as to whether there exist one or more multiple play markets, which are distinct
+    from each of the underlying individual telecommunication services.75
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '19'
+  quote_snippet: The market investigation in the case at hand provided no clear evidence as
+    to the substitutability between multiple play services on the one hand and combinations
+    of standalone services on the other hand.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '22'
+  quote_snippet: In light of the foregoing, the Commission concludes that, for the purpose of
+    this decision and to follow its previous decisional practice, the market for TV advertising,
+    the market for radio advertising and the market for online advertising constitute separate
+    markets. The Commission also concludes that the question whether the market for TV advertising
+    includes both Pay and FTA TV channels and/or AVOD services or whether it can be divided
+    into those two segments can be left open, since the Transaction does not raise serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA Agreement
+    under any such plausible product market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '21'
+  quote_snippet: The Commission has previously defined the sale of advertising space on TV,
+    the sale of advertising space on radio and the sale of advertising space on websites as
+    distinct product markets, rather than forming part of a wider advertising market (incorporating,
+    among others, also print advertising).81
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '22'
+  quote_snippet: In light of the foregoing, the Commission concludes that, for the purpose of
+    this decision and to follow its previous decisional practice, the market for TV advertising,
+    the market for radio advertising and the market for online advertising constitute separate
+    markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '21'
+  quote_snippet: The Commission has previously defined the sale of advertising space on TV,
+    the sale of advertising space on radio and the sale of advertising space on websites as
+    distinct product markets, rather than forming part of a wider advertising market (incorporating,
+    among others, also print advertising).81
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '22'
+  quote_snippet: In light of the foregoing, the Commission concludes that, for the purpose of
+    this decision and to follow its previous decisional practice, the market for TV advertising,
+    the market for radio advertising and the market for online advertising constitute separate
+    markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '21'
+  quote_snippet: The Commission has previously defined the sale of advertising space on TV,
+    the sale of advertising space on radio and the sale of advertising space on websites as
+    distinct product markets, rather than forming part of a wider advertising market (incorporating,
+    among others, also print advertising).81
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '6'
+  quote_snippet: In previous cases, the Commission considered that the question whether the
+    geographic scope of the market for the production of TV content was national or regional
+    (the Flemish Region or the combination of the Flemish Region and the Brussels Capital Region)
+    could be left open.18
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '9'
+  quote_snippet: In light of the above, the Commission considers that, for the purpose of this
+    decision and in line with its precedents, the question whether the relevant geographic market
+    for the licensing of individual broadcasting rights for AV content, including all the possible
+    sub-segments, is national or by linguistic area (the Dutch-speaking areas of Belgium), can
+    be left open, since the Transaction does not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement under any such plausible
+    geographic market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '9'
+  quote_snippet: In previous cases, the Commission left open the question whether the geographic
+    scope of the market for the licensing of broadcasting rights for TV content was national
+    or regional (the Flemish Region or the combination of the Flemish Region and the Brussels
+    Capital Region) left open.32
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '9'
+  quote_snippet: According to a majority of respondents to the market investigation, the geographic
+    scope of agreements for the licensing of individual broadcasting rights for AV content is
+    either national or by linguistic area.37
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '13'
+  quote_snippet: In light of the above, the Commission concludes that, for the purpose of this
+    decision and in light of its previous practice, the relevant geographic market for the wholesale
+    supply of TV channels, including all the possible sub-segments, is either the local footprint
+    of Telenet's cable network, or its enlarged regional or national scopes. In that respect,
+    the Commission considers that the exact geographic market definition (i.e. whether it corresponds
+    to Telenet's footprint, is regional or national) can be left open, since the Transaction
+    does not raise serious doubts as to its compatibility with the internal market or the functioning
+    of the EEA Agreement under any such plausible geographic market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '12'
+  quote_snippet: The results of the market investigation indicated that it is still relevant
+    to consider that the relevant geographic markets for both (i) the wholesale supply of FTA/basic
+    pay TV channels, and (ii) the wholesale supply of premium pay TV channels might be Telenet's
+    footprint, or enlarged to a regional or national scope.53
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_34
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '17'
+  quote_snippet: In light of the foregoing, the Commission concludes that it is appropriate
+    not to depart from its previous practice, and considers that, for the purpose of this decision,
+    the relevant market for the provision of fixed internet services is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_35
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '16'
+  quote_snippet: In its previous decisions, the Commission concluded that the retail market
+    for the provision of fixed internet services was national in scope.70
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_36
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '17'
+  quote_snippet: The market investigation did not provide any indication that the Commission
+    should depart from its findings in previous cases, according to which the geographic market
+    should be national.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_37
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '18'
+  quote_snippet: In light of the foregoing, the Commission concludes that it is appropriate
+    to not depart from its previous practice, and considers that, for the purpose of this decision,
+    the relevant market for the retail provision of mobile telecommunications services is national
+    in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_38
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '18'
+  quote_snippet: In its previous decisions, the Commission concluded that the retail market
+    for the provision of mobile telecommunications services was national in scope.74
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_39
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '18'
+  quote_snippet: The market investigation in the present case did not provide any indication
+    that the Commission should depart from its previous findings.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_40
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '22'
+  quote_snippet: The Commission previously considered that the geographic markets for (i) TV
+    advertising, (ii) radio advertising and (iii) online advertising are either national or
+    regional (along linguistic lines; in Belgium concerning the Flemish region, potentially
+    including the Brussels-capital region).89
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_41
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '22'
+  quote_snippet: The Commission previously considered that the geographic markets for (i) TV
+    advertising, (ii) radio advertising and (iii) online advertising are either national or
+    regional (along linguistic lines; in Belgium concerning the Flemish region, potentially
+    including the Brussels-capital region).89
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_42
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '22'
+  quote_snippet: The Commission previously considered that the geographic markets for (i) TV
+    advertising, (ii) radio advertising and (iii) online advertising are either national or
+    regional (along linguistic lines; in Belgium concerning the Flemish region, potentially
+    including the Brussels-capital region).89
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_8
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_43
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '6'
+  quote_snippet: since the Transaction does not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement under any such plausible
+    product market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_44
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '9'
+  quote_snippet: since the Transaction does not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement under any such plausible
+    product market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_45
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '12'
+  quote_snippet: since the Transaction does not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement under any such plausible
+    product market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_46
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '13'
+  quote_snippet: since the Transaction does not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement under any such plausible
+    geographic market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_47
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '16'
+  quote_snippet: as the Transaction does not raise serious doubts as to its compatibility with
+    the internal market or the functioning of the EEA Agreement under any plausible product
+    market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_48
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '19'
+  quote_snippet: since the Transaction does not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement under any such plausible
+    product market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_49
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '22'
+  quote_snippet: since the Transaction does not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement under any such plausible
+    product market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_50
+  source_document_id: eu_ec_m9802_2020_decision
+  page: '4'
+  quote_snippet: The Transaction therefore has a Union dimension pursuant to Article 1(2) of
+    the Merger Regulation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

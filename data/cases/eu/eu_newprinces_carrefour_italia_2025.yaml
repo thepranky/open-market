@@ -1,0 +1,523 @@
+case_id: eu_newprinces_carrefour_italia_2025
+case_name: NEWPRINCES / CARREFOUR ITALIA
+authority: European Commission
+jurisdiction: EU
+sector: retail
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2025-11-28'
+parties:
+- name: NEWPRINCES
+  role: acquirer
+- name: CARREFOUR ITALIA
+  role: target
+source_documents:
+- doc_id: eu_newprinces_carrefour_italia_2025_decision
+  title: NEWPRINCES / CARREFOUR ITALIA — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.12121
+  pdf_url: http://publications.europa.eu/resource/cellar/9cc04d4e-1710-11f1-8870-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Supply of fresh milk
+  definition_status: defined
+  notes: The Commission considered that fresh milk constitutes a separate product market from
+    long-life milk. It comprises pasteurised milk and Extended Shelf Life (ESL) milk, both branded
+    and private label products. The question of whether the market should be segmented according
+    to the distribution channel (retail and out-of-home) and whether there could be a health
+    segment was left open. Conventional and organic fresh milk constitute separate product markets.
+- market_id: pm_2
+  name: Supply of conventional fresh milk
+  definition_status: defined
+  notes: Conventional and organic fresh milk constitute separate product markets.
+- market_id: pm_3
+  name: Supply of organic fresh milk
+  definition_status: defined
+  notes: Conventional and organic fresh milk constitute separate product markets.
+- market_id: pm_4
+  name: Supply of baby meals
+  definition_status: defined
+  notes: Baby meals designate prepared meals and individual ingredients for meal preparation,
+    labelled and marketed for babies and children from 6 months up to 36 months. They include
+    mashed purées with a combination of vegetables and meat or fish, single food purees, fruit
+    compotes, soups and ambient dairy products.
+- market_id: pm_5
+  name: Supply of baby dry cereals
+  definition_status: defined
+  notes: A segment of the baby foods market.
+- market_id: pm_6
+  name: Supply of baby snacks
+  definition_status: defined
+  notes: Baby snacks refer to all sweet and savoury snacks intended for babies and toddlers
+    from 4 to 36 months and include biscuits, crackers, cereals bars and fruit bars.
+- market_id: pm_7
+  name: Supply of baby drinks
+  definition_status: defined
+  notes: A segment of the baby foods market.
+- market_id: pm_8
+  name: Retail sale of daily consumer goods through modern distribution channels
+  definition_status: defined
+  notes: Includes retail outlets such as hypermarkets, supermarkets and discount chains. The
+    Commission generally considered that other types of retailers such as specialised outlets
+    (butchers or bakers, for instance), kiosks, cash & carry stores and service stations do
+    not belong to the relevant market. Segmentation by store surface was left open for consumer
+    relationships but deemed not relevant for evaluating upstream relationships between suppliers
+    and retailers for the purpose of the vertical assessment.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Supply of fresh milk — national/regional (Italy affected)
+  definition_status: left_open
+  notes: The Commission left open whether the market for fresh milk in Italy was of a national
+    or narrower (regional) dimension, as the transaction did not give rise to competition concerns
+    even under the narrower market definition. Market investigation results indicated fresh
+    milk is procured predominantly at a regional level, but national players exist, and transport
+    distances can extend beyond individual regions.
+- market_id: gm_2
+  name: Supply of baby foods — national (Italy affected)
+  definition_status: defined
+  notes: The Commission considers the markets for baby food to have a national geographic dimension,
+    based on features such as procurement at national level, price differences among Member
+    States, existence of national brands, and differences in consumption and market growth.
+- market_id: gm_3
+  name: Retail sale of daily consumer goods through modern distribution channels — local (Italy
+    affected)
+  definition_status: defined
+  notes: The geographic market for the retail sale of daily consumer goods is considered local,
+    corresponding to a catchment area around each store based on travel distance. Hypermarkets
+    typically have larger catchment areas (20-30 minutes by car) compared to supermarkets (10-20
+    minutes).
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_newprinces_carrefour_italia_2025_decision
+  page: '3'
+  quote_snippet: Fresh milk is milk with a standardised fat content, which is pasteurised at
+    72°C for 15 seconds. The Notifying Party submits that the relevant market should be defined
+    as the market for the production and supply of fresh milk, without any further segmentation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_newprinces_carrefour_italia_2025_decision
+  page: '3'
+  quote_snippet: In its previous decisional practice, the Commission considered that fresh milk
+    constitutes a separate product market from long-life milk. The market of fresh milk comprises
+    both pasteurised milk as well as Extended Shelf Life (ESL) milk, (9) and both branded and
+    private label products.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_newprinces_carrefour_italia_2025_decision
+  page: '3'
+  quote_snippet: The market investigation in this case did not reveal any reasons to depart
+    from this approach.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_newprinces_carrefour_italia_2025_decision
+  page: '3'
+  quote_snippet: Instead, conventional and organic fresh milk constitute separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_newprinces_carrefour_italia_2025_decision
+  page: '3'
+  quote_snippet: The market investigation in this case did not reveal any reasons to depart
+    from this approach.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_newprinces_carrefour_italia_2025_decision
+  page: '3'
+  quote_snippet: Instead, conventional and organic fresh milk constitute separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_newprinces_carrefour_italia_2025_decision
+  page: '3'
+  quote_snippet: The market investigation in this case did not reveal any reasons to depart
+    from this approach.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_newprinces_carrefour_italia_2025_decision
+  page: '4'
+  quote_snippet: In its decisional practice, the Commission has identified that the market for
+    baby foods can be segmented into baby meals, baby dry cereals, baby snacks and baby drinks.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_newprinces_carrefour_italia_2025_decision
+  page: '4'
+  quote_snippet: Baby meals designate prepared meals and individual ingredients for meal preparation,
+    labelled and marketed for babies and children from 6 months up to 36 months. They include
+    mashed purées with a combination of vegetables and meat or fish, single food purees, fruit
+    compotes, soups and ambient dairy products.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_newprinces_carrefour_italia_2025_decision
+  page: '4'
+  quote_snippet: The market investigation in this case did not reveal any reason to depart from
+    this approach.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_newprinces_carrefour_italia_2025_decision
+  page: '4'
+  quote_snippet: In its decisional practice, the Commission has identified that the market for
+    baby foods can be segmented into baby meals, baby dry cereals, baby snacks and baby drinks.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_newprinces_carrefour_italia_2025_decision
+  page: '4'
+  quote_snippet: The market investigation in this case did not reveal any reason to depart from
+    this approach.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_newprinces_carrefour_italia_2025_decision
+  page: '4'
+  quote_snippet: In its decisional practice, the Commission has identified that the market for
+    baby foods can be segmented into baby meals, baby dry cereals, baby snacks and baby drinks.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_newprinces_carrefour_italia_2025_decision
+  page: '4'
+  quote_snippet: Baby snacks refer to all sweet and savoury snacks intended for babies and toddlers
+    from 4 to 36 months and include biscuits, crackers, cereals bars and fruit bars.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_newprinces_carrefour_italia_2025_decision
+  page: '4'
+  quote_snippet: The market investigation in this case did not reveal any reason to depart from
+    this approach.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_newprinces_carrefour_italia_2025_decision
+  page: '4'
+  quote_snippet: In its decisional practice, the Commission has identified that the market for
+    baby foods can be segmented into baby meals, baby dry cereals, baby snacks and baby drinks.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_newprinces_carrefour_italia_2025_decision
+  page: '4'
+  quote_snippet: The market investigation in this case did not reveal any reason to depart from
+    this approach.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_newprinces_carrefour_italia_2025_decision
+  page: '4'
+  quote_snippet: In its decisional practice, the Commission has considered that a separate product
+    market exists within the retail segment for the sale of daily consumer goods carried out
+    by retail outlets such as hypermarkets, supermarkets and discount chains (“modern distribution
+    channels”).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_newprinces_carrefour_italia_2025_decision
+  page: '5'
+  quote_snippet: The Commission generally considered that other types of retailers such as specialised
+    outlets (butchers or bakers, for instance), kiosks, cash & carry stores and service stations
+    do not belong to the relevant market, in view of the fact that they fulfil a specialist
+    or convenience function.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_newprinces_carrefour_italia_2025_decision
+  page: '5'
+  quote_snippet: The Commission considers that the segmentations described above are relevant
+    when assessing relationships between retailers and consumers, as consumers typically express
+    preferences for particular types of retail outlets. However, these segmentations are not
+    relevant for evaluating upstream relationships between suppliers and retailers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_newprinces_carrefour_italia_2025_decision
+  page: '3'
+  quote_snippet: In case Lactalis/Parmalat, the Commission left open the question of whether
+    the market for fresh milk in Italy was of a national or narrower (i.e., regional) dimension.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_newprinces_carrefour_italia_2025_decision
+  page: '4'
+  quote_snippet: The results of the market investigation carried out by the Commission are that
+    fresh milk is procured predominantly at a regional level, influenced by proximity to production
+    areas and regional operations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_newprinces_carrefour_italia_2025_decision
+  page: '4'
+  quote_snippet: The Commission concludes that the precise geographic scope of the fresh milk
+    markets can be left open because, even under the narrower market definition (i.e., at the
+    regional level), the Transaction does not give rise to competition concerns.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_newprinces_carrefour_italia_2025_decision
+  page: '4'
+  quote_snippet: As to the geographic scope of the market, the Commission took the view that
+    the different markets for baby food have a national geographic dimension.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_newprinces_carrefour_italia_2025_decision
+  page: '4'
+  quote_snippet: Several national features pointed to the existence of national markets, such
+    as procurement at national level, price differences among Member States, existence of national
+    brands, differences between countries as regards consumption level and market growth.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_newprinces_carrefour_italia_2025_decision
+  page: '4'
+  quote_snippet: The market investigation in this case did not reveal any reason to depart from
+    this approach.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_newprinces_carrefour_italia_2025_decision
+  page: '5'
+  quote_snippet: In its decisional practice, the Commission has considered that the geographic
+    market for the retail sale of daily consumer goods is local in nature, the exact geographical
+    scope corresponding to a catchment area around each store, based on travel distance to the
+    store.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_newprinces_carrefour_italia_2025_decision
+  page: '5'
+  quote_snippet: 'In previous decisions, the Commission has considered a zone of 10, 20, or
+    30 minutes of travel time by car to the store: in general, hypermarkets, defined as stores
+    with a surface of more than 2500 square meter, have a larger catchment area (20 to 30 minutes)
+    than smaller stores such as supermarkets (catchment areas of 10 to 20 minutes).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_newprinces_carrefour_italia_2025_decision
+  page: '5'
+  quote_snippet: The Commission considers that the segmentations described above are relevant
+    when assessing relationships between retailers and consumers, as consumers typically express
+    preferences for particular types of retail outlets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []
+ai_summary: null
+case_type: merger

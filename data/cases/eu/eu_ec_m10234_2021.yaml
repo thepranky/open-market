@@ -1,0 +1,331 @@
+case_id: eu_ec_m10234_2021
+case_name: M.10234
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2021-06-18'
+parties: []
+source_documents:
+- doc_id: eu_ec_m10234_2021_decision
+  title: M.10234 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10234
+  pdf_url: http://publications.europa.eu/resource/cellar/fff480ba-4b85-11ec-91ac-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: biocidal products for hygiene end-uses
+  definition_status: left_open
+  notes: The Commission considered segmenting by active ingredient chemistry or assessing the
+    overall market. It concluded that the exact scope could be left open as the transaction
+    did not raise serious doubts under any plausible definition.
+- market_id: pm_2
+  name: cleaning and hygiene products and systems
+  definition_status: left_open
+  notes: The Commission considered segmentation by industrial/institutional sector or further
+    by end-use (kitchen hygiene, on-premises laundry, housekeeping hygiene). It concluded the
+    exact scope could be left open as the transaction did not raise serious doubts under any
+    plausible definition.
+- market_id: pm_3
+  name: polymer additives
+  definition_status: left_open
+  notes: The parties' combined market shares were [0-10]%, so these overlaps were not further
+    considered.
+- market_id: pm_4
+  name: cosmetic ingredients
+  definition_status: left_open
+  notes: The parties' combined market shares were [0-10]%, so these overlaps were not further
+    considered.
+- market_id: pm_5
+  name: corrosion inhibitors
+  definition_status: left_open
+  notes: The parties' combined market shares were [0-10]%, so this overlap was not further assessed.
+geographic_markets_considered:
+- market_id: gm_1
+  name: biocidal products for hygiene end-uses — EEA-wide or worldwide
+  definition_status: left_open
+  notes: The Commission considered both EEA-wide and worldwide scopes but found the market investigation
+    inconclusive. It concluded that the exact scope could be left open as the outcome of the
+    competitive assessment was not affected.
+- market_id: gm_2
+  name: cleaning and hygiene products and systems — EEA-wide or national
+  definition_status: left_open
+  notes: The Commission considered both EEA-wide and national scopes but found the market investigation
+    inconclusive. It concluded that the exact scope could be left open as the outcome of the
+    competitive assessment was not affected.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m10234_2021_decision
+  page: '5'
+  quote_snippet: In any event, the Commission considers that, for the purposes of the present
+    Decision, the exact scope of the product market definition for the supply of biocidal products
+    can be left open, since the Transaction does not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement under any product market
+    definition that the Commission considers plausible (i.e. biocidal products for hygiene end-uses
+    overall or biocidal products segmented by the active ingredients produced by Lonza Specialty
+    Chemicals for hygiene end-uses, see paragraph (15)).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m10234_2021_decision
+  page: '5'
+  quote_snippet: In light of the above, and in particular the level of supply-side substitutability
+    between different active ingredients, the Commission considers that a segmentation based
+    on active ingredient might not be fully appropriate in the present case, whereas a segmentation
+    based on end-use continues to be appropriate in light of the above demand and supply-side
+    considerations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m10234_2021_decision
+  page: '5'
+  quote_snippet: The Notifying Parties consider that biocidal products for hygiene end-uses
+    have properties and characteristics that make them suitable for one end-use (for example,
+    disinfectant properties suitable for cleaning hard surfaces) and are not typically suitable
+    for other end-uses (for example personal care products for human application). Therefore,
+    downstream customers would not switch and demand-side substitutability is limited. Likewise,
+    supply-side substitution is limited given that biocidal products for different end-uses
+    typically involve different technologies, know-how, mix of ingredients and manufacturing
+    processes, as well as the existence of different registration requirements under the BPR.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m10234_2021_decision
+  page: '7'
+  quote_snippet: In any event, the Commission considers that for the purpose of this Decision,
+    the question of whether there is an overall relevant product market for the supply of cleaning
+    and hygiene products and systems, or whether it should be segmented by sector and/or end
+    use can be left open. Neither of these alternative product market definitions affects the
+    outcome of the competitive assessment of the Transaction as to its compatibility with the
+    internal market or the functioning of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m10234_2021_decision
+  page: '7'
+  quote_snippet: The market investigation did not provide indications that would allow the Commission
+    to determine which of the plausible alternative potential product market definitions (i.e.
+    overall, industrial, or institutional, or further segmentations by end-use) would be appropriate
+    for the market for the supply of cleaning and hygiene products and systems.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m10234_2021_decision
+  page: '6'
+  quote_snippet: In previous cases, the Commission has considered a segmentation for the supply
+    of hygiene and cleaning products between the industrial sector (customers such as commercial
+    laundries and food and beverage producers) and the institutional sector (customers such
+    as hotels, restaurants, hospitals and schools), but ultimately left open the scope of the
+    relevant product market.18 The Commission also considered further sub-segmentations by end-use,
+    namely for the industrial sector between (i) food and beverage hygiene, and (ii) professional
+    laundry detergent, and for the
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m10234_2021_decision
+  page: '4'
+  quote_snippet: In specialty chemicals, the Parties’ activities overlap (a) in the market for
+    polymer additives and (b) in the market for cosmetic ingredients, however their combined
+    market shares are [0-10]% under any market definition that the Commission considers plausible,
+    be it in the EEA and on a worldwide level.6 Therefore, these overlaps are not further considered
+    in this Decision.7 Moreover, the Commission considers that the Transaction does not raise
+    serious doubts as to its compatibility with the internal market or the functioning of the
+    EEA Agreement in relation to potential conglomerate effects involving products sold by Lonza
+    Special Ingredients on the one hand and either of the Notifying Parties on the other hand.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m10234_2021_decision
+  page: '4'
+  quote_snippet: In specialty chemicals, the Parties’ activities overlap (a) in the market for
+    polymer additives and (b) in the market for cosmetic ingredients, however their combined
+    market shares are [0-10]% under any market definition that the Commission considers plausible,
+    be it in the EEA and on a worldwide level.6 Therefore, these overlaps are not further considered
+    in this Decision.7 Moreover, the Commission considers that the Transaction does not raise
+    serious doubts as to its compatibility with the internal market or the functioning of the
+    EEA Agreement in relation to potential conglomerate effects involving products sold by Lonza
+    Special Ingredients on the one hand and either of the Notifying Parties on the other hand.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m10234_2021_decision
+  page: '4'
+  quote_snippet: For completeness, Lonza Specialty Ingredients and Italmatch also minimally
+    overlap in the supply of corrosion inhibitors in the EEA. However, their combined market
+    shares are [0-10]% under any market definition that the Commission considers plausible (Form
+    CO, footnote 19). This overlap is therefore not further assessed in this Decision.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m10234_2021_decision
+  page: '6'
+  quote_snippet: The Commission takes note of the […] sales of Lonza Specialty Ingredients into
+    Europe from the US. However, on the basis of the inconclusive market investigation and the
+    fact that the outcome of the competitive assessment of the Transaction as to its compatibility
+    with the internal market or the functioning of the EEA Agreement is not affected under either
+    of the two plausible alternative geographic market definitions (EEA-wide or worldwide),
+    the Commission considers that for the purpose of assessing the Transaction, the exact scope
+    of the geographic market definition for biocidal products for hygiene end-uses can be left
+    open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m10234_2021_decision
+  page: '6'
+  quote_snippet: The market investigation did not provide sufficient indications to determine
+    which of the plausible alternative potential geographic market definitions (i.e. EEA-wide
+    or worldwide) is appropriate for biocidal products for hygiene end-uses.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m10234_2021_decision
+  page: '5'
+  quote_snippet: The Commission has previously considered the relevant geographic market for
+    biocidal products for hygiene end-uses to be at least EEA-wide, while leaving open whether
+    the relevant market should be EEA-wide or worldwide.15
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m10234_2021_decision
+  page: '8'
+  quote_snippet: In any event, the Commission considers that for the purpose of assessing the
+    Transaction, the exact scope of the geographic market definition for cleaning and hygiene
+    products and systems can be left open. Neither of the plausible alternative geographic market
+    definitions (EEA-wide or national) affects the outcome of the competitive assessment of
+    the Transaction as to its compatibility with the internal market or the functioning of the
+    EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m10234_2021_decision
+  page: '7'
+  quote_snippet: The market investigation did not provide sufficient indications to determine
+    which of the plausible alternative potential geographic market definitions (i.e. EEA-wide
+    or national) would be appropriate for the supply of cleaning and hygiene products and systems.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m10234_2021_decision
+  page: '17'
+  quote_snippet: For the above reasons, the European Commission has decided not to oppose the
+    notified concentration and to declare it compatible with the internal market and with the
+    EEA Agreement. This Decision is adopted in application of Article 6(1)(b) of the Merger
+    Regulation and Article 57 of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []
+case_type: merger
+ai_summary: null

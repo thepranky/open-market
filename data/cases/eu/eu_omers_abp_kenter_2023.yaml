@@ -1,0 +1,217 @@
+case_id: eu_omers_abp_kenter_2023
+case_name: OMERS / ABP / KENTER
+authority: European Commission
+jurisdiction: EU
+sector: energy
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2023-12-21'
+parties:
+- name: OMERS
+  role: acquirer
+- name: ABP
+  role: acquirer
+- name: KENTER
+  role: target
+source_documents:
+- doc_id: eu_omers_abp_kenter_2023_decision
+  title: OMERS / ABP / KENTER — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11233
+  pdf_url: http://publications.europa.eu/resource/cellar/bf99aaf4-f641-11ee-a251-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Electricity and gas metering services to large customers (including both main meters
+    and sub-meters)
+  definition_status: left_open
+  notes: The Commission concluded that the exact market definition could be left open as it
+    did not affect the compatibility conclusions. However, it assessed the effects of the Transaction
+    on this overall market.
+- market_id: pm_2
+  name: Possible segment for the provision of electricity and gas main metering services
+  definition_status: segmented
+  notes: Considered as a possible segment within the broader metering services market.
+- market_id: pm_3
+  name: Possible segment for the provision of electricity and gas sub-metering services
+  definition_status: segmented
+  notes: The Commission noted that the majority of market investigation respondents considered
+    sub-meters and main meters to belong to the same market, but left the question open.
+- market_id: pm_4
+  name: Possible distinct market for the assessment and interpretation of metering data
+  definition_status: left_open
+  notes: The market investigation suggested a possible distinct market, but the question was
+    left open as the transaction did not lead to an overlap in this area.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Electricity and gas metering services to large customers (including both main meters
+    and sub-meters) — national (Netherlands affected)
+  definition_status: defined
+  notes: The Commission concluded the relevant geographic market is national based on previous
+    cases, parties' views, and market investigation.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_omers_abp_kenter_2023_decision
+  page: '5'
+  quote_snippet: The majority of customers and competitors expressing a view confirmed that
+    there is a distinct market for gas and electricity metering services to large customers.
+    The results of the market investigation further confirmed that it is not relevant to distinguish
+    between meter services for electricity, gas, gross production and A1-meters.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_omers_abp_kenter_2023_decision
+  page: '6'
+  quote_snippet: In conclusion, the Commission considers that the exact market definition can
+    be left open as it does not affect the Commission’s conclusions regarding the compatibility
+    of the Transaction with the internal market. It will assess the effects of the Transaction
+    on the overall market for electricity and gas metering services to large customers (including
+    both main meters and sub-meters) and will also assess the possible segments for the provision
+    of electricity and gas main metering services, on the one hand and the provision of electricity
+    and gas sub-metering services, on the other hand.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_omers_abp_kenter_2023_decision
+  page: '6'
+  quote_snippet: In conclusion, the Commission considers that the exact market definition can
+    be left open as it does not affect the Commission’s conclusions regarding the compatibility
+    of the Transaction with the internal market. It will assess the effects of the Transaction
+    on the overall market for electricity and gas metering services to large customers (including
+    both main meters and sub-meters) and will also assess the possible segments for the provision
+    of electricity and gas main metering services, on the one hand and the provision of electricity
+    and gas sub-metering services, on the other hand.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_omers_abp_kenter_2023_decision
+  page: '6'
+  quote_snippet: Concerning the possible segment for sub-metering activities, the majority of
+    responding customers and competitors to the market investigation consider that sub-meters
+    and main meters belong to the same market. One competitor noted that “meters and sub-meters
+    both serve the same underlying customer demand for insights on energy consumption”. The
+    large majority of customers source sub-meters from the same suppliers than main meters.
+    In any case, the question can be left open, as it does not affect the Commission’s conclusions
+    regarding the compatibility of the Transaction with the internal market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_omers_abp_kenter_2023_decision
+  page: '6'
+  quote_snippet: In conclusion, the Commission considers that the exact market definition can
+    be left open as it does not affect the Commission’s conclusions regarding the compatibility
+    of the Transaction with the internal market. It will assess the effects of the Transaction
+    on the overall market for electricity and gas metering services to large customers (including
+    both main meters and sub-meters) and will also assess the possible segments for the provision
+    of electricity and gas main metering services, on the one hand and the provision of electricity
+    and gas sub-metering services, on the other hand.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_omers_abp_kenter_2023_decision
+  page: '6'
+  quote_snippet: 'The results of the market investigation however suggest that there could be
+    a distinct market for the assessment and interpretation of metering data, for example, in
+    order to suggest measures to reduce energy consumption: while all responding competitors
+    indicated that they provide such services, only a minority of customers source these services
+    from their metering services suppliers. The majority of responding customers assess and
+    interpret the metering data in-house and a small minority of customers rely on another supplier
+    than its metering supplier. For the purpose of this Decision, the question can however be
+    left open as the Transaction does not lead to an overlap on the possible segment for the
+    assessment and interpretation of metering data with a specific objective.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_omers_abp_kenter_2023_decision
+  page: '7'
+  quote_snippet: In previous cases, notably concerning the Dutch market, the Commission considered
+    the market for gas and electricity metering services to be national in scope. The Dutch
+    Competition Authority also considered the market for metering services to large customers
+    to be national.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_omers_abp_kenter_2023_decision
+  page: '7'
+  quote_snippet: The Parties submit that the market for gas and electricity metering services
+    is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_omers_abp_kenter_2023_decision
+  page: '7'
+  quote_snippet: As a result, the Commission considers the relevant market to be national and
+    will analyse the effects of the Transaction on the Dutch market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

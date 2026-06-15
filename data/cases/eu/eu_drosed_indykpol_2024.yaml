@@ -1,0 +1,388 @@
+case_id: eu_drosed_indykpol_2024
+case_name: DROSED / INDYKPOL
+authority: European Commission
+jurisdiction: EU
+sector: agriculture
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2024-07-05'
+parties:
+- name: DROSED
+  role: acquirer
+- name: INDYKPOL
+  role: target
+source_documents:
+- doc_id: eu_drosed_indykpol_2024_decision
+  title: DROSED / INDYKPOL — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11407
+  pdf_url: http://publications.europa.eu/resource/cellar/7867f5ab-713c-11ef-a8ba-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Supply of processed poultry meat
+  definition_status: left_open
+  notes: The Commission considered that the exact market definition for the supply of processed
+    poultry meat could be left open, as the transaction did not raise serious doubts under any
+    plausible definition. However, for the purpose of the decision, the competitive assessment
+    was carried out considering various segmentations, including by species, type of processed
+    product, sales channel, and branding.
+- market_id: pm_2
+  name: Supply of processed branded poultry meat to all retail channels
+  definition_status: considered
+  notes: This market was considered as part of the competitive assessment for processed poultry
+    meat products, under the segmentation of product branding and all retail sales channels.
+- market_id: pm_3
+  name: Supply of processed poultry meat, including branded and private/white label, to the
+    traditional trade channel
+  definition_status: considered
+  notes: This market was considered as part of the competitive assessment for processed poultry
+    meat products, under the segmentation of product branding and the traditional trade sales
+    channel.
+- market_id: pm_4
+  name: Supply of processed poultry cooked sausages
+  definition_status: considered
+  notes: The Commission explicitly considered the narrower market for processed poultry cooked
+    sausages as part of its competitive assessment, within the broader context of processed
+    poultry meat products. The overall market definition was left open.
+- market_id: pm_5
+  name: Supply of processed poultry cooked sausages, private/white label products, to all retail
+    channels
+  definition_status: considered
+  notes: This market was considered as part of the competitive assessment for processed poultry
+    cooked sausages, under the segmentation of private/white label branding and all retail sales
+    channels.
+- market_id: pm_6
+  name: Supply of processed poultry cooked sausages, private/white label products, to the modern
+    trade channel
+  definition_status: considered
+  notes: This market was considered as part of the competitive assessment for processed poultry
+    cooked sausages, under the segmentation of private/white label branding and the modern trade
+    sales channel.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Supply of processed poultry meat products — national (Poland affected)
+  definition_status: considered
+  notes: The Commission left open the precise geographic market definition for the supply of
+    processed poultry products but carried out its competitive assessment based on a national
+    market encompassing Poland, as this was considered the narrowest plausible market where
+    overlaps occurred. This applies to all identified product markets.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_drosed_indykpol_2024_decision
+  page: '8'
+  quote_snippet: (23) The Commission considers that the exact market definition can be left
+    open, as the proposed Transaction does not raise serious doubts as to its compatibility
+    with the internal market or a substantial part of it under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_drosed_indykpol_2024_decision
+  page: '8'
+  quote_snippet: '(24) For the purposes of this Decision, based on the results of the market
+    investigation, the competitive assessment will be carried out considering the following
+    segmentations where the Parties’ activities overlap and give rise to affected markets: (i)
+    by species of processed poultry meat product, considering all poultry species; (ii) by type
+    of processed poultry product, considering the wider market for all types of processed poultry
+    meat products as well as the narrower market for processed poultry cooked sausages; (iii)
+    by type of retail sales channel, considering the wider market for all retail sales channels,
+    as well as the narrower markets for the Modern trade channel, on the one hand, and the Traditional
+    trade channel, on the other hand; and (iv) by product branding, considering the wider market
+    for branded and private/white label products, as well as the narrower markets for branded,
+    on the one hand, and private/white label, on the other hand.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_drosed_indykpol_2024_decision
+  page: '3'
+  quote_snippet: (7) The activities of the Parties horizontally overlap in the supply of processed
+    poultry meat in general and, more specifically, in the supply of processed poultry cooked
+    sausages.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_drosed_indykpol_2024_decision
+  page: '10'
+  quote_snippet: '(a) For all species of processed poultry meat products in Poland (Section
+    4.3.2): (i) the supply of processed branded poultry meat to all retail channels;'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_drosed_indykpol_2024_decision
+  page: '8'
+  quote_snippet: '(24) For the purposes of this Decision, based on the results of the market
+    investigation, the competitive assessment will be carried out considering the following
+    segmentations where the Parties’ activities overlap and give rise to affected markets: (...)
+    (iii) by type of retail sales channel, considering the wider market for all retail sales
+    channels, as well as the narrower markets for the Modern trade channel, on the one hand,
+    and the Traditional trade channel, on the other hand; and (iv) by product branding, considering
+    the wider market for branded and private/white label products, as well as the narrower markets
+    for branded, on the one hand, and private/white label, on the other hand.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_drosed_indykpol_2024_decision
+  page: '10'
+  quote_snippet: '(a) For all species of processed poultry meat products in Poland (Section
+    4.3.2): (...) (ii) the supply of processed poultry meat, including branded and private/white
+    label, to the traditional trade channel;'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_drosed_indykpol_2024_decision
+  page: '8'
+  quote_snippet: '(24) For the purposes of this Decision, based on the results of the market
+    investigation, the competitive assessment will be carried out considering the following
+    segmentations where the Parties’ activities overlap and give rise to affected markets: (...)
+    (iii) by type of retail sales channel, considering the wider market for all retail sales
+    channels, as well as the narrower markets for the Modern trade channel, on the one hand,
+    and the Traditional trade channel, on the other hand; and (iv) by product branding, considering
+    the wider market for branded and private/white label products, as well as the narrower markets
+    for branded, on the one hand, and private/white label, on the other hand.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_drosed_indykpol_2024_decision
+  page: '8'
+  quote_snippet: '(24) For the purposes of this Decision, based on the results of the market
+    investigation, the competitive assessment will be carried out considering the following
+    segmentations where the Parties’ activities overlap and give rise to affected markets: (i)
+    by species of processed poultry meat product, considering all poultry species; (ii) by type
+    of processed poultry product, considering the wider market for all types of processed poultry
+    meat products as well as the narrower market for processed poultry cooked sausages;'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_drosed_indykpol_2024_decision
+  page: '3'
+  quote_snippet: (7) The activities of the Parties horizontally overlap in the supply of processed
+    poultry meat in general and, more specifically, in the supply of processed poultry cooked
+    sausages.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_drosed_indykpol_2024_decision
+  page: '3'
+  quote_snippet: (10) Particularly concerning processed poultry cooked sausages, the Parties
+    in addition also consider that all poultry sausages should be included in the same market.9
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_drosed_indykpol_2024_decision
+  page: '10'
+  quote_snippet: '(b) For processed poultry cooked sausages in Poland (Section 4.3.3): (i) the
+    supply of processed poultry cooked sausages, private/white label products, to all retail
+    channels;'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_drosed_indykpol_2024_decision
+  page: '8'
+  quote_snippet: '(24) For the purposes of this Decision, based on the results of the market
+    investigation, the competitive assessment will be carried out considering the following
+    segmentations where the Parties’ activities overlap and give rise to affected markets: (...)
+    (ii) by type of processed poultry product, considering the wider market for all types of
+    processed poultry meat products as well as the narrower market for processed poultry cooked
+    sausages; (...) (iii) by type of retail sales channel, considering the wider market for
+    all retail sales channels, as well as the narrower markets for the Modern trade channel,
+    on the one hand, and the Traditional trade channel, on the other hand; and (iv) by product
+    branding, considering the wider market for branded and private/white label products, as
+    well as the narrower markets for branded, on the one hand, and private/white label, on the
+    other hand.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_drosed_indykpol_2024_decision
+  page: '10'
+  quote_snippet: '(b) For processed poultry cooked sausages in Poland (Section 4.3.3): (...)
+    (ii) the supply of processed poultry cooked sausages, private/white label products, to the
+    modern trade channel.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_drosed_indykpol_2024_decision
+  page: '8'
+  quote_snippet: '(24) For the purposes of this Decision, based on the results of the market
+    investigation, the competitive assessment will be carried out considering the following
+    segmentations where the Parties’ activities overlap and give rise to affected markets: (...)
+    (ii) by type of processed poultry product, considering the wider market for all types of
+    processed poultry meat products as well as the narrower market for processed poultry cooked
+    sausages; (...) (iii) by type of retail sales channel, considering the wider market for
+    all retail sales channels, as well as the narrower markets for the Modern trade channel,
+    on the one hand, and the Traditional trade channel, on the other hand; and (iv) by product
+    branding, considering the wider market for branded and private/white label products, as
+    well as the narrower markets for branded, on the one hand, and private/white label, on the
+    other hand.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_drosed_indykpol_2024_decision
+  page: '9'
+  quote_snippet: (29) For the purposes of this Decision, the precise geographic market definition
+    for the supply of processed poultry products can be left open, as the proposed Transaction
+    does not raise serious doubts as to its compatibility with the internal market or a substantial
+    part of it regardless of the geographic market definition upheld. The competitive assessment
+    will be carried out at the narrowest plausible market where the Parties’ activities overlap
+    and where the Transaction gives rise to affected markets, i.e. a national market encompassing
+    Poland.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_drosed_indykpol_2024_decision
+  page: '8'
+  quote_snippet: (25) In previous cases, the Commission considered that the markets for the
+    supply of processed poultry meat could be national or wider than national in scope.46 The
+    Polish competition authority considered the market for processed poultry products to be
+    national in scope.47
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_drosed_indykpol_2024_decision
+  page: '8'
+  quote_snippet: (27) The results of the market investigation were not conclusive on whether
+    the market for the supply of processed poultry meat can be regarded as national or wider
+    than national.49
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_drosed_indykpol_2024_decision
+  page: '15'
+  quote_snippet: (56) For the above reasons, the Commission concludes that the Transaction does
+    not raise serious doubts as to its compatibility with the internal market or a substantial
+    part of it as a result of horizontal non-coordinated effects on the markets for the supply
+    of processed poultry cooked sausages in Poland.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

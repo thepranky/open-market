@@ -1,0 +1,405 @@
+case_id: eu_hedin_delta_auto_2023
+case_name: HEDIN / DELTA AUTO
+authority: European Commission
+jurisdiction: EU
+sector: retail
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2023-07-19'
+parties:
+- name: HEDIN
+  role: acquirer
+- name: DELTA AUTO
+  role: target
+source_documents:
+- doc_id: eu_hedin_delta_auto_2023_decision
+  title: HEDIN / DELTA AUTO — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11116
+  pdf_url: http://publications.europa.eu/resource/cellar/a1fbab0f-724c-11ee-9220-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Retail distribution of new PCs and/or LCVs
+  definition_status: left_open
+  notes: The Commission considered, but left open, a distinction between the retail distribution
+    of PCs and LCVs. The exact market definition was left open, but the effects were analysed
+    based on separate markets for PCs and LCVs.
+- market_id: pm_2
+  name: Retail distribution of new PCs
+  definition_status: considered
+  notes: For the purpose of the decision, the Commission analysed the effects on this market
+    as the narrowest plausible product market, considering it separately from LCVs.
+- market_id: pm_3
+  name: Retail distribution of new LCVs
+  definition_status: considered
+  notes: For the purpose of the decision, the Commission analysed the effects on this market
+    as the narrowest plausible product market, considering it separately from PCs.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Retail distribution of new PCs and/or LCVs — EEA-wide
+  definition_status: left_open
+  notes: The geographic scope (EEA-wide, national, or local) was left open as the transaction
+    did not raise serious doubts under any plausible definition.
+- market_id: gm_2
+  name: Retail distribution of new PCs and/or LCVs — national (Finland affected)
+  definition_status: left_open
+  notes: The geographic scope (EEA-wide, national, or local) was left open. The market investigation
+    pointed to a national scope, but affected markets only arose at the local level.
+- market_id: gm_3
+  name: Retail distribution of new PCs and/or LCVs — local (Finland affected)
+  definition_status: left_open
+  notes: The geographic scope (EEA-wide, national, or local) was left open. However, the Commission
+    analysed the effects on a local basis, as defined by the Notifying Party (cities with surrounding
+    municipalities), because affected markets would only arise at this level.
+- market_id: gm_4
+  name: Retail distribution of new PCs — local (Lahti region affected)
+  definition_status: considered
+  notes: This specific local market was identified as one of the horizontally affected markets
+    where competitive effects were assessed. The Lahti region is defined as the administrative
+    region of Päijät-Häme, including the city of Lahti and surrounding municipalities.
+- market_id: gm_5
+  name: Retail distribution of new PCs — local (Jyväskylä region affected)
+  definition_status: considered
+  notes: This specific local market was identified as one of the horizontally affected markets
+    where competitive effects were assessed. The Jyväskylä region is defined as part of the
+    administrative region Keski-Suomi, corresponding to the city of Jyväskylä and surrounding
+    municipalities.
+- market_id: gm_6
+  name: Retail distribution of new LCVs — local (Turku region affected)
+  definition_status: considered
+  notes: This specific local market was identified as one of the horizontally affected markets
+    where competitive effects were assessed. The Turku region is defined as part of the administrative
+    region Varsinais-Suomi, corresponding to the city of Turku and surrounding municipalities.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_hedin_delta_auto_2023_decision
+  page: '3'
+  quote_snippet: The Commission has previously considered, but left open, a distinction between
+    the retail distribution of PCs and LCVs and found that a further segmentation is not appropriate.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_hedin_delta_auto_2023_decision
+  page: '3'
+  quote_snippet: The Commission considers that for the purposes of this decision, the exact
+    market definition can be left open between retail distribution of both PCs and LCVs or separately
+    for each of PCs and LCVs as the Transaction does not raise serious doubts as to its compatibility
+    with the internal market under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_hedin_delta_auto_2023_decision
+  page: '3'
+  quote_snippet: For the purpose of this decision, the Commission will analyse the effects of
+    the Transaction on the basis of the narrowest plausible product market definition, i.e.,
+    separately for retail distribution of PCs only and retail distribution of LCVs only, as
+    these are the only potential product markets in which (horizontally) affected markets would
+    arise.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_hedin_delta_auto_2023_decision
+  page: '3'
+  quote_snippet: For the purpose of this decision, the Commission will analyse the effects of
+    the Transaction on the basis of the narrowest plausible product market definition, i.e.,
+    separately for retail distribution of PCs only and retail distribution of LCVs only, as
+    these are the only potential product markets in which (horizontally) affected markets would
+    arise.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_hedin_delta_auto_2023_decision
+  page: '3'
+  quote_snippet: The Commission has so far left open whether the retail distribution of PCs
+    and/or LCVs markets are EEA-wide, national or local in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_hedin_delta_auto_2023_decision
+  page: '4'
+  quote_snippet: The Commission considers that for the purposes of this decision, the exact
+    market definition can be left open between EEA-wide, national or local markets, as the Transaction
+    does not raise serious doubts as to its compatibility with the internal market under any
+    plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_hedin_delta_auto_2023_decision
+  page: '3'
+  quote_snippet: The Commission has so far left open whether the retail distribution of PCs
+    and/or LCVs markets are EEA-wide, national or local in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_hedin_delta_auto_2023_decision
+  page: '4'
+  quote_snippet: The results of the market investigation point to the geographic scope of the
+    market being national. A majority of competitors and customers who expressed a view stated
+    that there are substantial differences in price, customer preferences, purchasing patterns,
+    or similar elements between Finland and other EEA Member States.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_hedin_delta_auto_2023_decision
+  page: '4'
+  quote_snippet: The Commission considers that for the purposes of this decision, the exact
+    market definition can be left open between EEA-wide, national or local markets, as the Transaction
+    does not raise serious doubts as to its compatibility with the internal market under any
+    plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_hedin_delta_auto_2023_decision
+  page: '3'
+  quote_snippet: The Commission has so far left open whether the retail distribution of PCs
+    and/or LCVs markets are EEA-wide, national or local in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_hedin_delta_auto_2023_decision
+  page: '4'
+  quote_snippet: 'For the purpose of this decision, the Commission will analyse the effects
+    of the Transaction on a local basis as affected markets would arise only on local levels
+    (as defined by the Notifying Party: cities with the surrounding municipalities), and on
+    the narrowest plausible product markets of the retail distribution of PCs and of LCVs separately.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_hedin_delta_auto_2023_decision
+  page: '4'
+  quote_snippet: The Commission considers that for the purposes of this decision, the exact
+    market definition can be left open between EEA-wide, national or local markets, as the Transaction
+    does not raise serious doubts as to its compatibility with the internal market under any
+    plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_hedin_delta_auto_2023_decision
+  page: '5'
+  quote_snippet: 'Specifically, the Transaction gives rise to the horizontally affected markets
+    in the potential markets for: (a) retail distribution of new PCs in the Lahti region;'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_hedin_delta_auto_2023_decision
+  page: '5'
+  quote_snippet: Defined as the administrative region of Päijät-Häme, i.e., the city of Lahti
+    with the surrounding municipalities of Asikkala, Hartola, Heinola, Hollola, Iitti, Kärkölä,
+    Orimattola, Padasjoki and Sysmä.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_hedin_delta_auto_2023_decision
+  page: '4'
+  quote_snippet: 'For the purpose of this decision, the Commission will analyse the effects
+    of the Transaction on a local basis as affected markets would arise only on local levels
+    (as defined by the Notifying Party: cities with the surrounding municipalities), and on
+    the narrowest plausible product markets of the retail distribution of PCs and of LCVs separately.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_hedin_delta_auto_2023_decision
+  page: '5'
+  quote_snippet: 'Specifically, the Transaction gives rise to the horizontally affected markets
+    in the potential markets for: (b) retail distribution of new PCs in the Jyväskylä region;'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_hedin_delta_auto_2023_decision
+  page: '5'
+  quote_snippet: Defined as part of the administrative region Keski-Suomi corresponding to the
+    city of Jyväskylä with the surrounding municipalities of Hankasalmi, Joutsa, Jämsä, Kannonkoski,
+    Karstula, Keuruu, Konnevesi, Laukaa, Multia, Muurame, Petäjävesi, Pihitipudas, Saarijärvi,
+    Toivakka, Uurainen, Viitasaari and Äänekoski.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_hedin_delta_auto_2023_decision
+  page: '4'
+  quote_snippet: 'For the purpose of this decision, the Commission will analyse the effects
+    of the Transaction on a local basis as affected markets would arise only on local levels
+    (as defined by the Notifying Party: cities with the surrounding municipalities), and on
+    the narrowest plausible product markets of the retail distribution of PCs and of LCVs separately.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_hedin_delta_auto_2023_decision
+  page: '5'
+  quote_snippet: 'Specifically, the Transaction gives rise to the horizontally affected markets
+    in the potential markets for: (c) retail distribution of new LCVs in the Turku region.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_hedin_delta_auto_2023_decision
+  page: '5'
+  quote_snippet: Defined as part of the administrative region Varsinais-Suomi corresponding
+    to the city of Turku and the surrounding municipalities of Aura, Kaarina, Kustavi, Lieto,
+    Masku, Mynämäki, Naantali, Nousiainen, Paimio, Paraisten kaupunki, Raisio, Rusko, Taivassalo
+    and Vehmaa.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_hedin_delta_auto_2023_decision
+  page: '4'
+  quote_snippet: 'For the purpose of this decision, the Commission will analyse the effects
+    of the Transaction on a local basis as affected markets would arise only on local levels
+    (as defined by the Notifying Party: cities with the surrounding municipalities), and on
+    the narrowest plausible product markets of the retail distribution of PCs and of LCVs separately.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

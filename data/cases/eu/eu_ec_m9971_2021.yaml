@@ -1,0 +1,365 @@
+case_id: eu_ec_m9971_2021
+case_name: M.9971
+authority: European Commission
+jurisdiction: EU
+sector: financial
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2021-07-08'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9971_2021_decision
+  title: M.9971 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9971
+  pdf_url: http://publications.europa.eu/resource/cellar/aa32d60f-58d1-11ec-91ac-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Payment clearing services (Layer 1 services)
+  definition_status: left_open
+  notes: The Commission considered segmentations between low-value and large-value payments;
+    domestic and cross-border payments; batch and instant payments; and A2A and card payments,
+    but the market investigation was not fully conclusive.
+- market_id: pm_2
+  name: A2A invoice payment services (Layer 2)
+  definition_status: left_open
+  notes: The Commission considered segmentations between card-based and A2A services; by A2A
+    payment methods (e.g. direct debit, credit transfer); between instant and batch payments;
+    by type of transactions (e.g. C2B, B2B); and between invoice messaging vs. invoice payment,
+    but the market investigation was not fully conclusive.
+- market_id: pm_3
+  name: Payment services to end-customers
+  definition_status: left_open
+  notes: The Commission's precedents considered potential sub-segmentation between domestic
+    and international payment services and between corporate and retail customers.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Payment clearing services (Layer 1 services) — national or Nordic-wide
+  definition_status: left_open
+  notes: The Commission considered whether the geographic scope is national or Nordic-wide,
+    leaving the exact scope open. Past decisional practice generally considered it national.
+- market_id: gm_2
+  name: A2A invoice payment services (Layer 2) — national or Nordic-wide
+  definition_status: left_open
+  notes: The Commission considered whether the geographic scope is national or Nordic-wide,
+    leaving the exact scope open. Past decisional practice generally considered it national.
+- market_id: gm_3
+  name: Payment services to end-customers — national or Nordic-wide
+  definition_status: left_open
+  notes: The Commission considered whether the geographic scope is national or Nordic-wide,
+    leaving the exact scope open. Past decisional practice generally considered it national.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9971_2021_decision
+  page: '4'
+  quote_snippet: (14) Payment clearing services refer to the processing of interbank payments
+    prior to the completion of the transaction and the transfer of funds (i.e. the settlement).
+    P27 and Bankgirot are active in the clearing process but do not conduct the settlement process,
+    which is carried out by distinct providers (typically central banks). In other words, clearing
+    services entail all the processes that precede the transfer of funds, such as transmitting
+    and reconciling interbank payments, confirming verifying that there are funds or credit
+    available on individual accounts, authorising the transactions, etc.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9971_2021_decision
+  page: '5'
+  quote_snippet: '(18) The market investigation was not fully conclusive regarding whether the
+    market for clearing services should be further segmented or not: − Segmentation between
+    low-value and large-value payments: the results of the market investigation were mixed.
+    A large majority of customers of payment clearing services consider that the two segments
+    present similar competitive dynamics. However, virtually all providers of payment clearing
+    services generally take the opposite view, stressing the existence of different providers
+    and requirements, while acknowledging some convergence; − Segmentation between domestic
+    and cross-border payments: the results of the market investigation suggest that the clearing
+    of domestic payments and cross-border payments may constitute distinct markets. Around half
+    of the respondents consider that the two segments present different competitive dynamics
+    and landscape (due to the existence of different regulations, prices, currencies, etc.).
+    However, a third of the respondents takes the opposite view and several of them stressed
+    that the above distinction may become less relevant with P27; − Segmentation between batch
+    and instant payments: the results of the market investigation suggest that the clearing
+    of instant payments and batch payments could be part of the same market. For most participants,
+    both types of payments are characterized by similar competitive dynamics and landscape;
+    − Segmentation between A2A and card payments: most respondents consider that the clearing
+    of card payments and A2A payments could be part of the same market. However, a significant
+    minority takes the opposite view. A few market participants also stress a trend towards
+    convergence.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9971_2021_decision
+  page: '5'
+  quote_snippet: (19) In any event, for the purpose of this decision, the Commission concludes
+    that the exact scope of the market for clearing services can be left open since the Transaction
+    does not give rise to serious doubts as to its compatibility with the internal market and
+    with the EEA Agreement under any of the above-mentioned plausible market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9971_2021_decision
+  page: '6'
+  quote_snippet: (20) In Mastercard/Nets,23 the Commission assessed the market for A2A invoice
+    payment services, i.e. services/applications allowing end-users to transfer money from one
+    bank account to another for the payment of invoices, which are mainly used for payments
+    that are recurring (e.g. monthly utilities bill) but can also be used for the payment of
+    one-off invoices. The Commission ultimately left open the question of whether A2A invoice
+    payment services are part of a wider market for invoice payment services including recurring
+    card-based payments, or segmented based on the types of transactions (e.g. C2B, B2B) and
+    A2A payment methods (such as direct debit (i.e. A2A payment initiated by the payee on the
+    basis of payer’s consent), credit transfer (i.e. A2A payment initiated by payer), payment
+    slip, etc.).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9971_2021_decision
+  page: '7'
+  quote_snippet: (23) In any event, for the purpose of this decision, the Commission concludes
+    that the exact scope of the market for A2A invoice payment services can be left open since
+    the Transaction does not give rise to serious doubts as to its compatibility with the internal
+    market and with the EEA Agreement under any of the above-mentioned plausible market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9971_2021_decision
+  page: '8'
+  quote_snippet: (24) Payment services include various types of cashless transactions, such
+    as direct debits (i.e. A2A payments initiated by the payee on the basis of payer’s consent),
+    credit transfers (i.e. A2A payments initiated by payer), card payments, mobile payments,
+    etc. provided to end-customers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9971_2021_decision
+  page: '8'
+  quote_snippet: (28) For the purpose of this decision, the Commission concludes that the exact
+    scope of the market for the provision of payment services to end-customers can be left open
+    since the Transaction does not give rise to serious doubts as to its compatibility with
+    the internal market and with the EEA Agreement under any of the above-mentioned plausible
+    market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9971_2021_decision
+  page: '8'
+  quote_snippet: (29) In its past decisional practice the Commission generally considered that
+    (i) the market for payment clearing services;34 (ii) the market for the provision of A2A
+    invoice payment services;35 and (iii) the market for payment services36 are national or
+    likely national in scope but ultimately left open the exact geographic scope of those markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9971_2021_decision
+  page: '9'
+  quote_snippet: (31) The market participants largely confirm that the competitive dynamics
+    for the provision of clearing services and A2A invoice payment services are not homogenous
+    across the Nordic region (due to the existence of national regulations and currencies)38
+    Respondents also indicate that A2A invoice payment services are typically provided on a
+    national basis.39 However, the pan-Nordic scope of the P27 project suggest that those markets
+    are moving toward a broader regional dimension.40
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9971_2021_decision
+  page: '9'
+  quote_snippet: (33) For the purpose of this decision, the Commission considers that the exact
+    scope of the markets for the provision of (i) payment clearing services, (ii) A2A invoice
+    payment services and (iii) payment services to end-customers can be left open since the
+    Transaction does not give rise to serious doubts as to its compatibility with the internal
+    market and with the EEA Agreement, regardless of whether markets are considered national
+    or Nordic-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9971_2021_decision
+  page: '8'
+  quote_snippet: (29) In its past decisional practice the Commission generally considered that
+    (i) the market for payment clearing services;34 (ii) the market for the provision of A2A
+    invoice payment services;35 and (iii) the market for payment services36 are national or
+    likely national in scope but ultimately left open the exact geographic scope of those markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9971_2021_decision
+  page: '9'
+  quote_snippet: (31) The market participants largely confirm that the competitive dynamics
+    for the provision of clearing services and A2A invoice payment services are not homogenous
+    across the Nordic region (due to the existence of national regulations and currencies)38
+    Respondents also indicate that A2A invoice payment services are typically provided on a
+    national basis.39 However, the pan-Nordic scope of the P27 project suggest that those markets
+    are moving toward a broader regional dimension.40
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9971_2021_decision
+  page: '9'
+  quote_snippet: (33) For the purpose of this decision, the Commission considers that the exact
+    scope of the markets for the provision of (i) payment clearing services, (ii) A2A invoice
+    payment services and (iii) payment services to end-customers can be left open since the
+    Transaction does not give rise to serious doubts as to its compatibility with the internal
+    market and with the EEA Agreement, regardless of whether markets are considered national
+    or Nordic-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m9971_2021_decision
+  page: '8'
+  quote_snippet: (29) In its past decisional practice the Commission generally considered that
+    (i) the market for payment clearing services;34 (ii) the market for the provision of A2A
+    invoice payment services;35 and (iii) the market for payment services36 are national or
+    likely national in scope but ultimately left open the exact geographic scope of those markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m9971_2021_decision
+  page: '9'
+  quote_snippet: (32) Moreover, no element of the market investigation suggests that the Commission
+    should depart from its previous practice regarding the likely national scope of the markets
+    for the provision of payment services to end-customers in the present decision.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m9971_2021_decision
+  page: '9'
+  quote_snippet: (33) For the purpose of this decision, the Commission considers that the exact
+    scope of the markets for the provision of (i) payment clearing services, (ii) A2A invoice
+    payment services and (iii) payment services to end-customers can be left open since the
+    Transaction does not give rise to serious doubts as to its compatibility with the internal
+    market and with the EEA Agreement, regardless of whether markets are considered national
+    or Nordic-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m9971_2021_decision
+  page: '23'
+  quote_snippet: (94) The Transaction gives rise to a vertical link between the A2A invoice
+    payment services provided by P27 and Bankgirot (upstream) and the payment services provided
+    by the Parent Companies to end-customers (downstream).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

@@ -1,0 +1,481 @@
+case_id: eu_bnp_paribas_caceis_jv_2022
+case_name: BNP PARIBAS / CACEIS / JV
+authority: European Commission
+jurisdiction: EU
+sector: financial
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2022-12-21'
+parties:
+- name: BNP PARIBAS
+  role: acquirer
+- name: CACEIS
+  role: acquirer
+- name: JV
+  role: target
+source_documents:
+- doc_id: eu_bnp_paribas_caceis_jv_2022_decision
+  title: BNP PARIBAS / CACEIS / JV — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10786
+  pdf_url: http://publications.europa.eu/resource/cellar/b8772794-b67c-11ed-8912-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Provision of Corporate Trust Services (CTS)
+  definition_status: left_open
+  notes: The Commission left the exact scope of the overall product market for CTS open, while
+    conducting its competitive assessment on specific plausible segments.
+- market_id: pm_2
+  name: CTS for indirect employee shareholding
+  definition_status: defined
+  notes: The Commission considered CTS for indirect employee shareholding to differ from other
+    CTS, thus forming a separate market. However, the JV will not be active in this market,
+    so it was not an affected market and was not further considered in the decision.
+- market_id: pm_3
+  name: CTS to listed companies
+  definition_status: defined
+  notes: The Commission considered CTS to listed companies to form a separate market from CTS
+    to unlisted companies.
+- market_id: pm_4
+  name: CTS to unlisted companies
+  definition_status: defined
+  notes: The Commission considered CTS to unlisted companies to form a separate market from
+    CTS to listed companies, but this market was not affected by the transaction.
+- market_id: pm_5
+  name: CTS for investor shareholding to listed companies
+  definition_status: considered
+  notes: The Commission found the market investigation results inconclusive on whether CTS for
+    investor shareholding and CTS for direct employee shareholding form part of the same or
+    separate markets. However, for the purpose of the decision, the competitive assessment was
+    conducted for this plausible product market definition.
+- market_id: pm_6
+  name: CTS for direct employee shareholding to listed companies
+  definition_status: considered
+  notes: The Commission found the market investigation results inconclusive on whether CTS for
+    investor shareholding and CTS for direct employee shareholding form part of the same or
+    separate markets. However, for the purpose of the decision, the competitive assessment was
+    conducted for this plausible product market definition.
+- market_id: pm_7
+  name: Software (middleware products for banking and financial sector)
+  definition_status: left_open
+  notes: The Commission did not conclude on the precise product market definition for software,
+    including middleware products like RegistrAccess, VotAccess, and GIE software, as the transaction
+    did not raise serious doubts under any plausible definition.
+- market_id: pm_8
+  name: Banking services (corporate and investment banking)
+  definition_status: left_open
+  notes: The Commission did not conclude on the precise product market definition for banking
+    services, particularly corporate and investment banking, as the transaction did not raise
+    serious doubts under any plausible definition.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Corporate Trust Services — national (France affected)
+  definition_status: defined
+  notes: The Commission concluded that the market for CTS and its possible further segments
+    is national in scope, particularly in France, due to national regulatory environments, linguistic
+    preferences, and market barriers.
+- market_id: gm_2
+  name: Software — national / EEA-wide / worldwide (plausible)
+  definition_status: left_open
+  notes: The Commission noted that national regulations might affect the geographic scope of
+    the software market, and while acknowledging this, left the precise geographic market definition
+    open as no serious doubts arose under any plausible definition (national, EEA-wide, or worldwide).
+- market_id: gm_3
+  name: Banking services (corporate and investment banking) — national / EEA-wide / worldwide
+    (plausible)
+  definition_status: left_open
+  notes: The Commission, consistent with previous practice, left open the exact geographic market
+    definition for banking services, including corporate and investment banking, as no serious
+    doubts arose under any plausible definition (national, EEA-wide, or worldwide).
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_bnp_paribas_caceis_jv_2022_decision
+  page: '12'
+  quote_snippet: For the purposes of this decision, as the Transaction does not give rise to
+    serious doubts as to its compatibility with the internal market or the functioning of the
+    EEA agreement under any plausible product market definition, the exact scope of the product
+    market for the provision of CTS can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_bnp_paribas_caceis_jv_2022_decision
+  page: '8'
+  quote_snippet: Based on the market investigation results, the Commission considers that CTS
+    for indirect employee shareholding differ in certain important respects from other CTS,
+    namely CTS for investor shareholding and CTS for direct employee shareholding.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_bnp_paribas_caceis_jv_2022_decision
+  page: '8'
+  quote_snippet: In any event, the JV will not be active in the provision of CTS for indirect
+    employee shareholding. Therefore, in this case, a plausible market for CTS for indirect
+    employee shareholding cannot be an affected market, and CTS for indirect employee shareholding
+    will not be considered further in this decision.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_bnp_paribas_caceis_jv_2022_decision
+  page: '8'
+  quote_snippet: Based on the following considerations, the Commission considers that CTS for
+    listed companies form a separate market from CTS for unlisted companies.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_bnp_paribas_caceis_jv_2022_decision
+  page: '9'
+  quote_snippet: In light of the above and for the purposes of this decision, the Commission
+    considers that CTS to listed companies form a market separate from CTS to unlisted companies.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_bnp_paribas_caceis_jv_2022_decision
+  page: '8'
+  quote_snippet: Based on the following considerations, the Commission considers that CTS for
+    listed companies form a separate market from CTS for unlisted companies.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_bnp_paribas_caceis_jv_2022_decision
+  page: '9'
+  quote_snippet: Given that the market for CTS to unlisted companies (and any plausible segments)
+    is not an affected market, it will not be further discussed in the present Decision.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_bnp_paribas_caceis_jv_2022_decision
+  page: '11'
+  quote_snippet: In any case, the Commission considers that for the purposes of this decision,
+    it is not necessary to conclude on whether the markets for CTS for investor shareholding
+    and for CTS for direct employee shareholding form part of the same or separate product markets,
+    since competition concerns are unlikely to arise under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_bnp_paribas_caceis_jv_2022_decision
+  page: '12'
+  quote_snippet: The competitive assessment, therefore, will be conducted for any plausible
+    product market definition, namely in a market for CTS to listed companies (encompassing
+    both CTS for investor shareholding to listed companies and CTS for direct employee shareholding
+    to listed companies), in a market for CTS for investor shareholding to listed companies,
+    and in a market for CTS for direct employee shareholding to listed companies.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_bnp_paribas_caceis_jv_2022_decision
+  page: '11'
+  quote_snippet: In any case, the Commission considers that for the purposes of this decision,
+    it is not necessary to conclude on whether the markets for CTS for investor shareholding
+    and for CTS for direct employee shareholding form part of the same or separate product markets,
+    since competition concerns are unlikely to arise under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_bnp_paribas_caceis_jv_2022_decision
+  page: '12'
+  quote_snippet: The competitive assessment, therefore, will be conducted for any plausible
+    product market definition, namely in a market for CTS to listed companies (encompassing
+    both CTS for investor shareholding to listed companies and CTS for direct employee shareholding
+    to listed companies), in a market for CTS for investor shareholding to listed companies,
+    and in a market for CTS for direct employee shareholding to listed companies.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_bnp_paribas_caceis_jv_2022_decision
+  page: '14'
+  quote_snippet: In previous decisions in Computer Sciences Corporation / iSOFT Group and IMB
+    / INF Business of Deutsche Lufthansa, the Commission considered a segmentation of software
+    based on (i) the different functionalities of the software and the sector concerned, and
+    (ii) the end uses offered by that particular software.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_bnp_paribas_caceis_jv_2022_decision
+  page: '15'
+  quote_snippet: In any event and in light of the outcome of the market investigation, the Commission
+    considers that, for the purposes of this decision, as regards the aforementioned software,
+    the precise product market definition can be left open, as the Transaction does not raise
+    serious doubts as to its compatibility with the internal market or the functioning of the
+    EEA agreement under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_bnp_paribas_caceis_jv_2022_decision
+  page: '16'
+  quote_snippet: 'In its decisional practice, the Commission has considered the following relevant
+    markets in the banking sector: (i) retail banking, (ii) corporate banking, (iii) investment
+    banking, (iv) leasing, (v) factoring, (vi) payment cards, (vii) financial market services,
+    and (viii) asset management.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_bnp_paribas_caceis_jv_2022_decision
+  page: '17'
+  quote_snippet: In any event, the Commission considers that, for the purposes of the present
+    decision, the precise product market definition for banking services, and in particular
+    corporate and investment banking, can be left open, as the Transaction does not raise serious
+    doubts as to its compatibility with the internal market or the functioning of the EEA agreement
+    under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_bnp_paribas_caceis_jv_2022_decision
+  page: '13'
+  quote_snippet: Based on the results of its market investigation, the Commission considers
+    that the market for CTS is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_bnp_paribas_caceis_jv_2022_decision
+  page: '13'
+  quote_snippet: A clear majority of customers and competitors consider that procuring CTS for
+    listed companies is only possible from providers located in France because of the specific
+    national regulatory environment and customers’ linguistic preferences.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_bnp_paribas_caceis_jv_2022_decision
+  page: '13'
+  quote_snippet: For purposes of this decision, the Commission therefore considers the market
+    for CTS and its possible further segments to be national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_bnp_paribas_caceis_jv_2022_decision
+  page: '15'
+  quote_snippet: In previous decisions, the Commission took the view that the geographic scope
+    of the market for software was at least EEA-wide. In relation to middleware in Oracle /
+    Sun Microsystems and in DELL / EMC, the Commission considered the relevant geographic market
+    for the overall middleware market and sub-segments thereof to be worldwide. However, the
+    Commission has also noted in the past that national regulations may affect the geographic
+    scope of the software market, as there are geographic variations in the nature of each end
+    application the software caters for.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_bnp_paribas_caceis_jv_2022_decision
+  page: '16'
+  quote_snippet: The Notifying Parties, while arguing that the exact scope of the geographic
+    market can be left open since the Transaction does not raise serious doubts regardless of
+    the exact geographic market definition, they also submit that the geographic scope of the
+    market for software related to CTS in France may be affected by certain elements specific
+    to France, due to national regulations affecting for example the listing process, voting
+    systems, shareholders’ obligations, exchange of transaction orders of unlisted securities,
+    etc.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_bnp_paribas_caceis_jv_2022_decision
+  page: '16'
+  quote_snippet: In any event and in light of the outcome of the market investigation, the Commission
+    considers that, for the purposes of this decision, the precise geographic market definition
+    of software can be left open, as the Transaction does not raise serious doubts as to its
+    compatibility with the internal market or the functioning of the EEA agreement under any
+    plausible geographic market definition (i.e. national, EEA-wide or worldwide).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_bnp_paribas_caceis_jv_2022_decision
+  page: '17'
+  quote_snippet: With respect to corporate banking, the Commission has previously found that
+    services provided to SMEs should be defined nationally, whereas services provided to LCCs
+    may be national or broader than national in scope, although ultimately leaving the geographic
+    market definition open. In terms of investment banking, the Commission has considered the
+    relevant geographic market to be national or international (EEA-wide or global) in scope,
+    but ultimately left the geographic market open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_bnp_paribas_caceis_jv_2022_decision
+  page: '18'
+  quote_snippet: In any event, for the purposes of the present decision, the exact geographic
+    market definition can be left open, as no serious doubts as to the Transaction’s compatibility
+    with the internal market or the functioning of the EEA agreement arise under any plausible
+    geographic market definition (i.e. national, EEA-wide or worldwide).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_bnp_paribas_caceis_jv_2022_decision
+  page: '38'
+  quote_snippet: For the above reasons, the European Commission has decided not to oppose the
+    notified operation and to declare it compatible with the internal market and with the EEA
+    Agreement. This decision is adopted in application of Article 6(1)(b) of the Merger Regulation
+    and Article 57 of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

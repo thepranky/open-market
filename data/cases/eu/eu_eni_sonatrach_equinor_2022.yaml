@@ -1,0 +1,380 @@
+case_id: eu_eni_sonatrach_equinor_2022
+case_name: ENI / SONATRACH / EQUINOR / IN SALAH JV
+authority: European Commission
+jurisdiction: EU
+sector: energy
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2022-12-02'
+parties:
+- name: ENI
+  role: acquirer
+- name: SONATRACH
+  role: acquirer
+- name: EQUINOR
+  role: acquirer
+- name: IN SALAH JV
+  role: target
+source_documents:
+- doc_id: eu_eni_sonatrach_equinor_2022_decision
+  title: ENI / SONATRACH / EQUINOR / IN SALAH JV — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10941
+  pdf_url: http://publications.europa.eu/resource/cellar/45de05f3-fbc9-11ed-a05c-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Exploration of crude oil and natural gas
+  definition_status: considered
+  notes: The Commission considered this market without distinguishing between crude oil and
+    natural gas. Although the parties are active, their combined market share is below [0-5]%,
+    so it was not considered an affected market and was not discussed further in the decision
+    for competitive assessment purposes.
+- market_id: pm_2
+  name: Development, production and upstream wholesale supply of natural gas
+  definition_status: considered
+  notes: The Commission generally considers a separate market for this activity. The question
+    of whether this market should encompass both natural gas in gaseous form and LNG was left
+    open, but for the purpose of the assessment, the Commission focused on production and upstream
+    wholesale supply of natural gas in gaseous form only, as the In Salah JV is not active in
+    LNG and other parties' supplies to Italy are primarily gaseous.
+- market_id: pm_3
+  name: Downstream wholesale supply of natural gas
+  definition_status: considered
+  notes: The Commission previously found this to be a distinct product market. The question
+    of including gas trading on hubs was left open. The market investigation clarified that
+    distinguishing between gas originating from LNG or gaseous form is not relevant for downstream
+    wholesale supply. The question of including bilateral transactions and regulated exchange
+    trading was left open, but for its assessment, the Commission did not distinguish between
+    these categories.
+- market_id: pm_4
+  name: Gas import infrastructure
+  definition_status: considered
+  notes: The Commission considered whether to sub-segment this market between regasification
+    services for LNG and international pipelines, ultimately leaving the question open in previous
+    decisions. For this decision, the Commission adopted the narrowest potential market definition,
+    considering the Transmediterranean pipeline as a natural monopoly for the import of Algerian
+    gas into Italy.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Exploration of crude oil and natural gas — worldwide
+  definition_status: considered
+  notes: In line with previous decisions, the Commission considered the market for the exploration
+    of crude oil and natural gas to be worldwide in scope.
+- market_id: gm_2
+  name: Development, production and upstream wholesale supply of natural gas — into Italy
+  definition_status: considered
+  notes: The Commission has previously found this market to potentially comprise the EEA or
+    be narrower. The market investigation indicated a narrower scope due to transport infrastructure
+    dependencies. Given the activities of the parties, the Commission focused its analysis on
+    a market comprising upstream wholesale supplies of natural gas in gaseous form into Italy,
+    including exports from Algeria, Azerbaijan, Libya, and Russia.
+- market_id: gm_3
+  name: Downstream wholesale supply of natural gas — national (Italy affected)
+  definition_status: considered
+  notes: The Commission has generally defined this geographic market as at least national in
+    scope. While the Notifying Party suggested a wider-than-national scope, the market investigation
+    results were not conclusive. The Commission left the exact scope open but conducted its
+    assessment based on a national market in Italy as the narrowest potential scope.
+- market_id: gm_4
+  name: Gas import infrastructure — national (Italy affected) (Transmediterranean pipeline)
+  definition_status: considered
+  notes: In recent decisions, this market was considered at least national in scope, focusing
+    on infrastructures connected to the Italian transmission grid. For this decision, the Commission
+    adopted the narrowest potential market definition, treating the Transmediterranean pipeline
+    as a natural monopoly for the import of Algerian gas into Italy.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_eni_sonatrach_equinor_2022_decision
+  page: '6'
+  quote_snippet: For the purposes of this decision, and in line with its findings in previous
+    cases, the Commission will consider a market for the exploration of crude oil and natural
+    gas, without further distinguishing between crude oil and natural gas.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_eni_sonatrach_equinor_2022_decision
+  page: '13'
+  quote_snippet: As mentioned in paragraph (20), all Parties are active on the global market
+    for the exploration of crude oil and natural gas. However, their combined market share is
+    below [0-5]%, and therefore this market is not affected and will not be discussed further
+    in this decision.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_eni_sonatrach_equinor_2022_decision
+  page: '6'
+  quote_snippet: In its decisional practice, the Commission has generally considered a separate
+    market for the development, production and upstream wholesale supply of natural gas where
+    large upstream producers and exporters tend to sell large volumes of gas to downstream wholesalers/importers.13
+    The Commission has also considered whether this market should encompass the upstream wholesale
+    supply of liquefied natural gas (“LNG”), but ultimately left this question open.14
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_eni_sonatrach_equinor_2022_decision
+  page: '7'
+  quote_snippet: In any case, the question of whether the market for the development, production
+    and upstream wholesale supply of natural gas should encompass both natural gas in gaseous
+    form and LNG can be left open, as the Transaction does not raise serious doubts as to its
+    compatibility with the internal market, irrespective of the precise market delineation.
+    The Commission’s assessment does not change depending on whether LNG is considered part
+    of the market, as the Parties’ market shares do not differ materially between the two alternative
+    market delineations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_eni_sonatrach_equinor_2022_decision
+  page: '8'
+  quote_snippet: As the In Salah JV is not active in the supply of LNG, and the supplies of
+    Eni, Sonatrach and Equinor into Italy (where, as will be explained below, the Commission
+    focuses its analysis) are primarily in gaseous form, the Commission will analyse the effects
+    of the Transaction under the most conservative approach, focusing its assessment on production
+    and upstream wholesale supply of natural gas in gaseous form only.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_eni_sonatrach_equinor_2022_decision
+  page: '8'
+  quote_snippet: The Commission has further considered, and has ultimately left the question
+    open in its decisional practice, whether gas trading on hubs should be included in the market
+    for the downstream wholesale supply of natural gas.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_eni_sonatrach_equinor_2022_decision
+  page: '9'
+  quote_snippet: The Commission will therefore conduct the assessment of the Transaction considering
+    a market for the downstream wholesale supply of natural gas, without distinguishing further
+    between (i) natural gas in gaseous form and natural gas that originated from LNG, and (ii)
+    between bilateral, over the counter gas supply contracts with delivery point at the PSV
+    and transactions on the regulated exchange managed by GME.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_eni_sonatrach_equinor_2022_decision
+  page: '10'
+  quote_snippet: For the purposes of this decision and in line with its findings in its most
+    recent case relating to the Transmediterranean pipeline, the Commission will conduct its
+    assessment under the narrowest potential market definition, considering the Transmediterranean
+    pipeline as a natural monopoly for the import of Algerian gas into Italy.45
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_eni_sonatrach_equinor_2022_decision
+  page: '10'
+  quote_snippet: In previous decisions, the Commission has defined the market for the exploration
+    of crude oil and natural gas as worldwide in scope, because the companies engaged in exploration
+    do not usually limit their activities to a specific geographic area.46
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_eni_sonatrach_equinor_2022_decision
+  page: '10'
+  quote_snippet: For the purposes of this decision and in line with its findings in previous
+    cases, the Commission will consider a market for the exploration of crude oil and natural
+    gas that is worldwide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_eni_sonatrach_equinor_2022_decision
+  page: '13'
+  quote_snippet: As mentioned in paragraph (20), all Parties are active on the global market
+    for the exploration of crude oil and natural gas. However, their combined market share is
+    below [0-5]%, and therefore this market is not affected and will not be discussed further
+    in this decision.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_eni_sonatrach_equinor_2022_decision
+  page: '12'
+  quote_snippet: In light of the above, the Commission will conduct its analysis on the basis
+    of a market that comprises upstream wholesale supplies of natural gas in gaseous form into
+    Italy, including exports to Italy from Algeria, Azerbaijan, Libya and Russia.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_eni_sonatrach_equinor_2022_decision
+  page: '12'
+  quote_snippet: The Commission has defined the geographic market for the downstream wholesale
+    supply of natural gas to be (at least) national in scope in most cases.57 In some instances,
+    the Commission has considered whether several gas hubs (located in different Member States)
+    could be considered as part of the same geographic market, for reasons of price convergence,
+    leaving however the question open.58
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_eni_sonatrach_equinor_2022_decision
+  page: '12'
+  quote_snippet: In any case, the exact geographic scope of the market can be left open, as
+    the Transaction does not raise serious doubts as to its compatibility with the internal
+    market under any plausible market definition. For the purposes of this decision, the Commission
+    will conduct the assessment on the narrowest potential geographic scope, considering the
+    market for downstream wholesale supply of natural gas in Italy to be national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_eni_sonatrach_equinor_2022_decision
+  page: '13'
+  quote_snippet: In recent decisions, the Commission considered that the market for gas import
+    infrastructures was at least national in scope.62 In its most recent decision, relating
+    to Italy, the Commission confirmed that the market is national in scope, and conducted its
+    assessment on the basis of a market that comprises gas import infrastructures that are connected
+    to the Italian transmission grid.63
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_eni_sonatrach_equinor_2022_decision
+  page: '13'
+  quote_snippet: As explained in paragraph (45) above, for the purposes of this decision and
+    in line with its findings in its most recent case relating to the Transmediterranean pipeline,
+    the Commission will conduct its assessment under the narrowest potential market definition,
+    considering the Transmediterranean pipeline as a natural monopoly for the import of Algerian
+    gas into Italy.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_eni_sonatrach_equinor_2022_decision
+  page: '5'
+  quote_snippet: The notified operation therefore has a Union dimension.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_eni_sonatrach_equinor_2022_decision
+  page: '16'
+  quote_snippet: The Commission’s assessment of the affected markets does not change if more
+    recent market data are considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

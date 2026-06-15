@@ -1,0 +1,1309 @@
+case_id: eu_ec_m10070_2021
+case_name: M.10070
+authority: European Commission
+jurisdiction: EU
+sector: tech
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2021-07-26'
+parties: []
+source_documents:
+- doc_id: eu_ec_m10070_2021_decision
+  title: M.10070 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10070
+  pdf_url: http://publications.europa.eu/resource/cellar/63973574-2cfb-11ec-bd8e-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Wholesale broadband access market
+  definition_status: left_open
+  notes: The Commission considered segmenting this market by type of access (physical access
+    / LLU, non-physical / virtual network access / bitstream, and wholesale resale broadband
+    access), by point of interconnection (local and central broadband access), and by technology
+    (DSL/copper, cable, and fiber). The exact definition was left open as the transaction did
+    not raise serious doubts.
+- market_id: pm_2
+  name: Wholesale leased lines market
+  definition_status: left_open
+  notes: The Commission considered segmenting this market by trunk and terminating segments,
+    passive and activated lines, bandwidth (below/above 2Mbits/s), and into passive (dark fiber)
+    and active infrastructure. The question of whether this product market includes dark fiber
+    was left open.
+- market_id: pm_3
+  name: Retail mobile telecommunications services market
+  definition_status: defined
+  notes: The Commission considered but did not adopt further segmentations based on customer
+    type (business or private), tariff (pre-paid or post-paid), network technology (2G/3G, 3G/UMTS
+    and 4G/LTE), or type of service (national or international calls, internet data services,
+    voice and text services).
+- market_id: pm_4
+  name: Retail fixed voice services market
+  definition_status: defined
+  notes: The Commission considered an overall market for retail fixed voice services without
+    further subdivisions between local/national and international calls, residential and non-residential
+    customers, and including Voice over Internet Protocol (“VoIP”) services.
+- market_id: pm_5
+  name: Retail fixed internet services market
+  definition_status: defined
+  notes: The Commission defined an overall market for the retail supply of fixed internet access
+    services, excluding retail business connectivity services, and without the need to further
+    segment the market by product type, distribution technology, customer type or download speed.
+- market_id: pm_6
+  name: Retail business connectivity services market
+  definition_status: left_open
+  notes: This market includes broadband access for large business customers, leased lines, and
+    VPN services, but excludes connectivity services for residential, SMEs and small-office-home-offices
+    customers. The question of whether this market could be further segmented by technology
+    or download speed was left open.
+- market_id: pm_7
+  name: Potential retail market for multi-play services
+  definition_status: left_open
+  notes: The Commission left open the question of whether this market was separate from the
+    retail markets for television, voice and Internet access. While the popularity of multi-play
+    offers is growing, its commercial development is still evolving.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Wholesale broadband access market — national (Belgium affected)
+  definition_status: left_open
+  notes: The Commission considered the relevant geographic market to be national, the cable
+    operator’s coverage area/region, and the operator’s footprint. However, the exact delineation
+    was left open.
+- market_id: gm_2
+  name: Wholesale broadband access market — cable operator's coverage area/region (Belgium affected)
+  definition_status: left_open
+  notes: The Commission considered the relevant geographic market to be national, the cable
+    operator’s coverage area/region, and the operator’s footprint. However, the exact delineation
+    was left open.
+- market_id: gm_3
+  name: Wholesale broadband access market — operator's footprint (Belgium affected)
+  definition_status: left_open
+  notes: The Commission considered the relevant geographic market to be national, the cable
+    operator’s coverage area/region, and the operator’s footprint. However, the exact delineation
+    was left open.
+- market_id: gm_4
+  name: Wholesale supply of leased lines market — national (Belgium affected)
+  definition_status: left_open
+  notes: The Commission considered the relevant geographic market to be national, the cable
+    operator’s coverage area/region, and the operator’s footprint. However, the exact delineation
+    was left open.
+- market_id: gm_5
+  name: Wholesale supply of leased lines market — cable operator's coverage area/region (Belgium
+    affected)
+  definition_status: left_open
+  notes: The Commission considered the relevant geographic market to be national, the cable
+    operator’s coverage area/region, and the operator’s footprint. However, the exact delineation
+    was left open.
+- market_id: gm_6
+  name: Wholesale supply of leased lines market — operator's footprint (Belgium affected)
+  definition_status: left_open
+  notes: The Commission considered the relevant geographic market to be national, the cable
+    operator’s coverage area/region, and the operator’s footprint. However, the exact delineation
+    was left open.
+- market_id: gm_7
+  name: Retail mobile telecommunications services market — national (Belgium affected)
+  definition_status: defined
+  notes: null
+- market_id: gm_8
+  name: Retail fixed voice services market — national (Belgium affected)
+  definition_status: left_open
+  notes: The Commission considered the relevant geographic market to be national, the coverage
+    area of each cable operator/region, and the operator’s footprint. However, the exact delineation
+    was left open.
+- market_id: gm_9
+  name: Retail fixed voice services market — cable operator's coverage area/region (Belgium
+    affected)
+  definition_status: left_open
+  notes: The Commission considered the relevant geographic market to be national, the coverage
+    area of each cable operator/region, and the operator’s footprint. However, the exact delineation
+    was left open.
+- market_id: gm_10
+  name: Retail fixed voice services market — operator's footprint (Belgium affected)
+  definition_status: left_open
+  notes: The Commission considered the relevant geographic market to be national, the coverage
+    area of each cable operator/region, and the operator’s footprint. However, the exact delineation
+    was left open.
+- market_id: gm_11
+  name: Retail fixed internet services market — national (Belgium affected)
+  definition_status: left_open
+  notes: The Commission considered the relevant geographic market to be national, the cable
+    operator’s coverage area/region, and the operator’s footprint. However, the exact delineation
+    was left open.
+- market_id: gm_12
+  name: Retail fixed internet services market — cable operator's coverage area/region (Belgium
+    affected)
+  definition_status: left_open
+  notes: The Commission considered the relevant geographic market to be national, the cable
+    operator’s coverage area/region, and the operator’s footprint. However, the exact delineation
+    was left open.
+- market_id: gm_13
+  name: Retail fixed internet services market — operator's footprint (Belgium affected)
+  definition_status: left_open
+  notes: The Commission considered the relevant geographic market to be national, the cable
+    operator’s coverage area/region, and the operator’s footprint. However, the exact delineation
+    was left open.
+- market_id: gm_14
+  name: Retail business connectivity services market — national (Belgium affected)
+  definition_status: left_open
+  notes: The Commission considered the relevant geographic market to be national, the cable
+    operator’s coverage area/region, and the operator’s footprint. However, the exact delineation
+    was left open.
+- market_id: gm_15
+  name: Retail business connectivity services market — cable operator's coverage area/region
+    (Belgium affected)
+  definition_status: left_open
+  notes: The Commission considered the relevant geographic market to be national, the cable
+    operator’s coverage area/region, and the operator’s footprint. However, the exact delineation
+    was left open.
+- market_id: gm_16
+  name: Retail business connectivity services market — operator's footprint (Belgium affected)
+  definition_status: left_open
+  notes: The Commission considered the relevant geographic market to be national, the cable
+    operator’s coverage area/region, and the operator’s footprint. However, the exact delineation
+    was left open.
+- market_id: gm_17
+  name: Potential retail market for multi-play services — national (Belgium affected)
+  definition_status: left_open
+  notes: The Commission considered the relevant geographic market to be national, the cable
+    operator’s coverage area, and the operator’s footprint. However, the exact delineation was
+    left open.
+- market_id: gm_18
+  name: Potential retail market for multi-play services — cable operator's coverage area (Belgium
+    affected)
+  definition_status: left_open
+  notes: The Commission considered the relevant geographic market to be national, the cable
+    operator’s coverage area, and the operator’s footprint. However, the exact delineation was
+    left open.
+- market_id: gm_19
+  name: Potential retail market for multi-play services — operator's footprint (Belgium affected)
+  definition_status: left_open
+  notes: The Commission considered the relevant geographic market to be national, the cable
+    operator’s coverage area, and the operator’s footprint. However, the exact delineation was
+    left open.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '5'
+  quote_snippet: 'Wholesale broadband access (also defined as wholesale access to internet services)
+    includes different types of access to fixed connections that allow internet service providers
+    to provide services to end consumers. It comprises: (i) physical access at a fixed location
+    (such as local loop unbundling (“LLU”)22), (ii) non-physical or virtual network access at
+    a fixed location (such as “bitstream” access), and (iii) resale of a fixed provider''s internet
+    access services (“wholesale resale broadband access”).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '6'
+  quote_snippet: In previous decisions, including relating to the Belgian market,24 the Commission
+    defined the product market as a separate wholesale broadband access market, and left the
+    question open as to whether it should be subdivided according to the type of access (i.e.,
+    LLU, bitstream or resale (see paragraph (15) above)), or based on the level where the point
+    of interconnection is situated.25 The latter connects the infrastructure of the wholesale
+    provider and that of the customer and comprises (i) local broadband access and (ii) central
+    broadband access.26
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '7'
+  quote_snippet: In light of the above, the Commission considers that, for the purpose of this
+    decision, the question of the exact scope of the wholesale broadband access market with
+    respect to its possible segmentations ((i) the level where the point of interconnection
+    is situated (i.e., wholesale local or central broadband access), (ii) the type of access
+    to fixed connections (i.e., wholesale LLU, bitstream or resale broadband access), or (iii)
+    the type of technology (i.e., DSL/copper, cable or fiber)) can be left open as the Transaction
+    does not raise serious doubts as to its compatibility with the internal market or the functioning
+    of the EEA Agreement under any of the plausible product market definitions considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '9'
+  quote_snippet: Wholesale leased lines are part-circuits that allow telecommunications providers
+    to connect their own networks to end user sites for the supply of business connectivity
+    services. In addition, wholesale leased lines are an input for the provision of fixed and
+    mobile telecommunications services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '10'
+  quote_snippet: A large majority of respondents consider that there is a single overall market
+    for leased lines in Belgium, without further segmenting the market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '11'
+  quote_snippet: In light of the above, the Commission considers that, for the purpose of this
+    decision, the relevant product market is the overall leased lines market (which includes
+    various wholesale inputs, ranging from leased lines to other wholesale access products,
+    which fulfil certain high-quality access requirements). The question whether this product
+    market includes dark fiber or not can be left open as the Transaction would not raise serious
+    doubts as to its compatibility with the internal market or the functioning of the EEA Agreement
+    under any of the plausible product market definitions considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '12'
+  quote_snippet: Mobile telecommunications services to end customers consist of the sale of
+    subscriptions enabling access to public mobile telecommunications networks. Such access
+    allows end users to make voice national and international calls, send and receive messages
+    and use mobile data.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '13'
+  quote_snippet: A large majority of respondents to the market investigation stated that there
+    is a single overall retail market for retail mobile telecommunications services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '13'
+  quote_snippet: In light of the above, for the purpose of this decision, the Commission considers
+    that there is an overall retail market for mobile telecommunications services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '14'
+  quote_snippet: Fixed telephony services to end customers comprise the provision of subscriptions
+    enabling access to public telephone networks at a fixed location for the purpose of making
+    and/or receiving calls and related services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '14'
+  quote_snippet: A large majority of respondents indicate that there is a single overall retail
+    market for retail fixed voice services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '14'
+  quote_snippet: In light of the above, for the purpose of this decision, the Commission considers
+    that there is an overall retail fixed voice market without further subdivisions between
+    local/national and international calls, residential and non-residential customers,80 and
+    including VoIP services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '16'
+  quote_snippet: Fixed internet access services at the retail level consist of the provision
+    of subscriptions enabling customers to access the internet through a fixed telecommunications
+    connection.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '17'
+  quote_snippet: A large majority of the respondents to the market investigation indicate that
+    there is an overall retail fixed internet market, excluding retail business connectivity
+    services without the need to distinguish different customer and product types.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '17'
+  quote_snippet: In light of the above, for the purpose of this decision, the Commission considers
+    that there is an overall market for the retail supply of fixed internet access services,
+    excluding retail business connectivity services, and without the need to further segment
+    the market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '18'
+  quote_snippet: The retail market for business connectivity includes fixed telecommunications
+    services purchased by large businesses, enterprises and public sector customers in order
+    to provide data connectivity between multiple sites.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '19'
+  quote_snippet: A large majority of respondents to the market investigation consider that there
+    is an overall retail business connectivity market, including (i) broadband access for large
+    business customers; (ii) leased lines; and (iii) VPN services, excluding connectivity services
+    offered to residential, SMEs and small-office-home-offices customers, which are part of
+    the retail fixed internet market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '19'
+  quote_snippet: In light of the above, the Commission considers that, for the purpose of the
+    decision, the relevant product market is the overall retail business connectivity market.
+    The question whether this product market can be further segmented according to (i) technology
+    or (ii) download speed can be left open as the Transaction does not raise serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA Agreement
+    under any of the plausible product market definitions considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '20'
+  quote_snippet: Multi-play services include several telecommunications products (mobile services
+    and one or more of the fixed services such as fixed internet, fixed voice and TV), which
+    are provided to consumers through a common offer.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '21'
+  quote_snippet: However, other respondents consider that there is no such separate market.
+    As noted above (paragraph (96)), from the demand side, customers can and do switch easily
+    between purchasing their services as part of a multi-play offering or separately (e.g. “unpicking”
+    the bundle), subject to their needs. From the supply side, operators who already offer separate
+    services can easily offer these services as a bundle, and vice versa. Finally, while the
+    popularity of multi-play offers in Belgium is certainly growing, its commercial development
+    is still evolving.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '22'
+  quote_snippet: In light of the above, and for the purpose of this decision, the question as
+    to whether there exist one or more multi-play markets that are distinct from each of the
+    underlying individual telecommunications services can be left open given that the Transaction
+    would not raise serious doubts as to its compatibility with the internal market or the functioning
+    of the EEA Agreement, independently of the existence of a separate market, or a lack thereof.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '8'
+  quote_snippet: The results of the market investigation are inconclusive regarding whether
+    a wholesale broadband access market should be defined as national44, according to the coverage
+    area of each cable operator/region45 or according to the footprint of the operator’s network
+    (hereafter “operator’s footprint”).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '9'
+  quote_snippet: In light of the above and for the purpose of this decision, the Commission
+    considers that the relevant geographic market is at the national level and at the level
+    of the cable operator’s coverage area/region, but it will also assess the effects of this
+    Transaction on the wholesale broadband access market at the level of the operator’s footprint.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '9'
+  quote_snippet: In any event, the exact delineation of the relevant geographic market can be
+    left open given that the Transaction would not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement under any of the plausible
+    geographic market definitions considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '8'
+  quote_snippet: The results of the market investigation are inconclusive regarding whether
+    a wholesale broadband access market should be defined as national44, according to the coverage
+    area of each cable operator/region45 or according to the footprint of the operator’s network
+    (hereafter “operator’s footprint”).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '9'
+  quote_snippet: In light of the above and for the purpose of this decision, the Commission
+    considers that the relevant geographic market is at the national level and at the level
+    of the cable operator’s coverage area/region, but it will also assess the effects of this
+    Transaction on the wholesale broadband access market at the level of the operator’s footprint.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '9'
+  quote_snippet: In any event, the exact delineation of the relevant geographic market can be
+    left open given that the Transaction would not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement under any of the plausible
+    geographic market definitions considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '8'
+  quote_snippet: The results of the market investigation are inconclusive regarding whether
+    a wholesale broadband access market should be defined as national44, according to the coverage
+    area of each cable operator/region45 or according to the footprint of the operator’s network
+    (hereafter “operator’s footprint”).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '9'
+  quote_snippet: In light of the above and for the purpose of this decision, the Commission
+    considers that the relevant geographic market is at the national level and at the level
+    of the cable operator’s coverage area/region, but it will also assess the effects of this
+    Transaction on the wholesale broadband access market at the level of the operator’s footprint.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '9'
+  quote_snippet: In any event, the exact delineation of the relevant geographic market can be
+    left open given that the Transaction would not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement under any of the plausible
+    geographic market definitions considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '12'
+  quote_snippet: In light of the above, and for the purpose of this decision, the Commission
+    considers that the relevant geographic market is at the national level, but it will also
+    assess the effects of this Transaction on the leased lines market (irrespective of whether
+    such market includes dark fiber or not, see paragraph (39) above) at the level of the cable
+    operator’s coverage area/region and at the level of the operator’s footprint.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '12'
+  quote_snippet: In any event, the exact delineation of the relevant geographic market can be
+    left open given that the Transaction would not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement under any of the plausible
+    geographic market definitions considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '12'
+  quote_snippet: In light of the above, and for the purpose of this decision, the Commission
+    considers that the relevant geographic market is at the national level, but it will also
+    assess the effects of this Transaction on the leased lines market (irrespective of whether
+    such market includes dark fiber or not, see paragraph (39) above) at the level of the cable
+    operator’s coverage area/region and at the level of the operator’s footprint.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_34
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '12'
+  quote_snippet: In any event, the exact delineation of the relevant geographic market can be
+    left open given that the Transaction would not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement under any of the plausible
+    geographic market definitions considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_35
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '12'
+  quote_snippet: In light of the above, and for the purpose of this decision, the Commission
+    considers that the relevant geographic market is at the national level, but it will also
+    assess the effects of this Transaction on the leased lines market (irrespective of whether
+    such market includes dark fiber or not, see paragraph (39) above) at the level of the cable
+    operator’s coverage area/region and at the level of the operator’s footprint.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_36
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '12'
+  quote_snippet: In any event, the exact delineation of the relevant geographic market can be
+    left open given that the Transaction would not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement under any of the plausible
+    geographic market definitions considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_37
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '13'
+  quote_snippet: In its decisional practice, the Commission has consistently concluded that
+    the market for the provision of retail mobile telecommunication services is national in
+    scope.72
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_38
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '13'
+  quote_snippet: A majority of respondents consider that the geographic market for retail mobile
+    telecommunication services is national in scope.74
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_39
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '14'
+  quote_snippet: In light of the above, and for the purpose of this decision, the relevant geographic
+    market for retail mobile telecommunication services is national in scope, and corresponds
+    to the territory of Belgium.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_40
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '15'
+  quote_snippet: The large majority of respondents to the market investigation indicate that
+    the geographic market for retail fixed voice services is national in scope.84 A few respondents
+    consider that the market should be defined according to the coverage area of each cable
+    operator/region or at the level of the operator’s footprint.85
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_8
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_41
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '15'
+  quote_snippet: In light of the above, while there are indications that the relevant geographic
+    market is national in scope, the Commission considers that, for the purpose of this decision,
+    it is appropriate to assess the effects of the Transaction at the national level, at the
+    level of the coverage area of each cable operator/region, and at the level of the operator’s
+    footprint.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_8
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_42
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '15'
+  quote_snippet: In any event, the exact delineation of the relevant geographic market can be
+    left open for the purpose of this decision, as the Transaction would not raise serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA Agreement
+    under any of the plausible geographic market definitions considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_8
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_43
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '15'
+  quote_snippet: The large majority of respondents to the market investigation indicate that
+    the geographic market for retail fixed voice services is national in scope.84 A few respondents
+    consider that the market should be defined according to the coverage area of each cable
+    operator/region or at the level of the operator’s footprint.85
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_9
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_44
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '15'
+  quote_snippet: In light of the above, while there are indications that the relevant geographic
+    market is national in scope, the Commission considers that, for the purpose of this decision,
+    it is appropriate to assess the effects of the Transaction at the national level, at the
+    level of the coverage area of each cable operator/region, and at the level of the operator’s
+    footprint.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_9
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_45
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '15'
+  quote_snippet: In any event, the exact delineation of the relevant geographic market can be
+    left open for the purpose of this decision, as the Transaction would not raise serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA Agreement
+    under any of the plausible geographic market definitions considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_9
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_46
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '15'
+  quote_snippet: The large majority of respondents to the market investigation indicate that
+    the geographic market for retail fixed voice services is national in scope.84 A few respondents
+    consider that the market should be defined according to the coverage area of each cable
+    operator/region or at the level of the operator’s footprint.85
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_10
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_47
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '15'
+  quote_snippet: In light of the above, while there are indications that the relevant geographic
+    market is national in scope, the Commission considers that, for the purpose of this decision,
+    it is appropriate to assess the effects of the Transaction at the national level, at the
+    level of the coverage area of each cable operator/region, and at the level of the operator’s
+    footprint.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_10
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_48
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '15'
+  quote_snippet: In any event, the exact delineation of the relevant geographic market can be
+    left open for the purpose of this decision, as the Transaction would not raise serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA Agreement
+    under any of the plausible geographic market definitions considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_10
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_49
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '18'
+  quote_snippet: A majority of respondents to the market investigation consider that the geographic
+    retail fixed internet market should be defined as national.99
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_11
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_50
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '18'
+  quote_snippet: In light of the above, the Commission considers that, for the purpose of this
+    decision, it is appropriate to assess the effects of the Transaction on the retail fixed
+    internet market at the national level, at the level of the cable operator’s coverage area/region,
+    and at the level of the operator’s footprint.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_11
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_51
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '18'
+  quote_snippet: In any event, the exact delineation of the relevant geographic market can be
+    left open for the purpose of this decision, as the Transaction would not raise serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA Agreement
+    under any of the plausible geographic market definitions considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_11
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_52
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '18'
+  quote_snippet: A majority of respondents to the market investigation consider that the geographic
+    retail fixed internet market should be defined as national.99
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_12
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_53
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '18'
+  quote_snippet: In light of the above, the Commission considers that, for the purpose of this
+    decision, it is appropriate to assess the effects of the Transaction on the retail fixed
+    internet market at the national level, at the level of the cable operator’s coverage area/region,
+    and at the level of the operator’s footprint.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_12
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_54
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '18'
+  quote_snippet: In any event, the exact delineation of the relevant geographic market can be
+    left open for the purpose of this decision, as the Transaction would not raise serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA Agreement
+    under any of the plausible geographic market definitions considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_12
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_55
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '18'
+  quote_snippet: A majority of respondents to the market investigation consider that the geographic
+    retail fixed internet market should be defined as national.99
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_13
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_56
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '18'
+  quote_snippet: In light of the above, the Commission considers that, for the purpose of this
+    decision, it is appropriate to assess the effects of the Transaction on the retail fixed
+    internet market at the national level, at the level of the cable operator’s coverage area/region,
+    and at the level of the operator’s footprint.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_13
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_57
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '18'
+  quote_snippet: In any event, the exact delineation of the relevant geographic market can be
+    left open for the purpose of this decision, as the Transaction would not raise serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA Agreement
+    under any of the plausible geographic market definitions considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_13
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_58
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '20'
+  quote_snippet: In light of the above, for the purpose of this decision, the Commission considers
+    that the relevant geographic market is at the national level, but it will also assess the
+    effects of the Transaction at the level of the cable operator’s coverage area/region and
+    at the level of the operator’s footprint for any of the plausible product market definitions
+    considered in paragraph (87) above.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_14
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_59
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '20'
+  quote_snippet: In any event, the exact delineation of the relevant geographic market can be
+    left open for the purpose of this decision, as the Transaction would not raise serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA Agreement
+    under any of the plausible geographic market definitions considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_14
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_60
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '20'
+  quote_snippet: In light of the above, for the purpose of this decision, the Commission considers
+    that the relevant geographic market is at the national level, but it will also assess the
+    effects of the Transaction at the level of the cable operator’s coverage area/region and
+    at the level of the operator’s footprint for any of the plausible product market definitions
+    considered in paragraph (87) above.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_15
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_61
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '20'
+  quote_snippet: In any event, the exact delineation of the relevant geographic market can be
+    left open for the purpose of this decision, as the Transaction would not raise serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA Agreement
+    under any of the plausible geographic market definitions considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_15
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_62
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '20'
+  quote_snippet: In light of the above, for the purpose of this decision, the Commission considers
+    that the relevant geographic market is at the national level, but it will also assess the
+    effects of the Transaction at the level of the cable operator’s coverage area/region and
+    at the level of the operator’s footprint for any of the plausible product market definitions
+    considered in paragraph (87) above.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_16
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_63
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '20'
+  quote_snippet: In any event, the exact delineation of the relevant geographic market can be
+    left open for the purpose of this decision, as the Transaction would not raise serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA Agreement
+    under any of the plausible geographic market definitions considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_16
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_64
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '22'
+  quote_snippet: A majority of the respondents to the market investigation considered that a
+    possible market for multi-play offers (irrespective of what type of bundles are included
+    in such a possible market) would be national in scope.126 This view, however, does not necessarily
+    align with the results of the market investigation obtained in relation to retail fixed
+    internet access services, which would be one of the components of such a hypothetical market.
+    A number of other respondents considered that the coverage area of each cable operator was
+    also relevant, notably because multi-play offers in Belgium are generally limited to the
+    coverage area of the cable operator.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_17
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_65
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '22'
+  quote_snippet: A majority of the respondents to the market investigation considered that a
+    possible market for multi-play offers (irrespective of what type of bundles are included
+    in such a possible market) would be national in scope.126 This view, however, does not necessarily
+    align with the results of the market investigation obtained in relation to retail fixed
+    internet access services, which would be one of the components of such a hypothetical market.
+    A number of other respondents considered that the coverage area of each cable operator was
+    also relevant, notably because multi-play offers in Belgium are generally limited to the
+    coverage area of the cable operator.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_18
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_66
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '22'
+  quote_snippet: A majority of the respondents to the market investigation considered that a
+    possible market for multi-play offers (irrespective of what type of bundles are included
+    in such a possible market) would be national in scope.126 This view, however, does not necessarily
+    align with the results of the market investigation obtained in relation to retail fixed
+    internet access services, which would be one of the components of such a hypothetical market.
+    A number of other respondents considered that the coverage area of each cable operator was
+    also relevant, notably because multi-play offers in Belgium are generally limited to the
+    coverage area of the cable operator.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_19
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_67
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '11'
+  quote_snippet: The question whether this product market includes dark fiber or not can be
+    left open as the Transaction would not raise serious doubts as to its compatibility with
+    the internal market or the functioning of the EEA Agreement under any of the plausible product
+    market definitions considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_68
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '19'
+  quote_snippet: The question whether this product market can be further segmented according
+    to (i) technology or (ii) download speed can be left open as the Transaction does not raise
+    serious doubts as to its compatibility with the internal market or the functioning of the
+    EEA Agreement under any of the plausible product market definitions considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_69
+  source_document_id: eu_ec_m10070_2021_decision
+  page: '30'
+  quote_snippet: The Commission considers that the Transaction does not raise horizontal concerns
+    in the leased lines market in Belgium, VOO’s coverage area/Wallonia and in the JV’s footprint,
+    and in a potential segment for the supply of dark fiber in Belgium or any possible narrower
+    affected markets, for the following reasons.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

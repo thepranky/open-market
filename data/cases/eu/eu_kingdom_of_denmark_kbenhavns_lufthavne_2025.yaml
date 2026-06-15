@@ -1,0 +1,611 @@
+case_id: eu_kingdom_of_denmark_kbenhavns_lufthavne_2025
+case_name: KINGDOM OF DENMARK / KØBENHAVNS LUFTHAVNE
+authority: European Commission
+jurisdiction: EU
+sector: transport
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2025-07-16'
+parties:
+- name: KINGDOM OF DENMARK
+  role: acquirer
+- name: KØBENHAVNS LUFTHAVNE
+  role: target
+source_documents:
+- doc_id: eu_kingdom_of_denmark_kbenhavns_lufthavne_2025_decision
+  title: KINGDOM OF DENMARK / KØBENHAVNS LUFTHAVNE — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11871
+  pdf_url: http://publications.europa.eu/resource/cellar/8e63bf99-08c4-11f1-8870-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Airport infrastructure services
+  definition_status: defined
+  notes: The Commission concluded against further sub-segmentation of this market.
+- market_id: pm_2
+  name: Associated commercial services
+  definition_status: defined
+  notes: null
+- market_id: pm_3
+  name: Ground handling services
+  definition_status: defined
+  notes: null
+- market_id: pm_4
+  name: Cargo handling services
+  definition_status: defined
+  notes: null
+- market_id: pm_5
+  name: Line maintenance services
+  definition_status: defined
+  notes: The Commission concluded against further sub-segmentation of this market.
+- market_id: pm_6
+  name: Air passenger transport services
+  definition_status: considered
+  notes: The Commission assessed the transaction based on product market definitions from past
+    cases, including considerations for sub-segmentation by passenger categories (time-sensitive/non-time-sensitive)
+    and flight types (direct/indirect).
+- market_id: pm_7
+  name: Air cargo transport services
+  definition_status: considered
+  notes: The Commission assessed the transaction based on product market definitions from past
+    cases, which defined this market as distinct from other cargo transport and on a unidirectional
+    basis.
+- market_id: pm_8
+  name: Renting and leasing of premises at airports
+  definition_status: left_open
+  notes: Market participants were divided on whether this service belongs to airport infrastructure
+    services or associated commercial services. The Commission left the definition open as the
+    transaction did not raise serious doubts under either definition.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Airport infrastructure services — local (Copenhagen airport affected)
+  definition_status: defined
+  notes: null
+- market_id: gm_2
+  name: Associated commercial services — local (Copenhagen airport affected)
+  definition_status: considered
+  notes: The market investigation found that the majority of market participants consider this
+    market limited to CPH airport. The Commission assesses the effects of the transaction on
+    the basis of the narrowest market definition.
+- market_id: gm_3
+  name: Ground handling services — local (Copenhagen airport affected)
+  definition_status: defined
+  notes: null
+- market_id: gm_4
+  name: Cargo handling services — local (Copenhagen airport affected)
+  definition_status: defined
+  notes: null
+- market_id: gm_5
+  name: Line maintenance services — local (Copenhagen airport affected)
+  definition_status: defined
+  notes: null
+- market_id: gm_6
+  name: Air passenger transport services (Point-to-point traffic) — local (Copenhagen airport
+    affected)
+  definition_status: considered
+  notes: The market investigation showed divided views among airport managers and airlines regarding
+    Malmö airport as a substitute. The Commission will consider the narrowest geographic scope
+    of Copenhagen airport only for P2P traffic.
+- market_id: gm_7
+  name: Air passenger transport services (Transfer traffic) — multi-national (Scandinavia/Europe
+    affected)
+  definition_status: considered
+  notes: The market investigation highlighted that international hubs such as Stockholm, Oslo,
+    Amsterdam, Helsinki, Vienna, Frankfurt, Munich, Paris, and London may be considered by transfer
+    passengers as substitutes for transfer traffic at CPH airport.
+- market_id: gm_8
+  name: Air cargo transport services (intra-European routes) — European-wide
+  definition_status: considered
+  notes: null
+- market_id: gm_9
+  name: Air cargo transport services (intercontinental routes) — catchment area (countries/continents
+    affected)
+  definition_status: considered
+  notes: null
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_kingdom_of_denmark_kbenhavns_lufthavne_2025_decision
+  page: '3'
+  quote_snippet: In its previous decisional practice, the Commission distinguished between (i)
+    a market for airport infrastructure services to airlines, which includes the development,
+    maintenance, use and provision of the runway facilities, taxiways and other airport infrastructure
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_kingdom_of_denmark_kbenhavns_lufthavne_2025_decision
+  page: '5'
+  quote_snippet: More specifically, the market investigation in this case confirmed the existence
+    of separate relevant product markets for (i) airport infrastructure services
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_kingdom_of_denmark_kbenhavns_lufthavne_2025_decision
+  page: '5'
+  quote_snippet: In particular, the market does not consider appropriate to further sub-segment
+    the markets for airport infrastructure services and line maintenance services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_kingdom_of_denmark_kbenhavns_lufthavne_2025_decision
+  page: '3'
+  quote_snippet: and (ii) a market for associated commercial services, which includes leasing
+    of offices, hangars and other premises, catering facilities, sale of advertising space,
+    or car parking services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_kingdom_of_denmark_kbenhavns_lufthavne_2025_decision
+  page: '5'
+  quote_snippet: More specifically, the market investigation in this case confirmed the existence
+    of separate relevant product markets for (i) airport infrastructure services, (ii) associated
+    commercial services
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_kingdom_of_denmark_kbenhavns_lufthavne_2025_decision
+  page: '4'
+  quote_snippet: In prior decisions, the Commission has considered separate product markets
+    for the provision of (i) ground handling services, comprising of ramp services
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_kingdom_of_denmark_kbenhavns_lufthavne_2025_decision
+  page: '5'
+  quote_snippet: More specifically, the market investigation in this case confirmed the existence
+    of separate relevant product markets for (i) airport infrastructure services, (ii) associated
+    commercial services, (iii) ground handling services
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_kingdom_of_denmark_kbenhavns_lufthavne_2025_decision
+  page: '4'
+  quote_snippet: and (ii) landside cargo handling services. (13)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_kingdom_of_denmark_kbenhavns_lufthavne_2025_decision
+  page: '5'
+  quote_snippet: More specifically, the market investigation in this case confirmed the existence
+    of separate relevant product markets for (i) airport infrastructure services, (ii) associated
+    commercial services, (iii) ground handling services, (iv) cargo handling services
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_kingdom_of_denmark_kbenhavns_lufthavne_2025_decision
+  page: '4'
+  quote_snippet: In its previous decisional practice, the Commission has distinguished between
+    four separate product markets within the Maintenance, Repair, and Overhaul (MRO) sector,
+    namely (i) line maintenance
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_kingdom_of_denmark_kbenhavns_lufthavne_2025_decision
+  page: '5'
+  quote_snippet: More specifically, the market investigation in this case confirmed the existence
+    of separate relevant product markets for (i) airport infrastructure services, (ii) associated
+    commercial services, (iii) ground handling services, (iv) cargo handling services, and (v)
+    line maintenance services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_kingdom_of_denmark_kbenhavns_lufthavne_2025_decision
+  page: '5'
+  quote_snippet: In particular, the market does not consider appropriate to further sub-segment
+    the markets for airport infrastructure services and line maintenance services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_kingdom_of_denmark_kbenhavns_lufthavne_2025_decision
+  page: '3'
+  quote_snippet: With regard to passenger air transport services, the Commission, in its prior
+    decisional practice, has considered whether to sub-segment the market for air passenger
+    transport into passenger categories, namely a distinction between (i) time-sensitive, and
+    (ii) non-time sensitive passengers (10), and a distinction between (i) direct and (ii) indirect
+    flights. (11)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_kingdom_of_denmark_kbenhavns_lufthavne_2025_decision
+  page: '5'
+  quote_snippet: With regard to air passenger transport services and air cargo transport, the
+    market investigation has not produced evidence indicating that the Commission should depart
+    from its precedents. Therefore, the impact of the Transaction will be assessed on the basis
+    of the product market definitions followed by the Commission in past cases.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_kingdom_of_denmark_kbenhavns_lufthavne_2025_decision
+  page: '4'
+  quote_snippet: In its previous decisions, the Commission has considered that air cargo transport
+    forms a distinct market from other modes of cargo transportation (12) and should be defined
+    on a unidirectional basis (such as cargo transport from Europe to South Korea on the one
+    hand and from South Korea to Europe on the other hand).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_kingdom_of_denmark_kbenhavns_lufthavne_2025_decision
+  page: '5'
+  quote_snippet: With regard to air passenger transport services and air cargo transport, the
+    market investigation has not produced evidence indicating that the Commission should depart
+    from its precedents. Therefore, the impact of the Transaction will be assessed on the basis
+    of the product market definitions followed by the Commission in past cases.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_kingdom_of_denmark_kbenhavns_lufthavne_2025_decision
+  page: '5'
+  quote_snippet: With regard to the renting and leasing of premises at airports, participants
+    in the market investigation were divided. While the majority of airlines and other airport
+    users expressing a view consider this service to be part of the market for airport infrastructure
+    services, airports expressing a view consider it to be part of the market for associated
+    commercial services. (20)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_kingdom_of_denmark_kbenhavns_lufthavne_2025_decision
+  page: '5'
+  quote_snippet: For the purpose of the present decision, the product market definition can
+    be left open as the Transaction does not raise serious doubts as to its compatibility with
+    the internal market irrespective of whether the renting and leasing of premises at airports
+    is considered part of the market for airport infrastructure services or the market of associated
+    commercial services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_kingdom_of_denmark_kbenhavns_lufthavne_2025_decision
+  page: '5'
+  quote_snippet: Concerning airport infrastructure services, the Commission has considered in
+    its previous decisions that the geographic market is limited to an individual airport or
+    to the airport's catchment area, which has been considered as no larger than 300 km for
+    international airports.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_kingdom_of_denmark_kbenhavns_lufthavne_2025_decision
+  page: '7'
+  quote_snippet: The market investigation confirms that the geographic market concerning airport
+    infrastructure services is limited to Copenhagen airport.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_kingdom_of_denmark_kbenhavns_lufthavne_2025_decision
+  page: '6'
+  quote_snippet: Concerning associated commercial services, the Commission has considered that
+    the relevant geographic market is limited to the airport or its immediate surroundings.
+    (23)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_kingdom_of_denmark_kbenhavns_lufthavne_2025_decision
+  page: '7'
+  quote_snippet: As to the geographic market for associated commercial services, the majority
+    of market participants expressing a view considers this is limited to CPH airport. (35)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_kingdom_of_denmark_kbenhavns_lufthavne_2025_decision
+  page: '7'
+  quote_snippet: The Commission will in any case assess the effects of the Transaction on the
+    basis of the narrowest market definition which includes only CPH airport.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_kingdom_of_denmark_kbenhavns_lufthavne_2025_decision
+  page: '6'
+  quote_snippet: Regarding ground handling services and landside cargo handling services, the
+    Commission has also considered that the geographic scope of those markets is restricted
+    to a specific airport (or possibly two neighbouring airports). (28)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_kingdom_of_denmark_kbenhavns_lufthavne_2025_decision
+  page: '7'
+  quote_snippet: Market participants also consider that the geographic scope of the markets
+    for ground handling services, cargo handling services, and line maintenance services is
+    limited to the specific airport where the services are provided, that is, CPH airport. (36)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_kingdom_of_denmark_kbenhavns_lufthavne_2025_decision
+  page: '6'
+  quote_snippet: Regarding ground handling services and landside cargo handling services, the
+    Commission has also considered that the geographic scope of those markets is restricted
+    to a specific airport (or possibly two neighbouring airports). (28)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_kingdom_of_denmark_kbenhavns_lufthavne_2025_decision
+  page: '7'
+  quote_snippet: Market participants also consider that the geographic scope of the markets
+    for ground handling services, cargo handling services, and line maintenance services is
+    limited to the specific airport where the services are provided, that is, CPH airport. (36)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_kingdom_of_denmark_kbenhavns_lufthavne_2025_decision
+  page: '6'
+  quote_snippet: whereas the geographic scope of line maintenance services is local, limited
+    to individual airports. (29)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_kingdom_of_denmark_kbenhavns_lufthavne_2025_decision
+  page: '7'
+  quote_snippet: Market participants also consider that the geographic scope of the markets
+    for ground handling services, cargo handling services, and line maintenance services is
+    limited to the specific airport where the services are provided, that is, CPH airport. (36)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_kingdom_of_denmark_kbenhavns_lufthavne_2025_decision
+  page: '6'
+  quote_snippet: 'Regarding air passenger transport, the Commission has assessed concentrations
+    on the basis of two approaches: (i) on a route-by route basis, that is, on the "point of
+    origin/point of destination" ("O&D") city-pair approach (24) when assessing the links between
+    airlines and overlaps in their flight networks, and (ii) the "airport-by-airport" approach
+    when assessing links between airlines holding slot portfolios at the same airports. (25)'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_kingdom_of_denmark_kbenhavns_lufthavne_2025_decision
+  page: '6'
+  quote_snippet: Regarding air cargo transport, the Commission has defined the market in intra-European
+    routes of air cargo transport as European-wide.(26)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_8
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_kingdom_of_denmark_kbenhavns_lufthavne_2025_decision
+  page: '6'
+  quote_snippet: For intercontinental routes, the Commission considered that the geographic
+    markets are catchment areas at each end of the route broadly corresponding to either countries
+    or continents depending on whether local infrastructure is adequate to allow for onward
+    connections (such as in Europe or North America) or not (such as in Africa or Asia). (27)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_9
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: eu_kingdom_of_denmark_kbenhavns_lufthavne_2025_decision
+  page: '7'
+  quote_snippet: However, this point can be left open as the Transaction does not raise serious
+    doubts as to its compatibility with the internal market irrespective of whether the geographic
+    market is considered to be limited to CPH or to include also its immediate surroundings.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

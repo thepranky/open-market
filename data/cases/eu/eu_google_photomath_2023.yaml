@@ -1,0 +1,373 @@
+case_id: eu_google_photomath_2023
+case_name: GOOGLE / PHOTOMATH
+authority: European Commission
+jurisdiction: EU
+sector: tech
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2023-03-28'
+parties:
+- name: GOOGLE
+  role: acquirer
+- name: PHOTOMATH
+  role: target
+source_documents:
+- doc_id: eu_google_photomath_2023_decision
+  title: GOOGLE / PHOTOMATH — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10796
+  pdf_url: http://publications.europa.eu/resource/cellar/6dc6ceb8-673f-11ee-9220-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Online HSH tools that include a maths offering
+  definition_status: considered
+  notes: The Commission considers this a plausible relevant product market. However, it leaves
+    open whether the market should comprise all online learning and education tools or be further
+    segmented based on HSH tool types, functionalities, or different means of service provision.
+    The Commission explicitly decided *not* to segment this market based on whether other academic
+    subjects are offered or by pricing model.
+- market_id: pm_2
+  name: Android app stores
+  definition_status: considered
+  notes: The Commission considered Android app stores a separate relevant product market, in
+    line with its previous decisional practice.
+- market_id: pm_3
+  name: General search services
+  definition_status: considered
+  notes: The Commission considered the provision of general search services a separate relevant
+    product market, in line with its previous decisional practice. It also noted that general
+    search services on static and mobile devices belong to the same market.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Online HSH tools that include a maths offering — worldwide
+  definition_status: considered
+  notes: Based on market investigation results, the Commission considers the geographic scope
+    of this market to be global.
+- market_id: gm_2
+  name: Android app stores — worldwide (excluding China)
+  definition_status: considered
+  notes: The Commission considered the geographic scope of this market to be worldwide, excluding
+    China, in line with its previous decisional practice.
+- market_id: gm_3
+  name: General search services — national
+  definition_status: considered
+  notes: The Commission considered the geographic scope of this market to be national, in line
+    with its previous decisional practice.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_google_photomath_2023_decision
+  page: '3'
+  quote_snippet: 'The Transaction mainly concerns three related markets: (i) online HSH tools
+    that include a maths offering (where both Google and Photomath are active); (ii) Android
+    app stores (where only Google is active); and (iii) General search services (where only
+    Google is active).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_google_photomath_2023_decision
+  page: '5'
+  quote_snippet: 'In line with the Notifying Party’s submission and the results of the market
+    investigation, the Commission considers that online HSH tools that include a maths offering
+    constitute a plausible relevant product market. For the purposes of this decision, it can
+    be left open whether the relevant product market should comprise all online learning and
+    education tools or be further segmented on the basis of: (i) HSH tool types; (ii) functionalities;
+    or (iii) different means through which HSH services are provided.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_google_photomath_2023_decision
+  page: '6'
+  quote_snippet: Further, for the purposes of this decision, the Commission considers the relevant
+    product market should not be further segmented based on (i) whether other academic subjects
+    are offered (in addition to maths), or (ii) whichever pricing model is used.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_google_photomath_2023_decision
+  page: '8'
+  quote_snippet: The Commission concluded in Google Android and Google/Fitbit that Android app
+    stores constitute a separate relevant product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_google_photomath_2023_decision
+  page: '8'
+  quote_snippet: In line with its previous decisional practice, for the purpose of this decision,
+    the Commission considers that the supply of Android app stores constitutes a separate relevant
+    product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_google_photomath_2023_decision
+  page: '9'
+  quote_snippet: In particular, in the Google Shopping, Google Android and Google/Fitbit decisions,
+    the Commission concluded that the provision of general search services constitutes a separate
+    relevant product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_google_photomath_2023_decision
+  page: '10'
+  quote_snippet: The Commission found that general search services on static devices such as
+    desktop and laptop PCs and on mobile devices belong to the same relevant product market
+    due to supply-side substitutability.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_google_photomath_2023_decision
+  page: '10'
+  quote_snippet: In line with its previous decisional practice, for the purpose of this decision,
+    the Commission considers that the supply of general search services belongs to a separate
+    relevant product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_google_photomath_2023_decision
+  page: '7'
+  quote_snippet: The Notifying Party submits that the geographic market for the supply of online
+    HSH tools that include a maths offering is worldwide or at least EEA wide in scope, given
+    the global presence of almost all significant providers, the general lack of country specific
+    variation in the content and features of HSH tools, the absence of geographic barriers to
+    entry and the generally global approach to the development, marketing and supply of such
+    tools21.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_google_photomath_2023_decision
+  page: '7'
+  quote_snippet: Based on the results of the market investigation, the Commission considers
+    the geographic scope of the market for online HSH tools that include a maths offering or
+    potential segments of this market to be global.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_google_photomath_2023_decision
+  page: '7'
+  quote_snippet: The vast majority of respondents to the market investigation indicated that
+    they supply their online HSH tool that includes a maths offering globally. Further, all
+    respondents except one consider that the “conditions of competition” (e.g. prices, consumption
+    habits, number and identity of suppliers, their market strength) are sufficiently similar/homogenous
+    at the global level. Several respondents reasoned that, since these tools are online (either
+    on the web or as an app), they can be accessed anywhere in the world. In addition, several
+    respondents confirmed that their product is available in multiple languages.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_google_photomath_2023_decision
+  page: '9'
+  quote_snippet: In Google Android and Google/Fitbit, the Commission concluded that the market
+    for Android app stores is worldwide in scope, excluding China25.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_google_photomath_2023_decision
+  page: '9'
+  quote_snippet: In line with its previous decisional practice, for the purpose of this decision,
+    the Commission considers the geographic scope of the market for the supply of Android app
+    stores to be worldwide, excluding China.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_google_photomath_2023_decision
+  page: '10'
+  quote_snippet: In the Google Shopping, Google Android and Google/Fitbit decisions, the Commission
+    concluded that the market for the provision of general search services is national in scope32.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_google_photomath_2023_decision
+  page: '5'
+  quote_snippet: However, the Commissions considers, that from a user’s perspective, learning
+    and education tools without a maths offering are not a reasonable alternative if the user
+    wishes to solve maths homework or wants to improve his or her maths skills. The Commission
+    considers that it can be left open whether the relevant product market should be broader,
+    consisting of all online learning and education tools, as the Transaction does not raise
+    serious doubts as to its compatibility with the internal market regardless of whether such
+    a broader product market is considered instead of online HSH tools that include a maths
+    offering15.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_google_photomath_2023_decision
+  page: '6'
+  quote_snippet: However, the Commission considers that the question of whether the market for
+    the supply of online HSH tools that include a maths offering should be further segmented
+    by excluding tools that are only a forum18, without OCR functionality or without solution
+    steps, or any combination thereof can be left open, as the Transaction does not raise serious
+    doubts as to its compatibility with the internal market under any plausible product market
+    definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_google_photomath_2023_decision
+  page: '6'
+  quote_snippet: In any event, the Commission considers that the question of whether the market
+    for the supply of online HSH tools that include a maths offering should exclude web-only
+    tools can be left open, as the Transaction does not raise serious doubts as to its compatibility
+    with the internal market regardless of whether web-only tools are excluded from the product
+    market’s scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_google_photomath_2023_decision
+  page: '7'
+  quote_snippet: 'In light of the above, and for the purposes of this decision, the Commission
+    considers that online HSH tools that include a maths offering constitute a plausible relevant
+    product market. For the purposes of this decision, it can be left open, since the Transaction
+    does not raise serious doubts as to its compatibility with the internal market, whether
+    the relevant product market should comprise all online learning and education tools or be
+    further segmented on the basis of: (i) HSH tool types; (ii) functionalities or (iii) different
+    means through which HSH services are provided. Further, for the purposes of this decision,
+    the Commission considers the relevant product market should not be further segmented based
+    on (i) whether other academic subjects are offered (in addition to maths), or (ii) whichever
+    pricing model is used.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_google_photomath_2023_decision
+  page: '8'
+  quote_snippet: Regarding the potential broader market for online learning and education tools,
+    the Commission considers that it can be left open whether this market would be EEA-wide
+    or global, as the Transaction does not raise serious doubts as to its compatibility with
+    the internal market under any plausible geographic scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+ai_summary: null
+case_type: merger
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

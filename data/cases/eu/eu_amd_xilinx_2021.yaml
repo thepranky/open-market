@@ -1,0 +1,866 @@
+case_id: eu_amd_xilinx_2021
+case_name: AMD / Xilinx
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2021-06-30'
+parties:
+- name: AMD
+  role: acquirer
+- name: Xilinx
+  role: target
+source_documents:
+- doc_id: eu_amd_xilinx_2021_decision
+  title: AMD / Xilinx — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10097
+  pdf_url: http://publications.europa.eu/resource/cellar/8e5ffa9f-42f8-11ec-89db-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: CPUs, discrete GPUs and FPGAs
+  definition_status: defined
+  notes: The Commission concluded that these three categories of semiconductor products belong
+    to separate product markets.
+- market_id: pm_2
+  name: CPUs (including CPU-based SoCs and CPUs with integrated GPUs)
+  definition_status: defined
+  notes: The Commission concluded that for the purpose of this Decision, it would not distinguish
+    CPUs from CPU-based SoCs or discrete CPUs from CPUs that contain an integrated GPU, effectively
+    defining the CPU market to be inclusive of these forms.
+- market_id: pm_3
+  name: CPUs based on architecture (x86 vs. non-x86)
+  definition_status: left_open
+  notes: Segmentation between x86 CPUs and non-x86 CPUs was considered but left open by the
+    Commission, as the distinction would not change the competitive assessment. Precedents previously
+    found them to be separate markets due to incompatibility and high switching costs.
+- market_id: pm_4
+  name: CPUs for computers vs. CPUs for non-computer devices
+  definition_status: left_open
+  notes: Segmentation between CPUs for computer devices and CPUs for non-computer devices was
+    considered but left open by the Commission, as the distinction would not change the competitive
+    assessment. Precedents previously found them to be separate markets.
+- market_id: pm_5
+  name: CPUs by device type (e.g. servers, desktops, laptops)
+  definition_status: left_open
+  notes: Segmentation of CPUs for computer devices by device type (e.g., servers, desktops,
+    laptops) was considered but left open by the Commission, as the distinction would not raise
+    competition concerns.
+- market_id: pm_6
+  name: Discrete GPUs
+  definition_status: defined
+  notes: The Commission concluded that discrete GPUs constitute a separate product market from
+    integrated GPUs, which are usually integrated into CPUs.
+- market_id: pm_7
+  name: Discrete GPUs for data centres
+  definition_status: defined
+  notes: The Commission concluded that discrete GPUs for data centres and discrete GPUs for
+    gaming and professional visualisation constitute separate markets.
+- market_id: pm_8
+  name: Discrete GPUs for gaming and professional visualisation
+  definition_status: defined
+  notes: The Commission concluded that discrete GPUs for gaming and professional visualisation
+    constitute a separate market from discrete GPUs for data centres. The market includes gaming
+    and other professional visualisation tasks.
+- market_id: pm_9
+  name: Discrete GPUs (including graphics cards)
+  definition_status: defined
+  notes: The Commission concluded that graphics cards fall into the same market as the discrete
+    GPUs they house, based on supply-side substitutability.
+- market_id: pm_10
+  name: FPGAs vs. CPLDs
+  definition_status: defined
+  notes: The Commission concluded that FPGAs and CPLDs fall into different product markets.
+- market_id: pm_11
+  name: FPGAs vs. ASICs/ASSPs
+  definition_status: defined
+  notes: The Commission concluded that FPGAs and ASICs/ASSPs fall into different product markets.
+- market_id: pm_12
+  name: FPGAs (including standalone FPGAs and FPGA SoCs)
+  definition_status: defined
+  notes: The Commission concluded that standalone FPGAs and FPGA SoCs are in the same market,
+    effectively defining the FPGA market to be inclusive of these forms.
+- market_id: pm_13
+  name: FPGAs segmented by performance level (high-end, mid-range, low-end)
+  definition_status: left_open
+  notes: Segmentation of FPGAs based on performance levels was considered but left open by the
+    Commission, due to inconclusive results from the market investigation and no change to the
+    competitive assessment.
+- market_id: pm_14
+  name: FPGAs for computer vs. non-computer devices
+  definition_status: left_open
+  notes: Segmentation of FPGAs between those for computer devices and non-computer devices was
+    considered but left open by the Commission, due to inconclusive replies from the market
+    investigation and no change to the competitive assessment.
+- market_id: pm_15
+  name: FPGAs used in different industrial sectors (e.g. automotive, telecommunications)
+  definition_status: left_open
+  notes: Segmentation of FPGAs based on the industrial sector of use was considered but left
+    open by the Commission, due to insufficient clarity on supplier's ability to adjust production
+    for specific environmental factors and no change to the competitive assessment.
+- market_id: pm_16
+  name: FPGAs by specific use cases
+  definition_status: left_open
+  notes: Segmentation of FPGAs based on specific use cases was considered but left open by the
+    Commission, due to insufficient feedback on suppliers' ability to adjust production and
+    no change to the competitive assessment.
+- market_id: pm_17
+  name: FPGAs for data centres vs. FPGAs used outside data centres
+  definition_status: left_open
+  notes: Segmentation of FPGAs between those used in data centres and those used outside data
+    centres was considered but left open by the Commission, due to inconclusive results and
+    no change to the competitive assessment.
+- market_id: pm_18
+  name: FPGAs vs. FPGA accelerator cards
+  definition_status: left_open
+  notes: The Commission left open whether FPGA accelerator cards are part of the same market
+    as FPGAs, as the competitive assessment would not change.
+- market_id: pm_19
+  name: Chipsets
+  definition_status: left_open
+  notes: The Commission left open whether chipsets belong to the same product market as CPUs,
+    noting that the distinction would have no effect on the competitive assessment.
+- market_id: pm_20
+  name: Semi-custom SoCs for the gaming market
+  definition_status: left_open
+  notes: The Commission considered these products distinct from CPUs, discrete GPUs, and FPGAs,
+    and left open their exact market definition, as it would not change the outcome of the competitive
+    assessment.
+geographic_markets_considered:
+- market_id: gm_1
+  name: CPUs — worldwide
+  definition_status: defined
+  notes: The geographic market for CPUs was found to be worldwide in scope.
+- market_id: gm_2
+  name: FPGAs — worldwide
+  definition_status: defined
+  notes: The geographic market for FPGAs was found to be worldwide in scope.
+- market_id: gm_3
+  name: GPUs — worldwide
+  definition_status: defined
+  notes: The geographic market for GPUs was found to be worldwide in scope.
+- market_id: gm_4
+  name: Chipsets — worldwide
+  definition_status: considered
+  notes: A previous Commission decision (Intel/McAfee) found the geographic market for chipsets
+    to be worldwide. This decision did not explicitly re-confirm or define it for chipsets in
+    its conclusion, but only for CPUs, FPGAs, and GPUs.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '10'
+  quote_snippet: Accordingly, for the purpose of the present Decision, the Commission concludes
+    that CPUs, discrete GPUs and FPGAs belong to separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '9'
+  quote_snippet: In line with the Commission’s consistent case practice, the market investigation
+    confirms that CPUs, discrete GPUs and FPGAs belong to different product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '9'
+  quote_snippet: A large majority of both customers and competitors was of the view that FPGAs
+    are almost never credible alternatives to CPUs and GPUs or that any substitution between
+    these chips is limited to some very specific applications.50
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '14'
+  quote_snippet: On that basis and for the purpose of the present Decision, the Commission will
+    not distinguish CPUs from CPU-based SoCs or discrete CPUs from CPUs that contain an integrated
+    GPU.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '13'
+  quote_snippet: Indeed, as factually almost all, if not all, CPUs contain elements other than
+    the cores, under the definition put forward by the Notifying Party and adopted for the purpose
+    of this Decision (see Section 4.1.2.1), CPUs are sold in an SoC form and are thus SoCs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '13'
+  quote_snippet: It also appears to be very common that CPUs include a GPU on the same die,
+    in particular in smartphones, tablets, laptops and desktops.84 Specifically, in 80% of all
+    notebooks (laptops) and desktops, and in 100% of notebooks (laptops), the CPU includes an
+    integrated GPU.85
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '15'
+  quote_snippet: However, as the distinction would not change the competitive assessment of
+    this case, the Commission leaves the definition open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '10'
+  quote_snippet: In Intel,61 the Commission found that there is no substitutability between
+    (i) x86 CPUs and ii) non-x86 CPUs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '15'
+  quote_snippet: Thus, while there appears to be some level of competitive constraint between
+    CPUs of different architectures, the indications are that these are unidirectional (ARM
+    CPUs constrain x86 CPUs but not vice-versa) and not immediate enough for including the CPUs
+    of different architectures in one product market;
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '14'
+  quote_snippet: Overall, taking all the responses into account, CPUs for computers and CPUs
+    for non-computers (sometimes also referred to as “embedded CPUs in the industry) are more
+    likely than not to constitute separate markets. However, as the distinction does not change
+    the competitive assessment, the Commission leaves the definition open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '10'
+  quote_snippet: In the same decision, the Commission also found that there is no substitutability
+    between (i) CPUs for computers; and (ii) CPUs for non-computer devices.64
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '14'
+  quote_snippet: All competitors and roughly half of customers that expressed a view considered
+    that CPUs for computers and CPUs for non-computers are substantially different and that
+    they are not substitutable.88
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '15'
+  quote_snippet: In any case, the Commission considers that, for the purpose of this Decision,
+    it can be left open whether the product market for CPUs should be segmented according to
+    any of the distinctions set out above, as the Transaction does not raise competition concerns
+    under any of the possible product market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '18'
+  quote_snippet: In light of the precedents and of the results of the market investigation,
+    the Commission concludes, for the purpose of the present Decision, that discrete GPUs constitute
+    a separate product market from integrated GPUs, which are usually integrated into CPUs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '17'
+  quote_snippet: Thus, respondents confirmed that integrated GPUs on the one hand, and discrete
+    GPUs on the other hand belong to separate product markets
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '18'
+  quote_snippet: Likewise, the Commission concludes that discrete GPUs for data centres and
+    discrete GPUs for gaming and professional visualisation constitute separate markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '16'
+  quote_snippet: Against this background, the Commission found that there is a separate relevant
+    product market for discrete GPUs for datacentres.101
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '18'
+  quote_snippet: Likewise, the Commission concludes that discrete GPUs for data centres and
+    discrete GPUs for gaming and professional visualisation constitute separate markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '18'
+  quote_snippet: Graphics cards would fall into the same market as the discrete GPU they house.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '18'
+  quote_snippet: Furthermore, discrete GPUs and graphics cards appear to fall into the same
+    market based on supply-side substitution. Indeed, the core component of a graphics card
+    is the discrete GPU, whereas the card that houses the GPU is a simple and relatively inexpensive
+    device that can be added at little cost by any discrete GPU supplier.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '17'
+  quote_snippet: The Notifying Party also submits that graphics cards should not be considered
+    as forming a separate product market. In the Notifying Party’s view, graphics cards are
+    a mere way of selling a GPU, and they bring only limited additional value in comparison
+    to the GPU technology that graphics cards contain.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '19'
+  quote_snippet: 'Eventually, the Commission found that: (i) FPGAs and CPLDs; and (ii) FPGAs
+    and ASICs/ASSPs fall into different product markets, but left open the issue whether segmentations
+    within FPGA products are warranted, as the transaction did not raise any concerns under
+    any market definition based on the considered distinctions.119'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '20'
+  quote_snippet: As regards CPLDs, respondents to the market investigation nearly unanimously
+    confirmed that they are not substitutable with FPGAs neither from a demand, nor from a supply
+    perspective, due to the wide performance gap and the large differences in production know-how.124
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '19'
+  quote_snippet: 'Eventually, the Commission found that: (i) FPGAs and CPLDs; and (ii) FPGAs
+    and ASICs/ASSPs fall into different product markets, but left open the issue whether segmentations
+    within FPGA products are warranted, as the transaction did not raise any concerns under
+    any market definition based on the considered distinctions.119'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '20'
+  quote_snippet: The market investigation also confirmed, in line with the precedents, that
+    although in some cases both FPGAs and ASICs could be deployed for the same task, there is
+    a large difference in their cost structure.125 Namely, respondents indicated that designing
+    an ASIC involves very substantial fixed costs and thus they are worth to deploy only in
+    large quantities.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '22'
+  quote_snippet: The market investigation confirmed that some FPGAs are also often offered as
+    SoCs.143 On the demand side, the majority of customers indicated that FPGA SoCs are regarded
+    as more complex, distinct products from standalone FPGAs, although the issue remains that
+    the term “SoC” is not used consistently.144
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '22'
+  quote_snippet: However, there appears to be supply-side substitutability between standalone
+    FPGAs and FPGA SoCs. The Commission recalls that FPGA SoCs are standalone FPGAs that have
+    been pre-emptively combined with other semiconductors, typically an ARM-based CPU, for efficiency
+    reasons.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '21'
+  quote_snippet: Replies were also inconclusive as regards a possible distinction between FPGAs
+    for computers (almost exclusively servers) and for non-computer devices.132 Certain responses
+    indicate that if the performance (and thus power consumption, cost and size) parameters
+    are equivalent, the same FPGA can be used in computers and in non-computers.133
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_14
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '22'
+  quote_snippet: For example, FPGAs used in 5G base stations need to be temperature resistant,138
+    while FPGAs used in the aerospace industry need to be resistant to radiation.139 However,
+    as indicated before, the market feedback lacks sufficient clarity as to whether or not suppliers
+    could add such features without major difficulties.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_15
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '22'
+  quote_snippet: A large majority of customers also indicated that there are specific use cases
+    for FPGAs that would require specific product characteristics and technical parameters such
+    that the FPGAs are not substitutable across these use cases.140
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_16
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '23'
+  quote_snippet: The Notifying Party submits that chipsets are part of the same product market
+    as CPUs. According to the Parties, changes in the way CPUs are designed and manufactured
+    make a distinction between chipsets and CPUs even less appropriate today than it was at
+    the time of the Commission’s 2011 Intel/McAfee decision.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_19
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '23'
+  quote_snippet: In Intel/McAfee, the Commission detailed that chipsets are generally designed
+    to work with a specific family or generation of CPUs and that, in order to function together,
+    chipsets and CPUs have to be compatible.148
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_19
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '24'
+  quote_snippet: Their exact market definition can be left open because it would not change
+    the outcome of the competitive assessment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_20
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_34
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '24'
+  quote_snippet: The Commission considers that semi-custom SoCs for the gaming market are not
+    part of any of the potential CPU markets discussed in Section 4.2.2 or any of the discrete
+    GPU markets discussed in Section 4.2.3. These are semi-bespoke products developed for specific
+    customers and not substitutable with AMD’s CPUs or GPUs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_20
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_35
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '25'
+  quote_snippet: In line with the precedents and with the results of the market investigation,
+    the Commission therefore considers that, for the purpose of this Decision, the relevant
+    geographic market for CPUs, FPGAs and GPUs, regardless of the exact definitions at product
+    level, is worldwide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_36
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '25'
+  quote_snippet: In Intel, the Commission found that the geographic market for CPUs is worldwide
+    in scope, as (i) CPU suppliers compete globally, (ii) CPU architectures are the same around
+    the world, (iii) OEMs operate on a worldwide basis, and (iv) the cost of shipping CPUs around
+    the world is low compared to CPU manufacturing cost.155
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_37
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '25'
+  quote_snippet: A large majority of respondents to the market investigation indicated that,
+    regardless of the precise distinction on product level, the geographic market for CPUs,
+    GPUs and FPGAs is worldwide in scope.161
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_38
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '25'
+  quote_snippet: In line with the precedents and with the results of the market investigation,
+    the Commission therefore considers that, for the purpose of this Decision, the relevant
+    geographic market for CPUs, FPGAs and GPUs, regardless of the exact definitions at product
+    level, is worldwide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_39
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '25'
+  quote_snippet: Similarly, in Intel/Altera and Nvidia/Mellanox, the Commission concluded that
+    the markets for FPGAs and GPUs (and possible segments thereof) are worldwide in scope.158
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_40
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '25'
+  quote_snippet: A large majority of respondents to the market investigation indicated that,
+    regardless of the precise distinction on product level, the geographic market for CPUs,
+    GPUs and FPGAs is worldwide in scope.161
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_41
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '25'
+  quote_snippet: In line with the precedents and with the results of the market investigation,
+    the Commission therefore considers that, for the purpose of this Decision, the relevant
+    geographic market for CPUs, FPGAs and GPUs, regardless of the exact definitions at product
+    level, is worldwide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_42
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '25'
+  quote_snippet: Similarly, in Intel/Altera and Nvidia/Mellanox, the Commission concluded that
+    the markets for FPGAs and GPUs (and possible segments thereof) are worldwide in scope.158
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_43
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '25'
+  quote_snippet: A large majority of respondents to the market investigation indicated that,
+    regardless of the precise distinction on product level, the geographic market for CPUs,
+    GPUs and FPGAs is worldwide in scope.161
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_44
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '25'
+  quote_snippet: Likewise, in Intel/McAfee, the Commission found that the geographic markets
+    for x86 CPUs and chipsets are both worldwide in scope.156
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_45
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '25'
+  quote_snippet: The Notifying Party submits that, in line with the relevant Commission precedents,
+    the geographic markets for semiconductors should be worldwide in scope.160
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_46
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '11'
+  quote_snippet: According to the Notifying Party, the Transaction does not raise any competition
+    concerns regardless of the precise market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_47
+  source_document_id: eu_amd_xilinx_2021_decision
+  page: '17'
+  quote_snippet: In any case, the Notifying Party argues that the exact scope of the GPU product
+    market can be left open due to the absence of competition concerns in relation to this Transaction
+    under any plausible product market definition.110
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+ai_summary: null
+case_type: merger
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

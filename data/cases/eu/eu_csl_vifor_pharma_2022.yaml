@@ -1,0 +1,190 @@
+case_id: eu_csl_vifor_pharma_2022
+case_name: CSL / VIFOR PHARMA
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2022-05-31'
+parties:
+- name: CSL
+  role: acquirer
+- name: VIFOR PHARMA
+  role: target
+source_documents:
+- doc_id: eu_csl_vifor_pharma_2022_decision
+  title: CSL / VIFOR PHARMA — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10629
+  pdf_url: http://publications.europa.eu/resource/cellar/32cbb144-4004-11ed-92ed-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: treatments for Sickle Cell Disease (SCD)
+  definition_status: left_open
+  notes: The Commission considered segmenting the market by the severity of the disease/Line
+    of Treatment (LoT), Mode of Action (MoA), SCD sub-type, or Mode of Delivery (MoD). However,
+    the market investigation was not conclusive on these segmentations, and the Commission ultimately
+    left the exact scope of the market open.
+- market_id: pm_2
+  name: treatments for moderate-to-severe Hidradenitis Suppurativa (HS)
+  definition_status: left_open
+  notes: The Commission considered segmenting the market by Hurley stage, Mode of Action (MoA),
+    or Mode of Delivery (MoD). However, the market investigation was not conclusive on these
+    segmentations, and the Commission ultimately left the exact scope of the market open.
+geographic_markets_considered:
+- market_id: gm_1
+  name: treatments for Sickle Cell Disease (SCD) — EEA-wide
+  definition_status: considered
+  notes: null
+- market_id: gm_2
+  name: treatments for moderate-to-severe Hidradenitis Suppurativa (HS) — EEA-wide
+  definition_status: considered
+  notes: The provided text mentions the Commission's consistent view that markets for pipeline
+    drugs are at least EEA-wide in scope and applies this generally. While the specific geographic
+    scope for HS is not explicitly stated in the provided chunk for HS, the general precedent
+    for pipeline drugs is applied. No specific geographic market analysis was found for HS treatments
+    alone.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_csl_vifor_pharma_2022_decision
+  page: '6'
+  quote_snippet: 'In the absence of Commission precedents for SCD treatments, the Notifying
+    Party considers that a segmentation of the market could be envisaged according to the severity
+    of the disease and the LoT, as follows: (i) durable curative treatments (i.e. stem-cell
+    transplants and, in the future, gene therapies); (ii) prophylaxis treatments (prevention
+    of VOC and other SCD symptoms); and (iii) treatments of VOC and other SCD complications
+    (acute (on-demand) treatment).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_csl_vifor_pharma_2022_decision
+  page: '7'
+  quote_snippet: 'The market investigation was not conclusive as to whether the treatments for
+    SCD should be sub-segmented by the severity of the disease/LoT, MoA, SCD sub-type or (MoD).
+    However market participants also noted that pipeline treatments are still at the development
+    stage and there is an intrinsic level of uncertainty in assessing their future characteristics
+    and market positioning:'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_csl_vifor_pharma_2022_decision
+  page: '8'
+  quote_snippet: In any event, for the purposes of this decision, the Commission concludes that
+    the exact scope of the market for SCD treatments can be left open since the Transaction
+    does not give rise to serious doubts as to its compatibility with the internal market and
+    the functioning of the EEA Agreement under any plausible market definitions (i.e. segmentations
+    by LoT, MoA, SCD sub-type or MoD).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_csl_vifor_pharma_2022_decision
+  page: '14'
+  quote_snippet: In the absence of Commission precedents for HS treatments, the Parties are
+    of the view that a segmentation of the market for treatment of HS could be envisaged according
+    to the Hurley stage of classification. The Parties further argue that in any event, the
+    exact scope of the product market can be left open because the Transaction will not raise
+    competition concerns under any market segmentation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_csl_vifor_pharma_2022_decision
+  page: '14'
+  quote_snippet: Given that the starting point for all the developers of HS drugs is generally
+    either moderate-to-severe HS or mild HS, with the Parties’ drugs belonging to the former
+    category, the starting point for defining the relevant product market is treatments for
+    moderate-to-severe HS.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_csl_vifor_pharma_2022_decision
+  page: '14'
+  quote_snippet: 'The market investigation was not conclusive as to whether the treatments for
+    moderate-to-severe HS should be sub-segmented, notably because many of the moderate-to-severe
+    HS drugs are still at the development stage and there is an intrinsic level of uncertainty
+    in assessing future characteristics and market positioning. In particular, the results of
+    the market investigation were not conclusive as to whether the following potential segmentations
+    are warranted:'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_csl_vifor_pharma_2022_decision
+  page: '8'
+  quote_snippet: As regards the geographic market definition, the Commission has consistently
+    considered the markets for pipeline drugs to be global or at least EEA-wide in scope.41
+    The Notifying Party does not contest the above. Nothing in the market investigation suggests
+    that the Commission should depart from its previous practice in the present decision with
+    respect to SCD.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_csl_vifor_pharma_2022_decision
+  page: '3'
+  quote_snippet: In terms of geographic scope, the Commission has consistently considered that
+    the markets for pipeline drugs are at least EEA-wide.9
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

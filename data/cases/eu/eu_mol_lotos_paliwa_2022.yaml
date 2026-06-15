@@ -1,0 +1,366 @@
+case_id: eu_mol_lotos_paliwa_2022
+case_name: MOL / LOTOS PALIWA
+authority: European Commission
+jurisdiction: EU
+sector: retail
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2022-07-15'
+parties:
+- name: MOL
+  role: acquirer
+- name: LOTOS PALIWA
+  role: target
+source_documents:
+- doc_id: eu_mol_lotos_paliwa_2022_decision
+  title: MOL / LOTOS PALIWA — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10652
+  pdf_url: http://publications.europa.eu/resource/cellar/03286362-1a14-11ed-8fa0-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Retail supply of motor fuels
+  definition_status: considered
+  notes: The Commission considered the retail supply of motor fuels to be a distinct relevant
+    product market, but proceeded to assess various segmentations before defining the specific
+    market for its assessment.
+- market_id: pm_2
+  name: Retail supply of motor fuels (by type of fuel product)
+  definition_status: left_open
+  notes: The Commission concluded that retail supply of motor fuels should not be further sub-segmented
+    by type of fuel product (diesel, gasoline, LPG) in general, but left the specific segmentation
+    for LPG open in this case as no affected markets would arise.
+- market_id: pm_3
+  name: Retail supply of motor fuels at on-motorway stations / off-motorway stations
+  definition_status: left_open
+  notes: The Commission considered segmenting the market by on-motorway and off-motorway stations,
+    reviewing previous decisions, but ultimately left the sub-segmentation open for this case.
+    It focused its assessment on off-motorway stations as this was the narrowest plausible segment
+    where affected markets arose.
+- market_id: pm_4
+  name: Retail sale of motor fuels to B2B customers / B2C customers
+  definition_status: defined
+  notes: The Commission confirmed that B2B and B2C sales belong to distinct markets based on
+    market investigation findings. The assessment focused on B2C customers as the B2B market
+    did not result in an affected market.
+- market_id: pm_5
+  name: Retail sale of fuel to B2C customers at off-motorway stations
+  definition_status: defined
+  notes: This is the specific market definition on which the Commission focused its competitive
+    assessment, following segmentation analysis for fuel type, station type, and customer type.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Retail sale of motor fuels to B2C customers at off-motorway stations — national (Poland
+    affected)
+  definition_status: defined
+  notes: The Commission considered the market to be national in scope, but acknowledged its
+    local elements and focused its assessment on the local level due to absence of affected
+    markets nationally.
+- market_id: gm_2
+  name: Retail sale of motor fuels to B2C customers at off-motorway stations — local (Poland
+    affected)
+  definition_status: defined
+  notes: The Commission assessed local competition using isochrones based on driving distances,
+    with different radii for cities (2.5 km), suburban areas (5 km), and rural areas (20 km).
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_mol_lotos_paliwa_2022_decision
+  page: '3'
+  quote_snippet: (12) The Commission has considered in previous decisions that the market for
+    the retail supply of motor fuel products constitutes a distinct relevant product market.6
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_mol_lotos_paliwa_2022_decision
+  page: '5'
+  quote_snippet: (20) First, the Commission’s market investigation supports the view that the
+    retail supply of motor fuels encompasses all types of motor fuels available at stations,
+    including LPG, with all respondents unanimously confirming this point.19
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_mol_lotos_paliwa_2022_decision
+  page: '3'
+  quote_snippet: (13) The Commission has concluded that the retail supply of motor fuels should
+    not be further sub-segmented by type of fuel product (diesel, gasoline and automotive liquefied
+    petroleum gas (‘LPG’)),7 and it has defined the market for the retail sales of motor fuels
+    as sales of motor fuels at service stations.8
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_mol_lotos_paliwa_2022_decision
+  page: '5'
+  quote_snippet: (20) First, the Commission’s market investigation supports the view that the
+    retail supply of motor fuels encompasses all types of motor fuels available at stations,
+    including LPG, with all respondents unanimously confirming this point.19 However, as regards
+    LPG the precise segmentation can be left open as no affected markets would arise on a potential
+    segment for the sale of LPG.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_mol_lotos_paliwa_2022_decision
+  page: '4'
+  quote_snippet: (15) Regarding a possible segmentation between on- and off-motorway stations,
+    the Commission has in two recent cases ultimately decided against such segmentation in view
+    of the particularities of those cases (such as the non-existence of tolls or insignificant
+    price differences).15 In a previous decision, however, it considered that on-motorway stations
+    constitute a separate market from that for off-motorway stations in view of the notable
+    differences in competitive conditions which characterise the sale of fuels by the two categories
+    of service stations (such as the existence of tolls, price differences, differences in commercial
+    offer, distinct conditions of entry).16
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_mol_lotos_paliwa_2022_decision
+  page: '5'
+  quote_snippet: (21) For the purpose of the present case, the Commission will leave open a
+    possible sub-segmentation between on and off-motorway stations, given that neither approach
+    would give rise to competition concerns. Given that affected markets only arise on local
+    markets comprising off-motorway stations, only the off-motorway stations (i.e. the narrowest
+    plausible segment) will be further discussed in this decision.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_mol_lotos_paliwa_2022_decision
+  page: '5'
+  quote_snippet: (22) The market investigation has also confirmed that B2B and B2C sales belong
+    to distinct markets.20 One respondent noted that “[t]he B2B and B2C markets [are] characterized
+    by a different offer of products and services, and thus require a different sales strategy
+    and activities”. Another respondent pointed to different preferences of B2B customers who
+    determine their preferred supplier based on “having access to [a] large network of stations,
+    and having access to stations along transit routes” while B2C customers “tend to view the
+    retail market more as a local market, than national one”. Other respondents pointed to differences
+    in prices offered to B2B compared to B2C customers.21 Given that the Proposed Transaction
+    does not result in an an affected market as regards B2B customers, the retail sale of motor
+    fuels to B2B customers will not be further discussed in this Decision.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_mol_lotos_paliwa_2022_decision
+  page: '5'
+  quote_snippet: (21) For the purpose of the present case, the Commission will leave open a
+    possible sub-segmentation between on and off-motorway stations, given that neither approach
+    would give rise to competition concerns. Given that affected markets only arise on local
+    markets comprising off-motorway stations, only the off-motorway stations (i.e. the narrowest
+    plausible segment) will be further discussed in this decision.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_mol_lotos_paliwa_2022_decision
+  page: '5'
+  quote_snippet: (22) The market investigation has also confirmed that B2B and B2C sales belong
+    to distinct markets.20 One respondent noted that “[t]he B2B and B2C markets [are] characterized
+    by a different offer of products and services, and thus require a different sales strategy
+    and activities”. Another respondent pointed to different preferences of B2B customers who
+    determine their preferred supplier based on “having access to [a] large network of stations,
+    and having access to stations along transit routes” while B2C customers “tend to view the
+    retail market more as a local market, than national one”. Other respondents pointed to differences
+    in prices offered to B2B compared to B2C customers.21 Given that the Proposed Transaction
+    does not result in an an affected market as regards B2B customers, the retail sale of motor
+    fuels to B2B customers will not be further discussed in this Decision.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_mol_lotos_paliwa_2022_decision
+  page: '5'
+  quote_snippet: (23) In conclusion, the Commission will only assess the impact of the Proposed
+    Transaction on the market for the retail sale of fuel to B2C customers at off-motorway stations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_mol_lotos_paliwa_2022_decision
+  page: '5'
+  quote_snippet: (24) The Commission previously considered that the market for retail sale of
+    motor fuel products to B2C customers is characterised by competition taking place at both
+    the national22 and local level.23
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_mol_lotos_paliwa_2022_decision
+  page: '6'
+  quote_snippet: (25) This approach was also followed in recent cases, where the Commission
+    confirmed that the market for retail sale of motor fuels to B2C customers is national in
+    scope, acknowledging however that these markets have a local element, as vehicle owners
+    usually resort to fuel stations in their vicinity.24
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_mol_lotos_paliwa_2022_decision
+  page: '7'
+  quote_snippet: (34) For the purpose of this decision, the Commission considers that the market
+    for the retail sale of motor fuels to B2C customers in Poland is national in scope with
+    local elements of competition. Given the absence of affected markets at national level,
+    the Commission will in this decision only assess competition at the local level. To do so,
+    it will examine local areas where the Parties’ stations overlap, using isochrones based
+    on driving distances of 2.5 km, 5 km and 20 km in cities, suburban areas and rural areas
+    respectively.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_mol_lotos_paliwa_2022_decision
+  page: '6'
+  quote_snippet: (27) The presence-based approach is premised on the assumption that local competition
+    between retail stations can be indirectly observed by virtue of physical proximity between
+    stations. The analysis is carried out by defining isochrones centred around each individual
+    retail station of the respective Party’s retail network. The radius of the isochrone is
+    assumed to encapsulate the stations that compete with the station in question. The appropriate
+    radius may depend on the particularities of respective local areas and will most likely
+    vary between, for example, urban and rural areas.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_mol_lotos_paliwa_2022_decision
+  page: '7'
+  quote_snippet: (32) As regards the local level, a majority of respondents to the Commission’s
+    market investigation confirmed that isochrones based on driving distances of 2.5 km, 5 km
+    and 20 km in cities, suburban areas and rural areas respectively reflect the distance within
+    which motorists consider competing alternatives.28
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_mol_lotos_paliwa_2022_decision
+  page: '7'
+  quote_snippet: (34) For the purpose of this decision, the Commission considers that the market
+    for the retail sale of motor fuels to B2C customers in Poland is national in scope with
+    local elements of competition. Given the absence of affected markets at national level,
+    the Commission will in this decision only assess competition at the local level. To do so,
+    it will examine local areas where the Parties’ stations overlap, using isochrones based
+    on driving distances of 2.5 km, 5 km and 20 km in cities, suburban areas and rural areas
+    respectively.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_mol_lotos_paliwa_2022_decision
+  page: '11'
+  quote_snippet: (45) In conclusion, the Proposed Transaction would not give rise to competition
+    concerns as a result of horizontal effects as regards the retail supply of motor fuels to
+    B2C customers in Poland.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

@@ -1,0 +1,422 @@
+case_id: eu_amazon_mgm_2022
+case_name: AMAZON / MGM
+authority: European Commission
+jurisdiction: EU
+sector: tech
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2022-03-15'
+parties:
+- name: AMAZON
+  role: acquirer
+- name: MGM
+  role: target
+source_documents:
+- doc_id: eu_amazon_mgm_2022_decision
+  title: AMAZON / MGM — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10349
+  pdf_url: http://publications.europa.eu/resource/cellar/6b9896b5-7704-11ed-9887-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Production and supply of AV content
+  definition_status: considered
+  notes: The Commission considered there were no reasons to depart from previous cases' approach.
+    Past decisions identified separate markets for (i) commissioned AV content (non-captive)
+    and (ii) licensing of broadcasting rights for pre-produced AV content (possibly subdivided
+    by content type or exhibition window, but these segmentations were left open).
+- market_id: pm_2
+  name: Wholesale supply of TV channels
+  definition_status: left_open
+  notes: The Commission defined the relevant product market as the wholesale supply of TV channels,
+    including ancillary services and covering all types of infrastructure. However, the question
+    of further segmentation (by genre, distribution technology, or between FTA/pay TV channels,
+    or basic/premium pay TV channels) was left open as the transaction did not raise serious
+    doubts.
+- market_id: pm_3
+  name: Retail supply of AV services to end-customers
+  definition_status: segmented
+  notes: The market investigation yielded mixed results regarding segmentation. The distinction
+    between FTA TV channels and pay TV channels was confirmed as accurate. Within pay TV, segmentation
+    into basic and premium was inconclusive. Segmentation by linear vs. non-linear pay TV found
+    a majority seeing them as alternatives. The Commission's assessment specifically started
+    with affected vertical relationships in Germany, Austria, and Croatia relating to a narrow
+    market definition consisting of only SVOD services.
+- market_id: pm_4
+  name: Production and licensing of distribution rights of films for theatrical exhibition
+  definition_status: defined
+  notes: The Commission concluded that this constitutes a relevant product market, separated
+    from the distribution of films for theatrical release. The question of whether to distinguish
+    between US and non-US films was left open.
+- market_id: pm_5
+  name: Distribution of home entertainment products (physical form)
+  definition_status: left_open
+  notes: The Commission decided not to further discuss this market as Amazon is not active and
+    MGM is not active in distribution in the EEA, hence no relevant vertical relationships arise.
+- market_id: pm_6
+  name: Merchandise licensing
+  definition_status: left_open
+  notes: The Commission decided not to further discuss this market due to its large size and
+    the very low combined market share of the parties.
+- market_id: pm_7
+  name: Theatrical exhibition of films
+  definition_status: left_open
+  notes: The Commission stated that neither of the parties is active in this market, and therefore
+    the decision would not further assess its impact.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Production and supply of AV content — national or linguistically homogeneous regions
+    (scope left open)
+  definition_status: left_open
+  notes: The Commission concluded the geographic market is either national in scope or encompasses
+    linguistically homogeneous regions, but the precise scope was left open as the transaction
+    did not raise serious concerns.
+- market_id: gm_2
+  name: Wholesale supply of TV channels — national (Germany affected)
+  definition_status: defined
+  notes: The Commission concluded the relevant geographic market is national in scope for Germany,
+    based on market investigation responses indicating distribution on a national basis.
+- market_id: gm_3
+  name: Production and licensing of distribution rights of films for theatrical release — national
+  definition_status: defined
+  notes: The Commission concluded the relevant geographic market is national in scope, supported
+    by market investigation responses from content providers and cinemas.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_amazon_mgm_2022_decision
+  page: '3'
+  quote_snippet: 'The Transaction primarily concerns home entertainment at all levels of the
+    AV value chain: (i) the production and supply of AV content (including the supply of pre-produced
+    AV content and commissioned AV content), where both Amazon (through Amazon Studios) and
+    MGM are active in the production and licensing of AV content;'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_amazon_mgm_2022_decision
+  page: '5'
+  quote_snippet: 'In previous decisions, the Commission has concluded that there are separate
+    markets for: (i) the production and supply of commissioned AV content (also referred to
+    as ad hoc or new content); and (ii) the licensing of broadcasting rights for pre-produced
+    AV content (available off-the-shelf).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_amazon_mgm_2022_decision
+  page: '6'
+  quote_snippet: Overall, the market investigation indicated that there are no reasons for the
+    Commission to depart from the approach taken in previous cases with regard to the definition
+    of the market for the production and supply of AV content.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_amazon_mgm_2022_decision
+  page: '3'
+  quote_snippet: 'The Transaction primarily concerns home entertainment at all levels of the
+    AV value chain: [...] (ii) the wholesale supply of TV channels, where MGM is active in the
+    wholesale supply of AV channels in certain countries in the EEA through MGM+;'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_amazon_mgm_2022_decision
+  page: '9'
+  quote_snippet: 'In its previous decisions, the Commission has identified a wholesale market
+    for the supply of TV channels. Within that market, in certain decisions, the Commission
+    has further identified two separate product markets for: (i) FTA TV channels, and (ii) pay
+    TV channels.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_amazon_mgm_2022_decision
+  page: '3'
+  quote_snippet: 'The Transaction primarily concerns home entertainment at all levels of the
+    AV value chain: [...] (iii) the retail supply of AV services to end customers, where Amazon
+    is active in the EEA through Prime Video. The scope of the three markets is assessed below
+    in Sections 4.1 to 4.3.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_amazon_mgm_2022_decision
+  page: '3'
+  quote_snippet: the Transaction only gives rise to affected vertical relationships in Germany,
+    Austria and Croatia relating to the retail supply of AV services to end customers under
+    a narrow market definition consisting of only SVOD services. Therefore, this will be the
+    starting point for the Commission’s assessment in this decision.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_amazon_mgm_2022_decision
+  page: '15'
+  quote_snippet: The market investigation first confirmed the segmentation that the Commission
+    previously identified between the retail supply of FTA TV channels and pay TV channels,
+    indicating that this distinction is accurate on the markets in Germany, Austria and Croatia
+    today.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_amazon_mgm_2022_decision
+  page: '3'
+  quote_snippet: The Transaction further concerns part of the theatrical distribution value
+    chain, namely the production and licensing of distribution rights of films for theatrical
+    exhibition, where both Amazon (through Amazon Studios) and MGM are active.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_amazon_mgm_2022_decision
+  page: '17'
+  quote_snippet: For the purpose of that decision, the Commission concluded that a separate
+    market for the production and licensing of distribution rights to third-party distributors
+    of films for theatrical release exists.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_amazon_mgm_2022_decision
+  page: '18'
+  quote_snippet: On the basis of the above, the Commission concludes that for the purpose of
+    this decision the production and licensing of distribution rights to third-party distributors
+    of films for theatrical release constitutes a relevant product market. The question whether
+    a distinction should be drawn between films produced by US studios and films produced by
+    non-US studios can be left open since the Transaction does not raise serious doubts as to
+    its compatibility with the internal market under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_amazon_mgm_2022_decision
+  page: '4'
+  quote_snippet: Amazon is not active on this market and MGM is not active in the distribution
+    of home entertainment products in the EEA. Therefore, this decision will not further discuss
+    a market for the distribution of home entertainment products.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_amazon_mgm_2022_decision
+  page: '4'
+  quote_snippet: Finally, the Parties are both active in the licensing out of IP rights for
+    merchandising. However, as the merchandise licensing industry is very large (according to
+    public sources reaching USD 280 billion in 2017)4 and the combined market share of the Parties
+    would be very low (less than [0-5]%) under any market definition, this decision will not
+    further discuss a market for merchandise licensing.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_amazon_mgm_2022_decision
+  page: '3'
+  quote_snippet: Moreover, neither of the Parties is active in theatrical exhibition. Therefore,
+    this decision will not further assess the impact of the Transaction on these markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_amazon_mgm_2022_decision
+  page: '9'
+  quote_snippet: The Commission concludes that, for the purpose of this decision, the geographic
+    markets for the production of commissioned AV content and the licensing of broadcasting
+    rights for pre-produced AV content are either national in scope or encompass linguistically
+    homogeneous regions. In any event, the precise scope of the geographic market can be left
+    open, as the Transaction does not raise serious concerns as to its compatibility with the
+    internal market under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_amazon_mgm_2022_decision
+  page: '13'
+  quote_snippet: For the purpose of this decision, the Commission concludes therefore that the
+    relevant geographic market for the wholesale supply of TV channels and all its possible
+    sub-segments is national in scope for Germany.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_amazon_mgm_2022_decision
+  page: '19'
+  quote_snippet: The vast majority of responding content providers indicate that, as a producer/supplier
+    of AV content, they would license distribution rights to third-party distributors of films
+    for theatrical release on a national level. This is confirmed by the responses the Commission
+    received from cinemas, where the majority indicates that they procure the rights to exhibit
+    films from distributors on a national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_amazon_mgm_2022_decision
+  page: '19'
+  quote_snippet: The Commission concludes that, for the purpose of this decision, the relevant
+    geographic market for the production and licensing of distribution rights of films for theatrical
+    release is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_amazon_mgm_2022_decision
+  page: '6'
+  quote_snippet: the Transaction does not raise serious doubts as to its compatibility with
+    the internal market under any plausible market definition, given the absence of an overlap.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_amazon_mgm_2022_decision
+  page: '9'
+  quote_snippet: the precise scope of the geographic market can be left open, as the Transaction
+    does not raise serious concerns as to its compatibility with the internal market under any
+    plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_amazon_mgm_2022_decision
+  page: '18'
+  quote_snippet: The question whether a distinction should be drawn between films produced by
+    US studios and films produced by non-US studios can be left open since the Transaction does
+    not raise serious doubts as to its compatibility with the internal market under any plausible
+    market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+case_type: merger
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []
+ai_summary: null

@@ -1,0 +1,486 @@
+case_id: eu_bouygues_equans_2022
+case_name: BOUYGUES / EQUANS
+authority: European Commission
+jurisdiction: EU
+sector: construction
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2022-07-19'
+parties:
+- name: BOUYGUES
+  role: acquirer
+- name: EQUANS
+  role: target
+source_documents:
+- doc_id: eu_bouygues_equans_2022_decision
+  title: BOUYGUES / EQUANS — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10575
+  pdf_url: http://publications.europa.eu/resource/cellar/b3f8b39a-56c5-11ed-92ed-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Installation and maintenance services for catenaries and overhead contact lines
+  definition_status: considered
+  notes: The Commission found that installation and maintenance are within the same product
+    market. A separation by type of system (catenaries and overhead contact lines versus third
+    rail) is warranted. The market investigation was inconclusive on further segmentation by
+    type of customer (long-distance versus metropolitan rail), but the Commission decided to
+    focus on long-distance rail. A distinction between conventional and high-speed rail was
+    not considered necessary.
+- market_id: pm_2
+  name: Manufacture and supply of catenary equipment
+  definition_status: left_open
+  notes: The Commission confirmed the existence of a separate market for the manufacture and
+    supply of catenary equipment. The question of whether to segment the market between catenary
+    equipment for trains and tramways was left open as it did not raise serious doubts.
+- market_id: pm_3
+  name: Electrical engineering services for telecommunication networks
+  definition_status: considered
+  notes: The Commission considers a separate market for electrical services for telecommunication
+    networks. The question of further segmentation between installation and maintenance services
+    or between different types of telecommunication networks (fixed/mobile) was left open.
+- market_id: pm_4
+  name: Electrical engineering services for power lines
+  definition_status: considered
+  notes: The Commission considers a separate market for electrical engineering services for
+    power lines, further divided between high-voltage and medium-to-low voltage networks. The
+    question of further segmentation between installation and maintenance services or between
+    overhead and underground lines was left open.
+- market_id: pm_5
+  name: Electrical engineering services for substations
+  definition_status: considered
+  notes: The Commission considers a separate market for electrical services for substations,
+    distinct from power lines engineering services. The question of further segmentation between
+    installation and maintenance services was left open.
+- market_id: pm_6
+  name: Electrical engineering services for public lighting
+  definition_status: considered
+  notes: The Commission considers a separate market for electrical engineering services for
+    public lighting, which does not need to be segmented further by type of service (traditional
+    vs. smart equipment). The question of further segmentation between installation and maintenance
+    services was left open.
+- market_id: pm_7
+  name: Electrical engineering services for the civil nuclear industry
+  definition_status: considered
+  notes: The Commission confirmed the existence of a separate market for electrical engineering
+    services for the civil nuclear industry, due to specific knowledge and expertise requirements.
+    The question of further segmentation between installation and maintenance services was left
+    open.
+- market_id: pm_8
+  name: Deployment and operation of optical fibre networks in low density public-initiative
+    areas
+  definition_status: left_open
+  notes: The Commission had previously considered this a separate product market due to specificities
+    of the French market and regulatory framework. It left open whether 'zones AMEL' are part
+    of the same market as 'zones RIP', and whether to segment by type of network (e.g., copper,
+    FttO, FttH). For the purposes of this decision, the exact market definition was left open,
+    but the Commission assessed effects on this potential market and narrower markets by type
+    of network.
+- market_id: pm_9
+  name: Provision of HVAC installation and maintenance services for the civil nuclear industry
+  definition_status: considered
+  notes: The Commission confirmed the existence of a separate market for HVAC engineering services
+    for the civil nuclear industry due to high expertise requirements. Respondents tended to
+    indicate separate markets for installation and maintenance works, as maintenance is less
+    sophisticated. For the assessment, the Commission considered separate markets for installation
+    and maintenance.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Installation and maintenance services for catenaries and overhead contact lines — national
+    (Belgium affected)
+  definition_status: defined
+  notes: The market investigation clearly indicated that this market is national in scope due
+    to providers being based in the same country as customers and differing national regulations,
+    certifications, and technical standards.
+- market_id: gm_2
+  name: Installation and maintenance services for catenaries and overhead contact lines — national
+    (Luxembourg affected)
+  definition_status: defined
+  notes: Although not explicitly stated as 'defined' for Luxembourg as a separate entry, the
+    analysis of the Luxembourg market in paragraph 161 (which discusses the national railway
+    operator CFL) and paragraph 162 (combined market share 'in Luxembourg') implies a national
+    scope, further reinforced by the general conclusion in paragraph 29 regarding national scope
+    for these services. The commitment is specifically for Belgium.
+- market_id: gm_3
+  name: Manufacture and supply of catenary equipment — EEA-wide
+  definition_status: considered
+  notes: The market investigation confirmed the market is at least EEA-wide, primarily based
+    on customer feedback indicating comparable national regulations, technical standards, and
+    certification processes across the EEA, and customers sourcing equipment on an EEA-wide
+    or worldwide basis.
+- market_id: gm_4
+  name: Electrical engineering services for telecommunication networks — national/regional (France
+    affected)
+  definition_status: left_open
+  notes: The Commission previously considered this market most likely national but left the
+    precise scope open, assessing it at both national and regional levels. Market investigation
+    feedback was mixed, noting both national players and regional contracts (e.g., for fibre
+    rollout).
+- market_id: gm_5
+  name: Electrical engineering services for power lines — national/regional (France affected)
+  definition_status: left_open
+  notes: Previous decisions considered high-voltage power lines national in scope, while leaving
+    power lines overall open between national and regional. Market investigation showed large
+    suppliers are national, but smaller providers operate regionally, particularly for medium
+    and low-voltage networks. The Commission ultimately left the exact geographic market definition
+    open but analyzed effects at both national and regional levels.
+- market_id: gm_6
+  name: Electrical engineering services for substations — national/regional (France affected)
+  definition_status: left_open
+  notes: Previous decisions considered this market national. Market investigation feedback was
+    mixed, with some suppliers active regionally and others nationally. Most customers sourced
+    nationwide, with consistent prices. The Commission left the exact geographic market definition
+    open but analyzed effects at both national and regional levels.
+- market_id: gm_7
+  name: Electrical engineering services for public lighting — national/regional (France affected)
+  definition_status: left_open
+  notes: The Commission previously considered this market national. Market investigation feedback
+    from customers and competitors supported a national scope due to national players and similar
+    pricing. The Commission left the exact geographic market definition open but analyzed effects
+    at both national and regional levels.
+- market_id: gm_8
+  name: Electrical engineering services for the civil nuclear industry (installation services)
+    — national (France affected)
+  definition_status: considered
+  notes: Service providers for the civil nuclear industry are typically present nation-wide,
+    especially for installation and larger maintenance projects. The Commission decided to analyze
+    installation services at a national level and maintenance services at a regional level.
+- market_id: gm_9
+  name: Electrical engineering services for the civil nuclear industry (maintenance services)
+    — regional (France affected)
+  definition_status: considered
+  notes: Service providers for the civil nuclear industry are typically present nation-wide
+    for larger projects, but smaller maintenance projects can be addressed by local players.
+    The Commission decided to analyze maintenance services at a regional level, as specified
+    for the civil nuclear industry.
+- market_id: gm_10
+  name: Deployment and operation of optical fibre networks in low density public-initiative
+    areas — regional (France affected)
+  definition_status: considered
+  notes: The Commission previously found this market national in scope but assessed it at a
+    regional level because vertically affected markets only arose regionally.
+- market_id: gm_11
+  name: Provision of HVAC installation services for the civil nuclear industry — national (France
+    affected)
+  definition_status: defined
+  notes: Market investigation confirmed that service providers are typically nation-wide due
+    to the volume of activities and qualifications required. All customers sourced nationally.
+- market_id: gm_12
+  name: Provision of HVAC maintenance services for the civil nuclear industry — unknown (France
+    affected)
+  definition_status: left_open
+  notes: For HVAC maintenance services, the exact geographic market definition was left open
+    as the parties do not overlap in these activities.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_bouygues_equans_2022_decision
+  page: '5'
+  quote_snippet: Furthermore, the results of the market investigation indicated that a separation
+    by type of system, between catenaries and overhead contact lines, on the one hand, and third
+    rail systems, on the other hand, is warranted.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_bouygues_equans_2022_decision
+  page: '6'
+  quote_snippet: In light of the above, the Commission will assess the Transaction on the basis
+    of a market comprising the provision of both installation and maintenance services for catenaries
+    and overhead contact lines, excluding third rail systems, with a particular focus on long-distance
+    rail.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_bouygues_equans_2022_decision
+  page: '7'
+  quote_snippet: The market investigation confirmed the Commission’s previous findings with
+    respect to the existence of a separate market for the manufacture and supply of catenary
+    equipment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_bouygues_equans_2022_decision
+  page: '8'
+  quote_snippet: Furthermore, the question of whether a segmentation between catenary equipment
+    for trains and tramways is warranted can be left open, as the Transaction does not give
+    rise to serious doubts as to its compatibility with the internal market or the functioning
+    of the EEA agreement as regards the manufacture and supply of catenary equipment, irrespective
+    of the precise product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_bouygues_equans_2022_decision
+  page: '12'
+  quote_snippet: In line with the Commission’s precedents, the results of the market investigation
+    tended to indicate that within the infrastructure sector, there are separate product markets
+    according to the type of customer65 as explained below.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_bouygues_equans_2022_decision
+  page: '13'
+  quote_snippet: For the purposes of this decision, the Commission considers that, within electrical
+    engineering services, there is a separate market for electrical services for telecommunication
+    networks. The question whether this product market should be further segmented between installation
+    and maintenance services or between different types of telecommunication networks can be
+    left open as the Transaction does not raise serious doubts as to its compatibility with
+    the internal market or the functioning of the EEA agreement under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_bouygues_equans_2022_decision
+  page: '13'
+  quote_snippet: As regards power lines engineering services, the market investigation confirmed
+    that electrical engineering services for power lines differ from electrical engineering
+    services provided to customers in other infrastructure sectors. In addition, a majority
+    of both customers and competitors tended to indicate that high-voltage engineering services
+    belong to a separate market from engineering services for medium and low-voltage networks.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_bouygues_equans_2022_decision
+  page: '13'
+  quote_snippet: The feedback from the market investigation indicated that there were no grounds
+    to distinguish according to whether the installation and maintenance of power lines concerned
+    overground or underground lines, with respondents noting that suppliers tended to be active
+    in both.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_bouygues_equans_2022_decision
+  page: '13'
+  quote_snippet: For the purposes of this decision, the Commission considers that, within electrical
+    engineering services, there is a separate market for electrical engineering services for
+    power lines, which should be divided further between high-voltage networks, on the one hand,
+    and medium to low-voltage networks, on the other hand. The question whether this product
+    market should be further segmented between installation and maintenance services, or between
+    other types of power lines, can be left open as the Transaction does not raise serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA agreement
+    under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_bouygues_equans_2022_decision
+  page: '14'
+  quote_snippet: The results of the market investigation therefore tended to indicate that there
+    are separate markets for substations and power lines engineering services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_bouygues_equans_2022_decision
+  page: '14'
+  quote_snippet: For the purposes of this decision, the Commission considers that, within electrical
+    engineering services, there is a separate market for electrical services for substations.
+    The question whether this product market should be further segmented between installation
+    and maintenance services can be left open as the Transaction does not raise serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA agreement
+    under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_bouygues_equans_2022_decision
+  page: '14'
+  quote_snippet: In line with previous Commission precedents, the results of the market investigation
+    indicated that public lighting could be considered a separate product market. Furthermore,
+    the majority of both customers and competitors indicated that there were no grounds to further
+    separate the market according to the type of service provided e.g. between traditional lighting
+    (such as street lighting, traffic lights) or “smart” urban electrical equipment e.g. video-surveillance
+    etc. on the basis that a significant majority of customers and all competitors indicated
+    that providers can carry out engineering services for both traditional lighting and “smart”
+    urban electrical equipment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_bouygues_equans_2022_decision
+  page: '14'
+  quote_snippet: For the purposes of this decision, the Commission considers that, within electrical
+    engineering services, there is a separate market for electrical engineering services for
+    public lighting, which does not need to be segmented further by type of service provided.
+    The question whether this product market should be further segmented between installation
+    and maintenance services can be left open as the Transaction does not raise serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA agreement
+    under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_bouygues_equans_2022_decision
+  page: '15'
+  quote_snippet: The results of the market investigation confirmed the existence of a separate
+    market for the provision of electrical engineering services for the civil nuclear industry.
+    Responses from both competitors and customers were unanimous in that electrical engineering
+    service providers who are active on the overall industry sector are not necessarily able
+    or qualified to provide their services to the civil nuclear sector.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_bouygues_equans_2022_decision
+  page: '15'
+  quote_snippet: For the purposes of this decision, the Commission considers that, within electrical
+    engineering services, there is a separate market for electrical engineering services for
+    the civil nuclear industry. The question whether this product market should be further segmented
+    between installation and maintenance services can be left open as the Transaction does not
+    raise serious doubts as to its compatibility with the internal market or the functioning
+    of the EEA agreement under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_bouygues_equans_2022_decision
+  page: '35'
+  quote_snippet: As regards the Luxembourg market, the Commission notes that, in order to maintain
+    effective competition in its tenders for catenary and overhead contact line tenders, CFL,
+    the national railway operator and only customer in the long-distance rail segment, requires
+    at least three offers from qualified service providers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_bouygues_equans_2022_decision
+  page: '35'
+  quote_snippet: Following the Transaction, the combined market share of the Parties would exceed
+    60% on the overall market for the installation and maintenance of catenaries and overhead
+    contact lines in Luxembourg and exceed 70% on the potential market in Luxembourg for long-distance
+    rail. The Transaction would reduce the number of suppliers based in Luxembourg from three
+    to two.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_bouygues_equans_2022_decision
+  page: '69'
+  quote_snippet: For the reasons set out in this decision, the Commission has decided not to
+    oppose the notified operation and to declare it compatible with the internal market and
+    with the functioning of the EEA Agreement, subject to full compliance with the conditions
+    set out in Section B (and the respective Schedules) of the commitments
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

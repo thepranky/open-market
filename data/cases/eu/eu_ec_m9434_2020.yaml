@@ -1,0 +1,1316 @@
+case_id: eu_ec_m9434_2020
+case_name: M.9434
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2020-03-13'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9434_2020_decision
+  title: M.9434 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9434
+  pdf_url: http://publications.europa.eu/resource/cellar/ccf6666b-25cf-11eb-9d7e-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Military GNSS receivers
+  definition_status: defined
+  notes: The Commission defined a separate product market for military GPS receivers. It also
+    considered a possible differentiation by type of application/platform but did not definitively
+    resolve it for the purpose of the decision. The relationship between Galileo PRS receivers
+    and GPS receivers was not conclusively determined, but they were perceived as complementary
+    rather than substitutes.
+- market_id: pm_2
+  name: Military airborne radios
+  definition_status: defined
+  notes: The Commission defined a separate product market for military airborne radios, distinct
+    from military ground radios, military data links, and SATCOMs. It considered a possible
+    differentiation by frequency band (HF, VHF/UHF) but concluded no further segmentation was
+    necessary for the decision.
+- market_id: pm_3
+  name: Military ground radios
+  definition_status: defined
+  notes: The Commission defined a separate product market for military ground radios, distinct
+    from military airborne radios, military data links, and SATCOMs. The market investigation
+    for fixed and deployable ground radios was not conclusive, and no further segmentation was
+    deemed necessary. Raytheon indicated its intention to exit this segment.
+- market_id: pm_4
+  name: Military data links
+  definition_status: defined
+  notes: The Commission defined a separate product market for military data links, distinct
+    from military radios. The market investigation on segmentation between SA and ISR data links
+    was not conclusive, and no further segmentation was deemed necessary.
+- market_id: pm_5
+  name: SATCOMs (military)
+  definition_status: defined
+  notes: The Commission defined a separate product market for SATCOMs, distinct from other military
+    airborne communications systems. It noted demand-side segmentation between narrowband, wideband,
+    and protected SATCOMs but found supply-side analysis inconclusive, concluding no further
+    segmentation was necessary for the decision.
+- market_id: pm_6
+  name: EO/IR sensors (military)
+  definition_status: left_open
+  notes: The market investigation confirmed the Notifying Party’s view that segmentation by
+    range (short-, mid-, and long-range) reflects market conditions and implies distinct product
+    markets. However, it also suggested an alternative segmentation by mission type (surveillance,
+    reconnaissance, targeting). The exact market definition was left open as no competition
+    concerns arose regardless of the definition.
+- market_id: pm_7
+  name: Bombs (military)
+  definition_status: left_open
+  notes: The market investigation confirmed that bombs, projectiles, and missiles constitute
+    distinct product markets due to limited demand-side and supply-side substitutability. However,
+    the exact product market definition for PGMs was left open as no competition concerns arose.
+- market_id: pm_8
+  name: Projectiles (military)
+  definition_status: left_open
+  notes: The market investigation confirmed that bombs, projectiles, and missiles constitute
+    distinct product markets due to limited demand-side and supply-side substitutability. However,
+    the exact product market definition for PGMs was left open as no competition concerns arose.
+- market_id: pm_9
+  name: Missiles (military)
+  definition_status: left_open
+  notes: The market investigation confirmed that bombs, projectiles, and missiles constitute
+    distinct product markets. It also suggested a further segmentation for missiles into strategic
+    and tactical types due to limited substitutability. However, the exact product market definition
+    for PGMs was left open as no competition concerns arose.
+- market_id: pm_10
+  name: PGM actuation systems
+  definition_status: left_open
+  notes: The Commission had previously considered guided missile actuation systems as a separate
+    product market. The market investigation confirmed that segmentation distinguishing Thrust
+    Vector-based Actuation (TVA) and fin-based actuation systems for PGMs reflects market conditions
+    and that they constitute distinct markets. However, the exact product market definition
+    was ultimately left open as no competition concerns arose.
+- market_id: pm_11
+  name: IMUs for PGMs
+  definition_status: left_open
+  notes: The market investigation indicated that a segmentation distinguishing lower end tactical
+    IMUs from navigation IMUs for PGMs reflects market conditions, confirming they constitute
+    distinct product markets. Consumer grade IMUs were not considered for PGMs. The exact product
+    market definition was ultimately left open as no competition concerns arose.
+- market_id: pm_12
+  name: Datalink network services (ARINC/SITA)
+  definition_status: left_open
+  notes: Market investigation indicated that ARINC and SITA are considered alternative datalink
+    network services. However, the Commission left open the question of whether they constitute
+    separate markets or a single product market, as the transaction did not raise serious doubts
+    under any segmentation.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Military GNSS receivers — EEA-wide
+  definition_status: defined
+  notes: The geographic market for all military equipment discussed in Section 7 was considered
+    EEA-wide. Sales of defence equipment in the EEA generally originate from EEA-based or US-based
+    suppliers, and the US market is de facto closed to EEA suppliers.
+- market_id: gm_2
+  name: Military airborne radios — EEA-wide
+  definition_status: defined
+  notes: The geographic market for all military equipment discussed in Section 7 was considered
+    EEA-wide. Sales of defence equipment in the EEA generally originate from EEA-based or US-based
+    suppliers, and the US market is de facto closed to EEA suppliers.
+- market_id: gm_3
+  name: Military ground radios — EEA-wide
+  definition_status: defined
+  notes: The geographic market for all military equipment discussed in Section 7 was considered
+    EEA-wide. Sales of defence equipment in the EEA generally originate from EEA-based or US-based
+    suppliers, and the US market is de facto closed to EEA suppliers.
+- market_id: gm_4
+  name: Military data links — EEA-wide
+  definition_status: defined
+  notes: The geographic market for all military equipment discussed in Section 7 was considered
+    EEA-wide. Sales of defence equipment in the EEA generally originate from EEA-based or US-based
+    suppliers, and the US market is de facto closed to EEA suppliers.
+- market_id: gm_5
+  name: SATCOMs (military) — EEA-wide
+  definition_status: defined
+  notes: The geographic market for all military equipment discussed in Section 7 was considered
+    EEA-wide. Sales of defence equipment in the EEA generally originate from EEA-based or US-based
+    suppliers, and the US market is de facto closed to EEA suppliers.
+- market_id: gm_6
+  name: EO/IR sensors (military) — EEA-wide
+  definition_status: left_open
+  notes: The geographic market for all military equipment discussed in Section 7 was considered
+    EEA-wide, although the exact product market definition for EO/IR sensors was left open.
+    Sales of defence equipment in the EEA generally originate from EEA-based or US-based suppliers,
+    and the US market is de facto closed to EEA suppliers.
+- market_id: gm_7
+  name: Bombs (military) — EEA-wide
+  definition_status: left_open
+  notes: The geographic market for all military equipment discussed in Section 7 was considered
+    EEA-wide, although the exact product market definition for PGM types was left open. Sales
+    of defence equipment in the EEA generally originate from EEA-based or US-based suppliers,
+    and the US market is de facto closed to EEA suppliers.
+- market_id: gm_8
+  name: Projectiles (military) — EEA-wide
+  definition_status: left_open
+  notes: The geographic market for all military equipment discussed in Section 7 was considered
+    EEA-wide, although the exact product market definition for PGM types was left open. Sales
+    of defence equipment in the EEA generally originate from EEA-based or US-based suppliers,
+    and the US market is de facto closed to EEA suppliers.
+- market_id: gm_9
+  name: Missiles (military) — EEA-wide
+  definition_status: left_open
+  notes: The geographic market for all military equipment discussed in Section 7 was considered
+    EEA-wide, although the exact product market definition for PGM types was left open. Sales
+    of defence equipment in the EEA generally originate from EEA-based or US-based suppliers,
+    and the US market is de facto closed to EEA suppliers.
+- market_id: gm_10
+  name: PGM actuation systems — EEA-wide
+  definition_status: left_open
+  notes: The geographic market for all military equipment discussed in Section 7 was considered
+    EEA-wide, although the exact product market definition for PGM actuation systems was left
+    open. Sales of defence equipment in the EEA generally originate from EEA-based or US-based
+    suppliers, and the US market is de facto closed to EEA suppliers.
+- market_id: gm_11
+  name: IMUs for PGMs — EEA-wide
+  definition_status: left_open
+  notes: The geographic market for all military equipment discussed in Section 7 was considered
+    EEA-wide, although the exact product market definition for IMUs for PGMs was left open.
+    Sales of defence equipment in the EEA generally originate from EEA-based or US-based suppliers,
+    and the US market is de facto closed to EEA suppliers.
+- market_id: gm_12
+  name: Datalink network services (ARINC/SITA) — EEA-wide / unspecified national
+  definition_status: left_open
+  notes: While market investigation pointed to EEA-wide or national variations (Rockwell Collins
+    exclusive VHF in some areas, SITA in others), the Commission ultimately left open the exact
+    geographic market definition for datalink network services (ARINC/SITA), as no competition
+    concerns arose under any segmentation.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '8'
+  quote_snippet: From a demand side perspective, according to the results of the market investigation,
+    most market participants consider that civilian and military GNSS receivers constitute separate
+    product markets due to limited substitutability for customers in terms of, e.g., product
+    characteristics, applications and prices.18 One respondent to the market investigation indicated
+    that ‘[m]ilitary receivers utilize a different signal and have technical features that ordinary,
+    civilian receivers do not include, such as enhanced security to prevent disruption of signals’.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '8'
+  quote_snippet: From the point of view of suppliers, the results of the market investigation
+    have revealed that the production of civilian and military GNSS receivers entail significantly
+    different technical features, expertise and costs.20 This is irrespective of the fact that
+    the manufacture and supply of military GNSS receivers requires authorisation from relevant
+    national authorities.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '9'
+  quote_snippet: Based on the assessment laid down in paragraphs (42) to (45), the Commission
+    considers it appropriate to define a separate product market for military GPS receivers.
+    The Commission will in addition factor into its assessment a possible differentiation in
+    the production and supply of military GPS receivers by type of application/platform.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '12'
+  quote_snippet: From a demand-side perspective, according to the results of the market investigation,
+    most market participants consider that military airborne radios and military ground radios
+    constitute separate product markets due to limited substitutability for customers in terms
+    of, e.g., product characteristics, applications and prices.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '12'
+  quote_snippet: From a supply-side perspective, the market investigation has revealed that
+    most market participants consider that the production of military airborne radios and the
+    production of military ground radios entail significantly different technical features,
+    expertise and costs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '14'
+  quote_snippet: Based on the assessment laid down in paragraphs (60) to (65), the Commission
+    considers it appropriate to define separate product markets for the production and supply
+    of, respectively, military airborne radios, military ground radios, military data links
+    and SATCOMs. The Commission concludes that, for the purposes of the present Decision, no
+    further segmentation of said markets is necessary, as the conclusion would remain the same,
+    though a possible differentiation of military airborne radios by frequency band will be
+    taken into account in the competitive assessment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '12'
+  quote_snippet: From a demand-side perspective, according to the results of the market investigation,
+    most market participants consider that military airborne radios and military ground radios
+    constitute separate product markets due to limited substitutability for customers in terms
+    of, e.g., product characteristics, applications and prices.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '12'
+  quote_snippet: From a supply-side perspective, the market investigation has revealed that
+    most market participants consider that the production of military airborne radios and the
+    production of military ground radios entail significantly different technical features,
+    expertise and costs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '14'
+  quote_snippet: Based on the assessment laid down in paragraphs (60) to (65), the Commission
+    considers it appropriate to define separate product markets for the production and supply
+    of, respectively, military airborne radios, military ground radios, military data links
+    and SATCOMs. The Commission concludes that, for the purposes of the present Decision, no
+    further segmentation of said markets is necessary, as the conclusion would remain the same,
+    though a possible differentiation of military airborne radios by frequency band will be
+    taken into account in the competitive assessment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '13'
+  quote_snippet: With regard to military data links, the market investigation has revealed that
+    most market participants consider that, from both demand and supply side perspectives, it
+    is appropriate to consider that military radios and data links constitute separate product
+    markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '13'
+  quote_snippet: One market participant has explained that, ‘[r]adios are largely narrow band
+    and low data rate, whereas data links can be very wide band, high bandwidth, and specialized
+    to handle advanced network topologies and data routing’ and ‘[d]ata links are therefore
+    different products and are not substitutable with radios’.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '14'
+  quote_snippet: Based on the assessment laid down in paragraphs (60) to (65), the Commission
+    considers it appropriate to define separate product markets for the production and supply
+    of, respectively, military airborne radios, military ground radios, military data links
+    and SATCOMs. The Commission concludes that, for the purposes of the present Decision, no
+    further segmentation of said markets is necessary, as the conclusion would remain the same,
+    though a possible differentiation of military airborne radios by frequency band will be
+    taken into account in the competitive assessment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '14'
+  quote_snippet: As to SATCOMs, most respondents to the market investigation indicated that
+    it is appropriate to consider that SATCOMs constitute a separate product market from other
+    military airborne communications systems (i.e. military radios and data links) due to limited
+    substitutability for customers and suppliers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '14'
+  quote_snippet: Within SATCOMs, most respondents consider that, from a demand side perspective,
+    further segmentations between (i) narrowband SATCOMs, (ii) wideband SATCOMs and (iii) protected
+    SATCOMs are should be considered due to limited substitutability for customers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '14'
+  quote_snippet: Based on the assessment laid down in paragraphs (60) to (65), the Commission
+    considers it appropriate to define separate product markets for the production and supply
+    of, respectively, military airborne radios, military ground radios, military data links
+    and SATCOMs. The Commission concludes that, for the purposes of the present Decision, no
+    further segmentation of said markets is necessary, as the conclusion would remain the same,
+    though a possible differentiation of military airborne radios by frequency band will be
+    taken into account in the competitive assessment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '16'
+  quote_snippet: The market investigation indicates that the Notifying Party’s proposed product
+    market segmentation by range of EO/IR sensors, that is to say EO/IR sensors with short-,
+    mid-, and long-range, reflects market conditions in terms of, for example, product characteristics,
+    applications and prices. However, alternative market segmentations have also been suggested
+    by respondents to the market investigation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '18'
+  quote_snippet: In conclusion, the market investigation appears to confirm the Notifying Party’s
+    claim that long-, mid-, and short-range EO/IR sensors constitute three distinct product
+    markets due to limited demand-side and supply-side substitutability. However, the market
+    investigation also suggests that an alternative way of defining product markets for EO/IR
+    sensors would be based on their final use, i.e. that the markets for EO/IR sensors for surveillance,
+    for reconnaissance, and for targeting would constitute three distinct product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '18'
+  quote_snippet: At the end though, while there might be some overlaps between a segmentation
+    by ranges and by mission types, the exact product market definition can be left open because,
+    as explained in Section 7.1.3 and for the purposes of this Decision, no competition concern
+    would arise as a result of the Transaction, irrespective of whether product markets are
+    defined based on sensors range or based on final application.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '23'
+  quote_snippet: The results of the market investigation reveal that the Notifying Party’s proposed
+    product market segmentation by type of weapon, that is to say bombs, projectiles and missiles,
+    reflects market conditions in terms of product characteristics, applications and prices.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '25'
+  quote_snippet: In conclusion, the market investigation confirms the Notifying Party’s claim
+    that the markets for bombs, projectiles and missiles constitute distinct product markets
+    due to limited demand-side and supply-side substitutability. However, the market investigation
+    also suggests that a further segmentation of product markets specifically for missiles could
+    be based on their final use, i.e. that strategic and tactical missiles would constitute
+    distinct product markets. At the end, though, the exact product market definition can be
+    left open because no competition concern would arise as a result of the Transaction, irrespective
+    of whether product markets are defined based on the type of PGM, or based on their final
+    use.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '23'
+  quote_snippet: The results of the market investigation reveal that the Notifying Party’s proposed
+    product market segmentation by type of weapon, that is to say bombs, projectiles and missiles,
+    reflects market conditions in terms of product characteristics, applications and prices.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '25'
+  quote_snippet: In conclusion, the market investigation confirms the Notifying Party’s claim
+    that the markets for bombs, projectiles and missiles constitute distinct product markets
+    due to limited demand-side and supply-side substitutability. However, the market investigation
+    also suggests that a further segmentation of product markets specifically for missiles could
+    be based on their final use, i.e. that strategic and tactical missiles would constitute
+    distinct product markets. At the end, though, the exact product market definition can be
+    left open because no competition concern would arise as a result of the Transaction, irrespective
+    of whether product markets are defined based on the type of PGM, or based on their final
+    use.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '23'
+  quote_snippet: The results of the market investigation reveal that the Notifying Party’s proposed
+    product market segmentation by type of weapon, that is to say bombs, projectiles and missiles,
+    reflects market conditions in terms of product characteristics, applications and prices.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '24'
+  quote_snippet: A majority of the respondents to the market investigation considered that is
+    it appropriate to consider that tactical missiles (used for specific, geographically limited
+    actions) and strategic missiles (dedicated to state defence with longer range and greater
+    destruction capabilities) constitute separate product markets due to limited substitutability
+    for customers in terms of, e.g., product characteristics, applications and prices.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '26'
+  quote_snippet: The Commission has previously decided that guided missile actuation systems
+    constitute a separate product market.86
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '27'
+  quote_snippet: The market investigation indicates that a market segmentation distinguishing
+    TVA and fin-based actuation systems for PGMs reflects market conditions in terms of, e.g.,
+    product characteristics, applications and prices.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '27'
+  quote_snippet: In conclusion, the market investigation confirms that TVA and fin-based actuation
+    systems constitute distinct product markets due to the limited demand-side and supply-side
+    substitutability. At the end, though, the exact product market definition can be left open
+    because no competition concern would arise as a result of the Transaction, irrespectively
+    if product markets are defined based on the type of actuators, or not.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '28'
+  quote_snippet: The results of the market investigation indicate that a market segmentation
+    distinguishing lower end tactical IMUs from navigation IMUs systems for PGMs reflects market
+    conditions in terms of, e.g., product characteristics, applications and prices.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '29'
+  quote_snippet: First, with respect to demand-side substitutability, a large majority of the
+    suppliers of military equipment that replied to the market investigation agree with the
+    view that lower performance tactical grade IMUs (used in short-range PGMs, land vehicles,
+    sensor stabilization, and low altitude tactical UAVs) constitute a product market separate
+    from other IMUs due to limited substitutability for customers in terms of, e.g., product
+    characteristics, applications and prices.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '29'
+  quote_snippet: In conclusion, the market investigation seems to confirm that tactical IMUs
+    systems and other IMUs for PGMs constitute distinct product markets due to the limited demand-side
+    and supply-side substitutability. At the end, the exact product market definition can be
+    left open because no competition concern would arise as a result of the Transaction, irrespectively
+    if product markets are defined based on the type of IMU, or not.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '30'
+  quote_snippet: The results of the Commission's market investigation have shown that the majority
+    of airlines consider the datalink services offered by ARINC and SITA to be interchangeable.
+    The geographic coverage difference has nonetheless been singled out. In fact, while Rockwell
+    Collins is the exclusive supplier of VHF in […], SITA is the exclusive supplier of VHF in
+    […]. Nonetheless both airlines can provide coverage using other connectivity means. The
+    majority of OEMs therefore considered that ARINC and SITA compete’.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '31'
+  quote_snippet: Market investigation shows that both ARINC and SITA are used as datalink network
+    services and that market participant consider that they are alternative providing a similar
+    service.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '31'
+  quote_snippet: In conclusion, the market investigation appears to confirm that ARINC and SITA
+    are considered to offer alternative datalink network services. However, the question of
+    whether ARINC and SITA constitute separate markets or belong to a single product market
+    can be left open as the Transaction does not raise serious doubts regarding its compatibility
+    with the internal market under any of those segmentations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_34
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '31'
+  quote_snippet: The Notifying Party submits that the relevant geographic market for military
+    products is EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_35
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '32'
+  quote_snippet: The results of the market investigation suggest that the geographic scope of
+    the relevant product markets is EEA-wide. This is because, when asked at what geographical
+    level EEA-based customers procure the relevant products, none or very few respondents to
+    the market investigation indicated that EEA-based customers typically procure the relevant
+    products at nation-wide level. Conversely, most respondents indicated that EEA-based customers
+    typically procure the relevant products at EEA level and from the US.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_36
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '32'
+  quote_snippet: The Commission therefore considers that the geographic market for all military
+    equipment discussed in Section 7 below, is EEA-wide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_37
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '31'
+  quote_snippet: The Notifying Party submits that the relevant geographic market for military
+    products is EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_38
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '32'
+  quote_snippet: The results of the market investigation suggest that the geographic scope of
+    the relevant product markets is EEA-wide. This is because, when asked at what geographical
+    level EEA-based customers procure the relevant products, none or very few respondents to
+    the market investigation indicated that EEA-based customers typically procure the relevant
+    products at nation-wide level. Conversely, most respondents indicated that EEA-based customers
+    typically procure the relevant products at EEA level and from the US.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_39
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '32'
+  quote_snippet: The Commission therefore considers that the geographic market for all military
+    equipment discussed in Section 7 below, is EEA-wide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_40
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '31'
+  quote_snippet: The Notifying Party submits that the relevant geographic market for military
+    products is EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_41
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '32'
+  quote_snippet: The results of the market investigation suggest that the geographic scope of
+    the relevant product markets is EEA-wide. This is because, when asked at what geographical
+    level EEA-based customers procure the relevant products, none or very few respondents to
+    the market investigation indicated that EEA-based customers typically procure the relevant
+    products at nation-wide level. Conversely, most respondents indicated that EEA-based customers
+    typically procure the relevant products at EEA level and from the US.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_42
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '32'
+  quote_snippet: The Commission therefore considers that the geographic market for all military
+    equipment discussed in Section 7 below, is EEA-wide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_43
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '31'
+  quote_snippet: The Notifying Party submits that the relevant geographic market for military
+    products is EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_44
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '32'
+  quote_snippet: The results of the market investigation suggest that the geographic scope of
+    the relevant product markets is EEA-wide. This is because, when asked at what geographical
+    level EEA-based customers procure the relevant products, none or very few respondents to
+    the market investigation indicated that EEA-based customers typically procure the relevant
+    products at nation-wide level. Conversely, most respondents indicated that EEA-based customers
+    typically procure the relevant products at EEA level and from the US.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_45
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '32'
+  quote_snippet: The Commission therefore considers that the geographic market for all military
+    equipment discussed in Section 7 below, is EEA-wide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_46
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '31'
+  quote_snippet: The Notifying Party submits that the relevant geographic market for military
+    products is EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_47
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '32'
+  quote_snippet: The results of the market investigation suggest that the geographic scope of
+    the relevant product markets is EEA-wide. This is because, when asked at what geographical
+    level EEA-based customers procure the relevant products, none or very few respondents to
+    the market investigation indicated that EEA-based customers typically procure the relevant
+    products at nation-wide level. Conversely, most respondents indicated that EEA-based customers
+    typically procure the relevant products at EEA level and from the US.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_48
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '32'
+  quote_snippet: The Commission therefore considers that the geographic market for all military
+    equipment discussed in Section 7 below, is EEA-wide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_49
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '31'
+  quote_snippet: The Notifying Party submits that the relevant geographic market for military
+    products is EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_50
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '32'
+  quote_snippet: The results of the market investigation suggest that the geographic scope of
+    the relevant product markets is EEA-wide. This is because, when asked at what geographical
+    level EEA-based customers procure the relevant products, none or very few respondents to
+    the market investigation indicated that EEA-based customers typically procure the relevant
+    products at nation-wide level. Conversely, most respondents indicated that EEA-based customers
+    typically procure the relevant products at EEA level and from the US.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_51
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '32'
+  quote_snippet: The Commission therefore considers that the geographic market for all military
+    equipment discussed in Section 7 below, is EEA-wide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_52
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '31'
+  quote_snippet: The Notifying Party submits that the relevant geographic market for military
+    products is EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_53
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '32'
+  quote_snippet: The results of the market investigation suggest that the geographic scope of
+    the relevant product markets is EEA-wide. This is because, when asked at what geographical
+    level EEA-based customers procure the relevant products, none or very few respondents to
+    the market investigation indicated that EEA-based customers typically procure the relevant
+    products at nation-wide level. Conversely, most respondents indicated that EEA-based customers
+    typically procure the relevant products at EEA level and from the US.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_54
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '32'
+  quote_snippet: The Commission therefore considers that the geographic market for all military
+    equipment discussed in Section 7 below, is EEA-wide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_55
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '31'
+  quote_snippet: The Notifying Party submits that the relevant geographic market for military
+    products is EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_8
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_56
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '32'
+  quote_snippet: The results of the market investigation suggest that the geographic scope of
+    the relevant product markets is EEA-wide. This is because, when asked at what geographical
+    level EEA-based customers procure the relevant products, none or very few respondents to
+    the market investigation indicated that EEA-based customers typically procure the relevant
+    products at nation-wide level. Conversely, most respondents indicated that EEA-based customers
+    typically procure the relevant products at EEA level and from the US.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_8
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_57
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '32'
+  quote_snippet: The Commission therefore considers that the geographic market for all military
+    equipment discussed in Section 7 below, is EEA-wide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_8
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_58
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '31'
+  quote_snippet: The Notifying Party submits that the relevant geographic market for military
+    products is EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_9
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_59
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '32'
+  quote_snippet: The results of the market investigation suggest that the geographic scope of
+    the relevant product markets is EEA-wide. This is because, when asked at what geographical
+    level EEA-based customers procure the relevant products, none or very few respondents to
+    the market investigation indicated that EEA-based customers typically procure the relevant
+    products at nation-wide level. Conversely, most respondents indicated that EEA-based customers
+    typically procure the relevant products at EEA level and from the US.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_9
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_60
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '32'
+  quote_snippet: The Commission therefore considers that the geographic market for all military
+    equipment discussed in Section 7 below, is EEA-wide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_9
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_61
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '31'
+  quote_snippet: The Notifying Party submits that the relevant geographic market for military
+    products is EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_10
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_62
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '32'
+  quote_snippet: The results of the market investigation suggest that the geographic scope of
+    the relevant product markets is EEA-wide. This is because, when asked at what geographical
+    level EEA-based customers procure the relevant products, none or very few respondents to
+    the market investigation indicated that EEA-based customers typically procure the relevant
+    products at nation-wide level. Conversely, most respondents indicated that EEA-based customers
+    typically procure the relevant products at EEA level and from the US.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_10
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_63
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '32'
+  quote_snippet: The Commission therefore considers that the geographic market for all military
+    equipment discussed in Section 7 below, is EEA-wide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_10
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_64
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '31'
+  quote_snippet: The Notifying Party submits that the relevant geographic market for military
+    products is EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_11
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_65
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '32'
+  quote_snippet: The results of the market investigation suggest that the geographic scope of
+    the relevant product markets is EEA-wide. This is because, when asked at what geographical
+    level EEA-based customers procure the relevant products, none or very few respondents to
+    the market investigation indicated that EEA-based customers typically procure the relevant
+    products at nation-wide level. Conversely, most respondents indicated that EEA-based customers
+    typically procure the relevant products at EEA level and from the US.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_11
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_66
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '32'
+  quote_snippet: The Commission therefore considers that the geographic market for all military
+    equipment discussed in Section 7 below, is EEA-wide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_11
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_67
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '30'
+  quote_snippet: The results of the Commission's market investigation have shown that the majority
+    of airlines consider the datalink services offered by ARINC and SITA to be interchangeable.
+    The geographic coverage difference has nonetheless been singled out. In fact, while Rockwell
+    Collins is the exclusive supplier of VHF in […], SITA is the exclusive supplier of VHF in
+    […]. Nonetheless both airlines can provide coverage using other connectivity means. The
+    majority of OEMs therefore considered that ARINC and SITA compete’.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_12
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_68
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '31'
+  quote_snippet: Market investigation shows that both ARINC and SITA are used as datalink network
+    services and that market participant consider that they are alternative providing a similar
+    service.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_12
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_69
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '31'
+  quote_snippet: In conclusion, the market investigation appears to confirm that ARINC and SITA
+    are considered to offer alternative datalink network services. However, the question of
+    whether ARINC and SITA constitute separate markets or belong to a single product market
+    can be left open as the Transaction does not raise serious doubts regarding its compatibility
+    with the internal market under any of those segmentations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_12
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_70
+  source_document_id: eu_ec_m9434_2020_decision
+  page: '1'
+  quote_snippet: Commission decision pursuant to Article 6(1)(b) in conjunction with Article
+    6(2) of Council Regulation No 139/20041 and Article 57 of the Agreement on the European
+    Economic Area2
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

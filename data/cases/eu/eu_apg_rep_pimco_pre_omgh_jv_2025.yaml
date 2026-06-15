@@ -1,0 +1,324 @@
+case_id: eu_apg_rep_pimco_pre_omgh_jv_2025
+case_name: APG REP / PIMCO PRE / OMGH JV
+authority: European Commission
+jurisdiction: EU
+sector: professional_services
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2025-05-06'
+parties:
+- name: APG REP
+  role: acquirer
+- name: PIMCO PRE
+  role: acquirer
+- name: OMGH JV
+  role: target
+source_documents:
+- doc_id: eu_apg_rep_pimco_pre_omgh_jv_2025_decision
+  title: APG REP / PIMCO PRE / OMGH JV — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11648
+  pdf_url: http://publications.europa.eu/resource/cellar/80e5cc0f-939c-11f0-97c8-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Rental of retail spaces in OCs (GLA > 10,000 sqm)
+  definition_status: considered
+  notes: ''
+- market_id: pm_2
+  name: Rental of real estate properties (distinct from development and management)
+  definition_status: considered
+  notes: ''
+- market_id: pm_3
+  name: Real estate services segmented by use (residential vs. commercial)
+  definition_status: considered
+  notes: ''
+- market_id: pm_4
+  name: Commercial properties segmented into office, retail, and industrial properties
+  definition_status: considered
+  notes: ''
+- market_id: pm_5
+  name: Rental of retail spaces (8,000 sqm and 10,000 sqm in real estate properties including
+    shopping centres and retail parks)
+  definition_status: considered
+  notes: ''
+- market_id: pm_6
+  name: Rental of retail spaces in shopping centres (8,000 sqm and 10,000 sqm)
+  definition_status: considered
+  notes: ''
+geographic_markets_considered:
+- market_id: gm_1
+  name: Rental of retail spaces in OCs — national (Netherlands affected)
+  definition_status: considered
+  notes: ''
+- market_id: gm_2
+  name: Rental of retail spaces in OCs — 50 km radius (Netherlands affected)
+  definition_status: considered
+  notes: ''
+- market_id: gm_3
+  name: Real estate markets — national, regional or local
+  definition_status: considered
+  notes: ''
+- market_id: gm_4
+  name: Rental of retail space in shopping centres (at least 8,000 or 10,000 sqm) — 50 km radius
+  definition_status: considered
+  notes: ''
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_apg_rep_pimco_pre_omgh_jv_2025_decision
+  page: '3'
+  quote_snippet: The Target is active on the market for the rental of retail spaces, in particular
+    of rental of space in OCs. PIMCO PRE and APG REP are also active on this market through
+    their majority interests in shopping centres, high street units, and OCs across Europe.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_apg_rep_pimco_pre_omgh_jv_2025_decision
+  page: '5'
+  quote_snippet: Notwithstanding, the Commission will for the purpose of this Decision assess
+    the competitive impact of the Transaction on the narrowest plausible market, that is rental
+    of retail spaces in OCs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_apg_rep_pimco_pre_omgh_jv_2025_decision
+  page: '5'
+  quote_snippet: For the purpose of the analysis in this case, and on a conservative basis,
+    the Commission has only taken into account competing assets which also have a gross lettable
+    area (“GLA”) in excess of 10,000 sqm, since all of the shopping centres (including OCs)
+    located in the overlapping countries in which the Target and the Notifying Parties have
+    controlling interests (13) have a GLA in excess of 10,000 sqm.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_apg_rep_pimco_pre_omgh_jv_2025_decision
+  page: '3'
+  quote_snippet: The Commission has previously considered that the market for the rental of
+    real estate properties was distinct from the market for the development of real estate properties
+    and the market for the management of real estate properties on behalf of third parties.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_apg_rep_pimco_pre_omgh_jv_2025_decision
+  page: '4'
+  quote_snippet: In its prior decisional practice, the Commission has also considered, but ultimately
+    left open, whether real estate services could be segmented according to the use made of
+    the real estate property between (i) residential and (ii) commercial real estate property.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_apg_rep_pimco_pre_omgh_jv_2025_decision
+  page: '4'
+  quote_snippet: With regard to commercial properties, the Commission has considered possible
+    segmentations into (i) office properties; (ii) retail properties; and (iii) industrial properties.
+    However, the Commission ultimately left the product market definition open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_apg_rep_pimco_pre_omgh_jv_2025_decision
+  page: '4'
+  quote_snippet: With regard to the market for rental of retail spaces, the Commission has considered,
+    but ultimately left open, a plausible market for (i) the rental of retail spaces in real
+    estate properties (including shopping centres and retail parks) of at least 8,000 sqm and
+    10,000 sqm respectively, and (ii) a distinct market for the rental of retail spaces in shopping
+    centres of at least 8,000 sqm and 10,000 sqm respectively.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_apg_rep_pimco_pre_omgh_jv_2025_decision
+  page: '4'
+  quote_snippet: With regard to the market for rental of retail spaces, the Commission has considered,
+    but ultimately left open, a plausible market for (i) the rental of retail spaces in real
+    estate properties (including shopping centres and retail parks) of at least 8,000 sqm and
+    10,000 sqm respectively, and (ii) a distinct market for the rental of retail spaces in shopping
+    centres of at least 8,000 sqm and 10,000 sqm respectively.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_apg_rep_pimco_pre_omgh_jv_2025_decision
+  page: '6'
+  quote_snippet: The Transaction gives rise to an affected market in the Netherlands if a national
+    market for the rental of retail spaces in OCs is considered. The competitive assessment
+    will, thus, focus on this market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_apg_rep_pimco_pre_omgh_jv_2025_decision
+  page: '6'
+  quote_snippet: In line with its precedent, it will assess the horizontal overlaps both under
+    the broadest plausible geographic scope (national) and under the narrowest plausible geographic
+    scope (i.e. a 50 km radius).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_apg_rep_pimco_pre_omgh_jv_2025_decision
+  page: '5'
+  quote_snippet: The market investigation provided indications that it would be appropriate
+    to examine the market for the rental of retail spaces in shopping centres and/or in OCs
+    using a 50 km radius around the relevant city.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_apg_rep_pimco_pre_omgh_jv_2025_decision
+  page: '6'
+  quote_snippet: In line with its precedent, it will assess the horizontal overlaps both under
+    the broadest plausible geographic scope (national) and under the narrowest plausible geographic
+    scope (i.e. a 50 km radius).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_apg_rep_pimco_pre_omgh_jv_2025_decision
+  page: '6'
+  quote_snippet: Neither APG REP nor PIMCO hold controlling interests in shopping centres (including
+    OCs) within a 50 km radius around the Target’s Roermond Phase 1 OC. (18) Therefore, considering
+    the 50 km radius catchment area, the Transaction does not lead to any overlaps in the Netherlands
+    or the surrounding areas caught by the 50km radii.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_apg_rep_pimco_pre_omgh_jv_2025_decision
+  page: '5'
+  quote_snippet: The Commission has previously considered, but ultimately left open, whether
+    real estate markets (including their segmentations) can be regarded as national, regional
+    or local.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_apg_rep_pimco_pre_omgh_jv_2025_decision
+  page: '5'
+  quote_snippet: In particular, the Commission has considered in previous cases, but ultimately
+    left open the question whether these markets should be considered as regional and examined
+    the market for rental of retail space in shopping centres of at least 8,000 or 10,000 sqm
+    within a 50 km radius around the relevant city in the region.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_apg_rep_pimco_pre_omgh_jv_2025_decision
+  page: '9'
+  quote_snippet: For the above reasons, the European Commission has decided not to oppose the
+    notified operation and to declare it compatible with the internal market and with the EEA
+    Agreement. This decision is adopted in application of Article 6(1)(b) of the Merger Regulation
+    and Article 57 of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+case_type: merger
+ai_summary: null
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

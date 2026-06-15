@@ -1,0 +1,497 @@
+case_id: eu_ec_m10855_2023
+case_name: M.10855
+authority: European Commission
+jurisdiction: EU
+sector: tech
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2023-06-12'
+parties: []
+source_documents:
+- doc_id: eu_ec_m10855_2023_decision
+  title: M.10855 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10855
+  pdf_url: http://publications.europa.eu/resource/cellar/242da147-4aff-11ee-9220-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Overall provision of IT services
+  definition_status: left_open
+  notes: The Commission considered segmenting this market but ultimately left the product market
+    definition open.
+- market_id: pm_2
+  name: Cloud computing (IaaS and PaaS solutions)
+  definition_status: left_open
+  notes: The Commission referred to a sub-segmentation of IT outsourcing but ultimately left
+    the market definition open.
+- market_id: pm_3
+  name: SaaS solutions
+  definition_status: considered
+  notes: Considered as part of the IT software market in previous decisions. Segmentation based
+    on functionalities, industry sector, and end uses was considered.
+- market_id: pm_4
+  name: IaaS, PaaS, and SaaS cloud solutions
+  definition_status: left_open
+  notes: The Commission's market investigation indicated IaaS, PaaS, and SaaS are not interchangeable,
+    but ultimately the market definition for these distinctions and further segmentations (public/private/hybrid,
+    sovereign/non-sovereign, industry verticals) was left open.
+- market_id: pm_5
+  name: ANSSI-certified sovereign cloud services
+  definition_status: left_open
+  notes: The Commission's market investigation found that ANSSI-certified sovereign cloud services
+    are generally not interchangeable with standard cloud services from a demand-side perspective,
+    and that switching from standard to ANSSI-certified is difficult. The question of a separate
+    market was left open.
+- market_id: pm_6
+  name: Application implementation and managed services
+  definition_status: left_open
+  notes: The question of whether to distinguish this market and segment it further by industry
+    vertical was left open.
+- market_id: pm_7
+  name: Infrastructure implementation and managed services
+  definition_status: left_open
+  notes: The question of whether to distinguish this market and segment it further by industry
+    vertical was left open.
+- market_id: pm_8
+  name: Retail supply of fixed telephony services, including VoIP services
+  definition_status: considered
+  notes: The Commission considered this market for the purpose of the decision, but left open
+    whether it should be further segmented (e.g., local/national vs international calls, residential
+    vs non-residential customers).
+- market_id: pm_9
+  name: Retail supply of business connectivity services to large businesses and public sector
+    customers
+  definition_status: considered
+  notes: The Commission considered this market for the purpose of the decision, but left open
+    whether it should be further segmented (e.g., broadband access, leased lines, VPN services).
+geographic_markets_considered:
+- market_id: gm_1
+  name: IT services and IT software — at least EEA-wide/worldwide
+  definition_status: left_open
+  notes: The market investigation results were mixed, with some respondents indicating an EEA-wide
+    scope for IaaS, PaaS, and SaaS, while the Commission ultimately left the exact geographic
+    market definition open.
+- market_id: gm_2
+  name: Sovereign cloud services, including ANSSI-certified cloud services — national (France
+    affected)
+  definition_status: considered
+  notes: A majority of market participants indicated a national scope for these services due
+    to ANSSI certification requirements, despite the overall geographic market for IT services
+    being left open.
+- market_id: gm_3
+  name: Managed services — worldwide
+  definition_status: left_open
+  notes: The majority of competitors viewed the geographic scope as worldwide, but customer
+    views were mixed. The overall geographic market for IT services was left open.
+- market_id: gm_4
+  name: Retail supply of fixed telephony services, including VoIP services — national or wider
+    (France affected)
+  definition_status: left_open
+  notes: Market investigation yielded mixed views, with customers largely pointing to a national
+    scope, while some competitors suggested a wider scope due to VoIP technology. The Commission
+    left the exact geographic definition open.
+- market_id: gm_5
+  name: Retail supply of business connectivity services to large businesses and public sector
+    customers — national or wider (France affected)
+  definition_status: left_open
+  notes: Market investigation showed comparable views for national or wider scope, with some
+    services (like VPN) being worldwide and others limited by physical infrastructure. The Commission
+    left the exact geographic definition open.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m10855_2023_decision
+  page: '6'
+  quote_snippet: In previous decisions, the Commission considered a relevant product market
+    for the overall provision of IT services. More recently, the Commission considered segmenting
+    such market on the basis of (i) the functionality of the services; and (ii) the industry
+    verticals in which the customers are active, but ultimately left the product market definition
+    open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m10855_2023_decision
+  page: '9'
+  quote_snippet: In any event, the Commission considers that the question whether the IT services
+    market should be distinguished between (i) IaaS, PaaS and SaaS (the latter being a possible
+    segment of the IT software market); (ii) public, hybrid and private cloud services; (iii)
+    ANSSI-certified sovereign cloud services and non-ANSSI-certified cloud services; (iv) infrastructure
+    implementation and managed services; and (v) application implementation and managed services
+    can be left open as the Transaction does not raise competition concerns regardless of the
+    exact product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m10855_2023_decision
+  page: '6'
+  quote_snippet: When assessing the market for cloud computing (i.e., IaaS and PaaS solutions),
+    the Commission referred to a sub-segmentation of IT outsourcing, but ultimately left the
+    market definition open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m10855_2023_decision
+  page: '9'
+  quote_snippet: In any event, the Commission considers that the question whether the IT services
+    market should be distinguished between (i) IaaS, PaaS and SaaS (the latter being a possible
+    segment of the IT software market); (ii) public, hybrid and private cloud services; (iii)
+    ANSSI-certified sovereign cloud services and non-ANSSI-certified cloud services; (iv) infrastructure
+    implementation and managed services; and (v) application implementation and managed services
+    can be left open as the Transaction does not raise competition concerns regardless of the
+    exact product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m10855_2023_decision
+  page: '6'
+  quote_snippet: As regards SaaS solutions, the Commission’s previous decisional practice considered
+    such solutions as part of the separate IT software market. The Commission considered possible
+    segmentations of such market based on (i) the software’s functionalities, (ii) the industry
+    sector concerned and (iii) the end uses offered by a particular software.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m10855_2023_decision
+  page: '8'
+  quote_snippet: Overall, competitors and customers provided indications that IaaS, PaaS and
+    SaaS are not interchangeable and belong therefore to separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m10855_2023_decision
+  page: '9'
+  quote_snippet: In any event, the Commission considers that the question whether the IT services
+    market should be distinguished between (i) IaaS, PaaS and SaaS (the latter being a possible
+    segment of the IT software market); (ii) public, hybrid and private cloud services; (iii)
+    ANSSI-certified sovereign cloud services and non-ANSSI-certified cloud services; (iv) infrastructure
+    implementation and managed services; and (v) application implementation and managed services
+    can be left open as the Transaction does not raise competition concerns regardless of the
+    exact product market definition. Likewise, the questions whether (i) IaaS, PaaS and SaaS
+    solutions as well as (ii) managed services should be distinguished on the basis of the industry
+    verticals can be left open, as the Transaction does not raise competition concerns under
+    the Merger Regulation regardless of such possible distinction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m10855_2023_decision
+  page: '8'
+  quote_snippet: With respect to the existence of a possible separate market for sovereign cloud
+    services, and in particular ANSSI-certified sovereign cloud services, the majority of competitors
+    and customers who expressed a view consider that ANSSI-certified sovereign cloud services
+    are not interchangeable with standard (non-sovereign) cloud services from a demand-side
+    perspective.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m10855_2023_decision
+  page: '9'
+  quote_snippet: Overall, competitors submitted that it takes years and an investment of several
+    millions to start supplying ANSSI-certified sovereign cloud services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m10855_2023_decision
+  page: '9'
+  quote_snippet: In any event, the Commission considers that the question whether the IT services
+    market should be distinguished between (i) IaaS, PaaS and SaaS (the latter being a possible
+    segment of the IT software market); (ii) public, hybrid and private cloud services; (iii)
+    ANSSI-certified sovereign cloud services and non-ANSSI-certified cloud services; (iv) infrastructure
+    implementation and managed services; and (v) application implementation and managed services
+    can be left open as the Transaction does not raise competition concerns regardless of the
+    exact product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m10855_2023_decision
+  page: '9'
+  quote_snippet: In any event, the Commission considers that the question whether the IT services
+    market should be distinguished between (i) IaaS, PaaS and SaaS (the latter being a possible
+    segment of the IT software market); (ii) public, hybrid and private cloud services; (iii)
+    ANSSI-certified sovereign cloud services and non-ANSSI-certified cloud services; (iv) infrastructure
+    implementation and managed services; and (v) application implementation and managed services
+    can be left open as the Transaction does not raise competition concerns regardless of the
+    exact product market definition. Likewise, the questions whether (i) IaaS, PaaS and SaaS
+    solutions as well as (ii) managed services should be distinguished on the basis of the industry
+    verticals can be left open, as the Transaction does not raise competition concerns under
+    the Merger Regulation regardless of such possible distinction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m10855_2023_decision
+  page: '9'
+  quote_snippet: In any event, the Commission considers that the question whether the IT services
+    market should be distinguished between (i) IaaS, PaaS and SaaS (the latter being a possible
+    segment of the IT software market); (ii) public, hybrid and private cloud services; (iii)
+    ANSSI-certified sovereign cloud services and non-ANSSI-certified cloud services; (iv) infrastructure
+    implementation and managed services; and (v) application implementation and managed services
+    can be left open as the Transaction does not raise competition concerns regardless of the
+    exact product market definition. Likewise, the questions whether (i) IaaS, PaaS and SaaS
+    solutions as well as (ii) managed services should be distinguished on the basis of the industry
+    verticals can be left open, as the Transaction does not raise competition concerns under
+    the Merger Regulation regardless of such possible distinction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m10855_2023_decision
+  page: '11'
+  quote_snippet: In light of the above and in line with its precedents, the Commission considers
+    that, for the purpose of the present Decision, the relevant market is the market for the
+    retail supply of fixed telephony services, including VoIP services. The question whether
+    such market should be further segmented between local/national and international calls or
+    between the different types of end-users can be left open, as the Transaction does not raise
+    competition concerns under the Merger Regulation regardless of the precise product market
+    definition for fixed telephony services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m10855_2023_decision
+  page: '14'
+  quote_snippet: In any event, the Commission considers that, for the purpose of the present
+    Decision, and in line with its precedents, the relevant market is the market for the retail
+    supply of business connectivity services to large businesses and public sector customers.
+    The question whether this market should be further segmented between the different types
+    of networks and services can be left open as the Transaction does not raise competition
+    concerns under the Merger Regulation regardless of the precise product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m10855_2023_decision
+  page: '10'
+  quote_snippet: In its decisional practice, the Commission has acknowledged that the IT services
+    market is likely broader than national but has ultimately left the geographic market definition
+    open. As regards the IT software market, the Commission previously concluded that the geographic
+    scope is at least EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m10855_2023_decision
+  page: '10'
+  quote_snippet: The results of the market investigation were mixed as regards the geographic
+    scope of the markets for IT services and IT software. While the many respondents indicated
+    that the geographic scope of IaaS, PaaS and SaaS as well as private, hybrid and public cloud
+    services is at least EEA-wide, a majority of customers and competitors also indicated that
+    sovereign cloud services, including ANSSI-certified cloud services, are national in scope,
+    because of the requirements for the ANSSI certification according to which the relevant
+    operators have to be based in France.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m10855_2023_decision
+  page: '11'
+  quote_snippet: In any event, the Commission considers that, for the purpose of the present
+    Decision, the exact geographic market definition for the provision of IT services and IT
+    software can be left open as the Transaction does not raise competition concerns under the
+    Merger Regulation under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m10855_2023_decision
+  page: '11'
+  quote_snippet: In any event, the Commission considers that, for the purpose of the present
+    Decision, the exact geographic market definition for the provision of IT services and IT
+    software can be left open as the Transaction does not raise competition concerns under the
+    Merger Regulation under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m10855_2023_decision
+  page: '11'
+  quote_snippet: As regards managed services, the majority of competitors that provided a view
+    indicated that their geographic scope is worldwide, because the conditions for supply of
+    such services are generally homogeneous regardless of the geography.45 While the majority
+    of customers also indicated that the geographic scope of managed services is worldwide,
+    replies were more mixed as a number of customers pointed to a national dimension of managed
+    services.46
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m10855_2023_decision
+  page: '11'
+  quote_snippet: In any event, the Commission considers that, for the purpose of the present
+    Decision, the exact geographic market definition for the provision of IT services and IT
+    software can be left open as the Transaction does not raise competition concerns under the
+    Merger Regulation under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m10855_2023_decision
+  page: '13'
+  quote_snippet: In any event, the Commission considers that, for the purpose of the present
+    Decision, the exact geographic definition of the market for the retail supply of fixed telephony
+    services can be left open, as the Transaction does not raise competition concerns under
+    the Merger Regulation regardless of the precise geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m10855_2023_decision
+  page: '15'
+  quote_snippet: In any event, the Commission considers that, for the purpose of the present
+    Decision, the exact geographic definition of the market for the provision of business connectivity
+    services can be left open as the Transaction does not raise competition concerns under the
+    Merger Regulation regardless of the precise geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+case_type: merger
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []
+ai_summary: null

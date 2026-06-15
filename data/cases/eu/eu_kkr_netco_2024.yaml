@@ -1,0 +1,349 @@
+case_id: eu_kkr_netco_2024
+case_name: KKR / NETCO
+authority: European Commission
+jurisdiction: EU
+sector: tech
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2024-05-30'
+parties:
+- name: KKR
+  role: acquirer
+- name: NETCO
+  role: target
+source_documents:
+- doc_id: eu_kkr_netco_2024_decision
+  title: KKR / NETCO — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11386
+  pdf_url: http://publications.europa.eu/resource/cellar/f4746cb8-6cac-11ef-a8ba-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Wholesale supply of broadband access services (segmented by level of interconnection,
+    type of access, technology, and type of service)
+  definition_status: left_open
+  notes: The Commission previously defined a separate market for wholesale supply of broadband
+    access services and considered but left open further segmentation by point of interconnection
+    (local/central), type of access (LLU, bitstream, resale), and technology (cable, copper,
+    fibre, FWA). For this decision, the exact product market definition for the overall market
+    was left open, irrespective of further segmentation by these criteria and by type of service
+    (active/passive).
+- market_id: pm_2
+  name: Wholesale supply of passive broadband access services
+  definition_status: considered
+  notes: This market was considered as part of a vertically affected link and a horizontally
+    affected market for the purpose of the competitive assessment, with a focus on semi-GPON
+    services in the foreclosure analysis.
+- market_id: pm_3
+  name: Wholesale supply of active broadband access services
+  definition_status: considered
+  notes: This market was considered as part of a vertically affected link for the purpose of
+    the competitive assessment. The Commission noted that the Transaction does not lead to a
+    structural change in this market.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Wholesale supply of broadband access services — national (Italy affected)
+  definition_status: considered
+  notes: The Commission considered the relevant geographic market for the wholesale supply of
+    broadband access services to be national (Italy) based on market investigation responses
+    and the fact that NetCo will be active throughout Italy and prices are set at a national
+    level.
+- market_id: gm_2
+  name: Wholesale supply of passive broadband access services — national (Italy affected)
+  definition_status: considered
+  notes: This market, as part of the vertically and horizontally affected links, was assessed
+    at a national level in Italy.
+- market_id: gm_3
+  name: Wholesale supply of active broadband access services — national (Italy affected)
+  definition_status: considered
+  notes: This market, as part of the vertically affected link, was assessed at a national level
+    in Italy.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_kkr_netco_2024_decision
+  page: '16'
+  quote_snippet: 'The Commission has previously defined a separate market for wholesale supply
+    of broadband access services. The Commission considered, but ultimately left the question
+    open, whether this market should be subdivided according to: (i) the level where the point
+    of interconnection – which connects the infrastructure of the wholesale provider and that
+    of the customer (i.e. the operator seeking access) – is situated (i.e. wholesale local or
+    central broadband access); (ii) the type of access to fixed connections (i.e. wholesale
+    LLU, bitstream or resale broadband access); or (iii) the type of technology (i.e. cable,
+    copper, fibre or FWA).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_kkr_netco_2024_decision
+  page: '17'
+  quote_snippet: In light of the above and for the purpose of this decision, the Commission
+    concludes that the exact product market definition for the market for wholesale supply of
+    broadband access services can be left open, as the Transaction does not raise serious doubts
+    as to its compatibility with the internal market irrespective of a further segmentation
+    by (i) the level where the point of interconnection is situated; (ii) the type of access;
+    (iii) the type of technology (between copper, fibre and FWA); and (iv) the type of service
+    (between active and passive).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_kkr_netco_2024_decision
+  page: '19'
+  quote_snippet: The horizontally affected market for the wholesale supply of broadband access
+    services in Italy.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_kkr_netco_2024_decision
+  page: '19'
+  quote_snippet: The vertically affected link between the market for the wholesale supply of
+    passive broadband access services in Italy (upstream) and the market for the wholesale supply
+    of active broadband access services in Italy (downstream); and, (b) The horizontally affected
+    market for the wholesale supply of passive broadband access services in Italy;
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_kkr_netco_2024_decision
+  page: '25'
+  quote_snippet: On this basis, the scope of this section will be limited to assessing whether
+    it is likely that the Transaction will lead to the foreclosure of access seekers relying
+    on semi-GPON services in Italy.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_kkr_netco_2024_decision
+  page: '33'
+  quote_snippet: The Commission will assess whether the proposed Transaction makes coordination
+    possible and/or easier in the horizontally affected markets for the wholesale supply of
+    broadband access services in Italy and for the wholesale supply of passive broadband access
+    services in Italy
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_kkr_netco_2024_decision
+  page: '19'
+  quote_snippet: The vertically affected link between the market for the wholesale supply of
+    passive broadband access services in Italy (upstream) and the market for the wholesale supply
+    of active broadband access services in Italy (downstream)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_kkr_netco_2024_decision
+  page: '21'
+  quote_snippet: As FiberCop does not offer wholesale active broadband access services, the
+    Transaction does not lead to any increment on this market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_kkr_netco_2024_decision
+  page: '25'
+  quote_snippet: Accordingly, prior to the Transaction, active services using FiberCop’s fibre
+    assets are marketed by TIM (and other competitors). On this basis, the Transaction is only
+    liable to alter the possibility for third-party customers of FiberCop to maintain their
+    access to semi-GPON, as all other (passive and active) services are already offered only
+    by TIM prior to the Transaction and not by FiberCop.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_kkr_netco_2024_decision
+  page: '18'
+  quote_snippet: The vast majority of the respondents to the market investigation submitted
+    that the relevant geographic scope of the market for wholesale supply of broadband access
+    services is national. The Commission notes that NetCo will be active in the whole territory
+    of Italy. Moreover, prices are set at a national level. In light of the above and for the
+    purpose of this decision, the Commission considers that the relevant geographic market is
+    national, i.e. Italy.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_kkr_netco_2024_decision
+  page: '18'
+  quote_snippet: In previous decisions, the Commission considered whether the geographic market
+    for wholesale supply of broadband access services was national or limited to the coverage
+    area of each network operator but left the definition open. In recent decisions concerning
+    cable, the Commission concluded that the geographical scope was each cable operator’s coverage
+    area. In respect of the Italian market, in Vodafone Italia/TIM/Inwit JV, the Commission
+    left the exact geographic market definition open absent any competition concerns, but based
+    its competitive assessment on the national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_kkr_netco_2024_decision
+  page: '19'
+  quote_snippet: The vertically affected link between the market for the wholesale supply of
+    passive broadband access services in Italy (upstream) and the market for the wholesale supply
+    of active broadband access services in Italy (downstream); and, (b) The horizontally affected
+    market for the wholesale supply of passive broadband access services in Italy; and, (c)
+    The horizontally affected market for the wholesale supply of broadband access services in
+    Italy.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_kkr_netco_2024_decision
+  page: '19'
+  quote_snippet: The vertically affected link between the market for the wholesale supply of
+    passive broadband access services in Italy (upstream) and the market for the wholesale supply
+    of active broadband access services in Italy (downstream); and, (b) The horizontally affected
+    market for the wholesale supply of passive broadband access services in Italy;
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_kkr_netco_2024_decision
+  page: '18'
+  quote_snippet: The Commission notes that NetCo will be active in the whole territory of Italy.
+    Moreover, prices are set at a national level. In light of the above and for the purpose
+    of this decision, the Commission considers that the relevant geographic market is national,
+    i.e. Italy.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_kkr_netco_2024_decision
+  page: '19'
+  quote_snippet: The vertically affected link between the market for the wholesale supply of
+    passive broadband access services in Italy (upstream) and the market for the wholesale supply
+    of active broadband access services in Italy (downstream)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_kkr_netco_2024_decision
+  page: '18'
+  quote_snippet: The Commission notes that NetCo will be active in the whole territory of Italy.
+    Moreover, prices are set at a national level. In light of the above and for the purpose
+    of this decision, the Commission considers that the relevant geographic market is national,
+    i.e. Italy.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_kkr_netco_2024_decision
+  page: '46'
+  quote_snippet: For the above reasons, the European Commission has decided not to oppose the
+    notified operation and to declare it compatible with the internal market and with the EEA
+    Agreement. This decision is adopted in application of Article 6(1)(b) of the Merger Regulation
+    and Article 57 of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

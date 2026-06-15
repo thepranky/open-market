@@ -1,0 +1,377 @@
+case_id: eu_advent_dem_business_hpm_business_2023
+case_name: ADVENT / DEM BUSINESS / HPM BUSINESS
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2023-01-09'
+parties:
+- name: ADVENT
+  role: acquirer
+- name: DEM BUSINESS
+  role: acquirer
+- name: HPM BUSINESS
+  role: target
+source_documents:
+- doc_id: eu_advent_dem_business_hpm_business_2023_decision
+  title: ADVENT / DEM BUSINESS / HPM BUSINESS — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10817
+  pdf_url: http://publications.europa.eu/resource/cellar/9939caae-05cd-11ee-b12e-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: PA6 BP
+  definition_status: segmented
+  notes: The Commission considers the manufacturing and sale of PA6 BP to be a separate product
+    market from PA6 EP and PA6.6 BP. The Commission considered further segmenting the PA6 BP
+    market by end-use (i.e., for manufacturing of PA6 EP, for films, and for fibres) but the
+    market investigation results were inconclusive. The exact market definition for segmentation
+    was left open for the purposes of the decision as no competition concerns arose under any
+    plausible definition.
+- market_id: pm_2
+  name: PA6 EP
+  definition_status: segmented
+  notes: The Commission considers PA6 EP to be a separate product market from PA6 BP. The market
+    investigation suggested that PA6 EP would be separate from PA6.6 EP, in line with past practice,
+    but the exact market definition for this distinction was ultimately left open as no competition
+    concerns arose. Furthermore, the market for PA6 EP may be further segmented by end-application
+    (i.e., automotive, E&E, and specialised industries), but the exact segmentation was left
+    open for the purposes of the decision as no competition concerns arose under any plausible
+    definition.
+- market_id: pm_3
+  name: PA6.6 BP
+  definition_status: defined
+  notes: The Commission considers that the manufacturing and sale of PA6.6 BP constitutes a
+    separate product market from PA6 BP due to lack of demand-side and supply-side substitutability.
+- market_id: pm_4
+  name: PA6.6 EP
+  definition_status: left_open
+  notes: The market investigation suggested that PA6.6 EP likely constitutes a separate product
+    market from PA6 EP, consistent with the Commission’s past practice. However, the exact market
+    definition was left open for the assessment of this Transaction as no competition concerns
+    arose.
+geographic_markets_considered:
+- market_id: gm_1
+  name: PA6 BP — EEA-wide
+  definition_status: defined
+  notes: The Commission considered the geographic market for PA6 BP to be EEA-wide, confirming
+    past practice. This was supported by customer preference for proximity, transportation costs,
+    delivery times, security of supply, regulatory barriers, and significant price differences
+    between the EEA and other regions like Asia.
+- market_id: gm_2
+  name: PA6 EP — EEA-wide
+  definition_status: defined
+  notes: The market investigation confirmed the existence of an EEA-wide market for PA6 EP.
+    Customers showed an even stronger preference for sourcing PA6 EP in relative proximity to
+    their manufacturing plants compared to PA6 BP, citing transport costs, delivery times, security
+    of supply, and sustainability aspects. Competitors also reported selling most of their EEA
+    production within the EEA due to similar factors and regulatory barriers like EU REACH.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_advent_dem_business_hpm_business_2023_decision
+  page: '6'
+  quote_snippet: Based on the above, and in line with past practice, the Commission considers
+    that the manufacturing and sale of PA6 BP is upstream in the PA value chain of the manufacturing
+    and sale of PA6 EP. The exact product market definition on the BP level and on the EP level
+    is discussed in sections 4.2.3.1. and 4.2.3.2. below.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_advent_dem_business_hpm_business_2023_decision
+  page: '6'
+  quote_snippet: Based on the above, and in line with past practice, the Commission considers
+    that the manufacturing and sale of PA6 BP constitutes a separate product market from the
+    manufacturing and sale of PA6.6 BP.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_advent_dem_business_hpm_business_2023_decision
+  page: '7'
+  quote_snippet: Based on the above, the Commission considers that separate product markets
+    for PA6 BP by end-applications, e.g. for the manufacturing of PA6 EP, films and fibers may
+    exist, but that the market can be left open for the purposes of the present decision as
+    no competition concerns arise due to the Transaction under any plausible product market
+    definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_advent_dem_business_hpm_business_2023_decision
+  page: '6'
+  quote_snippet: Based on the above, and in line with past practice, the Commission considers
+    that the manufacturing and sale of PA6 BP is upstream in the PA value chain of the manufacturing
+    and sale of PA6 EP. The exact product market definition on the BP level and on the EP level
+    is discussed in sections 4.2.3.1. and 4.2.3.2. below.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_advent_dem_business_hpm_business_2023_decision
+  page: '8'
+  quote_snippet: On balance, PA6 EP and PA6.6 EP likely constitute two separate product markets,
+    in line with the Commission’s past practice. To the extent that there is substitution, it
+    is more from PA6.6 EP to PA6 EP than the other way due to the higher cost of PA6.6 EP. For
+    the assessment of the present Transaction, this question can ultimately be left open, as
+    no competition concerns arise due to Transaction under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_advent_dem_business_hpm_business_2023_decision
+  page: '9'
+  quote_snippet: Based on the above, the Commission considers that it is not meaningful to define
+    a very high number of separate product markets for each grade. The Commission cannot exclude
+    the possibility that the market may be segmented by end use (automotive, E&E, specialised
+    industries). For the purpose of the assessment of this Transaction, the Commission will
+    carry out an assessment for the overall PA6 EP market, as well as separately for automotive,
+    E&E and specialised industriess, while the exact product market definition can be left open
+    in this regard as no competition concerns arise due to the Transaction under any plausible
+    product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_advent_dem_business_hpm_business_2023_decision
+  page: '6'
+  quote_snippet: PA6 BP must be distinguished from PA6.6 BP. The market investigation confirmed
+    the Commission’s past practice that PA6 BP and PA6.6 BP constitute separate product markets.
+    From a demand-side perspective, respondents to the market investigation indicated that customers
+    would only be able to substitute PA6 BP with PA6.6 BP with difficulties and additional costs,
+    pointing toward different processing characteristics and different functionalities of the
+    two materials. From a supply-side point of view, competitors provided that switching production
+    between PA6 BP and PA6.6 BP would require considerable time and investment due to differences
+    in production.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_advent_dem_business_hpm_business_2023_decision
+  page: '6'
+  quote_snippet: Based on the above, and in line with past practice, the Commission considers
+    that the manufacturing and sale of PA6 BP constitutes a separate product market from the
+    manufacturing and sale of PA6.6 BP.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_advent_dem_business_hpm_business_2023_decision
+  page: '9'
+  quote_snippet: The Commission further concludes that the manufacturing and sale of PA6 BP
+    and PA6.6 BP constitute separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_advent_dem_business_hpm_business_2023_decision
+  page: '7'
+  quote_snippet: PA6 EP must be distinguished from PA6.6 EP. Against the background of the arguments
+    put forward by the Notifying Party, the Commission assessed whether the market situation
+    for PA6 EP and PA6.6 EP has changed in the sense that both products would now fall into
+    the same product market. From a demand-side perspective, customers and competitors responding
+    to the market investigation confirmed that PA6 EP and PA6.6 EP could be used interchangeably
+    from a technical point of view for a significant share of end-applications, while no substitution
+    was possible for others.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_advent_dem_business_hpm_business_2023_decision
+  page: '8'
+  quote_snippet: On balance, PA6 EP and PA6.6 EP likely constitute two separate product markets,
+    in line with the Commission’s past practice. To the extent that there is substitution, it
+    is more from PA6.6 EP to PA6 EP than the other way due to the higher cost of PA6.6 EP. For
+    the assessment of the present Transaction, this question can ultimately be left open, as
+    no competition concerns arise due to Transaction under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_advent_dem_business_hpm_business_2023_decision
+  page: '9'
+  quote_snippet: As for the manufacturing and sale of PA6 EP, the market investigation suggests
+    that this market would be separate from the manufacture and sale of PA6.6 EP, but the exact
+    market definition can ultimately be left open in this regard.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_advent_dem_business_hpm_business_2023_decision
+  page: '10'
+  quote_snippet: In the past, the Commission considered the market for PA6 BP to be EEA-wide
+    in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_advent_dem_business_hpm_business_2023_decision
+  page: '10'
+  quote_snippet: PA6 BP. The market investigation confirmed the Commission’s past practice that
+    the market is EEA-wide in geographic scope. Customers indicated a certain or even a strong
+    preference to source PA6 BP in relative proximity to their manufacturing plants, mainly
+    to reduce transportation costs and delivery times, and to ensure the security of supply.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_advent_dem_business_hpm_business_2023_decision
+  page: '11'
+  quote_snippet: Lastly, customers and competitors confirm significant price differences between
+    the EEA and Asia, where production is significantly cheaper, e.g. due to lower energy costs.
+    The existence of significant price gaps between regions further indicate separate geographic
+    product markets. While PA6 BP is generally a transportable product without significant technical
+    barriers to transportation over longer distances, it is uncertain if potentially increasing
+    price differences would trigger significantly larger imports into the EEA, offsetting transportation
+    costs, longer delivery times, security of supply considerations and regulatory barriers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_advent_dem_business_hpm_business_2023_decision
+  page: '11'
+  quote_snippet: PA6 EP. The market investigation confirmed the existence of an EEA-wide market
+    for PA6 EP. Customers indicated an even stronger preference for sourcing in relative proximity
+    to their manufacturing plants compared to BP, naming transport costs, delivery times and
+    security of supply as the main reasons, as well as sustainability aspects.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_advent_dem_business_hpm_business_2023_decision
+  page: '11'
+  quote_snippet: This view was further substantiated by feedback from competitors, who sell
+    the large part of their EEA-wide PA6 EP production within the EEA, due to delivery periods,
+    transportation costs, customer preferences and regulatory barriers, specifically the EU
+    REACH regulation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_advent_dem_business_hpm_business_2023_decision
+  page: '18'
+  quote_snippet: On the basis of the above considerations, and all evidence available to it,
+    the Commission concludes that the Transaction does not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement in relation to the supply
+    of PA6 BP (and the plausible segmentation by end application, i.e. PA6 BP for EP and PA6
+    BP for films) in the EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

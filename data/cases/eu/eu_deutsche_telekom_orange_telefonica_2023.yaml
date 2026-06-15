@@ -1,0 +1,587 @@
+case_id: eu_deutsche_telekom_orange_telefonica_2023
+case_name: DEUTSCHE TELEKOM / ORANGE / TELEFONICA / VODAFONE / JV
+authority: European Commission
+jurisdiction: EU
+sector: tech
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2023-02-10'
+parties:
+- name: DEUTSCHE TELEKOM
+  role: acquirer
+- name: ORANGE
+  role: acquirer
+- name: TELEFONICA
+  role: acquirer
+- name: VODAFONE
+  role: acquirer
+- name: JV
+  role: target
+source_documents:
+- doc_id: eu_deutsche_telekom_orange_telefonica_2023_decision
+  title: DEUTSCHE TELEKOM / ORANGE / TELEFONICA / VODAFONE / JV — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10815
+  pdf_url: http://publications.europa.eu/resource/cellar/54042fbd-b39a-11ee-b164-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Digital identification services for targeted advertising and/or site optimisation
+  definition_status: defined
+  notes: The Commission concluded that this is a distinct market from online advertising intermediation
+    services.
+- market_id: pm_2
+  name: Online advertising intermediation services
+  definition_status: considered
+  notes: The Commission previously considered segmenting this market but left it open in past
+    decisions. The Notifying Parties have very limited activities in this market, and the JV's
+    market is distinct from it.
+- market_id: pm_3
+  name: Retail supply of mobile telecommunications services
+  definition_status: defined
+  notes: The market excludes OTT and M2M services.
+- market_id: pm_4
+  name: Retail supply of fixed internet access services
+  definition_status: defined
+  notes: The market includes all product types, distribution modes, and speeds/bandwidths, to
+    residential and SOHO customers, but excludes fLTE and retail business connectivity services.
+- market_id: pm_5
+  name: Retail supply of audio-visual services
+  definition_status: considered
+  notes: The Commission considered the overall market encompassing all distribution technologies.
+    Segmentation into FTA/pay AV, linear/non-linear, and premium/basic pay AV services was left
+    open but the assessment was conducted on the overall market.
+- market_id: pm_6
+  name: Supply of online advertising space
+  definition_status: left_open
+  notes: The Commission considered the market separate from offline advertising space and considered
+    various segmentations (online search vs. non-search, on vs. off social networks, PC vs.
+    mobile platform), but found it unnecessary to conclude on the exact definition for the transaction
+    assessment. The assessment focused on the online non-search or display ads on domains other
+    than social networks segment.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Digital identification services for targeted advertising and/or site optimisation —
+    national (France, Germany, Italy, Spain affected)
+  definition_status: considered
+  notes: The Commission considered national, EEA-wide or global scope, but assessed the transaction
+    on the narrowest plausible market, i.e., national scope for France, Germany, Italy, and
+    Spain.
+- market_id: gm_2
+  name: Online advertising intermediation services — EEA-wide
+  definition_status: considered
+  notes: This geographic scope was concluded in a recent prior Commission decision for segments
+    of the market for non-search display advertising intermediation services.
+- market_id: gm_3
+  name: Retail supply of mobile telecommunications services — national (France, Germany, Italy,
+    Spain affected)
+  definition_status: defined
+  notes: The Commission's decisional practice is that this market is national in scope.
+- market_id: gm_4
+  name: Retail supply of fixed internet access services — national (France, Germany, Italy,
+    Spain affected)
+  definition_status: defined
+  notes: The Commission's decisional practice is that this market is national in scope.
+- market_id: gm_5
+  name: Retail supply of audio-visual services — national (France, Germany, Italy, Spain affected)
+  definition_status: considered
+  notes: The Commission generally concluded that this market is national or at most linguistically
+    homogeneous areas. The assessment for the transaction was performed on national markets.
+- market_id: gm_6
+  name: Supply of online non-search or display ads or advertising services on domains other
+    than social networks — national (France, Germany, Italy, Spain affected)
+  definition_status: considered
+  notes: The Commission found that the market for online advertising space is national or along
+    linguistic borders in previous decisions. For this transaction, it assessed the relevant
+    segment on a national basis for France, Germany, Italy, and Spain.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_deutsche_telekom_orange_telefonica_2023_decision
+  page: '7'
+  quote_snippet: (40) The Commission has not previously assessed the supply of digital identification
+    services for targeted advertising and/or site optimisation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_deutsche_telekom_orange_telefonica_2023_decision
+  page: '9'
+  quote_snippet: (46) Second, the market investigation has not provided any evidence suggesting
+    that the services that the JV will provide form part of the overall market for online advertising
+    intermediation services, in any existing or new product market segment. In light of the
+    above, the Commission considers that the JV will operate in a market for the supply of digital
+    identification services for targeted advertising and/or site optimisation which is distinct
+    from the market for online advertising intermediation services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_deutsche_telekom_orange_telefonica_2023_decision
+  page: '9'
+  quote_snippet: (49) In light of the above and for the purpose of this decision, the Commission
+    concludes that the relevant product market is the market for the supply of digital identification
+    services for targeted advertising and/or site optimisation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_deutsche_telekom_orange_telefonica_2023_decision
+  page: '7'
+  quote_snippet: (40) The Commission has not previously assessed the supply of digital identification
+    services for targeted advertising and/or site optimisation. In a recent decision, the Commission
+    has assessed the market for online advertising intermediation services in light of developments
+    in the ad tech sector.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_deutsche_telekom_orange_telefonica_2023_decision
+  page: '8'
+  quote_snippet: (41) The Notifying Parties explain that the JV may be seen as operating in
+    the market for online intermediation services for display advertising, in a segment not
+    previously assessed by the Commission. In particular, the Notifying Parties submit that
+    this is due to the fact that the JV’s activities do not fall neatly within the perimeter
+    of any previously considered advertising intermediation services markets/segments.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_deutsche_telekom_orange_telefonica_2023_decision
+  page: '9'
+  quote_snippet: (46) Second, the market investigation has not provided any evidence suggesting
+    that the services that the JV will provide form part of the overall market for online advertising
+    intermediation services, in any existing or new product market segment. In light of the
+    above, the Commission considers that the JV will operate in a market for the supply of digital
+    identification services for targeted advertising and/or site optimisation which is distinct
+    from the market for online advertising intermediation services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_deutsche_telekom_orange_telefonica_2023_decision
+  page: '11'
+  quote_snippet: (59) The market for the retail supply of mobile telecommunications services
+    is the market on which MNOs and MVNOs sell voice, messaging and data services to end-customers
+    via a mobile network.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_deutsche_telekom_orange_telefonica_2023_decision
+  page: '11'
+  quote_snippet: (64) In previous decisions, the Commission has identified an overall retail
+    market for mobile telecommunications services constituting a separate market, distinct from
+    retail fixed telecommunication services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_deutsche_telekom_orange_telefonica_2023_decision
+  page: '12'
+  quote_snippet: (68) In light of the above and for the purpose of this decision, the Commission
+    concludes that the relevant product market is the market for the retail supply of mobile
+    telecommunication services, excluding OTT and M2M services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_deutsche_telekom_orange_telefonica_2023_decision
+  page: '14'
+  quote_snippet: (78) In recent cases, the Commission has considered that the relevant product
+    market is the overall retail market for the provision of fixed internet access services,
+    including all product types (narrowband, broadband, dedicated access), distribution modes
+    (xDSL, cable, fibre, fixed wireless access (“FWA”)) and speeds/bandwidths, to residential
+    and small office/home office (“SOHO”) customers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_deutsche_telekom_orange_telefonica_2023_decision
+  page: '14'
+  quote_snippet: (79) Furthermore, in previous decisions, the Commission excluded from the scope
+    of the market for the retail supply of fixed internet access services, those fixed internet
+    access services provided through mobile network infrastructure (e.g., fixed Long-Term Evolution
+    (“fLTE”)) which form part of the market for retail mobile telecommunications services.48
+    The Commission also excluded from the scope of the market fixed internet access services
+    provided to large business and government customers, which form part of a separate market
+    for the retail supply of business connectivity.49
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_deutsche_telekom_orange_telefonica_2023_decision
+  page: '14'
+  quote_snippet: (82) In light of the above and for the purpose of this decision, the Commission
+    concludes that there is an overall market for the retail supply of fixed internet access
+    services without further segmentations, excluding fLTE and retail business connectivity
+    services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_deutsche_telekom_orange_telefonica_2023_decision
+  page: '15'
+  quote_snippet: '(92) In previous cases, the Commission split the retail supply of AV services
+    in two separate markets: free-to-air (“FTA”) and pay AV services.53 In other more recent
+    cases, the Commission ultimately left open the product market definition.54 The Commission
+    has also considered whether the market for retail pay AV services should be segmented further
+    according to: (i) premium pay AV vs basic pay AV services;55 and (ii) linear vs non-linear
+    AV services (Pay-per-View (“PPV”), Video-on-Demand (“VOD”));56 but ultimately left the market
+    definition open.57 In past decisions, the Commission has considered that all distribution
+    technologies are part of the same product market (e.g., cable, satellite, terrestrial television
+    and internet protocol television (“IPTV”)).58'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_deutsche_telekom_orange_telefonica_2023_decision
+  page: '16'
+  quote_snippet: (95) In light of the above, the Commission considers that, for the purposes
+    of this decision, the relevant product market at retail level is the market for the retail
+    supply of AV services encompassing all distribution technologies. The question whether the
+    retail supply of AV services should be further segmented between (i) FTA and pay AV services,
+    as well as the question whether the retail supply of pay AV services should be segmented
+    according to (ii) linear and non-linear pay AV services, and, (iii) premium and basic pay
+    AV services can be left open as the Transaction does not raise serious doubts as to its
+    compatibility with the internal market or the functioning of the EEA Agreement under any
+    plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_deutsche_telekom_orange_telefonica_2023_decision
+  page: '16'
+  quote_snippet: (96) However, the Commission will assess the effects of the Transaction on
+    the basis of the overall market for the retail supply of AV services as the same elements
+    justify the same conclusion on all possible segmentations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_deutsche_telekom_orange_telefonica_2023_decision
+  page: '18'
+  quote_snippet: (109) In light of the above and for the purpose of this decision, the Commission
+    considers that the market for the supply of online advertising space to be a market separate
+    from the one for the supply for offline advertising space. The Commission further considers
+    possible segmentations between the supply of online search and non-search advertising space,
+    between the supply of ads on social networks or off social networks, or on the basis of
+    the platform (PC versus mobile). However, the Commission considers that it is not necessary
+    to conclude on the exact product market definition, as the Transaction does not raise any
+    concerns irrespective of the exact product market definition. As the JV will only provide
+    input to the operators providing online non-search or display ads or advertising services
+    on domains other than social networks, which can be either contextual ads, selected according
+    to the content of the page on which they appear, or non-contextual ads, the Commission will
+    only consider this segment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_deutsche_telekom_orange_telefonica_2023_decision
+  page: '9'
+  quote_snippet: (50) The Commission has not previously assessed the geographic scope of a market
+    for the supply of digital identification services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_deutsche_telekom_orange_telefonica_2023_decision
+  page: '10'
+  quote_snippet: (54) Second, with regards to the market for the supply of digital identification
+    services, the market investigation has provided mixed results with regards to the exact
+    geographic scope of the market for the supply of digital identification services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_deutsche_telekom_orange_telefonica_2023_decision
+  page: '11'
+  quote_snippet: (58) In light of the above and for the purpose of this decision, the Commission
+    concludes that the relevant geographic market for market for the supply of digital identification
+    services could be national, EEA-wide or global. However, the Commission will assess the
+    Transaction based on the narrowest plausible geographic market, i.e., under the assumption
+    that the relevant geographic market is the territory of each of France, Germany, Italy and
+    Spain.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_deutsche_telekom_orange_telefonica_2023_decision
+  page: '13'
+  quote_snippet: (69) In previous decisions, the Commission found that the market for the retail
+    supply of mobile telecommunications services is national in scope.44
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_deutsche_telekom_orange_telefonica_2023_decision
+  page: '13'
+  quote_snippet: (72) In light of the above and for the purpose of this decision, the Commission
+    concludes that the relevant geographic market for the retail supply of mobile telecommunication
+    services is the territory of each of France, Germany, Italy and Spain.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_deutsche_telekom_orange_telefonica_2023_decision
+  page: '14'
+  quote_snippet: (83) In previous decisions, the Commission has found the market for the retail
+    supply of fixed internet access services to be national in scope.51
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_deutsche_telekom_orange_telefonica_2023_decision
+  page: '15'
+  quote_snippet: (86) In light of the above and for the purpose of this decision, the Commission
+    concludes that the relevant geographic market for the retail supply of fixed internet access
+    services is the territory of each of France, Germany, Italy and Spain.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_deutsche_telekom_orange_telefonica_2023_decision
+  page: '17'
+  quote_snippet: (97) The Commission has generally concluded that the market for the retail
+    supply of AV services is national in scope or at most corresponds to linguistically homogenous
+    areas.60
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_deutsche_telekom_orange_telefonica_2023_decision
+  page: '17'
+  quote_snippet: (100) In light of the above and for the purpose of this decision, the Commission
+    concludes that the relevant geographic market for the retail supply of AV services is either
+    the territory of each of France, Germany, Italy and Spain, or at most linguistically homogeneous
+    areas. However, the Commission will perform its assessment only for the national markets,
+    as the same elements justify the same conclusion on all possible segmentations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_deutsche_telekom_orange_telefonica_2023_decision
+  page: '19'
+  quote_snippet: (110) In previous decisions, the Commission found that the market for the retail
+    supply of online advertising space is national in scope or along the linguistic borders
+    within the EEA.65
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_deutsche_telekom_orange_telefonica_2023_decision
+  page: '19'
+  quote_snippet: (113) In light of the above and for the purpose of this decision, the Commission
+    concludes that the relevant geographic market for the market for online non-search or display
+    ads or advertising services on domains other than social networks, which can be either contextual
+    ads, selected according to the content of the page on which they appear, or non-contextual
+    ads could be national or along the linguistic borders within the EEA-wide. However, the
+    Commission will assess the Transaction considering that the relevant geographic market is
+    the territory of each of France, Germany, Italy and Spain as the Transaction does not raise
+    any competition concerns irrespective of the exact geographic scope considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_deutsche_telekom_orange_telefonica_2023_decision
+  page: '44'
+  quote_snippet: (225) In view of the above, the Commission concludes that the Transaction does
+    not raise serious doubts as to its compatibility with the internal market arising from the
+    relationship between the JV’s activities on the market for the supply of digital identification
+    services in each of France, Germany, Spain and Italy (upstream) and the Parties’ activities
+    as customers of online advertising related to their activities on the markets for the retail
+    supply of telecommunication and AV services in each of France, Germany, Spain and Italy
+    (downstream).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_deutsche_telekom_orange_telefonica_2023_decision
+  page: '44'
+  quote_snippet: (227) In view of the above, the Commission concludes that the Transaction does
+    not raise serious doubts as to its compatibility with the internal market with respect to
+    the vertical relationships resulting from the Transaction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+case_type: merger
+ai_summary: null
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

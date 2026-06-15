@@ -1,0 +1,485 @@
+case_id: eu_ec_m9810_2020
+case_name: M.9810
+authority: European Commission
+jurisdiction: EU
+sector: financial
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2020-09-30'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9810_2020_decision
+  title: M.9810 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9810
+  pdf_url: http://publications.europa.eu/resource/cellar/c43b0022-5cbc-11eb-b487-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Asset management
+  definition_status: left_open
+  notes: The Commission considered various segmentations for asset management, including by
+    customer type (retail vs. institutional) and product type (mutual funds, tailor-made funds,
+    portfolio management), as well as further sub-segmentations (e.g., active vs. passive asset
+    management for institutional clients). However, the precise definition was ultimately left
+    open for the purpose of this decision.
+- market_id: pm_2
+  name: Fund administration
+  definition_status: considered
+  notes: The Commission considered fund administration to constitute a distinct product market
+    based on previous cases and confirmed by the market investigation, encompassing back office
+    and middle office activities.
+- market_id: pm_3
+  name: Insurance provision
+  definition_status: considered
+  notes: The Commission referenced previous decisions distinguishing between a market for insurance
+    provision and insurance distribution, and further segmenting insurance provision into life
+    insurance, non-life insurance, and reinsurance.
+- market_id: pm_4
+  name: Life insurance provision
+  definition_status: left_open
+  notes: The Commission referenced previous decisions that segmented life insurance provision
+    by purpose (pure risk protection, savings/investment, pension products) and by customer
+    type (group vs. individual products). For the purpose of this decision, the exact scope
+    of the market was left open.
+- market_id: pm_5
+  name: Non-life insurance provision
+  definition_status: left_open
+  notes: The Commission referenced previous decisions that distinguished non-life insurance
+    into various segments (e.g., accident and sickness, motor vehicle, property, credit and
+    suretyship). Further segmentation for credit and suretyship was also noted. For the purpose
+    of this decision, the exact scope of the market was left open.
+- market_id: pm_6
+  name: Reinsurance
+  definition_status: left_open
+  notes: The Commission referenced previous decisions that identified reinsurance as a broad
+    category within insurance provision. For the purpose of this decision, the exact scope of
+    the market was left open.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Asset management — national or EEA-wide
+  definition_status: left_open
+  notes: The Commission considered previous findings that the geographic market for asset management
+    could be national or EEA-wide, with institutional asset management likely wider than national.
+    The market investigation confirmed the international nature of competition. However, the
+    precise definition was left open.
+- market_id: gm_2
+  name: Fund administration — national or worldwide
+  definition_status: left_open
+  notes: The Commission considered previous decisions that left open whether the geographic
+    market for fund administration should be considered national or wider in scope (e.g., worldwide).
+    The precise geographic scope was left open for this case.
+- market_id: gm_3
+  name: Life insurance provision — national
+  definition_status: left_open
+  notes: The Commission considered previous findings that the geographic market for the provision
+    of life insurance and its respective segments is national in scope. However, for the purpose
+    of this decision, the exact geographic market definition was left open.
+- market_id: gm_4
+  name: Non-life insurance provision — national
+  definition_status: left_open
+  notes: The Commission considered previous findings that the geographic market for non-life
+    insurance and its segments is generally national in scope, with the exception of large commercial
+    risks (specialty insurance) which is likely at least EEA-wide. However, for the purpose
+    of this decision, the exact geographic market definition was left open.
+- market_id: gm_5
+  name: Reinsurance — global
+  definition_status: considered
+  notes: The Commission referenced previous findings that the geographic scope of the reinsurance
+    market has been considered global due to the need to pool risks on a worldwide basis.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9810_2020_decision
+  page: '5'
+  quote_snippet: In any event, the precise definition of the product market for asset management
+    can be left open, as the Transaction does not raise serious doubts as to its compatibility
+    with the internal market concerning the asset management market, or any other plausible
+    segment previously envisaged by the Commission.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9810_2020_decision
+  page: '4'
+  quote_snippet: In its decisional practice, the Commission considered a relevant product market
+    for asset management overall, including the creation and management of mutual funds which
+    are then marketed on an “off-the-shelf” basis (including to retail customers), the provision
+    of portfolio management services to institutional investors (pension funds, institutions
+    and international organisations), and the provision of custody services related to asset
+    management.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9810_2020_decision
+  page: '5'
+  quote_snippet: Within the segment of asset management for institutional clients, the Commission
+    considered the possibility of further sub-segmenting the institutional asset management
+    based upon a distinction between active asset management and passive asset management.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9810_2020_decision
+  page: '5'
+  quote_snippet: In previous cases, the Commission considered fund administration to constitute
+    a distinct product market, notably because all activities are subject to the same legal
+    and business environment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9810_2020_decision
+  page: '5'
+  quote_snippet: The results of the market investigation conducted in this case did not provide
+    any elements which would justify departing from the Commission’s previous findings.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9810_2020_decision
+  page: '5'
+  quote_snippet: Fund administration services include various services such as acting as trustee,
+    depositary or depot bank of mutual funds, accounting services etc.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9810_2020_decision
+  page: '6'
+  quote_snippet: In previous decisions relating to the insurance sector, the Commission has
+    distinguished between a product market for insurance provision and a product market for
+    insurance distribution.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9810_2020_decision
+  page: '6'
+  quote_snippet: 'Within the upstream market for insurance provision, the Commission has distinguished
+    the market for the provision of insurance into three broad product categories: life insurance,
+    non-life insurance and reinsurance.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9810_2020_decision
+  page: '7'
+  quote_snippet: In any event, for the purpose of this decision the exact scope of the product
+    market can be left open, as the Transaction does not raise serious doubts as to its compatibility
+    with the internal market, regardless of the precise product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9810_2020_decision
+  page: '6'
+  quote_snippet: 'As regards life insurance, the Commission has further segmented the market
+    according to the purpose served by the product, distinguishing between: (i) pure risk protection
+    products; (ii) savings and investment products; and (iii) pension products. In addition,
+    the Commission has considered a possible segmentation of these product markets between group
+    and individual products.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9810_2020_decision
+  page: '7'
+  quote_snippet: In any event, for the purpose of this decision the exact scope of the product
+    market can be left open, as the Transaction does not raise serious doubts as to its compatibility
+    with the internal market, regardless of the precise product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9810_2020_decision
+  page: '6'
+  quote_snippet: 'As regards non-life insurance, the Commission has distinguished as a starting
+    point between the following segments: (i) accident and sickness, (ii) motor vehicle, (iii)
+    property, (iv) liability, (v) marine, aviation and transport, (vi) credit and suretyship,
+    (vii) travel, (viii) cargo, (ix) specialty and (x) aerospace.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9810_2020_decision
+  page: '6'
+  quote_snippet: With respect specifically to the potential segment for credit and suretyship,
+    in its past decisional practice, the Commission has found that this segment could be further
+    segmented between (i) delcredere insurance, (ii) capital goods insurance, (iii) consumer
+    credit insurance, (iv) fidelity insurance and (v) guarantee insurance, although the precise
+    market definition has been left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m9810_2020_decision
+  page: '7'
+  quote_snippet: In any event, for the purpose of this decision the exact scope of the product
+    market can be left open, as the Transaction does not raise serious doubts as to its compatibility
+    with the internal market, regardless of the precise product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m9810_2020_decision
+  page: '6'
+  quote_snippet: 'Within the upstream market for insurance provision, the Commission has distinguished
+    the market for the provision of insurance into three broad product categories: life insurance,
+    non-life insurance and reinsurance.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m9810_2020_decision
+  page: '7'
+  quote_snippet: In any event, the precise geographic market definition regarding asset management
+    can be left open, as the Transaction does not raise any doubts as to its compatibility with
+    the internal market, irrespective of the exact geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m9810_2020_decision
+  page: '7'
+  quote_snippet: The relevant geographic market for asset management, or any narrower segment,
+    has previously been considered to be either national or EEA wide. Furthermore, the Commission
+    has deemed it likely that some parts of the asset management market, in particular asset
+    management for institutional customers, are wider than national, which the results of the
+    market investigation in the present case tended to confirm, as several customers underlined
+    that French players compete with various international players and stressed the international
+    scale of the provision of such services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m9810_2020_decision
+  page: '7'
+  quote_snippet: In any case, the precise geographic scope of the market for fund administration
+    can be left open for the purpose of this case, as the Transaction does not raise competition
+    concerns under any plausible geographic definition of the market for fund administration
+    services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m9810_2020_decision
+  page: '7'
+  quote_snippet: In previous decisions, the Commission considered and left open whether the
+    geographic market should be considered national or wider in scope (e.g. worldwide).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m9810_2020_decision
+  page: '8'
+  quote_snippet: For the purpose of the present decision, the exact geographic market definition
+    for the provision of life and non-life insurance can be left open as the Transaction does
+    not raise serious doubts as to its compatibility with the internal market under any plausible
+    geographic market definition of all plausible markets identified in paragraphs (26) to (30).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m9810_2020_decision
+  page: '8'
+  quote_snippet: The Commission previously considered the geographic market for the provision
+    of life insurance and its respective segments to be national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m9810_2020_decision
+  page: '8'
+  quote_snippet: For the purpose of the present decision, the exact geographic market definition
+    for the provision of life and non-life insurance can be left open as the Transaction does
+    not raise serious doubts as to its compatibility with the internal market under any plausible
+    geographic market definition of all plausible markets identified in paragraphs (26) to (30).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_ec_m9810_2020_decision
+  page: '8'
+  quote_snippet: Regarding the non-life insurance market and its segments, the Commission considered
+    that they are generally national in scope. Within non-life insurance, the Commission has
+    however found that the insurance of large commercial risks, or so-called speciality insurance,
+    is most likely to be at least EEA-wide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_ec_m9810_2020_decision
+  page: '8'
+  quote_snippet: The geographic scope of the reinsurance market has in the past been considered
+    as global due to the need to pool risks on a worldwide basis.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_ec_m9810_2020_decision
+  page: '3'
+  quote_snippet: No Member State expressed disagreement with this request and the case was referred
+    to the Commission on 12 August 2020.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+case_type: merger
+ai_summary: null
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

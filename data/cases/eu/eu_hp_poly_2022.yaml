@@ -1,0 +1,844 @@
+case_id: eu_hp_poly_2022
+case_name: HP / POLY
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2022-07-08'
+parties:
+- name: HP
+  role: acquirer
+- name: POLY
+  role: target
+source_documents:
+- doc_id: eu_hp_poly_2022_decision
+  title: HP / POLY — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10737
+  pdf_url: http://publications.europa.eu/resource/cellar/db58f124-3a7f-11ed-9c68-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Consumer audio electronics
+  definition_status: considered
+  notes: The Commission confirmed the approach from previous decisions but did not define this
+    market for the purpose of this decision.
+- market_id: pm_2
+  name: Headphones
+  definition_status: left_open
+  notes: The Commission considered headphones as a potential separate market within consumer
+    audio electronics, and also a potential segmentation, but left the precise market definition
+    open.
+- market_id: pm_3
+  name: Headsets
+  definition_status: left_open
+  notes: The Commission investigated whether a separate market for headsets should be distinguished
+    from headphones, and whether different product categories within headsets should be recognized,
+    but ultimately left the question open.
+- market_id: pm_4
+  name: Business headsets
+  definition_status: considered
+  notes: The Commission investigated the potential impact of the transaction on this narrowly
+    defined market for the purpose of the decision.
+- market_id: pm_5
+  name: Videoconferencing Solutions (“VCS”)
+  definition_status: left_open
+  notes: The Commission confirmed the overall market definition but left the precise segmentation
+    open.
+- market_id: pm_6
+  name: VCS segmented (dedicated-room, multi-purpose, executive office/desktop)
+  definition_status: left_open
+  notes: This segmentation was considered accurate based on previous decisions and market investigation,
+    but the Commission ultimately left the precise segmentation of the VCS market open.
+- market_id: pm_7
+  name: VCS segmented (room-based endpoints, USB room devices, PVCD)
+  definition_status: left_open
+  notes: This alternative segmentation was suggested by the Notifying Party and supported by
+    the market investigation as potentially more accurate, but the Commission ultimately left
+    the precise segmentation of the VCS market open.
+- market_id: pm_8
+  name: USB room devices
+  definition_status: considered
+  notes: The Commission had not previously considered this market but investigated it for the
+    purpose of the decision as it was the only segment where the parties' activities would overlap
+    (HP planning to enter).
+geographic_markets_considered:
+- market_id: gm_1
+  name: Consumer audio electronics (including headphones) — national
+  definition_status: left_open
+  notes: Previous decisions considered this market national, and market investigation generally
+    supported this, but the precise scope was left open in precedents and results for headsets
+    did not justify a departure for consumer audio electronics in general.
+- market_id: gm_2
+  name: Headsets — worldwide
+  definition_status: left_open
+  notes: Market investigation indicated suppliers sell worldwide and customers purchase globally,
+    but the precise geographic scope was left open for headsets.
+- market_id: gm_3
+  name: Headsets — EEA-wide
+  definition_status: left_open
+  notes: The Notifying Party submitted the market is at least EEA-wide, and market investigation
+    showed some customers purchasing at an EEA-wide level, but the precise geographic scope
+    was left open for headsets.
+- market_id: gm_4
+  name: Headsets — national
+  definition_status: left_open
+  notes: Market investigation indicated some support for national scope due to varying customer
+    preferences, but the precise geographic scope was left open for headsets.
+- market_id: gm_5
+  name: Business headsets — worldwide
+  definition_status: considered
+  notes: The Commission explicitly examined the worldwide level for the provision of business
+    headsets for the purpose of the decision.
+- market_id: gm_6
+  name: Business headsets — EEA-wide
+  definition_status: considered
+  notes: The Commission explicitly examined the EEA level for the provision of business headsets
+    for the purpose of the decision.
+- market_id: gm_7
+  name: Business headsets — national
+  definition_status: considered
+  notes: The Commission explicitly examined the national level for the provision of business
+    headsets for the purpose of the decision.
+- market_id: gm_8
+  name: VCS — EEA-wide
+  definition_status: considered
+  notes: The market investigation supported an EEA-wide scope, and the Commission concluded
+    that the geographic market for VCS and its segments is at least EEA-wide for the purpose
+    of the decision.
+- market_id: gm_9
+  name: VCS — worldwide
+  definition_status: left_open
+  notes: While the Commission considered the market to be at least EEA-wide, it explicitly left
+    open whether the market is EEA-wide or worldwide.
+- market_id: gm_10
+  name: USB room devices — EEA-wide
+  definition_status: considered
+  notes: For the purpose of the decision, the Commission considered the EEA-wide scope for USB
+    room devices as a segment of the VCS market.
+- market_id: gm_11
+  name: USB room devices — worldwide
+  definition_status: left_open
+  notes: While the Commission considered the market to be at least EEA-wide for the purpose
+    of the decision, it explicitly left open whether the market is EEA-wide or worldwide.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_hp_poly_2022_decision
+  page: '3'
+  quote_snippet: In previous decisions, the Commission considered that, within the market for
+    consumer audio electronics, a separate market exists for the supply of headphones, although
+    the precise market definition was left open.6
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_hp_poly_2022_decision
+  page: '3'
+  quote_snippet: The results of the market investigation confirm the approach that the Commission
+    has taken in previous cases with regard to consumer audio electronics.10
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_hp_poly_2022_decision
+  page: '3'
+  quote_snippet: In previous decisions, the Commission considered that, within the market for
+    consumer audio electronics, a separate market exists for the supply of headphones, although
+    the precise market definition was left open.6
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_hp_poly_2022_decision
+  page: '3'
+  quote_snippet: The Commission further considered a potential segmentation between high-end,
+    sophisticated headphones with various features such as wireless connectivity and low-end
+    headphones with no additional features.7
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_hp_poly_2022_decision
+  page: '5'
+  quote_snippet: In conclusion, the Commission considers that the question of whether within
+    the market for the supply of consumer audio electronics a distinction should be made between
+    a market for the supply of headphones and a market for the supply of headsets, and whether
+    within that latter market a further distinction could be made based on the category of headset,
+    could be left open, as the Transaction does not raise serious doubts as to its compatibility
+    with the internal market under any plausible product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_hp_poly_2022_decision
+  page: '3'
+  quote_snippet: The Commission did not previously consider headsets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_hp_poly_2022_decision
+  page: '4'
+  quote_snippet: Based on the market investigation results, the Commission considers that there
+    are indications that a separate market for the supply of headsets could be distinguished.
+    However, as mentioned above, the Commission also received indications that headsets and
+    headphones could comprise one single market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_hp_poly_2022_decision
+  page: '5'
+  quote_snippet: In conclusion, the Commission considers that the question of whether within
+    the market for the supply of consumer audio electronics a distinction should be made between
+    a market for the supply of headphones and a market for the supply of headsets, and whether
+    within that latter market a further distinction could be made based on the category of headset,
+    could be left open, as the Transaction does not raise serious doubts as to its compatibility
+    with the internal market under any plausible product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_hp_poly_2022_decision
+  page: '5'
+  quote_snippet: Based on the market investigation results, the Commission considers that while
+    there are multiple indications that separate segments for different categories of headsets
+    could be recognised, it also received indications that a further segmentation would not
+    be warranted.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_hp_poly_2022_decision
+  page: '5'
+  quote_snippet: For the purpose of this decision, the Commission has nevertheless investigated
+    the potential impact of the Transaction on a potential narrowly defined market for the supply
+    of business headsets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_hp_poly_2022_decision
+  page: '10'
+  quote_snippet: With respect to headsets, the Transaction results in only one horizontally
+    affected market on the narrowly defined sub-segment of business headsets (at national, EEA
+    and worldwide level).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_hp_poly_2022_decision
+  page: '7'
+  quote_snippet: In previous decisions, the Commission considered that within the broad UC sector,
+    a separate segment exists for the supply of VCS which is defined as “a set of interactive
+    telecommunications technologies that allow users at two or more locations to interact via
+    two-way video and audio transmissions simultaneously”.40
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_hp_poly_2022_decision
+  page: '8'
+  quote_snippet: The vast majority of respondents confirms that the Commission’s distinction
+    of a separate market for the supply of VCS within the broad UC sector is still accurate
+    today.45
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_hp_poly_2022_decision
+  page: '9'
+  quote_snippet: In conclusion, the Commission considers that the question of precise segmentation
+    of the VCS market can be left open, as the Transaction does not raise serious doubts as
+    to its compatibility with the internal market under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_hp_poly_2022_decision
+  page: '7'
+  quote_snippet: Within a market for the supply of VCS, the Commission considered that there
+    are three separate markets for respectively the supply of dedicated-room VCS, multi-purpose
+    room-base VCS and executive office/desktop VCS.41
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_hp_poly_2022_decision
+  page: '8'
+  quote_snippet: Similarly, a majority of the respondents to the market investigation confirms
+    that, within a VCS market, the segmentation that the Commission previously considered between
+    (i) dedicated-room VCS, (ii) multi-purpose room-based VCS and (iii) executive office/desktop
+    VCS is still accurate today.46
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_hp_poly_2022_decision
+  page: '9'
+  quote_snippet: Based on the results of the market investigation, the Commission considers
+    that there are indications that the approach previously taken regarding a potential segmentation
+    of the VCS market between (i) dedicated-room VCS, (ii) multi-purpose room-based VCS and
+    (iii) executive office/desktop VCS is still accurate today.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_hp_poly_2022_decision
+  page: '7'
+  quote_snippet: 'The Parties submit that a more accurate segmentation of the VCS market would
+    be the one used in the Frost & Sullivan Report State of the Global Video Conferencing Devices
+    Market, Forecast to 2025 (March 2021),43 which distinguishes between: (a) room-based endpoints;
+    (b) USB room devices; and (c) PVCD:'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_hp_poly_2022_decision
+  page: '9'
+  quote_snippet: A majority of respondents expressing an opinion also considers that an alternative
+    segmentation between (i) room-based endpoints, (ii) USB room devices, and (iii) PVCD could
+    be more accurate today as it reflects the technological and commercial developments since
+    the Commission’s decision in Cisco / Tandberg in 2010.49
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_hp_poly_2022_decision
+  page: '9'
+  quote_snippet: However, the Commission also received indications that an alternative segmentation
+    between (i) room-based endpoints, (ii) USB room devices, and (iii) PVCD more accurately
+    reflects recent technological and commercial developments in the market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_hp_poly_2022_decision
+  page: '7'
+  quote_snippet: The Commission did not previously consider a potential market for USB room
+    devices.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_hp_poly_2022_decision
+  page: '9'
+  quote_snippet: For the purpose of this decision, the Commission has nevertheless investigated
+    the impact of the Transaction on the potential narrowly defined market segment for the supply
+    of USB room devices, as it is the only segment on which the Parties’ activities overlap.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_hp_poly_2022_decision
+  page: '10'
+  quote_snippet: With respect to VCS, the Transaction may give rise to a horizontally affected
+    market in the future (both at EEA and worldwide level), given that HP is about to enter
+    the USB room devices segment of the VCS market, where Poly is also active.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_hp_poly_2022_decision
+  page: '6'
+  quote_snippet: In conclusion, the Commission considers that the results of the market investigation
+    do not justify a departure from the approach taken in previous cases regarding the geographic
+    scope of the market for the supply of consumer audio electronics and segments thereof.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_hp_poly_2022_decision
+  page: '6'
+  quote_snippet: First, most of the suppliers of headphones and headsets indicate that they
+    sell their products worldwide.35
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_hp_poly_2022_decision
+  page: '6'
+  quote_snippet: In any event, the precise geographic scope on a potential market for the supply
+    of headsets or any segmentation thereof can be left open as the Transaction does not raise
+    serious doubts as to its compatibility with the internal market under any plausible geographic
+    market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_hp_poly_2022_decision
+  page: '6'
+  quote_snippet: The Notifying Party submits that the geographic market is at least EEA-wide
+    as, among others, suppliers distribute products on a global basis and headset prices and
+    consumer preferences within the EEA are harmonised.32
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_hp_poly_2022_decision
+  page: '6'
+  quote_snippet: In any event, the precise geographic scope on a potential market for the supply
+    of headsets or any segmentation thereof can be left open as the Transaction does not raise
+    serious doubts as to its compatibility with the internal market under any plausible geographic
+    market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_hp_poly_2022_decision
+  page: '6'
+  quote_snippet: While several respondents consider that a national geographic scope would be
+    narrow, others confirm that customer preferences may vary among national markets as well
+    as budgets, price etc.37
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_hp_poly_2022_decision
+  page: '6'
+  quote_snippet: In any event, the precise geographic scope on a potential market for the supply
+    of headsets or any segmentation thereof can be left open as the Transaction does not raise
+    serious doubts as to its compatibility with the internal market under any plausible geographic
+    market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_hp_poly_2022_decision
+  page: '6'
+  quote_snippet: For the purpose of this decision, the Commission has thus examined the worldwide,
+    EEA and national level of the market for the provision of business headsets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_hp_poly_2022_decision
+  page: '10'
+  quote_snippet: With respect to headsets, the Transaction results in only one horizontally
+    affected market on the narrowly defined sub-segment of business headsets (at national, EEA
+    and worldwide level).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: eu_hp_poly_2022_decision
+  page: '6'
+  quote_snippet: For the purpose of this decision, the Commission has thus examined the worldwide,
+    EEA and national level of the market for the provision of business headsets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_34
+  source_document_id: eu_hp_poly_2022_decision
+  page: '10'
+  quote_snippet: With respect to headsets, the Transaction results in only one horizontally
+    affected market on the narrowly defined sub-segment of business headsets (at national, EEA
+    and worldwide level).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_35
+  source_document_id: eu_hp_poly_2022_decision
+  page: '6'
+  quote_snippet: For the purpose of this decision, the Commission has thus examined the worldwide,
+    EEA and national level of the market for the provision of business headsets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_36
+  source_document_id: eu_hp_poly_2022_decision
+  page: '10'
+  quote_snippet: With respect to headsets, the Transaction results in only one horizontally
+    affected market on the narrowly defined sub-segment of business headsets (at national, EEA
+    and worldwide level).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_37
+  source_document_id: eu_hp_poly_2022_decision
+  page: '9'
+  quote_snippet: In previous decisions, the Commission considered that the VCS market and possible
+    sub-segments are at least EEA-wide if not worldwide in scope.50
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_8
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_38
+  source_document_id: eu_hp_poly_2022_decision
+  page: '9'
+  quote_snippet: A vast majority of the respondents to the market investigation expressing an
+    opinion confirms that it is still accurate today to consider the VCS market, including any
+    plausible segmentation thereof, to be at least EEA-wide in scope.51
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_8
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_39
+  source_document_id: eu_hp_poly_2022_decision
+  page: '9'
+  quote_snippet: In conclusion, for the purpose of this decision, the Commission considers that
+    the relevant geographic market for the supply of VCS and segments thereof (including the
+    provision of USB room devices) is at least EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_8
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_40
+  source_document_id: eu_hp_poly_2022_decision
+  page: '9'
+  quote_snippet: In previous decisions, the Commission considered that the VCS market and possible
+    sub-segments are at least EEA-wide if not worldwide in scope.50
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_9
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_41
+  source_document_id: eu_hp_poly_2022_decision
+  page: '5'
+  quote_snippet: The Commission considers that the exact geographic market definition can be
+    left open, as the Transaction does not give rise to serious doubts as to its compatibility
+    with the internal market regardless of whether the market is EEA-wide or worldwide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_9
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_42
+  source_document_id: eu_hp_poly_2022_decision
+  page: '9'
+  quote_snippet: In conclusion, for the purpose of this decision, the Commission considers that
+    the relevant geographic market for the supply of VCS and segments thereof (including the
+    provision of USB room devices) is at least EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_10
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_43
+  source_document_id: eu_hp_poly_2022_decision
+  page: '5'
+  quote_snippet: The Commission considers that the exact geographic market definition can be
+    left open, as the Transaction does not give rise to serious doubts as to its compatibility
+    with the internal market regardless of whether the market is EEA-wide or worldwide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_10
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_44
+  source_document_id: eu_hp_poly_2022_decision
+  page: '5'
+  quote_snippet: The Commission considers that the exact geographic market definition can be
+    left open, as the Transaction does not give rise to serious doubts as to its compatibility
+    with the internal market regardless of whether the market is EEA-wide or worldwide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_11
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_45
+  source_document_id: eu_hp_poly_2022_decision
+  page: '1'
+  quote_snippet: Commission decision pursuant to Article 6(1)(b) of Council Regulation No 139/20041
+    and Article 57 of the Agreement on the European Economic Area2
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_46
+  source_document_id: eu_hp_poly_2022_decision
+  page: '18'
+  quote_snippet: For all the above reasons, the Commission concludes that the Transaction does
+    not give rise to serious doubts as to its compatibility with the internal market with respect
+    to possible non-coordinated horizontal effects on the market for the supply of business
+    headsets at worldwide, EEA or national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_47
+  source_document_id: eu_hp_poly_2022_decision
+  page: '19'
+  quote_snippet: For all the above reasons, the Commission concludes that the Transaction does
+    not give rise to serious doubts as to its compatibility with the internal market with respect
+    to possible non-coordinated horizontal effects on the market for the supply of USB room
+    devices at worldwide or EEA level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+case_type: merger
+ai_summary: null
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

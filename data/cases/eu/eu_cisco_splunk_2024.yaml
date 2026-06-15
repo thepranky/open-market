@@ -1,0 +1,312 @@
+case_id: eu_cisco_splunk_2024
+case_name: CISCO / SPLUNK
+authority: European Commission
+jurisdiction: EU
+sector: tech
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2024-03-13'
+parties:
+- name: CISCO
+  role: acquirer
+- name: SPLUNK
+  role: target
+source_documents:
+- doc_id: eu_cisco_splunk_2024_decision
+  title: CISCO / SPLUNK — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11320
+  pdf_url: http://publications.europa.eu/resource/cellar/1a1b19bb-4346-11ef-865a-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Application Performance Management & Observability (APM&O) software
+  definition_status: considered
+  notes: The Commission considered APM&O software as the narrowest plausible market for its
+    competitive assessment, within the broader IT Operations Management (ITOM) software macro
+    market, the definition of which was left open.
+- market_id: pm_2
+  name: IT Operations Analytics (ITOA) software
+  definition_status: considered
+  notes: The Commission considered ITOA software as a plausible IDC market for its competitive
+    assessment, within the broader System Infrastructure software market, the definition of
+    which was left open.
+- market_id: pm_3
+  name: Security Information and Event Management (SIEM) software
+  definition_status: considered
+  notes: The Commission considered SIEM software for its competitive assessment, within the
+    broader Security software macro market, the definition of which was left open.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Application Performance Management & Observability (APM&O) software — EEA-wide
+  definition_status: considered
+  notes: The Commission left open the exact geographic market definition for ITOM software (the
+    broader market), but carried out its assessment for APM&O on an EEA-wide basis as it results
+    in an affected market at that level.
+- market_id: gm_2
+  name: IT Operations Analytics (ITOA) software — worldwide
+  definition_status: considered
+  notes: The Commission left open the exact geographic market definition for System Infrastructure
+    software (the broader market), but carried out its assessment for ITOA on both worldwide
+    and EEA-wide bases.
+- market_id: gm_3
+  name: IT Operations Analytics (ITOA) software — EEA-wide
+  definition_status: considered
+  notes: The Commission left open the exact geographic market definition for System Infrastructure
+    software (the broader market), but carried out its assessment for ITOA on both worldwide
+    and EEA-wide bases.
+- market_id: gm_4
+  name: Security Information and Event Management (SIEM) software — worldwide
+  definition_status: considered
+  notes: The Commission left open the exact geographic market definition for Security software
+    (the broader market), but carried out its assessment for SIEM on both worldwide and EEA-wide
+    bases.
+- market_id: gm_5
+  name: Security Information and Event Management (SIEM) software — EEA-wide
+  definition_status: considered
+  notes: The Commission left open the exact geographic market definition for Security software
+    (the broader market), but carried out its assessment for SIEM on both worldwide and EEA-wide
+    bases.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_cisco_splunk_2024_decision
+  page: '3'
+  quote_snippet: 'The Transaction only gives rise to limited horizontal overlaps, with the exception
+    of two Gartner and IDC market segments which are affected at the worldwide or EEA level,
+    namely: (i) Application Performance Management & Observability (“APM&O”) software7 (Gartner
+    terminology) and (ii) a hypothetical market for IT operations analytics (“ITOA”) software8
+    (IDC terminology).9'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_cisco_splunk_2024_decision
+  page: '5'
+  quote_snippet: According to Gartner, APM&O tools collect and analyze the performance and behavior
+    of end-user interactions with applications by discovering applications and their relationships.19
+    APM&O solutions provide real-time monitoring and tracking of software applications, allowing
+    for detection of performance issues and anomalies.20
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_cisco_splunk_2024_decision
+  page: '7'
+  quote_snippet: |
+    The Commission considers therefore that, for the purposes of this Decision, the exact product market definition with regards to the supply of ITOM software can be left open, as the Transaction would not raise serious doubts as to its compatibility with the internal market irrespective of the exact product market definition upheld, based on the Gartner segmentation.
+    (39) In Section 5.5.3, the Commission carries out an assessment on the basis of the narrowest plausible market, which is Gartner’s APM&O category.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_cisco_splunk_2024_decision
+  page: '3'
+  quote_snippet: 'The Transaction only gives rise to limited horizontal overlaps, with the exception
+    of two Gartner and IDC market segments which are affected at the worldwide or EEA level,
+    namely: (i) Application Performance Management & Observability (“APM&O”) software7 (Gartner
+    terminology) and (ii) a hypothetical market for IT operations analytics (“ITOA”) software8
+    (IDC terminology).9'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_cisco_splunk_2024_decision
+  page: '10'
+  quote_snippet: |
+    The Commission considers that, for the purposes of this Decision, the exact product market definition with regard to the supply of System infrastructure software can be left open, as the Transaction does not raise serious doubts as to its compatibility with the internal market even under the narrowest plausible product market definition, for which market share data is available, based on the IDC segmentation.
+    (61) In Section 5.5.4, the Commission carries out an assessment on the basis of a plausible IDC market for ITOA software.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_cisco_splunk_2024_decision
+  page: '13'
+  quote_snippet: |
+    Therefore, the Commission considers that, for the purposes of this Decision, the exact product market definition with regard to the supply of Security software can be left open, as the Transaction would not raise serious doubts as to its compatibility with the internal market even under the narrowest plausible product market definition, for which market share data is available, based on the Gartner segmentation.
+    (81) In Section 5.6, the Commission carries out an assessment on the basis of Gartner’s SIEM market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_cisco_splunk_2024_decision
+  page: '8'
+  quote_snippet: In the market investigation, the vast majority of respondents expressing an
+    opinion considered that competition in the APM&O software market takes place at a worldwide
+    level.36 Respondents explained that “procurement is done worldwide” and “it is a global
+    market, and the larger companies in the market are global companies with customers all across
+    the globe”.37
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_cisco_splunk_2024_decision
+  page: '8'
+  quote_snippet: |
+    In any event, the Commission considers that, for the purposes of this Decision, the exact geographic market definition with regard to the supply of ITOM software (as well as any potential segmentation of that market) can be left open, as the Transaction does not raise serious doubts as to its compatibility with the internal market irrespective of whether a worldwide or EEA-wide market is considered.
+    (44) In Section 5.5.3, the Commission carries out an assessment on the basis of a geographic market which is EEA-wide, as only at that level the Transaction results in an affected market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_cisco_splunk_2024_decision
+  page: '11'
+  quote_snippet: |
+    The Commission considers that, for the purposes of this Decision, the exact geographic market definition with regard to the supply of System Infrastructure software, or any segment thereof, can be left open, as the Transaction would not raise serious doubts as to its compatibility with the internal market irrespective of whether a worldwide or EEA-wide market is considered.
+    (67) In Section 5.5.4, the Commission carries out an assessment on the basis of both worldwide and EEA-wide markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_cisco_splunk_2024_decision
+  page: '11'
+  quote_snippet: |
+    The Commission considers that, for the purposes of this Decision, the exact geographic market definition with regard to the supply of System Infrastructure software, or any segment thereof, can be left open, as the Transaction would not raise serious doubts as to its compatibility with the internal market irrespective of whether a worldwide or EEA-wide market is considered.
+    (67) In Section 5.5.4, the Commission carries out an assessment on the basis of both worldwide and EEA-wide markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_cisco_splunk_2024_decision
+  page: '14'
+  quote_snippet: In the market investigation, the vast majority of respondents expressing an
+    opinion considered that competition in the SIEM software market takes place at a worldwide
+    level.69 Respondents explained that “procurement is worldwide” and that “most vendors in
+    this space operate in all major markets.”70
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_cisco_splunk_2024_decision
+  page: '14'
+  quote_snippet: |
+    In any event, the Commission considers that, for the purposes of this Decision, the exact geographic market definition with regard to the supply of Security software (and possible segmentation thereof) can be left open, as the Transaction would not raise serious doubts as to its compatibility with the internal market irrespective of whether a worldwide or EEA-wide market is considered.
+    (86) In Section 5.6 the Commission carries out an assessment on the basis of both worldwide and EEA-wide markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_cisco_splunk_2024_decision
+  page: '14'
+  quote_snippet: In the market investigation, the vast majority of respondents expressing an
+    opinion considered that competition in the SIEM software market takes place at a worldwide
+    level.69 Respondents explained that “procurement is worldwide” and that “most vendors in
+    this space operate in all major markets.”70
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_cisco_splunk_2024_decision
+  page: '14'
+  quote_snippet: |
+    In any event, the Commission considers that, for the purposes of this Decision, the exact geographic market definition with regard to the supply of Security software (and possible segmentation thereof) can be left open, as the Transaction would not raise serious doubts as to its compatibility with the internal market irrespective of whether a worldwide or EEA-wide market is considered.
+    (86) In Section 5.6 the Commission carries out an assessment on the basis of both worldwide and EEA-wide markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_cisco_splunk_2024_decision
+  page: '28'
+  quote_snippet: For the above reasons, the European Commission has decided not to oppose the
+    notified operation and to declare it compatible with the internal market and with the EEA
+    Agreement. This decision is adopted in application of Article 6(1)(b) of the Merger Regulation
+    and Article 57 of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

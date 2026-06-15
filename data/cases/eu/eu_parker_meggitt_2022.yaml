@@ -1,0 +1,111 @@
+case_id: eu_parker_meggitt_2022
+case_name: PARKER / MEGGITT
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2022-04-01'
+parties:
+- name: PARKER
+  role: acquirer
+- name: MEGGITT
+  role: target
+source_documents:
+- doc_id: eu_parker_meggitt_2022_decision
+  title: PARKER / MEGGITT — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10506
+  pdf_url: http://publications.europa.eu/resource/cellar/b3e79da0-0432-11ed-acce-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: AWB for general aviation
+  definition_status: defined
+  notes: The Commission defines separate product markets for AWB by aircraft type. For AWB for
+    general aviation, the Commission left open the questions of segmentation between original
+    parts and spare parts, and between piston and turboprop aircraft.
+- market_id: pm_2
+  name: AWB for business jets
+  definition_status: defined
+  notes: The Commission defines separate product markets for AWB by aircraft type. For AWB for
+    business jets, the Commission concludes there is no need to define separate markets by weight
+    range.
+- market_id: pm_3
+  name: AWB for military fixed-wing UAVs
+  definition_status: defined
+  notes: The Commission defines separate product markets for AWB by aircraft type, including
+    military fixed-wing UAVs, which are developed specifically for military applications.
+- market_id: pm_4
+  name: AWB for military fixed-wing trainers
+  definition_status: defined
+  notes: The Commission defines separate product markets for AWB by aircraft type, including
+    military fixed-wing trainers, which are developed specifically for military applications.
+    For AWB for military fixed-wing trainers, the Commission left open the question of segmentation
+    between turboprop and jet aircraft.
+- market_id: pm_5
+  name: AWB for helicopters
+  definition_status: defined
+  notes: The Commission defines separate product markets for AWB by aircraft type. For AWB for
+    helicopters, the Commission left open the question of segmentation between civil and military
+    use.
+- market_id: pm_6
+  name: Aerospace pneumatic valves
+  definition_status: left_open
+  notes: The Commission left open the exact product market definition for pneumatic valves,
+    as well as potential narrower segmentations between airframe and engine systems or by valve
+    type, because the transaction did not raise serious doubts irrespective of these distinctions.
+geographic_markets_considered:
+- market_id: gm_1
+  name: AWB — global
+  definition_status: defined
+  notes: The Commission concluded that the relevant geographic market for the manufacture and
+    supply of AWB is global in scope, noting that market investigation results did not support
+    narrower markets even for military applications.
+- market_id: gm_2
+  name: Aerospace pneumatic valves — global
+  definition_status: considered
+  notes: The Commission considered the geographic market for aerospace pneumatic valves is likely
+    global in scope, based on market investigation responses.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_parker_meggitt_2022_decision
+  page: '70'
+  quote_snippet: Where, as in this case, a notified concentration raises serious doubts as to
+    its compatibility with the internal market, the Parties may modify the notified concentration
+    so as to remove the grounds for the serious doubts identified by the Commission with a view
+    to having it declared compatible with the internal market pursuant to Article 6(1)(b) in
+    conjunction with Article 6(2) of the Merger Regulation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_parker_meggitt_2022_decision
+  page: '79'
+  quote_snippet: Pursuant to Article 6(2) of Council Regulation (EC) No 139/2004 (the “Merger
+    Regulation”), Parker-Hannifin Corporation (“Parker” or the “Notifying Party”) hereby enters
+    into the following Commitments (the “Commitments”) vis-à-vis the European Commission (the
+    “Commission”) with a view to rendering the acquisition by Parker of Meggitt PLC (“Meggitt”)
+    (the “Concentration”) compatible with the internal market and the functioning of the EEA
+    Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

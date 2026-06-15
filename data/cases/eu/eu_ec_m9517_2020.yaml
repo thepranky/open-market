@@ -1,0 +1,394 @@
+case_id: eu_ec_m9517_2020
+case_name: M.9517
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2020-04-22'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9517_2020_decision
+  title: M.9517 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9517
+  pdf_url: http://publications.europa.eu/resource/cellar/d318bc5f-08ad-11eb-a511-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Finished Dose Pharmaceuticals (FDPs) at molecule level
+  definition_status: defined
+  notes: The Commission defines the relevant product markets for Finished Dose Pharmaceuticals
+    (FDPs) at the level of individual molecules, which includes both originator and generic
+    products based on the same active pharmaceutical ingredient, as they are generally considered
+    interchangeable. This approach is consistent with prior decisions in genericized FDP markets.
+- market_id: pm_2
+  name: Finished Dose Pharmaceuticals (FDPs) segmented by galenic form
+  definition_status: left_open
+  notes: The Commission considered whether to further segment FDP markets based on galenic form,
+    but the market investigation was inconclusive regarding substitutability. As the competitive
+    assessment would not significantly differ, this question was left open.
+- market_id: pm_3
+  name: Anticholinergic agents
+  definition_status: left_open
+  notes: For anticholinergic agents, the Commission explicitly left open whether the market
+    includes all anticholinergic agents combined or each separate agent. This was because the
+    competitive assessment did not raise serious doubts regardless of the definition.
+- market_id: pm_4
+  name: Active Pharmaceutical Ingredients (APIs) for each individual molecule
+  definition_status: defined
+  notes: For Active Pharmaceutical Ingredients (APIs), the Commission considers the supply of
+    APIs for each individual molecule as a separate product market, consistent with past decisions
+    and the views of the Notifying Parties.
+- market_id: pm_5
+  name: Outlicensing for each individual molecule
+  definition_status: defined
+  notes: The Commission considers outlicensing for each individual molecule to be a relevant
+    product market, consistent with its past decisions and the lack of contrary indications
+    from the Notifying Parties or the market investigation.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Finished Dose Pharmaceuticals (FDPs) — national
+  definition_status: defined
+  notes: The geographic markets for FDPs are defined as national in scope, consistent with Commission
+    precedents and confirmed by the market investigation due to national regulatory and reimbursement
+    schemes.
+- market_id: gm_2
+  name: Active Pharmaceutical Ingredients (APIs) for each individual molecule — EEA-wide or
+    worldwide
+  definition_status: left_open
+  notes: The precise geographic scope for API markets (whether EEA-wide or worldwide) was left
+    open as the transaction did not raise serious doubts under any plausible definition. Past
+    decisions considered them at least EEA-wide or possibly global.
+- market_id: gm_3
+  name: Outlicensing for each individual molecule — EEA-wide
+  definition_status: defined
+  notes: The geographic scope for outlicensing markets is considered EEA-wide, aligning with
+    Commission precedents and without contrary indications from the parties or market investigation.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9517_2020_decision
+  page: '7'
+  quote_snippet: (20) For the purpose of this Decision, the Commission considers that the relevant
+    product markets for FDPs should be defined at molecule level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9517_2020_decision
+  page: '9'
+  quote_snippet: (24) In summary, based on the results of the market investigation and any other
+    evidence available to it, the Commission has no reason to depart from its decisional precedents
+    in the area of genericized FDPs (see paras. 15 to 18 above), and concludes that the relevant
+    product markets should be defined at molecule level, while the question of the sub-segmentation
+    based on the galenic form can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9517_2020_decision
+  page: '7'
+  quote_snippet: (17) In previous decisions, the Commission found that, at molecule level, the
+    originator (i.e. the first product that was launched on the market for a specific molecule)
+    and generics (i.e. products that were launched after the originator’s loss of exclusivity)
+    generally form part of the same market. This is because generics are versions of originator
+    medicines, which are specifically designed to compete with those medicines and normally
+    represent the closest substitute to them.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9517_2020_decision
+  page: '8'
+  quote_snippet: (23) The market investigation was inconclusive regarding whether products with
+    different galenic forms are substitutable.26 A large majority of responding pharmacies indicated
+    that different form factors might not be interchangeable to treat the same symptoms or illness,
+    especially for nervous system treatments,27 while an overwhelming majority of competitors
+    consider that different galenic forms do compete with each other.28 The Commission notes
+    that the Commission’s assessment does not significantly differ in the present case should
+    the relevant product markets be sub-segmented at the galenic form level or comprise all
+    galenic forms. Moreover, no additional Group 1(+) or 2 markets arise from the Transaction
+    if the relevant product markets were defined based on different galenic forms, except where
+    this is explicitly mentioned in Section 5, and in none of those cases the competitive assessment
+    changes. Therefore, the question of whether the relevant molecule markets should be further
+    segmented based on the galenic form of FDPs can be left open, as it has no impact on the
+    competitive assessment of the Transaction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9517_2020_decision
+  page: '9'
+  quote_snippet: (24) In summary, based on the results of the market investigation and any other
+    evidence available to it, the Commission has no reason to depart from its decisional precedents
+    in the area of genericized FDPs (see paras. 15 to 18 above), and concludes that the relevant
+    product markets should be defined at molecule level, while the question of the sub-segmentation
+    based on the galenic form can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9517_2020_decision
+  page: '8'
+  quote_snippet: (24) With regard to anticholinergics, the Commission considers that the precise
+    relevant product market, whether it includes (i) all anticholinergic agents combined or
+    (i) each separate anticholinergic agent separately, can be left open. Indeed, the competitive
+    assessment of the Transaction does not raise serious doubts regardless of whether the relevant
+    product market comprises (i) all anticholinergic agents combined or (i) each separate anticholinergic
+    agent separately.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9517_2020_decision
+  page: '8'
+  quote_snippet: (21) In the present case, the responses to the market investigation suggest
+    that, for the molecules involved in this case, different genericized molecules, including
+    from the same ATC3 class, do not form part of the same product market, in particular since
+    they are not interchangeable for patients and pharmacies,19 and their price-setting modalities
+    differ.20 Relatedly, respondents to the market investigation also indicated that certain
+    genericized molecules belonging to wider groups of molecules with the same or similar mode
+    of actions, such benzodiazepines, are generally not interchangeable.21 However, with regard
+    to anticholinergics specifically, while the majority of respondents also consider that different
+    molecules generally do not form part of the same product market, 22 the Commission notes
+    that the answers received in the market investigation to this question were mixed regarding
+    the Lithuanian market.23 These elements indicate that, with the possible exception of anticholinergics,24
+    the molecules offered by the Parties and analysed in the present case each form a separate
+    product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9517_2020_decision
+  page: '116'
+  quote_snippet: (562) Therefore, for the purpose of this Decision, the product market definition
+    proposed by the Notifying Parties is retained. For the purpose of this case, and for the
+    molecules involved in this case, the Commission therefore considers that the supply of the
+    APIs for each molecule concerned by the Transaction constitutes a separate relevant product
+    market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9517_2020_decision
+  page: '115'
+  quote_snippet: (559) In past decisions, the Commission considered that the supply of APIs
+    for each individual molecule might constitute a separate product market that is upstream
+    to the markets for the supply of FDPs, whilst noting that it was not excluded that certain
+    APIs may be substitutable with each other for all, or for a range of, applications.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9517_2020_decision
+  page: '116'
+  quote_snippet: (560) The Notifying Parties agree with the previous practice of the Commission
+    and submit that the competitive analysis of the supply of APIs does not have to be conducted
+    at the ATC3 or ATC4 level if competition concerns can be excluded at the level of individual
+    APIs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9517_2020_decision
+  page: '127'
+  quote_snippet: (605) For the purpose of this case, the Commission therefore considers that
+    individual molecules constitute the relevant product market for outlicensing.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9517_2020_decision
+  page: '127'
+  quote_snippet: (603) In past decisions, the Commission considered outlicensing for each individual
+    molecule to potentially constitute a separate product market which is upstream of the market
+    for the supply of FDPs.194
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9517_2020_decision
+  page: '9'
+  quote_snippet: (28) Therefore, for the purpose of this Decision, the Commission considers
+    that the geographic scope of all relevant FDP product markets is national.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m9517_2020_decision
+  page: '9'
+  quote_snippet: (25) The Commission has consistently defined the geographic markets for FDPs
+    as being national in scope.29
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m9517_2020_decision
+  page: '9'
+  quote_snippet: (27) The market investigation in this case confirmed the national dimension
+    of the markets for FDPs, in particular in view of the differing national regulatory and
+    reimbursement schemes, and the fact that competition between pharmaceutical suppliers still
+    predominantly takes place at a national level.30
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m9517_2020_decision
+  page: '116'
+  quote_snippet: (563) In past decisions, the Commission considered that API markets are, from
+    a geographic perspective, at least EEA-wide and possibly global in scope.182
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m9517_2020_decision
+  page: '116'
+  quote_snippet: (564) The Notifying Parties submit that API suppliers are active globally.
+    The Parties indicate that only [30-40]% of the valid certificates awarded to control the
+    quality of pharmaceutical substances183 were held by European manufacturers, while Chinese
+    and Indian manufacturers held together [50-60]% of these certificates in 2017.184 The Parties
+    further submit that the share of Indian and Chinese manufacturers has steadily increased
+    over recent years. In the Parties’ view, the fact that the majority of CEP holders are from
+    outside of Europe shows that suppliers are able to compete in Europe regardless of their
+    location.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m9517_2020_decision
+  page: '127'
+  quote_snippet: (608) For the purpose of this case, the Commission considers that the market(s)
+    of FDP outlicensing to be EEA-wide in geographic scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m9517_2020_decision
+  page: '127'
+  quote_snippet: (606) In past decisions, the Commission considered the upstream outlicensing
+    market(s) to be at least EEA-wide.195
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

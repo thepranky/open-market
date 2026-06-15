@@ -1,0 +1,206 @@
+case_id: eu_phoenix_mckesson_2022
+case_name: PHOENIX / MCKESSON
+authority: European Commission
+jurisdiction: EU
+sector: retail
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2022-03-30'
+parties:
+- name: PHOENIX
+  role: acquirer
+- name: MCKESSON
+  role: target
+source_documents:
+- doc_id: eu_phoenix_mckesson_2022_decision
+  title: PHOENIX / MCKESSON — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10404
+  pdf_url: http://publications.europa.eu/resource/cellar/821ebc26-e4d6-11ed-a05c-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Pharmaceutical wholesale distribution in Italy
+  definition_status: defined
+  notes: The Commission considered the market for pharmaceutical wholesale in Italy should encompass
+    full-line wholesalers and exclude short-liners and direct deliveries. Further segmentations
+    by product or customer group were deemed inappropriate.
+- market_id: pm_2
+  name: Pharmaceutical retail distribution in Italy
+  definition_status: left_open
+  notes: The Commission left open the exact product market definition for pharmaceutical retail
+    market in Italy, as no competition concerns arose on any plausible product market. Past
+    practice suggested a distinction between Rx and OTC products, and the Italian NCA made a
+    distinction between pharmaceutical products and para-pharmaceutical products.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Pharmaceutical wholesale distribution — catchment areas (Italy affected)
+  definition_status: left_open
+  notes: The Commission considered national markets inappropriate for pharmaceutical wholesale
+    in Italy, preferring narrower catchment areas. While market investigation and quantile methodology
+    suggested 90 minutes, and the Notifying Party proposed 171 minutes, the exact delineation
+    was left open for the purpose of the decision as no concerns arose under either plausible
+    definition. Market shares were reported for both 90 and 171 minutes driving time.
+- market_id: gm_2
+  name: Pharmaceutical retail distribution — local (Italy affected)
+  definition_status: left_open
+  notes: The Commission noted that the pharmaceutical retail market presents national features
+    on the supply-side but is local in nature on the demand-side, consistent with past practice
+    and the Italian NCA's view of municipal territory. However, the exact geographic market
+    definition and the relevance of municipal boundaries were left open as no competition concerns
+    arose.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_phoenix_mckesson_2022_decision
+  page: '6'
+  quote_snippet: (23) In light of the foregoing, the Commission considers that the relevant
+    product market for pharmaceutical wholesaling in Italy should encompass the activities of
+    full-line wholesalers and exclude short-line wholesalers from its scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_phoenix_mckesson_2022_decision
+  page: '7'
+  quote_snippet: (29) In light of the foregoing, the Commission considers that the relevant
+    product market should encompass only wholesaling activities and exclude direct deliveries
+    from its scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_phoenix_mckesson_2022_decision
+  page: '8'
+  quote_snippet: (34) In relation to the definition of the relevant product market, the Commission
+    considers that the market for pharmaceutical wholesale in Italy should encompass full-line
+    wholesalers and exclude short-liners and direct deliveries. Further segmentations of this
+    market by product or customer group would not appear appropriate.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_phoenix_mckesson_2022_decision
+  page: '9'
+  quote_snippet: (39) In line with its past practice, the Commission considers that national
+    markets would be inappropriate for the assessment of the Italian market. The market investigation
+    results confirmed that all competitors deliver pharmacies located in urban areas at least
+    twice a day and the majority of competitors indicated that the same applies to pharmacies
+    located in rural areas.38 The vast majority of customers who responded to the market investigation
+    indicated that the average number of deliveries is twice a day.39 Thus, although wholesalers
+    compete in a given country through a network of depots, the ability to compete for given
+    customers depends on the location of the depots. The market investigation results suggested
+    that the shorter the distance between a depot and a customer, the greater the competitive
+    advantage.40 Therefore, it would not appear feasible for wholesalers to provide this type
+    of service twice a day at national level in the absence of a nation-wide network of local
+    depots. For instance, McKesson has only two depots located in Northern Italy, and thus cannot
+    provide short-term deliveries throughout the whole Italian territory.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_phoenix_mckesson_2022_decision
+  page: '10'
+  quote_snippet: (44) While the catchment area of 171 minutes driving time, as proposed by the
+    Notifying Party, would seem appropriate considering the analysis of the Parties’ driving
+    time distribution in Italy, the market investigation results and the application of the
+    quantile threshold methodology would point to a smaller catchment area. For these purposes,
+    in its competitive assessment, the Commission will indicate the market shares for the two
+    catchment areas of 90 minutes and 171 minutes driving time. The third potential alternative
+    market definition, based on a catchment area within which 97-98% of turnover of a given
+    depot is achieved, will not be further discussed in this decision, given that this catchment
+    area would broadly coincide with the catchment area of 171 minutes proposed by the Notifying
+    Party.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_phoenix_mckesson_2022_decision
+  page: '11'
+  quote_snippet: (45) In light of the foregoing, the Commission considers that the geographic
+    markets for pharmaceutical wholesale in Italy are narrower than national. The Commission
+    also considers that the alternative geographic market definition proposed by the Notifying
+    Party, i.e., 171 minutes driving time, is likely too broad. The exact delineation of the
+    catchment areas can be left open for the purposes of the present decision, as pharmaceutical
+    wholesale markets are in any event not wider than national, and the Transaction does not
+    raise any competition concerns under any alternative plausible market definition. For the
+    purposes of the competitive assessment, the Commission will indicate the market shares for
+    the two catchment areas of 90 minutes and 171 minutes driving time.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_phoenix_mckesson_2022_decision
+  page: '13'
+  quote_snippet: (56) There is no evidence stemming from the market investigation indicating
+    that the Commission should depart from its past decisional practice. Therefore, while the
+    geographic scope of the market for retail distribution presents certain national features
+    on the supply-side, on the demand-side this market is local in nature.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_phoenix_mckesson_2022_decision
+  page: '13'
+  quote_snippet: (57) For the purposes of the present decision, however, the Commission can
+    leave open the exact geographic market definition and the analysis regarding the relevance
+    of municipal boundaries on the demand side, as in any event there are no competition concerns
+    arising under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

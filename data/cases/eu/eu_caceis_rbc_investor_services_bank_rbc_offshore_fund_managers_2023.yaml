@@ -1,0 +1,417 @@
+case_id: eu_caceis_rbc_investor_services_bank_rbc_offshore_fund_managers_2023
+case_name: CACEIS / RBC INVESTOR SERVICES BANK / RBC OFFSHORE FUND MANAGERS / RBC INVESTOR SERVICES
+  TRUST ASSETS
+authority: European Commission
+jurisdiction: EU
+sector: financial
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2023-06-15'
+parties:
+- name: CACEIS
+  role: acquirer
+- name: RBC INVESTOR SERVICES BANK
+  role: acquirer
+- name: RBC OFFSHORE FUND MANAGERS
+  role: acquirer
+- name: RBC INVESTOR SERVICES TRUST ASSETS
+  role: target
+source_documents:
+- doc_id: eu_caceis_rbc_investor_services_bank_rbc_offshore_fund_managers_2023_decision
+  title: CACEIS / RBC INVESTOR SERVICES BANK / RBC OFFSHORE FUND MANAGERS / RBC INVESTOR SERVICES
+    TRUST ASSETS — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10978
+  pdf_url: http://publications.europa.eu/resource/cellar/de00bef9-a007-11ee-b164-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Global custody services
+  definition_status: considered
+  notes: The Commission considered global custody to comprise a broad set of services as a single
+    heterogeneous market. It was left open whether global custody and fund administration services
+    should be considered a combined market.
+- market_id: pm_2
+  name: Local custody services
+  definition_status: left_open
+  notes: The Commission considered a plausible market for local custody services but did not
+    conclude on whether it constitutes a separate product market.
+- market_id: pm_3
+  name: Fund administration services
+  definition_status: considered
+  notes: The Commission considered fund administration to comprise a range of services as a
+    single heterogeneous market. It was left open whether fund administration and global custody
+    services should be considered a combined market.
+- market_id: pm_4
+  name: Asset management
+  definition_status: left_open
+  notes: The Commission considered a market for asset management, leaving open the question
+    of further segmentation by client type (retail/institutional) and management type (active/passive)
+    or by mutual funds.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Global custody services — national (France affected)
+  definition_status: left_open
+  notes: The Commission ultimately left the geographic market definition open, noting that the
+    market investigation indicated global custody services might be national in scope, but the
+    transaction did not give rise to competitive concerns under any plausible definition. The
+    assessment was performed on a national market in France, where affected overlaps arose.
+- market_id: gm_2
+  name: Local custody services — national
+  definition_status: considered
+  notes: The Commission considered the market to be national in scope, consistent with previous
+    decisions, as the market investigation did not indicate otherwise.
+- market_id: gm_3
+  name: Fund administration services — national (France and Belgium affected)
+  definition_status: left_open
+  notes: The Commission ultimately left the geographic market definition open, noting that the
+    market investigation indicated fund administration services might be national in scope,
+    but the transaction did not give rise to competitive concerns under any plausible definition.
+    The assessment was performed on national markets in France and Belgium, where affected overlaps
+    arose.
+- market_id: gm_4
+  name: Asset management — global, EEA-wide or national
+  definition_status: considered
+  notes: The Commission considered the market to be global, EEA-wide or national in scope, consistent
+    with previous decisions, as the market investigation did not indicate otherwise.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_caceis_rbc_investor_services_bank_rbc_offshore_fund_managers_2023_decision
+  page: '4'
+  quote_snippet: As such, for the purposes of this decision, the Commission considers global
+    custody to comprise all the services mentioned in paragraph (9).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_caceis_rbc_investor_services_bank_rbc_offshore_fund_managers_2023_decision
+  page: '4'
+  quote_snippet: As such, for the purposes of this decision, the Commission considers that a
+    segmentation of the global custody market by asset class is not appropriate.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_caceis_rbc_investor_services_bank_rbc_offshore_fund_managers_2023_decision
+  page: '5'
+  quote_snippet: To conclude, the Commission considers that global custody can be considered
+    as a single heterogeneous market, with a set of services that may differ slightly depending
+    on client needs or asset type.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_caceis_rbc_investor_services_bank_rbc_offshore_fund_managers_2023_decision
+  page: '7'
+  quote_snippet: Local custody (or sub-custody) refers to the provision of custody services
+    within a specific jurisdiction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_caceis_rbc_investor_services_bank_rbc_offshore_fund_managers_2023_decision
+  page: '7'
+  quote_snippet: The Commission has previously noted that a local custodian (or sub-custodian)
+    is one method by which a global custodian can carry out custody services in countries other
+    than the one in which it is domiciled and still adhere to the specific requirements of national
+    law.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_caceis_rbc_investor_services_bank_rbc_offshore_fund_managers_2023_decision
+  page: '7'
+  quote_snippet: As such, for the purposes of this decision, the Commission has considered a
+    plausible market for local custody services, but does not conclude on whether local custody
+    clearly constitutes a separate product market, given that no competition concerns arise
+    regardless of the precise definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_caceis_rbc_investor_services_bank_rbc_offshore_fund_managers_2023_decision
+  page: '8'
+  quote_snippet: The Commission previously considered that fund administration includes a range
+    of services that form a single product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_caceis_rbc_investor_services_bank_rbc_offshore_fund_managers_2023_decision
+  page: '9'
+  quote_snippet: As such, for the purposes of this decision, the Commission considers that a
+    segmentation by asset class is not appropriate.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_caceis_rbc_investor_services_bank_rbc_offshore_fund_managers_2023_decision
+  page: '10'
+  quote_snippet: To conclude, the Commission considers that fund administration can be considered
+    as a single heterogeneous market, with a set of services that may differ slightly depending
+    on client needs or asset type. As such, for the purposes of this decision, the Commission
+    considers fund administration to comprise all the services mentioned in paragraph (32).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_caceis_rbc_investor_services_bank_rbc_offshore_fund_managers_2023_decision
+  page: '11'
+  quote_snippet: The Commission has previously described asset management as “the provision
+    of investment advice and often also the implementation of this advice”.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_caceis_rbc_investor_services_bank_rbc_offshore_fund_managers_2023_decision
+  page: '11'
+  quote_snippet: Ultimately, however, the Commission has left open the question of whether asset
+    management should be treated as a single market or segmented more narrowly according to
+    these various distinctions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_caceis_rbc_investor_services_bank_rbc_offshore_fund_managers_2023_decision
+  page: '12'
+  quote_snippet: As such, for the purposes of this decision, the Commission considers a market
+    for asset management, leaving open the question of further segmentation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_caceis_rbc_investor_services_bank_rbc_offshore_fund_managers_2023_decision
+  page: '6'
+  quote_snippet: The majority of customers responding to the Commission’s market investigation
+    purchase global custody services by comparing offers at national level (e.g., for France
+    and Belgium separately)21 and require their global custody provider to be domiciled and/or
+    have personnel located in the same jurisdiction as the relevant fund either for regulatory
+    reasons or out of commercial preference.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_caceis_rbc_investor_services_bank_rbc_offshore_fund_managers_2023_decision
+  page: '6'
+  quote_snippet: These facts would indicate that global custody services might be national in
+    scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_caceis_rbc_investor_services_bank_rbc_offshore_fund_managers_2023_decision
+  page: '6'
+  quote_snippet: Ultimately, in this case the appropriate geographic market definition for global
+    custody services can be left open, as the Transaction does not give rise to competitive
+    concerns under any plausible geographic market definition. The Transaction does not give
+    rise to an affected market for global custody on a global or EEA-wide level. At national
+    level, the Transaction gives rise to affected global custody markets in France.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_caceis_rbc_investor_services_bank_rbc_offshore_fund_managers_2023_decision
+  page: '7'
+  quote_snippet: The Commission noted in Crédit Agricole/Caisse D'Epargne/JV29 that it may be
+    defensible to analyse a national-level market on the basis that a large number of clients
+    with a significant part of their investment domiciled in one country may favour a sub-custodian
+    in the same country.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_caceis_rbc_investor_services_bank_rbc_offshore_fund_managers_2023_decision
+  page: '8'
+  quote_snippet: As such, for the purposes of this decision, the Commission has considered the
+    market to be national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_caceis_rbc_investor_services_bank_rbc_offshore_fund_managers_2023_decision
+  page: '10'
+  quote_snippet: The majority of customers responding to the Commission’s market investigation
+    indicated that they source fund administration services by comparing offers at national
+    level (i.e., separately for France and Belgium), and consider fund administration suppliers
+    to be active at national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_caceis_rbc_investor_services_bank_rbc_offshore_fund_managers_2023_decision
+  page: '11'
+  quote_snippet: The above facts would indicate that fund administration services might be national
+    in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_caceis_rbc_investor_services_bank_rbc_offshore_fund_managers_2023_decision
+  page: '11'
+  quote_snippet: Ultimately, in this case the appropriate geographic market definition for fund
+    administration services can be left open, as the Transaction does not give rise to competitive
+    concerns under any plausible geographic market definition. The Transaction does not give
+    rise to an affected market under a global or EEA-wide geographic scope under any possible
+    segmentation. At national level, the Transaction gives rise to affected markets in France
+    and in Belgium.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_caceis_rbc_investor_services_bank_rbc_offshore_fund_managers_2023_decision
+  page: '12'
+  quote_snippet: In previous cases, the Commission has considered the market as global, EEA-wide
+    or national in scope, but ultimately left this question open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_caceis_rbc_investor_services_bank_rbc_offshore_fund_managers_2023_decision
+  page: '12'
+  quote_snippet: As such, for the purposes of this decision, the Commission has considered the
+    market as global, EEA-wide or national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []
+case_type: merger
+ai_summary: null

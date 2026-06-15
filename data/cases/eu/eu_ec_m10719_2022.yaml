@@ -1,0 +1,332 @@
+case_id: eu_ec_m10719_2022
+case_name: M.10719
+authority: European Commission
+jurisdiction: EU
+sector: energy
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2022-08-03'
+parties: []
+source_documents:
+- doc_id: eu_ec_m10719_2022_decision
+  title: M.10719 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10719
+  pdf_url: http://publications.europa.eu/resource/cellar/c2752a01-3a7b-11ed-9c68-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Electrical engineering services relating to substations for non-residential customers,
+    comprising the leasing/renting of substations together with installation and maintenance
+    services limited to the infrastructure sector
+  definition_status: considered
+  notes: The Commission decided to carry out its competitive assessment on this basis for the
+    purposes of this Decision, while leaving broader market definitions open.
+- market_id: pm_2
+  name: Heat metering services markets, by reference to large and small capacity connections
+  definition_status: segmented
+  notes: The Commission confirmed that heat metering services could plausibly be segmented between
+    large (above 100kW) and small (below 100kW) capacity connections for the purposes of this
+    Decision, while leaving the exact product market definition open.
+- market_id: pm_3
+  name: Gas and electricity metering services market
+  definition_status: considered
+  notes: null
+- market_id: pm_4
+  name: Overall market for the generation and distribution of district heating
+  definition_status: considered
+  notes: The Commission concluded that it was not necessary to further segment the market for
+    the generation and distribution of district heating, considering that Ennatuurlijk has a
+    natural monopoly in the wider product market.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Electrical engineering services relating to substations for non-residential customers,
+    comprising the leasing/renting of substations together with installation and maintenance
+    services limited to the infrastructure sector — national (the Netherlands affected)
+  definition_status: considered
+  notes: The Commission stated it would assess the effects of the Transaction on the national
+    market in the Netherlands, while leaving the exact geographic market definition open.
+- market_id: gm_2
+  name: Metering services — national (the Netherlands affected)
+  definition_status: considered
+  notes: This geographic scope applies to both heat metering services and gas/electricity metering
+    services.
+- market_id: gm_3
+  name: Overall market for the generation and distribution of district heating — local (relevant
+    heating distribution networks affected)
+  definition_status: considered
+  notes: The Commission will assess the effects based on both local (relevant heating networks)
+    and national scope, leaving the exact geographic definition open.
+- market_id: gm_4
+  name: Overall market for the generation and distribution of district heating — national (the
+    Netherlands affected)
+  definition_status: considered
+  notes: The Commission will assess the effects based on both local (relevant heating networks)
+    and national scope, leaving the exact geographic definition open.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m10719_2022_decision
+  page: '4'
+  quote_snippet: In light of the fact that electrical engineering services for substations are
+    always provided together with the rental/lease thereof in the Netherlands, the Commission
+    will therefore, for the purposes of this Decision, carry out its competitive assessment
+    on the basis of a product market comprising both the leasing/renting of substations and
+    installation and maintenance services of the same. No distinction will be made between installation
+    and maintenance, as all providers in the Netherlands provide both installation and maintenance
+    as one package. No distinction will be made between residential and non-residential customers
+    either, as all customers within the substation segment are all non-residential.15 The Commission
+    leaves open whether a distinction based on infrastructure/industry/tertiary sector should
+    be made, but will make this distinction for the purposes of the competitive assessment in
+    order to assess the narrowest plausible market, which for the purposes of this Decision,
+    would be the infrastructure sector.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m10719_2022_decision
+  page: '5'
+  quote_snippet: 'The Commission will assess the effects of the Transaction on the following
+    markets: (a) Product markets: electrical engineering services relating to substations for
+    non-residential customers, comprising the leasing/renting of substations together with installation
+    and maintenance services limited to the infrastructure sector.18'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m10719_2022_decision
+  page: '7'
+  quote_snippet: The Commission has confirmed the Notifying Parties’ statements regarding the
+    different regulatory requirements between heat metering for small and large capacity connections
+    in the Netherlands. In light of these requirements, the Commission considers that for the
+    purposes of this Decision, heat metering services in the Netherlands could plausibly be
+    segmented between large (above 100kW) and small (below 100kW) capacity connections. In any
+    event, given that the Transaction would not raise serious doubts as to its compatibility
+    with the internal market even under the narrowest plausible product market definition, the
+    Commission will leave the exact product market definition open for the purposes of this
+    Decision.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m10719_2022_decision
+  page: '8'
+  quote_snippet: 'The Commission will assess the effects of the Transaction on the following
+    markets: (a) Product markets: (i) the heat metering services markets, by reference to large
+    and small capacity connections and (ii) the gas and electricity metering services market.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m10719_2022_decision
+  page: '8'
+  quote_snippet: 'The Commission will assess the effects of the Transaction on the following
+    markets: (a) Product markets: (i) the heat metering services markets, by reference to large
+    and small capacity connections and (ii) the gas and electricity metering services market.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m10719_2022_decision
+  page: '9'
+  quote_snippet: The Commission concludes that for the purposes of this Decision, it is not
+    necessary to further segment the market for the generation and distribution of district
+    heating, because in its competitive assessment, it considers that Ennatuurlijk has a natural
+    monopoly in the wider product market in relation to its district heating networks and therefore,
+    the competitive assessment and its outcome would not differ should the market be segmented
+    between the generation and distribution of district heating..
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m10719_2022_decision
+  page: '9'
+  quote_snippet: In any event, the exact scope of the product market for district heating services
+    can be left open because the Transaction would not raise serious doubts as to its compatibility
+    with the internal market even under the narrowest plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m10719_2022_decision
+  page: '10'
+  quote_snippet: 'The Commission will assess the effects of the Transaction on the following
+    markets: (a) Product market: the overall market for the generation and distribution of district
+    heating.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m10719_2022_decision
+  page: '5'
+  quote_snippet: Given that the Transaction would not raise serious doubts as to its compatibility
+    with the internal market even under the narrowest plausible geographic market definition,
+    the Commission will leave the exact geographic market definition open for the purposes of
+    this Decision.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m10719_2022_decision
+  page: '5'
+  quote_snippet: 'The Commission will assess the effects of the Transaction on the following
+    markets: (b) Geographic markets: the national market in the Netherlands.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m10719_2022_decision
+  page: '8'
+  quote_snippet: The geographic scope of the market for metering services in the Netherlands
+    can therefore be considered to be national for the purposes of this Decision.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m10719_2022_decision
+  page: '8'
+  quote_snippet: 'The Commission will assess the effects of the Transaction on the following
+    markets: (b) Geographic markets: the national market in the Netherlands.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m10719_2022_decision
+  page: '9'
+  quote_snippet: Given that the Transaction would not raise serious doubts as to its compatibility
+    with the internal market even under the narrowest plausible geographic market definition
+    (i.e. the relevant district heating network), the Commission will leave the exact geographic
+    market definition for district heating services open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m10719_2022_decision
+  page: '10'
+  quote_snippet: 'The Commission will assess the effects of the Transaction on the following
+    markets: (b) Geographic markets: the relevant heating distribution networks as well as the
+    overall national market in the Netherlands.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m10719_2022_decision
+  page: '10'
+  quote_snippet: 'The Commission will assess the effects of the Transaction on the following
+    markets: (b) Geographic markets: the relevant heating distribution networks as well as the
+    overall national market in the Netherlands.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m10719_2022_decision
+  page: '7'
+  quote_snippet: In any event, given that the Transaction would not raise serious doubts as
+    to its compatibility with the internal market even under the narrowest plausible product
+    market definition, the Commission will leave the exact product market definition open for
+    the purposes of this Decision.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

@@ -1,0 +1,540 @@
+case_id: eu_ec_m9626_2020
+case_name: M.9626
+authority: European Commission
+jurisdiction: EU
+sector: energy
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2020-03-31'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9626_2020_decision
+  title: M.9626 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9626
+  pdf_url: http://publications.europa.eu/resource/cellar/ea667f77-8621-11ea-812f-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Generation and wholesale supply of electricity
+  definition_status: defined
+  notes: ''
+- market_id: pm_2
+  name: Balancing and ancillary services
+  definition_status: left_open
+  notes: ''
+- market_id: pm_3
+  name: Generation, transmission, distribution and supply of heat on a district heating network
+  definition_status: defined
+  notes: ''
+- market_id: pm_4
+  name: Wholesale supply of HFO for industrial processes
+  definition_status: left_open
+  notes: ''
+- market_id: pm_5
+  name: Wholesale supply of LHO
+  definition_status: left_open
+  notes: ''
+- market_id: pm_6
+  name: Supply of industrial lubricants
+  definition_status: left_open
+  notes: ''
+geographic_markets_considered:
+- market_id: gm_1
+  name: Generation and wholesale supply of electricity — national (Poland affected)
+  definition_status: defined
+  notes: ''
+- market_id: gm_2
+  name: Balancing and ancillary services — national (Poland affected)
+  definition_status: defined
+  notes: ''
+- market_id: gm_3
+  name: Generation, transmission, distribution and supply of heat on a district heating network
+    — limited to each specific district heating network (Poland affected)
+  definition_status: defined
+  notes: ''
+- market_id: gm_4
+  name: Wholesale supply of HFO for industrial processes — national (Poland affected)
+  definition_status: left_open
+  notes: ''
+- market_id: gm_5
+  name: Wholesale supply of LHO — national (Poland affected)
+  definition_status: left_open
+  notes: ''
+- market_id: gm_6
+  name: Supply of industrial lubricants — national (Poland affected)
+  definition_status: left_open
+  notes: ''
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9626_2020_decision
+  page: '3'
+  quote_snippet: In previous decisions, the Commission has considered that electricity generation
+    and wholesale supply constitutes a distinct product market from transmission and distribution
+    and retail supply of electricity.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9626_2020_decision
+  page: '4'
+  quote_snippet: Therefore, the Commission considers the relevant product market to be generation
+    and wholesale supply of electricity.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9626_2020_decision
+  page: '4'
+  quote_snippet: Balancing and ancillary services can be defined as the services consisting
+    in maintaining the voltage in the grid within a very narrow bandwidth. Transmission System
+    Operators (“TSOs”) purchase electricity, on a balancing exchange or bilaterally, in order
+    to cover deviations between production and consumption within their control areas. In previous
+    decisions, the Commission has treated balancing and ancillary services as a separate product
+    market from that for the generation and wholesale supply of electricity.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9626_2020_decision
+  page: '4'
+  quote_snippet: The Commission has identified different categories of balancing and ancillary
+    services, namely primary (frequency containment reserve), secondary (automatic frequency
+    restoration reserve) and tertiary (manual frequency restoration reserve, fast active disturbance
+    reserve and peak load reserve), on the basis of the order of activation and the magnitude
+    of frequency deviation. The Commission has however left open whether the market for these
+    different categories of balancing and ancillary services could correspond to distinct product
+    markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9626_2020_decision
+  page: '5'
+  quote_snippet: For the purposes of the present decision, the precise product market definition
+    can be left open as the Transaction does not lead to serious doubts as to its compatibility
+    with the internal market under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9626_2020_decision
+  page: '5'
+  quote_snippet: In previous decisions, the Commission has concluded that district heating constitutes
+    a separate product market, which includes the distribution of thermal energy in the form
+    of steam and/or hot water from central or decentralised sources of production (heating plants)
+    through a network to multiple buildings or sites for use of space or process heating.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9626_2020_decision
+  page: '5'
+  quote_snippet: Therefore, the Commission considers the relevant product market to be generation,
+    transmission, distribution and supply of heat on a district heating network.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9626_2020_decision
+  page: '6'
+  quote_snippet: With respect to HFO, a distinction should be made between on the one hand,
+    HFO used as a motor fuel for large marine engines, and one the other hand, HFO used as an
+    energy source/fuel for inland industrial processes (e.g. power plants, horticulture, industrial
+    laundry, etc.).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9626_2020_decision
+  page: '6'
+  quote_snippet: 'The Commission has previously distinguished two different levels of wholesale
+    distribution of refined fuel products: (i) ex-refinery sales (primary level of distribution)
+    and (ii) non-retail sales (secondary level of distribution). It has previously doubted whether
+    this distinction would also apply to wholesale sales of fuel in Poland, but decided to leave
+    the precise market definition open.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9626_2020_decision
+  page: '7'
+  quote_snippet: For the purposes of this decision, the precise product market definition between
+    ex- refinery and non-retail sales can be left open, as the Transaction does not lead to
+    serious doubts as to its compatibility with the internal market under any plausible market
+    definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9626_2020_decision
+  page: '7'
+  quote_snippet: LHO is a low viscosity, liquid petroleum product which can be used as fuel
+    oil for furnaces or boilers in buildings is usually burned for the purpose of heating. As
+    mentioned above in relation to HFO, the Commission has previously divided the market for
+    the wholesale supply of fuels by fuel type, including LHO. It has also previously distinguished
+    between ex-refinery and non-retail sales of LHO.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9626_2020_decision
+  page: '7'
+  quote_snippet: 'On the non-retail level, previous decisions considered that LHO may consist
+    of two segments: (i) heating oil light (“HOL”) and (ii) heating oil extra light (“HOEL”).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9626_2020_decision
+  page: '7'
+  quote_snippet: For the purposes of this decision, the precise market definition can be left
+    open, as the Transaction does not lead to serious doubts as to its compatibility with the
+    internal market under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m9626_2020_decision
+  page: '8'
+  quote_snippet: The Commission has also defined separate markets for lubricants based on their
+    application, i.e. (i) automotive lubricants, (ii) industrial lubricants, (iii) marine lubricants
+    and (iv) aviation lubricants. The Parties are only active in industrial lubricants.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m9626_2020_decision
+  page: '8'
+  quote_snippet: Previous decisions have also considered a possible further distinction based
+    on the base stock employed, i.e. between (i) mineral and (ii) synthetic lubricants, leaving
+    the market definition open .
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m9626_2020_decision
+  page: '8'
+  quote_snippet: For the purposes of this decision, the Commission considers that the precise
+    product market definition can be left open, as the Transaction does not lead to serious
+    doubts as to its compatibility with the internal market under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m9626_2020_decision
+  page: '4'
+  quote_snippet: The Commission has previously considered the market for generation and wholesale
+    supply of electricity to be national in scope. The Polish Competition Authority has also
+    concluded in its decisions that the market for generation and wholesale supply of electricity
+    is national in scope in Poland.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m9626_2020_decision
+  page: '4'
+  quote_snippet: The Commission therefore considers the relevant geographic market for generation
+    and wholesale supply of electricity to be national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m9626_2020_decision
+  page: '5'
+  quote_snippet: In previous decisions, the Commission has considered that the market for balancing
+    and ancillary services is at most national in scope. Balancing and ancillary services can
+    be provided only by the entities which are connected to the national power system, and can
+    only be provided to PSE, the sole TSO in Poland.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m9626_2020_decision
+  page: '5'
+  quote_snippet: The Commission considers the relevant geographic market for the provision of
+    balancing and ancillary services to be national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m9626_2020_decision
+  page: '5'
+  quote_snippet: In previous decisions, the Commission has considered the geographic scope of
+    the district heating market to be limited to the specific district heating network to which
+    the plant is linked, as different networks usually cover different geographical areas and
+    are not connected to each other.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m9626_2020_decision
+  page: '6'
+  quote_snippet: The Commission therefore considers the relevant geographic market for generation,
+    transmission, distribution and supply of heat on a district heating network to be limited
+    to each specific district heating network.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_ec_m9626_2020_decision
+  page: '7'
+  quote_snippet: The Commission has previously concluded that a possible market for non-retail
+    sales of HFO would be national in scope, and that a possible ex-refinery market for this
+    product could be broader (Western Europe-wide, EU-wide or EEA-wide).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_ec_m9626_2020_decision
+  page: '7'
+  quote_snippet: For the purposes of this decision, the precise geographic market definition
+    can be left open, as the Transaction does not lead to serious doubts as to its compatibility
+    with the internal market under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_ec_m9626_2020_decision
+  page: '7'
+  quote_snippet: The Commission has previously concluded that the possible geographic market
+    for non-retail sales of fuel products would be national in scope while that for ex-refinery
+    sales would be potentially EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_ec_m9626_2020_decision
+  page: '7'
+  quote_snippet: For the purposes of this decision, the precise geographic market definition
+    can be left open, as the Transaction does not lead to serious doubts as to its compatibility
+    with the internal market under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_ec_m9626_2020_decision
+  page: '8'
+  quote_snippet: The Commission has previously considered the geographic scope of the market
+    for industrial lubricants to be at least national and possibly EEA-wide in scope, although
+    it has ultimately left the exact geographic market definition open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_ec_m9626_2020_decision
+  page: '8'
+  quote_snippet: For the purposes of this decision, the Commission considers that the precise
+    geographic market definition between EEA-wide or national can be left open, as the Transaction
+    does not lead to serious doubts as to its compatibility with the internal market under any
+    plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_ec_m9626_2020_decision
+  page: '1'
+  quote_snippet: |
+    Subject: Case M.9626 – PKN Orlen/Energa
+    Commission decision pursuant to Article 6(1)(b) of Council Regulation
+    No 139/20041 and Article 57 of the Agreement on the European Economic
+    Area2
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_ec_m9626_2020_decision
+  page: '15'
+  quote_snippet: For the above reasons, the European Commission has decided not to oppose the
+    notified operation and to declare it compatible with the internal market and with the EEA
+    Agreement. This decision is adopted in application of Article 6(1)(b) of the Merger Regulation
+    and Article 57 of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

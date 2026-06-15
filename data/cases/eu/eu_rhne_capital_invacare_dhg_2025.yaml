@@ -1,0 +1,375 @@
+case_id: eu_rhne_capital_invacare_dhg_2025
+case_name: RHÔNE CAPITAL / INVACARE / DHG
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2025-12-05'
+parties:
+- name: RHÔNE CAPITAL
+  role: acquirer
+- name: INVACARE
+  role: acquirer
+- name: DHG
+  role: target
+source_documents:
+- doc_id: eu_rhne_capital_invacare_dhg_2025_decision
+  title: RHÔNE CAPITAL / INVACARE / DHG — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.12089
+  pdf_url: http://publications.europa.eu/resource/cellar/5b3ba106-08c5-11f1-8870-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Pressure Ulcer Prevention ('PUP') mattresses
+  definition_status: left_open
+  notes: The Commission considered that the market should most likely be segmented into foam/static,
+    hybrid, and air/dynamic PUP mattresses, and further by acute and non-acute settings. However,
+    it ultimately left the exact market definition open for the purpose of this decision.
+- market_id: pm_2
+  name: Healthcare beds
+  definition_status: left_open
+  notes: The Commission considered that the market for healthcare beds could likely be segmented
+    between long-term care beds (non-acute settings) and conventional hospital beds (acute settings).
+    However, it ultimately left the exact market definition open for the purpose of this decision.
+- market_id: pm_3
+  name: Toilet and hygiene products for patients with reduced mobility
+  definition_status: left_open
+  notes: The Commission considered that this market should likely be further segmented into
+    at least rails & supports and stools & seats, with potential further segmentation for each
+    specific product type (rails, supports, stools, and seats). However, it ultimately left
+    the exact market definition open for the purpose of this decision.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Pressure Ulcer Prevention ('PUP') mattresses — national
+  definition_status: left_open
+  notes: The Commission considered the geographic market for PUP mattresses to be likely national
+    in scope, based on the need for national presence for tenders and service obligations, national
+    procurement rules, and price differences across Member States. However, it ultimately left
+    the exact geographic market definition open for the purpose of this decision.
+- market_id: gm_2
+  name: Healthcare beds — national
+  definition_status: left_open
+  notes: The Commission considered the geographic scope of the market for healthcare beds to
+    be likely national, due to differing prices, reimbursement schemes, and public financing
+    rules across Member States. However, it ultimately left the exact geographic market definition
+    open for the purpose of this decision.
+- market_id: gm_3
+  name: Toilet and hygiene products for patients with reduced mobility — national
+  definition_status: left_open
+  notes: The Commission considered the geographic scope of this market to be likely national,
+    based on the need for suppliers to have a national presence for tenders and service obligations.
+    However, it ultimately left the exact geographic market definition open for the purpose
+    of this decision.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_rhne_capital_invacare_dhg_2025_decision
+  page: '3'
+  quote_snippet: (14) The Notifying Party considers that all types of PUP mattresses are largely
+    substitutable on both the demand and the supply-side. Therefore, the Notifying Party considers
+    the relevant market should include all types of PUP mattresses.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_rhne_capital_invacare_dhg_2025_decision
+  page: '4'
+  quote_snippet: '(17) The Commission considers that the relevant market for PUP mattresses
+    is likely narrower than an overall market including all types of PUP mattresses. A majority
+    of respondents to the market investigation considered a segmentation of the market into:
+    (i) foam/static; (ii) hybrid; and (iii) air/dynamic mattresses to be appropriate.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_rhne_capital_invacare_dhg_2025_decision
+  page: '5'
+  quote_snippet: (23) In light of the above, the Commission considers that the relevant market
+    for PUP mattresses should most likely distinguish between (i) foam/static, (ii) hybrid and
+    (iii) air/dynamic PUP mattresses, in acute settings (i.e. hospitals) and in non-acute settings
+    respectively. However, for the purpose of this decision, the exact definition of the relevant
+    product market can be left open as the Transaction would not raise serious doubts as to
+    its compatibility with the internal market under any possible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_rhne_capital_invacare_dhg_2025_decision
+  page: '6'
+  quote_snippet: (26) The Notifying Party submits that the relevant market is the supply of
+    healthcare beds, including both hospital and long-term care beds. According to the Notifying
+    Party, conventional hospital beds have higher specifications and prices, but they are generally
+    substitutable with long-term care beds. The Notifying Party has, however, also considered
+    a narrower segmentation by end-use, distinguishing long-term care beds used in non-acute
+    settings (i.e., nursing and care home environments), where the activities of the Targets
+    overlap, from other possible segmentations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_rhne_capital_invacare_dhg_2025_decision
+  page: '6'
+  quote_snippet: (27) The Commission considers that the market for healthcare beds can likely
+    be segmented between those intended for long-term care (in non-acute settings, either in
+    a care home or at-home setting) and those for hospital care (acute settings). A majority
+    of respondents to the market investigation considered that long-term care beds and hospital
+    beds are not interchangeable based on their functionalities and the needs of patients and
+    caregivers, and that healthcare beds for patients in acute settings (i.e., hospitals) and
+    non-acute settings (i.e., care home or at home) are not interchangeable.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_rhne_capital_invacare_dhg_2025_decision
+  page: '6'
+  quote_snippet: (28) In light of the above, the Commission considers that, within healthcare
+    beds, it is likely appropriate to distinguish between long-term care beds (non-acute settings)
+    and conventional hospital beds (acute settings). However, for the purpose of this decision,
+    the exact definition of the relevant product market can be left open as the Transaction
+    would not raise serious doubts as to its compatibility with the internal market under any
+    possible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_rhne_capital_invacare_dhg_2025_decision
+  page: '7'
+  quote_snippet: (31) The Notifying Party considers that there should be an overall market for
+    toilet and hygiene products for patients with reduced mobility because all these products
+    are similar in design and ultimately have the same functionality of ensuring patients security
+    and stability. The Notifying Party nevertheless considered a possible distinction between
+    rails & supports on the one hand, and stool & seats on the other hand.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_rhne_capital_invacare_dhg_2025_decision
+  page: '7'
+  quote_snippet: (32) The Commission considers that the market for toilet and hygiene products
+    for patients with reduced mobility should likely be further segmented and there are likely
+    separate markets for at least rails & supports and for stools & seats, and each of these
+    markets could be further segmented into separate markets for each of the specific products,
+    i.e., rails, supports, stools, and seats.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_rhne_capital_invacare_dhg_2025_decision
+  page: '8'
+  quote_snippet: (36) In light of the above, the Commission considers that it is likely appropriate
+    to distinguish between different types of toilet and hygiene products for patients with
+    reduced mobility, at least between rails & supports, on the one hand, and stools & seats,
+    on the other hand, without excluding a further segmentation for each type of product (i.e.
+    rails, supports, stools and seats). However, for the purpose of this decision, the exact
+    definition of the relevant product market can be left open as the Transaction would not
+    raise serious doubts as to its compatibility with the internal market under any possible
+    product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_rhne_capital_invacare_dhg_2025_decision
+  page: '8'
+  quote_snippet: (38) The Notifying Party submits that, although tenders for PUP mattresses
+    are typically carried out at a national level, there are no significant regulatory or other
+    restrictions that would limit the market across Member States and that, accordingly, the
+    geographic scope of these markets should be considered to be EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_rhne_capital_invacare_dhg_2025_decision
+  page: '8'
+  quote_snippet: (39) The Commission considers that the relevant geographic market for PUP mattresses
+    is likely national in scope. A majority of respondents to the market investigation considered
+    that a supplier of PUP mattresses needs a national presence to be able to participate in
+    tenders and comply with service obligations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_rhne_capital_invacare_dhg_2025_decision
+  page: '9'
+  quote_snippet: (41) In light of the above, the Commission considers that the appropriate geographic
+    scope of the market for PUP mattresses is likely national in scope. However, for the purpose
+    of this decision, the exact definition of the relevant product market can be left open as
+    the Transaction would not raise serious doubts as to its compatibility with the internal
+    market under any possible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_rhne_capital_invacare_dhg_2025_decision
+  page: '9'
+  quote_snippet: (43) The Notifying Party submits that, although tenders for healthcare beds
+    are typically carried out at a national level, there are no significant regulatory or other
+    restrictions that would limit the market across Member States and that, accordingly, the
+    geographic scope of these markets is EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_rhne_capital_invacare_dhg_2025_decision
+  page: '9'
+  quote_snippet: (44) The Commission considers that the relevant geographic scope of a market
+    for healthcare beds is likely national in scope, on account of differing prices, reimbursement
+    schemes and public financing rules for hospitals and nursing homes across Member States.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_rhne_capital_invacare_dhg_2025_decision
+  page: '10'
+  quote_snippet: (46) In light of the above, the Commission considers that the appropriate geographic
+    scope of a market for healthcare beds is likely national in scope. However, for the purpose
+    of this decision, the exact definition of the relevant product market can be left open as
+    the Transaction would not raise serious doubts as to its compatibility with the internal
+    market under any possible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_rhne_capital_invacare_dhg_2025_decision
+  page: '10'
+  quote_snippet: (48) The Notifying Party submits that, although tenders for toilet and hygiene
+    products for patients with reduced mobility are typically carried out at national level,
+    there are no significant regulatory or other restrictions that would segment the geographic
+    market along Member States’ borders and that, accordingly, the geographic scope of this
+    market is EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_rhne_capital_invacare_dhg_2025_decision
+  page: '10'
+  quote_snippet: (49) The Commission considers that the relevant geographic scope to the market
+    for toilet and hygiene products for patients with reduced mobility is likely national.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_rhne_capital_invacare_dhg_2025_decision
+  page: '18'
+  quote_snippet: (91) For the above reasons, the European Commission has decided not to oppose
+    the notified operation and to declare it compatible with the internal market and with the
+    EEA Agreement. This decision is adopted in application of Article 6(1)(b) of the Merger
+    Regulation and Article 57 of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

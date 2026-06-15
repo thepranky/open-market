@@ -1,0 +1,289 @@
+case_id: eu_astrazeneca_alexion_pharmaceuticals_2021
+case_name: Astrazeneca / Alexion Pharmaceuticals
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2021-07-05'
+parties:
+- name: Astrazeneca
+  role: acquirer
+- name: Alexion Pharmaceuticals
+  role: target
+source_documents:
+- doc_id: eu_astrazeneca_alexion_pharmaceuticals_2021_decision
+  title: Astrazeneca / Alexion Pharmaceuticals — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10165
+  pdf_url: http://publications.europa.eu/resource/cellar/94fd5da2-65b2-11ed-9f85-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Treatments for pharmaceutical products in development
+  definition_status: considered
+  notes: The Commission generally referred to its past decisions where it envisaged market definitions
+    based on indication, mode of action, and line of treatment for pharmaceutical products in
+    development.
+- market_id: pm_2
+  name: Treatments of Lupus nephritis (LN)
+  definition_status: left_open
+  notes: The Commission assessed potential segmentations based on Mode of Action (MoA) and Line
+    of Treatment (LoT) but found the market investigation inconclusive. It ultimately left the
+    exact scope of the market open.
+- market_id: pm_3
+  name: Treatments for Follicular Lymphoma (FL)
+  definition_status: left_open
+  notes: The market investigation was not conclusive as to whether the treatments for FL should
+    be sub-segmented, with potential segmentations by MoA or LoT remaining unclear.
+- market_id: pm_4
+  name: Treatments for Peripheral T-Cell Lymphoma (PTCL)
+  definition_status: left_open
+  notes: The market investigation was not conclusive on sub-segmentation for PTCL treatments,
+    considering segmentation based on MoA and PTCL subtypes. The exact profile of pipeline drugs
+    remained highly speculative.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Treatments for pharmaceutical products in development — at least EEA-wide
+  definition_status: considered
+  notes: The Commission referenced its consistent view from past decisions that markets for
+    pipeline drugs are at least EEA-wide.
+- market_id: gm_2
+  name: Treatments of Lupus nephritis (LN) — at least EEA-wide
+  definition_status: considered
+  notes: The Commission explicitly stated that it consistently considered the markets for pipeline
+    drugs to be at least EEA-wide, and the Notifying Party did not dispute this.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_astrazeneca_alexion_pharmaceuticals_2021_decision
+  page: '2'
+  quote_snippet: When defining relevant product markets in past decisions dealing with pharmaceutical
+    products in development (also called pipeline products),6 the Commission has generally envisaged
+    market definitions based on the indication, the mode of action (“MoA”) and, where relevant,
+    the line of treatment (“LoT”),7 but ultimately left open the exact delineation of the market
+    definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_astrazeneca_alexion_pharmaceuticals_2021_decision
+  page: '5'
+  quote_snippet: In any event, for the purposes of this decision, the Commission concludes that
+    the exact scope of the market for treatments of LN can be left open since the Transaction
+    does not give rise to serious doubts as to its compatibility with the internal market and
+    the functioning of the EEA Agreement under any plausible market definitions (i.e. segmentations
+    by MoA and by LoT).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_astrazeneca_alexion_pharmaceuticals_2021_decision
+  page: '5'
+  quote_snippet: The market investigation was not conclusive as to whether the treatments for
+    LN should be sub-segmented notably because many of the LN drugs are still at the development
+    stage and there is an intrinsic level of uncertainty in assessing their future characteristics
+    and market positioning.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_astrazeneca_alexion_pharmaceuticals_2021_decision
+  page: '5'
+  quote_snippet: 'Segmentation based on the MoA: LN drugs with different MoAs target different
+    pathways and, thus, may translate into distinct efficacy and safety profiles, which are
+    key factors for physicians when prescribing drugs. However, at this stage, given the limited
+    available data, the exact efficacy and safety profile of the various LN pipeline drugs remains
+    uncertain.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_astrazeneca_alexion_pharmaceuticals_2021_decision
+  page: '8'
+  quote_snippet: The market investigation was not conclusive as to whether the treatments for
+    FL should be sub-segmented, notably because many of the FL drugs are still at the development
+    stage and there is an intrinsic level of uncertainty in assessing their future characteristics
+    and market positioning.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_astrazeneca_alexion_pharmaceuticals_2021_decision
+  page: '8'
+  quote_snippet: In the absence of Commission precedents for FL treatments, the Notifying Party
+    submits that all marketed and pipeline treatments for FL belong to the same product market
+    and should not be further segmented. In any event, according to the Notifying Party , this
+    question can be left open as no competition concerns arise under any plausible market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_astrazeneca_alexion_pharmaceuticals_2021_decision
+  page: '12'
+  quote_snippet: The results of the market investigation are not conclusive as to whether the
+    treatments for PTCL should be sub-segmented, notably because many of the PTCL drugs are
+    still at the development stage and there is an intrinsic level of uncertainty in assessing
+    their future characteristics and market positioning.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_astrazeneca_alexion_pharmaceuticals_2021_decision
+  page: '3'
+  quote_snippet: In terms of geographic scope, the Commission has consistently considered that
+    the markets for pipeline drugs are at least EEA-wide.10
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_astrazeneca_alexion_pharmaceuticals_2021_decision
+  page: '5'
+  quote_snippet: As regards the geographic market definition, the Commission has consistently
+    considered the markets for pipeline drugs to be at least EEA-wide in scope.27
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_astrazeneca_alexion_pharmaceuticals_2021_decision
+  page: '1'
+  quote_snippet: Commission decision pursuant to Article 6(1)(b) of Council Regulation No 139/20041
+    and Article 57 of the Agreement on the European Economic Area2
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_astrazeneca_alexion_pharmaceuticals_2021_decision
+  page: '8'
+  quote_snippet: In view of the above considerations, the Commission concludes that the Transaction
+    does not give rise to serious doubts as to its compatibility with the internal market and
+    the functioning of the EEA Agreement as regards its impact on competition in the market
+    for the treatments of LN (and its plausible sub-segmentations).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_astrazeneca_alexion_pharmaceuticals_2021_decision
+  page: '10'
+  quote_snippet: allows the Commission to exclude serious doubts as to the compatibility of
+    the Transaction with the internal market and the functioning of the EEA Agreement resulting
+    from the overlap between the Parties’ activities in FL.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_astrazeneca_alexion_pharmaceuticals_2021_decision
+  page: '14'
+  quote_snippet: allows the Commission to exclude serious doubts as to the compatibility of
+    the Transaction with the internal market and the functioning of the EEA Agreement resulting
+    from the overlaps between the Parties’ activities in PTCLtreatments.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_astrazeneca_alexion_pharmaceuticals_2021_decision
+  page: '1'
+  quote_snippet: Brussels, 5.7.2021
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_astrazeneca_alexion_pharmaceuticals_2021_decision
+  page: '1'
+  quote_snippet: 'Subject: Case M.10165 – ASTRAZENECA/ALEXION PHARMACEUTICALS'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+case_type: merger
+ai_summary: null
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

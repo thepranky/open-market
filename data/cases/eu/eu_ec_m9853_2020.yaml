@@ -1,0 +1,566 @@
+case_id: eu_ec_m9853_2020
+case_name: M.9853
+authority: European Commission
+jurisdiction: EU
+sector: transport
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2020-06-29'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9853_2020_decision
+  title: M.9853 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9853
+  pdf_url: http://publications.europa.eu/resource/cellar/a6d5f559-0d4b-11eb-bc07-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Inland waterway freight transport
+  definition_status: left_open
+  notes: The Commission assessed the market for inland waterways transport but ultimately left
+    the exact product and geographic definition open.
+- market_id: pm_2
+  name: Inland waterway transport of dry bulk products
+  definition_status: left_open
+  notes: The Commission assessed this market but left the precise definition open, including
+    whether it should be further subdivided by product type.
+- market_id: pm_3
+  name: Inland waterway transport of coal and fuels
+  definition_status: considered
+  notes: Assessed as a potential narrower market segment within dry bulk transport.
+- market_id: pm_4
+  name: Inland waterway transport of agricultural and forestry products
+  definition_status: considered
+  notes: Assessed as a potential narrower market segment within dry bulk transport.
+- market_id: pm_5
+  name: Inland waterway transport of other goods
+  definition_status: considered
+  notes: Assessed as a potential narrower market segment within dry bulk transport.
+- market_id: pm_6
+  name: Stevedoring/transhipment services
+  definition_status: left_open
+  notes: The Commission assessed these services as one market but left the precise definition
+    open regarding subdivisions by cargo type or port type.
+- market_id: pm_7
+  name: Stevedoring/transhipment services in private ports
+  definition_status: considered
+  notes: This narrower market for services in private ports was considered in the assessment
+    of affected markets.
+- market_id: pm_8
+  name: Inland port infrastructure
+  definition_status: defined
+  notes: The Commission found a distinct product market for inland port infrastructure, separate
+    from other inland waterway transport markets. The question of sub-division into public/private
+    ports was left open for this market.
+- market_id: pm_9
+  name: Public inland ports infrastructure
+  definition_status: considered
+  notes: The Commission assessed the transaction based on the more narrow potential market of
+    public inland ports as the notifying party's main activity was in this segment and the target
+    was not active in port infrastructure at all.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Inland waterway freight transport — Rhine basin
+  definition_status: left_open
+  notes: The Commission considered the Rhine basin as a geographic market but left the precise
+    definition open.
+- market_id: gm_2
+  name: Inland waterway freight transport — Germany, Belgium and the Netherlands
+  definition_status: left_open
+  notes: The Commission considered a broader market including Germany, Belgium and the Netherlands
+    but left the precise geographic definition open.
+- market_id: gm_3
+  name: Stevedoring/transhipment services — Nijmegen-Cologne range
+  definition_status: left_open
+  notes: The Commission considered this geographic scope for stevedoring services but left the
+    precise definition open.
+- market_id: gm_4
+  name: Stevedoring/transhipment services — Nijmegen-Bonn range
+  definition_status: left_open
+  notes: The Commission considered this geographic scope, including Bonn, for stevedoring services
+    but left the precise definition open.
+- market_id: gm_5
+  name: Inland port infrastructure — Bonn-Wesel range
+  definition_status: left_open
+  notes: The Commission considered the Bonn-Wesel range for inland port infrastructure but left
+    the precise geographic scope open.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9853_2020_decision
+  page: '4'
+  quote_snippet: Therefore, for the purposes of this Decision, the Commission will assess the
+    market for inland waterways transport, as the Transaction would not raise serious doubts
+    as to its compatibility with the internal market whether rail and road were included or
+    not.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9853_2020_decision
+  page: '7'
+  quote_snippet: For the purposes of this Decision, the Commission considers that it is not
+    necessary to conclude on the exact product and geographic definition for the market for
+    the provision of freight transport by inland waterways, as the Transaction would not raise
+    serious doubts as to its compatibility with the internal market including when only the
+    Rhine basin is considered and only the market for inland waterway transport of coal and
+    fuels, for instance, or inland waterway transport of agricultural and forestry products
+    within that area is considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9853_2020_decision
+  page: '4'
+  quote_snippet: The Commission found that the transport of dry bulk products on ships on inland
+    waterways constituted a separate product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9853_2020_decision
+  page: '4'
+  quote_snippet: As HGK does not transport liquid bulk and there are no affected markets on
+    the market for transporting containers22 by inland waterways, this Decision will assess
+    the market for dry bulk transport only and the markets for liquid bulk and container transport
+    will not be considered further in this Decision.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9853_2020_decision
+  page: '5'
+  quote_snippet: For the purposes of this Decision, the Commission considers that the precise
+    definition of the product market for the transport of dry bulk products on inland waterways
+    can be left open as the Transaction would not raise serious doubts as to its compatibility
+    with the internal market even if the relevant product market were narrower, based on the
+    type of products transported.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9853_2020_decision
+  page: '7'
+  quote_snippet: For the purposes of this Decision, the Commission considers that it is not
+    necessary to conclude on the exact product and geographic definition for the market for
+    the provision of freight transport by inland waterways, as the Transaction would not raise
+    serious doubts as to its compatibility with the internal market including when only the
+    Rhine basin is considered and only the market for inland waterway transport of coal and
+    fuels, for instance, or inland waterway transport of agricultural and forestry products
+    within that area is considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9853_2020_decision
+  page: '25'
+  quote_snippet: The Commission therefore concludes that the Transaction does not raise serious
+    doubts as to its compatibility with the internal market with respect to the horizontal effects
+    in the market for inland waterway transport of coal under any of the plausible geographic
+    market definitions considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9853_2020_decision
+  page: '7'
+  quote_snippet: For the purposes of this Decision, the Commission considers that it is not
+    necessary to conclude on the exact product and geographic definition for the market for
+    the provision of freight transport by inland waterways, as the Transaction would not raise
+    serious doubts as to its compatibility with the internal market including when only the
+    Rhine basin is considered and only the market for inland waterway transport of coal and
+    fuels, for instance, or inland waterway transport of agricultural and forestry products
+    within that area is considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9853_2020_decision
+  page: '25'
+  quote_snippet: When looking at the estimated value (instead of volume) of transportation,
+    the market for inland waterway transport of agricultural and forestry products127 is affected
+    by the Transaction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9853_2020_decision
+  page: '26'
+  quote_snippet: The Commission therefore concludes that the Transaction does not raise serious
+    doubts as to its compatibility with the internal market with respect to the horizontal effects
+    in the market for inland waterway transport of agricultural and forestry products under
+    any of the plausible alternative geographic market definitions considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9853_2020_decision
+  page: '28'
+  quote_snippet: The Parties explain the enormous fluctuation of the market shares in this market
+    by the lack of homogeneity and clarity when classifying goods as “other goods”.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9853_2020_decision
+  page: '28'
+  quote_snippet: The Commission therefore concludes that the Transaction does not raise serious
+    doubts as to its compatibility with the internal market with respect to the horizontal effects
+    in the market for inland waterway transport of other goods under any of the plausible alternative
+    geographic market definitions considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9853_2020_decision
+  page: '8'
+  quote_snippet: Consequently, in this Decision and with regard to stevedoring services provided
+    in inland ports, the Commission will assess these services as one market and will refer
+    to it as transhipment/stevedoring services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m9853_2020_decision
+  page: '10'
+  quote_snippet: The Commission considers that, for the purposes of this Decision, the product
+    market definition, including whether stevedoring services for public and private ports belong
+    to the same market or whether stevedoring services should be subdivided in hinterland or
+    transhipment traffic or according to the type of cargo and/or type of commodity handled,
+    can be left open since the Transaction would not raise serious doubts as to its compatibility
+    with the internal market under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m9853_2020_decision
+  page: '29'
+  quote_snippet: The concentration gives rise to affected markets for a wider market of stevedoring/transshipment
+    services in public and private ports as well as a more narrow market of stevedoring/transshipment
+    services in private ports only, both for all bulk and dry bulk for every plausible geographic
+    market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m9853_2020_decision
+  page: '34'
+  quote_snippet: The Parties’ combined market shares in the market for stevedoring/transhipment
+    services when only looking at private ports were [20-30]% for all bulk goods and [40-50]%
+    for dry bulk goods in 2019 under any plausible geographic market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m9853_2020_decision
+  page: '36'
+  quote_snippet: The Commission therefore concludes that the Transaction does not raise serious
+    doubts as to its compatibility with the internal market with respect to the horizontal effects
+    in the market for stevedoring/transhipment services in private ports in any of the alternative
+    geographic markets considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m9853_2020_decision
+  page: '13'
+  quote_snippet: Based on the above, the Commission therefore considers that there is a distinct
+    product market for the provision of inland port infrastructure, which is separate from other
+    markets within the inland waterways transport sector.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m9853_2020_decision
+  page: '13'
+  quote_snippet: Regarding a possible sub-division according to public or private ports, for
+    the purposes of this decision, the precise definition of the market for the provision of
+    inland port infrastructure can be left open, as the Transaction does not raise serious doubts
+    if the product market were further divided into public and private inland port infrastructure.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m9853_2020_decision
+  page: '13'
+  quote_snippet: As part of this decision, the Commission, will however only look at the more
+    narrow potential market of public inland ports, as HGK’s only activity in the provision
+    of private ports infrastructure is the terminal operated by its subsidiary neska in Dormagen70
+    and Imperial is not active in the provision of port infrastructure at all.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m9853_2020_decision
+  page: '7'
+  quote_snippet: The market investigation confirmed that the geographic market comprises at
+    least the Rhine basin.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m9853_2020_decision
+  page: '7'
+  quote_snippet: For the purposes of this Decision, the Commission will assess the Transaction
+    on the basis of a geographic market comprising the Rhine basin as well as a broader market
+    including Germany, Belgium and the Netherlands. It considers that the precise geographic
+    market definition can be left open as the Transaction does not raise serious doubts as to
+    its compatibility with the internal market on all alternatives considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_ec_m9853_2020_decision
+  page: '7'
+  quote_snippet: For the purposes of this Decision, the Commission will assess the Transaction
+    on the basis of a geographic market comprising the Rhine basin as well as a broader market
+    including Germany, Belgium and the Netherlands. It considers that the precise geographic
+    market definition can be left open as the Transaction does not raise serious doubts as to
+    its compatibility with the internal market on all alternatives considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_ec_m9853_2020_decision
+  page: '11'
+  quote_snippet: In line with its previous practice, the Commission will assess the transaction
+    considering a geographic market for stevedoring services servicing waterway transport between
+    Nijmegen and Cologne.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_ec_m9853_2020_decision
+  page: '11'
+  quote_snippet: For the purposes of this Decision, the Commission considers that the exact
+    product and geographic scope of the stevedoring services market for inland waterways transport
+    can be left open, as the Transaction would not raise serious doubts as to its compatibility
+    with the internal market whether Bonn is included or not.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_ec_m9853_2020_decision
+  page: '11'
+  quote_snippet: As the Parties have provided market share data both for a market including
+    Bonn and without it, the Commission will also assess the Transaction considering a Nijmegen-Bonn
+    range as well.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_ec_m9853_2020_decision
+  page: '11'
+  quote_snippet: For the purposes of this Decision, the Commission considers that the exact
+    product and geographic scope of the stevedoring services market for inland waterways transport
+    can be left open, as the Transaction would not raise serious doubts as to its compatibility
+    with the internal market whether Bonn is included or not.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_ec_m9853_2020_decision
+  page: '14'
+  quote_snippet: While the Commission has not yet expressly defined the geographic market for
+    inland port infrastructure, the results of the market investigation confirmed the results
+    of the market investigation confirmed the Parties’ assessment of the geographic market to
+    encompass the Bonn-Wesel range.71 In light of this and considering all the information available
+    to it, the Commission considers this definition to also be appropriate for the geographic
+    market for the provision of port infrastructure.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_ec_m9853_2020_decision
+  page: '14'
+  quote_snippet: The Commission will thus assess the Transaction on the basis of the Bonn-Wesel
+    range of ports. However, it considers that, for the purpose of this Decision, the exact
+    product and geographic scope of the market for inland port infrastructure services can be
+    left open, since the Transaction would not raise serious doubts as to its compatibility
+    with the internal market under any alternative product market definition considered above
+    in the Bonn-Wesel range.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

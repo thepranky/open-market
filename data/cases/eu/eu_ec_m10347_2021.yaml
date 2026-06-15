@@ -1,0 +1,238 @@
+case_id: eu_ec_m10347_2021
+case_name: M.10347
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2021-10-21'
+parties: []
+source_documents:
+- doc_id: eu_ec_m10347_2021_decision
+  title: M.10347 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10347
+  pdf_url: http://publications.europa.eu/resource/cellar/30438e95-3a7d-11ed-9c68-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: ESBR
+  definition_status: defined
+  notes: The Commission concluded that ESBR and SSBR constitute separate product markets. Further
+    segmentation of ESBR (e.g., on the basis of oil extension, individual grades, application)
+    was not considered appropriate based on market investigation findings.
+- market_id: pm_2
+  name: SSBR
+  definition_status: segmented
+  notes: The Commission concluded that SSBR and ESBR constitute separate product markets. However,
+    the question of further sub-segmentation of SSBR into non-functionalised SSBR and functionalised
+    SSBR was left open, as the transaction did not raise competition concerns under any plausible
+    definition.
+geographic_markets_considered:
+- market_id: gm_1
+  name: ESBR — European region or global
+  definition_status: left_open
+  notes: The Commission left open whether the appropriate geographic scope for ESBR is the European
+    region or global, as the transaction did not raise serious doubts under either definition.
+    It was considered that if narrower than worldwide, it would encompass the European region
+    due to transport costs and the presence of non-EEA suppliers in the region.
+- market_id: gm_2
+  name: SSBR (including functionalised and non-functionalised SSBR) — worldwide or European
+    region
+  definition_status: left_open
+  notes: The Commission concluded that the geographic scope for SSBR (including its sub-segmentations)
+    is most likely worldwide, or at least the European region, and left the exact definition
+    open as the transaction did not raise serious doubts under either scope. Market investigation
+    showed global sourcing by customers and suppliers.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m10347_2021_decision
+  page: '5'
+  quote_snippet: (20) The Commission’s market investigation confirmed that ESBR and SSBR constitute
+    separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m10347_2021_decision
+  page: '5'
+  quote_snippet: (24) For the purpose of this Decision, the Commission concludes that ESBR and
+    SSBR constitute separate product markets. A further segmentation of ESBR is not appropriate.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m10347_2021_decision
+  page: '5'
+  quote_snippet: (22) Regarding possible further segmentations, the majority of customers17
+    and of competitors18 that responded to the Commission’s market investigation indicated that
+    ESBR does not need to be further segmented (e.g. on the basis of oil extension, individual
+    grades, application, etc.)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m10347_2021_decision
+  page: '5'
+  quote_snippet: (20) The Commission’s market investigation confirmed that ESBR and SSBR constitute
+    separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m10347_2021_decision
+  page: '6'
+  quote_snippet: (24) For the purpose of this Decision, the Commission concludes that ESBR and
+    SSBR constitute separate product markets. A further segmentation of ESBR is not appropriate.
+    As far as a further sub-segmentation of SSBR into non-functionalised SSBR and functionalised
+    SSBR is concerned, the issue can be left open since the Transaction does not give rise to
+    serious doubts as to its compatibility with the internal market or the functioning of the
+    EEA agreement under any of these plausible market definitions (SSBR overall, functionalised
+    SSBR or non-functionalised SSBR).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m10347_2021_decision
+  page: '5'
+  quote_snippet: (23) Regarding SSBR, the majority of customers that responded to the Commission’s
+    market investigation indicated that they do not consider functionalised and non-functionalised
+    SSBR substitutable in terms of characteristics, performance, price and intended use.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m10347_2021_decision
+  page: '6'
+  quote_snippet: (41) However, since the Transaction does not give rise to serious doubts as
+    to its compatibility with the internal market or the functioning of the EEA agreement for
+    either a worldwide geographic scope or a geographic scope limited to the European region,
+    the question of whether the appropriate geographic scope for ESBR is the European region
+    or global can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m10347_2021_decision
+  page: '8'
+  quote_snippet: '(40) Based on the above, the Commission considers that if the appropriate
+    geographic scope for ESBR were narrower than worldwide, it is not strictly limited to the
+    EEA but would encompass the European region, as: (i) the main barrier to global sourcing
+    is transport cost and time, rather than regulatory or tariff barriers; and (ii) Russian
+    and Serbian players have a significant presence in the EEA and are considered credible by
+    customers.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m10347_2021_decision
+  page: '7'
+  quote_snippet: (31) A large majority of customers32 and a slight majority of competitors33
+    that responded to the Commission’s market investigation indicate that they source/supply
+    ESBR on a global basis.34
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m10347_2021_decision
+  page: '9'
+  quote_snippet: (44) It can therefore be concluded that the geographic scope for SSBR, as well
+    as for its sub-segmentations, non-functionalised and functionalised SSBR is most likely
+    worldwide. If the scope is considered narrower than worldwide, it is likely to encompass
+    the European region, as similarly to ESBR no tariff or regulatory hurdles exist. However,
+    as the Transaction does not give rise to serious doubts as to its compatibility with the
+    internal market or the functioning of the EEA agreement under either a worldwide scope or
+    a scope limited to the European region, the issue can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m10347_2021_decision
+  page: '9'
+  quote_snippet: (43) The market investigation did not provide any indications against the arguments
+    of the Notifying Party concerning the absence of barriers (such as trade tariffs or environmental
+    rules) for SSBR to be imported in the EEA from around the world.51 One customer said that
+    “[We] procure SSBR globally (through annual global invitations to tender) from all of the
+    main SBR suppliers. The proximity of the locations of the suppliers’ plants to [our company]
+    is not a condition for being invited to tender”52, while a competitor replied that “…Each
+    major manufacturer has only a few production facilities worldwide, each supplying customers
+    all around the globe. The main customers are all global players active in the tire industry.
+    …”.53 As SSBR, and particularly functionalised SSBR, is a less commoditised and higher value-added
+    product than ESBR, transport cost is relatively less significant.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

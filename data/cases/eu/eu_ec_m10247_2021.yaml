@@ -1,0 +1,976 @@
+case_id: eu_ec_m10247_2021
+case_name: M.10247
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2021-10-22'
+parties: []
+source_documents:
+- doc_id: eu_ec_m10247_2021_decision
+  title: M.10247 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10247
+  pdf_url: http://publications.europa.eu/resource/cellar/71edf879-58d2-11ec-91ac-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Finished dose pharmaceuticals (FDPs)
+  definition_status: left_open
+  notes: The Commission stated it was not necessary to depart from its typical approach, which
+    involves defining markets for FDPs at ATC3/CHC3, ATC4/CHC4 or molecule levels.
+- market_id: pm_2
+  name: Antihaemorrhoids
+  definition_status: left_open
+  notes: The market definition for antihaemorrhoids was left open, considering plausible markets
+    at ATC3 class C5A, CHC3 code 10A1, and CHC4 code 10A1O (antihaemorrhoidal ointments and
+    creams).
+- market_id: pm_3
+  name: Sore throat remedies
+  definition_status: left_open
+  notes: The market definition for sore throat remedies was left open, considering plausible
+    markets at ATC3 level (R2A) or CHC4 level (aerosols or sprays).
+- market_id: pm_4
+  name: Mouth pain relief products
+  definition_status: left_open
+  notes: The market definition for mouth pain relief products was left open, considering plausible
+    markets at ATC3/CHC3 level or CHC4 level (liquids).
+- market_id: pm_5
+  name: Ear care products
+  definition_status: left_open
+  notes: The exact product market definition for ear care products was left open, considering
+    plausible markets at CHC3 code 08A1 and CHC4 code 08A1Z (Ear Care in other forms).
+- market_id: pm_6
+  name: Antitussives (in combination)
+  definition_status: left_open
+  notes: The market definition for antitussives was left open, considering plausible markets
+    at ATC3 code R5D and ATC4 code R5D2. The Commission noted that the parties no longer overlap
+    in ATC4 class R5D2 due to regulatory changes.
+- market_id: pm_7
+  name: Intestinal anti-infective anti-diarrhoeals
+  definition_status: left_open
+  notes: The market definition for intestinal anti-infective anti-diarrhoeals was left open,
+    considering plausible markets at ATC3 level (A7A) or at molecule level (nifuroxazide-based).
+- market_id: pm_8
+  name: Finished dose pharmaceuticals (FDPs) (vertically affected)
+  definition_status: left_open
+  notes: The precise delineation of FDP markets that are vertically affected by the transaction
+    was left open as no competition concerns arose under any plausible definition.
+- market_id: pm_9
+  name: Flexible packaging for pharmaceuticals
+  definition_status: left_open
+  notes: The question of whether the market should be further segmented (into laminated sachets,
+    coldform blister bases, plastic-based blister bases, and blister lidding) was left open
+    as no competition concerns arose.
+- market_id: pm_10
+  name: Packaging machinery (for the pharmaceutical sector)
+  definition_status: left_open
+  notes: The question of whether the market includes all packaging machinery or only for the
+    pharmaceutical sector was left open as no competition concerns arose.
+- market_id: pm_11
+  name: Active pharmaceutical ingredients (APIs)
+  definition_status: left_open
+  notes: The exact product market definition for APIs was left open as no competition concerns
+    arose under any plausible definition. The Commission's decisional practice is that each
+    API typically belongs to a separate market.
+- market_id: pm_12
+  name: Pharmaceutical excipients (segmented by substance ingredients; lactose segmented into
+    wet granulation and direct compression lactose)
+  definition_status: considered
+  notes: The Commission's investigation did not require a departure from previous decisional
+    practice to consider separate markets based on substance ingredients and sub-segmenting
+    lactose.
+- market_id: pm_13
+  name: CDMO services (for FDPs, for APIs, and further segmentation)
+  definition_status: left_open
+  notes: The exact product market definition for CDMOs was left open, including distinctions
+    for FDPs and APIs, and further segmentation by pharmaceutical form, manufacturing conditions,
+    API type, and delivery mechanism.
+- market_id: pm_14
+  name: Hospital services (private hospital services)
+  definition_status: left_open
+  notes: The product market definition for hospital services, specifically whether private hospital
+    services constitute a separate market from public hospital services, was left open.
+geographic_markets_considered:
+- market_id: gm_1
+  name: FDPs — national (general)
+  definition_status: defined
+  notes: The Commission consistently defines relevant markets for FDPs at a national level.
+- market_id: gm_2
+  name: Topical antihaemorrhoidals — national (Italy affected)
+  definition_status: considered
+  notes: This market was identified as a Group 1/1+ affected market in Italy at the ATC3 class
+    C5A level.
+- market_id: gm_3
+  name: Antihaemorrhoids — national (Italy affected)
+  definition_status: considered
+  notes: This market was identified as a Group 1/1+ affected market in Italy at the CHC3 code
+    10A1 level.
+- market_id: gm_4
+  name: Antihaemorrhoidal ointments and creams — national (Italy affected)
+  definition_status: considered
+  notes: This market was identified as a Group 1/1+ affected market in Italy at the CHC4 code
+    10A1O level.
+- market_id: gm_5
+  name: Antihaemorrhoidal ointments and creams — national (Romania affected)
+  definition_status: considered
+  notes: This market was identified as a Group 1/1+ affected market in Romania at the CHC4 code
+    10A1O level.
+- market_id: gm_6
+  name: Sore throat remedies in the form of aerosols/sprays — national (France affected)
+  definition_status: considered
+  notes: This market was identified as a Group 1/1+ horizontally affected market in France at
+    the CHC4 level (01C1A – Sore throat Remedies – Aerosols/Sprays).
+- market_id: gm_7
+  name: Mouth pain relief liquids (Topical) — national (France affected)
+  definition_status: considered
+  notes: This market was identified as a Group 1/1+ horizontally affected market in France at
+    the CHC4 level (02D1L – Mouth Pain Relief – Liquids (Topical)).
+- market_id: gm_8
+  name: Ear care products in other forms — national (Spain affected)
+  definition_status: considered
+  notes: This market was identified as a Group 1/1+ horizontally affected market in Spain at
+    the CHC4 level (08A1Z – Ear Care – Other Forms).
+- market_id: gm_9
+  name: Antitussives (in combination) — national (Luxembourg affected)
+  definition_status: left_open
+  notes: The geographic scope was not explicitly defined but the competitive assessment focused
+    on Luxembourg, and the product market definition was left open.
+- market_id: gm_10
+  name: Finished dose pharmaceuticals (FDPs) (vertically affected) — national
+  definition_status: defined
+  notes: The Commission consistently defines the plausible markets for vertically affected FDPs
+    as national in scope.
+- market_id: gm_11
+  name: Flexible packaging for pharmaceuticals — EEA-wide or wider
+  definition_status: considered
+  notes: The Commission considered the geographic scope for flexible packaging for pharmaceuticals
+    to be at least EEA-wide, in line with previous decisional practice.
+- market_id: gm_12
+  name: Packaging machinery for pharmaceuticals — EEA-wide or wider
+  definition_status: considered
+  notes: The Commission considered the geographic scope for packaging machinery for pharmaceuticals
+    to be at least EEA-wide.
+- market_id: gm_13
+  name: Active pharmaceutical ingredients (APIs) — EEA-wide or wider
+  definition_status: left_open
+  notes: The exact geographic market definition for APIs was left open as no competition concerns
+    arose under any plausible definition. The Commission's previous practice considered it at
+    least EEA-wide.
+- market_id: gm_14
+  name: Pharmaceutical excipients (segmented by substance ingredients; lactose segmented into
+    wet granulation and direct compression lactose) — EEA-wide or wider
+  definition_status: considered
+  notes: The Commission's investigation did not require a departure from previous decisional
+    practice, which considered at least EEA-wide markets for excipients.
+- market_id: gm_15
+  name: CDMO services (for FDPs, for APIs, and further segmentation) — EEA-wide or wider
+  definition_status: left_open
+  notes: The exact geographic market definition for CDMO services was left open. Previous Commission
+    decisions indicated the geographic scope is at least EEA-wide.
+- market_id: gm_16
+  name: Private hospital services — national or narrower
+  definition_status: left_open
+  notes: The exact geographic market definition for private hospital services was left open.
+    Previous Commission decisions indicated it is national or narrower.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '3'
+  quote_snippet: (8) For the purposes of the present Decision, it is not necessary to depart
+    from the above approach, that is to define the markets for FDPs either at ATC3/CHC3, ATC4/CHC4
+    or molecule levels.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '6'
+  quote_snippet: (19) For the purposes of this decision, the product market definition for antihaemorrhoids
+    can be left open, as the Transaction does not give rise to serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA agreement even in the narrowest plausible
+    market where the Parties’ activities overlap (i.e., antihaemorrhoidal ointments and creams
+    at CHC4 level).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '6'
+  quote_snippet: (17) As explained above,17 the Commission consistently defines the market for
+    FDPs looking at both the ATC3/CHC3 level and at ATC4/CHC4 level. Also in this case, both
+    ATC3 class C5A, CHC3 code 10A1 and CHC4 code 10A1O constitute plausible relevant product
+    markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '6'
+  quote_snippet: (22) The Commission’s market investigation did not provide conclusive evidence
+    regarding the question whether the relevant product market should be defined at ATC3/CHC3
+    level (including all types of sore throat remedies) or at ATC4/CHC4 level (including only
+    aerosols and sprays).20 For the purposes of this decision, the product market definition
+    for sore throat remedies can be left open, as the Transaction does not give rise to serious
+    doubts as to its compatibility with the internal market or the functioning of the EEA agreement
+    even in the narrowest plausible market where the Parties’ activities overlap (i.e., sore
+    throat remedies in form of aerosols or sprays at CHC4 level).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '6'
+  quote_snippet: (20) In the past, 19 the Commission considered a relevant market for sore throat
+    remedies at ATC3 level (R2A) but eventually left open the issue of product market definition.
+    The Commission has not assessed sore throat remedies in the past based on their CHC3 or
+    CHC4 classification.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '7'
+  quote_snippet: (26) The Commission’s market investigation did not provide any indication on
+    whether the relevant product market should be defined at ATC3/CHC3 level (including all
+    types of mouth pain relief products) or at ATC4/CHC4 level (including only liquids). For
+    the purposes of this decision, the product market definition for mouth pain relief products
+    can be left open, as the Transaction does not give rise to serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA agreement even in the narrowest plausible
+    market where the Parties’ activities overlap (i.e., mouth pain relief in the form of liquids
+    at CHC4 level).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '7'
+  quote_snippet: (23) In the past, 21 the Commission considered that the there are two separate
+    product markets for mouth pain relief products. Namely (i) a market for adult mouth pain
+    relief products that covers products classified under ATC4 class A1A2 excluding mouthwashes
+    (i.e. antiseptics and anti-infectives) and products classified under ATC4 class A1A3 (i.e.
+    anti-inflammatories and analgesics), and (ii) a market for paediatric mouth pain relief
+    products that covers products classified under ATC4 class A1A2 excluding mouthwashes (i.e.
+    antiseptics and anti-infectives) and products classified under ATC4 class A1A3 (i.e. anti-inflammatories
+    and analgesics).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '7'
+  quote_snippet: (31) For the purposes of this decision, the exact product market definition
+    for ear care products can be left open since the Transaction does not give rise to serious
+    doubts as to its compatibility with the internal market or the functioning of the EEA agreement
+    even under the narrowest plausible market defined at the CHC4 code 08A1Z –Ear Care products
+    in other forms.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '7'
+  quote_snippet: (27) The Parties’ ear care products that give rise to affected markets belong
+    to the CHC3 code 08A1 – Ear Care and CHC4 code 08A1Z – Ear Care in other forms. The Commission
+    has not previously considered the markets for ear care products belonging to these categories.
+    As explained above,23 the Commission consistently defines market for FDPs based on both
+    the CHC3 level and at CHC4 level, and therefore both CHC3 code 08A1 and CHC4 code 08A1Z
+    constitute plausible relevant product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '31'
+  quote_snippet: (99) The Commission takes note that the regulatory changes discussed above,
+    make that the Parties no longer overlap in ATC4 class R5D2. Vermedia has replaced Pholco
+    Mereprine by Pholco Mereprine Mono, based on the molecule pholcodine (which is not contained
+    in Recordati's Neo-Codion). Therefore, there is no overlap at the molecule level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '9'
+  quote_snippet: (40) For the purposes of this decision, the product market definition for intestinal
+    anti-infective anti-diarrhoeals can be left open, as the Transaction does not give rise
+    to serious doubts as to its compatibility with the internal market or the functioning of
+    the EEA agreement even in the narrowest plausible market where the Parties’ activities overlap
+    (i.e., at molecule level for nifuroxazide-based products).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '9'
+  quote_snippet: (37) In Sanofi-Aventis/Zentiva, the Commission considered a relevant market
+    for intestinal anti-infective anti-diarrhoeals at ATC3 level (A7A) but eventually left open
+    the issue of relevant market definition.29 The Commission has not assessed intestinal anti-infective
+    anti-diarrhoeals at molecule level in the past.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '35'
+  quote_snippet: (112) The precise delineation of the FDP market(s) that are vertically affected
+    by the Transaction can be left open because no competition concerns arise under any plausible
+    relevant market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '35'
+  quote_snippet: (111) The market investigation did not provide any indications that would require
+    the Commission to depart from its previous decisional practice with respect to the product
+    market definition for FDPs that are vertically affected.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '36'
+  quote_snippet: (121) In this case, the question of whether the market for flexible packaging
+    for pharmaceuticals should be further segmented in line with the four segments listed at
+    paragraph (118) above, can be left open since the Transaction does not give rise to serious
+    doubts as to its compatibility with the internal market or the functioning of the EEA agreement
+    under any of these narrower plausible market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '35'
+  quote_snippet: (118) With respect to flexible packaging for pharmaceuticals, the Commission
+    has previously considered a narrower segmentation into (a) laminated sachets, (b) coldform
+    blister bases, (c) plastic-based blister bases and (d) blister lidding, but ultimately left
+    the product market definition open.107
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '36'
+  quote_snippet: (128) The Commission’s investigation did not provide any indications as to
+    the appropriate level for defining the market for packaging machinery. The question of whether
+    the relevant product market includes all packaging machinery, or packaging machinery for
+    the pharmaceutical sector only, can be left open since the Transaction does not give rise
+    to serious doubts as to its compatibility with the internal market or the functioning of
+    the EEA agreement under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '37'
+  quote_snippet: (137) In this case, the exact product market definition for APIs can be left
+    open since the Transaction does not give rise to serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA agreement under any plausible market
+    definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '37'
+  quote_snippet: (134) Per the Commission’s decisional practice, in principle, each API belongs
+    to a separate product market but substitutability between APIs, either in general, or for
+    certain applications must also be considered.115
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '38'
+  quote_snippet: (145) The Commission’s investigation did not provide any indications that would
+    require the Commission to depart from its previous decisional practice to consider separate
+    markets for excipients based on their substance ingredients and to sub-segment the market
+    for lactose into (i) wet granulation lactose and (ii) direct compression lactose.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '38'
+  quote_snippet: (143) In Ashland/International Specialty Products, the Commission considered
+    pharmaceutical excipients belong to separate relevant markets based on the substance from
+    which each excipient was made (e.g., lactose, starch, cellulose) and considered plausible
+    markets for binders, coatings and plausible narrower segments.119 In Friesland Foods/Campina,
+    the Commission defined even narrower markets for lactose excipients, namely separate markets
+    for (i) wet granulation lactose and (ii) direct compression lactose.120
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '39'
+  quote_snippet: (153) In this case, the exact product market definition for CDMOs can be left
+    open since the Transaction does not give rise to serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA agreement under any plausible market
+    definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_13
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '39'
+  quote_snippet: (150) In the past, the Commission distinguished (i) a CDMO market for FDPs
+    and (ii) a CDMO market for APIs.122 As regards the CDMO market for FDPs, further segmentation
+    was considered based on (i) the pharmaceutical form manufactured (e.g., solids, semi-solids,
+    injectables); (ii) the conditions of manufacture (e.g., toxicity, sterile environment);
+    (iii) the type of API used for its production and the delivery mechanism used (e.g., swallowing,
+    intravenous, injection, etc.).123 The Commission also examined whether there is a separate
+    market for contract manufacturing organization (“CMO”) services but eventually left the
+    question open.124
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_13
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '40'
+  quote_snippet: (161) In this case, the product market definition for hospital services can
+    be left open since the Transaction does not give rise to serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA agreement even under the narrowest
+    plausible product market definition of private hospital services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_14
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '40'
+  quote_snippet: (158) In CVC/Recordati, the Commission considered a relevant product market
+    for private hospital services which would be separate from public hospital services, depending
+    on the specificities of the case and the national market in question.128
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_14
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '3'
+  quote_snippet: (10) As will be further discussed further below in the present Decision (paragraphs
+    (41) to (43), the Commission consistently defines relevant markets at national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '9'
+  quote_snippet: (41) For FDPs, the Commission consistently defines relevant markets at national
+    level.30
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '9'
+  quote_snippet: (43) Therefore, for the purposes of this decision, the Commission considers
+    the geographic scope of the different plausible markets for FDPs, including all of the Group1/1+
+    markets, Group 2 and Group 3 to be national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '11'
+  quote_snippet: (51) At each of the ATC3 class C5A (topical antihaemorrhoidals) and CHC3 code
+    10A1 (antihaemorrhoids), the Parties activities result in a Group 1/1+ affected market in
+    Italy, while in the CHC4 code 10A1O (antihaemorrhoids - ointments and creams) the Parties
+    activities result in a Group 1/1+ affected market in Italy and Romania.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '11'
+  quote_snippet: (51) At each of the ATC3 class C5A (topical antihaemorrhoidals) and CHC3 code
+    10A1 (antihaemorrhoids), the Parties activities result in a Group 1/1+ affected market in
+    Italy, while in the CHC4 code 10A1O (antihaemorrhoids - ointments and creams) the Parties
+    activities result in a Group 1/1+ affected market in Italy and Romania.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '11'
+  quote_snippet: (51) At each of the ATC3 class C5A (topical antihaemorrhoidals) and CHC3 code
+    10A1 (antihaemorrhoids), the Parties activities result in a Group 1/1+ affected market in
+    Italy, while in the CHC4 code 10A1O (antihaemorrhoids - ointments and creams) the Parties
+    activities result in a Group 1/1+ affected market in Italy and Romania.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '11'
+  quote_snippet: (51) At each of the ATC3 class C5A (topical antihaemorrhoidals) and CHC3 code
+    10A1 (antihaemorrhoids), the Parties activities result in a Group 1/1+ affected market in
+    Italy, while in the CHC4 code 10A1O (antihaemorrhoids - ointments and creams) the Parties
+    activities result in a Group 1/1+ affected market in Italy and Romania.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '24'
+  quote_snippet: (76) The Parties’ activities in this product category in France give rise to
+    a Group 1/1+ horizontally affected market only at CHC4 level (01C1A – Sore throat Remedies
+    – Aerosols/Sprays).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_34
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '24'
+  quote_snippet: (78) The Parties’ activities in this product category in France give rise to
+    a Group 1/1+ horizontally affected market only at CHC4 level (02D1L – Mouth Pain Relief
+    – Liquids (Topical)).74
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_35
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '26'
+  quote_snippet: (86) The Parties’ activities in this product category in Spain give rise to
+    a Group 1/1+ horizontally affected market only at CHC4 level (08A1Z – Ear Care – Other Forms).83
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_8
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_36
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '31'
+  quote_snippet: (101) Finally, the market investigation did not reveal any concerns in relation
+    to antitussives, in combination in Luxembourg.97
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_9
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_37
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '35'
+  quote_snippet: (113) As explained above,104 the Commission consistently defines the different
+    plausible markets for FDPs as national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_10
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_38
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '35'
+  quote_snippet: (115) Therefore, for the purposes of this decision, the Commission considers
+    the geographic scope of the different plausible markets for FDPs to be national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_10
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_39
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '36'
+  quote_snippet: (125) Therefore, for the purposes of this decision, the Commission considers
+    the geographic scope for flexible packaging for pharmaceuticals to be at least EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_11
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_40
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '36'
+  quote_snippet: (124) The Commission’s investigation did not provide any indications that would
+    require the Commission to depart from its previous decisional practice that the geographic
+    market for flexible packaging for pharmaceuticals is at least EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_11
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_41
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '37'
+  quote_snippet: (132) Therefore, for the purposes of this decision, the Commission considers
+    the geographic scope for packaging machinery for pharmaceuticals to be at least EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_12
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_42
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '37'
+  quote_snippet: (141) In this case, the exact geographic market definition for APIs can be
+    left open since the Transaction does not give rise to serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA agreement under any plausible market
+    definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_13
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_43
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '37'
+  quote_snippet: (138) The Commission has previously considered the geographic scope for APIs
+    is at least EEA-wide.117
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_13
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_44
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '38'
+  quote_snippet: (148) The Commission’s investigation did not provide any indications that would
+    require the Commission to depart from its previous decisional practice to consider at least
+    EEA-wide markets for excipients based on their substance ingredients and to sub-segment
+    the market for lactose into (i) wet granulation lactose and (ii) direct compression lactose.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_14
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_45
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '39'
+  quote_snippet: (157) In this case, the exact geographic market definition for CDMOs can be
+    left open since the Transaction does not give rise to serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA agreement under any plausible geographic
+    market definition for CDMOs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_15
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_46
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '39'
+  quote_snippet: (154) The Commission added that the geographic scope of all plausible CDMO
+    services markets is at least EEA-wide.126
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_15
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_47
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '40'
+  quote_snippet: (165) In this case, the exact geographic market definition for private hospital
+    services can be left open since the Transaction does not give rise to serious doubts as
+    to its compatibility with the internal market or the functioning of the EEA agreement under
+    any plausible product market definition of private hospital services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_16
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_48
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '40'
+  quote_snippet: (162) The Commission found that the geographic scope of this market is national
+    or narrower.130
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_16
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_49
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '1'
+  quote_snippet: Commission decision pursuant to Article 6(1)(b) of Council Regulation No 139/20041
+    and Article 57 of the Agreement on the European Economic Area2
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_50
+  source_document_id: eu_ec_m10247_2021_decision
+  page: '13'
+  quote_snippet: (57) In light of the above considerations, the Commission concludes that the
+    Transaction does not raise serious doubts as to its compatibility with the internal market
+    or the functioning of the EEA agreement as a result of a horizontal effects in the market
+    for topical antihaemorrhoidals in Italy.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

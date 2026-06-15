@@ -1,0 +1,609 @@
+case_id: eu_ec_m10075_2021
+case_name: M.10075
+authority: European Commission
+jurisdiction: EU
+sector: financial
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2021-03-08'
+parties: []
+source_documents:
+- doc_id: eu_ec_m10075_2021_decision
+  title: M.10075 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10075
+  pdf_url: http://publications.europa.eu/resource/cellar/0abb03ab-e327-11eb-895a-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Wholesale merchant acquiring services in Italy
+  definition_status: defined
+  notes: null
+- market_id: pm_2
+  name: Retail merchant acquiring services in Italy
+  definition_status: defined
+  notes: null
+- market_id: pm_3
+  name: POS merchant acquiring services
+  definition_status: defined
+  notes: The Commission left open whether any additional segmentations are relevant for POS
+    merchant acquiring.
+- market_id: pm_4
+  name: E-commerce merchant acquiring services
+  definition_status: defined
+  notes: null
+- market_id: pm_5
+  name: Acquiring processing services
+  definition_status: defined
+  notes: The Commission considered that no further segmentation is necessary.
+- market_id: pm_6
+  name: Provision and management of POS terminals
+  definition_status: defined
+  notes: The Commission considered that no further segmentation is necessary.
+- market_id: pm_7
+  name: Manufacture and supply of non-personalised smart payment cards
+  definition_status: defined
+  notes: null
+- market_id: pm_8
+  name: Personalisation of smart payment cards
+  definition_status: defined
+  notes: null
+geographic_markets_considered:
+- market_id: gm_1
+  name: POS merchant acquiring services — national
+  definition_status: defined
+  notes: null
+- market_id: gm_2
+  name: E-commerce merchant acquiring services — EEA-wide
+  definition_status: defined
+  notes: null
+- market_id: gm_3
+  name: Acquiring processing services — national or EEA-wide
+  definition_status: left_open
+  notes: null
+- market_id: gm_4
+  name: Provision and management of POS terminals — national
+  definition_status: defined
+  notes: null
+- market_id: gm_5
+  name: Manufacture and supply of non-personalised smart payment cards — at least EEA-wide
+  definition_status: defined
+  notes: null
+- market_id: gm_6
+  name: Personalisation of smart payment cards — national or regional (EEA-wide or national
+    left open)
+  definition_status: left_open
+  notes: null
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m10075_2021_decision
+  page: '5'
+  quote_snippet: Therefore, the Commission considers that, for the purposes of this decision,
+    (i) separate relevant markets exist for wholesale and retail merchant acquiring in Italy;
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m10075_2021_decision
+  page: '4'
+  quote_snippet: In Nexi/ISP, the Commission found that separate product markets for wholesale
+    and retail merchant acquiring are appropriate for Italy.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m10075_2021_decision
+  page: '4'
+  quote_snippet: 'The Commission assessed whether the merchant acquiring market could be further
+    subdivided on the basis of: (i) types of payment card schemes (international or domestic);
+    (ii) payment card brands (e.g., Visa or Mastercard); (iii) type of payment card (debit or
+    credit); (iv) physical payment via a POS terminal (“POS merchant acquiring”) or web-based
+    payment (“e-commerce merchant acquiring”); and (v) wholesale merchant acquiring (to banks)
+    and retail merchant acquiring (to merchants) in Italy.8'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m10075_2021_decision
+  page: '5'
+  quote_snippet: Therefore, the Commission considers that, for the purposes of this decision,
+    (i) separate relevant markets exist for wholesale and retail merchant acquiring in Italy;
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m10075_2021_decision
+  page: '4'
+  quote_snippet: In Nexi/ISP, the Commission found that separate product markets for wholesale
+    and retail merchant acquiring are appropriate for Italy.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m10075_2021_decision
+  page: '4'
+  quote_snippet: 'The Commission assessed whether the merchant acquiring market could be further
+    subdivided on the basis of: (i) types of payment card schemes (international or domestic);
+    (ii) payment card brands (e.g., Visa or Mastercard); (iii) type of payment card (debit or
+    credit); (iv) physical payment via a POS terminal (“POS merchant acquiring”) or web-based
+    payment (“e-commerce merchant acquiring”); and (v) wholesale merchant acquiring (to banks)
+    and retail merchant acquiring (to merchants) in Italy.8'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m10075_2021_decision
+  page: '5'
+  quote_snippet: Therefore, the Commission considers that, for the purposes of this decision,
+    ... (ii) separate relevant markets exist for POS merchant acquiring and e-commerce merchant
+    acquiring; and (iii) it can be left open whether any additional segmentations are relevant
+    for POS merchant acquiring.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m10075_2021_decision
+  page: '4'
+  quote_snippet: In Worldline/Ingenico, the Commission found that POS merchant acquiring and
+    e-commerce merchant acquiring constitute separate product markets. The question whether
+    the market for POS merchant acquiring services should be sub-segmented further was left
+    open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m10075_2021_decision
+  page: '4'
+  quote_snippet: 'The Commission assessed whether the merchant acquiring market could be further
+    subdivided on the basis of: (i) types of payment card schemes (international or domestic);
+    (ii) payment card brands (e.g., Visa or Mastercard); (iii) type of payment card (debit or
+    credit); (iv) physical payment via a POS terminal (“POS merchant acquiring”) or web-based
+    payment (“e-commerce merchant acquiring”); and (v) wholesale merchant acquiring (to banks)
+    and retail merchant acquiring (to merchants) in Italy.8'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m10075_2021_decision
+  page: '5'
+  quote_snippet: Therefore, the Commission considers that, for the purposes of this decision,
+    ... (ii) separate relevant markets exist for POS merchant acquiring and e-commerce merchant
+    acquiring;
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m10075_2021_decision
+  page: '4'
+  quote_snippet: In Worldline/Ingenico, the Commission found that POS merchant acquiring and
+    e-commerce merchant acquiring constitute separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m10075_2021_decision
+  page: '4'
+  quote_snippet: 'The Commission assessed whether the merchant acquiring market could be further
+    subdivided on the basis of: (i) types of payment card schemes (international or domestic);
+    (ii) payment card brands (e.g., Visa or Mastercard); (iii) type of payment card (debit or
+    credit); (iv) physical payment via a POS terminal (“POS merchant acquiring”) or web-based
+    payment (“e-commerce merchant acquiring”); and (v) wholesale merchant acquiring (to banks)
+    and retail merchant acquiring (to merchants) in Italy.8'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m10075_2021_decision
+  page: '6'
+  quote_snippet: Therefore, the Commission considers that, for the purposes of this decision,
+    acquiring processing is a separate product market and that no further segmentation is necessary.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m10075_2021_decision
+  page: '6'
+  quote_snippet: In a recent decision, the Commission considered that acquiring processing is
+    a separate product market and that no further segmentation is appropriate.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m10075_2021_decision
+  page: '6'
+  quote_snippet: Within acquiring processing, the Commission discussed the possibility to segment
+    the market based on (i) the payment card scheme (domestic/international) and (ii) the platform,
+    distinguishing between physical POS terminals and web-enabled interfaces (e-commerce). The
+    exact market definition was ultimately left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m10075_2021_decision
+  page: '8'
+  quote_snippet: Therefore, the Commission considers that, for the purposes of this decision,
+    the relevant market is the provision and management of POS terminals which does not need
+    to be further segmented.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m10075_2021_decision
+  page: '10'
+  quote_snippet: In light of the above, for the purposes of this decision, the Commission considers
+    that there are separate relevant product markets for the (i) manufacture and supply of non-personalised
+    smart payment cards and (ii) personalisation of smart payment cards.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m10075_2021_decision
+  page: '9'
+  quote_snippet: The Commission ultimately left open whether the smart payment card market can
+    be segmented into the (i) manufacture and supply of non-personalised smart payment cards
+    and (ii) personalisation of smart payment cards.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m10075_2021_decision
+  page: '10'
+  quote_snippet: In light of the above, for the purposes of this decision, the Commission considers
+    that there are separate relevant product markets for the (i) manufacture and supply of non-personalised
+    smart payment cards and (ii) personalisation of smart payment cards.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m10075_2021_decision
+  page: '9'
+  quote_snippet: The Commission ultimately left open whether the smart payment card market can
+    be segmented into the (i) manufacture and supply of non-personalised smart payment cards
+    and (ii) personalisation of smart payment cards.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m10075_2021_decision
+  page: '10'
+  quote_snippet: There are several market players who only offer personalisation services (including
+    OTP, Global Payments, and Euro-P3C). In the market investigation, these players indicated
+    that it would be impossible or very hard to start manufacturing non-personalised cards.42
+    Nexi and Nets also offer personalisation services only.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m10075_2021_decision
+  page: '5'
+  quote_snippet: In Worldline/Ingenico, the Commission considered that (i) the market for the
+    provision of POS merchant acquiring services (and its possible sub-segmentations regarding
+    credit/debit cards, card brands, and international/domestic card network schemes) is national
+    in scope and (ii) the market for the provision of e-commerce merchant acquiring services
+    is at least EEA-wide in scope.14
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_ec_m10075_2021_decision
+  page: '5'
+  quote_snippet: In Worldline/Ingenico, the Commission considered that (i) the market for the
+    provision of POS merchant acquiring services (and its possible sub-segmentations regarding
+    credit/debit cards, card brands, and international/domestic card network schemes) is national
+    in scope and (ii) the market for the provision of e-commerce merchant acquiring services
+    is at least EEA-wide in scope.14
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_ec_m10075_2021_decision
+  page: '7'
+  quote_snippet: In the present case, the Commission considers that, for the purposes of this
+    decision, it can be left open whether the market for acquiring processing services should
+    be considered as national or EEA-wide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_ec_m10075_2021_decision
+  page: '7'
+  quote_snippet: In its decisional practice, the Commission had previously left open whether
+    the provision of payment card processing services, in general, and of acquiring processing
+    services, in particular, is national or EEA-wide in scope.25 In a recent decision, however,
+    the Commission found that the market for acquiring processing services should be considered
+    as EEA-wide in scope.26
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_ec_m10075_2021_decision
+  page: '8'
+  quote_snippet: Therefore, the Commission considers that, for the purposes of this decision,
+    the market for the provision and management of POS terminals should be considered as national
+    in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_ec_m10075_2021_decision
+  page: '8'
+  quote_snippet: In its previous decisions, the Commission considered that the geographic market
+    definition for the provision and management of POS terminals is likely national in scope.33
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_ec_m10075_2021_decision
+  page: '12'
+  quote_snippet: In light of the above, for the purposes of this decision, the Commission considers
+    that the relevant market for the manufacture and supply of non-personalised smart payment
+    cards is at least EEA-wide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_ec_m10075_2021_decision
+  page: '10'
+  quote_snippet: In Advent International/Morpho, the Commission found that a plausible market
+    for manufacture and supply of non-personalised cards is broader than national, namely EEA-wide
+    or even global in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_ec_m10075_2021_decision
+  page: '11'
+  quote_snippet: The majority of customers indicated that they source non-personalised smart
+    payment cards through competitive bidding processes at EEA-level or through bilateral agreements
+    at EEA-level.48
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_ec_m10075_2021_decision
+  page: '12'
+  quote_snippet: The exact geographic scope of the market for smart payment card personalisation
+    services can be left open, since the Transaction does not give rise to serious doubts as
+    to its compatibility with the internal market even on the basis of the narrowest plausible
+    geographic market definition, i.e., at national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_ec_m10075_2021_decision
+  page: '12'
+  quote_snippet: 'The market investigation was inconclusive regarding the geographic scope of
+    the relevant market for smart payment card personalisation services (namely, whether it
+    is national or regional):'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: eu_ec_m10075_2021_decision
+  page: '1'
+  quote_snippet: Commission decision pursuant to Article 6(1)(b) of Council Regulation No 139/2004
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_34
+  source_document_id: eu_ec_m10075_2021_decision
+  page: '1'
+  quote_snippet: (1) On 1 February 2021, the European Commission received notification of a
+    proposed concentration pursuant to Article 4 of the Merger Regulation by which Nexi SpA
+    (“Nexi”, Italy or the “Notifying Party”) intends to acquire within the meaning of Article
+    3(1)(b) of the Merger Regulation sole control over Nets A/S, Denmark, and the Concardis
+    Payment Group, Germany (together “Nets”). Together, Nexi and Nets are referred to below
+    as the “Parties”.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

@@ -1,0 +1,497 @@
+case_id: eu_ec_m9673_2020
+case_name: M.9673
+authority: European Commission
+jurisdiction: EU
+sector: transport
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2020-02-17'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9673_2020_decision
+  title: M.9673 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9673
+  pdf_url: http://publications.europa.eu/resource/cellar/209c0742-08ae-11eb-a511-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Ferry services (freight and passengers)
+  definition_status: left_open
+  notes: The Commission considered the overall market for ferry/shipping services, and left
+    open whether this includes both passenger and freight ferry services, whether it includes
+    both RoRo and LoLo services, and whether it includes both business and tourist passengers,
+    as the transaction would not raise serious doubts under any alternative definition.
+- market_id: pm_2
+  name: Freight (short-sea container liner) shipping services
+  definition_status: left_open
+  notes: The Commission considered various segmentations for freight shipping services, including
+    container vs non-containerised, short-sea vs long-sea, liner vs non-liner, reefer vs non-reefer,
+    RoRo vs LoLo, and feeder services, but left the exact definition open for the purpose of
+    this decision.
+- market_id: pm_3
+  name: Passenger shipping services
+  definition_status: left_open
+  notes: The Commission previously defined separate markets for business and tourist passenger
+    services and considered rail and air as possible substitutes for foot passengers. For this
+    decision, the distinction between business and tourist services was left open due to the
+    majority of Condor's passengers being tourists and no resulting difference in assessment.
+- market_id: pm_4
+  name: Stevedoring services (container terminal services)
+  definition_status: left_open
+  notes: The Commission left open the exact delineation of the product market for stevedoring
+    services, including whether it should be segmented between hinterland and transhipment traffic,
+    as the transaction would not raise serious doubts under any plausible definition.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Ferry services (freight and passengers) — Channel Islands routes (UK/France affected)
+  definition_status: defined
+  notes: The Commission explicitly distinguished routes to the Channel Islands from cross-Channel
+    routes, noting differences in demand-side substitutability, topography of ports, and stringent
+    authorisation agreements. While the overall geographic market definition was left open,
+    this segmentation was a specific finding.
+- market_id: gm_2
+  name: Ferry services (freight and passengers) — cross-Channel routes (UK-France affected)
+  definition_status: defined
+  notes: The Commission explicitly distinguished cross-Channel routes (UK-France) from routes
+    to the Channel Islands based on lack of demand-side substitutability and specific port topographies.
+    While the overall geographic market definition was left open, this segmentation was a specific
+    finding.
+- market_id: gm_3
+  name: Freight (short-sea container) shipping services — unspecified
+  definition_status: left_open
+  notes: The Commission's prior practice considered segmenting by single trade/corridor or single
+    leg of trades, but the exact scope for short-sea container shipping services was left open.
+- market_id: gm_4
+  name: Passenger shipping services — unspecified
+  definition_status: left_open
+  notes: The Commission's prior practice for passenger shipping services examined Western Channel,
+    Short Sea, and North Sea routes, but did not conclude on a precise geographic definition
+    in this decision.
+- market_id: gm_5
+  name: Stevedoring services (container terminal services) — unspecified
+  definition_status: left_open
+  notes: The Commission left open whether the geographic market for container terminal services
+    encompasses ports of a region, a catchment area, or one Member State, as the transaction
+    would not raise serious doubts under any alternative definition.
+- market_id: gm_6
+  name: Stevedoring services (container terminal services) — Southern England ports
+  definition_status: considered
+  notes: The Commission considered the Southern England ports as a possible geographic market
+    for assessment purposes, without formally defining it as the relevant market.
+- market_id: gm_7
+  name: Stevedoring services (container terminal services) — Port of Portsmouth
+  definition_status: considered
+  notes: The Commission assessed the transaction's effects at the narrowest level of the Port
+    of Portsmouth, where a vertical relationship arises, without formally defining it as the
+    appropriate geographic market.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9673_2020_decision
+  page: '5'
+  quote_snippet: In light of the above, the Commission considers that the relevant product market
+    concerns the market for the provision of ferry/shipping services overall and it can be left
+    open (i) whether this includes both passenger and freight ferry services; (ii) whether this
+    includes both RoRo and LoLo services; and (iii) whether this includes both business and
+    tourist passengers, since the Transaction would not raise serious doubts as to its compatibility
+    with the internal market under those alternative product market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9673_2020_decision
+  page: '3'
+  quote_snippet: Both BF and Condor provide both freight and passenger ferry services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9673_2020_decision
+  page: '5'
+  quote_snippet: The Notifying Parties submit that, as a general rule, almost all ferry service
+    providers offer passenger and freight services and many will be able to do so on the same
+    vessel.17 With regard to transportation services to and from the Channel Islands, where
+    the Target is active, they consider that the relevant product markets should be considered
+    broadly (including passenger and freight ferry services in the same market), since a standalone
+    passenger ferry service would be uneconomic and unsustainable.18
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9673_2020_decision
+  page: '4'
+  quote_snippet: In its prior decisional practice, the Commission has left open “whether shipping
+    services should be part of a broader door-to-door multimodal transport services market.”9
+    Should a separate market for shipping services exist, the Commission has considered that
+    (i) container shipping is distinct from non-containerised shipping (such as bulk shipping),
+    (ii) short-sea container shipping is distinct from long-sea container shipping (that is,
+    deep-sea shipping), (iii) container liner shipping (scheduled service) is different from
+    non-liner shipping (that is, charter, tramp or specialised transport services).10
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9673_2020_decision
+  page: '5'
+  quote_snippet: First, with regard to freight ferry services, the Commission notes that there
+    is no need, for the purposes of assessing the Transaction, to distinguish between reefer
+    and non-reefer services or RoRo and LoLo freight services. The Target only offers RoRo freight
+    services and it can offer both reefer and non-reefer services while there is no horizontal
+    overlap arising from the Transaction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9673_2020_decision
+  page: '3'
+  quote_snippet: With regard to freight ferry services, they are only active in short-see container
+    liner shipping services. Short-sea container liner shipping involves the provision of regular,
+    scheduled intracontinental (usually coastal trade) services for the carriage of cargo by
+    container liner shipping companies.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9673_2020_decision
+  page: '4'
+  quote_snippet: The Commission has previously defined two separate markets within passenger
+    shipping services, namely the market for business passenger services and the market for
+    tourist passenger services14 and concluded that there was a separate market for tourist
+    passenger shipping.15 The Commission has also noted that, for passengers travelling by ferry
+    without a car, rail and air transport could be a possible substitute.16
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9673_2020_decision
+  page: '5'
+  quote_snippet: Similarly, with regard to passengers ferry services, as the majority of the
+    passengers travelling with Condor are tourists, there is no need, for the purposes of assessing
+    the Transaction, to distinguish between tourist and business services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9673_2020_decision
+  page: '5'
+  quote_snippet: With particular regard to passenger ferry services, since Condor’s passengers
+    are almost exclusively tourists, the Notifying Parties further submit that the distinction
+    between business and tourist passenger services would not make any difference to the assessment
+    in this case.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9673_2020_decision
+  page: '8'
+  quote_snippet: For the purposes of this Decision, the exact delineation of the product market
+    (including the question of whether the market for container terminal services should be
+    segmented between hinterland and transhipment traffic) can be left open, as the Transaction
+    would not raise serious doubts as to its compatibility with the internal market under any
+    plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9673_2020_decision
+  page: '7'
+  quote_snippet: Stevedoring services for containers (also called container terminal services)
+    are an input for the provision of (short-sea) container liner shipping services. The provision
+    of container stevedoring services by terminal operators involves the loading, unloading,
+    storage and land-side handling for inland transportation of containerised cargo.26 It relates
+    only to freight and does not concern passenger services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9673_2020_decision
+  page: '7'
+  quote_snippet: The Commission notes that, for customers of ferry services seeking a route
+    either from the UK or France to the Channel Islands, suppliers of ferry services on routes
+    that do not go to the Channel Islands are not potential substitutes.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9673_2020_decision
+  page: '7'
+  quote_snippet: Therefore, for the purposes of this decision, and on the basis of its precedents
+    and the arguments put forward by the Parties, the Commission considers that the cross-Channel
+    routes, that is, the routes between UK and France (as serviced by BF) do not belong to the
+    same geographic market as routes to the Channel Islands (serviced by Condor) because of,
+    among others, the lack of demand-side substitutability and the specific topography of the
+    Channel Islands ports (tidal movements and shallowness), which require a specific type of
+    vessels for providing such services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m9673_2020_decision
+  page: '7'
+  quote_snippet: Therefore, for the purposes of this decision, and on the basis of its precedents
+    and the arguments put forward by the Parties, the Commission considers that the cross-Channel
+    routes, that is, the routes between UK and France (as serviced by BF) do not belong to the
+    same geographic market as routes to the Channel Islands (serviced by Condor) because of,
+    among others, the lack of demand-side substitutability and the specific topography of the
+    Channel Islands ports (tidal movements and shallowness), which require a specific type of
+    vessels for providing such services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m9673_2020_decision
+  page: '6'
+  quote_snippet: 'The Notifying Parties submit that with regard to freight/short-sea container
+    shipping services, the relevant geographic markets should be as follows: i) from the UK
+    to the Channel Islands, ii) from the Channel Islands to the UK, iii) from France to the
+    Channel Islands and iv) from the Channel Islands to France.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m9673_2020_decision
+  page: '6'
+  quote_snippet: The Notifying Parties submit that the relevant geographic markets for passenger
+    shipping services in this case are i) between the UK and the Channel Islands and ii) between
+    France and the Channel Islands.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m9673_2020_decision
+  page: '9'
+  quote_snippet: For the purposes of this Decision, the question of whether the market for container
+    terminal services encompasses ports of a region, of a catchment area, or of one Member State
+    can be left open, as the Transaction would not raise serious doubts as to its compatibility
+    with the internal market under any alternative geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m9673_2020_decision
+  page: '9'
+  quote_snippet: In its prior decisional practice, the Commission considered that the relevant
+    geographic dimension of stevedoring services is, in its broadest scope, regional, such as
+    for Northern Europe (for transhipment traffic), or, in its narrowest possible scope, could
+    be delineated based on the catchment area of the ports in a certain range, such as Hamburg-Antwerp
+    (for hinterland traffic) or possibly even narrower, comprising the ports of a single Member
+    State only.31
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m9673_2020_decision
+  page: '9'
+  quote_snippet: However, as the Parties have provided information at the level of the port
+    of Portsmouth (where BF provides such services to Condor), the Commission will assess the
+    effects of the Transaction on the overall market for the provision of stevedoring services
+    (without distinction between hinterland and transhipment traffic) at the level of the ports
+    in Southern England and, even though it does not believe that a single port constitutes
+    the appropriate geographic market delineation, also at the narrowest level of the port of
+    Portsmouth.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m9673_2020_decision
+  page: '9'
+  quote_snippet: However, as the Parties have provided information at the level of the port
+    of Portsmouth (where BF provides such services to Condor), the Commission will assess the
+    effects of the Transaction on the overall market for the provision of stevedoring services
+    (without distinction between hinterland and transhipment traffic) at the level of the ports
+    in Southern England and, even though it does not believe that a single port constitutes
+    the appropriate geographic market delineation, also at the narrowest level of the port of
+    Portsmouth. As demonstrated below, the Transaction will not give rise to competition concerns
+    even within this narrow scope comprising only the port of Portsmouth (which is where a vertical
+    relationship arises between the Parties’ activities).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m9673_2020_decision
+  page: '3'
+  quote_snippet: The Transaction therefore has a Union dimension within the meaning of Article
+    1(2) of the Merger Regulation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m9673_2020_decision
+  page: '5'
+  quote_snippet: For the purposes of this Decision, it is not necessary to conclude on the exact
+    product and geographic definition for the market for the provision of ferry services (freight
+    and passengers), as the Transaction would not raise serious doubts as to its compatibility
+    with the internal market under any alternative market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_ec_m9673_2020_decision
+  page: '10'
+  quote_snippet: For the purposes of this Decision, it is not necessary to conclude on the exact
+    product and geographic definition of the market for the provision of container terminal/stevedoring
+    services, as the Transaction would not raise serious doubts as to its compatibility with
+    the internal market under any alternative market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_ec_m9673_2020_decision
+  page: '10'
+  quote_snippet: Under Article 2(2) and (3) of the Merger Regulation, the Commission must assess
+    whether a proposed concentration would significantly impede effective competition in the
+    internal market or in a substantial part of it, in particular through the creation or strengthening
+    of a dominant position.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+ai_summary: null
+case_type: merger
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

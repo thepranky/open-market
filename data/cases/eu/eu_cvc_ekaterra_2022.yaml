@@ -1,0 +1,320 @@
+case_id: eu_cvc_ekaterra_2022
+case_name: CVC / EKATERRA
+authority: European Commission
+jurisdiction: EU
+sector: retail
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2022-05-23'
+parties:
+- name: CVC
+  role: acquirer
+- name: EKATERRA
+  role: target
+source_documents:
+- doc_id: eu_cvc_ekaterra_2022_decision
+  title: CVC / EKATERRA — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10578
+  pdf_url: http://publications.europa.eu/resource/cellar/43e7f2cd-4893-11ed-92ed-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Production and supply of branded tea to modern trade retailers with a distinction by
+    type of tea and by format
+  definition_status: considered
+  notes: The Commission left open potential segmentations by type of tea, format, distribution
+    channel, and between branded/private label tea, but assessed the transaction on the narrowest
+    plausible definition which is branded tea to modern trade retailers, with distinction by
+    type and format.
+- market_id: pm_2
+  name: Retail distribution of daily consumer goods in small retail stores to the exclusion
+    of hypermarkets, supermarkets and discount stores
+  definition_status: considered
+  notes: The Commission generally left open the question of market segmentation within retail
+    distribution but conducted its analysis on the narrowest segment (small retail stores including
+    convenience stores).
+- market_id: pm_3
+  name: Procurement of daily consumer goods by modern trade retailers
+  definition_status: considered
+  notes: The Commission left open questions of segmentation for procurement of daily consumer
+    goods (by category or sales channel) but conducted its analysis on the general segment of
+    procurement by modern trade retailers.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Production and supply of branded tea to modern trade retailers in Poland, with a further
+    distinction by type of tea and by format — national (Poland affected)
+  definition_status: considered
+  notes: null
+- market_id: gm_2
+  name: Retail distribution of daily consumer goods in small retail stores — local (Poland affected
+    at commune level)
+  definition_status: considered
+  notes: The Commission left open the exact scope of the local market but assessed the transaction
+    based on a local market at the commune (gmina) level.
+- market_id: gm_3
+  name: Procurement of daily consumer goods by modern trade retailers — national (Poland affected)
+  definition_status: considered
+  notes: null
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_cvc_ekaterra_2022_decision
+  page: '3'
+  quote_snippet: As to the existence of a separate market for the production and supply of tea,
+    retailers refer to tea as a distinct category14 which is of specific importance in Poland
+    due to the specific taste of Polish consumers for tea.15 This is also consistent with the
+    Parties’ internal documents […].16
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_cvc_ekaterra_2022_decision
+  page: '3'
+  quote_snippet: As to potential segmentations within the production and supply of tea, the
+    results of the market investigation suggest that distinctions by type of tea (black or green
+    tea) and formats (bags or loose tea), as well as segmentations by distribution channel or
+    between private labels and branded tea, are relevant.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_cvc_ekaterra_2022_decision
+  page: '4'
+  quote_snippet: In any event, potential segmentations by type of tea, by format, by distribution
+    channel and between branded tea and private label tea can be left open as the Transaction
+    does not give rise to competition concerns under any plausible product market definition.
+    In the case at hand, the Commission will assess the Transaction under the narrowest plausible
+    product market definition (where ekaterra’s upstream market share is the highest), i.e.
+    the market for the production and supply of branded tea to modern trade retailers with a
+    distinction by type of tea and by format.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_cvc_ekaterra_2022_decision
+  page: '5'
+  quote_snippet: In its previous practice, the Commission defined a distinct market for the
+    retail provision of daily consumer goods, including dry food-stuffs and non-food household
+    consumables sold in a supermarket environment.23
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_cvc_ekaterra_2022_decision
+  page: '5'
+  quote_snippet: In the case at hand, the Commission does not see any reason to depart from
+    its previous decisional practice. In any event, the question whether the market for retail
+    distribution of daily consumer goods is segmented between hypermarkets, supermarkets, discount
+    chains, on the one hand, and specialised stores or small retailers, on the other hand can
+    be left open, as the Transaction does not give rise to competition concerns under any plausible
+    market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_cvc_ekaterra_2022_decision
+  page: '5'
+  quote_snippet: For the purpose of this Decision, the analysis will be conducted based on the
+    narrowest possible product segments (on which Zabka’s market share is the highest), i.e.
+    the market for the retail distribution of daily consumer goods in small retail stores26
+    to the exclusion of hypermarkets, supermarkets and discount stores.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_cvc_ekaterra_2022_decision
+  page: '5'
+  quote_snippet: In previous decisions, the Commission has considered a market for the procurement
+    of daily consumer goods, distinct from the retail distribution market.27
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_cvc_ekaterra_2022_decision
+  page: '6'
+  quote_snippet: In the case at hand, the Commission does not see any reason to depart from
+    its previous decisional practice. In any event, the questions whether the procurement of
+    different categories of products (e.g. basic foodstuffs, wine and spirit drinks, etc.) or
+    the different sales channels (e.g. food retailing, specialised trade, etc.) belong to separate
+    markets can be left open, as the Transaction does not give rise to competition concerns
+    under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_cvc_ekaterra_2022_decision
+  page: '6'
+  quote_snippet: For the purpose of this decision, the analysis will be conducted on the segment
+    for the procurement of daily consumer goods by modern trade retailers, where Zabka’s market
+    share is higher than for the tea category.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_cvc_ekaterra_2022_decision
+  page: '6'
+  quote_snippet: In its precedents, however, the Commission has defined the markets for non-alcoholic
+    beverages as national in scope.30
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_cvc_ekaterra_2022_decision
+  page: '7'
+  quote_snippet: In view of the above, the Commission takes the view that the market for the
+    production and supply of tea in Poland is likely to be national in scope. In the case at
+    hand, the Commission will assess the competitive effect of the Transaction on the national
+    market for the production and supply of branded tea to modern trade retailers in Poland,
+    with a further distinction by type of tea and by format.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_cvc_ekaterra_2022_decision
+  page: '7'
+  quote_snippet: In previous decisions, the Commission considered the markets for the distribution
+    of daily consumer goods to be local, with a radius of 20 to 30 minutes by car.34 In Poland
+    in particular, the Commission has contemplated the definition of local markets, extending
+    to a 1-kilometer radius around each store.35
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_cvc_ekaterra_2022_decision
+  page: '7'
+  quote_snippet: In the case at hand, the Commission does not see any reason to depart from
+    its previous decisional practice. In any event, the exact scope of the relevant geographic
+    market for the retail distribution of daily consumer goods, i.e. the exact geographic scope
+    of the catchment areas, can be left open, as the Transaction does not give rise to competition
+    concerns under any plausible geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_cvc_ekaterra_2022_decision
+  page: '7'
+  quote_snippet: In the case at hand, the Commission will assess the Transaction under the narrowest
+    and most conservative plausible geographic market definition, i.e. the local market for
+    the retail distribution of daily consumer goods at the commune (gmina) level in Poland.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_cvc_ekaterra_2022_decision
+  page: '7'
+  quote_snippet: From a geographic point of view, the Commission has considered the markets
+    for the procurement of daily consumer goods to be national in scope.36
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_cvc_ekaterra_2022_decision
+  page: '7'
+  quote_snippet: The Notifying Party does not contest these market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

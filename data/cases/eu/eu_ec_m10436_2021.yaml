@@ -1,0 +1,379 @@
+case_id: eu_ec_m10436_2021
+case_name: M.10436
+authority: European Commission
+jurisdiction: EU
+sector: retail
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2021-12-20'
+parties: []
+source_documents:
+- doc_id: eu_ec_m10436_2021_decision
+  title: M.10436 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10436
+  pdf_url: http://publications.europa.eu/resource/cellar/0001386d-4004-11ed-92ed-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Production and wholesale distribution of Still Wines
+  definition_status: left_open
+  notes: The Commission considered segmenting wines by type (still vs. sparkling) and spirits
+    by category/origin, but ultimately left the definitive segmentation open as it would not
+    change the competitive assessment.
+- market_id: pm_2
+  name: Production and wholesale distribution of Sparkling Wines
+  definition_status: left_open
+  notes: The Commission considered segmenting wines by type (still vs. sparkling) and spirits
+    by category/origin, but ultimately left the definitive segmentation open as it would not
+    change the competitive assessment.
+- market_id: pm_3
+  name: Production and wholesale distribution of Spirits (general category)
+  definition_status: left_open
+  notes: The Commission considered segmenting spirits by main categories (whisky, brandy, rum,
+    etc.) and by origin for some categories (e.g., Scotch whisky, Cognac), and by sales channel
+    (on-trade/off-trade), but ultimately left the definitive segmentation open as it would not
+    change the competitive assessment.
+- market_id: pm_4
+  name: Retail of wines and spirits
+  definition_status: left_open
+  notes: The Commission considered whether to segment by sales channel (online vs. brick-and-mortar)
+    but left it open, adopting a conservative approach to assess the online segment only. It
+    concluded that the market for retail encompasses all wines and spirits, not segmented by
+    type of beverage.
+- market_id: pm_5
+  name: Retail of wines and spirits — online segment
+  definition_status: considered
+  notes: The Commission considered segmenting the retail market by sales channel and, taking
+    a conservative approach due to Tannico's online-only activity, assessed the transaction
+    specifically for the online segment, while leaving the overall segmentation open.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Production and wholesale distribution of wines and spirits — national
+  definition_status: considered
+  notes: The Commission noted past decisions found national scope due to strong national preferences,
+    and while leaving the exact scope open, adopted a conservative approach by assessing the
+    transaction at a national level.
+- market_id: gm_2
+  name: Retail of wines and spirits — national (Italy affected)
+  definition_status: considered
+  notes: While Notifying Parties considered online retail to be EEA-wide, the market investigation
+    suggested national purchasing patterns. The Commission did not conclusively define the geographic
+    market but focused its analysis on Italy for input foreclosure.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m10436_2021_decision
+  page: '4'
+  quote_snippet: (15) With respect to wines, in past decisions regarding the production and
+    wholesale distribution of wines, the Commission considered a possible sub-segmentation by
+    type of wine between (i) still wines and (ii) sparkling wines (further segmented into Champagne,
+    Lambrusco, semi-sparkling or flavoured sparkling wine, and sparkling wines other than Champagne).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m10436_2021_decision
+  page: '5'
+  quote_snippet: (19) The Commission considers that, consistently with its past practice and
+    absent indications to the contrary from the market investigation, plausible relevant product
+    markets for the production and wholesale distribution of wines and spirits can be defined
+    according to the product categories referred to in paragraphs 14-15 above.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m10436_2021_decision
+  page: '5'
+  quote_snippet: (20) In any event, it can be left open whether the market for the production
+    and wholesale distribution of wines should be segmented (i) by product type for wines, and
+    (ii) product category or origin for spirits; and (iii) by sales to the on-trade channel
+    and sales to the off-trade channel,15 as the assessment of the Transaction’s compatibility
+    with the internal market or the functioning of the EEA Agreement would not change under
+    any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m10436_2021_decision
+  page: '4'
+  quote_snippet: (15) With respect to wines, in past decisions regarding the production and
+    wholesale distribution of wines, the Commission considered a possible sub-segmentation by
+    type of wine between (i) still wines and (ii) sparkling wines (further segmented into Champagne,
+    Lambrusco, semi-sparkling or flavoured sparkling wine, and sparkling wines other than Champagne).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m10436_2021_decision
+  page: '5'
+  quote_snippet: (19) The Commission considers that, consistently with its past practice and
+    absent indications to the contrary from the market investigation, plausible relevant product
+    markets for the production and wholesale distribution of wines and spirits can be defined
+    according to the product categories referred to in paragraphs 14-15 above.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m10436_2021_decision
+  page: '5'
+  quote_snippet: (20) In any event, it can be left open whether the market for the production
+    and wholesale distribution of wines should be segmented (i) by product type for wines, and
+    (ii) product category or origin for spirits; and (iii) by sales to the on-trade channel
+    and sales to the off-trade channel,15 as the assessment of the Transaction’s compatibility
+    with the internal market or the functioning of the EEA Agreement would not change under
+    any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m10436_2021_decision
+  page: '4'
+  quote_snippet: '(17) In a previous case, the Commission also considered the possible existence
+    of separate markets for the supply of spirits depending on whether they are on-trade (i.e:
+    sales to hotels, bars, cafés, etc) or off-trade (i.e: sales to the retail sector).13 However,
+    the Commission ultimately concluded that this delineation would not change the competitive
+    assessment as the transaction in question in that case would primarily concern off-trade,
+    i.e. sales to wholesalers and large retailers. In the present case the delineation would
+    not change the competitive assessment since Tannico is present essentially in the direct
+    sales to final customers ([…]% of Tannico turnover is represented by sales to final consumers).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m10436_2021_decision
+  page: '5'
+  quote_snippet: (20) In any event, it can be left open whether the market for the production
+    and wholesale distribution of wines should be segmented (i) by product type for wines, and
+    (ii) product category or origin for spirits; and (iii) by sales to the on-trade channel
+    and sales to the off-trade channel,15 as the assessment of the Transaction’s compatibility
+    with the internal market or the functioning of the EEA Agreement would not change under
+    any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m10436_2021_decision
+  page: '6'
+  quote_snippet: (26) The results of the market investigation support the fact that retailers
+    purchase the whole range of wines and spirits as all retailers that expressed a view explained
+    that they purchase the whole range of wines and spirits.21 Indeed, the retailers aim to
+    offer a broad selection of wines and spirits to the final consumer to maximise their revenues.
+    For example, one retailer pointed out in the market investigation that ‘Our product portfolio
+    has 3000 wine references and 3000 spirits references’22. The Commission therefore considers
+    that, for the purposes of this Decision, the market for retail encompasses all wines and
+    spirits.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m10436_2021_decision
+  page: '6'
+  quote_snippet: (27) In addition, for the purposes of this Decision, it can be left open whether
+    the retail market for wines and spirits can be segmented by sales channel as the as the
+    assessment of the Transaction’s compatibility with the internal market or the functioning
+    of the EEA Agreement would not change under any plausible product market definition. Since
+    Tannico is active only in the online sales channel, taking a conservative approach, the
+    Commission will assess the Proposed Transaction only for the online segment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m10436_2021_decision
+  page: '6'
+  quote_snippet: (27) In addition, for the purposes of this Decision, it can be left open whether
+    the retail market for wines and spirits can be segmented by sales channel as the as the
+    assessment of the Transaction’s compatibility with the internal market or the functioning
+    of the EEA Agreement would not change under any plausible product market definition. Since
+    Tannico is active only in the online sales channel, taking a conservative approach, the
+    Commission will assess the Proposed Transaction only for the online segment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m10436_2021_decision
+  page: '6'
+  quote_snippet: (27) In addition, for the purposes of this Decision, it can be left open whether
+    the retail market for wines and spirits can be segmented by sales channel as the as the
+    assessment of the Transaction’s compatibility with the internal market or the functioning
+    of the EEA Agreement would not change under any plausible product market definition. Since
+    Tannico is active only in the online sales channel, taking a conservative approach, the
+    Commission will assess the Proposed Transaction only for the online segment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m10436_2021_decision
+  page: '6'
+  quote_snippet: (27) In addition, for the purposes of this Decision, it can be left open whether
+    the retail market for wines and spirits can be segmented by sales channel as the as the
+    assessment of the Transaction’s compatibility with the internal market or the functioning
+    of the EEA Agreement would not change under any plausible product market definition. Since
+    Tannico is active only in the online sales channel, taking a conservative approach, the
+    Commission will assess the Proposed Transaction only for the online segment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m10436_2021_decision
+  page: '5'
+  quote_snippet: (21) As to the geographic scope, in previous decisions concerning the production
+    and wholesale distribution of wines and spirits,16 the Commission found that the geographic
+    scope of the various product markets is national, mainly because of strong national preferences
+    and consumption behaviours.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m10436_2021_decision
+  page: '5'
+  quote_snippet: (23) In any event, for the purposes of this Decision, it can be left open whether
+    the markets for the production and wholesale of wines and spirits are national or EEA wide
+    in scope as the assessment of the Transaction’s compatibility with the internal market or
+    the functioning of the EEA Agreement would not change under any plausible product market
+    definition. Under a conservative approach, the Transaction will be assessed at a national
+    level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m10436_2021_decision
+  page: '6'
+  quote_snippet: (28) The majority of the retailers that expressed a view in the market investigation
+    state that they purchase their portfolio of wines and spirits on a national level.24
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m10436_2021_decision
+  page: '6'
+  quote_snippet: (28) The majority of the retailers that expressed a view in the market investigation
+    state that they purchase their portfolio of wines and spirits on a national level.24
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m10436_2021_decision
+  page: '10'
+  quote_snippet: (40) The Commission considers that, post-Transaction, neither the Notifying
+    Parties, in particular Moët Hennessy, nor Tannico will likely have the ability or incentive
+    to pursue any plausible input foreclosure strategy in the Champagne sub-segment in Italy
+    for the reasons set out below.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

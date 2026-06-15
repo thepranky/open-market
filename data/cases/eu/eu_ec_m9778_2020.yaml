@@ -1,0 +1,235 @@
+case_id: eu_ec_m9778_2020
+case_name: M.9778
+authority: European Commission
+jurisdiction: EU
+sector: business_services
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2020-06-24'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9778_2020_decision
+  title: M.9778 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9778
+  pdf_url: http://publications.europa.eu/resource/cellar/17331526-015a-11eb-af6b-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Overall market for the provision of oceanic cruises
+  definition_status: considered
+  notes: The Commission decided to assess the transaction on this market, which is defined as
+    journeys on board a ship for leisure purposes in maritime waters, combining various amenities.
+- market_id: pm_2
+  name: Luxury/expedition cruises
+  definition_status: left_open
+  notes: The Commission assessed this as a possible distinct market but explicitly stated it
+    was not necessary to conclude on its precise definition.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Overall market for the provision of oceanic cruises — national
+  definition_status: considered
+  notes: The Commission decided to assess the transaction on national markets for oceanic cruises,
+    consistent with its precedents.
+- market_id: gm_2
+  name: Luxury/expedition cruises — national
+  definition_status: considered
+  notes: The Commission decided to assess the transaction on national markets for luxury/expedition
+    cruises, consistent with its precedents, noting reliance on national travel agents.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9778_2020_decision
+  page: '3'
+  quote_snippet: Oceanic cruises involve a journey on board a ship undertaken for leisure purposes
+    in maritime waters. Oceanic cruises generally combine cabins, restaurants, bars, casinos,
+    swimming pools, spas, gyms, theatres, and shopping into a floating resort. Cruises typically
+    embark from one port and then visit a number of destinations, either for a day or overnight,
+    before returning to the same port or a different port to continue the journey.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9778_2020_decision
+  page: '8'
+  quote_snippet: 'The Commission will therefore assess the effects of the Transaction on the
+    following product markets: the overall market for the provision of oceanic cruises; and
+    the possible distinct market for the provision of luxury/expedition cruises.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9778_2020_decision
+  page: '4'
+  quote_snippet: The Notifying Parties claim that land-based holidays and river cruises are,
+    for at least some customers, substitutable for oceanic cruise holidays and exert competitive
+    pressure on cruise operators. They nonetheless submit that the relevant product market within
+    which to assess the Transaction is the market for oceanic cruises.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9778_2020_decision
+  page: '5'
+  quote_snippet: A number of elements point to the possibility that luxury and expedition cruises
+    could form part of the same relevant market distinct from the overall cruise market, although
+    the boundaries around the edges of this possible cruise segment appear blurred.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9778_2020_decision
+  page: '5'
+  quote_snippet: The ship size differs according to the type of cruise. For example, contemporary
+    cruise brands operate the largest vessels (from approximately 100 000 GT and above). Premium
+    cruises operate vessels that are somewhat smaller between 40 000 GT and 120 000 GT. Luxury
+    and expedition cruise operations have smaller cruise ships (between 5,000 GT – and 60 000
+    GT).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9778_2020_decision
+  page: '8'
+  quote_snippet: For the purposes of this decision, it is not necessary to conclude on whether
+    luxury/expedition cruises constitute a separate product market, as in any event the Transaction
+    would not raise serious doubts as to its compatibility with the internal market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9778_2020_decision
+  page: '9'
+  quote_snippet: The market investigation in this case has not produced evidence indicating
+    that the Commission should depart from the approach taken in its previous decisions concluding
+    the existence of national markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9778_2020_decision
+  page: '9'
+  quote_snippet: The vast majority of cruise operators responding to the market investigation
+    have confirmed that specialised cruise agencies and/or general travel agents predominantly
+    operate at national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9778_2020_decision
+  page: '9'
+  quote_snippet: Therefore, in line with the precedents, for the purposes of the present case,
+    the Commission considers the relevant geographic markets to be national for both the overall
+    market for oceanic cruises and luxury/expedition cruises.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9778_2020_decision
+  page: '9'
+  quote_snippet: A minority of respondents provided responses indicating that the relevant geographic
+    market could be seen as comprising a cluster of German-speaking countries (i.e. Austria
+    and Germany). However, since there is limited recourse to online booking when booking a
+    luxury/expedition cruise, with customers tending to book through travel agents, which predominantly
+    operate at national level, the Commission considers that there is not sufficient evidence
+    to depart from the conclusion reached in its previous decisions that cruise markets are
+    national.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9778_2020_decision
+  page: '9'
+  quote_snippet: Therefore, in line with the precedents, for the purposes of the present case,
+    the Commission considers the relevant geographic markets to be national for both the overall
+    market for oceanic cruises and luxury/expedition cruises.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9778_2020_decision
+  page: '8'
+  quote_snippet: In its previous decisions, the Commission has concluded that the markets for
+    the supply of oceanic cruises should be considered as national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

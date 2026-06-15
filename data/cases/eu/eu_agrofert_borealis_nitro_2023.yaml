@@ -1,0 +1,504 @@
+case_id: eu_agrofert_borealis_nitro_2023
+case_name: AGROFERT / BOREALIS NITRO
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2023-03-13'
+parties:
+- name: AGROFERT
+  role: acquirer
+- name: BOREALIS NITRO
+  role: target
+source_documents:
+- doc_id: eu_agrofert_borealis_nitro_2023_decision
+  title: AGROFERT / BOREALIS NITRO — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10834
+  pdf_url: http://publications.europa.eu/resource/cellar/abdaeee2-1723-11ee-806b-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Nitrogen based fertilizers (including CAN, UAN, AN, urea)
+  definition_status: left_open
+  notes: The Commission left open whether to distinguish between markets for Calcium Ammonium
+    Nitrate (CAN), Urea Ammonium Nitrate (UAN), Ammonium Nitrate (AN) and urea, or to define
+    wider markets for all straight nitrogen fertilizers or all nitrogen fertilizers, as the
+    transaction did not raise serious doubts under any of these plausible definitions.
+- market_id: pm_2
+  name: Production and supply of CAN
+  definition_status: considered
+  notes: The Commission assessed the transaction based on a narrow market for CAN, explicitly
+    considering it as a plausible definition for analysis, even though the broader nitrogen
+    fertilizer market definition was left open. This specific market was identified as affected
+    due to horizontal overlaps.
+- market_id: pm_3
+  name: Retail sale of mineral fertilizers to end-customers
+  definition_status: defined
+  notes: The Commission confirmed its previous finding that there is a market for the distribution
+    of all types of mineral fertilizers and did not find evidence to depart from this definition.
+- market_id: pm_4
+  name: AdBlue
+  definition_status: left_open
+  notes: The Commission confirmed that AdBlue could form a separate product market but left
+    open whether it should encompass only trademarked AdBlue or also non-branded urea solutions
+    with the same concentration, as the transaction did not raise serious doubts under either
+    definition.
+- market_id: pm_5
+  name: Aqueous ammonia
+  definition_status: considered
+  notes: The Commission considered a separate market for aqueous ammonia, distinct from anhydrous
+    ammonia, consistent with previous findings and market investigation results.
+- market_id: pm_6
+  name: Weak nitric acid
+  definition_status: defined
+  notes: The Commission defined weak nitric acid as a separate product market, distinct from
+    azeotropic and concentrated nitric acid, based on different applications, lack of demand-side
+    substitutability, and different production processes.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Nitrogen based fertilizers (including CAN, UAN, Urea) — EEA-wide
+  definition_status: considered
+  notes: The Commission considered the market to be at least EEA-wide in scope, noting that
+    previous decisions had considered it at least EEA-wide and potentially wider. Market investigation
+    confirmed an at least EEA-wide scope.
+- market_id: gm_2
+  name: Production and supply of CAN — EEA-wide
+  definition_status: considered
+  notes: The Commission considered an EEA-wide geographic scope for CAN, based on market investigation
+    findings and consistency with the broader nitrogen fertilizer market.
+- market_id: gm_3
+  name: Retail sale of mineral fertilizers to end-customers — national (Czechia, Slovakia, Hungary,
+    Romania, Croatia, Poland affected)
+  definition_status: defined
+  notes: The Commission confirmed its previous finding that in the distribution market, sales
+    to retailers and end-customers are considered on a national basis. This market is identified
+    as forming vertical links in Czechia, Slovakia, Hungary, Romania, Croatia, and Poland.
+- market_id: gm_4
+  name: AdBlue — EEA-wide
+  definition_status: defined
+  notes: The Commission confirmed an EEA-wide geographic market for AdBlue, consistent with
+    previous decisions and market investigation findings.
+- market_id: gm_5
+  name: Aqueous ammonia — EEA-wide, regional, or 1,000 km catchment area
+  definition_status: left_open
+  notes: The Commission left open whether the geographic market for aqueous ammonia should be
+    considered as EEA-wide, regional or based on a 1,000 kilometres catchment area around the
+    production plant, as the transaction would not give rise to any competition concerns on
+    any plausible geographic market.
+- market_id: gm_6
+  name: Weak nitric acid — EEA-wide, regional, or 1,000 km catchment area
+  definition_status: left_open
+  notes: The Commission left open whether the geographic market for weak nitric acid should
+    be considered as EEA-wide, regional or based on a 1,000 kilometres catchment area around
+    the production plant, as the transaction would not give rise to any competition concerns
+    on any plausible geographic market.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_agrofert_borealis_nitro_2023_decision
+  page: '5'
+  quote_snippet: For the purpose of this decision, however, it can be left open whether a distinction
+    should be made between markets for CAN, UAN, AN and urea or whether markets can be defined
+    wider as all straight nitrogen fertilizers or even wider as a market including all nitrogen
+    fertilizers as the Transaction does not raise serious doubts as to its compatibility with
+    the internal market under any of these plausible product market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_agrofert_borealis_nitro_2023_decision
+  page: '17'
+  quote_snippet: As noted above, the Parties’ combined market shares for CAN on a sales volume
+    basis result in an affected market with a combined market share of [20-30]% (AGROFERT [10-20]%
+    and Borealis NITRO [10-20]%), if the market was defined narrow as the market for the production
+    and supply of CAN. The Parties’ and their competitors’ shares in such a narrow market are
+    set out in Table 2 below.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_agrofert_borealis_nitro_2023_decision
+  page: '5'
+  quote_snippet: For the purpose of this decision, however, it can be left open whether a distinction
+    should be made between markets for CAN, UAN, AN and urea or whether markets can be defined
+    wider as all straight nitrogen fertilizers or even wider as a market including all nitrogen
+    fertilizers as the Transaction does not raise serious doubts as to its compatibility with
+    the internal market under any of these plausible product market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_agrofert_borealis_nitro_2023_decision
+  page: '7'
+  quote_snippet: In the past, the Commission considered as relevant market as the distribution
+    to purchasers who source mineral fertilizers on a national basis which in that case it identified
+    to typically be retailers and end-customers.37
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_agrofert_borealis_nitro_2023_decision
+  page: '7'
+  quote_snippet: The results of the market investigation confirm the previous finding that there
+    is a market for the distribution of all types of mineral fertilizers.39 In particular, the
+    majority of respondents considered that all types of mineral nitrogen fertilizers are sold
+    through the same distribution channels.40 The Commission did not find substantiated evidence
+    suggesting that it should depart from the previous product market definition of distribution
+    of all mineral fertilizers to end-customers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_agrofert_borealis_nitro_2023_decision
+  page: '8'
+  quote_snippet: The Commission previously considered that AdBlue could form a distinct product
+    market.46
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_agrofert_borealis_nitro_2023_decision
+  page: '8'
+  quote_snippet: The results of the market investigation confirm that there is a separate product
+    market for AdBlue.47 While the market investigation suggested there is supply-side substitutability
+    between AdBlue and other products produced by diluting concentrated urea, it also confirmed
+    that AdBlue is a separate product with limited, if any, demand-side substitutability between
+    trademarked AdBlue and other urea solutions with the same chemical composition. As such,
+    while producers can easily change the ratio at which they dilute urea prills, the vast majority
+    of customers confirmed that they only purchase trademarked AdBlue solutions and would not
+    consider purchasing urea of the same concentration without the trademark.48 In practice
+    therefore, because there is little if any demand-side substitutability between trademarked
+    AdBlue and urea diluted to the same concentration, the Commission considers there could
+    be a separate product market that only encompasses AdBlue.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_agrofert_borealis_nitro_2023_decision
+  page: '9'
+  quote_snippet: For the purpose of this decision, however, it can be left open whether there
+    should be a separate product market for urea solutions with the AdBlue trademark or whether
+    it should also encompass all urea solutions with the same concentration because the Transaction
+    does not raise serious doubts as to its compatibility with the internal market under either
+    product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_agrofert_borealis_nitro_2023_decision
+  page: '10'
+  quote_snippet: In light of the above, the Commission will consider a separate market for aqueous
+    ammonia for the purpose of this decision.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_agrofert_borealis_nitro_2023_decision
+  page: '13'
+  quote_snippet: In light of the above, the Commission considers that the market for weak nitric
+    acid is a separate product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_agrofert_borealis_nitro_2023_decision
+  page: '5'
+  quote_snippet: In previous decisions the Commission has considered the market for nitrogen
+    fertilizers geographically to be at least EEA-wide in scope.24 Moreover, due to high levels
+    of imports of nitrogen fertilizers into the EEA it has been considered that markets may
+    be even wider than the EEA.25
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_agrofert_borealis_nitro_2023_decision
+  page: '6'
+  quote_snippet: In light of the above, the Commission considers that the market for the production
+    and supply of all nitrogen fertilizers, or the market including all straight nitrogen fertilizers
+    or including the different types (CAN, UAN or urea), to be at least EEA-wide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_agrofert_borealis_nitro_2023_decision
+  page: '18'
+  quote_snippet: Second, the Commission considers that even if there were a market for the supply
+    of CAN this market would be wider than national and at least EEA-wide106 and, therefore,
+    in line with the competitive assessment the Transaction does not raise serious doubts as
+    to its compatibility with the internal market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_agrofert_borealis_nitro_2023_decision
+  page: '7'
+  quote_snippet: In line with the Commission's previous practice,41 the Notifying Party agrees
+    that the relevant geographic market for retail sales of mineral fertilizers to end customers
+    is national in scope.42
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_agrofert_borealis_nitro_2023_decision
+  page: '7'
+  quote_snippet: Market participants that replied to the market investigation indicated that
+    the market for the supply of mineral fertilizers to retailers and to end-customers may be
+    national or wider than national.43 Taking into account the overall evidence on the file,
+    the Commission’s market investigation overall confirms the previous Commission’s finding
+    that in the distribution market the sales to those purchasers (typically retailers and end-customers)
+    are considered on a national basis.44
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_agrofert_borealis_nitro_2023_decision
+  page: '6'
+  quote_snippet: 'The Transaction gives rise to a vertical link between the upstream EEA-wide
+    market for the production and supply of all nitrogen fertilizers (including plausible sub-segmentation
+    into straight nitrogen fertilizers or into different types: CAN, UAN or urea) on which both
+    Parties are active and the downstream national markets for the retail sale of mineral fertilizers
+    (including all nitrogen fertilizers) to end customers in the Czechia, Slovakia, Hungary,
+    Romania, Croatia and Poland on which AGROFERT is active. Borealis NITRO has only marginal
+    and occasional sales to end customers.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_agrofert_borealis_nitro_2023_decision
+  page: '9'
+  quote_snippet: The Commission previously found that the relevant geographic market for AdBlue
+    is EEA-wide in scope as the supply of AdBlue does not encounter any “factual or regulatory”
+    barriers to trade.49
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_agrofert_borealis_nitro_2023_decision
+  page: '9'
+  quote_snippet: The results of the market investigation confirmed a lack of barriers to trade
+    in the EEA51 and the Commission did not find any evidence suggesting that it should depart
+    from the previous geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_agrofert_borealis_nitro_2023_decision
+  page: '11'
+  quote_snippet: The majority of customers and competitors that responded to the market investigation
+    indicated that aqueous ammonia is usually sourced within a radius of 500 kilometres from
+    the production plant.66 Although, in reaction to a potential price increase of 5 - 10% the
+    majority of customers who responded to the market investigation indicated that they would
+    consider purchasing from further afield, from neighbouring countries, across the EEA and
+    up to 1000 kilometres from the place of delivery.67 These results are in line with Regional
+    Segment A suggested by the Notifying Party and described in paragraph (45) above.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_agrofert_borealis_nitro_2023_decision
+  page: '11'
+  quote_snippet: However, as the Transaction will not give rise to any competition concerns
+    on any plausible geographic market, it can be left open whether or not the geographic market
+    definition should be considered as EEA-wide, regional or based on a 1,000 kilometres catchment
+    area around the production plant.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_agrofert_borealis_nitro_2023_decision
+  page: '13'
+  quote_snippet: The Commission has previously left the relevant geographic market definition
+    for weak nitric acid open, but noted that several factors pointed to the existence of national
+    or regional (based on a radius of 1,000 kilometres around a production plant) geographic
+    markets and a separate market for North Western Europe, because of the existing dense transportation
+    infrastructure and the concentration of industrial activity in that area.80
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_agrofert_borealis_nitro_2023_decision
+  page: '14'
+  quote_snippet: The majority of customers and competitors that responded to the market investigation
+    indicated that weak nitric acid is usually sourced within a radius of 500 kilometres from
+    the production plant.85 Although in reaction to a potential price increase of 5 - 10% the
+    majority of customers who responded to the market investigation indicated that they would
+    consider purchasing from further afield, across the EEA and up to 1,000 kilometres from
+    the place of delivery.86 These results are in line with Regional Segment B suggested by
+    the Notifying Party and described in paragraph (59) above.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_agrofert_borealis_nitro_2023_decision
+  page: '14'
+  quote_snippet: However, as the Transaction will not give rise to any competition concerns
+    on any plausible geographic market, it can be left open whether or not the geographic market
+    definition should be considered as EEA-wide, regional or based on a 1,000 kilometres catchment
+    area around the production plant.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_agrofert_borealis_nitro_2023_decision
+  page: '28'
+  quote_snippet: For the above reasons, the European Commission has decided not to oppose the
+    notified concentration and to declare it compatible with the internal market and with the
+    EEA Agreement. This decision is adopted in application of Article 6(1)(b) of the Merger
+    Regulation and Article 57 of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+ai_summary: null
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []
+case_type: merger

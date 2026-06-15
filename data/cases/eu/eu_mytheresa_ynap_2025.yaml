@@ -1,0 +1,569 @@
+case_id: eu_mytheresa_ynap_2025
+case_name: MYTHERESA / YNAP
+authority: European Commission
+jurisdiction: EU
+sector: retail
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2025-04-11'
+parties:
+- name: MYTHERESA
+  role: acquirer
+- name: YNAP
+  role: target
+source_documents:
+- doc_id: eu_mytheresa_ynap_2025_decision
+  title: MYTHERESA / YNAP — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11793
+  pdf_url: http://publications.europa.eu/resource/cellar/f6e59f8a-72eb-11f0-bf4e-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Online retail supply of multi-brand, multi-product personal luxury goods (excluding
+    pre-owned goods)
+  definition_status: considered
+  notes: The Commission considered this as the narrowest plausible market definition for its
+    assessment, although the exact product market definition was left open as the transaction
+    did not raise competition concerns even under this narrowest definition. This market excludes
+    offline channels, mono-brand/DTC channels, mono-product/specialised channels, and pre-owned
+    goods.
+- market_id: pm_2
+  name: Luxury goods (excluding mass-market goods)
+  definition_status: defined
+  notes: Segmented from mass-market goods.
+- market_id: pm_3
+  name: Online vs. offline retail of luxury goods
+  definition_status: left_open
+  notes: The exact product market definition between online and offline retail of luxury goods
+    was left open, but competitive constraints from offline channels were considered.
+- market_id: pm_4
+  name: 1P vs. 3P distribution models for online retail supply of personal luxury goods
+  definition_status: left_open
+  notes: The Commission found no need to distinguish between 1P and 3P distribution models.
+- market_id: pm_5
+  name: Multi-brand vs. mono-brand (DTC) retailers for online luxury goods
+  definition_status: left_open
+  notes: The exact product market definition between multi-brand and mono-brand (DTC) retailers
+    was left open, but competitive constraints from mono-brand/DTC channels were considered.
+- market_id: pm_6
+  name: Multi-product vs. specialised (mono-product) retailers for online luxury goods
+  definition_status: left_open
+  notes: The exact product market definition between multi-product and mono-product retailers
+    was left open, but competitive constraints from mono-product channels were considered.
+- market_id: pm_7
+  name: New vs. pre-owned luxury goods
+  definition_status: left_open
+  notes: The exact product market definition between new and pre-owned luxury goods was left
+    open, but competitive constraints from pre-owned goods were considered.
+- market_id: pm_8
+  name: Manufacture and wholesale supply of luxury goods
+  definition_status: left_open
+  notes: The exact product market definition, including whether it should be segmented by product
+    categories, was left open.
+- market_id: pm_9
+  name: Supply of e-commerce services
+  definition_status: left_open
+  notes: The exact product market definition, including whether it should be segmented by different
+    types of e-commerce services, was left open.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Online retail supply of luxury goods — consumer-facing side — national or EEA-wide
+  definition_status: left_open
+  notes: The Commission left open whether the geographic market for the consumer-facing side
+    is national or EEA-wide, as the transaction did not raise serious doubts irrespective of
+    the definition.
+- market_id: gm_2
+  name: Online retail supply of luxury goods — business-facing side — EEA-wide
+  definition_status: considered
+  notes: The Commission assessed the transaction on an EEA-wide basis for the business-facing
+    side, although the exact definition was left open as the transaction did not raise serious
+    doubts even at this narrowest plausible level.
+- market_id: gm_3
+  name: Manufacture and wholesale supply of luxury goods — EEA-wide or wider
+  definition_status: left_open
+  notes: The geographic market for the manufacture and wholesale supply of luxury goods was
+    left open, but the Commission considered it likely to be EEA-wide or wider in scope.
+- market_id: gm_4
+  name: Supply of e-commerce services — EEA-wide or wider
+  definition_status: left_open
+  notes: The geographic market for the supply of e-commerce services was left open, but the
+    Commission considered it likely to be EEA-wide or wider in scope.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_mytheresa_ynap_2025_decision
+  page: '7'
+  quote_snippet: The Commission’s market investigation results were in line with its findings
+    in case M.10926 Farfetch / Richemont / YNAP, i.e., that there is a plausible separate product
+    market for the online retail supply of multi-brand, multi-product personal luxury goods
+    (excl. pre-owned goods).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_mytheresa_ynap_2025_decision
+  page: '10'
+  quote_snippet: For the reasons explained above, the Commission considers that luxury goods
+    form a separate market from mass-market goods. As regards the other parameters examined
+    above, the exact product market definition can be left open for the purposes of this decision,
+    since the Transaction does not give rise to competition concerns even under the narrowest
+    plausible market definition, i.e., the product market for the online retail supply of multi-brand,
+    multi-product personal luxury goods (excluding pre-owned goods).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_mytheresa_ynap_2025_decision
+  page: '6'
+  quote_snippet: The Commission has recently considered the market for online retail supply
+    of luxury goods in 2023 in case M.10926 Farfetch / Richemont / YNAP. In that case, the relevant
+    product market was considered to be the online retail supply of multi-brand, multi-product
+    personal luxury goods (excluding pre-owned personal luxury goods).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_mytheresa_ynap_2025_decision
+  page: '7'
+  quote_snippet: The market investigation results confirm the distinction between luxury goods
+    and mass-market goods, with the majority of respondents agreeing that these markets should
+    be separated.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_mytheresa_ynap_2025_decision
+  page: '7'
+  quote_snippet: Therefore, the Commission considers that luxury goods form a separate market
+    from mass-market goods and will consequently conduct its competitive assessment on a separate
+    retail market for luxury goods (excluding mass-market goods).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_mytheresa_ynap_2025_decision
+  page: '8'
+  quote_snippet: For the purposes of this decision, the exact product market definition can
+    be left open, as the Transaction does not give rise to competition concerns even on a conservative,
+    narrower online retail market for luxury goods (excluding offline channels). Competitive
+    constraints posed by offline retailers are taken into account in the competitive assessment
+    (see Section 6.2.7) below.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_mytheresa_ynap_2025_decision
+  page: '7'
+  quote_snippet: 'The Commission has previously considered, on a conservative basis, that online
+    and offline retail of luxury goods may form separate markets because: (i) online retailers
+    predominantly monitor other online players and may not compete closely with offline players,
+    (ii) brands do not consider online and offline channels substitutable, and (iii) consumers
+    use online and offline for different purposes.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_mytheresa_ynap_2025_decision
+  page: '9'
+  quote_snippet: Consequently, the Commission considers that, for the purposes of this decision,
+    there is no need to distinguish between online retailers operating a 1P model and those
+    operating a 3P model in the context of the online retail supply of personal luxury goods.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_mytheresa_ynap_2025_decision
+  page: '8'
+  quote_snippet: The Commission has in the past not considered a distinction between retailers
+    operating a 1P vs 3P distribution model for the purpose of defining the relevant market
+    for the online retail supply of personal luxury goods.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_mytheresa_ynap_2025_decision
+  page: '8'
+  quote_snippet: The Commission’s market investigation in this case indicates that (i) consumers
+    view retailers operating a 1P model as competing closely with retailers operating a 3P model;
+    (ii) most brands generally work with both 1P and 3P distribution models, as they present
+    complementary advantages; (iii) several retailers (including the Parties) are capable of
+    offering (and actually offer) both 1P and 3P models; and (iv) brands and retailers usually
+    decide together which model to use, taking factors such as brand strategy, operational costs
+    and stock management preferences into account.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_mytheresa_ynap_2025_decision
+  page: '9'
+  quote_snippet: For the purposes of this decision, the exact product market definition can
+    be left open, as the Transaction does not give rise to competition concerns even on a narrower
+    market for online multi-brand retail of luxury goods (excluding mono-brand/DTC channels).
+    Competitive constraints posed by mono-brand retailers’ online sales are taken into account
+    in the competitive assessment (see Section 6.2.7) below.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_mytheresa_ynap_2025_decision
+  page: '9'
+  quote_snippet: The Commission has in the past concluded, on a conservative basis, that multi-brand
+    and mono-brand (i.e., brands’ DTC) channels form distinct markets. This is because, e.g.,
+    brands view multi-brand retailers as additional distribution channels rather than direct
+    competitors and multi-brand retailers often consider that DTC channels are not close substitutes
+    to their websites.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_mytheresa_ynap_2025_decision
+  page: '9'
+  quote_snippet: The Commission’s market investigation broadly confirms this view. Whilst the
+    majority of market investigation respondents found that these channels compete at least
+    to some extent, the responses were inconclusive in whether they compete closely.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_mytheresa_ynap_2025_decision
+  page: '10'
+  quote_snippet: For the purposes of this decision, the exact product market definition can
+    be left open, as the Transaction does not give rise to competition concerns even on a narrower
+    online, multi-brand, multi-product retail market for luxury goods (excluding mono-product/specialised
+    channels). Competitive constraints posed by mono-product online retailers are taken into
+    account in the competitive assessment (see Section 6.2.7) below.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_mytheresa_ynap_2025_decision
+  page: '10'
+  quote_snippet: The results of the market investigation in this respect were inconclusive.
+    Whilst almost all responding retailers consider that multi-product and mono-product online
+    retailers compete, at least to some extent (with the majority considering that they compete
+    closely), the majority of brands providing a response found that consumers do not view them
+    as substitutes.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_mytheresa_ynap_2025_decision
+  page: '10'
+  quote_snippet: For the purposes of this decision, the exact product market definition can
+    be left open, as the Transaction does not give rise to competition concerns even on a narrower
+    online, multi-brand, multi-product retail market for new luxury goods (excluding pre-owned
+    goods). Competitive constraints posed by retailers of pre-owned goods are taken into account
+    in the competitive assessment (see Section 6.2.7) below.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_mytheresa_ynap_2025_decision
+  page: '10'
+  quote_snippet: The market for new luxury goods has previously been considered as potentially
+    distinct from the market for pre-owned (i.e., second-hand) items, although the Commission
+    has noted that this may depend on the price difference between the new and pre-owned item.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_mytheresa_ynap_2025_decision
+  page: '10'
+  quote_snippet: The Commission’s investigation confirms that pre-owned luxury goods pose a
+    limited constraint on new luxury goods, as the majority of market investigation respondents
+    found that they compete somewhat but not closely or only in some cases.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_mytheresa_ynap_2025_decision
+  page: '15'
+  quote_snippet: Therefore, for the purposes of this decision, the exact product market definition
+    can be left open, as the Transaction does not give rise to competition concerns, irrespective
+    of whether the product market is further segmented according to different product categories
+    of luxury goods, as assessed in Section 6.3.1 below (81).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_mytheresa_ynap_2025_decision
+  page: '14'
+  quote_snippet: Similarly to the online multi-brand, multi-product retail supply market discussed
+    above, the Commission has in its previous decisional practice considered that the market
+    for the manufacturing and the wholesale supply of luxury goods should be distinguished from
+    mass-market products.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_mytheresa_ynap_2025_decision
+  page: '15'
+  quote_snippet: In its previous practice, the Commission considered that the relevant product
+    market is likely the market for the supply of e-commerce services including front-end, back-end
+    and additional services, but ultimately left the relevant market definition open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_mytheresa_ynap_2025_decision
+  page: '13'
+  quote_snippet: Based on the above factors, and for the purposes of this decision, the Commission
+    considers that the question of whether the geographic dimension of the consumer-facing side
+    of the market should be national or EEA-wide can ultimately be left open, as the Transaction
+    does not raise serious doubts as to its compatibility with the internal market or the functioning
+    of the EEA Agreement irrespective of the geographic market definition retained.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_mytheresa_ynap_2025_decision
+  page: '11'
+  quote_snippet: For the consumer-facing side, the Commission left open whether the geographic
+    market is national or EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_mytheresa_ynap_2025_decision
+  page: '14'
+  quote_snippet: For the business-facing side, for the purpose of this decision and in line
+    with its previous decisional practice, (76) the Commission will assess the Transaction on
+    the narrowest plausible geographic market definition (i.e., at EEA-wide level).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_mytheresa_ynap_2025_decision
+  page: '11'
+  quote_snippet: For the business-facing side, factors including the geographic scope (typically
+    at least EEA-wide) of distribution contracts between brands and online retailers and platforms
+    led the Commission to conclude that the market is EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_mytheresa_ynap_2025_decision
+  page: '13'
+  quote_snippet: The Commission’s market investigation shows that brands primarily contract
+    with online retailers on a at least EEA, but often global, basis. The majority of the responding
+    brands have indicated that the typical geographic scope of distribution contracts negotiated
+    with third-party online retailers is worldwide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_mytheresa_ynap_2025_decision
+  page: '15'
+  quote_snippet: Accordingly, for the purposes of this decision, the Commission considers that
+    while the geographic market is likely to be EEA-wide or wider in scope, the relevant geographic
+    market definition can be left open as the Transaction does not give rise to competition
+    concerns, even at the narrowest plausible level (i.e., at EEA-wide level), as assessed in
+    Section 6.3.1 below.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_mytheresa_ynap_2025_decision
+  page: '15'
+  quote_snippet: In its past practice, the Commission has left open whether the geographic market
+    for the manufacture and wholesale supply of luxury goods is national, EEA-wide or wider
+    in scope. Most recently, the Commission considered in Case M.10926 Farfetch/Richemont/YNAP
+    that the geographic market is likely to be EEA-wide or wider in scope, but ultimately left
+    the definition open as the transaction did not raise any competition concerns irrespective
+    of the market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_mytheresa_ynap_2025_decision
+  page: '52'
+  quote_snippet: For the above reasons, the European Commission has decided not to oppose the
+    notified operation and to declare it compatible with the internal market and with the EEA
+    Agreement. This decision is adopted in application of Article 6(1)(b) of the Merger Regulation
+    and Article 57 of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+case_type: merger
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []
+ai_summary: null

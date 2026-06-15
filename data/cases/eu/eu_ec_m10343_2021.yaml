@@ -1,0 +1,514 @@
+case_id: eu_ec_m10343_2021
+case_name: M.10343
+authority: European Commission
+jurisdiction: EU
+sector: tech
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2021-12-22'
+parties: []
+source_documents:
+- doc_id: eu_ec_m10343_2021_decision
+  title: M.10343 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10343
+  pdf_url: http://publications.europa.eu/resource/cellar/61b26790-d293-11ec-a95f-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Production of commissioned AV content
+  definition_status: considered
+  notes: The Commission considers this a separate market from the licensing of broadcasting
+    rights for AV content, following past decisions. The market is limited to non-captive AV
+    production.
+- market_id: pm_2
+  name: Licensing of broadcasting rights for AV content
+  definition_status: considered
+  notes: The Commission considers this a separate market from the production of commissioned
+    AV content. Segmentation by type of content (films, sports, other), US/non-US films, premium/non-premium
+    content, scripted/non-scripted content, and exhibition window were considered but left open.
+- market_id: pm_3
+  name: Wholesale supply of TV channels (including ancillary services and all types of infrastructure)
+  definition_status: considered
+  notes: The Commission considers this the relevant product market, including ancillary services
+    and all distribution infrastructure. Segmentation by FTA vs. pay TV, basic vs. premium pay
+    TV, and by genre (sports, films, children/youth, other) were considered but left open.
+- market_id: pm_4
+  name: Retail supply of AV services (encompassing all distribution technologies)
+  definition_status: considered
+  notes: The Commission considers this the relevant product market at retail level, encompassing
+    all distribution technologies. Segmentation by FTA vs. pay AV services, linear vs. non-linear
+    pay AV services, premium vs. basic pay AV services, and linear vs. non-linear FTA AV services
+    were considered but left open.
+- market_id: pm_5
+  name: Sale of advertising space on TV channels
+  definition_status: considered
+  notes: The Commission considers this a distinct market. The question of further segmentation
+    between FTA TV channels and pay TV channels for advertising space was left open.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Production of commissioned AV content — national/linguistic areas (EEA affected)
+  definition_status: left_open
+  notes: The Commission concludes that the geographic markets for the production of commissioned
+    AV content are either national or correspond with a linguistic area, but left the precise
+    definition open.
+- market_id: gm_2
+  name: Licensing of broadcasting rights for AV content — national/linguistic areas (EEA affected)
+  definition_status: left_open
+  notes: The Commission concludes that the geographic markets for the licensing of broadcasting
+    rights for AV content are either national or correspond with a linguistic area, but left
+    the precise definition open.
+- market_id: gm_3
+  name: Wholesale supply of TV channels — national (EEA affected, excluding Belgium)
+  definition_status: defined
+  notes: The geographic market is national for most countries.
+- market_id: gm_4
+  name: Wholesale supply of TV channels — regional (Belgium affected)
+  definition_status: defined
+  notes: The geographic market is regional in Belgium, based on language and network footprint.
+- market_id: gm_5
+  name: Retail supply of AV services — national (EEA affected)
+  definition_status: defined
+  notes: The geographic market for the retail supply of AV services is national in scope.
+- market_id: gm_6
+  name: Sale of advertising space on TV channels — unknown (EEA affected)
+  definition_status: considered
+  notes: The geographic market definition for the sale of advertising space on TV channels is
+    not concluded in the provided chunks. Previous decisions indicate a national scope.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m10343_2021_decision
+  page: '5'
+  quote_snippet: The information gathered during the market investigation does not provide indication
+    that the Commisison should depart from the distinction between the market for the production
+    of commissioned AV content on the one hand, and the market for the licensing of broadcasting
+    rights for pre-produced AV content on the other hand.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m10343_2021_decision
+  page: '4'
+  quote_snippet: 'In previous decisions, the Commission has concluded that there are separate
+    markets for: (i) the production and supply of commissioned AV content (also referred to
+    as ad hoc or new content); and (ii) the licensing of broadcasting rights for pre-produced
+    AV content (available off-the-shelf).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m10343_2021_decision
+  page: '5'
+  quote_snippet: The information gathered during the market investigation does not provide indication
+    that the Commisison should depart from the distinction between the market for the production
+    of commissioned AV content on the one hand, and the market for the licensing of broadcasting
+    rights for pre-produced AV content on the other hand.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m10343_2021_decision
+  page: '4'
+  quote_snippet: 'In previous decisions, the Commission has concluded that there are separate
+    markets for: (i) the production and supply of commissioned AV content (also referred to
+    as ad hoc or new content); and (ii) the licensing of broadcasting rights for pre-produced
+    AV content (available off-the-shelf).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m10343_2021_decision
+  page: '9'
+  quote_snippet: In relation to the possible segmentation between FTA and pay TV channels, the
+    market investigation has confirmed that the segmentation is still relevant in a majority
+    of Member States under investigation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m10343_2021_decision
+  page: '10'
+  quote_snippet: In all the countries covered by the market investigation, market participants
+    have confirmed that there should be no segmentation between linear TV channels and the ancillary
+    services linked thereto.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m10343_2021_decision
+  page: '14'
+  quote_snippet: Except for Finland, the market investigation suggested that a segmentation
+    between the retail supply of FTA AV services and pay AV services may no longer be relevant.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m10343_2021_decision
+  page: '14'
+  quote_snippet: In relation to a possible segmentation of the market for the retail supply
+    of pay AV services, a majority of market respondents considered that it is no longer appropriate
+    to segment the retail market for the supply of pay AV services between basic and premium
+    services. Market participants also indicated that non-linear pay AV services constitute
+    a good alternative to linear pay AV services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m10343_2021_decision
+  page: '17'
+  quote_snippet: for the purpose of this Decision, the Commission considers that there is a
+    distinct market for the sale of advertising space on TV channels. The question whether the
+    market for sale of advertising space on TV channels can be further segmented between the
+    the sale of advertising space on FTA TV channels and pay TV channels can be left open as
+    the Transaction does not raise serious doubts as to its compatibility with the internal
+    market or the functioning of the EEA Agreement under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m10343_2021_decision
+  page: '17'
+  quote_snippet: A majority of market participants active across the AV value chain indicated
+    that there is a distinct market for the sale of advertising space on TV channels. The market
+    investigation provided mixed responses on whether the market for the sale of advertising
+    space on TV channels should be further segmented between the sale of advertising space on
+    FTA TV channels and pay TV channels.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m10343_2021_decision
+  page: '16'
+  quote_snippet: The Commission has in previous cases established a distinction between (i)
+    online and (ii) offline advertising, on the basis of specificity (i.e. the ability to reach
+    a more targeted audience) and pricing model. Within offline advertising, the Commission
+    has distinguished separate markets for (i) the sale of advertising on TV channels and (ii)
+    for the sale of advertising in newspapers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m10343_2021_decision
+  page: '6'
+  quote_snippet: for the purpose of this Decision, the Commission concludes that the geographic
+    markets for the production of commissioned AV content and the licensing of broadcasting
+    rights for AV content are either national or correspond with a linguistic areas. In any
+    event, the precise definition of the geographic market can be left open, as the Transaction
+    does not raise serious concerns as to its compatibility with the internal market under any
+    plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m10343_2021_decision
+  page: '6'
+  quote_snippet: The market investigation confirmed that the geographic scope of licensing agreements
+    is normally national. Overall, market participants confirmed that the market for the production
+    and supply of AV content to be national in scope, or encompassing linguistically homogenous
+    areas.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m10343_2021_decision
+  page: '6'
+  quote_snippet: In past decisions, the Commission has considered the market for the production
+    and supply of AV content (and its relevant segments) to be either national or regional,
+    based on linguistically homogeneous areas.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m10343_2021_decision
+  page: '6'
+  quote_snippet: for the purpose of this Decision, the Commission concludes that the geographic
+    markets for the production of commissioned AV content and the licensing of broadcasting
+    rights for AV content are either national or correspond with a linguistic areas. In any
+    event, the precise definition of the geographic market can be left open, as the Transaction
+    does not raise serious concerns as to its compatibility with the internal market under any
+    plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m10343_2021_decision
+  page: '6'
+  quote_snippet: The market investigation confirmed that the geographic scope of licensing agreements
+    is normally national. Overall, market participants confirmed that the market for the production
+    and supply of AV content to be national in scope, or encompassing linguistically homogenous
+    areas.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m10343_2021_decision
+  page: '6'
+  quote_snippet: In past decisions, the Commission has considered the market for the production
+    and supply of AV content (and its relevant segments) to be either national or regional,
+    based on linguistically homogeneous areas.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m10343_2021_decision
+  page: '11'
+  quote_snippet: for the purpose of this Decision, the Commission concludes that the relevant
+    geographic market for the wholesale supply of TV channels, and all its possible sub-segments
+    is national for all of the countries considered in this decision, and/or regional in scope
+    for Belgium.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m10343_2021_decision
+  page: '11'
+  quote_snippet: Except for Belgium, the market investigation has confirmed that agreements
+    between wholesale suppliers of TV channels and retail suppliers of AV services are negotiated
+    on a national basis.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m10343_2021_decision
+  page: '11'
+  quote_snippet: In its previous decisions, the Commission found the market for the wholesale
+    supply of TV channels to be either national in scope, regional, or delineated by linguistically
+    homogeneous areas encompassing more than one EU Member State.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m10343_2021_decision
+  page: '11'
+  quote_snippet: for the purpose of this Decision, the Commission concludes that the relevant
+    geographic market for the wholesale supply of TV channels, and all its possible sub-segments
+    is national for all of the countries considered in this decision, and/or regional in scope
+    for Belgium.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m10343_2021_decision
+  page: '11'
+  quote_snippet: In its previous decisions, the Commission found the market for the wholesale
+    supply of TV channels to be either national in scope, regional, or delineated by linguistically
+    homogeneous areas encompassing more than one EU Member State.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_ec_m10343_2021_decision
+  page: '15'
+  quote_snippet: for the purpose of this Decision, the Commission concludes that the relevant
+    geographic market for the retail supply of AV services, and all its possible sub-segments,
+    is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_ec_m10343_2021_decision
+  page: '15'
+  quote_snippet: The market investigation has confirmed that the market for the retail supply
+    of AV services is national in scope, due to the fact that these services are offered on
+    a national basis.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_ec_m10343_2021_decision
+  page: '15'
+  quote_snippet: The Commission has in the past considered that the geographic scope of the
+    market for the retail provision of AV services could be either (i) national, since providers
+    of retail AV services compete on a nation-wide basis; or (ii) limited to the coverage area
+    of each cable operator.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_ec_m10343_2021_decision
+  page: '38'
+  quote_snippet: Under Article 2(2) and (3) of the Merger Regulation, the Commission must assess
+    whether a proposed concentration would significantly impede effective competition in the
+    internal market or in a substantial part of it, in particular through the creation or strengthening
+    of a dominant position.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_ec_m10343_2021_decision
+  page: '3'
+  quote_snippet: The notified operation therefore has a Union dimension pursuant to Article
+    1(2) of the Merger Regulation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+case_type: merger
+ai_summary: null
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

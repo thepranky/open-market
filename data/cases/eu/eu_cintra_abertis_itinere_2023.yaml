@@ -1,0 +1,208 @@
+case_id: eu_cintra_abertis_itinere_2023
+case_name: CINTRA / ABERTIS / ITINERE / BIP & DRIVE
+authority: European Commission
+jurisdiction: EU
+sector: transport
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2023-02-14'
+parties:
+- name: CINTRA
+  role: acquirer
+- name: ABERTIS
+  role: acquirer
+- name: ITINERE
+  role: acquirer
+- name: BIP & DRIVE
+  role: target
+source_documents:
+- doc_id: eu_cintra_abertis_itinere_2023_decision
+  title: CINTRA / ABERTIS / ITINERE / BIP & DRIVE — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10561
+  pdf_url: http://publications.europa.eu/resource/cellar/c9646b0a-eb47-11ed-a05c-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Market for the distribution of OBE devices
+  definition_status: considered
+  notes: The Commission considered the market for the distribution of OBE devices as the narrowest
+    plausible product market for its assessment, leaving open whether OBE devices are substitutable
+    to other means of toll payment. The distinction between distribution to cars and trucks
+    was also considered not relevant for this case in Spain.
+- market_id: pm_2
+  name: Market for the management of toll motorway concessions
+  definition_status: considered
+  notes: The Commission defined this market as one of two related to toll motorway concessions
+    (the other being for the grant of concessions). For the purpose of assessing the vertical
+    relationship with OBE distribution, this market was adopted. The question of distinguishing
+    from other transport modes was left open.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Market for the distribution of OBE devices — geographic scope left open
+  definition_status: left_open
+  notes: The Commission's latest decisional practice left open whether this market is national
+    or EEA-wide. For the purposes of the present case, the question was also left open as the
+    transaction would not raise serious doubts under any plausible definition. Bip&Drive is
+    active in Spain.
+- market_id: gm_2
+  name: Market for the management of toll motorway concessions — national (Spain affected)
+  definition_status: considered
+  notes: While prior decisional practice often defined this market according to the Origin &
+    Destination method, for the purpose of assessing the vertical link with OBE devices in this
+    case, the market was considered national in scope due to the perspective of OBE distributors
+    and national regulatory requirements in Spain.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_cintra_abertis_itinere_2023_decision
+  page: '4'
+  quote_snippet: In its decision in case M.7075 - Cintra/Abertis/Itinere/Bip&Drive JV, the Commission
+    concluded that the different methods of toll payment, that is, by cash, credit/debit card
+    or using an OBE device do not form part of the same product market and defined a market
+    for the distribution of OBE devices as distinct from other methods of toll payment.13 However,
+    in its most recent decisional practice, the Commission has left open whether the market
+    for the distribution of OBE devices constitutes a distinct market and whether OBE devices
+    are substitutable to other means of toll payment.14
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_cintra_abertis_itinere_2023_decision
+  page: '5'
+  quote_snippet: That said, for the purposes of the present case, the question of whether OBE
+    devices are substitutable to other means of toll payments may be left open as the Transaction
+    would not raise serious doubts as to its compatibility with the internal market under any
+    alternative product market definition. The Commission will assess the effects of the Transaction
+    on the narrowest plausible product market, that is, the market for the distribution of OBE
+    devices.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_cintra_abertis_itinere_2023_decision
+  page: '5'
+  quote_snippet: In view of the above, and for the purposes of the present decision, the Commission
+    considers that the distinction between cars and trucks is not relevant and will assess the
+    impact of the Transaction on the overall market for distribution of OBE devices.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_cintra_abertis_itinere_2023_decision
+  page: '7'
+  quote_snippet: For the purposes of this case, the question of whether the provision of transport
+    services on toll motorways should be distinguished from other transport modes may be left
+    open, as the Transaction would not raise serious doubts as to its compatibility with the
+    internal market under any plausible alternative product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_cintra_abertis_itinere_2023_decision
+  page: '5'
+  quote_snippet: In case M.7075, the Commission held that the geographic scope of the market
+    for the distribution of OBE devices was likely national, mainly because the customer base
+    of OBE distributors (drivers) was essentially national and they mainly used the devices
+    on the national motorways, even though the OBE devices might be interoperable on a wider
+    basis than national.19
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_cintra_abertis_itinere_2023_decision
+  page: '5'
+  quote_snippet: In its latest decisional practice, the Commission left open the question of
+    whether the market for the distribution of OBE devices is national or EEA-wide in scope.20
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_cintra_abertis_itinere_2023_decision
+  page: '5'
+  quote_snippet: That said, for the purposes of the present case, the question of whether the
+    market for the distribution of OBE devices is national or EEA-wide in scope may be left
+    open as the Transaction would not raise serious doubts as to its compatibility with the
+    internal market under any plausible geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_cintra_abertis_itinere_2023_decision
+  page: '7'
+  quote_snippet: In its prior decisional practice, the Commission has in general defined the
+    market for the management of toll motorways, according to the Origin & Destination (“O&D”)
+    method, whereby every combination of a point of origin and a point of destination is considered
+    to be a distinct market from the demand side.32
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_cintra_abertis_itinere_2023_decision
+  page: '8'
+  quote_snippet: Consequently, for the purposes of this case, where the Commission is only assessing
+    the vertical link with OBE devices, the assessment will be carried out at the national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

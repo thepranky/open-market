@@ -1,22 +1,15 @@
 case_id: eu_facebook_whatsapp_2014
 case_name: Facebook / WhatsApp
 authority: European Commission
-authority_reference: M.7217
 jurisdiction: EU
-decision_date: '2014-10-03'
-case_type: merger
-procedure_stage: phase1
 sector: consumer internet / social media / messaging
-
+outcome: cleared
+decision_date: '2014-10-03'
 parties:
 - name: Facebook Inc.
   role: acquirer
 - name: WhatsApp Inc.
   role: target
-
-outcome: cleared
-remedies: []
-
 source_documents:
 - doc_id: eu_facebook_whatsapp_decision
   title: 'Case M.7217 – Facebook / WhatsApp: Commission Decision'
@@ -26,86 +19,71 @@ source_documents:
   authority_reference: M.7217
   retrieval_status: direct
   published_date: '2014-10-03'
-
 product_markets_considered:
 - market_id: pm_1
   name: Consumer communications apps for smartphones
   definition_status: considered
-  notes: >
-    The Commission considered the narrowest relevant product market to be consumer
-    communications apps for smartphones, encompassing all operating systems and all
-    communications functionalities. It explicitly left open whether to include traditional
-    electronic communications services but assessed the Transaction on the narrowest
-    basis. The Commission also left open sub-segmentation by OS and by functionality,
-    finding neither appropriate. The market was formally adopted 'for the purpose
-    of the assessment of the present case' (para. 34), giving it 'considered' rather
-    than 'defined' status.
+  notes: The Commission considered the narrowest relevant product market to be consumer communications
+    apps for smartphones, encompassing all operating systems and all communications functionalities.
+    It explicitly left open whether to include traditional electronic communications services
+    but assessed the Transaction on the narrowest basis. The Commission also left open sub-segmentation
+    by OS and by functionality, finding neither appropriate. The market was formally adopted
+    'for the purpose of the assessment of the present case' (para. 34), giving it 'considered'
+    rather than 'defined' status.
 - market_id: pm_2
   name: Social networking services
   definition_status: left_open
-  notes: >
-    The Commission assessed whether consumer communications apps such as Facebook
-    Messenger and WhatsApp fall within the scope of social networking services, but
-    left the exact market boundaries open since no competition concerns arise under
-    any alternative market definition. The Commission also considered but left open
-    whether social networking services should be segmented by intended use (private/entertainment
-    vs. professional). It concluded that segmentation by platform or operating system
-    is not appropriate.
+  notes: The Commission assessed whether consumer communications apps such as Facebook Messenger
+    and WhatsApp fall within the scope of social networking services, but left the exact market
+    boundaries open since no competition concerns arise under any alternative market definition.
+    The Commission also considered but left open whether social networking services should be
+    segmented by intended use (private/entertainment vs. professional). It concluded that segmentation
+    by platform or operating system is not appropriate.
 - market_id: pm_3
   name: Online advertising services (online vs. offline; sub-segments left open)
   definition_status: left_open
-  notes: >
-    The Commission concluded that online advertising constitutes a relevant market
-    separate from offline advertising, consistent with Google/DoubleClick and Microsoft/Yahoo!
-    Search Business precedents. Sub-segmentation into search vs. non-search, online
-    advertising on social networking websites, and mobile vs. static online advertising
-    were all considered and left open. The Commission stated that narrower definitions
-    would not change the outcome. WhatsApp is not active in advertising; the market
-    was assessed solely because of Facebook's activities.
-
+  notes: The Commission concluded that online advertising constitutes a relevant market separate
+    from offline advertising, consistent with Google/DoubleClick and Microsoft/Yahoo! Search
+    Business precedents. Sub-segmentation into search vs. non-search, online advertising on
+    social networking websites, and mobile vs. static online advertising were all considered
+    and left open. The Commission stated that narrower definitions would not change the outcome.
+    WhatsApp is not active in advertising; the market was assessed solely because of Facebook's
+    activities.
 geographic_markets_considered:
 - market_id: gm_1
   name: Consumer communications apps – EEA-wide (at least), possibly worldwide
   definition_status: considered
-  notes: >
-    The Commission considered the geographic market to be at least EEA-wide,
-    if not worldwide. It adopted an EEA-wide approach as more conservative, given
-    that the Parties' market shares are greater in the EEA. The Notifying Party argued
-    for EEA-wide or worldwide scope. Prior decisions left the exact scope open but
-    found factors pointing to at least EEA-wide; the market investigation found no
-    major differences in consumer communications app offerings across the world. The
-    Commission examined penetration differences, roaming charges, and Member State-level
-    data and rejected national sub-segmentation. The WhatsApp subscription fee in
-    Italy and the UK was found insufficient to justify national markets.
+  notes: The Commission considered the geographic market to be at least EEA-wide, if not worldwide.
+    It adopted an EEA-wide approach as more conservative, given that the Parties' market shares
+    are greater in the EEA. The Notifying Party argued for EEA-wide or worldwide scope. Prior
+    decisions left the exact scope open but found factors pointing to at least EEA-wide; the
+    market investigation found no major differences in consumer communications app offerings
+    across the world. The Commission examined penetration differences, roaming charges, and
+    Member State-level data and rejected national sub-segmentation. The WhatsApp subscription
+    fee in Italy and the UK was found insufficient to justify national markets.
 - market_id: gm_2
   name: Social networking services – EEA-wide (at least), possibly worldwide
   definition_status: considered
-  notes: >
-    The Commission adopted an EEA-wide geographic market for social networking
-    services as a conservative approach, noting indications that the scope could be
-    global. The conclusion mirrors that for consumer communications apps.
+  notes: The Commission adopted an EEA-wide geographic market for social networking services
+    as a conservative approach, noting indications that the scope could be global. The conclusion
+    mirrors that for consumer communications apps.
 - market_id: gm_3
   name: Online advertising – national or linguistic borders within the EEA
   definition_status: defined
-  notes: >
-    The Commission concluded that the online advertising market and its possible
-    sub-segments should be defined as national in scope or alongside linguistic borders
-    within the EEA. This mirrors prior precedents in Google/DoubleClick and Microsoft/Yahoo!
-    Search Business, and was confirmed by the market investigation in this case.
-
+  notes: The Commission concluded that the online advertising market and its possible sub-segments
+    should be defined as national in scope or alongside linguistic borders within the EEA. This
+    mirrors prior precedents in Google/DoubleClick and Microsoft/Yahoo! Search Business, and
+    was confirmed by the market investigation in this case.
 theories_of_harm: []
-
 source_passages:
 - passage_id: sp_1
   source_document_id: eu_facebook_whatsapp_decision
   page: '5'
-  source_role: commission_assessment
-  quote_snippet: the Commission notes that the segmentation that is most relevant
-    for the assessment of the present case is the segmentation based on platforms,
-    since WhatsApp is offered only for smartphones and it does not have any plan to
-    expand its offering to other platforms. Therefore, the present case can be assessed
-    on the basis of a relevant product market including only consumer communications
-    apps for smartphones.
+  quote_snippet: the Commission notes that the segmentation that is most relevant for the assessment
+    of the present case is the segmentation based on platforms, since WhatsApp is offered only
+    for smartphones and it does not have any plan to expand its offering to other platforms.
+    Therefore, the present case can be assessed on the basis of a relevant product market including
+    only consumer communications apps for smartphones.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -117,10 +95,9 @@ source_passages:
 - passage_id: sp_2
   source_document_id: eu_facebook_whatsapp_decision
   page: '5'
-  source_role: market_investigation
-  quote_snippet: On the basis of the results of the market investigation, further
-    segmentations of the market for consumer communications apps on the basis of the
-    operating system or the functionalities offered do not seem to be appropriate.
+  quote_snippet: On the basis of the results of the market investigation, further segmentations
+    of the market for consumer communications apps on the basis of the operating system or the
+    functionalities offered do not seem to be appropriate.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -132,10 +109,9 @@ source_passages:
 - passage_id: sp_3
   source_document_id: eu_facebook_whatsapp_decision
   page: '6'
-  source_role: commission_assessment
-  quote_snippet: the Commission considers that for the assessment of the present case
-    the relevant product market should encompass consumer communications apps offered
-    for all operating systems and including all communications functionalities.
+  quote_snippet: the Commission considers that for the assessment of the present case the relevant
+    product market should encompass consumer communications apps offered for all operating systems
+    and including all communications functionalities.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -147,13 +123,11 @@ source_passages:
 - passage_id: sp_4
   source_document_id: eu_facebook_whatsapp_decision
   page: '6'
-  source_role: commission_assessment
-  quote_snippet: the Commission considers that for the purpose of the assessment of
-    the present case the exact product market definition can be left open. Indeed,
-    the Transaction does not raise serious doubts as to its compatibility with the
-    internal market even on the basis of the narrowest product market definition limited
-    to consumer communications apps for smartphones and excluding traditional communication
-    services.
+  quote_snippet: the Commission considers that for the purpose of the assessment of the present
+    case the exact product market definition can be left open. Indeed, the Transaction does
+    not raise serious doubts as to its compatibility with the internal market even on the basis
+    of the narrowest product market definition limited to consumer communications apps for smartphones
+    and excluding traditional communication services.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -165,10 +139,9 @@ source_passages:
 - passage_id: sp_5
   source_document_id: eu_facebook_whatsapp_decision
   page: '7'
-  source_role: commission_assessment
-  quote_snippet: the Commission will assess the effects of the Transaction in the
-    narrowest relevant product market for consumer communications services, that is
-    the market for consumer communications apps for smartphones.
+  quote_snippet: the Commission will assess the effects of the Transaction in the narrowest
+    relevant product market for consumer communications services, that is the market for consumer
+    communications apps for smartphones.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -180,11 +153,9 @@ source_passages:
 - passage_id: sp_6
   source_document_id: eu_facebook_whatsapp_decision
   page: '11'
-  source_role: commission_assessment
-  quote_snippet: The Commission further assessed whether it is appropriate to segment
-    social networking services according to the platform (that is, PC, smartphone
-    and tablet) or the operating system (such as Windows, Mac, Android or iOS) on
-    which they are available.
+  quote_snippet: The Commission further assessed whether it is appropriate to segment social
+    networking services according to the platform (that is, PC, smartphone and tablet) or the
+    operating system (such as Windows, Mac, Android or iOS) on which they are available.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -196,9 +167,8 @@ source_passages:
 - passage_id: sp_7
   source_document_id: eu_facebook_whatsapp_decision
   page: '11'
-  source_role: commission_assessment
-  quote_snippet: Therefore, social networking services should not be further segmented
-    according to a platform or an operating system.
+  quote_snippet: Therefore, social networking services should not be further segmented according
+    to a platform or an operating system.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -210,13 +180,11 @@ source_passages:
 - passage_id: sp_8
   source_document_id: eu_facebook_whatsapp_decision
   page: '11'
-  source_role: market_investigation
-  quote_snippet: Respondents to the market investigation generally consider that a
-    distinction could be drawn between social networking services promoting interpersonal
-    contact for private and entertainment purposes (such as Facebook or Google+) and
-    services which are used for professional purposes (such as LinkedIn or Xing).
-    Nevertheless, respondents acknowledge that there are overlaps between the purposes
-    of intended use.
+  quote_snippet: Respondents to the market investigation generally consider that a distinction
+    could be drawn between social networking services promoting interpersonal contact for private
+    and entertainment purposes (such as Facebook or Google+) and services which are used for
+    professional purposes (such as LinkedIn or Xing). Nevertheless, respondents acknowledge
+    that there are overlaps between the purposes of intended use.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -228,10 +196,9 @@ source_passages:
 - passage_id: sp_9
   source_document_id: eu_facebook_whatsapp_decision
   page: '11'
-  source_role: commission_assessment
-  quote_snippet: In the present case, it can be left open whether social networking
-    services should be segmented according to the intended use since no competition
-    concerns arise under any alternative market definition.
+  quote_snippet: In the present case, it can be left open whether social networking services
+    should be segmented according to the intended use since no competition concerns arise under
+    any alternative market definition.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -243,12 +210,10 @@ source_passages:
 - passage_id: sp_10
   source_document_id: eu_facebook_whatsapp_decision
   page: '11'
-  source_role: commission_assessment
-  quote_snippet: the Commission concludes that while consumer communications apps
-    like Facebook Messenger and WhatsApp offer certain elements which are typical
-    of a social networking service, in particular sharing of messages and photos,
-    there are important differences between WhatsApp and social network services,
-    as described in paragraphs (50) and (53)-(56).
+  quote_snippet: the Commission concludes that while consumer communications apps like Facebook
+    Messenger and WhatsApp offer certain elements which are typical of a social networking service,
+    in particular sharing of messages and photos, there are important differences between WhatsApp
+    and social network services, as described in paragraphs (50) and (53)-(56).
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -260,13 +225,11 @@ source_passages:
 - passage_id: sp_11
   source_document_id: eu_facebook_whatsapp_decision
   page: '11'
-  source_role: commission_assessment
-  quote_snippet: For the purposes of the present case, the exact boundaries of the
-    market for social networking services, in particular whether consumer communications
-    apps such as Facebook Messenger and WhatsApp fall within the scope of such a potential
-    market can be left open, since the Transaction would not give rise to serious
-    doubts as to its compatibility with the internal market under any alternative
-    market definition.
+  quote_snippet: For the purposes of the present case, the exact boundaries of the market for
+    social networking services, in particular whether consumer communications apps such as Facebook
+    Messenger and WhatsApp fall within the scope of such a potential market can be left open,
+    since the Transaction would not give rise to serious doubts as to its compatibility with
+    the internal market under any alternative market definition.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -278,14 +241,12 @@ source_passages:
 - passage_id: sp_12
   source_document_id: eu_facebook_whatsapp_decision
   page: '14'
-  source_role: commission_assessment
-  quote_snippet: In line with its decisions in Google / DoubleClick and Microsoft
-    / Yahoo! Search Business, the Commission concludes that online advertising constitutes
-    a relevant market separate from offline advertising. Whether segments of that
-    market constitute relevant markets in their own right can be left open for the
-    purposes of this decision, because the Transaction would not give rise to serious
-    doubts as to its compatibility with the internal market under any such narrower
-    product market definition.
+  quote_snippet: In line with its decisions in Google / DoubleClick and Microsoft / Yahoo! Search
+    Business, the Commission concludes that online advertising constitutes a relevant market
+    separate from offline advertising. Whether segments of that market constitute relevant markets
+    in their own right can be left open for the purposes of this decision, because the Transaction
+    would not give rise to serious doubts as to its compatibility with the internal market under
+    any such narrower product market definition.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -297,10 +258,9 @@ source_passages:
 - passage_id: sp_13
   source_document_id: eu_facebook_whatsapp_decision
   page: '14'
-  source_role: market_investigation
-  quote_snippet: the market investigation also supported to a large extent the existence
-    of a further sub-segmentation of the online advertising market between search
-    and non-search advertising.
+  quote_snippet: the market investigation also supported to a large extent the existence of
+    a further sub-segmentation of the online advertising market between search and non-search
+    advertising.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -312,11 +272,9 @@ source_passages:
 - passage_id: sp_14
   source_document_id: eu_facebook_whatsapp_decision
   page: '12'
-  source_role: commission_assessment
-  quote_snippet: the Commission also examined whether a separate product market should
-    be defined for the provision of online non-search advertising services on social
-    networking websites. However, the results of the market investigation were mixed
-    in this regard.
+  quote_snippet: the Commission also examined whether a separate product market should be defined
+    for the provision of online non-search advertising services on social networking websites.
+    However, the results of the market investigation were mixed in this regard.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -328,10 +286,8 @@ source_passages:
 - passage_id: sp_15
   source_document_id: eu_facebook_whatsapp_decision
   page: '14'
-  source_role: market_investigation
-  quote_snippet: As regards a possible distinction between online advertising on different
-    platforms (PCs vs. mobile devices), the results of the market investigation were
-    also mixed.
+  quote_snippet: As regards a possible distinction between online advertising on different platforms
+    (PCs vs. mobile devices), the results of the market investigation were also mixed.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -343,11 +299,10 @@ source_passages:
 - passage_id: sp_16
   source_document_id: eu_facebook_whatsapp_decision
   page: '13'
-  source_role: precedent
-  quote_snippet: In previous decisions, the Commission distinguished between the provision
-    of online and offline advertising space. The Commission also considered whether
-    the market for online advertising could be sub-segmented into search and non-search
-    advertising, but ultimately left this question open.
+  quote_snippet: In previous decisions, the Commission distinguished between the provision of
+    online and offline advertising space. The Commission also considered whether the market
+    for online advertising could be sub-segmented into search and non-search advertising, but
+    ultimately left this question open.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -359,10 +314,9 @@ source_passages:
 - passage_id: sp_17
   source_document_id: eu_facebook_whatsapp_decision
   page: '14'
-  source_role: market_investigation
-  quote_snippet: The market investigation conducted for the purpose of reviewing the
-    Transaction clearly confirmed the distinction made in the Commission precedents
-    between the provision of online and offline advertising.
+  quote_snippet: The market investigation conducted for the purpose of reviewing the Transaction
+    clearly confirmed the distinction made in the Commission precedents between the provision
+    of online and offline advertising.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -374,15 +328,13 @@ source_passages:
 - passage_id: sp_18
   source_document_id: eu_facebook_whatsapp_decision
   page: '14'
-  source_role: market_investigation
-  quote_snippet: The market investigation also supported to a large extent the existence
-    of a further sub-segmentation of the online advertising market between search
-    and non-search advertising. Indeed, the majority of the advertisers who took part
-    in the market investigation considered that search and non-search ads are not
-    substitutable as they serve different purposes (for search ads, mainly generating
-    direct user traffic to the merchant's website, while, for non-search ads, mainly
-    building brand awareness) and, as a result, most advertisers would not be likely
-    to switch from one type to another in the event of a 5-10% price increase.
+  quote_snippet: The market investigation also supported to a large extent the existence of
+    a further sub-segmentation of the online advertising market between search and non-search
+    advertising. Indeed, the majority of the advertisers who took part in the market investigation
+    considered that search and non-search ads are not substitutable as they serve different
+    purposes (for search ads, mainly generating direct user traffic to the merchant's website,
+    while, for non-search ads, mainly building brand awareness) and, as a result, most advertisers
+    would not be likely to switch from one type to another in the event of a 5-10% price increase.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -394,11 +346,9 @@ source_passages:
 - passage_id: sp_21
   source_document_id: eu_facebook_whatsapp_decision
   page: '7'
-  source_role: precedent
-  quote_snippet: In previous decisions, while ultimately leaving the exact geographic
-    market definition open, the Commission found that a number of factors suggested
-    that the geographic market for consumer communications apps would be at least
-    EEA-wide, if not worldwide.
+  quote_snippet: In previous decisions, while ultimately leaving the exact geographic market
+    definition open, the Commission found that a number of factors suggested that the geographic
+    market for consumer communications apps would be at least EEA-wide, if not worldwide.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -410,11 +360,9 @@ source_passages:
 - passage_id: sp_22
   source_document_id: eu_facebook_whatsapp_decision
   page: '8'
-  source_role: commission_assessment
-  quote_snippet: while there are indications that the geographic scope of the consumer
-    communications apps market could be global, the Commission considers that the
-    relevant geographic market for the assessment of the case is EEA-wide in line
-    with a more conservative approach.
+  quote_snippet: while there are indications that the geographic scope of the consumer communications
+    apps market could be global, the Commission considers that the relevant geographic market
+    for the assessment of the case is EEA-wide in line with a more conservative approach.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -426,9 +374,8 @@ source_passages:
 - passage_id: sp_23
   source_document_id: eu_facebook_whatsapp_decision
   page: '9'
-  source_role: commission_assessment
-  quote_snippet: the Commission considers that the relevant geographic market for
-    the assessment of the Transaction is at least EEA-wide, if not worldwide.
+  quote_snippet: the Commission considers that the relevant geographic market for the assessment
+    of the Transaction is at least EEA-wide, if not worldwide.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -440,12 +387,11 @@ source_passages:
 - passage_id: sp_24
   source_document_id: eu_facebook_whatsapp_decision
   page: '8'
-  source_role: commission_assessment
-  quote_snippet: the main factors relevant for the assessment of the Transaction (such
-    as closeness of competition, customer switching, entry barriers) do not differ
-    according to the Member State concerned. In particular, if the factors taken into
-    account by the Commission in its analysis of the Transaction were considered at
-    national (as opposed to EEA) level, the Commission's conclusions would not change.
+  quote_snippet: the main factors relevant for the assessment of the Transaction (such as closeness
+    of competition, customer switching, entry barriers) do not differ according to the Member
+    State concerned. In particular, if the factors taken into account by the Commission in its
+    analysis of the Transaction were considered at national (as opposed to EEA) level, the Commission's
+    conclusions would not change.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -457,11 +403,9 @@ source_passages:
 - passage_id: sp_25
   source_document_id: eu_facebook_whatsapp_decision
   page: '8'
-  source_role: commission_assessment
-  quote_snippet: while there are indications that the geographic scope of the market
-    for social networking services could be global, the Commission considers that
-    the relevant geographic market for the assessment of the case is EEA-wide in line
-    with a more conservative approach.
+  quote_snippet: while there are indications that the geographic scope of the market for social
+    networking services could be global, the Commission considers that the relevant geographic
+    market for the assessment of the case is EEA-wide in line with a more conservative approach.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -473,9 +417,8 @@ source_passages:
 - passage_id: sp_26
   source_document_id: eu_facebook_whatsapp_decision
   page: '12'
-  source_role: commission_assessment
-  quote_snippet: the Commission concludes that the geographic scope for the market
-    for social networking services is at least EEA-wide, if not worldwide.
+  quote_snippet: the Commission concludes that the geographic scope for the market for social
+    networking services is at least EEA-wide, if not worldwide.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -487,11 +430,9 @@ source_passages:
 - passage_id: sp_27
   source_document_id: eu_facebook_whatsapp_decision
   page: '15'
-  source_role: precedent
-  quote_snippet: In previous decisions, the Commission concluded that the market for
-    online advertising space is to be divided alongside national or linguistic borders
-    within the EEA, although it ultimately left the geographic market definition open
-    in one case.
+  quote_snippet: In previous decisions, the Commission concluded that the market for online
+    advertising space is to be divided alongside national or linguistic borders within the EEA,
+    although it ultimately left the geographic market definition open in one case.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -503,11 +444,9 @@ source_passages:
 - passage_id: sp_28
   source_document_id: eu_facebook_whatsapp_decision
   page: '14'
-  source_role: commission_assessment
-  quote_snippet: In line with its decisions in Google / DoubleClick and Microsoft
-    / Yahoo! Search Business, the Commission concludes that the online advertising
-    market and its possible sub-segments should be defined as national in scope or
-    alongside linguistic borders within the EEA.
+  quote_snippet: In line with its decisions in Google / DoubleClick and Microsoft / Yahoo! Search
+    Business, the Commission concludes that the online advertising market and its possible sub-segments
+    should be defined as national in scope or alongside linguistic borders within the EEA.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -519,17 +458,15 @@ source_passages:
 - passage_id: sp_30
   source_document_id: eu_facebook_whatsapp_decision
   page: '15'
-  source_role: market_investigation
   quote_snippet: The market investigation in this case generally confirmed the Commission's
-    previous findings as regards the geographic market definition for online advertising.
-    The majority of the respondents to the market investigation stated that advertisers
-    typically purchase online advertising space and conduct advertising campaigns
-    on a national (or linguistic) basis, although a number of respondents also pointed
-    out that, depending on the type of campaign, global companies may also procure
-    advertising space on a broader geographic scale (EEA-wide or even worldwide).
-    Moreover, the majority of the respondents submitted that prices for online advertising
-    tend to differ depending on the country, based on a number of factors, such as
-    demand and supply, local market conditions, Internet penetration rate, etc.
+    previous findings as regards the geographic market definition for online advertising. The
+    majority of the respondents to the market investigation stated that advertisers typically
+    purchase online advertising space and conduct advertising campaigns on a national (or linguistic)
+    basis, although a number of respondents also pointed out that, depending on the type of
+    campaign, global companies may also procure advertising space on a broader geographic scale
+    (EEA-wide or even worldwide). Moreover, the majority of the respondents submitted that prices
+    for online advertising tend to differ depending on the country, based on a number of factors,
+    such as demand and supply, local market conditions, Internet penetration rate, etc.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -541,9 +478,8 @@ source_passages:
 - passage_id: sp_31
   source_document_id: eu_facebook_whatsapp_decision
   page: '7'
-  source_role: notifying_party_view
-  quote_snippet: According to the Notifying Party, the geographic scope of the market
-    for consumer communications apps is EEA-wide, if not worldwide.
+  quote_snippet: According to the Notifying Party, the geographic scope of the market for consumer
+    communications apps is EEA-wide, if not worldwide.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -555,12 +491,11 @@ source_passages:
 - passage_id: sp_33
   source_document_id: eu_facebook_whatsapp_decision
   page: '7'
-  source_role: market_investigation
-  quote_snippet: The market investigation conducted in the present case revealed that
-    no major differences exist in the offering of consumer communications apps across
-    the world. All respondents stated that the consumer communications apps they offer
-    do not differ depending on the region or country concerned, either in terms of
-    price, functionalities, platforms or operating system.
+  quote_snippet: The market investigation conducted in the present case revealed that no major
+    differences exist in the offering of consumer communications apps across the world. All
+    respondents stated that the consumer communications apps they offer do not differ depending
+    on the region or country concerned, either in terms of price, functionalities, platforms
+    or operating system.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -572,10 +507,9 @@ source_passages:
 - passage_id: sp_35
   source_document_id: eu_facebook_whatsapp_decision
   page: '8'
-  source_role: commission_assessment
-  quote_snippet: the fact that WhatsApp is not free but is subject to a subscription
-    fee in some Member States (currently, Italy and the United Kingdom) is not sufficient
-    to justify the definition of national markets
+  quote_snippet: the fact that WhatsApp is not free but is subject to a subscription fee in
+    some Member States (currently, Italy and the United Kingdom) is not sufficient to justify
+    the definition of national markets
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -584,7 +518,10 @@ source_passages:
   supports_geographic_markets:
   - gm_1
   supports_theories: []
-
+remedies: []
+case_type: merger
+authority_reference: M.7217
+procedure_stage: phase1
 metadata:
   extraction_method: ai_extracted
   review_status: unreviewed
@@ -592,11 +529,11 @@ metadata:
   created_date: '2026-05-31'
   last_updated_date: '2026-06-01'
   tags:
-    - consumer-internet
-    - social-media
-    - messaging
-    - online-advertising
-    - digital-markets
-    - network-effects
-    - phase1
-    - cleared
+  - consumer-internet
+  - social-media
+  - messaging
+  - online-advertising
+  - digital-markets
+  - network-effects
+  - phase1
+  - cleared

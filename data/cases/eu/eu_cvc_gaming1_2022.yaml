@@ -1,0 +1,238 @@
+case_id: eu_cvc_gaming1_2022
+case_name: CVC / GAMING1
+authority: European Commission
+jurisdiction: EU
+sector: media_entertainment
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2022-05-16'
+parties:
+- name: CVC
+  role: acquirer
+- name: GAMING1
+  role: target
+source_documents:
+- doc_id: eu_cvc_gaming1_2022_decision
+  title: CVC / GAMING1 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10634
+  pdf_url: http://publications.europa.eu/resource/cellar/1e5e4008-1401-11ee-806b-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Gaming and betting services
+  definition_status: left_open
+  notes: The Commission considered whether the market could be segmented between (i) games;
+    (ii) bets (horseracing and sports betting); and (iii) gaming machines, and also between
+    physical and online channels. However, it ultimately left open the question of whether different
+    types of services constitute a single product market.
+- market_id: pm_2
+  name: B2B licensing of games
+  definition_status: left_open
+  notes: The Notifying Parties submitted that the relevant market is the market for the business-to-business
+    licensing of online games. The Commission noted that in previous decisions concerning 'development
+    and publishing of game software' (which the Target submits is similar), it left open whether
+    that market should be segmented by online/offline, platform, or game genre. Given the de
+    minimis activities of the Target, the exact delineation of this market was left open in
+    the present case.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Gaming and betting services — national (Germany, Austria, Italy, Spain, Belgium, France,
+    Luxembourg, Malta, Netherlands, Portugal, Romania, Serbia, Switzerland affected)
+  definition_status: considered
+  notes: The Commission considered the geographic market for gaming and betting services to
+    be national, in line with previous decisions, due to differences in demand and national
+    regulatory systems.
+- market_id: gm_2
+  name: B2B licensing of games — EEA-wide or global
+  definition_status: left_open
+  notes: In previous decisions concerning 'development and publishing of game software', the
+    Commission left open whether the geographic scope was EEA-wide or global. For the purpose
+    of assessing customer foreclosure, the upstream market for B2B licensing of games was considered
+    to be at least EEA-wide. However, given the de minimis activities of the Target, the exact
+    geographic delineation was left open in the present case.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_cvc_gaming1_2022_decision
+  page: '3'
+  quote_snippet: Ultimately, the Commission has left open the question of whether different
+    types of gaming and betting services constitute a single product market or not.11
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_cvc_gaming1_2022_decision
+  page: '4'
+  quote_snippet: For the purpose of the present Transaction, the exact product market definition
+    for gaming and betting services can be left open as the outcome of the assessment would
+    not differ irrespective of the plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_cvc_gaming1_2022_decision
+  page: '4'
+  quote_snippet: In the absence of a Commission precedent, the Parties submit that the relevant
+    market is the market for the business-to-business licensing of online games. In previous
+    decisions, the Commission has identified a market for development and publishing of game
+    software13, which the Target submits is similar to the activities of the Target within B2B
+    licensing of games.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_cvc_gaming1_2022_decision
+  page: '4'
+  quote_snippet: Since the Target’s activities within B2B licensing of games is de minimis under
+    any plausible market definition, the exact delineation of the market can be left open in
+    the present case, as no serious doubts would arise under any plausible product and geographic
+    market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_cvc_gaming1_2022_decision
+  page: '3'
+  quote_snippet: The Commission has taken the view in previous decisions that the geographical
+    scope of gaming and betting markets is national due to differences in terms of demand across
+    national territories and in the national regulatory systems, in particular with regard to
+    the granting of licenses.12
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_cvc_gaming1_2022_decision
+  page: '4'
+  quote_snippet: In line with previous Commission decisions, the geographic market for gaming
+    and betting services is considered to be national.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_cvc_gaming1_2022_decision
+  page: '4'
+  quote_snippet: The Commission has left open in previous decisions whether the geographical
+    scope of the market for development and publishing of game software was EEA-wide or global.15
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_cvc_gaming1_2022_decision
+  page: '4'
+  quote_snippet: Since the Target’s activities within B2B licensing of games is de minimis under
+    any plausible market definition, the exact delineation of the market can be left open in
+    the present case, as no serious doubts would arise under any plausible product and geographic
+    market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_cvc_gaming1_2022_decision
+  page: '5'
+  quote_snippet: competitors within the field of B2B licensing of games are not reliant on serving
+    customers specifically in Germany, given that the upstream market for B2B licensing of games
+    is at least EEA-wide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_cvc_gaming1_2022_decision
+  page: '3'
+  quote_snippet: the Transaction does not raise serious doubts as to its compatibility with
+    the internal market under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_cvc_gaming1_2022_decision
+  page: '4'
+  quote_snippet: no serious doubts would arise under any plausible product and geographic market
+    definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_cvc_gaming1_2022_decision
+  page: '4'
+  quote_snippet: the Transaction will therefore not lead to material horizontal overlaps on
+    any market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

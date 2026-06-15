@@ -1,0 +1,493 @@
+case_id: eu_lear_ig_bauerhin_2023
+case_name: LEAR / IG BAUERHIN
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2023-04-24'
+parties:
+- name: LEAR
+  role: acquirer
+- name: IG BAUERHIN
+  role: target
+source_documents:
+- doc_id: eu_lear_ig_bauerhin_2023_decision
+  title: LEAR / IG BAUERHIN — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10738
+  pdf_url: http://publications.europa.eu/resource/cellar/e1617ca3-2539-11ee-94cb-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Manufacturing and supply of seat thermal solutions
+  definition_status: left_open
+  notes: The Commission discussed, but ultimately left open, whether there is a market for the
+    production and supply of seat thermal solutions. It considered it likely to be a distinct
+    market that can be further segmented into seat thermal heat mats and seat ventilation systems.
+    The exact definition was left open as the transaction did not raise serious doubts even
+    under the narrowest plausible market definition.
+- market_id: pm_2
+  name: Manufacturing and supply of seat thermal heat mats
+  definition_status: considered
+  notes: The Commission considered this as a distinct market, as a sub-segment of seat thermal
+    solutions, and used it as the narrowest plausible market definition for its competitive
+    assessment.
+- market_id: pm_3
+  name: Manufacturing and supply of seat ventilation systems
+  definition_status: considered
+  notes: The Commission considered this as a distinct market, as a sub-segment of seat thermal
+    solutions, and used it as the narrowest plausible market definition for its competitive
+    assessment.
+- market_id: pm_4
+  name: Production and supply of sensors used in cars
+  definition_status: left_open
+  notes: The Commission discussed, but ultimately left open in past decisions, whether there
+    is a separate product market for sensors used in cars. Market investigation respondents
+    generally agreed it is a distinct market, which the Commission considered likely, with a
+    sub-segment for pressure sensors used in car seats.
+- market_id: pm_5
+  name: Production and supply of pressure sensors used in car seats
+  definition_status: considered
+  notes: The Commission considered this as a distinct market, as a sub-segment of sensors used
+    in cars, and used it as the narrowest plausible market definition for its competitive assessment.
+- market_id: pm_6
+  name: JIT assembly of complete car seats
+  definition_status: left_open
+  notes: The Commission discussed a potential market for JIT assembly of complete car seats,
+    but ultimately left it open in past decisions. The Notifying Party and market investigation
+    respondents support it as a separate market, and the Commission considered it likely to
+    be distinct, but left the exact definition open for the purpose of the decision, assessing
+    it under the narrowest plausible definition.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Seat thermal solutions — EEA-wide
+  definition_status: considered
+  notes: Past decisions considered markets for automotive components at least EEA-wide. The
+    Notifying Party argued for a global market. The Commission considered the market to be at
+    least EEA-wide and potentially broader (including neighbouring countries or other global
+    regions), but analysed the impact based on the EEA as the narrowest plausible scope.
+- market_id: gm_2
+  name: Seat sensors — EEA-wide
+  definition_status: considered
+  notes: Past decisions on sensors suggested a likely global scope, leaving it open. The Notifying
+    Party submitted it was global. The Commission considered the market at least EEA-wide and
+    potentially global, but analysed the impact based on the EEA as the narrowest plausible
+    scope.
+- market_id: gm_3
+  name: JIT assembly of complete car seats — EEA-wide
+  definition_status: considered
+  notes: Past decisions on JIT assembly of complete car seats considered the geographic scope
+    to be at least EEA-wide, sometimes leaving it open. The Notifying Party and market investigation
+    supported an at least EEA-wide scope. The Commission considered it at least EEA-wide and
+    analysed the impact based on the EEA as the narrowest plausible scope.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_lear_ig_bauerhin_2023_decision
+  page: '4'
+  quote_snippet: In past decisions, the Commission has discussed, but ultimately left open,
+    whether there is a market for the production and supply of seat thermal solutions (heat
+    mats and ventilation systems).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_lear_ig_bauerhin_2023_decision
+  page: '6'
+  quote_snippet: In light of the above information, the Commission considers it likely that
+    the manufacturing and supply of seat thermal solutions is a distinct market that can be
+    further segmented between seat thermal heat mats and seat ventilation systems, but for which
+    there is no need to segment, in addition, according to different vehicle types.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_lear_ig_bauerhin_2023_decision
+  page: '6'
+  quote_snippet: In any event, for the purposes of this Decision, it can be left open, first,
+    whether the manufacturing and supply of seat thermal solutions is a separate market from
+    (i) a wider market for the production and supply of seat components or (ii) a wider market
+    that would also encompass HVAC systems, or, second, whether the market for the manufacturing
+    and supply of seat thermal solutions should be sub-segmented, as the Transaction does not
+    raise serious doubts as to its compatibility with the internal market or the functioning
+    of the EEA Agreement even under the narrowest plausible market definition, i.e., the separate
+    markets for seat thermal heat mats and seat ventilation systems.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_lear_ig_bauerhin_2023_decision
+  page: '5'
+  quote_snippet: Lastly, the majority of respondents to the market investigation consider the
+    manufacturing and supply of seat thermal heat mats to be a separate market from the manufacturing
+    and supply of seat ventilation systems.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_lear_ig_bauerhin_2023_decision
+  page: '6'
+  quote_snippet: In light of the above information, the Commission considers it likely that
+    the manufacturing and supply of seat thermal solutions is a distinct market that can be
+    further segmented between seat thermal heat mats and seat ventilation systems, but for which
+    there is no need to segment, in addition, according to different vehicle types.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_lear_ig_bauerhin_2023_decision
+  page: '12'
+  quote_snippet: As the Parties’ combined shares are higher for seat thermal heat mats than
+    for the wider market for seat thermal solutions, and because the Parties’ combined shares
+    for seat ventilation systems are below the threshold to be considered an affected market,59
+    the Commission presents its competitive assessment, as regards seat thermal solutions, only
+    in relation to seat thermal heat mats, i.e. the narrowest plausible affected product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_lear_ig_bauerhin_2023_decision
+  page: '5'
+  quote_snippet: Lastly, the majority of respondents to the market investigation consider the
+    manufacturing and supply of seat thermal heat mats to be a separate market from the manufacturing
+    and supply of seat ventilation systems.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_lear_ig_bauerhin_2023_decision
+  page: '6'
+  quote_snippet: In light of the above information, the Commission considers it likely that
+    the manufacturing and supply of seat thermal solutions is a distinct market that can be
+    further segmented between seat thermal heat mats and seat ventilation systems, but for which
+    there is no need to segment, in addition, according to different vehicle types.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_lear_ig_bauerhin_2023_decision
+  page: '12'
+  quote_snippet: As the Parties’ combined shares are higher for seat thermal heat mats than
+    for the wider market for seat thermal solutions, and because the Parties’ combined shares
+    for seat ventilation systems are below the threshold to be considered an affected market,59
+    the Commission presents its competitive assessment, as regards seat thermal solutions, only
+    in relation to seat thermal heat mats, i.e. the narrowest plausible affected product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_lear_ig_bauerhin_2023_decision
+  page: '6'
+  quote_snippet: The Commission has in the past discussed, but ultimately left open, whether
+    there is a separate product market for the production and supply of sensors used in cars,
+    and, if so, whether it should be further sub-segmented by functionality, e.g. position sensors,
+    temperature sensors, pressure sensors, level sensors, speed sensors, and accelerometers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_lear_ig_bauerhin_2023_decision
+  page: '6'
+  quote_snippet: The Commission notes that the vast majority of respondents to the market investigation
+    agree that production and supply of sensors used in cars constitutes a distinct product
+    market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_lear_ig_bauerhin_2023_decision
+  page: '7'
+  quote_snippet: In light of the above information, the Commission considers it likely that
+    production and supply of sensors used in cars constitutes a distinct product market and
+    that there is a sub-segment for pressure sensors used in car seats.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_lear_ig_bauerhin_2023_decision
+  page: '6'
+  quote_snippet: The Notifying Party submits that the sensors produced by the Target are developed
+    and produced specifically for car seats. Given that other types of sensors cannot replace
+    the sensors in car seats, the Notifying Party considers that they belong to a separate product
+    market for pressure sensors used in car seats.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_lear_ig_bauerhin_2023_decision
+  page: '7'
+  quote_snippet: A majority of respondents who expressed a view considered the production and
+    supply of pressure sensors used in car seats to be a distinct market, separate from the
+    market for the production and supply of other pressure sensors used in cars.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_lear_ig_bauerhin_2023_decision
+  page: '7'
+  quote_snippet: In any event, for the purposes of this Decision, it can be left open whether
+    the production and supply of pressure sensors used in car seats is a separate market from
+    wider markets for the production and supply of sensors or sensors used in cars as the Transaction
+    does not raise serious doubts as to its compatibility with the internal market or the functioning
+    of the EEA Agreement even under the narrowest plausible market definition, , i.e., the market
+    for pressure sensors used in car seats.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_lear_ig_bauerhin_2023_decision
+  page: '7'
+  quote_snippet: In past decisions in the automotive sector the Commission has discussed a potential
+    market for the JIT assembly of complete car seats, but ultimately left open whether the
+    JIT assembly of complete car seats on the one hand, and the manufacturing of its individual
+    components on the other hand, constitute different relevant product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_lear_ig_bauerhin_2023_decision
+  page: '8'
+  quote_snippet: The Commission notes that most respondents to the market investigation support
+    the view that the JIT assembly of complete car seats is a separate product market from the
+    production and supply of individual seat components.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_lear_ig_bauerhin_2023_decision
+  page: '9'
+  quote_snippet: In any event, for the purposes of this Decision, the exact product market definition
+    may be left open as the proposed Transaction does not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement even under the narrowest
+    plausible product market definition, i.e. the JIT assembly of complete car seats.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_lear_ig_bauerhin_2023_decision
+  page: '9'
+  quote_snippet: In past decisions the Commission has considered the markets for automotive
+    components, including for car seat components as well as for HVAC systems, to be at least
+    EEA-wide if not broader.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_lear_ig_bauerhin_2023_decision
+  page: '10'
+  quote_snippet: The Commission considers, based on the above information, that the geographic
+    market for seat thermal solutions in general, and for both seat thermal heat mats and seat
+    ventilation systems, is at least EEA-wide and that it could be broader (where a broader
+    scope could comprise the EEA and neighbouring countries (such as Serbia, North Macedonia,
+    and Turkey) or indeed comprise other global regions (such as Asia)).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_lear_ig_bauerhin_2023_decision
+  page: '10'
+  quote_snippet: In any event, for the purposes of this Decision, the precise geographic scope
+    of the market may be left open since the Transaction does not raise serious doubts as to
+    its compatibility with the internal market or the functioning of the EEA Agreement regardless
+    of the geographic market definition adopted. The Commission will analyse the impact of the
+    proposed Transaction on the narrowest plausible markets, i.e. separately for seat thermal
+    heat mats in the EEA and for seat ventilation systems in the EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_lear_ig_bauerhin_2023_decision
+  page: '10'
+  quote_snippet: In past decisions the Commission has considered the markets for the various
+    possible segments for sensors to likely be global in scope, but it left open the precise
+    scope of the geographic market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_lear_ig_bauerhin_2023_decision
+  page: '11'
+  quote_snippet: In light of the above information, the Commission considers that the geographic
+    scope of the market for sensors used in cars is at least EEA-wide and could be global.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_lear_ig_bauerhin_2023_decision
+  page: '11'
+  quote_snippet: In any event, for the purposes of this Decision, the precise geographic scope
+    of the market may be left open since the proposed Transaction does not raise serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA Agreement
+    regardless of the geographic market definition adopted. The Commission will analyse the
+    impact of the proposed Transaction on the narrowest plausible market, i.e. the market for
+    pressure sensors for car seats in the EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_lear_ig_bauerhin_2023_decision
+  page: '11'
+  quote_snippet: In past decisions the Commission has considered the geographic scope of the
+    market for the JIT assembly of complete car seats to be at least EEA-wide54, while leaving
+    this question open in other decisions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

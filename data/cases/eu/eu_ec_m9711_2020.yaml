@@ -1,0 +1,343 @@
+case_id: eu_ec_m9711_2020
+case_name: M.9711
+authority: European Commission
+jurisdiction: EU
+sector: retail
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2020-08-17'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9711_2020_decision
+  title: M.9711 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9711
+  pdf_url: http://publications.europa.eu/resource/cellar/e188970e-6074-11eb-8146-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Full-line pharmaceutical wholesaling excluding direct deliveries from manufacturers
+  definition_status: defined
+  notes: The Commission defined this market as distinct from direct deliveries by manufacturers
+    and from short-line wholesaling. It encompasses the delivery of a full complement of pharmaceutical
+    products to professional customers, primarily pharmacies.
+- market_id: pm_2
+  name: Pharmaceutical wholesaling segmented by product groups (Rx, OTC, and other products)
+  definition_status: left_open
+  notes: The Commission considered a potential segmentation of pharmaceutical wholesaling according
+    to product groups (Rx, OTC, etc.) but found no reason to further segment the market, as
+    competition conditions would not materially change.
+- market_id: pm_3
+  name: Pharmaceutical wholesaling segmented by customer groups (pharmacies, hospitals, doctors)
+  definition_status: left_open
+  notes: The Commission considered a potential segmentation of pharmaceutical wholesaling according
+    to customer groups (pharmacies, doctors, hospitals) but found no reason to further segment
+    the market, as deliveries to groups other than pharmacies were negligible.
+- market_id: pm_4
+  name: National pharmaceutical wholesale market
+  definition_status: considered
+  notes: Specifically for the Netherlands, the Commission considered a national pharmaceutical
+    wholesale market, acknowledging that full-line vs. short-line data was unavailable and these
+    figures served as the closest estimate for full-line wholesaling.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Full-line pharmaceutical wholesaling — regional (Germany affected)
+  definition_status: defined
+  notes: For Germany, the Commission concluded that the market for full-line pharmaceutical
+    wholesaling is sub-national, specifically defining it as a catchment area of 2 hours 14
+    minutes driving time around each depot, in line with the German Federal Cartel Office's
+    approach. This reflects the need for frequent, rapid deliveries to pharmacies.
+- market_id: gm_2
+  name: Pharmaceutical wholesaling — national or sub-national (Netherlands affected)
+  definition_status: left_open
+  notes: For the Netherlands, the Commission referred to past practice of considering a national
+    or sub-national market but ultimately left the exact geographic market definition open,
+    as no competition concerns arose under any plausible definition.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9711_2020_decision
+  page: '5'
+  quote_snippet: However, from the perspective of the customer, there are clear reasons why
+    direct deliveries do not form part of the same product market as pharmaceutical wholesaling.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9711_2020_decision
+  page: '6'
+  quote_snippet: For similar reasons as stated above in the context of direct deliveries by
+    manufacturers, the Commission considers that there is no reason to deviate from past decisional
+    practice to regard pharmaceutical full-line wholesaling as separate from pharmaceutical
+    short-line wholesaling.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9711_2020_decision
+  page: '7'
+  quote_snippet: In light of the foregoing, the Commission considers full-line pharmaceutical
+    wholesaling excluding direct deliveries from manufactures as the relevant product market
+    for the assessment of the competitive impact of the Transaction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9711_2020_decision
+  page: '4'
+  quote_snippet: Furthermore, the Commission has considered a further sub-segmentation of pharmaceutical
+    wholesaling according to different product groups. Specifically, the Commission considered
+    possible segmentation between prescription medicine (“Rx”) and over-the-counter products
+    (“OTC”); originator, generic and parallel import medicine; and whether the medicine may
+    be sold in retail pharmacies under the supervision of a pharmacist only, or also in other
+    outlets such as supermarkets. Ultimately, the product market definition was left open regarding
+    all potential segments according to product groups as mentioned above.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9711_2020_decision
+  page: '6'
+  quote_snippet: With respect to a potential segmentation according to product groups, the Commission
+    has no reason to further segment the market for example into the deliveries of Rx, OTC and
+    other products. In the market investigation, a majority of competitors stated that they
+    would generally deliver all types of products to all customers. The remaining competitors
+    submitted that it would be rare that a customer would not source all three types of products.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9711_2020_decision
+  page: '4'
+  quote_snippet: Finally, the Commission has considered a potential segmentation of pharmaceutical
+    wholesaling according to customer groups, namely between (i) retail pharmacies, (ii) doctors
+    and (iii) hospitals. Ultimately, also the product market definition was left open regarding
+    all potential segments according to customer groups.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9711_2020_decision
+  page: '6'
+  quote_snippet: Similarly, the Commission has no reason to further segment the market according
+    to customer groups like pharmacies, hospitals or doctors. In the market investigation, one
+    competitor stated that doctors usually would not source from pharmaceutical wholesalers
+    due to national regulation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9711_2020_decision
+  page: '7'
+  quote_snippet: Consequently, the Commission notes that a segmentation between customer groups
+    would not change the competitive assessment, as competition between the Parties and their
+    competitors basically only concerns deliveries to pharmacies.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9711_2020_decision
+  page: '26'
+  quote_snippet: The Parties’ combined market share on a national pharmaceutical wholesale market
+    in the Netherlands lies between [10-20]% and [20-30]%, depending on whether Gehe’s sales
+    to its customers that are sold to end-customers in Germany are taken into account.147 If
+    these are not regarded as being part of the relevant market, the combined market share only
+    amounts to [10-20]%.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9711_2020_decision
+  page: '26'
+  quote_snippet: It has to be noted, that the market shares cited here do not distinguish between
+    full-line and short-line wholesaling. The Parties explain, that there are no data available
+    for a short-line wholesaling market. The Parties also explain that to their knowledge, there
+    is no separate market for short-line wholesaling in the Netherlands and that here are no
+    specialist short-line wholesalers in the Dutch market. See Form CO para 6.58. The Commission
+    notes, that for these reasons, the market figures presented in table 4 are the closest estimate
+    of full-line pharmaceutical wholesaling in the Netherlands.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9711_2020_decision
+  page: '8'
+  quote_snippet: With respect to Germany, the market investigation suggests that the market
+    for pharmaceutical wholesaling is sub-national in scope. As described above in more detail,
+    the clear majority of pharmacies receive three or more daily deliveries from their main
+    wholesaler. It is apparent that providing three or more deliveries per day requires a local
+    presence by the respective wholesaler, given the size of Germany that excludes multiple
+    daily deliveries from only one central location of the wholesaler.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9711_2020_decision
+  page: '8'
+  quote_snippet: The market investigation rather suggests that the approach of defining the
+    geographic market of a catchment area of 2 hours 14 minutes driving time around each depot,
+    as applied by the German Federal Cartel Office in past decisions, is the more appropriate
+    approach to assess competition in German pharmaceutical wholesaling.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9711_2020_decision
+  page: '9'
+  quote_snippet: From the above, the Commission considers that applying a geographic scope of
+    2 hours 14 minutes of driving time, in line with the practice of the German Federal Cartel
+    Office, around the depots of pharmaceutical wholesalers to be the most appropriate approach
+    for Germany. Therefore, this market definition is considered as the relevant geographical
+    market relating to Germany in this decision.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m9711_2020_decision
+  page: '7'
+  quote_snippet: Regarding the Netherlands, the Commission has previously pointed at past practice
+    of defining a national or sub-national market for pharmaceutical wholesaling, but left the
+    market definition open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m9711_2020_decision
+  page: '9'
+  quote_snippet: The Commission notes that in other Member States, a different geographic market
+    definition may be appropriate due to different national regulatory requirements and geography.
+    In line with past decisional practice, as discussed in paragraphs (20) to (22) of this Decision,
+    the Commission therefore considers the geographic scope of pharmaceutical wholesaling for
+    the Netherlands to be national or sub-national, but leaves the ultimate geographic market
+    definition open, as no competition concerns arise under any plausible geographic market
+    definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m9711_2020_decision
+  page: '1'
+  quote_snippet: |
+    Subject: Case M.9711 – Alliance Healthcare Deutschland AG / GEHE Pharma Handel GmbH
+    Commission decision pursuant to Article 6(1)(b) of Council Regulation
+    No 139/20041 and Article 57 of the Agreement on the European Economic
+    Area2
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m9711_2020_decision
+  page: '1'
+  quote_snippet: Brussels, 17.08.2020
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []
+ai_summary: null
+case_type: merger

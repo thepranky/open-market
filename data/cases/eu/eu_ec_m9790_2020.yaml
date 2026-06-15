@@ -1,0 +1,332 @@
+case_id: eu_ec_m9790_2020
+case_name: M.9790
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2020-07-27'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9790_2020_decision
+  title: M.9790 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9790
+  pdf_url: http://publications.europa.eu/resource/cellar/e6f34936-08ad-11eb-a511-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: wholesale supply of precast concrete components to retailers
+  definition_status: left_open
+  notes: The Commission considered further segmentation of this market, specifically for "Poutrelles
+    Hourdis" (infiller beams and blocks), but ultimately left the exact product market definition
+    open.
+- market_id: pm_2
+  name: retail sales of building materials to professional end-customers
+  definition_status: left_open
+  notes: The Commission considered sub-segmentation based on sales to General Builders' Merchants
+    (GBMs) versus Specialist Builders' Merchants (SBMs), and by specific product groups within
+    building materials, but ultimately left the precise definition open. KP1 does not sell its
+    products to SBMs.
+geographic_markets_considered:
+- market_id: gm_1
+  name: wholesale supply of precast concrete components to retailers — national (France affected)
+  definition_status: left_open
+  notes: The Commission noted that the parties agreed the upstream market is national in scope,
+    but also considered regional assessment due to BME's limited regional activity. Ultimately,
+    the market definition was left open.
+- market_id: gm_2
+  name: wholesale supply of precast concrete components to retailers — regional (Ile-de-France
+    and Normandie affected)
+  definition_status: left_open
+  notes: The market investigation suggested a regional scope (around 250 km from production
+    plants), but the Commission ultimately left the geographic market definition open, assessing
+    the transaction under both national and regional scopes.
+- market_id: gm_3
+  name: retail sales of building materials to professional end-customers — national (France
+    affected)
+  definition_status: left_open
+  notes: The parties submitted a national scope, but the Commission also considered regional
+    scope due to BME's limited activity. The market definition was ultimately left open.
+- market_id: gm_4
+  name: retail sales of building materials to professional end-customers — regional (Ile-de-France
+    and Normandie affected)
+  definition_status: left_open
+  notes: The market investigation confirmed a regional scope (around 100 km from the delivery
+    site). The Commission considered this regional scope along with a national scope but ultimately
+    left the geographic market definition open.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9790_2020_decision
+  page: '5'
+  quote_snippet: (15) The Parties propose that the upstream market for present purposes should
+    be the wholesale supply of precast concrete and non-concrete components to retailers.28
+    The Parties confirmed29 that, in view of regulatory considerations, both KP1 and its competitors
+    who offer similar products to KP1's infiller blocks and thermal bridge breakers (which are
+    the non-concrete components) do not sell them on a standalone basis, but sell them also
+    only in conjunction with their own beams. In view of this, the Commission’s assessment will
+    focus specifically on the concrete components, in line with precedent.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9790_2020_decision
+  page: '5'
+  quote_snippet: '(16) The results of the market investigation confirmed that “Poutrelles Hourdis”,
+    the local classification of infiller beams and blocks (pre-stressed concrete products),
+    can be considered as a separate product market: “En effet le marché de la poutrelle est
+    un marché assez particulier”.30 Also, a GBM retailer distinguished a “pre-stressed concrete
+    beams and infiller blocks” market when he provided feedback on the impact of the Transaction.31'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9790_2020_decision
+  page: '5'
+  quote_snippet: (17) In any event, for the purpose of this Decision, it can be left open whether
+    the market for the wholesale of precast concrete components to retailers may be further
+    segmented, as the Transaction does not give rise to serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement regardless of the precise
+    product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9790_2020_decision
+  page: '6'
+  quote_snippet: (22) At the downstream retail level, the Commission has previously distinguished
+    between sales to professionals by generalist retailers, on the one hand, and by specialist
+    retailers, on the other hand, but left the precise market definition open35. KP1 does not
+    sell its products to specialist retailers (SBMs) in France as it doesn’t manufacture products
+    that are inputs for SBMs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9790_2020_decision
+  page: '6'
+  quote_snippet: (24) The Parties submit that the downstream relevant product market should
+    be the retail sales of building materials to professional end-customers as KP1 sells its
+    products in the retail channel only to GBMs.38
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9790_2020_decision
+  page: '6'
+  quote_snippet: (25) For the purpose of this Decision, it can be left open whether the market
+    for retail sales of building materials to professional end-customers may be segmented based
+    on sales to GBMs or sales to SBMs, or based on the specific product group of building materials,
+    as the Transaction does not give rise to serious doubts as to its compatibility with the
+    internal market or the functioning of the EEA Agreement regardless of the precise product
+    market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9790_2020_decision
+  page: '5'
+  quote_snippet: (19) In line with Commission’s precedents, the Parties agree that the upstream
+    market is national in scope. However, given that KP1 sells its products at the wholesale
+    level in France to GBMs nationally and to BME’s GBM chain, Raboni, which is active solely
+    in two French regions, Ile-de-France and Normandie, the Parties submit that the impact of
+    the Transaction should be assessed at both the national level and in Ile-de-France and Normandie.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9790_2020_decision
+  page: '6'
+  quote_snippet: (21) In any event, the Commission leaves the markets definition (whether national
+    or regional) open, since even under the narrowest market definition, the Transaction does
+    not give rise to serious doubts as to its compatibility with the internal market or the
+    functioning of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9790_2020_decision
+  page: '5'
+  quote_snippet: (19) In line with Commission’s precedents, the Parties agree that the upstream
+    market is national in scope. However, given that KP1 sells its products at the wholesale
+    level in France to GBMs nationally and to BME’s GBM chain, Raboni, which is active solely
+    in two French regions, Ile-de-France and Normandie, the Parties submit that the impact of
+    the Transaction should be assessed at both the national level and in Ile-de-France and Normandie.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9790_2020_decision
+  page: '6'
+  quote_snippet: '(20) The results of the market investigation confirmed that the geographic
+    market is regional in scope based on the catchment areas around the production plants, as
+    one supplier stated: “In our product range of similar products, we can see that they can
+    be delivered in a distance up to about 250 km from our factories, at an acceptable cost”.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9790_2020_decision
+  page: '6'
+  quote_snippet: (21) In any event, the Commission leaves the markets definition (whether national
+    or regional) open, since even under the narrowest market definition, the Transaction does
+    not give rise to serious doubts as to its compatibility with the internal market or the
+    functioning of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9790_2020_decision
+  page: '7'
+  quote_snippet: (30) In any event, for the purpose of this Decision, it can be left open whether
+    the market for the retail supply of building materials to professional end-customers is
+    regional in scope, at the level of Ile-de-France and Normandie, or a 100 km radius from
+    the delivery site, as the Transaction does not give rise to serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement regardless of the precise
+    product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9790_2020_decision
+  page: '7'
+  quote_snippet: '(29) The results of the market investigation confirmed that the relevant geographic
+    market is regional in scope and is limited at around 100 km from the delivery site, as a
+    GBM retailer stated: “as a general rule, the delivery distance from these platforms and
+    branches does not exceed 100km (1h30 of driving for a standard delivery truck)”42.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m9790_2020_decision
+  page: '7'
+  quote_snippet: (30) In any event, for the purpose of this Decision, it can be left open whether
+    the market for the retail supply of building materials to professional end-customers is
+    regional in scope, at the level of Ile-de-France and Normandie, or a 100 km radius from
+    the delivery site, as the Transaction does not give rise to serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement regardless of the precise
+    product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m9790_2020_decision
+  page: '1'
+  quote_snippet: |
+    Subject: Case M.9790 – Blackstone/KP1
+    Commission decision pursuant to Article 6(1)(b) of Council Regulation No 139/20041 and Article 57 of the Agreement on the European Economic Area2
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m9790_2020_decision
+  page: '12'
+  quote_snippet: (59) For the above reasons, the European Commission has decided not to oppose
+    the notified operation and to declare it compatible with the internal market and with the
+    EEA Agreement. This decision is adopted in application of Article 6(1)(b) of the Merger
+    Regulation and Article 57 of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

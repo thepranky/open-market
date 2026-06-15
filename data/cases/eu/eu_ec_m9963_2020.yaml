@@ -1,0 +1,540 @@
+case_id: eu_ec_m9963_2020
+case_name: M.9963
+authority: European Commission
+jurisdiction: EU
+sector: tech
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2020-10-26'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9963_2020_decision
+  title: M.9963 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9963
+  pdf_url: http://publications.europa.eu/resource/cellar/c17aab2f-3890-11eb-b27b-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Overall retail market for mobile telecommunications services
+  definition_status: considered
+  notes: The Commission considered the relevant product market to be the overall retail market
+    for mobile telecommunications services, without further segmentation by type of service,
+    type of customers, or network technology. This was in line with previous practice and not
+    objected to by the Notifying Party.
+- market_id: pm_2
+  name: Overall retail market for fixed telephony services
+  definition_status: considered
+  notes: The Commission considered the relevant product market to be the overall retail market
+    for fixed telephony services, including VoIP services, without any further segmentations.
+    This was in line with previous practice and not objected to by the Notifying Party.
+- market_id: pm_3
+  name: Wholesale market for international roaming services comprising both terminating calls
+    and originating calls
+  definition_status: defined
+  notes: The Commission concluded that the market for international roaming services, comprising
+    both terminating calls and originating calls, constitutes a separate product market. This
+    was consistent with previous decisions and not objected to by the Notifying Party.
+- market_id: pm_4
+  name: Wholesale market for mobile call termination services on each individual mobile network
+  definition_status: considered
+  notes: The Commission considered that termination on each individual mobile network constitutes
+    a separate product market for wholesale call termination services, in line with its previous
+    decisional practice. The Notifying Party did not object to this definition.
+- market_id: pm_5
+  name: Wholesale market for fixed call termination services on each individual fixed network
+  definition_status: considered
+  notes: The Commission considered that termination on each individual fixed network constitutes
+    a separate product market for wholesale call termination services, in line with its previous
+    decisional practice. The Notifying Party did not object to this definition.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Retail mobile telecommunications services — national (Cyprus, France, Ireland, Italy,
+    Malta, Poland affected)
+  definition_status: considered
+  notes: The Commission considered the market for retail mobile services to be national in scope,
+    consistent with previous decisions and considering that licenses to mobile operators are
+    granted on a national basis. This was not objected to by the Notifying Party.
+- market_id: gm_2
+  name: Retail supply of fixed telephony services — national (Cyprus, France, Ireland, Malta,
+    Poland affected)
+  definition_status: considered
+  notes: The Commission consistently considered the market for the supply of fixed telephony
+    services to be national in scope, reflecting national regulation and upstream wholesale
+    services. This was not objected to by the Notifying Party.
+- market_id: gm_3
+  name: Wholesale market for international roaming services — national (Cyprus, France, Ireland,
+    Italy, Malta, Poland affected)
+  definition_status: considered
+  notes: The Commission considered the wholesale market for international roaming to be national
+    in scope, given that operating licenses for mobile services are nationally restricted due
+    to regulatory barriers. The Notifying Party did not object.
+- market_id: gm_4
+  name: Wholesale market for mobile call termination services — national (Cyprus, France, Ireland,
+    Italy, Malta, Poland affected)
+  definition_status: considered
+  notes: The Commission considered the wholesale market for mobile call termination services
+    to be national in scope, as each market corresponds to the operator's network dimensions,
+    which are nationally limited due to regulatory barriers. This was not objected to by the
+    Notifying Party.
+- market_id: gm_5
+  name: Wholesale market for fixed call termination services — national (Cyprus, France, Ireland,
+    Malta affected)
+  definition_status: considered
+  notes: The Commission considered the wholesale market for fixed call termination services
+    to be national in scope, as the geographic scope of each market corresponds to the operator's
+    network dimensions, which are nationally limited due to regulatory barriers. The Notifying
+    Party agreed with this definition.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9963_2020_decision
+  page: '4'
+  quote_snippet: In light of the foregoing, the Commission considers that, for the purpose of
+    this decision, the relevant product market definition is the overall retail market for mobile
+    telecommunications services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9963_2020_decision
+  page: '4'
+  quote_snippet: The Notifying Party does not object to the existence of an overall retail mobile
+    market.11
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9963_2020_decision
+  page: '5'
+  quote_snippet: In light of the foregoing, the Commission concludes that it is appropriate
+    to not depart from its previous practice, and considers that, for the purpose of this decision,
+    the relevant product market is the overall retail market for fixed telephony services without
+    any further segmentations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9963_2020_decision
+  page: '5'
+  quote_snippet: The Notifying Party does not object to the existence of an overall retail market
+    for fixed telephony services.21
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9963_2020_decision
+  page: '6'
+  quote_snippet: In previous decisions, the Commission considered a separate product market
+    for wholesale international roaming services comprising both terminating calls and originating
+    calls.25
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9963_2020_decision
+  page: '6'
+  quote_snippet: The Commission concludes, in line with previous decisions, that the market
+    for international roaming comprising both terminating calls and originating calls constitutes
+    a separate product market.27
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9963_2020_decision
+  page: '6'
+  quote_snippet: The Notifying Party does not object to this market definition.26
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9963_2020_decision
+  page: '8'
+  quote_snippet: In previous decisions, the Commission has found that there is no substitute
+    for call termination on each individual network, as the operator transmitting the call can
+    reach the intended recipient only through the operator of the network to which the recipient
+    is connected.32 Therefore, each individual network, either fixed or mobile, constitutes
+    a separate market.33
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9963_2020_decision
+  page: '8'
+  quote_snippet: Consequently, for the purpose of the present decision, and in line with its
+    previous decisional practice, the Commission considers that, as regards wholesale call termination
+    services, termination on each individual mobile network constitutes a separate product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9963_2020_decision
+  page: '8'
+  quote_snippet: The Notifying Party does not object to this market definition.34
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9963_2020_decision
+  page: '9'
+  quote_snippet: As in the case of wholesale mobile call termination services, in previous decisions
+    the Commission has established that there are no potential substitutes for call termination
+    on each fixed network since the operator transmitting the call can reach the intended recipient
+    only through the operator of the network to which the recipient is connected.37
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9963_2020_decision
+  page: '9'
+  quote_snippet: Consequently, for the purpose of the present decision, and in line with its
+    previous decisional practice the Commission considers that, as regards wholesale call termination
+    services, termination on each individual fixed network constitutes a separate product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9963_2020_decision
+  page: '9'
+  quote_snippet: The Notifying Party, in accordance with the Commission’s decisional practice,
+    does not object to this product market definition.38
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m9963_2020_decision
+  page: '4'
+  quote_snippet: In previous decisions, the Commission has consistently concluded that the market
+    for the provision of retail mobile communication services is national in scope.12
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m9963_2020_decision
+  page: '4'
+  quote_snippet: Consequently, for the purpose of the present decision and in line with its
+    previous decisional practice, the Commission considers the market for retail mobile services
+    to be national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m9963_2020_decision
+  page: '4'
+  quote_snippet: The Notifying Party does not object to this market definition.13
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m9963_2020_decision
+  page: '5'
+  quote_snippet: In previous decisions, the Commission has consistently considered that the
+    market for the supply of fixed telephony services is national in scope, as this reflects
+    the continuing importance of the role of national regulation in the telecommunications sector,
+    the supply of upstream wholesale services on a national basis, as well as the fact that
+    the pricing policies of telecommunications providers are predominantly national.22
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m9963_2020_decision
+  page: '6'
+  quote_snippet: Consequently, for the purpose of the present decision and in line with its
+    previous decisional practice, the Commission considers that the market for the supply of
+    fixed telephony services is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m9963_2020_decision
+  page: '6'
+  quote_snippet: The Notifying Party does not object to this geographic market definition.23
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m9963_2020_decision
+  page: '7'
+  quote_snippet: In previous decisions, the Commission found that the wholesale market for international
+    roaming is national in scope, given that wholesale international agreements can be concluded
+    only with companies that have an operating licence in the relevant country and the licences
+    to provide mobile services are restricted to a national territory.28
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m9963_2020_decision
+  page: '7'
+  quote_snippet: Consequently, for the purpose of the present decision and in line with its
+    previous decisional practice, the Commission considers that the markets for international
+    roaming are national.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m9963_2020_decision
+  page: '7'
+  quote_snippet: The Notifying Party does not object to this geographic market definition.29
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_ec_m9963_2020_decision
+  page: '8'
+  quote_snippet: In previous decisions, the Commission considered that the market for wholesale
+    mobile call termination services is national in scope, as each wholesale market for call
+    termination corresponds to the dimensions of the operator’s network and is limited to the
+    national territory of the operator's network.35 This is primarily due to regulatory barriers
+    as the geographic scope of a network licence is, in principle, limited to areas that do
+    not extend beyond the borders of a Member State.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_ec_m9963_2020_decision
+  page: '9'
+  quote_snippet: Consequently, for the purpose of the present decision, and in line with its
+    previous decisional practice the Commission considers that the market for wholesale mobile
+    call termination services is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_ec_m9963_2020_decision
+  page: '9'
+  quote_snippet: The Notifying Party does not object to this geographic market definition.36
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_ec_m9963_2020_decision
+  page: '9'
+  quote_snippet: In previous decisions, the Commission has found that the market for wholesale
+    fixed call termination services is national in scope, considering that the geographic scope
+    of each wholesale market for call termination should correspond to the dimensions of the
+    operator’s network, which is limited to national borders due to regulatory barriers.39
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_ec_m9963_2020_decision
+  page: '10'
+  quote_snippet: Consequently, for the purpose of the present decision, and in line with its
+    previous decisional practice the Commission considers that the market for wholesale fixed
+    call termination services is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_ec_m9963_2020_decision
+  page: '10'
+  quote_snippet: The Notifying Party agrees, in line with previous Commission decisions, that
+    the market for wholesale fixed call termination services is national.40
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_ec_m9963_2020_decision
+  page: '1'
+  quote_snippet: (1) On 21 September 2020, the European Commission received notification of
+    a proposed concentration pursuant to Article 4 of the Merger Regulation by which Iliad S.A.
+    (“Iliad”, France; the “Notifying Party”) acquires within the meaning of Article 3(1)(b)
+    sole control of Play Communications S.A. (“Play Communications”, Luxembourg) (the “Transaction”).
+    Iliad and Play Communications are designated hereinafter as the “Parties”.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_ec_m9963_2020_decision
+  page: '17'
+  quote_snippet: |
+    In the third place, the above conclusions (recitals (60) and (66)) are confirmed by the result of the market investigation. The majority of respondents considered that competition would likely increase or stay the same on the wholesale market for international roaming services and the retail market for mobile telecommunications services.58 The majority of respondents to the market investigation did not raise any issues related to vertical competition concerns arising from the Transaction on the market for wholesale international roaming services on the one hand, and the market for retail supply of mobile telecommunications services on the other hand.59
+    (71) In light of the analysis above, the Commission concludes that the proposed Transaction would not raise serious doubts as to its compatibility with the internal market relative to (1) any hypothetical input foreclosure strategy of the Notifying Parties in relation to the downstream markets for the retail supply of mobile telecommunication services, and (2) any hypothetical customer foreclosure strategy of the Notifying Parties in relation to the upstream markets for wholesale international roaming services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

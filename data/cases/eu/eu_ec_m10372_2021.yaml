@@ -1,0 +1,586 @@
+case_id: eu_ec_m10372_2021
+case_name: M.10372
+authority: European Commission
+jurisdiction: EU
+sector: retail
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2021-12-21'
+parties: []
+source_documents:
+- doc_id: eu_ec_m10372_2021_decision
+  title: M.10372 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10372
+  pdf_url: http://publications.europa.eu/resource/cellar/31e86ef5-8f04-11ec-8c40-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Refined fuel products — upstream activities (exploration and production of crude oil
+    and natural gas)
+  definition_status: considered
+  notes: Referenced from previous decisions regarding the market for refined fuel products.
+- market_id: pm_2
+  name: Refined fuel products — downstream activities (marketing and distribution)
+  definition_status: considered
+  notes: Referenced from previous decisions regarding the market for refined fuel products.
+- market_id: pm_3
+  name: Wholesale supply of diesel (including biodiesel)
+  definition_status: considered
+  notes: Distinguished as a separate market by fuel type at the wholesale and non-retail sales
+    level in previous cases.
+- market_id: pm_4
+  name: Wholesale supply of gasoline
+  definition_status: considered
+  notes: Distinguished as a separate market by fuel type at the wholesale and non-retail sales
+    level in previous cases.
+- market_id: pm_5
+  name: Wholesale supply of LPG (including bio LPG)
+  definition_status: considered
+  notes: Distinguished as a separate market by fuel type at the wholesale and non-retail sales
+    level in previous cases.
+- market_id: pm_6
+  name: Wholesale supply of heavy fuel oil
+  definition_status: considered
+  notes: Distinguished as a separate market by fuel type at the wholesale and non-retail sales
+    level in previous cases.
+- market_id: pm_7
+  name: Wholesale supply of light fuel oil
+  definition_status: considered
+  notes: Distinguished as a separate market by fuel type at the wholesale and non-retail sales
+    level in previous cases.
+- market_id: pm_8
+  name: Retail supply of motor fuel (diesel, gasoline or LPG)
+  definition_status: considered
+  notes: The retail level for motor fuels was considered one market in previous cases due to
+    supply-side substitutability, despite no demand-side substitutability.
+- market_id: pm_9
+  name: Ex-refinery sales of rDME
+  definition_status: left_open
+  notes: The Commission explicitly stated that the precise product market definition for rDME
+    could be left open, considering scenarios where it forms a separate market or is part of
+    a broader fuel market.
+- market_id: pm_10
+  name: Non-retail sales of LPG (including fossil LPG, blended LPG with rDME, and bio LPG)
+  definition_status: left_open
+  notes: The Commission assessed this as a downstream market potentially vertically linked to
+    rDME, and as part of a hypothetical wider market for horizontal assessment. The precise
+    product market definition was left open.
+- market_id: pm_11
+  name: Retail sales of LPG (including fossil LPG, blended LPG with rDME, and bio LPG)
+  definition_status: left_open
+  notes: The Commission assessed this as a downstream market potentially vertically linked to
+    rDME, and as part of a hypothetical wider market for horizontal assessment. The precise
+    product market definition was left open.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Upstream activities (exploration and production of crude oil and natural gas) — EEA-wide
+  definition_status: considered
+  notes: Referenced as a previous Commission consideration, with the question ultimately left
+    open.
+- market_id: gm_2
+  name: Refined fuel products — national
+  definition_status: considered
+  notes: Previous decisions considered downstream refined fuel markets to have a national dimension,
+    although the market investigation in this case was inconclusive.
+- market_id: gm_3
+  name: Ex-refinery sales of rDME — national / EEA-wide (Denmark, France, Ireland, Austria affected)
+  definition_status: left_open
+  notes: The Commission left open the precise geographic market definition for rDME, noting
+    that no competition concerns would arise under any plausible definition, even at a national
+    level. The market investigation was inconclusive, with competitors suggesting wider than
+    national and customers suggesting national.
+- market_id: gm_4
+  name: Non-retail sales of LPG (including fossil LPG, blended LPG with rDME, and bio LPG) —
+    national (Denmark, France, Ireland affected)
+  definition_status: left_open
+  notes: The Commission identified national markets as vertically affected for non-retail LPG
+    sales. The precise geographic market definition was left open, as no competition concerns
+    would arise even at a national level.
+- market_id: gm_5
+  name: Retail sales of LPG (including fossil LPG, blended LPG with rDME, and bio LPG) — national
+    (Austria, France, Ireland affected)
+  definition_status: left_open
+  notes: The Commission identified national markets as vertically affected for retail LPG sales.
+    The precise geographic market definition was left open, as no competition concerns would
+    arise even at a national level.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m10372_2021_decision
+  page: '4'
+  quote_snippet: According to previous decisions, the market for refined fuel products can be
+    divided into upstream (exploration and production of crude oil and natural gas) and downstream
+    activities.8
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m10372_2021_decision
+  page: '4'
+  quote_snippet: Upstream activities include the exploration and production of crude oil and
+    natural gas.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m10372_2021_decision
+  page: '4'
+  quote_snippet: Downstream activities encompass the marketing and distribution of refined fuel
+    products. In previous cases, the Commission consistently distinguished three different levels
+    of distribution, two of which occur at the wholesale level (i.e. (i) ex-refinery sales and
+    (ii) non-retail sales)9 and a third which relates to retail sales (i.e. sales exclusively
+    to end customers).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m10372_2021_decision
+  page: '4'
+  quote_snippet: 'Accordingly, at least the following markets within the first and second levels
+    of wholesale distribution can be distinguished: supply of (i) diesel, (ii) gasoline, (iii)
+    LPG, (iv) heavy fuel oil and (v) light fuel oil.10 The ‘traditional’ fuel segments also
+    include their biofuel variant (e.g., the market segment for diesel also includes biodiesel,
+    and the market for LPG also includes bio LPG).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m10372_2021_decision
+  page: '4'
+  quote_snippet: 'Accordingly, at least the following markets within the first and second levels
+    of wholesale distribution can be distinguished: supply of (i) diesel, (ii) gasoline, (iii)
+    LPG, (iv) heavy fuel oil and (v) light fuel oil.10 The ‘traditional’ fuel segments also
+    include their biofuel variant (e.g., the market segment for diesel also includes biodiesel,
+    and the market for LPG also includes bio LPG).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m10372_2021_decision
+  page: '4'
+  quote_snippet: 'Accordingly, at least the following markets within the first and second levels
+    of wholesale distribution can be distinguished: supply of (i) diesel, (ii) gasoline, (iii)
+    LPG, (iv) heavy fuel oil and (v) light fuel oil.10 The ‘traditional’ fuel segments also
+    include their biofuel variant (e.g., the market segment for diesel also includes biodiesel,
+    and the market for LPG also includes bio LPG).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m10372_2021_decision
+  page: '4'
+  quote_snippet: 'Accordingly, at least the following markets within the first and second levels
+    of wholesale distribution can be distinguished: supply of (i) diesel, (ii) gasoline, (iii)
+    LPG, (iv) heavy fuel oil and (v) light fuel oil.10 The ‘traditional’ fuel segments also
+    include their biofuel variant (e.g., the market segment for diesel also includes biodiesel,
+    and the market for LPG also includes bio LPG).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m10372_2021_decision
+  page: '4'
+  quote_snippet: 'Accordingly, at least the following markets within the first and second levels
+    of wholesale distribution can be distinguished: supply of (i) diesel, (ii) gasoline, (iii)
+    LPG, (iv) heavy fuel oil and (v) light fuel oil.10 The ‘traditional’ fuel segments also
+    include their biofuel variant (e.g., the market segment for diesel also includes biodiesel,
+    and the market for LPG also includes bio LPG).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m10372_2021_decision
+  page: '3'
+  quote_snippet: The Notifying Parties are active in refined fuel products, while the JV will
+    be active in the development and commercialization of rDME.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m10372_2021_decision
+  page: '6'
+  quote_snippet: In any event, the Commission considers that, for the purposes of this decision,
+    the precise product market definition can be left open, as no competition concerns would
+    arise under any plausible product market definition, irrespective of whether the market
+    is defined as encompassing LPG, bio LPG, blended LPG with rDME,18 and rDME, or whether a
+    separate market were to exist for rDME.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m10372_2021_decision
+  page: '7'
+  quote_snippet: The ex-refinery sales of rDME (upstream) and non-retail sales of LPG24 (downstream)
+    in Denmark,25 France26 and Ireland;27 and, (b) The ex-refinery sales of rDME (upstream)
+    and retail sales of LPG28 (downstream) in Austria,29 France30 and Ireland.31
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m10372_2021_decision
+  page: '6'
+  quote_snippet: In any event, the Commission considers that, for the purposes of this decision,
+    the precise product market definition can be left open, as no competition concerns would
+    arise under any plausible product market definition, irrespective of whether the market
+    is defined as encompassing LPG, bio LPG, blended LPG with rDME,18 and rDME, or whether a
+    separate market were to exist for rDME.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m10372_2021_decision
+  page: '7'
+  quote_snippet: The ex-refinery sales of rDME (upstream) and non-retail sales of LPG24 (downstream)
+    in Denmark,25 France26 and Ireland;27
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m10372_2021_decision
+  page: '9'
+  quote_snippet: Since rDME is a novel product that was not previously considered, the Commission
+    has assessed potential horizontal overlaps between the Parties and the JV based on a hypothetically
+    wider product market, which would include both LPG and rDME. In such case, the national
+    markets mentioned in paragraph (30) above, namely Denmark, France and Ireland at non-retail
+    level, and Austria, France and Ireland at retail level, would be affected in the future.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m10372_2021_decision
+  page: '6'
+  quote_snippet: In any event, the Commission considers that, for the purposes of this decision,
+    the precise product market definition can be left open, as no competition concerns would
+    arise under any plausible product market definition, irrespective of whether the market
+    is defined as encompassing LPG, bio LPG, blended LPG with rDME,18 and rDME, or whether a
+    separate market were to exist for rDME.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m10372_2021_decision
+  page: '7'
+  quote_snippet: The ex-refinery sales of rDME (upstream) and retail sales of LPG28 (downstream)
+    in Austria,29 France30 and Ireland.31
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m10372_2021_decision
+  page: '9'
+  quote_snippet: Since rDME is a novel product that was not previously considered, the Commission
+    has assessed potential horizontal overlaps between the Parties and the JV based on a hypothetically
+    wider product market, which would include both LPG and rDME. In such case, the national
+    markets mentioned in paragraph (30) above, namely Denmark, France and Ireland at non-retail
+    level, and Austria, France and Ireland at retail level, would be affected in the future.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m10372_2021_decision
+  page: '6'
+  quote_snippet: Regarding upstream activities (exploration and production of crude oil and
+    natural gas), while ultimately leaving the question open, the Commission has considered
+    the market to be at least EEA-wide in scope.19
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m10372_2021_decision
+  page: '6'
+  quote_snippet: As regards the geographic scope of the various markets comprised under the
+    downstream activities, the Commission has considered that those markets usually have a national
+    dimension.20
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m10372_2021_decision
+  page: '6'
+  quote_snippet: Whilst the Notifying Parties do not dispute the Commission’s previous findings
+    on the geographic scope of such markets, the market investigation was inconclusive on this
+    point.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m10372_2021_decision
+  page: '6'
+  quote_snippet: They further considered that if a potential market for rDME alone were to be
+    delineated, this would also be wider than national in scope,22 whereas most customers considered
+    that it would likely be national.23
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m10372_2021_decision
+  page: '6'
+  quote_snippet: In any event, the Commission considers that, for the purposes of this decision,
+    the precise geographic market definition can be left open, as no competition concerns would
+    arise under any plausible geographic market definition (even at a national level).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_ec_m10372_2021_decision
+  page: '7'
+  quote_snippet: 'Based on these projections as well as the current plans of the Parties to
+    potentially supply blended LPG in a number of EEA Member States, the following vertically
+    affected markets were identified: (a) The ex-refinery sales of rDME (upstream) and non-retail
+    sales of LPG24 (downstream) in Denmark,25 France26 and Ireland;27 and, (b) The ex-refinery
+    sales of rDME (upstream) and retail sales of LPG28 (downstream) in Austria,29 France30 and
+    Ireland.31'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_ec_m10372_2021_decision
+  page: '6'
+  quote_snippet: In any event, the Commission considers that, for the purposes of this decision,
+    the precise geographic market definition can be left open, as no competition concerns would
+    arise under any plausible geographic market definition (even at a national level).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_ec_m10372_2021_decision
+  page: '7'
+  quote_snippet: The ex-refinery sales of rDME (upstream) and non-retail sales of LPG24 (downstream)
+    in Denmark,25 France26 and Ireland;27
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_ec_m10372_2021_decision
+  page: '9'
+  quote_snippet: In such case, the national markets mentioned in paragraph (30) above, namely
+    Denmark, France and Ireland at non-retail level, and Austria, France and Ireland at retail
+    level, would be affected in the future.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_ec_m10372_2021_decision
+  page: '6'
+  quote_snippet: In any event, the Commission considers that, for the purposes of this decision,
+    the precise geographic market definition can be left open, as no competition concerns would
+    arise under any plausible geographic market definition (even at a national level).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_ec_m10372_2021_decision
+  page: '7'
+  quote_snippet: The ex-refinery sales of rDME (upstream) and retail sales of LPG28 (downstream)
+    in Austria,29 France30 and Ireland.31
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_ec_m10372_2021_decision
+  page: '9'
+  quote_snippet: In such case, the national markets mentioned in paragraph (30) above, namely
+    Denmark, France and Ireland at non-retail level, and Austria, France and Ireland at retail
+    level, would be affected in the future.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_ec_m10372_2021_decision
+  page: '10'
+  quote_snippet: For the above reasons, the European Commission has decided not to oppose the
+    notified operation and to declare it compatible with the internal market and with the EEA
+    Agreement. This decision is adopted in application of Article 6(1)(b) of the Merger Regulation
+    and Article 57 of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+ai_summary: null
+case_type: merger
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

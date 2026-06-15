@@ -1,0 +1,251 @@
+case_id: eu_ec_m10326_2021
+case_name: M.10326
+authority: European Commission
+jurisdiction: EU
+sector: financial
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2021-08-06'
+parties: []
+source_documents:
+- doc_id: eu_ec_m10326_2021_decision
+  title: M.10326 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10326
+  pdf_url: http://publications.europa.eu/resource/cellar/ae250e0b-2cfb-11ec-bd8e-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Life insurance and its possible sub-segments
+  definition_status: left_open
+  notes: The Commission considered segmenting the life insurance market by purpose (pure risk,
+    pension, savings/investment), customer type (individuals, group/corporate), and type of
+    risk covered (based on Polish Insurance Act classifications). However, it ultimately left
+    the precise product market definition open.
+- market_id: pm_2
+  name: Pensions in Poland and its possible sub-segments (open pension funds)
+  definition_status: left_open
+  notes: The Commission considered segmenting the Polish pensions market into obligatory (pillars
+    one and two) and voluntary (pillar three) pensions, but ultimately left the exact market
+    definition open.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Life insurance (and its possible sub-segments) — national (Poland affected)
+  definition_status: considered
+  notes: For the purposes of this decision, the Commission considered the geographic scope of
+    the market for life insurance to be national in Poland.
+- market_id: gm_2
+  name: Pensions (and its possible sub-segments) — national (Poland affected)
+  definition_status: considered
+  notes: For the purposes of this decision, the Commission considered the geographic scope of
+    the market for pensions to be national in Poland.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m10326_2021_decision
+  page: '6'
+  quote_snippet: The Commission ultimately left open the precise product market definition for
+    life insurance products for all plausible segmentations mentioned above.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m10326_2021_decision
+  page: '6'
+  quote_snippet: In the present case, the question whether the market for life insurance should
+    be further segmented on the basis of the purpose served by the product, customer type and/or
+    different risks covered can be left open since the Transaction does not give rise to serious
+    doubts as to its compatibility with the internal market or the functioning of the EEA agreement
+    under any of these plausible market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m10326_2021_decision
+  page: '4'
+  quote_snippet: 'The Transaction only gives rise to horizontally affected markets in certain
+    segments of the markets for life insurance and pensions in Poland. Specifically, in the
+    following segments of life insurance: Class 3, Class 4 to individuals, Class 5 to individuals
+    (see paragraph (21)).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m10326_2021_decision
+  page: '8'
+  quote_snippet: In this case, the question whether the market for pensions should be further
+    segmented can be left open since the Transaction does not give rise to serious doubts as
+    to its compatibility with the internal market or the functioning of the EEA agreement under
+    any of these plausible market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m10326_2021_decision
+  page: '7'
+  quote_snippet: The Commission has previously concluded that the exact market definition of
+    the Polish pensions’ system can be left open. In a previous case, the market investigation
+    had indicated that obligatory pensions (pillars one and two) and voluntary pensions (pillar
+    three) form two separate product markets, but the Commission ultimately left the market
+    definition open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m10326_2021_decision
+  page: '4'
+  quote_snippet: The Transaction only gives rise to horizontally affected markets in certain
+    segments of the markets for life insurance and pensions in Poland. Specifically, in [...]
+    open pension funds in Poland (pension funds that operate in the second pillar of the Polish
+    pension system, see paragraphs (32) to (34)).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m10326_2021_decision
+  page: '7'
+  quote_snippet: For the purposes of this decision, therefore, the Commission considers the
+    geographic scope of the market for life insurance (and its possible sub-segments) to be
+    national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m10326_2021_decision
+  page: '6'
+  quote_snippet: The Commission’s investigation did not provide any indications that would require
+    the Commission to depart from its previous decisional practice on the geographic scope of
+    the markets for life insurance being national.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m10326_2021_decision
+  page: '6'
+  quote_snippet: In previous cases, the Commission considered the market for life insurance
+    and its segments to be national, due to national distribution channels, established market
+    structures, fiscal constraints and specific regulatory systems among Member States. However,
+    the exact geographic market definition has been left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m10326_2021_decision
+  page: '8'
+  quote_snippet: For the purposes of this decision, therefore, the Commission considers the
+    geographic scope of the market for pensions (and its possible sub-segments) to be national
+    in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m10326_2021_decision
+  page: '8'
+  quote_snippet: The Commission’s investigation did not provide any indications that would require
+    the Commission to depart from its previous decisional practice on the geographic scope of
+    the markets for pensions being national.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m10326_2021_decision
+  page: '8'
+  quote_snippet: In its previous case law, the Commission considered that that the market for
+    pension products for Poland is national in scope, but left the final market definition open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m10326_2021_decision
+  page: '14'
+  quote_snippet: For the above reasons, the European Commission has decided not to oppose the
+    notified operation and to declare it compatible with the internal market and with the EEA
+    Agreement. This decision is adopted in application of Article 6(1)(b) of the Merger Regulation
+    and Article 57 of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

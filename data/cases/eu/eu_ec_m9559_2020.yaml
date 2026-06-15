@@ -1,0 +1,872 @@
+case_id: eu_ec_m9559_2020
+case_name: M.9559
+authority: European Commission
+jurisdiction: EU
+sector: business_services
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2020-02-19'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9559_2020_decision
+  title: M.9559 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9559
+  pdf_url: http://publications.europa.eu/resource/cellar/c5ce1b28-7ff7-11ea-b94a-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Market for security systems
+  definition_status: left_open
+  notes: The Commission considered a distinction within the market for security systems between
+    (i) manned guarding services; (ii) alarm installation and maintenance; and (iii) alarm monitoring
+    and response. Segments (ii) and (iii) are referred to as 'alarm services'. The exact product
+    market definition was left open as the transaction did not raise serious doubts under any
+    plausible definition.
+- market_id: pm_2
+  name: Alarm installation and maintenance services
+  definition_status: left_open
+  notes: Considered as a segment of the market for security systems. The Commission previously
+    considered that this market could be further divided by customer type (residential and business
+    customers), but left the market definition open.
+- market_id: pm_3
+  name: Alarm monitoring and response services
+  definition_status: left_open
+  notes: Considered as a segment of the market for security systems. The Commission previously
+    considered whether alarm monitoring and alarm response could be distinct and whether it
+    could be further divided by customer type (residential and business customers), but left
+    the exact product market definition open.
+- market_id: pm_4
+  name: Peace of Mind solutions
+  definition_status: defined
+  notes: The Commission concluded that Peace of Mind solutions do not form part of the market
+    for security systems, despite exerting some competitive constraint.
+- market_id: pm_5
+  name: Retail supply of mobile telecommunication services
+  definition_status: left_open
+  notes: The Commission previously considered an overall retail market for mobile telecommunication
+    services, separate from fixed services, and did not further segment it by service type or
+    network technology, or by pre-paid/post-paid or customer type. For this decision, the exact
+    product market definition was left open for the part excluding M2M services.
+- market_id: pm_6
+  name: M2M services
+  definition_status: defined
+  notes: The Commission concluded that M2M (machine-to-machine) services constitute a separate
+    market.
+- market_id: pm_7
+  name: Retail supply of fixed telephony services
+  definition_status: left_open
+  notes: The Commission considered an overall retail market for fixed telephony services including
+    VoIP services. Possible distinctions between local/national and international calls or residential/non-residential
+    customers were considered but left open.
+- market_id: pm_8
+  name: Retail supply of fixed internet access services
+  definition_status: left_open
+  notes: The Commission previously considered possible segmentations within fixed internet access
+    services by product type, distribution mode, and customer type, and also noted it should
+    not be segmented by download speed. For this decision, the exact product market definition
+    was left open.
+- market_id: pm_9
+  name: Retail supply of TV services
+  definition_status: left_open
+  notes: The Commission previously distinguished Free-to-Air (FTA) TV and pay-TV, and considered
+    further segmentations for pay-TV (linear vs non-linear, distribution technologies, premium
+    vs basic services). For this decision, the exact product market definition was left open.
+- market_id: pm_10
+  name: Retail supply of multiple play services
+  definition_status: left_open
+  notes: The Commission previously considered the existence of distinct markets for multiple
+    play offerings but left it open. The market investigation in this case generally supported
+    the possibility of a potential separate market.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Market for security systems — national (Spain affected)
+  definition_status: defined
+  notes: The Commission concluded that the market for security systems, including any plausible
+    segmentation thereof, is national in scope.
+- market_id: gm_2
+  name: Retail mobile telecommunication services (excluding M2M services) — national (Spain
+    affected)
+  definition_status: defined
+  notes: The Commission found that the overall market for retail mobile telecommunication services
+    (except M2M services) is national in scope.
+- market_id: gm_3
+  name: M2M services — geographic market left open
+  definition_status: left_open
+  notes: The Commission assessed whether the geographic market was national or regional, but
+    ultimately left the definition open, noting mixed results from the market investigation
+    (national for Spanish operators, wider for international operators, but alarm devices are
+    at a fixed location).
+- market_id: gm_4
+  name: Retail supply of fixed telephony services — geographic market left open
+  definition_status: left_open
+  notes: Previous decisions concluded this market was national in scope. For the purpose of
+    this decision, the exact geographic market definition was left open.
+- market_id: gm_5
+  name: Retail supply of fixed internet access services — geographic market left open
+  definition_status: left_open
+  notes: Previous decisions concluded this market was national in scope. For the purpose of
+    this decision, the exact geographic market definition was left open.
+- market_id: gm_6
+  name: Retail supply of TV services — geographic market left open
+  definition_status: left_open
+  notes: The Commission previously considered that this market is either national, or limited
+    to the geographic coverage of a supplier’s cable network. For the purpose of this decision,
+    the exact geographic market definition was left open.
+- market_id: gm_7
+  name: Retail supply of multiple play services — geographic market left open
+  definition_status: left_open
+  notes: Previous decisions considered the geographic scope would be national as components
+    are offered nationally. For the purpose of this decision, the exact geographic market definition
+    was left open.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '3'
+  quote_snippet: In prior decisions, the Commission made a distinction, within the market for
+    security systems, between (i) manned guarding services; (ii) alarm installation and maintenance
+    (i.e. electronic guarding equipment); and (iii) alarm monitoring and response.6 Hereafter,
+    segments (ii) and (iii) will be referred to as “alarm services”.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '3'
+  quote_snippet: Prosegur Alarmas and TEF, via its subsidiary TIS, are active in the supply
+    of alarm services7, while they do not offer manned guarding services as PCS does. While
+    Prosegur Alarms mainly supplies alarm services to residential and SME customers, TEF mainly
+    supplies SME customers. Accordingly, the Transaction only concerns the markets for alarms
+    services and not the wider market for security systems.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '5'
+  quote_snippet: With regard to the other above-mentioned segmentations, namely between (i)
+    manned guarding services; (ii) alarm installation and maintenance (i.e. electronic guarding
+    equipment); and (iii) alarm monitoring and response services and, for (ii) and (iii), a
+    further potential sub-segmentation between residential and business customers, the Commission
+    considers that, in any event, for the purposes of this decision, the exact product market
+    definition with regard to the market for security systems can be left open, as the Transaction
+    does not raise serious doubts as to its compatibility with the internal market or the functioning
+    of the EEA Agreement under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '3'
+  quote_snippet: In prior decisions, the Commission made a distinction, within the market for
+    security systems, between (i) manned guarding services; (ii) alarm installation and maintenance
+    (i.e. electronic guarding equipment); and (iii) alarm monitoring and response.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '4'
+  quote_snippet: The Commission has previously considered that alarm installation and maintenance
+    and alarm monitoring and response could each be further divided into two sub- segments depending
+    on the type of customers, i.e. residential and business customers, although it ultimately
+    left the market definition open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '5'
+  quote_snippet: With regard to the other above-mentioned segmentations, namely between (i)
+    manned guarding services; (ii) alarm installation and maintenance (i.e. electronic guarding
+    equipment); and (iii) alarm monitoring and response services and, for (ii) and (iii), a
+    further potential sub-segmentation between residential and business customers, the Commission
+    considers that, in any event, for the purposes of this decision, the exact product market
+    definition with regard to the market for security systems can be left open, as the Transaction
+    does not raise serious doubts as to its compatibility with the internal market or the functioning
+    of the EEA Agreement under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '3'
+  quote_snippet: In prior decisions, the Commission made a distinction, within the market for
+    security systems, between (i) manned guarding services; (ii) alarm installation and maintenance
+    (i.e. electronic guarding equipment); and (iii) alarm monitoring and response.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '4'
+  quote_snippet: In previous decisions, the Commission considered whether alarm monitoring and
+    alarm response could belong to distinct market, but left the exact product market definition
+    open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '5'
+  quote_snippet: With regard to the other above-mentioned segmentations, namely between (i)
+    manned guarding services; (ii) alarm installation and maintenance (i.e. electronic guarding
+    equipment); and (iii) alarm monitoring and response services and, for (ii) and (iii), a
+    further potential sub-segmentation between residential and business customers, the Commission
+    considers that, in any event, for the purposes of this decision, the exact product market
+    definition with regard to the market for security systems can be left open, as the Transaction
+    does not raise serious doubts as to its compatibility with the internal market or the functioning
+    of the EEA Agreement under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '4'
+  quote_snippet: The Notifying Parties submit that so-called “Peace of Mind” solutions, which
+    include electronic device-based security systems without connection to an ARC, should also
+    be included into an overall market for security systems.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '5'
+  quote_snippet: The Commission concludes that, for the purpose of this decision, Peace of Mind
+    solutions do not form part of the market for security systems, even though they exert some
+    competitive constraint on alarm services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '7'
+  quote_snippet: The Commission has previously considered that there is an overall retail market
+    for mobile telecommunication services constituting a separate market from retail fixed telecommunication
+    services. In previous decisions, the Commission did not further segment the overall retail
+    mobile market based on the type of service (e.g. voice calls, SMS, data services), or the
+    type of network technology (e.g. 2G, 3G, 4G). The Commission considered possible segments
+    of the overall retail market for mobile telecommunication services between pre-paid or post-paid
+    services and private customers or business customers, concluding that these did not constitute
+    separate product markets but rather represent market segments within an overall retail market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '8'
+  quote_snippet: As for the remaining part of the market for the provision of retail mobile
+    telecommunications services, the exact product market definition can be left open as the
+    Transaction does not raise serious doubts as to its compatibility with the internal market
+    or the functioning of the EEA Agreement under any possible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '7'
+  quote_snippet: In previous decisions, the Commission concluded that there is a separate market
+    for M2M services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '7'
+  quote_snippet: The results of the market investigation conducted in the present case generally
+    supported the market definition derived from the Commission’s past decisional practice.29
+    Notably, the respondents highlighted several demand-side and supply-side substitutability
+    issues. In particular, one respondent stressed that not all retail telecommunication services
+    providers offer M2M services, the reverse being also true. Furthermore, remote monitoring
+    and control as well as predictive maintenance are key features for M2M services that are
+    not necessary for traditional telecommunication services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '8'
+  quote_snippet: The Commission therefore concludes, for the purpose of this decision, that
+    M2M services constitute a separate market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '9'
+  quote_snippet: In previous decisions, the Commission considered whether a distinction between
+    local/national and international calls as well as between residential and non- residential
+    customers should be drawn, based on the distinctions in the Commission Recommendation 2003/311/EC,39
+    but ultimately left the exact product market definition open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '9'
+  quote_snippet: In recent decisions, the Commission considered that an overall retail market
+    for fixed telephony services exists, which includes VoIP services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '9'
+  quote_snippet: The Commission considers that, for the purposes of this decision, the exact
+    product market definition with regard to the market for the retail supply of fixed telephony
+    services can be left open, as the Transaction does not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement under any plausible product
+    market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '11'
+  quote_snippet: In previous cases, the Commission considered, but ultimately left open, possible
+    segmentations within the supply of retail fixed internet access services according to (i)
+    product type, distinguishing between narrowband, broadband and dedicated access; (ii) distribution
+    mode, distinguishing between xDSL, fibre, cable (fixed-only) and internet provided through
+    the mobile network infrastructure (fixed-wireless); and (iii) customer type, distinguishing
+    between residential and small business customers on the one hand, and larger business customers
+    and public authorities on the other.49 At the same time, the Commission noted that the retail
+    market for fixed internet access services should not be segmented according to download
+    speed.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '11'
+  quote_snippet: More recently, in Vodafone/Certain Liberty Global Assets, the Commission considered
+    that the relevant product for the retail supply of fixed internet access services is the
+    overall retail market for the provision of fixed internet access services, including all
+    product types, distribution modes and speeds/bandwidths, to residential and small business
+    customers, excluding the supply of fixed internet services provided through mobile network
+    infrastructure.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '11'
+  quote_snippet: The Commission considers that, in any event, for the purposes of this decision,
+    the exact product market definition with regard to the market for the retail supply of fixed
+    internet access services can be left open, as the Transaction does not raise serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA Agreement
+    under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '12'
+  quote_snippet: 'In previous cases, the Commission distinguished two separate markets for the
+    retail supply of television services: (i) Free-to-Air (“FTA”) TV and (ii) pay-TV.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '13'
+  quote_snippet: 'The Commission also considered whether pay-TV can be segmented further according
+    to: (i) linear vs non-linear pay-TV services;59 (ii) distribution technologies (e.g. cable,
+    satellite, or terrestrial);60 (ii) distribution technologies (e.g. cable, satellite, or
+    terrestrial);61 and (iii) premium vs basic pay-TV services.62 In certain countries, due
+    to the large penetration of pay-TV services and the fact that such services also carry the
+    main FTA channels, the Commission has identified two separate product markets for: (i) basic
+    pay-TV services (including FTA services) and (ii) premium pay-TV services. In previous cases,
+    the Commission has left open the market definition with regard to each of these potential
+    sub-segments.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '13'
+  quote_snippet: The Commission considers that, in any event, for the purposes of this decision,
+    the exact product market definition with regard to the market for the retail supply of TV
+    services can be left open, as the Transaction does not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement under any plausible product
+    market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '14'
+  quote_snippet: In previous decisions, the Commission considered, but ultimately left open,
+    the existence of distinct markets for the supply of multiple play offerings that comprise
+    a bundle of two or more telecommunication (fixed internet access, fixed telephony, mobile)
+    and TV services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '15'
+  quote_snippet: The results of the market investigation conducted in the present case generally
+    supported the possibility of a potential separate market for the retail supply of multiple
+    play services. In particular, most respondents considered that quadruple play (“4P”) offerings
+    that comprise fixed internet access, fixed telephony, mobile and TV services have a high
+    penetration in the Spanish residential market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '15'
+  quote_snippet: The Commission considers that, in any event, for the purposes of this decision,
+    the exact product market definition with regard to the market for the retail supply of multiple
+    play services can be left open, as the Transaction does not raise serious doubts as to its
+    compatibility with the internal market or the functioning of the EEA Agreement under any
+    plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '6'
+  quote_snippet: In its previous decisions, the Commission concluded that the market for security
+    systems, under any plausible segmentation, is national in scope due to the existence of
+    specific national regulations and standards, language differences and national preferences
+    derived from the reputation of each of the players at the national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '6'
+  quote_snippet: For the purpose of this decision, the Commission concludes that the market
+    for security systems, including any plausible segmentation thereof, is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '8'
+  quote_snippet: The Commission has found that the overall market for retail mobile telecommunication
+    services (except M2M services) is national in scope.31
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '8'
+  quote_snippet: With regard to the overall market for retail mobile telecommunication services
+    (excluding M2M services), the market investigation in this case did not provide any new
+    elements justifying a departure from Commission’s previous decisions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '9'
+  quote_snippet: For the purpose of this decision, the Commission concludes that the market
+    for retail mobile telecommunication services (excluding M2M services) is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_34
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '8'
+  quote_snippet: As for the geographic scope of M2M services, the market investigation has yielded
+    mixed results depending on the area of activity of the responding operator. The majority
+    of operators active in Spain consider that a potential market for M2M services is national
+    in scope35, whereas suppliers of M2M services mainly active outside of Spain have considered
+    the geographic market to be wider in scope.36 However, the respondents that argued for a
+    wider geographic scope referred to devices which cross borders (e.g., connected cars), for
+    which a multi-national SIM card from a single connectivity provider would be required.37
+    This is not the case for alarm devices, which are installed at a fixed location.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_35
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '9'
+  quote_snippet: As for the market for M2M services, the Commission considers that, for the
+    purposes of this decision, the exact geographic market definition can be left open, as the
+    Transaction does not raise serious doubts as to its compatibility with the internal market
+    or the functioning of the EEA Agreement under any plausible geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_36
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '10'
+  quote_snippet: In previous decisions, the Commission concluded that the retail market for
+    the provision of fixed telephony services was national in scope.44 This is due to the continuing
+    importance of national regulation in the telecommunications sector, the supply of upstream
+    wholesale services that work on a national basis, and the fact that the pricing policies
+    of telecommunications providers are predominantly national.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_37
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '10'
+  quote_snippet: The Commission considers that, for the purposes of this decision, the exact
+    geographic market definition with regard to the market for the retail supply of fixed telephony
+    services can be left open, as the Transaction does not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement under any plausible geographic
+    market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_38
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '11'
+  quote_snippet: In previous decisions, the Commission concluded that the retail market for
+    the provision of fixed internet services was national in scope.53
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_39
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '11'
+  quote_snippet: The Commission considers that, in any event, for the purposes of this decision,
+    the exact geographic market definition with regard to the market for the retail supply of
+    fixed internet access services can be left open, as the Transaction does not raise serious
+    doubts as to its compatibility with the internal market or the functioning of the EEA Agreement
+    under any plausible geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_40
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '13'
+  quote_snippet: The Commission has previously considered that the market for the retail provision
+    of TV services is either national, or limited to the geographic coverage of a supplier’s
+    cable network.65
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_41
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '14'
+  quote_snippet: The Commission considers that, in any event, for the purposes of this decision,
+    the exact geographic market definition with regard to the market for the retail supply of
+    TV services can be left open, as the Transaction does not raise serious doubts as to its
+    compatibility with the internal market or the functioning of the EEA Agreement under any
+    plausible geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_42
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '15'
+  quote_snippet: In previous decisions, the Commission considered that the geographic scope
+    of any possible retail market for multiple play services would be national since the components
+    of the multiple play offers are offered individually at national level and the bundling
+    of the services would not change the geographic scope of the components. It nevertheless
+    left the exact geographic delineation of the possible multiple play market open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_43
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '15'
+  quote_snippet: The Commission considers that, for the purposes of this decision, the exact
+    geographic market definition with regard to the market for the retail supply of multiple
+    play services can be left open, as the Transaction does not raise serious doubts as to its
+    compatibility with the internal market or the functioning of the EEA Agreement under any
+    plausible geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_44
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '5'
+  quote_snippet: the Commission considers that, in any event, for the purposes of this decision,
+    the exact product market definition with regard to the market for security systems can be
+    left open, as the Transaction does not raise serious doubts as to its compatibility with
+    the internal market or the functioning of the EEA Agreement under any plausible product
+    market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_45
+  source_document_id: eu_ec_m9559_2020_decision
+  page: '16'
+  quote_snippet: the Commission considers that the concentration does not raise serious doubts
+    as to its compatibility with the common market in the potential segment for alarm services
+    for business customers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

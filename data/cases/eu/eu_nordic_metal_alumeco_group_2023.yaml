@@ -1,0 +1,361 @@
+case_id: eu_nordic_metal_alumeco_group_2023
+case_name: NORDIC METAL / ALUMECO GROUP
+authority: European Commission
+jurisdiction: EU
+sector: retail
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2023-06-26'
+parties:
+- name: NORDIC METAL
+  role: acquirer
+- name: ALUMECO GROUP
+  role: target
+source_documents:
+- doc_id: eu_nordic_metal_alumeco_group_2023_decision
+  title: NORDIC METAL / ALUMECO GROUP — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11061
+  pdf_url: http://publications.europa.eu/resource/cellar/d11dccfc-f1c0-11ee-8e14-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Distribution of aluminium
+  definition_status: defined
+  notes: The Commission concluded that a distinction by metal type is warranted, thus defining
+    the distribution of aluminium as a separate market from other metals.
+- market_id: pm_2
+  name: Distribution of other metals (stainless steel, copper, brass, bronze)
+  definition_status: defined
+  notes: The Commission considered a distinction by metal type warranted, but found horizontal
+    overlaps in other metals to be marginal and not giving rise to affected markets.
+- market_id: pm_3
+  name: Distribution of aluminium by producers/mills vs. wholesalers
+  definition_status: left_open
+  notes: The Commission investigated whether sales by producers/mills constitute a separate
+    market from sales by wholesalers but left the definition open as no serious doubts arose
+    regardless of this segmentation.
+- market_id: pm_4
+  name: Distribution of aluminium by wholesalers offering value-added services vs. not offering
+    value-added services
+  definition_status: left_open
+  notes: The Commission investigated a segmentation based on value-added services offered by
+    wholesalers but left the definition open due to mixed market investigation results and no
+    serious doubts arising.
+- market_id: pm_5
+  name: Distribution of flat aluminium products
+  definition_status: considered
+  notes: The Commission considered that the distribution of flat aluminium products could constitute
+    a distinct market due to differences in competitive dynamics, and would consider this segmentation
+    in its competitive assessment.
+- market_id: pm_6
+  name: Distribution of long aluminium products
+  definition_status: considered
+  notes: The Commission considered that the distribution of long aluminium products could constitute
+    a distinct market due to differences in competitive dynamics, and would consider this segmentation
+    in its competitive assessment.
+- market_id: pm_7
+  name: Sub-segmentation within flat and long aluminium products (e.g. coils, bars, tubes, sheets)
+  definition_status: left_open
+  notes: The market investigation did not support a further sub-segmentation of flat and long
+    aluminium products into narrower types, and this segmentation was not considered further
+    in the decision.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Distribution of aluminium products — national (Denmark, Sweden, Finland affected)
+  definition_status: left_open
+  notes: The investigation suggested national markets for the wholesale distribution of aluminium
+    products. However, the precise geographic market definition was left open as no serious
+    doubts arose regardless of whether markets were considered national or regional.
+- market_id: gm_2
+  name: Distribution of aluminium products — regional (Nordics affected)
+  definition_status: left_open
+  notes: While the investigation suggested national markets, the Commission also considered
+    regional markets (Nordics) in its competitive assessment. The precise geographic market
+    definition was ultimately left open.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_nordic_metal_alumeco_group_2023_decision
+  page: '5'
+  quote_snippet: (26) The Commission considers that, consistent with its past practice and absent
+    indications to the contrary from the market investigation, a distinction by metal type is
+    warranted.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_nordic_metal_alumeco_group_2023_decision
+  page: '5'
+  quote_snippet: (23) The Notifying Party agrees with the Commission’s past practice that the
+    distribution of aluminium is a separate market from the distribution of other metals such
+    as stainless steel or copper alloys.21
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_nordic_metal_alumeco_group_2023_decision
+  page: '5'
+  quote_snippet: (26) The Commission considers that, consistent with its past practice and absent
+    indications to the contrary from the market investigation, a distinction by metal type is
+    warranted.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_nordic_metal_alumeco_group_2023_decision
+  page: '7'
+  quote_snippet: (34) This has been confirmed by market participants, a majority of which indicated
+    that wholesalers do not compete or only marginally compete for some customers with producers/mills.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_nordic_metal_alumeco_group_2023_decision
+  page: '7'
+  quote_snippet: (37) In any event, for the purpose of this Decision, it can be left open whether
+    sales of aluminium by producers/mills constitute a separate market from sales of aluminium
+    from wholesalers, as no serious doubts arise as to the compatibility of the Transaction
+    with the internal market as regards the horizontal overlap between the Parties’ activities
+    in the distribution of aluminium in the EEA irrespective of this potential segmentation
+    of the relevant product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_nordic_metal_alumeco_group_2023_decision
+  page: '8'
+  quote_snippet: (41) In any event, for the purpose of this Decision, it can be left open whether
+    a segmentation between wholesalers offering value-added service and those not offering those
+    services is warranted, as no serious doubts arise as to the compatibility of the Transaction
+    with the internal market with regard to the horizontal overlap between the Parties’ activities
+    in the distribution of aluminium in the EEA irrespective of this potential further segmentation
+    of the relevant product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_nordic_metal_alumeco_group_2023_decision
+  page: '8'
+  quote_snippet: (44) Distinction between flat and long aluminium products. According to the
+    results of the market investigation, a majority of respondents considered that competitive
+    dynamics (available producers/suppliers, available volumes, prices, etc.) for the wholesale
+    distribution of (i) flat aluminium products and (ii) long aluminium products are different
+    in the EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_nordic_metal_alumeco_group_2023_decision
+  page: '9'
+  quote_snippet: (47) In view of the above, for the purpose of this Decision, the Commission
+    considers that due to the differences in competitive dynamics between the distribution of
+    flat and long aluminium products, distribution of these two types of aluminium products
+    could constitute distinct product markets, and will consider this segmentation in its competitive
+    assessment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_nordic_metal_alumeco_group_2023_decision
+  page: '8'
+  quote_snippet: (44) Distinction between flat and long aluminium products. According to the
+    results of the market investigation, a majority of respondents considered that competitive
+    dynamics (available producers/suppliers, available volumes, prices, etc.) for the wholesale
+    distribution of (i) flat aluminium products and (ii) long aluminium products are different
+    in the EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_nordic_metal_alumeco_group_2023_decision
+  page: '9'
+  quote_snippet: (47) In view of the above, for the purpose of this Decision, the Commission
+    considers that due to the differences in competitive dynamics between the distribution of
+    flat and long aluminium products, distribution of these two types of aluminium products
+    could constitute distinct product markets, and will consider this segmentation in its competitive
+    assessment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_nordic_metal_alumeco_group_2023_decision
+  page: '9'
+  quote_snippet: (46) However, regarding the wholesale distribution of aluminium products, the
+    market investigation did not support a possible further sub-segmentation of each of the
+    flat and long aluminium product categories according to narrower types of products.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_nordic_metal_alumeco_group_2023_decision
+  page: '9'
+  quote_snippet: (47) The Commission however considers for the purpose of this Decision that,
+    given the results of the market investigation pointing to important supply-side considerations,
+    a further segmentation of flat and long aluminium by narrower type of products is not warranted.
+    This potential further segmentation according to narrower product type is accordingly not
+    considered further in this decision.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_nordic_metal_alumeco_group_2023_decision
+  page: '11'
+  quote_snippet: (55) On balance, the investigation suggests that the markets for the wholesale
+    distribution of aluminium products in the EEA are national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_nordic_metal_alumeco_group_2023_decision
+  page: '11'
+  quote_snippet: (56) In any event, for the purpose of this decision, the precise geographic
+    market definition can be left open on this point as no serious doubts arise as to the compatibility
+    of the Transaction with the internal market with regard to the horizontal overlap between
+    the Parties’ activities in the distribution of aluminium in the EEA irrespective of whether
+    the relevant markets are considered national or regional (groups of more than one country).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_nordic_metal_alumeco_group_2023_decision
+  page: '11'
+  quote_snippet: (55) However, the Commission also will consider regional markets in its competitive
+    assessment as the Transaction leads to affected markets based on that geographic segmentation
+    as well.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_nordic_metal_alumeco_group_2023_decision
+  page: '11'
+  quote_snippet: (56) In any event, for the purpose of this decision, the precise geographic
+    market definition can be left open on this point as no serious doubts arise as to the compatibility
+    of the Transaction with the internal market with regard to the horizontal overlap between
+    the Parties’ activities in the distribution of aluminium in the EEA irrespective of whether
+    the relevant markets are considered national or regional (groups of more than one country).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_nordic_metal_alumeco_group_2023_decision
+  page: '14'
+  quote_snippet: (68) For the reasons set out below, the Commission considers that the Transaction
+    does not raise serious doubts as to its compatibility with the internal market or the functioning
+    of the EEA Agreement with regard to the horizontal overlap between the Parties’ activities
+    in the distribution of aluminium in the EEA since the Transaction does not give rise to
+    competition concerns in any of the plausibly affected markets listed in Table 1, which the
+    Commission assesses together given the similarity of the assessment in each of them.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+ai_summary: null
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []
+case_type: merger

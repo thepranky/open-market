@@ -1,0 +1,313 @@
+case_id: eu_arcelik_whirlpool_emea_mda_2023
+case_name: ARCELIK / WHIRLPOOL EMEA MDA
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2023-10-23'
+parties:
+- name: ARCELIK
+  role: acquirer
+- name: WHIRLPOOL EMEA MDA
+  role: target
+source_documents:
+- doc_id: eu_arcelik_whirlpool_emea_mda_2023_decision
+  title: ARCELIK / WHIRLPOOL EMEA MDA — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11086
+  pdf_url: http://publications.europa.eu/resource/cellar/1d5af8af-d4a8-11ef-be2a-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: MDA categories (cooking appliances, hoods, dishwashers, refrigerators, freezers, microwave
+    ovens, washing machines, tumble dryers)
+  definition_status: defined
+  notes: The Commission confirmed previous decisional practice identifying separate relevant
+    product markets for each category of Major Domestic Appliances (MDA).
+- market_id: pm_2
+  name: Cooking appliances sub-segmentation (hobs, cookers, ovens)
+  definition_status: left_open
+  notes: The market investigation was inconclusive regarding further sub-segmentation of cooking
+    appliances.
+- market_id: pm_3
+  name: MDA — Built-in vs. Freestanding Appliances
+  definition_status: left_open
+  notes: The exact market definition for built-in versus freestanding MDA was left open, but
+    the competitive assessment would be conducted on this segmented basis. Market investigation
+    confirmed to a certain degree the segmentation, noting differences in supply-side (production
+    lines, investments) and demand-side substitutability, as well as price differences.
+- market_id: pm_4
+  name: MDA — Connected vs. Non-connected Appliances
+  definition_status: defined
+  notes: The Commission concluded that smart/connected and non-connected MDA belong to the same
+    relevant market, based on market investigation results confirming strong supply-side substitution
+    and customers not being driven by connected features.
+- market_id: pm_5
+  name: Sale of Small Domestic Appliances (SDA) — various product categories
+  definition_status: considered
+  notes: The Commission referenced past decisions where it examined SDA markets comprising thirteen
+    product categories. This market definition was applied for assessing the minority shareholding,
+    not for the main merger.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Manufacture and supply of MDA — EEA-wide or national
+  definition_status: left_open
+  notes: The Commission left open the exact geographic scope for MDA markets (EEA-wide or national),
+    as the transaction did not raise serious doubts under any plausible definition. However,
+    market investigation results suggested markets were most likely national in scope, citing
+    demand patterns, price negotiation at national level, local presence importance, brand varying
+    importance, and national marketing campaigns.
+- market_id: gm_2
+  name: Sale of Small Domestic Appliances (SDA) — National
+  definition_status: considered
+  notes: For Small Domestic Appliances, the Commission applied a precedent that concluded SDA
+    markets are national in scope.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_arcelik_whirlpool_emea_mda_2023_decision
+  page: '4'
+  quote_snippet: In line with the Commission’s prior decisional practice, the results of the
+    market investigation confirm that separate markets exist for each of the MDA categories
+    (i.e. (i) cooking appliances, (ii) hoods, (iii) dishwashers, (iv) refrigerators, (v) freezers,
+    (vi) microwave ovens, (vii) washing machines and (viii) tumble dryers).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_arcelik_whirlpool_emea_mda_2023_decision
+  page: '5'
+  quote_snippet: The market investigation was inconclusive as to whether cooking appliances
+    should be further sub-segmented into hobs, cookers, and ovens.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_arcelik_whirlpool_emea_mda_2023_decision
+  page: '5'
+  quote_snippet: As regards the potential sub-segmentation between built-in and freestanding
+    MDA, the results of the market investigation confirmed to a certain degree the segmentation
+    between built-in and freestanding appliances.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_arcelik_whirlpool_emea_mda_2023_decision
+  page: '4'
+  quote_snippet: The Notifying Party submits that there are no grounds for further segmenting
+    the MDA markets into built-in versus freestanding appliances. According to the Notifying
+    Party, this is because there is a high supply-side and demand-side substitutability and
+    most of the major MDA manufacturers produce both built-in and freestanding MDA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_arcelik_whirlpool_emea_mda_2023_decision
+  page: '6'
+  quote_snippet: The Commission concludes that for the purpose of this decision the exact definition
+    of the relevant product market can be left open, as far as the distinction between into
+    built-in and freestanding appliances is concerned, as the Transaction does not raise serious
+    doubts on the basis of any plausible definition of the relevant product market. Therefore,
+    for the purpose of the decision, the Commission will conduct its competitive assessment
+    on the basis of each separate MDA category, further segmented into built-in and freestanding
+    appliances.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_arcelik_whirlpool_emea_mda_2023_decision
+  page: '4'
+  quote_snippet: The Notifying Party further submits that there are no grounds for segmenting
+    the MDA markets into connected versus non-connected appliances. This is because there is
+    strong supply-side substitution between smart/connected MDA and non-connected MDA in both
+    directions. According to the Notifying Party, every manufacturer that produces non-connected
+    MDA also produces smart/connected MDA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_arcelik_whirlpool_emea_mda_2023_decision
+  page: '6'
+  quote_snippet: As regards the potential sub-segmentation between smart/connected and non-connected
+    MDA, the results of the market investigation confirmed that smart/connected appliances and
+    non-connected appliances could be part of the same market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_arcelik_whirlpool_emea_mda_2023_decision
+  page: '6'
+  quote_snippet: In light of the results of the market investigation, the Commission overall
+    considers, that for the purposes of this decision, both smart/connected and non-connected
+    DMA, belong to the same relevant market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_arcelik_whirlpool_emea_mda_2023_decision
+  page: '65'
+  quote_snippet: 'The Commission has in the past examined the market for the sale of SDA comprising
+    thirteen product categories: deep fryers, mini ovens, toasters, sandwich and waffle makers,
+    appliances for informal meals (‘pierrade’, ‘wokparty’, ‘raclette’, ‘fondue’, etc.), electric
+    barbecue and interior grills, rice cookers and steam cookers, electric filter coffee makers,
+    kettles, espresso coffee machines, mixers and food mixers, irons/steam stations, and personal
+    care appliances (health and beauty appliances).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_arcelik_whirlpool_emea_mda_2023_decision
+  page: '7'
+  quote_snippet: The results of the market investigation did not support the Notifying Party’s
+    submission. Based on the results of the market investigation, it appears that the markets
+    for the manufacture and supply of MDAs are most likely national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_arcelik_whirlpool_emea_mda_2023_decision
+  page: '7'
+  quote_snippet: The Notifying Party argues that the markets for the manufacture and supply
+    of MDAs are EEA-wide due to (i) the presence of MDA manufacturers across Europe; (ii) the
+    lack of meaningful barriers to entry or expansion; (iii) a centralised manufacturing; (iv)
+    the significant level of imports into the EEA to serve all hypothetical national markets;
+    (v) the little product differentiation across Europe; (vi) the presence of large retail
+    customers across Europe; (vii) customer purchases being managed at the European level; (viii)
+    the Parties' strategies being decided at the European level; (ix) and the market shares
+    at the hypothetical national level not being informative of the Parties' competitive strength.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_arcelik_whirlpool_emea_mda_2023_decision
+  page: '9'
+  quote_snippet: Nevertheless, as the Transaction does not give rise to serious doubts under
+    all plausible geographic market definitions (i.e. EEA or national), it is not necessary
+    to conclude on the exact scope of the geographic market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_arcelik_whirlpool_emea_mda_2023_decision
+  page: '65'
+  quote_snippet: On the geographic scope of the market, the Commission previously concluded
+    that SDA markets are national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_arcelik_whirlpool_emea_mda_2023_decision
+  page: '14'
+  quote_snippet: For the reasons set out below, the Commission considers that the Transaction
+    does not raise serious doubts in respect of any of the relevant MDA categories and potential
+    sub-segments in the EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_arcelik_whirlpool_emea_mda_2023_decision
+  page: '14'
+  quote_snippet: For the reasons set out below, the Commission considers that the Transaction
+    does not raise serious doubts in respect of the affected MDA categories and potential sub-segments
+    in Belgium, listed in Table 2 above.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+case_type: merger
+ai_summary: null
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

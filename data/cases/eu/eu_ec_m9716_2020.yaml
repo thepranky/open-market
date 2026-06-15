@@ -1,0 +1,1067 @@
+case_id: eu_ec_m9716_2020
+case_name: M.9716
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2020-07-06'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9716_2020_decision
+  title: M.9716 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9716
+  pdf_url: http://publications.europa.eu/resource/cellar/82534e73-1dac-11eb-b57e-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: ICs, discretes, optical semiconductors, and sensors and actuators
+  definition_status: defined
+  notes: The Commission concludes that these four categories constitute separate product markets
+    within semiconductors.
+- market_id: pm_2
+  name: Optical semiconductors
+  definition_status: left_open
+  notes: The Commission chose to leave open the question of whether specific segments (light
+    sensors, laser diodes, LEDs) constitute separate product markets within optical semiconductors,
+    as the transaction did not raise competition concerns regardless of the exact definition.
+- market_id: pm_3
+  name: Commercial and consumer optical semiconductors
+  definition_status: left_open
+  notes: The Commission chose to leave open the distinction between commercial/consumer and
+    communications IR optical semiconductors, as sales differences were immaterial for the competitive
+    assessment.
+- market_id: pm_4
+  name: Communications IR optical semiconductors
+  definition_status: left_open
+  notes: The Commission chose to leave open the distinction between commercial/consumer and
+    communications IR optical semiconductors, as sales differences were immaterial for the competitive
+    assessment.
+- market_id: pm_5
+  name: Light sensors
+  definition_status: left_open
+  notes: The Commission suggested that light sensors likely constitute a separate market from
+    other optical semiconductors, and that further segmentations by end-use (e.g., automotive
+    vs. consumer electronics) were also likely, but ultimately left the precise definition open
+    due to lack of competition concerns.
+- market_id: pm_6
+  name: Light sensors for automotive applications
+  definition_status: left_open
+  notes: The market investigation suggested a likely segmentation of light sensors by end-use
+    (automotive vs. consumer electronics), but the Commission left the precise definition open.
+- market_id: pm_7
+  name: Light sensors for consumer electronics
+  definition_status: left_open
+  notes: The market investigation suggested a likely segmentation of light sensors by end-use
+    (automotive vs. consumer electronics), but the Commission left the precise definition open.
+- market_id: pm_8
+  name: Biosensors for consumer electronics
+  definition_status: left_open
+  notes: The market investigation was not conclusive on whether biosensors for consumer electronics
+    constitute a separate market from other biosensors or whether they should be segmented by
+    technology (discrete components vs. ICs). The definition was left open as there were no
+    competition concerns.
+- market_id: pm_9
+  name: Mobile 3D flood illuminators
+  definition_status: left_open
+  notes: The market investigation was not conclusive on whether mobile 3D flood illuminators
+    constitute a separate product market. The definition was left open as there were no competition
+    concerns.
+- market_id: pm_10
+  name: Laser diodes
+  definition_status: left_open
+  notes: The Commission suggested that laser diodes likely constitute a separate market from
+    other optical semiconductors, and that further segmentations by technology (VCSEL, EEL)
+    or end-use (automotive, consumer electronics) were plausible, but ultimately left the precise
+    definition open due to lack of competition concerns.
+- market_id: pm_11
+  name: VCSEL (Vertical Cavity Surface Emitting Laser)
+  definition_status: left_open
+  notes: While a distinction between VCSEL and EEL for LiDAR appeared widely supported, the
+    Commission deemed it unnecessary to conclude on this segmentation due to very limited sales
+    and expected market evolution. The overall market for laser diodes was also left open.
+- market_id: pm_12
+  name: EEL (Edge Emitting Laser)
+  definition_status: left_open
+  notes: While a distinction between VCSEL and EEL for LiDAR appeared widely supported, the
+    Commission deemed it unnecessary to conclude on this segmentation due to very limited sales
+    and expected market evolution. The overall market for laser diodes was also left open.
+- market_id: pm_13
+  name: Laser diodes for LiDAR
+  definition_status: left_open
+  notes: The Commission considered a narrower segmentation for laser diodes for LiDAR, but the
+    market investigation did not provide a clear indication. The definition was left open as
+    there were no competition concerns.
+- market_id: pm_14
+  name: Assembly and packaging services for sensor solutions
+  definition_status: left_open
+  notes: The Commission noted that it had not dealt with these services in previous decisions
+    and the market investigation replies were limited and inconclusive. The definition was left
+    open as the transaction did not raise competition concerns.
+- market_id: pm_15
+  name: LEDs
+  definition_status: left_open
+  notes: The Commission suggested that LEDs likely constitute a separate market from other optical
+    semiconductors, and that further segmentations were plausible, but ultimately left the precise
+    definition open due to lack of competition concerns.
+- market_id: pm_16
+  name: Segmentations of LEDs
+  definition_status: left_open
+  notes: The Commission listed several plausible segmentations for LEDs (visible/invisible,
+    automotive/general lighting, by light colour, by power output) but left open whether these
+    further segmentations were appropriate, as the transaction did not raise competition concerns.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Optical semiconductors — at least EEA-wide and most likely worldwide
+  definition_status: left_open
+  notes: The Commission found strong indications for a worldwide scope, but explicitly left
+    the precise geographic market definition open.
+- market_id: gm_2
+  name: Light sensors — at least EEA-wide and most likely worldwide
+  definition_status: left_open
+  notes: The market investigation indicated worldwide competitive conditions for light sensors,
+    supporting an at least EEA-wide and most likely worldwide scope. The precise definition
+    was left open.
+- market_id: gm_3
+  name: Laser diodes — at least EEA-wide and most likely worldwide
+  definition_status: left_open
+  notes: The market investigation indicated worldwide competitive conditions for laser diodes,
+    supporting an at least EEA-wide and most likely worldwide scope. The precise definition
+    was left open.
+- market_id: gm_4
+  name: Assembly and packaging services for sensor solutions for mobile phones — global
+  definition_status: considered
+  notes: The Commission implicitly considered a global market for the assessment of vertical
+    effects, noting that mobile phone manufacturing is predominantly done in China and Korea
+    and using worldwide market shares as a proxy.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '8'
+  quote_snippet: The market investigation has widely confirmed the Commission’s past practice
+    and the Notifying Party’s view according to which ICs, discretes, optical semiconductors,
+    and sensors and actuators are part of separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '15'
+  quote_snippet: The Commission concludes that ICs, discretes, optical semiconductors, and sensors
+    and actuators are part of separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '7'
+  quote_snippet: In a number of previous decisions, the Commission considered that optical semiconductors
+    belong to product markets that are separate from other semiconductors product markets. Consistently
+    with the Notifying Party’s view, the Commission has in the past made a clear distinction
+    between (i) ICs; (ii) discretes; (iii) optical semiconductors; and (iv) sensors and actuators.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '15'
+  quote_snippet: However, as the Transaction does not raise competition concerns irrespectively
+    of the exact product market definition, the question of whether light sensors, laser diodes
+    and LEDs constitute separate product markets within optical semiconductors can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '9'
+  quote_snippet: Since the Transaction does not raise competition concerns irrespectively of
+    the exact product market definition, the question of whether LEDs, laser diodes, couplers,
+    light sensors and image sensors are considered separate product markets within optical semiconductors
+    can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '6'
+  quote_snippet: The Transaction gives rise to horizontal overlaps with respect to the development,
+    manufacture and supply of certain optical semiconductors and, in particular, of certain
+    light sensors and laser diodes.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '20'
+  quote_snippet: Due to the immaterial difference in sales between optical semiconductors overall
+    and commercial and consumer optical semiconductors, this distinction is not further considered
+    in the competitive assessment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '6'
+  quote_snippet: In addition, the Notifying Party considers appropriate to further segment optical
+    semiconductors (where the Parties’ activities overlap) by the industrial sector where they
+    are employed, namely (i) commercial and consumer optical semiconductors; and (ii) communications
+    infrared (‘IR’) optical semiconductors.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '8'
+  quote_snippet: With respect to the Notifying Party’s proposed distinction between commercial
+    and consumer optical semiconductors and communications IR optical semiconductors (supplied
+    to data communication providers operating fibre glass, etc.) the majority of the market
+    participants that responded to the market investigation (in particular, most customers in
+    consumer electronics) agreed with the proposed distinction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '20'
+  quote_snippet: Due to the immaterial difference in sales between optical semiconductors overall
+    and commercial and consumer optical semiconductors, this distinction is not further considered
+    in the competitive assessment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '6'
+  quote_snippet: In addition, the Notifying Party considers appropriate to further segment optical
+    semiconductors (where the Parties’ activities overlap) by the industrial sector where they
+    are employed, namely (i) commercial and consumer optical semiconductors; and (ii) communications
+    infrared (‘IR’) optical semiconductors.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '8'
+  quote_snippet: With respect to the Notifying Party’s proposed distinction between commercial
+    and consumer optical semiconductors and communications IR optical semiconductors (supplied
+    to data communication providers operating fibre glass, etc.) the majority of the market
+    participants that responded to the market investigation (in particular, most customers in
+    consumer electronics) agreed with the proposed distinction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '12'
+  quote_snippet: In conclusion, the market investigation suggests that light sensors likely
+    belong to a product market that is separate from other optical semiconductors. Moreover,
+    light sensors developed and sold for different end-uses (e.g. consumer electronics, automotive,
+    etc.) appear to have very limited demand- and supply- side substitutability, and therefore
+    they likely belong to separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '12'
+  quote_snippet: Ultimately, the definition of the relevant product market for the assessment
+    of light sensors can be left open as the Transaction does not lead to any competition concerns
+    irrespective of whether light sensors are considered a distinct product market or a part
+    of a wider market for optical semiconductors, or whether biosensors for consumer electronics
+    (and segmentations by technology therein) or mobile 3D flood illuminators are considered
+    as separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '15'
+  quote_snippet: However, as the Transaction does not raise competition concerns irrespectively
+    of the exact product market definition, the question of whether light sensors, laser diodes
+    and LEDs constitute separate product markets within optical semiconductors can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '10'
+  quote_snippet: Most of the Parties’ customers that expressed a view during the market investigation
+    suggested that, from a demand-side perspective, light sensors for automotive applications
+    and those for consumer electronics cannot be substituted by one another and therefore they
+    belong to separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '12'
+  quote_snippet: Moreover, light sensors developed and sold for different end-uses (e.g. consumer
+    electronics, automotive, etc.) appear to have very limited demand- and supply- side substitutability,
+    and therefore they likely belong to separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '15'
+  quote_snippet: Likewise, whether further segmentations of the product categories where the
+    activities of the Parties overlap or give rise to a vertical relationship (biosensors for
+    consumer electronics, mobile 3D flood illuminators, VCSELs for LiDAR, visible LEDs, invisible
+    IR LEDs, invisible UV LEDs, automotive LEDs, general lighting LEDs, LEDs of different colours,
+    LEDs of different outputs) are appropriate can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '10'
+  quote_snippet: Most of the Parties’ customers that expressed a view during the market investigation
+    suggested that, from a demand-side perspective, light sensors for automotive applications
+    and those for consumer electronics cannot be substituted by one another and therefore they
+    belong to separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '12'
+  quote_snippet: Moreover, light sensors developed and sold for different end-uses (e.g. consumer
+    electronics, automotive, etc.) appear to have very limited demand- and supply- side substitutability,
+    and therefore they likely belong to separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '15'
+  quote_snippet: Likewise, whether further segmentations of the product categories where the
+    activities of the Parties overlap or give rise to a vertical relationship (biosensors for
+    consumer electronics, mobile 3D flood illuminators, VCSELs for LiDAR, visible LEDs, invisible
+    IR LEDs, invisible UV LEDs, automotive LEDs, general lighting LEDs, LEDs of different colours,
+    LEDs of different outputs) are appropriate can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '10'
+  quote_snippet: Within light sensors, the Parties’ activities overlap in the supply of biosensors
+    for consumer electronics32 and mobile 3D (VCSEL-based) flood illuminators.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '10'
+  quote_snippet: The results of the market investigation are not conclusive as to whether customers
+    and competitors consider that biosensors for consumer electronics constitute a product market
+    which is separate from other biosensors and whether they consider that biosensors for consumer
+    electronics based on different technologies (discrete components versus ICs) belong to separate
+    product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '11'
+  quote_snippet: However, since the Transaction does neither raise competition concerns in the
+    supply of biosensors for consumer electronics, where the activities of the Parties overlap,
+    nor in the narrowest-plausible markets based on different technologies, where the activities
+    of the Parties do not overlap, it can be left open whether these products are part of a
+    wider market for light sensors.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '10'
+  quote_snippet: Within light sensors, the Parties’ activities overlap in the supply of biosensors
+    for consumer electronics32 and mobile 3D (VCSEL-based) flood illuminators.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '11'
+  quote_snippet: The results of the market investigation are not conclusive as to whether customers
+    and competitors consider that mobile 3D flood illuminators constitute a separate product
+    market or if they are part of a wider product market for light sensors from demand- and
+    supply-side perspectives.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '11'
+  quote_snippet: However, since the Transaction does not raise competition concerns in the narrowest-plausible
+    market for 3D flood illuminators for mobile applications, it can be left open whether these
+    products are part of a wider market for light sensors.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '14'
+  quote_snippet: In conclusion, the market investigation suggests that laser diodes likely belong
+    to a product market that is separate from other optical semiconductors. A further distinction
+    by technology, i.e. VCSEL and EEL, also appears to be widely supported by customers and
+    suppliers due to the limited demand-side and supply-side substitutability.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '14'
+  quote_snippet: Ultimately, since the Transaction does not raise competition concerns in any
+    of the market definitions for laser diodes set out above, the precise product market definition
+    can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '15'
+  quote_snippet: However, as the Transaction does not raise competition concerns irrespectively
+    of the exact product market definition, the question of whether light sensors, laser diodes
+    and LEDs constitute separate product markets within optical semiconductors can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '14'
+  quote_snippet: A further distinction by technology, i.e. VCSEL and EEL, also appears to be
+    widely supported by customers and suppliers due to the limited demand-side and supply-side
+    substitutability.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '14'
+  quote_snippet: However, since sales of VCSEL for LiDAR are very limited and expected to remain
+    so at least for the next 5 years, a distinction between VCSEL and EEL for LiDAR is not deemed
+    necessary for the purpose of the present decision. Ultimately, since the Transaction does
+    not raise competition concerns in any of the market definitions for laser diodes set out
+    above, the precise product market definition can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '13'
+  quote_snippet: The results of the market investigation are not conclusive as to whether market
+    participants consider that, from a demand-side perspective, EELs and VCSELs (for LiDAR systems)
+    belong to separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_34
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '14'
+  quote_snippet: A further distinction by technology, i.e. VCSEL and EEL, also appears to be
+    widely supported by customers and suppliers due to the limited demand-side and supply-side
+    substitutability.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_35
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '14'
+  quote_snippet: However, since sales of VCSEL for LiDAR are very limited and expected to remain
+    so at least for the next 5 years, a distinction between VCSEL and EEL for LiDAR is not deemed
+    necessary for the purpose of the present decision. Ultimately, since the Transaction does
+    not raise competition concerns in any of the market definitions for laser diodes set out
+    above, the precise product market definition can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_36
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '13'
+  quote_snippet: The results of the market investigation are not conclusive as to whether market
+    participants consider that, from a demand-side perspective, EELs and VCSELs (for LiDAR systems)
+    belong to separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_37
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '14'
+  quote_snippet: A narrower segmentation for laser diodes for LiDAR and further segmentations
+    thereof (VCSEL versus EEL) would be possible in principle, but the market investigation
+    did not provide for a clear indication in this respect.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_13
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_38
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '14'
+  quote_snippet: Ultimately, since the Transaction does not raise competition concerns in any
+    of the market definitions for laser diodes set out above, the precise product market definition
+    can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_13
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_39
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '15'
+  quote_snippet: Likewise, whether further segmentations of the product categories where the
+    activities of the Parties overlap or give rise to a vertical relationship (biosensors for
+    consumer electronics, mobile 3D flood illuminators, VCSELs for LiDAR, visible LEDs, invisible
+    IR LEDs, invisible UV LEDs, automotive LEDs, general lighting LEDs, LEDs of different colours,
+    LEDs of different outputs) are appropriate can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_13
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_40
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '14'
+  quote_snippet: Ultimately, the definition of the relevant product market for the provision
+    of assembly and packaging services for sensor solutions for mobile phones can be left open,
+    as the Transaction does not raise competition concerns irrespectively of the product market
+    definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_14
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_41
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '15'
+  quote_snippet: Moreover, the definition of the relevant product market for the provision of
+    assembly and packaging services for sensor solutions can be left open, as the Transaction
+    does not raise competition concerns irrespectively of the product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_14
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_42
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '14'
+  quote_snippet: During the market investigation, competitors were asked whether the provision
+    of micro-packaging and assembly services for light sensor solutions and other optical assembly
+    and packaging services entail significantly different features, expertise and costs, as
+    suggested by the Notifying Party. However, whereas it would appear that there is some common
+    know-how, the replies obtained were very limited and not conclusive.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_14
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_43
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '14'
+  quote_snippet: The market investigation suggests that LEDs likely belong to a product market
+    that is separate from other optical semiconductors.49 Moreover, the supply of LEDs can be
+    further segmented between (a) visible and invisible LEDs (the latter potentially sub-divided
+    by IR and UV); (b) automotive and general lightning; (c) by light colour; and (d) by power
+    output.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_15
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_44
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '15'
+  quote_snippet: Ultimately, since the Transaction does not raise competition concerns in the
+    narrowest-plausible market within LEDs, it can be left open if these products are part of
+    a wider market for LEDs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_15
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_45
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '15'
+  quote_snippet: However, as the Transaction does not raise competition concerns irrespectively
+    of the exact product market definition, the question of whether light sensors, laser diodes
+    and LEDs constitute separate product markets within optical semiconductors can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_15
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_46
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '14'
+  quote_snippet: Moreover, the supply of LEDs can be further segmented between (a) visible and
+    invisible LEDs (the latter potentially sub-divided by IR and UV); (b) automotive and general
+    lightning; (c) by light colour; and (d) by power output.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_16
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_47
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '15'
+  quote_snippet: Likewise, whether further segmentations of the product categories where the
+    activities of the Parties overlap or give rise to a vertical relationship (biosensors for
+    consumer electronics, mobile 3D flood illuminators, VCSELs for LiDAR, visible LEDs, invisible
+    IR LEDs, invisible UV LEDs, automotive LEDs, general lighting LEDs, LEDs of different colours,
+    LEDs of different outputs) are appropriate can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_16
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_48
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '15'
+  quote_snippet: Ultimately, since the Transaction does not raise competition concerns in the
+    narrowest-plausible market within LEDs, it can be left open if these products are part of
+    a wider market for LEDs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_16
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_49
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '16'
+  quote_snippet: The market investigation confirms the Commission’s findings in previous cases
+    that the market for optical semiconductors is at least EEA-wide in scope, with important
+    global characteristics.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_50
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '15'
+  quote_snippet: In past decisions, the Commission has consistently considered the geographic
+    scope of semiconductor markets, including optical semiconductors, to be at least EEA-wide,
+    if not worldwide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_51
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '16'
+  quote_snippet: A large majority of the Parties’ customers and competitors that replied to
+    the market investigation considers that competitive conditions for light sensors (prices,
+    delivery time, active suppliers, etc.) are generally the same on a worldwide level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_52
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '16'
+  quote_snippet: Moreover, most customers and competitors that replied to the market investigation
+    consider that transport cost has little or no impact on imports and exports of light sensors
+    as they can be cost-effectively transported from/to different regions of the world.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_53
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '16'
+  quote_snippet: Similarly, a large majority of the Parties’ customers and competitors that
+    replied to the market investigation consider that competitive conditions for laser diodes
+    (prices, delivery time, active suppliers, etc.) are generally the same on a worldwide level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_54
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '38'
+  quote_snippet: Any potential vertical effects of the Transaction would only raise if global
+    markets are considered as AMS [information about the Parties’ business strategy].124 Mobile
+    phone manufacturing is predominantly done in China and Korea.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_55
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '39'
+  quote_snippet: With regard to the provision of assembly and packaging services for sensor
+    solutions for mobile phones, the Notifying Party indicated that market shares are not available
+    and therefore worldwide market shares for mobile camera modules should be used as a proxy.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_56
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '1'
+  quote_snippet: |
+    Brussels, 06.07.2020
+    C(2020) 4682 final
+    PUBLIC VERSION
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_57
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '1'
+  quote_snippet: |
+    Subject: Case M.9716 – AMS/OSRAM
+    Commission decision pursuant to Article 6(1)(b) of Council Regulation No 139/20041 and Article 57 of the Agreement on the European Economic Area2
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_58
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '1'
+  quote_snippet: (1) On 29 May 2020, the European Commission received notification of a concentration
+    pursuant to Article 4 of the Merger Regulation resulting from a proposed transaction whereby
+    ams AG (‘AMS’, Austria) intends to acquire sole control, within the meaning of Article 3(1)(b)
+    of the Merger Regulation, of the whole of OSRAM Licht AG (‘OSRAM’, Germany)3. AMS is referred
+    to hereinafter as the ‘Notifying Party’ and together with OSRAM as the ‘Parties’. The undertaking
+    that would result from the proposed transaction is referred to as the ‘merged entity’.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_59
+  source_document_id: eu_ec_m9716_2020_decision
+  page: '41'
+  quote_snippet: For the above reasons, the European Commission has decided not to oppose the
+    notified operation and to declare it compatible with the internal market and with the EEA
+    Agreement. This decision is adopted in application of Article 6(1)(b) of the Merger Regulation
+    and Article 57 of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

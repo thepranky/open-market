@@ -1,0 +1,284 @@
+case_id: eu_deli_home_hwi_houtwerf_2025
+case_name: DELI HOME / HWI / HOUTWERF / DISTRI-HOUT
+authority: European Commission
+jurisdiction: EU
+sector: retail
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2025-01-10'
+parties:
+- name: DELI HOME
+  role: acquirer
+- name: HWI
+  role: acquirer
+- name: HOUTWERF
+  role: acquirer
+- name: DISTRI-HOUT
+  role: target
+source_documents:
+- doc_id: eu_deli_home_hwi_houtwerf_2025_decision
+  title: DELI HOME / HWI / HOUTWERF / DISTRI-HOUT — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11569
+  pdf_url: http://publications.europa.eu/resource/cellar/24e211ae-f1e7-11f0-8d3c-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Wholesale of timber construction materials to the DIY retail channel (segmented by material)
+  definition_status: left_open
+  notes: The Commission assessed this market at the 'narrowest plausible level' by segmenting
+    it by sales channel (to DIY retailers) and material type. Segmentation by intended use and
+    branded/unbranded products was not considered relevant.
+- market_id: pm_2
+  name: Retail sale of timber construction materials (segmented by sales channel and material)
+  definition_status: left_open
+  notes: The Commission assessed this market at the 'narrowest plausible level' by segmenting
+    it by sales channel (to non-professional customers, i.e., DIY retail) and material type.
+    Segmentation by intended use was not considered relevant.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Wholesale of timber construction materials to the DIY retail channel — national (Netherlands
+    and Belgium affected)
+  definition_status: considered
+  notes: While the Commission considered the market 'likely cross-border regional in scope,
+    and in relation to this Transaction, potentially encompassing Benelux', it was assessed
+    at the national level as the 'narrowest plausible level'.
+- market_id: gm_2
+  name: Retail sale of timber construction materials — national (Netherlands and Belgium affected)
+  definition_status: considered
+  notes: While the Commission considered the market 'likely local in scope, corresponding to
+    a catchment area of ca. 30 km from the store', it was assessed at the national level for
+    the vertical assessment.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_deli_home_hwi_houtwerf_2025_decision
+  page: '4'
+  quote_snippet: Based on the results of the market investigation and in line with the Commission’s
+    prior decisional practice, the wholesale of timber construction materials should be segmented
+    by sales channel, i.e. between sales to DIY retailers and sales to professional retailers,
+    e.g. builders’ merchants.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_deli_home_hwi_houtwerf_2025_decision
+  page: '5'
+  quote_snippet: Moreover, based on the results of the market investigation, it is likely relevant
+    to segment the market for the wholesale of timber construction materials by material type,
+    i.e. in relation to this Transaction between MDF and HDF, oriented strand board (‘OSB’),
+    coated particle boards and uncoated particle boards, plywood, and sawn wood/timber.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_deli_home_hwi_houtwerf_2025_decision
+  page: '5'
+  quote_snippet: Ultimately, the Commission concludes that the exact product market definition
+    can be left open as the Transaction does not raise competition concerns under any plausible
+    segmentation. For the purpose of this decision, the Transaction will be assessed at the
+    narrowest plausible level, i.e. the wholesale of timber construction materials segmented
+    by sales channel and by material.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_deli_home_hwi_houtwerf_2025_decision
+  page: '6'
+  quote_snippet: Based on the results of the market investigation, and in line with the Commission’s
+    prior decisional practice, it is likely relevant to segment the market for the retail sale
+    of timber construction materials by sales channel.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_deli_home_hwi_houtwerf_2025_decision
+  page: '6'
+  quote_snippet: Moreover, based on the market investigation, a segmentation by material is
+    likely relevant, but not a segmentation by intended use, as a majority of DIY retailers
+    who expressed a view indicated that consumers typically demand a certain material when purchasing
+    timber construction materials rather than specifying a certain intended use.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_deli_home_hwi_houtwerf_2025_decision
+  page: '6'
+  quote_snippet: In any event, the Commission concludes that the exact product market definition
+    can be left open, as the Transaction does not raise competition concerns under any plausible
+    segmentation. For the purpose of this decision, the Transaction will be assessed at the
+    narrowest plausible level, i.e. the retail sale of timber construction materials segmented
+    by sales channel and material.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_deli_home_hwi_houtwerf_2025_decision
+  page: '7'
+  quote_snippet: Based on the results of the market investigation, the markets for the wholesale
+    of timber construction materials to the DIY channel are likely cross-border regional in
+    scope, and in relation to this Transaction, potentially encompassing Benelux.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_deli_home_hwi_houtwerf_2025_decision
+  page: '7'
+  quote_snippet: Ultimately, the Commission concludes that the exact geographic market definition
+    can be left open as the Transaction does not raise competition concerns under any plausible
+    segment. For the purpose of this decision, the Transaction will be assessed at the narrowest
+    plausible level, i.e. at national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_deli_home_hwi_houtwerf_2025_decision
+  page: '7'
+  quote_snippet: In previous decisions, while ultimately leaving it open, the Commission has
+    considered that DIY retail sales of timber construction materials could be national or local,
+    with the latter corresponding to a catchment area of approx. 30 km from the store.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_deli_home_hwi_houtwerf_2025_decision
+  page: '7'
+  quote_snippet: Based on the market investigation, and in line with the Commission’s prior
+    decisional practice, the markets for the DIY retail of timber construction materials (MDF,
+    OSB, coated particle boards, plywood and sawn wood/timber) are likely local in scope, corresponding
+    to a catchment area of ca. 30 km from the store.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_deli_home_hwi_houtwerf_2025_decision
+  page: '8'
+  quote_snippet: Ultimately, the Commission concludes that the exact geographic market definition
+    can be left open as the Transaction does not raise competition concerns under any plausible
+    segment. For the purpose of this decision, and particularly the assessment of the affected
+    vertical links which the Transaction gives rise to, the Transaction will be assessed at
+    national level in relation to the DIY retail of timber construction materials.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_deli_home_hwi_houtwerf_2025_decision
+  page: '3'
+  quote_snippet: The Transaction therefore has an EU dimension according to Article 1(3) of
+    the Merger Regulation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_deli_home_hwi_houtwerf_2025_decision
+  page: '3'
+  quote_snippet: The Transaction gives rise to horizontally affected markets in the Netherlands
+    and Belgium in relation to the wholesale of timber construction materials to the DIY retail
+    channel, and certain sub-segments thereof. The Transaction also gives rise to vertically
+    affected markets, between the wholesale of certain timber construction materials to DIY
+    retailers (upstream) and the DIY retail of such materials (downstream) in the Netherlands
+    and Belgium. The Transaction could also give rise to conglomerate effects as the Parties
+    supply other home improvement products to DIY retailers alongside timber construction materials.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_deli_home_hwi_houtwerf_2025_decision
+  page: '3'
+  quote_snippet: The Transaction further results in horizontal overlaps and vertical links for
+    a number of other markets.5 However, none of these overlaps or links give rise to affected
+    markets within the meaning of recital 25(g) Annex I to Regulation (EU) 2023/9146, as they
+    meet the conditions for review under point 5 or benefit from the flexibility clauses of
+    point 8 of the Notice on Simplified Treatment7. Therefore, these overlaps and links will
+    not be further discussed in this decision.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

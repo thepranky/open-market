@@ -1,0 +1,349 @@
+case_id: eu_ec_m9934_2021
+case_name: M.9934
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2021-01-12'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9934_2021_decision
+  title: M.9934 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9934
+  pdf_url: http://publications.europa.eu/resource/cellar/3d2b4e10-f201-11ec-a534-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Foam sandwich panels
+  definition_status: defined
+  notes: The Commission concluded that foam sandwich panels and mineral fibre sandwich panels
+    constitute separate product markets. For the purpose of this Decision, all potential sub-segments
+    by end-use application (standard vs. refrigerating, wall vs. roof) are included within the
+    single product market for foam sandwich panels.
+- market_id: pm_2
+  name: Mineral fibre sandwich panels
+  definition_status: defined
+  notes: The Commission concluded that foam sandwich panels and mineral fibre sandwich panels
+    constitute separate product markets.
+- market_id: pm_3
+  name: Single skin construction sheets
+  definition_status: left_open
+  notes: The Commission left open whether the market for single skin construction sheets includes
+    all potential sub-segments by end-use application (decking, roofing, and wall cladding),
+    as the competitive assessment remained the same even on the basis of the narrowest possible
+    product markets.
+- market_id: pm_4
+  name: Purlins
+  definition_status: left_open
+  notes: The Commission left open whether purlins belong to a hypothetical wider market for
+    finished flat carbon steel products or whether purlins constitute a separate product market,
+    as the competitive assessment remained the same even on the basis of the narrowest plausible
+    product market.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Foam sandwich panels — national/cross-border regional (EEA affected)
+  definition_status: left_open
+  notes: The Commission found significant factual and evidentiary elements pointing to national
+    markets, but ultimately left open whether the market for foam sandwich panels is national
+    or cross-border regional in scope.
+- market_id: gm_2
+  name: Mineral fibre sandwich panels — EEA-wide/cross-border regional/national (EEA affected)
+  definition_status: left_open
+  notes: While past decisions suggested an EEA-wide scope, the market investigation in this
+    case indicated strong evidence for national or at most cross-border regional markets for
+    mineral fibre sandwich panels. However, the question of the precise market definition was
+    left open.
+- market_id: gm_3
+  name: Single skin construction sheets — national (EEA affected)
+  definition_status: defined
+  notes: The Commission concluded that the relevant geographic market for the production and
+    supply of single skin construction sheets is national in scope, consistent with its earlier
+    findings.
+- market_id: gm_4
+  name: Purlins — EEA-wide/narrower (EEA affected)
+  definition_status: left_open
+  notes: The Commission left open whether the market for purlins is EEA-wide or narrower, as
+    the transaction would not raise serious doubts regardless of the geographic market definition.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9934_2021_decision
+  page: '7'
+  quote_snippet: (28) In light of the above, based on the results of the market investigation
+    carried out in the present case, the Commission considers that mineral fibre sandwich panels
+    and foam sandwich panels belong to separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9934_2021_decision
+  page: '7'
+  quote_snippet: (32) Therefore, the investigation suggests that at least in the CEE region
+    there is ample supply-side substitution between standard and refrigerating foam sandwich
+    panels. For purposes of this Decision, foam sandwich panels, including standard and refrigerating
+    foam sandwich panels, constitute one product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9934_2021_decision
+  page: '8'
+  quote_snippet: (37) The Commission concludes based on its investigation that foam sandwich
+    panels and mineral fibre sandwich panels constitute separate product markets. For purposes
+    of this Decision, foam sandwich panels, including all potential sub-segments by end-use
+    application, constitute one product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9934_2021_decision
+  page: '7'
+  quote_snippet: (28) In light of the above, based on the results of the market investigation
+    carried out in the present case, the Commission considers that mineral fibre sandwich panels
+    and foam sandwich panels belong to separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9934_2021_decision
+  page: '8'
+  quote_snippet: (37) The Commission concludes based on its investigation that foam sandwich
+    panels and mineral fibre sandwich panels constitute separate product markets. For purposes
+    of this Decision, foam sandwich panels, including all potential sub-segments by end-use
+    application, constitute one product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9934_2021_decision
+  page: '9'
+  quote_snippet: (42) For purposes of this Decision, it can be left open whether the market
+    for single skin construction sheets includes all potential sub-segments by end-use application,
+    as the competitive assessment remains the same even on the basis of the narrowest possible
+    product markets, which are single skin construction sheets separately for (i) decking and
+    (ii) roofing and wall cladding applications.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9934_2021_decision
+  page: '10'
+  quote_snippet: (49) For purposes of this Decision, it can be left open whether purlins belong
+    to a hypothetical wider market for finished flat carbon steel products or whether purlins
+    constitute a separate product market, as the competitive assessment remains the same even
+    on the basis of the narrowest plausible product market, which would be the market for purlins.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9934_2021_decision
+  page: '11'
+  quote_snippet: (52) The market investigation demonstrated that national and sub-national differences
+    on a variety of dimensions affect the production and sale of foam sandwich panels, sometimes
+    significantly.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9934_2021_decision
+  page: '12'
+  quote_snippet: (55) The competitive landscape across various CEE countries reflects national
+    markets, with different pools of suppliers active even in geographically proximate countries.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9934_2021_decision
+  page: '14'
+  quote_snippet: (61) As can be seen from the above a significant number of factual and evidentiary
+    elements in the present case point to national markets. In the present case the question
+    as to whether the market for foam sandwich panels is national or cross-border regional in
+    scope can however be left open as the Transaction would not raise serious doubts as to its
+    compatibility with the internal market regardless of the geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9934_2021_decision
+  page: '15'
+  quote_snippet: (68) On balance, the market investigation likely calls for a reassessment of
+    the Commission’s conclusions in an earlier case as to the geographic market definition for
+    mineral fibre sandwich panels. Already the stark differences in the Parties’ respective
+    market share across EEA countries suggest a geographic market that is not EEA-wide. Importantly,
+    the market investigation refuted a key basis for the Commission’s conclusion in an earlier
+    case, namely the difference in the relative transport costs for mineral fibre sandwich panels
+    and foam sandwich panels.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9934_2021_decision
+  page: '16'
+  quote_snippet: (69) As can be seen from the above, a significant number of factual and evidentiary
+    elements in the present case point to national markets. The question as to whether the market
+    for mineral fibre sandwich panels is EEA-wide, cross-border regional, or national in scope
+    can however be left open as the Transaction would not raise serious doubts as to its compatibility
+    with the internal market regardless of the geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9934_2021_decision
+  page: '16'
+  quote_snippet: (72) Single skin construction sheets were not a central focus of the market
+    investigation in this case. The market investigation did not provide any reason to depart
+    from the Commission’s earlier finding that the relevant geographic market for single skin
+    construction sheets is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m9934_2021_decision
+  page: '16'
+  quote_snippet: (73) The Commission considers for the purpose of the assessment of this case
+    that the relevant market for the production and supply of single skin construction sheets
+    is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m9934_2021_decision
+  page: '17'
+  quote_snippet: (76) Purlins were not a central focus of the market investigation in this case
+    as no competition concerns would arise under any plausible geographic market definition.
+    The market investigation did not provide any indications to define the geographic market
+    for purlins differently from the market for other finished flat carbon steel products in
+    past Commission decisions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m9934_2021_decision
+  page: '17'
+  quote_snippet: (77) The question as to whether the market for purlins is EEA-wide or narrower
+    can be left open as the Transaction would not raise serious doubts as to its compatibility
+    with the internal market regardless of the geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m9934_2021_decision
+  page: '32'
+  quote_snippet: (160) For the above reasons, considering that the Transaction does not raise
+    serious doubts as to its compatibility with the internal market, the European Commission
+    has decided not to oppose the notified operation and to declare it compatible with the internal
+    market and with the EEA Agreement. This decision is adopted in application of Article 6(1)(b)
+    of the Merger Regulation and Article 57 of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

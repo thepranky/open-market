@@ -1,0 +1,695 @@
+case_id: eu_novo_holdings_novo_nordisk_catalent_2024
+case_name: NOVO HOLDINGS / NOVO NORDISK / CATALENT
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2024-12-06'
+parties:
+- name: NOVO HOLDINGS
+  role: acquirer
+- name: NOVO NORDISK
+  role: acquirer
+- name: CATALENT
+  role: target
+source_documents:
+- doc_id: eu_novo_holdings_novo_nordisk_catalent_2024_decision
+  title: NOVO HOLDINGS / NOVO NORDISK / CATALENT — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11486
+  pdf_url: http://publications.europa.eu/resource/cellar/f8f9c199-30ca-11f0-8a44-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: CDMO services
+  definition_status: segmented
+  notes: The Commission considered segmenting CDMO services between APIs and FDPs, and between
+    CMO and CDO services, with the latter left open in past cases. The market investigation
+    for this decision confirmed the distinction between API and FDP services.
+- market_id: pm_2
+  name: CDO FDP services
+  definition_status: left_open
+  notes: The precise product market definition for CDO services was left open, as the Transaction
+    did not raise serious doubts irrespective of the definition adopted.
+- market_id: pm_3
+  name: CDO FDP services for solubility enhancing technologies
+  definition_status: segmented
+  notes: The Commission concluded that solubility-enhancing technologies constitute a plausible
+    market within CDMO FDP services for solid dose formats. Further segmentation based on the
+    type of solubility-enhancing technology was considered but left open.
+- market_id: pm_4
+  name: CDO FDP services for lipid-based drug delivery systems (LBDDs)
+  definition_status: considered
+  notes: Considered as the narrowest plausible affected market within the broader solubility-enhancing
+    technologies for the purposes of the assessment.
+- market_id: pm_5
+  name: CMO FDP services
+  definition_status: segmented
+  notes: The CMO FDP services market is further segmented based on the manufactured pharmaceutical
+    form, including injectables, semi-solid, liquids, and solids.
+- market_id: pm_6
+  name: CMO FDP services for injectables
+  definition_status: segmented
+  notes: The market for CMO FDP services for injectables is considered further segmented based
+    on the exact format of the injectable (e.g., PFS, cartridges, vials).
+- market_id: pm_7
+  name: CMO FDP services for PFS
+  definition_status: left_open
+  notes: The precise market definition for CMO FDP services for PFS was left open, specifically
+    regarding whether clinical and commercial supply constitute separate markets, and to what
+    extent commercial supply can be segmented based on the speed of the production line.
+- market_id: pm_8
+  name: CMO FDP services for solids
+  definition_status: segmented
+  notes: This market is further segmented based on solubility-enhancing technologies versus
+    non-solubility-enhancing technologies.
+- market_id: pm_9
+  name: CMO FDP services for ODTs
+  definition_status: left_open
+  notes: The exact product market definition for CMO FDP services for ODTs was left open.
+- market_id: pm_10
+  name: Anti-obesity preparations excluding dietetics (ATC class A8A)
+  definition_status: left_open
+  notes: The Commission considered the relevant market to be ATC class A8A, but left open whether
+    further segmentation based on the type of molecule used in the obesity preparation is appropriate.
+- market_id: pm_11
+  name: GLP-1 receptor agonists indicated for diabetes (ATC class A10S)
+  definition_status: left_open
+  notes: The Commission considered the relevant market to be ATC class A10S, but left open the
+    possibility of a split between older generation (daily) and new generation (weekly) GLP-1
+    receptor agonists.
+- market_id: pm_12
+  name: Opioid use disorder treatments (ATC3 class N7F)
+  definition_status: left_open
+  notes: The Commission assessed the narrowest plausible market, ATC3 class N7F, but left the
+    exact market definition open.
+geographic_markets_considered:
+- market_id: gm_1
+  name: CMO FDP services (general upstream) — EEA-wide/worldwide
+  definition_status: left_open
+  notes: The exact geographic market definition for upstream CMO services was left open, considering
+    EEA, global, or global excluding China.
+- market_id: gm_2
+  name: Finished pharmaceutical products (downstream general) — national
+  definition_status: considered
+  notes: This refers to the Commission's past consistent practice of defining geographic markets
+    for finished pharmaceutical products as national in scope, while also acknowledging a trend
+    towards EEA-level standardization more recently.
+- market_id: gm_3
+  name: Anti-obesity preparations excluding dietetics (ATC class A8A) — national/EEA-wide
+  definition_status: left_open
+  notes: The Commission considered both national and EEA-wide geographic markets for anti-obesity
+    preparations, leaving the precise definition open.
+- market_id: gm_4
+  name: GLP-1 receptor agonists indicated for diabetes (ATC class A10S) — national/EEA-wide
+  definition_status: left_open
+  notes: The Commission considered both national and EEA-wide geographic markets for GLP-1 receptor
+    agonists, leaving the precise definition open.
+- market_id: gm_5
+  name: Opioid use disorder treatments (ATC3 class N7F) — EEA-wide
+  definition_status: considered
+  notes: The downstream market for Opioid Use Disorder treatments was assessed on an EEA-wide
+    basis, as indicated by market share data for Orexo’s Zubsolv.
+- market_id: gm_6
+  name: CMO FDP services for PFS — EEA-wide/worldwide
+  definition_status: considered
+  notes: The geographic market for CMO FDP services for PFS was assessed as at least EEA-wide,
+    if not global (potentially excluding China).
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_novo_holdings_novo_nordisk_catalent_2024_decision
+  page: '7'
+  quote_snippet: (27) The Commission has previously analysed several transactions involving
+    CDMO services, consistently distinguishing between the supply of CDMO services for APIs
+    and those for FDPs. While it has also explored the possibility of separate markets for CMO
+    and CDO services, it has ultimately left this question open.22 However, no specific assessment
+    of potential sub-segments within the CDO services market has been conducted.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_novo_holdings_novo_nordisk_catalent_2024_decision
+  page: '9'
+  quote_snippet: (34) In line with the Commission’s past decisional practice and with the Notifying
+    Party’s submission, the vast majority of the respondents to the market investigation37 agreed
+    that services provided for the manufacture or development of APIs - sometimes also referred
+    to as “drug substance” - and services provided for the manufacture or development of FDPs
+    belong to separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_novo_holdings_novo_nordisk_catalent_2024_decision
+  page: '7'
+  quote_snippet: (29) Regardless of the precise product market definition, the Transaction does
+    not give rise to any vertically affected links with respect to CDO services and only gives
+    rise to a horizontally affected market under two plausible product market definitions, specifically
+    the market for CDO FDP services for solubility enhancing technologies or (if a narrower
+    market is defined) lipid-based drug delivery systems.24 The precise product market definition
+    for CDO services can be left open, as regardless of the definition adopted the Transaction
+    does not raise serious doubts as to its compatibility with the internal market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_novo_holdings_novo_nordisk_catalent_2024_decision
+  page: '6'
+  quote_snippet: (25) The Transaction also gives rise to horizontally affected markets for the
+    supply of CDO FDP services for solubility enhancing technologies and lipid-based drug delivery
+    systems.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_novo_holdings_novo_nordisk_catalent_2024_decision
+  page: '18'
+  quote_snippet: (80) In light of the above, the Commission concludes that solubility-enhancing
+    technologies constitute a plausible market within the CDMO FDP services for solid dose formats.
+    The Commission further considers that this market can be further segmented based on the
+    type of solubility-enhancing technology, but leaves the market open, since no serious doubts
+    arise under any plausible market definition in relation to solubility-enhancing technologies
+    – the narrowest relevant plausible affected market in this case being that for LBDDs. At
+    the same time, and for the purposes of this Decision, the Commission will focus its assessment
+    on the narrowest plausible affected market in the non-solubility-enhancing technologies
+    segment, specifically the market for CMO FDP services for ODTs, leaving the exact product
+    market definition open, as the Transaction does not raise serious doubts about its compatibility
+    with the internal market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_novo_holdings_novo_nordisk_catalent_2024_decision
+  page: '18'
+  quote_snippet: (80) In light of the above, the Commission concludes that solubility-enhancing
+    technologies constitute a plausible market within the CDMO FDP services for solid dose formats.
+    The Commission further considers that this market can be further segmented based on the
+    type of solubility-enhancing technology, but leaves the market open, since no serious doubts
+    arise under any plausible market definition in relation to solubility-enhancing technologies
+    – the narrowest relevant plausible affected market in this case being that for LBDDs. At
+    the same time, and for the purposes of this Decision, the Commission will focus its assessment
+    on the narrowest plausible affected market in the non-solubility-enhancing technologies
+    segment, specifically the market for CMO FDP services for ODTs, leaving the exact product
+    market definition open, as the Transaction does not raise serious doubts about its compatibility
+    with the internal market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_novo_holdings_novo_nordisk_catalent_2024_decision
+  page: '8'
+  quote_snippet: (30) In its previous decisions, the Commission identified separate markets
+    according to whether the product manufactured and supplied was an API or an FDP.25 In Chr.
+    Hansen / Lonza / JV, the Commission distinguished the services offered for those two types
+    of products. Services at the API level involve the evaluation, characterisation, development
+    of production and scaling processes in relation to the manufacturing of the actual molecule.
+    Services at FDP level mostly pertain to the development of appropriate dosage formulation
+    and large-scale manufacture of the final drug product.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_novo_holdings_novo_nordisk_catalent_2024_decision
+  page: '9'
+  quote_snippet: (36) In light of the above, the Commission considers that the CMO FDP services
+    market should be further segmented based on the manufactured pharmaceutical form, i.e. injectables,
+    semi-solid, liquids and solids41. For the purposes of this decision, it will therefore assess
+    the segmentation of CMO FDP services for injectables, and CMO FDP services for solids.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_novo_holdings_novo_nordisk_catalent_2024_decision
+  page: '9'
+  quote_snippet: (36) In light of the above, the Commission considers that the CMO FDP services
+    market should be further segmented based on the manufactured pharmaceutical form, i.e. injectables,
+    semi-solid, liquids and solids41. For the purposes of this decision, it will therefore assess
+    the segmentation of CMO FDP services for injectables, and CMO FDP services for solids.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_novo_holdings_novo_nordisk_catalent_2024_decision
+  page: '13'
+  quote_snippet: (55) Considering the limited supply-side substitutability, the Notifying Party’s
+    submission confirming that changing format once a marketing authorization has been obtained
+    requires significant resources and time66, which has been confirmed by the market investigation
+    results on the demand-side, the Commission will, for the purposes of this Decision, consider
+    that the market for CMO FDP services for injectables can be further segmented based on the
+    exact format of the injectable.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_novo_holdings_novo_nordisk_catalent_2024_decision
+  page: '6'
+  quote_snippet: |
+    (24) The Transaction gives rise to several affected vertical links between the Parties:
+    (a) The supply of CMO FDP services for PFS (upstream) – the supply of (i) anti-obesity preparations excluding dietetics, and (ii) GLP-1 receptor agonists indicated for diabetes (downstream);
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_novo_holdings_novo_nordisk_catalent_2024_decision
+  page: '17'
+  quote_snippet: (73) In light of the above, the Commission will conduct its assessment of the
+    market for CMO FDP services for PFS,83 leaving the precise market definition open as to
+    whether clinical and commercial supply form part of the same market, and to what extent
+    a potential market segment for commercial supply can be segmented based onthe speed of the
+    production line.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_novo_holdings_novo_nordisk_catalent_2024_decision
+  page: '12'
+  quote_snippet: (49) In any case, the exact product market definition can be left open since
+    the Transaction does not raise serious doubts as to its compatibility with the internal
+    market whether CMO FDP services for vials, PFS and cartridges at the clinical stage of development
+    are considered together or separated by format. For the purposes of this decision, on a
+    conservative basis, the Commission will conduct its assessment on the narrowest plausible
+    market segmentation which is CMO FDP services for PFS at the clinical stage.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_novo_holdings_novo_nordisk_catalent_2024_decision
+  page: '9'
+  quote_snippet: (36) In light of the above, the Commission considers that the CMO FDP services
+    market should be further segmented based on the manufactured pharmaceutical form, i.e. injectables,
+    semi-solid, liquids and solids41. For the purposes of this decision, it will therefore assess
+    the segmentation of CMO FDP services for injectables, and CMO FDP services for solids.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_novo_holdings_novo_nordisk_catalent_2024_decision
+  page: '17'
+  quote_snippet: (78) The results of the Commission’s market investigation generally confirmed
+    a segmentation between solubility enhancing technologies and non-solubility enhancing technologies
+    for CDMO FDP services for solid forms.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_novo_holdings_novo_nordisk_catalent_2024_decision
+  page: '18'
+  quote_snippet: (80) In light of the above, the Commission concludes that solubility-enhancing
+    technologies constitute a plausible market within the CDMO FDP services for solid dose formats.
+    The Commission further considers that this market can be further segmented based on the
+    type of solubility-enhancing technology, but leaves the market open, since no serious doubts
+    arise under any plausible market definition in relation to solubility-enhancing technologies
+    – the narrowest relevant plausible affected market in this case being that for LBDDs. At
+    the same time, and for the purposes of this Decision, the Commission will focus its assessment
+    on the narrowest plausible affected market in the non-solubility-enhancing technologies
+    segment, specifically the market for CMO FDP services for ODTs, leaving the exact product
+    market definition open, as the Transaction does not raise serious doubts about its compatibility
+    with the internal market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_novo_holdings_novo_nordisk_catalent_2024_decision
+  page: '6'
+  quote_snippet: |
+    (24) The Transaction gives rise to several affected vertical links between the Parties:
+    (b) The supply of CMO FDP services for ODTs (upstream) – the supply of opioid use disorder (“OUD”) treatments (downstream).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_novo_holdings_novo_nordisk_catalent_2024_decision
+  page: '17'
+  quote_snippet: (80) At the same time, and for the purposes of this Decision, the Commission
+    will focus its assessment on the narrowest plausible affected market in the non-solubility-enhancing
+    technologies segment, specifically the market for CMO FDP services for ODTs, leaving the
+    exact product market definition open, as the Transaction does not raise serious doubts about
+    its compatibility with the internal market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_novo_holdings_novo_nordisk_catalent_2024_decision
+  page: '18'
+  quote_snippet: (80) At the same time, and for the purposes of this Decision, the Commission
+    will focus its assessment on the narrowest plausible affected market in the non-solubility-enhancing
+    technologies segment, specifically the market for CMO FDP services for ODTs, leaving the
+    exact product market definition open, as the Transaction does not raise serious doubts about
+    its compatibility with the internal market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_novo_holdings_novo_nordisk_catalent_2024_decision
+  page: '6'
+  quote_snippet: |
+    (24) The Transaction gives rise to several affected vertical links between the Parties:
+    (a) The supply of CMO FDP services for PFS (upstream) – the supply of (i) anti-obesity preparations excluding dietetics, and (ii) GLP-1 receptor agonists indicated for diabetes (downstream);
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_novo_holdings_novo_nordisk_catalent_2024_decision
+  page: '6'
+  quote_snippet: |
+    (24) The Transaction gives rise to several affected vertical links between the Parties:
+    (a) The supply of CMO FDP services for PFS (upstream) – the supply of (i) anti-obesity preparations excluding dietetics, and (ii) GLP-1 receptor agonists indicated for diabetes (downstream);
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_novo_holdings_novo_nordisk_catalent_2024_decision
+  page: '21'
+  quote_snippet: (95) In light of its past approach regarding pharmaceutical products, and considering
+    the Parties’ submission and the overall market feedback, the Commission considers the relevant
+    market to be the market for GLP-1 receptor agonists (ATC class A10S) indicated for the treatment
+    of diabetes.107
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_novo_holdings_novo_nordisk_catalent_2024_decision
+  page: '21'
+  quote_snippet: For completeness, the Commission investigated whether there could be a potential
+    split between older generation (daily) GLP-1 receptor agonists and new generation (weekly)
+    GLP-1 receptor agonists. The market feedback received mostly pointed towards the fact that
+    the older generation of GLP-1 receptor agonists likely still exercised competitive constraints
+    over the new generation but only to a limited extent. In any case, the specific market definition
+    can be left open as the Transaction does not raise serious doubts as to the compatibility
+    with the internal market regardless of the market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_novo_holdings_novo_nordisk_catalent_2024_decision
+  page: '6'
+  quote_snippet: |
+    (24) The Transaction gives rise to several affected vertical links between the Parties:
+    (b) The supply of CMO FDP services for ODTs (upstream) – the supply of opioid use disorder (“OUD”) treatments (downstream).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_novo_holdings_novo_nordisk_catalent_2024_decision
+  page: '22'
+  quote_snippet: (97) In light of the above, for the purposes of the decision the Commission
+    will assess the narrowest plausible market, specifically the market for the supply of opioid
+    use disorder treatments (ATC3 class N7F), leaving the exact market definition open, since
+    no serious doubts arise under any plausible market definition in relation to Opioid Use
+    Disorder treatments.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_novo_holdings_novo_nordisk_catalent_2024_decision
+  page: '19'
+  quote_snippet: (85) In any case, the exact geographic market definition can be left open as
+    the Transaction does not raise serious doubts as to the compatibility with the internal
+    market regardless of the geographic market definition (whether EEA, global, or global excluding
+    China).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_novo_holdings_novo_nordisk_catalent_2024_decision
+  page: '22'
+  quote_snippet: '(98) The Commission has previously consistently defined the geographic markets
+    for finished pharmaceutical products as being national in scope.109 This conclusion has
+    been reached because of: (i) varying regulatory controls for pharmaceutical products; (ii)
+    perceived differences in price setting and purchasing patterns/reimbursement by Member States;
+    (iii) differences in national clinical guidelines, medical views and patient preferences;
+    (iv) differences in brand, pack size and distribution system; and (v) because competition
+    between pharmaceutical companies generally takes place at national level.110'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_novo_holdings_novo_nordisk_catalent_2024_decision
+  page: '22'
+  quote_snippet: (101) In light of the above, the Commission will consider both national markets
+    and the EEA as potential geographic markets to conduct its assessment of the GLP-1 receptor
+    agonist market and the obesity preparations excluding dietetics, leaving the precise market
+    definition open as the Transaction does not raise serious doubts as to the compatibility
+    with the internal market regardless of the precise definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_novo_holdings_novo_nordisk_catalent_2024_decision
+  page: '22'
+  quote_snippet: (101) In light of the above, the Commission will consider both national markets
+    and the EEA as potential geographic markets to conduct its assessment of the GLP-1 receptor
+    agonist market and the obesity preparations excluding dietetics, leaving the precise market
+    definition open as the Transaction does not raise serious doubts as to the compatibility
+    with the internal market regardless of the precise definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_novo_holdings_novo_nordisk_catalent_2024_decision
+  page: '52'
+  quote_snippet: |
+    (205) The merged entity would also be unlikely to have the incentive to engage in an input foreclosure strategy:
+    (a) First, Orexo’s Zubsolv has a negligible share of the relevant market of OUD treatments in ATC3 class N7F ([0-5]% EEA-wide), and as a result an ODT input foreclosure strategy would be highly unlikely to be profitable;
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_novo_holdings_novo_nordisk_catalent_2024_decision
+  page: '31'
+  quote_snippet: (131) Third, the Commission typically considers markets for the supply of pharmaceutical
+    products as national. For the purposes of this Decision however, given that the same considerations
+    generally apply across the EEA per the comments in paragraph (125) and that the market for
+    the supply of CMO FDP services for PFS is at-least EEA wide, if not global (potentially
+    excluding China), the Commission will assess the vertical link at hand at EEA level for
+    the supply of obesity and diabetes products (downstream market).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_novo_holdings_novo_nordisk_catalent_2024_decision
+  page: '39'
+  quote_snippet: (154) In light of the foregoing, given the merged entity would be unlikely
+    to have the ability to engage in an input foreclosure strategy and the limited effect such
+    a strategy would have, the Commission concludes that the Transaction is unlikely to give
+    rise to serious doubts as to its compatibility with the internal market as a result of non-horizontal
+    effects in the form of input foreclosure of CMO FDP services for PFS in the EEA or worldwide.190
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: eu_novo_holdings_novo_nordisk_catalent_2024_decision
+  page: '16'
+  quote_snippet: (72) In any case, the Commission considers that the exact product market definition
+    can be left open since the Transaction does not raise serious doubts as to its compatibility
+    with the internal market under any plausible segmentation relating to speed of the line.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+case_type: merger
+ai_summary: null
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

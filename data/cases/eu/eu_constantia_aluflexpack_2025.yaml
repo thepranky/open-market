@@ -1,0 +1,656 @@
+case_id: eu_constantia_aluflexpack_2025
+case_name: CONSTANTIA / ALUFLEXPACK
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2025-01-22'
+parties:
+- name: CONSTANTIA
+  role: acquirer
+- name: ALUFLEXPACK
+  role: target
+source_documents:
+- doc_id: eu_constantia_aluflexpack_2025_decision
+  title: CONSTANTIA / ALUFLEXPACK — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11536
+  pdf_url: http://publications.europa.eu/resource/cellar/18ea22ec-4ddb-11f1-8095-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Production and supply of pre-treated aluminium foil for food uses
+  definition_status: defined
+  notes: The Commission defined the market for pre-treated aluminium foil as segmented into
+    food and non-food uses. Further sub-segmentation within food uses was left open.
+- market_id: pm_2
+  name: Production and supply of pre-treated aluminium foil for non-food uses
+  definition_status: defined
+  notes: The Commission defined the market for pre-treated aluminium foil as segmented into
+    food and non-food uses.
+- market_id: pm_3
+  name: Flexible aluminium packaging
+  definition_status: defined
+  notes: The Commission considered flexible aluminium packaging to be a product market distinct
+    from other types of flexible packaging and rigid packaging.
+- market_id: pm_4
+  name: Retortable aluminium containers and lids for wet pet food
+  definition_status: defined
+  notes: This is a segment of flexible aluminium packaging.
+- market_id: pm_5
+  name: Retortable aluminium containers and lids for human food
+  definition_status: defined
+  notes: This is a segment of flexible aluminium packaging.
+- market_id: pm_6
+  name: Aluminium lidding for dairy
+  definition_status: considered
+  notes: The Commission assessed this as a separate product market for the purposes of the Decision,
+    but left open whether it should be further segmented from aluminium cheese wrapping.
+- market_id: pm_7
+  name: Aluminium cheese wrapping
+  definition_status: considered
+  notes: The Commission assessed this as a separate product market for the purposes of the Decision,
+    but left open whether it should be further segmented from aluminium lidding for dairy. AFP
+    is only marginally active in this segment, making it ancillary.
+- market_id: pm_8
+  name: Aluminium foil for confectionery
+  definition_status: defined
+  notes: This is a segment of flexible aluminium packaging.
+- market_id: pm_9
+  name: Aluminium blister lidding for pharmaceutical applications
+  definition_status: left_open
+  notes: The Commission left open whether this market should be further segmented between unprinted
+    and printed blister lidding, but assessed it as a potential market.
+- market_id: pm_10
+  name: Printed aluminium blister lidding for pharmaceutical applications
+  definition_status: left_open
+  notes: This is a sub-segment of aluminium blister lidding for pharmaceutical applications,
+    which the Commission assessed as a potential market, leaving open the overall segmentation.
+- market_id: pm_11
+  name: Aluminium coffee capsules
+  definition_status: left_open
+  notes: The Commission assessed this as a separate product market for the purposes of the Decision,
+    but left open whether aluminium coffee capsules and lids are separate product markets. This
+    market did not give rise to a vertically affected market.
+- market_id: pm_12
+  name: Aluminium coffee lids
+  definition_status: left_open
+  notes: The Commission assessed this as a separate product market for the purposes of the Decision,
+    but left open whether aluminium coffee capsules and lids are separate product markets. This
+    market did not give rise to a vertically affected market.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Production and supply of pre-treated aluminium foil for flexible aluminium packaging
+    — EEA-wide (EEA and Switzerland affected)
+  definition_status: left_open
+  notes: The Commission considered the geographic scope to be at least EEA-wide, but possibly
+    including EEA and Switzerland, and left the exact scope open.
+- market_id: gm_2
+  name: Flexible aluminium packaging — EEA-wide (EEA and Switzerland affected)
+  definition_status: left_open
+  notes: The Commission considered the geographic scope for all relevant product markets related
+    to flexible aluminium packaging to be at least EEA-wide, but possibly including EEA and
+    Switzerland, and left the exact scope open.
+- market_id: gm_3
+  name: Retortable aluminium containers and lids for wet pet food — EEA-wide (EEA and Switzerland
+    affected)
+  definition_status: left_open
+  notes: The geographic scope for this horizontally affected market was considered to be at
+    least EEA-wide, but possibly including EEA and Switzerland, and left open.
+- market_id: gm_4
+  name: Retortable aluminium containers and lids for human food — EEA-wide (EEA and Switzerland
+    affected)
+  definition_status: left_open
+  notes: The geographic scope for this horizontally affected market was considered to be at
+    least EEA-wide, but possibly including EEA and Switzerland, and left open.
+- market_id: gm_5
+  name: Aluminium lidding foil for dairy — EEA-wide (EEA and Switzerland affected)
+  definition_status: left_open
+  notes: The geographic scope for this horizontally affected market was considered to be at
+    least EEA-wide, but possibly including EEA and Switzerland, and left open.
+- market_id: gm_6
+  name: Aluminium foil for confectionery — EEA-wide (EEA and Switzerland affected)
+  definition_status: left_open
+  notes: The geographic scope for this horizontally affected market was considered to be at
+    least EEA-wide, but possibly including EEA and Switzerland, and left open.
+- market_id: gm_7
+  name: Aluminium blister lidding for pharmaceutical applications — EEA-wide (EEA and Switzerland
+    affected)
+  definition_status: left_open
+  notes: The geographic scope for this horizontally affected market was considered to be at
+    least EEA-wide, but possibly including EEA and Switzerland, and left open.
+- market_id: gm_8
+  name: Printed aluminium blister lidding for pharmaceutical applications — EEA-wide (EEA and
+    Switzerland affected)
+  definition_status: left_open
+  notes: The geographic scope for this vertically affected market was considered to be at least
+    EEA-wide, but possibly including EEA and Switzerland, and left open.
+- market_id: gm_9
+  name: Aluminium coffee capsules — EEA-wide (EEA and Switzerland affected)
+  definition_status: left_open
+  notes: While not giving rise to an affected market, the geographic scope for the upstream
+    supply of pre-treated aluminium foil for coffee capsules was noted as EEA-wide, and the
+    general flexible aluminium packaging market conclusion implies this for downstream as well.
+- market_id: gm_10
+  name: Aluminium coffee lids — EEA-wide (EEA and Switzerland affected)
+  definition_status: left_open
+  notes: While not giving rise to an affected market, the geographic scope for flexible aluminium
+    packaging in general implies this for aluminium coffee lids.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_constantia_aluflexpack_2025_decision
+  page: '5'
+  quote_snippet: (19) Therefore, and in light of the results of the market investigation, the
+    Commission overall considers that, for the purposes of this Decision, the relevant market
+    for pre-treated aluminium foil is that for the production and supply of pre-treated aluminium
+    foil for food uses, on the one hand, and for non-food uses, on the other hand. While pre-treated
+    aluminium foil for food could be further sub-segmented according to end-use, this can ultimately
+    be left open, given that the Transaction does not raise serious doubts as to its compatibility
+    with the internal market under any of these plausible market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_constantia_aluflexpack_2025_decision
+  page: '5'
+  quote_snippet: (16) The Commission’s market investigation has revealed that it is likely that
+    the market for the production and supply of pre-treated aluminium foil should be further
+    sub-segmented according to the end-use it is required for.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_constantia_aluflexpack_2025_decision
+  page: '5'
+  quote_snippet: '(17) Indeed, market participants have highlighted that there exist differences
+    between pre-treated aluminium foil according to the end-use it is destined for. For example,
+    pre-treated aluminium foil destined for food end-uses needs to satisfy certain regulations:
+    one market participant explained that ‘aluminium packaging must be aligned with the high
+    production standards for food quality and safety in the European Union. For example, inks
+    and lacquering [i.e. the pre-treatment of the foil] must be food safe. Certification of
+    a new supplier may take from 6 to 12 months as there are many steps and procedures to be
+    tested’.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_constantia_aluflexpack_2025_decision
+  page: '5'
+  quote_snippet: (19) Therefore, and in light of the results of the market investigation, the
+    Commission overall considers that, for the purposes of this Decision, the relevant market
+    for pre-treated aluminium foil is that for the production and supply of pre-treated aluminium
+    foil for food uses, on the one hand, and for non-food uses, on the other hand. While pre-treated
+    aluminium foil for food could be further sub-segmented according to end-use, this can ultimately
+    be left open, given that the Transaction does not raise serious doubts as to its compatibility
+    with the internal market under any of these plausible market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_constantia_aluflexpack_2025_decision
+  page: '5'
+  quote_snippet: (16) The Commission’s market investigation has revealed that it is likely that
+    the market for the production and supply of pre-treated aluminium foil should be further
+    sub-segmented according to the end-use it is required for.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_constantia_aluflexpack_2025_decision
+  page: '10'
+  quote_snippet: (38) Therefore, and in light of the results of the market investigation, the
+    Commission overall considers that, for the purposes of this Decision, flexible aluminium
+    packaging constitutes a product market distinct from that of other types of flexible packaging.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_constantia_aluflexpack_2025_decision
+  page: '7'
+  quote_snippet: (28) The Commission’s market investigation has shown that flexible aluminium
+    packaging is distinct from other types of flexible packaging.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_constantia_aluflexpack_2025_decision
+  page: '14'
+  quote_snippet: (53) Therefore, and in light of the results of the market investigation, the
+    Commission overall considers that, for the purposes of this Decision, there is a separate
+    product market for retortable aluminium containers and lids for wet pet food.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_constantia_aluflexpack_2025_decision
+  page: '13'
+  quote_snippet: (50) With regards to the substitutability between retortable aluminium containers
+    and lids, and other types of wet pet food packaging such as retortable pouches, or cans,
+    a majority of customers having expressed their opinion explained that they would not switch
+    their current purchases of aluminium containers/containers and lids to other types of aluminium
+    packaging for wet pet food in response to a small but significant price increase.72 According
+    to one pet food customer, ‘the qualification of a new type of packaging takes time and may
+    require changing production lines depending on the type of packaging’.73
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_constantia_aluflexpack_2025_decision
+  page: '15'
+  quote_snippet: (58) Therefore, and in light of the results of the market investigation, the
+    Commission overall considers that, for the purposes of this Decision, that there is a separate
+    product market for retortable aluminium containers and lids for human food.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_constantia_aluflexpack_2025_decision
+  page: '14'
+  quote_snippet: (55) With regards to the substitutability between retortable aluminium trays
+    and lids, and other types of retort human food packaging such as retortable pouches, or
+    cans, a majority of customers having expressed their opinion explained that they would not
+    switch their current purchases of aluminium containers/trays and lids to other types of
+    aluminium packaging for human food in response to a small but significant price increase.81
+    According to one human food customer, ‘The lines are speicifcally designed for this packaging,
+    change [is] not possible’.82
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_constantia_aluflexpack_2025_decision
+  page: '16'
+  quote_snippet: (64) There have been no indications from the market investigation that use
+    of flexible aluminium packaging for confectionery should be further sub-segmented. Therefore,
+    and for the purposes of this Decision, the relevant product market is aluminium foil for
+    confectionery.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_constantia_aluflexpack_2025_decision
+  page: '16'
+  quote_snippet: (69) However, for the purposes of this Decision, it can be left open whether
+    the market for blister lidding should be further segmented between unprinted blister lidding
+    and printed blister lidding, given that the Transaction does not raise serious doubts as
+    to its compatibility with the internal market under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_constantia_aluflexpack_2025_decision
+  page: '16'
+  quote_snippet: '(70) As explained in paragraphs (11) and (12) above, the Transaction gives
+    rise to a horizontal affected market in relation to blister lidding. Given that AFP only
+    has de minimis spot sales in unprinted blister lidding, the Commission’s horizontal assessment
+    will assess only the product markets for: (i) aluminium blister lidding for pharmaceutical
+    applications; and (ii) printed aluminium blister lidding for pharmaceutical applications.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_constantia_aluflexpack_2025_decision
+  page: '16'
+  quote_snippet: (68) While Constantia supplies both printed and unprinted blister lidding,
+    AFP supplies almost exclusively printed blister lidding to pharmaceutical customers. From
+    a demand-side perspective, as explained in the previous paragraph, pharmaceutical end-users
+    seem to use unprinted and printed blister lidding for the same end-use applications. However,
+    from a supply-side perspective, it appears that suppliers of printed blister lidding require
+    additional printing capabilities. While there are several providers of unprinted blister
+    lidding that are also active in printed blister lidding (e.g. Amcor, Constantia or Aluberg),
+    it seems that no pharmaceutical companies and most converters/printers are only active at
+    the level of printed blister lidding, potentially indicating the existence of separate markets
+    for unprinted and printed blister lidding.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_constantia_aluflexpack_2025_decision
+  page: '16'
+  quote_snippet: (69) However, for the purposes of this Decision, it can be left open whether
+    the market for blister lidding should be further segmented between unprinted blister lidding
+    and printed blister lidding, given that the Transaction does not raise serious doubts as
+    to its compatibility with the internal market under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_constantia_aluflexpack_2025_decision
+  page: '16'
+  quote_snippet: '(70) As explained in paragraphs (11) and (12) above, the Transaction gives
+    rise to a horizontal affected market in relation to blister lidding. Given that AFP only
+    has de minimis spot sales in unprinted blister lidding, the Commission’s horizontal assessment
+    will assess only the product markets for: (i) aluminium blister lidding for pharmaceutical
+    applications; and (ii) printed aluminium blister lidding for pharmaceutical applications.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_constantia_aluflexpack_2025_decision
+  page: '16'
+  quote_snippet: (68) While Constantia supplies both printed and unprinted blister lidding,
+    AFP supplies almost exclusively printed blister lidding to pharmaceutical customers. From
+    a demand-side perspective, as explained in the previous paragraph, pharmaceutical end-users
+    seem to use unprinted and printed blister lidding for the same end-use applications. However,
+    from a supply-side perspective, it appears that suppliers of printed blister lidding require
+    additional printing capabilities. While there are several providers of unprinted blister
+    lidding that are also active in printed blister lidding (e.g. Amcor, Constantia or Aluberg),
+    it seems that no pharmaceutical companies and most converters/printers are only active at
+    the level of printed blister lidding, potentially indicating the existence of separate markets
+    for unprinted and printed blister lidding.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_constantia_aluflexpack_2025_decision
+  page: '15'
+  quote_snippet: (60) Therefore, and in light of the results of the market investigation, the
+    Commission will assess, for the purposes of this Decision, separate product markets for
+    each of aluminium coffee capsules and aluminium coffee lids. In any event, whether aluminium
+    coffee capsules and aluminium coffee lids are separate product markets can be left open,
+    given that the Transaction does not raise serious doubts as to its compatibility with the
+    internal market under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_constantia_aluflexpack_2025_decision
+  page: '15'
+  quote_snippet: (60) Therefore, and in light of the results of the market investigation, the
+    Commission will assess, for the purposes of this Decision, separate product markets for
+    each of aluminium coffee capsules and aluminium coffee lids. In any event, whether aluminium
+    coffee capsules and aluminium coffee lids are separate product markets can be left open,
+    given that the Transaction does not raise serious doubts as to its compatibility with the
+    internal market under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_constantia_aluflexpack_2025_decision
+  page: '17'
+  quote_snippet: (76) For the purposes of this Decision, the Commission considers that the geographic
+    scope of the market is at least EEA-wide, but possibly comprises the EEA and Switzerland.
+    In any event, the exact scope of the geographic market can be left open, given that the
+    Transaction does not raise serious doubts as to its compatibility with the internal market
+    under any plausible geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_constantia_aluflexpack_2025_decision
+  page: '18'
+  quote_snippet: (80) The Commission’s market investigation has confirmed that the geographic
+    scope of all relevant product markets related to the production and supply of flexible aluminium
+    packaging are at least EEA wide and possibly wider, comprising the EEA and Switzerland.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_constantia_aluflexpack_2025_decision
+  page: '4'
+  quote_snippet: (a) Retortable7 aluminium containers and lids for wet pet food in the EEA and
+    in the EEA and Switzerland,
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_constantia_aluflexpack_2025_decision
+  page: '4'
+  quote_snippet: (b) Retortable aluminium containers and lids for human food in the EEA and
+    in the EEA and Switzerland,
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_constantia_aluflexpack_2025_decision
+  page: '4'
+  quote_snippet: (c) Aluminium lidding foil for dairy in the EEA and in the EEA and Switzerland,
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_constantia_aluflexpack_2025_decision
+  page: '4'
+  quote_snippet: (d) Aluminium foil for confectionery in the EEA and in the EEA and Switzerland,
+    and
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_constantia_aluflexpack_2025_decision
+  page: '4'
+  quote_snippet: (e) Aluminium blister lidding for pharmaceutical applications in the EEA and
+    in the EEA and Switzerland.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_constantia_aluflexpack_2025_decision
+  page: '17'
+  quote_snippet: (71) In addition, the Transaction also gives rise to vertically affected markets
+    in relation to unprinted aluminium blister lidding for pharmaceutical applications, upstream,
+    and printed aluminium blister lidding for pharmaceutical applications, downstream. The Commission’s
+    vertical assessment will therefore focus on those two potential market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_8
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_constantia_aluflexpack_2025_decision
+  page: '61'
+  quote_snippet: (318) During the market investigation, a customer expressed concerns relating
+    to the Parties being able to foreclose their customers of co-extruded aluminium foil for
+    coffee capsules in the EEA post-Transaction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_9
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_constantia_aluflexpack_2025_decision
+  page: '65'
+  quote_snippet: (337) In order to remove the serious doubts raised by the Transaction and render
+    the concentration compatible with the internal market, on 8 January 2025, the Notifying
+    Party formally submitted a first set of commitments under Article 6(2) of the Merger Regulation
+    (the ‘Initial Commitments’).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_constantia_aluflexpack_2025_decision
+  page: '65'
+  quote_snippet: (339) Following the feedback received through the market test, the Notifying
+    Party formally submitted amended commitments on 22 January 2024 (the ‘Final Commitments’).
+    The Final Commitments are annexed to this Decision,420 and form an integral part thereof.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

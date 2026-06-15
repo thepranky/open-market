@@ -1,0 +1,295 @@
+case_id: eu_oracle_cerner_2022
+case_name: ORACLE / CERNER
+authority: European Commission
+jurisdiction: EU
+sector: tech
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2022-06-01'
+parties:
+- name: ORACLE
+  role: acquirer
+- name: CERNER
+  role: target
+source_documents:
+- doc_id: eu_oracle_cerner_2022_decision
+  title: ORACLE / CERNER — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10643
+  pdf_url: http://publications.europa.eu/resource/cellar/55dc040e-2f77-11ee-9e98-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: RDBMS software
+  definition_status: considered
+  notes: The Commission considered the relevant product market to be that comprising all RDBMS
+    (Relational Database Management Systems) for the purpose of the decision, but left open
+    the question of whether it is part of a broader market for DBMS (Database Management Systems)
+    including non-relational DBMS. Segmentation of the RDBMS market itself (e.g. by embedded
+    vs non-embedded, OLAP vs OLTP, general purpose vs specialised, compatibility, or mission
+    critical vs non-mission critical) was not considered necessary.
+- market_id: pm_2
+  name: Healthcare software
+  definition_status: left_open
+  notes: The Commission considered the market for healthcare software to be the relevant product
+    market, but explicitly left open its exact product market definition, including a possible
+    segmentation by modules (e.g., EHR and other clinical software, RCM solutions, healthcare
+    provider analytics, patient engagement, and telehealth).
+- market_id: pm_3
+  name: Health insurance software
+  definition_status: defined
+  notes: The Commission confirmed that the market for health insurance software is separate
+    from the market for healthcare software, based on different customer needs, sales channels,
+    regulatory requirements, and supply-side considerations.
+geographic_markets_considered:
+- market_id: gm_1
+  name: RDBMS software — worldwide
+  definition_status: defined
+  notes: The geographic market for RDBMS software was defined as worldwide, consistent with
+    previous Commission decisions and market investigation findings that the IT industry is
+    global and software can be licensed and installed anywhere.
+- market_id: gm_2
+  name: Healthcare software — EEA-wide or national
+  definition_status: left_open
+  notes: The geographic market definition for healthcare software (and its possible segmentations)
+    was left open, as market investigation results were mixed (some respondents indicated a
+    national market, others an EEA-wide market), and the transaction did not raise serious doubts
+    under any plausible definition.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_oracle_cerner_2022_decision
+  page: '3'
+  quote_snippet: A relational database management system (RDBMS) is a type of DBMS that manages
+    and stores data in separate tables and defines relationships between those tables.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_oracle_cerner_2022_decision
+  page: '6'
+  quote_snippet: In light of the above, the Commission considers that the relevant product market
+    in this case is that comprising all RDBMS. For the purpose of this Decision, the question
+    of whether the market for RDBMS is part of a broader market (i.e. an overall market for
+    DBMS including RDBMS) can be left open, since the Transaction does not raise serious doubts
+    as to its compatibility with the internal market under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_oracle_cerner_2022_decision
+  page: '4'
+  quote_snippet: 'In Oracle/Sun Microsystems, the Commission considered a segmentation of the
+    RDBMS market based on several criteria but ultimately concluded that the market was “one
+    comprising all RDBMS”, among other reasons because of supply-side substitutability. Those
+    segmentation criteria included: − embedded vs. non-embedded RDBMS; − databases for online
+    analytical processing (OLAP) and databases for online transaction processing (OLTP); − general
+    purpose databases vs. specialised databases (for example related to data warehousing); −
+    compatibility with customers’ existing IT infrastructure (operating systems); − RDBMS for
+    mission critical vs. non-mission critical applications.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_oracle_cerner_2022_decision
+  page: '2'
+  quote_snippet: 'For the assessment of the Transaction in this decision, the following business
+    activities of the Parties are relevant: (i) Oracle is active in relational database management
+    systems (“RDBMS”) software5 and (ii) Cerner is active in healthcare software, i.e. software
+    adapted to the needs of healthcare providers.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_oracle_cerner_2022_decision
+  page: '9'
+  quote_snippet: In light of the above, the Commission considers that the relevant product market
+    in this case is the market for healthcare software and that health insurance software is
+    not part of that market. For the purposes of this Decision, the exact product market definition
+    of the healthcare software market can be left open because the Transaction does not raise
+    serious doubts as to its compatibility with the internal market under any plausible market
+    definition (including a possible segmentation of the healthcare software market by both
+    the modules considered in CSC/iSoft and the modules proposed by the Notifying Party).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_oracle_cerner_2022_decision
+  page: '9'
+  quote_snippet: In light of the above, the Commission considers that the relevant product market
+    in this case is the market for healthcare software and that health insurance software is
+    not part of that market. For the purposes of this Decision, the exact product market definition
+    of the healthcare software market can be left open because the Transaction does not raise
+    serious doubts as to its compatibility with the internal market under any plausible market
+    definition (including a possible segmentation of the healthcare software market by both
+    the modules considered in CSC/iSoft and the modules proposed by the Notifying Party).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_oracle_cerner_2022_decision
+  page: '6'
+  quote_snippet: In Oracle/Sun Microsystems, the Commission found the geographic scope of the
+    market for RDBMS to be worldwide as the market investigation showed that “the IT industry
+    is a global industry” and “any database software can be licensed and installed at any specific
+    geographic location”.37
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_oracle_cerner_2022_decision
+  page: '7'
+  quote_snippet: In light of the above, for the purpose of this Decision, and in line with its
+    previous decisional practice, the Commission considers that the markets for DBMS and RDBMS
+    are worldwide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_oracle_cerner_2022_decision
+  page: '7'
+  quote_snippet: Almost all respondents to the market investigation consider that the market
+    for RDBMS is global.41 The evidence in the Commission’s file has not provided any indication
+    that would suggest that the geographic scope of the market for DBMS would be different.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_oracle_cerner_2022_decision
+  page: '10'
+  quote_snippet: The market investigation delivered mixed results. While some respondents pointed
+    to a national market, others supported an EEA-wide market.59 In particular, from a demand-side
+    perspective, healthcare providers are usually located in one country and there are national
+    limitations resulting from IP-rights and other regulatory or language requirements. On the
+    other hand, from a supply-side perspective, most providers of healthcare software are active
+    in more than one country.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_oracle_cerner_2022_decision
+  page: '10'
+  quote_snippet: In any event, for the purposes of this Decision, the geographic market definition
+    for the market for software for healthcare providers (and possible segmentation thereof)
+    can be left open because the Transaction does not raise serious doubts as to its compatibility
+    with the internal market regardless of whether any plausible market is national or EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_oracle_cerner_2022_decision
+  page: '1'
+  quote_snippet: Commission decision pursuant to Article 6(1)(b) of Council Regulation No 139/20041
+    and Article 57 of the Agreement on the European Economic Area2
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_oracle_cerner_2022_decision
+  page: '6'
+  quote_snippet: For the purpose of this Decision, the question of whether the market for RDBMS
+    is part of a broader market (i.e. an overall market for DBMS including RDBMS) can be left
+    open, since the Transaction does not raise serious doubts as to its compatibility with the
+    internal market under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_oracle_cerner_2022_decision
+  page: '9'
+  quote_snippet: For the purposes of this Decision, the exact product market definition of the
+    healthcare software market can be left open because the Transaction does not raise serious
+    doubts as to its compatibility with the internal market under any plausible market definition
+    (including a possible segmentation of the healthcare software market by both the modules
+    considered in CSC/iSoft and the modules proposed by the Notifying Party).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

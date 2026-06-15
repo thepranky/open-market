@@ -1,0 +1,544 @@
+case_id: eu_nokia_infinera_2025
+case_name: NOKIA / INFINERA
+authority: European Commission
+jurisdiction: EU
+sector: retail
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2025-02-26'
+parties:
+- name: NOKIA
+  role: acquirer
+- name: INFINERA
+  role: target
+source_documents:
+- doc_id: eu_nokia_infinera_2025_decision
+  title: NOKIA / INFINERA — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11663
+  pdf_url: http://publications.europa.eu/resource/cellar/0cadd8fc-29b3-11f0-8a44-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Overall optical transport equipment
+  definition_status: considered
+  notes: The Commission explicitly stated that the exact product market definition could be
+    left open, but for the purpose of the decision, its competitive assessment considered this
+    market.
+- market_id: pm_2
+  name: WDM systems (all applications)
+  definition_status: considered
+  notes: The Commission explicitly stated that the exact product market definition could be
+    left open regarding segmentation by device type and application, but for the purpose of
+    the decision, its competitive assessment considered this market segment.
+- market_id: pm_3
+  name: WDM systems for metro applications
+  definition_status: considered
+  notes: The Commission explicitly stated that the exact product market definition could be
+    left open regarding segmentation by application, but for the purpose of the decision, its
+    competitive assessment considered this market segment.
+- market_id: pm_4
+  name: WDM systems for long-haul applications
+  definition_status: considered
+  notes: The Commission explicitly stated that the exact product market definition could be
+    left open regarding segmentation by application, but for the purpose of the decision, its
+    competitive assessment considered this market segment.
+- market_id: pm_5
+  name: WDM systems for terrestrial applications
+  definition_status: considered
+  notes: The Commission explicitly stated that the exact product market definition could be
+    left open regarding segmentation by application, but for the purpose of the decision, its
+    competitive assessment considered this market segment.
+- market_id: pm_6
+  name: WDM systems for subsea applications
+  definition_status: considered
+  notes: The Commission explicitly stated that the exact product market definition could be
+    left open regarding segmentation by application, but for the purpose of the decision, its
+    competitive assessment considered this market segment.
+- market_id: pm_7
+  name: WDM systems for DCI applications
+  definition_status: considered
+  notes: The Commission explicitly stated that the exact product market definition could be
+    left open regarding segmentation by application, but for the purpose of the decision, its
+    competitive assessment considered this market segment.
+- market_id: pm_8
+  name: Legacy (non-WDM) devices
+  definition_status: considered
+  notes: The Commission explicitly stated that the exact product market definition could be
+    left open regarding segmentation by device type, but for the purpose of the decision, its
+    competitive assessment considered this market segment, which includes bandwidth management
+    devices and aggregation devices.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Optical transport equipment — worldwide
+  definition_status: considered
+  notes: The Commission explicitly stated that the exact geographic market definition could
+    be left open, but for the purpose of the decision, its competitive assessment considered
+    both worldwide and EEA-wide levels.
+- market_id: gm_2
+  name: Optical transport equipment — EEA-wide
+  definition_status: considered
+  notes: The Commission explicitly stated that the exact geographic market definition could
+    be left open, but for the purpose of the decision, its competitive assessment considered
+    both worldwide and EEA-wide levels.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_nokia_infinera_2025_decision
+  page: '4'
+  quote_snippet: (15) The Transaction concerns the market for optical transport equipment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_nokia_infinera_2025_decision
+  page: '7'
+  quote_snippet: (27) The results of the market investigation are inconclusive as to whether
+    the relevant market for the supply of optical transport equipment must be further segmented
+    by type of device (into bandwidth management devices, aggregation devices and WDM systems).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_nokia_infinera_2025_decision
+  page: '12'
+  quote_snippet: '(50) The competitive assessment will consider the following product market
+    and its potential segments that are affected as set out in Table 16 of this Decision (excluding
+    pluggable transceiver modules, though considering such modules as a possible constraint):
+    (1) overall optical transport equipment, (2) WDM systems (all applications), (3) WDM systems
+    for metro applications, (4) WDM systems for long-haul applications, (5) WDM systems for
+    terrestrial applications, (6) WDM systems for subsea applications, (7) WDM systems for DCI
+    applications, and (8) legacy (non-WDM) devices.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_nokia_infinera_2025_decision
+  page: '5'
+  quote_snippet: '(21) In case M.4003 Ericsson / Marconi the Commission considered that optical
+    transport equipment can be segmented into three categories based on the functions performed
+    by devices in each category: (i) bandwidth management devices situated at the core of the
+    optical network;22 (ii) aggregation devices situated at the edge of the optical network
+    and used to aggregate customers into the core network;23 and (iii) WDM systems.24'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_nokia_infinera_2025_decision
+  page: '7'
+  quote_snippet: (27) The results of the market investigation are inconclusive as to whether
+    the relevant market for the supply of optical transport equipment must be further segmented
+    by type of device (into bandwidth management devices, aggregation devices and WDM systems).
+    The feedback received from market participants during the market investigation confirmed
+    that, despite the ongoing technological advancements in the market for the supply of optical
+    transport equipment, the market transformation is still in progress. Thus, although there
+    is a technological shift that has led to increased use of WDM systems, bandwidth management
+    devices and aggregation devices are still relevant for the assessment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_nokia_infinera_2025_decision
+  page: '12'
+  quote_snippet: '(50) The competitive assessment will consider the following product market
+    and its potential segments that are affected as set out in Table 16 of this Decision (excluding
+    pluggable transceiver modules, though considering such modules as a possible constraint):
+    (1) overall optical transport equipment, (2) WDM systems (all applications), (3) WDM systems
+    for metro applications, (4) WDM systems for long-haul applications, (5) WDM systems for
+    terrestrial applications, (6) WDM systems for subsea applications, (7) WDM systems for DCI
+    applications, and (8) legacy (non-WDM) devices.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_nokia_infinera_2025_decision
+  page: '9'
+  quote_snippet: (39) In conclusion, in view of the above, the Commission considers that the
+    results of the market investigation are inconclusive as to whether the potential segment
+    of WDM systems should be further sub-segmented based on its distance/application.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_nokia_infinera_2025_decision
+  page: '12'
+  quote_snippet: '(50) The competitive assessment will consider the following product market
+    and its potential segments that are affected as set out in Table 16 of this Decision (excluding
+    pluggable transceiver modules, though considering such modules as a possible constraint):
+    (1) overall optical transport equipment, (2) WDM systems (all applications), (3) WDM systems
+    for metro applications, (4) WDM systems for long-haul applications, (5) WDM systems for
+    terrestrial applications, (6) WDM systems for subsea applications, (7) WDM systems for DCI
+    applications, and (8) legacy (non-WDM) devices.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_nokia_infinera_2025_decision
+  page: '4'
+  quote_snippet: • Long-haul networks provide high-bandwidth connectivity over countries or
+    even continents typically covering ranges from 1 000 kilometres.14
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_nokia_infinera_2025_decision
+  page: '9'
+  quote_snippet: (39) In conclusion, in view of the above, the Commission considers that the
+    results of the market investigation are inconclusive as to whether the potential segment
+    of WDM systems should be further sub-segmented based on its distance/application.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_nokia_infinera_2025_decision
+  page: '12'
+  quote_snippet: '(50) The competitive assessment will consider the following product market
+    and its potential segments that are affected as set out in Table 16 of this Decision (excluding
+    pluggable transceiver modules, though considering such modules as a possible constraint):
+    (1) overall optical transport equipment, (2) WDM systems (all applications), (3) WDM systems
+    for metro applications, (4) WDM systems for long-haul applications, (5) WDM systems for
+    terrestrial applications, (6) WDM systems for subsea applications, (7) WDM systems for DCI
+    applications, and (8) legacy (non-WDM) devices.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_nokia_infinera_2025_decision
+  page: '4'
+  quote_snippet: • Terrestrial networks enable the transmission of data through fibre optic
+    cables laid across land, connecting countries, cities, towns, and even rural areas.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_nokia_infinera_2025_decision
+  page: '9'
+  quote_snippet: (39) In conclusion, in view of the above, the Commission considers that the
+    results of the market investigation are inconclusive as to whether the potential segment
+    of WDM systems should be further sub-segmented based on its distance/application.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_nokia_infinera_2025_decision
+  page: '12'
+  quote_snippet: '(50) The competitive assessment will consider the following product market
+    and its potential segments that are affected as set out in Table 16 of this Decision (excluding
+    pluggable transceiver modules, though considering such modules as a possible constraint):
+    (1) overall optical transport equipment, (2) WDM systems (all applications), (3) WDM systems
+    for metro applications, (4) WDM systems for long-haul applications, (5) WDM systems for
+    terrestrial applications, (6) WDM systems for subsea applications, (7) WDM systems for DCI
+    applications, and (8) legacy (non-WDM) devices.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_nokia_infinera_2025_decision
+  page: '4'
+  quote_snippet: • Subsea networks enable submarine cable data transmission in long-haul networks.15
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_nokia_infinera_2025_decision
+  page: '9'
+  quote_snippet: (39) In conclusion, in view of the above, the Commission considers that the
+    results of the market investigation are inconclusive as to whether the potential segment
+    of WDM systems should be further sub-segmented based on its distance/application.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_nokia_infinera_2025_decision
+  page: '12'
+  quote_snippet: '(50) The competitive assessment will consider the following product market
+    and its potential segments that are affected as set out in Table 16 of this Decision (excluding
+    pluggable transceiver modules, though considering such modules as a possible constraint):
+    (1) overall optical transport equipment, (2) WDM systems (all applications), (3) WDM systems
+    for metro applications, (4) WDM systems for long-haul applications, (5) WDM systems for
+    terrestrial applications, (6) WDM systems for subsea applications, (7) WDM systems for DCI
+    applications, and (8) legacy (non-WDM) devices.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_nokia_infinera_2025_decision
+  page: '9'
+  quote_snippet: (39) In conclusion, in view of the above, the Commission considers that the
+    results of the market investigation are inconclusive as to whether the potential segment
+    of WDM systems should be further sub-segmented based on its distance/application.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_nokia_infinera_2025_decision
+  page: '12'
+  quote_snippet: '(50) The competitive assessment will consider the following product market
+    and its potential segments that are affected as set out in Table 16 of this Decision (excluding
+    pluggable transceiver modules, though considering such modules as a possible constraint):
+    (1) overall optical transport equipment, (2) WDM systems (all applications), (3) WDM systems
+    for metro applications, (4) WDM systems for long-haul applications, (5) WDM systems for
+    terrestrial applications, (6) WDM systems for subsea applications, (7) WDM systems for DCI
+    applications, and (8) legacy (non-WDM) devices.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_nokia_infinera_2025_decision
+  page: '6'
+  quote_snippet: '(24) The Notifying Party submits that the optical network industry has evolved
+    significantly since the Commission’s 2006 decision in M.4214 Alcatel / Lucent Technologies.
+    In particular, the Notifying Party submits that: (a) Bandwidth management devices and aggregation
+    devices would today be considered as legacy categories of products that have almost entirely
+    been replaced by WDM systems.27 Accordingly, the industry typically would distinguish between:
+    (i) WDM systems and (ii) non-WDM or legacy products comprising both bandwidth management
+    devices and aggregation devices.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_nokia_infinera_2025_decision
+  page: '7'
+  quote_snippet: (29) Second, the responses to the market investigation also confirmed that,
+    whereas this segmentation (between bandwidth management devices, aggregation devices and
+    WDM systems) is still relevant today, the use of the first two types of devices, i.e., aggregation
+    devices and bandwidth management devices (jointly referred to as ‘non-WDM devices’) is declining.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_nokia_infinera_2025_decision
+  page: '12'
+  quote_snippet: '(50) The competitive assessment will consider the following product market
+    and its potential segments that are affected as set out in Table 16 of this Decision (excluding
+    pluggable transceiver modules, though considering such modules as a possible constraint):
+    (1) overall optical transport equipment, (2) WDM systems (all applications), (3) WDM systems
+    for metro applications, (4) WDM systems for long-haul applications, (5) WDM systems for
+    terrestrial applications, (6) WDM systems for subsea applications, (7) WDM systems for DCI
+    applications, and (8) legacy (non-WDM) devices.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_nokia_infinera_2025_decision
+  page: '12'
+  quote_snippet: (51) In M.4003 Ericsson / Marconi and M.4214 Alcatel / Lucent Technologies,64
+    the Commission considered that the geographic market for optical transport equipment, and
+    its possible segments, is at least EEA-wide, if not broader, for various reasons. These
+    include customers and suppliers having an EEA (if not worldwide) presence, the evolution
+    of IP technology and EEA/worldwide standardisation, the fact that prices and tenders for
+    these products are normally negotiated on an EEA (if not worldwide) basis and that transport
+    costs are not a determining factor when considering suppliers. Ultimately, the Commission
+    left the exact geographic market definition open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_nokia_infinera_2025_decision
+  page: '8'
+  quote_snippet: (35) In any event, the Commission considers that, for the purpose of this Decision,
+    the exact product market definition with regard to the potential market segmentation into
+    bandwidth management devices, aggregation devices and WDM systems can be left open, as the
+    Transaction does not raise serious doubts as to its compatibility with the internal market,
+    irrespective of the exact product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_nokia_infinera_2025_decision
+  page: '11'
+  quote_snippet: (48) In any event, the Commission considers that, for the purpose of this Decision,
+    the exact product market definition can be left open, as the Transaction does not raise
+    serious doubts as to its compatibility with the internal market, irrespective of the exact
+    product market definition. The competitive assessment will consider market shares that do
+    not include pluggable transceiver modules but will consider their presence as a possible
+    constraint on the Parties.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_nokia_infinera_2025_decision
+  page: '12'
+  quote_snippet: (49) In view of the foregoing, the Commission considers that, for the purpose
+    of this Decision, the exact product market definition with regard to the supply optical
+    transport equipment can be left open, given that the Transaction would not raise serious
+    doubts as to its compatibility with the internal market, even on the narrowest plausible
+    product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_nokia_infinera_2025_decision
+  page: '26'
+  quote_snippet: (85) The Commission considers that, for the reasons set out below, the Transaction
+    does not raise serious doubts as to its compatibility with the internal market as a result
+    of horizontal effects in the market for the supply of optical transport equipment or any
+    of its potential segments, at worldwide or EEA-wide level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

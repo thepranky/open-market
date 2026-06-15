@@ -1,22 +1,15 @@
 case_id: eu_coca_cola_costa_2018
 case_name: The Coca-Cola Company / Costa
 authority: European Commission
-authority_reference: M.9122
 jurisdiction: EU
-decision_date: '2018-12-21'
-case_type: merger
-procedure_stage: phase1
 sector: food & beverages / consumer goods
-
+outcome: cleared
+decision_date: '2018-12-21'
 parties:
 - name: The Coca-Cola Company
   role: acquirer
 - name: Costa Limited
   role: target
-
-outcome: cleared
-remedies: []
-
 source_documents:
 - doc_id: eu_coca_cola_costa_decision
   title: 'Case M.9122 – The Coca-Cola Company / Costa: Commission Decision'
@@ -26,169 +19,101 @@ source_documents:
   authority_reference: M.9122
   retrieval_status: direct
   published_date: '2018-12-21'
-
 product_markets_considered:
 - market_id: pm_1
   name: Supply of non-alcoholic ready-to-drink commercial beverages (NABs)
   definition_status: left_open
-  notes: >
-    Commission left open the exact product market scope (including possible segmentations
-    into CSDs vs NCSDs, cola-flavoured CSDs, packaged water, fruit juices, RTD teas,
-    energy/sports drinks). For the purposes of this decision, left open since no serious
-    doubts arise even under the strictest definition (Coca-Cola branded products).
-    Assessed on off-premises and on-premises (HoReCa) channels as separate product
-    markets.
+  notes: |
+    Commission left open the exact product market scope (including possible segmentations into CSDs vs NCSDs, cola-flavoured CSDs, packaged water, fruit juices, RTD teas, energy/sports drinks). For the purposes of this decision, left open since no serious doubts arise even under the strictest definition (Coca-Cola branded products). Assessed on off-premises and on-premises (HoReCa) channels as separate product markets.
 - market_id: pm_2
   name: Operation of coffee shops / informal restaurants
   definition_status: left_open
-  notes: >
-    Commission has not previously defined a relevant product market for coffee shops
-    specifically; prior cases indicated coffee shops are part of a market for informal
-    restaurants. Possible narrower segmentation into branded coffee shops. Market
-    investigation provided some indications coffee shops compete with informal restaurants
-    but was less conclusive on branded vs unbranded. Left open for the purposes of this
-    decision. Also assessed as the downstream market in the vertical effects analysis
-    (Section 5.3): Costa's branded coffee shops had [30-40]% share by store numbers in
-    UK (2017), [10-20]% in Ireland and Poland; including independent coffee shops would
-    sizably reduce Costa's share. Countries assessed: UK, Ireland, Poland.
+  notes: |
+    Commission has not previously defined a relevant product market for coffee shops specifically; prior cases indicated coffee shops are part of a market for informal restaurants. Possible narrower segmentation into branded coffee shops. Market investigation provided some indications coffee shops compete with informal restaurants but was less conclusive on branded vs unbranded. Left open for the purposes of this decision. Also assessed as the downstream market in the vertical effects analysis (Section 5.3): Costa's branded coffee shops had [30-40]% share by store numbers in UK (2017), [10-20]% in Ireland and Poland; including independent coffee shops would sizably reduce Costa's share. Countries assessed: UK, Ireland, Poland.
 - market_id: pm_3
   name: Provision of vending services (vending machines)
   definition_status: left_open
-  notes: >
-    Commission previously left open whether market should be segmented by type of
-    food dispensed (hot beverages, cold drinks, snacks/food). Market investigation
-    confirmed prior description but was not definitive on segmentation by beverage/food
-    type or by machine type. Left open for the purposes of this decision; strictest
-    definition is vending services for hot beverages only. Also assessed as the downstream
-    market in the conglomerate vending theory (th_4): Costa Express machines and TCCC's
-    existing Chaqwa hot-beverage vending machines were assessed; Chaqwa had less than
-    [0-5]% share in Germany and similarly low shares elsewhere. Countries: UK, Ireland,
-    Poland.
+  notes: |
+    Commission previously left open whether market should be segmented by type of food dispensed (hot beverages, cold drinks, snacks/food). Market investigation confirmed prior description but was not definitive on segmentation by beverage/food type or by machine type. Left open for the purposes of this decision; strictest definition is vending services for hot beverages only. Also assessed as the downstream market in the conglomerate vending theory (th_4): Costa Express machines and TCCC's existing Chaqwa hot-beverage vending machines were assessed; Chaqwa had less than [0-5]% share in Germany and similarly low shares elsewhere. Countries: UK, Ireland, Poland.
 - market_id: pm_4
   name: Manufacture and sale of coffee and other ingredients
   definition_status: left_open
-  notes: >
-    Commission considered in-home and out-of-home as separate product markets. In-home
-    channel further segmented into: (i) instant coffee, (ii) R&G coffee, (iii) filter
-    pads, (iv) Nespresso compatible capsules, (v) other espresso capsules, (vi) multi-drink
-    capsules. Possible further segmentation of R&G coffee in-home and whole coffee
-    beans left open. Left open for the purposes of this decision; strictest plausible
-    definitions are out-of-home channel only; R&G coffee only and Tassimo discs only
-    in the in-home channel. The out-of-home sub-market was assessed in the conglomerate
-    theory regarding TCCC NABs on-premise and Costa PtS products (th_2). The in-home
-    R&G/Tassimo sub-market was assessed in the conglomerate theory regarding TCCC NABs
-    off-premise and Costa R&G/Tassimo discs (th_3). Countries: UK and Ireland for both
-    conglomerate theories.
+  notes: |
+    Commission considered in-home and out-of-home as separate product markets. In-home channel further segmented into: (i) instant coffee, (ii) R&G coffee, (iii) filter pads, (iv) Nespresso compatible capsules, (v) other espresso capsules, (vi) multi-drink capsules. Possible further segmentation of R&G coffee in-home and whole coffee beans left open. Left open for the purposes of this decision; strictest plausible definitions are out-of-home channel only; R&G coffee only and Tassimo discs only in the in-home channel. The out-of-home sub-market was assessed in the conglomerate theory regarding TCCC NABs on-premise and Costa PtS products (th_2). The in-home R&G/Tassimo sub-market was assessed in the conglomerate theory regarding TCCC NABs off-premise and Costa R&G/Tassimo discs (th_3). Countries: UK and Ireland for both conglomerate theories.
 - market_id: pm_6
-  name: "Supply of Carbonated Soft Drinks (CSDs) / Non-Alcoholic Beverages (NABs)\
-    \ — on-premise channel (upstream)"
+  name: Supply of Carbonated Soft Drinks (CSDs) / Non-Alcoholic Beverages (NABs) — on-premise
+    channel (upstream)
   definition_status: considered
-  notes: >
-    The Commission assessed this market as an upstream input in the context of vertical
-    effects analysis. Market shares are provided for the UK, Ireland and Poland. The
-    exact scope is used for the purpose of assessing vertical and conglomerate effects
-    without a conclusive formal definition visible in the supplied text.
+  notes: |
+    The Commission assessed this market as an upstream input in the context of vertical effects analysis. Market shares are provided for the UK, Ireland and Poland. The exact scope is used for the purpose of assessing vertical and conglomerate effects without a conclusive formal definition visible in the supplied text.
 - market_id: pm_7
   name: Juices (upstream supply)
   definition_status: considered
-  notes: >
-    Mentioned in the context of vertically affected markets alongside CSDs. Market
-    shares provided (below 30% in on-premise and off-premise channels). Not subject
-    to detailed market definition analysis in the supplied text.
+  notes: |
+    Mentioned in the context of vertically affected markets alongside CSDs. Market shares provided (below 30% in on-premise and off-premise channels). Not subject to detailed market definition analysis in the supplied text.
 - market_id: pm_8
   name: Cold drinks vending services
   definition_status: considered
-  notes: >
-    Assessed in the context of conglomerate effects. TCCC's share in cold drinks
-    vending services is referenced with market share estimates. Assessed together
-    with Costa Express machines for the conglomerate bundling theory (th_4).
-
+  notes: |
+    Assessed in the context of conglomerate effects. TCCC's share in cold drinks vending services is referenced with market share estimates. Assessed together with Costa Express machines for the conglomerate bundling theory (th_4).
 geographic_markets_considered:
 - market_id: gm_1
   name: NABs — national
   definition_status: defined
-  notes: >
-    The Commission confirms it will assess NABs markets on a national basis, consistent
-    with prior precedents and confirmed by the market investigation.
+  notes: |
+    The Commission treated the geographic scope of NABs as national, relying on consistent prior decisional practice, the Notifying Party's agreement, and market investigation confirmation, and conducted its assessment on that basis.
 - market_id: gm_2
   name: Operation of coffee shops / informal restaurants — national (or possibly local/regional)
   definition_status: left_open
-  notes: >
-    Commission precedents considered geographic scope to be at least national. The
-    market investigation was not conclusive. The Commission leaves open the exact
-    scope, finding no serious doubts even under the strictest plausible definition
-    (national).
+  notes: |
+    Commission precedents considered geographic scope to be at least national. The market investigation was not conclusive. The Commission leaves open the exact scope, finding no serious doubts even under the strictest plausible definition (national).
 - market_id: gm_3
   name: Provision of vending services — national
   definition_status: left_open
-  notes: >
-    Prior Commission precedents found national geographic scope for vending services.
-    The notifying party and market investigation respondents agree. The Commission
-    leaves open the exact scope, finding no serious doubts even under the strictest
-    plausible definition (national).
+  notes: |
+    Prior Commission precedents found national geographic scope for vending services. The notifying party and market investigation respondents agree. The Commission leaves open the exact scope, finding no serious doubts even under the strictest plausible definition (national).
 - market_id: gm_4
   name: United Kingdom
   definition_status: considered
-  notes: >
-    The UK is consistently used as a geographic unit for assessing market shares and
-    competitive effects across all vertical and conglomerate theories in the supplied
-    text.
+  notes: |
+    The UK is consistently used as a geographic unit for assessing market shares and competitive effects across all vertical and conglomerate theories in the supplied text.
 - market_id: gm_5
   name: Ireland
   definition_status: considered
-  notes: >
-    Ireland is assessed alongside the UK and Poland as a national geographic market
-    across vertical and conglomerate theories.
+  notes: |
+    Ireland is assessed alongside the UK and Poland as a national geographic market across vertical and conglomerate theories.
 - market_id: gm_6
   name: Poland
   definition_status: considered
-  notes: >
-    Poland is assessed alongside the UK and Ireland across vertical and conglomerate
-    theories, though the on-premise/off-premise conglomerate leveraging analysis for
-    NABs is limited to UK and Ireland; vending services theory covers UK, Ireland
-    and Poland.
-
+  notes: |
+    Poland is assessed alongside the UK and Ireland across vertical and conglomerate theories, though the on-premise/off-premise conglomerate leveraging analysis for NABs is limited to UK and Ireland; vending services theory covers UK, Ireland and Poland.
 theories_of_harm:
 - theory_id: th_1
   name: Vertical foreclosure — NABs upstream / coffee shops downstream
-  description: >
-    TCCC's upstream position in the supply of NABs and CSDs for on-premises consumption
-    could be leveraged to foreclose rivals in Costa's downstream market for coffee
-    shops (informal restaurants) in the UK, Ireland and Poland. The Commission assessed
-    vertically affected markets between TCCC's upstream CSD/NAB supply (pm_6) and
-    Costa's downstream coffee-shop operations (pm_2). No serious doubts found.
+  description: |
+    TCCC's upstream position in the supply of NABs and CSDs for on-premises consumption could be leveraged to foreclose rivals in Costa's downstream market for coffee shops (informal restaurants) in the UK, Ireland and Poland. The Commission assessed vertically affected markets between TCCC's upstream CSD/NAB supply (pm_6) and Costa's downstream coffee-shop operations (pm_2). No serious doubts found.
 - theory_id: th_2
   name: Conglomerate effects — NABs on-premise / Costa out-of-home coffee
-  description: >
-    TCCC's position in NABs/Coca-Cola for on-premises/out-of-home consumption in the
-    UK and Ireland could be leveraged to foreclose competitors in the market for
-    manufacture and sale of coffee and other ingredients in the out-of-home channel
-    (pm_4). No serious doubts found.
+  description: |
+    TCCC's position in NABs/Coca-Cola for on-premises/out-of-home consumption in the UK and Ireland could be leveraged to foreclose competitors in the market for manufacture and sale of coffee and other ingredients in the out-of-home channel (pm_4). No serious doubts found.
 - theory_id: th_3
   name: Conglomerate effects — NABs off-premise / Costa in-home R&G and Tassimo
-  description: >
-    TCCC's position in NABs/Coca-Cola off-premises/retail in the UK and Ireland could
-    be leveraged to foreclose competitors in the market for manufacture and sale of
-    R&G coffee and Tassimo discs in the in-home channel (pm_4). No serious doubts
-    found.
+  description: |
+    TCCC's position in NABs/Coca-Cola off-premises/retail in the UK and Ireland could be leveraged to foreclose competitors in the market for manufacture and sale of R&G coffee and Tassimo discs in the in-home channel (pm_4). No serious doubts found.
 - theory_id: th_4
   name: Conglomerate effects — cold drinks vending / Costa Express
-  description: >
-    TCCC's position in cold drinks vending services (pm_8) in the UK, Ireland and
-    Poland could be leveraged to foreclose competitors in vending services (pm_3),
-    particularly through the Costa Express machine segment. No serious doubts found.
-
+  description: |
+    TCCC's position in cold drinks vending services (pm_8) in the UK, Ireland and Poland could be leveraged to foreclose competitors in vending services (pm_3), particularly through the Costa Express machine segment. No serious doubts found.
 source_passages:
 - passage_id: sp_1
   source_document_id: eu_coca_cola_costa_decision
   page: '6'
-  quote_snippet: In previous decisions, the Commission has considered that, within
-    NABs, carbonated soft drinks ("CSDs") constitute a separate market from non-carbonated
-    soft drinks (NCSDs). In particular, the Commission has previously considered a
-    narrower market segmentation for cola-flavoured CSDs. In its past decisional practice
-    the Commission also indicated that NCSDs could be segmented into packaged water,
-    fruit juices, ready-to-drink teas and energy and sports drinks, although ultimately
-    left the question on such segmentation open.
+  quote_snippet: In previous decisions, the Commission has considered that, within NABs, carbonated
+    soft drinks ("CSDs") constitute a separate market from non-carbonated soft drinks (NCSDs).
+    In particular, the Commission has previously considered a narrower market segmentation for
+    cola-flavoured CSDs. In its past decisional practice the Commission also indicated that
+    NCSDs could be segmented into packaged water, fruit juices, ready-to-drink teas and energy
+    and sports drinks, although ultimately left the question on such segmentation open.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -200,11 +125,10 @@ source_passages:
 - passage_id: sp_2
   source_document_id: eu_coca_cola_costa_decision
   page: '6'
-  quote_snippet: The Commission considers that, for the purpose of this decision,
-    the exact scope of the product market can be left open since the Transaction does
-    not give rise to serious doubts about its compatibility with the internal market
-    even under the strictest plausible definition of the product market (i.e. the
-    Coca Cola branded products).
+  quote_snippet: The Commission considers that, for the purpose of this decision, the exact
+    scope of the product market can be left open since the Transaction does not give rise to
+    serious doubts about its compatibility with the internal market even under the strictest
+    plausible definition of the product market (i.e. the Coca Cola branded products).
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -216,10 +140,10 @@ source_passages:
 - passage_id: sp_3
   source_document_id: eu_coca_cola_costa_decision
   page: '8'
-  quote_snippet: Previous Commission's decisions considered separate product markets
-    according to the distribution channel of NABs distinguishing between the off-premises
-    (retail) and the on-premises consumption market (including, for example, hotels,
-    restaurants, and cafes, known as the "HoReCa" sector).
+  quote_snippet: Previous Commission's decisions considered separate product markets according
+    to the distribution channel of NABs distinguishing between the off-premises (retail) and
+    the on-premises consumption market (including, for example, hotels, restaurants, and cafes,
+    known as the "HoReCa" sector).
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -231,10 +155,10 @@ source_passages:
 - passage_id: sp_4
   source_document_id: eu_coca_cola_costa_decision
   page: '8'
-  quote_snippet: Respondents to the market investigation confirmed the Commission's
-    findings in previous cases. Therefore, the Commission considers that the effects
-    of the Transaction should be assessed on the two separate product markets for
-    the off-premises channel and the on-premises one.
+  quote_snippet: Respondents to the market investigation confirmed the Commission's findings
+    in previous cases. Therefore, the Commission considers that the effects of the Transaction
+    should be assessed on the two separate product markets for the off-premises channel and
+    the on-premises one.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -246,9 +170,9 @@ source_passages:
 - passage_id: sp_5
   source_document_id: eu_coca_cola_costa_decision
   page: '8'
-  quote_snippet: The Commission has not previously defined a relevant product market
-    for the operation of coffee shops specifically, but previous cases indicated that
-    coffee shops are part of a market for informal restaurants.
+  quote_snippet: The Commission has not previously defined a relevant product market for the
+    operation of coffee shops specifically, but previous cases indicated that coffee shops are
+    part of a market for informal restaurants.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -260,9 +184,9 @@ source_passages:
 - passage_id: sp_6
   source_document_id: eu_coca_cola_costa_decision
   page: '9'
-  quote_snippet: The Commission's market investigation provided a number of indications
-    that coffee shops do compete with informal restaurants, while the answers as to
-    whether branded coffee shops competed with the unbranded ones were less conclusive.
+  quote_snippet: The Commission's market investigation provided a number of indications that
+    coffee shops do compete with informal restaurants, while the answers as to whether branded
+    coffee shops competed with the unbranded ones were less conclusive.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -274,11 +198,10 @@ source_passages:
 - passage_id: sp_7
   source_document_id: eu_coca_cola_costa_decision
   page: '9'
-  quote_snippet: The Commission considers that, for the purposes of this decision,
-    the exact scope of the relevant product market can be left open in this respect
-    since the Transaction does not give rise to serious doubts as to its compatibility
-    with the internal market even under the strictest plausible definition of the
-    product market (i.e., branded coffee shops).
+  quote_snippet: The Commission considers that, for the purposes of this decision, the exact
+    scope of the relevant product market can be left open in this respect since the Transaction
+    does not give rise to serious doubts as to its compatibility with the internal market even
+    under the strictest plausible definition of the product market (i.e., branded coffee shops).
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -290,10 +213,9 @@ source_passages:
 - passage_id: sp_8
   source_document_id: eu_coca_cola_costa_decision
   page: '9'
-  quote_snippet: The Commission has previously considered the provision of vending
-    services, but left open the question of whether the market should be further segmented
-    by the type of food dispensed in (i) hot beverages, (ii) cold drinks and (iii)
-    snacks and food.
+  quote_snippet: The Commission has previously considered the provision of vending services,
+    but left open the question of whether the market should be further segmented by the type
+    of food dispensed in (i) hot beverages, (ii) cold drinks and (iii) snacks and food.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -305,12 +227,11 @@ source_passages:
 - passage_id: sp_9
   source_document_id: eu_coca_cola_costa_decision
   page: '9'
-  quote_snippet: Respondents to the market investigation confirmed the Commission's
-    description of this products in previous cases, but were not definitive as to
-    a segmentation of vending services by type of beverage/food as well as by type
-    of distribution machine, such as, for example, vending machines, beverage machines
-    used in hotels, restaurants or cafeterias and small capacity machines without
-    payment system designed for office coffee supply.
+  quote_snippet: Respondents to the market investigation confirmed the Commission's description
+    of this products in previous cases, but were not definitive as to a segmentation of vending
+    services by type of beverage/food as well as by type of distribution machine, such as, for
+    example, vending machines, beverage machines used in hotels, restaurants or cafeterias and
+    small capacity machines without payment system designed for office coffee supply.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -322,11 +243,10 @@ source_passages:
 - passage_id: sp_10
   source_document_id: eu_coca_cola_costa_decision
   page: '9'
-  quote_snippet: The Commission considers that, for the purpose of this decision,
-    the exact scope of the product market can be left open since the Transaction does
-    not give rise to serious doubts about its compatibility with the internal market
-    even under the strictest plausible definition of the product market (i.e., vending
-    services for hot beverages only).
+  quote_snippet: The Commission considers that, for the purpose of this decision, the exact
+    scope of the product market can be left open since the Transaction does not give rise to
+    serious doubts about its compatibility with the internal market even under the strictest
+    plausible definition of the product market (i.e., vending services for hot beverages only).
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -338,12 +258,12 @@ source_passages:
 - passage_id: sp_11
   source_document_id: eu_coca_cola_costa_decision
   page: '9'
-  quote_snippet: In previous decisions, the Commission has considered that the manufacture
-    and sale of coffee via the "in-home" and "out-of-home" channels form part of separate
-    product markets. In-home encompasses the sale of coffee to consumers via retailers
-    or directly to consumers. Out-of-home encompasses the sale of coffee to hotels,
-    restaurants or cafes (referred to as "HoReCa") but also to offices, hospitals,
-    educational establishments and other work places.
+  quote_snippet: In previous decisions, the Commission has considered that the manufacture and
+    sale of coffee via the "in-home" and "out-of-home" channels form part of separate product
+    markets. In-home encompasses the sale of coffee to consumers via retailers or directly to
+    consumers. Out-of-home encompasses the sale of coffee to hotels, restaurants or cafes (referred
+    to as "HoReCa") but also to offices, hospitals, educational establishments and other work
+    places.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -355,10 +275,10 @@ source_passages:
 - passage_id: sp_12
   source_document_id: eu_coca_cola_costa_decision
   page: '10'
-  quote_snippet: The Commission has also considered that all out-of-home sales belong
-    to the same product market. Conversely, the Commission has segmented the in-home
-    channel into (i) instant coffee, (ii) R&G coffee, (iii) filter pads, (iv) Nespresso
-    compatible capsules, (v) other espresso capsules, and (vi) multi-drink capsules.
+  quote_snippet: The Commission has also considered that all out-of-home sales belong to the
+    same product market. Conversely, the Commission has segmented the in-home channel into (i)
+    instant coffee, (ii) R&G coffee, (iii) filter pads, (iv) Nespresso compatible capsules,
+    (v) other espresso capsules, and (vi) multi-drink capsules.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -370,9 +290,9 @@ source_passages:
 - passage_id: sp_13
   source_document_id: eu_coca_cola_costa_decision
   page: '10'
-  quote_snippet: The Commission also considered whether R&G coffee in-home was in
-    the same market as whole coffee beans, but ultimately left open the precise product
-    market definition in this respect.
+  quote_snippet: The Commission also considered whether R&G coffee in-home was in the same market
+    as whole coffee beans, but ultimately left open the precise product market definition in
+    this respect.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -384,13 +304,12 @@ source_passages:
 - passage_id: sp_14
   source_document_id: eu_coca_cola_costa_decision
   page: '10'
-  quote_snippet: The Commission considers that, for the purpose of this decision,
-    the exact scope of the relevant product market can be left open since the Transaction
-    does not give rise to serious doubts as to its compatibility with the internal
-    market even under the strictest plausible definition of the relevant product market
-    (manufacture and sale of coffee and other ingredients in the out-of-home channel;
-    manufacture and sale of R&G coffee only and Tassimo discs only, both in the in-home
-    channel).
+  quote_snippet: The Commission considers that, for the purpose of this decision, the exact
+    scope of the relevant product market can be left open since the Transaction does not give
+    rise to serious doubts as to its compatibility with the internal market even under the strictest
+    plausible definition of the relevant product market (manufacture and sale of coffee and
+    other ingredients in the out-of-home channel; manufacture and sale of R&G coffee only and
+    Tassimo discs only, both in the in-home channel).
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -402,10 +321,9 @@ source_passages:
 - passage_id: sp_18
   source_document_id: eu_coca_cola_costa_decision
   page: '15'
-  quote_snippet: As regards TCCC's market share in selling NABs in the on-premise
-    channel upstream, TCCC would have more than 40% of the CSD market in the UK, Ireland
-    and Poland based on the Notifying Party's estimates, as illustrated by Table 1
-    below.
+  quote_snippet: As regards TCCC's market share in selling NABs in the on-premise channel upstream,
+    TCCC would have more than 40% of the CSD market in the UK, Ireland and Poland based on the
+    Notifying Party's estimates, as illustrated by Table 1 below.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -418,9 +336,9 @@ source_passages:
 - passage_id: sp_19
   source_document_id: eu_coca_cola_costa_decision
   page: '16'
-  quote_snippet: Vertically affected markets arise in the UK, Ireland and Poland between
-    TCCC's upstream supply of CSDs and juices for on-premises consumption and Costa's
-    downstream operations of informal restaurants (coffee shops) in these countries.
+  quote_snippet: Vertically affected markets arise in the UK, Ireland and Poland between TCCC's
+    upstream supply of CSDs and juices for on-premises consumption and Costa's downstream operations
+    of informal restaurants (coffee shops) in these countries.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -438,9 +356,9 @@ source_passages:
 - passage_id: sp_20
   source_document_id: eu_coca_cola_costa_decision
   page: '15'
-  quote_snippet: Table 1 also shows TCCC's market share in juices as well as in vending
-    services for cold drinks. The share of TCCC in juices is below 30% in both the
-    on-premise and off-premise channels in each of the three countries considered.
+  quote_snippet: Table 1 also shows TCCC's market share in juices as well as in vending services
+    for cold drinks. The share of TCCC in juices is below 30% in both the on-premise and off-premise
+    channels in each of the three countries considered.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -452,8 +370,8 @@ source_passages:
 - passage_id: sp_22
   source_document_id: eu_coca_cola_costa_decision
   page: '15'
-  quote_snippet: The share of TCCC cold drinks vending services is estimated at less
-    than [10-20]% in the UK and Poland and less than [30-40]% in Ireland.
+  quote_snippet: The share of TCCC cold drinks vending services is estimated at less than [10-20]%
+    in the UK and Poland and less than [30-40]% in Ireland.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -466,9 +384,9 @@ source_passages:
 - passage_id: sp_23
   source_document_id: eu_coca_cola_costa_decision
   page: '19'
-  quote_snippet: the potential leveraging of TCCC's position in cold drinks vending
-    services/Coca-Cola in the UK, Ireland and Poland to foreclose competitors in vending
-    services (vending machines) in the same countries.
+  quote_snippet: the potential leveraging of TCCC's position in cold drinks vending services/Coca-Cola
+    in the UK, Ireland and Poland to foreclose competitors in vending services (vending machines)
+    in the same countries.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -481,11 +399,10 @@ source_passages:
 - passage_id: sp_24
   source_document_id: eu_coca_cola_costa_decision
   page: '15'
-  quote_snippet: As regards Costa's market share in operating coffee shops downstream,
-    Table 2 below shows the number and the share of Costa's branded coffee shops in
-    the UK, Ireland and Poland, by number of shops for 2017. If independent coffee
-    shops where included in the relevant market, the Costa's share is would be reduced
-    sizeably.
+  quote_snippet: As regards Costa's market share in operating coffee shops downstream, Table
+    2 below shows the number and the share of Costa's branded coffee shops in the UK, Ireland
+    and Poland, by number of shops for 2017. If independent coffee shops where included in the
+    relevant market, the Costa's share is would be reduced sizeably.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -498,9 +415,9 @@ source_passages:
 - passage_id: sp_26
   source_document_id: eu_coca_cola_costa_decision
   page: '18'
-  quote_snippet: the potential leveraging of TCCC's position in NABs/Coca-Cola for
-    on premise/out-of-home consumption in the UK and Ireland to foreclose Costa's
-    on-premise/out-of-home coffee competitors in the same countries
+  quote_snippet: the potential leveraging of TCCC's position in NABs/Coca-Cola for on premise/out-of-home
+    consumption in the UK and Ireland to foreclose Costa's on-premise/out-of-home coffee competitors
+    in the same countries
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -513,12 +430,11 @@ source_passages:
 - passage_id: sp_27
   source_document_id: eu_coca_cola_costa_decision
   page: '20'
-  quote_snippet: it appears unlikely that the Transaction would significantly impede
-    effective competition in the market for the manufacture and sale of coffee and
-    other ingredients in the out-of-home channel in the UK and Ireland as a result
-    of conglomerate non-coordinated effects deriving from the leveraging of TCCC's
-    position in NABs/Coca-Cola in the on-premises/out-of-home channel in the same
-    countries.
+  quote_snippet: it appears unlikely that the Transaction would significantly impede effective
+    competition in the market for the manufacture and sale of coffee and other ingredients in
+    the out-of-home channel in the UK and Ireland as a result of conglomerate non-coordinated
+    effects deriving from the leveraging of TCCC's position in NABs/Coca-Cola in the on-premises/out-of-home
+    channel in the same countries.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -530,9 +446,8 @@ source_passages:
 - passage_id: sp_28
   source_document_id: eu_coca_cola_costa_decision
   page: '18'
-  quote_snippet: the potential leveraging of TCCC's position in NABs/Coca-Cola off
-    premise/retail in the UK and Ireland to foreclose in-home coffee competitors in
-    the same countries
+  quote_snippet: the potential leveraging of TCCC's position in NABs/Coca-Cola off premise/retail
+    in the UK and Ireland to foreclose in-home coffee competitors in the same countries
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -545,11 +460,11 @@ source_passages:
 - passage_id: sp_29
   source_document_id: eu_coca_cola_costa_decision
   page: '21'
-  quote_snippet: it appears unlikely that the Transaction would significantly impede
-    effective competition in the market(s) for the manufacture and sale of R&G coffee
-    and Tassimo discs in the in-home channel in the UK and Ireland as a result of
-    conglomerate non-coordinated effects deriving from the leveraging of TCCC's
-    position in NABs/Coca-Cola in the off premise channel in the same countries.
+  quote_snippet: it appears unlikely that the Transaction would significantly impede effective
+    competition in the market(s) for the manufacture and sale of R&G coffee and Tassimo discs
+    in the in-home channel in the UK and Ireland as a result of conglomerate non-coordinated
+    effects deriving from the leveraging of TCCC's position in NABs/Coca-Cola in the off premise
+    channel in the same countries.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -561,9 +476,9 @@ source_passages:
 - passage_id: sp_30
   source_document_id: eu_coca_cola_costa_decision
   page: '15'
-  quote_snippet: Table 2 also shows Costa's market shares for the other three lines
-    of Costa's products, namely Costa Express vending machines, PtS and R&G and Tassimo
-    discs in 2017 in the national markets where Costa is present.
+  quote_snippet: Table 2 also shows Costa's market shares for the other three lines of Costa's
+    products, namely Costa Express vending machines, PtS and R&G and Tassimo discs in 2017 in
+    the national markets where Costa is present.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -575,9 +490,9 @@ source_passages:
 - passage_id: sp_31
   source_document_id: eu_coca_cola_costa_decision
   page: '21'
-  quote_snippet: it appears unlikely that the Transaction would significantly impede
-    effective competition in vending services (vending machines) in the UK, Ireland
-    and Poland as a result of conglomerate non-coordinated effects
+  quote_snippet: it appears unlikely that the Transaction would significantly impede effective
+    competition in vending services (vending machines) in the UK, Ireland and Poland as a result
+    of conglomerate non-coordinated effects
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -589,9 +504,9 @@ source_passages:
 - passage_id: sp_32
   source_document_id: eu_coca_cola_costa_decision
   page: '10'
-  quote_snippet: The Commission has consistently found that the geographic scope of
-    the supply of NABs is national due to, inter alia, differences in consumption
-    patterns, logistics and distribution networks and marketing strategies.
+  quote_snippet: The Commission has consistently found that the geographic scope of the supply
+    of NABs is national due to, inter alia, differences in consumption patterns, logistics and
+    distribution networks and marketing strategies.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -603,8 +518,8 @@ source_passages:
 - passage_id: sp_34
   source_document_id: eu_coca_cola_costa_decision
   page: '11'
-  quote_snippet: Based on the above, the Commission will conduct its assessment of
-    the markets for NABs on a national basis.
+  quote_snippet: Based on the above, the Commission will conduct its assessment of the markets
+    for NABs on a national basis.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -616,9 +531,8 @@ source_passages:
 - passage_id: sp_35
   source_document_id: eu_coca_cola_costa_decision
   page: '11'
-  quote_snippet: As concerns the market for informal restaurants, Commission precedents
-    considered its geographic scope to be at least national, leaving the precise market
-    definition open.
+  quote_snippet: As concerns the market for informal restaurants, Commission precedents considered
+    its geographic scope to be at least national, leaving the precise market definition open.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -630,10 +544,10 @@ source_passages:
 - passage_id: sp_36
   source_document_id: eu_coca_cola_costa_decision
   page: '11'
-  quote_snippet: The Notifying Party submits that also for coffee shops the relevant
-    geographic market should be considered national, as in particular price and product
-    ranges of branded chains are typically determined on a national basis. This is
-    also the case for Costa's equity stores.
+  quote_snippet: The Notifying Party submits that also for coffee shops the relevant geographic
+    market should be considered national, as in particular price and product ranges of branded
+    chains are typically determined on a national basis. This is also the case for Costa's equity
+    stores.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -645,8 +559,8 @@ source_passages:
 - passage_id: sp_37
   source_document_id: eu_coca_cola_costa_decision
   page: '11'
-  quote_snippet: The market investigation was not conclusive as to the exact scope
-    of the geographic market.
+  quote_snippet: The market investigation was not conclusive as to the exact scope of the geographic
+    market.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -658,11 +572,10 @@ source_passages:
 - passage_id: sp_38
   source_document_id: eu_coca_cola_costa_decision
   page: '11'
-  quote_snippet: The Commission considers that, for the purpose of this decision,
-    the exact scope of the geographic market can be left open since the Transaction
-    does not give rise to serious doubts about its compatibility with the internal
-    market even under the strictest plausible definition of the geographic market
-    (national).
+  quote_snippet: The Commission considers that, for the purpose of this decision, the exact
+    scope of the geographic market can be left open since the Transaction does not give rise
+    to serious doubts about its compatibility with the internal market even under the strictest
+    plausible definition of the geographic market (national).
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -675,12 +588,11 @@ source_passages:
 - passage_id: sp_39
   source_document_id: eu_coca_cola_costa_decision
   page: '11'
-  quote_snippet: The Commission has in the past found that the relevant geographic
-    markets for the provision of vending services in general are national in scope
-    due to the absence of EU-wide legislation for the vending industry, the difference
-    in lifestyle and culture between the various European countries and the need for
-    having teams of staff (machine engineers, stockists, operators) available in reasonable
-    proximity.
+  quote_snippet: The Commission has in the past found that the relevant geographic markets for
+    the provision of vending services in general are national in scope due to the absence of
+    EU-wide legislation for the vending industry, the difference in lifestyle and culture between
+    the various European countries and the need for having teams of staff (machine engineers,
+    stockists, operators) available in reasonable proximity.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -692,8 +604,8 @@ source_passages:
 - passage_id: sp_40
   source_document_id: eu_coca_cola_costa_decision
   page: '11'
-  quote_snippet: The Notifying Party therefore submits it would be appropriate to
-    examine the Proposed Transaction by reference to national geographic markets.
+  quote_snippet: The Notifying Party therefore submits it would be appropriate to examine the
+    Proposed Transaction by reference to national geographic markets.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -705,8 +617,8 @@ source_passages:
 - passage_id: sp_41
   source_document_id: eu_coca_cola_costa_decision
   page: '11'
-  quote_snippet: Respondents to the market investigation confirmed the Commission's
-    findings in previous cases that the geographic scope of this market is national.
+  quote_snippet: Respondents to the market investigation confirmed the Commission's findings
+    in previous cases that the geographic scope of this market is national.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -715,7 +627,7 @@ source_passages:
   supports_geographic_markets:
   - gm_3
   supports_theories: []
-
+authority_reference: M.9122
 metadata:
   extraction_method: pdf_extracted
   review_status: unreviewed
@@ -723,11 +635,14 @@ metadata:
   created_date: '2026-05-31'
   last_updated_date: '2026-05-31'
   tags:
-    - food-and-beverages
-    - consumer-goods
-    - phase1
-    - cleared
-    - conglomerate-effects
-    - vertical-effects
-    - nabs
-    - coffee
+  - food-and-beverages
+  - consumer-goods
+  - phase1
+  - cleared
+  - conglomerate-effects
+  - vertical-effects
+  - nabs
+  - coffee
+case_type: merger
+remedies: []
+procedure_stage: phase1

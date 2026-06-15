@@ -1,0 +1,194 @@
+case_id: eu_ec_m9623_2020
+case_name: M.9623
+authority: European Commission
+jurisdiction: EU
+sector: utilities
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2020-03-17'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9623_2020_decision
+  title: M.9623 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9623
+  pdf_url: http://publications.europa.eu/resource/cellar/bc958457-fca5-11ea-b44f-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Supply of FRCs
+  definition_status: defined
+  notes: FRCs are used to treat refinery residue in hydroprocessing. The Commission considered
+    that the product market should not be broader than FRCs and that no further sub-segmentation
+    (e.g., between fixed bed and ebullated bed technologies) was necessary.
+- market_id: pm_2
+  name: Recycling of SRCs
+  definition_status: defined
+  notes: SRCs are spent FRCs that can be recycled. The Commission found no need for sub-segmentation
+    based on different recycling stages, recovered materials/technology (e.g., pyro- or hydrometallurgical
+    processes), or types of SRCs (e.g., from fixed bed vs. ebullated bed reactors).
+geographic_markets_considered:
+- market_id: gm_1
+  name: Supply of FRCs — EEA and worldwide
+  definition_status: left_open
+  notes: The Notifying Parties suggested a worldwide market. The market investigation also pointed
+    towards a worldwide market, but the Commission noted regional differences in supplier presence.
+    The exact geographic market definition was left open as the concentration would not raise
+    serious doubts under either an EEA or worldwide definition.
+- market_id: gm_2
+  name: Recycling of SRCs — EEA-wide or EMEA-wide
+  definition_status: left_open
+  notes: The Notifying Parties proposed an EEA-wide market, potentially including the Middle
+    East and Asia, due to significant transport and regulatory costs for hazardous spent catalysts.
+    The market investigation indicated the market is likely EEA-wide or EMEA-wide (Europe, Middle
+    East and Asia). The exact geographic market definition was left open as the concentration
+    would not raise serious doubts under either definition.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9623_2020_decision
+  page: '5'
+  quote_snippet: Based on the replies to its market investigation, the Commission considers
+    that the product market definition should not be broader than FRCs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9623_2020_decision
+  page: '6'
+  quote_snippet: Based on its market investigation, the Commission therefore considers that
+    the relevant product market for the purposes of this case is that of the supply of FRCs.
+    No further sub-segmentation is necessary for the purposes of this case.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9623_2020_decision
+  page: '8'
+  quote_snippet: Based on its market investigation, the Commission considers that for the purposes
+    of this case, the relevant market is that of recycling of SRCs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9623_2020_decision
+  page: '9'
+  quote_snippet: For the purpose of this Decision, the Commission considers the relevant market
+    to be that of recycling of SRCs without any further sub-segmentation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9623_2020_decision
+  page: '7'
+  quote_snippet: In any case, the exact geographic market definition can be left open between
+    the EEA and worldwide, as the proposed concentration will not give rise to serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA Agreement
+    on either of the two plausible geographic market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9623_2020_decision
+  page: '9'
+  quote_snippet: According to the Notifying Parties, the geographic market for SRCs is EEA-wide,
+    potentially including the Middle East and Asia as (i) transport costs for SRCs are significant,
+    limiting the profitability of transporting the waste product from a refinery to a recycling
+    facility, and (ii) as spent catalysts are toxic/hazardous, the related regulatory costs
+    mean that recyclers in a different region are at a competitive disadvantage.47
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9623_2020_decision
+  page: '10'
+  quote_snippet: 'The replies to the market investigation indicate that the relevant geographic
+    market is likely to be EEA-wide or possibly EMEA (Europe, Middle East and Asia).53 A majority
+    of respondents confirmed that the distance between recyclers and refineries played an important
+    role for the choice of recycler: “It is a benefit if the service provider is close by and
+    long distance shipments can be avoided”, because of transport costs and regulatory constraints'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9623_2020_decision
+  page: '11'
+  quote_snippet: Based on its market investigation, the Commission therefore considers that
+    for the purpose of this Decision the relevant geographic market can be EEA-wide or EMEA-wide.
+    The exact geographic market definition can be left open, as the proposed concentration will
+    not give rise to serious doubts as to its compatibility with the internal market or the
+    functioning of the EEA Agreement on either of the two plausible geographic market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9623_2020_decision
+  page: '3'
+  quote_snippet: Therefore, it can be concluded that the creation of a JV by Shell and AMG constitutes
+    a concentration within the meaning of articles 3(1)(b) and 3(4) of Council Regulation (EC)
+    No 139/2004 (“EUMR”).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+ai_summary: null
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []
+case_type: merger

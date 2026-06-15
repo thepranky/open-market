@@ -1,0 +1,456 @@
+case_id: eu_ec_m9705_2020
+case_name: M.9705
+authority: European Commission
+jurisdiction: EU
+sector: tech
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2020-03-30'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9705_2020_decision
+  title: M.9705 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9705
+  pdf_url: http://publications.europa.eu/resource/cellar/a57a4272-3097-11eb-b27b-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Sale of advertising space
+  definition_status: left_open
+  notes: The Commission considered segmenting the market into online and offline advertising
+    space, and further segmenting offline advertising into written press (daily and non-daily),
+    television, and radio advertising space. However, it ultimately left the precise product
+    market definition open.
+- market_id: pm_2
+  name: Manufacture and supply of passenger cars and commercial vehicles
+  definition_status: left_open
+  notes: The Commission considered separate markets for passenger cars and commercial vehicles,
+    with further sub-segmentation for passenger cars (mini, small, medium, large, executive,
+    luxury, sport coupés, multipurpose vehicles, SUVs, electric cars) and commercial vehicles
+    (LCVs, medium trucks, heavy trucks). It ultimately left the precise product market definition
+    open.
+- market_id: pm_3
+  name: Manufacture and supply of mini cars
+  definition_status: considered
+  notes: This market segment was identified as an 'affected market' by the Commission due to
+    EXOR's (through FCA) market share exceeding 30% in both EEA and Italy.
+- market_id: pm_4
+  name: Manufacture and supply of multipurpose vehicles
+  definition_status: considered
+  notes: This market segment was identified as an 'affected market' by the Commission due to
+    EXOR's (through FCA) market share exceeding 30% in Italy.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Sale of advertising space — national (Italy affected)
+  definition_status: considered
+  notes: The Commission's assessment for the purpose of the decision was that the geographic
+    market is national, specifically in Italy, for the sale of advertising space and its possible
+    sub-segments.
+- market_id: gm_2
+  name: Manufacture and supply of passenger cars and commercial vehicles — EEA-wide or national
+  definition_status: left_open
+  notes: The Commission left open whether the geographic scope of this market is EEA-wide or
+    national.
+- market_id: gm_3
+  name: Manufacture and supply of mini cars — EEA-wide
+  definition_status: considered
+  notes: This geographic market for mini cars was identified as an 'affected market' by the
+    Commission due to EXOR's (through FCA) market share exceeding 30% in the EEA.
+- market_id: gm_4
+  name: Manufacture and supply of mini cars — national (Italy affected)
+  definition_status: considered
+  notes: This geographic market for mini cars was identified as an 'affected market' by the
+    Commission due to EXOR's (through FCA) market share exceeding 30% in Italy.
+- market_id: gm_5
+  name: Manufacture and supply of multipurpose vehicles — national (Italy affected)
+  definition_status: considered
+  notes: This geographic market for multipurpose vehicles was identified as an 'affected market'
+    by the Commission due to EXOR's (through FCA) market share exceeding 30% in Italy.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9705_2020_decision
+  page: '3'
+  quote_snippet: (9) The Parties’ activities do not lead to any horizontal overlaps. The Transaction
+    only gives rise to a vertical relationship between GEDI’s activities in the upstream market
+    for the sale of advertising space in Italy and EXOR’s activities, through FCA, as a manufacturer
+    and supplier of passenger cars and light commercial vehicles (“LCVs”).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9705_2020_decision
+  page: '3'
+  quote_snippet: (10) In previous decisions, the Commission considered that the market for advertising
+    space may be segmented into (i) online and (ii) offline advertising space.10 Within offline
+    advertising space, the Commission found that a further segmentation between (i) written
+    press (ii) television and (iii) radio advertising space could be relevant.11 In addition,
+    within the written press segment, the Commission considered that (i) daily and (ii) non-daily
+    written press may constitute separate markets.12
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9705_2020_decision
+  page: '3'
+  quote_snippet: (12) The Commission considers that for the purpose of the present decision
+    the exact product market definition for the sale of advertising space (whether overall or
+    segmented into online and offline advertising which is further sub-segmented into advertising
+    in the written press, daily and non-daily, on the radio or on television) can be left open
+    as the Transaction does not raise serious doubts as to its compatibility with the internal
+    market or the functioning of the EEA Agreement under any plausible market definition for
+    the sale of advertising space.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9705_2020_decision
+  page: '3'
+  quote_snippet: (9) The Parties’ activities do not lead to any horizontal overlaps. The Transaction
+    only gives rise to a vertical relationship between GEDI’s activities in the upstream market
+    for the sale of advertising space in Italy and EXOR’s activities, through FCA, as a manufacturer
+    and supplier of passenger cars and light commercial vehicles (“LCVs”).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9705_2020_decision
+  page: '4'
+  quote_snippet: (13) In previous decisions, the Commission considered separate markets for
+    the manufacturing and supply of passenger cars on the one hand, and of commercial vehicles
+    on the other hand.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9705_2020_decision
+  page: '5'
+  quote_snippet: (19) The Commission considers that for the purpose of the present decision
+    the question whether there are separate markets for passenger cars and commercial vehicless17
+    and whether they should be further sub-segmented as indicated at paragraphs (14)-(17) can
+    be left open as the Transaction does not raise serious doubts as to its compatibility with
+    the internal market or the functioning of the EEA Agreement under any plausible market definition
+    for the manufacturing and supply of passenger cars and commercial vehicles.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9705_2020_decision
+  page: '7'
+  quote_snippet: (31) EXOR (through FCA’s activities) has market shares exceeding 30% in the
+    EEA market for the manufacture and supply of mini cars and the Italian markets for the manufacture
+    and supply of mini cars and for the manufacture and supply of multipurpose vehicles. FCA’s
+    market share remains below 30% in all the other possible product and geographic market definitions
+    referred to at paragraphs (19) and (25).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9705_2020_decision
+  page: '3'
+  quote_snippet: '(32) Therefore, on the basis of the information provided by the Notifying
+    Party, the Commission considers that the affected markets are: - the upstream market for
+    the sale of advertising space in Italy and its possible sub- segments: (i) on daily written
+    press; (ii) on non-daily written press; (iii) online; (iv) on radio; and, (v) on television.
+    - the downstream markets for o the manufacture and supply of (a) mini cars and (b) multipurpose
+    vehicles in Italy, and o the manufacture and supply of mini cars in the EEA.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9705_2020_decision
+  page: '7'
+  quote_snippet: (31) EXOR (through FCA’s activities) has market shares exceeding 30% in the
+    EEA market for the manufacture and supply of mini cars and the Italian markets for the manufacture
+    and supply of mini cars and for the manufacture and supply of multipurpose vehicles. FCA’s
+    market share remains below 30% in all the other possible product and geographic market definitions
+    referred to at paragraphs (19) and (25).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9705_2020_decision
+  page: '3'
+  quote_snippet: '(32) Therefore, on the basis of the information provided by the Notifying
+    Party, the Commission considers that the affected markets are: - the upstream market for
+    the sale of advertising space in Italy and its possible sub- segments: (i) on daily written
+    press; (ii) on non-daily written press; (iii) online; (iv) on radio; and, (v) on television.
+    - the downstream markets for o the manufacture and supply of (a) mini cars and (b) multipurpose
+    vehicles in Italy, and o the manufacture and supply of mini cars in the EEA.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9705_2020_decision
+  page: '5'
+  quote_snippet: (20) With regard to the market for advertising space, in previous decisions
+    referenced in Section 4.1.1, the Commission considered the market for advertising space
+    to be national in scope.18
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9705_2020_decision
+  page: '5'
+  quote_snippet: (22) In view of previous decisions, the Commission takes the view that, for
+    the purpose of the present decision, the geographic market is national, i.e., the sale of
+    advertising space (and possible sub-segments) in Italy.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9705_2020_decision
+  page: '3'
+  quote_snippet: '(32) Therefore, on the basis of the information provided by the Notifying
+    Party, the Commission considers that the affected markets are: - the upstream market for
+    the sale of advertising space in Italy and its possible sub- segments: (i) on daily written
+    press; (ii) on non-daily written press; (iii) online; (iv) on radio; and, (v) on television.
+    - the downstream markets for o the manufacture and supply of (a) mini cars and (b) multipurpose
+    vehicles in Italy, and o the manufacture and supply of mini cars in the EEA.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m9705_2020_decision
+  page: '5'
+  quote_snippet: (23) With regard to manufacturing and supply of passenger cars and commercial
+    vehicles, in previous decisions referenced in Section 4.1.2, the Commission left open whether
+    the geographic scope of the markets for manufacturing and supply of passenger cars and commercial
+    vehicles is EEA-wide or national in scope.19
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m9705_2020_decision
+  page: '7'
+  quote_snippet: (31) EXOR (through FCA’s activities) has market shares exceeding 30% in the
+    EEA market for the manufacture and supply of mini cars and the Italian markets for the manufacture
+    and supply of mini cars and for the manufacture and supply of multipurpose vehicles. FCA’s
+    market share remains below 30% in all the other possible product and geographic market definitions
+    referred to at paragraphs (19) and (25).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m9705_2020_decision
+  page: '3'
+  quote_snippet: '(32) Therefore, on the basis of the information provided by the Notifying
+    Party, the Commission considers that the affected markets are: - the upstream market for
+    the sale of advertising space in Italy and its possible sub- segments: (i) on daily written
+    press; (ii) on non-daily written press; (iii) online; (iv) on radio; and, (v) on television.
+    - the downstream markets for o the manufacture and supply of (a) mini cars and (b) multipurpose
+    vehicles in Italy, and o the manufacture and supply of mini cars in the EEA.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m9705_2020_decision
+  page: '7'
+  quote_snippet: (31) EXOR (through FCA’s activities) has market shares exceeding 30% in the
+    EEA market for the manufacture and supply of mini cars and the Italian markets for the manufacture
+    and supply of mini cars and for the manufacture and supply of multipurpose vehicles. FCA’s
+    market share remains below 30% in all the other possible product and geographic market definitions
+    referred to at paragraphs (19) and (25).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m9705_2020_decision
+  page: '3'
+  quote_snippet: '(32) Therefore, on the basis of the information provided by the Notifying
+    Party, the Commission considers that the affected markets are: - the upstream market for
+    the sale of advertising space in Italy and its possible sub- segments: (i) on daily written
+    press; (ii) on non-daily written press; (iii) online; (iv) on radio; and, (v) on television.
+    - the downstream markets for o the manufacture and supply of (a) mini cars and (b) multipurpose
+    vehicles in Italy, and o the manufacture and supply of mini cars in the EEA.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m9705_2020_decision
+  page: '7'
+  quote_snippet: (31) EXOR (through FCA’s activities) has market shares exceeding 30% in the
+    EEA market for the manufacture and supply of mini cars and the Italian markets for the manufacture
+    and supply of mini cars and for the manufacture and supply of multipurpose vehicles. FCA’s
+    market share remains below 30% in all the other possible product and geographic market definitions
+    referred to at paragraphs (19) and (25).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m9705_2020_decision
+  page: '3'
+  quote_snippet: '(32) Therefore, on the basis of the information provided by the Notifying
+    Party, the Commission considers that the affected markets are: - the upstream market for
+    the sale of advertising space in Italy and its possible sub- segments: (i) on daily written
+    press; (ii) on non-daily written press; (iii) online; (iv) on radio; and, (v) on television.
+    - the downstream markets for o the manufacture and supply of (a) mini cars and (b) multipurpose
+    vehicles in Italy, and o the manufacture and supply of mini cars in the EEA.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m9705_2020_decision
+  page: '1'
+  quote_snippet: Brussels, 30.3.2020 C(2020) 2048 final
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m9705_2020_decision
+  page: '1'
+  quote_snippet: 'Subject: Case M.9705 – EXOR/GEDI'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_ec_m9705_2020_decision
+  page: '1'
+  quote_snippet: Commission decision pursuant to Article 6(1)(b) of Council Regulation No 139/20041
+    and Article 57 of the Agreement on the European Economic Area2
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

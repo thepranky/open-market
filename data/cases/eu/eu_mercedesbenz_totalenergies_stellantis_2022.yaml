@@ -1,0 +1,685 @@
+case_id: eu_mercedesbenz_totalenergies_stellantis_2022
+case_name: MERCEDES-BENZ / TOTALENERGIES / STELLANTIS / ACC
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2022-03-30'
+parties:
+- name: MERCEDES-BENZ
+  role: acquirer
+- name: TOTALENERGIES
+  role: acquirer
+- name: STELLANTIS
+  role: acquirer
+- name: ACC
+  role: target
+source_documents:
+- doc_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  title: MERCEDES-BENZ / TOTALENERGIES / STELLANTIS / ACC — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10524
+  pdf_url: http://publications.europa.eu/resource/cellar/2b0c2de2-d859-11ec-a95f-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Manufacture and supply of battery cells and modules
+  definition_status: left_open
+  notes: The Commission considered the precise market definition for the manufacture and supply
+    of battery cells and modules for the automotive sector to be left open, but analyzed the
+    market for battery cells and modules (excluding battery systems) using Li-ion technology
+    as the narrowest plausible product market for assessing vertical effects.
+- market_id: pm_2
+  name: Segmentation of battery cells and modules by product form (cells/modules vs. battery
+    packs/systems)
+  definition_status: left_open
+  notes: The Commission had previously considered but left open whether to further segment the
+    market into modules or integrated battery packs. The market investigation confirmed a distinction
+    between cells/modules and packs/systems, but the Commission ultimately left the precise
+    segmentation open for the purposes of this decision, while focusing its analysis on cells
+    and modules (excluding battery systems) given ACC's activities.
+- market_id: pm_3
+  name: Segmentation of battery cells and modules by technology (Li-ion vs. NiMH)
+  definition_status: left_open
+  notes: The Commission previously indicated a possible distinction by cell technology but left
+    it open. The market investigation found that a distinction between Li-ion and NiMH was not
+    warranted due to the marginal role of NiMH. The Commission ultimately left the precise segmentation
+    open, while focusing its analysis on Li-ion technology given ACC's activities.
+- market_id: pm_4
+  name: Manufacture and supply of passenger cars
+  definition_status: left_open
+  notes: The Commission previously considered separate markets for PCs and LCVs, and segments
+    of PCs by size/type and propulsion technology. For the purpose of this decision, the exact
+    market definition for PCs and its potential sub-segments was left open, but the assessment
+    focused on the PC segment of EVs (including BEVs vs HEVs) where vertical effects could arise.
+- market_id: pm_5
+  name: Segmentation of passenger cars by size/type
+  definition_status: segmented
+  notes: The Commission's decisional practice has defined separate product markets for various
+    PC types (mini, small, medium, large, executive, luxury, sport, SUV, multipurpose) and further
+    segmented SUVs by size in previous decisions. However, for the current decision, this segmentation
+    was ultimately left open.
+- market_id: pm_6
+  name: 'Segmentation of passenger cars by propulsion technology (ICE vs. EV, and within EVs:
+    BEV vs. HEV vs. FCEV)'
+  definition_status: left_open
+  notes: 'The Commission previously considered but left open segmentation by propulsion technology
+    (ICE vs EV, and within EVs: BEV vs HEV). The Notifying Parties suggested a market for LEVs
+    (BEVs, HEVs, FCEVs), but the market investigation indicated FCEVs are not part of the same
+    market as BEVs and HEVs. The Commission left the exact definition open but focused its assessment
+    on the PC segment of EVs and its sub-segments (BEVs vs HEVs).'
+- market_id: pm_7
+  name: Manufacture and supply of light commercial vehicles (LCVs)
+  definition_status: left_open
+  notes: The Commission has considered separate markets for LCVs. For the purpose of this decision,
+    the exact market definition for LCVs and its potential sub-segments (particularly by propulsion
+    technology) was left open, but the assessment focused on the LCV segment of EVs (including
+    BEVs vs HEVs) where vertical effects could arise.
+- market_id: pm_8
+  name: Segmentation of light commercial vehicles by size/weight
+  definition_status: segmented
+  notes: The Commission's decisional practice has distinguished and further segmented LCVs by
+    size/weight in previous decisions. The market investigation for this case found that a segmentation
+    was not warranted for electric LCVs with regard to size or loading capacity.
+- market_id: pm_9
+  name: Segmentation of light commercial vehicles by propulsion technology (BEV vs. ICE)
+  definition_status: left_open
+  notes: The Commission previously considered it unnecessary to sub-segment LCV markets between
+    LEVs and ICEs. The market investigation was inconclusive regarding this segmentation. The
+    Commission left the exact definition open but focused its assessment on the LCV segment
+    of EVs (including BEVs vs HEVs).
+geographic_markets_considered:
+- market_id: gm_1
+  name: Manufacture and supply of battery cells and modules — worldwide or EEA-wide
+  definition_status: left_open
+  notes: The Commission had left the geographic definition open in previous decisions, indicating
+    worldwide or EEA-wide. Notifying parties suggested worldwide but provided EEA-wide data.
+    The market investigation was inconclusive, with some elements suggesting EEA-wide. The Commission
+    left the definition open for this decision.
+- market_id: gm_2
+  name: Manufacture and supply of passenger cars — EEA-wide or national
+  definition_status: left_open
+  notes: The Commission has previously considered the market for PCs to be national in scope.
+    The Notifying parties suggested leaving the geographic market definition open, providing
+    national level information. The Commission left the definition open for this decision.
+- market_id: gm_3
+  name: Manufacture and supply of light commercial vehicles — EEA-wide or national
+  definition_status: left_open
+  notes: The Commission has previously considered the market for LCVs to be national in scope.
+    The Notifying parties suggested leaving the geographic market definition open, providing
+    national level information. The Commission left the definition open for this decision.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  page: '4'
+  quote_snippet: The Target operates in France and Germany and focuses on the development, manufacturing
+    and supply of cells and modules (using the Li-ion chemistry only) on a large scale, i.e.
+    designed for mass production mainly for the automotive industry. The Target does not manufacture
+    battery packs (or systems).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  page: '6'
+  quote_snippet: In any case, as the activities of ACC in the market for the manufacture and
+    supply of battery cells and modules for the automotive sector under any plausible product
+    market definition or sub-segment (between modules and cells versus integrated battery packs,
+    Li-ion versus NiMH batteries) will remain below 20%, the Commission considers that for the
+    purposes of the present decision, the precise market definition can be left open, since
+    the Transaction does not raise serious doubts as to its compatibility with the internal
+    market or the functioning of the EEA Agreement, under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  page: '6'
+  quote_snippet: Since ACC will only be active in the manufacture and supply of battery cells
+    and modules (excluding battery systems) using Li-ion technology, the Commission will analyse
+    the market for the manufacture and supply of battery cells and modules (excluding battery
+    systems) using Li-ion technology as the narrowest plausible product market leading to vertically
+    affected markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  page: '5'
+  quote_snippet: The Commission has considered, but ultimately left open, whether this market
+    should be further segmented into the supply (i) of modules (consisting of a number of cells)
+    or (ii) integrated into a battery pack (or system).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  page: '6'
+  quote_snippet: The majority of respondents to the market investigation confirmed the distinction
+    between the manufacture and sale of battery cells and modules, on the one hand, and of battery
+    packs or systems, on the other hand.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  page: '6'
+  quote_snippet: In any case, as the activities of ACC in the market for the manufacture and
+    supply of battery cells and modules for the automotive sector under any plausible product
+    market definition or sub-segment (between modules and cells versus integrated battery packs,
+    Li-ion versus NiMH batteries) will remain below 20%, the Commission considers that for the
+    purposes of the present decision, the precise market definition can be left open
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  page: '5'
+  quote_snippet: The Commission has also previously indicated a possible distinction for automotive
+    batteries by cell technology (e.g., Li-ion or NiMH15), which was ultimately left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  page: '5'
+  quote_snippet: The Notifying parties submit that the effects of the Transaction should be
+    assessed in a product market for the manufacture and supply of cells and modules for automotive
+    applications without any further segmentation based on the technology. In this regard, the
+    Notifying parties submit that, as recalled in the Commission’s past decisions, almost all
+    cells and modules manufacturers use Li-ion technology and that Li-ion cells are expected
+    to constitute the technology of choice for the next decade.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  page: '6'
+  quote_snippet: The majority of automotive customers of battery cells and modules responding
+    to the market investigation further confirmed that a distinction by cell technology (i.e.
+    between Li-ion and NiMH) is not warranted due to the marginal role that NiMH technology
+    plays today.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  page: '7'
+  quote_snippet: In previous decisions, the Commission has considered separate markets for the
+    manufacturing and supply of PCs on the one hand, and LCVs on the other hand.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  page: '8'
+  quote_snippet: In light of the above, for the purposes of the present decision, the Commission
+    considers that the exact market definition for the downstream market for the manufacture
+    and supply of PCs and its potential sub-segments (between different types of propulsion
+    technology and the further segmentation within EVs) can be left open, as the Transaction
+    does not give rise to competition concerns under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  page: '8'
+  quote_snippet: The Commission will focus its assessment on the PC segment of EVs including
+    its possible sub-segments (BEVs versus HEVs), since this is the only segment in which vertical
+    effects could arise.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  page: '7'
+  quote_snippet: For PCs, the Commission has defined separate product markets for (i) mini cars,
+    (ii) small cars, (iii) medium cars (iv) large cars, (v) executive cars, (vi) luxury cars
+    (vii) sport cars, (viii) sport utility vehicles (“SUVs”) and (ix) multipurpose vehicles.
+    The Commission further considered a segmentation of the SUV market by size into separate
+    markets for (x) mini (A-SUVs) to (xiv) luxury (E-SUVs) SUVs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  page: '7'
+  quote_snippet: The Commission previously considered, but ultimately left open, further segmentations
+    by size and weight.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  page: '8'
+  quote_snippet: The Notifying parties argue that, given that the Commission has not ultimately
+    decided whether such segments as mentioned at paragraph (31) above should be markets on
+    their own, it can be held with respect to the Transaction that the relevant product market
+    is that of PCs overall.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  page: '7'
+  quote_snippet: The Commission also previously considered, but ultimately left open, whether
+    PCs overall or each vehicle segment described at paragraph (29) above should be further
+    segmented by type of propulsion technology between vehicles with internal combustion engines
+    (“ICE”) and electric vehicles (“EVs”). Within EVs, a possible further segmentation exists
+    on the basis of technology, between BEVs and hybrid electric vehicles (“HEVs”).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  page: '8'
+  quote_snippet: Regarding a possible market for LEVs, the majority of suppliers of passenger
+    cars responding to the market investigation indicated that FCEVs are not part of the same
+    market as BEVs and HEVs. The results of the market investigation remained inconclusive regarding
+    further possible segmentations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  page: '8'
+  quote_snippet: The Commission will focus its assessment on the PC segment of EVs including
+    its possible sub-segments (BEVs versus HEVs), since this is the only segment in which vertical
+    effects could arise.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  page: '7'
+  quote_snippet: In previous decisions, the Commission has considered separate markets for the
+    manufacturing and supply of PCs on the one hand, and LCVs on the other hand.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  page: '9'
+  quote_snippet: The Commission considers that for the purpose of the present decision, the
+    exact market definition for the downstream market for the manufacture and supply of LCVs
+    and its potential sub-segments (in particular by type of propulsion technology) can be left
+    open, as the Transaction does not give rise to competition concerns under any plausible
+    product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  page: '9'
+  quote_snippet: The Commission will focus its assessment on the LCV segment of EVs, including
+    its possible sub-segments (BEVs versus HEVs), as this is the only segment in which vertical
+    effects could arise.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  page: '8'
+  quote_snippet: The Commission’s decisional practice has distinguished for the manufacture
+    and supply of commercial vehicles between (i) light (LCVs), (ii) medium-size and (iii) heavy-duty
+    commercial vehicles.32 The Commission further segmented LCVs into (i) small LCVs up to 3.5
+    tonnes, (ii) medium LCVs up to 3.5 tonnes, (iii) large LCVs up to 3.5 tonnes, (iv) LCVs
+    between 3.5 and 6 tonnes and (v) large LCVs and large LCVs above 3.5 tonnes combined, and
+    considered that pick-up trucks were not part of the same product market as LCVs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  page: '9'
+  quote_snippet: The results of the market investigation remained inconclusive as to a possible
+    segmentation of LCV by type of propulsion technology (BEV and ICE), while the majority of
+    respondents to the market investigation confirmed that a segmentation was not warranted
+    for electric LCVs with regard to the size or loading capacity of LCVs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  page: '9'
+  quote_snippet: Regarding electric LCVs, the Commission considered in previous decisions that
+    it was unnecessary to further sub-segment LCVs markets between LEVs and ICEs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  page: '9'
+  quote_snippet: The results of the market investigation remained inconclusive as to a possible
+    segmentation of LCV by type of propulsion technology (BEV and ICE), while the majority of
+    respondents to the market investigation confirmed that a segmentation was not warranted
+    for electric LCVs with regard to the size or loading capacity of LCVs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  page: '9'
+  quote_snippet: The Commission will focus its assessment on the LCV segment of EVs, including
+    its possible sub-segments (BEVs versus HEVs), as this is the only segment in which vertical
+    effects could arise.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  page: '6'
+  quote_snippet: In previous decisions, the Commission had left the geographic definition open
+    with regard to the markets for cells and modules, indicating that these could be worldwide
+    or EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  page: '6'
+  quote_snippet: The Notifying parties consider that the markets for the manufacture and supply
+    of battery cells and modules for the automotive sector and for the non-automotive sector
+    should be assessed at worldwide level in light of both supply-side and demand-side considerations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  page: '7'
+  quote_snippet: The Commission considers that for the purposes of the present decision, it
+    can be left open whether the markets for the manufacture and supply of battery cells and
+    modules are worldwide or EEA-wide, since the activities of the Parties will remain below
+    20% and the Transaction does not raise serious doubts as to its compatibility with the internal
+    market or the functioning of the EEA Agreement, under any plausible geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  page: '9'
+  quote_snippet: The Commission has considered the markets for the manufacturing and supply
+    of (i) PCs and (ii) LCVs to be national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  page: '9'
+  quote_snippet: The Notifying parties suggest leaving the geographic market definition open
+    and provided market information at national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  page: '9'
+  quote_snippet: In light of the above, for the purposes of the present decision, it can be
+    left open whether the markets for the manufacture and supply of passenger cars and light
+    commercial vehicles are EEA-wide or national in scope, since the Transaction does not raise
+    serious doubts as to its compatibility with the internal market or the functioning of the
+    EEA Agreement, under any plausible geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  page: '9'
+  quote_snippet: The Commission has considered the markets for the manufacturing and supply
+    of (i) PCs and (ii) LCVs to be national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_34
+  source_document_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  page: '9'
+  quote_snippet: The Notifying parties suggest leaving the geographic market definition open
+    and provided market information at national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_35
+  source_document_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  page: '9'
+  quote_snippet: In light of the above, for the purposes of the present decision, it can be
+    left open whether the markets for the manufacture and supply of passenger cars and light
+    commercial vehicles are EEA-wide or national in scope, since the Transaction does not raise
+    serious doubts as to its compatibility with the internal market or the functioning of the
+    EEA Agreement, under any plausible geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_36
+  source_document_id: eu_mercedesbenz_totalenergies_stellantis_2022_decision
+  page: '6'
+  quote_snippet: the Commission considers that for the purposes of the present decision, the
+    precise market definition can be left open, since the Transaction does not raise serious
+    doubts as to its compatibility with the internal market or the functioning of the EEA Agreement,
+    under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

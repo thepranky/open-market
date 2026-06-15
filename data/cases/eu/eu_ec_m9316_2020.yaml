@@ -1,0 +1,472 @@
+case_id: eu_ec_m9316_2020
+case_name: M.9316
+authority: European Commission
+jurisdiction: EU
+sector: extractives
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2020-03-26'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9316_2020_decision
+  title: M.9316 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9316
+  pdf_url: http://publications.europa.eu/resource/cellar/50373771-b6f5-11ea-bb7a-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Aggregates
+  definition_status: left_open
+  notes: The Commission considered segmentations between primary vs secondary/recycled aggregates,
+    specialist vs other aggregates, and crushed rock vs gravel and sand. It decided not to distinguish
+    primary from secondary/recycled, and specialist from other aggregates, for the purpose of
+    the assessment. For crushed rock vs gravel and sand, while the market investigation suggested
+    they belong to one market, the question was ultimately left open.
+- market_id: pm_2
+  name: Bitumen
+  definition_status: left_open
+  notes: The Commission considered a distinct market for bitumen, with potential further segmentation
+    by type, but left the exact definition open due to the Target's minor activity and no resulting
+    competition concerns.
+- market_id: pm_3
+  name: Asphalt
+  definition_status: defined
+  notes: The Commission considered asphalt to be a distinct market separate from paving and
+    did not distinguish between warm, half-warm, and cold mix asphalt, focusing on warm asphalt
+    for the assessment.
+- market_id: pm_4
+  name: Paving (contract surfacing)
+  definition_status: defined
+  notes: The Commission considered paving to be a single, distinct product market, separate
+    from the materials used.
+- market_id: pm_5
+  name: Ready-mix concrete (RMX)
+  definition_status: defined
+  notes: The Commission consistently considered RMX to be a single, distinct product market
+    without further subdivisions.
+- market_id: pm_6
+  name: Construction
+  definition_status: left_open
+  notes: Due to no horizontal overlap and Peab's low market shares, the Commission left the
+    exact market definition open, as it would not change the competitive assessment of the vertical
+    links with aggregates.
+- market_id: pm_7
+  name: Transport (cargo/bulk shipping)
+  definition_status: left_open
+  notes: Given the Target's minor activity in transport (one cargo ship and one bulk carrier),
+    the Commission left the market definition open as no competition concerns were foreseen.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Aggregates — local/regional (Finland, Norway, Sweden affected)
+  definition_status: considered
+  notes: The Commission generally considered a 50km radius but noted regional variations, such
+    as an 80km radius in sparsely populated areas or longer distances (around 200km) in northern
+    Norway due to boat transport.
+- market_id: gm_2
+  name: Bitumen — national/local (Norway affected)
+  definition_status: left_open
+  notes: The Commission noted that the Target sells bitumen over distances up to 600km in Norway
+    and that market investigation did not contradict past findings. However, it left the exact
+    scope open as no competition concerns would arise.
+- market_id: gm_3
+  name: Asphalt — local (Norway and Sweden affected)
+  definition_status: considered
+  notes: The Commission generally considered a 50km radius due to the perishable nature of asphalt,
+    but allowed for regional differences such as an 80km radius in sparsely populated areas,
+    longer distances via boat transport in northern Norway, and mobile asphalt plants acting
+    as competitive constraints in northern Sweden and most of Norway.
+- market_id: gm_4
+  name: Paving (contract surfacing) — national (Norway and Sweden affected)
+  definition_status: defined
+  notes: The Commission defined the paving market as national, based on national bidding, suppliers
+    constraining each other nationally, and barriers to entry for foreign competitors.
+- market_id: gm_5
+  name: Ready-mix concrete (RMX) — local (Finland, Norway, Sweden affected)
+  definition_status: left_open
+  notes: The Commission considered plausible geographic markets of 25km or 50km around each
+    plant, with a narrower catchment area in urban areas and a wider one in rural/sparsely populated
+    regions. It decided to use a 50km radius as a general assumption for a more prudent analysis
+    but left the ultimate definition open.
+- market_id: gm_6
+  name: Construction — national/wider (Finland, Norway, Sweden affected)
+  definition_status: considered
+  notes: The Commission considered the market for construction to be national or wider, noting
+    that major players are active in multiple countries, but did not conclude on a precise definition.
+- market_id: gm_7
+  name: Transport (cargo/bulk shipping) — local/national (Norway affected)
+  definition_status: left_open
+  notes: Given the small size of the ships involved and the limited competition concerns, the
+    Commission left the geographic market definition open, noting it would be smaller than worldwide.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9316_2020_decision
+  page: '7'
+  quote_snippet: Consequently, for the purpose of the assessment of the Transaction, the Commission
+    will not distinguish primary and secondary/recycled aggregates.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9316_2020_decision
+  page: '7'
+  quote_snippet: Consequently, for the purpose of the assessment of the Transaction, the Commission
+    will not distinguish specialist aggregates and primary, secondary/recycled aggregates.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9316_2020_decision
+  page: '9'
+  quote_snippet: Consequently, for the purpose of the assessment of the Transaction, the Commission
+    will take a single aggregates market as a basis without distinguishing between (i) gravel
+    and sand and ii) crushed rock. However, it ultimately leaves this question open as it would
+    not change the competitive assessment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9316_2020_decision
+  page: '12'
+  quote_snippet: In line with previous decisions, the Commission considers a distinct market
+    for the supply of bitumen, with a potential further segmentation, depending on the type
+    of bitumen.55 In this case, the Target processes the purchased bitumen predominantly for
+    its own asphalt production in Norway,56 and sells any surplus on an ad-hoc basis to third
+    parties.57 Because of the Target’s minor activity, the competitive assessment would not
+    change under any plausible product market definition. For the purpose of this case, the
+    exact product market definition can therefore be left open, as regardless of the exact product
+    market definition for bitumen, no competition concerns would arise as a result of the transaction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9316_2020_decision
+  page: '15'
+  quote_snippet: On the basis of the above, for the purposes of the present decision, the Commission
+    considers that asphalt is a market separate from paving. The Commission does not distinguish
+    between warm, half-warm and cold mix asphalt in this case as practically the only type of
+    asphalt that matters for the competitive assessment is warm asphalt. The issue of mobile
+    plants is taken into account in the geographic market definition as they can only be a viable
+    customer choice in certain areas.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9316_2020_decision
+  page: '19'
+  quote_snippet: Consequently, the Commission considers that paving is a single, distinct product
+    market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9316_2020_decision
+  page: '20'
+  quote_snippet: RMX is homogenous and distinct from other types of building materials. Given
+    the consistent past practice, which is in accordance with the Notifying Party’s view, the
+    Commission considers that RMX is a single distinct product market without further subdivisions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9316_2020_decision
+  page: '23'
+  quote_snippet: Consequently, for the purpose of the assessment of the Transaction, the exact
+    market definition can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9316_2020_decision
+  page: '23'
+  quote_snippet: The Parties do not have any horizontal overlap in construction as the Target
+    is not active in construction. Peab’s share in construction stays below 30 % under any market
+    definition that the Commission considers plausible in all three EEA states involved in the
+    Transaction.124 Thus construction markets are of interest because they are the downstream
+    leg of a vertical link involving aggregates in the upstream market. In these vertical relationships
+    the competitive assessment is the same under any market definition that the Commission considers
+    plausible.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9316_2020_decision
+  page: '24'
+  quote_snippet: Given that the Target only has one cargo ship and one bulk carrier ship, which
+    carry, inter alia, some mineral aggregates, the Commission considers that the market definition
+    can be left open as there are no conceivable competition concerns linked to these transport
+    vessels.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9316_2020_decision
+  page: '11'
+  quote_snippet: Thus, in line with the precedents, the Commission considers that the appropriate
+    geographic market is in general a radius of 50 kms in Finland, Norway and Sweden. However,
+    to the extent necessary, it will also take into account regional variations in the competitive
+    assessment. The most important regional variation is that in northern Norway boat transport
+    is also used and this increases the area within which aggregates suppliers compete.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9316_2020_decision
+  page: '10'
+  quote_snippet: In past decisions, the Commission has considered the aggregates market to be
+    local/regional in scope42 and has retained a radius of 50 to 80 km depending on the particularities
+    of the areas concerned.43 This approach was based on the fact that aggregates are heavy
+    and voluminous products with significant transport costs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9316_2020_decision
+  page: '13'
+  quote_snippet: In any event, for the purpose of this decision the exact scope of the geographic
+    market can be left open, as the Transaction would not give rise to any competition concerns
+    in this regard, irrespective of the exact market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m9316_2020_decision
+  page: '13'
+  quote_snippet: In the present case, the Target sells bitumen in Norway over a distance of
+    up to 600 km.61 The market investigation has not provided any indications that would speak
+    against defining bitumen markets in this case in line with the Commission's findings in
+    previous cases.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m9316_2020_decision
+  page: '18'
+  quote_snippet: 'Based on the above, the Commission will retain geographic markets with a radius
+    of 50 km but will take into account regional differences in the competitive assessment as
+    appropriate. These regional differences are as follows: i.) in sparsely populated areas
+    a radius of 80 km may be more appropriate; ii.) in northern Norway boat transport is also
+    an alternative that can result in a larger geographic market as boat transport allows larger
+    volumes, which reduces perishability; and iii.) in northern Sweden and in Norway outside
+    the metropolitan areas, mobile asphalt plants can also be competitive constraints.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m9316_2020_decision
+  page: '17'
+  quote_snippet: Given the perishable nature of asphalt, the definition of the relevant geographic
+    market revolves around the appropriate radius of the catchment area within which most of
+    the competition takes place. In this regard customers indicated that they source close to
+    100 % of their asphalt within a radius of 50 km from their paving projects,92 while 5 out
+    of 7 competitors submitted that they sell 85%-100% of their asphalt within this radius.93
+    Thus, most of the competitive interactions between competitors with fixed plants in Norway
+    and Sweden take place within a radius of 50 km from the asphalt plant.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m9316_2020_decision
+  page: '20'
+  quote_snippet: On the basis of the above, the Commission considers that, in line with precedents,
+    the market for paving is national.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m9316_2020_decision
+  page: '19'
+  quote_snippet: A majority of both customers and competitors considered that paving players
+    bid nationally and not only regionally.106 As bidding has substantial costs, it is unlikely
+    that a firm would bid in a tender if it did not consider that it has a non-negligible chance
+    of success. Consequently, the fact that bidding takes place nationally indicates that suppliers
+    constrain each other in the entire EEA state concerned and not only in the region where
+    they have equipment or employees. This would therefore be indicative of a national market.
+    In the same vein, respondents to the market investigation were of the view that paving suppliers
+    can bid competitively anywhere in the EEA state regardless of having equipment and employees
+    in the area, even if they considered that local presence is an advantage.107 The Commission
+    notes that having an advantage implies differentiation within the same market rather than
+    separate markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m9316_2020_decision
+  page: '20'
+  quote_snippet: As regards the possibility of a market larger than national in scope, competitors
+    considered that they would not be able to bid competitively in an EEA State where they are
+    not present.108 Similarly, customers considered that paving companies from neighbouring
+    countries cannot bid competitively without presence in their own Member State, in this case
+    Sweden.109 Barriers include cultural differences, language and lack of contacts.110
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m9316_2020_decision
+  page: '23'
+  quote_snippet: For the assessment of the case, a geographic market of at least national is
+    considered, as no concerns would occur under the narrower definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m9316_2020_decision
+  page: '23'
+  quote_snippet: For the present case, the Commission considers the market for construction
+    to be national or wider. Peab itself is active in construction in Finland, Sweden and Norway,
+    which is also the case for Skanska. NCC and Veidekke have a presence in construction in
+    both Norway and Sweden126. However, companies do not compete in all parts of the EEA, and
+    market investigation provided no information on whether presence in the respective country
+    is a perquisite for successfully competing for construction projects.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m9316_2020_decision
+  page: '24'
+  quote_snippet: The ships in question are rather small,133 the geographic market is therefore
+    smaller than worldwide. For the assessment of this case, the market definition can be left
+    open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

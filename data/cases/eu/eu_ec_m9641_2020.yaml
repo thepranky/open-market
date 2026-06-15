@@ -1,0 +1,352 @@
+case_id: eu_ec_m9641_2020
+case_name: M.9641
+authority: European Commission
+jurisdiction: EU
+sector: energy
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2020-02-11'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9641_2020_decision
+  title: M.9641 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9641
+  pdf_url: http://publications.europa.eu/resource/cellar/5c8ffb8f-bf50-11ea-901b-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Market for infrastructure for gas imports
+  definition_status: left_open
+  notes: The Commission considered the question of sub-segmenting this market into regasification
+    services, interconnection points with international gas pipelines, and underground gas storage
+    in previous decisions, ultimately leaving the exact market definition open. For the purpose
+    of this decision, it was also left open whether pipelines and regasification terminals belong
+    to the same relevant product market or separate relevant product markets.
+- market_id: pm_2
+  name: Gas storage
+  definition_status: considered
+  notes: The Commission considers gas storage as a separate market. Any possible segmentation
+    (e.g., pore/cavern or H-gas/L-gas) is left open, as these distinctions were found to be
+    irrelevant for Italy.
+- market_id: pm_3
+  name: Small-scale LNG services (SSLNG services)
+  definition_status: left_open
+  notes: The Notifying Parties submitted that no distinct market for SSLNG services exists yet,
+    as projects are at a very preliminary stage. The market investigation was inconclusive on
+    the substitutability with ordinary regasification services, noting it as a nascent and undeveloped
+    market. The Commission left open whether these services belong to the same product market
+    as regasification terminal services or a separate market.
+- market_id: pm_4
+  name: Gas transmission (via high-pressure systems)
+  definition_status: defined
+  notes: The Commission considers that gas networks for the transmission of gas are natural
+    monopolies and each of them constitutes a distinct product market, consistent with previous
+    decisional practice and confirmed by the market investigation.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Infrastructure for gas imports — national (Italy affected)
+  definition_status: considered
+  notes: Past decisions considered the market for infrastructure for gas imports, including
+    LNG regasification terminals, to be national in scope but left it open. For this decision,
+    based on market investigation, the Commission considers the geographic scope to be national.
+- market_id: gm_2
+  name: SSLNG services — national (Italy affected)
+  definition_status: considered
+  notes: The Notifying Parties suggested a broader-than-national dimension. Market investigation
+    results were mixed. The Commission decided to base its assessment on the most narrow plausible
+    market definition, i.e., national, consistent with the geographic dimension of the market
+    for infrastructure for gas imports.
+- market_id: gm_3
+  name: Gas transmission (via high-pressure systems) — national (Italy affected)
+  definition_status: considered
+  notes: Consistent with its past decisional practice and confirmed by market investigation
+    results, the Commission considers the market for gas transmission to be national in scope,
+    limited to Italian territory.
+- market_id: gm_4
+  name: Gas storage — national (Italy affected)
+  definition_status: considered
+  notes: Based on market investigation results and consistent with decisional practice, the
+    Commission considers the market for gas storage to be national in scope.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9641_2020_decision
+  page: '4'
+  quote_snippet: OLT is active in the market for infrastructure for gas imports in Italy. It
+    owns and operates an offshore regasification terminal located about 22 km off the Tuscan
+    coast between Livorno and Pisa, with a storage capacity of 137,100 cubic meters of LNG and
+    a maximum annual regasification capacity of 3.75 billion cubic meters.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9641_2020_decision
+  page: '4'
+  quote_snippet: 'In previous decisions, the Commission considered the question whether the
+    market for infrastructure for gas imports could be sub-segmented into the following markets:
+    (i) regasification services for the import of liquid natural gas; (ii) interconnection points
+    with international gas pipelines; and (iii) underground gas storage.6 The Commission ultimately
+    left open the exact market definition.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9641_2020_decision
+  page: '5'
+  quote_snippet: The Commission considers that, for the purposes of this decision, it may be
+    left open whether pipelines and regasification terminals belong to the same relevant product
+    market or belong to separate relevant product markets, as the Transaction does not lead
+    to serious doubts as to its compatibility with the internal market, regardless of the market
+    definition adopted.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9641_2020_decision
+  page: '5'
+  quote_snippet: With respect to gas storage and consistently with previous Commission’s practice,13
+    for the purposes of this decision, the Commission considers gas storage as a separate market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9641_2020_decision
+  page: '7'
+  quote_snippet: The results of the market investigation confirm that gas storage facilities
+    belong to a separate product market.20 As to the possible distinction between (i) pore and
+    cavern and (ii) facilities for the storage of L-gas and H-gas, the market investigation
+    indicated that such distinctions are irrelevant for Italy, as there would not be cavern
+    storage facilities and no L-gas grids/storages.21
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9641_2020_decision
+  page: '7'
+  quote_snippet: In view of the above, the Commission considers that storage facilities belong
+    to a separate market, while any possible segmentation can be left open, as the Transaction
+    does not lead to serious doubts as to its compatibility with the internal market regardless
+    of the market definition adopted in this respect.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9641_2020_decision
+  page: '5'
+  quote_snippet: The Notifying Parties submitted that all regasification terminal operators
+    are considering to start offering Small-scale LNG services (SSLNG). Such services consist
+    in processing LNG delivered by large cargoes in order to sell it as a fuel to LNG-fuelled
+    trucks or ships. SSLNG can also be used to divide large LNG shipments in smaller LNG loads
+    to deliver through smaller ships (for example to local networks in Sardinia). According
+    to the Notifying Parties, all projects relating to SSLNG are still at a very preliminary
+    stage and there is no market for SSLNG services yet, distinct from the market for infrastructure
+    for gas imports or from the possible regasification service segment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9641_2020_decision
+  page: '6'
+  quote_snippet: With respect to the question whether the services of SSNLG, which are still
+    in development in Italy, are substitutable with ordinary regasification services, the results
+    of the market investigation are inconclusive. On the one hand, the majority of respondents
+    to the market investigation have indicated that SSLNG services are distinct from the traditional
+    regasification services offered by LNG terminals.14 One respondent submitted that SSLNG
+    services are very different from conventional LNG services in terms of market, logistic
+    costs, operations, etc.15 On the other hand, another respondent submitted that it is too
+    early in the development of the SSLNG market in Italy to provide an opinion on the differences
+    between SSLNG services and traditional services provided by regasification terminals.16
+    In general, respondents to the market investigation confirmed that this is a nascent market,
+    not yet sufficiently developed, and therefore it could be difficult to provide a final view.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9641_2020_decision
+  page: '6'
+  quote_snippet: However, for the purpose of this decision, the Commission considers that it
+    may be left open whether SSLNG services belong to the same product market as regasification
+    terminals services (or, under a broader product market definition, to the overall market
+    for infrastructure for gas imports) or are part of a separate product market, as the Transaction
+    does not raise serious doubts as to its compatibility with the internal market, regardless
+    of the market definition adopted.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9641_2020_decision
+  page: '6'
+  quote_snippet: The transmission of natural gas consists of physical gas transportation services
+    via high-pressure pipelines to gas wholesale suppliers that aim to resell their gas either
+    to other gas wholesalers, to distributors, or to large industrial customers that are directly
+    connected to the gas transmission network.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9641_2020_decision
+  page: '6'
+  quote_snippet: The results of the market investigation confirm that the conclusions reached
+    by the Commission in its previous practice are still valid for Italy today.18 The Commission
+    therefore considers that gas networks for the transmission of gas are natural monopolies
+    and each of them constitute a distinct product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9641_2020_decision
+  page: '7'
+  quote_snippet: The results of the market investigation indicate that the geographic scope
+    of the market for infrastructure for gas imports in general, and for regasification terminals
+    in particular, is national.23 The majority of the respondents to the market investigation
+    also confirmed that the different regasification terminals in Italy are substitutable, irrespective
+    of their different locations in Italy.24 Therefore, for the purpose of this decision, the
+    Commission considers that the market for infrastructure for gas imports (possibly split
+    between pipelines and regasification terminals) is national.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9641_2020_decision
+  page: '8'
+  quote_snippet: With respect to SSLNG services, the Notifying Parties submit that a future
+    potential separate market for SSLNG services provided by LNG terminals would most likely
+    have a geographic dimension broader than national. The results of the market investigation
+    are mixed, with some respondents pointing to a national dimension of the market and other
+    respondents to a supra-national dimension, dependent on the specific location of the different
+    SSLNG terminals.25 In any case, and consistently with the geographic dimension of the market
+    for infrastructure for gas imports, the Commission will base its assessment on the most
+    narrow plausible market definition, i.e. national.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m9641_2020_decision
+  page: '8'
+  quote_snippet: Based on the results of the market investigation,27 the Commission considers
+    that the market for gas transmission can be considered national in scope, in line with its
+    decisional practice.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m9641_2020_decision
+  page: '8'
+  quote_snippet: Based on the results of the market investigation,29 the Commission considers
+    that the market for gas storage can be considered national in scope, in line with its decisional
+    practice.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m9641_2020_decision
+  page: '21'
+  quote_snippet: In light of the above considerations, the Commission considers that the Transaction
+    does not raise serious doubts as to its compatibility with the internal market with respect
+    to non-horizontal effects.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

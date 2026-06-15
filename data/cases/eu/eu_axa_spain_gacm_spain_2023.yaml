@@ -1,0 +1,379 @@
+case_id: eu_axa_spain_gacm_spain_2023
+case_name: AXA SPAIN / GACM SPAIN
+authority: European Commission
+jurisdiction: EU
+sector: financial
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2023-05-05'
+parties:
+- name: AXA SPAIN
+  role: acquirer
+- name: GACM SPAIN
+  role: target
+source_documents:
+- doc_id: eu_axa_spain_gacm_spain_2023_decision
+  title: AXA SPAIN / GACM SPAIN — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10986
+  pdf_url: http://publications.europa.eu/resource/cellar/03576279-8481-11ee-99ba-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Provision of hospital services
+  definition_status: left_open
+  notes: The Commission considered segmentation between public and private hospital services,
+    and between inpatient and outpatient services, but left the exact product market definition
+    open. The narrowest possible segment, private inpatient hospitals, was considered for the
+    vertical relationship analysis.
+- market_id: pm_2
+  name: Healthcare insurance services
+  definition_status: left_open
+  notes: The Commission referenced prior decisions distinguishing healthcare insurance as a
+    segment within non-life insurance. While the Notifying Party argued against conclusive definition,
+    the Commission ultimately left the exact product market definition open.
+- market_id: pm_3
+  name: Provision of assistance services
+  definition_status: left_open
+  notes: Identified as an upstream market forming a vertical relationship with assistance insurance.
+    The exact product market definition was not conclusively determined as market shares were
+    below 10% under any plausible definition, thus not giving rise to vertically affected markets.
+- market_id: pm_4
+  name: Provision of assistance insurance
+  definition_status: left_open
+  notes: Identified as a plausible segment within non-life insurance, forming a vertical relationship
+    with assistance services. The exact product market definition was not conclusively determined
+    as market shares were below 10% under any plausible definition, thus not giving rise to
+    vertically affected markets.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Provision of hospital services — regional/local (Cantabria affected)
+  definition_status: left_open
+  notes: Prior decisions indicated national or narrower scope. The transaction only gave rise
+    to a vertically affected link when considering Cantabria as the most narrowly defined regional
+    market, but the exact geographic definition was left open.
+- market_id: gm_2
+  name: Healthcare insurance services — national (Spain affected)
+  definition_status: left_open
+  notes: Prior decisions confirmed that non-life insurance products, including healthcare insurance,
+    are generally national in scope. The Commission left the exact geographic market definition
+    open.
+- market_id: gm_3
+  name: Provision of assistance services — national (Spain affected)
+  definition_status: left_open
+  notes: The geographic scope was considered national, aligned with non-life insurance markets,
+    but the exact definition was not conclusively determined as market shares were below 10%
+    under any plausible definition.
+- market_id: gm_4
+  name: Provision of assistance insurance — national (Spain affected)
+  definition_status: left_open
+  notes: The geographic scope was considered national, aligned with non-life insurance markets,
+    but the exact definition was not conclusively determined as market shares were below 10%
+    under any plausible definition.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_axa_spain_gacm_spain_2023_decision
+  page: '3'
+  quote_snippet: 'ii. Vertical Relationships: There are vertical relationships between (i) the
+    provision of inpatient private hospital services in the provinces of Barcelona and Cantabria
+    (upstream) and the provision of healthcare insurance in Spain (downstream); (ii) the provision
+    of assistance services (upstream) and the provision of assistance insurance (downstream),
+    a plausible segment within the provision of non-life insurance.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_axa_spain_gacm_spain_2023_decision
+  page: '3'
+  quote_snippet: (7) Under all potential market delineations, the Parties’ combined market shares
+    remain below 20% (for horizontal relationships), and their combined or individual market
+    shares below 30% (for vertical relationships). The only exception is the vertical relationship
+    between the provision of inpatient private hospital services in the province of Cantabria
+    (upstream), in which AXA Spain holds a market share of [30-40]% and the provision of healthcare
+    insurance in Spain (downstream), which results in vertically affected markets only when
+    considering the narrowest possible segment for the provision of hospital services, namely
+    private inpatient hospitals. Through its ownership of Hospital Mompía in the region of Cantabria,
+    AXA Spain is active in the provision of inpatient private hospital services and both Parties
+    are active in the provision of healthcare insurance across Spain with a combined market
+    share of [0-5]%.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_axa_spain_gacm_spain_2023_decision
+  page: '3'
+  quote_snippet: 7 The vertical relationship between the provision of assistance services (upstream)
+    where AXA Spain is active and the provision of assistance insurance (downstream), a plausible
+    segment within the provision of non-life insurance, where both Parties are active, does
+    not give rise to vertically affected markets, as the Parties’ market shares in each of those
+    markets remain at below 10% under any plausible product and geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_axa_spain_gacm_spain_2023_decision
+  page: '3'
+  quote_snippet: (8) The Commission considered in past decisions whether separate markets exist
+    for public and for private hospital services. The Commission found that this distinction
+    depends on the way healthcare systems are structured, regulated, and funded in each Member
+    State. For example, the Commission found that separate markets exist for private and for
+    public hospital services in the UK and Greece, while the Commission has consistently held
+    that the market for hospital services in Germany comprises both public and private hospitals.
+    The Commission has not considered in past decisions whether separate markets exist for public
+    and for private hospital services in Spain.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_axa_spain_gacm_spain_2023_decision
+  page: '4'
+  quote_snippet: (9) Within private hospital services, the Commission also considered whether
+    separate markets exist for inpatient and outpatient hospital services. The precise product
+    market delineation was ultimately left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_axa_spain_gacm_spain_2023_decision
+  page: '4'
+  quote_snippet: (11) The Commission considers that the exact product market definition for
+    the provision of hospital services can be left open in this case as the Transaction does
+    not raise concerns as to its compatibility with the internal market irrespective of the
+    exact product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_axa_spain_gacm_spain_2023_decision
+  page: '4'
+  quote_snippet: (12) In prior decisions, the Commission indicated that the market for private
+    hospital services was not broader than national in scope usually considering that it is
+    narrower, i.e. regional or local.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_axa_spain_gacm_spain_2023_decision
+  page: '4'
+  quote_snippet: (13) The Notifying Party considers that the precise scope of the geographic
+    market can be left open since the Transaction will not lead to any competition concerns
+    on any plausible geographic market definition. The Transaction only gives rise to a vertically
+    affected link when considering Cantabria as the most narrowly defined regional market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_axa_spain_gacm_spain_2023_decision
+  page: '4'
+  quote_snippet: (14) The Commission considers that the exact geographic market definition for
+    the provision of hospital services can be left open in this case as the Transaction does
+    not raise concerns as to its compatibility with the internal market irrespective of the
+    exact geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_axa_spain_gacm_spain_2023_decision
+  page: '5'
+  quote_snippet: '(15) In previous decisions relating to the insurance sector, the Commission
+    has distinguished between three large categories of insurance product markets: life insurance,
+    non-life insurance and reinsurance. Within non-life insurance, the Commission has distinguished
+    the market for healthcare insurance as a separate relevant product market.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_axa_spain_gacm_spain_2023_decision
+  page: '5'
+  quote_snippet: (16) The Notifying Party considers that for the purpose of the present case,
+    it is not necessary to define the relevant product market because, even under the narrowest
+    possible product market definition, namely healthcare insurance services by type of customer,
+    the addition of market shares as a consequence of the Transaction will be mostly immaterial
+    and the Parties’ combined market shares would be below 20% in a market that faces strong
+    competitive pressure from important, long-established competitors.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_axa_spain_gacm_spain_2023_decision
+  page: '5'
+  quote_snippet: (17) The Commission considers that the exact product market definition for
+    healthcare insurance services can be left open in this case as the Transaction does not
+    raise concerns as to its compatibility with the internal market under any plausible product
+    market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_axa_spain_gacm_spain_2023_decision
+  page: '5'
+  quote_snippet: (18) As regards the market for non-life insurance products and its potential
+    various sub-segments, such as healthcare insurance, the Commission has confirmed that such
+    markets are generally national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_axa_spain_gacm_spain_2023_decision
+  page: '5'
+  quote_snippet: (19) The Notifying Party argues that the relevant geographic market of non-life
+    insurance products and its potential various sub-segments should be considered as national
+    in scope in line with the relevant Commission precedent.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_axa_spain_gacm_spain_2023_decision
+  page: '5'
+  quote_snippet: (20) The Commission considers that the exact geographic market definition for
+    healthcare insurance services can be left open in this case as the Transaction does not
+    raise concerns as to its compatibility with the internal market under any plausible geographic
+    market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_axa_spain_gacm_spain_2023_decision
+  page: '5'
+  quote_snippet: (21) Under the Non-Horizontal Merger Guidelines, a transaction with vertically
+    affected markets may significantly impede effective competition if the merger gives rise
+    to foreclosure. Foreclosure occurs where actual or potential competitors’ access to supplies
+    or markets is hampered or eliminated as a result of the merger, thereby reducing those companies’
+    ability and/or incentive to compete.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_axa_spain_gacm_spain_2023_decision
+  page: '7'
+  quote_snippet: '(27) The Notifying Party submits that the Parties would have neither the ability
+    nor the incentive to engage in any input or customer foreclosure because AXA Spain’s market
+    share upstream only […] exceeds the 30% threshold under the narrowest plausible product
+    and geographic market definition and the Parties have a negligible market position downstream.
+    The Commission considers that the Transaction does not raise concerns in relation to an
+    input foreclosure theory of harm. Despite AXA Spain’s market share upstream ([30-40]% in
+    the province of Cantabria), the Transaction will not lead to any competition concerns considering
+    that AXA Spain would not have neither the ability nor an incentive to foreclose because:
+    (i) AXA Spain’s market share on the upstream market for the provision of inpatient private
+    hospital services only […] exceeds the 30% threshold; and (ii) there is sufficient competition
+    that will remain on the market upstream, as there is a number of inpatient private hospitals
+    in the region of Cantabria that will continue to exert sufficient competitive pressure on
+    the Parties (as indicated in Table 1 below).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_axa_spain_gacm_spain_2023_decision
+  page: '7'
+  quote_snippet: (28) The Commission considers that the Transaction does not raise any concerns
+    in relation to a customer foreclosure theory of harm, considering that the Parties’ combined
+    market shares in the downstream market for the provision of healthcare insurance services
+    are at below 30% under any plausible product and geographic market definition, which evidently
+    indicates that the Parties will have no ability to engage in customer foreclosure post-Transaction.
+    In light of that, the Parties would also not have any incentive in pursuing a customer foreclosure
+    strategy. The lack of any potential effects is further evidenced by the fact that this vertical
+    relationship pre-dates the Transaction and the Target accounts for only a de minimis share
+    of demand at the national level as well as in the province of Cantabria ([0-5]% and [0-5]%
+    respectively). Consequently, the Transaction will not give rise to any competition concerns
+    because of customer foreclosure.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

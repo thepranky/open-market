@@ -1,0 +1,558 @@
+case_id: eu_permira_sestant_kedrion_2022
+case_name: PERMIRA / SESTANT / KEDRION / BPL
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2022-08-05'
+parties:
+- name: PERMIRA
+  role: acquirer
+- name: SESTANT
+  role: acquirer
+- name: KEDRION
+  role: acquirer
+- name: BPL
+  role: target
+source_documents:
+- doc_id: eu_permira_sestant_kedrion_2022_decision
+  title: PERMIRA / SESTANT / KEDRION / BPL — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10680
+  pdf_url: http://publications.europa.eu/resource/cellar/8f3ec38b-9afa-11ed-b508-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Plasma-derived pharmaceutical products
+  definition_status: left_open
+  notes: The Commission previously identified separate product markets for human albumin, intravenous
+    immunoglobulin ("IG"), Factor VIII, and Factor IX. For the purpose of this Decision, it
+    was not necessary to conclude on the exact product market definition.
+- market_id: pm_2
+  name: Human albumin
+  definition_status: considered
+  notes: Referenced as a separate product market identified in previous Commission decisions.
+- market_id: pm_3
+  name: Intravenous immunoglobulin ("IG")
+  definition_status: considered
+  notes: Referenced as a separate product market identified in previous Commission decisions.
+- market_id: pm_4
+  name: Factor VIII
+  definition_status: considered
+  notes: Referenced as a separate product market identified in previous Commission decisions.
+- market_id: pm_5
+  name: Factor IX
+  definition_status: considered
+  notes: Referenced as a separate product market identified in previous Commission decisions.
+- market_id: pm_6
+  name: Collection and supply of blood plasma
+  definition_status: left_open
+  notes: The Notifying Parties considered separate markets for the collection of normal plasma
+    and specialty plasma. The Commission did not conclude on the exact product market definition
+    for this Decision.
+- market_id: pm_7
+  name: Supply of paste
+  definition_status: left_open
+  notes: Paste is an intermediate product from plasma fractionation, including types like CRYO
+    paste, prothrombin complex concentrate, Fraction II, Fraction II+III, and Fraction V.
+- market_id: pm_8
+  name: CDMO services
+  definition_status: considered
+  notes: The Commission's decisional practice, referenced from previous cases, identified separate
+    markets for CDMO services for Finished Dose Pharmaceuticals (FDPs) and Active Pharmaceutical
+    Ingredients (APIs).
+- market_id: pm_9
+  name: CRO services
+  definition_status: considered
+  notes: The Commission's decisional practice, referenced from previous cases, found a separate
+    market for CRO services without further segmentation.
+- market_id: pm_10
+  name: Laboratory services for clinical development
+  definition_status: considered
+  notes: The Commission previously identified separate markets for laboratory services for clinical
+    development and laboratory services for diagnostic purposes. For this Decision, only the
+    market for laboratory services for clinical development was considered relevant.
+- market_id: pm_11
+  name: Specific chemicals
+  definition_status: left_open
+  notes: Specific chemicals considered relevant include acetic acid, hydrochloric acid, sodium
+    hypochlorite, sodium hydroxide, sodium acetate anhydrous, and sodium acetate trihydrate.
+    The Commission did not conclude on the exact product market definition for these chemicals.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Plasma-derived pharmaceutical products — national (EEA countries affected)
+  definition_status: defined
+  notes: null
+- market_id: gm_2
+  name: Collection and supply of blood plasma — global
+  definition_status: left_open
+  notes: The Commission stated it was not necessary to conclude on the exact geographic market
+    definition, but noted a vertical relationship only exists when considering a global market
+    definition.
+- market_id: gm_3
+  name: Supply of paste — global
+  definition_status: left_open
+  notes: The Commission stated it was not necessary to conclude on the exact geographic market
+    definition, but indicated it is likely global.
+- market_id: gm_4
+  name: CDMO services — EEA-wide
+  definition_status: considered
+  notes: The Commission's decisional practice considered the market for CDMO services to be
+    at least EEA-wide in scope.
+- market_id: gm_5
+  name: CRO services — EEA-wide
+  definition_status: considered
+  notes: The Commission's decisional practice considered the market for CRO services to be at
+    least EEA-wide in scope.
+- market_id: gm_6
+  name: Laboratory services for clinical development — EEA-wide
+  definition_status: considered
+  notes: The Commission's decisional practice considered the market for laboratory services
+    for clinical development to be at least EEA-wide in scope.
+- market_id: gm_7
+  name: Specific chemicals — national/EEA-wide
+  definition_status: left_open
+  notes: The Commission stated it was not necessary to conclude on the exact geographic market
+    definition, but noted that for certain chemicals, markets could be either national or EEA-wide.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_permira_sestant_kedrion_2022_decision
+  page: '5'
+  quote_snippet: (20) For the purposes of this Decision, it is not necessary to conclude on
+    the product market definition, because the Parties do not overlap horizontally in any of
+    these products and the focus of the competitive assessment is potential customer foreclosure
+    and the Targets’ share of demand is not significant taking into that they are overall small
+    purchasers of the upstream products/services. The Transaction does not give rise to any
+    competitive concerns under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_permira_sestant_kedrion_2022_decision
+  page: '5'
+  quote_snippet: (19) With regard to plasma-derived pharmaceutical products specifically, the
+    Commission previously found that they differ from other pharmaceutical products because
+    they come from a natural body fluid for the collection of which manufacturers depend on
+    the willingness of donors. The Commission found separate product markets for human albumin,
+    intravenous immunoglobulin (“IG”), Factor VIII and Factor IX.13 The Notifying Party agrees
+    with the Commission’s decisional practice.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_permira_sestant_kedrion_2022_decision
+  page: '5'
+  quote_snippet: (19) With regard to plasma-derived pharmaceutical products specifically, the
+    Commission previously found that they differ from other pharmaceutical products because
+    they come from a natural body fluid for the collection of which manufacturers depend on
+    the willingness of donors. The Commission found separate product markets for human albumin,
+    intravenous immunoglobulin (“IG”), Factor VIII and Factor IX.13 The Notifying Party agrees
+    with the Commission’s decisional practice.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_permira_sestant_kedrion_2022_decision
+  page: '5'
+  quote_snippet: (19) With regard to plasma-derived pharmaceutical products specifically, the
+    Commission previously found that they differ from other pharmaceutical products because
+    they come from a natural body fluid for the collection of which manufacturers depend on
+    the willingness of donors. The Commission found separate product markets for human albumin,
+    intravenous immunoglobulin (“IG”), Factor VIII and Factor IX.13 The Notifying Party agrees
+    with the Commission’s decisional practice.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_permira_sestant_kedrion_2022_decision
+  page: '5'
+  quote_snippet: (19) With regard to plasma-derived pharmaceutical products specifically, the
+    Commission previously found that they differ from other pharmaceutical products because
+    they come from a natural body fluid for the collection of which manufacturers depend on
+    the willingness of donors. The Commission found separate product markets for human albumin,
+    intravenous immunoglobulin (“IG”), Factor VIII and Factor IX.13 The Notifying Party agrees
+    with the Commission’s decisional practice.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_permira_sestant_kedrion_2022_decision
+  page: '5'
+  quote_snippet: (19) With regard to plasma-derived pharmaceutical products specifically, the
+    Commission previously found that they differ from other pharmaceutical products because
+    they come from a natural body fluid for the collection of which manufacturers depend on
+    the willingness of donors. The Commission found separate product markets for human albumin,
+    intravenous immunoglobulin (“IG”), Factor VIII and Factor IX.13 The Notifying Party agrees
+    with the Commission’s decisional practice.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_permira_sestant_kedrion_2022_decision
+  page: '6'
+  quote_snippet: (25) For the purposes of this Decision, it is not necessary to conclude on
+    the exact product market definition for the collection and supply of blood plasma, as regardless
+    of the market definition considered, the Transaction does not give rise to serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_permira_sestant_kedrion_2022_decision
+  page: '6'
+  quote_snippet: (24) The Notifying Parties consider that there may be separate markets for
+    the collection of normal plasma and specialty plasma, and consider that these markets (either
+    combined or separate) should include collection through collection centres as well as the
+    limited volumes of blood plasma procured otherwise.15 Normal plasma differs from speciality
+    plasma both on the supply-side (since the latter is collected from donors who have specific
+    antibodies in their plasma) and on the demand-side (since they are used to manufacture different
+    therapeutical products).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_permira_sestant_kedrion_2022_decision
+  page: '7'
+  quote_snippet: (29) It is likely that the product market definition for paste could be considered
+    along similar lines as the product definition for the collection and supply of blood plasma.
+    In the present case, the Notifying Parties did not express a view on the appropriate product
+    market definition for paste. However, for the purposes of this Decision, it is not necessary
+    to conclude on the exact product market, as regardless of the product market definition
+    considered, the Transaction does not raise competition concerns under any plausible market
+    definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_permira_sestant_kedrion_2022_decision
+  page: '7'
+  quote_snippet: (32) In previous decisions, the Commission identified separate markets for
+    CDMO services for FDPs and active pharmaceutical ingredients APIs.17 In the present case,
+    the Notifying Parties did not express a view on the appropriate market definition of CDMO
+    services. For the purpose of this Decision, there is no need to depart from the Commission’s
+    decisional practice, as the Transaction does not raise competition concerns under any plausible
+    market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_permira_sestant_kedrion_2022_decision
+  page: '8'
+  quote_snippet: (35) In previous decisions, the Commission found a separate market for CRO
+    services without further segmentation.19 In the present case, the Notifying Parties did
+    not express a view on the appropriate market definition of CRO services. For the purpose
+    of this Decision, there is no need to depart from the Commission’s decisional practice,
+    as the Transaction does not raise competition concerns under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_permira_sestant_kedrion_2022_decision
+  page: '8'
+  quote_snippet: (37) In a previous decision, the Commission identified separate markets for
+    laboratory services for clinical development (for which the customers are e.g. pharmaceutical
+    and biotechnology companies, CROs and CDMOs) and laboratory services for diagnostic purposes
+    (for which customers are hospitals / clinics and physicians), and left the possibility of
+    further segmentation open.21 In the current case, the Notifying Parties did not express
+    a view on the appropriate market definition of laboratory services. For the purpose of this
+    Decision, it is not necessary to depart from the Commission’s decisional practice, as the
+    Transaction does not raise competition concerns under any plausible market definition. In
+    this case, only the market for laboratory services for clinical development is relevant,
+    as it forms part of an affected vertical relationship.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_permira_sestant_kedrion_2022_decision
+  page: '9'
+  quote_snippet: (40) In previous decisions, the Commission considered that different chemicals
+    fall into separate product markets depending on their characteristics and potential use,
+    as well as lack of supply side substitution.24 The Notifying Parties do not express a view
+    on the market definition for these products. For the purposes of this Decision, it is not
+    necessary to conclude on the exact product market definition for these chemicals, as regardless
+    of the product market definition considered, the Transaction does not raise competition
+    concerns under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_permira_sestant_kedrion_2022_decision
+  page: '9'
+  quote_snippet: '(39) The relevant chemicals that give rise to a vertical relationship because
+    they could potentially be purchased by the Targets include: (i) acetic acid, (ii) hydrochloric
+    acid, (iii) sodium hypochlorite; (iv) sodium hydroxide; (v) sodium acetate anhydrous and
+    (vi) sodium acetate trihydrate.23'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_permira_sestant_kedrion_2022_decision
+  page: '5'
+  quote_snippet: (21) According to the decisional practice of the Commission, the relevant geographic
+    market for the sale of pharmaceutical products is national due to regulatory barriers resulting
+    from, among others, the national reimbursement systems of EEA countries. The Notifying Parties
+    agree with this decisional practice. For the purposes of this Decision, the Commission does
+    not find any reasons to depart from this definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_permira_sestant_kedrion_2022_decision
+  page: '6'
+  quote_snippet: (27) For the purposes of this Decision, it is not necessary to conclude on
+    the exact geographic market definition. Both Targets exclusively operate collection centres
+    in the US, and therefore a vertical relationship with the supply of plasma-derived pharmaceutical
+    products only exists when considering a global market definition for the collection of blood
+    plasma.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_permira_sestant_kedrion_2022_decision
+  page: '7'
+  quote_snippet: (30) It is likely that the geographic market definition for paste is global
+    as similar considerations as for blood plasma supply apply. In the present case, the Notifying
+    Parties did not express a view on the appropriate geographic market definition for paste.
+    However, for the purposes of this Decision, it is not necessary to conclude on the exact
+    geographic market, as regardless of the geographic market definition considered, the Transaction
+    does not raise competition concerns under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_permira_sestant_kedrion_2022_decision
+  page: '8'
+  quote_snippet: (33) In the past, the Commission has considered the market for CDMO services
+    to be at least EEA-wide in scope.18 In the present case, the Notifying Parties did not express
+    a view on the appropriate market definition of CDMO services. For the purpose of this Decision,
+    there is no need to depart from the Commission’s decisional practice, as the Transaction
+    does not raise competition concerns under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_permira_sestant_kedrion_2022_decision
+  page: '9'
+  quote_snippet: (36) In the past, the Commission has considered the market for CRO services
+    to be at least EEA-wide in scope.20 In the present case, the Notifying Parties did not express
+    a view on the appropriate market definition of CRO services. For the purpose of this Decision,
+    there is no need to depart from the Commission’s decisional practice, as the Transaction
+    does not raise competition concerns under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_permira_sestant_kedrion_2022_decision
+  page: '9'
+  quote_snippet: (38) In the past, the Commission has considered the market for laboratory services
+    for clinical development to be at least EEA-wide in scope.22 In the present case, the Notifying
+    Parties did not express a view on the appropriate market definition of laboratory services.
+    For the purpose of this Decision, there is no need to depart from the Commission’s decisional
+    practice, as the Transaction does not raise competition concerns under any plausible market
+    definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_permira_sestant_kedrion_2022_decision
+  page: '9'
+  quote_snippet: (41) In previous decisions, the Commission considered that, for certain chemicals,
+    markets could be either national or EEA-wide.25 As the outcome of the competitive assessment
+    of the Transaction remains the same under all alternative geographic market definitions,
+    it is not necessary for the Commission to conclude on the exact geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_permira_sestant_kedrion_2022_decision
+  page: '15'
+  quote_snippet: (66) For the reasons set out above, the Transaction does not give rise to serious
+    doubts as to its compatibility with the internal market or a substantial part thereof in
+    relation to vertical effects for the supply of paste.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_permira_sestant_kedrion_2022_decision
+  page: '16'
+  quote_snippet: (72) For the reasons set out above, the Transaction does not give rise to serious
+    doubts as to its compatibility with the internal market or a substantial part thereof in
+    relation to vertical effects for CDMO services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_permira_sestant_kedrion_2022_decision
+  page: '17'
+  quote_snippet: (78) For the reasons set out above, the Transaction does not give rise to serious
+    doubts as to its compatibility with the internal market or a substantial part thereof in
+    relation to vertical effects for CRO services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_permira_sestant_kedrion_2022_decision
+  page: '18'
+  quote_snippet: (84) For the reasons set out above, the Transaction does not give rise to serious
+    doubts as to its compatibility with the internal market or a substantial part thereof in
+    relation to vertical effects for laboratory services for clinical development.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []
+case_type: merger
+ai_summary: null

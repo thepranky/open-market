@@ -1,0 +1,211 @@
+case_id: eu_ec_m10006_2021
+case_name: M.10006
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2021-02-05'
+parties: []
+source_documents:
+- doc_id: eu_ec_m10006_2021_decision
+  title: M.10006 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10006
+  pdf_url: http://publications.europa.eu/resource/cellar/ceb78718-9c76-11eb-b85c-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Coating Resins
+  definition_status: considered
+  notes: The Commission considered a segmentation by chemistry and delivery technology, and
+    potentially by industrial application, while noting that a distinction by industrial application
+    did not impact the outcome of the competitive assessment.
+- market_id: pm_2
+  name: Crosslinkers
+  definition_status: considered
+  notes: The Commission considered crosslinkers on the basis of chemistry, and for crosslinkers-amino
+    resins, crosslinkers-phenolic resins, aziridines crosslinkers, and carbodiimide crosslinkers,
+    it also potentially distinguished between industrial applications, but not for polyisocyanate
+    crosslinkers.
+- market_id: pm_3
+  name: Diisocyanates
+  definition_status: defined
+  notes: The Commission concluded that the market for diisocyanates can be segmented by compound
+    (i.e., HDI, IPDI, H12MDI, TDI, MDI, and mMDI) without further segmentation.
+- market_id: pm_4
+  name: Linear Polyols
+  definition_status: defined
+  notes: The Commission considered that polyester, polyether, and polycarbonate diols constitute
+    separate markets.
+- market_id: pm_5
+  name: Solar Coatings
+  definition_status: left_open
+  notes: The Commission left open the exact product market definition for solar coatings, considering
+    that it did not impact the competitive assessment due to the lack of any actual vertical
+    relationships.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Coating Resins — EEA-wide or Worldwide
+  definition_status: left_open
+  notes: The Commission did not conclude on the exact geographic market definition for coating
+    resins (EEA-wide or worldwide) as it did not impact the outcome of the competitive assessment.
+- market_id: gm_2
+  name: Crosslinkers — EEA-wide or Worldwide
+  definition_status: left_open
+  notes: The Commission did not conclude on the exact geographic market definition for crosslinkers
+    (EEA-wide or worldwide) as it did not impact the outcome of the competitive assessment.
+- market_id: gm_3
+  name: Diisocyanates — EEA-wide or Worldwide
+  definition_status: left_open
+  notes: The Commission did not conclude on the exact geographic market definition for diisocyanate
+    compounds (EEA-wide or worldwide) as it would not impact the competitive assessment.
+- market_id: gm_4
+  name: Linear Polyols — EEA-wide or Worldwide
+  definition_status: left_open
+  notes: The Commission left open the exact geographic market definition for polyols (EEA-wide
+    or worldwide) as it did not impact the outcome of the competitive assessment.
+- market_id: gm_5
+  name: Solar Coatings — EEA-wide or Worldwide
+  definition_status: left_open
+  notes: The Commission left open the exact geographic market definition for solar coatings
+    as it did not impact the competitive assessment due to the lack of actual vertical relationships.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m10006_2021_decision
+  page: '4'
+  quote_snippet: The Commission has previously considered a segmentation of the relevant product
+    market for the supply of coating resins by (i) delivery technology, (ii) chemistry and (iii)
+    industrial application.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m10006_2021_decision
+  page: '7'
+  quote_snippet: 'The Commission has on the basis of chemistry, previously identified two types
+    of crosslinkers: (i) crosslinkers-amino resins, and (ii) crosslinkers-phenolic resins.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m10006_2021_decision
+  page: '9'
+  quote_snippet: The Commission has previously considered a segmentation of diisocyanates by
+    compound, and has found that TDI and MDI constituted distinct product markets. The Commission
+    has also considered that HDI is a distinct product market without further segmentations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m10006_2021_decision
+  page: '6'
+  quote_snippet: In past decisions, the Commission considered that the geographic market for
+    the supply of coating resins is likely EEA-wide in scope, but has also examined a worldwide
+    market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m10006_2021_decision
+  page: '8'
+  quote_snippet: The Commission has previously left open the question of whether the relevant
+    geographic market is worldwide or EEA-wide in scope, and examined the potential effects
+    of the proposed concentration both on a worldwide and on an EEA-wide level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m10006_2021_decision
+  page: '10'
+  quote_snippet: In previous decisions in the sector, the Commission has considered the geographic
+    markets for the supply of diisocyanates to be at least EEA-wide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m10006_2021_decision
+  page: '11'
+  quote_snippet: In previous decisions, the Commission has considered the geographic markets
+    for the supply of polyols to be at least EEA-wide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m10006_2021_decision
+  page: '13'
+  quote_snippet: The market investigation was not conclusive as to whether the possible market
+    for solar coatings is EEA-wide or worldwide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m10006_2021_decision
+  page: '21'
+  quote_snippet: On the basis of the paragraphs (84) to (96) above, the Commission considers
+    that the Transaction does not raise serious doubts as to its compatibility with the internal
+    market as a result of horizontal non-coordinated effects on any of the Category C Markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

@@ -1,0 +1,443 @@
+case_id: eu_heidelbergcement_thoma_bravo_command_alkon_2022
+case_name: HEIDELBERGCEMENT / THOMA BRAVO / COMMAND ALKON
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2022-04-11'
+parties:
+- name: HEIDELBERGCEMENT
+  role: acquirer
+- name: THOMA BRAVO
+  role: acquirer
+- name: COMMAND ALKON
+  role: target
+source_documents:
+- doc_id: eu_heidelbergcement_thoma_bravo_command_alkon_2022_decision
+  title: HEIDELBERGCEMENT / THOMA BRAVO / COMMAND ALKON — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10529
+  pdf_url: http://publications.europa.eu/resource/cellar/a0ff3567-fd0b-11ec-b94a-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Automation software solutions used for the production of heavy building materials (HBM)
+  definition_status: considered
+  notes: The Commission left open further segmentations by industry, end-use application, and
+    functionality. However, for the purpose of the case, it carried out its analysis under the
+    segment for HBM automation software solutions, with distinctions by end-use application
+    (aggregates, asphalt, cement, ready-mix concrete, pre-cast concrete, and contractors) and
+    by individual functionalities (ticketing, order taking, scheduling, recipe, truck tracking,
+    pricing and quoting, business intelligence).
+- market_id: pm_2
+  name: Aggregates
+  definition_status: considered
+  notes: The Commission confirmed the relevance of its decisional practice and, while leaving
+    plausible segmentations between primary and secondary aggregates, and within primary aggregates
+    (sand and gravel vs. crushed rock) open, conducted its analysis on the narrowest plausible
+    product segments.
+- market_id: pm_3
+  name: Cement
+  definition_status: considered
+  notes: The Commission confirmed the relevance of its decisional practice and carried out its
+    analysis on the distinct segments for white cement and grey cement.
+- market_id: pm_4
+  name: Ready-mix concrete
+  definition_status: considered
+  notes: The Commission confirmed its previous decisional practice, conducting the analysis
+    on a single market for ready-mixed concrete.
+- market_id: pm_5
+  name: Pre-cast concrete products
+  definition_status: considered
+  notes: The Commission confirmed the relevance of its decisional practice. While leaving plausible
+    segmentations open, the analysis was conducted on the narrowest plausible product segments,
+    including concrete building blocks, paving materials made of concrete, pre-cast floors,
+    and building materials for load-bearing walls.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Automation software solutions used for the production of heavy building materials —
+    national (EEA affected)
+  definition_status: considered
+  notes: While the exact geographic market definition was left open, the Commission conducted
+    its analysis under national markets, where Command Alkon's market shares and market power
+    were highest, based on market investigation results indicating national/regional scope and
+    barriers.
+- market_id: gm_2
+  name: Aggregates — national (EEA affected)
+  definition_status: considered
+  notes: The Commission confirmed its decisional practice, leaving open whether the market is
+    local or national, but conducted its analysis on national markets due to no competition
+    concerns under any definition.
+- market_id: gm_3
+  name: Cement — national (EEA affected)
+  definition_status: considered
+  notes: The Commission confirmed its decisional practice, leaving the exact market definition
+    open but conducting its analysis on national markets for the purpose of the decision, as
+    no competition concerns arose irrespective of the scope.
+- market_id: gm_4
+  name: Ready-mix concrete — national (EEA affected)
+  definition_status: considered
+  notes: The Commission confirmed its decisional practice, leaving the market definition open
+    but conducting its analysis on national markets for the purpose of the decision, as no competition
+    concerns arose irrespective of the scope.
+- market_id: gm_5
+  name: Pre-cast concrete products — national (EEA affected)
+  definition_status: considered
+  notes: The Commission confirmed its decisional practice, leaving the market definition (national
+    or local for sub-markets) open but conducting its analysis on national markets for the purpose
+    of the decision, as no competition concerns arose irrespective of the scope.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_heidelbergcement_thoma_bravo_command_alkon_2022_decision
+  page: '5'
+  quote_snippet: However, the question whether the market for automation software solutions
+    should be further segmented by type of industry can be left open as the Transaction does
+    not give rise to competition concerns on the HBM industry segment, which is the only segment
+    on which Command Alkon is active. For the purpose of this case, the Commission will adopt
+    a conservative approach and carry out its analysis under the segment for HBM automation
+    software solutions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_heidelbergcement_thoma_bravo_command_alkon_2022_decision
+  page: '6'
+  quote_snippet: However, the question whether the market for HBM automation software solutions
+    should be further segmented by end-use application can be left open, as the Transaction
+    does not give rise to competition concerns, even when such a distinction is made, which
+    results in higher market shares for Command Alkon. For the purpose of this case, the Commission
+    will carry out its analysis with a distinction between aggregates, asphalt, cement, ready-mix
+    concrete, pre-cast concrete and contractors.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_heidelbergcement_thoma_bravo_command_alkon_2022_decision
+  page: '7'
+  quote_snippet: However, the question whether the market for HBM automation software solutions
+    should be further segmented by individual functionality can be left open as the Transaction
+    does not give rise to competition concerns, even when such a distinction is made, which
+    results in higher market shares and market power for Command Alkon. For the purpose of this
+    case, the Commission will carry out its analysis with a distinction between individual functionalities
+    (ticketing, order taking, scheduling, recipe, truck tracking, pricing and quoting, business
+    intelligence).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_heidelbergcement_thoma_bravo_command_alkon_2022_decision
+  page: '9'
+  quote_snippet: For the purposes of this Decision, the analysis will be conducted on the narrowest
+    plausible product segment, i.e. on the segments for primary aggregates and secondary aggregates,
+    with a further segmentation within primary aggregates between sand and gravel, on the one
+    hand, and crushed rock, on the other hand.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_heidelbergcement_thoma_bravo_command_alkon_2022_decision
+  page: '8'
+  quote_snippet: In past decisions, the Commission has considered aggregates as a separate product
+    market. The Commission has also considered, but ultimately left open, a further segmentation
+    between (i) primary aggregates (crushed rock, gravel and sand) and (ii) secondary/recycled
+    aggregates (such as colliery and china clay waste, slate, power station ash, slags and demolition/construction
+    waste).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_heidelbergcement_thoma_bravo_command_alkon_2022_decision
+  page: '10'
+  quote_snippet: For the purposes of this Decision, the analysis will be carried out on the
+    segments for white cement and grey cement separately.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_heidelbergcement_thoma_bravo_command_alkon_2022_decision
+  page: '10'
+  quote_snippet: In past decisions, the Commission has defined distinct product markets for
+    white cement and grey cement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_heidelbergcement_thoma_bravo_command_alkon_2022_decision
+  page: '11'
+  quote_snippet: In the case at hand, the Commission does not see any reason to depart from
+    its previous decisional practice. For the purposes of this Decision, the analysis will thus
+    be conducted on a single market for ready-mixed concrete.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_heidelbergcement_thoma_bravo_command_alkon_2022_decision
+  page: '11'
+  quote_snippet: In past decisions, the Commission has consistently considered ready-mixed concrete
+    as a single, distinct product market regardless of different ready-mixed concrete specifications
+    and the facilities used (mobile or fixed plants).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_heidelbergcement_thoma_bravo_command_alkon_2022_decision
+  page: '12'
+  quote_snippet: For the purposes of this Decision, the analysis will be conducted on the narrowest
+    plausible product segments, i.e. concrete building blocks, paving materials made of concrete,
+    pre-cast floors and building materials for load-bearing walls.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_heidelbergcement_thoma_bravo_command_alkon_2022_decision
+  page: '12'
+  quote_snippet: The Commission has previously considered that these different concrete products
+    form part of a single product market for pre-cast concrete products.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_heidelbergcement_thoma_bravo_command_alkon_2022_decision
+  page: '7'
+  quote_snippet: On balance, the results from the market investigation suggest that the relevant
+    geographic markets are national and possibly regional in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_heidelbergcement_thoma_bravo_command_alkon_2022_decision
+  page: '8'
+  quote_snippet: However, the exact geographic market definition can be left open as the Transaction
+    does not give rise to competition concerns under any plausible market definition. For the
+    purpose of this case, the Commission will carry out its analysis under national markets,
+    which is where Command Alkon’s market shares and market power are the highest.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_heidelbergcement_thoma_bravo_command_alkon_2022_decision
+  page: '7'
+  quote_snippet: According to one customer of Command Alkon for instance ‘the software used
+    may vary across Member States because each Member State may have a specific set of norms
+    applicable to the production of ready-mix concrete’.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_heidelbergcement_thoma_bravo_command_alkon_2022_decision
+  page: '9'
+  quote_snippet: From a geographic point of view, the Commission has considered the aggregates
+    market to be local or at most national in scope and has retained a radius of 50 to 80 km
+    depending on the particularities of the areas concerned.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_heidelbergcement_thoma_bravo_command_alkon_2022_decision
+  page: '9'
+  quote_snippet: In any event, the question whether the market is local or national in scope
+    can be left open, as the Transaction does not give rise to any competition concerns under
+    any of these market definitions. For the purposes of this Decision, as explained in further
+    detail below, the Commission will carry out its analysis on national markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_heidelbergcement_thoma_bravo_command_alkon_2022_decision
+  page: '10'
+  quote_snippet: From a geographic point of view, the Commission has considered that the geographic
+    market for grey cement consists of a group of geographic markets centred on different cement
+    plants, overlapping with one another. The scope for the relevant geographic markets was
+    determined by the distance from the plant at which cement may be sold. Generally, radii
+    of 150 km or 250 km have been taken into account.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_heidelbergcement_thoma_bravo_command_alkon_2022_decision
+  page: '10'
+  quote_snippet: As for white cement, the Commission has considered this market to be at least
+    EEA-wide while leaving open the possibility to define national markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_heidelbergcement_thoma_bravo_command_alkon_2022_decision
+  page: '10'
+  quote_snippet: In any event, the market definition can be left open, as the Transaction does
+    not give rise to competition concerns irrespective of the exact scope of the geographic
+    market. For the purposes of this Decision, as explained in further detail below, the Commission
+    will carry out its analysis on national markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_heidelbergcement_thoma_bravo_command_alkon_2022_decision
+  page: '11'
+  quote_snippet: The Commission has considered that the geographic market for ready-mixed concrete
+    can be defined as catchment areas around ready-mix concrete plants with a radius of 25 km
+    around production facilities according to the most recent decisions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_heidelbergcement_thoma_bravo_command_alkon_2022_decision
+  page: '11'
+  quote_snippet: In any event, the market definition can be left open, as the Transaction does
+    not give rise to competition concerns irrespective of the exact scope of the geographic
+    market. For the purposes of this Decision, as explained in further detail below, the Commission
+    will carry out its analysis on national markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_heidelbergcement_thoma_bravo_command_alkon_2022_decision
+  page: '12'
+  quote_snippet: Geographic-wise, the Commission has considered that the overall market for
+    pre-cast concrete products was national in scope. For the sub-markets for concrete building
+    blocks, however, while leaving the question open, the Commission has considered the definition
+    of national or local markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

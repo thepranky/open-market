@@ -1,0 +1,254 @@
+case_id: eu_amd_zt_2025
+case_name: AMD / ZT
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2025-03-12'
+parties:
+- name: AMD
+  role: acquirer
+- name: ZT
+  role: target
+source_documents:
+- doc_id: eu_amd_zt_2025_decision
+  title: AMD / ZT — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11749
+  pdf_url: http://publications.europa.eu/resource/cellar/5920f694-3f88-11f0-8a44-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: The market for the supply of FPGAs
+  definition_status: left_open
+  notes: The Commission left open whether the market for FPGAs should be further segmented based
+    on performance levels, use in computer versus non-computer devices, industrial sector/specific
+    use cases, data centre versus non-data centre usage, and whether FPGA-based SmartNICs are
+    part of the same market as FPGAs.
+- market_id: pm_2
+  name: The market for the supply of data centre servers
+  definition_status: left_open
+  notes: The Commission left open whether the market for the supply of data centre servers should
+    be segmented further by price band (low-end, mid-range, and high-end) or based on use case/workload.
+geographic_markets_considered:
+- market_id: gm_1
+  name: The market for the supply of FPGAs — global in scope
+  definition_status: considered
+  notes: null
+- market_id: gm_2
+  name: The market for the supply of data centre servers — global in scope
+  definition_status: considered
+  notes: null
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_amd_zt_2025_decision
+  page: '3'
+  quote_snippet: The relevant markets for the assessment of this Transaction are (i) the market
+    for the supply of FPGAs;
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_amd_zt_2025_decision
+  page: '5'
+  quote_snippet: The market investigation confirms the Commission’s previous practice for defining
+    the relevant product market for FPGAs. All respondents that expressed a view considered
+    that the market for the supply of FPGAs constitutes a distinct market from the supply of
+    other semiconductors.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_amd_zt_2025_decision
+  page: '5'
+  quote_snippet: Based on the above, the Commission considers that, for the purpose of this
+    Decision, it can be left open whether the market for FPGAs should be further segmented (i)
+    based on the performance levels; (ii) between FPGAs for computer and non-computer devices;
+    (iii) between FPGAs used in different industrial sectors; (iv) based on the specific use
+    cases; and/or (v) between FPGAs for data centres and FPGAs used outside data centres. The
+    Commission also considers that it can be left open whether FPGA-based SmartNICs are part
+    of the same market as FPGAs. The Commission considers that the outcome of the competitive
+    assessment does not change regardless of these potential segmentations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_amd_zt_2025_decision
+  page: '3'
+  quote_snippet: and (ii) the market for the supply of data centre servers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_amd_zt_2025_decision
+  page: '8'
+  quote_snippet: The market investigation confirms the Commission’s previous practice for defining
+    the relevant product market for the supply of data centre servers. The majority of respondents
+    that expressed a view consider that there is a distinct product market for the supply of
+    data centre servers. Equally, the majority of respondents that expressed a view also considered
+    that potential segmentations of the market for the supply of data centre servers by performance
+    (using the afore-mentioned price bands as a proxy) remain valid.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_amd_zt_2025_decision
+  page: '8'
+  quote_snippet: 'Based on the above, the Commission considers that, for the purpose of this
+    Decision, it can be left open whether the market for the supply of data centre servers should
+    be segmented further by price band (low-end: below USD 100 000; mid-range: USD 100 000 –
+    USD 999 999; and high-end: USD 1 million and above) or based on any other criteria such
+    as use case/workload. The Commission considers that the outcome of the competitive assessment
+    does not change regardless of any market definition based on these segmentations.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_amd_zt_2025_decision
+  page: '6'
+  quote_snippet: In previous decisions, the Commission found that the market for the supply
+    of FPGAs (including all plausible segmentations) was global in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_amd_zt_2025_decision
+  page: '6'
+  quote_snippet: All respondents in the Commission’s market investigation who expressed a view
+    confirmed that the geographic scope of the market for FPGAs and any possible segments is
+    global in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_amd_zt_2025_decision
+  page: '6'
+  quote_snippet: In line with the precedents and with the results of the market investigation,
+    the Commission considers that, for the purpose of this Decision, the relevant geographic
+    market for FPGAs (and any possible segments) is global in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_amd_zt_2025_decision
+  page: '8'
+  quote_snippet: In NVIDIA/Mellanox, the Commission found the market for data centre servers
+    to be global in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_amd_zt_2025_decision
+  page: '9'
+  quote_snippet: All respondents in the Commission’s market investigation who expressed a view
+    confirmed that the geographic scope of the market for data centre servers and any possible
+    segments is global in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_amd_zt_2025_decision
+  page: '9'
+  quote_snippet: In line with the precedents and with the results of the market investigation,
+    the Commission considers that, for the purpose of this Decision, the relevant geographic
+    market for the supply of data centre servers (and any possible segments) is global in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_amd_zt_2025_decision
+  page: '19'
+  quote_snippet: In view of the above considerations and in light of the results of the market
+    investigation and the evidence and information available to it, the Commission concludes
+    that the Transaction is unlikely to raise serious doubts as to its compatibility with the
+    internal market as a result of conglomerate non-coordinated effects, due to the absence
+    of significant degree of market power on any of the Conglomerate Leveraging Markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

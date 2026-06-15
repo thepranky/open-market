@@ -1,0 +1,471 @@
+case_id: eu_msc_gip_iii_italo_2024
+case_name: MSC / GIP III / ITALO
+authority: European Commission
+jurisdiction: EU
+sector: transport
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2024-02-27'
+parties:
+- name: MSC
+  role: acquirer
+- name: GIP III
+  role: acquirer
+- name: ITALO
+  role: target
+source_documents:
+- doc_id: eu_msc_gip_iii_italo_2024_decision
+  title: MSC / GIP III / ITALO — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11326
+  pdf_url: http://publications.europa.eu/resource/cellar/b6d880de-039f-11ef-a251-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Passenger high-speed rail services
+  definition_status: left_open
+  notes: The Commission considered a separate market for passenger rail transport services,
+    identifying relevant markets as point-to-point travel on routes (O&D pairs). It also considered
+    whether to distinguish between high-speed and non-high-speed services, and between time-sensitive
+    and non-time-sensitive passengers, but ultimately left the exact product market definition
+    open.
+- market_id: pm_2
+  name: Provision of travel agency services
+  definition_status: left_open
+  notes: The Commission considered segmenting this market by type of customers (business vs.
+    leisure travel) and by distribution channel (online vs. brick-and-mortar agencies). MSC
+    Group is active in offline services.
+- market_id: pm_3
+  name: Provision of tour operator services
+  definition_status: left_open
+  notes: The Commission's prior practice distinguished between leisure and business travel within
+    this market. MSC Group is active in leisure travel services by tour operators.
+- market_id: pm_4
+  name: Provision of passenger ferry services
+  definition_status: considered
+  notes: null
+- market_id: pm_5
+  name: Provision of passenger cruise services
+  definition_status: considered
+  notes: The market for oceanic cruises is considered distinct from coastal/riverine cruises
+    and land-based holidays.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Passenger high-speed rail services — point-to-point routes (Italy affected)
+  definition_status: left_open
+  notes: Prior decisions identified relevant markets as point-to-point travel (O&D pair). Trenitalia
+    also assesses on a national basis (Italy as a whole). The exact geographic market definition
+    was left open.
+- market_id: gm_2
+  name: Provision of travel agency services — national (Italy affected)
+  definition_status: left_open
+  notes: Past decisions considered the market likely national due to linguistic and cultural
+    borders. More recently, online travel intermediation was assessed at the EEA level. The
+    Notifying Parties focus on Italy for MSC Group's offline activities.
+- market_id: gm_3
+  name: Provision of tour operator services — national (Italy affected)
+  definition_status: left_open
+  notes: Prior decisions considered these markets national in scope.
+- market_id: gm_4
+  name: Provision of passenger ferry services — point-to-point routes (Mediterranean Sea affected)
+  definition_status: considered
+  notes: The geographic market for passenger ferry services was considered on an O&D basis,
+    consistent with prior decisions and unchallenged by the Notifying Parties. MSC Group is
+    active in the Mediterranean Sea.
+- market_id: gm_5
+  name: Provision of passenger cruise services — national (Italy affected)
+  definition_status: considered
+  notes: The geographic market for passenger cruise services was considered national in scope,
+    consistent with precedents that cited country-specific marketing channels and unchallenged
+    by the Notifying Parties.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_msc_gip_iii_italo_2024_decision
+  page: '4'
+  quote_snippet: In its prior decisions, the Commission has defined a separate market for passenger
+    rail transport services.8
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_msc_gip_iii_italo_2024_decision
+  page: '4'
+  quote_snippet: In its previous decisions, the Commission has not considered whether a distinction
+    between high-speed and non high-speed passenger rail services needs to be made. The Notifying
+    Parties submit that Italo is only active as an operator of the high-speed rail network in
+    Italy, which is separate from trains on the non-high speed part of the Italian rail network.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_msc_gip_iii_italo_2024_decision
+  page: '5'
+  quote_snippet: Given that the Transaction would not raise serious doubts as to its compatibility
+    with the internal market under any plausible market definition, the exact product and geographic
+    market definition can be left open and in particular whether the market should be further
+    segmented by distinguishing between time-sensitive and non-time sensitive passengers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_msc_gip_iii_italo_2024_decision
+  page: '5'
+  quote_snippet: The Notifying Parties submit that MSC Group is active in the market for the
+    provision of travel agency services in Italy through its subsidiaries Bluvacanze S.r.l.
+    (in the leisure sub-segment) and Cisalpina Tour S.r.l. (in the business sub-segment).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_msc_gip_iii_italo_2024_decision
+  page: '5'
+  quote_snippet: Given that the Transaction would not raise serious doubts as to its compatibility
+    with the internal market under any plausible market definition, the exact product and geographic
+    market definition can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_msc_gip_iii_italo_2024_decision
+  page: '5'
+  quote_snippet: The Commission has identified in its prior decisional practice a distinct market
+    for the supply of travel services by tour operators, further distinguishing between leisure
+    and business travel.17
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_msc_gip_iii_italo_2024_decision
+  page: '6'
+  quote_snippet: The Notifying Parties submit that MSC Group is active in the market for the
+    supply of leisure travel services by tour operators through its subsidiary Going S.r.l.
+    which provides personalised package holidays, and have therefore submitted market share
+    data for the market of the supply of leisure travel services by tour operators in Italy.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_msc_gip_iii_italo_2024_decision
+  page: '6'
+  quote_snippet: Given that the Transaction would not raise serious doubts as to its compatibility
+    with the internal market under any plausible market definition, the exact product and geographic
+    market definition can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_msc_gip_iii_italo_2024_decision
+  page: '6'
+  quote_snippet: In previous decisions, the Commission has considered a separate market for
+    the scheduled maritime transport of passengers by ferry.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_msc_gip_iii_italo_2024_decision
+  page: '6'
+  quote_snippet: Consequently, for the purposes of the analysis of this Transaction, the Commission
+    considered the relevant markets for the provision of scheduled maritime transport of passengers
+    by ferry on the relevant O&Ds.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_msc_gip_iii_italo_2024_decision
+  page: '6'
+  quote_snippet: In its previous decisions, the Commission has considered the market for the
+    supply of oceanic cruises to be distinct from the market for the supply of coastal ferry
+    or riverine cruises, and also separate from the market for the supply of other (land-based)
+    holidays.20
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_msc_gip_iii_italo_2024_decision
+  page: '6'
+  quote_snippet: Consequently, for the purposes of the analysis of this Transaction, the Commission
+    considered the relevant markets for the provision of passenger cruise services on a national
+    basis.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_msc_gip_iii_italo_2024_decision
+  page: '4'
+  quote_snippet: identified the relevant markets as those for point-to-point travel on the routes
+    concerned. This market definition corresponds to the demand-side perspective whereby passengers
+    do not readily substitute destinations. On this basis, every combination of a point of origin
+    and a point of destination (‘O&D pair’) is considered to be a separate market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_msc_gip_iii_italo_2024_decision
+  page: '4'
+  quote_snippet: In a call with Trenitalia (the state-owned Italian high-speed railway operator),
+    Trenitalia stated that they typically assess their position and that of Italo on the basis
+    of specific routes (‘O&D’) as well as on a national basis (i.e., in Italy as a whole).10
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_msc_gip_iii_italo_2024_decision
+  page: '5'
+  quote_snippet: Given that the Transaction would not raise serious doubts as to its compatibility
+    with the internal market under any plausible market definition, the exact product and geographic
+    market definition can be left open and in particular whether the market should be further
+    segmented by distinguishing between time-sensitive and non-time sensitive passengers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_msc_gip_iii_italo_2024_decision
+  page: '5'
+  quote_snippet: As regards the geographic market definition, the Commission has in the past
+    considered (but ultimately left open) that the market for the provision of travel agency
+    services is likely national in scope because of linguistic and cultural borders.14 More
+    recently, the Commission assessed the effects of a transaction on the market for online
+    travel intermediation at the EEA level, because online travel agents are generally active
+    and their services are rather homogenous across the EEA and language and regulatory barriers
+    to expand across Member States had reduced over the years.15
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_msc_gip_iii_italo_2024_decision
+  page: '5'
+  quote_snippet: The Notifying Parties submit that MSC Group is active in the market for the
+    provision of travel agency services in Italy through its subsidiaries Bluvacanze S.r.l.
+    (in the leisure sub-segment) and Cisalpina Tour S.r.l. (in the business sub-segment).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_msc_gip_iii_italo_2024_decision
+  page: '5'
+  quote_snippet: Given that the Transaction would not raise serious doubts as to its compatibility
+    with the internal market under any plausible market definition, the exact product and geographic
+    market definition can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_msc_gip_iii_italo_2024_decision
+  page: '6'
+  quote_snippet: Regarding geographic market definition, the Commission considered the markets
+    as national in scope.18
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_msc_gip_iii_italo_2024_decision
+  page: '6'
+  quote_snippet: The Notifying Parties submit that MSC Group is active in the market for the
+    supply of leisure travel services by tour operators through its subsidiary Going S.r.l.
+    which provides personalised package holidays, and have therefore submitted market share
+    data for the market of the supply of leisure travel services by tour operators in Italy.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_msc_gip_iii_italo_2024_decision
+  page: '6'
+  quote_snippet: Given that the Transaction would not raise serious doubts as to its compatibility
+    with the internal market under any plausible market definition, the exact product and geographic
+    market definition can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_msc_gip_iii_italo_2024_decision
+  page: '6'
+  quote_snippet: As regards the geographic market definition, the Commission has in the past
+    adopted the O&D approach.19 The Notifying Parties do not contest this approach.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_msc_gip_iii_italo_2024_decision
+  page: '6'
+  quote_snippet: Consequently, for the purposes of the analysis of this Transaction, the Commission
+    considered the relevant markets for the provision of scheduled maritime transport of passengers
+    by ferry on the relevant O&Ds.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_msc_gip_iii_italo_2024_decision
+  page: '6'
+  quote_snippet: As regards geographic market definition, the Commission has in its precedents
+    considered the market as national in scope because marketing channels are predominantly
+    country specific.21 The Notifying Parties do not contest this approach.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_msc_gip_iii_italo_2024_decision
+  page: '6'
+  quote_snippet: Consequently, for the purposes of the analysis of this Transaction, the Commission
+    considered the relevant markets for the provision of passenger cruise services on a national
+    basis.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

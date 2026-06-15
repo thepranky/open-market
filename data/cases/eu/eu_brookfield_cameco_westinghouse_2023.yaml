@@ -1,0 +1,536 @@
+case_id: eu_brookfield_cameco_westinghouse_2023
+case_name: BROOKFIELD / CAMECO / WESTINGHOUSE
+authority: European Commission
+jurisdiction: EU
+sector: extractives
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2023-10-16'
+parties:
+- name: BROOKFIELD
+  role: acquirer
+- name: CAMECO
+  role: acquirer
+- name: WESTINGHOUSE
+  role: target
+source_documents:
+- doc_id: eu_brookfield_cameco_westinghouse_2023_decision
+  title: BROOKFIELD / CAMECO / WESTINGHOUSE — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10988
+  pdf_url: http://publications.europa.eu/resource/cellar/ce87f45a-e4f9-11ee-8b2b-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Supply of uranium concentrate
+  definition_status: considered
+  notes: The Commission considered for the purposes of this Decision that there is a market
+    for the supply of uranium concentrate which encompasses all ancillary activities such as
+    exploration, mining and milling. The question of whether segmentation between primary and
+    secondary supply is warranted was left open, as the Transaction did not raise serious doubts
+    under the narrowest plausible market definition (separate primary and secondary supply markets).
+- market_id: pm_2
+  name: Services to convert uranium concentrate to UF6
+  definition_status: segmented
+  notes: The Commission concluded that there is a market for conversion of uranium concentrate
+    into UF6 which does not include conversion of uranium concentrate into UO2, and includes
+    both primary and secondary sources. The question of whether RepU conversion into UF6 and
+    conversion of uranium concentrate into UF6 are part of the same product market or belong
+    to separate product markets was left open.
+- market_id: pm_3
+  name: Manufacture and supply of FAs for HWRs
+  definition_status: defined
+  notes: The Commission concluded that there is a separate market for the manufacture and supply
+    of FAs for HWRs, distinct from FAs for LWRs.
+- market_id: pm_4
+  name: Manufacture and supply of FAs for LWRs
+  definition_status: defined
+  notes: The Commission concluded that there is a separate market for the manufacture and supply
+    of FAs for LWRs, distinct from FAs for HWRs, and that this market should be segmented between
+    FAs for PWRs and BWRs.
+- market_id: pm_5
+  name: Manufacture and supply of FAs for PWRs
+  definition_status: segmented
+  notes: The Commission concluded that FAs for PWRs and BWRs constitute different product markets
+    within the LWR segment. The question of whether the market for FAs for PWRs should be further
+    segmented into separate markets for FAs for VVERs and for non-VVER PWRs was left open.
+- market_id: pm_6
+  name: Manufacture and supply of FAs for BWRs
+  definition_status: defined
+  notes: The Commission concluded that FAs for BWRs and PWRs constitute different product markets
+    within the LWR segment.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Supply of uranium concentrate — worldwide
+  definition_status: left_open
+  notes: The Commission concluded that the market for the supply of uranium concentrate is worldwide,
+    but considered that it can be left open whether Russian and/or Chinese suppliers are excluded
+    in that market.
+- market_id: gm_2
+  name: Services to convert uranium concentrate to UF6 — worldwide
+  definition_status: left_open
+  notes: The Commission considered that it can be left open whether the geographic scope of
+    the market for the conversion of uranium concentrate into UF6 is worldwide, or whether it
+    is worldwide but excluding Russian and/or Chinese conversion suppliers.
+- market_id: gm_3
+  name: Manufacture and supply of FAs — EEA-wide or worldwide
+  definition_status: left_open
+  notes: The Commission considered that it can be left open whether the geographic scope of
+    the markets for the manufacture and supply of FAs is EEA-wide, EEA and the UK, or worldwide,
+    and whether Russian and/or Chinese suppliers are excluded from the worldwide market. However,
+    for the competitive assessment, the Commission used separate EEA-wide markets for PWRs and
+    BWRs.
+- market_id: gm_4
+  name: Manufacture and supply of FAs for PWRs — EEA-wide
+  definition_status: considered
+  notes: For the purposes of its assessment, the Commission considered separate EEA-wide markets
+    for the manufacture and supply of FAs for PWRs and BWRs.
+- market_id: gm_5
+  name: Manufacture and supply of FAs for BWRs — EEA-wide
+  definition_status: considered
+  notes: For the purposes of its assessment, the Commission considered separate EEA-wide markets
+    for the manufacture and supply of FAs for PWRs and BWRs.
+- market_id: gm_6
+  name: Manufacture and supply of FAs for VVERs — EEA including supplies from Russia
+  definition_status: considered
+  notes: The Commission considered that the narrowest plausible market definition for the manufacture
+    and supply of FAs for VVERs should entail the EEA including supplies from Russia, due to
+    historic exclusive supply relationships with Russian suppliers.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_brookfield_cameco_westinghouse_2023_decision
+  page: '11'
+  quote_snippet: Based on the above, the Commission considers, in line with the Commission’s
+    precedents and for the purposes of this Decision, that there is a market for the supply
+    of uranium concentrate which encompasses all ancillary activities such as exploration, mining
+    and milling. Furthermore, the Commission considers that the market for the supply of uranium
+    concentrate is likely to consist of both primary and secondary supply but that whether any
+    such segmentation is warranted can be left open as the Transaction does not raise serious
+    doubts as to its compatibility with the internal market or the functioning of the EEA Agreement
+    even under the narrowest plausible market definition, i.e., separate markets for the primary
+    supply of uranium concentrate and for the secondary supply of uranium concentrate.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_brookfield_cameco_westinghouse_2023_decision
+  page: '10'
+  quote_snippet: The majority of respondents to the market investigation34 confirmed that there
+    is a distinct market for the supply of uranium concentrate and that it encompasses all ancillary
+    activities such as exploration, mining and milling.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_brookfield_cameco_westinghouse_2023_decision
+  page: '11'
+  quote_snippet: In relation to primary and secondary sources, the majority of respondents to
+    the market investigation stated that, in addition to primary sources, they supply or procure
+    uranium concentrate also to/from secondary sources, and that there are no significant differences
+    between primary and secondary supply of uranium concentrate in terms of product characteristics,
+    pricing or supply arrangements (e.g., procurement, contract specifics, storage, transport).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_brookfield_cameco_westinghouse_2023_decision
+  page: '15'
+  quote_snippet: Based on the above, the Commission concludes that, in line with the Commission’s
+    prior decisions, there is a market for conversion of uranium concentrate into UF6 which
+    does not include conversion of uranium concentrate into UO2. The Commission considers for
+    the purposes of this Decision a market for conversion of uranium concentrate into UF6 including
+    both primary and secondary sources. The question of whether RepU conversion into UF6 and
+    conversion of uranium concentrate into UF6 are part of the same product market or belong
+    to separate product markets can be left open, as the Transaction does not raise serious
+    doubts as to its compatibility with the internal market or the functioning of the EEA Agreement
+    under any plausible product markets, including in a potential market for the conversion
+    of uranium concentrate into UF6 which includes RepU conversion into UF6. For the purposes
+    of this Decision, the Commission will conduct its competitive assessment under both plausible
+    product markets (i.e., conversion of uranium concentrate into UF6 excluding RepU conversion
+    into UF6 and conversion of uranium concentrate into UF6 including RepU conversion into UF6).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_brookfield_cameco_westinghouse_2023_decision
+  page: '12'
+  quote_snippet: The results of the market investigation indicate that services to convert uranium
+    concentrate into UF6 should be distinguished from services to convert uranium concentrate
+    into ceramic grade natural UO2.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_brookfield_cameco_westinghouse_2023_decision
+  page: '13'
+  quote_snippet: The results of the market investigation further confirm that UF6 procured from
+    secondary sources, such as enrichers’ underfeeding and inventories of utilities, governments,
+    and other undertakings, are considered a substitute to the procurement of services to convert
+    uranium concentrate into UF6.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_brookfield_cameco_westinghouse_2023_decision
+  page: '17'
+  quote_snippet: Based on the above, the Commission concludes that there are separate markets
+    for the manufacture and supply of FAs for HWRs and for LWRs, and that the market for the
+    manufacture and supply of FAs for LWRs should be segmented between FAs for PWRs and BWRs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_brookfield_cameco_westinghouse_2023_decision
+  page: '16'
+  quote_snippet: All respondents who expressed a view agreed that FAs for HWRs and FAs for LWRs
+    belong to separate product markets, mainly because HWRs operate with a different fuel, moderator,
+    and cooling agent compared to LWRs and the design and fabrication of fuel assemblies for
+    HWRs requires specific expertise and production equipment, which is distinct from LWRs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_brookfield_cameco_westinghouse_2023_decision
+  page: '17'
+  quote_snippet: Based on the above, the Commission concludes that there are separate markets
+    for the manufacture and supply of FAs for HWRs and for LWRs, and that the market for the
+    manufacture and supply of FAs for LWRs should be segmented between FAs for PWRs and BWRs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_brookfield_cameco_westinghouse_2023_decision
+  page: '16'
+  quote_snippet: All respondents who expressed a view agreed that FAs for HWRs and FAs for LWRs
+    belong to separate product markets, mainly because HWRs operate with a different fuel, moderator,
+    and cooling agent compared to LWRs and the design and fabrication of fuel assemblies for
+    HWRs requires specific expertise and production equipment, which is distinct from LWRs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_brookfield_cameco_westinghouse_2023_decision
+  page: '17'
+  quote_snippet: Based on the above, the Commission concludes that there are separate markets
+    for the manufacture and supply of FAs for HWRs and for LWRs, and that the market for the
+    manufacture and supply of FAs for LWRs should be segmented between FAs for PWRs and BWRs.
+    The Commission considers that it can be left open whether the market for the manufacture
+    and supply of FAs for PWRs should be further segmented into separate markets for FAs for
+    VVERs and for non-VVER PWRs as the Transaction does not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement even under the narrowest
+    plausible market definition, i.e., distinct markets for the manufacture and supply of FAs
+    for VVERs and the manufacture and supply of FAs for non-VVER PWRs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_brookfield_cameco_westinghouse_2023_decision
+  page: '16'
+  quote_snippet: All customers and a majority of competitors agreed that, within the LWR segment,
+    FAs for the different nuclear reactor types, i.e. PWRs and BWRs constitute different product
+    markets, mainly because FAs for the different types of LWR are not substitutable from a
+    demand perspective, due to significant design differences.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_brookfield_cameco_westinghouse_2023_decision
+  page: '17'
+  quote_snippet: In relation to VVERs (a type of PWR), the market investigation confirmed that
+    VVERs cannot use FAs designed for non-VVER PWRs, and vice-versa.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_brookfield_cameco_westinghouse_2023_decision
+  page: '17'
+  quote_snippet: Based on the above, the Commission concludes that there are separate markets
+    for the manufacture and supply of FAs for HWRs and for LWRs, and that the market for the
+    manufacture and supply of FAs for LWRs should be segmented between FAs for PWRs and BWRs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_brookfield_cameco_westinghouse_2023_decision
+  page: '16'
+  quote_snippet: All customers and a majority of competitors agreed that, within the LWR segment,
+    FAs for the different nuclear reactor types, i.e. PWRs and BWRs constitute different product
+    markets, mainly because FAs for the different types of LWR are not substitutable from a
+    demand perspective, due to significant design differences.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_brookfield_cameco_westinghouse_2023_decision
+  page: '19'
+  quote_snippet: On the basis of the above, the Commission concludes, in line with the Commission’s
+    precedents, that the market for the supply of uranium concentrate is a worldwide market,
+    but considers that it can be left open whether Russian and/or Chinese suppliers are excluded
+    in that market as the Transaction does not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement even under the narrowest
+    plausible geographic market definition, i.e., a worldwide market excluding Russian and Chinese
+    suppliers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_brookfield_cameco_westinghouse_2023_decision
+  page: '18'
+  quote_snippet: The majority of respondents to the market investigation confirm that their
+    customers and/or suppliers of uranium concentrate can be located anywhere in the world,
+    they do not consider transport costs for uranium concentrate to be a hindering factor for
+    supplying uranium concentrate to any part of the world and prices at which uranium concentrate
+    is sold do not differ significantly across different global geographic areas.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_brookfield_cameco_westinghouse_2023_decision
+  page: '21'
+  quote_snippet: Based on the above, the Commission considers that it can be left open whether
+    the geographic scope of the market for the conversion of uranium concentrate into UF6 is
+    worldwide, or whether it is worldwide but excluding Russian and/or Chinese conversion suppliers,
+    as the Transaction does not raise serious doubts as to its compatibility with the internal
+    market or the functioning of the EEA Agreement even under the narrowest plausible market
+    definitions, i.e., a worldwide market that excludes both Russian and Chinese conversion
+    suppliers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_brookfield_cameco_westinghouse_2023_decision
+  page: '19'
+  quote_snippet: The clear majority of utilities replied that their providers of services to
+    convert uranium concentrate into UF6 can be anywhere in the world.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_brookfield_cameco_westinghouse_2023_decision
+  page: '23'
+  quote_snippet: Based on the above, the Commission considers that it can be left open whether
+    the geographic scope of the markets for the manufacture and supply of FAs is EEA-wide, EEA
+    and the UK, or worldwide, and considers that it can be left open whether Russian and/or
+    Chinese suppliers are excluded from the worldwide market, as the Transaction does not raise
+    serious doubts as to its compatibility with the internal market or the functioning of the
+    EEA Agreement even under the narrowest plausible market definitions, i.e., separate EEA-wide
+    markets for the manufacture and supply of FAs for (i) PWRs and (ii) BWRs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_brookfield_cameco_westinghouse_2023_decision
+  page: '21'
+  quote_snippet: The majority of respondents to the market investigation agree that the market
+    for the manufacture and supply of FAs is EEA-wide, primarily due to (i) the importance of
+    proximity between the FA supplier and the NPP, considering transportation duration, risks
+    and costs, (ii) regulatory requirements, that can differ between the EEA and other regions
+    and (iii) import duties.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_brookfield_cameco_westinghouse_2023_decision
+  page: '23'
+  quote_snippet: Based on the above, the Commission considers that it can be left open whether
+    the geographic scope of the markets for the manufacture and supply of FAs is EEA-wide, EEA
+    and the UK, or worldwide, and considers that it can be left open whether Russian and/or
+    Chinese suppliers are excluded from the worldwide market, as the Transaction does not raise
+    serious doubts as to its compatibility with the internal market or the functioning of the
+    EEA Agreement even under the narrowest plausible market definitions, i.e., separate EEA-wide
+    markets for the manufacture and supply of FAs for (i) PWRs and (ii) BWRs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_brookfield_cameco_westinghouse_2023_decision
+  page: '23'
+  quote_snippet: Based on the above, the Commission considers that it can be left open whether
+    the geographic scope of the markets for the manufacture and supply of FAs is EEA-wide, EEA
+    and the UK, or worldwide, and considers that it can be left open whether Russian and/or
+    Chinese suppliers are excluded from the worldwide market, as the Transaction does not raise
+    serious doubts as to its compatibility with the internal market or the functioning of the
+    EEA Agreement even under the narrowest plausible market definitions, i.e., separate EEA-wide
+    markets for the manufacture and supply of FAs for (i) PWRs and (ii) BWRs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_brookfield_cameco_westinghouse_2023_decision
+  page: '23'
+  quote_snippet: As regards the manufacture and supply of FAs for VVERs in particular, the Commission
+    considers that, due to the historic exclusive supply relationships of VVER utilities with
+    Russian suppliers,136 and in line with the Commission’s findings in paragraph (102) above,
+    the narrowest plausible market definition should entail the EEA including supplies from
+    Russia.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_brookfield_cameco_westinghouse_2023_decision
+  page: '22'
+  quote_snippet: In relation to Russian suppliers of FAs, only VVER customers stated that they
+    currently procure FAs from Russian suppliers, and only those VVER customers stated that,
+    absent any relevant administrative barriers (sanctions etc.), they will procure FAs from
+    Russian suppliers in the next 5-10 years, though less than they procure currently.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

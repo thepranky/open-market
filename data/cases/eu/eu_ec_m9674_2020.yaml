@@ -1,0 +1,803 @@
+case_id: eu_ec_m9674_2020
+case_name: M.9674
+authority: European Commission
+jurisdiction: EU
+sector: tech
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2020-03-06'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9674_2020_decision
+  title: M.9674 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9674
+  pdf_url: http://publications.europa.eu/resource/cellar/629ec1a4-f7f9-11ea-991b-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Hospitality services to TV and radio broadcasting operators
+  definition_status: defined
+  notes: The Commission considered these services but explicitly concluded they are not part
+    of the relevant market for hospitality services to telecommunication operators.
+- market_id: pm_2
+  name: Hospitality services on macro-sites to customers other than TV and radio broadcasters
+  definition_status: left_open
+  notes: The Commission left open the exact segmentation between MNOs, FWA suppliers, and other
+    telecom operators (like IoT providers) but assessed the impact of the Transaction considering
+    both a general market for all these customers and distinct markets for MNOs and FWA suppliers.
+- market_id: pm_3
+  name: Hospitality services on micro-sites
+  definition_status: defined
+  notes: The Commission concluded the relevant product market is the overall supply of hospitality
+    services on micro sites, without further segmentation, noting that this type of site is
+    primarily intended to satisfy MNOs’ demand.
+- market_id: pm_4
+  name: Retail provision of mobile telecommunications services, excluding M2M subscriptions
+  definition_status: defined
+  notes: This market includes traditional mobile telecommunications services, excluding M2M
+    subscriptions, and is considered separately from fixed telecommunications services.
+- market_id: pm_5
+  name: Retail provision of M2M subscriptions
+  definition_status: defined
+  notes: The Commission, in line with previous decisions, considers M2M subscriptions to belong
+    to a separate market within retail mobile telecommunications services.
+- market_id: pm_6
+  name: Wholesale access and call origination on public mobile telephone networks
+  definition_status: defined
+  notes: The Commission retains its previous product market definition for this market, considering
+    the services generally supplied together as key elements for non-MNOs.
+- market_id: pm_7
+  name: Retail fixed internet access services
+  definition_status: considered
+  notes: 'The Commission considered two alternative product market definitions for assessment:
+    either the overall retail market for fixed Internet access services (excluding mobile network
+    infrastructure-based services) or a narrower hypothetical market for services supplied based
+    on FWA technology only, due to the vertical link with hospitality services on macro-sites
+    relevant for FWA networks.'
+- market_id: pm_8
+  name: Wholesale fixed internet access services
+  definition_status: considered
+  notes: 'The Commission considered two alternative product market definitions for assessment:
+    either the overall wholesale supply of fixed access (encompassing all technologies) or a
+    narrower hypothetical market for services supplied based on FWA technology only, due to
+    the vertical link with hospitality services on macro-sites relevant for FWA networks.'
+- market_id: pm_9
+  name: Wholesale supply of fixed backhaul services
+  definition_status: left_open
+  notes: The Commission explicitly left open the exact product market definition for wholesale
+    fixed backhaul services, as the transaction did not raise competition concerns under any
+    possible definition. However, its analysis would focus on fixed fiber backhauling services.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Hospitality services on macro-sites — national (Italy affected)
+  definition_status: defined
+  notes: The Commission concluded the geographic market is national in scope, corresponding
+    to Italy. While a complainant argued for local markets and the Commission considered potential
+    distinction between rural and urban areas, these were not sufficient to redefine the market
+    as local.
+- market_id: gm_2
+  name: Hospitality services on micro-sites — national (Italy affected)
+  definition_status: defined
+  notes: While the micro-sites market is considered nascent, the Commission concluded that the
+    geographic market for hospitality services on micro-sites is national, aligned with the
+    macro-site market and general market investigation findings.
+- market_id: gm_3
+  name: Retail provision of mobile telecommunications services, excluding M2M subscriptions
+    — national (Italy affected)
+  definition_status: defined
+  notes: The Commission, in line with previous decisions, considered the geographic scope of
+    the retail mobile telecommunications services market to be national, corresponding to the
+    territory of Italy.
+- market_id: gm_4
+  name: Retail provision of M2M subscriptions — national (Italy affected)
+  definition_status: defined
+  notes: The Commission, in line with previous decisions, considered the geographic scope of
+    the retail M2M subscriptions market to be national, corresponding to the territory of Italy.
+- market_id: gm_5
+  name: Wholesale access and call origination on public mobile telephone networks — national
+    (Italy affected)
+  definition_status: defined
+  notes: The Commission considered the geographic scope of this wholesale market to be national,
+    corresponding to Italy, primarily due to regulatory barriers related to national MNO licenses.
+- market_id: gm_6
+  name: Retail fixed internet access services — national (Italy affected)
+  definition_status: defined
+  notes: The Commission concluded the geographic market for retail fixed internet services is
+    national in scope, corresponding to the territory of Italy, in line with previous decisions
+    and finding no reasons to depart from this position.
+- market_id: gm_7
+  name: Wholesale fixed internet access services — national (Italy affected)
+  definition_status: left_open
+  notes: The Commission explicitly left open the exact geographic market definition for wholesale
+    fixed internet access services, stating that the transaction did not raise serious doubts
+    under any alternative definition. However, precedent indicated support for a national scope.
+- market_id: gm_8
+  name: Wholesale supply of fixed backhaul services — national (Italy affected)
+  definition_status: defined
+  notes: The Commission considered the geographic scope of the market for wholesale fixed backhaul
+    services to be national, corresponding to the territory of Italy, in line with market investigation
+    results and concerns expressed by market participants regarding potential competition at
+    the national level.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '18'
+  quote_snippet: Based on the above, the Commission considers that, in line with its previous
+    decisions, hospitality services to TV and radiobroadcasting operators are not part of the
+    relevant market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '17'
+  quote_snippet: The vast majority of the participants to the market investigation49 confirmed
+    that suppliers of mobile telecommunications services and suppliers of TV/Radio broadcasting
+    services have different requirements for hospitality services.50 Generally, towers originally
+    designed to serve MNOs would be limited in their ability to offer hospitality services to
+    radio and TV broadcasters. Moreover, TV and radio broadcasters need higher transmission
+    power and need to be located outside of densely populated areas, while MNOs would require
+    capillary distribution of antennas especially in densely populated areas.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '18'
+  quote_snippet: With respect to macro-sites, the result of the market investigation has not
+    been conclusive as regards the possible distinction between hospitality services to MNOs
+    and FWA suppliers. Therefore, the Commission leaves this question open and will analyse
+    the impact of the Transaction considering both a general market for hospitality services
+    on macro-sites to customers other than TV and radio broadcasters, and distinct markets for
+    hospitality services on macro-sites to (i) MNOs and (ii) FWA suppliers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '18'
+  quote_snippet: As for the question whether the other categories of customers (excluding TV
+    and radio broadcasters, i.e. in particular IoT providers) form part of a separate market,
+    the Commission considers that this question can also be left open. Indeed, whilst the Commission
+    does not find serious doubts as to the compatibility of the Transaction as a result of horizontal
+    or vertical effects in relation to this customer group, this does not affect the conclusion
+    that serious doubts arise in relation to the overall market for the supply of hospitality
+    services to all customers other than TV and radio broadcasters. This is because the current
+    demand by these customers is marginal compared to the demand by MNOs and FWA suppliers56
+    and thus does not affect the competitive analysis for the overall market for hospitality
+    services to all customers other than TV and radio broadcasters.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '17'
+  quote_snippet: 'With respect to a possible segmentation between different telecommunications
+    operators (MNOs, FWA suppliers), the majority of the respondents to the market investigation
+    submitted that requirements for hospitality services on macro-sites are the same for suppliers
+    of mobile telecommunications services and providers of FWA, at least to a certain extent.51
+    In general, FWA equipment would be comparable to MNOs’ equipment, although sometimes smaller.
+    Energy requirements could be met within the same infrastructure as MNOs. On the other hand,
+    FWA services would target a customer base living in the less densely populated areas in
+    Italy, where fixed fiber telecommunication services are not as capillary as in the more
+    densely populated areas: in this context FWA suppliers needs a smaller number of sites for
+    their operations (in the range of hundreds sites). On the contrary, MNOs would need capillary
+    distribution in urban and rural areas and have a much greater need for sites (in the range
+    of thousands sites).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '19'
+  quote_snippet: With respect to the market for hospitality services on micro-sites, the Commission
+    notes, based on the market reconstruction57, that this type of sites would be primarily
+    intended to satisfy MNOs’ demand up to 2027, with sales to this customer group representing
+    more than 95% on each year covered by the market reconstruction, by both volume and value.
+    Further, there is no evidence in the file that the effects of the Transaction in relation
+    to the supply of hospitality services on micro-sites to customers other than MNOs would
+    be different. In this context, the Commission considers that, for the purposes of this Decision,
+    the relevant product market would be the overall supply of hospitality services on micro
+    sites, without any further segmentation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '18'
+  quote_snippet: Furthermore, the Commission considers that macro-sites and micro-sites are
+    part of separate markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '17'
+  quote_snippet: With respect to micro-sites, the vast majority of respondents to the market
+    investigation submitted that MNOs using hospitality services on macro-sites would consider
+    hospitality services on micro-sites as a complement and not as an alternative for their
+    network. Micro-cells are used in combination with macro cells to improve coverage and capacity
+    in very densely occupied areas (stadium, shopping malls) or to reach areas where normal
+    infrastructure is insufficient (underground, high buildings).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '22'
+  quote_snippet: For the purposes of this Decision, the Commission therefore retains its previous
+    product market definition and considers that there is an overall product market for the
+    retail provision of mobile telecommunications services, excluding M2M subscriptions, and
+    the product market for the retail provision of M2M subscriptions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '21'
+  quote_snippet: The Commission has considered the retail mobile market in several past decisions,
+    including with specific reference to the Italian market.66 In these decisions, the Commission
+    has considered that there is an overall retail market for mobile telecommunications services
+    constituting a separate market from retail fixed telecommunications services.67 The Commission
+    did not further subdivide the overall retail mobile market based on the type of service
+    (voice calls, SMS, MMS, mobile internet data services), or network technology.68
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '22'
+  quote_snippet: For the purposes of this Decision, the Commission therefore retains its previous
+    product market definition and considers that there is an overall product market for the
+    retail provision of mobile telecommunications services, excluding M2M subscriptions, and
+    the product market for the retail provision of M2M subscriptions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '22'
+  quote_snippet: In relation to M2M subscriptions, in recent decisions, the Commission has concluded
+    that these belong to a separate market.72
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '24'
+  quote_snippet: For the purposes of this Decision, the Commission therefore retains its previous
+    product market definition and considers that there is a distinct wholesale market for access
+    and call origination on public mobile telephone networks.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '23'
+  quote_snippet: In previous cases, the Commission defined a wholesale market for access and
+    call origination on public mobile networks.75 The services provided by MNOs to non-MNOs
+    were considered as key elements required for non-MNOs to be able to provide retail mobile
+    communication services. Since both services were considered to be generally supplied together,
+    they were seen as being part of a single market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '25'
+  quote_snippet: Thus, for the purpose of this Decision, the Commission considers that the relevant
+    product market is either the overall retail market for the provision of fixed Internet access
+    services, including all customer groups, product types, distribution modes and speeds/bandwidths,
+    excluding only the supply of fixed internet services provided through mobile network infrastructure83,
+    or a hypothetical narrower market where services are only supplied based on FWA technology.
+    As the operators in these markets which would be affected by the Transaction are the same,
+    the vertical analysis of the effects of the Transaction in relation to these retail services
+    will be undertaken jointly and in the following any reference to the “retail fixed markets”
+    should be intended to cover both the overall retail market for the provision of fixed internet
+    access services and the hypothetical narrower market where services are only supplied based
+    on FWA technology.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '24'
+  quote_snippet: However, the Parties consider that it is not necessary to conclude on product
+    market definition, and in particular whether a further segmentation between broadband and
+    ultra-broadband would be appropriate in the fixed internet market, in the absence of any
+    competition concern.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '27'
+  quote_snippet: Thus, for the purposes of this Decision, the Commission considers that the
+    relevant product market is either the overall wholesale supply of fixed access, encompassing
+    all technologies, or a hypothetical narrower market where services are only supplied based
+    on FWA technology. As the operators in these markets which would be affected by the Transaction
+    are the same, the vertical analysis of the effects of the Transaction in relation to these
+    wholesale services will be undertaken jointly and in the following any reference to the
+    “wholesale fixed markets” should be intended to cover both the overall wholesale supply
+    of fixed access, encompassing all technologies, or the hypothetical narrower market where
+    services are only supplied based on FWA technology.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '26'
+  quote_snippet: In previous decisions87, the Commission defined a separate market for wholesale
+    broadband access and left open the question of whether it should be sub-divided per type
+    of access (LLU, bitstream or resale of the incumbent's offering).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '28'
+  quote_snippet: In the present case, the question of the exact product market definition for
+    wholesale services for fixed backhaul can be left open, as the Transaction does not raise
+    competition concerns under any possible product market definition. In any case, the competitive
+    analysis will focus on fixed fiber backhauling services, irrespective of a segmentation
+    by active or passive infrastructure services, considering that (i) future roll-out would
+    mainly involve fiber connections due to 5G capacity requirements, (ii) MNOs typically self-supply
+    wireless backhaul services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '28'
+  quote_snippet: The vast majority of the respondents to the market investigation submitted
+    that the different transmission means (i.e. wireless, fiber and copper lines) do not satisfy
+    the same backhauling needs (e.g. in terms of capacity and other relevant parameters).92
+    The different transmission would address different backhauling needs in relation to capacity,
+    stability, time-to-deploy and costs. However, fiber would offer the highest reliability
+    in terms of capacity, throughput, latency, etc. and would be the only option for future
+    5G backhauling.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '21'
+  quote_snippet: Although it cannot be excluded that in some specific locations there could
+    be specific problems of site scarcity and/or of local authorization processes longer and
+    more difficult than on average (and that this can have an influence on the specific pricing),
+    the Commission considers that this element only cannot justify a market definition al local
+    level, considering that all the other elements point to a national dimension of the market.
+    In any case, the Commission in its analysis will consider a potential distinction between
+    rural and urban areas – also in connection with the existing passive arrangements between
+    the Parties – to take into account this possible difference in the competitive dynamics
+    between rural areas and areas more densely populated, where barriers to entry could be somehow
+    more relevant.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '19'
+  quote_snippet: The Commission has in its previous decisions considered that the market for
+    hospitality services for mobile operators is national in scope, because it is driven by
+    nationally licensed operators and the relevant planning rules are guided by national law58
+    and because all the site hosting activities are subject to a national regulatory environment.59
+    In addition, national competition authorities have considered in past decisions that the
+    market for hospitality services is national in scope.60
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '19'
+  quote_snippet: The Commission has in its previous decisions considered that the market for
+    hospitality services for mobile operators is national in scope, because it is driven by
+    nationally licensed operators and the relevant planning rules are guided by national law58
+    and because all the site hosting activities are subject to a national regulatory environment.59
+    In addition, national competition authorities have considered in past decisions that the
+    market for hospitality services is national in scope.60
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '19'
+  quote_snippet: The Parties submit that the market for hospitality services is national in
+    scope, because MNOs would purchase hospitality services from a TowerCo so that they can
+    in turn provide services according to the terms of their license, which is typically for
+    the territory of a given Member State. Therefore, MNOs would purchase services from operators
+    that can provide solutions across the entire territory of a Member State. MNOs would not
+    approach TowerCos for a single access purchase at a certain location and they will either
+    rely on TowerCos to manage their networks in its entirety or to provide access to a set
+    of locations across the territory under the license. To address these needs, TowerCos would
+    provide a diversified portfolio of assets conveniently located across the country. These
+    features would explain why there are no local TowerCos for MNOs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '23'
+  quote_snippet: In line with previous decisions73 and taking into account that nothing in the
+    Commission's file would justify a departure from the previous position, for the purposes
+    of this Decision, the Commission considers that the geographic scope of the market for mobile
+    telecommunications services is national in scope and corresponds to the territory of Italy.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '23'
+  quote_snippet: The Parties submit that, in line with the Commission's previous decisions,
+    the market for mobile telecommunications services to end customers is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '23'
+  quote_snippet: In line with previous decisions73 and taking into account that nothing in the
+    Commission's file would justify a departure from the previous position, for the purposes
+    of this Decision, the Commission considers that the geographic scope of the market for mobile
+    telecommunications services is national in scope and corresponds to the territory of Italy.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '23'
+  quote_snippet: The Parties submit that, in line with the Commission's previous decisions,
+    the market for mobile telecommunications services to end customers is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '24'
+  quote_snippet: In line with previous decisions and taking into account that nothing in the
+    Commission's file would justify a departure from the previous position, for the purposes
+    of this Decision, the Commission considers that the geographic scope of the wholesale market
+    for access and call origination on public mobile networks is national in scope and corresponds
+    to the territory of Italy.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '24'
+  quote_snippet: In previous cases, the Commission considered the wholesale market for access
+    and call origination to be national in scope due to regulatory barriers stemming from the
+    fact that licenses granted to MNOs are generally national in scope.76
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '24'
+  quote_snippet: In line with previous Commission decisions, the Parties submit that the relevant
+    geographic scope of the market for wholesale access and call origination on mobile networks
+    is national, that is to say, limited to the territory of Italy.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '26'
+  quote_snippet: The Commission therefore concludes that, for the purpose of the present Decision,
+    the relevant geographic market for the retail provision of fixed internet services is national
+    in scope and correspond to the territory of Italy.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '26'
+  quote_snippet: In previous decisions, the Commission concluded that the retail market for
+    the provision of fixed internet services was national in scope.84 In Liberty Global/BASE
+    Belgium the Commission considered whether the geographic scope of the market should be defined
+    on a regional basis or by reference to the footprint of the operators' networks, but ultimately
+    left the question open.85 In Vodafone/Certain Liberty Global Assets, the Commission considered
+    that the relevant geographic market for the retail provision of fixed internet services
+    was national in scope.86
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_34
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '26'
+  quote_snippet: The Parties submit that the relevant geographic scope is national.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_35
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '27'
+  quote_snippet: For the purpose of this Decision, the exact geographic market definition can
+    be left open, as the Transaction does not raise serious doubts as to its compatibility with
+    the internal market with respect to wholesale Internet access services under any alternative
+    geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_36
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '27'
+  quote_snippet: In Carphone Warehouse/Tiscali UK, while there were indications supporting a
+    national scope of the market, the Commission ultimately left open the exact geographic market
+    definition.89 In Liberty Global/BASE Belgium, the Commission considered whether the geographic
+    scope of wholesale access to Internet services should be national or limited to the network
+    footprint of each operator, but ultimately left the product market definition open.90
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_37
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '27'
+  quote_snippet: The Parties do not take a view on the geographic market definition for wholesale
+    Internet access services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_38
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '29'
+  quote_snippet: For the purposes of this Decision and in line with the result of the market
+    investigation, the Commission considers that the geographic scope of the market for wholesale
+    services for fixed backhaul is national in scope and corresponds to the territory of Italy.
+    A national scope appears to be the most appropriate to assess the Transaction in light of
+    the concerns expressed by some market participants, linked to possible detrimental effects
+    of the Transaction on potential competition at national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_8
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_39
+  source_document_id: eu_ec_m9674_2020_decision
+  page: '29'
+  quote_snippet: In a previous case, the Commission has left the exact geographic scope of the
+    possible market for wholesale services for fixed backhaul open.95
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_8
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

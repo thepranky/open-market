@@ -1,0 +1,321 @@
+case_id: eu_ec_m9929_2020
+case_name: M.9929
+authority: European Commission
+jurisdiction: EU
+sector: energy
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2020-10-28'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9929_2020_decision
+  title: M.9929 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9929
+  pdf_url: http://publications.europa.eu/resource/cellar/a0bc1d6b-25d0-11eb-9d7e-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Generation and wholesale supply of electricity
+  definition_status: defined
+  notes: null
+- market_id: pm_2
+  name: Distribution of electricity (operation and management of the lower voltage grids)
+  definition_status: defined
+  notes: null
+geographic_markets_considered:
+- market_id: gm_1
+  name: Generation and wholesale supply of electricity — national (Portugal affected)
+  definition_status: defined
+  notes: null
+- market_id: gm_2
+  name: Generation and wholesale supply of electricity — national (Spain affected)
+  definition_status: defined
+  notes: null
+- market_id: gm_3
+  name: Distribution of electricity — grid-wide (Portugal affected)
+  definition_status: defined
+  notes: null
+- market_id: gm_4
+  name: Distribution of electricity — grid-wide (Spain affected)
+  definition_status: defined
+  notes: null
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9929_2020_decision
+  page: '4'
+  quote_snippet: The Commission has consistently defined the market for the generation and wholesale
+    supply of electricity as encompassing the domestic generation of electricity in power stations
+    within a certain geographic market, traded on the wholesale market, as well as electricity
+    physically imported into that geographic market via interconnectors, and irrespective of
+    the different sources of electric energy
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9929_2020_decision
+  page: '4'
+  quote_snippet: In previous decisions, the Commission has taken the view that generation and
+    wholesale supply of electricity are a single relevant product market because the generation
+    of electricity is not an autonomous market activity from its wholesale supply.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9929_2020_decision
+  page: '5'
+  quote_snippet: In view of the Commission’s practice, and in the absence of evidence to the
+    contrary, for the purposes of this decision, the Commission retains the market definition
+    identified above, that is the market for the generation and wholesale supply of electricity,
+    which is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9929_2020_decision
+  page: '5'
+  quote_snippet: In relation to distribution of electricity, in previous decisions, the Commission
+    has identified a separate market for the distribution of electricity, namely the operation
+    and management of the lower voltage grids.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9929_2020_decision
+  page: '5'
+  quote_snippet: In view of the Commission’s practice, and in the absence of evidence to the
+    contrary, for the purposes of this decision, the Commission will retain the market definition
+    identified above for the distribution of electricity, namely the operation and management
+    of the lower voltage grids, which is grid-wide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9929_2020_decision
+  page: '4'
+  quote_snippet: Against this background, the Transaction results in one horizontally affected
+    market, namely the Portuguese market for generation and wholesale supply of electricity.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9929_2020_decision
+  page: '5'
+  quote_snippet: The Commission has generally defined the geographic market for the generation
+    and wholesale supply of electricity as national in scope.14The Parties do not contest the
+    Commission’s practice.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9929_2020_decision
+  page: '5'
+  quote_snippet: In view of the Commission’s practice, and in the absence of evidence to the
+    contrary, for the purposes of this decision, the Commission retains the market definition
+    identified above, that is the market for the generation and wholesale supply of electricity,
+    which is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9929_2020_decision
+  page: '4'
+  quote_snippet: 'The activities of the Parties result in the following vertically affected
+    markets: (i) the markets for the grid-wide distribution of electricity in Portugal (upstream)9
+    and the market for generation and wholesale supply of electricity in Portugal (downstream)
+    and (ii) the markets for the grid-wide distribution of electricity in Spain (upstream) and
+    the market for generation and wholesale supply of electricity in Spain (downstream).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9929_2020_decision
+  page: '5'
+  quote_snippet: The Commission has generally defined the geographic market for the generation
+    and wholesale supply of electricity as national in scope.14The Parties do not contest the
+    Commission’s practice.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9929_2020_decision
+  page: '5'
+  quote_snippet: In view of the Commission’s practice, and in the absence of evidence to the
+    contrary, for the purposes of this decision, the Commission retains the market definition
+    identified above, that is the market for the generation and wholesale supply of electricity,
+    which is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9929_2020_decision
+  page: '4'
+  quote_snippet: 'The activities of the Parties result in the following vertically affected
+    markets: (i) the markets for the grid-wide distribution of electricity in Portugal (upstream)9
+    and the market for generation and wholesale supply of electricity in Portugal (downstream)
+    and (ii) the markets for the grid-wide distribution of electricity in Spain (upstream) and
+    the market for generation and wholesale supply of electricity in Spain (downstream).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9929_2020_decision
+  page: '5'
+  quote_snippet: For the distribution of electricity, the Commission has previously considered
+    that the relevant geographic market is the territory covered by a relevant distribution
+    network forming a connected grid. Similarly to other customer distribution channels one
+    distribution grid is separate and not substitutable with distribution through another grid.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m9929_2020_decision
+  page: '5'
+  quote_snippet: In view of the Commission’s practice, and in the absence of evidence to the
+    contrary, for the purposes of this decision, the Commission will retain the market definition
+    identified above for the distribution of electricity, namely the operation and management
+    of the lower voltage grids, which is grid-wide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m9929_2020_decision
+  page: '4'
+  quote_snippet: 'The activities of the Parties result in the following vertically affected
+    markets: (i) the markets for the grid-wide distribution of electricity in Portugal (upstream)9
+    and the market for generation and wholesale supply of electricity in Portugal (downstream)
+    and (ii) the markets for the grid-wide distribution of electricity in Spain (upstream) and
+    the market for generation and wholesale supply of electricity in Spain (downstream).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m9929_2020_decision
+  page: '5'
+  quote_snippet: For the distribution of electricity, the Commission has previously considered
+    that the relevant geographic market is the territory covered by a relevant distribution
+    network forming a connected grid. Similarly to other customer distribution channels one
+    distribution grid is separate and not substitutable with distribution through another grid.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m9929_2020_decision
+  page: '5'
+  quote_snippet: In view of the Commission’s practice, and in the absence of evidence to the
+    contrary, for the purposes of this decision, the Commission will retain the market definition
+    identified above for the distribution of electricity, namely the operation and management
+    of the lower voltage grids, which is grid-wide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

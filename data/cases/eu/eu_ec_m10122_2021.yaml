@@ -1,0 +1,493 @@
+case_id: eu_ec_m10122_2021
+case_name: M.10122
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2021-06-11'
+parties: []
+source_documents:
+- doc_id: eu_ec_m10122_2021_decision
+  title: M.10122 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10122
+  pdf_url: http://publications.europa.eu/resource/cellar/2ae54259-f8ec-11eb-b520-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Cartonboard
+  definition_status: left_open
+  notes: The Commission considered an overall market for cartonboard but ultimately left the
+    definition open, as no affected markets arose under this broader definition and thus it
+    was not analysed further.
+- market_id: pm_2
+  name: Folding Box Board (FBB)
+  definition_status: segmented
+  notes: The Commission examined an overall FBB market but ultimately left the definition open,
+    assessing the transaction based on segmented FBB markets by end-application or sub-grade,
+    as no affected markets arose under a broader FBB definition.
+- market_id: pm_3
+  name: FBB for food applications
+  definition_status: considered
+  notes: The Commission analysed the effects of the transaction on the basis of a market for
+    FBB segmented by end-application, specifically including food applications, due to affected
+    markets arising in this segment.
+- market_id: pm_4
+  name: FBB sub-grade GC1
+  definition_status: considered
+  notes: The Commission analysed the effects of the transaction on the basis of a market for
+    FBB segmented by sub-grade, specifically including GC1, noting its distinct characteristics
+    and end-uses.
+- market_id: pm_5
+  name: FBB sub-grade GC2
+  definition_status: considered
+  notes: The Commission analysed the effects of the transaction on the basis of a market for
+    FBB segmented by sub-grade, specifically including GC2, due to affected markets arising
+    in this segment.
+- market_id: pm_6
+  name: Folding boxes
+  definition_status: segmented
+  notes: The Commission considered an overall market for folding boxes but ultimately left the
+    definition open, assessing the transaction based on segmented folding box markets by end-application,
+    as no affected markets arose under a broader folding boxes definition.
+- market_id: pm_7
+  name: Folding boxes for the pharma industry
+  definition_status: considered
+  notes: The Commission analysed the effects of the transaction on the basis of a market for
+    folding boxes segmented by end-application, specifically including the pharma industry,
+    due to affected markets arising in this segment in France.
+- market_id: pm_8
+  name: Folding boxes for the tobacco industry
+  definition_status: considered
+  notes: The Commission noted that MM's market shares in this segment exceeded 30%, giving rise
+    to a vertically affected market. However, as Kotkamills does not produce FBB for the tobacco
+    industry, this vertical relationship was pre-existing and not specific to the Transaction,
+    and therefore not analysed further in the competitive assessment.
+geographic_markets_considered:
+- market_id: gm_1
+  name: FBB — EEA-wide
+  definition_status: considered
+  notes: The Commission analysed the effects of the transaction on the basis that the market
+    for FBB is EEA-wide, noting that no affected markets arose at a worldwide level.
+- market_id: gm_2
+  name: FBB — worldwide
+  definition_status: left_open
+  notes: The Commission left open whether the geographic market for FBB is EEA-wide or worldwide,
+    as the proposed transaction would not raise serious doubts under either plausible definition.
+    However, no affected markets arose at the worldwide level, so it was not analysed further.
+- market_id: gm_3
+  name: Folding boxes — national
+  definition_status: considered
+  notes: The Commission analysed the effects of the transaction on the basis that the market
+    for folding boxes is national level, as no affected markets arose under broader (regional,
+    EEA or worldwide) market definitions.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m10122_2021_decision
+  page: '6'
+  quote_snippet: In any case, for the purpose of this decision the exact product market definition
+    can be left open between an overall market for cartonboard33 or FBB, and between an overall
+    FBB market or sub-segments for FBB according to end use or sub-grade of FBB, as the proposed
+    Transaction does not raise serious doubts as to its compatibility with the internal market
+    or the functioning of the EEA Agreement under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m10122_2021_decision
+  page: '6'
+  quote_snippet: No affected markets arise if considering an overall cartonboard market or an
+    overall FBB market and so these will not be analysed further in this decision.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m10122_2021_decision
+  page: '3'
+  quote_snippet: The Parties submit that the main different types of cartonboard are FBB, WLC,
+    SBS and SUS. According to the Parties, the relevant market comprises all types of cartonboard,
+    for the following reasons.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m10122_2021_decision
+  page: '6'
+  quote_snippet: In any case, for the purpose of this decision the exact product market definition
+    can be left open between an overall market for cartonboard33 or FBB, and between an overall
+    FBB market or sub-segments for FBB according to end use or sub-grade of FBB, as the proposed
+    Transaction does not raise serious doubts as to its compatibility with the internal market
+    or the functioning of the EEA Agreement under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m10122_2021_decision
+  page: '6'
+  quote_snippet: In conclusion, the Commission will analyse the effects of the proposed Transaction
+    on the basis that the market for FBB is segmented either by end-application i.e. food, pharmaceuticals,
+    tobacco, cosmetics, graphical and “other non-food”,34 or by sub-grade of FBB i.e. GC1 and
+    GC2. No affected markets arise if considering an overall cartonboard market or an overall
+    FBB market and so these will not be analysed further in this decision.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m10122_2021_decision
+  page: '3'
+  quote_snippet: As regards cartonboard, MM only manufactures and sells FBB and WLC and Kotkamills
+    only manufactures and sells FBB and cup board. The only horizontal overlap between the Parties’
+    activities is therefore in FBB.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m10122_2021_decision
+  page: '6'
+  quote_snippet: In conclusion, the Commission will analyse the effects of the proposed Transaction
+    on the basis that the market for FBB is segmented either by end-application i.e. food, pharmaceuticals,
+    tobacco, cosmetics, graphical and “other non-food”,34 or by sub-grade of FBB i.e. GC1 and
+    GC2.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m10122_2021_decision
+  page: '10'
+  quote_snippet: The proposed Transaction gives rise to affected markets in the plausible markets
+    for the supply of FBB for food applications ([20-30%]) and the supply of GC2 ([20-30%])
+    in the EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m10122_2021_decision
+  page: '15'
+  quote_snippet: In the upstream market for FBB, if analysed by end-use (as for the downstream
+    markets), the Parties’ combined market shares remains moderate, with the highest market
+    share in a potential market for FBB for the food sector and GC2 [20-30]% (see paragraph
+    (46)).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m10122_2021_decision
+  page: '6'
+  quote_snippet: In conclusion, the Commission will analyse the effects of the proposed Transaction
+    on the basis that the market for FBB is segmented either by end-application i.e. food, pharmaceuticals,
+    tobacco, cosmetics, graphical and “other non-food”,34 or by sub-grade of FBB i.e. GC1 and
+    GC2.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m10122_2021_decision
+  page: '6'
+  quote_snippet: In conclusion, the Commission will analyse the effects of the proposed Transaction
+    on the basis that the market for FBB is segmented either by end-application i.e. food, pharmaceuticals,
+    tobacco, cosmetics, graphical and “other non-food”,34 or by sub-grade of FBB i.e. GC1 and
+    GC2.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m10122_2021_decision
+  page: '10'
+  quote_snippet: The proposed Transaction gives rise to affected markets in the plausible markets
+    for the supply of FBB for food applications ([20-30%]) and the supply of GC2 ([20-30%])
+    in the EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m10122_2021_decision
+  page: '15'
+  quote_snippet: In the upstream market for FBB, if analysed by end-use (as for the downstream
+    markets), the Parties’ combined market shares remains moderate, with the highest market
+    share in a potential market for FBB for the food sector and GC2 [20-30]% (see paragraph
+    (46)).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m10122_2021_decision
+  page: '9'
+  quote_snippet: For the purpose of this decision the exact product market definition can be
+    left open between an overall market for folding boxes and sub-segments for (i) food, (ii)
+    beverages, (iii) tobacco, (iv) cosmetics and personal hygiene, (v) pharmaceuticals, and
+    (vi) household, as the proposed Transaction does not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement under any plausible market
+    definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m10122_2021_decision
+  page: '9'
+  quote_snippet: In conclusion, the Commission will analyse the effects of the proposed Transaction
+    on the basis that the markets for folding boxes are segmented . by end-application, notably
+    folding boxes for the end-uses (i) food, (ii) beverages, (iii) tobacco, (iv) cosmetics and
+    personal hygiene, (v) pharmaceuticals, and (vi) household.58 No affected markets arise if
+    considering an overall market for folding boxes and this will therefore not be analysed
+    further in this decision.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m10122_2021_decision
+  page: '9'
+  quote_snippet: In conclusion, the Commission will analyse the effects of the proposed Transaction
+    on the basis that the markets for folding boxes are segmented . by end-application, notably
+    folding boxes for the end-uses (i) food, (ii) beverages, (iii) tobacco, (iv) cosmetics and
+    personal hygiene, (v) pharmaceuticals, and (vi) household.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m10122_2021_decision
+  page: '10'
+  quote_snippet: Moreover, MM is active in the production and supply of folding boxes, which
+    are made out of cartonboard. This vertical link gives rise to two vertically affected markets,
+    as MM’s market shares in the market for folding boxes for the pharma industry in France
+    and folding boxes for the tobacco industry in Germany exceed 30% (with <40% and <50% respectively).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m10122_2021_decision
+  page: '9'
+  quote_snippet: In conclusion, the Commission will analyse the effects of the proposed Transaction
+    on the basis that the markets for folding boxes are segmented . by end-application, notably
+    folding boxes for the end-uses (i) food, (ii) beverages, (iii) tobacco, (iv) cosmetics and
+    personal hygiene, (v) pharmaceuticals, and (vi) household.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m10122_2021_decision
+  page: '10'
+  quote_snippet: Moreover, MM is active in the production and supply of folding boxes, which
+    are made out of cartonboard. This vertical link gives rise to two vertically affected markets,
+    as MM’s market shares in the market for folding boxes for the pharma industry in France
+    and folding boxes for the tobacco industry in Germany exceed 30% (with <40% and <50% respectively).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m10122_2021_decision
+  page: '15'
+  quote_snippet: As Kotkamills does not produce FBB for the tobacco industry, the vertical relationship
+    of this segment is pre-existing and does not change as a result of the Transaction. This
+    vertical link is therefore not analysed further as it is not merger-specific.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m10122_2021_decision
+  page: '6'
+  quote_snippet: The Commission has previously defined the market for FBB as at least EEA-wide.35
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m10122_2021_decision
+  page: '7'
+  quote_snippet: The vast majority of customers confirmed that their suppliers were located
+    in the EEA or worldwide,42 with a majority of competitors also confirming that their customers
+    were located at either EEA or worldwide level.43 Similarly, the majority of both customers
+    and competitors indicated that they either requested bids, or participated in bids, at least
+    at EEA level, if not worldwide.44 The majority of respondents also confirmed that price
+    differences were not significant within the EEA, price differences generally tended to be
+    explained by the differences in product (e.g. the different grade etc.).45 While a majority
+    of respondents confirmed that transport costs were however significant by the EEA,46 the
+    results of the market investigation indicate that this has not prevented customers from
+    sourcing, and competitors from supplying, across the EEA and beyond.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_ec_m10122_2021_decision
+  page: '7'
+  quote_snippet: In any case, for the purpose of this decision the exact geographic market definition
+    can be left open between EEA-wide and worldwide as the proposed Transaction does not raise
+    serious doubts as to its compatibility with the internal market or the functioning of the
+    EEA Agreement under any of these two plausible market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_ec_m10122_2021_decision
+  page: '9'
+  quote_snippet: In the past, the Commission left open whether the market for folding boxes
+    is national or EEA-wide, based on the level at which sourcing of folding cartons takes place.59
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_ec_m10122_2021_decision
+  page: '10'
+  quote_snippet: In conclusion, since no affected markets arise under a broader market definition
+    (i.e. regional, EEA or worldwide), the Commission will analyse the effects of the proposed
+    Transaction on the market for folding boxes at national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

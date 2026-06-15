@@ -3,7 +3,7 @@ case_name: Lufthansa / ITA Airways
 authority: European Commission
 jurisdiction: EU
 sector: airlines
-outcome: cleared_with_conditions
+outcome: unknown
 procedure_stage: unknown
 decision_date: '2024-07-04'
 parties:
@@ -21,179 +21,150 @@ product_markets_considered:
 - market_id: pm_1
   name: Scheduled passenger air transport services
   definition_status: defined
-  notes: The Commission defined the relevant markets for scheduled passenger air transport
-    services on the basis of the 'point of origin/point of destination' (O&D) approach.
-    The network dimension of competition and strong presence at certain airports are
-    taken into account in the competitive assessment. Segmentations considered and
-    their conclusions are detailed in the geographic market notes.
+  notes: The Commission defined the relevant markets for scheduled passenger air transport services
+    on the basis of the 'point of origin/point of destination' (O&D) approach. The network dimension
+    of competition and strong presence at certain airports are taken into account in the competitive
+    assessment. Segmentations considered and their conclusions are detailed in the geographic
+    market notes.
 - market_id: pm_2
   name: Feeder traffic
   definition_status: defined
-  notes: The relevant upstream market for feeder traffic is defined as the provision
-    of access to flights for connecting passengers on an O&D basis or a group of feeder
-    routes. This service is recognized as an important input for airlines.
+  notes: The relevant upstream market for feeder traffic is defined as the provision of access
+    to flights for connecting passengers on an O&D basis or a group of feeder routes. This service
+    is recognized as an important input for airlines.
 - market_id: pm_3
   name: Airport infrastructure services
   definition_status: defined
-  notes: The market is defined for the provision of airport infrastructure services
-    to airlines, including runway facilities, taxiways, and other airport infrastructure.
-    No further distinction within these services was considered necessary.
+  notes: The market is defined for the provision of airport infrastructure services to airlines,
+    including runway facilities, taxiways, and other airport infrastructure. No further distinction
+    within these services was considered necessary.
 - market_id: pm_4
   name: Air cargo transport services
   definition_status: defined
-  notes: The Commission defined a separate product market for air cargo services,
-    without further segmentation. It excludes 'door-to-door' services offered by integrators,
-    but their spare capacity is taken into account.
+  notes: The Commission defined a separate product market for air cargo services, without further
+    segmentation. It excludes 'door-to-door' services offered by integrators, but their spare
+    capacity is taken into account.
 - market_id: pm_5
   name: Maintenance, Repair, and Overhaul (MRO) services
   definition_status: left_open
-  notes: The Commission did not find it necessary to determine the exact product market
-    definition for MRO services as the transaction would not significantly impede
-    effective competition under any plausible definition. Prior practice distinguished
-    between line maintenance, heavy maintenance, engine maintenance, and components
-    maintenance.
+  notes: The Commission did not find it necessary to determine the exact product market definition
+    for MRO services as the transaction would not significantly impede effective competition
+    under any plausible definition. Prior practice distinguished between line maintenance, heavy
+    maintenance, engine maintenance, and components maintenance.
 - market_id: pm_6
   name: Ground handling services
   definition_status: left_open
-  notes: The Commission did not find it necessary to determine an exact product market
-    definition for ground handling services, as the transaction would not significantly
-    impede effective competition under any plausible definition. Prior decisions noted
-    segments like ramp services and passenger services.
+  notes: The Commission did not find it necessary to determine an exact product market definition
+    for ground handling services, as the transaction would not significantly impede effective
+    competition under any plausible definition. Prior decisions noted segments like ramp services
+    and passenger services.
 - market_id: pm_7
   name: Cargo handling services
   definition_status: left_open
-  notes: The Commission did not find it necessary to determine an exact product market
-    definition for cargo handling services, as the transaction would not significantly
-    impede effective competition under any plausible definition. It is considered
-    separate from ramp passenger and baggage handling.
+  notes: The Commission did not find it necessary to determine an exact product market definition
+    for cargo handling services, as the transaction would not significantly impede effective
+    competition under any plausible definition. It is considered separate from ramp passenger
+    and baggage handling.
 - market_id: pm_8
   name: Flight training services
   definition_status: left_open
-  notes: The Commission did not find it necessary to determine an exact product market
-    definition for flight training services, as the transaction would not significantly
-    impede effective competition under any plausible definition. Civil flight simulator
-    training is distinct from real flight training.
+  notes: The Commission did not find it necessary to determine an exact product market definition
+    for flight training services, as the transaction would not significantly impede effective
+    competition under any plausible definition. Civil flight simulator training is distinct
+    from real flight training.
 - market_id: pm_9
   name: Online flight ticketing distribution services
   definition_status: considered
   notes: The Commission considers a separate market for online flight ticketing distribution
-    services encompassing both direct and indirect distribution for the purpose of
-    the decision, in line with precedents and parties' submissions. Prior cases suggest
-    distinctions within online intermediation of travel services.
+    services encompassing both direct and indirect distribution for the purpose of the decision,
+    in line with precedents and parties' submissions. Prior cases suggest distinctions within
+    online intermediation of travel services.
 geographic_markets_considered:
 - market_id: gm_1
-  name: Scheduled passenger air transport services — O&D basis (Each O&D pair is a
-    distinct market)
+  name: Scheduled passenger air transport services — O&D basis (Each O&D pair is a distinct
+    market)
   definition_status: defined
-  notes: 'The geographic market is defined on an O&D (origin and destination) city-pair
-    basis for scheduled passenger air transport services. Airport substitutability
-    for specific city-pairs was assessed:
-
-    - Düsseldorf: DUS and CGN are within the same market; DTM and NRN question left
-    open (para 73).
-
-    - Milan: LIN and MXP belong to the same market; BGY question left open (para 73).
-    However, for airport infrastructure services, LIN is considered a distinct market
-    (para 331).
-
-    - New York: JFK and EWR belong to the same market; LGA and SWF question left open
-    (para 73).
-
+  notes: |
+    The geographic market is defined on an O&D (origin and destination) city-pair basis for scheduled passenger air transport services. Airport substitutability for specific city-pairs was assessed:
+    - Düsseldorf: DUS and CGN are within the same market; DTM and NRN question left open (para 73).
+    - Milan: LIN and MXP belong to the same market; BGY question left open (para 73). However, for airport infrastructure services, LIN is considered a distinct market (para 331).
+    - New York: JFK and EWR belong to the same market; LGA and SWF question left open (para 73).
     - Rome: FCO and CIA belong to the same market (para 73).
-
-    - Brussels: left open, but will take into consideration which airport carriers
-    fly to (para 136).
-
-    - Frankfurt: left open, but will take into consideration which airport carriers
-    fly to (para 162).
-
-    - Hamburg: left open, but will take into consideration which airport carriers
-    fly to (para 171).
-
-    - Munich: left open, but will take into consideration which airport carriers fly
-    to (para 205).
-
-    - Stuttgart: left open, but will take into consideration which airport carriers
-    fly to (para 230).
-
-    - Vienna: left open, but will take into consideration which airport carriers fly
-    to (para 237).
-
-    - Zurich: left open, but will take into consideration which airport carriers fly
-    to (para 248).
-
-    '
+    - Brussels: left open, but will take into consideration which airport carriers fly to (para 136).
+    - Frankfurt: left open, but will take into consideration which airport carriers fly to (para 162).
+    - Hamburg: left open, but will take into consideration which airport carriers fly to (para 171).
+    - Munich: left open, but will take into consideration which airport carriers fly to (para 205).
+    - Stuttgart: left open, but will take into consideration which airport carriers fly to (para 230).
+    - Vienna: left open, but will take into consideration which airport carriers fly to (para 237).
+    - Zurich: left open, but will take into consideration which airport carriers fly to (para 248).
 - market_id: gm_2
-  name: Feeder traffic — O&D basis (Each O&D pair is a distinct market, connecting
-    airports generally not substitutable)
+  name: Feeder traffic — O&D basis (Each O&D pair is a distinct market, connecting airports
+    generally not substitutable)
   definition_status: defined
-  notes: Feeder traffic is defined on an O&D basis. Connecting airports are generally
-    not substitutable by other airports in the same area due to the inability of secondary
-    airports to accommodate hub-and-spoke operations and limited inter-airport connections.
+  notes: Feeder traffic is defined on an O&D basis. Connecting airports are generally not substitutable
+    by other airports in the same area due to the inability of secondary airports to accommodate
+    hub-and-spoke operations and limited inter-airport connections.
 - market_id: gm_3
   name: Airport infrastructure services — local (Milan-Linate Airport (LIN) affected)
   definition_status: defined
-  notes: The geographic scope for airport infrastructure services is considered the
-    catchment area of individual airports. Milan-Linate (LIN) is deemed a distinct
-    market from Milan-Malpensa (MXP) and Bergamo (BGY) due to LIN's ability to serve
-    'premium passengers,' higher congestion, and differing characteristics for carriers.
+  notes: The geographic scope for airport infrastructure services is considered the catchment
+    area of individual airports. Milan-Linate (LIN) is deemed a distinct market from Milan-Malpensa
+    (MXP) and Bergamo (BGY) due to LIN's ability to serve 'premium passengers,' higher congestion,
+    and differing characteristics for carriers.
 - market_id: gm_4
   name: Air cargo transport services — European-wide (Intra-European routes affected)
   definition_status: considered
   notes: For intra-European air cargo transport, the market is assessed as European-wide.
 - market_id: gm_5
-  name: Air cargo transport services — intercontinental (Europe to North America,
-    North America to Europe, Europe to Japan, Japan to Europe affected)
+  name: Air cargo transport services — intercontinental (Europe to North America, North America
+    to Europe, Europe to Japan, Japan to Europe affected)
   definition_status: considered
-  notes: For intercontinental air cargo transport where parties' activities overlap,
-    the market is assessed for routes from Europe to North America, North America
-    to Europe, Europe to Japan, and Japan to Europe.
+  notes: For intercontinental air cargo transport where parties' activities overlap, the market
+    is assessed for routes from Europe to North America, North America to Europe, Europe to
+    Japan, and Japan to Europe.
 - market_id: gm_6
   name: Maintenance, Repair, and Overhaul (MRO) services — geographic scope
   definition_status: left_open
-  notes: The geographic scope for MRO services is left open as the transaction does
-    not raise competition concerns under any plausible definition. Prior decisions
-    suggested EEA-wide for heavy maintenance, local for line maintenance, and worldwide
-    for engine and components maintenance.
+  notes: The geographic scope for MRO services is left open as the transaction does not raise
+    competition concerns under any plausible definition. Prior decisions suggested EEA-wide
+    for heavy maintenance, local for line maintenance, and worldwide for engine and components
+    maintenance.
 - market_id: gm_7
   name: Ground handling services — geographic scope
   definition_status: left_open
-  notes: The geographic market definition for ground handling services is left open
-    as the transaction would not significantly impede effective competition irrespective
-    of the definition. Prior decisions suggested restriction to a specific airport,
-    with potential for a wider catchment area.
+  notes: The geographic market definition for ground handling services is left open as the transaction
+    would not significantly impede effective competition irrespective of the definition. Prior
+    decisions suggested restriction to a specific airport, with potential for a wider catchment
+    area.
 - market_id: gm_8
   name: Cargo handling services — geographic scope
   definition_status: left_open
-  notes: The geographic market definition for cargo handling services is left open
-    as the transaction would not significantly impede effective competition irrespective
-    of the definition. Prior decisions suggested restriction to a specific airport
-    (or two neighbouring airports).
+  notes: The geographic market definition for cargo handling services is left open as the transaction
+    would not significantly impede effective competition irrespective of the definition. Prior
+    decisions suggested restriction to a specific airport (or two neighbouring airports).
 - market_id: gm_9
   name: Flight training services — geographic scope
   definition_status: left_open
-  notes: The geographic market definition for flight training services is left open
-    as the transaction would not significantly impede effective competition irrespective
-    of the definition. Prior decisions considered the market to be worldwide or at
-    least EEA-wide.
+  notes: The geographic market definition for flight training services is left open as the transaction
+    would not significantly impede effective competition irrespective of the definition. Prior
+    decisions considered the market to be worldwide or at least EEA-wide.
 - market_id: gm_10
   name: Online flight ticketing distribution services — geographic scope
   definition_status: left_open
-  notes: The geographic market definition for online flight ticketing distribution
-    services is left open as the transaction does not lead to competition concerns
-    under any plausible definition. The parties argue worldwide scope, while prior
-    decisions found the upstream GDS market to be EEA-wide.
+  notes: The geographic market definition for online flight ticketing distribution services
+    is left open as the transaction does not lead to competition concerns under any plausible
+    definition. The parties argue worldwide scope, while prior decisions found the upstream
+    GDS market to be EEA-wide.
 theories_of_harm: []
 commitments: []
 source_passages:
 - passage_id: sp_1
   source_document_id: eu_lufthansa_ita_airways_2024_decision
   page: '22'
-  quote_snippet: The supply of scheduled passenger air transport services on the basis
-    of the “point of origin/point of destination” (“O&D”) approach. The network dimension
-    of competition between Lufthansa and ITA and their strong presence at the same
-    airports will, however, be taken into account in the competitive assessment (sections
-    6.1);
+  quote_snippet: The supply of scheduled passenger air transport services on the basis of the
+    “point of origin/point of destination” (“O&D”) approach. The network dimension of competition
+    between Lufthansa and ITA and their strong presence at the same airports will, however,
+    be taken into account in the competitive assessment (sections 6.1);
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -219,10 +190,10 @@ source_passages:
 - passage_id: sp_3
   source_document_id: eu_lufthansa_ita_airways_2024_decision
   page: '73'
-  quote_snippet: Therefore, contrary to the Parties’ arguments, airline carriers consider
-    that access to feeder traffic constitutes an important part of their network planning
-    and there appears to be strong market demand for feeder traffic and limited substitution
-    options with alternative services.
+  quote_snippet: Therefore, contrary to the Parties’ arguments, airline carriers consider that
+    access to feeder traffic constitutes an important part of their network planning and there
+    appears to be strong market demand for feeder traffic and limited substitution options with
+    alternative services.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -235,8 +206,8 @@ source_passages:
 - passage_id: sp_4
   source_document_id: eu_lufthansa_ita_airways_2024_decision
   page: '74'
-  quote_snippet: Feeder traffic therefore has the characteristics of a distinct market,
-    separate from the sale of tickets to passengers.
+  quote_snippet: Feeder traffic therefore has the characteristics of a distinct market, separate
+    from the sale of tickets to passengers.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -249,8 +220,8 @@ source_passages:
 - passage_id: sp_5
   source_document_id: eu_lufthansa_ita_airways_2024_decision
   page: '22'
-  quote_snippet: The market for airport infrastructure services in Milan-Linate airport
-    (LIN) under the airport-by-airport approach (section 6.10);
+  quote_snippet: The market for airport infrastructure services in Milan-Linate airport (LIN)
+    under the airport-by-airport approach (section 6.10);
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -263,10 +234,9 @@ source_passages:
 - passage_id: sp_6
   source_document_id: eu_lufthansa_ita_airways_2024_decision
   page: '75'
-  quote_snippet: The Commission has, in its prior decision practice, delineated a
-    product market for the provision of airport infrastructure services to airlines,
-    which includes the development, maintenance, use and provision of the runway facilities,
-    taxiways and other airport infrastructure.
+  quote_snippet: The Commission has, in its prior decision practice, delineated a product market
+    for the provision of airport infrastructure services to airlines, which includes the development,
+    maintenance, use and provision of the runway facilities, taxiways and other airport infrastructure.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -279,10 +249,10 @@ source_passages:
 - passage_id: sp_7
   source_document_id: eu_lufthansa_ita_airways_2024_decision
   page: '75'
-  quote_snippet: In prior decisions relating to the transfer of slots at airports,
-    the Commission has not considered it appropriate to further distinguish within
-    the market for airport infrastructure services, considering that slot portfolios
-    give access to all infrastructure services necessary to operate at the airport.
+  quote_snippet: In prior decisions relating to the transfer of slots at airports, the Commission
+    has not considered it appropriate to further distinguish within the market for airport infrastructure
+    services, considering that slot portfolios give access to all infrastructure services necessary
+    to operate at the airport.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -308,10 +278,10 @@ source_passages:
 - passage_id: sp_9
   source_document_id: eu_lufthansa_ita_airways_2024_decision
   page: '83'
-  quote_snippet: The market investigation in this case did not provide any reasons
-    to depart from the Commission’s prior decisional practice and therefore, for the
-    purposes of the present Decision, the Commission will consider a separate product
-    market for air cargo services, where the Parties are active, without further segmentation.
+  quote_snippet: The market investigation in this case did not provide any reasons to depart
+    from the Commission’s prior decisional practice and therefore, for the purposes of the present
+    Decision, the Commission will consider a separate product market for air cargo services,
+    where the Parties are active, without further segmentation.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -324,9 +294,9 @@ source_passages:
 - passage_id: sp_10
   source_document_id: eu_lufthansa_ita_airways_2024_decision
   page: '22'
-  quote_snippet: maintenance, repair and overhaul (“MRO”) services, which can be further
-    subdivided to distinguish between (i) line maintenance, (ii) heavy maintenance,
-    (iii) engine maintenance and (iv) components maintenance (section 6.12);
+  quote_snippet: maintenance, repair and overhaul (“MRO”) services, which can be further subdivided
+    to distinguish between (i) line maintenance, (ii) heavy maintenance, (iii) engine maintenance
+    and (iv) components maintenance (section 6.12);
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -339,10 +309,9 @@ source_passages:
 - passage_id: sp_11
   source_document_id: eu_lufthansa_ita_airways_2024_decision
   page: '85'
-  quote_snippet: The Commission considers that, for the purposes of the present Decision,
-    the precise product market definition for MRO can be left open, as the Transaction
-    does not give rise to competition concerns under any plausible product market
-    definition.
+  quote_snippet: The Commission considers that, for the purposes of the present Decision, the
+    precise product market definition for MRO can be left open, as the Transaction does not
+    give rise to competition concerns under any plausible product market definition.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -355,12 +324,11 @@ source_passages:
 - passage_id: sp_12
   source_document_id: eu_lufthansa_ita_airways_2024_decision
   page: '24'
-  quote_snippet: As regards MRO, ground handling services, cargo handling services,
-    and flight training services, the Commission considers that, for the purposes
-    of the present Decision, it is not necessary to determine the exact market definition,
-    as the Transaction would not significantly impede effective competition under
-    any plausible market definition, as discussed in more detail below in sections
-    6.12-6.15.
+  quote_snippet: As regards MRO, ground handling services, cargo handling services, and flight
+    training services, the Commission considers that, for the purposes of the present Decision,
+    it is not necessary to determine the exact market definition, as the Transaction would not
+    significantly impede effective competition under any plausible market definition, as discussed
+    in more detail below in sections 6.12-6.15.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -386,10 +354,9 @@ source_passages:
 - passage_id: sp_14
   source_document_id: eu_lufthansa_ita_airways_2024_decision
   page: '86'
-  quote_snippet: The Commission considers that, for the purposes of the present Decision,
-    it is not necessary to determine an exact product market definition, as the Transaction
-    would not significantly impede effective competition under any plausible product
-    market definition.
+  quote_snippet: The Commission considers that, for the purposes of the present Decision, it
+    is not necessary to determine an exact product market definition, as the Transaction would
+    not significantly impede effective competition under any plausible product market definition.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -402,12 +369,11 @@ source_passages:
 - passage_id: sp_15
   source_document_id: eu_lufthansa_ita_airways_2024_decision
   page: '24'
-  quote_snippet: As regards MRO, ground handling services, cargo handling services,
-    and flight training services, the Commission considers that, for the purposes
-    of the present Decision, it is not necessary to determine the exact market definition,
-    as the Transaction would not significantly impede effective competition under
-    any plausible market definition, as discussed in more detail below in sections
-    6.12-6.15.
+  quote_snippet: As regards MRO, ground handling services, cargo handling services, and flight
+    training services, the Commission considers that, for the purposes of the present Decision,
+    it is not necessary to determine the exact market definition, as the Transaction would not
+    significantly impede effective competition under any plausible market definition, as discussed
+    in more detail below in sections 6.12-6.15.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -433,12 +399,11 @@ source_passages:
 - passage_id: sp_17
   source_document_id: eu_lufthansa_ita_airways_2024_decision
   page: '24'
-  quote_snippet: As regards MRO, ground handling services, cargo handling services,
-    and flight training services, the Commission considers that, for the purposes
-    of the present Decision, it is not necessary to determine the exact market definition,
-    as the Transaction would not significantly impede effective competition under
-    any plausible market definition, as discussed in more detail below in sections
-    6.12-6.15.
+  quote_snippet: As regards MRO, ground handling services, cargo handling services, and flight
+    training services, the Commission considers that, for the purposes of the present Decision,
+    it is not necessary to determine the exact market definition, as the Transaction would not
+    significantly impede effective competition under any plausible market definition, as discussed
+    in more detail below in sections 6.12-6.15.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -464,12 +429,11 @@ source_passages:
 - passage_id: sp_19
   source_document_id: eu_lufthansa_ita_airways_2024_decision
   page: '24'
-  quote_snippet: As regards MRO, ground handling services, cargo handling services,
-    and flight training services, the Commission considers that, for the purposes
-    of the present Decision, it is not necessary to determine the exact market definition,
-    as the Transaction would not significantly impede effective competition under
-    any plausible market definition, as discussed in more detail below in sections
-    6.12-6.15.
+  quote_snippet: As regards MRO, ground handling services, cargo handling services, and flight
+    training services, the Commission considers that, for the purposes of the present Decision,
+    it is not necessary to determine the exact market definition, as the Transaction would not
+    significantly impede effective competition under any plausible market definition, as discussed
+    in more detail below in sections 6.12-6.15.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -482,11 +446,11 @@ source_passages:
 - passage_id: sp_20
   source_document_id: eu_lufthansa_ita_airways_2024_decision
   page: '89'
-  quote_snippet: In prior merger and antitrust decisions concerning travel services,
-    the Commission has defined a product market for the distribution of travel services
-    distinct from the product market for the provision of travel services. In British
-    Airways, the General Court confirmed the existence of such a separate market for
-    the distribution of passenger air tickets (i.e. air travel agency services).
+  quote_snippet: In prior merger and antitrust decisions concerning travel services, the Commission
+    has defined a product market for the distribution of travel services distinct from the product
+    market for the provision of travel services. In British Airways, the General Court confirmed
+    the existence of such a separate market for the distribution of passenger air tickets (i.e.
+    air travel agency services).
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -499,8 +463,8 @@ source_passages:
 - passage_id: sp_21
   source_document_id: eu_lufthansa_ita_airways_2024_decision
   page: '22'
-  quote_snippet: The supply of scheduled passenger air transport services on the basis
-    of the “point of origin/point of destination” (“O&D”) approach.
+  quote_snippet: The supply of scheduled passenger air transport services on the basis of the
+    “point of origin/point of destination” (“O&D”) approach.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -513,10 +477,9 @@ source_passages:
 - passage_id: sp_22
   source_document_id: eu_lufthansa_ita_airways_2024_decision
   page: '24'
-  quote_snippet: Under the O&D approach, every combination of an airport (or city,
-    where relevant) of origin to an airport (or city, where relevant) of destination
-    is defined as a distinct market.74 The effects of a transaction on competition
-    are thus assessed for each O&D separately.
+  quote_snippet: Under the O&D approach, every combination of an airport (or city, where relevant)
+    of origin to an airport (or city, where relevant) of destination is defined as a distinct
+    market.74 The effects of a transaction on competition are thus assessed for each O&D separately.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -529,9 +492,9 @@ source_passages:
 - passage_id: sp_23
   source_document_id: eu_lufthansa_ita_airways_2024_decision
   page: '25'
-  quote_snippet: 'The Commission nevertheless acknowledges that the competitive assessment
-    needs to factor in supply-side considerations and network effects, given Lufthansa’s
-    and ITA’s operations as network carriers,81 in the following ways:'
+  quote_snippet: 'The Commission nevertheless acknowledges that the competitive assessment needs
+    to factor in supply-side considerations and network effects, given Lufthansa’s and ITA’s
+    operations as network carriers,81 in the following ways:'
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -557,12 +520,11 @@ source_passages:
 - passage_id: sp_25
   source_document_id: eu_lufthansa_ita_airways_2024_decision
   page: '74'
-  quote_snippet: The majority of respondents having expressed an opinion agreed with
-    the Commission’s decisional practice that connecting airports are generally not
-    substitutable by other airports in the same area when assessing feed traffic routes,
-    due to the inability of secondary airports to accommodate hub-and-spoke operations
-    (by contrast to point-to-point operations) and to the limited number of inter-airport
-    connections.
+  quote_snippet: The majority of respondents having expressed an opinion agreed with the Commission’s
+    decisional practice that connecting airports are generally not substitutable by other airports
+    in the same area when assessing feed traffic routes, due to the inability of secondary airports
+    to accommodate hub-and-spoke operations (by contrast to point-to-point operations) and to
+    the limited number of inter-airport connections.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -575,8 +537,8 @@ source_passages:
 - passage_id: sp_26
   source_document_id: eu_lufthansa_ita_airways_2024_decision
   page: '22'
-  quote_snippet: The market for airport infrastructure services in Milan-Linate airport
-    (LIN) under the airport-by-airport approach (section 6.10);
+  quote_snippet: The market for airport infrastructure services in Milan-Linate airport (LIN)
+    under the airport-by-airport approach (section 6.10);
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -590,8 +552,8 @@ source_passages:
   source_document_id: eu_lufthansa_ita_airways_2024_decision
   page: '75'
   quote_snippet: The Commission has, in its prior decision practice, defined the geographic
-    scope of the market for airport infrastructure services as the catchment area
-    of individual airports.
+    scope of the market for airport infrastructure services as the catchment area of individual
+    airports.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -604,8 +566,8 @@ source_passages:
 - passage_id: sp_28
   source_document_id: eu_lufthansa_ita_airways_2024_decision
   page: '81'
-  quote_snippet: The Commission therefore considers that the relevant market is the
-    market for the provision of airport infrastructure services in LIN.
+  quote_snippet: The Commission therefore considers that the relevant market is the market for
+    the provision of airport infrastructure services in LIN.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -618,8 +580,8 @@ source_passages:
 - passage_id: sp_29
   source_document_id: eu_lufthansa_ita_airways_2024_decision
   page: '84'
-  quote_snippet: Accordingly, the Commission has previously defined a European-wide
-    market for intra-European routes of air cargo transport.439
+  quote_snippet: Accordingly, the Commission has previously defined a European-wide market for
+    intra-European routes of air cargo transport.439
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -632,10 +594,9 @@ source_passages:
 - passage_id: sp_30
   source_document_id: eu_lufthansa_ita_airways_2024_decision
   page: '84'
-  quote_snippet: In that respect the Commission concluded in previous cases that as
-    concerns intercontinental routes, the catchment areas broadly correspond to continents,
-    at least for those continents where local infrastructure is adequate to allow
-    for onward connections.
+  quote_snippet: In that respect the Commission concluded in previous cases that as concerns
+    intercontinental routes, the catchment areas broadly correspond to continents, at least
+    for those continents where local infrastructure is adequate to allow for onward connections.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -648,9 +609,9 @@ source_passages:
 - passage_id: sp_31
   source_document_id: eu_lufthansa_ita_airways_2024_decision
   page: '85'
-  quote_snippet: In its prior decisions, the Commission considered that the geographic
-    scope of the market for heavy maintenance services might be at least EEA-wide,
-    whereas line maintenance services has been considered as local in scope.442
+  quote_snippet: In its prior decisions, the Commission considered that the geographic scope
+    of the market for heavy maintenance services might be at least EEA-wide, whereas line maintenance
+    services has been considered as local in scope.442
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -663,10 +624,9 @@ source_passages:
 - passage_id: sp_32
   source_document_id: eu_lufthansa_ita_airways_2024_decision
   page: '86'
-  quote_snippet: The Commission considers that, for the purposes of this Decision,
-    the precise product market definition for MRO can be left open, as the Transaction
-    would not significantly impede effective competition under any plausible product
-    market definition.
+  quote_snippet: The Commission considers that, for the purposes of this Decision, the precise
+    product market definition for MRO can be left open, as the Transaction would not significantly
+    impede effective competition under any plausible product market definition.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -679,8 +639,8 @@ source_passages:
 - passage_id: sp_33
   source_document_id: eu_lufthansa_ita_airways_2024_decision
   page: '85'
-  quote_snippet: As regards to engine maintenance services and components maintenance
-    services, the Commission has considered these services to be worldwide in scope.443
+  quote_snippet: As regards to engine maintenance services and components maintenance services,
+    the Commission has considered these services to be worldwide in scope.443
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -693,10 +653,10 @@ source_passages:
 - passage_id: sp_34
   source_document_id: eu_lufthansa_ita_airways_2024_decision
   page: '87'
-  quote_snippet: The Commission considered in its previous decisions that the geographic
-    scope for the provision of ground handling services was restricted to a specific
-    airport given that the services required at a particular airport could not normally
-    be substituted by services provided at other airports.449
+  quote_snippet: The Commission considered in its previous decisions that the geographic scope
+    for the provision of ground handling services was restricted to a specific airport given
+    that the services required at a particular airport could not normally be substituted by
+    services provided at other airports.449
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -709,10 +669,10 @@ source_passages:
 - passage_id: sp_35
   source_document_id: eu_lufthansa_ita_airways_2024_decision
   page: '87'
-  quote_snippet: The Commission considers that, for the purposes of the present Decision,
-    the precise definition of the geographic market for ground handling services can
-    be left open as the Transaction would not significantly impede effective competition
-    irrespective of the precise geographic market definition adopted.
+  quote_snippet: The Commission considers that, for the purposes of the present Decision, the
+    precise definition of the geographic market for ground handling services can be left open
+    as the Transaction would not significantly impede effective competition irrespective of
+    the precise geographic market definition adopted.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -725,11 +685,10 @@ source_passages:
 - passage_id: sp_36
   source_document_id: eu_lufthansa_ita_airways_2024_decision
   page: '88'
-  quote_snippet: In its past decisional practice, the Commission has considered the
-    market for the provision of landside cargo handling services to be restricted
-    to a specific airport (or possibly two neighbouring airports), based on the assumption
-    that the services required at a particular airport could not be substituted for
-    services provided at other airports.457
+  quote_snippet: In its past decisional practice, the Commission has considered the market for
+    the provision of landside cargo handling services to be restricted to a specific airport
+    (or possibly two neighbouring airports), based on the assumption that the services required
+    at a particular airport could not be substituted for services provided at other airports.457
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -742,10 +701,10 @@ source_passages:
 - passage_id: sp_37
   source_document_id: eu_lufthansa_ita_airways_2024_decision
   page: '88'
-  quote_snippet: The Commission considers that, for the purposes of the present Decision,
-    the precise definition of the geographic market for cargo handling services can
-    be left open as the Transaction would not significantly impede effective competition
-    irrespective of the precise geographic market definition adopted.
+  quote_snippet: The Commission considers that, for the purposes of the present Decision, the
+    precise definition of the geographic market for cargo handling services can be left open
+    as the Transaction would not significantly impede effective competition irrespective of
+    the precise geographic market definition adopted.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -758,12 +717,11 @@ source_passages:
 - passage_id: sp_38
   source_document_id: eu_lufthansa_ita_airways_2024_decision
   page: '89'
-  quote_snippet: In its past decisional practice, the Commission considered that the
-    market for the provision of flight training services appears as worldwide or at
-    least EEA-wide in scope,463 because the players active in the market serve clients
-    who are mobile all over the world and the airlines fly their crew where flight
-    simulator training is available and readily switch supplier of flight simulator
-    training in case of price increase.
+  quote_snippet: In its past decisional practice, the Commission considered that the market
+    for the provision of flight training services appears as worldwide or at least EEA-wide
+    in scope,463 because the players active in the market serve clients who are mobile all over
+    the world and the airlines fly their crew where flight simulator training is available and
+    readily switch supplier of flight simulator training in case of price increase.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7

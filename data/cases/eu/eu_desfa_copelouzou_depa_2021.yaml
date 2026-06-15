@@ -1,0 +1,324 @@
+case_id: eu_desfa_copelouzou_depa_2021
+case_name: DESFA / COPELOUZOU / DEPA / GASLOG / BTG / GASTRADE
+authority: European Commission
+jurisdiction: EU
+sector: energy
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2021-11-26'
+parties:
+- name: DESFA
+  role: acquirer
+- name: COPELOUZOU
+  role: acquirer
+- name: DEPA
+  role: acquirer
+- name: GASLOG
+  role: acquirer
+- name: BTG
+  role: acquirer
+- name: GASTRADE
+  role: target
+source_documents:
+- doc_id: eu_desfa_copelouzou_depa_2021_decision
+  title: DESFA / COPELOUZOU / DEPA / GASLOG / BTG / GASTRADE — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10139
+  pdf_url: http://publications.europa.eu/resource/cellar/13f5eb79-c7be-11ec-b6f4-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Infrastructure for gas imports, including a possible sub-segment for regasification
+    services
+  definition_status: left_open
+  notes: ''
+- market_id: pm_2
+  name: Gas transmission
+  definition_status: defined
+  notes: ''
+- market_id: pm_3
+  name: Gas storage
+  definition_status: defined
+  notes: ''
+geographic_markets_considered:
+- market_id: gm_1
+  name: Infrastructure for gas imports — national or wider (Greece and other countries in South
+    East Europe affected)
+  definition_status: left_open
+  notes: ''
+- market_id: gm_2
+  name: Gas transmission — national (Greece affected)
+  definition_status: defined
+  notes: ''
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_desfa_copelouzou_depa_2021_decision
+  page: '9'
+  quote_snippet: 'In previous decisions, the Commission considered the question whether the
+    market for infrastructure for gas imports could be sub-segmented into the following markets:
+    (i) regasification services for the import of liquid natural gas; (ii) interconnection points
+    with international gas pipelines; and (iii) underground gas storage.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_desfa_copelouzou_depa_2021_decision
+  page: '10'
+  quote_snippet: The Commission considers that, for the purposes of this decision, it may be
+    left open whether pipelines and regasification terminals belong to the same relevant product
+    market or belong to separate relevant product markets, as the Transaction does not lead
+    to serious doubts as to its compatibility with the internal market, regardless of the market
+    definition adopted.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_desfa_copelouzou_depa_2021_decision
+  page: '9'
+  quote_snippet: The results of the market investigation conducted in the present case indicated
+    that most entities that import gas in Greece do so by using both pipelines and regasification
+    terminals. The majority of those respondents who provided a definite answer consider that
+    regasification terminals and pipelines are interchangeable facilities in order to carry
+    out the import of gas. However, a number of respondents consider the two types of infrastructures
+    to be more complementary than substitutable solutions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_desfa_copelouzou_depa_2021_decision
+  page: '10'
+  quote_snippet: The results of the market investigation confirm that the conclusions reached
+    by the Commission in its previous practice are still valid for Greece today. The Commission
+    therefore considers that gas networks for the transmission of gas are natural monopolies
+    and each of them constitute a distinct product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_desfa_copelouzou_depa_2021_decision
+  page: '10'
+  quote_snippet: The transmission of natural gas consists of physical gas transportation services
+    via high-pressure pipelines to gas wholesale suppliers that aim to resell their gas either
+    to other gas wholesalers, to distributors, or to large industrial customers that are directly
+    connected to the gas transmission network.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_desfa_copelouzou_depa_2021_decision
+  page: '10'
+  quote_snippet: In its decisional practice, the Commission has consistently considered gas
+    networks as natural monopolies.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_desfa_copelouzou_depa_2021_decision
+  page: '11'
+  quote_snippet: In view of the above, the Commission considers that gas storage belongs to
+    a separate market. As the Parties are not active in such a market and there is currently
+    no gas storage market in Greece, in this Decision gas storage will not be dealt with further.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_desfa_copelouzou_depa_2021_decision
+  page: '10'
+  quote_snippet: In previous decisions, the Commission has defined a separate relevant product
+    market for the storage of natural gas.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_desfa_copelouzou_depa_2021_decision
+  page: '11'
+  quote_snippet: The results of the market investigation confirm that a gas storage market has
+    not yet developed in Greece. A number of respondents confirmed that there is currently no
+    storage facility for natural gas in Greece. A clear majority of customers also confirmed
+    that short-term storage provided by LNG terminals cannot be considered as equivalent to
+    underground gas storage services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_desfa_copelouzou_depa_2021_decision
+  page: '14'
+  quote_snippet: In light of the above, including the responses to the market investigation
+    and the view of the Notifying Parties, the Commission considers that the geographic market
+    for gas import infrastructure and the possible sub-segment for regasification terminals
+    is national, or even wider (comprising Greece and other countries in South East Europe).
+    For the purposes of this Decision, the question can be left open, as the Transaction does
+    not lead to serious doubts as to its compatibility with the internal market regardless of
+    the market definition adopted in this respect.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_desfa_copelouzou_depa_2021_decision
+  page: '11'
+  quote_snippet: The results of the market investigation with regard to the geographic scope
+    of the market for infrastructure for gas imports point to it being national in scope. The
+    majority of competitors submitted that the market is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_desfa_copelouzou_depa_2021_decision
+  page: '11'
+  quote_snippet: The Notifying Parties submit that, given Greece’s land and sea borders, the
+    positioning of gas import infrastructure in the wider region, and the technical specifications
+    of the Greek gas infrastructure, in this case the market should not be delineated on a national
+    basis, but should instead comprise at least Greece, the Balkans and countries of South and
+    Eastern Europe, as well as Turkey.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_desfa_copelouzou_depa_2021_decision
+  page: '14'
+  quote_snippet: A majority of the respondents confirmed in the market investigation that the
+    Commission’s decisional practice of considering the market for gas transmission systems
+    as being national, covering the physical infrastructure grid, is still valid for Greece
+    today. In this respect, one customer noted that “DESFA is the only TSO operating on national
+    scale.” The Commission therefore considers the market for gas transmission to be national
+    in scope, in line with its decisional practice.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_desfa_copelouzou_depa_2021_decision
+  page: '14'
+  quote_snippet: In its past decisional practice, the Commission has generally considered the
+    market for gas transmission to be national, although noting that the region covered by the
+    physical infrastructure grid constitutes the narrowest possible delineation of the geographic
+    market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_desfa_copelouzou_depa_2021_decision
+  page: '14'
+  quote_snippet: The Notifying Parties note that in Greece the Trans Adriatic Pipeline (“TAP”)
+    (running across Greece from the Turkish border to Albania and into Italy) is now operational
+    and is thus a second balancing zone or entry-exit system where the amount of gas put into
+    the system balances with the amount taken out (in addition to the balancing zone associated
+    with DESFA’s transmission network). Given that it is an international pipeline its balancing
+    zone is wider than Greece. However, given that TAP cannot currently be used for physical
+    gas transportation services between two points in Greece, on a conservative basis the Parties
+    provided their analysis of the market for the transmission of natural gas as the NNGTS balancing
+    zone encompassing the territory of Greece.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_desfa_copelouzou_depa_2021_decision
+  page: '14'
+  quote_snippet: For the purposes of this Decision, the question can be left open, as the Transaction
+    does not lead to serious doubts as to its compatibility with the internal market regardless
+    of the market definition adopted in this respect.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

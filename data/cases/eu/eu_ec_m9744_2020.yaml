@@ -1,0 +1,509 @@
+case_id: eu_ec_m9744_2020
+case_name: M.9744
+authority: European Commission
+jurisdiction: EU
+sector: financial
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2020-08-17'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9744_2020_decision
+  title: M.9744 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9744
+  pdf_url: http://publications.europa.eu/resource/cellar/f66afc2a-96b7-11eb-b85c-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: A2A core infrastructure managed services
+  definition_status: defined
+  notes: The Commission concluded that A2A core infrastructure managed services and software-only
+    solutions constitute distinct product markets. A further differentiation based on the type
+    of payment processing (batch vs. instant) was not warranted.
+- market_id: pm_2
+  name: A2A core infrastructure software-only solutions
+  definition_status: defined
+  notes: The Commission concluded that A2A core infrastructure software-only solutions and managed
+    services constitute distinct product markets. A further differentiation based on the type
+    of payment processing (batch vs. instant) was not warranted.
+- market_id: pm_3
+  name: A2A payment services
+  definition_status: left_open
+  notes: The Commission left open whether A2A payment services form part of a wider market for
+    invoice payment services including recurring card-based payments, or if they are segmented
+    based on transaction types and methods.
+- market_id: pm_4
+  name: Invoice payment services
+  definition_status: left_open
+  notes: The Commission considered whether invoice payment services (including both A2A payment
+    services and recurring card payments) constituted a broader market, but left this question
+    open.
+geographic_markets_considered:
+- market_id: gm_1
+  name: A2A core infrastructure managed services — national, regional within the EEA or EEA-wide
+  definition_status: left_open
+  notes: The Commission considered national, regional (e.g. pan-Nordic) or EEA-wide scopes for
+    A2A CIS markets but ultimately left the exact geographic scope open.
+- market_id: gm_2
+  name: A2A core infrastructure software-only solutions — national, regional within the EEA
+    or EEA-wide
+  definition_status: left_open
+  notes: The Commission considered national, regional (e.g. pan-Nordic) or EEA-wide scopes for
+    A2A CIS markets but ultimately left the exact geographic scope open.
+- market_id: gm_3
+  name: A2A payment services — national or regional at the Nordic level
+  definition_status: left_open
+  notes: The Commission left open the exact geographic market definition for A2A payment services,
+    considering national or regional (Nordic) levels.
+- market_id: gm_4
+  name: Invoice payment services — national or regional at the Nordic level
+  definition_status: left_open
+  notes: The Commission left open the exact geographic market definition for invoice payment
+    services, considering national or regional (Nordic) levels, mirroring the assessment for
+    the narrower A2A payment services.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9744_2020_decision
+  page: '5'
+  quote_snippet: The results of the market investigation indicates that software-only solutions
+    and managed services are likely to constitute distinct product markets for the following
+    reasons.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9744_2020_decision
+  page: '5'
+  quote_snippet: First, most competitors and a significant share of customers consider that
+    A2A CIS providers do not typically have the capabilities to provide both software solutions
+    and managed services. In particular, market participants stressed the fact that the “business
+    model for [managed] services and [software] products is quite different” and that providing
+    managed services “implies much wider responsibilities and different type of expertise than
+    just delivering a [software] product”.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9744_2020_decision
+  page: '6'
+  quote_snippet: Based on the results of the market investigation and for the purpose of this
+    decision, the Commission concludes that the provision of A2A core infrastructure managed
+    services and software-only solutions constitute distinct product markets. A further differentiation
+    based on the type of payment processing is not warranted.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9744_2020_decision
+  page: '5'
+  quote_snippet: The results of the market investigation indicates that software-only solutions
+    and managed services are likely to constitute distinct product markets for the following
+    reasons.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9744_2020_decision
+  page: '5'
+  quote_snippet: Second, competitors generally consider that the provision of managed services
+    and software-only solutions are characterized by different competitive dynamics and landscape.
+    A large number of respondents to the market investigation explained that, although some
+    A2A CIS providers (such as the Parties) offer both types of solutions, most players provide
+    either only managed services or only software solutions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9744_2020_decision
+  page: '6'
+  quote_snippet: Based on the results of the market investigation and for the purpose of this
+    decision, the Commission concludes that the provision of A2A core infrastructure managed
+    services and software-only solutions constitute distinct product markets. A further differentiation
+    based on the type of payment processing is not warranted.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9744_2020_decision
+  page: '21'
+  quote_snippet: The market investigation did not fully support the Parties’ claims that recurring
+    card-based payment services and A2A payment services form part of a single product market
+    for invoice payment services. Competitors and customers expressed differing views on this
+    part. To the contrary, some elements of the market investigation clearly suggest that A2A
+    payment services form part of a distinct product market from recurring card payment services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9744_2020_decision
+  page: '22'
+  quote_snippet: A significant share of responding customers highlight that competitive dynamics
+    are different between A2A and recurring card-based payment services, in particular due to
+    differences in terms of technologies, prices and the role of international card schemes.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9744_2020_decision
+  page: '22'
+  quote_snippet: For the purpose of this decision, the exact product market definition for the
+    provision of A2A payment services and the question of whether they are part of a wider market
+    for invoice payment services including recurring card-based payments, or segmented based
+    on the types and methods of A2A transactions concerned can be left open as the Transaction
+    does not raise serious doubts as to its compatibility with the internal market under any
+    plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9744_2020_decision
+  page: '21'
+  quote_snippet: In the absence of Commission precedents, the Parties submit that, under the
+    narrowest possible market delineation, A2A payment services would be part of the market
+    for invoice payment services (i.e. services enabling remote payments of invoices), including
+    both A2A payment services and recurring card payments, as they are both used interchangeably
+    by individuals and businesses to pay bills.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9744_2020_decision
+  page: '21'
+  quote_snippet: The market investigation did not fully support the Parties’ claims that recurring
+    card-based payment services and A2A payment services form part of a single product market
+    for invoice payment services. Competitors and customers expressed differing views on this
+    part.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9744_2020_decision
+  page: '22'
+  quote_snippet: For the purpose of this decision, the exact product market definition for the
+    provision of A2A payment services and the question of whether they are part of a wider market
+    for invoice payment services including recurring card-based payments, or segmented based
+    on the types and methods of A2A transactions concerned can be left open as the Transaction
+    does not raise serious doubts as to its compatibility with the internal market under any
+    plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9744_2020_decision
+  page: '7'
+  quote_snippet: 'The market investigation was not fully conclusive with respect to the geographic
+    scope of the A2A CIS markets: while the Commission found that these markets are unlikely
+    to be worldwide, their exact geographic scope in the EEA is unclear.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m9744_2020_decision
+  page: '9'
+  quote_snippet: On the one hand, several elements suggest that the A2A CIS are no longer national
+    in scope and could be potentially regional (e.g. pan-Nordic) or EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m9744_2020_decision
+  page: '10'
+  quote_snippet: Based on the results of the market investigation and for the purpose of this
+    decision, the Commission considers that it can be left open whether the A2A CIS markets
+    are national, regional within the EEA or EEA-wide in scope as these alternative geographic
+    market
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m9744_2020_decision
+  page: '7'
+  quote_snippet: 'The market investigation was not fully conclusive with respect to the geographic
+    scope of the A2A CIS markets: while the Commission found that these markets are unlikely
+    to be worldwide, their exact geographic scope in the EEA is unclear.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m9744_2020_decision
+  page: '9'
+  quote_snippet: On the one hand, several elements suggest that the A2A CIS are no longer national
+    in scope and could be potentially regional (e.g. pan-Nordic) or EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m9744_2020_decision
+  page: '10'
+  quote_snippet: Based on the results of the market investigation and for the purpose of this
+    decision, the Commission considers that it can be left open whether the A2A CIS markets
+    are national, regional within the EEA or EEA-wide in scope as these alternative geographic
+    market
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m9744_2020_decision
+  page: '23'
+  quote_snippet: The market investigation did not fully support the Parties’ claims that the
+    markets for A2A payment services were regional in scope. In fact, the market investigation
+    indicated that markets for A2A payment services (regardless of the type of transaction or
+    A2A payment method concerned) are likely national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m9744_2020_decision
+  page: '23'
+  quote_snippet: Trans-border competition is perceived by most market participants (customers
+    and competitors alike) as limited, including competition from neighbouring countries. As
+    a result, the markets are unlikely to be EEA-wide in scope. Some respondents note that the
+    situation may be different in the Nordics.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m9744_2020_decision
+  page: '24'
+  quote_snippet: For the purpose of this decision, the exact geographic market definition for
+    the provision of A2A payment services can be left open as the Transaction does not raise
+    serious doubts as to its compatibility with the internal market under any plausible market
+    definition (national or regional at the Nordic level).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m9744_2020_decision
+  page: '23'
+  quote_snippet: The market investigation did not fully support the Parties’ claims that the
+    markets for A2A payment services were regional in scope. In fact, the market investigation
+    indicated that markets for A2A payment services (regardless of the type of transaction or
+    A2A payment method concerned) are likely national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_ec_m9744_2020_decision
+  page: '23'
+  quote_snippet: In the present case, the Parties argue that the market for invoice payment
+    services is no longer national but regional, covering the entire Nordic region (where the
+    Parties’ A2A payment service activities overlap).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_ec_m9744_2020_decision
+  page: '24'
+  quote_snippet: For the purpose of this decision, the exact geographic market definition for
+    the provision of A2A payment services can be left open as the Transaction does not raise
+    serious doubts as to its compatibility with the internal market under any plausible market
+    definition (national or regional at the Nordic level).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_ec_m9744_2020_decision
+  page: '20'
+  quote_snippet: In view of the above considerations, taking into account the market investigation
+    and all the evidence available, the Commission concludes that the Transaction raises serious
+    doubts as to its compatibility with the internal market and functioning of the EEA Agreement
+    with respect to overlaps between the Parties’ activities in the EEA market(s) for the provision
+    of A2A CI managed solutions in the EEA under any plausible geographic market definition
+    (i.e. national, regional and/or EEA-wide).. The Commission notes that, in relation to the
+    market for the provision of A2A CI software-only solutions, due to the presence of a sufficient
+    number of competitors post-Transaction and the lower barriers to entry, no serious doubts
+    arise. In any event, the final commitments offered by the Parties fully address the competition
+    concerns identified in the decision in relation to the provision of A2A CI managed services
+    in the EEA (see Section 4 below).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_ec_m9744_2020_decision
+  page: '18'
+  quote_snippet: In view of the above considerations, the Commission concludes that the Transaction
+    does not raise serious doubts as to its compatibility with the internal market and the functioning
+    of the EEA Agreement with respect to the overlaps between the Parties’ activities in the
+    market for the provision of A2A CI software-only solutions in the EEA, under any plausible
+    geographic market definition (i.e. national, regional and/or EEA-wide).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_ec_m9744_2020_decision
+  page: '30'
+  quote_snippet: Based on the above considerations, the Commission considers that the Transaction
+    does not raise serious doubts as to its compatibility with the internal market in relation
+    to the potential market for the provision of A2A payment services (or the wider market for
+    invoice payment services) in Denmark and Norway or the wider Nordic region.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

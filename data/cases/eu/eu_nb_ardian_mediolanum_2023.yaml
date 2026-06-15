@@ -1,0 +1,275 @@
+case_id: eu_nb_ardian_mediolanum_2023
+case_name: NB / ARDIAN / MEDIOLANUM / NEOPHARMED
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2023-02-27'
+parties:
+- name: NB
+  role: acquirer
+- name: ARDIAN
+  role: acquirer
+- name: MEDIOLANUM
+  role: acquirer
+- name: NEOPHARMED
+  role: target
+source_documents:
+- doc_id: eu_nb_ardian_mediolanum_2023_decision
+  title: NB / ARDIAN / MEDIOLANUM / NEOPHARMED — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10997
+  pdf_url: http://publications.europa.eu/resource/cellar/78f826bf-cfa7-11ed-a05c-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Commercialization of Finished Dose Pharmaceuticals (FDPs)
+  definition_status: left_open
+  notes: The Commission's past practice uses the Anatomical Therapeutic Classification (ATC)
+    system, particularly the ATC3 level, as a starting point. While the exact scope of the overall
+    FDP market was left open, the Commission specifically concluded that NeoGen’s product Axil
+    and Mediolanum’s product Lonquex, despite a technical overlap at the ATC3 level (L03A),
+    belong to separate product markets due to falling under different ATC4 classes and significant
+    differences in therapeutic indications, method of administration, distribution channels,
+    and cost, which was confirmed by competitors. For other FDPs relevant to vertical markets,
+    the exact market definition was also left open.
+- market_id: pm_2
+  name: Contract Development and Manufacturing Organisation (CDMO) services
+  definition_status: left_open
+  notes: CDMO services involve the upstream manufacturing of Finished Dose Pharmaceuticals (FDPs)
+    and Active Pharmaceutical Ingredients (APIs) under contract for third-party pharmaceutical
+    companies. The Commission noted its past practice considered segmentations based on API
+    vs. FDP, pharmaceutical form, manufacturing conditions, type of API, delivery mechanism,
+    and between dosage formulation/development services (CDO) and contract manufacturing services
+    (CMO). However, for the purpose of this decision, the exact product market definition was
+    left open as the transaction did not raise serious doubts irrespective of segmentation.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Commercialization of Finished Dose Pharmaceuticals (FDPs) — national (Italy affected)
+  definition_status: defined
+  notes: Consistent with its past practice, the Commission defined the relevant geographic market
+    for FDPs as national in scope, primarily due to regulatory barriers arising from national
+    reimbursement systems.
+- market_id: gm_2
+  name: Contract Development and Manufacturing Organisation (CDMO) services — EEA-wide or worldwide
+  definition_status: left_open
+  notes: The Commission's past decisions typically found the geographic market for CDMO services
+    to be worldwide or at least EEA-wide due to the economics of the services and absence of
+    trade barriers. For this decision, the exact geographic market definition was left open
+    as the transaction did not raise serious doubts irrespective of whether the market was EEA-wide
+    or global.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_nb_ardian_mediolanum_2023_decision
+  page: '5'
+  quote_snippet: 'The activities of the Parties give rise to horizontal overlaps in (i) the
+    commercialization of FDPs and (ii) food supplements in Italy.22 However, the Transaction
+    does not give rise to any horizontally affected markets. As further explained in Section
+    4.2 below, one technically horizontal overlap would arise from the Parties’ activities in
+    the commercialization of FDPs at the ATC3 level,23 class L03A (“Immunostimolanting agents
+    excluding interferons”) in Italy, where the Parties’ combined market share would amount
+    to [70-80]% in value (NeoGen: [60-70]%, Mediolanum: [5-10]%) and [60-70]% in volume (NeoGen:
+    [60-70]%, Mediolanum: [0-5]%). In this class, NeoGen is active with the product Axil, used
+    in the treatment of respiratory or urinary tract infections, while Mediolanum is present
+    with the product Lonquex, which is used for the reduction of neutropenia as a possible complication
+    of chemotherapy treatments. However, the products commercialized by NeoGen and Mediolanum
+    belong to separate product markets, as further explained in section 4.2.1 below.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_nb_ardian_mediolanum_2023_decision
+  page: '6'
+  quote_snippet: The Notifying Parties submit that the product market definition can be left
+    open because irrespective of the exact scope of the relevant product market, no competition
+    concerns would arise. The Notifying Parties further submit that, even in the only FDP ATC3
+    level where the Parties’ activities technically overlap horizontally (class L03A), NeoGen’s
+    Axil product and Mediolanum’s Lonquex product (i) fall under different ATC4 classes, and
+    (ii) are not substitutable.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_nb_ardian_mediolanum_2023_decision
+  page: '7'
+  quote_snippet: In light of the above and for the purpose of this decision, the Commission
+    considers that NeoGen’s product Axil and Mediolanum’s product Lonquex belong to separate
+    product markets. As far as the other FDPs the Target is active in and are relevant in the
+    context of the present Transaction, i.e. in the context of vertically affected markets described
+    in Table 2 below, are concerned, the exact product market definition can be left open, as
+    the Transaction does not give rise to serious doubts as to its compatibility with the internal
+    market or the functioning of the EEA Agreement under any plausible product market definition
+    (i.e. ATC3 or ATC4).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_nb_ardian_mediolanum_2023_decision
+  page: '8'
+  quote_snippet: In the past, the Commission considered the existence of a market for the supply
+    of CDMO services for APIs distinct from the market for the supply of contract manufacturing
+    for FDPs.37 With regard to the CDMO market for FDPs, further segmentations were considered
+    on the basis of (i) the pharmaceutical form manufactured (e.g. solid, semi-solid, injectable);
+    (ii) the conditions of manufacture (e.g. toxicity, sterile environment); (iii) the type
+    of API used for its production; (iv) the delivery mechanism used (e.g. swallowing, intravenous,
+    injection), and (v) between the supply of dosage formulation and development services (CDO)
+    and of contract manufacturing services (CMO).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_nb_ardian_mediolanum_2023_decision
+  page: '8'
+  quote_snippet: The Notifying Parties submit that the relevant product market should be defined
+    as encompassing all CDMO services offered to pharmaceutical companies for FDPs, without
+    any further segmentation, given that irrespective of whether the market comprises both CMO
+    and CDO or whether CDO should be considered separately, the Transaction does not raise any
+    doubts as to its compatibility with the internal market.39
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_nb_ardian_mediolanum_2023_decision
+  page: '9'
+  quote_snippet: The Commission considers that, for the purpose of the present decision, the
+    exact product market definition for the supply of CDMO services can be left open since the
+    Transaction does not give rise to serious doubts as to its compatibility with the internal
+    market or the functioning of the EEA Agreement irrespective of whether the market is defined
+    as encompassing all CDMO services or is segmented by type of services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_nb_ardian_mediolanum_2023_decision
+  page: '8'
+  quote_snippet: In its past practice, the Commission defined the relevant geographic market
+    for FDPs as national in scope due to the regulatory barriers, which result inter alia from
+    the national reimbursement systems of the EU Member States.34
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_nb_ardian_mediolanum_2023_decision
+  page: '8'
+  quote_snippet: In line with the Commission’s practice, the Notifying Parties submit that the
+    market for the commercialization of FDPs should be defined at the national level.35
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_nb_ardian_mediolanum_2023_decision
+  page: '8'
+  quote_snippet: For the purpose of the present decision, the Commission considers that the
+    geographic market for the commercialization of FDPs is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_nb_ardian_mediolanum_2023_decision
+  page: '9'
+  quote_snippet: In previous decisions, the Commission has found the relevant geographic market
+    for CDMO services to be worldwide or at least EEA-wide, as CDMO services are generally procured
+    anywhere in the EEA, regardless of the EEA country where the pharmaceutical products are
+    subsequently marketed, given the economics of the services under consideration, as well
+    as the lack of any trade or other barriers.40
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_nb_ardian_mediolanum_2023_decision
+  page: '9'
+  quote_snippet: For the purpose of the present decision, the geographic market definition can
+    be left open, since irrespective of whether the market for CDMO services and its plausible
+    segmentations is EEA-wide or global in scope, the Transaction does not raise serious doubts
+    as to its compatibility with the internal market or the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_nb_ardian_mediolanum_2023_decision
+  page: '7'
+  quote_snippet: Therefore, according to the Notifying Parties, the Transaction does not give
+    rise to any horizontal overlap among the Parties’ activities in FDPs in Italy.28
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

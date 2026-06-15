@@ -3,7 +3,7 @@ case_name: Siemens / Alstom
 authority: European Commission
 jurisdiction: EU
 sector: transport
-outcome: blocked
+outcome: unknown
 procedure_stage: phase2
 decision_date: '2019-02-06'
 parties:
@@ -21,12 +21,11 @@ product_markets_considered:
 - market_id: pm_1
   name: High and very high-speed trains
   definition_status: defined
-  notes: The Commission considered that the market could be further sub-segmented
-    on the basis of speed, distinguishing 'very high-speed trains' (equal to or above
-    300 km/h) as a narrower market, but left this question open as the transaction
-    raised competition concerns under both definitions. Therefore, the assessment
-    was carried out on the overall market for high and very high-speed trains and
-    on the narrower market for very high-speed trains.
+  notes: The Commission considered that the market could be further sub-segmented on the basis
+    of speed, distinguishing 'very high-speed trains' (equal to or above 300 km/h) as a narrower
+    market, but left this question open as the transaction raised competition concerns under
+    both definitions. Therefore, the assessment was carried out on the overall market for high
+    and very high-speed trains and on the narrower market for very high-speed trains.
 - market_id: pm_2
   name: Mainline signalling
   definition_status: defined
@@ -38,8 +37,8 @@ product_markets_considered:
 - market_id: pm_4
   name: Mainline signalling projects
   definition_status: defined
-  notes: Distinguished from mainline signalling products. This market is further segmented
-    into various sub-systems.
+  notes: Distinguished from mainline signalling products. This market is further segmented into
+    various sub-systems.
 - market_id: pm_5
   name: Mainline signalling products
   definition_status: defined
@@ -47,31 +46,31 @@ product_markets_considered:
 - market_id: pm_6
   name: Mainline signalling maintenance services
   definition_status: left_open
-  notes: The question of whether there is a distinct market for services was left
-    open, as neither party supplies signalling services to third parties, meaning
-    the transaction would have no impact on the merchant market for these services.
+  notes: The question of whether there is a distinct market for services was left open, as neither
+    party supplies signalling services to third parties, meaning the transaction would have
+    no impact on the merchant market for these services.
 - market_id: pm_7
   name: Legacy OBU projects
   definition_status: defined
   notes: Segmented from ETCS projects. Also, the segmentation of OBUs based on installation
-    (new rolling stock vs. retrofitting existing) and by ETCS level (Level 1 vs. Level
-    2) was not warranted by the Commission.
+    (new rolling stock vs. retrofitting existing) and by ETCS level (Level 1 vs. Level 2) was
+    not warranted by the Commission.
 - market_id: pm_8
   name: ETCS OBU projects
   definition_status: defined
-  notes: Segmented from Legacy projects. The segmentation of OBUs based on installation
-    (new rolling stock vs. retrofitting existing) and by ETCS level (Level 1 vs. Level
-    2) was not warranted by the Commission.
+  notes: Segmented from Legacy projects. The segmentation of OBUs based on installation (new
+    rolling stock vs. retrofitting existing) and by ETCS level (Level 1 vs. Level 2) was not
+    warranted by the Commission.
 - market_id: pm_9
   name: Legacy ATP wayside projects
   definition_status: defined
-  notes: Segmented from ETCS projects. The segmentation by project size for ATP wayside
-    overlay and re-signalling projects was not warranted by the Commission.
+  notes: Segmented from ETCS projects. The segmentation by project size for ATP wayside overlay
+    and re-signalling projects was not warranted by the Commission.
 - market_id: pm_10
   name: Standalone ETCS ATP wayside (overlay) projects
   definition_status: defined
-  notes: Segmented from re-signalling projects. The segmentation by ETCS level (Level
-    1 vs. Level 2) and by project size was not warranted by the Commission.
+  notes: Segmented from re-signalling projects. The segmentation by ETCS level (Level 1 vs.
+    Level 2) and by project size was not warranted by the Commission.
 - market_id: pm_11
   name: Standalone interlocking projects
   definition_status: defined
@@ -80,21 +79,20 @@ product_markets_considered:
 - market_id: pm_12
   name: ETCS ATP wayside re-signalling projects (bundle of ETCS ATP wayside and interlockings)
   definition_status: defined
-  notes: Segmented from overlay projects. This is explicitly defined as a bundle of
-    ETCS ATP wayside and interlockings. The segmentation by ETCS level (Level 1 vs.
-    Level 2) and by project size was not warranted by the Commission. The distinction
-    between greenfield and brownfield projects was also not warranted.
+  notes: Segmented from overlay projects. This is explicitly defined as a bundle of ETCS ATP
+    wayside and interlockings. The segmentation by ETCS level (Level 1 vs. Level 2) and by project
+    size was not warranted by the Commission. The distinction between greenfield and brownfield
+    projects was also not warranted.
 geographic_markets_considered:
 - market_id: gm_1
-  name: High and very high-speed trains — EEA-wide (excluding China, Japan, Korea
-    affected)
+  name: High and very high-speed trains — EEA-wide (excluding China, Japan, Korea affected)
   definition_status: considered
   notes: The Commission concluded the market is at least EEA-wide and includes Switzerland.
-    It also stated it 'cannot exclude that the relevant markets are broader and cover
-    the rest of the world, excluding China, Japan and South Korea' due to insurmountable
-    barriers to entry in those countries. This phrasing indicates a 'considered' status
-    as it is not a definitive 'defined' worldwide market but rather a recognition
-    of its potential broader scope for assessment purposes.
+    It also stated it 'cannot exclude that the relevant markets are broader and cover the rest
+    of the world, excluding China, Japan and South Korea' due to insurmountable barriers to
+    entry in those countries. This phrasing indicates a 'considered' status as it is not a definitive
+    'defined' worldwide market but rather a recognition of its potential broader scope for assessment
+    purposes.
 - market_id: gm_2
   name: ETCS OBU projects — EEA-wide
   definition_status: defined
@@ -122,11 +120,11 @@ source_passages:
 - passage_id: sp_1
   source_document_id: eu_siemens_alstom_2019_decision
   page: '30'
-  quote_snippet: For the reasons set out in Section 5.2.1 and in light of the results
-    of the investigation, the Commission considers that trains capable of speeds equal
-    to and above 250 km/h ("high and very high-speed trains") should be considered
-    as a separate product market, distinct from intercity trains which are incapable
-    of delivering the same service speed.
+  quote_snippet: For the reasons set out in Section 5.2.1 and in light of the results of the
+    investigation, the Commission considers that trains capable of speeds equal to and above
+    250 km/h ("high and very high-speed trains") should be considered as a separate product
+    market, distinct from intercity trains which are incapable of delivering the same service
+    speed.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -139,12 +137,11 @@ source_passages:
 - passage_id: sp_2
   source_document_id: eu_siemens_alstom_2019_decision
   page: '30'
-  quote_snippet: However, the question whether the market for high and very high-speed
-    trains should be further segmented on this basis can be left open for the purposes
-    of this Decision as the Transaction raises competition concerns on both conceivable
-    market definitions. The Commission will therefore carry out its competitive assessment
-    on the overall market for high and very high-speed trains and on the narrower
-    market for very high-speed trains.
+  quote_snippet: However, the question whether the market for high and very high-speed trains
+    should be further segmented on this basis can be left open for the purposes of this Decision
+    as the Transaction raises competition concerns on both conceivable market definitions. The
+    Commission will therefore carry out its competitive assessment on the overall market for
+    high and very high-speed trains and on the narrower market for very high-speed trains.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -157,8 +154,8 @@ source_passages:
 - passage_id: sp_3
   source_document_id: eu_siemens_alstom_2019_decision
   page: '113'
-  quote_snippet: Therefore, the Commission’s concludes that there is a distinction
-    between mainline signalling and urban signalling.
+  quote_snippet: Therefore, the Commission’s concludes that there is a distinction between mainline
+    signalling and urban signalling.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -171,8 +168,8 @@ source_passages:
 - passage_id: sp_4
   source_document_id: eu_siemens_alstom_2019_decision
   page: '129'
-  quote_snippet: For the purpose of the assessment of the Transaction, the Commission's
-    view is that mainline signalling and urban signalling are separate markets.
+  quote_snippet: For the purpose of the assessment of the Transaction, the Commission's view
+    is that mainline signalling and urban signalling are separate markets.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -185,8 +182,8 @@ source_passages:
 - passage_id: sp_5
   source_document_id: eu_siemens_alstom_2019_decision
   page: '113'
-  quote_snippet: Therefore, the Commission’s concludes that there is a distinction
-    between mainline signalling and urban signalling.
+  quote_snippet: Therefore, the Commission’s concludes that there is a distinction between mainline
+    signalling and urban signalling.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -199,8 +196,8 @@ source_passages:
 - passage_id: sp_6
   source_document_id: eu_siemens_alstom_2019_decision
   page: '129'
-  quote_snippet: For the purpose of the assessment of the Transaction, the Commission's
-    view is that mainline signalling and urban signalling are separate markets.
+  quote_snippet: For the purpose of the assessment of the Transaction, the Commission's view
+    is that mainline signalling and urban signalling are separate markets.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -213,8 +210,8 @@ source_passages:
 - passage_id: sp_7
   source_document_id: eu_siemens_alstom_2019_decision
   page: '115'
-  quote_snippet: The Commission's therefore concludes that there is a distinction
-    between mainline signalling projects and mainline signalling products.
+  quote_snippet: The Commission's therefore concludes that there is a distinction between mainline
+    signalling projects and mainline signalling products.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -241,8 +238,8 @@ source_passages:
 - passage_id: sp_9
   source_document_id: eu_siemens_alstom_2019_decision
   page: '115'
-  quote_snippet: The Commission's therefore concludes that there is a distinction
-    between mainline signalling projects and mainline signalling products.
+  quote_snippet: The Commission's therefore concludes that there is a distinction between mainline
+    signalling projects and mainline signalling products.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -269,10 +266,9 @@ source_passages:
 - passage_id: sp_11
   source_document_id: eu_siemens_alstom_2019_decision
   page: '115'
-  quote_snippet: In any event, since neither Party supplies signalling services to
-    third parties, the question whether there is a distinct market for services can
-    be left open as the Transaction will have no impact on the merchant market for
-    the provision of signalling services.
+  quote_snippet: In any event, since neither Party supplies signalling services to third parties,
+    the question whether there is a distinct market for services can be left open as the Transaction
+    will have no impact on the merchant market for the provision of signalling services.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -285,9 +281,8 @@ source_passages:
 - passage_id: sp_12
   source_document_id: eu_siemens_alstom_2019_decision
   page: '122'
-  quote_snippet: The Commission considers that ATP wayside and OBU projects should
-    be segmented into legacy and ETCS projects, each constituting a separate product
-    market.
+  quote_snippet: The Commission considers that ATP wayside and OBU projects should be segmented
+    into legacy and ETCS projects, each constituting a separate product market.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -313,9 +308,9 @@ source_passages:
 - passage_id: sp_14
   source_document_id: eu_siemens_alstom_2019_decision
   page: '125'
-  quote_snippet: The Commission does not consider that a segmentation of OBUs into
-    separate product markets based on installation, i.e. new rolling stock or retrofitting
-    existing rolling stock, is warranted.
+  quote_snippet: The Commission does not consider that a segmentation of OBUs into separate
+    product markets based on installation, i.e. new rolling stock or retrofitting existing rolling
+    stock, is warranted.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -328,9 +323,8 @@ source_passages:
 - passage_id: sp_15
   source_document_id: eu_siemens_alstom_2019_decision
   page: '122'
-  quote_snippet: The Commission considers that ATP wayside and OBU projects should
-    be segmented into legacy and ETCS projects, each constituting a separate product
-    market.
+  quote_snippet: The Commission considers that ATP wayside and OBU projects should be segmented
+    into legacy and ETCS projects, each constituting a separate product market.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -356,9 +350,9 @@ source_passages:
 - passage_id: sp_17
   source_document_id: eu_siemens_alstom_2019_decision
   page: '125'
-  quote_snippet: The Commission does not consider that a segmentation of OBUs into
-    separate product markets based on installation, i.e. new rolling stock or retrofitting
-    existing rolling stock, is warranted.
+  quote_snippet: The Commission does not consider that a segmentation of OBUs into separate
+    product markets based on installation, i.e. new rolling stock or retrofitting existing rolling
+    stock, is warranted.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -371,9 +365,8 @@ source_passages:
 - passage_id: sp_18
   source_document_id: eu_siemens_alstom_2019_decision
   page: '122'
-  quote_snippet: The Commission considers that ATP wayside and OBU projects should
-    be segmented into legacy and ETCS projects, each constituting a separate product
-    market.
+  quote_snippet: The Commission considers that ATP wayside and OBU projects should be segmented
+    into legacy and ETCS projects, each constituting a separate product market.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -399,8 +392,8 @@ source_passages:
 - passage_id: sp_20
   source_document_id: eu_siemens_alstom_2019_decision
   page: '126'
-  quote_snippet: The Commission considers that there is no need to define separate
-    product markets for ATP wayside overlay and re-signalling by project size.
+  quote_snippet: The Commission considers that there is no need to define separate product markets
+    for ATP wayside overlay and re-signalling by project size.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -413,8 +406,8 @@ source_passages:
 - passage_id: sp_21
   source_document_id: eu_siemens_alstom_2019_decision
   page: '124'
-  quote_snippet: The Commission considers that ATP projects should be segmented between
-    overlay and re-signalling projects, each constituting a separate product market.
+  quote_snippet: The Commission considers that ATP projects should be segmented between overlay
+    and re-signalling projects, each constituting a separate product market.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -440,9 +433,9 @@ source_passages:
 - passage_id: sp_23
   source_document_id: eu_siemens_alstom_2019_decision
   page: '126'
-  quote_snippet: The Commission considers that there is no need to define separate
-    product markets for ETCS wayside ATP and ETCS OBU projects based on ETCS level
-    (namely ETCS Level 1, ETCS Level 2).
+  quote_snippet: The Commission considers that there is no need to define separate product markets
+    for ETCS wayside ATP and ETCS OBU projects based on ETCS level (namely ETCS Level 1, ETCS
+    Level 2).
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -455,9 +448,9 @@ source_passages:
 - passage_id: sp_24
   source_document_id: eu_siemens_alstom_2019_decision
   page: '128'
-  quote_snippet: The Commission considers that standalone interlocking projects constitute
-    a separate product market, distinct from re-signalling projects involving the
-    supply of both ETCS ATP wayside systems and interlockings.
+  quote_snippet: The Commission considers that standalone interlocking projects constitute a
+    separate product market, distinct from re-signalling projects involving the supply of both
+    ETCS ATP wayside systems and interlockings.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -483,9 +476,8 @@ source_passages:
 - passage_id: sp_26
   source_document_id: eu_siemens_alstom_2019_decision
   page: '128'
-  quote_snippet: The Commission considers that there is no need to define separate
-    product markets for standalone interlockings projects based the type of technology
-    used.
+  quote_snippet: The Commission considers that there is no need to define separate product markets
+    for standalone interlockings projects based the type of technology used.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -498,8 +490,8 @@ source_passages:
 - passage_id: sp_27
   source_document_id: eu_siemens_alstom_2019_decision
   page: '124'
-  quote_snippet: The Commission considers that ATP projects should be segmented between
-    overlay and re-signalling projects, each constituting a separate product market.
+  quote_snippet: The Commission considers that ATP projects should be segmented between overlay
+    and re-signalling projects, each constituting a separate product market.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -512,8 +504,7 @@ source_passages:
 - passage_id: sp_28
   source_document_id: eu_siemens_alstom_2019_decision
   page: '129'
-  quote_snippet: ETCS ATP wayside re-signalling projects (bundle of ETCS ATP wayside
-    and interlockings).
+  quote_snippet: ETCS ATP wayside re-signalling projects (bundle of ETCS ATP wayside and interlockings).
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -526,9 +517,9 @@ source_passages:
 - passage_id: sp_29
   source_document_id: eu_siemens_alstom_2019_decision
   page: '126'
-  quote_snippet: The Commission considers that there is no need to define separate
-    product markets for ETCS wayside ATP and ETCS OBU projects based on ETCS level
-    (namely ETCS Level 1, ETCS Level 2).
+  quote_snippet: The Commission considers that there is no need to define separate product markets
+    for ETCS wayside ATP and ETCS OBU projects based on ETCS level (namely ETCS Level 1, ETCS
+    Level 2).
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -541,9 +532,9 @@ source_passages:
 - passage_id: sp_30
   source_document_id: eu_siemens_alstom_2019_decision
   page: '34'
-  quote_snippet: For the reasons set out in Section 5.2.2 and in light of the results
-    of the investigation, the Commission considers that the relevant geographic markets
-    for both high and very high-speed trains are at least EEA-wide and include Switzerland.
+  quote_snippet: For the reasons set out in Section 5.2.2 and in light of the results of the
+    investigation, the Commission considers that the relevant geographic markets for both high
+    and very high-speed trains are at least EEA-wide and include Switzerland.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -556,9 +547,9 @@ source_passages:
 - passage_id: sp_31
   source_document_id: eu_siemens_alstom_2019_decision
   page: '34'
-  quote_snippet: In light of the worldwide activities of non-Asian suppliers, the
-    Commission cannot exclude that the relevant markets are broader and cover the
-    rest of the world, excluding China,100 Japan and South Korea.
+  quote_snippet: In light of the worldwide activities of non-Asian suppliers, the Commission
+    cannot exclude that the relevant markets are broader and cover the rest of the world, excluding
+    China,100 Japan and South Korea.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -571,9 +562,9 @@ source_passages:
 - passage_id: sp_32
   source_document_id: eu_siemens_alstom_2019_decision
   page: '34'
-  quote_snippet: When considering the worldwide market, the market investigation has
-    confirmed the Notifying Party's view that insurmountable barriers impede the entry
-    of foreign suppliers in China, Japan and South Korea:98
+  quote_snippet: When considering the worldwide market, the market investigation has confirmed
+    the Notifying Party's view that insurmountable barriers impede the entry of foreign suppliers
+    in China, Japan and South Korea:98
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -586,8 +577,8 @@ source_passages:
 - passage_id: sp_33
   source_document_id: eu_siemens_alstom_2019_decision
   page: '134'
-  quote_snippet: The Commission considers that the relevant geographic market for
-    ETCS OBU projects is EEA-wide in scope for reasons set out below.
+  quote_snippet: The Commission considers that the relevant geographic market for ETCS OBU projects
+    is EEA-wide in scope for reasons set out below.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -600,8 +591,8 @@ source_passages:
 - passage_id: sp_34
   source_document_id: eu_siemens_alstom_2019_decision
   page: '134'
-  quote_snippet: For the reasons set out in Section 6.2.2 the Commission considers
-    that the relevant geographic market for ETCS OBU projects is EEA-wide.
+  quote_snippet: For the reasons set out in Section 6.2.2 the Commission considers that the
+    relevant geographic market for ETCS OBU projects is EEA-wide.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -614,9 +605,9 @@ source_passages:
 - passage_id: sp_35
   source_document_id: eu_siemens_alstom_2019_decision
   page: '145'
-  quote_snippet: On balance, for the reasons set out in recitals (745)-(768), the
-    Commission considers that the relevant geographic markets for standalone interlockings
-    projects is national and will undertake the competitive assessment on that basis.
+  quote_snippet: On balance, for the reasons set out in recitals (745)-(768), the Commission
+    considers that the relevant geographic markets for standalone interlockings projects is
+    national and will undertake the competitive assessment on that basis.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -629,9 +620,8 @@ source_passages:
 - passage_id: sp_36
   source_document_id: eu_siemens_alstom_2019_decision
   page: '145'
-  quote_snippet: The Commission considers that the relevant geographic market for
-    ETCS ATP overlay projects is EEA-wide in scope for the reasons set out in recitals
-    (771)-(799).
+  quote_snippet: The Commission considers that the relevant geographic market for ETCS ATP overlay
+    projects is EEA-wide in scope for the reasons set out in recitals (771)-(799).
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -644,9 +634,9 @@ source_passages:
 - passage_id: sp_37
   source_document_id: eu_siemens_alstom_2019_decision
   page: '151'
-  quote_snippet: For the reasons set out in Section 6.2.2 and in light of the results
-    of the investigation, the Commission considers that the relevant geographic markets
-    for ETCS ATP wayside overlay projects is EEA-wide.
+  quote_snippet: For the reasons set out in Section 6.2.2 and in light of the results of the
+    investigation, the Commission considers that the relevant geographic markets for ETCS ATP
+    wayside overlay projects is EEA-wide.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -659,14 +649,13 @@ source_passages:
 - passage_id: sp_38
   source_document_id: eu_siemens_alstom_2019_decision
   page: '146'
-  quote_snippet: These examples of ETCS ATP wayside overlay projects provided by the
-    Parties' and their competitors show that adaptation costs that are country specific
-    (e.g. NTRs, interfacing with interlockings) can be surmountable, as they represent
-    a relatively low share of the project's total value, which ranges from […] in
-    the examples included. The average project size for ETCS ATP wayside overlay projects
-    is EUR […], while […]% of the projects are larger than EUR […], which means that
-    there is a substantial share of projects that are large compared to the typical
-    adaptation costs of up to EUR […] submitted by the Notifying Party.
+  quote_snippet: These examples of ETCS ATP wayside overlay projects provided by the Parties'
+    and their competitors show that adaptation costs that are country specific (e.g. NTRs, interfacing
+    with interlockings) can be surmountable, as they represent a relatively low share of the
+    project's total value, which ranges from […] in the examples included. The average project
+    size for ETCS ATP wayside overlay projects is EUR […], while […]% of the projects are larger
+    than EUR […], which means that there is a substantial share of projects that are large compared
+    to the typical adaptation costs of up to EUR […] submitted by the Notifying Party.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -679,9 +668,9 @@ source_passages:
 - passage_id: sp_39
   source_document_id: eu_siemens_alstom_2019_decision
   page: '151'
-  quote_snippet: The Commission considers that the relevant geographic market for
-    ETCS ATP re-signalling projects (bundle of ETCS ATP wayside and interlockings)
-    is EEA-wide in scope for the following reasons.
+  quote_snippet: The Commission considers that the relevant geographic market for ETCS ATP re-signalling
+    projects (bundle of ETCS ATP wayside and interlockings) is EEA-wide in scope for the following
+    reasons.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -694,9 +683,9 @@ source_passages:
 - passage_id: sp_40
   source_document_id: eu_siemens_alstom_2019_decision
   page: '157'
-  quote_snippet: For the reasons set out in Section 6.2.2 and in light of the results
-    of the investigation, the Commission considers that the relevant geographic markets
-    for ETCS ATP wayside re-signalling projects is EEA-wide.
+  quote_snippet: For the reasons set out in Section 6.2.2 and in light of the results of the
+    investigation, the Commission considers that the relevant geographic markets for ETCS ATP
+    wayside re-signalling projects is EEA-wide.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7

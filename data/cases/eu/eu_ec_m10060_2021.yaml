@@ -1,0 +1,221 @@
+case_id: eu_ec_m10060_2021
+case_name: M.10060
+authority: European Commission
+jurisdiction: EU
+sector: transport
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2021-02-11'
+parties: []
+source_documents:
+- doc_id: eu_ec_m10060_2021_decision
+  title: M.10060 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10060
+  pdf_url: http://publications.europa.eu/resource/cellar/d05eea7c-a6b3-11eb-9585-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Transport Administration Systems (TAS) software solutions
+  definition_status: left_open
+  notes: The Commission considers TAS software solutions distinct from SCM and other business
+    software. However, it explicitly leaves open whether solutions provided by 3PL suppliers
+    and Transport Carriers are part of this market, noting that this would not impact the competitive
+    assessment. For the purpose of the decision, the precise product definition was left open
+    as no serious doubts arose under the narrowest plausible market of TAS solutions provided
+    by Generalist and Specialised SCE operators.
+- market_id: pm_2
+  name: Business software / Enterprise Application Software (EAS)
+  definition_status: considered
+  notes: The Commission referred to its precedents on business software and Enterprise Application
+    Software as a broader context, from which TAS solutions were distinguished.
+- market_id: pm_3
+  name: Supply Chain Management (SCM)
+  definition_status: considered
+  notes: SCM was defined based on Commission precedents, as a broader concept than TAS, and
+    TAS was concluded to be a distinct market from SCM.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Transport Administration Systems (TAS) software solutions — EEA-wide and worldwide
+  definition_status: considered
+  notes: The Commission considered the market for TAS software solutions to be at least EEA-wide
+    and potentially worldwide, a view supported by the market investigation and consistent with
+    precedents for related business software.
+- market_id: gm_2
+  name: Transport Administration Systems (TAS) software solutions — Nordic region
+  definition_status: considered
+  notes: Although the overall market was considered at least EEA-wide, due to limited indications
+    from the market investigation of a potential regional cross-border market, the Commission
+    also assessed the effects of the transaction at the regional level in the Nordic region.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m10060_2021_decision
+  page: '4'
+  quote_snippet: The results of the market investigation support the Parties’ views that the
+    provision of TAS software solutions may constitute a product market distinct from other
+    business software.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m10060_2021_decision
+  page: '5'
+  quote_snippet: Thus, whilst the results of the market investigation support a distinct market
+    for TAS software solutions provided by both Generalist and Specialised SCE operators, it
+    is less clear whether the solutions provided by 3PL suppliers and Transport Carriers are
+    part of this product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m10060_2021_decision
+  page: '5'
+  quote_snippet: In light of the above, and on the basis of the outcome of the market investigation,
+    the Commission considers that TAS software solutions constitute a market distinct from SCM
+    and other business software. Whilst the Commission considers that the market for TAS software
+    solutions comprises the software solutions provided by both Generalist and Specialized SCE
+    operators, it can be left open whether the software solutions provided by 3PL suppliers
+    and Transport Carriers are part of the same market, as this would in any case not impact
+    the outcome of the competitive assessment below.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m10060_2021_decision
+  page: '3'
+  quote_snippet: The Commission has previously assessed markets for business software,8 but
+    has never specifically considered a market for TAS solutions. In previous decisions on business
+    software,9 the Commission specified that business application software comprises software
+    programs that address some aspects of planning, execution or collaboration in a business,
+    government or other organization.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m10060_2021_decision
+  page: '4'
+  quote_snippet: 'These applications can in general be divided into: (i) Personal Productivity
+    Applications; and (ii) Enterprise Application Software (“EAS”).10 EAS can be further sub-segmented
+    into Enterprise Resource Planning (“ERP”), Customer Relationship Management (“CRM”), Supply
+    Chain Management (“SCM”), Supplier Relationship Management (“SRM”), Product Lifecycle Management
+    (“PLM”) and Business Analytics (“BA”).11'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m10060_2021_decision
+  page: '4'
+  quote_snippet: The Commission has defined SCM as applications that automate the process of
+    planning, producing and delivering a good or service to market (supply planning, manufacturing,
+    order fulfilment, distribution and logistics, sourcing and procurement).12
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m10060_2021_decision
+  page: '6'
+  quote_snippet: The outcome of the market investigation supports the views of the Parties,
+    since the majority of respondents consider that the market for TAS software solutions is
+    at least EEA-wide and possibly worldwide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m10060_2021_decision
+  page: '6'
+  quote_snippet: In light of the above, and on the basis of the outcome of the market investigation,
+    the Commission considers that the market for TAS software solutions (whether including or
+    excluding solutions by 3PL suppliers and Transport Carriers) is at least EEA-wide in scope
+    and potentially worldwide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m10060_2021_decision
+  page: '6'
+  quote_snippet: Only a limited number of respondents indicated the potential existence of a
+    regional cross-border market for TAS software solutions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m10060_2021_decision
+  page: '6'
+  quote_snippet: However, since a limited number of respondents indicated the potential existence
+    of a regional cross-border market for TAS software solutions (whether including or excluding
+    solutions by 3PL suppliers and Transport Carriers), for the purposes of this Transaction,
+    the Commission has also assessed the effects of the Transaction at regional level, namely
+    in the Nordic region where both Parties are active.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+case_type: merger
+ai_summary: null
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

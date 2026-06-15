@@ -1,0 +1,319 @@
+case_id: eu_midea_arbonia_2025
+case_name: MIDEA / ARBONIA
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2025-01-28'
+parties:
+- name: MIDEA
+  role: acquirer
+- name: ARBONIA
+  role: target
+source_documents:
+- doc_id: eu_midea_arbonia_2025_decision
+  title: MIDEA / ARBONIA — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11570
+  pdf_url: http://publications.europa.eu/resource/cellar/de2ac017-1625-11f0-b1a3-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Fan coil units (FCUs)
+  definition_status: left_open
+  notes: The Commission conducted segmentation analysis for FCUs based on intended use (residential
+    vs. non-residential), number of tubes (two vs. four), and design (classical/free-standing
+    vs. non-classical/mounted), finding a plausible basis for these distinctions, but ultimately
+    left the overall market definition for FCUs open as no competition concerns arose under
+    any plausible definition.
+- market_id: pm_2
+  name: Non-classical FCUs (mounted in the wall or ceiling)
+  definition_status: considered
+  notes: This is a specific segmentation of FCUs based on design, differentiated from 'classical'
+    (free-standing) FCUs. The Commission found it plausible to distinguish FCUs based on design
+    and focused its competitive assessment on this segment in Estonia, identifying it as the
+    only horizontally affected market.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Fan coil units (FCUs) — EEA-wide
+  definition_status: left_open
+  notes: null
+- market_id: gm_2
+  name: Fan coil units (FCUs) — national
+  definition_status: left_open
+  notes: null
+- market_id: gm_3
+  name: Non-classical FCUs (mounted in the wall or ceiling) — national (Estonia affected)
+  definition_status: considered
+  notes: The competitive assessment for non-classical FCUs was specifically carried out at the
+    national level in Estonia, even though the overall geographic market definition for FCUs
+    was left open. This market was identified as the only horizontally affected market at a
+    national level.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_midea_arbonia_2025_decision
+  page: '4'
+  quote_snippet: The Commission has adopted several decisions concerning HAVC products. In its
+    more recent precedents, the Commission has considered the existence of markets for specific
+    HAVC technologies, such as heat pumps, AHUs, as well as possible segmentations thereof,
+    for instance based on intended end-use (residential or non-residential), structure (free
+    standing or mounted), or design. However, the Commission has not defined so far a market
+    for FCUs or possible further segmentations thereof.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_midea_arbonia_2025_decision
+  page: '5'
+  quote_snippet: 'The results of the market investigation generally support a further segmentation
+    of the HVAC market based on type of technology, as a starting point. Further, the market
+    investigation supports a possible further segmentation of the FCU market according to: (i)
+    intended use (i.e., residential vs non-residential FCUs), (ii) based on the number of tubes
+    (i.e., FCUs with two tubes and FCUs with four tubes) and (iii) design (i.e. classical FCUs
+    that are free standing on the floor and non-classical FCUs that are mounted in the wall
+    or ceiling).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_midea_arbonia_2025_decision
+  page: '7'
+  quote_snippet: As the Transaction does not raise doubts as to its compatibility with the internal
+    market under any plausible product market definition, the exact product market definition
+    in relation to FCUs can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_midea_arbonia_2025_decision
+  page: '3'
+  quote_snippet: The Transaction however gives rise to one horizontally affected market with
+    respect to the supply of a certain type of FCUs (i.e. FCUs that are mounted in the wall
+    or the ceiling, such as high-wall, concealed or cassette units) at national level (in Estonia),
+    as will be further described below.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_midea_arbonia_2025_decision
+  page: '7'
+  quote_snippet: In view of the foregoing, the Commission finds it plausible to distinguish
+    between FCUs based on their design, differentiating between classical and non-classical
+    FCUs, while finding that there are some indications supporting a further segmentation of
+    non-classical FCUs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_midea_arbonia_2025_decision
+  page: '9'
+  quote_snippet: At national level, the Transaction gives rise to one horizontally affected
+    market as regards the supply of ‘non-classical’ FCUs (i.e., FCUs mounted in the wall or
+    ceiling) in Estonia.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_midea_arbonia_2025_decision
+  page: '8'
+  quote_snippet: The Notifying Party considers that the geographic market for the supply of
+    FCUs is at least EEA-wide and that national markets would be the narrowest possible geographic
+    market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_midea_arbonia_2025_decision
+  page: '8'
+  quote_snippet: The majority of the competitors that replied to the questionnaire indicated
+    that they typically supply FCUs beyond national boundaries – most of them across the EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_midea_arbonia_2025_decision
+  page: '9'
+  quote_snippet: The exact geographic market definition for the market for FCUs can be left
+    open since no competition concerns arise as a result of the Transaction under any of the
+    alternative geographic market definitions (i.e. national, or EEA-wide).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_midea_arbonia_2025_decision
+  page: '8'
+  quote_snippet: The Notifying Party considers that the geographic market for the supply of
+    FCUs is at least EEA-wide and that national markets would be the narrowest possible geographic
+    market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_midea_arbonia_2025_decision
+  page: '8'
+  quote_snippet: 'At the same time, however, the vast majority of competitors indicated that
+    they need a local presence (a local distributor, installer or representative) to make sales
+    in a given country. More precisely, they explained that: “You need to engage directly with
+    the end user or his mechanical contractor to understand their need and requirements in order
+    to generate a tailored-made quote”; “the local presence is mandatory to supply FCU”; “Yes,
+    need local sales representatives”; “Yes, local representation is critical to provide pre
+    and after sales support and logistic operations”; “[…] in each of these Markets it is fundamental
+    to master a solid network of distributors and various contractors (installers, service technicians,
+    planners) […]”.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_midea_arbonia_2025_decision
+  page: '9'
+  quote_snippet: The exact geographic market definition for the market for FCUs can be left
+    open since no competition concerns arise as a result of the Transaction under any of the
+    alternative geographic market definitions (i.e. national, or EEA-wide).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_midea_arbonia_2025_decision
+  page: '3'
+  quote_snippet: The Transaction however gives rise to one horizontally affected market with
+    respect to the supply of a certain type of FCUs (i.e. FCUs that are mounted in the wall
+    or the ceiling, such as high-wall, concealed or cassette units) at national level (in Estonia),
+    as will be further described below.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_midea_arbonia_2025_decision
+  page: '9'
+  quote_snippet: At national level, the Transaction gives rise to one horizontally affected
+    market as regards the supply of ‘non-classical’ FCUs (i.e., FCUs mounted in the wall or
+    ceiling) in Estonia.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_midea_arbonia_2025_decision
+  page: '11'
+  quote_snippet: 'The Commission considers that the Transaction will not significantly impede
+    effective competition on the market for the supply of non-classical FCUs in Estonia for
+    the following reasons: (i) the Parties’ combined market shares are moderate, with a non-significant
+    increment; (ii) the Parties are not close competitors to each other; (iii) there will remain
+    several credible FCU suppliers on the market capable of containing the Merged Entity post-Transaction;
+    and (iv) there is sufficient spare capacity on the market.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_midea_arbonia_2025_decision
+  page: '13'
+  quote_snippet: In view of the foregoing, the Commission concludes that the Transaction does
+    not give raise to serious doubts as to its compatibility with the internal market or a substantial
+    part of it, or with the functioning of the EEA agreement, in relation to the supply of non-classical
+    FCUs in Estonia.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

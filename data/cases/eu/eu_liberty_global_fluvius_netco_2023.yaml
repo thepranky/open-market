@@ -1,0 +1,801 @@
+case_id: eu_liberty_global_fluvius_netco_2023
+case_name: LIBERTY GLOBAL / FLUVIUS / NETCO
+authority: European Commission
+jurisdiction: EU
+sector: tech
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2023-05-30'
+parties:
+- name: LIBERTY GLOBAL
+  role: acquirer
+- name: FLUVIUS
+  role: acquirer
+- name: NETCO
+  role: target
+source_documents:
+- doc_id: eu_liberty_global_fluvius_netco_2023_decision
+  title: LIBERTY GLOBAL / FLUVIUS / NETCO — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10994
+  pdf_url: http://publications.europa.eu/resource/cellar/923201eb-6dd0-11ee-9220-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Wholesale broadband access
+  definition_status: left_open
+  notes: The Commission considered a separate market for wholesale broadband access or plausible
+    narrower segmentations for (i) the level where the point of interconnection is situated
+    (i.e., local or central wholesale broadband access), (ii) the type of access to fixed connections
+    (i.e., wholesale LLU, bitstream or resale broadband access), or (iii) the type of technology
+    (i.e., DSL/copper, cable or fibre). The exact scope was left open.
+- market_id: pm_2
+  name: Wholesale supply of leased lines
+  definition_status: left_open
+  notes: The Commission considered the relevant product market to be the leased lines market.
+    The questions of whether this market includes dark fibre or not, and whether there exist
+    separate segmentations for passive (i.e. dark fibre) and active infrastructure, were left
+    open.
+- market_id: pm_3
+  name: Wholesale access to TV services
+  definition_status: left_open
+  notes: The Commission considered whether there exists a separate market for wholesale access
+    to TV services or segmentations according to the type of technology (DSL/copper or cable).
+    The exact scope was left open.
+- market_id: pm_4
+  name: Wholesale internet connectivity services
+  definition_status: considered
+  notes: The Commission considered the relevant product market to be the wholesale internet
+    connectivity services market. The question of whether this market can be further segmented
+    between peering and transit services and between Tier 1 and Tier 2 transit providers was
+    left open.
+- market_id: pm_5
+  name: Wholesale access and call origination on mobile networks
+  definition_status: defined
+  notes: The Commission defined the relevant product market as wholesale access and call origination
+    on mobile networks. No segmentation was discussed or found necessary.
+- market_id: pm_6
+  name: Retail fixed internet services
+  definition_status: defined
+  notes: The Commission defined the market as the separate market for the retail supply of fixed
+    internet access services, excluding FWA services and retail business connectivity services,
+    and without the need to further segment the market by technology or download speed.
+- market_id: pm_7
+  name: Retail fixed voice services
+  definition_status: defined
+  notes: The Commission defined the market as the market for retail fixed voice services, without
+    any subdivisions between local/national and international calls, residential and non-residential
+    customers, and including Voice over Internet Protocol (“VoIP”) services.
+- market_id: pm_8
+  name: Retail business connectivity services
+  definition_status: defined
+  notes: The Commission defined the market as retail business connectivity services excluding
+    fixed wireless access (“FWA”), without segmentation by technology or download speed.
+- market_id: pm_9
+  name: Retail mobile communications services
+  definition_status: defined
+  notes: The Commission defined the market as retail mobile telecommunications services without
+    segmentation by type of service or type of network technology.
+- market_id: pm_10
+  name: Retail provision of free-to-air TV
+  definition_status: defined
+  notes: The Commission defined this as a separate market within retail audio-visual services,
+    without further segmentation.
+- market_id: pm_11
+  name: Retail provision of pay TV services
+  definition_status: defined
+  notes: The Commission defined this as a separate market within retail audio-visual services,
+    without further segmentation.
+- market_id: pm_12
+  name: Retail supply of multi-play services
+  definition_status: left_open
+  notes: The question of whether there exist one or more multi-play markets that are distinct
+    from each of the underlying individual telecommunications services (television, voice and
+    Internet access) was left open, as market investigation results were inconclusive.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Wholesale broadband access — subnational (Belgium affected)
+  definition_status: left_open
+  notes: The Commission assessed the effects at the national level, at the level of the operator’s
+    footprint/the cable operator’s coverage area (referred to as “Telenet footprint/coverage
+    area”) and at the level of the region (Flanders). However, the exact delineation was left
+    open.
+- market_id: gm_2
+  name: Wholesale supply of leased lines — subnational (Belgium affected)
+  definition_status: left_open
+  notes: The Commission assessed the effects at the national level, at the level of the operator’s
+    footprint/the cable operator’s coverage area, and at the level of the region. However, the
+    exact delineation was left open.
+- market_id: gm_3
+  name: Wholesale access to TV services — subnational (Belgium affected)
+  definition_status: left_open
+  notes: The Commission assessed the effects at the national level, at the level of the operator’s
+    footprint/coverage area, and at the level of the region. However, the exact delineation
+    was left open.
+- market_id: gm_4
+  name: Wholesale internet connectivity services — global (Belgium affected)
+  definition_status: left_open
+  notes: The Commission considered it appropriate to assess the effects at the global level,
+    but the exact delineation of the relevant geographic market was left open.
+- market_id: gm_5
+  name: Retail fixed internet services — subnational (Belgium affected)
+  definition_status: left_open
+  notes: The Commission assessed the effects at the national level, at the level of the operator’s
+    footprint/cable operator’s coverage area, and at the level of the region. However, the exact
+    delineation was left open.
+- market_id: gm_6
+  name: Retail business connectivity services — subnational (Belgium affected)
+  definition_status: left_open
+  notes: The Commission assessed the effects at the national level, at the level of the operator’s
+    footprint/coverage area, and at the level of the region. However, previous decisions left
+    the exact scope open, and the market investigation showed split views.
+- market_id: gm_7
+  name: Retail mobile communications services — national (Belgium affected)
+  definition_status: considered
+  notes: The Commission considered it appropriate to assess the effects at the national level.
+    Previous decisions defined the geographic market as national.
+- market_id: gm_8
+  name: Retail audio-visual services — subnational (Belgium affected)
+  definition_status: considered
+  notes: The Commission considered it appropriate to assess the effects at the national level,
+    at the level of the operator’s footprint/cable operator’s coverage area, and at the level
+    of the region.
+- market_id: gm_9
+  name: Retail supply of multi-play services — subnational (Belgium affected)
+  definition_status: left_open
+  notes: The Commission considered it appropriate to assess the effects at the national level,
+    at the level of the operator’s footprint/cable operator’s coverage area, and at the level
+    of the region. However, the exact market definition was left open in previous decisions
+    and market investigation results were inconclusive.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '6'
+  quote_snippet: (20) In any case, the Commission considers that, for the purpose of this decision,
+    the exact scope of the wholesale broadband access market can be left open as the Transaction
+    does not raise serious doubts as to its compatibility with the internal market or the functioning
+    of the EEA Agreement under any of the plausible product market definitions considered (i.e.
+    a separate market for wholesale broadband access or plausible narrower segmentations for
+    (i) the level where the point of interconnection is situated (i.e., local or central wholesale
+    broadband access), (ii) the type of access to fixed connections (i.e., wholesale LLU, bitstream
+    or resale broadband access), or (iii) the type of technology (i.e., DSL/copper, cable or
+    fibre)).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '8'
+  quote_snippet: (34) Wholesale leased lines are part-circuits that allow telecommunications
+    providers to connect their own networks to end user sites for the supply of business connectivity
+    services. In addition, wholesale leased lines are an input for the provision of retail fixed
+    and mobile communications services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '9'
+  quote_snippet: (41) A large majority of respondents to the market investigation considers
+    that there is a separate market for wholesale supply of leased lines in Belgium, without
+    further segments. In line with the Belgian Institute for Postal Services and Telecommunication’s
+    (“BIPT”) decision of 13 December 2019, these respondents consider that the market for wholesale
+    supply of leased lines includes various wholesale inputs (ranging from leased lines using
+    traditional or alternative interfaces independently of the underlying infrastructure, to
+    other wholesale access products, which fulfil certain high-quality access requirements).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '10'
+  quote_snippet: (44) In light of the above, the Commission considers that, for the purpose
+    of this decision, the relevant product market is the leased lines market (which includes
+    various wholesale inputs, ranging from leased lines to other wholesale access products,
+    which fulfil certain high-quality access requirements). The questions whether this product
+    market includes dark fibre or not, and whether there exist separate segmentations for passive
+    (i.e. dark fibre) and active infrastructure, can be left open as the Transaction would not
+    raise serious doubts as to its compatibility with the internal market or the functioning
+    of the EEA Agreement under any of the plausible product market definitions considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '12'
+  quote_snippet: (53) TV services can be delivered to end users through a number of technical
+    means, including cable, satellite and internet protocol television (IPTV). Operators that
+    own the necessary infrastructure can grant wholesale access to other companies, enabling
+    them to offer their own retail TV services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '12'
+  quote_snippet: (55) In cases relating to the Belgian market, the Commission has defined a
+    distinct product market for wholesale access to TV services, separate from the wholesale
+    market for broadband services. This is due to the fact that, from a demand-side perspective,
+    these two markets are complementary rather than substitutable.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '13'
+  quote_snippet: (60) In light of the above, the Commission considers that, for the purpose
+    of this decision, the question of the exact scope of the wholesale access to TV services
+    market (i.e. whether there exists a separate market for wholesale access to TV services
+    or there are segmentations according to the type of technology (DSL/copper or cable) can
+    be left open as the Transaction does not raise serious doubts as to its compatibility with
+    the internal market or the functioning of the EEA Agreement under any of the plausible product
+    market definitions considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '14'
+  quote_snippet: (66) As the Internet works as a network of networks, a local Internet Service
+    Provider (“ISP”) who wants to offer internet services to end-customers must connect with
+    other networks in order to allow its end-customers to exchange traffic with other end-customers
+    / content providers beyond its own local network. In order to reach networks at far distance,
+    an ISP has to connect to larger networks, which can link two ISPs to each other. Such connectivity
+    can be acquired either by peering (the mutual and free exchange of traffic between two networks)
+    or by transit (the provision, for a fee, of access to the Internet via a network). Peering
+    offers access only to the customers of the other network whereas a transit supplier gives
+    access to the whole Internet. Peering usually occurs between ISPs of like size and geographical
+    reach. Smaller networks can usually obtain connectivity to the larger ones only by paying
+    for transit.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '15'
+  quote_snippet: (72) A large majority of respondents to the market investigation consider that
+    there is a separate market for wholesale internet connectivity services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '15'
+  quote_snippet: (73) In light of the above, the Commission considers that, for the purpose
+    of this decision, the relevant product market is the wholesale internet connectivity services
+    market. The question whether this product market can be further segmented between peering
+    and transit services and between Tier 1 and Tier 2 transit providers can be left open as
+    the Transaction would not raise serious doubts as to its compatibility with the internal
+    market or the functioning of the EEA Agreement under any of the plausible product market
+    definitions considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '16'
+  quote_snippet: (80) Mobile network operators (“MNOs”) provide wholesale access and call origination
+    services which enable operators without their own network, namely MVNOs, to have access
+    to one or more of the MNOs’ networks in order to provide mobile telecommunications services
+    to end customers. There are different types of MVNOs, ranging from so-called full MVNOs
+    that typically own some of the core infrastructure but do not own radio network access or
+    spectrum, to light MVNOs, which do not own core infrastructure.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '16'
+  quote_snippet: (84) A large majority of respondents to the market investigation consider that
+    there is a separate market for wholesale access and call origination on mobile networks.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '16'
+  quote_snippet: (85) In light of the above, the Commission considers that, for the purpose
+    of this decision, the relevant product market is the market for wholesale access and call
+    origination on mobile networks.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '18'
+  quote_snippet: (91) Retail fixed internet services consist of the provision to end customers
+    of high-speed internet access through a fixed telecommunications connection. Telenet, as
+    a provider of retail fixed internet services, will need access to NetCo’s cable and fibre
+    network infrastructure in order to provide its services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '18'
+  quote_snippet: (94) A majority of the respondents to the market investigation confirm that
+    there is a separate retail fixed internet market, excluding FWA services and retail business
+    connectivity services (i.e. the supply of broadband access for large business customers;
+    leased lines; and Virtual Private Network (VPN) services, see section 4.8 below) without
+    the need to distinguish between types of technology (e.g., DSL, fibre or cable) or download
+    speeds (e.g., above or below 30 Mbps).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '18'
+  quote_snippet: (95) In light of the above, for the purpose of this decision, the Commission
+    considers that the relevant product market is the separate market for the retail supply
+    of fixed internet access services, excluding FWA services and retail business connectivity
+    services, and without the need to further segment the market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '20'
+  quote_snippet: (101) Fixed voice services comprise the supply of connection services at a
+    fixed location or access to the public telephone network, for the purpose of making and/or
+    receiving calls and related services. Such calls can be local, national or international
+    and the connection can be offered through traditional fixed PSTN lines or through Voice
+    over IP (“VoIP”) technology.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '22'
+  quote_snippet: (113) Retail business connectivity services comprise the supply of business
+    connectivity services to end customers (both large business customers and SMEs). This market
+    also includes the supply of broadband access for large business customers, leased lines
+    and VPN services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '22'
+  quote_snippet: (116) A large majority of respondents to the market investigation consider
+    that there is a separate market for retail business connectivity services excluding fixed
+    wireless access (“FWA”), without segmentation by technology or download speed.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '22'
+  quote_snippet: (117) In light of the above, the Commission considers that, for the purpose
+    of this decision, the relevant product market is the market for retail business connectivity
+    services excluding fixed wireless access (“FWA”), without segmentation by technology or
+    download speed.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '23'
+  quote_snippet: (122) Retail mobile communications services include national and international
+    voice calls, SMS (including MMS and other messages), mobile internet data services and retail
+    international roaming services. Telenet operates a mobile telecommunications network and
+    also offers mobile services under its own brand.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '24'
+  quote_snippet: (125) A large majority of respondents to the market investigation consider
+    that there is a separate market for retail mobile telecommunications services to end customers
+    (both private and business) without further segmenting the market based on the type of service
+    (national and international voice calls, SMS, MMS and other messages, mobile Internet data
+    services and retail international roaming services), or the type of network technology (2G,
+    3G, 4G).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '24'
+  quote_snippet: (126) In light of the above, the Commission considers that, for the purpose
+    of this decision, the relevant product market is the market for retail mobile telecommunications
+    services without segmentation by type of service or type of network technology.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '25'
+  quote_snippet: (134) A large majority of respondents to the market investigation consider
+    that in Belgium the retail provision of free-to-air TV and pay TV services are separate
+    markets, without further segmentation. A competitor commented that “the segmentation between
+    free-to-air and pay-TV services is not relevant anymore in Belgium and […] there should
+    not be any segmentation according to the type of technology used (in particular, between
+    cable and IPTV but also, in a more forward-looking approach, between all alternative forms
+    of TV transmission)” and that it “does not support any other additional segmentations within
+    the overall retail market for TV services”.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '27'
+  quote_snippet: (140) Multi-play services include several telecommunications products (mobile
+    services and one or more of the fixed services such as fixed internet, fixed voice and TV),
+    which are provided to consumers through a common offer. The question arises whether there
+    is a market for the retail supply of multi-play services that is separate from the retail
+    markets for each of the underlying individual telecommunications services, i.e. television,
+    voice and Internet access. Telenet is active on this potential market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '28'
+  quote_snippet: (145) In light of the above, and for the purpose of this decision, the question
+    as to whether there exist one or more multi-play markets that are distinct from each of
+    the underlying individual telecommunications services can be left open given that the Transaction
+    would not raise serious doubts as to its compatibility with the internal market or the functioning
+    of the EEA Agreement under any plausible market definition, namely the retail supply of
+    multi-play services and the retail supply of each of the underlying individual telecommunications
+    services, i.e. television, voice and Internet access.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '6'
+  quote_snippet: (21) In its decisional practice, the Commission considered whether the geographic
+    market for wholesale broadband access was national or limited to the coverage area of each
+    cable operator but left the definition open.24
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '8'
+  quote_snippet: (33) In any event, the exact delineation of the relevant geographic market
+    can be left open given that the Transaction would not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement under any of the plausible
+    geographic market definitions considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '12'
+  quote_snippet: (52) In any event, the exact delineation of the relevant geographic market
+    can be left open given that the Transaction would not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement under any of the plausible
+    geographic market definitions considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '13'
+  quote_snippet: (61) In Liberty Global/BASE Belgium, the Commission considered whether the
+    geographic scope of the wholesale market for access to TV services is national (Belgium)
+    or corresponding to the coverage area of each cable operator, but ultimately left the definition
+    open.68 In Providence/VOO/Brutélé, the Commission defined the market as limited to the coverage
+    area of each cable operator.69
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '14'
+  quote_snippet: (65) In any event, the exact delineation of the relevant geographic market
+    can be left open given that the Transaction would not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement under any of the plausible
+    geographic market definitions considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '19'
+  quote_snippet: (96) In previous decisions the Commission has defined the relevant geographic
+    market as national.97 However, in two recent decisions concerning Belgium, the market investigation
+    revealed elements tending towards a delineation corresponding to the cable operators' coverage
+    area/region or at the level of the operator’s footprint.98
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '19'
+  quote_snippet: (100) In any event, the exact delineation of the relevant geographic market
+    can be left open given that the Transaction would not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement under any of the plausible
+    geographic market definitions considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_34
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '23'
+  quote_snippet: (121) In light of the above, the Commission considers that, for the purpose
+    of this decision, it is appropriate to assess the effects of the Transaction on the retail
+    business connectivity market at the national level, at the level of the operator’s footprint/
+    coverage area127 and at the level of the region.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_35
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '24'
+  quote_snippet: (127) In previous decisions the Commission has defined the geographic market
+    as national on the grounds that mobile operators have national spectrum licenses, and operate
+    nationally, including with regard to commercial offers and pricing.131 This has been confirmed
+    by the Commission in recent decisions in relation to Belgium.132
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_36
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '25'
+  quote_snippet: (129) A majority of respondents to the market investigation consider that the
+    geographic retail mobile telecommunications market should be defined as national.134
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_37
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '25'
+  quote_snippet: (130) In light of the above, the Commission considers that, for the purpose
+    of this decision, it is appropriate to assess the effects of the Transaction on the retail
+    mobile telecommunications market at the national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_38
+  source_document_id: eu_liberty_global_fluvius_netco_2023_decision
+  page: '28'
+  quote_snippet: (146) In previous decisions, the Commission considered that the geographic
+    scope of any possible retail market for multi-play services would be national since the
+    components of the multi-play offers are offered individually at a national level, and the
+    bundling of the services would not change the geographic scope of the components.151 In
+    three recent decisions relating to the Belgian market, the Commission however left the question
+    of the geographic market definition open.152
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_9
+  supports_theories: []
+  supports_commitments: []
+ai_summary: null
+case_type: merger
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

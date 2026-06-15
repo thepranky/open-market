@@ -1,0 +1,239 @@
+case_id: eu_aramco_overseas_company_lotos_spv_1_2022
+case_name: ARAMCO OVERSEAS COMPANY / LOTOS SPV 1
+authority: European Commission
+jurisdiction: EU
+sector: retail
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2022-11-03'
+parties:
+- name: ARAMCO OVERSEAS COMPANY
+  role: acquirer
+- name: LOTOS SPV 1
+  role: target
+source_documents:
+- doc_id: eu_aramco_overseas_company_lotos_spv_1_2022_decision
+  title: ARAMCO OVERSEAS COMPANY / LOTOS SPV 1 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10697
+  pdf_url: http://publications.europa.eu/resource/cellar/f1993bfe-eb47-11ed-a05c-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Ex-refinery supply of jet fuel
+  definition_status: considered
+  notes: The Commission stated that the exact market definition for the ex-refinery supply of
+    aviation fuels could be left open, but proceeded to conduct its assessment on the basis
+    of the narrowest plausible segment, i.e., ex-refinery supply of jet fuel.
+- market_id: pm_2
+  name: Into-plane supply of jet fuel (by suppliers and throughputters)
+  definition_status: considered
+  notes: The Commission stated that the exact market definition for the into-plane supply of
+    aviation fuels could be left open, but proceeded to conduct its assessment on the basis
+    of into-plane supply of aviation fuel by both suppliers and throughputters, excluding into-plane
+    sales by resellers, focusing on jet fuel.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Ex-refinery supply of jet fuel — national (Poland affected)
+  definition_status: considered
+  notes: The Commission stated that the exact market definition for the ex-refinery supply of
+    aviation fuels in Poland could be left open, but proceeded to conduct its assessment on
+    the basis of a national Polish market.
+- market_id: gm_2
+  name: Into-plane supply of jet fuel (by suppliers and throughputters) — airport-specific (Poland
+    affected)
+  definition_status: considered
+  notes: The Commission stated that the exact market definition for the into-plane supply of
+    aviation fuels at specific airports in Poland could be left open, but proceeded to conduct
+    its assessment on the basis of separate markets for each specific airport in Poland.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_aramco_overseas_company_lotos_spv_1_2022_decision
+  page: '3'
+  quote_snippet: For the purposes of this decision the exact market definition for the ex-refinery
+    supply of aviation fuels can be left open, as the Transaction does not lead to serious doubts
+    as to its compatibility with the internal market regardless of the market definition adopted.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_aramco_overseas_company_lotos_spv_1_2022_decision
+  page: '3'
+  quote_snippet: 'With respect to the supply of aviation fuel, the Commission distinguished
+    between: (i) ex-refinery supply, and (ii) into-plane (retail) supply.9 The Commission has
+    also considered a distinction between two different types of aviation fuel: jet fuel and
+    aviation gasoline.10 The Notifying Party does not contest the Commission’s previous findings.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_aramco_overseas_company_lotos_spv_1_2022_decision
+  page: '5'
+  quote_snippet: In line with its previous findings, the Commission will conduct its assessment
+    on the basis of a market for into-plane supply of aviation fuel by both suppliers and throughputters,
+    excluding into-plane sales by resellers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_aramco_overseas_company_lotos_spv_1_2022_decision
+  page: '5'
+  quote_snippet: For the purposes of this decision the exact market definition for the into-plane
+    supply of aviation fuels can be left open, as the Transaction does not lead to serious doubts
+    as to its compatibility with the internal market, regardless of the market definition adopted.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_aramco_overseas_company_lotos_spv_1_2022_decision
+  page: '5'
+  quote_snippet: In PKN Orlen/Grupa Lotos, the Commission considered separate product markets
+    for (i) into-plane supply of aviation fuels by both suppliers and throughputters on the
+    one hand, and (ii) into-plane supply of aviation fuels by resellers on the other.16
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_aramco_overseas_company_lotos_spv_1_2022_decision
+  page: '4'
+  quote_snippet: In line with its previous findings, the Commission will conduct its assessment
+    on the basis of a national Polish market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_aramco_overseas_company_lotos_spv_1_2022_decision
+  page: '4'
+  quote_snippet: For the purposes of this decision the exact market definition for the ex-refinery
+    supply of aviation fuels in Poland can be left open, as the Transaction does not lead to
+    serious doubts as to its compatibility with the internal market, regardless of the market
+    definition adopted.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_aramco_overseas_company_lotos_spv_1_2022_decision
+  page: '4'
+  quote_snippet: In the PKN Orlen/Grupa Lotos decision, the Commission considered national markets
+    for the wholesale supply of diesel, gasoline and LHO, as well as ex-refinery supply of jet
+    fuel, rather than wider-than-national or even EEA-wide markets.13 The Notifying Party does
+    not contest the Commission’s previous findings.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_aramco_overseas_company_lotos_spv_1_2022_decision
+  page: '5'
+  quote_snippet: In line with its previous findings, the Commission will conduct its assessment
+    on the basis of separate markets for each specific airport in Poland.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_aramco_overseas_company_lotos_spv_1_2022_decision
+  page: '5'
+  quote_snippet: For the purposes of this decision the exact market definition for the into-plane
+    supply of aviation fuels at specific airports in Poland can be left open, as the Transaction
+    does not lead to serious doubts as to its compatibility with the internal market, even on
+    the narrowest plausible geographic market, that is airport-specific markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_aramco_overseas_company_lotos_spv_1_2022_decision
+  page: '5'
+  quote_snippet: In previous decisions, the Commission consistently found that the relevant
+    geographic scope for the into-plane supply of jet fuel could be limited to each specific
+    airport.19
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_aramco_overseas_company_lotos_spv_1_2022_decision
+  page: '9'
+  quote_snippet: For the above reasons, the European Commission has decided not to oppose the
+    notified operation and to declare it compatible with the internal market and with the EEA
+    Agreement. This decision is adopted in application of Article 6(1)(b) of the Merger Regulation
+    and Article 57 of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

@@ -1,43 +1,701 @@
 case_id: eu_microsoft_activision_2023
-case_name: "Microsoft / Activision Blizzard"
-jurisdiction: EU
+case_name: Microsoft / Activision Blizzard
 authority: European Commission
-authority_reference: M.10646
-decision_date: "2023-05-15"
-case_type: merger
-procedure_stage: phase2
+jurisdiction: EU
 sector: digital / gaming
+outcome: unknown
+decision_date: '2023-05-15'
 parties:
-  - name: Microsoft Corporation
-    role: acquirer
-  - name: Activision Blizzard, Inc.
-    role: target
-outcome: cleared_with_conditions
-remedies: []
-theories_of_harm: []
-product_markets_considered: []
-geographic_markets_considered: []
-
+- name: Microsoft Corporation
+  role: acquirer
+- name: Activision Blizzard, Inc.
+  role: target
 source_documents:
-  - doc_id: eu_microsoft_activision_decision
-    title: "Case M.10646 – Microsoft / Activision Blizzard: Commission Decision"
-    case_page_url: "https://competition-cases.ec.europa.eu/cases/M.10646"
-    pdf_url: "https://ec.europa.eu/competition/mergers/cases1/202330/M_10646_9311516_7443_3.pdf"
-    doc_type: decision
-    authority_reference: M.10646
-    retrieval_status: direct
-    published_date: "2023-05-15"
-
-source_passages: []
-similar_cases: []
-
+- doc_id: eu_microsoft_activision_decision
+  title: 'Case M.10646 – Microsoft / Activision Blizzard: Commission Decision'
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10646
+  pdf_url: https://ec.europa.eu/competition/mergers/cases1/202330/M_10646_9311516_7443_3.pdf
+  doc_type: decision
+  authority_reference: M.10646
+  retrieval_status: direct
+  published_date: '2023-05-15'
+product_markets_considered:
+- market_id: pm_1
+  name: Development and publishing of PC and console video games
+  definition_status: discussed
+  notes: 'The Commission concluded that the relevant product market is the overall market for
+    development and publishing of PC and console video games. Mobile games were excluded (separate
+    market, not assessed due to low combined share). The Commission left open whether this market
+    should be further segmented by: (i) gaming platform (PC vs. console); (ii) game genres (action
+    & adventure, shooter/battle royale, RPG, sports, racing, fighting, strategy); and (iii)
+    game types (AAA vs. non-AAA). Market investigation results were inconclusive or mixed on
+    all sub-segmentations. The Commission''s telemetry analysis indicated genre segmentation
+    may be appropriate, but the outcome of the competitive assessment would be the same regardless.'
+- market_id: pm_2
+  name: Supply of gaming hardware (consoles)
+  definition_status: left_open
+  notes: Mentioned in a footnote as a market in which Microsoft is active but Activision Blizzard
+    is not, so no horizontal overlap. Microsoft's shares remain below 30% at worldwide and EEA-wide
+    level, so not vertically affected. The Commission explicitly states it does not assess this
+    market in the present decision.
+- market_id: pm_3
+  name: PC and console video game distribution (overall market)
+  definition_status: discussed
+  notes: 'The Commission assessed multiple possible segmentations: (1) physical vs. digital
+    — rejected, one overall market; (2) by platform — mobile distribution found separate from
+    PC/console; PC vs. console left open; (3) by payment model — no segmentation warranted;
+    (4) by type of access (download vs. streaming) — no segmentation warranted. The Commission
+    concluded an overall market for PC and console game distribution, leaving open only the
+    PC vs. console sub-segmentation. Mobile game distribution was found to be a separate (potential)
+    market but will not be further assessed.'
+- market_id: pm_4
+  name: Distribution of mobile games (potential separate market)
+  definition_status: defined
+  notes: The Commission concluded that mobile game distribution is a separate market from PC
+    and console game distribution, but chose not to further assess it as the Transaction would
+    likely not significantly impede effective competition on this market.
+- market_id: pm_5
+  name: Distribution of PC and video console games
+  definition_status: left_open
+  notes: The Commission left open the geographic scope of this market (worldwide vs EEA-wide),
+    noting the outcome of analysis is the same either way. The product market definition itself
+    is referenced but not formally concluded in this chunk.
+- market_id: pm_6
+  name: Operating systems for PCs (PC OS)
+  definition_status: defined
+  notes: The Commission, following prior precedents (Google/Motorola Mobility, Google/Fitbit,
+    Microsoft/Nuance), concluded from market investigation that there is a separate market for
+    PC OS, distinct from OS for mobile devices and OS for servers. Activision Blizzard does
+    not supply operating systems.
+- market_id: pm_7
+  name: Operating systems for mobile devices
+  definition_status: considered
+  notes: Distinguished from PC OS by the Commission and market participants as a separate market.
+    Activision Blizzard does not supply operating systems, so no overlap. Referenced as a comparator/boundary
+    market in the PC OS analysis.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Geographic market for development and publishing of PC and console video games
+  definition_status: left_open
+  notes: The Commission concluded the market is at least EEA-wide, leaving open whether it is
+    EEA-wide or worldwide, as the outcome of the analysis is the same regardless.
+- market_id: gm_2
+  name: Geographic market for PC and console video game distribution
+  definition_status: left_open
+  notes: The Commission found the geographic scope is at least EEA-wide and possibly worldwide,
+    consistent with prior precedent in Microsoft/ZeniMax. The definition was left open between
+    EEA-wide and worldwide. The geographic scope was confirmed to be the same for possible platform
+    segmentations and physical vs. digital segmentations.
+- market_id: gm_3
+  name: Distribution of PC and video console games — worldwide or EEA-wide
+  definition_status: left_open
+  notes: The Commission explicitly left open whether the geographic scope of the market for
+    distribution of PC and video console games is worldwide or EEA-wide, as the outcome of the
+    analysis is the same either way.
+theories_of_harm: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_microsoft_activision_decision
+  page: '15'
+  quote_snippet: 'In Microsoft/ZeniMax, the Commission considered potential segmentations of
+    the market for video game publishing and development on the basis of: (i) gaming platforms
+    (i.e., PC games, console games and mobile games); (ii) game genres (e.g., strategy, simulation,
+    action, adventure, role-playing etc.); or (iii) type of games (e.g., premium or "AAA" games,
+    casual games). The Commission left the precise market definition open.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_2
+  source_document_id: eu_microsoft_activision_decision
+  page: '15'
+  quote_snippet: The Commission also considered the above segmentations in Activision Blizzard/King
+    and found indications that the game publishing market could be segmented by gaming platform,
+    and in particular that mobile games could form a separate market from PC and console games,
+    even though it left the market definition open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_3
+  source_document_id: eu_microsoft_activision_decision
+  page: '16'
+  quote_snippet: The Notifying Party considers that the game publishing market may currently
+    be segmented between PC/console games and native mobile games. While the distinction between
+    PC and console games has blurred, there remain differences between PC/console games and
+    mobile games, for example in terms of development resources, technical differences and game
+    characteristics (e.g., play session lengths and graphics). However, going forward, convergence
+    between platforms is going to increase further. In any case, the Notifying Party considers
+    that the precise product market definition can be left open for the purpose of assessing
+    this Transaction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_4
+  source_document_id: eu_microsoft_activision_decision
+  page: '16'
+  quote_snippet: The Notifying Party considers that it is not warranted to segment the game
+    publishing market based on genre or type of games.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_5
+  source_document_id: eu_microsoft_activision_decision
+  page: '17'
+  quote_snippet: The results of the market investigation are inconclusive regarding a possible
+    segmentation of the video game development and publishing product market by platform (PC,
+    console, and mobile). In particular, the market investigation provided no clear support
+    for segmenting the relevant market according to the three platforms or for considering mobile
+    games as distinct from games published for PCs and consoles.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_6
+  source_document_id: eu_microsoft_activision_decision
+  page: '19'
+  quote_snippet: In light of the above, for the purposes of this Decision, the Commission concludes
+    that the development and publishing of mobile games does not belong to the same product
+    market as the development and publishing of PC and console games, respectively. The Commission
+    will not assess the potential separate market for the development of mobile games, as the
+    combined market share of the Parties on this market remains below 20%. Moreover, the Commission
+    concludes that the product market definition can be left open with regard to a segmentation
+    based on platform between PC and console, as the outcome of the analysis will be the same
+    regardless of whether the Commission considers an overall market for game development and
+    publishing of PC and console games, or potential separate markets for the development of
+    (i) PC; and (ii) console games, respectively.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_7
+  source_document_id: eu_microsoft_activision_decision
+  page: '20'
+  quote_snippet: The Phase I market investigation provided mixed results with regard to a possible
+    segmentation of the video game publishing product market by genre (action and adventure,
+    shooter/battle royale, role-playing games, sports, racing, fighting, and strategy).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_8
+  source_document_id: eu_microsoft_activision_decision
+  page: '21'
+  quote_snippet: Contrary to the Notifying Party's submissions, the Commission's findings indicate
+    that when gamers start playing a newly released game, they mostly spend less time playing
+    other games of the same genre. That is, substitution mostly takes place within genres while
+    substitution across genres is substantially less frequent. This indicates that at least
+    a segmentation of the market for game development and publishing by genre would be appropriate.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_9
+  source_document_id: eu_microsoft_activision_decision
+  page: '22'
+  quote_snippet: Based on the results of the market investigation, the Commission considers
+    that the market for game development and publishing is highly differentiated on the basis
+    of game genres. In this regard, genres constitute an important distinguishing factor between
+    video games that affects to a certain degree the level of competition between them. However,
+    there exists some uncertainty as to whether such differentiation allows to conclude that
+    all or certain game genres form separate product markets from other genres.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_10
+  source_document_id: eu_microsoft_activision_decision
+  page: '23'
+  quote_snippet: 'for the purposes of this Decision, the Commission concludes that the relevant
+    product market is the market for the development and publishing of PC and console video
+    games. The Commission considers that it can be left open whether this market should be further
+    segmented based on game genres, in particular based on the following genres: (i) action
+    and adventure; (ii) shooter (including battle royale); (iii) role-playing games; (iv) sports;
+    (v) racing; (vi) fighting, and (vii) strategy, as this would not change the outcome of the
+    competitive assessment in this case.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_11
+  source_document_id: eu_microsoft_activision_decision
+  page: '23'
+  quote_snippet: The results of the Phase I market investigation were inconclusive regarding
+    a possible segmentation of the video game publishing product market by type of video game
+    (AAA games vs. non-AAA games).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_12
+  source_document_id: eu_microsoft_activision_decision
+  page: '23'
+  quote_snippet: For the purposes of this Decision, the Commission concludes that the relevant
+    product market is the market for the development and publishing of PC and console video
+    games. The Commission considers that the question whether this market should be further
+    segmented based on game types can be left open, as this would not change the outcome of
+    the competitive assessment in this case.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_13
+  source_document_id: eu_microsoft_activision_decision
+  page: '23'
+  quote_snippet: Based on the above, the Commission considers as the relevant product market
+    the overall market for development and publishing of PC and console video games, and leaves
+    open whether narrower separate markets exist on the basis of (i) gaming platforms; (ii)
+    game genres; and (iii) game types.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_14
+  source_document_id: eu_microsoft_activision_decision
+  page: '15'
+  quote_snippet: Microsoft is also active in the market for the supply of gaming hardware. As
+    Activision Blizzard is not active in this market, the Transaction does not result in a horizontal
+    overlap. As for vertical relationships, Microsoft's market shares in the market for the
+    supply of gaming hardware (even when considering only console hardware) remain below 30%
+    at the worldwide and EEA-wide level. Therefore, the market for the supply of gaming consoles
+    is not vertically affected. In any case, with regard to the vertical relationship with the
+    development and publishing of console video games upstream, the relevant activity downstream
+    is the distribution of video games, i.e. the sale of video games, which implies a prior
+    sale of console gaming hardware with the sole purpose of allowing these games to be distributed
+    and then played in that hardware.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_15
+  source_document_id: eu_microsoft_activision_decision
+  page: '25'
+  quote_snippet: 'In Microsoft/ZeniMax83, the Commission considered whether the market for video
+    game distribution should be segmented according to physical vs. digital distribution. Further,
+    in relation to digital distribution, the Commission considered whether segmentations were
+    appropriate by: (i) gaming platforms (PC, console and mobile); (ii) payment model (upfront
+    payment vs. subscription); and (iii) type of access to games (download vs. streaming). The
+    Commission left open the product market definition as regards physical vs. digital distribution
+    and a possible segmentation by gaming platforms, whereas it found that a segmentation by
+    payment model and type of access was not warranted.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_16
+  source_document_id: eu_microsoft_activision_decision
+  page: '26'
+  quote_snippet: From the demand-side, the majority of respondents to the market investigation
+    that expressed a view on this subject submitted that, based on technical features, pricing,
+    storage, and accessibility, physical and digital video game distribution are interchangeable
+    for gamers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_17
+  source_document_id: eu_microsoft_activision_decision
+  page: '26'
+  quote_snippet: for the purposes of this Decision, the Commission concludes that the relevant
+    market is an overall market for game distribution and that this market should not be segmented
+    between physical and digital distribution.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_18
+  source_document_id: eu_microsoft_activision_decision
+  page: '27'
+  quote_snippet: The market investigation provided mixed results to the question whether the
+    market for game distribution should be segmented according to the platforms for which games
+    are developed (i.e., PCs, consoles and mobile devices). In particular, the market investigation
+    provided no clear support for segmenting the relevant market according to the three platforms.
+    However, while it is more debated whether PC and consoles form separate distribution markets,
+    a majority of respondents to the Commission's market investigation indicated that the distribution
+    of mobile games forms a separate market from the distribution via the other platforms.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_19
+  source_document_id: eu_microsoft_activision_decision
+  page: '28'
+  quote_snippet: for the purposes of this Decision, the Commission concludes that the distribution
+    of mobile games does not belong to the same market as the distribution of PC and console
+    games, respectively. The Commission will not assess the potential separate market for the
+    distribution of mobile games, as it considers that the Transaction will likely not significantly
+    impede effective competition on this potential market. Moreover, the Commission concludes
+    that the product market definition can be left open with regard to a segmentation based
+    on platform as regards PC and console game distribution, as the outcome of the analysis
+    will be the same regardless of whether the Commission considers an overall market for PC
+    and console game distribution or potential narrower markets for (i) PC game distribution;
+    and (ii) console game distribution.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_20
+  source_document_id: eu_microsoft_activision_decision
+  page: '28'
+  quote_snippet: The majority of respondents that expressed a view on this subject during the
+    market investigation submitted that the market for game distribution should not be segmented
+    by payment model (buy-to-play vs subscription services).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_21
+  source_document_id: eu_microsoft_activision_decision
+  page: '28'
+  quote_snippet: for the purposes of this Decision, the Commission concludes that the market
+    for game distribution should not be segmented based on payment model.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_22
+  source_document_id: eu_microsoft_activision_decision
+  page: '29'
+  quote_snippet: for the purposes of this Decision, the Commission concludes that the relevant
+    market is an overall market for PC and console video game distribution and that this market
+    should not be segmented based on type of access.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_23
+  source_document_id: eu_microsoft_activision_decision
+  page: '28'
+  quote_snippet: the Commission concludes that the distribution of mobile games does not belong
+    to the same market as the distribution of PC and console games, respectively. The Commission
+    will not assess the potential separate market for the distribution of mobile games, as it
+    considers that the Transaction will likely not significantly impede effective competition
+    on this potential market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_24
+  source_document_id: eu_microsoft_activision_decision
+  page: '30'
+  quote_snippet: Therefore, the Commission considers that, for the purpose of this Decision,
+    the question whether the geographic scope of the market for the distribution of PC and video
+    console games is worldwide or EEA-wide can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_25
+  source_document_id: eu_microsoft_activision_decision
+  page: '30'
+  quote_snippet: The Commission has previously defined an OS as system software products that
+    control the basic functions of computing devices, such as servers, PCs, tablets and smartphones,
+    and enable its user to use the device and run application software on it.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_26
+  source_document_id: eu_microsoft_activision_decision
+  page: '30'
+  quote_snippet: In Google/Motorola Mobility, while leaving the exact market definition open,
+    the Commission took the view that OS for PCs and OS for smart mobile devices belong to separate
+    product markets, given that these OS use different hardware and have different performance
+    capacities.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_27
+  source_document_id: eu_microsoft_activision_decision
+  page: '30'
+  quote_snippet: The Notifying Party generally agrees with the Commission's previous decisional
+    practice. However, it notes that the market definition for OS is increasingly blurred. In
+    particular, the Notifying Party notes that PC OS face increasing competition from mobile
+    operating systems, as demand moves away from traditional laptops and desktops to more mobile
+    computing devices.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_28
+  source_document_id: eu_microsoft_activision_decision
+  page: '30'
+  quote_snippet: The market investigation confirmed that there is a separate market for PC OS,
+    which is distinct from the market for OS for mobile devices, as well as from the market
+    for OS for servers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_29
+  source_document_id: eu_microsoft_activision_decision
+  page: '30'
+  quote_snippet: The market investigation confirmed that there is a separate market for PC OS,
+    which is distinct from the market for OS for mobile devices, as well as from the market
+    for OS for servers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_30
+  source_document_id: eu_microsoft_activision_decision
+  page: '24'
+  quote_snippet: In Microsoft/ZeniMax77, the Commission concluded that the market for the development
+    and publishing of video games is at least EEA-wide, if not worldwide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+- passage_id: sp_31
+  source_document_id: eu_microsoft_activision_decision
+  page: '24'
+  quote_snippet: The Notifying Party submits that the market for the development and publishing
+    of video games is worldwide. In this regard, the Notifying Party submits that developers
+    and publishers typically produce one version of a video game for worldwide distribution
+    (subject to some elements being "localized"), with no significant price differences.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+- passage_id: sp_32
+  source_document_id: eu_microsoft_activision_decision
+  page: '24'
+  quote_snippet: The majority of respondents to the market investigation indicated that the
+    geographic market for the development and publishing of PC and console video games is at
+    least EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+- passage_id: sp_33
+  source_document_id: eu_microsoft_activision_decision
+  page: '24'
+  quote_snippet: for the purposes of this Decision, the Commission concludes that the geographic
+    scope of the market for the development and publishing of PC and console video games, as
+    well as potential segments thereof, is at least EEA-wide. The geographic market definition
+    can be left open between EEA-wide and worldwide, as the outcome of the analysis will be
+    the same regardless of such distinction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+- passage_id: sp_34
+  source_document_id: eu_microsoft_activision_decision
+  page: '29'
+  quote_snippet: In Microsoft/ZeniMax, the Commission found that the geographic scope of both
+    physical and digital game distribution is at least EEA-wide, and possibly worldwide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+- passage_id: sp_35
+  source_document_id: eu_microsoft_activision_decision
+  page: '29'
+  quote_snippet: The Notifying Party indicates that the geographic scope of the market for the
+    digital distribution of games is worldwide, as digital distribution channels are available
+    anywhere in the world without cross-border restrictions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+- passage_id: sp_36
+  source_document_id: eu_microsoft_activision_decision
+  page: '29'
+  quote_snippet: The majority of respondents to the market investigation submitted that the
+    geographic market for game distribution is worldwide, or at least EEA-wide. The majority
+    of market participants also confirmed that the geographic scope of the market would not
+    change for possible segmentations by platform or between physical and digital distribution.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+- passage_id: sp_37
+  source_document_id: eu_microsoft_activision_decision
+  page: '30'
+  quote_snippet: In any case, the Commission notes that, for the purposes of this Decision,
+    the outcome of the analysis will be the same regardless of whether the Commission considers
+    an EEA-wide or a worldwide geographic market for game distribution.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+- passage_id: sp_38
+  source_document_id: eu_microsoft_activision_decision
+  page: '30'
+  quote_snippet: Therefore, the Commission considers that, for the purpose of this Decision,
+    the question whether the geographic scope of the market for the distribution of PC and video
+    console games is worldwide or EEA-wide can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+procedure_stage: phase2
 metadata:
   extraction_method: manually_added
   review_status: unreviewed
   overall_confidence: 0.0
-  created_date: "2026-05-29"
-  last_updated_date: "2026-05-29"
+  created_date: '2026-05-29'
+  last_updated_date: '2026-05-29'
   tags:
-    - digital
-    - gaming
-    - cleared-with-conditions
+  - digital
+  - gaming
+  - cleared-with-conditions
+case_type: merger
+authority_reference: M.10646
+remedies: []
+similar_cases: []

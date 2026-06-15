@@ -1,0 +1,335 @@
+case_id: eu_ec_m9587_2020
+case_name: M.9587
+authority: European Commission
+jurisdiction: EU
+sector: energy
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2020-02-25'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9587_2020_decision
+  title: M.9587 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9587
+  pdf_url: http://publications.europa.eu/resource/cellar/6362c1f2-b139-11ea-bb7a-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Generation and wholesale supply of electricity
+  definition_status: defined
+  notes: The Commission confirmed previous decisions that generation and wholesale supply of
+    electricity constitutes a single product market, without further segmentation based on generation
+    sources or trading channels.
+- market_id: pm_2
+  name: Retail supply of electricity
+  definition_status: segmented
+  notes: 'The Commission segmented the retail supply of electricity based on three categories
+    of final customers: large industrial and commercial, smaller industrial and commercial,
+    and households.'
+geographic_markets_considered:
+- market_id: gm_1
+  name: Generation and wholesale supply of electricity — national (Belgium affected)
+  definition_status: left_open
+  notes: For Belgium, the geographic market definition was left open between national and supra-national,
+    as the transaction did not raise serious doubts under either alternative. The Commission
+    did, however, analyze the impact on a national Belgian market basis.
+- market_id: gm_2
+  name: Generation and wholesale supply of electricity — national (Portugal affected)
+  definition_status: left_open
+  notes: For Portugal, the geographic market definition was left open between national and supra-national
+    (Iberian market), as the transaction did not raise serious doubts under either alternative.
+    The Commission focused its discussion on the Portuguese national market.
+- market_id: gm_3
+  name: Retail supply of electricity — national (Belgium affected)
+  definition_status: left_open
+  notes: The Commission considered the market for retail supply of electricity to be national
+    in Belgium, but left open whether it could be regional for small industrial and commercial
+    customers and households, while focusing its analysis on the national level.
+- market_id: gm_4
+  name: Retail supply of electricity — national (Portugal affected)
+  definition_status: left_open
+  notes: The Commission considered the market for retail supply of electricity to be national
+    in Portugal, leaving the definition open while focusing analysis on the national level.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9587_2020_decision
+  page: '3'
+  quote_snippet: The only markets affected by the proposed transaction are (i) the markets for
+    the generation and the wholesale supply of electricity in Belgium and Portugal
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9587_2020_decision
+  page: '4'
+  quote_snippet: The market investigation in the present case confirms the market definition
+    in Commission’s previous decisions. None of the market respondents indicated that a narrower
+    market for generation and wholesale supply of electricity through renewable offshore sources
+    should be considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9587_2020_decision
+  page: '4'
+  quote_snippet: In light of the above considerations, in this Decision the market for generation
+    and wholesale supply of electricity is considered to be a single market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9587_2020_decision
+  page: '3'
+  quote_snippet: The only markets affected by the proposed transaction are ... (ii) the market
+    for the retail supply of electricity.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9587_2020_decision
+  page: '5'
+  quote_snippet: 'In previous decisions, the Commission segmented the market for retail supply
+    of electricity based on three categories of final customers: (i) large industrial and commercial
+    customers, (ii) smaller industrial and commercial customers; and (iii) households.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9587_2020_decision
+  page: '5'
+  quote_snippet: In light of the above considerations and of the results of the market investigation,
+    in this Decision, the retail market for the supply of electricity will only be segmented
+    based on different final customer groups.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9587_2020_decision
+  page: '4'
+  quote_snippet: As regards Belgium, the market investigation was inconclusive, with some market
+    participants buying from and selling to other Member States (e.g. Germany and the Netherlands)
+    and others exclusively active in Belgium.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9587_2020_decision
+  page: '4'
+  quote_snippet: In any case, for the purpose of this Decision, the geographic market definition
+    can be left open between national and supra national, as the proposed transaction does not
+    give rise to serious doubts as to its compatibility with the internal market under any of
+    these two alternative markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9587_2020_decision
+  page: '5'
+  quote_snippet: 'If the market was broader than Belgium to cover also the Netherlands and Luxembourg,
+    the market would be affected, but the combined market shares of the Parties would be significantly
+    lower than in the case for the Belgian national market (ENGIE: [30-40]% generation and [30-40]%
+    installed capacity and EDP: [0-5]% generation and [0-5]% installed capacity in Benelux.
+    For comparison, the Parties’ combined market shares in a Belgian national market are [70-80]%
+    in installed capacity and [60-70]% in generation).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9587_2020_decision
+  page: '4'
+  quote_snippet: As regards Portugal, a majority of competitors who participated in the market
+    investigation indicated that “the wholesale electricity market to consider is the Iberian
+    market (MIBEL)”.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9587_2020_decision
+  page: '4'
+  quote_snippet: In any case, for the purpose of this Decision, the geographic market definition
+    can be left open between national and supra national, as the proposed transaction does not
+    give rise to serious doubts as to its compatibility with the internal market under any of
+    these two alternative markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9587_2020_decision
+  page: '5'
+  quote_snippet: In case the geographic market was defined as Iberian, no affected market would
+    arise. Therefore, this Decision will only discuss the potential impacts of the proposed
+    transaction on the Portuguese market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9587_2020_decision
+  page: '6'
+  quote_snippet: With regard to large industrial and commercial customers, the market appears
+    to be national in both Belgium and Portugal. The market investigation examined whether the
+    market could be segmented between regions (Wallonia, Flanders and Brussels in the case of
+    Belgium) for the retail supply of electricity to small industrial and commercial customers
+    and households. The replies to the market investigation suggested that such a segmentation
+    of the market was not warranted.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m9587_2020_decision
+  page: '6'
+  quote_snippet: For the purpose of this Decision, the Commission will leave the market definition
+    open while focusing its analysis on the national level, as any difference in the market
+    shares between national and regional level do not affect the competitive analysis.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m9587_2020_decision
+  page: '6'
+  quote_snippet: With regard to large industrial and commercial customers, the market appears
+    to be national in both Belgium and Portugal.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m9587_2020_decision
+  page: '6'
+  quote_snippet: For the purpose of this Decision, the Commission will leave the market definition
+    open while focusing its analysis on the national level, as any difference in the market
+    shares between national and regional level do not affect the competitive analysis.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m9587_2020_decision
+  page: '8'
+  quote_snippet: The market investigation confirmed that the proposed transaction would not
+    raise serious doubts as to its compatibility with the internal market and there were no
+    substantiated complaints.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m9587_2020_decision
+  page: '9'
+  quote_snippet: The market investigation confirmed that the proposed transaction would not
+    raise serious doubts as to it compatibility with the internal market and there were no substantiated
+    complaints.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

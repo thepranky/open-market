@@ -1,0 +1,632 @@
+case_id: eu_ec_m9447_2020
+case_name: M.9447
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2020-05-28'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9447_2020_decision
+  title: M.9447 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9447
+  pdf_url: http://publications.europa.eu/resource/cellar/9f348a8c-e15d-11ea-ad25-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: High voltage (HV) products
+  definition_status: considered
+  notes: 'In previous cases, the Commission has acknowledged the existence of an HV product
+    market, subdividing electrical products and systems according to their respective voltage
+    levels into three broad product segments: Low Voltage (''LV'') products (<1 kV), Medium
+    Voltage (''MV'') products (1 kV to 52 kV), and High Voltage (''HV'') products (>52 kV).
+    This case does not define the market for HV products but refers to prior decisional practice.'
+- market_id: pm_2
+  name: Transformers
+  definition_status: left_open
+  notes: The Commission left open the precise product market definition for transformers, having
+    considered whether power and distribution transformers constituted separate relevant product
+    markets or whether they belong to an overall market for transformers. The Notifying Party
+    submitted that the relevant product market is the overall transformers market, arguing against
+    further segmentation by voltage type, technology, or end-use. The market investigation largely
+    supported segmentation by transformer type (power, distribution, traction transformers)
+    but the Commission found that no competition concerns arose regardless of the ultimate definition.
+- market_id: pm_3
+  name: Railway rolling stock
+  definition_status: left_open
+  notes: The Commission left open the precise product market definition for railway rolling
+    stock, having previously considered trains reaching speeds equal to or higher than 250 km/h
+    (high and very high-speed trains) as a separate product market, distinct from intercity
+    trains, and potential further sub-segmentation between high-speed trains (250-300 km/h)
+    and very high-speed trains (>300 km/h). The Notifying Party also suggested segments for
+    very high-speed trains, high-speed trains, and mainline railway rolling stock (intercity
+    and regional trains). The Commission concluded that no concerns arose even on the narrowest
+    segments (intercity/regional trains).
+- market_id: pm_4
+  name: Energy Automation and Information Systems (EAIS)
+  definition_status: left_open
+  notes: 'The Commission left open the precise product market definition for EAIS. It previously
+    considered an overall market for EAIS and potential sub-segments: power system management
+    (further segmented into SAS, NMS, EMS, DMS, WAMS) and protection relays, as well as turnkey
+    vs. individual components. The Notifying Party submitted an overall EAIS market. The market
+    investigation results were mixed but generally supported segmentation. However, no competition
+    concerns arose under any plausible market definition.'
+- market_id: pm_5
+  name: Enterprise Application Software (EAS)
+  definition_status: left_open
+  notes: The Commission left open the precise product market definition for EAS. It previously
+    considered a market for EAS as a segment within business software, with potential sub-segments
+    like ERP, CRM, SRM, SCM, PLM, BA. The Notifying Party submitted an overall EAS market. The
+    market investigation results were mixed but generally supported segmentation. However, no
+    competition concerns arose under any plausible market definition.
+- market_id: pm_6
+  name: T&D turnkey systems
+  definition_status: left_open
+  notes: The Commission left open the precise scope of the product market definition for T&D
+    Turnkey systems. It previously considered an overall market for T&D turnkey systems and
+    potential segments for HVDC stations/systems, FACTS, and substations (AIS, GIS, Hybrid,
+    Mobile). The market investigation confirmed T&D turnkey systems as a separate market, with
+    mixed results on sub-segmentation. The Commission concluded that no serious doubts arose
+    on the narrowest plausible segmentation.
+- market_id: pm_7
+  name: Power semiconductors
+  definition_status: left_open
+  notes: The Commission left open the precise scope of the product market definition for power
+    semiconductors. It previously distinguished between ICs, discretes, sensors and actuators,
+    and within discretes, further segments like power transistors and thyristors, rectifiers
+    and power diodes. The Notifying Party distinguished between discretes and modules, and considered
+    further segmentation into thyristors, diodes/rectifiers, IGCTs, GTOs, GCTs, and IGBTs, but
+    argued against segmentation by power levels (power, high power, extra high power). The market
+    investigation showed mixed results on power level segmentation. The Commission concluded
+    that no serious doubts arose on the narrowest plausible segmentation.
+- market_id: pm_8
+  name: EV charging infrastructure
+  definition_status: left_open
+  notes: The Commission left open the precise scope of the product market definition for charging
+    infrastructure for electric vehicles. The Notifying Party submitted that charging infrastructure
+    for electric vehicles could form a distinct product market without further distinction between
+    vehicle types. The market investigation found that EV charging infrastructure could be viewed
+    as a separate market and could be segmented into charging infrastructure for public transport
+    and for other electric vehicles. However, no serious doubts arose on the narrowest plausible
+    segmentation (charging infrastructure for electric buses used for public transportation).
+- market_id: pm_9
+  name: Internet of things (IoT) platforms
+  definition_status: left_open
+  notes: The Commission left open the precise scope of the product market definition for IoT
+    platforms. The Notifying Party submitted the market for the supply of IoT platforms, or
+    alternatively, a broader market for “infrastructure software.” The market investigation
+    indicated that industrial IoT platforms should not be considered separately from other IoT
+    platforms and are part of a broader 'infrastructure software' market. No serious doubts
+    arose on the narrowest plausible segmentation, which is IoT platforms.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Transformers — EEA-wide or worldwide
+  definition_status: left_open
+  notes: The Commission left open the precise geographic market definition for transformers,
+    having previously considered it to be at least EEA-wide in scope, possibly even worldwide.
+    The Notifying Party argued it is global. The market investigation was not conclusive, but
+    no horizontal concerns arose under either definition because Hitachi is not active in the
+    EEA for transformers.
+- market_id: gm_2
+  name: Railway rolling stock — EEA-wide or worldwide (excluding China, South Korea and Japan)
+  definition_status: considered
+  notes: The Commission previously considered the relevant markets for high and very high-speed
+    rolling stock to be at least EEA-wide (including Switzerland), not excluding the possibility
+    of these markets being worldwide (excluding China, South Korea and Japan), and leaving the
+    precise geographic market definition open. For regional and intercity trains, the market
+    was considered likely at least EEA-wide. The Notifying Party also submitted similar views.
+    The provided chunks do not contain a specific Commission assessment or conclusion for the
+    geographic market of railway rolling stock for the current case.
+- market_id: gm_3
+  name: Energy Automation and Information Systems (EAIS) — EEA-wide or worldwide
+  definition_status: considered
+  notes: The Commission previously considered the plausible EAIS markets to be EEA-wide or worldwide,
+    but ultimately left the precise geographic market definition open. The Notifying Party submitted
+    that the relevant geographic market for EAIS is global. The provided chunks do not contain
+    a specific Commission assessment or conclusion for the geographic market of EAIS for the
+    current case, beyond referring to prior practice and the Notifying Party's view.
+- market_id: gm_4
+  name: Enterprise Application Software (EAS) — EEA-wide or worldwide
+  definition_status: considered
+  notes: The Commission previously considered the relevant geographic market for EAS to be EEA-wide
+    or worldwide, with high function solutions for HR and FMS considered global. The Notifying
+    Party submitted that the relevant geographic market for EAS is global. The provided chunks
+    do not contain a specific Commission assessment or conclusion for the geographic market
+    of EAS for the current case, beyond referring to prior practice and the Notifying Party's
+    view.
+- market_id: gm_5
+  name: Grid Integration (GI) products — EEA-wide or worldwide
+  definition_status: left_open
+  notes: The Commission left open the precise geographic market definition for GI products.
+    The Notifying Party submitted that HVDC stations and FACTS are tendered globally, and power
+    semiconductors and EV charging infrastructure markets are global. The market investigation
+    indicated a worldwide market for all sub-segments of GI products, with competitors confirming
+    substitutability and similar standards across regions. However, the Commission concluded
+    that there was no need to close the geographic market definition as the transaction did
+    not raise serious doubts under any plausible market definition.
+- market_id: gm_6
+  name: Internet of things (IoT) platforms — EEA-wide or worldwide
+  definition_status: left_open
+  notes: The Commission left open the precise geographic market definition for IoT platforms.
+    The Notifying Party submitted that the geographic scope is global. The market investigation
+    gave strong indications that the market for IoT platforms is worldwide in scope, with market
+    conditions being the same globally. The Commission concluded there was no need to close
+    the geographic market definition as the transaction did not lead to serious doubts under
+    any plausible market definition (EEA-wide or worldwide).
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9447_2020_decision
+  page: '3'
+  quote_snippet: |
+    In previous cases, the Commission has acknowledged the existence of a HV product market, subdividing electrical products and systems according to their respective voltage levels into three broad product segments:
+     Low Voltage (“LV”) products (<1 kV)
+     Medium Voltage (“MV”) products (1 kV to 52 kV)
+     High Voltage (“HV”) products (>52 kV)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9447_2020_decision
+  page: '8'
+  quote_snippet: In previous decisions the Commission has considered whether power and distribution
+    transformers constituted separate relevant product markets or whether they belong to an
+    overall market for transformers, while ultimately leaving the precise product market definition
+    open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9447_2020_decision
+  page: '8'
+  quote_snippet: The Notifying Party submits that the relevant product market is the overall
+    transformers market since, ultimately, all transformers serve the same purpose, i.e. mainly
+    to increase or decrease the voltage levels of electrical power for its efficient transport
+    on transmission and distribution networks.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9447_2020_decision
+  page: '10'
+  quote_snippet: In previous decisions the Commission has considered trains reaching speeds
+    equal to or higher than 250 km/h (high and very high-speed trains) as a separate product
+    market, distinct from intercity trains which are incapable of achieving similar speeds.
+    Moreover, the Commission has considered a potential further sub-segmentation between high-speed
+    trains (top speed between 250 and 300 km/h) and very high-speed trains (top speed greater
+    than 300 km/h), while ultimately leaving the precise product market definition open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9447_2020_decision
+  page: '11'
+  quote_snippet: The Notifying Party submits that the relevant product markets for railway rolling
+    stock are (i) very high-speed trains (top speed above 300 km/h), (ii) high-speed trains
+    (top speed between 250 and 299 km/h), and (iii) mainline railway rolling stock (intercity
+    and regional trains).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9447_2020_decision
+  page: '11'
+  quote_snippet: For the purpose of the present case, the Commission considers that the precise
+    product market definition can be left open since, for the purpose of the vertical assessment
+    for traction transformers for railway rolling stock applications, the Proposed Transaction
+    does not raise concerns even on the narrowest segments (in particular, in the segment for
+    intercity/regional trains, where the Notifying Party is present).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9447_2020_decision
+  page: '13'
+  quote_snippet: The Commission has previously considered an overall market for Energy Automation
+    and Information Systems (‘EAIS’) as a potential segment within the market for Transmission
+    and Distribution.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9447_2020_decision
+  page: '19'
+  quote_snippet: The Commission has considered in the past that the transmission and distribution
+    systems could constitute a single market comprising the design and installation of turnkey
+    systems, either for transmission networks or for distribution networks, but ultimately left
+    the market definition open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9447_2020_decision
+  page: '19'
+  quote_snippet: The Notifying Party submits that the relevant product market is the overall
+    market for T&D turnkey systems, and that the narrowest plausible segments within this market
+    are HVDC stations/systems, FACTS and substations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9447_2020_decision
+  page: '23'
+  quote_snippet: Taking into account the Notifying Party's arguments and the results of the
+    market investigation, the Commission considers that, in any case, the precise scope of the
+    product market definition of T&D Turnkey systems can be left open since the Proposed Transaction
+    does not raise serious doubts on the narrowest plausible segmentation within T&D turnkey
+    systems, which in this case is HVDC stations, FACTS and substations, and the further sub-segmentation
+    for HVDC stations/systems between HVDC Classic and HVDC Light/Plus; for FACTS between Series
+    compensation FACTS (fixed (Fixed Series Compensation or Fixed SC), and controlled Series
+    compensation FACTS) and (Dynamic) Shunt compensation FACTS (static compensators (STATCOM),
+    and static VAR compensators (SVC)); and for substations between AIS substations, GIS substations,
+    hybrid substations, and mobile substations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9447_2020_decision
+  page: '24'
+  quote_snippet: In previous cases relating to semiconductors, the Commission distinguished
+    between ICs, discretes, and sensors and actuators, respectively (and further sub-segments,
+    as applicable).108 The Commission also considered within discretes a distinction between
+    the segments for RF and microwave, power transistors and thyristors, rectifiers and power
+    diodes, and small signal and other discretes.109
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9447_2020_decision
+  page: '24'
+  quote_snippet: The Notifying Party submits that in the area of power semiconductors, a distinction
+    can be made between discretes (including, e.g., thyristors and diodes/rectifiers) and modules.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9447_2020_decision
+  page: '29'
+  quote_snippet: The Notifying Party submits that the relevant product market for the purposes
+    of assessing the Lumada Platform should be the market for the supply of IoT platforms, or,
+    alternatively, a broader market for “infrastructure software” (Infrastructure software is
+    typically distinguished from other (secondary) software products such as middleware, application
+    software and office software, and operating/browser software).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m9447_2020_decision
+  page: '29'
+  quote_snippet: The majority of customers and competitors explained that industrial IoT platforms
+    should not be considered separately from other (non-industrial) IoT platforms.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m9447_2020_decision
+  page: '30'
+  quote_snippet: Taking into account the Notifying Party's arguments and the results of the
+    market investigation, the Commission considers that, in any case, the precise scope of the
+    product market definition can be left open since the Proposed Transaction does not raise
+    serious doubts on the narrowest plausible segmentation, which in this case is IoT platforms.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m9447_2020_decision
+  page: '10'
+  quote_snippet: In previous cases the Commission considered that the relevant geographic market
+    for transformers was at least EEA-wide in scope, possibly even worldwide, although the precise
+    definition was left open.39
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m9447_2020_decision
+  page: '10'
+  quote_snippet: In relation to the geographic scope of the market for transformers (and transformer
+    components), Hitachi argues that it is global and that it can ultimately be left open since
+    Hitachi is not active in the EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m9447_2020_decision
+  page: '10'
+  quote_snippet: The market investigation is not conclusive on whether the relevant geographic
+    market should be EEA-wide or global.40 In any event, no horizontal concerns arise under
+    either definition (because Hitachi is not active in the EEA). For the purpose of the assessment
+    of the only material vertical link (that for traction transformers used for railway rolling
+    stock), the market shares at both the EEA and globally are similar and thus the competition
+    analysis is applicable regardless of the precise geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m9447_2020_decision
+  page: '11'
+  quote_snippet: In previous decisions the Commission has defined the relevant markets for high
+    and very high-speed rolling stock as at least EEA-wide (including Switzerland) while not
+    excluding the possibility of these markets being worldwide (excluding China, South Korea
+    and Japan) and leaving the precise geographic market definition open.42
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m9447_2020_decision
+  page: '11'
+  quote_snippet: The Notifying Party submits that in its view, and in line with the geographic
+    market definition in Siemens/Alstom, the geographic market for high and very high-speed
+    trains is at least EEA wide, if not worldwide (excluding China, Japan and Korea).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m9447_2020_decision
+  page: '17'
+  quote_snippet: The Commission has previously considered the plausible EAIS markets to be EEA-wide
+    or world-wide, but has ultimately left the precise geographic market definition open.78
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m9447_2020_decision
+  page: '17'
+  quote_snippet: The Notifying Party submits that the relevant geographic market for EAIS is
+    global and, in any event, far larger than a geographic area including the EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_ec_m9447_2020_decision
+  page: '17'
+  quote_snippet: The Commission has considered the relevant geographic market for EAS to be
+    EEA-wide or worldwide.79 With respect to CRM and BA (including possible sub-segments), the
+    Commission has considered the market to be at least EEA-wide and possibly worldwide.80
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_ec_m9447_2020_decision
+  page: '17'
+  quote_snippet: The Notifying Party submits that the relevant geographic market for EAS (and
+    its segments and sub-segments, if examined separately) is global and, in any event, far
+    larger than a geographic area including the EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_ec_m9447_2020_decision
+  page: '29'
+  quote_snippet: In any event, there is no need to close the geographic market definition for
+    GI products between the EEA and worldwide, as the Proposed Transaction does not lead to
+    serious doubts under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_ec_m9447_2020_decision
+  page: '30'
+  quote_snippet: The Notifying Party submits that the geographic scope of both the market for
+    IoT platforms or the broader market for infrastructure software is global in scope. According
+    to the Notifying Party, licensing agreements for IoT platforms such as the Lumada platform
+    are generally concluded on a global basis and the objective conditions for competition are
+    essentially the same across the world. Neither import restrictions, transport costs nor
+    technical requirements constitute significant limitations. Certain country-specific limitations
+    due to regulations may exist, but, as far as the supply-side is concerned, they do not constitute
+    an obstacle for swift supply on a global basis.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_ec_m9447_2020_decision
+  page: '30'
+  quote_snippet: The Commission market investigation gave strong indications that the market
+    for IoT platforms is worldwide in scope, with the vast majority of competitors and customers
+    confirming such scope.142 Competitors and customers explained that the market conditions
+    are the same worldwide, and that IoT platforms suppliers are active and offer the same platforms
+    on a worldwide basis.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_ec_m9447_2020_decision
+  page: '30'
+  quote_snippet: In any event, there is no need to close the geographic market definition for
+    IoT platforms, as the Proposed Transaction does not lead to serious doubts under any plausible
+    market definition (EEA-wide or worldwide).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_ec_m9447_2020_decision
+  page: '29'
+  quote_snippet: In any event, the Notifying Party submits that the exact product market definition
+    can be left open since the Proposed Transaction does not substantially affect the supply
+    of IoT platforms.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+ai_summary: null
+case_type: merger
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

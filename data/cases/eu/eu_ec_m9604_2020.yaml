@@ -1,0 +1,513 @@
+case_id: eu_ec_m9604_2020
+case_name: M.9604
+authority: European Commission
+jurisdiction: EU
+sector: tech
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2020-04-30'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9604_2020_decision
+  title: M.9604 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9604
+  pdf_url: http://publications.europa.eu/resource/cellar/5fbd2784-6c4f-11eb-aeb5-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Wholesale supply of TV channels
+  definition_status: left_open
+  notes: ''
+- market_id: pm_2
+  name: Retail supply of AV services
+  definition_status: left_open
+  notes: ''
+- market_id: pm_3
+  name: Retail supply of fixed internet access services
+  definition_status: left_open
+  notes: ''
+- market_id: pm_4
+  name: Provision of satellite transponder capacity
+  definition_status: left_open
+  notes: ''
+geographic_markets_considered:
+- market_id: gm_1
+  name: Wholesale supply of TV channels — national (Norway, Sweden, Denmark, Finland affected)
+  definition_status: defined
+  notes: ''
+- market_id: gm_2
+  name: Retail supply of AV services — national (Norway, Sweden, Denmark, Finland affected)
+  definition_status: defined
+  notes: ''
+- market_id: gm_3
+  name: Retail supply of fixed internet access services — national (Nordics affected)
+  definition_status: defined
+  notes: ''
+- market_id: gm_4
+  name: Provision of satellite transponder capacity — regional (Nordics or Nordics and CEE region
+    affected)
+  definition_status: left_open
+  notes: ''
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9604_2020_decision
+  page: '4'
+  quote_snippet: |
+    5.3. Wholesale supply of TV channels
+    (19) TV broadcasters package the AV content and broadcasting rights for AV content
+    that they have produced in-house or acquired into linear TV channels, which are
+    supplied to retail suppliers of AV services, and then broadcast to end users either
+    on a FTA basis or on a pay TV basis. Ancillary services have gradually been
+    associated to TV channels in order to complement the TV offering and enhance
+    the viewer experience of traditional linear TV channels.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9604_2020_decision
+  page: '8'
+  quote_snippet: |
+    In light of the above, the Commission considers that, for the purpose of this
+    Decision, the relevant product market is the market for the wholesale supply of
+    TV channels, including their ancillary services and covering all types of
+    infrastructure. The question whether this product market can be further segmented
+    between (i) FTA and pay TV channels, and in turn whether pay TV channels can
+    be further segmented between basic pay and premium pay TV channels, or
+    (i) FTA and basic pay TV channels on the one hand, and premium pay TV
+    channels on the other hand could be left open, as the Transaction does not raise
+    serious doubts as to its compatibility with the internal market or the functioning
+    of the EEA Agreement under any plausible product market definition. The
+    question whether this product market can be further segmented by genre
+    (e.g., sports, films and series) could be left open, as the Transaction does not raise
+    serious doubts as to its compatibility with the internal market or the functioning
+    of the EEA Agreement under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9604_2020_decision
+  page: '6'
+  quote_snippet: |
+    (26) A majority of respondents to the market investigation across the four geographies
+    indicated that it remains appropriate to segment the wholesale supply of TV
+    channels (i) between FTA and pay TV channels, and (ii) within pay TV channels
+    between basic and premium TV channels continues to be appropriate.19
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9604_2020_decision
+  page: '9'
+  quote_snippet: |
+    5.4. Retail supply of AV services
+    (39) Retail providers of AV services offer packages of linear AV services and/or non-
+    linear AV services to end customers. Such linear and non-linear AV services can
+    be augmented with ancillary services, such as catch-up TV or TV everywhere.
+    (40) The retail supply of AV services is the lower level in the AV value chain. Retail
+    AV services can be delivered to end-users though a number of technical means
+    including cable, satellite and IPTV. OTT players deliver channels and content in
+    both a linear and non-linear fashion through the use of the open Internet.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9604_2020_decision
+  page: '12'
+  quote_snippet: |
+    In light of the above, the Commission considers that, for the purpose of this
+    Decision, the relevant product at retail level is the market for the retail supply of
+    AV services encompassing all distribution technologies. The question whether the
+    retail supply of AV services should be further segmented between (i) FTA and
+    pay AV services can be left open, as well as the question whether in turn the retail
+    supply of pay AV services should be segmented according to (ii) linear and non-
+    linear pay AV services, (iii) premium and basic pay AV services, and (iv) AV
+    services to MDUs and SDUs, as the Transaction does not raise serious doubts as
+    to its compatibility with the internal market or the functioning of the EEA
+    Agreement under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9604_2020_decision
+  page: '11'
+  quote_snippet: |
+    (50) As regards distribution technologies, a majority of respondents to the market
+    investigation considered that the market for the retail supply of AV services
+    should not be further segmented according to distribution forms, given that
+    (i) retail suppliers typically use several platforms to deliver their services,
+    (ii) most households have access to different combinations distribution
+    networks,52 and (iii) end customers would mainly consider the different
+    distribution forms as alternative to each other.53
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9604_2020_decision
+  page: '14'
+  quote_snippet: |
+    In light of the foregoing, the Commission does not depart from its previous
+    assessment, and concludes, for the purposes of this Decision, that the exact scope
+    of the product market definition in relation to the provision of retail fixed internet
+    access services can be left open, as the Transaction does not raise serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA
+    Agreement under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9604_2020_decision
+  page: '17'
+  quote_snippet: |
+    The Commission considers that, in any event, for the purposes of this decision,
+    the exact product market definition with regard to the market for satellite
+    transponder capacity can be left open. The question whether the supply of satellite
+    transponder capacity should be further segmented between satellite transponder
+    capacity used for (i) broadcasting (via the Ku-band) and telecommunication
+    services (via all frequency bands) can be left open as well as the question whether
+    the supply of satellite transponder capacity should be segmented between the
+    provision from (ii) orbital position 1°W and orbital position 5°E, as the
+    Transaction does not raise serious doubts as to its compatibility with the internal
+    market or the functioning of the EEA Agreement under any plausible product
+    market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9604_2020_decision
+  page: '16'
+  quote_snippet: |
+    (73) As regards the question whether satellite transponder capacity used for
+    broadcasting on the Ku-band and telecommunication services via all frequency
+    bands constitute distinct product markets, the market investigation has not
+    resulted in many meaningful responses and the received responses were not
+    consistent.76 While one satellite operator in principle confirmed the Notifying
+    Parties’ view, it also explained that “large portion of the transponders can be
+    used for various applications, i.e., it is not possible to fully distinguish between
+    transponders for broadcasting versus other applications”.77
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9604_2020_decision
+  page: '9'
+  quote_snippet: |
+    (38) In light of the above, for the purpose of this Decision, the Commission concludes
+    that the relevant geographic market for the wholesale supply of TV channels, and
+    all its possible sub-segments, is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9604_2020_decision
+  page: '9'
+  quote_snippet: |
+    (37) The results of the market investigation indicated that, despite being sometimes
+    negotiated on a regional basis, that is to say, encompassing the Nordic region, the
+    agreements between TV broadcasters and retail suppliers of AV services for the
+    wholesale supply of TV channels are mainly negotiated on a national basis.38
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9604_2020_decision
+  page: '13'
+  quote_snippet: |
+    (56) In light of the above, for the purpose of this Decision, the Commission concludes
+    that the relevant geographic market for the retail supply of AV services, and all its
+    possible sub-segments, is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9604_2020_decision
+  page: '13'
+  quote_snippet: |
+    (55) The results of the market investigation indicated that retail suppliers of AV
+    services mainly acquire license rights to distribute AV services at national level.58
+    In addition, the market investigation in this case did not provide any new
+    elements justifying a departure from Commission's previous decisional practice.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m9604_2020_decision
+  page: '14'
+  quote_snippet: |
+    (65) In light of the foregoing, the Commission does not depart from its previous
+    assessment, and concludes, for the purpose of this Decision, that the relevant
+    market for the provision of fixed internet services is national.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m9604_2020_decision
+  page: '14'
+  quote_snippet: |
+    (64) The market investigation did not provide any indication that the Commission
+    should depart from its findings in previous cases, according to which the
+    geographic market should be national.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m9604_2020_decision
+  page: '19'
+  quote_snippet: |
+    While the information gathered confirms the regional scope (Nordics, or Nordics
+    and CEE region), the Commission considers that, in any event, for the purposes of
+    this decision, the exact geographic market definition with regard to the market for
+    satellite transponder capacity and its possible sub-segments can be left open, as
+    the Transaction does not raise serious doubts as to its compatibility with the
+    internal market or the functioning of the EEA Agreement under any plausible
+    geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m9604_2020_decision
+  page: '8'
+  quote_snippet: as the Transaction does not raise serious doubts as to its compatibility with
+    the internal market or the functioning of the EEA Agreement under any plausible product
+    market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m9604_2020_decision
+  page: '12'
+  quote_snippet: as the Transaction does not raise serious doubts as to its compatibility with
+    the internal market or the functioning of the EEA Agreement under any plausible product
+    market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m9604_2020_decision
+  page: '14'
+  quote_snippet: as the Transaction does not raise serious doubts as to its compatibility with
+    the internal market or the functioning of the EEA Agreement under any plausible product
+    market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m9604_2020_decision
+  page: '17'
+  quote_snippet: as the Transaction does not raise serious doubts as to its compatibility with
+    the internal market or the functioning of the EEA Agreement under any plausible product
+    market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m9604_2020_decision
+  page: '19'
+  quote_snippet: as the Transaction does not raise serious doubts as to its compatibility with
+    the internal market or the functioning of the EEA Agreement under any plausible geographic
+    market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m9604_2020_decision
+  page: '45'
+  quote_snippet: the Commission considers that the Transaction does not raise serious doubts
+    as to its compatibility with the internal market regardless of the answer to this question.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_ec_m9604_2020_decision
+  page: '50'
+  quote_snippet: The Commission considers that the Transaction does not give rise to serious
+    doubts as to its compatibility with the internal market as a result of horizontal effects
+    on the market for the retail supply of AV content in Sweden, or any possible narrower affected
+    markets, for the following reasons.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_ec_m9604_2020_decision
+  page: '57'
+  quote_snippet: The Commission considers that the Transaction does not give rise to serious
+    doubts as to its compatibility with the internal market as a result of horizontal effects
+    on the market for the retail supply of AV content Denmark, or any possible narrower affected
+    markets, for the following reasons.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_ec_m9604_2020_decision
+  page: '122'
+  quote_snippet: the Commission concludes that the Transaction would not raise serious doubts
+    as to its compatibility with the internal market resulting from total or partial customer
+    foreclosure of third parties’ TV channels, irrespective of any plausible segmentation318,
+    in Finland.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_ec_m9604_2020_decision
+  page: '138'
+  quote_snippet: the Commission considers that the Transaction is not likely to lead to the
+    risk of customer foreclosure with regard to SES’ operations at the 5°E orbital position
+    as Viasat and the other Nordic TV broadcaster customers do not represent a sufficiently
+    large share of SES’ current and potential customer base.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

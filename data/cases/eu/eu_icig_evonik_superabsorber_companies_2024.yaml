@@ -1,0 +1,331 @@
+case_id: eu_icig_evonik_superabsorber_companies_2024
+case_name: ICIG / EVONIK SUPERABSORBER COMPANIES
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2024-08-01'
+parties:
+- name: ICIG
+  role: acquirer
+- name: EVONIK SUPERABSORBER COMPANIES
+  role: target
+source_documents:
+- doc_id: eu_icig_evonik_superabsorber_companies_2024_decision
+  title: ICIG / EVONIK SUPERABSORBER COMPANIES — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11504
+  pdf_url: http://publications.europa.eu/resource/cellar/1a2b3abb-7d9e-11ef-a67d-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Phenothiazine
+  definition_status: considered
+  notes: The Commission considered Phenothiazine (PTZ) as a separate product market distinct
+    from other polymer inhibitors, based on lack of demand-side substitutability and price differences.
+    While sub-segmentation by form and end-use was investigated, these were ultimately left
+    open.
+- market_id: pm_2
+  name: Phenothiazine prills
+  definition_status: considered
+  notes: While the broader segmentation of PTZ by form (prills, flakes, powder, liquid) was
+    left open, the Commission undertook its assessment considering the narrowest possible product
+    market of PTZ prills due to strong customer preference in the EEA and safety risks associated
+    with powder and flake forms.
+- market_id: pm_3
+  name: Acrylic Acid
+  definition_status: considered
+  notes: The Commission considered a plausible segmentation of the market for acrylic acid between
+    crude acrylic acid (CAA) and glacial acrylic acid (GAA). This aligns with its previous decisional
+    practice, and the majority of responding customers agreed with this segmentation. Acrylate
+    esters were not further discussed as the Parties do not produce them.
+- market_id: pm_4
+  name: Superabsorbent polymers
+  definition_status: left_open
+  notes: The Commission left open the exact product market definition for superabsorbent polymers,
+    consistent with previous decisional practice. However, it considered plausible segmentations
+    including superabsorbent polymers overall, higher quality superabsorbent polymers, and lower
+    quality superabsorbent polymers for its assessment.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Phenothiazine — at least EEA-wide
+  definition_status: considered
+  notes: While there were indications that the PTZ market is global in scope, the Commission
+    considered the geographic market for PTZ to be at least EEA-wide for the purposes of its
+    decision, based on mixed market investigation results regarding conditions of competition,
+    price differences, and limited barriers to entry.
+- market_id: gm_2
+  name: Acrylic Acid — EEA-wide
+  definition_status: left_open
+  notes: The Commission left open the exact scope of the geographic market for acrylic acid,
+    consistent with previous decisional practice. However, it carried out its assessment at
+    the narrowest plausible geographic market, i.e., at EEA level, citing material price differences,
+    local presence requirements, and barriers to entry in the EEA.
+- market_id: gm_3
+  name: Superabsorbent polymers — EEA-wide
+  definition_status: left_open
+  notes: The Commission left open the exact scope of the geographic market for superabsorbent
+    polymers, acknowledging that it could be either EEA-wide or global, consistent with previous
+    decisional practice. For its assessment, it proceeded at the narrowest plausible geographic
+    market, i.e., at EEA level.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_icig_evonik_superabsorber_companies_2024_decision
+  page: '4'
+  quote_snippet: (19) The outcome of the market investigation suggests that there is a separate
+    product market for PTZ distinct from other polymer inhibitors.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_icig_evonik_superabsorber_companies_2024_decision
+  page: '5'
+  quote_snippet: (20) The market investigation suggests that there is no demand-side substitutability
+    between PTZ and other polymer inhibitors. While views expressed by competing manufacturers
+    of PTZ are divided as regards the question whether it is possible to substitute PTZ with
+    another chemical to produce acrylic acid,21 the majority of responding customers of PTZ
+    consider that it is not possible to substitute PTZ with any other chemical to produce acrylic
+    acid irrespective of whether the acrylic acid is then used to produce superabsorbent polymers22
+    or other products.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_icig_evonik_superabsorber_companies_2024_decision
+  page: '5'
+  quote_snippet: (23) Given the above, for the purpose of this decision, the Commission considers
+    that there is a separate market for PTZ distinct from other polymer inhibitors.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_icig_evonik_superabsorber_companies_2024_decision
+  page: '6'
+  quote_snippet: (29) “Whilst in China, flakes and powder may still be produced and used for
+    the production of acrylic acid, this is not the case for Europe and the rest of the world,
+    where only PTZ prills can be used due to the explosion risk of PTZ powder and flakes.”31
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_icig_evonik_superabsorber_companies_2024_decision
+  page: '6'
+  quote_snippet: (32) In any event, for the purposes of this decision, the question of whether
+    the product market for PTZ should be further segmented by form can be left open, as the
+    Transaction does not raise serious doubts as to its compatibility with the internal market
+    under any plausible product market definitions. However, in view of the above, the Commission
+    has undertaken its assessment considering the narrowest possible product market of PTZ prills.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_icig_evonik_superabsorber_companies_2024_decision
+  page: '8'
+  quote_snippet: (43) The Commission has previously defined a market for acrylic acids in which
+    it considered a further segmentation between CAA, GAA and acrylic esters.58
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_icig_evonik_superabsorber_companies_2024_decision
+  page: '9'
+  quote_snippet: (47) For the purposes of this decision, the Commission will therefore consider
+    a plausible segmentation of the market for acrylic acid between GAA and CAA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_icig_evonik_superabsorber_companies_2024_decision
+  page: '9'
+  quote_snippet: (53) The Commission has previously defined a market for superabsorbent polymers
+    and considered a further segmentation for higher and lower quality superabsorbent polymers.71
+    It ultimately left open the product market definition72 and whether the geographic scope
+    is EEA or worldwide.73
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_icig_evonik_superabsorber_companies_2024_decision
+  page: '7'
+  quote_snippet: (37) The market investigation provided mixed results on conditions of competition
+    between the EEA and the rest of the world.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_icig_evonik_superabsorber_companies_2024_decision
+  page: '8'
+  quote_snippet: (40) In addition, as explained by a competitor, “the PTZ business is a global
+    business, and every market player acts at global level”.55 This is confirmed by the market
+    investigation as a majority of responding competitors supply PTZ to customers across the
+    world,56 and customers purchase PTZ from suppliers across the world.57
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_icig_evonik_superabsorber_companies_2024_decision
+  page: '8'
+  quote_snippet: (41) In conclusion, while there are indications that the PTZ market is global
+    in scope, for the purposes of this decision and in light of the above, the Commission considers
+    that the geographic market for PTZ can be considered to be at least EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_icig_evonik_superabsorber_companies_2024_decision
+  page: '8'
+  quote_snippet: (44) The Commission considered the scope of the geographic market for GAA to
+    be no wider than the EEA, but ultimately left the geographic market definition open.59 The
+    geographic scope for CAA was also left open as no merchant market could be identified.60
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_icig_evonik_superabsorber_companies_2024_decision
+  page: '9'
+  quote_snippet: (49) On conditions of competition between the EEA and the rest of the world,
+    the majority of responding customers considers that there is no difference in the quality
+    of acrylic acid.65 However, the majority of responding customers considers that there is
+    a material price difference, that prices have evolved in different ways in the past, and
+    that a local presence in the EEA is necessary.66 Responding customers are split on whether
+    conditions of competition otherwise differ between the EEA and the rest of the world.67
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_icig_evonik_superabsorber_companies_2024_decision
+  page: '9'
+  quote_snippet: (52) For the purposes of this decision, the Commission considers that the exact
+    scope of the geographic market definition can be left open as the Transaction does not raise
+    serious doubts as to its compatibility with the internal market under any plausible geographic
+    market definition. The Commission will therefore carry out its assessment at the narrowest
+    plausible geographic market, i.e. at EEA level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_icig_evonik_superabsorber_companies_2024_decision
+  page: '9'
+  quote_snippet: (53) The Commission has previously defined a market for superabsorbent polymers
+    and considered a further segmentation for higher and lower quality superabsorbent polymers.71
+    It ultimately left open the product market definition72 and whether the geographic scope
+    is EEA or worldwide.73
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_icig_evonik_superabsorber_companies_2024_decision
+  page: '17'
+  quote_snippet: (91) On the basis of the above considerations, the Commission concludes that
+    the Transaction does not raise serious doubts as to its compatibility with the internal
+    market with regard to the vertical relationship between PTZ (upstream) and acrylic acid
+    or superabsorbent polymers (downstream), under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+case_type: merger
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []
+ai_summary: null

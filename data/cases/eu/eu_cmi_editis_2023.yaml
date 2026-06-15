@@ -1,0 +1,188 @@
+case_id: eu_cmi_editis_2023
+case_name: CMI / EDITIS
+authority: European Commission
+jurisdiction: EU
+sector: tech
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2023-10-30'
+parties:
+- name: CMI
+  role: acquirer
+- name: EDITIS
+  role: target
+source_documents:
+- doc_id: eu_cmi_editis_2023_decision
+  title: CMI / EDITIS — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11153
+  pdf_url: http://publications.europa.eu/resource/cellar/781f8aff-b316-11ef-acb1-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Sale of books by publishers to retailers
+  definition_status: considered
+  notes: The Commission considered the product market to be segmented by major categories of
+    books, type of reseller, and book format, consistent with its previous decision in Vivendi/Lagardère.
+- market_id: pm_2
+  name: Retail sale of books to consumers
+  definition_status: considered
+  notes: The Commission assessed the transaction on the overall market for the sale of books
+    to consumers, without further segmentation, consistent with its previous decisions.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Sale of books by publishers to retailers — supra-national (French-speaking EU including
+    France, Belgium and Luxembourg affected)
+  definition_status: considered
+  notes: For school textbooks, the geographic market was analyzed at a national level (France).
+- market_id: gm_2
+  name: Retail sale of books to consumers — supra-national (French-speaking EU including France,
+    Belgium and Luxembourg affected)
+  definition_status: considered
+  notes: The Commission assessed the transaction on this geographic market, encompassing the
+    French-speaking area of the EU including France, Belgium and Luxembourg.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_cmi_editis_2023_decision
+  page: '4'
+  quote_snippet: As regards the product market, in Vivendi/Lagardère, the Commission segmented
+    the market for the sale of books by publishers to retailers by11 major categories of books,12
+    type of reseller13 and book format.14
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_cmi_editis_2023_decision
+  page: '4'
+  quote_snippet: The Commission has not received any indications during the market investigation
+    that it should depart, in this case, from the market definition adopted by the Commission
+    in Vivendi/Lagardère. The Commission will therefore carry out its analysis based on a segmentation
+    of the markets for sale of books by major categories of books, type of reseller and book
+    format.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_cmi_editis_2023_decision
+  page: '4'
+  quote_snippet: 'As regards the product market, in a previous decision, the Commission considered
+    distinct markets for the sale of books to consumers: (i) sale of books by retailers to end
+    consumers (in brick-and-mortar shops), (ii) distance selling (including internet sales,
+    mail orders and book clubs), (iii) second-hand book dealers, and (iv) sale of large reference
+    works by sales agents.18 In a previous case, the Commission concluded on the existence of
+    an overall market for the sale of books to end consumers including sales in brick-and-mortar
+    shops as well as distance selling,19 whilst in another case, the question was left open.20'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_cmi_editis_2023_decision
+  page: '5'
+  quote_snippet: The Commission has not received any elements during the market investigation
+    indicating that it should depart, in this case, from the market definitions adopted by the
+    Commission in its previous decisions. The Transaction will therefore be assessed on the
+    overall market for the sale of books to consumers, without further segmentation, in the
+    French-speaking area of the EU including France, Belgium and Luxembourg.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_cmi_editis_2023_decision
+  page: '4'
+  quote_snippet: With respect to the geographic market, in Vivendi/Lagardère, the Commission
+    analysed the effects of the Transaction at a supra-national level, corresponding to an area
+    covering the French-speaking part of the EU including France, Belgium and Luxembourg.15
+    As for school textbooks, the Commission analysed the effects of the Transaction at national
+    level (France), based on the prevalence of national school programmes.16
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_cmi_editis_2023_decision
+  page: '4'
+  quote_snippet: The Commission has not received any indications during the market investigation
+    that it should depart, in this case, from the market definition adopted by the Commission
+    in Vivendi/Lagardère. The Commission will therefore carry out its analysis based on a segmentation
+    of the markets for sale of books by major categories of books, type of reseller and book
+    format.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_cmi_editis_2023_decision
+  page: '5'
+  quote_snippet: With respect to the geographic market, in Lagardère/Natexis/VUP, the Commission
+    found that the geographic scope of the market for the sales of books to consumers corresponds
+    to an area covering the French-speaking part of the EU including France, the Belgium and
+    Luxembourg.21 In two decisions concerning respectively Denmark and Spain, the Commission
+    found this market to be national.22
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_cmi_editis_2023_decision
+  page: '5'
+  quote_snippet: The Commission has not received any elements during the market investigation
+    indicating that it should depart, in this case, from the market definitions adopted by the
+    Commission in its previous decisions. The Transaction will therefore be assessed on the
+    overall market for the sale of books to consumers, without further segmentation, in the
+    French-speaking area of the EU including France, Belgium and Luxembourg.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

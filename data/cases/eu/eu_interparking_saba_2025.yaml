@@ -1,0 +1,233 @@
+case_id: eu_interparking_saba_2025
+case_name: INTERPARKING / SABA
+authority: European Commission
+jurisdiction: EU
+sector: real_estate
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2025-06-13'
+parties:
+- name: INTERPARKING
+  role: acquirer
+- name: SABA
+  role: target
+source_documents:
+- doc_id: eu_interparking_saba_2025_decision
+  title: INTERPARKING / SABA — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11818
+  pdf_url: http://publications.europa.eu/resource/cellar/491cb616-8705-11f0-9af8-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Operation of paid public car parking services
+  definition_status: considered
+  notes: The Commission considered this a potential market, with potential segmentations, but
+    assessed the transaction on this basis.
+- market_id: pm_2
+  name: Off-street and on-street paid public parking services
+  definition_status: left_open
+  notes: The Commission considered a potential segmentation between on-street and off-street
+    services but left the question open for the purpose of the decision.
+- market_id: pm_3
+  name: Parking management services
+  definition_status: left_open
+  notes: The Commission considered a market for parking management services but left open whether
+    it constitutes a market separate from the operation of public paid parking services.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Operation of car parking services — local (city or municipality)
+  definition_status: considered
+  notes: For the purpose of this decision, the Commission considered the market to be local
+    in scope, consistent with previous decisions.
+- market_id: gm_2
+  name: Parking management services — wider than national (EEA-wide or regional)
+  definition_status: left_open
+  notes: The Commission considered that the market for car park management services could be
+    wider than national but left the exact geographic definition open for the purpose of the
+    decision.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_interparking_saba_2025_decision
+  page: '3'
+  quote_snippet: In its decisional practice, the Commission has considered a potential market
+    for the operation of paid public car parking services, excluding free parking spaces, residential
+    parking, private and company parking, with the following potential segmentations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_interparking_saba_2025_decision
+  page: '3'
+  quote_snippet: The first potential segmentation is between the operation of on-street and
+    off-street paid public parking spaces. Off-street parking refers to parking spaces in any
+    location other than the street and typically includes parking facilities such as garages
+    and lots, whether indoors or outdoors. By contrast, on-street parking refers to the supply
+    of parking spaces for vehicles to park on the street, e.g. along the sidewalk or any place
+    that is not an identified parking lot or car park.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_interparking_saba_2025_decision
+  page: '3'
+  quote_snippet: For the purpose of the present decision, the Commission considers that the
+    question of whether a segmentation should be made between on-street and off-street paid
+    public services can be left open. As explained below, the Transaction does not raise serious
+    doubts as to its compatibility with the internal market or any substantial part of it irrespective
+    of the market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_interparking_saba_2025_decision
+  page: '3'
+  quote_snippet: In its past decisional practice, the Commission also considered a market for
+    parking management services, which could possibly differ from the operation of public paid
+    parking services. The provision of parking management would consist in the maintenance and
+    supervision of parking spaces located on the sides of the road, in airports, hospitals,
+    shopping malls, cities, hotels.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_interparking_saba_2025_decision
+  page: '4'
+  quote_snippet: For the purpose of the present decision, the Commission considers that the
+    question of whether the market for the provision of parking management services constitute
+    a market separate from the market for the operation of public paid parking services can
+    be left open since the Transaction does not raise serious doubts as to its compatibility
+    with the internal market or any substantial part of it irrespective of the market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_interparking_saba_2025_decision
+  page: '4'
+  quote_snippet: In a previous decision, the Commission concluded that the market for the operation
+    of public paid parking services is local since consumers seek to park in the vicinity of
+    their destinations. The Commission also indicated that, in practice there was a chain of
+    substitution between parking facilities, or lots located in the neighbouring areas, which
+    limited the scope for parking to the local area, such as city or municipality.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_interparking_saba_2025_decision
+  page: '4'
+  quote_snippet: For the purpose of this decision, the Commission considers that the operation
+    of car parking services is local in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_interparking_saba_2025_decision
+  page: '4'
+  quote_snippet: In a previous decision, the Commission considered that the market for car park
+    management services could be wider than national (EEA-wide or regional) given strong supply-side
+    substitutability, but ultimately left the exact geographic definition of the market open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_interparking_saba_2025_decision
+  page: '4'
+  quote_snippet: For the purpose of this decision, the Commission considers that the question
+    of whether park management services could be larger than national can be left open since
+    the Transaction does not raise serious doubts as to its compatibility with the internal
+    market or any substantial part of it irrespective of the market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_interparking_saba_2025_decision
+  page: '2'
+  quote_snippet: Pursuant to a reasoned submission made by Interparking on 7 February 2025 under
+    Article 4(4) of the Merger Regulation and after transmitting the submission to all Member
+    States, the Commission adopted on 11 March 2025 a decision referring the assessment of the
+    effects of the Transaction on the relevant markets in Italy to be examined by the competent
+    authority of Italy. The current decision relates to the assessment of the effects of the
+    Transaction on the relevant markets outside of Italy.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_interparking_saba_2025_decision
+  page: '3'
+  quote_snippet: The Transaction therefore has a Union dimension pursuant to Article 1(3) of
+    the Merger Regulation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

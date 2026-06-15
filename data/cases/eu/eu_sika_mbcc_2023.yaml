@@ -1,43 +1,1381 @@
 case_id: eu_sika_mbcc_2023
-case_name: "Sika / MBCC Group"
-jurisdiction: EU
+case_name: Sika / MBCC Group
 authority: European Commission
-authority_reference: M.10560
-decision_date: "2023-02-08"
-case_type: merger
-procedure_stage: phase2
+jurisdiction: EU
 sector: industrials / construction chemicals
+outcome: unknown
+decision_date: '2023-02-08'
 parties:
-  - name: Sika AG
-    role: acquirer
-  - name: MBCC Group
-    role: target
-outcome: cleared_with_conditions
-remedies: []
-theories_of_harm: []
-product_markets_considered: []
-geographic_markets_considered: []
-
+- name: Sika AG
+  role: acquirer
+- name: MBCC Group
+  role: target
 source_documents:
-  - doc_id: eu_sika_mbcc_decision
-    title: "Case M.10560 – Sika / MBCC Group: Commission Decision"
-    case_page_url: "https://competition-cases.ec.europa.eu/cases/M.10560"
-    pdf_url: "https://ec.europa.eu/competition/mergers/cases1/202410/M_10560_9946206_16411_3.pdf"
-    doc_type: decision
-    authority_reference: M.10560
-    retrieval_status: direct
-    published_date: "2023-02-08"
-
-source_passages: []
+- doc_id: eu_sika_mbcc_decision
+  title: 'Case M.10560 – Sika / MBCC Group: Commission Decision'
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10560
+  pdf_url: https://ec.europa.eu/competition/mergers/cases1/202410/M_10560_9946206_16411_3.pdf
+  doc_type: decision
+  authority_reference: M.10560
+  retrieval_status: direct
+  published_date: '2023-02-08'
+product_markets_considered:
+- market_id: pm_1
+  name: Chemical admixtures (overall market)
+  definition_status: defined
+  notes: The Commission concluded that the overall market of chemical admixtures is a relevant
+    product market for the purpose of this Decision, alongside the narrower market of concrete
+    admixtures. The Commission also noted that breadth of portfolio and position in infrastructure/underground
+    applications would be taken into account in the competitive assessment.
+- market_id: pm_2
+  name: Concrete admixtures (narrower market)
+  definition_status: defined
+  notes: The Commission defined the narrower market of concrete admixtures as a relevant product
+    market alongside the overall chemical admixtures market. Possible further segmentation by
+    application (residential/commercial vs. infrastructure/underground) was considered but the
+    Commission declined to define separate markets based on residential/commercial applications,
+    while noting it would account for infrastructure/underground positioning in the competitive
+    assessment.
+- market_id: pm_3
+  name: Injection resins (concrete works)
+  definition_status: defined
+  notes: The Commission concluded that injection resins constitute a distinct product market
+    within concrete works, in line with its decisional practice and market investigation results.
+- market_id: pm_4
+  name: Resin-based grouts (concrete works)
+  definition_status: defined
+  notes: The Commission concluded resin-based grouts form a distinct product market. The Notifying
+    Party contended the market includes both epoxy and polyester grouts; the Commission confirmed
+    in line with decisional practice.
+- market_id: pm_5
+  name: Bonding agents (concrete works)
+  definition_status: defined
+  notes: The Commission concluded bonding agents constitute a distinct product market within
+    concrete works, consistent with prior decisional practice.
+- market_id: pm_6
+  name: Primers (concrete works)
+  definition_status: defined
+  notes: The Commission concluded primers constitute a distinct product market within concrete
+    works, consistent with prior decisional practice.
+- market_id: pm_7
+  name: Impregnations including coats/coatings (concrete works)
+  definition_status: defined
+  notes: The Commission defined impregnations (including coats/coatings) as a distinct product
+    market. The Notifying Party argued that impregnations include coats and coatings; a majority
+    of customers disagreed on demand-side substitutability, but a majority of competitors agreed
+    on supply-side substitutability. The Commission ultimately included coats/coatings within
+    impregnations.
+- market_id: pm_8
+  name: Corrosion protection/control (concrete works)
+  definition_status: defined
+  notes: The Commission concluded corrosion protection/control constitutes a distinct product
+    market within concrete works, consistent with prior decisional practice.
+- market_id: pm_9
+  name: Structural reinforcing/strengthening and ancillaries including cleaners and release
+    agents (concrete works)
+  definition_status: defined
+  notes: The Commission concluded structural reinforcing/strengthening and ancillaries (including
+    cleaners, release agents etc.) constitute a distinct product market within concrete works,
+    consistent with prior decisional practice.
+- market_id: pm_10
+  name: Premix mortars (dry vs. paste distinction)
+  definition_status: defined
+  notes: The Commission distinguished between dry and paste premix mortars, rejecting the Notifying
+    Party's argument that mortars of different physical forms belong to the same market. Wet
+    premix mortar is no longer used in the EEA and is not assessed further. The Commission concluded
+    it will distinguish between dry and paste mortars for the purpose of this Decision.
+- market_id: pm_11
+  name: 'Premix mortars (distinction based on application: construction, façade, tile-fixing)'
+  definition_status: considered
+  notes: 'The Commission distinguished between mortars based on application (construction, façade,
+    tile-fixing), consistent with prior decisions. The market investigation supported this segmentation:
+    a large majority of customers confirmed different applications require specific mortars
+    that are not interchangeable. The Commission''s final conclusion on this segmentation is
+    not fully stated in the supplied chunks (text ends mid-analysis at page 16).'
+- market_id: pm_12
+  name: Industrial flooring (overall and technology-based sub-segments)
+  definition_status: left_open
+  notes: The Commission conducted formal market definition analysis. It preliminarily found
+    that industrial flooring constitutes a distinct market from tiles and linoleum, and that
+    different flooring technologies (PU-based, epoxy-based, MMA-based, cementitious, hybrid
+    PU/cementitious) are likely to constitute separate markets. However, the precise product
+    market definition was ultimately left open, as the transaction does not raise serious doubts
+    regardless of whether sub-segmentation by technology is applied or an overall industrial
+    flooring market is used. The Commission assessed both the overall market and the technology
+    sub-segments conservatively.
+- market_id: pm_13
+  name: Industrial flooring
+  definition_status: left_open
+  notes: The Commission preliminarily found the markets for industrial flooring to be at least
+    national in scope and potentially EEA-wide, but left the precise geographic market definition
+    open. The product market definition for industrial flooring is not formally concluded in
+    these chunks (only the geographic scope is addressed here). No serious doubts raised.
+- market_id: pm_14
+  name: Sealants (overall market and sub-segments)
+  definition_status: left_open
+  notes: The Commission assessed whether sealants should be distinct from adhesives (agreed),
+    and whether the sealants market should be sub-segmented by end-use (DIY/consumer vs. construction)
+    and by technology (acrylic, polysulfide, polyurethane, silicone, silyl-modified polymers).
+    Market investigation results provided some support for the Notifying Party's arguments against
+    sub-segmentation, but were not entirely conclusive. The Commission left the precise product
+    market definition open and assessed both the overall sealants market and sub-segments conservatively.
+    No serious doubts raised.
+- market_id: pm_15
+  name: Sealants (construction and DIY/consumer)
+  definition_status: left_open
+  notes: The Commission left the precise geographic market definition open for sealants, but
+    the product market definition discussion appears in prior chunks. In this chunk, the Commission
+    states it will conservatively assess both overall EEA and national markets. The product
+    market definition itself (construction vs DIY/consumer segmentation) is referenced but the
+    formal conclusion on product market definition is not fully contained in this chunk — the
+    geographic scope is what is left open here.
+- market_id: pm_16
+  name: Adhesives
+  definition_status: discussed
+  notes: The Commission references prior decisions that segmented adhesives by end-use group
+    (DIY/consumers, construction, industrial) and by technology (water-based, reactive, hot-melts,
+    solvent-based). The Notifying Party argues against sub-segmentation by end-use group and
+    by technology. The Commission's own conclusion on the product market definition for adhesives
+    is not present in this chunk — only the prior precedents and the Notifying Party's position
+    are set out. Definition status is possible_segmentation based on the segmentation analysis
+    initiated here.
+- market_id: pm_17
+  name: Waterproofing – segmented by application type and technology (acrylic liquid membranes
+    used under tiling; acrylic liquid membranes other applications; PU liquid membranes; epoxy
+    liquid membranes; bitumen liquid; bitumen felts; PVC/TPO bonding sheets; other non-liquid
+    membranes; PU injection resins; damp proofing injection; epoxy injection systems)
+  definition_status: discussed
+  notes: The Commission's preliminary market investigation confirmed segmentation by waterproofing
+    application type and technology as narrowest plausible markets, consistent with prior decisional
+    practice (M.7498). The Notifying Party argued against sub-segmentation, proposing three
+    broader groupings (liquid-applied membranes, sheet membranes, injections). The Commission
+    preliminarily finds these distinct segments constitute separate markets but the text supplied
+    covers only the preliminary assessment; no final conclusive definition is stated. The Commission
+    states it will 'conservatively assess the Transaction based on the narrowest plausible product
+    segmentation', indicating a left-open / possible-segmentation posture for the formal decision.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Chemical admixtures / Concrete admixtures — national markets (EEA)
+  definition_status: defined
+  notes: The Commission preliminarily concluded that geographic markets for chemical admixtures
+    (and concrete admixtures) in the EEA are national in scope, though it noted cross-border
+    deliveries are common and that catchment-area definitions (~400-500 km radius) could also
+    be appropriate. Past decisions had left the question open between EEA-wide and narrower;
+    the Commission here assessed on national basis as most conservative. The notifying party
+    also submitted national dimension was appropriate.
+- market_id: gm_2
+  name: Concrete works — national geographic markets
+  definition_status: defined
+  notes: The Commission concluded that the relevant geographic market for each segment within
+    concrete works is national in scope, consistent with prior decisional practice. The Notifying
+    Party accepted national markets as the narrowest plausible definition for assessment purposes.
+- market_id: gm_3
+  name: Industrial flooring — geographic market (national or EEA-wide)
+  definition_status: left_open
+  notes: The Commission assessed the geographic scope of industrial flooring markets. Past decisions
+    left the question open but assessed sub-segments on a national basis as the narrowest plausible
+    market. The Commission's market investigation confirmed the national level as the narrowest
+    plausible market while also indicating the market could be EEA-wide. The geographic market
+    definition was ultimately left open between national and EEA-wide.
+- market_id: gm_4
+  name: Geographic market for industrial flooring
+  definition_status: left_open
+  notes: The Commission preliminarily found that the markets for industrial flooring are at
+    least national in scope and potentially EEA-wide. Market participants reported both similarities
+    (pricing, regulatory standards) and differences between Member States. The precise geographic
+    market definition was left open as no serious doubts arose under either national or EEA-wide
+    assessment.
+- market_id: gm_5
+  name: Geographic market for sealants
+  definition_status: left_open
+  notes: In prior decisions, the Commission considered geographic markets for sealants/adhesives
+    as varying by application — at least EEA-wide for some, national for others. Most recently,
+    the DIY/consumer segment was considered likely national, while the professional construction
+    segment was found likely supra-national (Western Europe, Central and Eastern Europe, Scandinavia).
+    The Notifying Party presented analysis on the narrowest plausible (national) basis. The
+    Commission's own assessment is noted as not entirely conclusive; the chunks end before the
+    Commission's final conclusion on geographic scope for sealants is provided.
+- market_id: gm_6
+  name: EEA-wide or national markets for sealants
+  definition_status: left_open
+  notes: The Commission explicitly left open the precise geographic market definition for sealants
+    (construction and DIY/consumer), stating it will conservatively assess both the overall
+    EEA market and each relevant national market. Market investigation evidence showed 80%/75%
+    of customers and 60%/67% of suppliers can procure/sell throughout the EEA or worldwide.
+theories_of_harm: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_sika_mbcc_decision
+  page: '4'
+  quote_snippet: Admixtures are ingredients that are added in order to improve the properties
+    of cement, concrete or mortar.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_2
+  source_document_id: eu_sika_mbcc_decision
+  page: '10'
+  quote_snippet: For the purpose of this Decision, the Commission considers as relevant product
+    markets the overall market of chemical admixtures, as well as the narrower market of concrete
+    admixtures.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_3
+  source_document_id: eu_sika_mbcc_decision
+  page: '10'
+  quote_snippet: The breadth and diversification of each suppliers' concrete admixtures portfolio
+    and its position in infrastructure and underground applications will also be taken into
+    account in the competitive assessment of the Transaction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_4
+  source_document_id: eu_sika_mbcc_decision
+  page: '4'
+  quote_snippet: Cement admixtures (often called 'grinding aids') are added to clinker cement
+    to reduce the energy required to grind this material and produce cement powder of the desired
+    finesse. Concrete and mortar admixtures are added to the mix of water, cement and aggregates
+    to improve the workability and hardened properties of those materials. The vast majority
+    of admixtures are used in concrete mixes.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_5
+  source_document_id: eu_sika_mbcc_decision
+  page: '10'
+  quote_snippet: For the purpose of this Decision, the Commission considers as relevant product
+    markets the overall market of chemical admixtures, as well as the narrower market of concrete
+    admixtures.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_6
+  source_document_id: eu_sika_mbcc_decision
+  page: '10'
+  quote_snippet: Since concrete admixtures used across residential and commercial construction
+    segments appear to be in principle similar, the Commission will not consider separate markets
+    based on those applications for the purpose of this Decision. However, since infrastructure
+    and underground applications appear to require suppliers with a certain track-record, the
+    Commission will take into account the Parties' and their competitors' market position for
+    those specific applications when assessing their competitive strengths and differentiation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_7
+  source_document_id: eu_sika_mbcc_decision
+  page: '14'
+  quote_snippet: In its past decisions, the Commission has distinguished between different types
+    of concrete works products, i.e. injection resins, polymer concrete, resin-based grouts,
+    anchoring resins, bonding agents, primers, impregnations, corrosion, protection/control,
+    structural reinforcing/strengthening and ancillaries (cleaners, release agents etc.).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_8
+  source_document_id: eu_sika_mbcc_decision
+  page: '14'
+  quote_snippet: 'In line with the Commission''s decisional practice and considering the results
+    of its market investigation, the Commission will consider each of the following categories
+    of concrete works as distinct product markets for the assessment of the Transaction: (a)
+    injection resins'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_9
+  source_document_id: eu_sika_mbcc_decision
+  page: '14'
+  quote_snippet: As regards resin-based grouts, the Notifying Party contends that the product
+    market includes both epoxy and polyester grouts.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_10
+  source_document_id: eu_sika_mbcc_decision
+  page: '14'
+  quote_snippet: With regard to impregnations, they submit that the product market also includes
+    coats and coatings.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_11
+  source_document_id: eu_sika_mbcc_decision
+  page: '14'
+  quote_snippet: As regards impregnations, contrary to the Notifying Party's claims, a majority
+    of customers indicated that coats and coatings are not part of the same market because of
+    a lack of demand-side substitutability. However, from a supply-side perspective, a majority
+    of competitors responded that producers of coats and coatings could easily switch production
+    to impregnations for concrete works.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_12
+  source_document_id: eu_sika_mbcc_decision
+  page: '14'
+  quote_snippet: 'In line with the Commission''s decisional practice and considering the results
+    of its market investigation, the Commission will consider each of the following categories
+    of concrete works as distinct product markets for the assessment of the Transaction: ...
+    (f) impregnations (including coats/coatings)'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_13
+  source_document_id: eu_sika_mbcc_decision
+  page: '14'
+  quote_snippet: 'In line with the Commission''s decisional practice and considering the results
+    of its market investigation, the Commission will consider each of the following categories
+    of concrete works as distinct product markets for the assessment of the Transaction: ...
+    (h) structural reinforcing/strengthening, ancillaries (including cleaners, release agents
+    etc.).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_14
+  source_document_id: eu_sika_mbcc_decision
+  page: '15'
+  quote_snippet: In previous decisions, the Commission distinguished between premix mortars,
+    which are mixed at the factory, and on-site mortars, which are mixed on the construction
+    site. The Notifying Party does not dispute this conclusion and the market investigation
+    did not call it into question.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_15
+  source_document_id: eu_sika_mbcc_decision
+  page: '15'
+  quote_snippet: As the Parties are not active in the supply of on-site mortars in the EEA,
+    this decision focuses on premix mortars.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_16
+  source_document_id: eu_sika_mbcc_decision
+  page: '16'
+  quote_snippet: In its past decisions, within premix mortars, the Commission distinguished
+    between dry mortars (supplied in a dry powder form), wet mortars (ready-mixed with water
+    at the factory) and ready-to-use paste mortars (supplied as paste, including organic compounds
+    as binders).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_17
+  source_document_id: eu_sika_mbcc_decision
+  page: '16'
+  quote_snippet: The Notifying Party disputes this conclusion, arguing that mortars having different
+    physical form (dry, wet or paste) may belong to the same product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_18
+  source_document_id: eu_sika_mbcc_decision
+  page: '16'
+  quote_snippet: However, the results of the market investigation do not support the Notifying
+    Party's position.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_19
+  source_document_id: eu_sika_mbcc_decision
+  page: '16'
+  quote_snippet: From a demand-side perspective, a majority of customers having expressed a
+    view confirmed that dry and paste mortars for tiles are generally not interchangeable because
+    they have different performances, applications, or prices.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_20
+  source_document_id: eu_sika_mbcc_decision
+  page: '17'
+  quote_snippet: The Notifying Party explained that, with a few exceptions, wet premix mortar
+    is no longer used in the EEA. In any event, the Parties are not active in wet premix mortar
+    in the EEA. Therefore, wet mortars are not assessed further in this decision.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_21
+  source_document_id: eu_sika_mbcc_decision
+  page: '17'
+  quote_snippet: In light of these considerations, the Commission will distinguish between dry
+    and paste mortars for the purpose of this Decision.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_22
+  source_document_id: eu_sika_mbcc_decision
+  page: '17'
+  quote_snippet: 'The Commission also distinguished, in previous decisions, between mortars
+    based on the application, namely: (i) construction mortars, used for various building construction
+    purposes such as casting and setting, masonry, plastering, floor levelling and concrete
+    repair; (ii) façade mortars, used as an outer layer of buildings for protective or aesthetic
+    purposes, or as part of insulation systems and (iii) tile-fixing mortars, used for fixing
+    tiles, both on substrate (adhesive mortars) and as sealants between tiles (grouts).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_23
+  source_document_id: eu_sika_mbcc_decision
+  page: '17'
+  quote_snippet: The Notifying Party instead argues that mortars for different applications
+    may belong to the same relevant product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_24
+  source_document_id: eu_sika_mbcc_decision
+  page: '17'
+  quote_snippet: Again, the results of the market investigation do not support the Notifying
+    Party's position.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_25
+  source_document_id: eu_sika_mbcc_decision
+  page: '17'
+  quote_snippet: From a demand-side perspective, a large majority of customers confirmed that
+    each different application (construction, façades, and tiles) requires specific mortars
+    having specific performances and that these are not interchangeable with mortars used for
+    other applications.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_26
+  source_document_id: eu_sika_mbcc_decision
+  page: '19'
+  quote_snippet: 'The Commission has previously considered the relevant market for industrial
+    flooring in decisions relating to flooring products and distinguished between industrial
+    and non-industrial flooring products: Industrial flooring was found to substantially differ
+    from wooden and laminate flooring with regard to (i) supply-side substitutability, (ii)
+    range of usability, (iii) pricing, and (iv) demand-side substitutability. It is therefore
+    not considered to form part of the same market as laminate and wooden flooring.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_27
+  source_document_id: eu_sika_mbcc_decision
+  page: '19'
+  quote_snippet: 'In case Compagnie de Saint-Gobain/Sika, the Commission considered the product
+    markets for various industrial flooring to be delineated by technology, namely: (i) epoxy,
+    (ii) methyl methacrylate ("MMA"), (iii) vinyl ester, (iv) polyurethane (''PU''), and (v)
+    others.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_28
+  source_document_id: eu_sika_mbcc_decision
+  page: '20'
+  quote_snippet: The Commission investigated whether other types of flooring can be substitutable
+    with industrial flooring.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_29
+  source_document_id: eu_sika_mbcc_decision
+  page: '20'
+  quote_snippet: In light of this, the Commission preliminarily finds that industrial flooring
+    constitutes a distinct market from tiles and linoleum, but can face some out of market constraints
+    from these types of flooring in particular use cases.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_30
+  source_document_id: eu_sika_mbcc_decision
+  page: '21'
+  quote_snippet: Contrary to the Notifying Party's view and in line with considerations in previous
+    Commission cases, the Commission's preliminary market investigation confirmed that a distinction
+    by technology is most likely appropriate and the narrowest plausible product market segmentation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_31
+  source_document_id: eu_sika_mbcc_decision
+  page: '21'
+  quote_snippet: From a demand-side perspective, the Commission found in its preliminary market
+    investigation that different technologies of industrial flooring substantially differ from
+    one another with regard to (i) demand-side substitutability in light of usability (ii) supply-side
+    substitutability, (iii) pricing.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_32
+  source_document_id: eu_sika_mbcc_decision
+  page: '22'
+  quote_snippet: The Commission further found that, from a supply-side perspective there are
+    relevant barriers to entry between the different technology types, with many competitors
+    indicating investments of several million Euros and timeframes of three to five years being
+    required to offer a different industrial flooring technology.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_33
+  source_document_id: eu_sika_mbcc_decision
+  page: '22'
+  quote_snippet: In light of both the limited demand-side and supply-side substitutability,
+    the Commission preliminarily finds that different types of flooring technology are likely
+    to constitute separate markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_34
+  source_document_id: eu_sika_mbcc_decision
+  page: '22'
+  quote_snippet: 'In any event, the precise product market definition can be left open, as the
+    Transaction does not raise serious doubts as to its compatibility with the internal market
+    irrespective of a sub-segmentation by technology or looking at overall markets for industrial
+    flooring. For the purposes of this Decision, the Commission will conservatively assess both
+    the overall market of industrial flooring and the sub-segments based on technology: PU-based,
+    epoxy-based, MMA-based, cementitious and hybrid PU/cementitious flooring.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_35
+  source_document_id: eu_sika_mbcc_decision
+  page: '24'
+  quote_snippet: In light of this, the Commission preliminarily finds for the purposes of this
+    Decision that the markets for industrial flooring are at least national in scope and potentially
+    EEA-wide. In any event, the precise geographic market definition can be left open, as the
+    Transaction does not raise serious doubts as to its compatibility with the internal market
+    in relation to industrial flooring when assessed either on the basis of national markets
+    or on the basis of an EEA-wide market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_13
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_36
+  source_document_id: eu_sika_mbcc_decision
+  page: '25'
+  quote_snippet: In its most recent decisions on sealants, the Commission considered that there
+    were likely distinct product markets for adhesives and for sealants. The Commission also
+    considered that the market for sealants should most likely be further segmented into sealants
+    produced for the construction and the consumer sectors respectively. The Commission noted
+    that the lack of true demand- or supply-side substitutability between the different sealant
+    technologies suggested that separate product markets may also exist for each type of sealant,
+    i.e. acrylic sealants, polysulfide sealants, polyurethane sealants, silicone sealants and
+    silylmodified polymers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_14
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_37
+  source_document_id: eu_sika_mbcc_decision
+  page: '25'
+  quote_snippet: Although not entirely conclusive (given the relatively low number of responses),
+    the results of the market investigation seem to provide some support to the Notifying Party's
+    arguments.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_14
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_38
+  source_document_id: eu_sika_mbcc_decision
+  page: '25'
+  quote_snippet: With respect to the distinction between end-use groups, a majority of customers
+    having responded to the market investigation (59%) confirmed that the same sealants are
+    generally used by professional construction businesses and DIY consumers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_14
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_39
+  source_document_id: eu_sika_mbcc_decision
+  page: '26'
+  quote_snippet: With respect to the distinction between technologies, a majority of customers
+    (56%) having responded to the preliminary market investigation stated that sealants based
+    on different technologies are used interchangeably because they have similar performances,
+    applications, and prices.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_14
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_40
+  source_document_id: eu_sika_mbcc_decision
+  page: '26'
+  quote_snippet: In any event, the precise product market definition can be left open, as the
+    Transaction does not raise serious doubts as to its compatibility with the internal market
+    either way. For the purposes of this Decision, the Commission will conservatively assess
+    both the overall market of sealants and its sub-segments based on end-use and technology.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_14
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_41
+  source_document_id: eu_sika_mbcc_decision
+  page: '27'
+  quote_snippet: In any event, the precise geographic market definition can be left open, as
+    the Transaction does not raise serious doubts as to its compatibility with the internal
+    market either way. For the purposes of this Decision, the Commission will conservatively
+    assess both the overall EEA market and each relevant national market for sealants.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_15
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_42
+  source_document_id: eu_sika_mbcc_decision
+  page: '27'
+  quote_snippet: Adhesives are products specifically developed to hold or stick objects together.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_16
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_43
+  source_document_id: eu_sika_mbcc_decision
+  page: '27'
+  quote_snippet: In previous decisions, the Commission considered a possible distinction between
+    adhesives and sealants. The Commission categorised adhesives into three end-use groups,
+    according to the target customer group, namely adhesives for consumers and DIY customers,
+    adhesives for the construction sector and adhesives for industrial applications. As regards
+    adhesives for industrial applications, the Commission considered further segmentations according
+    to the specific application such as automotive, bookbinding, labelling, packaging and according
+    to the adhesive technology, such as water-based technologies, solvent-based technologies,
+    hot melts or reactive adhesives.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_16
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_44
+  source_document_id: eu_sika_mbcc_decision
+  page: '27'
+  quote_snippet: The Notifying Party argues that the market of adhesives should not be sub-segmented
+    based on the end-use group (i.e. DIY/consumers, construction, industrial). According to
+    the Notifying Party, all customers have similar demands with respect to the technical properties
+    and usage of particular adhesives. Also, suppliers tend to cater to all end-use groups.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_16
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_45
+  source_document_id: eu_sika_mbcc_decision
+  page: '27'
+  quote_snippet: The Notifying Party also argues that the market of adhesives should not be
+    sub-segmented based on the technology (i.e. water-based, reactive, hot-melts or solvent-based
+    adhesives). This is because at least some of those technologies are characterised by similar
+    applications, prices, shelf life and input materials.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_16
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_46
+  source_document_id: eu_sika_mbcc_decision
+  page: '29'
+  quote_snippet: 'In its previous decisional practice108, the Commission considered waterproofing
+    and assessed distinct markets along the following lines as narrowest plausible markets:
+    acrylic liquid membranes (used under tiling), acrylic liquid membranes (other applications),
+    PU liquid membranes, epoxy liquid membranes, bitumen (liquid), bitumen felts, PVC/TPO bonding
+    sheets, other non-liquid membranes (foils, tapes, etc.), PU injection resins, damp proofing
+    injection and epoxy injection systems.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_17
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_47
+  source_document_id: eu_sika_mbcc_decision
+  page: '29'
+  quote_snippet: The Notifying Party submits that a sub-segmentation by categories or technology
+    is not appropriate in the area of waterproofing. They argue that there is significant demand-
+    and high supply-side substitutability between all waterproofing categories and technologies.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_17
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_48
+  source_document_id: eu_sika_mbcc_decision
+  page: '29'
+  quote_snippet: 'The Notifying Party proposes the following product groupings in case the Commission
+    would consider in the future to delineate the product market by technology: • liquid-applied
+    membranes, which include reactive coatings (i.e., PU, PUA and epoxy) and modified emulsion
+    (i.e., acrylic and bitumen); • sheet membranes, which include bitumen membranes and polymeric
+    membranes (i.e., TPO, PVC, HDPE including tapes, foil, gaskets, hoses and joints); and •
+    injections (i.e., PU and epoxy).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_17
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_49
+  source_document_id: eu_sika_mbcc_decision
+  page: '30'
+  quote_snippet: 'Contrary to the Notifying Party''s view and in line with considerations in
+    previous Commission cases, the Commission''s preliminary market investigation confirmed
+    a distinction of the waterproofing markets by waterproofing application type and technology,
+    namely as narrowest plausible markets: acrylic liquid membranes (used under tiling), acrylic
+    liquid membranes (other applications), PU liquid membranes, epoxy liquid membranes, bitumen
+    (liquid), bitumen felts, PVC/TPO bonding sheets, other non-liquid membranes (foils, tapes,
+    etc.), PU injection resins, damp proofing injection and epoxy injection systems.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_17
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_50
+  source_document_id: eu_sika_mbcc_decision
+  page: '30'
+  quote_snippet: From a demand-side perspective, the Commission found in its preliminary market
+    investigation that these different technologies of waterproofing substantially differ from
+    one another with regard to (i) demand-side substitutability in light of usability and (ii)
+    supply-side substitutability.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_17
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_51
+  source_document_id: eu_sika_mbcc_decision
+  page: '30'
+  quote_snippet: A majority of market participants confirmed that customers tend to use each
+    of them to address different needs. A clear majority of market participants that took a
+    view said that end consumers typically use each of the listed waterproofing technologies
+    to address different needs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_17
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_52
+  source_document_id: eu_sika_mbcc_decision
+  page: '30'
+  quote_snippet: the Commission found that not all suppliers offer all types of waterproofing.
+    While a few suppliers such as Sika offer all types of waterproofing, according to a vast
+    majority of competitors suppliers of waterproofing do not typically offer all types of waterproofing.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_17
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_53
+  source_document_id: eu_sika_mbcc_decision
+  page: '30'
+  quote_snippet: Competitors indicated in the market investigation, that it would require significant
+    financial expenses (several competitors indicated sums in EUR millions) as well as several
+    years (timeframes on average:1-3 years) to add to their portfolio a different type of waterproofing
+    technology that they are currently not offering.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_17
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_54
+  source_document_id: eu_sika_mbcc_decision
+  page: '30'
+  quote_snippet: 'In light of both the limited demand-side and supply-side substitutability,
+    the Commission preliminarily finds that the following different types of flooring technology
+    constitute the narrowest plausible separate markets in waterproofing: acrylic liquid membranes
+    (used under tiling), acrylic liquid membranes (other applications), PU liquid membranes,
+    epoxy liquid membranes, bitumen (liquid), bitumen felts, PVC/TPO bonding sheets, other non-liquid
+    membranes (foils, tapes, etc.), PU injection resins, damp proofing injection and epoxy injection
+    systems.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_17
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_55
+  source_document_id: eu_sika_mbcc_decision
+  page: '30'
+  quote_snippet: 'For the purposes of this Decision, the Commission will conservatively assess
+    the Transaction based on the narrowest plausible product segmentation based on application
+    type and technology, namely: acrylic liquid membranes (used under tiling), acrylic liquid
+    membranes (other applications), PU liquid membranes, epoxy liquid membranes, bitumen (liquid),
+    bitumen felts, PVC/TPO bonding sheets, other non-liquid membranes (foils, tapes, etc.),
+    PU injection resins, damp proofing injection and epoxy injection systems.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets:
+  - pm_17
+  supports_geographic_markets: []
+  supports_theories: []
+- passage_id: sp_56
+  source_document_id: eu_sika_mbcc_decision
+  page: '10'
+  quote_snippet: In its past decisions, the Commission left open whether the relevant geographic
+    market for admixtures was EEA-wide or narrower. The Commission carried out its assessment
+    based on the narrowest plausible geographic scope, i.e. national markets, as that was the
+    most conservative approach.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+- passage_id: sp_57
+  source_document_id: eu_sika_mbcc_decision
+  page: '10'
+  quote_snippet: The Notifying Party submits that the markets for chemical admixtures have a
+    national dimension and that a narrower delimitation based on local catchment areas is not
+    appropriate. In particular, the Notifying Party notes that the average radii in which Sika
+    and MBCC realise 80% of their sales are 410 km and 379 km around their plants, respectively,
+    and these catchment areas cover the majority if not the entirety of the country in which
+    each plant is located.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+- passage_id: sp_58
+  source_document_id: eu_sika_mbcc_decision
+  page: '12'
+  quote_snippet: These reasons strongly indicate that the geographic markets of admixtures in
+    the EEA are narrower than EEA-wide and no broader than national. The Commission therefore
+    preliminarily concludes, for the purpose of this Decision, that in the EEA the markets for
+    chemical admixtures (and for concrete admixtures) are national.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+- passage_id: sp_59
+  source_document_id: eu_sika_mbcc_decision
+  page: '11'
+  quote_snippet: A large majority of customers (72%) providing a view indicated as important
+    or very important that admixture suppliers are able to deliver orders within the next day.
+    A majority of customers (62%) also confirmed that it is important or very important for
+    them that an admixture supplier can deliver its products from a plant located in the same
+    country as the customer's plant.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+- passage_id: sp_60
+  source_document_id: eu_sika_mbcc_decision
+  page: '12'
+  quote_snippet: 56% of respondents to the market investigation indicated that the procurement
+    process is managed at the plant level, or in any event at the level of local geographic
+    areas within each EEA country. 25% of respondents manage their procurement process at the
+    national level and only 13% at the European level, covering several different countries.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+- passage_id: sp_61
+  source_document_id: eu_sika_mbcc_decision
+  page: '12'
+  quote_snippet: 'At the same time, there are some indications that the scope of those markets
+    does not always exactly coincide with national borders: cross border deliveries of admixtures
+    are common and while certain plants can easily supply several small or contiguous Member
+    States, others may be mostly focused on suppling one region within one large Member State.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+- passage_id: sp_62
+  source_document_id: eu_sika_mbcc_decision
+  page: '12'
+  quote_snippet: This suggests that a geographic market definition based on catchment areas
+    could also be appropriate. The market investigation did not provide conclusive evidence
+    as to the appropriate radius for those catchment areas, although a distance of about 400-500
+    km around the manufacturing plant seems to be the most accurate approximation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+- passage_id: sp_63
+  source_document_id: eu_sika_mbcc_decision
+  page: '15'
+  quote_snippet: In previous decisions regarding these markets, the Commission carried out its
+    assessment on a national basis, which was considered the narrowest plausible geographic
+    market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+- passage_id: sp_64
+  source_document_id: eu_sika_mbcc_decision
+  page: '15'
+  quote_snippet: While arguing that that the geographic markets might be wider than national,
+    the Notifying Party submits that, for the purpose of this Decision, the competitive assessment
+    can be conducted based on the narrowest plausible market definition, i.e., national markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+- passage_id: sp_65
+  source_document_id: eu_sika_mbcc_decision
+  page: '15'
+  quote_snippet: During the Commission's preliminary market investigation a majority of customers
+    stated that they procure concrete works at a national or subnational level, while a large
+    number of competitors stated encountering technical, regulatory or other obstacles when
+    delivering concrete works products across national borders within the EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+- passage_id: sp_66
+  source_document_id: eu_sika_mbcc_decision
+  page: '15'
+  quote_snippet: In line with the Commission's decisional practice and considering the information
+    provided by the Parties and the results of the market investigation, the Commission is of
+    the view that, for the purpose of this Decision, it is appropriate to consider the relevant
+    geographic market for each of the segments within concrete works to be national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+- passage_id: sp_67
+  source_document_id: eu_sika_mbcc_decision
+  page: '23'
+  quote_snippet: In its previous decisions, the Commission considered whether the markets for
+    different flooring products are at least EEA-wide, but ultimately left the question open.
+    However, in its latest decision on industrial flooring, the Commission assessed the sub-segments
+    of industrial flooring on a national basis as the narrowest plausible geographic market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+- passage_id: sp_68
+  source_document_id: eu_sika_mbcc_decision
+  page: '23'
+  quote_snippet: The Commission's market investigation confirmed the Commission's past finding
+    of the national level being the narrowest plausible market. The Commission finds that the
+    markets for industrial flooring in the EEA are at least national and potentially EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+- passage_id: sp_69
+  source_document_id: eu_sika_mbcc_decision
+  page: '23'
+  quote_snippet: A vast majority of both competitors and customers that took a view in the market
+    investigation, said that the same suppliers are active and similar products are available
+    in the EEA at national level or even EEA-wide rather than at local level. While many competitors
+    and customers took the view that the same suppliers are active and similar products are
+    available at EEA-level, just as many customers and almost as many competitors said this
+    was only true at national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+- passage_id: sp_70
+  source_document_id: eu_sika_mbcc_decision
+  page: '23'
+  quote_snippet: Similarly, other findings indicate a national or even EEA-wide market delineation
+    with regard to the supply of industrial flooring. A slight majority of customers said that
+    transport costs are a relevant factor when deciding from where to purchase industrial flooring
+    products, while nearly as many customers said transport costs were not a relevant factor.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+- passage_id: sp_71
+  source_document_id: eu_sika_mbcc_decision
+  page: '24'
+  quote_snippet: In light of this, the Commission preliminarily finds for the purposes of this
+    Decision that the markets for industrial flooring are at least national in scope and potentially
+    EEA-wide. In any event, the precise geographic market definition can be left open, as the
+    Transaction does not raise serious doubts as to its compatibility with the internal market
+    in relation to industrial flooring when assessed either on the basis of national markets
+    or on the basis of an EEA-wide market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+- passage_id: sp_72
+  source_document_id: eu_sika_mbcc_decision
+  page: '24'
+  quote_snippet: Many market participants reported similar pricing levels and similar regulatory
+    standards across EEA countries. However, just as many market participants reported respective
+    differences between Member States. In any event, no such differences were reported at a
+    more local level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+- passage_id: sp_73
+  source_document_id: eu_sika_mbcc_decision
+  page: '26'
+  quote_snippet: In previous decisions, the Commission considered that the geographic market
+    for industrial sealants and adhesives may vary depending on the application. For some of
+    them, the Commission considered the geographic market to be at least EEA-wide. For other
+    applications, the Commission found evidence suggesting that the relevant geographic market
+    is national.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+- passage_id: sp_74
+  source_document_id: eu_sika_mbcc_decision
+  page: '26'
+  quote_snippet: In its most recent decision on sealants, the Commission considered it likely
+    that the geographical scope for the segment of sealants for DIY/consumers was national.
+    The geographical scope of the segment of sealants for the professional construction segment
+    was found to be likely supra-national or at least regional, namely Western Europe, Central
+    and Eastern Europe and Scandinavia.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+- passage_id: sp_75
+  source_document_id: eu_sika_mbcc_decision
+  page: '26'
+  quote_snippet: Although not entirely conclusive (given the relatively low number of responses),
+    the results of the market investigation seem to provide some support to the Notifying Party's
+    arguments.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+- passage_id: sp_76
+  source_document_id: eu_sika_mbcc_decision
+  page: '27'
+  quote_snippet: A large majority of customers having responded to the market investigation
+    (80% for construction sealants and 75% for DIY/consumers sealants) confirmed that they are
+    able to procure sealants from suppliers located throughout the EEA, if not throughout the
+    world. A large majority of suppliers (60% for construction sealants and 67% for DIY/consumers
+    sealants) also confirmed that they are able to sell sealants to customers located throughout
+    the EEA, if not throughout the world.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+- passage_id: sp_77
+  source_document_id: eu_sika_mbcc_decision
+  page: '27'
+  quote_snippet: In any event, the precise geographic market definition can be left open, as
+    the Transaction does not raise serious doubts as to its compatibility with the internal
+    market either way. For the purposes of this Decision, the Commission will conservatively
+    assess both the overall EEA market and each relevant national market for sealants.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-05-29'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+procedure_stage: phase2
+authority_reference: M.10560
 similar_cases: []
-
+case_type: merger
+remedies: []
 metadata:
   extraction_method: manually_added
   review_status: unreviewed
   overall_confidence: 0.0
-  created_date: "2026-05-29"
-  last_updated_date: "2026-05-29"
+  created_date: '2026-05-29'
+  last_updated_date: '2026-05-29'
   tags:
-    - industrials
-    - construction-chemicals
-    - cleared-with-conditions
+  - industrials
+  - construction-chemicals
+  - cleared-with-conditions

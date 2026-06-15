@@ -1,0 +1,348 @@
+case_id: eu_epta_hauser_2026
+case_name: EPTA / HAUSER
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2026-02-06'
+parties:
+- name: EPTA
+  role: acquirer
+- name: HAUSER
+  role: target
+source_documents:
+- doc_id: eu_epta_hauser_2026_decision
+  title: EPTA / HAUSER — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.12094
+  pdf_url: http://publications.europa.eu/resource/cellar/2b076954-54f6-11f1-b3e2-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Manufacture and supply of commercial refrigeration products (segmented between remote
+    display cabinets and plug-ins)
+  definition_status: left_open
+  notes: The Commission assessed the market for commercial refrigeration products, considering
+    segmentation into remote display cases and plug-in display cases, but ultimately left the
+    precise definition open due to absence of competition concerns. The assessment was carried
+    out on the basis of the narrowest plausible market, i.e., segmented between remote and plug-in
+    display cases.
+- market_id: pm_2
+  name: Manufacture and supply of remote display cases
+  definition_status: considered
+  notes: null
+- market_id: pm_3
+  name: Manufacture and supply of plug-in display cases
+  definition_status: considered
+  notes: null
+- market_id: pm_4
+  name: Supply of installation and after-sales maintenance and repair services for commercial
+    refrigeration products
+  definition_status: considered
+  notes: null
+geographic_markets_considered:
+- market_id: gm_1
+  name: Manufacture and supply of commercial refrigeration products — EEA-wide
+  definition_status: defined
+  notes: null
+- market_id: gm_2
+  name: Supply of installation and after-sales maintenance and repair services for commercial
+    refrigeration products — national (Bulgaria, Cyprus, Czechia, Germany, Romania affected)
+  definition_status: left_open
+  notes: null
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_epta_hauser_2026_decision
+  page: '6'
+  quote_snippet: In any event, for the purposes of this Transaction, it can be left open whether
+    remote display cases and plug-ins are considered to constitute separate relevant product
+    markets or belong to one single product market, due to the absence of concerns. The Commission’s
+    competitive assessment will be carried out in relation to the narrowest plausible product
+    market, i.e. the market for the manufacture and supply of commercial refrigeration products,
+    segmented between remote display cabinets and plug-ins.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_epta_hauser_2026_decision
+  page: '5'
+  quote_snippet: Based on the market investigation carried out in this case, there are strong
+    indications that remote display cases and plug-in display cases should be considered as
+    constituting separate relevant product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_epta_hauser_2026_decision
+  page: '5'
+  quote_snippet: 'In particular, the majority of the respondents to the market investigation
+    indicated that the market for commercial refrigeration products should be distinguished
+    into: (i) remote display cases and (ii) plug-in display cases.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_epta_hauser_2026_decision
+  page: '6'
+  quote_snippet: The Commission’s competitive assessment will be carried out in relation to
+    the narrowest plausible product market, i.e. the market for the manufacture and supply of
+    commercial refrigeration products, segmented between remote display cabinets and plug-ins.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_epta_hauser_2026_decision
+  page: '5'
+  quote_snippet: Based on the market investigation carried out in this case, there are strong
+    indications that remote display cases and plug-in display cases should be considered as
+    constituting separate relevant product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_epta_hauser_2026_decision
+  page: '3'
+  quote_snippet: 'As the Notifying Party explained, refrigerated cabinets may be categorised
+    into two main system types: remote display cases, i.e., those relying on centralized refrigeration
+    systems located elsewhere in the store or facility, (including direct expansion, water-loop
+    (4), and indirect cascade systems) and plug-in display cases, i.e., self-contained portable
+    units equipped with their own built-in cooling system that expels heat directly into the
+    store environment, requiring only a power connection, also called ‘plug-ins’, (either water-cooled
+    or air-cooled).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_epta_hauser_2026_decision
+  page: '6'
+  quote_snippet: The Commission’s competitive assessment will be carried out in relation to
+    the narrowest plausible product market, i.e. the market for the manufacture and supply of
+    commercial refrigeration products, segmented between remote display cabinets and plug-ins.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_epta_hauser_2026_decision
+  page: '5'
+  quote_snippet: Based on the market investigation carried out in this case, there are strong
+    indications that remote display cases and plug-in display cases should be considered as
+    constituting separate relevant product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_epta_hauser_2026_decision
+  page: '3'
+  quote_snippet: 'As the Notifying Party explained, refrigerated cabinets may be categorised
+    into two main system types: remote display cases, i.e., those relying on centralized refrigeration
+    systems located elsewhere in the store or facility, (including direct expansion, water-loop
+    (4), and indirect cascade systems) and plug-in display cases, i.e., self-contained portable
+    units equipped with their own built-in cooling system that expels heat directly into the
+    store environment, requiring only a power connection, also called ‘plug-ins’, (either water-cooled
+    or air-cooled).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_epta_hauser_2026_decision
+  page: '7'
+  quote_snippet: The Commission considers that the supply of installation and after-sales maintenance
+    and repair services for commercial refrigeration products is the relevant product market
+    for the purposes of this Transaction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_epta_hauser_2026_decision
+  page: '7'
+  quote_snippet: In any event, for the purposes of this Transaction, the precise product market
+    definition can be left open due to the absence of concerns. The Commission will therefore
+    carry out its assessment on the basis of a market for the supply of installation and after-sales
+    maintenance and repair services for commercial refrigeration products.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_epta_hauser_2026_decision
+  page: '7'
+  quote_snippet: In fact, the majority of the respondents to the market investigation confirmed
+    that installation and after-sales maintenance and repair services for commercial refrigeration
+    equipment are distinct from installation and after-sales maintenance/repair services for
+    other types of commercial equipment, given that they require technicians with a specific
+    expertise in order to be carried out, and contracts for these services are different.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_epta_hauser_2026_decision
+  page: '9'
+  quote_snippet: The Commission considers, in line with its previous assessment, that the market
+    for the manufacture and supply of commercial refrigeration equipment is EEA-wide in scope.
+    The market investigation confirmed this assessment with the vast majority of the respondents
+    indicating that customers procure commercial refrigeration equipment on an EEA basis.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_epta_hauser_2026_decision
+  page: '8'
+  quote_snippet: The Notifying Party considers that the market for the manufacture and supply
+    of commercial refrigeration products, as well as its potential subsegments of remote display
+    cases and plug-ins, are EEA-wide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_epta_hauser_2026_decision
+  page: '8'
+  quote_snippet: In its past practice, the Commission considered that the market for the supply
+    of display cases should be considered as EEA-wide in scope, irrespective of a potential
+    distinction between remote and plug-in display cases.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_epta_hauser_2026_decision
+  page: '10'
+  quote_snippet: In any event, for the purposes of this Transaction, it can be left open whether
+    the market for the provision of installation and after-sales services for commercial refrigeration
+    equipment is narrower than EEA-wide in scope due to the absence of competition concerns,
+    while the Commission’s assessment will be carried out at the national level given no concerns
+    are expected to arise from the Transaction under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_epta_hauser_2026_decision
+  page: '10'
+  quote_snippet: In particular, when asked at which geographic level they procure installation
+    and after-sales maintenance and repair services, the majority of the respondents to the
+    market investigation indicated that they do so at the national level, with some of them
+    even stating that the level is narrower than national, i.e. local.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_epta_hauser_2026_decision
+  page: '1'
+  quote_snippet: Commission decision pursuant to Article 6(1)(b) of Council Regulation No 139/2004
+    (1) and Article 57 of the Agreement on the European Economic Area (2)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

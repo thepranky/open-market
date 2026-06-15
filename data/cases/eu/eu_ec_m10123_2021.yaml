@@ -1,0 +1,204 @@
+case_id: eu_ec_m10123_2021
+case_name: M.10123
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2021-03-10'
+parties: []
+source_documents:
+- doc_id: eu_ec_m10123_2021_decision
+  title: M.10123 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10123
+  pdf_url: http://publications.europa.eu/resource/cellar/98e5cad4-96b7-11eb-b85c-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Manufacture and wholesale supply of decorative coatings
+  definition_status: segmented
+  notes: The Commission considered segmentations between decorative paints and woodcare products,
+    water-based and solvent-based coatings, and sales channels. The first two were left open,
+    while the third (sales channels) was found not to require further segmentation for the purpose
+    of the decision.
+- market_id: pm_2
+  name: Retail distribution of decorative coatings
+  definition_status: defined
+  notes: The Commission concluded that this market does not need further segmentations.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Manufacture and wholesale supply of decorative coatings — EEA-wide or national
+  definition_status: left_open
+  notes: The exact scope of the geographic market was left open as it had no impact on the competitive
+    assessment.
+- market_id: gm_2
+  name: Retail distribution of decorative coatings — national or local (20-50 km radius)
+  definition_status: left_open
+  notes: The exact scope of the geographic market was left open as it had no impact on the competitive
+    assessment.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m10123_2021_decision
+  page: '2'
+  quote_snippet: (8) Decorative coatings cover various types of coatings (such as paints, lacquer
+    and varnish) normally used on-site both internally and externally during construction or
+    refurbishment, to protect and decorate surfaces of buildings such as walls, ceilings, doors,
+    window frames and other surfaces. Decorative coatings include both paints and woodcare products.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m10123_2021_decision
+  page: '4'
+  quote_snippet: (17) In any event, for the purpose of this decision, the question of whether
+    decorative paints and woodcare products constitute distinct markets can be left open, as
+    it has no impact on the Commission’s competitive assessment of the Transaction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m10123_2021_decision
+  page: '6'
+  quote_snippet: (31) The market for the retail distribution of decorative coatings is downstream
+    from the market for the manufacture and wholesale supply of decorative coatings, and consists
+    in the sale of decorative coatings to end-users by (specialised or not) shops.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m10123_2021_decision
+  page: '7'
+  quote_snippet: (34) The market investigation did not indicate that the market for the retail
+    distribution of decorative coatings should be further segmented. As a result, for the purposes
+    of assessing the Transaction, the Commission will analyse the retail activities of the Parties
+    on the basis of the narrowest plausible product market, namely the market for the retail
+    distribution of decorative coatings. The Commission therefore considers that, for the purposes
+    of assessing the Transaction, the retail distribution of decorative coatings constitutes
+    a distinct product market, without the need for further segmentations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m10123_2021_decision
+  page: '6'
+  quote_snippet: (28) The Notifying Party submits that the market for decorative coatings has
+    a national dimension, although the competitive pressure from imports is relevant.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m10123_2021_decision
+  page: '6'
+  quote_snippet: (29) The market investigation was not conclusive as to whether the market for
+    decorative coatings (and its sub-segments) is EEA-wide or national.32
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m10123_2021_decision
+  page: '6'
+  quote_snippet: (30) In any event, for the purpose of assessing the Transaction, the exact
+    scope of the geographic market definition can be left open since under all above-mentioned
+    plausible alternative geographic market definitions (EEA-wide or national), the Transaction
+    does not give rise to serious doubts as to its compatibility with the internal market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m10123_2021_decision
+  page: '7'
+  quote_snippet: (37) The market investigation did not provide any indications pointing towards
+    either alternative potential geographic market definition (i.e. national or local) for the
+    resale of decorative coatings to end-users.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m10123_2021_decision
+  page: '7'
+  quote_snippet: (38) In any event, for the purpose of assessing the Transaction, the exact
+    scope of the geographic market definition can be left open since under all above-mentioned
+    plausible alternative geographic market definitions, i.e. whether markets are defined as
+    national, regional or local (including either as a 20km or a 30-50 km radius around stores),
+    the Transaction does not give rise to serious doubts as to its compatibility with the internal
+    market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m10123_2021_decision
+  page: '1'
+  quote_snippet: 'Subject: Case M.10123 – PPG / Tikkurila Commission decision pursuant to Article
+    6(1)(b) of Council Regulation No 139/20041 and Article 57 of the Agreement on the European
+    Economic Area2'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

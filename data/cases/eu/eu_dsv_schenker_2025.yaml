@@ -1,0 +1,583 @@
+case_id: eu_dsv_schenker_2025
+case_name: DSV / SCHENKER
+authority: European Commission
+jurisdiction: EU
+sector: transport
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2025-04-08'
+parties:
+- name: DSV
+  role: acquirer
+- name: SCHENKER
+  role: target
+source_documents:
+- doc_id: eu_dsv_schenker_2025_decision
+  title: DSV / SCHENKER — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11746
+  pdf_url: http://publications.europa.eu/resource/cellar/adc81dbb-0361-11f1-825d-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Freight Forwarding Services
+  definition_status: left_open
+  notes: The Commission assessed freight forwarding services as distinct from contract logistics
+    and transportation services, and considered segmentation by mode (air, sea, land). While
+    these segments were assessed, the precise product market definition for freight forwarding
+    services was ultimately left open.
+- market_id: pm_2
+  name: Land Freight Forwarding
+  definition_status: left_open
+  notes: Segmentation between rail and road, FTL/LTL/groupage, and domestic and cross-border
+    services was considered but ultimately left open. The Commission assessed the effects on
+    the basis of these potential segmentations.
+- market_id: pm_3
+  name: Air Freight Forwarding
+  definition_status: left_open
+  notes: Segmentation between international trade lanes was considered. The precise product
+    market definition for air freight forwarding was ultimately left open.
+- market_id: pm_4
+  name: Sea Freight Forwarding
+  definition_status: left_open
+  notes: Segmentation between FCL and LCL was considered. The precise product market definition
+    for sea freight forwarding was ultimately left open.
+- market_id: pm_5
+  name: Contract Logistics Services
+  definition_status: left_open
+  notes: The Commission confirmed the distinction between freight forwarding and contract logistics.
+    It confirmed potential segmentation by type of goods/industry and by type of logistics provider
+    (LLP/3PL). Segmentation by cross-border/domestic was found not warranted. The precise product
+    market definition was left open.
+- market_id: pm_6
+  name: Finished Vehicles Logistics (FVL)
+  definition_status: left_open
+  notes: The Commission considered FVL as potentially distinct from freight forwarding and contract
+    logistics based on previous decisions and market investigation. However, the exact market
+    definition was left open and not further discussed, as the transaction would not raise serious
+    doubts.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Freight Forwarding Services — national/EEA-wide
+  definition_status: left_open
+  notes: The Commission's previous decisions left open whether freight forwarding markets are
+    national or EEA-wide. Market investigation indicated a preference for national/local providers,
+    suggesting national scope. However, the precise delineation was left open as the transaction
+    raised no serious doubts.
+- market_id: gm_2
+  name: Air Freight Forwarding — national with international trade lanes
+  definition_status: left_open
+  notes: Segmentation by international trade lanes was investigated for air freight forwarding,
+    with mixed results from the market investigation regarding demand and supply side substitutability.
+    The exact geographic market definition was left open, but the Commission assessed effects
+    on trade lanes out of caution.
+- market_id: gm_3
+  name: Sea Freight Forwarding — national with FCL/LCL and international trade lanes
+  definition_status: left_open
+  notes: Segmentation by international trade lanes was investigated for sea freight forwarding,
+    with mixed results from the market investigation regarding demand and supply side substitutability.
+    The exact geographic market definition was left open, but the Commission assessed effects
+    on trade lanes out of caution, also distinguishing FCL/LCL.
+- market_id: gm_4
+  name: Contract Logistics Services — national/EEA-wide
+  definition_status: left_open
+  notes: Previous Commission decisions considered the market EEA-wide, leaving open national
+    segmentation. Market investigation did not provide indications to deviate from this. The
+    exact geographic market definition was left open, but the Commission assessed effects on
+    national markets.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_dsv_schenker_2025_decision
+  page: '6'
+  quote_snippet: In previous decisions, the Commission has defined the provision of freight
+    forwarding services as a distinct product market from both contract logistics and transportation
+    services. The Commission has further considered segments of the freight forwarding market
+    depending on the modes of transport, between air, sea and land (including rail and road).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_dsv_schenker_2025_decision
+  page: '7'
+  quote_snippet: For the purposes of the present case, the Commission will therefore assess
+    the possible effects of the Transaction on each of land, sea and air freight forwarding.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_dsv_schenker_2025_decision
+  page: '21'
+  quote_snippet: For the purposes of the present case, the precise product and geographic market
+    definitions for freight forwarding services can be left open, given that the Transaction
+    would not raise serious doubts as to its compatibility with the internal market under any
+    plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_dsv_schenker_2025_decision
+  page: '9'
+  quote_snippet: For the purposes of the present case, the question whether land freight forwarding
+    services should be further segmented between rail and road freight forwarding can be left
+    open, given that the Transaction would not raise serious doubts as to its compatibility
+    with the internal market under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_dsv_schenker_2025_decision
+  page: '13'
+  quote_snippet: For the purposes of the present case, the question whether land freight forwarding
+    services should be further segmented between domestic and cross-border freight forwarding
+    can be left open, given that the Transaction would not raise serious doubts as to its compatibility
+    with the internal market under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_dsv_schenker_2025_decision
+  page: '21'
+  quote_snippet: 'For land freight forwarding: National markets distinguishing between (i) road
+    and rail, (ii) FTL, LTL and groupage, and (iii) domestic and cross-border services,'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_dsv_schenker_2025_decision
+  page: '7'
+  quote_snippet: For the purposes of the present case, the Commission will therefore assess
+    the possible effects of the Transaction on each of land, sea and air freight forwarding.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_dsv_schenker_2025_decision
+  page: '21'
+  quote_snippet: 'For air freight forwarding: National markets, and segmenting the national
+    markets between international trade lanes,'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_dsv_schenker_2025_decision
+  page: '7'
+  quote_snippet: For the purposes of the present case, the Commission will therefore assess
+    the possible effects of the Transaction on each of land, sea and air freight forwarding.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_dsv_schenker_2025_decision
+  page: '15'
+  quote_snippet: For the purposes of the present case, the question whether sea freight forwarding
+    services should be further segmented between FCL and LCL can be left open, given that the
+    Transaction would not raise serious doubts as to its compatibility with the internal market
+    under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_dsv_schenker_2025_decision
+  page: '22'
+  quote_snippet: 'For sea freight forwarding: National markets distinguishing between FCL and
+    LCL and segmenting the national markets between international trade lanes.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_dsv_schenker_2025_decision
+  page: '22'
+  quote_snippet: In previous decisions, the Commission distinguished freight forwarding services
+    from contract logistics and has considered that the provision of contract logistics services
+    is the part of the supply chain process offered at a warehouse that plans, implements, and
+    controls the efficient and effective flow and storage of goods, services, and related information
+    from the point of origin to the point of consumption in order to meet customers’ requirements.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_dsv_schenker_2025_decision
+  page: '24'
+  quote_snippet: Third, the results of the market investigation confirmed the potential segmentation
+    by reference to the type of goods handled or the industry serviced. In particular, the majority
+    of customers that expressed a view considered that not all contract logistics providers
+    can serve all customers, regardless of the industry in which the customers are active.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_dsv_schenker_2025_decision
+  page: '24'
+  quote_snippet: For the purposes of the present case, given that the Transaction would not
+    raise serious doubts as to its compatibility with the internal market under any plausible
+    market definition, the Commission will leave open the exact product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_dsv_schenker_2025_decision
+  page: '8'
+  quote_snippet: In previous decisions, the Commission has considered a potential market for
+    finished vehicles logistics (‘FVL’) services, distinct from the freight forwarding market
+    and contract logistics market. The providers of FVL are capable of responding to the multiple
+    requirements of car manufacturers all along the car supply chain and thus have a special
+    know-how, distinct from general logistics.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_dsv_schenker_2025_decision
+  page: '8'
+  quote_snippet: For the purposes of the present case, the question whether freight forwarding
+    and FVL can be left open, given that the Transaction would not raise serious doubts as to
+    its compatibility with the internal market under any plausible market definition. [...]
+    FVL will therefore not be further discussed in the present decision.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_dsv_schenker_2025_decision
+  page: '24'
+  quote_snippet: Fifth, the results of the market investigation do not provide indications that
+    the Commission should deviate from the market delineations considered in previous decisions
+    regarding a potential distinct market for FVL. In particular, a customer active in the automotive
+    industry explains that it relies on different suppliers for freight forwarding services,
+    contract logistics services and FVL, and noted that FVL ‘constitutes a separate market from
+    both contract logistics and freight forwarding’.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_dsv_schenker_2025_decision
+  page: '15'
+  quote_snippet: In its previous decisions, the Commission has left open whether the freight
+    forwarding services market or subdivisions thereof should be considered national in scope
+    for all modes of transportation, due to language and regulatory barriers, or wider in view
+    of a trend by major competitors to create trans-national or even EEA-wide networks.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_dsv_schenker_2025_decision
+  page: '16'
+  quote_snippet: The results of the market investigation indicate that customers have a general
+    preference to procure freight forwarding services domestically from providers that have
+    a local presence and have local expertise. Therefore, customers appear to face similar conditions
+    of competition at the national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_dsv_schenker_2025_decision
+  page: '16'
+  quote_snippet: In this sense, it appears that the relevant geographic market for freight forwarding
+    services is national in scope. However, for the purposes of the present case, the exact
+    delineation of the geographic market can be left open, given that the Transaction would
+    not raise serious doubts as to its compatibility with the internal market under any plausible
+    market definition – whether grouping customers in national or EEA-wide markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_dsv_schenker_2025_decision
+  page: '18'
+  quote_snippet: The results of the market investigation were inconclusive on the need to segment
+    the air and sea freight forwarding markets by trade lanes.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_dsv_schenker_2025_decision
+  page: '18'
+  quote_snippet: On the demand-side, while customers of air and sea freight forwarding services
+    require freight forwarding services between specific points of origin and destination, the
+    results of the market investigation were inconclusive regarding the typical geographical
+    scope of the tenders organised by customers procuring air and sea freight forwarding.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_dsv_schenker_2025_decision
+  page: '21'
+  quote_snippet: In this regard, for the purposes of the present case, the exact delineation
+    of the geographic market definition can be left open, given that the Transaction would not
+    raise serious doubts as to its compatibility with the internal market under any plausible
+    market definition. While there are indications that several of the large air and sea freight
+    forwarders are able to offer their services globally, out of caution and to ensure that
+    all potential effects of the Transaction have been taken into consideration, the Commission
+    will also assess the effects of the Transaction on trade lanes linking the national market
+    with different regions of the world (e.g., in relation to the German freight forwarding
+    market, different lanes to/from North America, Asia Pacific or Africa) for air and sea freight
+    forwarding.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_dsv_schenker_2025_decision
+  page: '18'
+  quote_snippet: The results of the market investigation were inconclusive on the need to segment
+    the air and sea freight forwarding markets by trade lanes.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_dsv_schenker_2025_decision
+  page: '18'
+  quote_snippet: On the demand-side, while customers of air and sea freight forwarding services
+    require freight forwarding services between specific points of origin and destination, the
+    results of the market investigation were inconclusive regarding the typical geographical
+    scope of the tenders organised by customers procuring air and sea freight forwarding.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_dsv_schenker_2025_decision
+  page: '21'
+  quote_snippet: In this regard, for the purposes of the present case, the exact delineation
+    of the geographic market definition can be left open, given that the Transaction would not
+    raise serious doubts as to its compatibility with the internal market under any plausible
+    market definition. While there are indications that several of the large air and sea freight
+    forwarders are able to offer their services globally, out of caution and to ensure that
+    all potential effects of the Transaction have been taken into consideration, the Commission
+    will also assess the effects of the Transaction on trade lanes linking the national market
+    with different regions of the world (e.g., in relation to the German freight forwarding
+    market, different lanes to/from North America, Asia Pacific or Africa) for air and sea freight
+    forwarding.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_dsv_schenker_2025_decision
+  page: '25'
+  quote_snippet: In previous decisions, the Commission found that the contract logistics market
+    is EEA-wide, leaving open a possible segmentation into national markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_dsv_schenker_2025_decision
+  page: '25'
+  quote_snippet: The market investigation did not provide indications that the Commission should
+    deviate from the market delineations considered in previous decisions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_dsv_schenker_2025_decision
+  page: '25'
+  quote_snippet: For the purposes of the present case, given that the Transaction would not
+    raise serious doubts as to its compatibility with the internal market under any plausible
+    market definition, the exact geographic market definition can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_dsv_schenker_2025_decision
+  page: '16'
+  quote_snippet: For the purposes of the present case, the exact delineation of the geographic
+    market can be left open, given that the Transaction would not raise serious doubts as to
+    its compatibility with the internal market under any plausible market definition – whether
+    grouping customers in national or EEA-wide markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_dsv_schenker_2025_decision
+  page: '17'
+  quote_snippet: Transaction would not raise serious doubts as to its compatibility with the
+    internal market under any plausible market definition
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

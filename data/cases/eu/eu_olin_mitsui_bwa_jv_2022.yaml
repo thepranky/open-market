@@ -1,0 +1,562 @@
+case_id: eu_olin_mitsui_bwa_jv_2022
+case_name: OLIN / MITSUI / BWA JV
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2022-12-20'
+parties:
+- name: OLIN
+  role: acquirer
+- name: MITSUI
+  role: acquirer
+- name: BWA JV
+  role: target
+source_documents:
+- doc_id: eu_olin_mitsui_bwa_jv_2022_decision
+  title: OLIN / MITSUI / BWA JV — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10862
+  pdf_url: http://publications.europa.eu/resource/cellar/d79f0295-2f77-11ee-9e98-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Supply of Caustic Soda (CS)
+  definition_status: left_open
+  notes: The Commission considered whether to segment the market between liquid and solid CS,
+    and between direct supply and trading of CS, but left both definitions open as the transaction
+    did not raise concerns under any plausible definition.
+- market_id: pm_2
+  name: Trading of Caustic Soda (CS)
+  definition_status: left_open
+  notes: The Commission's market investigation suggested that it may be appropriate to define
+    a separate market for the trading of CS, distinct from direct supply, but ultimately left
+    the definition open for the purpose of the decision.
+- market_id: pm_3
+  name: Supply of Ethylene Dichloride (EDC)
+  definition_status: considered
+  notes: While the Commission had not previously concluded on whether EDC constitutes a distinct
+    product market, for the purpose of this decision, it considered the supply of EDC to be
+    a relevant market. The potential distinction between direct supply and trading was left
+    open.
+- market_id: pm_4
+  name: Trading of Ethylene Dichloride (EDC)
+  definition_status: left_open
+  notes: The Commission considered it may be appropriate to define a separate market for the
+    trading of EDC, distinct from direct supply, but ultimately left the definition open for
+    the purpose of the decision.
+- market_id: pm_5
+  name: Supply of Epichlorohydrin
+  definition_status: considered
+  notes: The Commission identified the supply of epichlorohydrin as a downstream market for
+    the purpose of assessing vertical links. While the Notifying Parties suggested the market
+    is global, the Commission left the exact geographic market definition open.
+- market_id: pm_6
+  name: Supply of VCM
+  definition_status: left_open
+  notes: The Commission's past decisions have left open whether VCM constitutes a product market.
+    For this decision, it was identified as a downstream market in the vertical assessment.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Supply of Caustic Soda (CS) — EEA-wide/North West Europe/Global
+  definition_status: left_open
+  notes: The Commission previously considered the geographic market for CS to be at least North
+    West Europe, potentially broader (EEA-wide or global). For this decision, it left the exact
+    geographic definition open as the transaction raised no concerns under any plausible scope.
+- market_id: gm_2
+  name: Trading of Caustic Soda (CS) — worldwide
+  definition_status: considered
+  notes: The Commission's market investigation indicated that the appropriate geographic market
+    for the trading of CS would be global, primarily due to the broader reach offered by traders.
+- market_id: gm_3
+  name: Supply of Ethylene Dichloride (EDC) — EEA-wide/North West Europe/Global
+  definition_status: left_open
+  notes: The Commission previously had not concluded on the precise geographic scope of the
+    market for EDC. For this decision, the exact geographic market definition was left open
+    as the transaction did not give rise to an affected market under any plausible definition
+    (global, EEA-wide, or North West Europe).
+- market_id: gm_4
+  name: Trading of Ethylene Dichloride (EDC) — worldwide
+  definition_status: considered
+  notes: Based on the market investigation, the Commission considered the appropriate geographic
+    market definition for the trading of EDC to be global, consistent with its findings for
+    CS trading.
+- market_id: gm_5
+  name: Supply of Epichlorohydrin — EEA and worldwide
+  definition_status: left_open
+  notes: The Notifying Parties submitted that the market for epichlorohydrin is global, and
+    the Commission left the exact geographic market definition open for the purpose of this
+    decision.
+- market_id: gm_6
+  name: Supply of VCM — worldwide
+  definition_status: considered
+  notes: Although Olin produces VCM only in North America, the Commission considered a hypothetical
+    global geographic market for the purpose of assessing the vertical link to EDC trading.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_olin_mitsui_bwa_jv_2022_decision
+  page: '4'
+  quote_snippet: The Commission has previously considered CS to constitute a separate product
+    market. The Commission has considered separate markets for liquid CS and solid CS, but ultimately
+    left the appropriate product market definition open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_olin_mitsui_bwa_jv_2022_decision
+  page: '4'
+  quote_snippet: As concerns the potential distinction between solid CS and liquid CS that the
+    Commission considered in previous cases, the exact market definition can be left open in
+    this case. The supply of solid CS constitutes only minimal part of the overall market (c.
+    1%). Furthermore, Olin does not produce solid CS, and BWA JV is not expected to be active
+    in the trading of solid CS. Thus, the competitive assessment will remain the same regardless
+    of whether the relevant market comprises both forms of CS or whether it is limited to liquid
+    CS only.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_olin_mitsui_bwa_jv_2022_decision
+  page: '5'
+  quote_snippet: In light of the above, the Commission considers that it may be appropriate
+    to define separate product markets for the direct supply of CS and for the trading of CS.
+    However, in this case the appropriate product market definition can be left open as the
+    Transaction does not give rise to competitive concerns under either definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_olin_mitsui_bwa_jv_2022_decision
+  page: '4'
+  quote_snippet: As for the trading of CS, the Commission’s market investigation suggested that
+    it may be appropriate to define a separate market from direct supply of CS. In the Commission’s
+    market investigation, producers identified several services provided by traders that they
+    would not be able to replicate internally. Likewise, industrial customers who procure CS
+    from traders confirmed that these services are attractive to them.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_olin_mitsui_bwa_jv_2022_decision
+  page: '5'
+  quote_snippet: In light of the above, the Commission considers that it may be appropriate
+    to define separate product markets for the direct supply of CS and for the trading of CS.
+    However, in this case the appropriate product market definition can be left open as the
+    Transaction does not give rise to competitive concerns under either definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_olin_mitsui_bwa_jv_2022_decision
+  page: '6'
+  quote_snippet: In its previous decisions, the Commission has not reached a conclusion on whether
+    EDC constitutes a distinct product market, observing only that the merchant market in EDC
+    is limited in size, as most EDC producers are vertically integrated into the production
+    of PVC and the majority of their EDC production is for captive consumption.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_olin_mitsui_bwa_jv_2022_decision
+  page: '7'
+  quote_snippet: For the purpose of this decision, the Commission considers that supply of EDC
+    is a relevant market. While the majority of EDC is used captively to produce PVC, several
+    producers and traders supply EDC on the merchant market to customers who use it to produce
+    VCM, PVC, chlorinated organics intermediates or solvents. For BWA JV, trading of EDC is
+    one of its primary activities.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_olin_mitsui_bwa_jv_2022_decision
+  page: '7'
+  quote_snippet: In light of the above, the Commission considers that it may be appropriate
+    to define separate product markets for the direct supply of EDC and for the trading of EDC.
+    However, in this case it can be left open whether direct supply by producers and the trading
+    of EDC form separate product markets, as the Transaction does not give rise to competition
+    concerns under either market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_olin_mitsui_bwa_jv_2022_decision
+  page: '7'
+  quote_snippet: For the same reasons as set out above for CS (see paragraph (17)), the Commission
+    considers that it may be appropriate to define a separate product market for the trading
+    of EDC. Traders provide services that allow producers to sell to customers they could not
+    otherwise access, and may therefore be distinct from direct supply.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_olin_mitsui_bwa_jv_2022_decision
+  page: '7'
+  quote_snippet: In light of the above, the Commission considers that it may be appropriate
+    to define separate product markets for the direct supply of EDC and for the trading of EDC.
+    However, in this case it can be left open whether direct supply by producers and the trading
+    of EDC form separate product markets, as the Transaction does not give rise to competition
+    concerns under either market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_olin_mitsui_bwa_jv_2022_decision
+  page: '9'
+  quote_snippet: The trading of CS worldwide (upstream) and epichlorohydrin in the EEA and worldwide
+    (downstream)30,31;
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_olin_mitsui_bwa_jv_2022_decision
+  page: '9'
+  quote_snippet: The Parties submit that the market for epichlorohydrin is global as they regularly
+    ship it intercontinentally. For the purpose of this decision, the exact geographic market
+    definition can be left open as the Transaction does not give rise to competition concerns
+    under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_olin_mitsui_bwa_jv_2022_decision
+  page: '9'
+  quote_snippet: The trading of EDC worldwide (upstream) and supply of VCM worldwide32 (downstream).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_olin_mitsui_bwa_jv_2022_decision
+  page: '9'
+  quote_snippet: The Commission has in the past left open whether VCM constitutes a product
+    market (case M.6905 – Ineos / Solvay / JV, European Commission decision of 8 May 2014, paragraph
+    489).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_olin_mitsui_bwa_jv_2022_decision
+  page: '5'
+  quote_snippet: In the past, the Commission considered that the geographic market for CS was
+    at least North West Europe (Belgium, Luxembourg, Netherlands, Denmark, France, Ireland,
+    Sweden, Norway and the United Kingdom) and might be broader, i.e. EEA-wide or global in
+    scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_olin_mitsui_bwa_jv_2022_decision
+  page: '5'
+  quote_snippet: The Notifying Parties submit that the relevant geographic market for the supply
+    of CS is at least EEA-wide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_olin_mitsui_bwa_jv_2022_decision
+  page: '5'
+  quote_snippet: As concerns the market for the overall supply of CS, the market investigation
+    did not give any reason to depart from the Commission’s decisional practice. The Transaction
+    does not give rise to competition concerns under any plausible geographic market definition
+    (global, EEA-wide, or North West Europe) and can therefore be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_olin_mitsui_bwa_jv_2022_decision
+  page: '5'
+  quote_snippet: While the Notifying Parties consider that it is not appropriate to consider
+    a separate market for the trading of CS, they submit that if such market were to be considered,
+    it would be global in scope. The Notifying Parties indicate that Mitsui and its competitors
+    have customers globally and that there are no regulatory or logistical elements that require
+    traders to have local presence in Europe.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_olin_mitsui_bwa_jv_2022_decision
+  page: '5'
+  quote_snippet: As for the potential market for trading CS, the Commission considers on the
+    basis of the market investigation that the appropriate geographic market definition would
+    be global. This is supported by the fact that one of the key reasons to use traders put
+    forward by CS producers and traders in the Commission’s market investigation is the broader
+    reach that traders offer.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_olin_mitsui_bwa_jv_2022_decision
+  page: '6'
+  quote_snippet: Therefore, for the purposes of this decision, the Commission considers that
+    the appropriate geographic scope for a potential separate market for the trading of CS is
+    global.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_olin_mitsui_bwa_jv_2022_decision
+  page: '7'
+  quote_snippet: In its previous decisions, the Commission has not concluded on the precise
+    geographic scope of the market for EDC.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_olin_mitsui_bwa_jv_2022_decision
+  page: '7'
+  quote_snippet: The Notifying Parties submit that the relevant geographic market for the supply
+    of EDC is at least EEA-wide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_olin_mitsui_bwa_jv_2022_decision
+  page: '8'
+  quote_snippet: As concerns the market for the overall supply of EDC, the exact geographic
+    market definition can be left open. The Transaction does not give rise to an affected market
+    for the supply of EDC under any plausible geographic market definition (global, EEA-wide,
+    or North West Europe).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_olin_mitsui_bwa_jv_2022_decision
+  page: '7'
+  quote_snippet: While the Notifying Parties consider that it is not appropriate to consider
+    a separate market for the trading of EDC, they submit that if such market were to be considered,
+    it would be global in scope. The Notifying Parties indicate that Mitsui and its competitors
+    have customers globally and that there are no regulatory or logistical elements that require
+    traders to have local presence in Europe.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_olin_mitsui_bwa_jv_2022_decision
+  page: '8'
+  quote_snippet: As for the potential market for trading EDC, the Commission considers on the
+    basis of the market investigation that the appropriate geographic market definition would
+    be global for the same reasons as for CS, set out in paragraph (23). In particular, producers
+    are able to sell EDC to traders located worldwide and industrial customers can procure EDC
+    from traders located anywhere.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_olin_mitsui_bwa_jv_2022_decision
+  page: '8'
+  quote_snippet: Therefore, for the purposes of this decision, the appropriate geographic scope
+    for a potential separate market for the trading of EDC is global.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_olin_mitsui_bwa_jv_2022_decision
+  page: '9'
+  quote_snippet: The Parties submit that the market for epichlorohydrin is global as they regularly
+    ship it intercontinentally. For the purpose of this decision, the exact geographic market
+    definition can be left open as the Transaction does not give rise to competition concerns
+    under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_olin_mitsui_bwa_jv_2022_decision
+  page: '10'
+  quote_snippet: Olin only produces VCM in North America, meaning that a relevant vertical link
+    could only arise under a hypothetical global geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_olin_mitsui_bwa_jv_2022_decision
+  page: '19'
+  quote_snippet: For the above reasons, the European Commission has decided not to oppose the
+    notified operation and to declare it compatible with the internal market and with the EEA
+    Agreement. This decision is adopted in application of Article 6(1)(b) of the Merger Regulation
+    and Article 57 of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+case_type: merger
+ai_summary: null
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

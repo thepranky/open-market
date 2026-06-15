@@ -1,0 +1,289 @@
+case_id: eu_ec_m10314_2021
+case_name: M.10314
+authority: European Commission
+jurisdiction: EU
+sector: extractives
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2021-10-25'
+parties: []
+source_documents:
+- doc_id: eu_ec_m10314_2021_decision
+  title: M.10314 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10314
+  pdf_url: http://publications.europa.eu/resource/cellar/4eca9075-7908-11ec-9136-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Electrical engineering services
+  definition_status: left_open
+  notes: The Commission considered various sub-segmentations including by type of business (residential/non-residential),
+    type of work (installation/maintenance), nature of service (infrastructures/industry/tertiary
+    sector), specific engineering services (telecommunication networks, substations, power lines,
+    public lighting), and for power lines, by type of voltage (high/medium/low) or overhead/underground.
+    The precise market definition was ultimately left open as the transaction did not raise
+    serious doubts under any plausible definition.
+- market_id: pm_2
+  name: Mechanical engineering services
+  definition_status: left_open
+  notes: The Commission considered various sub-segmentations including by type of work (installation/maintenance),
+    type of business (residential/non-residential), and type of customer (infrastructures/industry/tertiary).
+    The precise market definition was ultimately left open as the transaction did not raise
+    serious doubts under any plausible definition.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Electrical engineering services — national/regional
+  definition_status: left_open
+  notes: The Commission considered the geographic market to be at least national, with some
+    market investigation responses suggesting a national scope and others noting regional presence.
+    The precise geographic definition was ultimately left open as the transaction did not raise
+    serious doubts under either national or regional definitions.
+- market_id: gm_2
+  name: Mechanical engineering services — national/regional
+  definition_status: left_open
+  notes: The Commission considered whether the geographic market should be national or regional,
+    as this was left open in past decisions. The Notifying Parties submitted a national scope.
+    The precise geographic definition was ultimately left open as the transaction did not raise
+    serious doubts under any plausible definition.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m10314_2021_decision
+  page: '3'
+  quote_snippet: Electrical engineering services include services on electrical and telecommunication
+    networks, substations, voice data-image, power supply, public lighting, etc. In its previous
+    decisions, the Commission has distinguished between the provision of (i) electrical, (ii)
+    mechanical and (iii) thermal/air-conditioning engineering services, although it left the
+    precise market definition open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m10314_2021_decision
+  page: '3'
+  quote_snippet: Within electrical engineering services, the Commission has considered the possibility
+    of further sub-segmenting the market depending on (i) the type of business (residential/non-residential);
+    (ii) the type of work (installation/maintenance); and (iii) the nature of the service (infrastructures/industry/tertiary
+    sector).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m10314_2021_decision
+  page: '5'
+  quote_snippet: The Commission considers that, for the purposes of this Decision, it can be
+    left open whether the provision of electrical engineering services should be sub-segmented
+    according to the type of business, the type of work or the nature of the service; whether
+    distinct product markets should be considered for telecommunication networks, substations,
+    power lines or public lighting; or whether power lines should be further sub-segmented according
+    to the type of voltage or between overhead and underground power lines, as the Transaction
+    does not raise serious doubts as to its compatibility with the internal market under any
+    of the plausible product market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m10314_2021_decision
+  page: '6'
+  quote_snippet: In the mechanical engineering services field, the Commission has considered
+    in its past decisions further sub-segmenting the market distinguishing by type of work (installation/maintenance),
+    type of business (residential/non-residential), and the type of customer (infrastructures/industry/tertiary),
+    although the precise market definition has ultimately been left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m10314_2021_decision
+  page: '6'
+  quote_snippet: For the purposes of this Decision, it can be left open whether the provision
+    of mechanical engineering services should be sub-segmented according to the type of work,
+    the type of business or the type of customer and whether the market should be defined as
+    national or regional, as the Transaction does not raise serious doubts as to its compatibility
+    with the internal market under any product or geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m10314_2021_decision
+  page: '5'
+  quote_snippet: In its previous decisions, the Commission has considered that the geographic
+    scope of electrical engineering markets was at least national, although the precise definition
+    was ultimately left open. While it is true that in one case concerning France the Commission
+    considered both national and regional shares due to the existence of national players, the
+    market investigation in that same case suggested that the geographic scope for the provision
+    of services to power lines was most likely national because the competitive conditions were
+    similar throughout France.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m10314_2021_decision
+  page: '5'
+  quote_snippet: In the market investigation, the majority of competitors were of the view that
+    companies active in electrical engineering services are typically present at national level
+    and that prices are essentially the same throughout the national territory. The majority
+    also indicated that the market for the installation/maintenance of electrical infrastructures
+    should be viewed as national, with one competitor even indicating that it could be even
+    EEA-wide or wider. The majority of customers also agreed that most companies active in electrical
+    engineering services are present at national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m10314_2021_decision
+  page: '6'
+  quote_snippet: In conclusion, according to the market investigation the geographic scope of
+    the provision of electrical engineering services, in particular for power lines, is most
+    likely national although, for the purposes of this Decision, it can be left open whether
+    the market should be defined as national or regional, as the Transaction does not raise
+    serious doubts as to its compatibility with the internal market under either geographic
+    market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m10314_2021_decision
+  page: '6'
+  quote_snippet: As regards the geographic market definition, the Commission has in the past
+    left open whether the market should be considered national or regional.33 The Notifying
+    Parties submit that the provision of mechanical engineering services is national.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m10314_2021_decision
+  page: '6'
+  quote_snippet: For the purposes of this Decision, it can be left open whether the provision
+    of mechanical engineering services should be sub-segmented according to the type of work,
+    the type of business or the type of customer and whether the market should be defined as
+    national or regional, as the Transaction does not raise serious doubts as to its compatibility
+    with the internal market under any product or geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m10314_2021_decision
+  page: '6'
+  quote_snippet: The Transaction would not give rise to any affected markets at national level
+    according to the market definitions and the different segmentations considered by the Commission
+    in the past.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m10314_2021_decision
+  page: '10'
+  quote_snippet: 'However, the Commission considers that, in the unlikely scenario that the
+    markets for the maintenance of medium and low voltage electric lines were to be defined
+    as regional, the Transaction would also not give rise to serious doubts as to its compatibility
+    with the internal market, for the following reasons (besides those explained in relation
+    to the national market in paragraphs (31)-(33) above):'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m10314_2021_decision
+  page: '16'
+  quote_snippet: For these reasons, the Commission considers that the Transaction does not raise
+    serious doubts as to its compatibility with the internal market in relation to the installation
+    of high voltage power lines in France.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m10314_2021_decision
+  page: '16'
+  quote_snippet: For these reasons, the Commission considers that the Transaction does not raise
+    serious doubts as to its compatibility with the internal market in relation to mechanical
+    engineering services in Spain.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

@@ -1,0 +1,903 @@
+case_id: eu_ec_m10158_2021
+case_name: M.10158
+authority: European Commission
+jurisdiction: EU
+sector: financial
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2021-07-20'
+parties: []
+source_documents:
+- doc_id: eu_ec_m10158_2021_decision
+  title: M.10158 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10158
+  pdf_url: http://publications.europa.eu/resource/cellar/9ac550cc-162b-11ec-b4fe-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Trading services for derivative contracts
+  definition_status: considered
+  notes: The Commission referenced previous decisions where the provision of trading services
+    for derivative contracts was distinguished based on underlying asset classes, execution
+    environment, types of contracts, and currency pairs. These are not definitive conclusions
+    for this specific case but inform the subsequent analysis.
+- market_id: pm_2
+  name: FX trading services
+  definition_status: left_open
+  notes: The Commission considered that separate FX trading services markets exist for exchange-traded
+    and OTC traded FX products. However, further distinctions (trading channel, pre-trade transparency,
+    type of contract, currency) were left open as they would not affect the outcome of the assessment.
+- market_id: pm_3
+  name: Derivatives clearing
+  definition_status: defined
+  notes: The Commission concluded that there are separate product markets for the clearing of
+    derivatives by underlying asset class, execution environment, type of customer, and type
+    of contract. For this decision, distinctions by customer and contract type were not considered
+    relevant, focusing on OTC FX clearing and OTC IRD clearing.
+- market_id: pm_4
+  name: Trade processing services
+  definition_status: defined
+  notes: The Commission, informed by market investigation, concluded that trade processing services
+    consist of separate markets by asset class, trade type (bilateral, tri-party), and service
+    type (at least NOE messaging, PB give-up management, CCP connectivity).
+- market_id: pm_5
+  name: Prime broker (PB) give-up management services
+  definition_status: defined
+  notes: The Commission concluded that PB give-up management services are a separate relevant
+    product market from other trade processing services and can be distinguished by asset class
+    and trade type. Further distinctions by service type or trading channel were left open.
+- market_id: pm_6
+  name: NOE messaging services
+  definition_status: defined
+  notes: The Commission concluded that NOE messaging services are a separate product market
+    from other trade processing services, and can be distinguished by asset class and trade
+    type. Further distinctions by type of contract, execution environment, trading channels
+    (electronic vs. bilateral/voice), and independent vs. captive provision were left open.
+- market_id: pm_7
+  name: CCP connectivity services
+  definition_status: defined
+  notes: The Commission concluded that CCP connectivity services are a separate product market
+    from other trade processing services, and that it is appropriate to define separate markets
+    by asset class. Whether narrower markets delineated by type of trade or only for OTC traded
+    derivatives would be appropriate was left open.
+- market_id: pm_8
+  name: Credit limit management for OTC derivatives
+  definition_status: defined
+  notes: The Commission considered that credit limit management services are a separate product
+    market from other trade processing services. However, distinctions by asset class, pre-
+    and post-trade provision, and third-party provision were left open as not affecting the
+    outcome.
+- market_id: pm_9
+  name: Trade confirmation services
+  definition_status: defined
+  notes: The Commission considered the relevant product market to be the provision of trade
+    confirmations. Distinctions by asset class or for third-party provision were left open as
+    not affecting the outcome.
+- market_id: pm_10
+  name: Portfolio compression services
+  definition_status: defined
+  notes: The Commission concluded that portfolio compression services are separate product markets
+    from trade processing services and are split by asset class. The question of whether there
+    are separate markets for third-party providers versus CCPs was left open.
+- market_id: pm_11
+  name: Portfolio reconciliation services
+  definition_status: defined
+  notes: The Commission concluded that portfolio reconciliation services are separate product
+    markets from trade processing services and are split by asset class. The question of whether
+    there are separate markets for third-party providers versus CCPs was left open.
+- market_id: pm_12
+  name: Margin management services
+  definition_status: defined
+  notes: The Commission concluded that margin management services are separate product markets
+    from trade processing services and are split by asset class. The question of whether there
+    are separate markets for third-party providers versus CCPs was left open.
+- market_id: pm_13
+  name: Basis risk mitigation services
+  definition_status: defined
+  notes: The Commission concluded that basis risk mitigation services are separate product markets
+    from trade processing services and are split by asset class. The question of whether there
+    are separate markets for third-party providers versus CCPs was left open.
+- market_id: pm_14
+  name: RED codes
+  definition_status: left_open
+  notes: The market investigation indicated that RED codes likely are a separate market. However,
+    the Commission left open whether RED codes form a distinct market or are part of a larger
+    market comprising other identifiers (e.g., LEIs paired with ISINs), as this would not affect
+    the outcome.
+geographic_markets_considered:
+- market_id: gm_1
+  name: OTC FX trading services — worldwide or at least EEA-wide
+  definition_status: left_open
+  notes: The Commission noted that the relevant geographic market for OTC FX trading is likely
+    global and at least EEA-wide, but left the exact definition open as it did not affect the
+    assessment's outcome.
+- market_id: gm_2
+  name: Bilateral FX NOE messaging services — worldwide
+  definition_status: defined
+  notes: The Commission, based on market investigation, concluded that the geographic market
+    for bilateral FX NOE messaging services is worldwide.
+- market_id: gm_3
+  name: CCP connectivity services — worldwide
+  definition_status: defined
+  notes: The Commission, based on market investigation, concluded that the relevant geographic
+    market for CCP connectivity services is worldwide.
+- market_id: gm_4
+  name: Credit limit management for OTC derivatives — worldwide
+  definition_status: defined
+  notes: The Commission concluded that the geographic scope of the market for credit limit management
+    for OTC derivatives is worldwide, noting that Traiana is the only third-party provider globally.
+- market_id: gm_5
+  name: Portfolio compression, portfolio reconciliation, margin management and basis risk mitigation
+    — global
+  definition_status: defined
+  notes: The Commission concluded that the geographic market for portfolio compression, portfolio
+    reconciliation, margin management, and basis risk mitigation is global, regardless of asset
+    class or whether CCPs are included.
+- market_id: gm_6
+  name: RED codes — worldwide
+  definition_status: defined
+  notes: The Commission, informed by market investigation, concluded that the relevant geographic
+    market for RED codes is worldwide.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '9'
+  quote_snippet: In past decisions, the Commission considered that the provision of trading
+    services for derivative contracts can be distinguished based on underlying asset classes,
+    execution environment, types of contracts and currency pairs.13
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '9'
+  quote_snippet: First, regarding the type of underlying variable or asset, the Commission considered
+    that trading services for derivatives can be categorised into trading services for equity
+    derivatives (single stock or index based), IRDs, currency derivatives, commodity derivatives,
+    credit derivatives, and FX derivatives.14
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '12'
+  quote_snippet: In view of the above, the Commission considers that separate FX trading services
+    markets exist for exchange traded and OTC traded FX products.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '12'
+  quote_snippet: Possible further distinctions may exist with respect to (i) trading channel
+    (electronic, voice/bilateral), (ii) pre-trade transparency (anonymous or disclosed trading),
+    and (iii) by type of contract and currency. However, concerning these additional possible
+    distinctions, the relevant product market definition can be left open as the Transaction
+    does not give rise to serious doubts as to its compatibility with the internal market even
+    on the narrowest plausible market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '14'
+  quote_snippet: In view of the above, the Commission concludes, in line with its previous decisional
+    practice, that there are separate product markets for the clearing of derivatives by underlying
+    asset class.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '14'
+  quote_snippet: The Commission also considers, in line with its previous decisional practice,
+    that there are separate product markets for the clearing of derivatives by execution environment,
+    type of customer and type of contract.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '14'
+  quote_snippet: Therefore, the Commission’s assessment focuses on the relevant markets for
+    OTC FX clearing and OTC IRD clearing services without further distinguishing between customer
+    or contract types.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '17'
+  quote_snippet: While the Commission has not previously considered trade processing services
+    directly, the results of the market investigation indicate that trade processing service
+    markets are separate markets in similar ways to trading services (e.g. by asset class),
+    as proposed by the Notifying Parties.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '20'
+  quote_snippet: In view of the above, the Commission considers that trade processing services
+    consist of separate markets (i) by asset class, (ii) by trade type (bilateral, tri-party)
+    and (iii) by service type (at least into NOE messaging, PB give-up management, CCP connectivity).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '22'
+  quote_snippet: The results of the market investigation indicate that it is appropriate to
+    consider PB give-up management services as a separate product market from other trade processing
+    services. Furthermore, the market investigation supports the conclusion that there are separate
+    PB give-up management services markets by asset class and trade type.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '23'
+  quote_snippet: Regarding distinctions by service type or trading channel, the market definition
+    can be left open as no serious doubts as to the Transaction’s compatibility with the internal
+    market arise regardless of whether a broader market (including all FX PB give-up management
+    services, i.e FX PB give-up messaging services, processing give-up agreements, tri-party
+    documentation management, credit limit management and aggregation for trades executed electronically
+    and bilaterally/via voice) or separate markets are assessed.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '24'
+  quote_snippet: Based on the results of the market investigation and the evidence available
+    to it, the Commission considers that PB give-up management services are a separate relevant
+    product market from other trade processing services and that it is appropriate to distinguish
+    the market for PB give-up management services by asset class and trade type.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '27'
+  quote_snippet: The results of the market investigation indicate that it is appropriate to
+    consider NOE messaging services as a separate product market from other trade processing
+    services. Furthermore, the market investigation supports the conclusion that there are separate
+    NOE messaging markets by asset class and trade type.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '27'
+  quote_snippet: Regarding distinctions based on trading channel (electronic or bilateral/voice
+    execution) and independent versus captive provision of services, the market definition can
+    be left open as no serious doubts as to the Transaction’s compatibility with the internal
+    market arise regardless of whether a broader market (including both) or separate markets
+    are concerned.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '32'
+  quote_snippet: Based on the results of the market investigation and the evidence available
+    to it, the Commission considers that NOE messaging services are a separate relevant product
+    market from other trade processing services, and that it is appropriate to distinguish the
+    market for NOE messaging services by asset class and trade type.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '34'
+  quote_snippet: The results of the market investigation indicate that it is appropriate to
+    consider CCP connectivity as a separate product market from other trade processing services
+    and are consistent with the Notifying Parties’ submissions that there is limited supply-side
+    substitutability between different asset classes.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '35'
+  quote_snippet: Finally, as regards type of trade, the results of the market investigation
+    were inconclusive as to whether it would be appropriate to define markets for CCP connectivity
+    on the basis of bilateral and trilateral trades.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '36'
+  quote_snippet: In light of the foregoing, the Commission considers that CCP connectivity services
+    are a separate relevant product market from other trade processing services, and that it
+    is appropriate to define separate relevant product markets for CCP connectivity services
+    by asset class. It can be left open whether a narrower product market delineated by type
+    of trade or only for OTC traded derivatives would be appropriate, as a conclusion on this
+    issue does not affect the outcome of the Commission’s assessment in the present case.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '38'
+  quote_snippet: While the Commission has not previously considered credit limit management
+    services directly, the results of the market investigation indicate that trade processing
+    service markets may be distinguished by asset class, trade type and service type (see Section
+    4.5.2), as proposed by the Notifying Parties. Credit limit management services could be
+    a separate product market (being a separate service type within PB give-up management services
+    markets).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '38'
+  quote_snippet: However, whether separate markets by asset class exist for credit limit management
+    services can be left open, as the Transaction does not give rise to serious doubts as to
+    its compatibility with the internal market irrespective of such a distinction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '39'
+  quote_snippet: Based on the results of the market investigation and the evidence available
+    to it, the Commission considers that credit limit management services are a separate relevant
+    product market from other trade processing services. It is possible that it may be appropriate
+    to distinguish the market for credit limit management services by asset class, pre- and
+    post-trade provision and third party provision only. The conclusion on whether these constitute
+    separate markets can be left open however, as the Transaction does not give rise to serious
+    doubts as to its compatibility with the internal market irrespective of such a distinction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '41'
+  quote_snippet: In line with the general finding outlined above that different trade processing
+    services are different product markets, the market investigation indicated that trade confirmations
+    are a separate product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '41'
+  quote_snippet: However, as the Transaction does not give rise to serious doubts as to its
+    compatibility with the internal market on the narrowest plausible basis (i.e. if there were
+    separate product markets by asset class, noting that MarkitSERV’s share would be lower on
+    an overall market for trade confirmations given that it is not active in several asset classes),
+    it is not necessary to reach a conclusion on this question.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '41'
+  quote_snippet: In light of the foregoing, for the purposes of this decision, the Commission
+    considers the relevant product market is the provision of trade confirmations. It can be
+    left open whether there would be a separate relevant product market by asset class (which
+    in this case would be relevant only for the IRD, CDS and equity derivatives asset classes)
+    or for third party provision of trade confirmations, as a conclusion on this issue does
+    not affect the outcome of the Commission’s assessment in the present case.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '45'
+  quote_snippet: As such, and in line with the conclusions for the other trade processing services,
+    the Commission concludes that trade optimization services are not part of the same market
+    as other trade processing services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '46'
+  quote_snippet: More specifically, the Commission concludes that there are separate product
+    markets for portfolio compression, margin management, portfolio reconciliation and basis
+    risk management services – in each case, these product markets are split by asset class.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '45'
+  quote_snippet: As such, and in line with the conclusions for the other trade processing services,
+    the Commission concludes that trade optimization services are not part of the same market
+    as other trade processing services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '46'
+  quote_snippet: More specifically, the Commission concludes that there are separate product
+    markets for portfolio compression, margin management, portfolio reconciliation and basis
+    risk management services – in each case, these product markets are split by asset class.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '45'
+  quote_snippet: As such, and in line with the conclusions for the other trade processing services,
+    the Commission concludes that trade optimization services are not part of the same market
+    as other trade processing services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '46'
+  quote_snippet: More specifically, the Commission concludes that there are separate product
+    markets for portfolio compression, margin management, portfolio reconciliation and basis
+    risk management services – in each case, these product markets are split by asset class.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '45'
+  quote_snippet: As such, and in line with the conclusions for the other trade processing services,
+    the Commission concludes that trade optimization services are not part of the same market
+    as other trade processing services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_13
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '46'
+  quote_snippet: More specifically, the Commission concludes that there are separate product
+    markets for portfolio compression, margin management, portfolio reconciliation and basis
+    risk management services – in each case, these product markets are split by asset class.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_13
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '49'
+  quote_snippet: The market investigation results indicate that RED codes likely are a separate
+    market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_14
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_34
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '49'
+  quote_snippet: The market investigation did not provide sufficient evidence to reach a conclusion
+    regarding whether RED codes constitute a separate product market, or could have substitutes,
+    leading to a wider market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_14
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_35
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '49'
+  quote_snippet: In any event, the product market definition in relation to RED codes, and in
+    particular whether RED codes form a distinct market or are part of a larger market comprising
+    other identifiers such as LEIs paired with ISINs can be left open as the Transaction does
+    not give rise to serious doubts as to its compatibility with the internal market even on
+    the narrowest plausible basis.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_14
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_36
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '12'
+  quote_snippet: From a demand-side perspective, the market investigation in a previous case
+    revealed that the majority of customers trade OTC FX products on worldwide venues.32
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_37
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '13'
+  quote_snippet: In view of the above, the Commission considers, in line with previous decisions,
+    that the relevant geographic market for OTC FX trading and potential narrower markets is
+    likely global and at least EEA-wide. However, the exact geographic market definition (i.e.
+    EEA-wide or global) can be left open for the purposes of this decision, as a conclusion
+    on this issue does not affect the outcome of the Commission’s assessment in the present
+    case.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_38
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '33'
+  quote_snippet: Therefore, for the purposes of this decision, the Commission considers the
+    geographic market of bilateral FX NOE messaging services to be worldwide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_39
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '37'
+  quote_snippet: Moreover, the Parties are active worldwide without differentiating their CCP
+    connectivity services by geography. The market investigation did not indicate any other
+    reasons to consider that a narrower geographic market definition would be appropriate.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_40
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '37'
+  quote_snippet: Based on the results of the market investigation, the Commission considers
+    that the relevant geographic market for CCP connectivity services is worldwide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_41
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '39'
+  quote_snippet: The Commission notes that Traiana’s credit limit management for OTC derivatives
+    services are used by […] CCPs, […] regulated venues and more than […] end clients worldwide.148
+    The product is the same worldwide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_42
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '40'
+  quote_snippet: In light of the foregoing, for the purposes of this decision, the Commission
+    considers the geographic scope of the market for credit limit management for OTC derivatives
+    to be worldwide. In any event, given that Traiana is the only third party provider of credit
+    limit management for OTC derivatives globally, the competitive assessment would not change
+    even on a narrower geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_43
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '47'
+  quote_snippet: The results of the market investigation indicate that it would be appropriate
+    to consider the relevant geographic market for portfolio compression, portfolio reconciliation,
+    margin management and basis risk mitigation to be worldwide (across all asset classes and
+    regardless of whether CCP services are considered part of the relevant product market).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_44
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '47'
+  quote_snippet: On the demand-side, the majority of customers indicated that they purchase
+    trade optimization services at the worldwide level and all confirmed that suppliers are
+    active at the worldwide level.178
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_45
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '47'
+  quote_snippet: On the basis of the market investigation results and for the reasons detailed
+    above, the Commission concludes that the geographic market for portfolio compression, portfolio
+    reconciliation, margin management and basis risk mitigation is global, regardless of asset
+    class or whether CCPs are considered to be part of the relevant product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_46
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '49'
+  quote_snippet: The market investigation indicated that the relevant geographic market is likely
+    to be worldwide. On the supply-side, there is only one provider of RED codes (IHSM), which
+    is active at worldwide level and does not alter its product offering depending on the place
+    of supply.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_47
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '6'
+  quote_snippet: The Transaction thus constitutes a concentration within the meaning of Articles
+    3(1)(b) and 3(4) of the Merger Regulation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_48
+  source_document_id: eu_ec_m10158_2021_decision
+  page: '6'
+  quote_snippet: The Transaction therefore has a Union dimension pursuant to Article 1(2) of
+    the Merger Regulation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []
+case_type: merger
+ai_summary: null

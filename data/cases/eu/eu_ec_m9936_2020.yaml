@@ -1,0 +1,377 @@
+case_id: eu_ec_m9936_2020
+case_name: M.9936
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2020-12-16'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9936_2020_decision
+  title: M.9936 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9936
+  pdf_url: http://publications.europa.eu/resource/cellar/3b8c4df9-d04a-11eb-ac72-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Construction and supply of container ships
+  definition_status: left_open
+  notes: The Commission considered different size categories (Feeder, Intermediate, Neo-Panamax,
+    Post-Panamax) based on TEU capacity, noting limited demand-side and supply-side substitutability.
+    However, the exact scope was left open as the transaction would not raise serious doubts
+    under any plausible definition.
+- market_id: pm_2
+  name: Construction and supply of bulk carriers
+  definition_status: left_open
+  notes: The Commission considered different size categories (by DWT) and port/region-specific
+    categories (e.g., Kamsarmax, Newcastlemax), noting a common understanding among market participants
+    but also some demand-side and supply-side substitutability for adjacent categories. The
+    exact market definition was left open as the transaction would not raise serious doubts.
+- market_id: pm_3
+  name: Construction and supply of PCTCs
+  definition_status: left_open
+  notes: The Commission considered segmentation based on the number of vehicles carried (e.g.,
+    above 6,000 cars), finding mixed responses from market participants regarding demand-side
+    and supply-side substitutability. The exact market definition was left open as the transaction
+    would not raise serious doubts.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Construction and supply of container ships — worldwide
+  definition_status: considered
+  notes: The Commission considered the geographic market for container ships to be worldwide
+    in scope, consistent with previous decisions and market investigation findings.
+- market_id: gm_2
+  name: Construction and supply of bulk carriers — worldwide
+  definition_status: considered
+  notes: The Commission considered the geographic market for bulk carriers to be worldwide in
+    scope, consistent with previous decisions and market investigation findings.
+- market_id: gm_3
+  name: Construction and supply of PCTCs — worldwide
+  definition_status: considered
+  notes: The Commission considered the geographic market for PCTCs to be worldwide in scope,
+    consistent with previous decisions and market investigation findings.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9936_2020_decision
+  page: '13'
+  quote_snippet: The results of the market investigation discussed above support the appropriateness
+    of distinguishing between different categories of container ships, based on size – in particular
+    their TEU capacity. While some market participants referred to different dividing lines
+    between container ship segments, the categorisation according to Clarksons is widely used
+    by industry participants. There appears to be virtually no demand side substitutability,
+    while there does appear to be some limited level of supply side substitutability when considering
+    smaller categories of container ships or the intersection between the large Neo-Panamax
+    12-14 999 TEU ships and Post-Panamax ships. Nevertheless, when considering large container
+    ships, including Neo-Panamax 12-14 999 TEU ships, only few shipbuilders are capable of producing
+    them.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9936_2020_decision
+  page: '9'
+  quote_snippet: 'Contrary to the submission by the Notifying Parties, market participants appear
+    to have a common understanding of different container ship categories based on size (delineated
+    by TEU capacity in particular). This holds specifically for categories reported on by industry
+    publication Clarksons Research, namely: Feeder (<3 000 TEU), Intermediate (3-7 999 TEU),
+    Neo-Panamax (8-11 999 TEU), Neo-Panamax (12-14 999 TEU), and Post-Panamax (15 000+ TEU).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9936_2020_decision
+  page: '14'
+  quote_snippet: In any event, the exact scope of product market definition with respect to
+    container ships can be left open since the Transaction would not raise serious doubts as
+    to its compatibility with the internal market under any plausible alternative product market
+    definition and irrespective of whether a separate market is defined according to the Clarksons
+    categorisation for Neo-Panamax 12-14 999 TEU container ships.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9936_2020_decision
+  page: '18'
+  quote_snippet: The results of the market investigation discussed above indicate that it may
+    be appropriate to distinguish between different categories of bulk carriers based on size
+    (by DWT) and on type of port or region. However, the exact categories according to which
+    distinction should be made for the purpose of market definition are not clear. While these
+    categories appear to be widely used by industry participants, there appears to be some level
+    of demand- and supply-side substitutability when considering adjacent categories of bulk
+    carriers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9936_2020_decision
+  page: '17'
+  quote_snippet: A majority of those customers and competitors that responded to the market
+    investigation submitted that shipping companies typically use different categories of bulk
+    carriers to carry out the same types of services at competitive conditions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9936_2020_decision
+  page: '19'
+  quote_snippet: In any event, since the Transaction does not raise serious doubts as to its
+    compatibility with the internal market under any plausible product market definition, it
+    can be left open whether all types of bulk carriers belong to a single product market or
+    whether distinct markets should be identified for various bulk carriers segments (i.e. into
+    (i) Small (DWT <10 000); (ii) Handysize (DWT 10 000 - <40 000); (iii) Handymax (DWT 40 000
+    – <65 000); (iv) Panamax (DWT 65 000 - <80 000); (v) Panamax (DWT 80 000 - <100 000); and
+    (vi) Capesize (DWT >100 000)) or according to specific ports or regions (i.e. into (i) Kamsarmax
+    (DWT 80 000 – 90 000); (ii) Dunkirkmax (DWT 170 000 – 180 000); (iii) Newcastlemax (DWT
+    180 000 – 190 000); and (iv) Setouchmax (DWT 200 000 – 210 000).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9936_2020_decision
+  page: '21'
+  quote_snippet: The results of the market investigation discussed above indicate that it may
+    be appropriate to distinguish between different categories of PCTCs based on the number
+    of vehicles they can carry.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9936_2020_decision
+  page: '20'
+  quote_snippet: A majority of customers that responded to the market investigation and expressed
+    an opinion submitted that shipping companies cannot use different categories of PCTCs to
+    carry out the same type of service at similar competitive conditions. Conversely, a majority
+    of competitors that responded to the market investigation and expressed an opinion said
+    that they can.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9936_2020_decision
+  page: '21'
+  quote_snippet: However, the exact scope of product market definition with respect to PCTCs
+    can be left open since the Transaction does not raise serious doubts as to its compatibility
+    with the internal market under any plausible alternative product market definition and irrespective
+    of whether all types of PCTCs belong to a single product market or whether different segmentations
+    of PCTCs can be identified for (i) less than 2 000 cars; (ii) between 2 000 and 3 999 cars;
+    (iii) between 4 000 and 5 999 cars; and (iv) above 6 000 cars.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9936_2020_decision
+  page: '21'
+  quote_snippet: In previous decisions, the Commission defined the relevant geographic market
+    for the construction and sale of commercial ships as worldwide in scope. The Notifying Parties
+    agree with this definition and do not propose an alternative.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9936_2020_decision
+  page: '21'
+  quote_snippet: A vast majority of the customers and competitors that responded to the market
+    investigation agreed that the relevant geographic market for the assessment of the relevant
+    competitive dynamics in shipbuilding is global in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9936_2020_decision
+  page: '21'
+  quote_snippet: In light of these considerations, as well as all evidence available to it,
+    the Commission considers that the markets for the construction and supply of (i) container
+    ships; (ii) bulk carriers; and (iii) PCTCs, including possible segmentations thereof, are
+    worldwide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9936_2020_decision
+  page: '21'
+  quote_snippet: In previous decisions, the Commission defined the relevant geographic market
+    for the construction and sale of commercial ships as worldwide in scope. The Notifying Parties
+    agree with this definition and do not propose an alternative.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m9936_2020_decision
+  page: '21'
+  quote_snippet: A vast majority of the customers and competitors that responded to the market
+    investigation agreed that the relevant geographic market for the assessment of the relevant
+    competitive dynamics in shipbuilding is global in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m9936_2020_decision
+  page: '21'
+  quote_snippet: In light of these considerations, as well as all evidence available to it,
+    the Commission considers that the markets for the construction and supply of (i) container
+    ships; (ii) bulk carriers; and (iii) PCTCs, including possible segmentations thereof, are
+    worldwide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m9936_2020_decision
+  page: '21'
+  quote_snippet: In previous decisions, the Commission defined the relevant geographic market
+    for the construction and sale of commercial ships as worldwide in scope. The Notifying Parties
+    agree with this definition and do not propose an alternative.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m9936_2020_decision
+  page: '21'
+  quote_snippet: A vast majority of the customers and competitors that responded to the market
+    investigation agreed that the relevant geographic market for the assessment of the relevant
+    competitive dynamics in shipbuilding is global in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m9936_2020_decision
+  page: '21'
+  quote_snippet: In light of these considerations, as well as all evidence available to it,
+    the Commission considers that the markets for the construction and supply of (i) container
+    ships; (ii) bulk carriers; and (iii) PCTCs, including possible segmentations thereof, are
+    worldwide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m9936_2020_decision
+  page: '37'
+  quote_snippet: For the above reasons, the European Commission has decided not to oppose the
+    notified operation and to declare it compatible with the internal market and with the EEA
+    Agreement. This decision is adopted in application of Article 6(1)(b) of the Merger Regulation
+    and Article 57 of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

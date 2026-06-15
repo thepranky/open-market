@@ -1,0 +1,351 @@
+case_id: eu_pcg_perstorp_2022
+case_name: PCG / PERSTORP
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2022-09-08'
+parties:
+- name: PCG
+  role: acquirer
+- name: PERSTORP
+  role: target
+source_documents:
+- doc_id: eu_pcg_perstorp_2022_decision
+  title: PCG / PERSTORP — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10797
+  pdf_url: http://publications.europa.eu/resource/cellar/4dc8b5d5-b67d-11ed-8912-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: 2-Ethylhexanoic Acid ("2-EHA")
+  definition_status: left_open
+  notes: The Notifying Party argued that 2-EHA should be considered as part of a wider market
+    comprising all carboxylic acids due to high substitutability. However, market investigation
+    respondents suggested 2-EHA is not easily substitutable, pointing to a distinct market.
+- market_id: pm_2
+  name: iso-butyric aldehyde ("I-BAL")
+  definition_status: left_open
+  notes: The Commission had previously considered I-BAL and N-BAL as distinct product markets,
+    a view that the Notifying Party and market investigation supported.
+- market_id: pm_3
+  name: n-butyric aldehyde ("N-BAL")
+  definition_status: left_open
+  notes: Similar to I-BAL, previous Commission decisions, the Notifying Party's view, and market
+    investigation results suggested N-BAL and I-BAL constitute distinct product markets.
+- market_id: pm_4
+  name: trimethylolpropane ("TMP")
+  definition_status: left_open
+  notes: TMP is a polyhydric alcohol. The Commission had previously considered the broader market
+    for polyhydric alcohols but noted evidence suggesting not all such alcohols form a single
+    market due to differing chemical structures.
+geographic_markets_considered:
+- market_id: gm_1
+  name: 2-Ethylhexanoic Acid ("2-EHA") — EEA or global
+  definition_status: left_open
+  notes: Previous decisions left the geographic scope open. Market investigation respondents
+    suggested a global market due to transportability and low costs.
+- market_id: gm_2
+  name: iso-butyric aldehyde ("I-BAL") — at most EEA-wide
+  definition_status: left_open
+  notes: Previous decisions considered the market for I-BAL to be at most EEA-wide. Market investigation
+    indicated a narrower than global market due to high transport costs and deterioration, but
+    noted some inter-regional transport.
+- market_id: gm_3
+  name: n-butyric aldehyde ("N-BAL") — at most EEA-wide
+  definition_status: left_open
+  notes: Previous decisions considered the market for N-BAL at most EEA-wide, with potential
+    segmentation into Northern and Southern Europe. Market investigation showed a tendency to
+    limit supply within regions but also instances of inter-regional exports. The Notifying
+    Party argued for an EEA-wide market.
+- market_id: gm_4
+  name: trimethylolpropane ("TMP") — at least EEA-wide and possibly global
+  definition_status: left_open
+  notes: Previous Commission decisions considered the geographic market for all polyhydric alcohols
+    to be at least EEA-wide and possibly global, but left the precise definition open.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_pcg_perstorp_2022_decision
+  page: '7'
+  quote_snippet: (29) The Commission has considered the market for 2-EHA in previous decisions
+    but has left open the exact scope of the product market.17 The Notifying Party argues that
+    2-EHA should be considered as part of the wider market comprising all carboxylic acids,18
+    due to the high level of substitutability between 2-EHA and other carboxylic acids, from
+    both a demand and a supply point of view.19
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_pcg_perstorp_2022_decision
+  page: '7'
+  quote_snippet: (30) Respondents to the market investigation observed that 2-EHA is not easily
+    substitutable with other carboxylic acids.20 This would therefore rather point to a distinct
+    market for 2-EHA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_pcg_perstorp_2022_decision
+  page: '7'
+  quote_snippet: (31) For the present case, the definition of the exact product market can be
+    left open, as no competition concerns would arise under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_pcg_perstorp_2022_decision
+  page: '8'
+  quote_snippet: (36) The Commission has previously considered that I-BAL and N-BAL constitute
+    distinct product markets.25 The Notifying Party agrees that I-BAL and N-BAL may constitute
+    distinct product markets26 and the results of the market investigation also suggest that
+    there are two separate markets for I-BAL and N-BAL.27
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_pcg_perstorp_2022_decision
+  page: '8'
+  quote_snippet: (37) For the purposes of the present decision, the definition of the exact
+    product market can be left open, as no competition concerns would arise under any plausible
+    product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_pcg_perstorp_2022_decision
+  page: '9'
+  quote_snippet: (41) The Commission has previously considered that N-BAL and I-BAL constitute
+    distinct product markets.31 The Notifying Party agrees that N-BAL and I-BAL may constitute
+    distinct product markets32 and the results of the market investigation also suggest that
+    there are two separate markets for N-BAL and I-BAL.33
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_pcg_perstorp_2022_decision
+  page: '9'
+  quote_snippet: (42) For the purposes of the present decision, the definition of the exact
+    product market can be left open, as no competition concerns would arise under any plausible
+    product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_pcg_perstorp_2022_decision
+  page: '7'
+  quote_snippet: (32) In previous decisions, the Commission has left open whether the geographic
+    scope of the market for 2-EHA should be considered as EEA or global.21 Respondents to the
+    market investigation suggested that 2-EHA is transported across regions and that there are
+    no significant transport costs, thus pointing to a global market.22
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_pcg_perstorp_2022_decision
+  page: '8'
+  quote_snippet: (33) For the present decision, the definition of the exact geographic market
+    can be left open, as no competition concerns would arise under any plausible definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_pcg_perstorp_2022_decision
+  page: '8'
+  quote_snippet: (39) For the present decision, the definition of the exact geographic market
+    can be left open, as no competition concerns would arise under any plausible definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_pcg_perstorp_2022_decision
+  page: '9'
+  quote_snippet: '(44) The Notifying Party submits that the N-BAL market (like I-BAL) should
+    be regarded as EEA-wide because: (a) most manufacturers supply N-BAL across the EEA as a
+    whole; (b) N-BAL is a commodity product traded across the EEA with EEA customers having
+    largely identical requirements; (c) N-BAL production is not subject to any specific regulatory
+    requirements and/or authorizations throughout the EEA; (d) there are similar conditions
+    in terms of specifications and competitive prices throughout the EEA and (e) Perstorp produces
+    N-BAL in Sweden and sells it in [certain EU Member States].36'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_pcg_perstorp_2022_decision
+  page: '9'
+  quote_snippet: (45) For the present decision, the definition of the exact geographic market
+    can be left open, as no competition concerns would arise under any plausible definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_pcg_perstorp_2022_decision
+  page: '10'
+  quote_snippet: (49) The Commission has previously considered that the relevant geographic
+    market for all polyhydric alcohols may be at least EEA-wide and possibly global but has
+    left the exact geographic market definition open.41
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_pcg_perstorp_2022_decision
+  page: '10'
+  quote_snippet: (50) For the purposes of the present decision, the exact geographic market
+    definition may be left open, as no competition concerns would arise under any plausible
+    definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_pcg_perstorp_2022_decision
+  page: '14'
+  quote_snippet: (79) In light of the evidence available, the Commission considers that the
+    Transaction does not raise serious doubts as to its compatibility with the internal market
+    or the functioning of the EEA Agreement as a result of the horizontal relationship between
+    the Parties in the production and supply of I-BAL.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_pcg_perstorp_2022_decision
+  page: '18'
+  quote_snippet: (93) On the basis of the above considerations, the Commission concludes that
+    the Transaction does not raise serious doubts as to its compatibility with the internal
+    market or the functioning of the EEA Agreement in relation to the vertical relationship
+    between the supply of N-BAL (upstream) and the supply of TMP (downstream), as a result of
+    input foreclosure.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_pcg_perstorp_2022_decision
+  page: '19'
+  quote_snippet: (98) Based on the above considerations, the Commission concludes that the Transaction
+    does not raise serious doubts as to its compatibility with the internal market or the functioning
+    of the EEA Agreement in relation to the vertical relationship between the supply of N-BAL
+    (upstream) and the supply of TMP (downstream) as a result of customer foreclosure.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_pcg_perstorp_2022_decision
+  page: '19'
+  quote_snippet: (108) Based on the above considerations, the Commission concludes that the
+    Transaction does not raise serious doubts as to its compatibility with the internal market
+    or the functioning of the EEA Agreement in relation to the vertical relationship between
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

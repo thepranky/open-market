@@ -1,0 +1,1010 @@
+case_id: eu_cma_cgm_bollore_logistics_2024
+case_name: CMA CGM / BOLLORE LOGISTICS
+authority: European Commission
+jurisdiction: EU
+sector: transport
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2024-02-23'
+parties:
+- name: CMA CGM
+  role: acquirer
+- name: BOLLORE LOGISTICS
+  role: target
+source_documents:
+- doc_id: eu_cma_cgm_bollore_logistics_2024_decision
+  title: CMA CGM / BOLLORE LOGISTICS — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11143
+  pdf_url: http://publications.europa.eu/resource/cellar/235ad946-2709-11ef-a195-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Container liner shipping services
+  definition_status: defined
+  notes: Defined as the provision of regular, scheduled services for the carriage of cargo by
+    container, distinguished from non-liner shipping and non-containerised transport services.
+- market_id: pm_2
+  name: Deep-sea container liner shipping services
+  definition_status: defined
+  notes: Defined as a segment of container liner shipping, involving the offer of regular, scheduled
+    services for the sea transportation of containerised cargo.
+- market_id: pm_3
+  name: Deep-sea container liner shipping services — Reefer vs. Dry Containers
+  definition_status: left_open
+  notes: Possible narrower market for transport of refrigerated (reefer) containers, distinct
+    from non-refrigerated (dry) containers, considered relevant when reefer containers represent
+    10% or more of all containerised cargo on both legs of a trade. The exact definition was
+    left open, but the Commission assessed the effects based on this narrower plausible delimitation.
+- market_id: pm_4
+  name: Short-sea container liner shipping services
+  definition_status: defined
+  notes: Defined as a segment of container liner shipping, involving the provision of regular,
+    scheduled intra-continental (usually coastal trade) services for the sea transportation
+    of containerised cargo.
+- market_id: pm_5
+  name: Short-sea container liner shipping services — Wheeled Cargo (Ro-Ro)
+  definition_status: left_open
+  notes: The Commission left open whether the transport of wheeled cargo (roll-on/roll-off or
+    Ro-Ro shipping) belongs to the market for short-sea container liner shipping services. CMA
+    CGM's activity in Ro-Ro services is marginal.
+- market_id: pm_6
+  name: Short-sea container liner shipping services — Reefer vs. Dry Containers
+  definition_status: left_open
+  notes: The Commission left open whether the provision of short-sea container liner shipping
+    services should be sub-segmented between refrigerated (reefer) and non-refrigerated (dry)
+    container shipping services, whenever the share of reefer containers is 10% or more on both
+    legs of a trade. Market investigation confirmed the appropriateness of the distinction,
+    and the Commission assessed the effects by reference to all plausible delimitations.
+- market_id: pm_7
+  name: Freight forwarding services
+  definition_status: defined
+  notes: Defined as the organisation of transportation of items on behalf of customers, possibly
+    including activities such as customs clearance, warehousing, and ground services.
+- market_id: pm_8
+  name: Freight forwarding services — Domestic vs. Cross-border & Modes of Transport
+  definition_status: left_open
+  notes: 'The Commission considered segmenting freight forwarding services between domestic
+    and cross-border, and by modes of transport (air, land, sea). Market investigation was inconclusive
+    on these segmentations. The exact market definition was left open, but the assessment was
+    conducted by reference to the narrowest plausible definitions: domestic and cross-border
+    services, segmented by modes of transport.'
+- market_id: pm_9
+  name: Freight forwarding services — Type of Transported Goods
+  definition_status: left_open
+  notes: The Commission's investigation found that a segmentation based on types of transported
+    goods is not appropriate, as most freight forwarders do not specialise by goods type.
+- market_id: pm_10
+  name: Contract logistics services
+  definition_status: defined
+  notes: Defined as the part of the supply chain process that plans, implements, and controls
+    the efficient and effective flow and storage of goods, services, and related information
+    from origin to consumption to meet customer requirements. Identified as a distinct product
+    market from bare transportation, freight forwarding, or warehousing services.
+- market_id: pm_11
+  name: Contract logistics services — Type of Operations, Goods/Industry, Logistics Provider
+  definition_status: left_open
+  notes: The Commission previously considered segmenting contract logistics markets by (i) cross-border
+    vs. domestic, (ii) type of goods/industry, and (iii) Lead Logistics Providers (LLPs) vs.
+    traditional logistics providers (3PLs), but left the precise scope open. Market investigation
+    results generally supported these segmentations. The exact definition was left open, but
+    the assessment was conducted by reference to the narrowest plausible delimitations based
+    on these criteria.
+- market_id: pm_12
+  name: Finished Vehicle Logistics (FVL) services
+  definition_status: left_open
+  notes: The Commission considered a potential separate market for FVL services, involving specific
+    know-how for car manufacturers' supply chains. Segmentation by vehicle type and mode of
+    transport (rail, road, sea) was also considered. Bolloré Logistics' activity in FVL is marginal
+    and was not further discussed in this decision.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Deep-sea container liner shipping services — one-way legs of trade
+  definition_status: defined
+  notes: The geographic market for deep-sea container liner shipping services is defined on
+    the basis of one-way legs of trade, where several ports within the same geographic area
+    are generally substitutable. The Commission will assess effects based on legs of trade connecting
+    regions of substitutable ports (e.g., North America, Far East Asia, etc.).
+- market_id: gm_2
+  name: Deep-sea container liner shipping services — North Europe vs. Mediterranean
+  definition_status: left_open
+  notes: Market investigation responses were mixed on whether to differentiate between North
+    Europe and Mediterranean regions within Europe. The question was left open, but the Commission
+    conducted its assessment distinguishing these regions as the narrowest plausible segmentation.
+- market_id: gm_3
+  name: Deep-sea container liner shipping services — French Overseas Territories (Martinique,
+    Guadeloupe, French Guiana, Réunion, Mayotte) vs. wider regions
+  definition_status: left_open
+  notes: The Commission's market investigation revealed reasons to consider distinct markets
+    for deep-sea container liner shipping services in legs of trade to/from Martinique, Guadeloupe,
+    French Guiana, Réunion, and Mayotte, due to specificities and limited substitutability with
+    other ports in their respective regions. The exact geographic market definition was left
+    open, but the assessment was conducted by reference to these narrower plausible delimitations.
+- market_id: gm_4
+  name: Short-sea container liner shipping services — single legs of trade (North Europe and
+    Mediterranean)
+  definition_status: left_open
+  notes: The Commission considered the geographic market for short-sea container liner shipping
+    services to be defined on the basis of either single trades/corridors or single legs of
+    trade. The exact definition was left open, but the Commission assessed the effects by reference
+    to the narrowest plausible delimitations, i.e., single legs of trade within North Europe
+    and Mediterranean regions.
+- market_id: gm_5
+  name: Freight forwarding services — national or wider
+  definition_status: left_open
+  notes: The Commission left open whether the geographic scope of freight forwarding services
+    should be national or wider (e.g., EEA-wide), as market investigation results were inconclusive.
+    The assessment was conducted by reference to the narrowest plausible delimitations, i.e.,
+    nation-wide markets.
+- market_id: gm_6
+  name: Sea freight forwarding services — infra-national (French Overseas Territories)
+  definition_status: left_open
+  notes: The Commission's market investigation found reasons to consider distinct infra-national
+    markets for sea freight forwarding services in Martinique, Guadeloupe, French Guiana, Saint
+    Martin, Réunion, and Mayotte due to geographic isolation, unique supply structures, specific
+    know-how requirements, and distinct demand patterns. The exact definition was left open,
+    but the assessment was conducted by reference to these narrower segments of the French market.
+- market_id: gm_7
+  name: Contract logistics services — national or EEA-wide
+  definition_status: left_open
+  notes: The Commission previously found the contract logistics market to be EEA-wide, leaving
+    open a possible segmentation into national markets. Market investigation responses were
+    mixed, with some considering it worldwide/EEA-wide and others noting national sourcing.
+    The exact definition was left open, but the assessment was conducted by reference to the
+    narrowest plausible delimitations, i.e., nation-wide markets.
+- market_id: gm_8
+  name: Finished Vehicle Logistics (FVL) services — EEA-wide or national
+  definition_status: left_open
+  notes: For a potential FVL segment, the Commission considered the geographic scope could be
+    either EEA-wide or national, but ultimately left the exact geographic market definition
+    open.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '2'
+  quote_snippet: In previous decisions, the Commission defined the product market for the provision
+    of container liner shipping services as the provision of regular, scheduled services for
+    the carriage of cargo by container. This market can be distinguished from non-liner shipping
+    (tramp, specialised transport) because of the regularity and frequency of the service. In
+    addition, the use of containers separates these services from other non-containerised transport
+    services, such as the transport of bulk cargo.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '2'
+  quote_snippet: 'The market investigation results in this case confirm that there are no reasons
+    to depart from the Commission’s prior decisional practice: respondents active in the market
+    for the provision of container liner shipping services unanimously consider that the distinctions
+    between (i) liner shipping and non-liner shipping, and (ii) container shipping and non-container
+    shipping remain relevant.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '3'
+  quote_snippet: In addition, in its prior decisional practice related to container liner shipping
+    services, the Commission defined a separate product market for the provision of short-sea
+    container liner shipping services, distinct from deep-sea container liner shipping and short-sea
+    non-liner shipping.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '3'
+  quote_snippet: In addition, in its prior decisional practice related to container liner shipping
+    services, the Commission defined a separate product market for the provision of short-sea
+    container liner shipping services, distinct from deep-sea container liner shipping and short-sea
+    non-liner shipping.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '3'
+  quote_snippet: Deep-sea container liner shipping services involve the offer of regular, scheduled
+    services for the sea transportation of containerised cargo.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '3'
+  quote_snippet: A possible narrower product market for deep-sea container liner shipping services
+    is that for the transport of only refrigerated (reefer) containers. In previous cases, the
+    Commission has decided to sub-segment the market between the transport of reefer containers
+    and the transport of non-refrigerated (dry) containers only when the share of reefer containers
+    in relation to all containerised cargo is 10% or more on both legs of a trade.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '4'
+  quote_snippet: The market investigation results show that the vast majority of respondents
+    active in the market for container liner shipping services agree that the sub-segmentation
+    between transport of refrigerated (reefer) goods and the transport of non-refrigerated (dry)
+    goods is still appropriate.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '4'
+  quote_snippet: For purposes of the present case, the exact product market definition may be
+    left open, considering that the Transaction, as modified by the commitments offered by the
+    Parties, does not raise serious doubts as to its compatibility with the internal market
+    or the functioning of the EEA Agreement under any plausible market definition. The Commission
+    will assess the effects of the Transaction by reference to the narrowest plausible product
+    market delimitation, i.e., the market for the provision of deep-sea container liner shipping
+    services further segmented between transport of refrigerated and non-refrigerated goods,
+    whenever the share of reefer containers in relation to all containerised cargo is 10% or
+    more on both legs of a trade.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '3'
+  quote_snippet: In addition, in its prior decisional practice related to container liner shipping
+    services, the Commission defined a separate product market for the provision of short-sea
+    container liner shipping services, distinct from deep-sea container liner shipping and short-sea
+    non-liner shipping.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '11'
+  quote_snippet: Short-sea container liner shipping involves the provision of regular, scheduled
+    intra-continental (usually coastal trade) services for the sea transportation of containerised
+    cargo.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '11'
+  quote_snippet: Furthermore, the Commission ultimately left open whether the transport of wheeled
+    cargo, such as cars and lorries, on ships belongs to the market for the provision of short-sea
+    container liner shipping services. The exact product market delineation may be left open
+    given that CMA CGM is not active in bulk shipping and has marginal activity in the transport
+    of wheeled cargo.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '12'
+  quote_snippet: The Commission has also left open whether the provision of short-sea container
+    liner shipping services should be sub-segmented between refrigerated (reefer) and non-refrigerated
+    (dry) container shipping services, whenever the share of reefer containers in relation to
+    all containerised cargo is 10% or more on both legs of a trade.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '12'
+  quote_snippet: The market investigation results confirmed that the sub-segmentation between
+    transport of refrigerated and the transport of non-refrigerated goods is appropriate. The
+    vast majority of respondents active in the market for container liner shipping services
+    agreed with this distinction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '12'
+  quote_snippet: For purposes of the present case, however, the exact product market definition
+    may be left open, given that the Transaction does not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement with respect to the provision
+    of short-sea container liner shipping services under any plausible product market definition.
+    The Commission will assess the effects of the Transaction by reference to all plausible
+    product market delimitations, i.e., the market for the provision of short-sea container
+    liner shipping services further segmented between transport of refrigerated and non-refrigerated
+    goods, whenever the share of reefer containers in relation to all containerised cargo is
+    10% or more on both legs of a trade.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '13'
+  quote_snippet: In previous decisions, the Commission defined the market for the provision
+    of freight forwarding services as ‘the organisation of transportation of items (possibly
+    including activities such as customs clearance, warehousing, ground services, etc.) on behalf
+    of customers according to their needs’.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '14'
+  quote_snippet: 'For purposes of the present case, the exact product market definition—namely
+    the questions whether the market should be further segmented by distinguishing between domestic
+    and cross-border freight forwarding and different modes of transport—may be left open, considering
+    that the Transaction, as modified by the commitments offered by the Parties, does not raise
+    serious doubts as to its compatibility with the internal market or the functioning of the
+    EEA Agreement under any plausible market definition. The Commission will assess the effects
+    of the Transaction by reference to the narrowest plausible product market definitions: the
+    markets for the provision of each of domestic and cross-border freight forwarding services,
+    segmented between modes of transport (air, rail, road, and sea).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '13'
+  quote_snippet: While ultimately leaving the relevant product market definition open, the Commission
+    has previously considered possible segmentations of the freight forwarding product market,
+    namely (i) between domestic and cross-border freight forwarding, (ii) based on the different
+    modes of transportation (i.e., freight forwarding by air, land (road and rail), and sea),
+    and (iii) by type of transported goods (e.g., perishable goods, valuables, etc.).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '14'
+  quote_snippet: The results of the Commission’s investigation were inconclusive on the need
+    to segment between domestic and cross-border freight forwarding services. While most freight
+    forwarder respondents agree with this segmentation, virtually all respondents admit that,
+    from a supply-side perspective, their companies and most of the freight forwarders active
+    in Europe provide both domestic and cross-border services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '14'
+  quote_snippet: 'For purposes of the present case, the exact product market definition—namely
+    the questions whether the market should be further segmented by distinguishing between domestic
+    and cross-border freight forwarding and different modes of transport—may be left open...
+    The Commission will assess the effects of the Transaction by reference to the narrowest
+    plausible product market definitions: the markets for the provision of each of domestic
+    and cross-border freight forwarding services, segmented between modes of transport (air,
+    rail, road, and sea).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '14'
+  quote_snippet: Finally, the Commission’s investigation has shown that a segmentation based
+    on types of transported goods is not appropriate, as most freight forwarders do not specialise,
+    offering services regardless of the nature of the transported goods.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '18'
+  quote_snippet: This part of the supply chain has the management of the flow and storage of
+    goods for customers as its focal point, as opposed to bare transportation, freight forwarding,
+    or warehousing services. As such, the Commission has identified contract logistics as a
+    distinct product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '19'
+  quote_snippet: For purposes of the present case, the exact product market definition may be
+    left open, given that the Transaction does not raise serious doubts as to its compatibility
+    with the internal market or with the functioning of the EEA Agreement with respect to the
+    provision of contract logistics services under any plausible market definition. The Commission
+    will assess the effects of the Transaction by reference to the narrowest plausible product
+    market delimitations, i.e., the markets for the provision of contract logistics services
+    segmented based on the (i) type of operations (domestic or cross-border), (ii) type of good
+    handled or industry serviced, and (iii) type of logistics provider (LLPs and 3PLs).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '18'
+  quote_snippet: In previous decisions, the Commission considered whether the contract logistics
+    market should be segmented (i) between cross-border and domestic logistics, (ii) by reference
+    to the type of goods handled or the industry serviced, and (iii) between lead logistics
+    providers (‘LLPs’) and traditional logistics providers (‘3PLs’). ... In the end, however,
+    the Commission left open the precise scope of the relevant product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '19'
+  quote_snippet: The results of the market investigation do not provide indications that the
+    Commission should deviate from the market delineations considered in previous decisions.
+    In particular, most of the freight forwarders having expressed an opinion consider that
+    the segmentations (i) between cross-border and domestic, (ii) between LLPs and 3PLs, and
+    (iii) by type of goods or industry remain relevant.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '19'
+  quote_snippet: For purposes of the present case, the exact product market definition may be
+    left open... The Commission will assess the effects of the Transaction by reference to the
+    narrowest plausible product market delimitations, i.e., the markets for the provision of
+    contract logistics services segmented based on the (i) type of operations (domestic or cross-border),
+    (ii) type of good handled or industry serviced, and (iii) type of logistics provider (LLPs
+    and 3PLs).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '18'
+  quote_snippet: The Commission has also considered a potential separate market for finished
+    vehicle logistics (‘FVL’) services, the providers of which can respond to the multiple requirements
+    of car manufacturers all along the car supply chain. The providers have a special know-how,
+    distinct from general contract logistics. Within the FVL segment, the Commission considered
+    various possible segmentations of the market according to type of vehicles and according
+    to the mode of transport (rail, road, sea).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '19'
+  quote_snippet: Bolloré Logistics’ only activity regarding FVL is highly specific (handling
+    movements of car prototypes), is linked to one customer only ([…]), and represents a very
+    marginal turnover (EUR […] million in 2022, achieved only in France). Bolloré Logistics
+    has a market share very close to 0% in each of the possible FVL market segment and respective
+    possible sub-segments, always limited to France. As such, Bolloré Logistics’ FVL activity
+    will not be discussed further in this decision.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '4'
+  quote_snippet: in its most recent practice the Commission concluded that the markets for the
+    provision of deep-sea container liner shipping services are geographically defined on the
+    basis of one-way legs of trade.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '5'
+  quote_snippet: The Commission’s market investigation confirmed that the market for the provision
+    of deep-sea container liner shipping services should be defined on the basis of one-way
+    legs of trade connecting regions of substitutable ports.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '10'
+  quote_snippet: 'The Commission will assess the effects of the Transaction by reference to
+    all plausible geographic market delimitations. On the one hand, it will consider one-way
+    legs of trade constituted at each end by ranges of substitutable ports, namely those legs
+    of trade from/to each of North Europe and Mediterranean to/from: (a) North America; (b)
+    Far East Asia; (c) Australasia & Oceania; (d) East Coast South America; (e) West Coast South
+    America; (f) Central America & Caribbean; (g) Indian Sub-continent; (h) Middle East; (i)
+    West Coast Africa; and (j) East Coast Africa & Indian Ocean Islands.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '5'
+  quote_snippet: First, the responses to the market investigation are mixed on whether it is
+    necessary to differentiate, within Europe, between North Europe and the Mediterranean regions.
+    In any case, this question may be left open. For purposes of the present decision, the Commission
+    will conduct its assessment on the basis of the narrowest plausible market segmentation,
+    i.e., distinguishing between the North Europe and Mediterranean regions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '5'
+  quote_snippet: Second, the Commission’s market investigation revealed that a refined assessment
+    is necessary for the trades that include the Central America & Caribbean and East Coast
+    Africa & Indian Ocean Islands regions, in view of the specificities of certain French overseas
+    departments and regions (‘French overseas territories’)... There appear to be reasons to
+    consider distinct markets for the provision of deep-sea container liner shipping services
+    in legs of trade from/to each of (i) North Europe and (ii) Mediterranean to/from each of
+    Martinique, Guadeloupe, French Guiana, Réunion, and Mayotte, in view of the limited substitutability
+    with other ports located in their respective regions, as described below.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '8'
+  quote_snippet: As such, the Commission considers that there are strong indications pointing
+    to the existence of separate narrower legs of trade from/to each of Martinique, Guadeloupe,
+    and French Guiana. However, the exact geographic market definition can be left open... The
+    Commission will conduct its assessment under the narrowest plausible geographic market definition,
+    i.e., the separate narrower legs of trade from/to each of North Europe and Mediterranean,
+    on one hand, to/from each of Martinique, Guadeloupe, and French Guiana, on the other hand.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_34
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '10'
+  quote_snippet: For purposes of the present case, the exact geographic market definition—namely
+    the question whether it is necessary to distinguish separate narrower legs of trade from/to
+    each of Martinique, Guadeloupe, French Guiana, Réunion, and Mayotte may be left open, considering
+    that the Transaction, as modified by the commitments offered by the Parties, does not raise
+    serious doubts as to its compatibility with the internal market or the functioning of the
+    EEA Agreement under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_35
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '12'
+  quote_snippet: In its previous decisional practice, the Commission considered that the relevant
+    geographic market for short-sea container liner shipping services should be defined on the
+    basis of (i) either single trades or corridors, defined by the range of ports which are
+    served at both ends of the service (e.g., from Iberia to British Isles and back) 67 or (ii)
+    single legs of trade (e.g., from Iberia to British Isles).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_36
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '13'
+  quote_snippet: 'For purposes of the present case, the exact geographic market definition may
+    be left open, given that the Transaction does not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement with respect to the provision
+    of short-sea container liner shipping services under any plausible market definition. The
+    Commission will assess the effects of the Transaction by reference to the narrowest plausible
+    geographic market delimitations, i.e., single legs of trade: (a) North Europe: – From/to
+    Baltic States (Estonia, Latvia, and Lithuania) to/from British Isles (United-Kingdom and
+    Ireland); – From/to Baltic States to/from Iberia (Spain, Portugal, and Gibraltar); – From/to
+    Baltic States to/from Poland; and – From/to Iberia to/from British Isles. (b) Mediterranean:
+    – Intra-Med; – Intra-East Med; and – Intra-West Med.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_37
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '14'
+  quote_snippet: In past decisions, the Commission left open whether the geographic scope of
+    the market for the provision of freight forwarding services or subdivisions thereof—including
+    sea freight forwarding services—should be considered national in scope or wider.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_38
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '15'
+  quote_snippet: The Commission’s market investigation was inconclusive on the exact geographic
+    market definition of the freight forwarding markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_39
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '15'
+  quote_snippet: In light of the mixed market investigation results, the Commission will assess
+    the effects of the Transaction by reference to the narrowest plausible market delimitations,
+    i.e., nation-wide markets. However, narrower market delimitations will be considered for
+    a small number of territories, for the following reasons.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_40
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '15'
+  quote_snippet: The Commission’s market investigation revealed that there are reasons to consider
+    distinct markets for the provision of sea freight forwarding services in each of the French
+    overseas territories. Namely, the Commission’s market investigation shows that Martinique,
+    Guadeloupe, French Guiana, Saint Martin, Réunion, and Mayotte present characteristics that
+    may justify the delimitation of narrower infra-national sea freight forwarding markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_41
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '17'
+  quote_snippet: Finally, most of the freight forwarders that participated in the Commission’s
+    market investigation consider that there are reasons to identify separate geographic markets
+    for each of Martinique, Guadeloupe, French Guiana, Réunion, and Mayotte. The two main reasons
+    identified were (i) the geographic and topographic specificities (i.e., insular and isolated
+    territories) and (ii) the specific know-how required (e.g., importance of consolidation
+    activities and balance of trade biased towards imports).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_42
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '17'
+  quote_snippet: 'For purposes of the present case, the exact geographic market definition—namely
+    the questions whether the markets are nation-wide or wider and whether distinct narrower
+    markets should be identified for each of Martinique, Guadeloupe, French Guiana, Saint Martin,
+    Réunion, and Mayotte—may be left open... The Commission will assess the effects of the Transaction
+    by reference to all plausible geographic markets: the national markets and the possible
+    narrower segmentations of the French market between, on the one hand, Martinique, Guadeloupe,
+    French Guiana, Saint Martin, Réunion, and Mayotte, and, on the other hand, mainland France.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_43
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '19'
+  quote_snippet: Concerning the geographic scope of the market, the Commission previously found
+    that the contract logistics market is EEA-wide, leaving open a possible segmentation into
+    national markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_44
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '20'
+  quote_snippet: The majority of the Bolloré Logistics’ competitors that expressed an opinion
+    consider that the contract logistics market is either worldwide or EEA-wide. At the same
+    time, a majority of respondents acknowledges that the majority of their customers source
+    contract logistics services at national or European levels.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_45
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '20'
+  quote_snippet: For purposes of the present case, the exact geographic market definition may
+    be left open... The Commission will assess the effects of the Transaction by reference to
+    the narrowest plausible geographic market delimitations, i.e., nation-wide markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_46
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '2'
+  quote_snippet: Therefore, the Transaction qualifies as a concentration within the meaning
+    of Article 3(1)(b) of the Merger Regulation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_47
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '2'
+  quote_snippet: The Transaction therefore has a Union dimension under Article 1(2) of the Merger
+    Regulation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_48
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '61'
+  quote_snippet: On 30 January 2024, in order to remove the serious doubts arising from the
+    Transaction, and render the concentration compatible with the internal market, the Parties
+    have modified the notified concentration by entering into the following commitments under
+    Article 6(2) of the Merger Regulation, which are annexed to this decision and form an integral
+    part thereof (‘Commitments’).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_49
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '68'
+  quote_snippet: For the reasons outlined above, the commitments entered into by the undertakings
+    concerned are sufficient to eliminate the serious doubts as to the compatibility of the
+    Transaction with the internal market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_50
+  source_document_id: eu_cma_cgm_bollore_logistics_2024_decision
+  page: '71'
+  quote_snippet: 'Main Closing Date: the closing of the Concentration filed under case M.11143.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+ai_summary: null
+case_type: merger
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

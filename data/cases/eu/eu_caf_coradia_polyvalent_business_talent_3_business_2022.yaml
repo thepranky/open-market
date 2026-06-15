@@ -1,0 +1,443 @@
+case_id: eu_caf_coradia_polyvalent_business_talent_3_business_2022
+case_name: CAF / CORADIA POLYVALENT BUSINESS / TALENT 3 BUSINESS
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2022-05-25'
+parties:
+- name: CAF
+  role: acquirer
+- name: CORADIA POLYVALENT BUSINESS
+  role: acquirer
+- name: TALENT 3 BUSINESS
+  role: target
+source_documents:
+- doc_id: eu_caf_coradia_polyvalent_business_talent_3_business_2022_decision
+  title: CAF / CORADIA POLYVALENT BUSINESS / TALENT 3 BUSINESS — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10616
+  pdf_url: http://publications.europa.eu/resource/cellar/aebec239-bd00-11ed-8912-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Self-propelled trains
+  definition_status: considered
+  notes: The Commission considered self-propelled trains to be distinct from locomotive-hauled
+    trains for the purposes of this decision.
+- market_id: pm_2
+  name: Mainline trains (within self-propelled trains)
+  definition_status: considered
+  notes: The Commission considered mainline trains distinct from high-speed trains and urban
+    trains. The exact product market definition within mainline trains was left open, with the
+    assessment focusing on specific segments.
+- market_id: pm_3
+  name: Self-propelled regional trains (including all types of traction technology)
+  definition_status: considered
+  notes: The Commission's assessment focused on this market as one of the potentially relevant
+    product markets where the parties overlap.
+- market_id: pm_4
+  name: Self-propelled regional EMUs
+  definition_status: considered
+  notes: The Commission's assessment focused on this market as one of the potentially relevant
+    product markets where the parties overlap.
+- market_id: pm_5
+  name: Regional bi-mode trains
+  definition_status: left_open
+  notes: The Commission found evidence supporting the analysis of a plausible separate market
+    for regional bi-mode trains, but left open whether it constitutes a distinct product market.
+    The assessment considered it as a hypothetical market.
+- market_id: pm_6
+  name: Regional bi-mode DEMUs
+  definition_status: left_open
+  notes: The Commission left open whether a further delineation between DEMUs, BEMUs, and HEMUs
+    is warranted, but considered DEMUs as a hypothetical market for assessment purposes.
+- market_id: pm_7
+  name: Regional bi-mode BEMUs
+  definition_status: left_open
+  notes: The Commission left open whether a further delineation between DEMUs, BEMUs, and HEMUs
+    is warranted, but considered BEMUs as a hypothetical market for assessment purposes.
+- market_id: pm_8
+  name: Regional bi-mode HEMUs
+  definition_status: left_open
+  notes: The Commission left open whether a further delineation between DEMUs, BEMUs, and HEMUs
+    is warranted, but considered HEMUs as a hypothetical market for assessment purposes.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Mainline trains — national or EEA-wide (unconcluded)
+  definition_status: left_open
+  notes: The market investigation in a precedent case was inconclusive as to whether the relevant
+    markets for mainline trains are national or EEA-wide. The Commission noted differences across
+    EEA Member States.
+- market_id: gm_2
+  name: Self-propelled regional trains — national (various countries affected)
+  definition_status: considered
+  notes: The market investigation findings in the present case are in line with previous decisions,
+    pointing towards national markets due to the importance of national manufacturing presence,
+    specifications, and requirements. The assessment took into account EEA-wide as well as national
+    markets, but specific overlaps in France and Germany were noted.
+- market_id: gm_3
+  name: Regional bi-mode trains — national or EEA-wide (unconcluded)
+  definition_status: left_open
+  notes: For bi-mode trains, the Commission left open the geographic market definition, noting
+    evidence pointing to both national specifications and pan-European train platforms. The
+    assessment took into account both EEA-wide and national markets.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_caf_coradia_polyvalent_business_talent_3_business_2022_decision
+  page: '5'
+  quote_snippet: For the purposes of the present decision, the Commission considers that self-propelled
+    trains are distinct from locomotive-hauled trains and that, within self-propelled trains,
+    mainline trains should be distinguished from both high-speed trains and urban trains.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_caf_coradia_polyvalent_business_talent_3_business_2022_decision
+  page: '5'
+  quote_snippet: For the purposes of the present decision, the Commission considers that self-propelled
+    trains are distinct from locomotive-hauled trains and that, within self-propelled trains,
+    mainline trains should be distinguished from both high-speed trains and urban trains. As
+    regards mainline trains, the exact product market definition can be left open and the Commission’s
+    assessment will focus on all potentially relevant products markets where the Parties overlap,
+    namely (i) self-propelled regional trains including all types of traction technology, and
+    (ii) self-propelled regional EMUs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_caf_coradia_polyvalent_business_talent_3_business_2022_decision
+  page: '3'
+  quote_snippet: As regards self-propelled trains, the Commission also distinguished mainline
+    trains (running at speeds below 250 km/h) from both high-speed trains (running at speeds
+    above 250 km/h) and urban trains (running on urban networks and covering mass transit within
+    cities).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_caf_coradia_polyvalent_business_talent_3_business_2022_decision
+  page: '5'
+  quote_snippet: As regards mainline trains, the exact product market definition can be left
+    open and the Commission’s assessment will focus on all potentially relevant products markets
+    where the Parties overlap, namely (i) self-propelled regional trains including all types
+    of traction technology, and (ii) self-propelled regional EMUs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_caf_coradia_polyvalent_business_talent_3_business_2022_decision
+  page: '4'
+  quote_snippet: The following assessment focuses on the two areas where the Parties’ activities
+    overlap, the supply of self-propelled (mainline) regional trains and the supply of regional
+    bi-mode trains.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_caf_coradia_polyvalent_business_talent_3_business_2022_decision
+  page: '5'
+  quote_snippet: As regards mainline trains, the exact product market definition can be left
+    open and the Commission’s assessment will focus on all potentially relevant products markets
+    where the Parties overlap, namely (i) self-propelled regional trains including all types
+    of traction technology, and (ii) self-propelled regional EMUs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_caf_coradia_polyvalent_business_talent_3_business_2022_decision
+  page: '5'
+  quote_snippet: As for regional bi-mode trains, the evidence gathered by the Commission in
+    the context of its preliminary investigation supports the analysis of a plausible separate
+    market for regional bi-mode trains with a further distinction according to the underlying
+    technology (i.e. between DEMUs, BEMUs and HEMUs), although there is no univocal support
+    for such a finding.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_caf_coradia_polyvalent_business_talent_3_business_2022_decision
+  page: '5'
+  quote_snippet: For the purposes of this decision, it can be left open whether regional bi-mode
+    trains constitute a distinct product market and whether a further delineation between DEMUs,
+    BEMUs and HEMUs is warranted. The Commission’s assessment takes into account all plausible
+    product market definitions, namely the hypothetical product markets for (i) regional bi-mode
+    trains as a whole, and for (ii) DEMUs, (iii) BEMUs, and (iv) HEMUs, considered separately.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_caf_coradia_polyvalent_business_talent_3_business_2022_decision
+  page: '4'
+  quote_snippet: The Commission has never contemplated the definition of a separate product
+    market for bi-mode trains.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_caf_coradia_polyvalent_business_talent_3_business_2022_decision
+  page: '5'
+  quote_snippet: For the purposes of this decision, it can be left open whether regional bi-mode
+    trains constitute a distinct product market and whether a further delineation between DEMUs,
+    BEMUs and HEMUs is warranted. The Commission’s assessment takes into account all plausible
+    product market definitions, namely the hypothetical product markets for (i) regional bi-mode
+    trains as a whole, and for (ii) DEMUs, (iii) BEMUs, and (iv) HEMUs, considered separately.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_caf_coradia_polyvalent_business_talent_3_business_2022_decision
+  page: '5'
+  quote_snippet: For the purposes of this decision, it can be left open whether regional bi-mode
+    trains constitute a distinct product market and whether a further delineation between DEMUs,
+    BEMUs and HEMUs is warranted. The Commission’s assessment takes into account all plausible
+    product market definitions, namely the hypothetical product markets for (i) regional bi-mode
+    trains as a whole, and for (ii) DEMUs, (iii) BEMUs, and (iv) HEMUs, considered separately.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_caf_coradia_polyvalent_business_talent_3_business_2022_decision
+  page: '5'
+  quote_snippet: For the purposes of this decision, it can be left open whether regional bi-mode
+    trains constitute a distinct product market and whether a further delineation between DEMUs,
+    BEMUs and HEMUs is warranted. The Commission’s assessment takes into account all plausible
+    product market definitions, namely the hypothetical product markets for (i) regional bi-mode
+    trains as a whole, and for (ii) DEMUs, (iii) BEMUs, and (iv) HEMUs, considered separately.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_caf_coradia_polyvalent_business_talent_3_business_2022_decision
+  page: '5'
+  quote_snippet: In Alstom / Bombardier, the market investigation was inconclusive as to whether
+    the relevant markets for mainline trains are national or EEA-wide (including Switzerland).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_caf_coradia_polyvalent_business_talent_3_business_2022_decision
+  page: '6'
+  quote_snippet: The Commission nevertheless noted that self-propelled mainline trains are significantly
+    different across EEA Member States in terms of customer preference, technical specifications
+    and regulatory requirements, which limits the possibility for rail operators to use a self-propelled
+    mainline train operated in one EEA country into another EEA country.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_caf_coradia_polyvalent_business_talent_3_business_2022_decision
+  page: '6'
+  quote_snippet: The findings of the Commission’s market investigation in the present case are
+    in line with the conclusions reached in the Alstom / Bombardier Transportation decision.
+    As regards self-propelled regional trains, a competitor confirmed the importance of a national
+    manufacturing presence as well as national specifications and requirements, thereby pointing
+    towards national markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_caf_coradia_polyvalent_business_talent_3_business_2022_decision
+  page: '6'
+  quote_snippet: For the purposes of this decision, the geographic market definition can be
+    left open. The following assessment will take into account EEA-wide as well as national
+    markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_caf_coradia_polyvalent_business_talent_3_business_2022_decision
+  page: '6'
+  quote_snippet: |
+    − in France: in the market for the supply of self-propelled regional trains and more specifically the supply of self-propelled regional EMU trains;
+    − in Germany: in the overall market for the supply of self-propelled regional trains.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_caf_coradia_polyvalent_business_talent_3_business_2022_decision
+  page: '6'
+  quote_snippet: Concerning bi-mode trains, competitors and customers highlighted the importance
+    of national specifications, requirements and a local manufacturing footprint on the one
+    hand, while pointing to the manufacturer’s aim of developing of pan-European train platforms
+    on the other hand.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_caf_coradia_polyvalent_business_talent_3_business_2022_decision
+  page: '6'
+  quote_snippet: For the purposes of this decision, the geographic market definition can be
+    left open. The following assessment will take into account EEA-wide as well as national
+    markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_caf_coradia_polyvalent_business_talent_3_business_2022_decision
+  page: '9'
+  quote_snippet: In view of the above, the Commission concludes that the Transaction does not
+    give rise to serious doubts as to its compatibility with the internal market concerning
+    the supply of regional bi-mode trains, and in particular regional bi-mode DEMUs, in the
+    EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_caf_coradia_polyvalent_business_talent_3_business_2022_decision
+  page: '10'
+  quote_snippet: However, the Transaction is unlikely to give rise to competition concerns for
+    the following reasons.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_caf_coradia_polyvalent_business_talent_3_business_2022_decision
+  page: '3'
+  quote_snippet: The Member States competent to examine the concentration did not express their
+    disagreement to the request for referral within fifteen working days, i.e., by 3 February
+    2022, and the concentration brought about by the Transaction is thus deemed to have Community
+    dimension.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+ai_summary: null
+case_type: merger
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

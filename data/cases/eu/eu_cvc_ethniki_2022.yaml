@@ -1,0 +1,392 @@
+case_id: eu_cvc_ethniki_2022
+case_name: CVC / ETHNIKI
+authority: European Commission
+jurisdiction: EU
+sector: financial
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2022-02-24'
+parties:
+- name: CVC
+  role: acquirer
+- name: ETHNIKI
+  role: target
+source_documents:
+- doc_id: eu_cvc_ethniki_2022_decision
+  title: CVC / ETHNIKI — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10301
+  pdf_url: http://publications.europa.eu/resource/cellar/3402a8d9-27a5-11ed-8fa0-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Health insurance services
+  definition_status: defined
+  notes: The Commission concluded that a separate relevant market should be defined for health
+    insurance services, excluding insurance products that offer cash payments in case of accidents
+    or critical illness. The question of sub-segmentation by customer type (individual vs. group)
+    was left open as the transaction did not raise serious doubts under any plausible definition.
+- market_id: pm_2
+  name: Individual health insurance services
+  definition_status: left_open
+  notes: The Commission's investigation on whether to sub-segment the health insurance services
+    market by customer type (individual vs. group) did not provide conclusive evidence and was
+    ultimately left open for the purposes of this decision, as the transaction did not raise
+    serious doubts under any plausible definition.
+- market_id: pm_3
+  name: Group health insurance services
+  definition_status: left_open
+  notes: The Commission's investigation on whether to sub-segment the health insurance services
+    market by customer type (individual vs. group) did not provide conclusive evidence and was
+    ultimately left open for the purposes of this decision, as the transaction did not raise
+    serious doubts under any plausible definition.
+- market_id: pm_4
+  name: General private hospital services
+  definition_status: defined
+  notes: The Commission concluded that public and private hospital services in Greece do not
+    belong to the same market. Within private hospital services, separate markets are defined
+    for general private, maternity, and diagnostic centre services. The Commission found it
+    unnecessary to segment general private hospital services further by medical specialisation
+    or between inpatient/outpatient services.
+- market_id: pm_5
+  name: Maternity hospital services
+  definition_status: defined
+  notes: The Commission concluded that public and private hospital services in Greece do not
+    belong to the same market. Within private hospital services, separate markets are defined
+    for general private, maternity, and diagnostic centre services. While the product market
+    was defined, the geographic market was left open as it was not affected by the transaction.
+- market_id: pm_6
+  name: Diagnostic centre services
+  definition_status: defined
+  notes: The Commission concluded that public and private hospital services in Greece do not
+    belong to the same market. Within private hospital services, separate markets are defined
+    for general private, maternity, and diagnostic centre services. While the product market
+    was defined, the geographic market was left open as it was not affected by the transaction.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Health insurance services — national (Greece affected)
+  definition_status: defined
+  notes: The Commission confirmed that the market for health insurance services (and its plausible
+    sub-segments) is national in scope, covering the entire territory of Greece.
+- market_id: gm_2
+  name: Individual health insurance services — national (Greece affected)
+  definition_status: defined
+  notes: The Commission concluded that the plausible market for individual health insurance
+    services is national in scope, covering the entire territory of Greece. This follows from
+    the decision to leave open the sub-segmentation of the broader health insurance market by
+    customer type, but to confirm the national scope for all plausible health insurance markets.
+- market_id: gm_3
+  name: Group health insurance services — national (Greece affected)
+  definition_status: defined
+  notes: The Commission concluded that the plausible market for group health insurance services
+    is national in scope, covering the entire territory of Greece. This follows from the decision
+    to leave open the sub-segmentation of the broader health insurance market by customer type,
+    but to confirm the national scope for all plausible health insurance markets.
+- market_id: gm_4
+  name: General private hospital services — local (Attica affected)
+  definition_status: defined
+  notes: Contrary to prior HCC decisions, the Commission's investigation found that the relevant
+    geographic market for general private hospital services is local in scope, limited to Attica,
+    due to factors like patient preferences, insurer views, and CVC's internal documents.
+- market_id: gm_5
+  name: Maternity private hospital services — national or local (Greece/Attica affected)
+  definition_status: left_open
+  notes: The Commission explicitly left open the geographic scope for maternity private hospital
+    services, noting that it was not affected by the proposed transaction under any plausible
+    geographic market delineation.
+- market_id: gm_6
+  name: Diagnostic centre services — national or local (Greece/Attica affected)
+  definition_status: left_open
+  notes: The Commission explicitly left open the geographic scope for diagnostic centre services,
+    noting that it was not affected by the proposed transaction under any plausible geographic
+    market delineation.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_cvc_ethniki_2022_decision
+  page: '5'
+  quote_snippet: (22) The Commission’s investigation also shows that the market for health insurance
+    services should not include insurance products that offer cash payments in case of accidents
+    or critical illness.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_cvc_ethniki_2022_decision
+  page: '6'
+  quote_snippet: '(26) In light of the above, the Commission concludes that, for the purposes
+    of this Decision, a separate relevant product market should be defined for health insurance
+    services. This market should not include insurance policies that offer cash payments in
+    case of accidents or critical illness. The question whether the relevant market for health
+    insurance services should be sub-segmented by customer type can be left open as the Transaction
+    does not raise serious doubts as to its compatibility with the internal market or the functioning
+    of the EEA Agreement, under any of the following plausible product market definitions: (i)
+    all health insurance services; (ii) individual health insurance services; or (iii) group
+    health insurance services.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_cvc_ethniki_2022_decision
+  page: '6'
+  quote_snippet: '(26) In light of the above, the Commission concludes that, for the purposes
+    of this Decision, a separate relevant product market should be defined for health insurance
+    services. This market should not include insurance policies that offer cash payments in
+    case of accidents or critical illness. The question whether the relevant market for health
+    insurance services should be sub-segmented by customer type can be left open as the Transaction
+    does not raise serious doubts as to its compatibility with the internal market or the functioning
+    of the EEA Agreement, under any of the following plausible product market definitions: (i)
+    all health insurance services; (ii) individual health insurance services; or (iii) group
+    health insurance services.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_cvc_ethniki_2022_decision
+  page: '6'
+  quote_snippet: '(26) In light of the above, the Commission concludes that, for the purposes
+    of this Decision, a separate relevant product market should be defined for health insurance
+    services. This market should not include insurance policies that offer cash payments in
+    case of accidents or critical illness. The question whether the relevant market for health
+    insurance services should be sub-segmented by customer type can be left open as the Transaction
+    does not raise serious doubts as to its compatibility with the internal market or the functioning
+    of the EEA Agreement, under any of the following plausible product market definitions: (i)
+    all health insurance services; (ii) individual health insurance services; or (iii) group
+    health insurance services.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_cvc_ethniki_2022_decision
+  page: '9'
+  quote_snippet: '(36) The Commission’s investigation also confirms that separate relevant markets
+    should be defined for general private hospital services; maternity hospital services; and
+    diagnostic centre services:'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_cvc_ethniki_2022_decision
+  page: '10'
+  quote_snippet: (38) In light of the above, the Commission concludes that, for the purposes
+    of this Decision, separate relevant product markets should be defined for general private
+    hospital services; maternity hospital services; and diagnostic centre services. The Commission
+    also finds that it is not necessary to segment further the relevant market for general private
+    hospital services in Greece (by medical specialisation or between inpatient and outpatient
+    services).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_cvc_ethniki_2022_decision
+  page: '9'
+  quote_snippet: '(36) The Commission’s investigation also confirms that separate relevant markets
+    should be defined for general private hospital services; maternity hospital services; and
+    diagnostic centre services:'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_cvc_ethniki_2022_decision
+  page: '10'
+  quote_snippet: (38) In light of the above, the Commission concludes that, for the purposes
+    of this Decision, separate relevant product markets should be defined for general private
+    hospital services; maternity hospital services; and diagnostic centre services. The Commission
+    also finds that it is not necessary to segment further the relevant market for general private
+    hospital services in Greece (by medical specialisation or between inpatient and outpatient
+    services).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_cvc_ethniki_2022_decision
+  page: '9'
+  quote_snippet: '(36) The Commission’s investigation also confirms that separate relevant markets
+    should be defined for general private hospital services; maternity hospital services; and
+    diagnostic centre services:'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_cvc_ethniki_2022_decision
+  page: '10'
+  quote_snippet: (38) In light of the above, the Commission concludes that, for the purposes
+    of this Decision, separate relevant product markets should be defined for general private
+    hospital services; maternity hospital services; and diagnostic centre services. The Commission
+    also finds that it is not necessary to segment further the relevant market for general private
+    hospital services in Greece (by medical specialisation or between inpatient and outpatient
+    services).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_cvc_ethniki_2022_decision
+  page: '7'
+  quote_snippet: (30) In light of the above, the Commission concludes that, for the purposes
+    of this Decision, the plausible markets for all health insurance services, for individual
+    health insurance services, and for group health insurance services are national in scope
+    and cover the entire territory of Greece.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_cvc_ethniki_2022_decision
+  page: '7'
+  quote_snippet: (30) In light of the above, the Commission concludes that, for the purposes
+    of this Decision, the plausible markets for all health insurance services, for individual
+    health insurance services, and for group health insurance services are national in scope
+    and cover the entire territory of Greece.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_cvc_ethniki_2022_decision
+  page: '7'
+  quote_snippet: (30) In light of the above, the Commission concludes that, for the purposes
+    of this Decision, the plausible markets for all health insurance services, for individual
+    health insurance services, and for group health insurance services are national in scope
+    and cover the entire territory of Greece.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_cvc_ethniki_2022_decision
+  page: '11'
+  quote_snippet: (42) The Commission’s investigation shows that there is a separate relevant
+    market for general private hospital services which is limited to Attica. This is the case
+    for the following reasons.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_cvc_ethniki_2022_decision
+  page: '12'
+  quote_snippet: (48) In light of the above, the Commission concludes that the relevant market
+    for general private hospital services is local in scope and for the purposes of this Decision,
+    the Commission will focus on the market for general private hospital services in Attica.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_cvc_ethniki_2022_decision
+  page: '1'
+  quote_snippet: |
+    Subject: Case M.10301 – CVC / Ethniki
+    Commission decision pursuant to Article 6(1)(b) of Council Regulation No 139/20041 and Article 57 of the Agreement on the European Economic Area2
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_cvc_ethniki_2022_decision
+  page: '1'
+  quote_snippet: Brussels, 24.02.2022
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

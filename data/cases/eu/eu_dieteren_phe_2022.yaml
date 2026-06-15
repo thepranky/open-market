@@ -1,0 +1,315 @@
+case_id: eu_dieteren_phe_2022
+case_name: D’IETEREN / PHE
+authority: European Commission
+jurisdiction: EU
+sector: retail
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2022-07-27'
+parties:
+- name: D’IETEREN
+  role: acquirer
+- name: PHE
+  role: target
+source_documents:
+- doc_id: eu_dieteren_phe_2022_decision
+  title: D’IETEREN / PHE — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10687
+  pdf_url: http://publications.europa.eu/resource/cellar/4f323c61-e4d6-11ed-a05c-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Vehicle glass repair and replacement services (light vehicles under 3.5 tonnes)
+  definition_status: considered
+  notes: The Commission decided to assess the transaction on the basis of a product market for
+    vehicle glass repair for light vehicles (under 3.5 tonnes), covering services by both specialist
+    glass repairers and independent garages, without further segmentation between repair and
+    replacement. Significant differences in pricing, expertise, and service between specialist
+    repairers and independent garages were noted for competitive assessment.
+- market_id: pm_2
+  name: Wholesale supply of automotive spare parts to the IAM channel (light vehicles)
+  definition_status: considered
+  notes: The Commission decided to consider a separate market for the wholesale supply of automotive
+    spare parts to the IAM channel for light vehicles, distinct from the OEM channel. No further
+    distinction by product type was deemed pertinent.
+- market_id: pm_3
+  name: Wholesale supply of VW-branded OE spare parts (light vehicles) by the OEM channel
+  definition_status: considered
+  notes: The Commission decided to consider a separate market for the wholesale supply of VW-branded
+    OE spare parts for light vehicles by the OEM channel, distinct from the IAM channel and
+    brand-specific. However, this market was not further examined as it did not give rise to
+    horizontally or vertically affected markets.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Vehicle glass repair and replacement services — national (France affected)
+  definition_status: defined
+  notes: The Commission concluded that the market for vehicle glass repair and replacement services
+    is national in scope and covers all of metropolitan France, based on precedents, localized
+    demand for dense networks, and homogeneous supply-side conditions and prices across the
+    country.
+- market_id: gm_2
+  name: Wholesale supply of automotive spare parts to the IAM channel (light vehicles) — EEA-wide,
+    national or regional (France affected)
+  definition_status: left_open
+  notes: For France, the Commission found that while suppliers cover the entire territory, the
+    market investigation results were not conclusive regarding whether independent retailers
+    have a similar choice of wholesalers across France, and conditions for competition may differ
+    regionally. Thus, it was not necessary to conclude on the exact geographic market definition,
+    which could be EEA-wide, national, or regional.
+- market_id: gm_3
+  name: Wholesale supply of automotive spare parts to the IAM channel (light vehicles) — national
+    (Belgium affected)
+  definition_status: considered
+  notes: For Belgium, the Commission's market investigation indicated that the market for wholesale
+    supply of automotive spare parts to the IAM is national in scope rather than regional, with
+    suppliers covering the entire territory and similar conditions of competition across the
+    country. The competitive assessment in Belgium would therefore focus on national markets.
+- market_id: gm_4
+  name: Wholesale supply of VW-branded OE spare parts (light vehicles) by the OEM channel —
+    national (Belgium affected)
+  definition_status: considered
+  notes: For Belgium, the Commission's market investigation indicated that the market for wholesale
+    supply of VW-branded OE spare parts is national in scope rather than regional. Although
+    some respondents indicated purchases from outside Belgium, the competitive assessment in
+    Belgium would focus on national markets. This market was not further examined for harm.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_dieteren_phe_2022_decision
+  page: '4'
+  quote_snippet: The Commission has previously identified a separate market for vehicle glass
+    repair and replacement services, distinct from other types of vehicle repair, but without
+    any further segmentation between repair and replacement.11
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_dieteren_phe_2022_decision
+  page: '5'
+  quote_snippet: Almost all customers, and a majority of competitors,23 indicated that vehicle
+    glass repair should be considered as distinct from other, general types of repair.24 The
+    reasons given included factors such as vehicle glass repair requires different equipment
+    and expertise compared to general vehicle repair, customer expectations and the level of
+    service are different (for example on-site intervention is a trend in vehicle glass repair),
+    and glass repair is more commonly dealt with separately to general repairs, because glass
+    repair is more frequently needed.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_dieteren_phe_2022_decision
+  page: '7'
+  quote_snippet: In light of the above, the Commission will assess the Transaction on the basis
+    of a product market for vehicle glass repair for light vehicles (under 3.5 tonnes), covering
+    vehicle glass repair by both specialist glass repairers and independent garages. However,
+    the Commission also notes that there are significant differences in pricing, expertise and
+    service provided between the specialist repairers and independent garages and these differences
+    will be taken into account further in the competitive assessment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_dieteren_phe_2022_decision
+  page: '10'
+  quote_snippet: The majority of respondents to the Commission’s market investigation agreed
+    that the wholesale supply of automotive spare parts constitutes a relevant market and that
+    a distinction should be made between the OEM and the IAM distribution channels.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_dieteren_phe_2022_decision
+  page: '11'
+  quote_snippet: In light of the above, for the purposes of the assessment of the Transaction
+    the Commission will consider separate markets for the wholesale supply of automotive spare
+    parts to the IAM channel (light vehicles) and the wholesale supply of VW-branded OE spare
+    parts (light vehicles) by the OEM channel.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_dieteren_phe_2022_decision
+  page: '10'
+  quote_snippet: The majority of respondents to the Commission’s market investigation agreed
+    that a distinction should be made between different brands in the case of the wholesale
+    supply of OE-spare parts56 as the distribution channels of each car brand are separate.
+    As one competitor explains “[…] the distribution of OE spare parts is made through the distribution
+    network of the OEM, meaning that for instance VW-branded spare parts are sold exclusively
+    to official distributors of VW such as DIG and not to the IAM distributors.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_dieteren_phe_2022_decision
+  page: '11'
+  quote_snippet: In light of the above, for the purposes of the assessment of the Transaction
+    the Commission will consider separate markets for the wholesale supply of automotive spare
+    parts to the IAM channel (light vehicles) and the wholesale supply of VW-branded OE spare
+    parts (light vehicles) by the OEM channel.60
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_dieteren_phe_2022_decision
+  page: '7'
+  quote_snippet: In previous cases, the Commission, while leaving the geographic scope of the
+    market open, considered a national market for vehicle glass repair and replacement and based
+    its competitive assessment on this assumption.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_dieteren_phe_2022_decision
+  page: '8'
+  quote_snippet: The Commission therefore considers the market for vehicle glass repair and
+    replacement services to be national in scope and to cover all of metropolitan France.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_dieteren_phe_2022_decision
+  page: '14'
+  quote_snippet: However, in the specific case of Belgium, the results of the market investigation
+    show that the market is rather national than regional both for the wholesale supply of automotive
+    spare parts to the IAM and for the wholesale supply of VW-branded OE spare parts. Therefore
+    the competitive assessment in Belgium will focus on national markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_dieteren_phe_2022_decision
+  page: '14'
+  quote_snippet: In Belgium, the Commission has also inquired competitors in the wholesale of
+    automotive spare parts to the IAM as to the distances at which they purchase VW-branded
+    OE-spare parts. The results indicate that the market may be larger than national as a slight
+    majority of respondents indicate that they purchase VW-branded OE-spare parts from suppliers
+    located outside Belgium, either in neighbouring countries or across the EEA87.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_dieteren_phe_2022_decision
+  page: '46'
+  quote_snippet: Pursuant to Article 6(2) of Council Regulation (EC) No 139/2004 (the “Merger
+    Regulation”), D’Ieteren Group (the “Notifying Party” or “DIG”) hereby enters into the following
+    Commitments (the “Commitments”) vis-à-vis the European Commission (the “Commission”) with
+    a view to rendering the acquisition of sole control of the whole Dakar Holding S.C.A, the
+    100% parent company of Parts Holding Europe (“PHE”) (DIG and PHE are referred to as the
+    “Parties”) (the “Concentration”) compatible with the internal market and the functioning
+    of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_dieteren_phe_2022_decision
+  page: '38'
+  quote_snippet: Where as in this case, a notified concentration raises serious doubts as to
+    its compatibility with the internal market or the functioning of the EEA agreement, the
+    parties may modify the notified concentration so as to remove the grounds for the serious
+    doubts identified by the Commission with a view to having it declared compatible with the
+    internal market pursuant to Article 6(1)(b) in conjunction with Article 6(2) of the Merger
+    Regulation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_dieteren_phe_2022_decision
+  page: '44'
+  quote_snippet: For the above reasons, the Commission has decided not to oppose the notified
+    operation as modified by the commitments and to declare it compatible with the internal
+    market and with the functioning of the EEA Agreement, subject to full compliance with the
+    conditions in sections B and C (and the respective Schedules) of the commitments annexed
+    to the present decision and with the obligations contained in the other sections of the
+    said commitments.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

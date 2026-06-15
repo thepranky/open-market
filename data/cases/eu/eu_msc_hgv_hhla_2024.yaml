@@ -1,0 +1,839 @@
+case_id: eu_msc_hgv_hhla_2024
+case_name: MSC / HGV / HHLA
+authority: European Commission
+jurisdiction: EU
+sector: transport
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2024-10-03'
+parties:
+- name: MSC
+  role: acquirer
+- name: HGV
+  role: acquirer
+- name: HHLA
+  role: target
+source_documents:
+- doc_id: eu_msc_hgv_hhla_2024_decision
+  title: MSC / HGV / HHLA — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11302
+  pdf_url: http://publications.europa.eu/resource/cellar/6b79d75b-b63a-11ef-acb1-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Deep-sea container terminal services overall
+  definition_status: considered
+  notes: The Commission considered this overall market for deep-sea container terminal services,
+    which is then further segmented into hinterland and transhipment traffic.
+- market_id: pm_2
+  name: Deep-sea container terminal services for hinterland traffic
+  definition_status: considered
+  notes: This market is a sub-segment of deep-sea container terminal services. The distinction
+    between hinterland traffic and transhipment traffic was considered but ultimately left open
+    as a definitive conclusion in prior decisional practice.
+- market_id: pm_3
+  name: Deep-sea container terminal services for transhipment traffic
+  definition_status: considered
+  notes: This market is a sub-segment of deep-sea container terminal services. The distinction
+    between hinterland traffic and transhipment traffic was considered but ultimately left open
+    as a definitive conclusion in prior decisional practice.
+- market_id: pm_4
+  name: Short-sea container terminal services
+  definition_status: considered
+  notes: The Commission's prior decisional practice distinguished short-sea container terminal
+    services from deep-sea container terminal services.
+- market_id: pm_5
+  name: Ancillary services to container terminal services (storage, leasing, repair and maintenance
+    of containers)
+  definition_status: left_open
+  notes: The Commission considered but ultimately left open whether there is a separate market
+    for these ancillary services.
+- market_id: pm_6
+  name: Deep-sea container liner shipping services
+  definition_status: defined
+  notes: The Commission's prior practice, which was upheld, defines this market as involving
+    regular, scheduled services for the sea carriage of containerised cargo, distinguished from
+    non-liner shipping, non-containerised transport (like bulk vessel), short-sea, and Ro-Ro
+    shipping. However, for the purpose of this Transaction, it was not necessary to reach a
+    definitive conclusion.
+- market_id: pm_7
+  name: Short-sea container liner shipping services
+  definition_status: defined
+  notes: The Commission concluded, in line with its previous practice, that short-sea container
+    shipping services should be distinguished from non-containerised shipping, such as bulk
+    shipping. Segmentation regarding wheeled cargo and refrigerated/non-refrigerated container
+    shipping services was left open.
+- market_id: pm_8
+  name: Inland transportation services
+  definition_status: left_open
+  notes: The Commission considered that various means of inland transportation (rail, truck,
+    barge) may constitute separate product markets, but ultimately left the market definition
+    open. The overlap between parties primarily concerned rail transportation services.
+- market_id: pm_9
+  name: Rail transportation services
+  definition_status: considered
+  notes: The Commission conducted its assessment focusing on rail transportation services as
+    the primary segment of inland transportation where parties' activities overlap. The overall
+    product market definition for inland transportation (including its segmentation) was left
+    open.
+- market_id: pm_10
+  name: Truck transportation services
+  definition_status: considered
+  notes: Considered as a segment of inland transportation. MSC has very low market shares and
+    HHLA's activity is negligible, so these activities do not give rise to any affected markets.
+- market_id: pm_11
+  name: Barge transportation services
+  definition_status: considered
+  notes: Considered as a segment of inland transportation. MSC has limited activities and HHLA
+    is not active in this segment, so these activities do not give rise to any affected markets.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Deep-sea container terminal services overall — Le Havre-Gdańsk range (EEA affected)
+  definition_status: left_open
+  notes: The Commission assessed the effects based on this geographic scope, which encompasses
+    the entire Northern range of ports. However, the precise geographic market definition was
+    left open as no serious doubts arose under any plausible definition.
+- market_id: gm_2
+  name: Deep-sea container terminal services overall — Antwerp-Hamburg range (EEA affected)
+  definition_status: left_open
+  notes: The Commission assessed the effects based on this narrower geographic scope for the
+    Northern range, which was considered for both transhipment and hinterland traffic. However,
+    the precise geographic market definition was left open as no serious doubts arose under
+    any plausible definition.
+- market_id: gm_3
+  name: Deep-sea container terminal services overall — German ports for hinterland traffic (Germany
+    affected)
+  definition_status: left_open
+  notes: The Commission assessed the effects based on this narrowest geographic scope for the
+    Northern range, specifically for hinterland traffic to/from German ports. However, the precise
+    geographic market definition was left open as no serious doubts arose under any plausible
+    definition.
+- market_id: gm_4
+  name: Deep-sea container terminal services — Trieste-Koper-Rijeka range of ports (Adriatic
+    affected)
+  definition_status: considered
+  notes: The Commission considered that the geographic market definition for deep-sea container
+    terminal services in the Adriatic range is not narrower than this range of ports, which
+    serve similar hinterland catchment areas and are generally substitutable for hinterland
+    and transhipment traffic.
+- market_id: gm_5
+  name: Deep-sea container terminal services — national (Estonia affected)
+  definition_status: left_open
+  notes: The Commission considered that the port of Tallinn (Estonia) primarily serves its national
+    hinterland. However, the precise geographic market definition for the Baltic range was left
+    open as no serious doubts arose.
+- market_id: gm_6
+  name: Deep-sea container terminal services — national (Latvia affected)
+  definition_status: left_open
+  notes: The Commission considered that the port of Riga (Latvia) primarily serves its national
+    hinterland. However, the precise geographic market definition for the Baltic range was left
+    open as no serious doubts arose.
+- market_id: gm_7
+  name: Deep-sea container terminal services — national (Lithuania affected)
+  definition_status: left_open
+  notes: The Commission considered that the port of Klaipeda (Lithuania) primarily serves its
+    national hinterland. However, the precise geographic market definition for the Baltic range
+    was left open as no serious doubts arose.
+- market_id: gm_8
+  name: Deep-sea container liner shipping services — individual legs of trade (worldwide affected)
+  definition_status: left_open
+  notes: Based on its most recent practice, the Commission considered deep-sea container liner
+    shipping services to be geographically defined on the basis of individual legs of trade.
+    However, for the purpose of this Transaction, it was not necessary to precisely define the
+    geographic market as no serious doubts arose.
+- market_id: gm_9
+  name: Short-sea container liner shipping services — single trades or corridors / single legs
+    of trade (intra-continental affected)
+  definition_status: left_open
+  notes: The Commission considered that the relevant geographic market for short-sea container
+    liner shipping services should be defined on the basis of single trades or corridors, or
+    single legs of trade. However, it was not necessary to precisely define the geographic market
+    as no serious doubts arose.
+- market_id: gm_10
+  name: Inland transportation services — national or wider (EEA affected)
+  definition_status: left_open
+  notes: The Commission considered that the geographic market for inland transportation services
+    may be national or wider, potentially EEA-wide, but ultimately left the definition open
+    as no serious doubts arose.
+- market_id: gm_11
+  name: Rail transportation services — national (Germany affected)
+  definition_status: left_open
+  notes: The Commission focused its assessment on the national level for rail inland transportation
+    services where the parties' activities overlap. However, the exact geographic market definition
+    was left open due to the absence of serious doubts.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '4'
+  quote_snippet: In its prior decisional practice, the Commission has defined a separate market
+    for container terminal services. The Commission has distinguished between the provision
+    of container terminal services to (i) deep-sea container ships, (ii) ships carrying non-containerised
+    cargo and (iii) short-sea vessels.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '8'
+  quote_snippet: 'a. Product markets: i) deep-sea container terminal services overall; ii) deep-sea
+    container terminal services for hinterland traffic; iii) deep-sea container terminal services
+    for transhipment traffic and iv) short-sea container terminal services;'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '4'
+  quote_snippet: For deep-sea container terminal services, the Commission has considered, but
+    ultimately left open, a possible distinction between hinterland traffic (containers transported
+    directly to/from a container vessel from/to the hinterland via barge, truck or train) and
+    transhipment traffic (containers destined for the onward transportation to other ports or
+    other vessels).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '8'
+  quote_snippet: 'a. Product markets: i) deep-sea container terminal services overall; ii) deep-sea
+    container terminal services for hinterland traffic; iii) deep-sea container terminal services
+    for transhipment traffic and iv) short-sea container terminal services;'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '4'
+  quote_snippet: For deep-sea container terminal services, the Commission has considered, but
+    ultimately left open, a possible distinction between hinterland traffic (containers transported
+    directly to/from a container vessel from/to the hinterland via barge, truck or train) and
+    transhipment traffic (containers destined for the onward transportation to other ports or
+    other vessels).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '8'
+  quote_snippet: 'a. Product markets: i) deep-sea container terminal services overall; ii) deep-sea
+    container terminal services for hinterland traffic; iii) deep-sea container terminal services
+    for transhipment traffic and iv) short-sea container terminal services;'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '4'
+  quote_snippet: The Commission has distinguished between the provision of container terminal
+    services to (i) deep-sea container ships, (ii) ships carrying non-containerised cargo and
+    (iii) short-sea vessels. The latter have two different requirements compared to deep-sea
+    container ships.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '8'
+  quote_snippet: 'a. Product markets: i) deep-sea container terminal services overall; ii) deep-sea
+    container terminal services for hinterland traffic; iii) deep-sea container terminal services
+    for transhipment traffic and iv) short-sea container terminal services;'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '4'
+  quote_snippet: In addition, the Commission has considered, but ultimately left open whether
+    there is a separate market for ancillary services to the container terminal services, such
+    as storage, leasing, repair and maintenance of containers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '9'
+  quote_snippet: In past cases, the Commission found that the product market for container liner
+    shipping involves the provision of regular, scheduled services for the sea carriage of cargo
+    by container. In addition, the Commission considered that the use of container transportation
+    separates it from other non-containerised transport such as bulk cargo shipping.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '9'
+  quote_snippet: Deep-sea container liner shipping services involve the offer of regular, scheduled
+    services for the sea transportation of containerised cargo.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '10'
+  quote_snippet: The Commission considers that, in light of the evidence gathered during the
+    market investigation, there is no reason to depart from its previous practice that there
+    is a separate market for deep-sea container liner shipping services, which is geographically
+    defined on the basis of the individual legs of trade.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '9'
+  quote_snippet: The Commission has defined a separate product market for short-sea container
+    liner shipping, which involves the provision of regular, scheduled intra-continental (usually
+    coastal trade) services, distinct from deep-sea container shipping
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '11'
+  quote_snippet: Short-sea container liner shipping involves the provision of regular, scheduled
+    intra-continental (usually costal trade) services for the carriage of cargo by container
+    liner shipping companies
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '12'
+  quote_snippet: The Commission considers that, in line with its previous practice, short-sea
+    container shipping services should be distinguished from non-containerised shipping, such
+    as bulk shipping.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '12'
+  quote_snippet: In its previous practice the Commission has considered that the various means
+    of inland transportation may constitute separate product markets, however ultimately left
+    the market definition open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '13'
+  quote_snippet: 'The Commission will conduct its assessment of the Transaction on the basis
+    of the following: (i) the overlap between the Parties occurs within rail transportation
+    services due to Metrans’ focus on this segment; (ii) MSC has very low market shares (excluding
+    captive volumes) in truck transportation and HHLA’s activity on this segment is negligible;
+    and (iii) MSC has limited activities in barge transportation, while HHLA is not active in
+    this segment.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '13'
+  quote_snippet: 'The Commission will conduct its assessment of the Transaction on the basis
+    of the following: (i) the overlap between the Parties occurs within rail transportation
+    services due to Metrans’ focus on this segment;'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '13'
+  quote_snippet: 'The Commission will conduct its assessment of the Transaction on the basis
+    of the following: (...) (ii) MSC has very low market shares (excluding captive volumes)
+    in truck transportation and HHLA’s activity on this segment is negligible;'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '13'
+  quote_snippet: 'The Commission will conduct its assessment of the Transaction on the basis
+    of the following: (...) (iii) MSC has limited activities in barge transportation, while
+    HHLA is not active in this segment.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '5'
+  quote_snippet: The Northern range encompasses the ports of Le Havre (France), Dunkirk (France),
+    Antwerp (Belgium), Rotterdam (the Netherlands), Wilhelmshaven, Bremerhaven and Hamburg (all
+    located in Germany), as well as the port of Gdańsk (Poland).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '9'
+  quote_snippet: 'In the Northern range: the Commission will assess the effects of the Transaction
+    on the basis of a geographic market, including catchment areas comprising: i) the ports
+    between Le Havre and Gdansk for transhipment and hinterland traffic; ii) the ports between
+    Antwerp and Hamburg for transhipment and hinterland traffic and iii) German ports for hinterland
+    traffic. The geographic market definition can be left open as the Transaction does not give
+    rise to serious doubts as to its compatibility with the internal market under any plausible
+    market definition.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '5'
+  quote_snippet: Concerning terminals in Northern Europe and Hamburg in particular, the Commission
+    considered that the relevant geographic market is, in its broadest scope, Northern Europe
+    (for transhipment traffic) and, in its narrowest possible scope, the catchment area of the
+    ports in the range Hamburg – Antwerp (for hinterland traffic – due to the limited connectivity
+    compared to transhipment traffic) or possibly even narrower, comprising the German ports
+    only.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '9'
+  quote_snippet: 'In the Northern range: the Commission will assess the effects of the Transaction
+    on the basis of a geographic market, including catchment areas comprising: i) the ports
+    between Le Havre and Gdansk for transhipment and hinterland traffic; ii) the ports between
+    Antwerp and Hamburg for transhipment and hinterland traffic and iii) German ports for hinterland
+    traffic. The geographic market definition can be left open as the Transaction does not give
+    rise to serious doubts as to its compatibility with the internal market under any plausible
+    market definition.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '5'
+  quote_snippet: Concerning terminals in Northern Europe and Hamburg in particular, the Commission
+    considered that the relevant geographic market is, in its broadest scope, Northern Europe
+    (for transhipment traffic) and, in its narrowest possible scope, the catchment area of the
+    ports in the range Hamburg – Antwerp (for hinterland traffic – due to the limited connectivity
+    compared to transhipment traffic) or possibly even narrower, comprising the German ports
+    only.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '9'
+  quote_snippet: 'In the Northern range: the Commission will assess the effects of the Transaction
+    on the basis of a geographic market, including catchment areas comprising: i) the ports
+    between Le Havre and Gdansk for transhipment and hinterland traffic; ii) the ports between
+    Antwerp and Hamburg for transhipment and hinterland traffic and iii) German ports for hinterland
+    traffic. The geographic market definition can be left open as the Transaction does not give
+    rise to serious doubts as to its compatibility with the internal market under any plausible
+    market definition.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '6'
+  quote_snippet: The Adriatic range encompasses the ports of Trieste (Italy), Koper (Slovenia),
+    and Rijeka (Croatia).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '7'
+  quote_snippet: Evidence on the Commission’s file indicates that the ports of Trieste, Koper
+    and Rijeka serve similar hinterland catchment areas around the Adriatic range.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '9'
+  quote_snippet: 'In the Adriatic range: the Commission considers that the geographic market
+    definition is not narrower than the Trieste-Koper-Rijeka range of ports.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '8'
+  quote_snippet: Evidence on the Commission’s file indicates that the ports of Tallinn, Riga
+    and Klaipeda serve the Estonian, Latvian and Lithuanian national markets respectively.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '9'
+  quote_snippet: 'In the Baltic range: the Commission considers that ports in the Baltic range,
+    namely the port of Tallinn (Estonia), the port of Riga (Latvia), and the port of Klaipeda
+    (Lithuania) primarily serve their respective national hinterlands, therefore the geographic
+    markets are national. However, the geographic market definition can be left open as the
+    Transaction does not give rise to serious doubts as to its compatibility with the internal
+    market under any plausible market definition.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '8'
+  quote_snippet: Evidence on the Commission’s file indicates that the ports of Tallinn, Riga
+    and Klaipeda serve the Estonian, Latvian and Lithuanian national markets respectively.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '9'
+  quote_snippet: 'In the Baltic range: the Commission considers that ports in the Baltic range,
+    namely the port of Tallinn (Estonia), the port of Riga (Latvia), and the port of Klaipeda
+    (Lithuania) primarily serve their respective national hinterlands, therefore the geographic
+    markets are national. However, the geographic market definition can be left open as the
+    Transaction does not give rise to serious doubts as to its compatibility with the internal
+    market under any plausible market definition.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_34
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '8'
+  quote_snippet: Evidence on the Commission’s file indicates that the ports of Tallinn, Riga
+    and Klaipeda serve the Estonian, Latvian and Lithuanian national markets respectively.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_35
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '9'
+  quote_snippet: 'In the Baltic range: the Commission considers that ports in the Baltic range,
+    namely the port of Tallinn (Estonia), the port of Riga (Latvia), and the port of Klaipeda
+    (Lithuania) primarily serve their respective national hinterlands, therefore the geographic
+    markets are national. However, the geographic market definition can be left open as the
+    Transaction does not give rise to serious doubts as to its compatibility with the internal
+    market under any plausible market definition.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_36
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '10'
+  quote_snippet: In its most recent practice, the Commission concluded that deep-sea container
+    liner shipping services are geographically defined on the basis of the individual legs of
+    trade (e.g. Northern Europe – North America eastbound and Northern Europe – North America
+    westbound separately).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_8
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_37
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '10'
+  quote_snippet: The Commission considers that, in light of the evidence gathered during the
+    market investigation, there is no reason to depart from its previous practice that there
+    is a separate market for deep-sea container liner shipping services, which is geographically
+    defined on the basis of the individual legs of trade. However, it is not necessary to precisely
+    define the geographic market as the Transaction does not raise serious doubts as to its
+    compatibility with the internal market under any plausible market definition, including
+    the narrowest definition according to individual legs of trade.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_8
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_38
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '11'
+  quote_snippet: In its prior decisional practice, the Commission considered that the relevant
+    geographic market for short-sea container liner shipping services should be defined on the
+    basis of (i) either single trades or corridors, defined by the range of ports which are
+    served at both ends of the service53 or (ii) single legs of trade.54
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_9
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_39
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '12'
+  quote_snippet: Short-sea container shipping services can be geographically distinguished on
+    the basis of (i) either single trades or corridors, defined by the range of ports which
+    are served at both ends of the service or (ii) single legs of trade. However, it is not
+    necessary to precisely define the geographic market as the Transaction does not raise serious
+    doubts as to its compatibility with the internal market under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_9
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_40
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '13'
+  quote_snippet: In its previous practice the Commission has considered that the geographic
+    market for inland transportation services may be national or wider, but ultimately left
+    the market definition open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_10
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_41
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '3'
+  quote_snippet: The Transaction therefore has an EU dimension.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_42
+  source_document_id: eu_msc_hgv_hhla_2024_decision
+  page: '15'
+  quote_snippet: Pursuant to Article 6(1)(b) of the Merger Regulation, where the Commission
+    finds that the notified concentration does not raise serious doubts as to its compatibility
+    with the internal market, the Commission shall decide not to oppose the concentration and
+    declares it compatible with the internal market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

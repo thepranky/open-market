@@ -1,0 +1,585 @@
+case_id: eu_philip_morris_international_swedish_match_2022
+case_name: PHILIP MORRIS INTERNATIONAL / SWEDISH MATCH
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2022-10-25'
+parties:
+- name: PHILIP MORRIS INTERNATIONAL
+  role: acquirer
+- name: SWEDISH MATCH
+  role: target
+source_documents:
+- doc_id: eu_philip_morris_international_swedish_match_2022_decision
+  title: PHILIP MORRIS INTERNATIONAL / SWEDISH MATCH — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10792
+  pdf_url: http://publications.europa.eu/resource/cellar/6b5d956d-253a-11ee-94cb-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Snus
+  definition_status: considered
+  notes: The Commission considers snus a separate market from other smokeless tobacco or nicotine
+    products, and no further segmentation is necessary.
+- market_id: pm_2
+  name: Nicotine pouches
+  definition_status: considered
+  notes: The Commission considers nicotine pouches a separate market from other smokeless tobacco
+    or nicotine products, and no further segmentation is necessary.
+- market_id: pm_3
+  name: FMC
+  definition_status: considered
+  notes: The Commission considers FMC a separate market from other combustible tobacco products,
+    and no further segmentation is necessary.
+- market_id: pm_4
+  name: RYO
+  definition_status: considered
+  notes: The Commission considers RYO a separate market from other combustible tobacco products,
+    and no further segmentation is necessary.
+- market_id: pm_5
+  name: Heated tobacco products
+  definition_status: considered
+  notes: The Commission considers heated tobacco products a separate market from combustible
+    tobacco products, and no further segmentation is necessary.
+- market_id: pm_6
+  name: Nicotine powder
+  definition_status: left_open
+  notes: The Commission considered it appropriate to leave open the exact product market definition
+    of nicotine powder and salt, irrespective of the formulation, as the competitive assessment
+    would not differ.
+- market_id: pm_7
+  name: Wholesale distribution of combustible tobacco, smoke-free, and related products
+  definition_status: considered
+  notes: The Commission considers the wholesale distribution of combustible tobacco, smoke-free,
+    and related products a separate market from the distribution of other products, and no further
+    segmentation is necessary.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Snus — national (Sweden and Norway affected)
+  definition_status: considered
+  notes: The relevant geographic market for snus is considered national in scope.
+- market_id: gm_2
+  name: Nicotine pouches — national (Sweden and Slovenia affected)
+  definition_status: considered
+  notes: The relevant geographic market for nicotine pouches is considered national in scope.
+- market_id: gm_3
+  name: FMC — national (Sweden affected)
+  definition_status: considered
+  notes: The relevant geographic market for FMC is considered national in scope.
+- market_id: gm_4
+  name: RYO — national (Sweden affected)
+  definition_status: considered
+  notes: The relevant geographic market for RYO is considered national in scope.
+- market_id: gm_5
+  name: Heated tobacco products — national (Sweden affected)
+  definition_status: considered
+  notes: The relevant geographic market for heated tobacco products is considered national in
+    scope.
+- market_id: gm_6
+  name: Nicotine powder — EEA or wider (EEA affected)
+  definition_status: left_open
+  notes: The Commission considered it appropriate to leave open the exact geographic market
+    definition for nicotine powder as the competitive assessment would not differ.
+- market_id: gm_7
+  name: Wholesale distribution of combustible tobacco, smoke-free, and related products — national
+    (Sweden affected)
+  definition_status: considered
+  notes: The relevant geographic market for the wholesale distribution of combustible tobacco,
+    smoke-free, and related products is considered national in scope.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_philip_morris_international_swedish_match_2022_decision
+  page: '6'
+  quote_snippet: (22) For the purpose of this Decision and in light of all information available
+    to it, the Commission therefore considers that snus is a separate market from other smokeless
+    tobacco or nicotine products (including nicotine pouches). The Commission considers that
+    it is not necessary to further segment the product market for snus.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_philip_morris_international_swedish_match_2022_decision
+  page: '5'
+  quote_snippet: (18) The Commission considers that snus is a separate market from other smokeless
+    tobacco or nicotine products (including nicotine pouches) for the following reasons.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_philip_morris_international_swedish_match_2022_decision
+  page: '5'
+  quote_snippet: (19) First, as regards the question whether snus constitutes a separate product
+    market, the majority of respondents of the market investigation who expressed an opinion
+    agree that snus should be considered as forming a distinct product market, separate from
+    other products such as nicotine pouches.17 For example, a competitor indicated that customer
+    bases for snus and nicotine pouches are different18 and that loyalty of consumers to brands
+    is higher for snus than for nicotine pouches, making entry harder for snus than for nicotine
+    pouches.19 Another competitor indicated that
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_philip_morris_international_swedish_match_2022_decision
+  page: '10'
+  quote_snippet: (38) For the purpose of this Decision and in light of all information available
+    to it, the Commission therefore considers that nicotine pouches are a separate market from
+    other smokeless tobacco or nicotine products (including snus). The Commission considers
+    that it is not necessary to further segment the product market for nicotine pouches.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_philip_morris_international_swedish_match_2022_decision
+  page: '9'
+  quote_snippet: (34) The Commission has not assessed the relevant market definition for nicotine
+    pouches specifically in previous cases. The Commission considers that nicotine pouches are
+    a separate market from other smokeless tobacco or nicotine products (including snus) for
+    the following reasons.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_philip_morris_international_swedish_match_2022_decision
+  page: '9'
+  quote_snippet: (35) First, as regards the question whether nicotine pouches should be a separate
+    product market, the majority of respondents to the market investigation who expressed an
+    opinion agree that nicotine pouches should be considered as forming a distinct product market,
+    separate from other products such as snus.45 As mentioned in paragraph (19), market participants
+    indicated that customer bases and loyalty levels differed for snus and nicotine pouches.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_philip_morris_international_swedish_match_2022_decision
+  page: '13'
+  quote_snippet: (52) For the purpose of this Decision and in light of all information available
+    to it, the Commission therefore considers that FMC are a separate market from other combustible
+    tobacco products. The Commission considers that it is not necessary to further segment the
+    product market for FMC.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_philip_morris_international_swedish_match_2022_decision
+  page: '14'
+  quote_snippet: (64) For the purpose of this Decision and in light of all information available
+    to it, the Commission therefore considers that RYO are a separate market from other combustible
+    tobacco products. The Commission considers that it is not necessary to further segment the
+    product market for RYO.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_philip_morris_international_swedish_match_2022_decision
+  page: '14'
+  quote_snippet: (61) In previous cases, the Commission defined separate product markets for
+    each type of combustible tobacco product (such as FMC, RYO, pipe tobacco, and cigars).80
+    It has taken the view that any other division of the RYO would not be appropriate.81
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_philip_morris_international_swedish_match_2022_decision
+  page: '17'
+  quote_snippet: (78) For the purpose of this Decision and in light of all information available
+    to it, the Commission therefore considers that heated tobacco products are a separate market
+    from other combustible tobacco products. The Commission considers that it is not necessary
+    to further segment the product market for heated tobacco products.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_philip_morris_international_swedish_match_2022_decision
+  page: '16'
+  quote_snippet: (73) The Commission considers that heated tobacco products are a separate market
+    from combustible tobacco products and that it is not necessary to further segment the product
+    market for heated tobacco products for the following reasons.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_philip_morris_international_swedish_match_2022_decision
+  page: '16'
+  quote_snippet: (74) First, as regards the question whether heated tobacco products constitute
+    a separate product market. The majority of market participants who expressed an opinion
+    consider that heated tobacco products should be considered as a separate product market
+    from other tobacco and nicotine products.95 Further, the Commission considers that supply-side
+    substitutability is not evident, as heated tobacco products require an electronic device
+    for use, which is not the case for other tobacco products, for example, FMC.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_philip_morris_international_swedish_match_2022_decision
+  page: '19'
+  quote_snippet: (92) For the purposes of the Decision and in light of all information available
+    to it, the Commission considers it appropriate to leave open the exact product market definition
+    of nicotine powder and salt,120 irrespective of the formulation for binding the nicotine
+    (e.g. resin or acid), since the competitive assessment would not differ irrespective of
+    the segmentation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_philip_morris_international_swedish_match_2022_decision
+  page: '18'
+  quote_snippet: (87) The Notifying Party considers that nicotine powder (including both powder
+    and salt formulations to bind the nicotine) should be viewed as a single product market
+    regardless of chemical composition.115
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_philip_morris_international_swedish_match_2022_decision
+  page: '21'
+  quote_snippet: (105) For the purpose of this Decision and in light of all information available
+    to it, the Commission therefore considers that the wholesale distribution of combustible
+    tobacco, smoke-free, and related products is a separate market from the distribution of
+    other products. The Commission considers that it is not necessary to further segment the
+    product market for the wholesale distribution of combustible tobacco, smoke-free, and related
+    products.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_philip_morris_international_swedish_match_2022_decision
+  page: '20'
+  quote_snippet: (104) Second, while different combustible tobacco, smoke-free, and related
+    products are subject to slightly different regulatory requirements, the distribution process
+    and know-how for these products is similar,129 including developing a platform for retailers
+    to order these products through, as a competitor mentioned.130
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_philip_morris_international_swedish_match_2022_decision
+  page: '8'
+  quote_snippet: (31) For the purpose of this Decision and in light of all information available
+    to it, the Commission therefore considers that the relevant geographic market for snus is
+    national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_philip_morris_international_swedish_match_2022_decision
+  page: '7'
+  quote_snippet: (26) The Commission considers that the relevant geographic market for snus
+    is national in scope for the following reasons.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_philip_morris_international_swedish_match_2022_decision
+  page: '7'
+  quote_snippet: (27) First, the majority of respondents who expressed an opinion consider that
+    the geographic market definition for snus is national in scope.31 For example, a customer
+    points out at the regulatory differences between countries for the wholesale supply of snus
+    indicating that snus is mainly sold ‘in Norway and Sweden due to EU regulation[s] prohibiting
+    snus-products in other jurisdictions’.32 Another customer explains that conditions of competition
+    vary, and are different in Norway than in other countries, as snus products sold in Norway
+    require regulatory approval by the Norwegian Ministry of Health, and prices differ by country
+    (they are higher in Norway than in neighbouring countries).33
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_philip_morris_international_swedish_match_2022_decision
+  page: '11'
+  quote_snippet: (45) For the purpose of this Decision and in light of all information available
+    to it, the Commission therefore considers that the relevant geographic market for nicotine
+    pouches is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_philip_morris_international_swedish_match_2022_decision
+  page: '11'
+  quote_snippet: (41) The Commission considers that the relevant geographic market for nicotine
+    pouches is national in scope for the following reasons.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_philip_morris_international_swedish_match_2022_decision
+  page: '13'
+  quote_snippet: (58) For the purpose of this Decision and in light of all information available
+    to it, the Commission therefore considers that the relevant geographic market for FMC is
+    national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_philip_morris_international_swedish_match_2022_decision
+  page: '13'
+  quote_snippet: (55) Based on the market investigation in this case it seems that there are
+    no reasons to depart from the Commission’s previous practice for the following reasons.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_philip_morris_international_swedish_match_2022_decision
+  page: '15'
+  quote_snippet: (69) For the purpose of this Decision and in light of all information available
+    to it, the Commission therefore considers that the relevant geographic market for RYO is
+    national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_philip_morris_international_swedish_match_2022_decision
+  page: '15'
+  quote_snippet: (67) Based on the market investigation in this case it seems that there are
+    no reasons to depart from the Commission’s previous practice.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_philip_morris_international_swedish_match_2022_decision
+  page: '18'
+  quote_snippet: (84) For the purpose of this Decision and in light of all information available
+    to it, the Commission therefore considers that the relevant geographic market for heated
+    tobacco products is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_philip_morris_international_swedish_match_2022_decision
+  page: '17'
+  quote_snippet: (81) Based on the market investigation in this case it seems that there are
+    no reasons to depart from the Commission’s previous practice for the following reasons.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_philip_morris_international_swedish_match_2022_decision
+  page: '19'
+  quote_snippet: (93) The Notifying Party submits that the market for nicotine powder should
+    be at least EEA-wide if not global.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_philip_morris_international_swedish_match_2022_decision
+  page: '22'
+  quote_snippet: (111) For the purpose of this Decision and in light of all information available
+    to it, the Commission therefore considers that the relevant geographic market for the wholesale
+    distribution of combustible tobacco, smoke-free, and related products is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_philip_morris_international_swedish_match_2022_decision
+  page: '21'
+  quote_snippet: (108) Based on the market investigation in this case it seems that there are
+    no reasons to depart from the Commission’s previous practice for the following reasons.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_philip_morris_international_swedish_match_2022_decision
+  page: '1'
+  quote_snippet: |
+    Subject: Case M.10792 – PHILIP MORRIS INTERNATIONAL / SWEDISH
+    MATCH
+    Commission decision pursuant to Article 6(1)(b) in conjunction with
+    Article 6(2) of Council Regulation No 139/20041 and Article 57 of the
+    Agreement on the European Economic Area2
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

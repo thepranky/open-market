@@ -1,0 +1,903 @@
+case_id: eu_dnb_danske_bank_sb1_2022
+case_name: DNB / DANSKE BANK / SB1 / EIKA / BALDER / VIPPS / MOBILEPAY
+authority: European Commission
+jurisdiction: EU
+sector: financial
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2022-10-21'
+parties:
+- name: DNB
+  role: acquirer
+- name: DANSKE BANK
+  role: acquirer
+- name: SB1
+  role: acquirer
+- name: EIKA
+  role: acquirer
+- name: BALDER
+  role: acquirer
+- name: VIPPS
+  role: acquirer
+- name: MOBILEPAY
+  role: target
+source_documents:
+- doc_id: eu_dnb_danske_bank_sb1_2022_decision
+  title: DNB / DANSKE BANK / SB1 / EIKA / BALDER / VIPPS / MOBILEPAY — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10935
+  pdf_url: http://publications.europa.eu/resource/cellar/feffb81b-a951-11ed-b508-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: P2P payments via mobile wallets
+  definition_status: defined
+  notes: The Commission concluded that cash payments and online banking (via browser or banking
+    apps) are not part of the same product market as payments via mobile wallets in P2P payment
+    situations, due to significant differences in convenience for end-users.
+- market_id: pm_2
+  name: POS payments overall
+  definition_status: left_open
+  notes: The Commission considered potential segments for (i) POS payments excluding cash; and
+    (ii) POS payments excluding cash and cards (i.e., payments via mobile wallets). The question
+    of whether cash payments or card payments are part of the same product market as payments
+    via mobile wallets in POS payment situations was left open.
+- market_id: pm_3
+  name: E-Commerce payments overall
+  definition_status: left_open
+  notes: The Commission considered potential segments for (i) E-Commerce payments excluding
+    other online payment methods, such as bank transfers, direct debit or BNPL (i.e., payments
+    via mobile wallets); and (ii) E-Commerce payments excluding other online card payment methods.
+    The question of whether card payments or other online payments are part of the same product
+    market as mobile wallet payments in an e-Commerce environment was left open.
+- market_id: pm_4
+  name: Invoice services to end-users overall
+  definition_status: left_open
+  notes: The Commission considered a plausible separate market for invoice services to end-users
+    via mobile wallets (i.e., excluding other channels such as online banking, mobile banking
+    apps or e-mail). The question of whether such a separate market exists or if the market
+    was wider including other channels was left open.
+- market_id: pm_5
+  name: e-Commerce checkout solutions
+  definition_status: left_open
+  notes: The Commission found that a separate product market exists for e-Commerce checkout
+    solutions, distinct from in-store (POS) payment services, but left the exact definition
+    open, including whether direct integration of specific payment methods is a substitute.
+- market_id: pm_6
+  name: Retail banking
+  definition_status: left_open
+  notes: The Commission assessed a plausible market for retail banking, which includes all banking
+    services to private individuals and very small enterprises, but left the exact product market
+    definition open.
+- market_id: pm_7
+  name: Current accounts (within Retail banking)
+  definition_status: left_open
+  notes: The Commission considered a plausible narrower market for current accounts within retail
+    banking, but left the exact product market definition open.
+- market_id: pm_8
+  name: Card issuing
+  definition_status: left_open
+  notes: The Commission assessed a plausible market for card issuing, distinct from merchant
+    acquiring and card processing, but left the exact product market definition open, including
+    potential narrower segments.
+- market_id: pm_9
+  name: Card issuing segments
+  definition_status: left_open
+  notes: 'The Commission considered plausible narrower segments for card issuing based on: (i)
+    debit and credit cards, (ii) personal and corporate cards, (iii) national and international
+    cards, (iv) selective and general cards and (v) universal and special purpose cards, but
+    left the exact product market definition open.'
+- market_id: pm_10
+  name: Merchant acquiring
+  definition_status: left_open
+  notes: The Commission considered merchant acquiring to be a distinct product market, segmented
+    into POS and e-Commerce merchant acquiring, with potential further segmentation by type
+    of payment card schemes, payment card brands, type of payment card, and wholesale/retail
+    merchant acquiring. However, the exact product market definition was left open for this
+    case.
+- market_id: pm_11
+  name: Payment systems
+  definition_status: left_open
+  notes: The Commission assessed a separate product market for payment systems, upstream to
+    the market for payment services, but left the exact product market definition open, including
+    potential further segmentation by type of payments.
+geographic_markets_considered:
+- market_id: gm_1
+  name: P2P payments via mobile wallets — national
+  definition_status: defined
+  notes: The Commission concluded that payment service markets for P2P payments, and especially
+    mobile P2P payment services, are national in geographic scope.
+- market_id: gm_2
+  name: POS payments overall — national or EEA-wide
+  definition_status: left_open
+  notes: The Commission considered the geographic market for POS payments (and its plausible
+    segments) as national or EEA-wide in scope, leaving the exact geographic market definition
+    open.
+- market_id: gm_3
+  name: E-Commerce payments overall — national or EEA-wide
+  definition_status: left_open
+  notes: The Commission considered the geographic market for e-Commerce payments (and its plausible
+    segments) as national or EEA-wide in geographic scope, leaving the exact geographic market
+    definition open.
+- market_id: gm_4
+  name: Invoice services to end-users overall — national
+  definition_status: defined
+  notes: The Commission found that invoice payments, or invoicing services to end-users, are
+    national in scope, supported by market investigation feedback.
+- market_id: gm_5
+  name: e-Commerce checkout solutions — regional (the Nordics) or EEA-wide
+  definition_status: left_open
+  notes: The Commission found the relevant geographic scope to be wider than national and either
+    regional (the Nordics) or EEA-wide. For the purpose of this decision, the narrower regional
+    market (Nordics) was assessed, but the exact geographic market definition was left open.
+- market_id: gm_6
+  name: Retail banking — national
+  definition_status: defined
+  notes: The Commission concluded that the geographic scope of the markets for retail banking
+    and segments therein is national in scope, consistent with previous decisional practice
+    and market investigation feedback.
+- market_id: gm_7
+  name: Card issuing — national
+  definition_status: defined
+  notes: The Commission concluded that the geographic scope of the markets for card issuing
+    and segments therein is national in scope, consistent with previous decisional practice
+    and market investigation feedback.
+- market_id: gm_8
+  name: Merchant acquiring — national or EEA-wide
+  definition_status: left_open
+  notes: The Commission left open whether merchant acquiring services (or potential segments
+    thereof) are national or EEA-wide in scope, as it would not change the outcome of the assessment,
+    despite mixed feedback from the market investigation.
+- market_id: gm_9
+  name: Payment systems — national or wider than national
+  definition_status: left_open
+  notes: The Commission's market investigation indicated that competitive conditions generally
+    still take place at a national level for payment systems, but market participants also pointed
+    towards a broader regional dimension. The exact geographic scope was left open.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '15'
+  quote_snippet: Considering all elements above, namely the explanations of the Notifying Parties,
+    the feedback from other market participants on demand-side and supply-side substitutability,
+    as well as the Commission’s past practice, the Commission considers that payment services
+    segmented by payment situations, i.e., P2P transfers, payments in a POS environment, e-Commerce
+    as well as invoice services, might each form separate product markets, which can each be
+    further sub-segmented, as detailed below.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '18'
+  quote_snippet: Based on the above, the Commission concludes that cash payments are not part
+    of the same product market as payments via mobile wallets in P2P payment situations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '18'
+  quote_snippet: Based on the above, the Commission concludes that online banking (enabled through
+    different hardware and software) is not part of the same product market as payments via
+    mobile wallets in P2P payment situations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '15'
+  quote_snippet: Considering all elements above, namely the explanations of the Notifying Parties,
+    the feedback from other market participants on demand-side and supply-side substitutability,
+    as well as the Commission’s past practice, the Commission considers that payment services
+    segmented by payment situations, i.e., P2P transfers, payments in a POS environment, e-Commerce
+    as well as invoice services, might each form separate product markets, which can each be
+    further sub-segmented, as detailed below.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '21'
+  quote_snippet: Based on the above, the Commission notes strong evidence that cash is not part
+    of the same product market as payments via mobile wallets in POS payment situations. However,
+    for the purpose of this decision, this question can ultimately be left open, as it does
+    not change the assessment of the Transaction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '23'
+  quote_snippet: Based on the above, the Commission notes that there is inconclusive feedback
+    as to the substitutability of cards and mobile wallets in POS payment situations. For the
+    purpose of this decision, this question can ultimately be left open, as it does not change
+    the assessment of the Transaction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '15'
+  quote_snippet: Considering all elements above, namely the explanations of the Notifying Parties,
+    the feedback from other market participants on demand-side and supply-side substitutability,
+    as well as the Commission’s past practice, the Commission considers that payment services
+    segmented by payment situations, i.e., P2P transfers, payments in a POS environment, e-Commerce
+    as well as invoice services, might each form separate product markets, which can each be
+    further sub-segmented, as detailed below.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '25'
+  quote_snippet: In any event, for the purpose of this decision, the question of whether other
+    online payment methods would be part of the same market as mobile wallet payments in an
+    e-Commerce environment can ultimately be left open, as the assessment of the Transaction
+    would not change.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '15'
+  quote_snippet: Considering all elements above, namely the explanations of the Notifying Parties,
+    the feedback from other market participants on demand-side and supply-side substitutability,
+    as well as the Commission’s past practice, the Commission considers that payment services
+    segmented by payment situations, i.e., P2P transfers, payments in a POS environment, e-Commerce
+    as well as invoice services, might each form separate product markets, which can each be
+    further sub-segmented, as detailed below.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '26'
+  quote_snippet: For the purpose of this decision, it can be left open if a separate market
+    for invoice services to end-users via mobile wallets exist, or if the market was wider including
+    other channels, namely online banking, mobile banking apps or e-mail, as it would not change
+    the outcome of the assessment in this case.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '32'
+  quote_snippet: First, the market investigation confirms that the provision of e-Commerce checkout
+    solutions constitutes a separate market, distinct from the provision of any in-store (POS)
+    payment services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '32'
+  quote_snippet: Second, while most of the responding merchants use Direct Integration, it is
+    not clear whether they consider Direct Integration of specific payment method to offer a
+    credible substitute for an e-Commerce checkout solution that already includes such payment
+    method.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '33'
+  quote_snippet: In light of the above, for the purposes of this decision, the Commission considers
+    that a separate product market exists for e-Commerce checkout solutions. However, the exact
+    product market definition can be left open for the purpose of this decision, as the outcome
+    of the competitive assessment does not change under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '35'
+  quote_snippet: The market investigation confirms the product market definition considered
+    in previous Commission decision. In particular, virtually all responding market participants
+    agree that there exists a distinct market for retail banking, and a large majority of respondents
+    considers that there may exist a distinct market for current accounts, separate from other
+    retail banking services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '36'
+  quote_snippet: In view of the above, the Commission will, for the purpose of this decision,
+    assess a plausible market for retail banking, as well as a plausible narrower market for
+    current accounts. In any case, the exact product market definition can be left open since
+    the Transaction does not give rise to serious doubts as to its compatibility with the internal
+    market or the functioning of the EEA agreement under any plausible market definition (i.e.,
+    retail banking or the narrower segmentation set out in paragraph 139 above).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '35'
+  quote_snippet: The market investigation confirms the product market definition considered
+    in previous Commission decision. In particular, virtually all responding market participants
+    agree that there exists a distinct market for retail banking, and a large majority of respondents
+    considers that there may exist a distinct market for current accounts, separate from other
+    retail banking services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '36'
+  quote_snippet: In view of the above, the Commission will, for the purpose of this decision,
+    assess a plausible market for retail banking, as well as a plausible narrower market for
+    current accounts. In any case, the exact product market definition can be left open since
+    the Transaction does not give rise to serious doubts as to its compatibility with the internal
+    market or the functioning of the EEA agreement under any plausible market definition (i.e.,
+    retail banking or the narrower segmentation set out in paragraph 139 above).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '37'
+  quote_snippet: The market investigation supports the product market definition considered
+    in previous Commission decisions. In particular, virtually all responding market participants
+    agree that there is a distinct market for card issuing, which may potentially be further
+    divided into segments listed in paragraph 148 above.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '37'
+  quote_snippet: 'In view of the above, the Commission will, for the purpose of this decision,
+    assess a plausible market for card issuing, as well as the following plausible narrower
+    segments: (i) debit and credit cards, (ii) personal and corporate cards, (iii) national
+    and international cards, (iv) selective and general cards and (v) universal and special
+    purpose cards. In any case, the exact product market definition can be left open since the
+    Transaction does not give rise to serious doubts as to its compatibility with the internal
+    market or the functioning of the EEA agreement under any plausible market definition (i.e.
+    card issuing or the narrower segmentations).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '37'
+  quote_snippet: The market investigation supports the product market definition considered
+    in previous Commission decisions. In particular, virtually all responding market participants
+    agree that there is a distinct market for card issuing, which may potentially be further
+    divided into segments listed in paragraph 148 above.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '37'
+  quote_snippet: 'In view of the above, the Commission will, for the purpose of this decision,
+    assess a plausible market for card issuing, as well as the following plausible narrower
+    segments: (i) debit and credit cards, (ii) personal and corporate cards, (iii) national
+    and international cards, (iv) selective and general cards and (v) universal and special
+    purpose cards. In any case, the exact product market definition can be left open since the
+    Transaction does not give rise to serious doubts as to its compatibility with the internal
+    market or the functioning of the EEA agreement under any plausible market definition (i.e.
+    card issuing or the narrower segmentations).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '39'
+  quote_snippet: In the market investigation, the majority of responding banks and payment service
+    providers, including those with an own merchant acquiring offering, confirmed the Commission’s
+    past practice as regards the product market definition for merchant acquiring. Therefore,
+    the Commission has no reason to deviate from precedent cases for the purpose of this decision.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '39'
+  quote_snippet: In any case, the exact product market definition for merchant acquiring can
+    be left open since the Transaction does not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement under any plausible market
+    definition (merchant acquiring or segments therein).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '40'
+  quote_snippet: Based on the above, the Commission considers that merchant acquiring constitutes
+    a distinct product market, segmented into POS and e-Commerce merchant acquiring, and potentially
+    further segmented by (i) types of payment card schemes (international/domestic); (ii) payment
+    card brands (e.g., Visa, Mastercard); (iii) type of payment card (debit/credit); and (iv)
+    wholesale merchant acquiring (to banks) and retail merchant acquiring (to merchants). The
+    exact product market definition can be left open in the present case.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '41'
+  quote_snippet: The Commission’s market investigation supports the product market definition
+    considered in previous Commission decisions. In particular, the vast majority of responding
+    market participants agree that there is a distinct market for payment systems, which may
+    potentially be further divided into segments listed in paragraph 171 above.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '41'
+  quote_snippet: In view of the above, for the purpose of the present decision, the Commission
+    will assess a separate product market for payment systems. In any event, the exact product
+    market definition can be left open since the Transaction does not give rise to serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA agreement
+    under any plausible market definition (i.e. payment systems overall or further segmented
+    by type of payments).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '28'
+  quote_snippet: Specifically for mobile payment services in P2P payment situations, the large
+    majority of respondents further indicated that most mobile payment methods used in P2P payments
+    are generally used in individual countries only.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '30'
+  quote_snippet: The market for P2P payments via mobile wallets is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '29'
+  quote_snippet: As for POS payments, a large majority of banks and payment service providers
+    responding to the market investigation indicate that the market is EEA-wide in geographic
+    scope, as competitive conditions would be similar across the EEA. Merchants, on the other
+    hand, indicate that POS markets may rather be national.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '29'
+  quote_snippet: Based on the above, the Commission considers the geographic market for POS
+    payments (and its plausible segments) as national or EEA-wide in scope. The exact geographic
+    market definition can be left open for the purpose of this decision, as the outcome of the
+    competitive assessment does not change under any plausible geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '30'
+  quote_snippet: Based on the above, the Commission considers the geographic market for e-Commerce
+    payments (and its plausible segments) as national or EEA-wide in geographic scope. The exact
+    geographic market definition can be left open for the purpose of this decision, as the outcome
+    of the competitive assessment does not change under any plausible geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '31'
+  quote_snippet: The market for E-Commerce payments (and its plausible segments) is national
+    or EEA-wide in scope;
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '30'
+  quote_snippet: In the market investigation, the large majority of responding banks and payment
+    service providers indicated that invoice payments, or the invoicing services to end-users
+    as provided by Vipps and MobilePay, are national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_34
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '30'
+  quote_snippet: 'In conclusion, for the purpose of this decision, the Commission considers
+    it relevant to assess the following plausible geographic markets for payment services: (...)
+    The market for Invoice services to end-users (and a plausible market for invoice services
+    to end-users via mobile wallets) is national in scope.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_35
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '34'
+  quote_snippet: First, the feedback to the Commission’s market investigation is mixed as to
+    whether the market for e-Commerce checkout solutions is EEA-wide or narrower, at a regional
+    level, i.e., at the level of the Nordics.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_36
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '34'
+  quote_snippet: In view of the above, the Commission finds that the relevant geographic scope
+    of a market for e-Commerce checkout solutions is wider than national and either regional
+    (i.e., the Nordics) or EEA-wide. For the purpose of this decision, the Commission will assess
+    the narrower regional market, at the level of the Nordics (for the purposes of this Decision
+    defined to include Denmark, Finland, Norway and Sweden), where the focus of the Proposed
+    Transaction is. The exact geographic market definition can be left open since the Transaction
+    does not give rise to serious doubts as to its compatibility with the internal market or
+    the functioning of the EEA agreement under any plausible geographic market definition (i.e.,
+    regional or EEA-wide).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_37
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '36'
+  quote_snippet: The market investigation did not provide any indication that would require
+    the Commission to depart from its previous decisional practice on the geographic scope of
+    the market for retail banking and its plausible segments. In particular, the majority of
+    responding market participants consider that the geographic scope of the market for the
+    provision of retail banking services (including the provision of bank accounts) is national.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_38
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '36'
+  quote_snippet: Therefore, for the purposes of this decision, the Commission considers the
+    geographic scope of the markets for retail banking and segments therein to be national in
+    scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_39
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '38'
+  quote_snippet: The Commission’s investigation did not provide any indication that would require
+    the Commission to depart from its previous decisional practice on the geographic scope of
+    the market for card issuing and its plausible segments. In particular, the majority of the
+    market investigation respondents consider the market for card issuing (and its plausible
+    segments) to be national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_40
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '38'
+  quote_snippet: Therefore, for the purposes of this decision, the Commission considers the
+    geographic scope of the markets for card issuing and segments therein to be national in
+    scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_41
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '40'
+  quote_snippet: In the market investigation, the Commission received mixed feedback as to the
+    exact geographic market definition of merchant acquiring or their plausible segments, while
+    respondents pointed to a rather EEA-wide market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_8
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_42
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '40'
+  quote_snippet: For the purposes of this decision, it can be left open if merchant acquiring
+    services (or potential segments thereof) are national or EEA-wide in scope, as it would
+    not change the outcome of the assessment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_8
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_43
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '42'
+  quote_snippet: The Commission’s market investigation has indicated that for responding banks
+    and payment service providers, competitive conditions are similar and competition generally
+    still takes place at a national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_9
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_44
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '42'
+  quote_snippet: However, market participants also point towards a broader regional dimension.
+    For example, one market participant explained that “[g]enerally, fundamental regulatory
+    changes have had an effect in the Nordics. The introduction of SEPA pushes the banking sector
+    in the Nordics, as in the rest of the EU, to move from country-based payment infrastructures
+    with proprietary country solutions and regulators, towards a common EU – or in the case
+    of P27 a pan-Nordic – infrastructure based on common ISO20022 payment standards and common
+    regulation”.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_9
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_45
+  source_document_id: eu_dnb_danske_bank_sb1_2022_decision
+  page: '34'
+  quote_snippet: The exact geographic market definition can be left open since the Transaction
+    does not give rise to serious doubts as to its compatibility with the internal market or
+    the functioning of the EEA agreement under any plausible geographic market definition (i.e.,
+    regional or EEA-wide).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

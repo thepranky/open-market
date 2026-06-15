@@ -1,0 +1,257 @@
+case_id: eu_mowi_nova_sea_2025
+case_name: MOWI / NOVA SEA
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2025-10-17'
+parties:
+- name: MOWI
+  role: acquirer
+- name: NOVA SEA
+  role: target
+source_documents:
+- doc_id: eu_mowi_nova_sea_2025_decision
+  title: MOWI / NOVA SEA — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11914
+  pdf_url: http://publications.europa.eu/resource/cellar/d16ae9ea-4dda-11f1-8095-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Farming and primary processing of non-organic NFAS, taking into account a possible further
+    segmentation for NFAS farmed in the North of Norway
+  definition_status: considered
+  notes: The Commission assessed the effects of the Transaction on this market as a conservative
+    approach, considering it the narrowest plausible market definition. The overall product
+    market definition for the farming and processing of salmon was left open.
+- market_id: pm_2
+  name: Secondary processed salmon with a further segmentation between fresh, frozen and smoked
+    salmon
+  definition_status: considered
+  notes: The Commission assessed the effects of the Transaction on this market as a conservative
+    approach, considering it the narrowest plausible market definition. The overall product
+    market definition for the secondary processing of salmon was left open.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Farming and supply of primary processed NFAS — EEA-wide
+  definition_status: considered
+  notes: The exact geographic market definition for the farming and processing of salmon was
+    left open, but the Commission assessed the effects of the Transaction at EEA level.
+- market_id: gm_2
+  name: Secondary processed salmon products — national
+  definition_status: considered
+  notes: The exact geographic market definition for secondary processing of salmon was left
+    open, but the Commission assessed the effects of the Transaction at national level in a
+    conservative approach.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_mowi_nova_sea_2025_decision
+  page: '7'
+  quote_snippet: In any event and for the reasons explained below, the exact product market
+    definition for the farming and processing of salmon can be left open as the Transaction
+    does not raise serious doubts under any plausible market definition. For the purpose of
+    this decision and in a conservative approach, the Commission will assess the effects of
+    the Transaction under the narrowest plausible market definition for which the Parties’ combined
+    market share is the highest (i.e., the market for the farming and primary processing of
+    non-organic NFAS, taking into account a possible further segmentation for NFAS farmed in
+    the North of Norway).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_mowi_nova_sea_2025_decision
+  page: '4'
+  quote_snippet: First, concerning a possible segmentation between primary and secondary processed
+    NFAS, the information collected confirms that primary processed salmon and secondary processed
+    salmon are not interchangeable from a demand point of view as they are not sold to the same
+    customers and cannot be used for the same end applications.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_mowi_nova_sea_2025_decision
+  page: '6'
+  quote_snippet: Sixth, several elements also suggest that a further distinction between salmon
+    farmed in North of Norway and in South of Norway could be relevant. From a demand point
+    of view, the results of the market investigation indicate that differences exist between
+    these two categories of NFAS in terms of fat percentage and softness, which increase the
+    quality of the salmon farmed in the North of Norway.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_mowi_nova_sea_2025_decision
+  page: '10'
+  quote_snippet: In any event and for the reasons explained below, the exact product market
+    definition for the secondary processing of salmon can be left open as the Transaction does
+    not raise serious doubts under any plausible market definition. For the purpose of this
+    decision and in a conservative approach, the Commission will assess the effects of the Transaction
+    under the narrowest plausible market definitions for which Mowi’s market shares are the
+    highest, i.e., the market for the supply of secondary processed salmon with a further segmentation
+    between fresh, frozen and smoked salmon.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_mowi_nova_sea_2025_decision
+  page: '8'
+  quote_snippet: Overall, the results of the market investigation suggest that a segmentation
+    between fresh, frozen and smoked salmon is relevant.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_mowi_nova_sea_2025_decision
+  page: '8'
+  quote_snippet: In any event and for the reasons explained below, the exact geographic market
+    definition for the farming and processing of salmon can be left open as the Transaction
+    does not raise serious doubts under any plausible market definition. For the purpose of
+    this decision, the Commission will assess the effects of the Transaction on the market for
+    the farming and primary processing of NFAS at EEA level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_mowi_nova_sea_2025_decision
+  page: '8'
+  quote_snippet: 'In line with the Commission’s findings in its past decisions, the market investigation
+    elicited several elements suggesting that the relevant market for the farming and primary
+    processing of NFAS is EEA-wide in scope. The market investigation confirmed in particular
+    that: (i) Norwegian salmon farmers sell and deliver their products across the EEA, (47)
+    (ii) transport costs do not play as a significant constraint (48) and (iii) there is no
+    significant price difference between EEA Member States. (49)'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_mowi_nova_sea_2025_decision
+  page: '7'
+  quote_snippet: In past decisions, the Commission defined the markets for the farming and primary
+    processing of salmon as EEA-wide. (42) To reach this conclusion, the Commission explained
+    that salmon farmed in Norway, Scotland and Ireland is transported across the EEA and transport
+    costs do not appear to materially affect customers’ sourcing decisions. (43)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_mowi_nova_sea_2025_decision
+  page: '11'
+  quote_snippet: In any event and for the reasons explained below, the exact geographic market
+    definition for the secondary processing of salmon can be left open as the Transaction does
+    not raise serious doubts under any plausible market definition. For the purpose of this
+    decision and in a conservative approach, the Commission will thus assess the effects of
+    the Transaction under the narrowest plausible geographic market definition (i.e., national)
+    for which Mowi’s market shares are the highest.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_mowi_nova_sea_2025_decision
+  page: '10'
+  quote_snippet: On the other hand, a majority of wholesalers and secondary processors indicated
+    that they could enter new EEA Member States but that such entry would require time and investment.
+    (65) As one secondary processor explained, ‘[e]stablishing a legal entity, office, or production
+    infrastructure in a new country involves time, legal procedures, and monetary funds’. (66)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_mowi_nova_sea_2025_decision
+  page: '10'
+  quote_snippet: In Marine Harvest/Morpol, while leaving the exact market definition open, the
+    Commission contemplated the definition of national markets for secondary processed salmon
+    products due to different consumer preferences and the relative importance of brands that
+    vary between Member States. (59)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_mowi_nova_sea_2025_decision
+  page: '23'
+  quote_snippet: For the above reasons, the European Commission has decided not to oppose the
+    notified operation and to declare it compatible with the internal market. This decision
+    is adopted in application of Article 6(1)(b) of the Merger Regulation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

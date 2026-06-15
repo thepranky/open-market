@@ -1,0 +1,803 @@
+case_id: eu_kps_capital_partners_real_alloy_europe_2022
+case_name: KPS CAPITAL PARTNERS / REAL ALLOY EUROPE
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2022-10-19'
+parties:
+- name: KPS CAPITAL PARTNERS
+  role: acquirer
+- name: REAL ALLOY EUROPE
+  role: target
+source_documents:
+- doc_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  title: KPS CAPITAL PARTNERS / REAL ALLOY EUROPE — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10702
+  pdf_url: http://publications.europa.eu/resource/cellar/e9f064d6-8480-11ee-99ba-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Wrought aluminium
+  definition_status: defined
+  notes: The Commission concluded that wrought aluminium constitutes a separate product market,
+    distinct from cast aluminium, due to intrinsic differences, customer needs, and manufacturing
+    processes.
+- market_id: pm_2
+  name: Wrought recycled aluminium for can bodies (series 3xxx)
+  definition_status: defined
+  notes: This market is a segmentation of wrought aluminium based on specific alloy series (3xxx)
+    for beverage can bodies, focusing on recycled input due to its importance. The segmentation
+    by shape (solid vs liquid) was found not relevant.
+- market_id: pm_3
+  name: Wrought recycled aluminium for can ends (series 5xxx)
+  definition_status: defined
+  notes: This market is a segmentation of wrought aluminium based on specific alloy series (5xxx)
+    for beverage can ends, focusing on recycled input due to its importance. The segmentation
+    by shape (solid vs liquid) was found not relevant.
+- market_id: pm_4
+  name: Recycling services for wrought dross
+  definition_status: defined
+  notes: The Commission concluded that recycling services for wrought dross constitute a separate
+    product market from foundry/cast dross, based on demand-side non-substitutability (dross
+    characteristics, end-product) and supply-side specialization of recyclers (wrought vs. cast).
+- market_id: pm_5
+  name: Salt slag recycling services
+  definition_status: defined
+  notes: The Commission concluded the product market scope is salt slag recycling, irrespective
+    of the technology used (zero-waste vs. non-zero-waste), even though technologies are highly
+    differentiated.
+- market_id: pm_6
+  name: FRPs for beverage can bodies
+  definition_status: defined
+  notes: The Commission considered FRPs for beverage can bodies a separate product market, in
+    line with previous decisional practice and confirmed by market investigation.
+- market_id: pm_7
+  name: FRPs for beverage can ends
+  definition_status: defined
+  notes: The Commission considered FRPs for beverage can ends a separate product market, in
+    line with previous decisional practice and confirmed by market investigation.
+- market_id: pm_8
+  name: FRPs for food cans
+  definition_status: considered
+  notes: Mentioned as a product market definition from previous Commission decisions, but not
+    explicitly assessed in this case's findings.
+- market_id: pm_9
+  name: FRPs for aluminium foil
+  definition_status: considered
+  notes: Mentioned as a product market definition from previous Commission decisions, but not
+    explicitly assessed in this case's findings.
+- market_id: pm_10
+  name: FRPs for automotive body sheets (‘ABS’)
+  definition_status: considered
+  notes: Mentioned as a product market definition from previous Commission decisions, but not
+    explicitly assessed in this case's findings.
+- market_id: pm_11
+  name: FRPs for lithographic sheets
+  definition_status: considered
+  notes: Mentioned as a product market definition from previous Commission decisions, but not
+    explicitly assessed in this case's findings.
+- market_id: pm_12
+  name: Standard FRPs
+  definition_status: considered
+  notes: Mentioned as a product market definition from previous Commission decisions, described
+    as including all FRPs not constituting separate product markets.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Recycled wrought aluminium — EEA+UK wide, with a geographic differentiation
+  definition_status: considered
+  notes: The Commission concluded the geographic market for recycled wrought aluminium is at
+    most EEA+UK wide, with a geographic differentiation, based on limited trade flows outside
+    EEA+UK, customer preferences for local sourcing, supply-side presence, and import barriers
+    (duties, lead-times, transportation costs).
+- market_id: gm_2
+  name: Recycled wrought aluminium — EEA+UK wide, with a geographic differentiation
+  definition_status: considered
+  notes: The Commission concluded the geographic market for recycled wrought aluminium is at
+    most EEA+UK wide, with a geographic differentiation, based on limited trade flows outside
+    EEA+UK, customer preferences for local sourcing, supply-side presence, and import barriers
+    (duties, lead-times, transportation costs).
+- market_id: gm_3
+  name: Dross recycling services — EEA+UK wide, with a strong geographic differentiation
+  definition_status: considered
+  notes: The Commission concluded the geographic market for dross recycling services is at most
+    EEA+UK wide, with a strong geographic differentiation, balancing the importance of transport
+    costs with factors like availability, performance, and sea shipping for longer distances.
+- market_id: gm_4
+  name: Salt slag recycling services — EEA+UK wide, with a strong geographic differentiation
+  definition_status: considered
+  notes: The Commission concluded the geographic market for salt slag recycling services is
+    at most EEA+UK wide, with a strong geographic differentiation, due to transport costs, hazardous
+    waste regulations, and scattered plant locations.
+- market_id: gm_5
+  name: FRPs for beverage can bodies — EEA+UK wide (EEA and United Kingdom affected)
+  definition_status: considered
+  notes: The Commission concluded the geographic market for FRPs for beverage can bodies encompasses
+    the EEA and at most also the UK and Switzerland, but the assessment would focus on EEA+UK
+    given the Notifying Party's activities.
+- market_id: gm_6
+  name: FRPs for beverage can ends — EEA+UK wide (EEA and United Kingdom affected)
+  definition_status: considered
+  notes: The Commission concluded the geographic market for FRPs for beverage can ends encompasses
+    the EEA and at most also the UK and Switzerland, but the assessment would focus on EEA+UK
+    given the Notifying Party's activities.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '8'
+  quote_snippet: (34) In view of the above, the Commission concludes that wrought aluminium
+    constitute a separate product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '6'
+  quote_snippet: (31) First, the results of the market investigation strongly corroborate the
+    finding that cast aluminium and wrought aluminium are not substitutable. A majority of market
+    participants consider that there are significant intrinsic differences between cast and
+    wrought alloys.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '7'
+  quote_snippet: (32) Second, from a demand side perspective, customers explained that cast
+    alloys and wrought alloys are not substitutable since they address different needs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '9'
+  quote_snippet: (44) The Commission will therefore assess the Transaction on the basis of an
+    upstream market for wrought recycled aluminium for can bodies (series 3xxx) and for can
+    ends (series 5xxx), irrespective of the shape or form.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '8'
+  quote_snippet: (39) In view of the above, the Commission concludes that wrought aluminium
+    for the production of beverage can bodies constitutes a separate product market distinct
+    from the market for wrought aluminium for the production of beverage can ends.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '8'
+  quote_snippet: (37) In particular, a majority of competitors confirmed that wrought aluminium
+    alloy series 3xxx allow to produce FRPs for beverage can body stock (‘FRPs for can body’)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '9'
+  quote_snippet: (44) The Commission will therefore assess the Transaction on the basis of an
+    upstream market for wrought recycled aluminium for can bodies (series 3xxx) and for can
+    ends (series 5xxx), irrespective of the shape or form.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '8'
+  quote_snippet: (39) In view of the above, the Commission concludes that wrought aluminium
+    for the production of beverage can bodies constitutes a separate product market distinct
+    from the market for wrought aluminium for the production of beverage can ends.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '8'
+  quote_snippet: (37) In particular, a majority of competitors confirmed that wrought aluminium
+    alloy series 3xxx allow to produce FRPs for beverage can body stock (‘FRPs for can body’)
+    and only wrought aluminium alloy series 5xxx allow to produce FRPs for can end and tab stock
+    (‘FRPs for can end’).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '11'
+  quote_snippet: (55) Based on the above, the Commission concludes that recycling services for
+    wrought dross and recycling services for foundry/cast dross constitute separate product
+    markets. The Commission concludes that there is sufficient supply-side substitutability
+    for the recycling all types of wrought drosses. Therefore, the product market includes all
+    types of wrought drosses.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '10'
+  quote_snippet: (50) Second, considering supply side substitutability, dross recyclers are
+    specialised by dross type, typically wrought or cast, but also aluminium content, purity,
+    or other relevant metric.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '12'
+  quote_snippet: (61) The Commission finds that while there are strong indications that zero-waste
+    and non-zero-waste salt slag recycling services are highly differentiated, both technologies
+    seem to be viable options for customers who are able, at least to a certain extent, to shift
+    their demand to one or the other technology. Therefore, the product market’s scope is salt
+    slag recycling, irrespective of the technology used.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '11'
+  quote_snippet: '(56) The Notifying Party submits that salt slag recycling could constitute
+    a separate product market. The Notifying Party indicates that while the vast majority of
+    salt slag recyclers in the EEA have a zero-waste technology, two facilities do not recycle
+    all components of the salt slag:'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '12'
+  quote_snippet: (59) Salt slag recycling services could be differentiated by technology. While
+    most companies that are active in the EEA have a so-called zero-waste technology and recycle
+    all components of the salt slag, some companies landfill some components in a mine pile
+    or release saltwater into the sea.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '13'
+  quote_snippet: (66) With regard to the specific end uses relevant for the present case, the
+    Commission considers the case concerns FRPs for (i) beverage can bodies; (ii) beverage can
+    ends; (iii) food cans and (iv) ABS, which constitute separate product markets distinct from
+    other FRPs products markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '12'
+  quote_snippet: (64) In previous decisions, the Commission concluded that FRPs constitute distinct
+    product markets based on their end application. These include (i) beverage can bodies, (ii)
+    beverage can ends, (iii) food cans, (iv) aluminium foil, (v) automotive body sheets (‘ABS’)
+    and (vi) lithographic sheets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '13'
+  quote_snippet: (65) In line with this previous decisional practice, the Commission considers
+    that a segmentation of the FRPs by applications is relevant. The results of the market investigation
+    confirm that this decisional practice is still valid, since a majority of customers agreed
+    with the Commission’s decisional practice segmenting FRPs by end-application.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '13'
+  quote_snippet: (66) With regard to the specific end uses relevant for the present case, the
+    Commission considers the case concerns FRPs for (i) beverage can bodies; (ii) beverage can
+    ends; (iii) food cans and (iv) ABS, which constitute separate product markets distinct from
+    other FRPs products markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '12'
+  quote_snippet: (64) In previous decisions, the Commission concluded that FRPs constitute distinct
+    product markets based on their end application. These include (i) beverage can bodies, (ii)
+    beverage can ends, (iii) food cans, (iv) aluminium foil, (v) automotive body sheets (‘ABS’)
+    and (vi) lithographic sheets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '13'
+  quote_snippet: (65) In line with this previous decisional practice, the Commission considers
+    that a segmentation of the FRPs by applications is relevant. The results of the market investigation
+    confirm that this decisional practice is still valid, since a majority of customers agreed
+    with the Commission’s decisional practice segmenting FRPs by end-application.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '12'
+  quote_snippet: (64) In previous decisions, the Commission concluded that FRPs constitute distinct
+    product markets based on their end application. These include (i) beverage can bodies, (ii)
+    beverage can ends, (iii) food cans, (iv) aluminium foil, (v) automotive body sheets (‘ABS’)
+    and (vi) lithographic sheets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '12'
+  quote_snippet: (64) In previous decisions, the Commission concluded that FRPs constitute distinct
+    product markets based on their end application. These include (i) beverage can bodies, (ii)
+    beverage can ends, (iii) food cans, (iv) aluminium foil, (v) automotive body sheets (‘ABS’)
+    and (vi) lithographic sheets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '12'
+  quote_snippet: (64) In previous decisions, the Commission concluded that FRPs constitute distinct
+    product markets based on their end application. These include (i) beverage can bodies, (ii)
+    beverage can ends, (iii) food cans, (iv) aluminium foil, (v) automotive body sheets (‘ABS’)
+    and (vi) lithographic sheets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '12'
+  quote_snippet: (64) In previous decisions, the Commission concluded that FRPs constitute distinct
+    product markets based on their end application. These include (i) beverage can bodies, (ii)
+    beverage can ends, (iii) food cans, (iv) aluminium foil, (v) automotive body sheets (‘ABS’)
+    and (vi) lithographic sheets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '13'
+  quote_snippet: (54) Furthermore, the Commission found that there is a distinct product market
+    for standard FRPs, which includes all FRPs that do not constitute separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '14'
+  quote_snippet: (75) In light of the above, the Commission concludes that the geographic market
+    for recycled wrought aluminium is at most EEA+UK wide, with a geographic differentiation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '14'
+  quote_snippet: (71) First, from a demand-side perspective, customers prefer to source mainly
+    from suppliers in the EEA or the United Kingdom. This is confirmed by the market investigation.
+    The majority of customers who expressed a view are sourcing recycled wrought aluminium from
+    suppliers located in the EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '14'
+  quote_snippet: (74) Third, there are certain import barriers. In this regard, the majority
+    of customers who expressed a view indicate that there are barriers that prevent or make
+    difficult the import of recycled wrought aluminium in the EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '14'
+  quote_snippet: (75) In light of the above, the Commission concludes that the geographic market
+    for recycled wrought aluminium is at most EEA+UK wide, with a geographic differentiation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '14'
+  quote_snippet: (71) First, from a demand-side perspective, customers prefer to source mainly
+    from suppliers in the EEA or the United Kingdom. This is confirmed by the market investigation.
+    The majority of customers who expressed a view are sourcing recycled wrought aluminium from
+    suppliers located in the EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '14'
+  quote_snippet: (74) Third, there are certain import barriers. In this regard, the majority
+    of customers who expressed a view indicate that there are barriers that prevent or make
+    difficult the import of recycled wrought aluminium in the EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '16'
+  quote_snippet: (87) In light of the above, the Commission concludes that the geographic market
+    for dross recycling services is at most EEA+UK wide, with a strong geographic differentiation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '16'
+  quote_snippet: (83) The first key aspect for long distance dross shipping is availability
+    of dross recycling service, as pointed by customers. The availability can be a key factor
+    in defining the delivery area of dross recycling.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_34
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '18'
+  quote_snippet: (95) In light of the above, the Commission concludes that the geographic market
+    for salt slag recycling services is at most EEA+UK wide, with a strong geographic differentiation.
+    The geographic differentiation will be further considered in the competitive assessment
+    (see Section 7.4.4).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_35
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '17'
+  quote_snippet: (90) Salt slag is a hazardous waste, its transport, notably cross-border, is
+    costly, requires permits and is subject to certain limitations, such as the restricted use
+    of tunnels.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_36
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '17'
+  quote_snippet: (91) From the demand side, this translates into significant transport costs.
+    Half of the customers that expressed a view in the market investigation indicate that the
+    effective delivery area range that can be reached by a plant in the EEA is determined mainly
+    by transport costs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_37
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '19'
+  quote_snippet: (101) Therefore, the Commission concludes that the geographic markets for FRPs
+    for (i) beverage can bodies and (ii) beverage can ends encompass the EEA and at most also
+    the United Kingdom and Switzerland. The Notifying Party is not active in FRPs for can bodies
+    or can ends in Switzerland. Therefore, the competitive assessment for the purpose of this
+    case will be carried out on a market comprising the EEA and the United Kingdom.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_38
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '18'
+  quote_snippet: (97) The Commission has previously considered the geographic scopes for FRPs
+    for (i) beverage can bodies and (ii) and beverage can ends to encompass the EEA (at the
+    time including the United Kingdom) and Switzerland.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_39
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '19'
+  quote_snippet: (99) First, from a demand-side perspective, the market investigation confirms
+    that while some customers purchase FRPs for beverage cans also outside the EEA, those volumes
+    are limited. The majority of customers who expressed a view indicated that they source less
+    than 10% of their demand for FRPs for beverage can bodies and can ends from outside the
+    EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_40
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '19'
+  quote_snippet: (101) Therefore, the Commission concludes that the geographic markets for FRPs
+    for (i) beverage can bodies and (ii) beverage can ends encompass the EEA and at most also
+    the United Kingdom and Switzerland. The Notifying Party is not active in FRPs for can bodies
+    or can ends in Switzerland. Therefore, the competitive assessment for the purpose of this
+    case will be carried out on a market comprising the EEA and the United Kingdom.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_41
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '18'
+  quote_snippet: (97) The Commission has previously considered the geographic scopes for FRPs
+    for (i) beverage can bodies and (ii) and beverage can ends to encompass the EEA (at the
+    time including the United Kingdom) and Switzerland.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_42
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '19'
+  quote_snippet: (99) First, from a demand-side perspective, the market investigation confirms
+    that while some customers purchase FRPs for beverage cans also outside the EEA, those volumes
+    are limited. The majority of customers who expressed a view indicated that they source less
+    than 10% of their demand for FRPs for beverage can bodies and can ends from outside the
+    EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_43
+  source_document_id: eu_kps_capital_partners_real_alloy_europe_2022_decision
+  page: '55'
+  quote_snippet: (284) For the above reasons, the Commission has decided not to oppose the notified
+    operation as modified by the commitments and to declare it compatible with the internal
+    market and with the functioning of the EEA Agreement, subject to full
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+ai_summary: null
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []
+case_type: merger

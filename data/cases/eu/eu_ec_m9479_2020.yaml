@@ -1,0 +1,223 @@
+case_id: eu_ec_m9479_2020
+case_name: M.9479
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2020-02-07'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9479_2020_decision
+  title: M.9479 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9479
+  pdf_url: http://publications.europa.eu/resource/cellar/720181f5-f7f9-11ea-991b-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: The manufacture and supply of batteries, cells and modules
+  definition_status: left_open
+  notes: The Commission distinguished between primary/secondary batteries and within rechargeable
+    batteries, between portable, heavy-duty industrial, and automotive batteries. It also considered
+    modules vs. integrated battery packs, and Li-ion vs. NiMH batteries for automotive batteries,
+    leaving these distinctions open. For the purpose of assessment, the market for the manufacture
+    and supply of battery cells and modules (excluding battery systems) using Li-ion technology
+    was analysed as the narrowest plausible product market, but the exact definition was ultimately
+    left open.
+- market_id: pm_2
+  name: The manufacture and supply of PCs and LCVs
+  definition_status: left_open
+  notes: The Commission considered separate markets for PCs and LCVs, with various sub-segments
+    for PCs (mini, small, medium, large, executive, luxury, sport, SUVs, multipurpose vehicles).
+    Further sub-segmentations considered but left open include SUV types, LCV weight categories,
+    inclusion of pick-up trucks, and distinctions between vehicles with combustion engines,
+    electric battery vehicles, and hybrid vehicles.
+geographic_markets_considered:
+- market_id: gm_1
+  name: The manufacture and supply of batteries, cells and modules — EEA-wide or global
+  definition_status: left_open
+  notes: The Commission referred to previous decisions where the geographic market for automotive
+    batteries was left open between EEA-wide or global scope. For the current transaction, the
+    exact geographic market definition was left open due to low market shares.
+- market_id: gm_2
+  name: The manufacture and supply of PCs and LCVs — national or EEA-wide
+  definition_status: left_open
+  notes: The Commission considered, based on previous decisions, that the geographic market
+    for the manufacture and supply of PCs and LCVs could be national or EEA-wide. The exact
+    geographic market definition was left open as the transaction would not raise serious doubts.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9479_2020_decision
+  page: '4'
+  quote_snippet: In previous decisions,11 the Commission has distinguished between "primary"
+    (also known as disposable) and "secondary" (also known as rechargeable) batteries. Within
+    rechargeable batteries, the Commission has previously differentiated the market into three
+    separate product markets:12 (i) portable batteries; (ii) heavy-duty industrial batteries;
+    and (iii) automotive batteries.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9479_2020_decision
+  page: '4'
+  quote_snippet: The Commission therefore analysed the market for the manufacture and supply
+    of battery cells and modules (excluding battery systems) using Li-ion technology as the
+    narrowest plausible product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9479_2020_decision
+  page: '4'
+  quote_snippet: In any case, as the activities of any of the Parties in the market for the
+    manufacture and supply of batteries, cells and modules under any plausible product market
+    definition or sub-segment (between modules versus integrated battery packs, Li-ion versus
+    MiMH batteries) will remain below 20%, the Commission considers that the question of the
+    exact product market definition can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9479_2020_decision
+  page: '5'
+  quote_snippet: In previous decisions,16 the Commission has considered separate markets for
+    the manufacture and supply of PCs on the one hand, and of LCVs on the other hand.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9479_2020_decision
+  page: '5'
+  quote_snippet: The Commission considers the exact market definition for the downstream market
+    for the manufacture and supply of PCs and LCVs and its potential sub-segments (between different
+    types of SUVs, between the weight categories of LCVs, as including or excluding pickup trucks,
+    EVs and its further segmentation by technology) can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9479_2020_decision
+  page: '6'
+  quote_snippet: In previous decisions,22 the Commission has left open whether the market for
+    automotive batteries is EEA-wide or global.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9479_2020_decision
+  page: '6'
+  quote_snippet: In any case, as the activities of any of the Parties in the market for the
+    manufacture and supply of batteries, cells and modules under any plausible product (as listed
+    in paragraph (19)) and geographic market definition or sub-segment (between EEA and worldwide)
+    will remain below 20%, the Commission considers that the question of the exact market definition
+    can be left open
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9479_2020_decision
+  page: '6'
+  quote_snippet: In previous decisions,23 the Commission has considered that the market for
+    the manufacture and supply of PCs and LCVs could be national or EEA-wide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9479_2020_decision
+  page: '6'
+  quote_snippet: The exact geographic market definition can, in any case, be left open between
+    national and EEA-wide as the Transaction will not give rise to serious doubts as to its
+    compatibility with the internal market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9479_2020_decision
+  page: '7'
+  quote_snippet: The Transaction will not give rise to any horizontally affected markets.25
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9479_2020_decision
+  page: '7'
+  quote_snippet: |
+    The Transaction gives rise to certain vertical links that are not affected26 and to a number of vertically affected markets between:
+    (a) Upstream: the manufacture and supply of Li-ion battery cells and modules for the automotive sector in the EEA (JV's activities), and
+    (b) Downstream: the manufacture and supply of PCs and LCVs, segmented by type of car, in Belgium, Croatia, Denmark, Estonia, France, Greece, Latvia, Malta, the Netherland, Portugal, Slovakia, Slovenia, and Spain and the UK (PSA's activities).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

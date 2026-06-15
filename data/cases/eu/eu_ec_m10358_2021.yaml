@@ -1,0 +1,316 @@
+case_id: eu_ec_m10358_2021
+case_name: M.10358
+authority: European Commission
+jurisdiction: EU
+sector: financial
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2021-09-22'
+parties: []
+source_documents:
+- doc_id: eu_ec_m10358_2021_decision
+  title: M.10358 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10358
+  pdf_url: http://publications.europa.eu/resource/cellar/621feaed-4e28-11ec-91ac-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Merchant acquiring
+  definition_status: segmented
+  notes: The Commission formally segmented merchant acquiring into retail and wholesale in Italy,
+    and into POS and e-commerce globally. Other segmentations were left open. The notifying
+    parties considered other segmentations no longer relevant.
+- market_id: pm_2
+  name: Provision and management of POS terminals
+  definition_status: considered
+  notes: The Commission considered the relevant market to be the provision and management of
+    POS terminals for this decision, in line with prior practice. Further segmentations were
+    left open.
+- market_id: pm_3
+  name: Acquiring processing services
+  definition_status: defined
+  notes: The Commission defined a separate market for acquiring processing services with no
+    further sub-segmentation.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Merchant acquiring — EEA-wide or national (geographic scope left open)
+  definition_status: left_open
+  notes: The Commission left open whether markets for merchant acquiring are national or EEA-wide
+    in scope, as it did not materially affect the assessment.
+- market_id: gm_2
+  name: Provision and management of POS terminals — EEA-wide or national (geographic scope left
+    open)
+  definition_status: left_open
+  notes: The Commission left open whether markets for POS provision and management are national
+    or EEA-wide, as it did not materially affect the assessment.
+- market_id: gm_3
+  name: Acquiring processing — EEA-wide (geographic scope left open)
+  definition_status: left_open
+  notes: The Commission found that acquiring processing is likely EEA-wide in scope, but left
+    the question open.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m10358_2021_decision
+  page: '3'
+  quote_snippet: (10) Merchant acquiring comprises a set of services that allows merchants to
+    accept card-based payments via POS terminals or online. Merchant acquirers typically offer
+    their services directly to merchants (retail merchant acquiring). In Italy, merchant acquirers
+    also offer services to partner banks who ultimately control the commercial relationship
+    with merchants (wholesale merchant acquiring).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m10358_2021_decision
+  page: '3'
+  quote_snippet: '(14) The Commission considers that, for the purposes of this decision, in
+    line with the decisional practice described above: (i) wholesale and retail merchant acquiring
+    constitute separate markets in Italy; (ii) POS merchant acquiring and e-commerce merchant
+    acquiring constitute separate markets; and (iii) whether any additional segmentations are
+    relevant for merchant acquiring can be left open, as the possible segmentation does not
+    materially affect the Commission’s assessment of the Transaction.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m10358_2021_decision
+  page: '3'
+  quote_snippet: '(11) In its decisional practice in terms of product market definition, the
+    Commission defined separate relevant markets for retail and for wholesale merchant acquiring
+    services in Italy only.7 The Commission also considered sub-segmenting (retail) merchant
+    acquiring based on: (i) the payment card scheme (domestic or international); (ii) the payment
+    card brand (e.g., VISA or Mastercard); (iii) the payment card type (credit or debit); (iv)
+    the payment platform (POS merchant acquiring or e-commerce merchant acquiring); and (v)
+    the size of the merchant (large merchants or small/medium companies) but ultimately left
+    these questions open.8'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m10358_2021_decision
+  page: '4'
+  quote_snippet: (18) The Commission considers that, for the purposes of this decision, in line
+    with the decisional practice described above, the relevant market is the provision and management
+    of POS terminals, and whether any additional segmentations are relevant can be left open,
+    as the possible segmentation does not materially affect the Commission’s assessment of the
+    Transaction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m10358_2021_decision
+  page: '4'
+  quote_snippet: (16) In its decisional practice in terms of product market definition, the
+    Commission found that there are separate markets for (i) the manufacture and supply of POS
+    terminals and (ii) the provision and management of POS terminals.12 The Commission has also
+    considered further segmenting relevant markets based on the type of POS terminal (traditional,
+    mobile, or smart POS terminals), or on customer size (large merchants or small/medium companies).13
+    In terms of geographic market definition, the Commission found that markets for the provision
+    and management of POS terminals are likely national in scope.14
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m10358_2021_decision
+  page: '4'
+  quote_snippet: (17) The Notifying Parties consider that POS terminal provision and management
+    such as the one provided by the target form part of a larger market for payment acceptance
+    solutions encompassing POS terminals and e-commerce acceptance solutions.15 The Notifying
+    Parties also consider that the relevant geographic market is EEA-wide in scope, due to technological
+    and regulatory changes, as well as consolidation of the industry.16
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m10358_2021_decision
+  page: '4'
+  quote_snippet: (20) In its recent decisional practice in terms of product market definition,
+    the Commission found that there is a separate market for acquiring processing services and
+    no further sub-segmentation is appropriate.17 In terms of geographic market definition,
+    the Commission found that acquiring processing is likely EEA-wide in scope, but left the
+    question open
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m10358_2021_decision
+  page: '4'
+  quote_snippet: (19) Acquiring processing relates to the merchant-oriented side of technically
+    processing a card payment transaction. It includes the network routing of payments towards
+    the bank that issued the card and the POS authorisation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m10358_2021_decision
+  page: '4'
+  quote_snippet: Whether markets for merchant acquiring are national or EEA wide in scope can
+    also be left open as the precise geographic scope does not materially affect the Commission’s
+    assessment of the Transaction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m10358_2021_decision
+  page: '3'
+  quote_snippet: (12) In terms of geographic market definition, the Commission regularly found
+    that markets for merchant acquiring are likely at least national in scope, with the exception
+    of e-commerce merchant acquiring, which is likely EEA-wide in scope, eventually leaving
+    the precise definition open.9
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m10358_2021_decision
+  page: '3'
+  quote_snippet: (13) The Notifying Parties consider that segmentations of retail merchant acquiring
+    are no longer relevant in light of the evolution of the market and the high degree of substitutability.10
+    The Notifying Parties also consider that the relevant geographic market for merchant acquiring
+    and any potential segments thereof is EEA-wide, due to technological and regulatory changes,
+    as well as consolidation of the industry.11
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m10358_2021_decision
+  page: '4'
+  quote_snippet: Whether markets for POS provision and management are national or EEA-wide in
+    scope can also be left open as the precise geographic scope does not materially affect the
+    Commission’s assessment of the Transaction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m10358_2021_decision
+  page: '4'
+  quote_snippet: (16) In its decisional practice in terms of product market definition, the
+    Commission found that there are separate markets for (i) the manufacture and supply of POS
+    terminals and (ii) the provision and management of POS terminals.12 The Commission has also
+    considered further segmenting relevant markets based on the type of POS terminal (traditional,
+    mobile, or smart POS terminals), or on customer size (large merchants or small/medium companies).13
+    In terms of geographic market definition, the Commission found that markets for the provision
+    and management of POS terminals are likely national in scope.14
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m10358_2021_decision
+  page: '4'
+  quote_snippet: (17) The Notifying Parties consider that POS terminal provision and management
+    such as the one provided by the target form part of a larger market for payment acceptance
+    solutions encompassing POS terminals and e-commerce acceptance solutions.15 The Notifying
+    Parties also consider that the relevant geographic market is EEA-wide in scope, due to technological
+    and regulatory changes, as well as consolidation of the industry.16
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m10358_2021_decision
+  page: '4'
+  quote_snippet: (20) In its recent decisional practice in terms of product market definition,
+    the Commission found that there is a separate market for acquiring processing services and
+    no further sub-segmentation is appropriate.17 In terms of geographic market definition,
+    the Commission found that acquiring processing is likely EEA-wide in scope, but left the
+    question open
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

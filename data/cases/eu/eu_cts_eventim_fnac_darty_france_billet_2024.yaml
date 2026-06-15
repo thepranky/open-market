@@ -1,0 +1,659 @@
+case_id: eu_cts_eventim_fnac_darty_france_billet_2024
+case_name: CTS EVENTIM / FNAC DARTY / FRANCE BILLET
+authority: European Commission
+jurisdiction: EU
+sector: tech
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2024-10-15'
+parties:
+- name: CTS EVENTIM
+  role: acquirer
+- name: FNAC DARTY
+  role: acquirer
+- name: FRANCE BILLET
+  role: target
+source_documents:
+- doc_id: eu_cts_eventim_fnac_darty_france_billet_2024_decision
+  title: CTS EVENTIM / FNAC DARTY / FRANCE BILLET — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11279
+  pdf_url: http://publications.europa.eu/resource/cellar/80a91131-1625-11f0-b1a3-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Overall market for the distribution of tickets
+  definition_status: left_open
+  notes: The Commission ultimately left open the precise scope of the overall market for the
+    distribution of tickets but considered it for assessment purposes, comprising both direct
+    and indirect distribution.
+- market_id: pm_2
+  name: Direct distribution of tickets (segmented by event categories, services provided, or
+    IT solution used)
+  definition_status: segmented
+  notes: The Commission assessed potential segmentations within direct distribution by categories
+    of events (sporting events, museums/exhibitions, shows/concerts), services provided (software,
+    access control), and IT solution used (IT ticketing management software or self-ticketing),
+    but ultimately left the overall market definition open.
+- market_id: pm_3
+  name: Indirect distribution of tickets (segmented by distribution channel, category of event,
+    or nature of services)
+  definition_status: segmented
+  notes: The Commission assessed potential segmentations within indirect distribution by distribution
+    channel (online vs offline), category of event (music/concert, theatre/comedy, etc.), and
+    nature of services offered, but ultimately left the overall market definition open.
+- market_id: pm_4
+  name: Supply of IT ticketing management services enabling direct distribution
+  definition_status: left_open
+  notes: The Notifying Parties proposed this as a separate market. The Commission considered
+    it within the broader 'distribution of tickets' market, particularly as a solution enabling
+    direct distribution, but did not definitively define it as a separate market. Market investigation
+    respondents had mixed views on whether solutions differ by event type, but indicated IT
+    ticketing management software and self-ticketing could be separate.
+- market_id: pm_5
+  name: Overall market for the production and organisation of events (including promotion activities)
+  definition_status: left_open
+  notes: The Commission considered an overall market including promotion activities for assessment
+    purposes, while also assessing two distinct segments (production/organisation excluding
+    promotion, and promotion). The exact scope was ultimately left open.
+- market_id: pm_6
+  name: Production and organisation of events (excluding promotion activities)
+  definition_status: segmented
+  notes: Considered as a distinct segment within the broader market for the production and organisation
+    of events. The exact scope was ultimately left open as part of the overall market.
+- market_id: pm_7
+  name: Promotion of events
+  definition_status: segmented
+  notes: Considered as a distinct segment within the broader market for the production and organisation
+    of events. The exact scope was ultimately left open as part of the overall market.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Overall market for the distribution of tickets — national (France affected)
+  definition_status: considered
+  notes: The Commission decided to assess this market at a national level, primarily for France,
+    supported by market investigation results and precedent.
+- market_id: gm_2
+  name: Direct distribution of tickets (segmented by event categories, services provided, or
+    IT solution used) — national (France affected)
+  definition_status: considered
+  notes: The geographic scope for potential segmentations within direct distribution was also
+    considered national, aligned with the overall ticketing market.
+- market_id: gm_3
+  name: Indirect distribution of tickets (segmented by distribution channel, category of event,
+    or nature of services) — national (France affected)
+  definition_status: considered
+  notes: The geographic scope for potential segmentations within indirect distribution was also
+    considered national, aligned with the overall ticketing market.
+- market_id: gm_4
+  name: Supply of IT ticketing management services enabling direct distribution — national (France
+    affected)
+  definition_status: considered
+  notes: The geographic scope for IT ticketing management services enabling direct distribution
+    was considered national, aligned with the overall ticketing market, despite mixed market
+    investigation results.
+- market_id: gm_5
+  name: Overall market for the production and organisation of events (including promotion activities)
+    — national, larger than national, or EEA-wide
+  definition_status: left_open
+  notes: The Commission explicitly left open the geographic scope, considering national, larger
+    than national (e.g., linguistic borders), or EEA-wide, due to mixed market investigation
+    results and variation by event type.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_cts_eventim_fnac_darty_france_billet_2024_decision
+  page: '12'
+  quote_snippet: In light of the above, including the contradictory views expressed by market
+    participants described in the previous paragraph, and for the purposes of this decision,
+    the Commission considers that the exact product market definition with regard to the distribution
+    of tickets can be left open, as the Transaction does not raise serious doubts as to its
+    compatibility with the internal market under any plausible product market definition. The
+    Commission will conduct its assessment considering the ticketing market from the perspective
+    of companies sourcing ticketing services, whereby the overall ticketing market (comprising
+    both direct and indirect distribution) covers the solutions required to enable direct or
+    indirect distribution respectively.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_cts_eventim_fnac_darty_france_billet_2024_decision
+  page: '11'
+  quote_snippet: In relation to a potential distinction between direct and indirect distribution
+    of tickets, a small majority of respondents to the market investigation expressing a view
+    indicate that these should not constitute separate markets. Respondents cite complementarity
+    of the two distribution channels as a reason for an overall market. A minority of respondents
+    that expressed a view refer to differences between clients, needs, services, competitors
+    and fiscal conditions as reasons justifying a distinction between the two.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_cts_eventim_fnac_darty_france_billet_2024_decision
+  page: '10'
+  quote_snippet: In Vivendi/Lagardère, while it ultimately left the precise scope of the product
+    market open, the Commission considered, for the purposes of its analysis, an overall market
+    for the distribution of tickets as well as potential segments corresponding to direct and
+    indirect distribution.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_cts_eventim_fnac_darty_france_billet_2024_decision
+  page: '10'
+  quote_snippet: As regards direct distribution, the FCA considered whether the market should
+    be segmented according to (i) the categories of events (sporting events, museums/exhibitions,
+    shows/concerts, etc.), (ii) the services provided (software, access control services, etc.)
+    or (iii) the IT solution used (IT ticketing management software or self-ticketing). The
+    FCA ultimately left the precise scope of the relevant product market open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_cts_eventim_fnac_darty_france_billet_2024_decision
+  page: '11'
+  quote_snippet: In relation to direct distribution, the majority of respondents that expressed
+    a view agreed with a segmentation for direct distribution of tickets by category of event,
+    type of services and IT solution, in line with the FCA precedent.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_cts_eventim_fnac_darty_france_billet_2024_decision
+  page: '12'
+  quote_snippet: In light of the above, including the contradictory views expressed by market
+    participants described in the previous paragraph, and for the purposes of this decision,
+    the Commission considers that the exact product market definition with regard to the distribution
+    of tickets can be left open, as the Transaction does not raise serious doubts as to its
+    compatibility with the internal market under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_cts_eventim_fnac_darty_france_billet_2024_decision
+  page: '10'
+  quote_snippet: As regards indirect distribution, the FCA considered whether the market for
+    the indirect distribution of tickets should be segmented according to (i) the distribution
+    channel (online vs offline), (ii) the category of event (music/concert, theatre/comedy,
+    tourism/leisure/parks, shows, sport, arts/museums, dance/classical music, cinema, etc.),
+    and (iii) the nature of the services offered. The FCA ultimately left the precise scope
+    of the relevant product market open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_cts_eventim_fnac_darty_france_billet_2024_decision
+  page: '12'
+  quote_snippet: The market investigation results were more mixed in relation to indirect distribution
+    of tickets. A majority of respondents that expressed a view agreed with a segmentation of
+    indirect distribution of tickets in France by distribution channel, type of event and nature
+    of services, in line with the FCA’s precedent.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_cts_eventim_fnac_darty_france_billet_2024_decision
+  page: '12'
+  quote_snippet: In light of the above, including the contradictory views expressed by market
+    participants described in the previous paragraph, and for the purposes of this decision,
+    the Commission considers that the exact product market definition with regard to the distribution
+    of tickets can be left open, as the Transaction does not raise serious doubts as to its
+    compatibility with the internal market under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_cts_eventim_fnac_darty_france_billet_2024_decision
+  page: '10'
+  quote_snippet: The Notifying Parties propose an overall market for the direct and indirect
+    distribution of tickets. They also submit that the supply of IT ticketing management services
+    should constitute a separate market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_cts_eventim_fnac_darty_france_billet_2024_decision
+  page: '12'
+  quote_snippet: In relation to IT ticketing management services specifically, a majority of
+    respondents that expressed a view indicated that the ticketing solutions do not differ depending
+    on the category of event. In fact, some respondents noted that even within the same type
+    of event, customers can have different requirements, to which certain suppliers can cater.
+    Responses as to whether ticketing solutions enabling direct distribution should be further
+    segmented by type of IT solution used, indicated that IT ticketing management software and
+    self-ticketing could belong to separate markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_cts_eventim_fnac_darty_france_billet_2024_decision
+  page: '34'
+  quote_snippet: As a preliminary remark, the Notifying Parties consider that the market for
+    IT ticketing management solutions enabling direct distribution is upstream from the market
+    for the production and organisation of events as IT ticketing management solutions are an
+    input to the producers and organisers of events. In contrast, the Notifying Parties submit
+    that the market for indirect distribution (and its potential segments) are downstream from
+    the market for the production and organisation of events. For the reasons set out in paragraph
+    (147), the Commission considers both potential markets as well as a potential overall market
+    for direct and indirect distribution to be downstream from the market for the production
+    and organisation of events.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_cts_eventim_fnac_darty_france_billet_2024_decision
+  page: '17'
+  quote_snippet: In view of the above, the Commission will consider an overall market for the
+    production and organisation of events, that includes promotion activities as well as two
+    distinct segments, for the production and organisation of events (excluding promotion) on
+    the one hand, and for the promotion of events on the other hand.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_cts_eventim_fnac_darty_france_billet_2024_decision
+  page: '18'
+  quote_snippet: In view of the above, the Commission considers that, for the purposes of this
+    decision, the exact scope of the product market definition regarding the production and
+    organisation of events can be left open, as the Transaction does not raise serious doubts
+    as to its compatibility with the internal market under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_cts_eventim_fnac_darty_france_billet_2024_decision
+  page: '17'
+  quote_snippet: First, the market investigation led to mixed results as to whether the production,
+    organisation and promotion of events belong to the same market. The majority of the respondents
+    that expressed a view considered that the production and organisation of events, on the
+    one hand, and the promotion of events, on the other hand, belong to distinct markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_cts_eventim_fnac_darty_france_billet_2024_decision
+  page: '17'
+  quote_snippet: In view of the above, the Commission will consider an overall market for the
+    production and organisation of events, that includes promotion activities as well as two
+    distinct segments, for the production and organisation of events (excluding promotion) on
+    the one hand, and for the promotion of events on the other hand.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_cts_eventim_fnac_darty_france_billet_2024_decision
+  page: '18'
+  quote_snippet: In view of the above, the Commission considers that, for the purposes of this
+    decision, the exact scope of the product market definition regarding the production and
+    organisation of events can be left open, as the Transaction does not raise serious doubts
+    as to its compatibility with the internal market under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_cts_eventim_fnac_darty_france_billet_2024_decision
+  page: '17'
+  quote_snippet: In view of the above, the Commission will consider an overall market for the
+    production and organisation of events, that includes promotion activities as well as two
+    distinct segments, for the production and organisation of events (excluding promotion) on
+    the one hand, and for the promotion of events on the other hand.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_cts_eventim_fnac_darty_france_billet_2024_decision
+  page: '18'
+  quote_snippet: In view of the above, the Commission considers that, for the purposes of this
+    decision, the exact scope of the product market definition regarding the production and
+    organisation of events can be left open, as the Transaction does not raise serious doubts
+    as to its compatibility with the internal market under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_cts_eventim_fnac_darty_france_billet_2024_decision
+  page: '13'
+  quote_snippet: In its Vivendi/Lagardère decision, the Commission, referring to the 2014 FCA
+    decision, considered the market for ticketing national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_cts_eventim_fnac_darty_france_billet_2024_decision
+  page: '13'
+  quote_snippet: The results of the market investigation generally support the Notifying Parties’
+    view that the market for the distribution of tickets – and its possible segmentations –
+    is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_cts_eventim_fnac_darty_france_billet_2024_decision
+  page: '14'
+  quote_snippet: In light of the results of the market investigation as set out above and for
+    the purposes of this decision, also taking into account that France Billet is mainly active
+    in one Member State, the Commission will assess the market for the distribution of tickets
+    and any possible further sub-segments at national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_cts_eventim_fnac_darty_france_billet_2024_decision
+  page: '14'
+  quote_snippet: Nothing in the market investigation suggests that that the geographic scope
+    of the market would differ for any possible further sub-segmentations for either indirect
+    distribution of tickets or the supply of solutions enabling direct distribution of tickets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_cts_eventim_fnac_darty_france_billet_2024_decision
+  page: '14'
+  quote_snippet: In light of the results of the market investigation as set out above and for
+    the purposes of this decision, also taking into account that France Billet is mainly active
+    in one Member State, the Commission will assess the market for the distribution of tickets
+    and any possible further sub-segments at national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_cts_eventim_fnac_darty_france_billet_2024_decision
+  page: '13'
+  quote_snippet: In relation to a potential market for the indirect distribution of tickets,
+    from the supply-side perspective, a majority of respondents expressing a view submit that
+    indirect distribution services are offered at a national level, as they offer their services
+    only in France. Only a small number of respondents offer their indirect ticket distribution
+    services in multiple countries, sometimes only in Francophone countries.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_cts_eventim_fnac_darty_france_billet_2024_decision
+  page: '14'
+  quote_snippet: Nothing in the market investigation suggests that that the geographic scope
+    of the market would differ for any possible further sub-segmentations for either indirect
+    distribution of tickets or the supply of solutions enabling direct distribution of tickets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_cts_eventim_fnac_darty_france_billet_2024_decision
+  page: '14'
+  quote_snippet: In light of the results of the market investigation as set out above and for
+    the purposes of this decision, also taking into account that France Billet is mainly active
+    in one Member State, the Commission will assess the market for the distribution of tickets
+    and any possible further sub-segments at national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_cts_eventim_fnac_darty_france_billet_2024_decision
+  page: '13'
+  quote_snippet: As regards IT ticketing management services specifically, the Notifying Parties
+    stress the importance of national regulations specific to France which affect the design
+    and functionalities of the software for IT ticketing management services. As a result, software
+    underlying IT ticketing management services used in other countries cannot be automatically
+    used in France. Furthermore, customers sourcing IT ticketing management services regularly
+    need IT support which requires a national presence of the supplier, and the events for which
+    tickets are distributed are national.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_cts_eventim_fnac_darty_france_billet_2024_decision
+  page: '14'
+  quote_snippet: In relation to a potential market for the supply of solutions enabling direct
+    distribution, the results of the market investigation were mixed. From a demand-side-perspective,
+    the majority of respondents expressing a view consider the market to be national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_cts_eventim_fnac_darty_france_billet_2024_decision
+  page: '14'
+  quote_snippet: In light of the results of the market investigation as set out above and for
+    the purposes of this decision, also taking into account that France Billet is mainly active
+    in one Member State, the Commission will assess the market for the distribution of tickets
+    and any possible further sub-segments at national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_cts_eventim_fnac_darty_france_billet_2024_decision
+  page: '19'
+  quote_snippet: The market investigation delivered mixed results as to the relevant geographic
+    scope of the market for the production and organisation of events (and plausible segmentations
+    thereof, potentially including promotion). Certain respondents indicated that this market
+    is national and the same number of respondents indicated that this market is larger than
+    national or EEA-wide. A potential delineation of a geographic market scope ‘larger than
+    national’ is along linguistic borders, as indicated by some respondents to the market investigation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_cts_eventim_fnac_darty_france_billet_2024_decision
+  page: '19'
+  quote_snippet: The results of the market investigation suggest therefore that, while at least
+    for some events (notably large ones such as so-called high ticket volume top acts), competition
+    may take place at the EEA level, it remains important for the promoter to have a national
+    anchorage. However, nothing in the market investigation suggests that the geographic scope
+    of the market would differ if considering its potential segments.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: eu_cts_eventim_fnac_darty_france_billet_2024_decision
+  page: '20'
+  quote_snippet: The Commission notes that, for the purposes of this decision, the exact scope
+    of the geographic market definition regarding the production and organisation of events
+    (and plausible segmentations thereof) can be left open between national, larger than national
+    or EEA-wide, as the Transaction does not raise serious doubts as to its compatibility with
+    the internal market under any of these plausible geographic market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []
+case_type: merger
+ai_summary: null

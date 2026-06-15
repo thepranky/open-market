@@ -1,0 +1,439 @@
+case_id: eu_ec_m9455_2020
+case_name: M.9455
+authority: European Commission
+jurisdiction: EU
+sector: hospitality
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2020-01-28'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9455_2020_decision
+  title: M.9455 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9455
+  pdf_url: http://publications.europa.eu/resource/cellar/4989e17b-8241-11eb-9ac9-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Contract foodservices
+  definition_status: defined
+  notes: The Commission defines contract foodservices as distinct from concession foodservices.
+    It explicitly includes catering for business meetings, kiosk and café services, and vending
+    services within the scope of contract foodservices, while excluding non-food related other
+    support services.
+- market_id: pm_2
+  name: Contract foodservices segmented by customer industry
+  definition_status: left_open
+  notes: The Commission considered whether the market for contract foodservices should be further
+    segmented by customer industry (business & industry, healthcare, education, defence). The
+    market investigation delivered mixed results, and the Commission ultimately left the question
+    open. However, for the competitive assessment, the Commission explicitly states it will
+    assess the transaction on the basis of these identifiable relevant sectors.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Contract foodservices to business & industry customers — national (Sweden affected)
+  definition_status: defined
+  notes: The Commission found that the relevant geographic market for contract foodservices
+    is national due to differences in legislation, national preferences, and competitive conditions.
+    This applies to the business & industry segment in Sweden.
+- market_id: gm_2
+  name: Contract foodservices to education customers — national (Sweden affected)
+  definition_status: defined
+  notes: The Commission found that the relevant geographic market for contract foodservices
+    is national due to differences in legislation, national preferences, and competitive conditions.
+    This applies to the education segment in Sweden.
+- market_id: gm_3
+  name: Contract foodservices to healthcare & welfare customers — national (Sweden affected)
+  definition_status: defined
+  notes: The Commission found that the relevant geographic market for contract foodservices
+    is national due to differences in legislation, national preferences, and competitive conditions.
+    This applies to the healthcare & welfare segment in Sweden.
+- market_id: gm_4
+  name: Contract foodservices to business & industry customers — national (Denmark affected)
+  definition_status: defined
+  notes: The Commission found that the relevant geographic market for contract foodservices
+    is national due to differences in legislation, national preferences, and competitive conditions.
+    This applies to the business & industry segment in Denmark.
+- market_id: gm_5
+  name: Contract foodservices to education customers — national (Denmark affected)
+  definition_status: defined
+  notes: The Commission found that the relevant geographic market for contract foodservices
+    is national due to differences in legislation, national preferences, and competitive conditions.
+    This applies to the education segment in Denmark.
+- market_id: gm_6
+  name: Contract foodservices to business & industry customers — national (Norway affected)
+  definition_status: defined
+  notes: The Commission found that the relevant geographic market for contract foodservices
+    is national due to differences in legislation, national preferences, and competitive conditions.
+    This applies to the business & industry segment in Norway.
+- market_id: gm_7
+  name: Contract foodservices to business & industry customers — national (Finland affected)
+  definition_status: defined
+  notes: The Commission found that the relevant geographic market for contract foodservices
+    is national due to differences in legislation, national preferences, and competitive conditions.
+    This applies to the business & industry segment in Finland.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9455_2020_decision
+  page: '7'
+  quote_snippet: The market investigation has not produced evidence indicating that the Commission
+    should depart from its prior decisional practice defining separate markets for contract
+    foodservices and concession foodservices.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9455_2020_decision
+  page: '8'
+  quote_snippet: In previous decisions, the Commission considered whether the market for contract
+    foodservices should be further segmented according to the sectors in which the cus-tomers
+    of contract foodservices are active, namely into (i) business & industry (staff canteens
+    in both public and private sectors), (ii) healthcare (hospitals, nursing homes), and (iii)
+    education (schools, universities), and (iv) defence and other.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9455_2020_decision
+  page: '9'
+  quote_snippet: The market investigation in the present case delivered mixed results. In some
+    in-stances, it was confirmed that segmentation on the basis of customer’s activities might
+    be relevant.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9455_2020_decision
+  page: '10'
+  quote_snippet: In line with the Commission’s precedents and considering that the results of
+    the Commission’s market investigation were mixed, the Commission concludes that, for the
+    purpose of this Decision, the question whether the market for contract foodser-vices should
+    be segmented on the basis of customer’s sector can in principle be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9455_2020_decision
+  page: '15'
+  quote_snippet: The market investigation in the present case confirms the Commission’s previous
+    decisions. It appears that, despite the fact that the Parties and some of their competi-tors
+    are active in all or most countries of the Nordic region, competition in the mar-ket for
+    contract foodservices takes place at a national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9455_2020_decision
+  page: '15'
+  quote_snippet: Indeed, the large majori-ty of customers and competitors responded that tenders
+    for contract foodservices as well as supply arrangements for ingredients are typically entered
+    into at national lev-el.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9455_2020_decision
+  page: '15'
+  quote_snippet: The market investigation in the present case confirms the Commission’s previous
+    decisions. It appears that, despite the fact that the Parties and some of their competi-tors
+    are active in all or most countries of the Nordic region, competition in the mar-ket for
+    contract foodservices takes place at a national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9455_2020_decision
+  page: '15'
+  quote_snippet: Indeed, the large majori-ty of customers and competitors responded that tenders
+    for contract foodservices as well as supply arrangements for ingredients are typically entered
+    into at national lev-el.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9455_2020_decision
+  page: '15'
+  quote_snippet: The market investigation in the present case confirms the Commission’s previous
+    decisions. It appears that, despite the fact that the Parties and some of their competi-tors
+    are active in all or most countries of the Nordic region, competition in the mar-ket for
+    contract foodservices takes place at a national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9455_2020_decision
+  page: '15'
+  quote_snippet: Indeed, the large majori-ty of customers and competitors responded that tenders
+    for contract foodservices as well as supply arrangements for ingredients are typically entered
+    into at national lev-el.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9455_2020_decision
+  page: '15'
+  quote_snippet: The market investigation in the present case confirms the Commission’s previous
+    decisions. It appears that, despite the fact that the Parties and some of their competi-tors
+    are active in all or most countries of the Nordic region, competition in the mar-ket for
+    contract foodservices takes place at a national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9455_2020_decision
+  page: '15'
+  quote_snippet: Indeed, the large majori-ty of customers and competitors responded that tenders
+    for contract foodservices as well as supply arrangements for ingredients are typically entered
+    into at national lev-el.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9455_2020_decision
+  page: '15'
+  quote_snippet: The market investigation in the present case confirms the Commission’s previous
+    decisions. It appears that, despite the fact that the Parties and some of their competi-tors
+    are active in all or most countries of the Nordic region, competition in the mar-ket for
+    contract foodservices takes place at a national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m9455_2020_decision
+  page: '15'
+  quote_snippet: Indeed, the large majori-ty of customers and competitors responded that tenders
+    for contract foodservices as well as supply arrangements for ingredients are typically entered
+    into at national lev-el.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m9455_2020_decision
+  page: '15'
+  quote_snippet: The market investigation in the present case confirms the Commission’s previous
+    decisions. It appears that, despite the fact that the Parties and some of their competi-tors
+    are active in all or most countries of the Nordic region, competition in the mar-ket for
+    contract foodservices takes place at a national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m9455_2020_decision
+  page: '15'
+  quote_snippet: Indeed, the large majori-ty of customers and competitors responded that tenders
+    for contract foodservices as well as supply arrangements for ingredients are typically entered
+    into at national lev-el.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m9455_2020_decision
+  page: '15'
+  quote_snippet: The market investigation in the present case confirms the Commission’s previous
+    decisions. It appears that, despite the fact that the Parties and some of their competi-tors
+    are active in all or most countries of the Nordic region, competition in the mar-ket for
+    contract foodservices takes place at a national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m9455_2020_decision
+  page: '15'
+  quote_snippet: Indeed, the large majori-ty of customers and competitors responded that tenders
+    for contract foodservices as well as supply arrangements for ingredients are typically entered
+    into at national lev-el.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m9455_2020_decision
+  page: '26'
+  quote_snippet: In light of the results of the market investigation and considering the evidence
+    avail-able to it, the Commission concludes that the Transaction does not raise serious doubts
+    as to its compatibility with the internal market with respect to the market for the supply
+    of contract foodservices to business & industry customers in Sweden.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m9455_2020_decision
+  page: '30'
+  quote_snippet: In light of the results of the market investigation and considering the evidence
+    avail-able to it, the Commission concludes that the Transaction does not raise serious doubts
+    as to its compatibility with the internal market with respect to the market for the supply
+    of contract foodservices to education customers in Sweden.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m9455_2020_decision
+  page: '35'
+  quote_snippet: In light of the results of the market investigation and considering the evidence
+    avail-able to it, the Commission concludes that the Transaction does not raise serious doubts
+    as to its compatibility with the internal market with respect to the market for the supply
+    of contract foodservices to healthcare & welfare customers in Sweden.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m9455_2020_decision
+  page: '44'
+  quote_snippet: In light of the results of the market investigation and considering the evidence
+    avail-able to it, the Commission concludes that the Transaction does not raise serious doubts
+    as to its compatibility with the internal market with respect to the market for the supply
+    of contract foodservices to business & industry customers in Denmark.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_ec_m9455_2020_decision
+  page: '54'
+  quote_snippet: In light of the results of the market investigation and considering the evidence
+    avail-able to it, the Commission concludes that the Transaction does not raise serious doubts
+    as to its compatibility with the internal market with respect to the market for the supply
+    of contract foodservices to business & industry customers in Norway.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

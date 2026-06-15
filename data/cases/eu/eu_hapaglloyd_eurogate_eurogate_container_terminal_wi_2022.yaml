@@ -1,0 +1,585 @@
+case_id: eu_hapaglloyd_eurogate_eurogate_container_terminal_wi_2022
+case_name: HAPAG-LLOYD / EUROGATE / EUROGATE CONTAINER TERMINAL WILHELMSHAVEN
+authority: European Commission
+jurisdiction: EU
+sector: transport
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2022-04-29'
+parties:
+- name: HAPAG-LLOYD
+  role: acquirer
+- name: EUROGATE
+  role: acquirer
+- name: EUROGATE CONTAINER TERMINAL WILHELMSHAVEN
+  role: target
+source_documents:
+- doc_id: eu_hapaglloyd_eurogate_eurogate_container_terminal_wi_2022_decision
+  title: HAPAG-LLOYD / EUROGATE / EUROGATE CONTAINER TERMINAL WILHELMSHAVEN — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10522
+  pdf_url: http://publications.europa.eu/resource/cellar/09b2afdc-a306-11ed-b508-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Container terminal services
+  definition_status: left_open
+  notes: The Commission considered a possible distinction between hinterland traffic and transhipment
+    traffic but left the segmentation open for the purposes of this decision, as the Transaction
+    would not raise serious doubts under any plausible alternative definition. It will assess
+    the effects on 'container terminal services overall' as well as the segmented markets.
+- market_id: pm_2
+  name: Deep-sea container liner shipping services
+  definition_status: left_open
+  notes: The Commission also considered a plausible reefer container liner shipping sub-segment
+    within deep-sea services.
+- market_id: pm_3
+  name: Short-sea container liner shipping services
+  definition_status: left_open
+  notes: The Commission left open the exact product market definition, including potential sub-segmentation
+    for reefer containers and whether it should be considered alongside the transport of wheeled
+    cargo. It will assess the effects on this market as well as the plausible narrower market
+    for short-sea reefer container liner shipping services.
+- market_id: pm_4
+  name: Storage, leasing, repair and maintenance of containers
+  definition_status: considered
+  notes: Considered as a potential market, but not an affected market due to combined market
+    share being below 10% nationally in Germany.
+- market_id: pm_5
+  name: Inland transportation services
+  definition_status: left_open
+  notes: The Commission left open whether rail, road, and water inland transport constitute
+    separate product markets and the precise geographic definition, as the Transaction would
+    not raise serious doubts.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Container terminal services — Northern Europe (for transhipment traffic)
+  definition_status: left_open
+  notes: The precise geographic market definition was left open. This range was considered as
+    the broadest scope for transhipment traffic. Market investigation respondents did not deny
+    the scope could be as wide as Northern Europe.
+- market_id: gm_2
+  name: Container terminal services — Hamburg-Le Havre range (for transhipment and hinterland
+    traffic)
+  definition_status: considered
+  notes: The Commission explicitly stated it would assess the effects on this geographic market.
+- market_id: gm_3
+  name: Container terminal services — Hamburg-Antwerp range (for transhipment and hinterland
+    traffic)
+  definition_status: left_open
+  notes: The precise geographic market definition was left open. This range was considered as
+    a narrower possible scope for hinterland traffic. The majority of market investigation respondents
+    indicated this range would be a suitable alternative for hinterland traffic.
+- market_id: gm_4
+  name: Container terminal services — national (Germany affected, for hinterland traffic)
+  definition_status: left_open
+  notes: The precise geographic market definition was left open. 'German ports only' was considered
+    as the narrowest possible scope for hinterland traffic. The Commission explicitly stated
+    it would assess the effects on this geographic market.
+- market_id: gm_5
+  name: Deep-sea container liner shipping services — legs of trade
+  definition_status: defined
+  notes: The geographic market is defined on the basis of individual legs of trades, in line
+    with the Commission’s prior decisional practice.
+- market_id: gm_6
+  name: Short-sea container liner shipping services — single legs of trade (including country
+    pairs)
+  definition_status: left_open
+  notes: The Commission left open the exact geographic market definition for short-sea container
+    liner shipping, including whether it should be defined on the basis of single trades/corridors
+    or single legs of trade. However, it will assess the effects on the narrowest plausible
+    geographic market, single legs of trade (including country pairs).
+- market_id: gm_7
+  name: Inland transportation services — national or wider
+  definition_status: left_open
+  notes: The Commission left open the precise definition of the geographic market for inland
+    transportation as the Transaction would not raise serious doubts.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_hapaglloyd_eurogate_eurogate_container_terminal_wi_2022_decision
+  page: '8'
+  quote_snippet: The provision of container terminal services by terminal operators involves
+    the loading, unloading, storage and land-side handling for inland transportation of containerised
+    cargo.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_hapaglloyd_eurogate_eurogate_container_terminal_wi_2022_decision
+  page: '9'
+  quote_snippet: In its prior decisional practice, the Commission has defined a separate market
+    for container terminal services, and has considered a possible distinction between hinterland
+    traffic (containers transported directly to/from a container vessel from/to the hinterland
+    via barge, truck or train) and transhipment traffic (containers destined for the onward
+    transportation to other ports or other vessels).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_hapaglloyd_eurogate_eurogate_container_terminal_wi_2022_decision
+  page: '10'
+  quote_snippet: On whether the market for container terminal services should be segmented between
+    hinterland and transhipment traffic, the majority of the respondents to the market investigation
+    indicated that they agree with this segmentation. However, for the purposes of this decision,
+    this question can be left open, as the Transaction would not raise serious doubts as to
+    its compatibility with the internal market under any of the plausible alternative product
+    market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_hapaglloyd_eurogate_eurogate_container_terminal_wi_2022_decision
+  page: '11'
+  quote_snippet: Deep-sea container liner shipping services involve the offer of regular, scheduled
+    services for the sea transportation of containerised cargo.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_hapaglloyd_eurogate_eurogate_container_terminal_wi_2022_decision
+  page: '11'
+  quote_snippet: A possible narrower product market for deep-sea container liner shipping services
+    is that for the transport of refrigerated goods, which could be limited to refrigerated
+    (reefer) containers only or could include transport in conventional bulk reefer vessels.
+    In past cases, the Commission has looked separately at the plausible narrower markets for
+    reefer containers and non-refrigerated containers only when the share of reefer containers
+    in relation to all containerised cargo is 10% or more on both legs of a trade.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_hapaglloyd_eurogate_eurogate_container_terminal_wi_2022_decision
+  page: '12'
+  quote_snippet: Given that the Transaction would not raise serious doubts as to its compatibility
+    with the internal market even under the narrowest product market definition, the Commission
+    will leave open the exact product market definition. The geographic market for deep-sea
+    container liner shipping services is defined on the basis of individual legs of trades,
+    in line with the Commission’s prior decisional practice.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_hapaglloyd_eurogate_eurogate_container_terminal_wi_2022_decision
+  page: '13'
+  quote_snippet: Short-sea container liner shipping involves the provision of regular, scheduled
+    intra-continental (usually costal trade) services for the carriage of cargo by container
+    liner shipping companies.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_hapaglloyd_eurogate_eurogate_container_terminal_wi_2022_decision
+  page: '13'
+  quote_snippet: In its prior decisional practice related to short-sea shipping services, the
+    Commission concluded, as regards the type of cargo transported, that short-sea container
+    shipping services should be distinguished from non-containerised shipping, such as bulk
+    shipping. Furthermore, the Commission has considered but ultimately left open whether the
+    transport of wheeled cargo and short-sea container shipping services should be considered
+    as belonging to the same product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_hapaglloyd_eurogate_eurogate_container_terminal_wi_2022_decision
+  page: '14'
+  quote_snippet: Given that the Transaction would not raise serious doubts as to its compatibility
+    with the internal market even under the narrowest plausible product and geographic market
+    definition, the Commission will leave open the exact product and geographic market definition,
+    including the question whether this market should be defined on the basis of single trades/corridors
+    or single legs of trade.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_hapaglloyd_eurogate_eurogate_container_terminal_wi_2022_decision
+  page: '8'
+  quote_snippet: Additionally one could consider a separate market for ancillary services such
+    as storage, leasing, repair and maintenance of containers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_hapaglloyd_eurogate_eurogate_container_terminal_wi_2022_decision
+  page: '14'
+  quote_snippet: If one should consider a potential market for the storage, leasing, repair
+    and maintenance of containers, where Eurogate and HL have minor activities through their
+    respective subsidiaries REMAIN GmbH Container-Depot and Repair (“REMAIN”) and CMR Container
+    Maintenance Repair Hamburg GmbH (“CMR”), this would, however, not be an affected market,
+    since the combined market share of HL and EUROGATE is below 10% on a national level in Germany.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_hapaglloyd_eurogate_eurogate_container_terminal_wi_2022_decision
+  page: '14'
+  quote_snippet: In its previous decisional practice, the Commission left open whether rail,
+    road and water inland transport constitute separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_hapaglloyd_eurogate_eurogate_container_terminal_wi_2022_decision
+  page: '14'
+  quote_snippet: The precise definition of the product and geographic market for inland transportation
+    can be left open as the Transaction would not raise serious doubts as to its compatibility
+    with the internal market under any plausible alternative market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_hapaglloyd_eurogate_eurogate_container_terminal_wi_2022_decision
+  page: '9'
+  quote_snippet: The Commission has considered that for container terminal services in deep-sea
+    ports, the relevant geographic market is in essence determined by the geographic area the
+    container terminal generally serves (catchment area). For example, concerning terminals
+    in Northern Europe and in Hamburg in particular, the Commission considered that the relevant
+    geographical dimension is in its broadest scope Northern Europe (for transhipment traffic)
+    and in its narrowest possible scope the catchment area of the ports in the range Hamburg
+    – Antwerp (for hinterland traffic) or possibly even narrower, comprising the German ports
+    only. However, the precise geographic market definition has been left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_hapaglloyd_eurogate_eurogate_container_terminal_wi_2022_decision
+  page: '10'
+  quote_snippet: On the geographic scope of the market for transhipment traffic, the market
+    investigation did not provide evidence to depart from the Commission practice. For instance,
+    the majority of respondents to the market investigation did not deny that the scope could
+    be the Hamburg-Le Havre range or even as wide as Northern Europe (including ports in Poland
+    and Sweden).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_hapaglloyd_eurogate_eurogate_container_terminal_wi_2022_decision
+  page: '11'
+  quote_snippet: 'The Commission will therefore assess the effects of the Transaction on the
+    following markets: [...] b) Geographic markets: i) the narrower geographic market, including
+    catchment areas comprising the ports in a certain range (such as Hamburg-Le Havre and Hamburg-Antwerp)
+    for transhipment and hinterland traffic and ii) the ports of a single Member State (Germany)
+    for hinterland traffic.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_hapaglloyd_eurogate_eurogate_container_terminal_wi_2022_decision
+  page: '9'
+  quote_snippet: The Commission has considered that for container terminal services in deep-sea
+    ports, the relevant geographic market is in essence determined by the geographic area the
+    container terminal generally serves (catchment area). For example, concerning terminals
+    in Northern Europe and in Hamburg in particular, the Commission considered that the relevant
+    geographical dimension is in its broadest scope Northern Europe (for transhipment traffic)
+    and in its narrowest possible scope the catchment area of the ports in the range Hamburg
+    – Antwerp (for hinterland traffic) or possibly even narrower, comprising the German ports
+    only. However, the precise geographic market definition has been left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_hapaglloyd_eurogate_eurogate_container_terminal_wi_2022_decision
+  page: '10'
+  quote_snippet: Regarding the geographic scope of the market for hinterland traffic, while
+    respondents have indicated that the proximity to the final destination of the container
+    is an important criterion in their choice of port, the majority of the respondents to the
+    market investigation (including shipping lines, container terminal operators and customers)
+    have indicated that the ports within the Hamburg-Antwerp range would be a suitable alternative
+    to CTW for hinterland traffic.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_hapaglloyd_eurogate_eurogate_container_terminal_wi_2022_decision
+  page: '11'
+  quote_snippet: 'The Commission will therefore assess the effects of the Transaction on the
+    following markets: [...] b) Geographic markets: i) the narrower geographic market, including
+    catchment areas comprising the ports in a certain range (such as Hamburg-Le Havre and Hamburg-Antwerp)
+    for transhipment and hinterland traffic and ii) the ports of a single Member State (Germany)
+    for hinterland traffic.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_hapaglloyd_eurogate_eurogate_container_terminal_wi_2022_decision
+  page: '9'
+  quote_snippet: The Commission has considered that for container terminal services in deep-sea
+    ports, the relevant geographic market is in essence determined by the geographic area the
+    container terminal generally serves (catchment area). For example, concerning terminals
+    in Northern Europe and in Hamburg in particular, the Commission considered that the relevant
+    geographical dimension is in its broadest scope Northern Europe (for transhipment traffic)
+    and in its narrowest possible scope the catchment area of the ports in the range Hamburg
+    – Antwerp (for hinterland traffic) or possibly even narrower, comprising the German ports
+    only. However, the precise geographic market definition has been left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_hapaglloyd_eurogate_eurogate_container_terminal_wi_2022_decision
+  page: '11'
+  quote_snippet: 'The Commission will therefore assess the effects of the Transaction on the
+    following markets: [...] b) Geographic markets: i) the narrower geographic market, including
+    catchment areas comprising the ports in a certain range (such as Hamburg-Le Havre and Hamburg-Antwerp)
+    for transhipment and hinterland traffic and ii) the ports of a single Member State (Germany)
+    for hinterland traffic.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_hapaglloyd_eurogate_eurogate_container_terminal_wi_2022_decision
+  page: '12'
+  quote_snippet: In its most recent practice, the Commission concluded that container liner
+    shipping services are geographically defined on the basis of the individual legs of trade
+    (e.g. Northern Europe – North America eastbound and Northern Europe – North America westbound
+    separately).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_hapaglloyd_eurogate_eurogate_container_terminal_wi_2022_decision
+  page: '12'
+  quote_snippet: Given that the Transaction would not raise serious doubts as to its compatibility
+    with the internal market even under the narrowest product market definition, the Commission
+    will leave open the exact product market definition. The geographic market for deep-sea
+    container liner shipping services is defined on the basis of individual legs of trades,
+    in line with the Commission’s prior decisional practice.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_hapaglloyd_eurogate_eurogate_container_terminal_wi_2022_decision
+  page: '13'
+  quote_snippet: In its prior decisional practice, the Commission considered that the relevant
+    geographic market for short-sea container liner shipping services should be defined on the
+    basis of (i) either single trades or corridors, defined by the range of ports which are
+    served at both ends of the service; or (ii) single legs of trade.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_hapaglloyd_eurogate_eurogate_container_terminal_wi_2022_decision
+  page: '14'
+  quote_snippet: Given that the Transaction would not raise serious doubts as to its compatibility
+    with the internal market even under the narrowest plausible product and geographic market
+    definition, the Commission will leave open the exact product and geographic market definition,
+    including the question whether this market should be defined on the basis of single trades/corridors
+    or single legs of trade.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_hapaglloyd_eurogate_eurogate_container_terminal_wi_2022_decision
+  page: '14'
+  quote_snippet: 'The Commission will assess the effects of the Transaction on the following
+    markets: [...] (b) Geographic markets: the narrowest plausible geographic market, that is
+    to say single legs of trade (including country pairs), which have been set out above.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_hapaglloyd_eurogate_eurogate_container_terminal_wi_2022_decision
+  page: '14'
+  quote_snippet: The geographic scope of the market for inland transportation was considered
+    as either national or wider.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_hapaglloyd_eurogate_eurogate_container_terminal_wi_2022_decision
+  page: '14'
+  quote_snippet: The precise definition of the product and geographic market for inland transportation
+    can be left open as the Transaction would not raise serious doubts as to its compatibility
+    with the internal market under any plausible alternative market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_hapaglloyd_eurogate_eurogate_container_terminal_wi_2022_decision
+  page: '29'
+  quote_snippet: For the above reasons, the European Commission has decided not to oppose the
+    notified operation and to declare it compatible with the internal market and with the EEA
+    Agreement. This decision is adopted in application of Article 6(1)(b) of the Merger Regulation
+    and Article 57 of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

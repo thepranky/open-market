@@ -1,0 +1,241 @@
+case_id: eu_carlyle_altadia_2022
+case_name: CARLYLE / ALTADIA
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2022-03-18'
+parties:
+- name: CARLYLE
+  role: acquirer
+- name: ALTADIA
+  role: target
+source_documents:
+- doc_id: eu_carlyle_altadia_2022_decision
+  title: CARLYLE / ALTADIA — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10603
+  pdf_url: http://publications.europa.eu/resource/cellar/093bdef1-b5b1-11ec-b6f4-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Metal and mineral commodities
+  definition_status: left_open
+  notes: The Commission listed a number of specific metal and mineral commodities (cerium oxide,
+    molybdenum oxide, potassium carbonate, sodium carbonate, vanadium pentoxide, wollastonite,
+    and zircon oxide) where Traxys is active. While the exact product market definition was
+    left open, the Commission assessed the market by commodity on an EEA-level for the purposes
+    of the decision.
+- market_id: pm_2
+  name: Ceramic tile intermediates
+  definition_status: left_open
+  notes: The Commission identified specific ceramic tile intermediates (frits and glazes, glaze
+    stains, digital inks, and body stains) where Altadia is active. Although the exact product
+    market definition was left open, the Commission performed its assessment on the basis of
+    separate EEA-wide product markets for each of these intermediates.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Metal and mineral commodities — EEA-wide
+  definition_status: left_open
+  notes: For the upstream metal and mineral commodities, the Commission left the exact geographic
+    market definition open but conducted its assessment on an EEA-level.
+- market_id: gm_2
+  name: Ceramic tile intermediates — EEA-wide
+  definition_status: left_open
+  notes: For the downstream ceramic tile intermediates, the Commission left the exact geographic
+    market definition open but performed its assessment on an EEA-wide basis.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_carlyle_altadia_2022_decision
+  page: '2'
+  quote_snippet: (a) a number of markets for metal and mineral commodities, namely cerium oxide,
+    molybdenum oxide, potassium carbonate, sodium carbonate, vanadium pentoxide, wollastonite,
+    and zircon oxide (the “Relevant Commodities”), where Traxys is active
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_carlyle_altadia_2022_decision
+  page: '4'
+  quote_snippet: (11) The Parties present a separate product market for each raw material for
+    which a supply relationship between Traxys and Altadia could exist, but consider that ultimately
+    the appropriate product market definition can be left open, as the Transaction does not
+    raise competitive concerns under either definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_carlyle_altadia_2022_decision
+  page: '4'
+  quote_snippet: (13) For the purposes of the present Decision, and in light of Traxys’ minimal
+    market shares upstream under any plausible market definition, the appropriate product and
+    geographic market definition for upstream metal and mineral commodities can be left open.
+    In the present Decision, the Commission will assess the market by commodity on EEA-level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_carlyle_altadia_2022_decision
+  page: '3'
+  quote_snippet: (b) a number of markets for ceramic tile intermediates, namely frits and glazes,
+    glaze stains, digital inks, and body stains, where Altadia is active.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_carlyle_altadia_2022_decision
+  page: '5'
+  quote_snippet: (17) For the present Decision, the appropriate product and geographic definitions
+    of the downstream market can be left open, as the Transaction does not give rise to competitive
+    concerns under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_carlyle_altadia_2022_decision
+  page: '5'
+  quote_snippet: (19) Therefore, for the purposes of the present Decision, the Commission will
+    perform its assessment on the basis of separate EEA-wide product markets for (i) frits &
+    glazes, (ii) glaze stains, (iii) digital inks, and (iv) body stains, as the competitive
+    assessment would not be significantly different, even under the narrowest scope possible.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_carlyle_altadia_2022_decision
+  page: '4'
+  quote_snippet: (12) The Notifying Party submits that the geographic market for the relevant
+    metal and mineral commodities is at least EEA-wide, if not global, but that the geographic
+    market definition can be left open as the Transaction does not raise competitive concerns
+    under either definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_carlyle_altadia_2022_decision
+  page: '4'
+  quote_snippet: (13) For the purposes of the present Decision, and in light of Traxys’ minimal
+    market shares upstream under any plausible market definition, the appropriate product and
+    geographic market definition for upstream metal and mineral commodities can be left open.
+    In the present Decision, the Commission will assess the market by commodity on EEA-level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_carlyle_altadia_2022_decision
+  page: '5'
+  quote_snippet: (16) The Notifying Party submits that all downstream markets are EEA-wide in
+    scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_carlyle_altadia_2022_decision
+  page: '5'
+  quote_snippet: (17) For the present Decision, the appropriate product and geographic definitions
+    of the downstream market can be left open, as the Transaction does not give rise to competitive
+    concerns under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_carlyle_altadia_2022_decision
+  page: '5'
+  quote_snippet: (19) Therefore, for the purposes of the present Decision, the Commission will
+    perform its assessment on the basis of separate EEA-wide product markets for (i) frits &
+    glazes, (ii) glaze stains, (iii) digital inks, and (iv) body stains, as the competitive
+    assessment would not be significantly different, even under the narrowest scope possible.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_carlyle_altadia_2022_decision
+  page: '2'
+  quote_snippet: '(5) The undertakings concerned have a combined aggregate worldwide turnover
+    of more than EUR 5 000 million in 2020 (Carlyle: EUR […]; Altadia: EUR […])4. Each of them
+    has a Union-wide turnover in excess of EUR 250 million in 2020 (Carlyle: EUR […]; Altadia:
+    EUR […]), but they do not achieve more than two-thirds of their aggregate Union-wide turnover
+    within one and the same Member State. The Transaction therefore has a Union dimension.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

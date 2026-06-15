@@ -1,0 +1,405 @@
+case_id: eu_bme_saintgobain_distribution_the_n_2021
+case_name: BME / Saint-Gobain Distribution the Netherlands
+authority: European Commission
+jurisdiction: EU
+sector: retail
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2021-07-09'
+parties:
+- name: BME
+  role: acquirer
+- name: Saint-Gobain Distribution the Netherlands
+  role: target
+source_documents:
+- doc_id: eu_bme_saintgobain_distribution_the_n_2021_decision
+  title: BME / Saint-Gobain Distribution the Netherlands — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10154
+  pdf_url: http://publications.europa.eu/resource/cellar/ad8d2191-0a58-11ec-adb1-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Wholesale supply of ceramic tiles
+  definition_status: left_open
+  notes: The Commission assessed this market but left open whether it should be further segmented
+    by material type (e.g. ceramic, stone, concrete) or end-use (e.g. floors, walls).
+- market_id: pm_2
+  name: Wholesale supply of SHAP Products
+  definition_status: left_open
+  notes: The Commission assessed this market but left open whether it should be further segmented
+    by subcategories of products (e.g. sanitary ware).
+- market_id: pm_3
+  name: Retail distribution of building materials to professional customers via GMB stores
+  definition_status: left_open
+  notes: The Commission left the exact market definition of retail sales of building products
+    open but assessed the impact of the transaction based on this narrower plausible market
+    definition.
+- market_id: pm_4
+  name: Retail distribution of interior finishing products, including dry finishing products,
+    via SBM stores
+  definition_status: left_open
+  notes: The Commission left the exact market definition of retail sales of building products
+    open but assessed the impact of the transaction based on this narrower plausible market
+    definition.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Wholesale supply of ceramic tiles — national (Netherlands affected)
+  definition_status: considered
+  notes: The Commission examined this market at the national level for the purpose of the decision,
+    noting that previous findings indicated at least national scope.
+- market_id: gm_2
+  name: Wholesale supply of SHAP Products — national (Netherlands affected)
+  definition_status: considered
+  notes: The Commission examined this market at the national level for the purpose of the decision,
+    noting that previous findings indicated at least national scope.
+- market_id: gm_3
+  name: Retail distribution of building materials to professional customers via GMB stores —
+    local/national (Netherlands affected)
+  definition_status: left_open
+  notes: The Commission left open whether the geographic scope for retail sale of building products
+    is local or national, but assessed the impact under various plausible definitions.
+- market_id: gm_4
+  name: Retail distribution of interior finishing products, including dry finishing products,
+    via SBM stores — local/national (Netherlands affected)
+  definition_status: left_open
+  notes: The Commission left open whether the geographic scope for retail sale of building products
+    is local or national, but assessed the impact under various plausible definitions.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_bme_saintgobain_distribution_the_n_2021_decision
+  page: '3'
+  quote_snippet: 'In light of this distinction by product category, the Notifying Party submits
+    that there are two distinct relevant product markets: (i) the wholesale supply of tiles
+    and (ii) the wholesale supply of SHAP Products.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_bme_saintgobain_distribution_the_n_2021_decision
+  page: '3'
+  quote_snippet: According to the Notifying Party there is no need to further segment the wholesale
+    supply of tiles market according to the type of material (e.g. ceramic, stone or concrete).
+    Nonetheless, because SGDN only supplies ceramic tiles, the Notifying Party has provided
+    market shares data on this narrower plausible segment. In addition, the Notifying Party
+    submits that given supply-side substitution, there is no need to further segment the ceramic
+    tiles market according to the end use, i.e. tiles for floors, on one hand, and tiles for
+    walls, on the other.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_bme_saintgobain_distribution_the_n_2021_decision
+  page: '4'
+  quote_snippet: For the purpose of this Decision, the Commission will assess the effects of
+    the Transaction on the market for the wholesale supply of ceramic tiles and on the market
+    for the wholesale supply of SHAP. Because the Transaction does not raise serious doubts
+    as to its compatibility with the internal market under any plausible narrower market definition,
+    it can be left open for the purpose of this Decision whether it is appropriate to further
+    segment each of these two markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_bme_saintgobain_distribution_the_n_2021_decision
+  page: '3'
+  quote_snippet: 'In light of this distinction by product category, the Notifying Party submits
+    that there are two distinct relevant product markets: (i) the wholesale supply of tiles
+    and (ii) the wholesale supply of SHAP Products.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_bme_saintgobain_distribution_the_n_2021_decision
+  page: '3'
+  quote_snippet: Similarly, the Notifying Party claims there is no need to further segment the
+    wholesale supply of SHAP market, by subcategories of products, such as sanitary ware. However,
+    as SGDN mainly supplies sanitary ware, the Notifying Party has provided market share data
+    also for this segment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_bme_saintgobain_distribution_the_n_2021_decision
+  page: '4'
+  quote_snippet: For the purpose of this Decision, the Commission will assess the effects of
+    the Transaction on the market for the wholesale supply of ceramic tiles and on the market
+    for the wholesale supply of SHAP. Because the Transaction does not raise serious doubts
+    as to its compatibility with the internal market under any plausible narrower market definition,
+    it can be left open for the purpose of this Decision whether it is appropriate to further
+    segment each of these two markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_bme_saintgobain_distribution_the_n_2021_decision
+  page: '3'
+  quote_snippet: 'The Commission has previously defined a market for the distribution of building
+    products in general, and has considered but left open whether this market can be further
+    divided into: (i) wholesale to retailers; (ii) retail sale to professional customers, primarily
+    via GBM and SBM stores; and (iii) retail sale to non-professional customers, primarily through
+    DIY stores.8'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_bme_saintgobain_distribution_the_n_2021_decision
+  page: '5'
+  quote_snippet: In any event, because the Transaction does not raise serious doubts as to its
+    compatibility with the internal market under any plausible market definition, the exact
+    market definition of the retail sales of building products can be left open for the purpose
+    of this Decision. The Commission will assess the impact of the Transaction taking account
+    of the following narrower plausible market definition that give rise to an affected market,
+    i.e. retail distribution of building materials to professional customers via GMB stores
+    and retail distribution of interior finishing products, including dry finishing products,
+    via SBM stores.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_bme_saintgobain_distribution_the_n_2021_decision
+  page: '3'
+  quote_snippet: 'The Commission has previously defined a market for the distribution of building
+    products in general, and has considered but left open whether this market can be further
+    divided into: (i) wholesale to retailers; (ii) retail sale to professional customers, primarily
+    via GBM and SBM stores; and (iii) retail sale to non-professional customers, primarily through
+    DIY stores.8'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_bme_saintgobain_distribution_the_n_2021_decision
+  page: '5'
+  quote_snippet: In any event, because the Transaction does not raise serious doubts as to its
+    compatibility with the internal market under any plausible market definition, the exact
+    market definition of the retail sales of building products can be left open for the purpose
+    of this Decision. The Commission will assess the impact of the Transaction taking account
+    of the following narrower plausible market definition that give rise to an affected market,
+    i.e. retail distribution of building materials to professional customers via GMB stores
+    and retail distribution of interior finishing products, including dry finishing products,
+    via SBM stores.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_bme_saintgobain_distribution_the_n_2021_decision
+  page: '5'
+  quote_snippet: The Commission has previously found that the relevant wholesale markets are
+    likely to be at least national in scope (and possibly wider).26
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_bme_saintgobain_distribution_the_n_2021_decision
+  page: '5'
+  quote_snippet: The Notifying Party shares this view,27 which has also been widely confirmed
+    by market participants who expressed a view due to, inter alia, the high transport costs
+    and the homogeneous prices at national level.28
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_bme_saintgobain_distribution_the_n_2021_decision
+  page: '5'
+  quote_snippet: Hence, for the purpose of the present decision, the Commission will examine
+    the market for the wholesale distribution of building products in the Netherlands.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_bme_saintgobain_distribution_the_n_2021_decision
+  page: '5'
+  quote_snippet: The Commission has previously found that the relevant wholesale markets are
+    likely to be at least national in scope (and possibly wider).26
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_bme_saintgobain_distribution_the_n_2021_decision
+  page: '5'
+  quote_snippet: The Notifying Party shares this view,27 which has also been widely confirmed
+    by market participants who expressed a view due to, inter alia, the high transport costs
+    and the homogeneous prices at national level.28
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_bme_saintgobain_distribution_the_n_2021_decision
+  page: '5'
+  quote_snippet: Hence, for the purpose of the present decision, the Commission will examine
+    the market for the wholesale distribution of building products in the Netherlands.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_bme_saintgobain_distribution_the_n_2021_decision
+  page: '6'
+  quote_snippet: Because the Transaction does not raise serious doubts as to its compatibility
+    with the internal market even under the narrowest segment, it can be left open for the purpose
+    of this Decision whether the geographic scope of the market for the retail sale of building
+    products, possibly segmented by customer type (between retail sale to professional and to
+    non-professional customers) and further segmented by sales channel (into GBM or SMB stores),
+    is local or national.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_bme_saintgobain_distribution_the_n_2021_decision
+  page: '6'
+  quote_snippet: Concerning the retail sale of building products to professional customers by
+    SBM stores, the majority of market participants who expressed a view support the definition
+    of the market as national in scope.35
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_bme_saintgobain_distribution_the_n_2021_decision
+  page: '6'
+  quote_snippet: Because the Transaction does not raise serious doubts as to its compatibility
+    with the internal market even under the narrowest segment, it can be left open for the purpose
+    of this Decision whether the geographic scope of the market for the retail sale of building
+    products, possibly segmented by customer type (between retail sale to professional and to
+    non-professional customers) and further segmented by sales channel (into GBM or SMB stores),
+    is local or national.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_bme_saintgobain_distribution_the_n_2021_decision
+  page: '13'
+  quote_snippet: For the above reasons, the European Commission has decided not to oppose the
+    notified operation and to declare it compatible with the internal market and with the EEA
+    Agreement. This decision is adopted in application of Article 6(1)(b) of the Merger Regulation
+    and Article 57 of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []
+case_type: merger
+ai_summary: null

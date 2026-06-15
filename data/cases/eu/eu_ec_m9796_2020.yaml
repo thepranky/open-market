@@ -1,0 +1,635 @@
+case_id: eu_ec_m9796_2020
+case_name: M.9796
+authority: European Commission
+jurisdiction: EU
+sector: financial
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2020-07-29'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9796_2020_decision
+  title: M.9796 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9796
+  pdf_url: http://publications.europa.eu/resource/cellar/c2819abd-08ad-11eb-a511-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Life insurance products
+  definition_status: left_open
+  notes: The Commission distinguished between pure risk protection products, pension products,
+    and savings/investment products, sometimes grouping the latter two. It also considered distinctions
+    between life insurance for individuals and group/corporate customers, or based on the type
+    of risk covered. In Slovakia, a potential segmentation for index-linked and unit-linked
+    life insurance was considered.
+- market_id: pm_2
+  name: Non-life insurance products
+  definition_status: left_open
+  notes: The Commission's consistent approach considers that relevant product markets can be
+    divided into types of risks to insure, typically distinguishing accident and sickness, motor
+    vehicle, property, liability, marine, aviation and transport, credit and suretyship, and
+    travel insurance. Other distinctions include fire insurance, legal assistance, national
+    insurance classifications, and individual vs group customers. In Poland, potential segments
+    for sickness, accident, and CASCO insurance of rail vehicles were considered.
+- market_id: pm_3
+  name: Voluntary retirement saving products
+  definition_status: left_open
+  notes: The Commission considered whether DDS pension fund products constitute a separate and
+    standalone market, or belong to a wider voluntary retirement saving market that includes
+    products such as mutual funds and pension insurance (life). The market investigation indicated
+    that DDS pension fund products should be considered a separate market due to employer contributions,
+    tax benefits, and regulatory framework, which differentiates them from other voluntary savings
+    products. A distinction was also made between mandatory (p1, p2) and voluntary (p3) pension
+    pillars.
+- market_id: pm_4
+  name: Distribution of voluntary retirement saving products
+  definition_status: left_open
+  notes: The Commission considered that a distinct product market for the distribution of specific
+    voluntary saving products, particularly DDS pension fund products in Slovakia, may exist,
+    given the potential for a distinct product market for DDS pension fund products themselves.
+- market_id: pm_5
+  name: Asset management
+  definition_status: left_open
+  notes: The Commission considered an overall relevant product market for asset management,
+    with potential segmentations between retail and institutional clients, active and passive
+    asset management, open and closed retail funds, and sub-segments for mutual funds and money
+    market funds. The precise definition was left open.
+- market_id: pm_6
+  name: Distribution of asset management products
+  definition_status: left_open
+  notes: This market relates to the distribution of retail funds. The Commission previously
+    considered a relevant market comprising all retail banking products, with the possibility
+    of segmenting it by offered products, including distribution of mutual funds. The exact
+    product market definition was left open.
+- market_id: pm_7
+  name: Custody and depositary services
+  definition_status: left_open
+  notes: The Commission considered custody services as a potential narrower market within asset
+    management, and depositary services as part of fund administration services or as a distinct
+    market within custody services. Depositary services largely include custody but also comprise
+    control functions prescribed by national law. Feedback suggested some supply-side substitutability
+    but also noted functional differences. Slovak law requires DSS and DDS companies to source
+    both services from one supplier.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Life insurance products — national (Slovakia affected)
+  definition_status: left_open
+  notes: The Commission typically considered markets for life and non-life insurance products
+    to be national in scope, potentially wider than national for certain non-life risk classes.
+    The Notifying Party indicated that the geographic scope could be left open.
+- market_id: gm_2
+  name: Non-life insurance products — national (Poland affected)
+  definition_status: left_open
+  notes: The Commission typically considered markets for life and non-life insurance products
+    to be national in scope, potentially wider than national for certain non-life risk classes.
+    The Notifying Party indicated that the geographic scope could be left open.
+- market_id: gm_3
+  name: Voluntary retirement saving products — national (Slovakia affected)
+  definition_status: left_open
+  notes: The Commission's market investigation revealed no indication that the market for DDS
+    pension fund products in Slovakia is wider than national in scope, noting that these products
+    are subject to national legislation.
+- market_id: gm_4
+  name: Distribution of voluntary retirement saving products — national (Slovakia affected)
+  definition_status: considered
+  notes: The Commission considered that a potential separate product market for the distribution
+    of voluntary retirement saving products, and specifically DDS pension fund products, would
+    likely be national in scope due to the high relevance of national regulation.
+- market_id: gm_5
+  name: Asset management — national/wider than national (Slovakia affected)
+  definition_status: left_open
+  notes: The Commission previously considered the market for asset management to be national
+    or wider than national in scope, with asset management for institutional clients potentially
+    wider than national, and open retail mutual funds and money market funds considered national
+    in scope.
+- market_id: gm_6
+  name: Distribution of asset management products — national (Slovakia affected)
+  definition_status: considered
+  notes: The Commission previously concluded that the market for retail banking, including the
+    distribution of mutual funds, is national in scope, and found no reason to deviate from
+    this decisional practice in the present case.
+- market_id: gm_7
+  name: Custody and depositary services — national (Slovakia affected)
+  definition_status: left_open
+  notes: The Commission previously considered that some custody services might be global while
+    others are domestic. For depositary services, it referred to national regulatory frameworks.
+    In Slovakia, the strong impact of national regulation suggests the geographic market for
+    depositary services is national in scope.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9796_2020_decision
+  page: '4'
+  quote_snippet: With respect to Slovakia, a potential segmentation of the life insurance market
+    by risk classes could be made based on Directive 2009/138/EC of the European Parliament
+    and of the Council of 25 November 2009 on the taking-up and pursuit of the business of Insurance
+    and Reinsurance (“Solvency II”), which would lead to a plausible affected market for index-linked
+    and unit-linked life insurance.15
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9796_2020_decision
+  page: '4'
+  quote_snippet: For the purpose of the present decision, the exact product and geographic market
+    definition for the provision of life and non-life insurance can be left open as the Transaction
+    does not raise serious doubts as to its compatibility with the internal market under any
+    plausible market definition identified in paragraphs (8) to (10).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9796_2020_decision
+  page: '3'
+  quote_snippet: 'As regards product market definition for non-life insurance products, the
+    Commission’s consistent approach is to consider that relevant product markets can be divided
+    into the types of risks to insure. Precedents typically distinguish the following non-life
+    insurance segments: (i) accident and sickness, (ii) motor vehicle, (iii) property, (iv)
+    liability, (v) marine, aviation and transport (“MAT”), (vi) credit and suretyship and (vii)
+    travel insurance.8 In certain decisions, the Commission also distinguished fire insurance,
+    and legal assistance. The Commission also considered several additional segmentations of
+    the non-life insurance market, including based on national insurance classification9 or
+    between individual and group (i.e. corporate/institutional) customers. The Commission ultimately
+    left open the precise product market definition for non-life insurance products for all
+    plausible segmentations mentioned above.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9796_2020_decision
+  page: '4'
+  quote_snippet: With respect to Poland, a potential product market segmentation of the non-life
+    insurance market by risk classes provided by the Polish Insurance Act would lead to a number
+    of plausible affected markets, including separated markets of non-life insurance for (i)
+    sickness and (ii) accident as well as CASCO insurance of rail vehicles.14
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9796_2020_decision
+  page: '4'
+  quote_snippet: For the purpose of the present decision, the exact product and geographic market
+    definition for the provision of life and non-life insurance can be left open as the Transaction
+    does not raise serious doubts as to its compatibility with the internal market under any
+    plausible market definition identified in paragraphs (8) to (10).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9796_2020_decision
+  page: '6'
+  quote_snippet: According to the Commission’s market investigation, DDS pension fund products
+    should be considered a separate and standalone market, distinctly from other voluntary retirement
+    savings products.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9796_2020_decision
+  page: '6'
+  quote_snippet: According to the Notifying Party`s competitors in the retirement saving market,
+    consumers do not view DDS pension fund products as interchangeable with other voluntary
+    retirement saving products such as mutual funds and pension (life) insurance products, mainly
+    because the key criterion for consumers when choosing a financial product for retirement
+    is the employer’s contribution, which is specific to DDS pension fund products and a specific
+    regulatory framework applicable to DDS pension fund products.23 In direct comparison of
+    DDS pension fund products with mutual funds and pension (life) insurance products it was
+    also pointed out that DDS pension fund products profit from favourable tax treatment.24
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9796_2020_decision
+  page: '7'
+  quote_snippet: For the purpose of this decision, the exact product and geographic market definition
+    for the provision of DDS pension fund products and the question of whether they are part
+    of a wider market for voluntary retirement saving products such as mutual funds and pension
+    (life) insurance products can be left open as the Transaction does not raise serious doubts
+    as to its compatibility with the internal market under any plausible market definition identified
+    in paragraphs (24) to (29).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9796_2020_decision
+  page: '8'
+  quote_snippet: In the present case, a potential distinct product market for DDS pension fund
+    products may exist in Slovakia38, as discussed in paragraphs (17) to (30). Consequently,
+    a distinct product market for the distribution of such products may also exist. The Commission
+    notes that, for the purpose of this decision, the exact definition of such a market can
+    be left open, as no competition concerns are raised under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9796_2020_decision
+  page: '9'
+  quote_snippet: Within the potential segment of institutional clients, the Commission has considered
+    in previous cases a further segmentation between active and passive asset management. In
+    active asset management, an asset manager aims at outperforming a benchmark such as an index,
+    whereas in passive asset management, the asset manager aims at replicating the performance
+    of an index.41 Regarding retail clients, the Commission has previously considered a segmentation
+    between open retail funds, with no restriction on the number of investors, and closed retail
+    funds, which are tailor-made for a small group of investors.42 For all these plausible segmentations,
+    the Commission ultimately left open the precise product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9796_2020_decision
+  page: '9'
+  quote_snippet: For the purpose of this decision, the exact product and geographic market definition
+    for the provision of asset management services can be left open as the Transaction does
+    not raise serious doubts as to its compatibility with the internal market under any plausible
+    market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9796_2020_decision
+  page: '10'
+  quote_snippet: The exact product market definition can be left open for the present case,
+    as the Transaction does not raise serious doubts as to its compatibility with the internal
+    market under any plausible definition. Regarding the geographic scope, there is no element
+    to deviate from the Commission’s previous decisional practice.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9796_2020_decision
+  page: '10'
+  quote_snippet: In past decisions, the Commission has considered custody services as a potential
+    narrower market within asset management services, but left this product market definition
+    open.50 Furthermore, the Commission has considered depositary services as part of fund administration
+    services, which was defined as one product market with no further segmentation.51 In later
+    decisions, the exact product market definition of fund administration was left open.52 Depositary
+    services for mutual and pension funds were also considered to be potentially a distinct
+    product market in the area of custody services or asset management, and ultimately left
+    the market definition open.53 The Commission thereby noted that depositary services would
+    largely include custody services, but would further comprise certain control functions prescribed
+    by national law.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m9796_2020_decision
+  page: '11'
+  quote_snippet: Feedback from the market suggests some degree of substitutability between the
+    provision of custody and depositary services from a supply side point of view in Slovakia.59
+    One respondent described depositary services to be typically an “add-on service” to custody
+    service. This would be an argument that custody and depositary services in Slovakia belong
+    to the same or a closely related product market. On the other hand, both types of services
+    differ in the sense that depositary services in Slovakia comprise the supervision, examination,
+    inspection and compliance checks with respect to the applicable national laws for each transaction.60
+    This would suggest to treat custody and depositary services in Slovakia as separate product
+    markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m9796_2020_decision
+  page: '4'
+  quote_snippet: For the present case, the exact product and geographic market definition of
+    custody and depositary services can be left open, as no competition concerns would arise
+    under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m9796_2020_decision
+  page: '3'
+  quote_snippet: As regards geographic market definition, in previous decisions, the Commission
+    typically considered that the markets for life and non-life insurance products and their
+    respective sub-segments are likely to be national in scope, and potentially wider than national
+    for certain risk classes of non-life insurance.10
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m9796_2020_decision
+  page: '4'
+  quote_snippet: The Notifying Party provided information at national level, but indicates that
+    the geographic scope of insurance markets can be left open as the Transaction does not raise
+    potential competitive concerns under any plausible market definition.13
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m9796_2020_decision
+  page: '4'
+  quote_snippet: For the purpose of the present decision, the exact product and geographic market
+    definition for the provision of life and non-life insurance can be left open as the Transaction
+    does not raise serious doubts as to its compatibility with the internal market under any
+    plausible market definition identified in paragraphs (8) to (10).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m9796_2020_decision
+  page: '3'
+  quote_snippet: As regards geographic market definition, in previous decisions, the Commission
+    typically considered that the markets for life and non-life insurance products and their
+    respective sub-segments are likely to be national in scope, and potentially wider than national
+    for certain risk classes of non-life insurance.10
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m9796_2020_decision
+  page: '4'
+  quote_snippet: The Notifying Party provided information at national level, but indicates that
+    the geographic scope of insurance markets can be left open as the Transaction does not raise
+    potential competitive concerns under any plausible market definition.13
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m9796_2020_decision
+  page: '4'
+  quote_snippet: For the purpose of the present decision, the exact product and geographic market
+    definition for the provision of life and non-life insurance can be left open as the Transaction
+    does not raise serious doubts as to its compatibility with the internal market under any
+    plausible market definition identified in paragraphs (8) to (10).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m9796_2020_decision
+  page: '7'
+  quote_snippet: The market investigation revealed no indication that the market is wider than
+    national in scope and it was repeatedly pointed out, that DDS pension fund products are
+    subject to national legislation.33
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_ec_m9796_2020_decision
+  page: '7'
+  quote_snippet: For the purpose of this decision, the exact product and geographic market definition
+    for the provision of DDS pension fund products and the question of whether they are part
+    of a wider market for voluntary retirement saving products such as mutual funds and pension
+    (life) insurance products can be left open as the Transaction does not raise serious doubts
+    as to its compatibility with the internal market under any plausible market definition identified
+    in paragraphs (24) to (29).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_ec_m9796_2020_decision
+  page: '8'
+  quote_snippet: The Commission further notes that a potential separate product market for the
+    distribution for voluntary retirement saving products, and specifically DDS pension fund
+    products, would likely be national in scope, due to the high relevance of national regulation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_ec_m9796_2020_decision
+  page: '9'
+  quote_snippet: For the purpose of this decision, the exact product and geographic market definition
+    for the provision of asset management services can be left open as the Transaction does
+    not raise serious doubts as to its compatibility with the internal market under any plausible
+    market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_ec_m9796_2020_decision
+  page: '10'
+  quote_snippet: In previous decisions, the Commission concluded the market for retail banking,
+    including the distribution of mutual funds, to be national in scope.47
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_ec_m9796_2020_decision
+  page: '10'
+  quote_snippet: The exact product market definition can be left open for the present case,
+    as the Transaction does not raise serious doubts as to its compatibility with the internal
+    market under any plausible definition. Regarding the geographic scope, there is no element
+    to deviate from the Commission’s previous decisional practice.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_ec_m9796_2020_decision
+  page: '11'
+  quote_snippet: The Commission notes that there is a high relevance of national regulation
+    for the provision of custody and depositary services in Slovakia.58 Feedback from the market
+    suggests some degree of substitutability between the provision of custody and depositary
+    services from a supply side point of view in Slovakia.59 One respondent described depositary
+    services to be typically an “add-on service” to custody service. This would be an argument
+    that custody and depositary services in Slovakia belong to the same or a closely related
+    product market. On the other hand, both types of services differ in the sense that depositary
+    services in Slovakia comprise the supervision, examination, inspection and compliance checks
+    with respect to the applicable national laws for each transaction.60 This would suggest
+    to treat custody and depositary services in Slovakia as separate product markets. The Commission
+    further notes that the strong impact of national regulation of the provision for depositary
+    services in Slovakia suggests the geographic market is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_ec_m9796_2020_decision
+  page: '4'
+  quote_snippet: For the present case, the exact product and geographic market definition of
+    custody and depositary services can be left open, as no competition concerns would arise
+    under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_ec_m9796_2020_decision
+  page: '1'
+  quote_snippet: Commission decision pursuant to Article 6(1)(b) of Council Regulation No 139/20041
+    and Article 57 of the Agreement on the European Economic Area2
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

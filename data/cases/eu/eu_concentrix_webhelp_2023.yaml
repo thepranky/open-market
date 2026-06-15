@@ -1,0 +1,365 @@
+case_id: eu_concentrix_webhelp_2023
+case_name: CONCENTRIX / WEBHELP
+authority: European Commission
+jurisdiction: EU
+sector: business_services
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2023-09-12'
+parties:
+- name: CONCENTRIX
+  role: acquirer
+- name: WEBHELP
+  role: target
+source_documents:
+- doc_id: eu_concentrix_webhelp_2023_decision
+  title: CONCENTRIX / WEBHELP — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11132
+  pdf_url: http://publications.europa.eu/resource/cellar/ad25ba0f-6dd0-11ee-9220-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: IT services
+  definition_status: left_open
+  notes: The Commission considered segmenting the market for IT services by functionality (BPO,
+    consulting, application implementation, infrastructure services, IaaS, hardware support)
+    and by industry sector, but ultimately left the definition open for the purpose of this
+    decision.
+- market_id: pm_2
+  name: Business Process Outsourcing (BPO) services
+  definition_status: segmented
+  notes: BPO services are identified as a sub-segment of IT services by functionality (Gartner
+    service level 2). The Commission further considered sub-segmenting BPO services into administration,
+    CXM, finance and accounting, human resources, operations, and supply chain management. A
+    majority of market participants agreed to this sub-segmentation.
+- market_id: pm_3
+  name: Customer Experience Management (CXM) BPO services
+  definition_status: considered
+  notes: CXM BPO services are a sub-segment of BPO services, primarily focused on direct customer
+    contact activities. The Commission's market investigation and internal documents support
+    considering CXM BPO services as a separate product market for the purpose of the decision,
+    further segmented by industry verticals for the competitive assessment.
+- market_id: pm_4
+  name: IT consulting services
+  definition_status: left_open
+  notes: IT consulting services are identified as a sub-segment of IT services where the parties
+    overlap, but the overall market definition for IT services was left open.
+geographic_markets_considered:
+- market_id: gm_1
+  name: IT services — worldwide/EEA-wide/national
+  definition_status: left_open
+  notes: The Commission's evidence regarding the geographic scope for IT services and its segments
+    was inconclusive, suggesting it is likely wider than national but leaving the precise definition
+    open.
+- market_id: gm_2
+  name: Customer Experience Management (CXM) BPO services, segmented by industry verticals —
+    national
+  definition_status: considered
+  notes: Despite the overall geographic market for IT services being left open, the Commission
+    chose to assess the effects of the transaction at the national level for CXM BPO services,
+    segmented by industry verticals, as the narrowest plausible scope.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_concentrix_webhelp_2023_decision
+  page: '2'
+  quote_snippet: The Parties’ activities overlap in the provision of IT services, and the subsegments
+    thereof of BPO services and IT consulting services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_concentrix_webhelp_2023_decision
+  page: '3'
+  quote_snippet: In its past decisions, (6) the Commission considered, but ultimately left open,
+    whether the market for the supply of IT services may potentially by segmented by (i) functionality
+    based on reports by the market intelligence company Gartner, (7) (ii) by industry sector,
+    or (iii) by both.(8)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_concentrix_webhelp_2023_decision
+  page: '7'
+  quote_snippet: For the purpose of this decision, the definition of the relevant product market
+    can be left open, as the Transaction does not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement under any of the plausible
+    alternative product market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_concentrix_webhelp_2023_decision
+  page: '3'
+  quote_snippet: 'Segmentation by functionality. According to the 2022 Gartner report, the overall
+    market for IT services can be segmented by functionality into: (i) business process services
+    (meaning BPO), (ii) consulting, (iii) application implementation and managed services, (iv)
+    infrastructure implementation and managed services, (v) infrastructure as a service, and
+    (vi) hardware support, (9). These functionalities are also referred to in the industry as
+    ‘service level 2’ of the Gartner report.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_concentrix_webhelp_2023_decision
+  page: '3'
+  quote_snippet: 'The sub-segments of business process services according to the Gartner report
+    are: (i) administration (ii) customer management (also referred to as customer experience
+    management or CXM) (iii) finance and accounting (iv) human resources (v) operations and
+    (vi) supply chain management.(11)'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_concentrix_webhelp_2023_decision
+  page: '5'
+  quote_snippet: A majority of those who expressed a view also agreed that BPO services should
+    be further segmented according to the specific service (i.e., segmenting the market into
+    (i) administration, (ii) CXM, (iii) finance and accounting, (iii) human resources, (iv)
+    operations, and, (v) supply chain management).(22)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_concentrix_webhelp_2023_decision
+  page: '3'
+  quote_snippet: CXM BPO services include the contracting out of direct customer contact activities
+    (including customer acquisition and targeting, marketing and customer services) within an
+    organisation to a third-party service provider.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_concentrix_webhelp_2023_decision
+  page: '4'
+  quote_snippet: As explained below, the market investigation as well as evidence in the Commission’s
+    file, support the view that CXM BPO services could be considered a separate product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_concentrix_webhelp_2023_decision
+  page: '7'
+  quote_snippet: For the purpose of this decision, the Commission will examine the effects of
+    the Transaction in the markets for the provision of CXM BPO services, segmented by industry
+    verticals, noting that the Transaction does not give rise to affected markets if a broader
+    product market definition is retained.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_concentrix_webhelp_2023_decision
+  page: '2'
+  quote_snippet: The Parties’ activities overlap in the provision of IT services, and the subsegments
+    thereof of BPO services and IT consulting services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_concentrix_webhelp_2023_decision
+  page: '4'
+  quote_snippet: The Notifying Party submits that the relevant product market is either the
+    supply of IT services or at least a product market that is as wide as the provision of (a)
+    business process outsourcing services and (b) IT consulting services. (13)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_concentrix_webhelp_2023_decision
+  page: '7'
+  quote_snippet: For the purpose of this decision, the definition of the relevant product market
+    can be left open, as the Transaction does not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement under any of the plausible
+    alternative product market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_concentrix_webhelp_2023_decision
+  page: '7'
+  quote_snippet: In its previous decisions, the Commission considered whether the geographic
+    market definitions for IT services were EEA-wide or national in scope, but ultimately left
+    the precise geographic market definition open. (41)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_concentrix_webhelp_2023_decision
+  page: '8'
+  quote_snippet: The evidence in the Commission’s file is inconclusive with regard to the exact
+    geographic scope of the market for the provision of IT services, and its possible segments,
+    and suggest that the scope is most likely wider than national.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_concentrix_webhelp_2023_decision
+  page: '9'
+  quote_snippet: For the purpose of this decision, the exact geographic scope of the market
+    for the provision of IT services and its sub-segments can be left open, as the Transaction
+    does not raise serious doubts as to its compatibility with the internal market or the functioning
+    of the EEA Agreement, under any of the plausible alternative geographic market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_concentrix_webhelp_2023_decision
+  page: '9'
+  quote_snippet: In any event, the Commission will assess the effects of the Transaction at
+    the narrowest plausible geographic market segment, i.e., at national level, noting that
+    the Transaction does not give rise to affected markets at EEA level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_concentrix_webhelp_2023_decision
+  page: '8'
+  quote_snippet: Some also explained that while national presence is not in itself a key requirement,
+    services should be tailored to the specific countries due to language barriers.(49) Sometimes,
+    language support might not be scalable outside the country being served,(50) rendering local
+    presence a requirement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_concentrix_webhelp_2023_decision
+  page: '8'
+  quote_snippet: For this reason, a majority of customer respondents who expressed a view in
+    the course of the market investigation considered that the ability to offer IT services
+    in a national language is a key requirement to select IT service providers in specific countries.(51)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_concentrix_webhelp_2023_decision
+  page: '9'
+  quote_snippet: Pursuant to Article 6(1)(b) of the Merger Regulation, where the Commission
+    finds that the notified concentration does not raise serious doubts as to its compatibility
+    with the internal market, the Commission shall decide not to oppose the concentration and
+    declares it compatible with the internal market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+ai_summary: null
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []
+case_type: merger

@@ -1,0 +1,836 @@
+case_id: eu_refresco_group_hansaheemann_2022
+case_name: REFRESCO GROUP / HANSA-HEEMANN
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2022-01-24'
+parties:
+- name: REFRESCO GROUP
+  role: acquirer
+- name: HANSA-HEEMANN
+  role: target
+source_documents:
+- doc_id: eu_refresco_group_hansaheemann_2022_decision
+  title: REFRESCO GROUP / HANSA-HEEMANN — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10435
+  pdf_url: http://publications.europa.eu/resource/cellar/b0a9b388-f792-11ec-b94a-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Production and bottling of non-alcoholic beverages (NABs)
+  definition_status: left_open
+  notes: The Commission left the precise product market definition open, but for the purpose
+    of the decision, it considered potential distinctions based on product categories (CSD,
+    NCSD excluding water, water), packaging type (aseptic PET), production process, organic/non-organic,
+    and PLB/branded NABs under a conservative approach.
+- market_id: pm_2
+  name: Production and bottling of carbonated soft drinks (CSDs)
+  definition_status: segmented
+  notes: Segmented from the broader NABs market, with CSDs and NCSDs forming two separate product
+    markets based on past decisional practice. Further segmentations within CSDs were not envisaged.
+- market_id: pm_3
+  name: Production and bottling of non-carbonated soft drinks (NCSDs)
+  definition_status: segmented
+  notes: Segmented from the broader NABs market, with CSDs and NCSDs forming two separate product
+    markets based on past decisional practice. Further segmentations within NCSDs, such as water
+    and RTD teas, were also considered.
+- market_id: pm_4
+  name: Production and bottling of water
+  definition_status: segmented
+  notes: Water was considered a separate product market within NCSDs based on past decisional
+    practice.
+- market_id: pm_5
+  name: Production and bottling of PLB packaged water in PET packaging
+  definition_status: considered
+  notes: This specific market segmentation (PLB, PET packaging, water) was considered as an
+    affected market for the competitive assessment in the Netherlands.
+- market_id: pm_6
+  name: Production and bottling of PLB CSDs in PET packaging
+  definition_status: considered
+  notes: This specific market segmentation (PLB, PET packaging, CSDs) was considered as an affected
+    market for the competitive assessment in the Netherlands and Poland.
+- market_id: pm_7
+  name: Production and bottling of branded CSDs in PET packaging
+  definition_status: considered
+  notes: This specific market segmentation (branded, PET packaging, CSDs) was considered as
+    an affected market for the competitive assessment in the Netherlands.
+- market_id: pm_8
+  name: Production and bottling of PLB NCSDs excluding water in PET packaging
+  definition_status: considered
+  notes: This specific market segmentation (PLB, PET packaging, NCSDs excluding water) was considered
+    as an affected market for the competitive assessment in the Netherlands.
+- market_id: pm_9
+  name: Production and bottling of branded NCSDs excluding water in PET packaging
+  definition_status: considered
+  notes: This specific market segmentation (branded, PET packaging, NCSDs excluding water) was
+    considered as an affected market for the competitive assessment in the Netherlands.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Production and bottling of PLB packaged water in PET packaging — national (Netherlands
+    affected)
+  definition_status: considered
+  notes: While the precise geographic market definition was left open, the competitive analysis
+    for this market in the Netherlands was conducted on a national basis, consistent with past
+    practice and market investigation findings.
+- market_id: gm_2
+  name: Production and bottling of PLB CSDs in PET packaging — national (Netherlands affected)
+  definition_status: considered
+  notes: While the precise geographic market definition was left open, the competitive analysis
+    for this market in the Netherlands was conducted on a national basis, consistent with past
+    practice and market investigation findings.
+- market_id: gm_3
+  name: Production and bottling of branded CSDs in PET packaging — national (Netherlands affected)
+  definition_status: considered
+  notes: While the precise geographic market definition was left open, the competitive analysis
+    for this market in the Netherlands was conducted on a national basis, consistent with past
+    practice and market investigation findings.
+- market_id: gm_4
+  name: Production and bottling of PLB NCSDs excluding water in PET packaging — national (Netherlands
+    affected)
+  definition_status: considered
+  notes: While the precise geographic market definition was left open, the competitive analysis
+    for this market in the Netherlands was conducted on a national basis, consistent with past
+    practice and market investigation findings.
+- market_id: gm_5
+  name: Production and bottling of branded NCSDs excluding water in PET packaging — national
+    (Netherlands affected)
+  definition_status: considered
+  notes: While the precise geographic market definition was left open, the competitive analysis
+    for this market in the Netherlands was conducted on a national basis, consistent with past
+    practice and market investigation findings.
+- market_id: gm_6
+  name: Production and bottling of PLB CSDs in PET packaging — national (Poland affected)
+  definition_status: considered
+  notes: While the precise geographic market definition was left open, the competitive analysis
+    for this market in Poland was conducted on a national basis, consistent with past practice
+    and market investigation findings.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '3'
+  quote_snippet: The production and bottling of non-alcoholic beverages (“NABs”), including
+    juices, is a service used by brand owners (for branded beverages) and retailers (for beverages
+    sold under PLB).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '5'
+  quote_snippet: The Commission considers that, consistent with its past practice and absent
+    indications to the contrary from the market investigation, potentially relevant product
+    markets for the production and bottling of beverages can be defined according to the product
+    categories referred to in paragraphs (10)-(14) above.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '5'
+  quote_snippet: In any event, the precise product market definition can be left open as even
+    under the narrowest possible market definition for the production and bottling of NABs no
+    serious concerns arise as to the compatibility of the concentration with the internal market
+    as regards the horizontal overlap between the Parties’ activities in that market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '4'
+  quote_snippet: The Commission has previously found that the market for the production and
+    bottling of NABs was further segmented into the production and bottling of carbonated soft
+    drinks (“CSDs”) and non-carbonated soft drinks (“NCSDs”), which were found to constitute
+    two separate product markets. The Commission has not envisaged further potential segmentations
+    within CSDs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '4'
+  quote_snippet: The Notifying Party agrees with the Commission’s past practice to consider
+    that the production and bottling of CSDs and NCSDs constitute separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '5'
+  quote_snippet: 'For the purposes of this Decision and under a conservative approach, the Commission
+    will factor into its assessment of the Transaction possible distinctions cumulatively based
+    on: (i) the type of products (for the purpose of this Decision, CSD, NCSD excluding water
+    and water);'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '4'
+  quote_snippet: The Commission has previously found that the market for the production and
+    bottling of NABs was further segmented into the production and bottling of carbonated soft
+    drinks (“CSDs”) and non-carbonated soft drinks (“NCSDs”), which were found to constitute
+    two separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '4'
+  quote_snippet: The Notifying Party agrees with the Commission’s past practice to consider
+    that the production and bottling of CSDs and NCSDs constitute separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '5'
+  quote_snippet: 'For the purposes of this Decision and under a conservative approach, the Commission
+    will factor into its assessment of the Transaction possible distinctions cumulatively based
+    on: (i) the type of products (for the purpose of this Decision, CSD, NCSD excluding water
+    and water);'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '4'
+  quote_snippet: Within NCSDs, the Commission has considered that water and ready-to-drink (“RTD”)
+    teas belong to separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '4'
+  quote_snippet: The Notifying Party indicated that NCSDs should be further segmented only for
+    RTD teas and water.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '5'
+  quote_snippet: 'For the purposes of this Decision and under a conservative approach, the Commission
+    will factor into its assessment of the Transaction possible distinctions cumulatively based
+    on: (i) the type of products (for the purpose of this Decision, CSD, NCSD excluding water
+    and water);'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '5'
+  quote_snippet: 'For the purposes of this Decision and under a conservative approach, the Commission
+    will factor into its assessment of the Transaction possible distinctions cumulatively based
+    on: (i) the type of products (for the purpose of this Decision, CSD, NCSD excluding water
+    and water); (ii) the type of packaging (for the purpose of this Decision, aseptic PET);
+    (v) PLB and branded NABs.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '7'
+  quote_snippet: |
+    More specifically, when considering the narrowest potentially relevant markets, the Transaction gives rise to the following horizontally affected markets in the Netherlands and, to an even more limited extent, in Poland:
+    • the production and bottling of PLB packaged water in PET packaging in the Netherlands;
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '3'
+  quote_snippet: |
+    The Transaction gives rise to horizontal overlaps between Refresco’s and Hansa-Heemann’s activities in the production and bottling of:8
+    (a) PLB packaged water in PET packaging in the Netherlands, Belgium and Poland;
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '5'
+  quote_snippet: 'For the purposes of this Decision and under a conservative approach, the Commission
+    will factor into its assessment of the Transaction possible distinctions cumulatively based
+    on: (i) the type of products (for the purpose of this Decision, CSD, NCSD excluding water
+    and water); (ii) the type of packaging (for the purpose of this Decision, aseptic PET);
+    (v) PLB and branded NABs.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '7'
+  quote_snippet: |
+    More specifically, when considering the narrowest potentially relevant markets, the Transaction gives rise to the following horizontally affected markets in the Netherlands and, to an even more limited extent, in Poland:
+    • the production and bottling of PLB CSDs in PET packaging in the Netherlands and Poland, respectively;
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '3'
+  quote_snippet: |
+    The Transaction gives rise to horizontal overlaps between Refresco’s and Hansa-Heemann’s activities in the production and bottling of:8
+    (c) PLB CSDs in PET packaging in the Netherlands, France and Poland;
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '5'
+  quote_snippet: 'For the purposes of this Decision and under a conservative approach, the Commission
+    will factor into its assessment of the Transaction possible distinctions cumulatively based
+    on: (i) the type of products (for the purpose of this Decision, CSD, NCSD excluding water
+    and water); (ii) the type of packaging (for the purpose of this Decision, aseptic PET);
+    (v) PLB and branded NABs.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '8'
+  quote_snippet: • the production and bottling of branded CSDs in PET packaging in the Netherlands;
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '3'
+  quote_snippet: (d) branded CSDs in PET packaging in the Netherlands;
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '5'
+  quote_snippet: 'For the purposes of this Decision and under a conservative approach, the Commission
+    will factor into its assessment of the Transaction possible distinctions cumulatively based
+    on: (i) the type of products (for the purpose of this Decision, CSD, NCSD excluding water
+    and water); (ii) the type of packaging (for the purpose of this Decision, aseptic PET);
+    (v) PLB and branded NABs.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '8'
+  quote_snippet: • The production and bottling of PLB NCSDs excluding water in PET packaging
+    in the Netherlands;
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '3'
+  quote_snippet: (e) PLB and branded NCSDs excluding water in PET packaging in the Netherlands.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '5'
+  quote_snippet: 'For the purposes of this Decision and under a conservative approach, the Commission
+    will factor into its assessment of the Transaction possible distinctions cumulatively based
+    on: (i) the type of products (for the purpose of this Decision, CSD, NCSD excluding water
+    and water); (ii) the type of packaging (for the purpose of this Decision, aseptic PET);
+    (v) PLB and branded NABs.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '8'
+  quote_snippet: • the production and bottling of branded NCSDs excluding water in PET packaging
+    in the Netherlands.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '3'
+  quote_snippet: (e) PLB and branded NCSDs excluding water in PET packaging in the Netherlands.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '5'
+  quote_snippet: The Commission has in the past found that the relevant geographic markets for
+    NABs are national in scope due to differences in consumption patterns, logistics and distribution
+    networks, marketing strategies, etc. Concerning NCSDs, the Commission has further noticed
+    that, while markets are national in scope, imports exert a competitive constraint.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '6'
+  quote_snippet: The results of the market investigation regarding the geographic market for
+    the production and bottling of NABs are consistent with the Commission’s past decisional
+    practice. The majority of competitors and bottling customers consider that the markets are
+    national in scope, with competitive pressure from neighbouring countries.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '6'
+  quote_snippet: In any event, the precise geographic market definition can be left open as
+    no serious doubts arise as to the compatibility of the concentration with the internal market
+    as regards the horizontal relationship between the Parties’ activities in the production
+    and bottling of NABs. For the purposes of this Decision and under a conservative approach,
+    the analysis will be conducted on the basis of national markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '5'
+  quote_snippet: The Commission has in the past found that the relevant geographic markets for
+    NABs are national in scope due to differences in consumption patterns, logistics and distribution
+    networks, marketing strategies, etc. Concerning NCSDs, the Commission has further noticed
+    that, while markets are national in scope, imports exert a competitive constraint.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '6'
+  quote_snippet: The results of the market investigation regarding the geographic market for
+    the production and bottling of NABs are consistent with the Commission’s past decisional
+    practice. The majority of competitors and bottling customers consider that the markets are
+    national in scope, with competitive pressure from neighbouring countries.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '6'
+  quote_snippet: In any event, the precise geographic market definition can be left open as
+    no serious doubts arise as to the compatibility of the concentration with the internal market
+    as regards the horizontal relationship between the Parties’ activities in the production
+    and bottling of NABs. For the purposes of this Decision and under a conservative approach,
+    the analysis will be conducted on the basis of national markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_34
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '5'
+  quote_snippet: The Commission has in the past found that the relevant geographic markets for
+    NABs are national in scope due to differences in consumption patterns, logistics and distribution
+    networks, marketing strategies, etc. Concerning NCSDs, the Commission has further noticed
+    that, while markets are national in scope, imports exert a competitive constraint.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_35
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '6'
+  quote_snippet: The results of the market investigation regarding the geographic market for
+    the production and bottling of NABs are consistent with the Commission’s past decisional
+    practice. The majority of competitors and bottling customers consider that the markets are
+    national in scope, with competitive pressure from neighbouring countries.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_36
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '6'
+  quote_snippet: In any event, the precise geographic market definition can be left open as
+    no serious doubts arise as to the compatibility of the concentration with the internal market
+    as regards the horizontal relationship between the Parties’ activities in the production
+    and bottling of NABs. For the purposes of this Decision and under a conservative approach,
+    the analysis will be conducted on the basis of national markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_37
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '5'
+  quote_snippet: The Commission has in the past found that the relevant geographic markets for
+    NABs are national in scope due to differences in consumption patterns, logistics and distribution
+    networks, marketing strategies, etc. Concerning NCSDs, the Commission has further noticed
+    that, while markets are national in scope, imports exert a competitive constraint.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_38
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '6'
+  quote_snippet: The results of the market investigation regarding the geographic market for
+    the production and bottling of NABs are consistent with the Commission’s past decisional
+    practice. The majority of competitors and bottling customers consider that the markets are
+    national in scope, with competitive pressure from neighbouring countries.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_39
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '6'
+  quote_snippet: In any event, the precise geographic market definition can be left open as
+    no serious doubts arise as to the compatibility of the concentration with the internal market
+    as regards the horizontal relationship between the Parties’ activities in the production
+    and bottling of NABs. For the purposes of this Decision and under a conservative approach,
+    the analysis will be conducted on the basis of national markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_40
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '5'
+  quote_snippet: The Commission has in the past found that the relevant geographic markets for
+    NABs are national in scope due to differences in consumption patterns, logistics and distribution
+    networks, marketing strategies, etc. Concerning NCSDs, the Commission has further noticed
+    that, while markets are national in scope, imports exert a competitive constraint.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_41
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '6'
+  quote_snippet: The results of the market investigation regarding the geographic market for
+    the production and bottling of NABs are consistent with the Commission’s past decisional
+    practice. The majority of competitors and bottling customers consider that the markets are
+    national in scope, with competitive pressure from neighbouring countries.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_42
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '6'
+  quote_snippet: In any event, the precise geographic market definition can be left open as
+    no serious doubts arise as to the compatibility of the concentration with the internal market
+    as regards the horizontal relationship between the Parties’ activities in the production
+    and bottling of NABs. For the purposes of this Decision and under a conservative approach,
+    the analysis will be conducted on the basis of national markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_43
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '5'
+  quote_snippet: The Commission has in the past found that the relevant geographic markets for
+    NABs are national in scope due to differences in consumption patterns, logistics and distribution
+    networks, marketing strategies, etc. Concerning NCSDs, the Commission has further noticed
+    that, while markets are national in scope, imports exert a competitive constraint.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_44
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '6'
+  quote_snippet: The results of the market investigation regarding the geographic market for
+    the production and bottling of NABs are consistent with the Commission’s past decisional
+    practice. The majority of competitors and bottling customers consider that the markets are
+    national in scope, with competitive pressure from neighbouring countries.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_45
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '6'
+  quote_snippet: In any event, the precise geographic market definition can be left open as
+    no serious doubts arise as to the compatibility of the concentration with the internal market
+    as regards the horizontal relationship between the Parties’ activities in the production
+    and bottling of NABs. For the purposes of this Decision and under a conservative approach,
+    the analysis will be conducted on the basis of national markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_46
+  source_document_id: eu_refresco_group_hansaheemann_2022_decision
+  page: '14'
+  quote_snippet: For the above reasons, the European Commission has decided not to oppose the
+    notified operation and to declare it compatible with the internal market and with the EEA
+    Agreement. This Decision is adopted in application of Article 6(1)(b) of the Merger Regulation
+    and Article 57 of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

@@ -1,0 +1,684 @@
+case_id: eu_agco_trimble_trimble_solutions_jv_2024
+case_name: AGCO / TRIMBLE / TRIMBLE SOLUTIONS JV
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2024-03-25'
+parties:
+- name: AGCO
+  role: acquirer
+- name: TRIMBLE
+  role: acquirer
+- name: TRIMBLE SOLUTIONS JV
+  role: target
+source_documents:
+- doc_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  title: AGCO / TRIMBLE / TRIMBLE SOLUTIONS JV — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11382
+  pdf_url: http://publications.europa.eu/resource/cellar/c47846ed-167b-11ef-a251-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: GNSS receivers for agricultural applications
+  definition_status: left_open
+  notes: The Commission conservatively assessed the transaction based on the narrowest plausible
+    market definition, but left open whether these products belong to a broader product market
+    encompassing receivers for other applications, as the transaction would not raise concerns
+    either way.
+- market_id: pm_2
+  name: Terminals for precision agriculture applications
+  definition_status: left_open
+  notes: The Commission confirmed that terminals for agricultural applications are not substitutable
+    with terminals used in other sectors. It conservatively assessed the transaction based on
+    the narrowest plausible market definition but left open whether these products belong to
+    a broader product market, as the transaction would not raise concerns either way.
+- market_id: pm_3
+  name: Electronic control units (ECUs)
+  definition_status: left_open
+  notes: The Commission noted that there is no precedent for ECUs in the agricultural sector
+    and found some support for a broader market extending beyond the agricultural sector. However,
+    the precise market definition was left open as the transaction would not raise competition
+    concerns irrespective of the product market definition.
+- market_id: pm_4
+  name: Precision agriculture products (factory channel)
+  definition_status: considered
+  notes: The Commission considered the factory channel and the aftermarket channel to be separate
+    product markets for precision agriculture products.
+- market_id: pm_5
+  name: Precision agriculture products (aftermarket channel)
+  definition_status: considered
+  notes: The Commission considered the factory channel and the aftermarket channel to be separate
+    product markets for precision agriculture products.
+- market_id: pm_6
+  name: Tractors
+  definition_status: considered
+  notes: The Commission considered different types of agriculture machinery to belong to separate
+    product markets, focusing its analysis on machinery types in which AGCO is active, including
+    tractors.
+- market_id: pm_7
+  name: Combines
+  definition_status: considered
+  notes: The Commission considered different types of agriculture machinery to belong to separate
+    product markets, focusing its analysis on machinery types in which AGCO is active, including
+    combines.
+- market_id: pm_8
+  name: Forage harvesters
+  definition_status: considered
+  notes: The Commission considered different types of agriculture machinery to belong to separate
+    product markets, focusing its analysis on machinery types in which AGCO is active, including
+    forage harvesters.
+- market_id: pm_9
+  name: Self-propelled sprayers
+  definition_status: considered
+  notes: The Commission considered different types of agriculture machinery to belong to separate
+    product markets, focusing its analysis on machinery types in which AGCO is active, including
+    self-propelled sprayers.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Precision agriculture products — EEA-wide
+  definition_status: considered
+  notes: The Commission's market investigation confirmed that the geographic scope for precision
+    agriculture products is at least EEA-wide, with transportation costs and regulatory requirements
+    not being meaningful barriers. However, market conditions were noted to differ from other
+    geographic areas due to distribution networks.
+- market_id: gm_2
+  name: Tractors — national (EEA countries affected)
+  definition_status: considered
+  notes: The Commission, in line with its precedent and market investigation findings, considered
+    the geographic markets for agricultural machinery (including tractors) to have a national
+    scope at the retail level, noting price and feature differences across Member States.
+- market_id: gm_3
+  name: Combines — national (EEA countries affected)
+  definition_status: considered
+  notes: The Commission, in line with its precedent and market investigation findings, considered
+    the geographic markets for agricultural machinery (including combines) to have a national
+    scope at the retail level, noting price and feature differences across Member States.
+- market_id: gm_4
+  name: Forage harvesters — national (EEA countries affected)
+  definition_status: considered
+  notes: The Commission, in line with its precedent and market investigation findings, considered
+    the geographic markets for agricultural machinery (including forage harvesters) to have
+    a national scope at the retail level, noting price and feature differences across Member
+    States.
+- market_id: gm_5
+  name: Self-propelled sprayers — national (EEA countries affected)
+  definition_status: considered
+  notes: The Commission, in line with its precedent and market investigation findings, considered
+    the geographic markets for agricultural machinery (including self-propelled sprayers) to
+    have a national scope at the retail level, noting price and feature differences across Member
+    States.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  page: '4'
+  quote_snippet: The Parties submit that, for the purpose of this case, receivers should be
+    segmented by sector. The assessment should therefore focus on receivers for agricultural
+    applications. These receivers are distinguished from those used in other sectors because
+    of their level of accuracy, their rugged housing and their design allowing easy installation
+    on the rooftops of agricultural machinery.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  page: '4'
+  quote_snippet: The Parties’ internal documents – as well as the several market participants
+    interviewed during the Commission’s investigation – generally refer to an overall category
+    of receivers for agricultural applications, without any meaningful sub-segmentations. In
+    particular, receivers for agricultural applications are generally characterized by similar
+    levels of accuracy, which is typically within the range of 2 cm.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  page: '4'
+  quote_snippet: For the purpose of this case, the Commission will conservatively assess the
+    transaction based on the narrowest plausible market definition, that is the market of GNSS
+    receivers for agricultural applications. However, it can be left open whether these products
+    belong to a broader product market encompassing receivers for other applications, because
+    the transaction would not raise concerns either way.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  page: '5'
+  quote_snippet: The Commission investigation confirmed that terminals for agricultural applications
+    are not substitutable with terminals used in other sectors.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  page: '5'
+  quote_snippet: On the demand side, these terminals are characterized by specific hardware
+    configurations allowing their interoperability with the agricultural machinery and with
+    other components of the precision agriculture infrastructure. More importantly, terminals
+    are the components that generally run the software allowing the operation of that infrastructure
+    (to the extent that is not hosted on the cloud), which is one of the most critical elements
+    of precision agriculture operations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  page: '5'
+  quote_snippet: For the purpose of this case, the Commission will conservatively assess the
+    transaction based on the narrowest plausible market definition, that is the market of terminals
+    for precision agriculture applications. However, it can be left open whether these products
+    belong to a broader product market encompassing terminals for other applications, because
+    the transaction would not raise concerns either way.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  page: '7'
+  quote_snippet: The Parties submit that it is not possible to sub-segment ECUs according to
+    their use. Accordingly, it is neither possible nor appropriate to make a distinction similar
+    to that of the Commission’s automotive precedents.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  page: '7'
+  quote_snippet: The Commission’s prenotification interviews with market participants provided
+    some support for the Parties’ arguments. In particular, the relevant market may not be limited
+    to specific applications within the agricultural sector (as it is the case in the automotive
+    sector) but may actually extend beyond the agricultural sector. In fact, market participants
+    explained that agricultural ECUs have similar requirements to ECUs used for construction
+    machinery and other off-road sectors and there is a wide range of alternative suppliers
+    for these products.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  page: '7'
+  quote_snippet: The Commission however considers that the precise market definition can be
+    left open, as the transaction would not raise competition concerns irrespective of the product
+    market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  page: '3'
+  quote_snippet: These products are sold to final users through three main channels. First,
+    in case of vertically integrated OEMs, precision agriculture products and agriculture machinery
+    are produced by the same companies, combined in the factory, and sold to users. Second,
+    independent suppliers of precision agriculture products can sell their solutions to agriculture
+    machinery OEMs for factory installation on their machinery.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  page: '10'
+  quote_snippet: Therefore, for the purpose of this case, the Commission considers that the
+    factory and aftermarket channels are separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  page: '4'
+  quote_snippet: Third, both vertically integrated OEMs and independent suppliers can sell their
+    precision agriculture products to dealers for aftermarket installation on agriculture machinery.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  page: '10'
+  quote_snippet: Therefore, for the purpose of this case, the Commission considers that the
+    factory and aftermarket channels are separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  page: '10'
+  quote_snippet: In past decisions the Commission has considered that the market for the distribution
+    and retail sale of agricultural machinery should be segmented by machinery type – separating
+    as between tractors, combines, forage harvesters, balers, and other implements.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  page: '11'
+  quote_snippet: The Commission’s investigation did not identify any reasons to deviate from
+    the market definition outlined in its precedent. Therefore, for the purpose of this case,
+    the Commission will consider different types of agriculture machinery to belong to separate
+    product markets. In particular, the analysis will focus on the market for machinery including
+    precision agriculture products in which AGCO is active in the EEA, that is tractors, combines,
+    forage harvesters and self-propelled sprayers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  page: '10'
+  quote_snippet: In past decisions the Commission has considered that the market for the distribution
+    and retail sale of agricultural machinery should be segmented by machinery type – separating
+    as between tractors, combines, forage harvesters, balers, and other implements.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  page: '11'
+  quote_snippet: The Commission’s investigation did not identify any reasons to deviate from
+    the market definition outlined in its precedent. Therefore, for the purpose of this case,
+    the Commission will consider different types of agriculture machinery to belong to separate
+    product markets. In particular, the analysis will focus on the market for machinery including
+    precision agriculture products in which AGCO is active in the EEA, that is tractors, combines,
+    forage harvesters and self-propelled sprayers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  page: '10'
+  quote_snippet: In past decisions the Commission has considered that the market for the distribution
+    and retail sale of agricultural machinery should be segmented by machinery type – separating
+    as between tractors, combines, forage harvesters, balers, and other implements.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  page: '11'
+  quote_snippet: The Commission’s investigation did not identify any reasons to deviate from
+    the market definition outlined in its precedent. Therefore, for the purpose of this case,
+    the Commission will consider different types of agriculture machinery to belong to separate
+    product markets. In particular, the analysis will focus on the market for machinery including
+    precision agriculture products in which AGCO is active in the EEA, that is tractors, combines,
+    forage harvesters and self-propelled sprayers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  page: '10'
+  quote_snippet: In past decisions the Commission has considered that the market for the distribution
+    and retail sale of agricultural machinery should be segmented by machinery type – separating
+    as between tractors, combines, forage harvesters, balers, and other implements.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  page: '11'
+  quote_snippet: The Commission’s investigation did not identify any reasons to deviate from
+    the market definition outlined in its precedent. Therefore, for the purpose of this case,
+    the Commission will consider different types of agriculture machinery to belong to separate
+    product markets. In particular, the analysis will focus on the market for machinery including
+    precision agriculture products in which AGCO is active in the EEA, that is tractors, combines,
+    forage harvesters and self-propelled sprayers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  page: '10'
+  quote_snippet: The Commission’s market investigation confirmed the Parties’ claim that the
+    geographic scope of the markets for precision agriculture products is at least EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  page: '10'
+  quote_snippet: Market participants observed transportation costs or regulatory requirements
+    are not meaningful barriers to cross-border trade. This is partially confirmed by the fact
+    that Trimble’s products are often manufactured in […] or […] and then imported in Europe.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  page: '10'
+  quote_snippet: For the purpose of this case and based on the above, the Commission will assess
+    the transaction based on an EEA-wide market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  page: '11'
+  quote_snippet: In its precedent the Commission has defined the geographic markets for agricultural
+    machines as national at the retail level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  page: '11'
+  quote_snippet: The majority of respondents to the market investigation observed that prices
+    and features of agricultural machinery generally differ between different EEA Member States.
+    Certain market participants also noted that certain types of agriculture machinery must
+    be adapted to the specific soil conditions, which may be considerably different across countries.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  page: '11'
+  quote_snippet: The Commission’s investigation therefore confirmed the market definition outlined
+    in its precedent. Therefore, for the purpose of this case, the Commission will consider
+    the markets for agriculture machinery to have a national scope at the retail level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  page: '11'
+  quote_snippet: In its precedent the Commission has defined the geographic markets for agricultural
+    machines as national at the retail level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  page: '11'
+  quote_snippet: The majority of respondents to the market investigation observed that prices
+    and features of agricultural machinery generally differ between different EEA Member States.
+    Certain market participants also noted that certain types of agriculture machinery must
+    be adapted to the specific soil conditions, which may be considerably different across countries.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  page: '11'
+  quote_snippet: The Commission’s investigation therefore confirmed the market definition outlined
+    in its precedent. Therefore, for the purpose of this case, the Commission will consider
+    the markets for agriculture machinery to have a national scope at the retail level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  page: '11'
+  quote_snippet: In its precedent the Commission has defined the geographic markets for agricultural
+    machines as national at the retail level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  page: '11'
+  quote_snippet: The majority of respondents to the market investigation observed that prices
+    and features of agricultural machinery generally differ between different EEA Member States.
+    Certain market participants also noted that certain types of agriculture machinery must
+    be adapted to the specific soil conditions, which may be considerably different across countries.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  page: '11'
+  quote_snippet: The Commission’s investigation therefore confirmed the market definition outlined
+    in its precedent. Therefore, for the purpose of this case, the Commission will consider
+    the markets for agriculture machinery to have a national scope at the retail level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_34
+  source_document_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  page: '11'
+  quote_snippet: In its precedent the Commission has defined the geographic markets for agricultural
+    machines as national at the retail level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_35
+  source_document_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  page: '11'
+  quote_snippet: The majority of respondents to the market investigation observed that prices
+    and features of agricultural machinery generally differ between different EEA Member States.
+    Certain market participants also noted that certain types of agriculture machinery must
+    be adapted to the specific soil conditions, which may be considerably different across countries.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_36
+  source_document_id: eu_agco_trimble_trimble_solutions_jv_2024_decision
+  page: '11'
+  quote_snippet: The Commission’s investigation therefore confirmed the market definition outlined
+    in its precedent. Therefore, for the purpose of this case, the Commission will consider
+    the markets for agriculture machinery to have a national scope at the retail level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

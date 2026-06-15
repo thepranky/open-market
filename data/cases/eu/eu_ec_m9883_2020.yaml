@@ -1,0 +1,422 @@
+case_id: eu_ec_m9883_2020
+case_name: M.9883
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2020-09-21'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9883_2020_decision
+  title: M.9883 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9883
+  pdf_url: http://publications.europa.eu/resource/cellar/9bde482f-2b17-11eb-9d7e-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Acetic acid
+  definition_status: defined
+  notes: The Commission concluded that acetic acid constitutes a separate product market without
+    any further sub-segmentations, consistent with past precedents and market investigation
+    results.
+- market_id: pm_2
+  name: Butyl Acetate (n-BuAc and iso-BuAc)
+  definition_status: segmented
+  notes: The Commission found that n-BuAc and iso-BuAc constitute separate product markets.
+    The question of a further sub-segmentation of n-BuAc by purity level was left open, as the
+    Transaction did not raise serious doubts under any possible definition.
+- market_id: pm_3
+  name: Acrylonitrile (ACN)
+  definition_status: defined
+  notes: The Commission concluded that ACN constitutes a distinct product market without any
+    further sub-segmentations, consistent with past precedents and market investigation results.
+- market_id: pm_4
+  name: Vinyl acetate monomer (VAM)
+  definition_status: defined
+  notes: The Commission found VAM to constitute a separate product market that should not be
+    further segmented, in line with previous decisions.
+- market_id: pm_5
+  name: S-PVC co-polymers
+  definition_status: defined
+  notes: The Commission considered S-PVC co-polymers a separate product market from other types
+    of S-PVC for the purposes of this decision.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Acetic acid — world-wide
+  definition_status: defined
+  notes: The Commission concluded that the relevant geographic market for acetic acid is worldwide,
+    consistent with precedents, notifying party's views, and market investigation results.
+- market_id: gm_2
+  name: Butyl Acetate (“BuAc”) — worldwide / EEA + Turkey / EEA
+  definition_status: left_open
+  notes: The exact scope of the geographic market for BuAc was left open, as the Transaction
+    did not raise serious doubts under any of the possible definitions (worldwide, EEA + Turkey,
+    or EEA).
+- market_id: gm_3
+  name: Acrylonitrile (“ACN”) — worldwide / EEA + Turkey / EEA
+  definition_status: left_open
+  notes: The exact scope of the geographic market for ACN was left open, as the Transaction
+    did not raise serious doubts under any of the possible definitions (worldwide, EEA + Turkey,
+    or EEA). Market investigation respondents unanimously considered it worldwide.
+- market_id: gm_4
+  name: Vinyl acetate monomer (“VAM”) — world-wide
+  definition_status: defined
+  notes: The Commission found the relevant geographic market for VAM to be worldwide, consistent
+    with previous decisions.
+- market_id: gm_5
+  name: S-PVC co-polymers — NWE / Western Europe / EEA
+  definition_status: left_open
+  notes: The exact scope of the geographic market for S-PVC co-polymers was left open, as the
+    Transaction did not raise serious doubts under any of the possible definitions (NWE, Western
+    Europe, or EEA).
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9883_2020_decision
+  page: '3'
+  quote_snippet: The Commission has previously considered that acetic acid constitutes a separate
+    product market.5
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9883_2020_decision
+  page: '3'
+  quote_snippet: Replies from both customers7 and competitors8 clearly indicate that acetic
+    acid is not substitutable by any other product and should form a distinct product market.
+    Furthermore, a majority of both customers9 and competitors10 indicates that no further segmentation
+    is needed.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9883_2020_decision
+  page: '3'
+  quote_snippet: In light of the above, the Commission considers that the relevant product market
+    for acetic acid is a separate market without any further sub-segmentations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9883_2020_decision
+  page: '5'
+  quote_snippet: In the past,18 the Commission found that the market for BuAc should be subdivided
+    into its isomers (same chemical formula but different chemical structures) which are isobutyl
+    acetate (“iso-BuAc”) and n-butyl acetate (“n-BuAc”).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9883_2020_decision
+  page: '6'
+  quote_snippet: In light of the above, the Commission considers that each of n-BuAc and iso-BuAc
+    constitutes a separate product market. Regarding a possible sub-segmentation of n-BuAc by
+    purity level, the question can be left open, since under any possible product market definition
+    (n-BuAc overall, normal grade n-BuAc with a purity of 99.0% and high purity grade n-BuAc
+    with a purity of at least 99.5%), the Transaction does not give rise to serious doubts as
+    to its compatibility with the internal market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9883_2020_decision
+  page: '7'
+  quote_snippet: In the past, the Commission found that ACN was a distinct product market,31
+    without considering the potential existence of any further sub-segmentations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9883_2020_decision
+  page: '7'
+  quote_snippet: All ACN respondents state that ACN is a distinct product market that should
+    not be further segmented.33
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9883_2020_decision
+  page: '7'
+  quote_snippet: In light of the above, the Commission considers that the relevant product market
+    for ACN is a separate market without any further sub-segmentations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9883_2020_decision
+  page: '9'
+  quote_snippet: The Commission considers that the relevant product market for VAM is a separate
+    market without any further sub-segmentations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9883_2020_decision
+  page: '9'
+  quote_snippet: The Commission considers, for the purposes of this Decision, that the relevant
+    product market for S-PVC co-polymers is a separate market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9883_2020_decision
+  page: '3'
+  quote_snippet: The Commission previously found (as a result of a Phase II investigation) that
+    the geographic market for acetic acid was worldwide in scope.11
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9883_2020_decision
+  page: '4'
+  quote_snippet: Both customers14 and competitors15 consider the market for acetic acid to be
+    worldwide. In their replies customers16 and competitors17 for acetic acid confirm the arguments
+    of the Notifying Party, outlined in paragraph (15).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9883_2020_decision
+  page: '4'
+  quote_snippet: In light of the above, the Commission considers that the relevant geographic
+    market for acetic acid is world-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m9883_2020_decision
+  page: '6'
+  quote_snippet: In the past,28 the Commission found indications that the geographic market
+    for the various types of BuAc was EEA-wide, but has ultimately left the precise scope of
+    the market open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m9883_2020_decision
+  page: '6'
+  quote_snippet: In light of the above, the Commission considers that the question of whether
+    the relevant geographic market for BuAc is worldwide, the EEA + Turkey, or the EEA can be
+    left open, since the Transaction does not give rise to serious doubts as to its compatibility
+    with the internal market, under any of these three possible geographic market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m9883_2020_decision
+  page: '7'
+  quote_snippet: In the past, the Commission considered that the relevant geographic market
+    for ACN could be worldwide, EEA wide and EEA wide + Turkey, but ultimately left the exact
+    scope of the geographic market open.34
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m9883_2020_decision
+  page: '8'
+  quote_snippet: Respondents in the market investigation unanimously consider the market for
+    ACN to be worldwide.37
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m9883_2020_decision
+  page: '8'
+  quote_snippet: In any event, the Commission considers that the question of whether the relevant
+    geographic market for ACN is worldwide, EEA + Turkey, or EEA can be left open, since the
+    Transaction does not give rise to serious doubts as to its compatibility with the internal
+    market, under any of these three possible geographic market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m9883_2020_decision
+  page: '9'
+  quote_snippet: The Commission considers that the relevant geographic market for VAM is world-wide
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m9883_2020_decision
+  page: '10'
+  quote_snippet: The Commission considers that the question of whether the relevant geographic
+    market for S-PVC co-polymers is NWE, Western Europe, or EEA, can be left open, since the
+    Transaction does not give rise to serious doubts as to its compatibility with the internal
+    market, under any of these three possible geographic market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m9883_2020_decision
+  page: '1'
+  quote_snippet: |
+    Brussels, 21.09.2020
+    C(2020) 6545 final
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m9883_2020_decision
+  page: '1'
+  quote_snippet: |
+    Subject: Case M.9883 – INEOS / BP CHEMICALS BUSINESS
+    Commission decision pursuant to Article 6(1)(b) of Council Regulation
+    No 139/20041 and Article 57 of the Agreement on the European Economic
+    Area2
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_ec_m9883_2020_decision
+  page: '20'
+  quote_snippet: For the above reasons, the European Commission has decided not to oppose the
+    notified operation and to declare it compatible with the internal market and with the EEA
+    Agreement. This decision is adopted in application of Article 6(1)(b) of the Merger Regulation
+    and Article 57 of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

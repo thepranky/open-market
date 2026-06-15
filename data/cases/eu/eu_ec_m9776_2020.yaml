@@ -1,0 +1,594 @@
+case_id: eu_ec_m9776_2020
+case_name: M.9776
+authority: European Commission
+jurisdiction: EU
+sector: financial
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2020-09-30'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9776_2020_decision
+  title: M.9776 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9776
+  pdf_url: http://publications.europa.eu/resource/cellar/606b52a2-7a84-11eb-9ac9-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Merchant acquiring services
+  definition_status: defined
+  notes: The Commission considered merchant acquiring to constitute a separate product market,
+    consistent with its precedents. It further assessed potential segmentations, ultimately
+    defining POS merchant acquiring and e-commerce merchant acquiring as separate markets, while
+    leaving others open or finding them not appropriate.
+- market_id: pm_2
+  name: POS merchant acquiring services
+  definition_status: defined
+  notes: Defined as a separate product market from e-commerce merchant acquiring.
+- market_id: pm_3
+  name: E-commerce merchant acquiring services
+  definition_status: defined
+  notes: Defined as a separate product market from POS merchant acquiring. Whether it can be
+    further subdivided between APMs and card-based payments was left open.
+- market_id: pm_4
+  name: Merchant acquiring services segmented by payment card schemes (international/domestic)
+  definition_status: left_open
+  notes: The market investigation was inconclusive on this segmentation, and the precise scope
+    was left open.
+- market_id: pm_5
+  name: Merchant acquiring services segmented by payment card brands (e.g. Visa, Mastercard)
+  definition_status: left_open
+  notes: The market investigation was inconclusive on this segmentation, and the precise scope
+    was left open.
+- market_id: pm_6
+  name: Merchant acquiring services segmented by type of payment card (debit/credit)
+  definition_status: left_open
+  notes: The market investigation was inconclusive on this segmentation, and the precise scope
+    was left open.
+- market_id: pm_7
+  name: Merchant acquiring services segmented by SMEs and large merchants
+  definition_status: considered
+  notes: The Commission considered such a segmentation not appropriate.
+- market_id: pm_8
+  name: Wholesale merchant acquiring and retail merchant acquiring services
+  definition_status: considered
+  notes: The Commission considered such a segmentation not appropriate for the purposes of this
+    Transaction given the affected Member States.
+- market_id: pm_9
+  name: Manufacture and supply of POS terminals
+  definition_status: defined
+  notes: 'The market investigation confirmed the Notifying Party''s view of two distinct markets
+    for POS terminals: manufacture/supply and provision/management.'
+- market_id: pm_10
+  name: Provision and management of POS terminals
+  definition_status: defined
+  notes: The market investigation confirmed this as a distinct market from manufacture and supply
+    of POS terminals.
+- market_id: pm_11
+  name: Manufacture and supply of POS terminals segmented by type (traditional, mPOS, smartPOS)
+  definition_status: left_open
+  notes: The market investigation was not conclusive on this segmentation, and the question
+    was left open as it would not change the competitive assessment.
+- market_id: pm_12
+  name: Provision and management of POS terminals segmented by customer size (SMEs and large
+    customers)
+  definition_status: considered
+  notes: The Commission considered such a segmentation not appropriate.
+- market_id: pm_13
+  name: Acquiring processing services
+  definition_status: defined
+  notes: The Commission defined this as a separate product market and found no further segmentation
+    appropriate, aligning with the Notifying Party's views.
+- market_id: pm_14
+  name: E-commerce acceptance services
+  definition_status: defined
+  notes: The Commission defined this as a separate product market, distinct from e-commerce
+    merchant acquiring, and found no further segmentation appropriate. No horizontally or vertically
+    affected market at EEA level.
+- market_id: pm_15
+  name: In-store acceptance services
+  definition_status: defined
+  notes: The Commission defined this as a separate product market distinct from merchant acquiring
+    and acquiring processing, and found no further segmentation appropriate.
+- market_id: pm_16
+  name: NSP services in Germany
+  definition_status: left_open
+  notes: The Commission noted that NSP services may constitute a separate product market, comparable
+    to domestic POS merchant acquiring, but ultimately left the definitive market definition
+    open as the competitive assessment did not reveal concerns regardless.
+geographic_markets_considered:
+- market_id: gm_1
+  name: POS merchant acquiring services — national
+  definition_status: defined
+  notes: The market investigation supported national markets for POS merchant acquiring services,
+    noting the importance of local presence and the differing sets of competitors in each country.
+- market_id: gm_2
+  name: E-commerce merchant acquiring services — EEA-wide
+  definition_status: defined
+  notes: The market investigation and market structure supported an EEA-wide or global market
+    for e-commerce merchant acquiring.
+- market_id: gm_3
+  name: Manufacture and supply of POS terminals — EEA-wide
+  definition_status: defined
+  notes: The market investigation confirmed the Notifying Party's view that this market is at
+    least EEA-wide, due to terminals not being country-specific and customers being sophisticated
+    international buyers.
+- market_id: gm_4
+  name: Provision and management of POS terminals — national
+  definition_status: defined
+  notes: The market investigation confirmed the Notifying Party's view that this market is national
+    in scope, due to the need for local presence for maintenance and support.
+- market_id: gm_5
+  name: Acquiring processing services — EEA-wide
+  definition_status: defined
+  notes: The market investigation supported an EEA-wide market definition for acquiring processing
+    services, as they are IT services deliverable from anywhere with common requirements across
+    the EEA.
+- market_id: gm_6
+  name: E-commerce acceptance services — EEA-wide
+  definition_status: defined
+  notes: The market investigation supported an EEA-wide scope, with customers having EEA-wide
+    procurement strategies and international players able to supply throughout the EEA.
+- market_id: gm_7
+  name: In-store acceptance services — EEA-wide
+  definition_status: defined
+  notes: The market investigation results supported an EEA-wide scope for in-store acceptance
+    services, with customers sourcing from providers across the EEA and international players
+    capable of supplying them.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9776_2020_decision
+  page: '10'
+  quote_snippet: (27) In line with Commission precedent, the Commission considers that merchant
+    acquiring constitutes a separate product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9776_2020_decision
+  page: '10'
+  quote_snippet: (28) The Commission’s market investigation was inconclusive as to whether the
+    sub- segmentations considered in previous Commission decisions, namely (i) types of payment
+    card schemes (international/domestic), (ii) payment card brands (e.g. Visa, Mastercard),
+    and (iii) type of payment card (debit/credit) are appropriate. Regarding the segmentation
+    between POS merchant acquiring and e-commerce merchant acquiring, the market investigation
+    provided sufficient evidence to conclude that these constitute separate product markets.
+    By contrast, the Commission considers that the market investigation did not provide sufficient
+    evidence to distinguish between (i) SMEs and large merchants and (ii) wholesale merchant
+    acquiring and retail merchant acquiring.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9776_2020_decision
+  page: '10'
+  quote_snippet: (28) [...] Regarding the segmentation between POS merchant acquiring and e-commerce
+    merchant acquiring, the market investigation provided sufficient evidence to conclude that
+    these constitute separate product markets. [...].
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9776_2020_decision
+  page: '10'
+  quote_snippet: (28) [...] Regarding the segmentation between POS merchant acquiring and e-commerce
+    merchant acquiring, the market investigation provided sufficient evidence to conclude that
+    these constitute separate product markets. [...].
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9776_2020_decision
+  page: '10'
+  quote_snippet: (28) The Commission’s market investigation was inconclusive as to whether the
+    sub- segmentations considered in previous Commission decisions, namely (i) types of payment
+    card schemes (international/domestic), (ii) payment card brands (e.g. Visa, Mastercard),
+    and (iii) type of payment card (debit/credit) are appropriate. [...].
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9776_2020_decision
+  page: '10'
+  quote_snippet: (28) The Commission’s market investigation was inconclusive as to whether the
+    sub- segmentations considered in previous Commission decisions, namely (i) types of payment
+    card schemes (international/domestic), (ii) payment card brands (e.g. Visa, Mastercard),
+    and (iii) type of payment card (debit/credit) are appropriate. [...].
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9776_2020_decision
+  page: '10'
+  quote_snippet: (28) The Commission’s market investigation was inconclusive as to whether the
+    sub- segmentations considered in previous Commission decisions, namely (i) types of payment
+    card schemes (international/domestic), (ii) payment card brands (e.g. Visa, Mastercard),
+    and (iii) type of payment card (debit/credit) are appropriate. [...].
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9776_2020_decision
+  page: '10'
+  quote_snippet: (28) [...] By contrast, the Commission considers that the market investigation
+    did not provide sufficient evidence to distinguish between (i) SMEs and large merchants
+    and (ii) wholesale merchant acquiring and retail merchant acquiring.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9776_2020_decision
+  page: '11'
+  quote_snippet: (32) Concerning a distinction by SMEs and large merchants, the Commission recently
+    took the view that such a segmentation is not appropriate,45 in line with the Notifying
+    Party’s submissions. The market investigation in the present case gave no reason to depart
+    from this view. Therefore, the Commission considers that large merchants and SMEs do not
+    constitute separate product markets, but may constitute different segments in a heterogenic
+    market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9776_2020_decision
+  page: '10'
+  quote_snippet: (28) [...] By contrast, the Commission considers that the market investigation
+    did not provide sufficient evidence to distinguish between (i) SMEs and large merchants
+    and (ii) wholesale merchant acquiring and retail merchant acquiring.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9776_2020_decision
+  page: '17'
+  quote_snippet: (59) The market investigation largely confirmed the Notifying Party’s arguments
+    that there are two distinct markets for POS terminals, namely for (i) the manufacture and
+    supply of POS terminals (mainly to distributors, merchant acquirers, and large merchants)
+    and (ii) the provision and management of POS terminals to merchants.76
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9776_2020_decision
+  page: '18'
+  quote_snippet: (64) It follows from the above that for the purposes of this decision, it is
+    necessary to distinguish product markets for (i) the manufacture and supply of POS terminals
+    and (ii) the provision and management of POS terminals. [...].
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9776_2020_decision
+  page: '17'
+  quote_snippet: (59) The market investigation largely confirmed the Notifying Party’s arguments
+    that there are two distinct markets for POS terminals, namely for (i) the manufacture and
+    supply of POS terminals (mainly to distributors, merchant acquirers, and large merchants)
+    and (ii) the provision and management of POS terminals to merchants.76
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m9776_2020_decision
+  page: '18'
+  quote_snippet: (64) It follows from the above that for the purposes of this decision, it is
+    necessary to distinguish product markets for (i) the manufacture and supply of POS terminals
+    and (ii) the provision and management of POS terminals. [...].
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m9776_2020_decision
+  page: '17'
+  quote_snippet: (61) The market investigation was not conclusive as to whether the market for
+    the manufacture and supply of POS terminals should be further segmented between the different
+    categories of POS (including traditional POS, mPOS, or SmartPOS).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m9776_2020_decision
+  page: '18'
+  quote_snippet: (64) [...] and the question as to whether a segmentation depending on the type
+    of POS supplied for the manufacture and supply of POS terminals, can be left open, as the
+    competitive assessment would not change With regards to the provision and management of
+    POS terminals, no further sub-segmentation is needed.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m9776_2020_decision
+  page: '18'
+  quote_snippet: (64) It follows from the above that for the purposes of this decision, it is
+    necessary to distinguish product markets for (i) the manufacture and supply of POS terminals
+    and (ii) the provision and management of POS terminals. In addition, for the purposes of
+    this decision, a segmentation depending on customer size is not needed, and the question
+    as to whether a segmentation depending on the type of POS supplied for the manufacture and
+    supply of POS terminals, can be left open, as the competitive assessment would not change
+    With regards to the provision and management of POS terminals, no further sub-segmentation
+    is needed.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m9776_2020_decision
+  page: '22'
+  quote_snippet: (87) Considering the results of the market investigation and in line with the
+    Notifying Party’s views, the Commission considers that, for the purposes of this decision,
+    acquiring processing is a separate product market and that no further segmentation is appropriate.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_13
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m9776_2020_decision
+  page: '24'
+  quote_snippet: (98) It results from the above that, in line with the Notifying Party’s views,
+    for the purposes of this decision, e-commerce acceptance is a separate product market and
+    that no further segmentation is appropriate.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_14
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m9776_2020_decision
+  page: '26'
+  quote_snippet: (104) While both Parties offer these services, the Transaction does not give
+    rise to a horizontally or vertically affected market of e-commerce acceptance services at
+    EEA level. Such services will therefore not be further discussed in this decision.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_14
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m9776_2020_decision
+  page: '27'
+  quote_snippet: '(109) In-store acceptance is a technical service that allows a merchant to
+    optimise connection to multiple acquirers: it is a centralised platform that connects all
+    POS terminals to all its merchant acquirers and allows concentration of transaction flows,
+    multiple-acquirer switching or reporting services. In-store acceptance is not a mandatory
+    technical service and is only provided to large retailers which have a significant volume
+    of terminals and transactions for which optimisation of payment flows is necessary. The
+    market investigation confirmed that a significant proportion of customers do not require
+    in-store acceptance services at all and that those that do require in-store acceptance services
+    procure them separately from other services such as merchant acquiring.130 Therefore, the
+    Commission considers that in-store acceptance services constitute a market that is distinct
+    from merchant acquiring and acquiring processing, the latter two being mandatory services,
+    required by all types of customers.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_15
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m9776_2020_decision
+  page: '27'
+  quote_snippet: (111) It results from the above that, in line with the Notifying Party’s views,
+    for the purposes of this decision, in-store acceptance services constitute a separate product
+    market and that no further subdivision is appropriate.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_15
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_ec_m9776_2020_decision
+  page: '32'
+  quote_snippet: (132) It results from the above, that for the purposes of this decision, NSP
+    services may constitute a separate product market. Such a market would be comparable to
+    the domestic POS merchant acquiring services in other countries, as mentioned in this decision,
+    but also includes additional functions, specific to the German market. Therefore, for the
+    purposes of this decision the plausible markets for POS merchant acquiring for international
+    card transactions and one for NSP services with its specific functions for domestic card
+    transactions in Germany are assessed separately, followed by a conclusion for the overall
+    market for POS merchant acquiring in Germany. However, for the purposes of this decision,
+    it can ultimately be left open whether NSP services and POS merchant acquiring in Germany
+    constitute separate markets or whether they form an overall market including both types
+    of services. This is because the competitive assessment did not reveal competition concerns
+    for any respective market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_16
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_ec_m9776_2020_decision
+  page: '19'
+  quote_snippet: (68) On the supply side, the Notifying Party indicates that terminals are sold
+    as hardware, which is not country-specific, and that international players can sell their
+    terminals across countries. To support this, they indicate that Asian players such as PAX
+    and Newland have been able to gain market share in the EEA rapidly.86 The Notifying Party
+    further submits that whilst sometimes country-specific applications need to be developed,
+    this is usually done once a client has been secured, and only requires that a supplier has
+    the ability to develop such application, which all do.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_ec_m9776_2020_decision
+  page: '19'
+  quote_snippet: '(72) The market investigation largely confirmed the Parties’ submissions according
+    to which the geographic scope for the markets are: (i) at least EEA-wide for the manufacturing
+    and supply of POS terminals, and (ii) national for the provision and management of POS terminals.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_ec_m9776_2020_decision
+  page: '19'
+  quote_snippet: '(72) The market investigation largely confirmed the Parties’ submissions according
+    to which the geographic scope for the markets are: (i) at least EEA-wide for the manufacturing
+    and supply of POS terminals, and (ii) national for the provision and management of POS terminals.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_ec_m9776_2020_decision
+  page: '28'
+  quote_snippet: (116) It results from the above that for the purposes of this decision the
+    market for in-store acceptance services should be considered as EEA-wide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+case_type: merger
+ai_summary: null
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

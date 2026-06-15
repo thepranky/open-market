@@ -1,0 +1,289 @@
+case_id: eu_ec_m10229_2021
+case_name: M.10229
+authority: European Commission
+jurisdiction: EU
+sector: financial
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2021-06-29'
+parties: []
+source_documents:
+- doc_id: eu_ec_m10229_2021_decision
+  title: M.10229 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10229
+  pdf_url: http://publications.europa.eu/resource/cellar/1aeaede6-21d4-11ec-bd8e-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Credit and suretyship insurance services
+  definition_status: segmented
+  notes: The Commission considered credit and suretyship insurance as a distinct market, but
+    left open the question of whether this market should be further narrowed into five types
+    of services (delcredere insurance, capital goods insurance, consumer credit insurance, fidelity
+    insurance, and guarantee insurance).
+- market_id: pm_2
+  name: Insurance distribution
+  definition_status: left_open
+  notes: The Commission previously identified a market for the distribution of insurance products,
+    but left open whether it includes only outward channels or also pure direct distribution,
+    and whether it distinguishes between life and non-life insurance products. For the purpose
+    of this Decision, it was left open under any plausible market definition as no concerns
+    arose.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Credit and suretyship insurance services — national (Italy affected)
+  definition_status: considered
+  notes: The Commission considered the geographic scope of the market for credit and suretyship
+    insurance and its possible sub-segments to be national for the purposes of this decision,
+    consistent with previous decisional practice.
+- market_id: gm_2
+  name: Insurance distribution — national (Italy affected)
+  definition_status: left_open
+  notes: The Commission generally considered the market for insurance distribution as national
+    in scope, but previously also considered a narrower scope at the level of Italian provinces.
+    The question of national versus provincial scope was left open as the transaction raised
+    no concerns under either definition.
+- market_id: gm_3
+  name: Insurance distribution — provincial (Italy affected)
+  definition_status: left_open
+  notes: The Commission previously considered a geographic market definition at the level of
+    Italian provinces for insurance distribution. The question of national versus provincial
+    scope was left open as the transaction raised no concerns under either definition.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m10229_2021_decision
+  page: '4'
+  quote_snippet: The Commission’s investigation did not provide any indications that it would
+    be appropriate for the Commission to depart from its previous decisional practice to consider
+    a distinct market for credit and suretyship insurance.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m10229_2021_decision
+  page: '4'
+  quote_snippet: In this case, the question whether the market for credit and suretyship insurance
+    should be further narrowed in line with the five types of service listed at recital (13)
+    above can be left open since the Transaction does not give rise to serious doubts as to
+    its compatibility with the internal market or the functioning of the EEA agreement under
+    any of these narrower plausible market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m10229_2021_decision
+  page: '5'
+  quote_snippet: The Commission has previously identified a market for the distribution of insurance
+    products, but has left open the question of whether this market includes only outward channels,
+    or both outward channels and pure direct distribution.22 However, for the purposes of this
+    Decision, only a market for insurance distribution including both outward channels and pure
+    direct distribution is relevant as both Allianz and Aviva Italia are each involved in pure
+    direct distribution only (they do not distribute third- party products).23 The remainder
+    of this Decision therefore refers to a plausible market for direct insurance distribution
+    including both pure direct distribution and other outward channels.24
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m10229_2021_decision
+  page: '6'
+  quote_snippet: The Commission previously considered that a distinction could be made between
+    the distribution of (i) life and (ii) non-life insurance products, as different providers
+    tend to be involved and the distribution of life insurance in Europe is regulated separately
+    from other types of insurance but ultimately left the exact product market definition open.25
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m10229_2021_decision
+  page: '6'
+  quote_snippet: In this case, the exact product market definition for direct insurance distribution
+    can be left open since the Transaction does not give rise to serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA agreement under any plausible market
+    for direct distribution (i.e., direct distribution including pure direct distribution; direct
+    distribution excluding pure direct distribution; life insurance direct distribution including
+    pure direct distribution; life insurance direct distribution excluding pure direct distribution;
+    non-life insurance direct distribution including pure direct distribution; and non-life
+    insurance direct distribution excluding pure direct distribution). The market for direct
+    insurance distribution is hereinafter referred as the market for “insurance distribution”.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m10229_2021_decision
+  page: '4'
+  quote_snippet: The Commission has consistently considered the relevant market for credit and
+    suretyship insurance services (and its possible sub-segments) to be national in scope.19
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m10229_2021_decision
+  page: '5'
+  quote_snippet: The Commission’s investigation did not provide any indications that would require
+    the Commission to depart from its previous decisional practice on the geographic scope of
+    the markets for non-life insurance services (including the market for credit and suretyship
+    insurance and its possible sub-segments) being national.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m10229_2021_decision
+  page: '5'
+  quote_snippet: For the purposes of this decision, therefore, the Commission considers the
+    geographic scope of the market for credit and suretyship insurance (and its possible sub-segments)
+    to be national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m10229_2021_decision
+  page: '6'
+  quote_snippet: In previous decisions, the Commission has generally considered the market for
+    the distribution of insurance products and non-life insurance products (including the distribution
+    of non-life insurance products) and its various sub-segments as national.28
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m10229_2021_decision
+  page: '7'
+  quote_snippet: For insurance distribution in Italy, the Commission has also considered in
+    the past a geographic market definition that is narrower than national, i.e., at the level
+    of province in Italy.29 In that case, the Commission ultimately left open the question whether
+    the market(s) for insurance distribution cover the whole of Italy or whether there are separate
+    markets for each province in Italy.30
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m10229_2021_decision
+  page: '7'
+  quote_snippet: The question whether the geographic market definition should be further narrowed
+    (i.e. to the level of each province in Italy) can be left open since the Transaction does
+    not give rise to serious doubts as to its compatibility with the internal market or the
+    functioning of the EEA agreement under either plausible geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m10229_2021_decision
+  page: '7'
+  quote_snippet: For insurance distribution in Italy, the Commission has also considered in
+    the past a geographic market definition that is narrower than national, i.e., at the level
+    of province in Italy.29 In that case, the Commission ultimately left open the question whether
+    the market(s) for insurance distribution cover the whole of Italy or whether there are separate
+    markets for each province in Italy.30
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m10229_2021_decision
+  page: '7'
+  quote_snippet: The question whether the geographic market definition should be further narrowed
+    (i.e. to the level of each province in Italy) can be left open since the Transaction does
+    not give rise to serious doubts as to its compatibility with the internal market or the
+    functioning of the EEA agreement under either plausible geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m10229_2021_decision
+  page: '1'
+  quote_snippet: Commission decision pursuant to Article 6(1)(b) of Council Regulation No 139/20041
+    and Article 57 of the Agreement on the European Economic Area2
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

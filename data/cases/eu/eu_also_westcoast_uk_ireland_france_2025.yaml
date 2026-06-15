@@ -1,0 +1,324 @@
+case_id: eu_also_westcoast_uk_ireland_france_2025
+case_name: ALSO / WESTCOAST UK IRELAND FRANCE
+authority: European Commission
+jurisdiction: EU
+sector: retail
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2025-02-18'
+parties:
+- name: ALSO
+  role: acquirer
+- name: WESTCOAST UK IRELAND FRANCE
+  role: target
+source_documents:
+- doc_id: eu_also_westcoast_uk_ireland_france_2025_decision
+  title: ALSO / WESTCOAST UK IRELAND FRANCE — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11715
+  pdf_url: http://publications.europa.eu/resource/cellar/d7d9af26-30ca-11f0-8a44-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Wholesale distribution of printing consumables
+  definition_status: segmented
+  notes: The Commission defined this as a separate market in previous decisions. It left open
+    whether the market should be segmented by distribution channels (specialised, ICT, or traditional
+    office supplies wholesalers) or by type of sales (direct and/or indirect). The Commission
+    later considered segmentation by distribution channel no longer plausible due to market
+    evolution.
+- market_id: pm_2
+  name: Wholesale distribution of printers
+  definition_status: left_open
+  notes: The Commission defined a separate market for the wholesale distribution of printers
+    in a previous decision (Ricoh/Ikon). It considered potential segmentation based on printer
+    categories (black and white, colour) and printing capacity, but left any further segmentation
+    open. In this decision, the Commission confirmed it was not departing from previous precedents
+    and left open segmentation by product category (printers within ICT products) and further
+    segmentation of printers by category or capacity.
+- market_id: pm_3
+  name: Wholesale distribution of ICT and CE products
+  definition_status: considered
+  notes: Mentioned as an overall market considered in previous decisions, which included a sub-segmentation
+    by product category such as printers, but that segmentation was left open.
+- market_id: pm_4
+  name: Wholesale distribution of ICT products
+  definition_status: considered
+  notes: Mentioned as a separate market defined in previous cases, considered as part of an
+    overall market including ICT and CE products.
+- market_id: pm_5
+  name: Wholesale distribution of photocopiers and fax machines
+  definition_status: considered
+  notes: Mentioned as a market separate from the wholesale distribution of printers in a previous
+    decision.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Wholesale distribution of printing consumables — national (France affected)
+  definition_status: left_open
+  notes: The Commission considered whether the geographic market for the wholesale distribution
+    of printing consumables could be EEA-wide, regional, or national in scope based on precedents,
+    but ultimately left it open. Market investigation results, however, provided indications
+    that the geographic scope is national, citing national contract negotiations, national pricing
+    by distributors, and logistical requirements for national presence.
+- market_id: gm_2
+  name: Wholesale distribution of printers — EEA-wide/regional/national
+  definition_status: left_open
+  notes: The Commission considered whether the geographic market for the wholesale distribution
+    of printers (or ICT products generally) could be EEA-wide, regional, or national based on
+    precedents but left the precise definition open.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_also_westcoast_uk_ireland_france_2025_decision
+  page: '5'
+  quote_snippet: As regards a potential segmentation by distribution channel, the Commission
+    considers that, in light of the evolution of the market for the wholesale distribution of
+    printing consumables (i.e., currently all printing consumables are sold via ICT wholesalers),
+    a segmentation by distribution channels (between ICT wholesalers, wholesalers of traditional
+    office supplies and specialized wholesalers) is no longer plausible.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_also_westcoast_uk_ireland_france_2025_decision
+  page: '6'
+  quote_snippet: The Commission considers that, for the purposes of this Decision, the question
+    whether the market definition for the wholesale distribution of printing consumables should
+    be segmented based on the type of sales (i.e. direct and/or indirect) can be left open,
+    as the Transaction does not raise serious doubts as to its compatibility with the internal
+    market irrespective of the exact market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_also_westcoast_uk_ireland_france_2025_decision
+  page: '7'
+  quote_snippet: In Ricoh / Ikon31, the Commision defined a market for the wholesale distribution
+    of printers, which was separate from the market for the wholesale distribution of photocopiers
+    and fax machines.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_also_westcoast_uk_ireland_france_2025_decision
+  page: '9'
+  quote_snippet: The Commission considers that, for the purposes of this Decision, the question
+    whether the market for the wholesale distribution of ICT products should be segmented by
+    product category (such as printers) and the question whether the potential market for the
+    wholesale distribution of printers should be segmented based on the category of printers
+    or printing capacity can be left open, as the Transaction does not raise serious doubts
+    as to its compatibility with the internal market irrespective of the exact market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_also_westcoast_uk_ireland_france_2025_decision
+  page: '8'
+  quote_snippet: In ALSO / ABC Data Group34, the Commission considered one overall market including
+    the wholesale distribution of ICT and CE products, as well as a separate market for the
+    wholesale distribution of ICT products (which had been defined by the Commission in previous
+    cases). In that decision, the Commission also considered a sub-segmention thereof by product
+    category, such as printers, but ultimately left the precise market definition open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_also_westcoast_uk_ireland_france_2025_decision
+  page: '8'
+  quote_snippet: In ALSO / ABC Data Group34, the Commission considered one overall market including
+    the wholesale distribution of ICT and CE products, as well as a separate market for the
+    wholesale distribution of ICT products (which had been defined by the Commission in previous
+    cases). In that decision, the Commission also considered a sub-segmention thereof by product
+    category, such as printers, but ultimately left the precise market definition open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_also_westcoast_uk_ireland_france_2025_decision
+  page: '7'
+  quote_snippet: In Ricoh / Ikon31, the Commision defined a market for the wholesale distribution
+    of printers, which was separate from the market for the wholesale distribution of photocopiers
+    and fax machines.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_also_westcoast_uk_ireland_france_2025_decision
+  page: '6'
+  quote_snippet: In previous decisions,23 the Commission considered whether the market for the
+    wholesale distribution of printing consumables could be EEA-wide, regional (e.g. the Baltic
+    region) or national in scope, but ultimately left the precise geographic market definition
+    open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_also_westcoast_uk_ireland_france_2025_decision
+  page: '7'
+  quote_snippet: The results of the market investigation provided indications that the geographic
+    scope of the market for the wholesale distribution of printing consumables is national.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_also_westcoast_uk_ireland_france_2025_decision
+  page: '7'
+  quote_snippet: The Commission considers that, for the purposes of this Decision, the exact
+    geographic market definition with regard to the wholesale distribution of printing consumables
+    can be left open, as the Transaction would not raise serious doubts as to its compatibility
+    with the internal market irrespective thereof.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_also_westcoast_uk_ireland_france_2025_decision
+  page: '9'
+  quote_snippet: In Ricoh / Ikon 41, the Commission considered whether the market for the wholesale
+    distribution of printers could be EEA-wide or national in scope, but ultimately left the
+    precise geographic market definition open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_also_westcoast_uk_ireland_france_2025_decision
+  page: '9'
+  quote_snippet: The Commission considers that, for the purposes of this Decision, the exact
+    geographic market definition concerning the wholesale distribution of printers (i.e. EEA-wide,
+    regional or national) can be left open, as the Transaction would not raise serious doubts
+    as to its compatibility with the internal market irrespective thereof.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_also_westcoast_uk_ireland_france_2025_decision
+  page: '6'
+  quote_snippet: the Transaction does not raise serious doubts as to its compatibility with
+    the internal market irrespective of the exact market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_also_westcoast_uk_ireland_france_2025_decision
+  page: '7'
+  quote_snippet: the Transaction would not raise serious doubts as to its compatibility with
+    the internal market irrespective thereof.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_also_westcoast_uk_ireland_france_2025_decision
+  page: '9'
+  quote_snippet: the Transaction does not raise serious doubts as to its compatibility with
+    the internal market irrespective of the exact market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_also_westcoast_uk_ireland_france_2025_decision
+  page: '10'
+  quote_snippet: the Transaction would not raise serious doubts as to its compatibility with
+    the internal market irrespective thereof.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+case_type: merger
+ai_summary: null
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

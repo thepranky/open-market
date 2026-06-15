@@ -3,7 +3,7 @@ case_name: Thales / Gemalto
 authority: European Commission
 jurisdiction: EU
 sector: tech
-outcome: cleared_with_conditions
+outcome: unknown
 procedure_stage: phase2
 decision_date: '2018-11-28'
 parties:
@@ -21,97 +21,93 @@ product_markets_considered:
 - market_id: pm_1
   name: GP HSMs
   definition_status: defined
-  notes: The Commission concluded that General Purpose Hardware Security Modules (GP
-    HSMs) constitute a distinct product market, separate from Payment HSMs and other
-    Key Management Solutions (KMS).
+  notes: The Commission concluded that General Purpose Hardware Security Modules (GP HSMs) constitute
+    a distinct product market, separate from Payment HSMs and other Key Management Solutions
+    (KMS).
 - market_id: pm_2
   name: Payment HSMs
   definition_status: defined
-  notes: The Commission concluded that Payment Hardware Security Modules (Payment
-    HSMs) constitute a distinct product market, separate from GP HSMs and other Key
-    Management Solutions (KMS).
+  notes: The Commission concluded that Payment Hardware Security Modules (Payment HSMs) constitute
+    a distinct product market, separate from GP HSMs and other Key Management Solutions (KMS).
 - market_id: pm_3
   name: Enterprise Encryption Software (ES) for data at rest/in use
   definition_status: left_open
-  notes: The Commission left open the exact product market definition for Enterprise
-    Encryption Software, including whether ES for data at rest/in use is a single
-    market or further segmented by encryption level (storage/disk, file/folder, database,
-    application, tokenization, data masking). The assessment considered this narrowest
-    plausible market.
+  notes: The Commission left open the exact product market definition for Enterprise Encryption
+    Software, including whether ES for data at rest/in use is a single market or further segmented
+    by encryption level (storage/disk, file/folder, database, application, tokenization, data
+    masking). The assessment considered this narrowest plausible market.
 - market_id: pm_4
   name: Network encryptors for data in motion
   definition_status: left_open
-  notes: The Commission left open the exact product market definition for network
-    encryptors for data in motion, including whether it should be sub-segmented based
-    on network layers (Layers 1, 2, or 3). The assessment considered this narrowest
-    plausible market, with specific horizontal effects identified for Layer 2.
+  notes: The Commission left open the exact product market definition for network encryptors
+    for data in motion, including whether it should be sub-segmented based on network layers
+    (Layers 1, 2, or 3). The assessment considered this narrowest plausible market, with specific
+    horizontal effects identified for Layer 2.
 - market_id: pm_5
   name: (Cyber) security evaluation services
   definition_status: left_open
-  notes: The Commission left open whether the market consists of all (cyber) security
-    evaluation services or separate markets based on certification standards (e.g.,
-    CSPN security evaluation services), as the Transaction would not significantly
-    impede effective competition under any plausible definition.
+  notes: The Commission left open whether the market consists of all (cyber) security evaluation
+    services or separate markets based on certification standards (e.g., CSPN security evaluation
+    services), as the Transaction would not significantly impede effective competition under
+    any plausible definition.
 - market_id: pm_6
   name: OTA SIM card administration and services platforms
   definition_status: defined
-  notes: The Commission confirmed that the provision of OTA SIM card administration
-    and services platforms constitutes a distinct product market.
+  notes: The Commission confirmed that the provision of OTA SIM card administration and services
+    platforms constitutes a distinct product market.
 - market_id: pm_7
   name: Manufacture and supply of SIM cards
   definition_status: left_open
-  notes: The Commission left open whether the market for the manufacture and supply
-    of SIM cards constitutes a separate market from overall plastic cards, but considered
-    this as a plausible narrowest market.
+  notes: The Commission left open whether the market for the manufacture and supply of SIM cards
+    constitutes a separate market from overall plastic cards, but considered this as a plausible
+    narrowest market.
 - market_id: pm_8
   name: GSM-R integration projects
   definition_status: left_open
-  notes: The Commission left open whether GSM-R integration projects constitute a
-    separate market from railway signalling systems, but noted indications for a separate
-    market and considered this as a plausible narrowest market.
+  notes: The Commission left open whether GSM-R integration projects constitute a separate market
+    from railway signalling systems, but noted indications for a separate market and considered
+    this as a plausible narrowest market.
 - market_id: pm_9
   name: Access control smart cards
   definition_status: left_open
-  notes: The Commission left open the exact product market definition, including whether
-    it should be segmented into physical and logical access control microprocessor
-    chip cards, as the Transaction would not significantly impede effective competition
-    under any plausible definition.
+  notes: The Commission left open the exact product market definition, including whether it
+    should be segmented into physical and logical access control microprocessor chip cards,
+    as the Transaction would not significantly impede effective competition under any plausible
+    definition.
 geographic_markets_considered:
 - market_id: gm_1
   name: GP HSMs — EEA-wide or worldwide (geographic scope left open)
   definition_status: left_open
-  notes: The Commission concluded that the geographic market for GP HSMs could be
-    at least EEA-wide or worldwide, but left the exact definition open as the competitive
-    assessment would remain the same.
+  notes: The Commission concluded that the geographic market for GP HSMs could be at least EEA-wide
+    or worldwide, but left the exact definition open as the competitive assessment would remain
+    the same.
 - market_id: gm_2
   name: Payment HSMs — EEA-wide or worldwide (geographic scope left open)
   definition_status: left_open
-  notes: The Commission concluded that the geographic market for Payment HSMs could
-    be at least EEA-wide or worldwide, but left the exact definition open as the competitive
-    assessment would remain the same.
+  notes: The Commission concluded that the geographic market for Payment HSMs could be at least
+    EEA-wide or worldwide, but left the exact definition open as the competitive assessment
+    would remain the same.
 - market_id: gm_3
-  name: Enterprise Encryption Software (ES) for data at rest/in use — EEA-wide or
-    global (geographic scope left open)
-  definition_status: left_open
-  notes: The Commission left open whether the relevant geographic market for ES for
-    data at rest/in use is EEA-wide or global, as the Transaction would not significantly
-    impede effective competition under any plausible definition, including the narrowest
-    possible market at the EEA level.
-- market_id: gm_4
-  name: Network encryptors for data in motion (Layer 2) — EEA-wide or global (geographic
+  name: Enterprise Encryption Software (ES) for data at rest/in use — EEA-wide or global (geographic
     scope left open)
   definition_status: left_open
-  notes: The Commission left open whether the relevant geographic market for network
-    encryptors for data in motion is EEA-wide or global. However, the horizontal competitive
-    assessment focused on a potential sub-segment for data in motion at Layer 2 at
-    the EEA-wide market.
-- market_id: gm_5
-  name: (Cyber) security evaluation services — global or EEA-wide (geographic scope
+  notes: The Commission left open whether the relevant geographic market for ES for data at
+    rest/in use is EEA-wide or global, as the Transaction would not significantly impede effective
+    competition under any plausible definition, including the narrowest possible market at the
+    EEA level.
+- market_id: gm_4
+  name: Network encryptors for data in motion (Layer 2) — EEA-wide or global (geographic scope
     left open)
   definition_status: left_open
-  notes: The Commission left open whether the geographic market for (cyber) security
-    evaluation services is global or EEA-wide, as the Transaction would not significantly
-    impede effective competition under any plausible definition.
+  notes: The Commission left open whether the relevant geographic market for network encryptors
+    for data in motion is EEA-wide or global. However, the horizontal competitive assessment
+    focused on a potential sub-segment for data in motion at Layer 2 at the EEA-wide market.
+- market_id: gm_5
+  name: (Cyber) security evaluation services — global or EEA-wide (geographic scope left open)
+  definition_status: left_open
+  notes: The Commission left open whether the geographic market for (cyber) security evaluation
+    services is global or EEA-wide, as the Transaction would not significantly impede effective
+    competition under any plausible definition.
 - market_id: gm_6
   name: Manufacture and supply of SIM cards — EEA-wide (geographic scope left open)
   definition_status: left_open
@@ -121,31 +117,30 @@ geographic_markets_considered:
   name: OTA SIM card administration and services platforms — EEA-wide or global (geographic
     scope left open)
   definition_status: left_open
-  notes: The Commission left open whether the relevant geographic market for OTA SIM
-    card administration and services platforms is global or EEA-wide.
+  notes: The Commission left open whether the relevant geographic market for OTA SIM card administration
+    and services platforms is global or EEA-wide.
 - market_id: gm_8
   name: GSM-R integration projects — national (geographic scope left open)
   definition_status: left_open
-  notes: The Commission left open the exact geographic market definition for GSM-R
-    integration, noting elements pointing to a national scope but also suggesting
-    an EEA-wide or global scope. The narrowest possible market at a national level
-    was considered.
+  notes: The Commission left open the exact geographic market definition for GSM-R integration,
+    noting elements pointing to a national scope but also suggesting an EEA-wide or global scope.
+    The narrowest possible market at a national level was considered.
 - market_id: gm_9
   name: Access control smart cards — EEA-wide or global (geographic scope left open)
   definition_status: left_open
-  notes: The Commission left open whether the geographic market for access control
-    smart cards is global or at least EEA-wide, considering that the Transaction would
-    not significantly impede effective competition under any plausible definition,
-    including the narrowest possible market at the EEA level.
+  notes: The Commission left open whether the geographic market for access control smart cards
+    is global or at least EEA-wide, considering that the Transaction would not significantly
+    impede effective competition under any plausible definition, including the narrowest possible
+    market at the EEA level.
 theories_of_harm: []
 commitments: []
 source_passages:
 - passage_id: sp_1
   source_document_id: eu_thales_gemalto_2019_decision
   page: '23'
-  quote_snippet: 'In light of the above, for the purposes of the present Decision,
-    the Commission concludes that the relevant product markets for the assessment
-    of the Transaction are: (a) GP HSMs (b) Payment HSMs'
+  quote_snippet: 'In light of the above, for the purposes of the present Decision, the Commission
+    concludes that the relevant product markets for the assessment of the Transaction are: (a)
+    GP HSMs (b) Payment HSMs'
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -158,18 +153,17 @@ source_passages:
 - passage_id: sp_2
   source_document_id: eu_thales_gemalto_2019_decision
   page: '22'
-  quote_snippet: As regards the question whether GP HSMs and Payment HSMs should be
-    considered from the demand side as substitutes, the results of the market investigation
-    generally indicate that they are not.61 The majority of the respondents considered
-    that there is a difference in functionality between Payment and GP HSMs and that
-    they are intended for different use cases. Respondents pointed to the fact that
-    GP HSMs are more expensive and more flexible, while Payment HSMs are more case-oriented.
-    It was also explained that GP HSMs must support standardised programmatic application
-    program interfaces ("APIs") whereas Payment HSMs present proprietary APIs that
-    do not allow any interoperability.62 In addition, customers of Payment HSMs require
-    additional PCI-HSM certifications for the HSMs they purchase. Consequently, the
-    offerings of the Parties and their competitors are divided between Payment and
-    GP HSM products.
+  quote_snippet: As regards the question whether GP HSMs and Payment HSMs should be considered
+    from the demand side as substitutes, the results of the market investigation generally indicate
+    that they are not.61 The majority of the respondents considered that there is a difference
+    in functionality between Payment and GP HSMs and that they are intended for different use
+    cases. Respondents pointed to the fact that GP HSMs are more expensive and more flexible,
+    while Payment HSMs are more case-oriented. It was also explained that GP HSMs must support
+    standardised programmatic application program interfaces ("APIs") whereas Payment HSMs present
+    proprietary APIs that do not allow any interoperability.62 In addition, customers of Payment
+    HSMs require additional PCI-HSM certifications for the HSMs they purchase. Consequently,
+    the offerings of the Parties and their competitors are divided between Payment and GP HSM
+    products.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -182,9 +176,9 @@ source_passages:
 - passage_id: sp_3
   source_document_id: eu_thales_gemalto_2019_decision
   page: '22'
-  quote_snippet: As regards supply side substitutability, the market investigation
-    generally confirmed that GP and Payment HSMs are designed differently, both when
-    it comes to hardware and software.
+  quote_snippet: As regards supply side substitutability, the market investigation generally
+    confirmed that GP and Payment HSMs are designed differently, both when it comes to hardware
+    and software.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -197,9 +191,9 @@ source_passages:
 - passage_id: sp_4
   source_document_id: eu_thales_gemalto_2019_decision
   page: '23'
-  quote_snippet: 'In light of the above, for the purposes of the present Decision,
-    the Commission concludes that the relevant product markets for the assessment
-    of the Transaction are: (a) GP HSMs (b) Payment HSMs'
+  quote_snippet: 'In light of the above, for the purposes of the present Decision, the Commission
+    concludes that the relevant product markets for the assessment of the Transaction are: (a)
+    GP HSMs (b) Payment HSMs'
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -212,18 +206,17 @@ source_passages:
 - passage_id: sp_5
   source_document_id: eu_thales_gemalto_2019_decision
   page: '22'
-  quote_snippet: As regards the question whether GP HSMs and Payment HSMs should be
-    considered from the demand side as substitutes, the results of the market investigation
-    generally indicate that they are not.61 The majority of the respondents considered
-    that there is a difference in functionality between Payment and GP HSMs and that
-    they are intended for different use cases. Respondents pointed to the fact that
-    GP HSMs are more expensive and more flexible, while Payment HSMs are more case-oriented.
-    It was also explained that GP HSMs must support standardised programmatic application
-    program interfaces ("APIs") whereas Payment HSMs present proprietary APIs that
-    do not allow any interoperability.62 In addition, customers of Payment HSMs require
-    additional PCI-HSM certifications for the HSMs they purchase. Consequently, the
-    offerings of the Parties and their competitors are divided between Payment and
-    GP HSM products.
+  quote_snippet: As regards the question whether GP HSMs and Payment HSMs should be considered
+    from the demand side as substitutes, the results of the market investigation generally indicate
+    that they are not.61 The majority of the respondents considered that there is a difference
+    in functionality between Payment and GP HSMs and that they are intended for different use
+    cases. Respondents pointed to the fact that GP HSMs are more expensive and more flexible,
+    while Payment HSMs are more case-oriented. It was also explained that GP HSMs must support
+    standardised programmatic application program interfaces ("APIs") whereas Payment HSMs present
+    proprietary APIs that do not allow any interoperability.62 In addition, customers of Payment
+    HSMs require additional PCI-HSM certifications for the HSMs they purchase. Consequently,
+    the offerings of the Parties and their competitors are divided between Payment and GP HSM
+    products.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -236,9 +229,9 @@ source_passages:
 - passage_id: sp_6
   source_document_id: eu_thales_gemalto_2019_decision
   page: '22'
-  quote_snippet: As regards supply side substitutability, the market investigation
-    generally confirmed that GP and Payment HSMs are designed differently, both when
-    it comes to hardware and software.
+  quote_snippet: As regards supply side substitutability, the market investigation generally
+    confirmed that GP and Payment HSMs are designed differently, both when it comes to hardware
+    and software.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -251,14 +244,13 @@ source_passages:
 - passage_id: sp_7
   source_document_id: eu_thales_gemalto_2019_decision
   page: '29'
-  quote_snippet: For the purposes of the present Decision, the exact product market
-    definition can be left open as the Transaction would not significantly impede
-    effective competition under any plausible market definition, including the narrowest
-    possible markets for (i) ES for data at rest/in use and possible further sub-segments
-    by level of encryption (at the storage/disk, file/folder, database or application
-    level, tokenization and data masking etc.) and (ii) network encryptors for data
-    in motion and possible sub-segments based on the layer on which the network encryption
-    takes place.
+  quote_snippet: For the purposes of the present Decision, the exact product market definition
+    can be left open as the Transaction would not significantly impede effective competition
+    under any plausible market definition, including the narrowest possible markets for (i)
+    ES for data at rest/in use and possible further sub-segments by level of encryption (at
+    the storage/disk, file/folder, database or application level, tokenization and data masking
+    etc.) and (ii) network encryptors for data in motion and possible sub-segments based on
+    the layer on which the network encryption takes place.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -271,9 +263,9 @@ source_passages:
 - passage_id: sp_8
   source_document_id: eu_thales_gemalto_2019_decision
   page: '28'
-  quote_snippet: The market investigation provided mixed results regarding the question
-    whether there is a single ES market comprising all solutions encrypting data at
-    rest, data in use and data in motion.
+  quote_snippet: The market investigation provided mixed results regarding the question whether
+    there is a single ES market comprising all solutions encrypting data at rest, data in use
+    and data in motion.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -286,12 +278,11 @@ source_passages:
 - passage_id: sp_9
   source_document_id: eu_thales_gemalto_2019_decision
   page: '28'
-  quote_snippet: The market investigation suggests that a further segmentation of
-    ES for data at rest/in use by level of encryption (at the storage/disk, file/folder,
-    database or application level etc.) would not be appropriate.97 According to some
-    customers who responded to the market investigation, the different levels of encryption
-    do not exist in distinct silos but are often used in parallel and are closely
-    inter-related from a technical point of view.
+  quote_snippet: The market investigation suggests that a further segmentation of ES for data
+    at rest/in use by level of encryption (at the storage/disk, file/folder, database or application
+    level etc.) would not be appropriate.97 According to some customers who responded to the
+    market investigation, the different levels of encryption do not exist in distinct silos
+    but are often used in parallel and are closely inter-related from a technical point of view.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -304,14 +295,13 @@ source_passages:
 - passage_id: sp_10
   source_document_id: eu_thales_gemalto_2019_decision
   page: '29'
-  quote_snippet: For the purposes of the present Decision, the exact product market
-    definition can be left open as the Transaction would not significantly impede
-    effective competition under any plausible market definition, including the narrowest
-    possible markets for (i) ES for data at rest/in use and possible further sub-segments
-    by level of encryption (at the storage/disk, file/folder, database or application
-    level, tokenization and data masking etc.) and (ii) network encryptors for data
-    in motion and possible sub-segments based on the layer on which the network encryption
-    takes place.
+  quote_snippet: For the purposes of the present Decision, the exact product market definition
+    can be left open as the Transaction would not significantly impede effective competition
+    under any plausible market definition, including the narrowest possible markets for (i)
+    ES for data at rest/in use and possible further sub-segments by level of encryption (at
+    the storage/disk, file/folder, database or application level, tokenization and data masking
+    etc.) and (ii) network encryptors for data in motion and possible sub-segments based on
+    the layer on which the network encryption takes place.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -324,13 +314,12 @@ source_passages:
 - passage_id: sp_11
   source_document_id: eu_thales_gemalto_2019_decision
   page: '29'
-  quote_snippet: Regarding the question whether encryption at different layers can
-    be distinguished as separate markets within the market for network encryptors,
-    the Commission has the following observations. First, the market investigation
-    did not indicate whether ES for data in motion should be further sub-segmented
-    based on layers of encryption. Second, based on the Notifying's Party submission,
-    the Commission considers that from the demand side customers can and do use network
-    encryptors to encrypt data at Layers 1, 2 and/or 3 of their computer networks
+  quote_snippet: Regarding the question whether encryption at different layers can be distinguished
+    as separate markets within the market for network encryptors, the Commission has the following
+    observations. First, the market investigation did not indicate whether ES for data in motion
+    should be further sub-segmented based on layers of encryption. Second, based on the Notifying's
+    Party submission, the Commission considers that from the demand side customers can and do
+    use network encryptors to encrypt data at Layers 1, 2 and/or 3 of their computer networks
     alone or in combination.
   extraction_method: pdf_extracted
   review_status: unreviewed
@@ -344,12 +333,12 @@ source_passages:
 - passage_id: sp_12
   source_document_id: eu_thales_gemalto_2019_decision
   page: '32'
-  quote_snippet: For the purpose of the present Decision, the question whether the
-    product market consists of all (cyber) security evaluation services or whether
-    separate markets exist for any segmentation of these services based on the certification
-    for which the lab was accredited can be left open as the Transaction would not
-    significantly impede effective competition under any plausible market definition,
-    including the narrowest possible market for CSPN security evaluation services.
+  quote_snippet: For the purpose of the present Decision, the question whether the product market
+    consists of all (cyber) security evaluation services or whether separate markets exist for
+    any segmentation of these services based on the certification for which the lab was accredited
+    can be left open as the Transaction would not significantly impede effective competition
+    under any plausible market definition, including the narrowest possible market for CSPN
+    security evaluation services.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -362,13 +351,12 @@ source_passages:
 - passage_id: sp_13
   source_document_id: eu_thales_gemalto_2019_decision
   page: '32'
-  quote_snippet: The Notifying Party submits that the Parties’ activities should be
-    considered as part of a market for (cyber) security evaluation services and should
-    not be further divided by certification or security standards. From the demand
-    side, companies are generally not required to certify their products to a particular
-    standard and can choose between a number of different certification options depending
-    on the product application, the desired level of security assurance, time constraints
-    and costs.
+  quote_snippet: The Notifying Party submits that the Parties’ activities should be considered
+    as part of a market for (cyber) security evaluation services and should not be further divided
+    by certification or security standards. From the demand side, companies are generally not
+    required to certify their products to a particular standard and can choose between a number
+    of different certification options depending on the product application, the desired level
+    of security assurance, time constraints and costs.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -381,9 +369,9 @@ source_passages:
 - passage_id: sp_14
   source_document_id: eu_thales_gemalto_2019_decision
   page: '34'
-  quote_snippet: For the purpose of the present Decision, the Commission in line with
-    its decisional practice confirms that the relevant product market is the market
-    for the provision of OTA SIM card administration and services platforms.
+  quote_snippet: For the purpose of the present Decision, the Commission in line with its decisional
+    practice confirms that the relevant product market is the market for the provision of OTA
+    SIM card administration and services platforms.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -396,12 +384,11 @@ source_passages:
 - passage_id: sp_15
   source_document_id: eu_thales_gemalto_2019_decision
   page: '34'
-  quote_snippet: In line with previous decisional practice (see recital (167)), the
-    Commission considers that the provision of OTA SIM card administration and services
-    platforms constitutes a distinct product market from general operation and support
-    system ("OSS") market in which traditional software vendors provide telecommunication
-    operators with IT-solutions (including call completion, messaging solutions, delivery
-    of data).
+  quote_snippet: In line with previous decisional practice (see recital (167)), the Commission
+    considers that the provision of OTA SIM card administration and services platforms constitutes
+    a distinct product market from general operation and support system ("OSS") market in which
+    traditional software vendors provide telecommunication operators with IT-solutions (including
+    call completion, messaging solutions, delivery of data).
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -414,12 +401,11 @@ source_passages:
 - passage_id: sp_16
   source_document_id: eu_thales_gemalto_2019_decision
   page: '34'
-  quote_snippet: The Commission leaves open the question whether the market for the
-    manufacture and supply of SIM cards constitutes a separate market and whether
-    GSM-R integration constitutes a separate market as the Transaction would not significantly
-    impede effective competition under any plausible market definition, including
-    the narrowest possible market for the manufacture and supply of SIM cards and
-    GSM-R integration.
+  quote_snippet: The Commission leaves open the question whether the market for the manufacture
+    and supply of SIM cards constitutes a separate market and whether GSM-R integration constitutes
+    a separate market as the Transaction would not significantly impede effective competition
+    under any plausible market definition, including the narrowest possible market for the manufacture
+    and supply of SIM cards and GSM-R integration.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -432,10 +418,9 @@ source_passages:
 - passage_id: sp_17
   source_document_id: eu_thales_gemalto_2019_decision
   page: '34'
-  quote_snippet: In previous decisions (see recital (166)), the Commission analysed
-    the transaction by distinguishing between the market for the manufacture and supply
-    of SIM cards from the overall market for plastic cards, ultimately leaving the
-    question open.
+  quote_snippet: In previous decisions (see recital (166)), the Commission analysed the transaction
+    by distinguishing between the market for the manufacture and supply of SIM cards from the
+    overall market for plastic cards, ultimately leaving the question open.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -448,12 +433,11 @@ source_passages:
 - passage_id: sp_18
   source_document_id: eu_thales_gemalto_2019_decision
   page: '34'
-  quote_snippet: The Commission leaves open the question whether the market for the
-    manufacture and supply of SIM cards constitutes a separate market and whether
-    GSM-R integration constitutes a separate market as the Transaction would not significantly
-    impede effective competition under any plausible market definition, including
-    the narrowest possible market for the manufacture and supply of SIM cards and
-    GSM-R integration.
+  quote_snippet: The Commission leaves open the question whether the market for the manufacture
+    and supply of SIM cards constitutes a separate market and whether GSM-R integration constitutes
+    a separate market as the Transaction would not significantly impede effective competition
+    under any plausible market definition, including the narrowest possible market for the manufacture
+    and supply of SIM cards and GSM-R integration.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -467,14 +451,14 @@ source_passages:
   source_document_id: eu_thales_gemalto_2019_decision
   page: '34'
   quote_snippet: 'With regard to GSM-R, the Commission considers that there are indications
-    that GSM-R integration projects constitute a separate product market from railway
-    signalling systems due to the following factors: (i) the presence of specialised
-    providers of GSM-R solutions, such as Nokia or Kapsch, who are not active in other
-    subsystems for railway signalling, (ii) railway signalling suppliers such as Thales,
-    Siemens and Alstom frequently bid in consortia with these specialised GSM-R providers
-    so that they do not directly supply GSM-R systems, (iii) the specialised nature
-    of the GSM-R standards and the underlying technologies, which are different from
-    other railway signalling technologies (such ETCS, the other component of ERTMS).'
+    that GSM-R integration projects constitute a separate product market from railway signalling
+    systems due to the following factors: (i) the presence of specialised providers of GSM-R
+    solutions, such as Nokia or Kapsch, who are not active in other subsystems for railway signalling,
+    (ii) railway signalling suppliers such as Thales, Siemens and Alstom frequently bid in consortia
+    with these specialised GSM-R providers so that they do not directly supply GSM-R systems,
+    (iii) the specialised nature of the GSM-R standards and the underlying technologies, which
+    are different from other railway signalling technologies (such ETCS, the other component
+    of ERTMS).'
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -487,11 +471,10 @@ source_passages:
 - passage_id: sp_20
   source_document_id: eu_thales_gemalto_2019_decision
   page: '37'
-  quote_snippet: For the purpose of the present Decision, the exact product market
-    definition can be left open as the Transaction would not significantly impede
-    effective competition under any plausible market definition, including the narrowest
-    possible market including for (i) physical and (ii) logical access control microprocessor
-    chip cards.
+  quote_snippet: For the purpose of the present Decision, the exact product market definition
+    can be left open as the Transaction would not significantly impede effective competition
+    under any plausible market definition, including the narrowest possible market including
+    for (i) physical and (ii) logical access control microprocessor chip cards.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -504,12 +487,12 @@ source_passages:
 - passage_id: sp_21
   source_document_id: eu_thales_gemalto_2019_decision
   page: '36'
-  quote_snippet: Based on the Notifying Party’s submission, from the demand side the
-    line between physical and logical access control are possibly blurred when physical
-    access is controlled by software, such as in the case of a smart card. From the
-    supply side, vendors are increasingly offering dual-use access control cards that
-    can simultaneously provide logical and physical access control (i.e. enabling
-    the same credentials to both open a door and access a computer system).
+  quote_snippet: Based on the Notifying Party’s submission, from the demand side the line between
+    physical and logical access control are possibly blurred when physical access is controlled
+    by software, such as in the case of a smart card. From the supply side, vendors are increasingly
+    offering dual-use access control cards that can simultaneously provide logical and physical
+    access control (i.e. enabling the same credentials to both open a door and access a computer
+    system).
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -522,11 +505,11 @@ source_passages:
 - passage_id: sp_22
   source_document_id: eu_thales_gemalto_2019_decision
   page: '24'
-  quote_snippet: In light of the above, the Commission concludes, for the purposes
-    of the present Decision, that the geographic market for GP HSMs and Payment HSMs
-    could be at least EEA-wide or worldwide in scope. However, the exact geographic
-    market definition can be left open as the competitive assessment remains the same
-    for both an EEA-wide and a worldwide geographic market.
+  quote_snippet: In light of the above, the Commission concludes, for the purposes of the present
+    Decision, that the geographic market for GP HSMs and Payment HSMs could be at least EEA-wide
+    or worldwide in scope. However, the exact geographic market definition can be left open
+    as the competitive assessment remains the same for both an EEA-wide and a worldwide geographic
+    market.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -539,10 +522,10 @@ source_passages:
 - passage_id: sp_23
   source_document_id: eu_thales_gemalto_2019_decision
   page: '24'
-  quote_snippet: The results of the market investigation have generally indicated
-    that the geographic scope of the market for HSMs is at least EEA-wide. The majority
-    of the customers responding to the market investigation consider that non-EEA
-    players could compete on an equal footing with established EEA players.
+  quote_snippet: The results of the market investigation have generally indicated that the geographic
+    scope of the market for HSMs is at least EEA-wide. The majority of the customers responding
+    to the market investigation consider that non-EEA players could compete on an equal footing
+    with established EEA players.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -555,8 +538,8 @@ source_passages:
 - passage_id: sp_24
   source_document_id: eu_thales_gemalto_2019_decision
   page: '24'
-  quote_snippet: Review of the internal documents of the Parties further confirms
-    that the market is at least EEA-wide.
+  quote_snippet: Review of the internal documents of the Parties further confirms that the market
+    is at least EEA-wide.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -569,11 +552,11 @@ source_passages:
 - passage_id: sp_25
   source_document_id: eu_thales_gemalto_2019_decision
   page: '24'
-  quote_snippet: In light of the above, the Commission concludes, for the purposes
-    of the present Decision, that the geographic market for GP HSMs and Payment HSMs
-    could be at least EEA-wide or worldwide in scope. However, the exact geographic
-    market definition can be left open as the competitive assessment remains the same
-    for both an EEA-wide and a worldwide geographic market.
+  quote_snippet: In light of the above, the Commission concludes, for the purposes of the present
+    Decision, that the geographic market for GP HSMs and Payment HSMs could be at least EEA-wide
+    or worldwide in scope. However, the exact geographic market definition can be left open
+    as the competitive assessment remains the same for both an EEA-wide and a worldwide geographic
+    market.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -586,10 +569,10 @@ source_passages:
 - passage_id: sp_26
   source_document_id: eu_thales_gemalto_2019_decision
   page: '24'
-  quote_snippet: The results of the market investigation have generally indicated
-    that the geographic scope of the market for HSMs is at least EEA-wide. The majority
-    of the customers responding to the market investigation consider that non-EEA
-    players could compete on an equal footing with established EEA players.
+  quote_snippet: The results of the market investigation have generally indicated that the geographic
+    scope of the market for HSMs is at least EEA-wide. The majority of the customers responding
+    to the market investigation consider that non-EEA players could compete on an equal footing
+    with established EEA players.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -602,8 +585,8 @@ source_passages:
 - passage_id: sp_27
   source_document_id: eu_thales_gemalto_2019_decision
   page: '24'
-  quote_snippet: Review of the internal documents of the Parties further confirms
-    that the market is at least EEA-wide.
+  quote_snippet: Review of the internal documents of the Parties further confirms that the market
+    is at least EEA-wide.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -616,11 +599,10 @@ source_passages:
 - passage_id: sp_28
   source_document_id: eu_thales_gemalto_2019_decision
   page: '30'
-  quote_snippet: For the purposes of the present Decision, the question whether the
-    relevant geographic market definition is EEA-wide or global can be left open as
-    the Transaction would not significantly impede effective competition under any
-    plausible geographic market definition, including the narrowest possible market
-    at the EEA level.
+  quote_snippet: For the purposes of the present Decision, the question whether the relevant
+    geographic market definition is EEA-wide or global can be left open as the Transaction would
+    not significantly impede effective competition under any plausible geographic market definition,
+    including the narrowest possible market at the EEA level.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -633,9 +615,8 @@ source_passages:
 - passage_id: sp_29
   source_document_id: eu_thales_gemalto_2019_decision
   page: '30'
-  quote_snippet: The Commission considers that the relevant geographic market for
-    ES and network encryptors is global or at least EEA-wide for the reasons set out
-    in recitals (143)-(144).
+  quote_snippet: The Commission considers that the relevant geographic market for ES and network
+    encryptors is global or at least EEA-wide for the reasons set out in recitals (143)-(144).
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -648,11 +629,10 @@ source_passages:
 - passage_id: sp_30
   source_document_id: eu_thales_gemalto_2019_decision
   page: '30'
-  quote_snippet: For the purposes of the present Decision, the question whether the
-    relevant geographic market definition is EEA-wide or global can be left open as
-    the Transaction would not significantly impede effective competition under any
-    plausible geographic market definition, including the narrowest possible market
-    at the EEA level.
+  quote_snippet: For the purposes of the present Decision, the question whether the relevant
+    geographic market definition is EEA-wide or global can be left open as the Transaction would
+    not significantly impede effective competition under any plausible geographic market definition,
+    including the narrowest possible market at the EEA level.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -665,9 +645,8 @@ source_passages:
 - passage_id: sp_31
   source_document_id: eu_thales_gemalto_2019_decision
   page: '30'
-  quote_snippet: The Commission considers that the relevant geographic market for
-    ES and network encryptors is global or at least EEA-wide for the reasons set out
-    in recitals (143)-(144).
+  quote_snippet: The Commission considers that the relevant geographic market for ES and network
+    encryptors is global or at least EEA-wide for the reasons set out in recitals (143)-(144).
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -680,11 +659,10 @@ source_passages:
 - passage_id: sp_32
   source_document_id: eu_thales_gemalto_2019_decision
   page: '33'
-  quote_snippet: For the purpose of the present Decision, the question whether the
-    geographic market for (cyber) security evaluation services is global or EEA-wide
-    can be left open as the Transaction would not significantly impede effective competition
-    under any plausible geographic market definition, including the narrowest possible
-    EEA-wide market.
+  quote_snippet: For the purpose of the present Decision, the question whether the geographic
+    market for (cyber) security evaluation services is global or EEA-wide can be left open as
+    the Transaction would not significantly impede effective competition under any plausible
+    geographic market definition, including the narrowest possible EEA-wide market.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -697,11 +675,10 @@ source_passages:
 - passage_id: sp_33
   source_document_id: eu_thales_gemalto_2019_decision
   page: '32'
-  quote_snippet: The Commission considers, based on the Notifying Party's submission,
-    that most evaluation labs, including the Parties’ (located in France) service
-    customers from around the world and not only those located in France. Most standards
-    are international or at least widely recognised due to mutual recognition agreements
-    such as CCRA.
+  quote_snippet: The Commission considers, based on the Notifying Party's submission, that most
+    evaluation labs, including the Parties’ (located in France) service customers from around
+    the world and not only those located in France. Most standards are international or at least
+    widely recognised due to mutual recognition agreements such as CCRA.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -714,12 +691,11 @@ source_passages:
 - passage_id: sp_34
   source_document_id: eu_thales_gemalto_2019_decision
   page: '35'
-  quote_snippet: For the purpose of the present Decision, the exact geographic market
-    definition can be left open as the Transaction would not significantly impede
-    effective competition under any plausible market definition, including the narrowest
-    possible market at the EEA level for the manufacture and supply of SIM cards and
-    OTA SIM card administration and services platform, and at a national level for
-    GSM-R integration.
+  quote_snippet: For the purpose of the present Decision, the exact geographic market definition
+    can be left open as the Transaction would not significantly impede effective competition
+    under any plausible market definition, including the narrowest possible market at the EEA
+    level for the manufacture and supply of SIM cards and OTA SIM card administration and services
+    platform, and at a national level for GSM-R integration.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -732,10 +708,10 @@ source_passages:
 - passage_id: sp_35
   source_document_id: eu_thales_gemalto_2019_decision
   page: '35'
-  quote_snippet: In line with previous decisional practice (see recitals (167)-(168)),
-    the Commission considers, for the purposes of this Decision, that the relevant
-    geographic market for (i) the manufacture and supply of SIM cards, (ii) OTA SIM
-    card administration and services platform is at least EEA-wide, if not global.
+  quote_snippet: In line with previous decisional practice (see recitals (167)-(168)), the Commission
+    considers, for the purposes of this Decision, that the relevant geographic market for (i)
+    the manufacture and supply of SIM cards, (ii) OTA SIM card administration and services platform
+    is at least EEA-wide, if not global.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -748,12 +724,11 @@ source_passages:
 - passage_id: sp_36
   source_document_id: eu_thales_gemalto_2019_decision
   page: '35'
-  quote_snippet: In line with previous decisional practice, for the purpose of the
-    present Decision, the Commission concludes that the relevant product market is
-    the market for OTA SIM card administration and services platform but leaves open
-    the question whether the relevant geographic market is global or EEA-wide as the
-    Transaction would not significantly impede effective competition under any plausible
-    geographic market definition.
+  quote_snippet: In line with previous decisional practice, for the purpose of the present Decision,
+    the Commission concludes that the relevant product market is the market for OTA SIM card
+    administration and services platform but leaves open the question whether the relevant geographic
+    market is global or EEA-wide as the Transaction would not significantly impede effective
+    competition under any plausible geographic market definition.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -766,10 +741,10 @@ source_passages:
 - passage_id: sp_37
   source_document_id: eu_thales_gemalto_2019_decision
   page: '35'
-  quote_snippet: In line with previous decisional practice (see recitals (167)-(168)),
-    the Commission considers, for the purposes of this Decision, that the relevant
-    geographic market for (i) the manufacture and supply of SIM cards, (ii) OTA SIM
-    card administration and services platform is at least EEA-wide, if not global.
+  quote_snippet: In line with previous decisional practice (see recitals (167)-(168)), the Commission
+    considers, for the purposes of this Decision, that the relevant geographic market for (i)
+    the manufacture and supply of SIM cards, (ii) OTA SIM card administration and services platform
+    is at least EEA-wide, if not global.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -782,12 +757,11 @@ source_passages:
 - passage_id: sp_38
   source_document_id: eu_thales_gemalto_2019_decision
   page: '35'
-  quote_snippet: For the purpose of the present Decision, the exact geographic market
-    definition can be left open as the Transaction would not significantly impede
-    effective competition under any plausible market definition, including the narrowest
-    possible market at the EEA level for the manufacture and supply of SIM cards and
-    OTA SIM card administration and services platform, and at a national level for
-    GSM-R integration.
+  quote_snippet: For the purpose of the present Decision, the exact geographic market definition
+    can be left open as the Transaction would not significantly impede effective competition
+    under any plausible market definition, including the narrowest possible market at the EEA
+    level for the manufacture and supply of SIM cards and OTA SIM card administration and services
+    platform, and at a national level for GSM-R integration.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -800,12 +774,11 @@ source_passages:
 - passage_id: sp_39
   source_document_id: eu_thales_gemalto_2019_decision
   page: '35'
-  quote_snippet: In relation to the geographic scope of the market for GSM-R integration,
-    the Commission considers that, while there are elements that could point to a
-    national geographic scope (see recital (175)), other considerations, such the
-    presence of the same players across different EEA countries and the presence of
-    the GSM-R standard (see recital (163)) suggest an EEA-wide or global geographic
-    market.
+  quote_snippet: In relation to the geographic scope of the market for GSM-R integration, the
+    Commission considers that, while there are elements that could point to a national geographic
+    scope (see recital (175)), other considerations, such the presence of the same players across
+    different EEA countries and the presence of the GSM-R standard (see recital (163)) suggest
+    an EEA-wide or global geographic market.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -818,10 +791,10 @@ source_passages:
 - passage_id: sp_40
   source_document_id: eu_thales_gemalto_2019_decision
   page: '37'
-  quote_snippet: For the purpose of the present Decision, the exact geographic market
-    definition can be left open as the Transaction does would not significantly impede
-    effective competition under any plausible market definition, including the narrowest
-    possible market at the EEA level.
+  quote_snippet: For the purpose of the present Decision, the exact geographic market definition
+    can be left open as the Transaction does would not significantly impede effective competition
+    under any plausible market definition, including the narrowest possible market at the EEA
+    level.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -834,9 +807,8 @@ source_passages:
 - passage_id: sp_41
   source_document_id: eu_thales_gemalto_2019_decision
   page: '37'
-  quote_snippet: Based on the Notifying Party’s submission, the Commission considers
-    that there are indications that the relevant geographic market is global or at
-    least EEA-wide.
+  quote_snippet: Based on the Notifying Party’s submission, the Commission considers that there
+    are indications that the relevant geographic market is global or at least EEA-wide.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -849,15 +821,9 @@ source_passages:
 - passage_id: sp_42
   source_document_id: eu_thales_gemalto_2019_decision
   page: '11'
-  quote_snippet: '(15) The Advisory Committee discussed the draft of this Decision
-    on 28 November 2018 and issued a unanimous positive opinion.6
-
-    6 At the Advisory Committee 10 present Member States agreed that that the Transaction
-    must be declared compatible with the internal market and the EEA Agreement in
-    accordance with Article 2(2) and 8(2) of the Merger Regulation and Article 57
-    of the EEA Agreement.
-
-    '
+  quote_snippet: |
+    (15) The Advisory Committee discussed the draft of this Decision on 28 November 2018 and issued a unanimous positive opinion.6
+    6 At the Advisory Committee 10 present Member States agreed that that the Transaction must be declared compatible with the internal market and the EEA Agreement in accordance with Article 2(2) and 8(2) of the Merger Regulation and Article 57 of the EEA Agreement.
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -869,19 +835,18 @@ source_passages:
 - passage_id: sp_43
   source_document_id: eu_thales_gemalto_2019_decision
   page: '38'
-  quote_snippet: '117 In the Form CO, the Notifying Party has identified a number
-    of other potential vertical links. However, these possible vertical links will
-    not be further discussed in Section 8 for the following reasons: (i) regarding
-    the vertical link between Gemalto''s activities on the upstream market for transport
-    cards and Thales'' activities on the downstream market for ticketing systems,
-    [...]; (ii) regarding the vertical link between Thales'' activities on the upstream
-    market for the provision of security evaluation and Gemalto''s need for evaluation
-    of its smart cards, [...]; (iii) [...], Gemalto became active in the provision
-    of biometric solutions (with its Live Face Identification system – "LIVE") which
-    could theoretically be used as a plug-in in video surveillance systems – an area
-    where Thales is active. However, [...]; (iv) in 2013 Gemalto acquired Invia, [...].
-    This vertical relationship is de minimis [...]. The Transaction will not affect
-    the market structure and any potential foreclosure concerns can be excluded.'
+  quote_snippet: '117 In the Form CO, the Notifying Party has identified a number of other potential
+    vertical links. However, these possible vertical links will not be further discussed in
+    Section 8 for the following reasons: (i) regarding the vertical link between Gemalto''s
+    activities on the upstream market for transport cards and Thales'' activities on the downstream
+    market for ticketing systems, [...]; (ii) regarding the vertical link between Thales'' activities
+    on the upstream market for the provision of security evaluation and Gemalto''s need for
+    evaluation of its smart cards, [...]; (iii) [...], Gemalto became active in the provision
+    of biometric solutions (with its Live Face Identification system – "LIVE") which could theoretically
+    be used as a plug-in in video surveillance systems – an area where Thales is active. However,
+    [...]; (iv) in 2013 Gemalto acquired Invia, [...]. This vertical relationship is de minimis
+    [...]. The Transaction will not affect the market structure and any potential foreclosure
+    concerns can be excluded.'
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7
@@ -893,21 +858,13 @@ source_passages:
 - passage_id: sp_44
   source_document_id: eu_thales_gemalto_2019_decision
   page: '11'
-  quote_snippet: '(10) After a preliminary examination of the notification and based
-    on the first phase
-
+  quote_snippet: |
+    (10) After a preliminary examination of the notification and based on the first phase
     market investigation, the Commission concluded that the Transaction raised serious
-
-    doubts as to its compatibility with the internal market as regards the market
-    for
-
+    doubts as to its compatibility with the internal market as regards the market for
     Hardware Security Modules and adopted a decision to initiate proceedings pursuant
-
     to Article 6(1)(c) of the Merger Regulation on 23 July 2018 (the "Article 6(1)(c)
-
     Decision").
-
-    '
   extraction_method: pdf_extracted
   review_status: unreviewed
   confidence_score: 0.7

@@ -1,0 +1,498 @@
+case_id: eu_deutsche_post_ctt_jvs_2026
+case_name: DEUTSCHE POST / CTT / JVs
+authority: European Commission
+jurisdiction: EU
+sector: transport
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2026-03-18'
+parties:
+- name: DEUTSCHE POST
+  role: acquirer
+- name: CTT
+  role: acquirer
+- name: JVs
+  role: target
+source_documents:
+- doc_id: eu_deutsche_post_ctt_jvs_2026_decision
+  title: DEUTSCHE POST / CTT / JVs — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11942
+  pdf_url: http://publications.europa.eu/resource/cellar/bb4eaa01-630f-11f1-9b18-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Small package delivery services
+  definition_status: defined
+  notes: Also referred to as 'parcels', defined as small packages not exceeding 31.5 kg. The
+    Commission states that the further exact scope of the product market definition for the
+    supply of parcel delivery services can be left open, but for the purposes of this decision,
+    it will consider the narrowest plausible market, which excludes parcel deliveries achieved
+    by using pallets.
+- market_id: pm_2
+  name: 'Small package delivery services (segmented by speed: express vs. deferred)'
+  definition_status: segmented
+  notes: Segmentation between express and deferred services was considered. Express services
+    were characterised by a commitment to deliver within the next day or until the end of the
+    day. The market investigation found this segmentation accurate.
+- market_id: pm_3
+  name: 'Small package delivery services (segmented by customer type: C2X, B2B, B2C)'
+  definition_status: segmented
+  notes: 'Segmentation based on the identity of the parcel senders into services offered to
+    consumers (C2X: consumers to businesses and consumers to consumers) and to businesses (B2X),
+    with a further distinction between B2B and B2C services, was considered and found accurate
+    by the market investigation.'
+- market_id: pm_4
+  name: 'Small package delivery services (segmented by delivery destination: home vs. out-of-home)'
+  definition_status: left_open
+  notes: The existence of an out-of-home (OOH) delivery segment (e.g., lockers, drop-off points)
+    was considered but ultimately left open as it does not affect the assessment of the Transaction.
+    Market investigation showed low maturity and adoption of OOH in Portugal and Spain.
+- market_id: pm_5
+  name: Mail delivery services (postal mail delivery)
+  definition_status: considered
+  notes: Mentioned as a separate relevant market in the Commission's previous practice, distinct
+    from small package delivery services and freight forwarding.
+- market_id: pm_6
+  name: Freight forwarding
+  definition_status: considered
+  notes: Mentioned as a separate relevant market in the Commission's previous practice, distinct
+    from mail delivery services and small package delivery services.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Small package delivery services — national (Portugal affected)
+  definition_status: considered
+  notes: While the exact geographic scope for parcel delivery services was left open, the Commission
+    considered the national scope (Portugal) as the narrowest plausible market for its assessment.
+- market_id: gm_2
+  name: Small package delivery services — national (Spain affected)
+  definition_status: considered
+  notes: While the exact geographic scope for parcel delivery services was left open, the Commission
+    considered the national scope (Spain) as the narrowest plausible market for its assessment.
+- market_id: gm_3
+  name: 'Small package delivery services (segmented by geography: domestic vs. cross-border/international)'
+  definition_status: segmented
+  notes: Segmentation into domestic and cross-border parcel delivery services, with further
+    sub-segmentation between cross-border intra-EEA and extra-EEA services, was considered and
+    found accurate by the market investigation.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_deutsche_post_ctt_jvs_2026_decision
+  page: '5'
+  quote_snippet: The Commission has previously considered mail delivery services (postal mail
+    delivery), small package delivery services (which are the delivery of packages, commonly
+    defined according to weight, which a single person can handle without specific equipment)
+    and freight forwarding (which is the organisation of transportation of items, - including
+    possible ancillary activities such as customs clearance, warehousing, ground services etc.,.
+    - on behalf of customers according to their needs) as separate relevant markets. (10) With
+    regard to small package delivery services, the Commission, in its previous practice, has
+    defined it as relating to small packages which do not exceed 31.5 kg, also referred to as
+    “parcels”.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_deutsche_post_ctt_jvs_2026_decision
+  page: '6'
+  quote_snippet: The Commission considers that, for the purposes of this decision, the exact
+    scope of the product market definition regarding the supply of parcel delivery services
+    may be left open, since the Transaction does not raise serious doubts as to its compatibility
+    with the internal market under any plausible product market definition. In its assessment,
+    the Commission will consider the narrowest plausible market, which in this case will exclude
+    parcel deliveries achieved by using pallets, even if the pallets are used only to group
+    a number of parcels that have the same sender and recipient to facilitate delivery management.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_deutsche_post_ctt_jvs_2026_decision
+  page: '9'
+  quote_snippet: In light of the above, and for the purposes of this decision, the Commission
+    considers that (i) there is a separate product market for the delivery of small packages
+    not exceeding 31.5 kg (also referred to as “parcels”), and (ii) the further exact scope
+    of the product market definition for the supply of parcel delivery services can be left
+    open, since the Transaction does not raise serious doubts as to its compatibility with the
+    internal market under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_deutsche_post_ctt_jvs_2026_decision
+  page: '5'
+  quote_snippet: In terms of speed, the Commission has considered a distinction between express
+    and deferred services, as they serve different customer needs, are based on different infrastructure,
+    and are priced differently. (12)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_deutsche_post_ctt_jvs_2026_decision
+  page: '7'
+  quote_snippet: Overall, a strong majority of customer respondents who expressed a view during
+    the market investigation agreed that the segmentation of the market among the lines previously
+    put forward by the Commission, i.e. based on... (iii) the speed of delivery, into express
+    (i.e., committed delivery by next day/end of day at the latest) and deferred (standard,
+    without commitment on the delivery date) package delivery services markets... is accurate
+    in Spain and Portugal today. (21)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_deutsche_post_ctt_jvs_2026_decision
+  page: '7'
+  quote_snippet: In line with past decisional practice, indicating that express products are
+    on the whole faster and more reliable than a standard service, (29) the Commission considers
+    that express parcel delivery services should be characterised by a commitment of the courier
+    to deliver within the next day or until the end of day.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_deutsche_post_ctt_jvs_2026_decision
+  page: '5'
+  quote_snippet: 'In terms of customer of the service, the Commission has in its previous decisions
+    distinguished between parcel delivery services offered to consumers (C2X: i.e. consumers
+    to businesses and consumers to consumers) and to businesses (B2C and B2B). In addition,
+    the provision of parcel delivery services to businesses to businesses (B2B) and to businesses
+    to consumers (B2C) has been found to constitute separate product markets. (14)'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_deutsche_post_ctt_jvs_2026_decision
+  page: '7'
+  quote_snippet: Overall, a strong majority of customer respondents who expressed a view during
+    the market investigation agreed that the segmentation of the market among the lines previously
+    put forward by the Commission, i.e. based on (i) the identity of the parcel senders, into
+    parcel delivery services offered to consumers (“C2X”, i.e. consumers to businesses and consumers
+    to consumers) and offered to businesses (“B2X”), with a further distinction between the
+    provision of parcel delivery services to businesses sending to businesses (“B2B”) and to
+    businesses sending to consumers (“B2C”)... is accurate in Spain and Portugal today. (21)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_deutsche_post_ctt_jvs_2026_decision
+  page: '5'
+  quote_snippet: In terms of delivery destination, the Commission has recently considered, but
+    ultimately left open, the existence of an “out-of-home” delivery segment (OOH), including
+    for example lockers and drop-off points at publicly accessible establishments such as convenience
+    stores. (15)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_deutsche_post_ctt_jvs_2026_decision
+  page: '7'
+  quote_snippet: Overall, a strong majority of customer respondents who expressed a view during
+    the market investigation agreed that the segmentation of the market among the lines previously
+    put forward by the Commission, i.e. based on... (iv) the destination, into home or out-of-home
+    (including, for example, automated lockers or third-party parcel pick-up points), is accurate
+    in Spain and Portugal today. (21)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_deutsche_post_ctt_jvs_2026_decision
+  page: '7'
+  quote_snippet: Without prejudice to the above considerations, the question of whether out-of-
+    home delivery services should be distinguished as a separate sub-segment of the parcel delivery
+    on the Spanish and Portuguese markets can be left open, since it does not affect the assessment
+    of the Transaction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_deutsche_post_ctt_jvs_2026_decision
+  page: '5'
+  quote_snippet: The Commission has previously considered mail delivery services (postal mail
+    delivery), small package delivery services (which are the delivery of packages, commonly
+    defined according to weight, which a single person can handle without specific equipment)
+    and freight forwarding (which is the organisation of transportation of items, - including
+    possible ancillary activities such as customs clearance, warehousing, ground services etc.,.
+    - on behalf of customers according to their needs) as separate relevant markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_deutsche_post_ctt_jvs_2026_decision
+  page: '5'
+  quote_snippet: The Commission has previously considered mail delivery services (postal mail
+    delivery), small package delivery services (which are the delivery of packages, commonly
+    defined according to weight, which a single person can handle without specific equipment)
+    and freight forwarding (which is the organisation of transportation of items, - including
+    possible ancillary activities such as customs clearance, warehousing, ground services etc.,.
+    - on behalf of customers according to their needs) as separate relevant markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_deutsche_post_ctt_jvs_2026_decision
+  page: '8'
+  quote_snippet: The Commission considers that, for the purposes of this decision, the exact
+    scope of the geographic market definitions regarding the supply of parcel delivery services
+    may be left open, since the Transaction does not raise serious doubts as to its compatibility
+    with the internal market under any plausible geographic market definition (i.e., national,
+    broader than national, encompassing the whole of the Iberian Peninsula or at the EEA level).
+    In its assessment, the Commission considers the narrowest plausible market, which is the
+    national scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_deutsche_post_ctt_jvs_2026_decision
+  page: '9'
+  quote_snippet: The Commission will assess the effects of the Transaction by reference to both
+    the overall market for the supply of parcel delivery services and its plausible product
+    sub-segments on the Spanish and Portuguese markets, as the narrowest plausible geographic
+    markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_deutsche_post_ctt_jvs_2026_decision
+  page: '8'
+  quote_snippet: In the past, the Commission has considered that the geographic scope of the
+    markets for the provision of parcel delivery services, and its subsegments, are likely national
+    in scope. In particular, contracts for parcel deliveries are mostly negotiated at national
+    level for both domestic and international deliveries, and parcel delivery companies need
+    a significant national presence in a given country (e.g. infrastructure, client contracts,
+    sales force) in order to meaningfully compete in that country. The Commission also noted
+    that there may be a tendency towards broader markets. (31)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_deutsche_post_ctt_jvs_2026_decision
+  page: '8'
+  quote_snippet: The Commission considers that, for the purposes of this decision, the exact
+    scope of the geographic market definitions regarding the supply of parcel delivery services
+    may be left open, since the Transaction does not raise serious doubts as to its compatibility
+    with the internal market under any plausible geographic market definition (i.e., national,
+    broader than national, encompassing the whole of the Iberian Peninsula or at the EEA level).
+    In its assessment, the Commission considers the narrowest plausible market, which is the
+    national scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_deutsche_post_ctt_jvs_2026_decision
+  page: '9'
+  quote_snippet: The Commission will assess the effects of the Transaction by reference to both
+    the overall market for the supply of parcel delivery services and its plausible product
+    sub-segments on the Spanish and Portuguese markets, as the narrowest plausible geographic
+    markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_deutsche_post_ctt_jvs_2026_decision
+  page: '8'
+  quote_snippet: In the past, the Commission has considered that the geographic scope of the
+    markets for the provision of parcel delivery services, and its subsegments, are likely national
+    in scope. In particular, contracts for parcel deliveries are mostly negotiated at national
+    level for both domestic and international deliveries, and parcel delivery companies need
+    a significant national presence in a given country (e.g. infrastructure, client contracts,
+    sales force) in order to meaningfully compete in that country. The Commission also noted
+    that there may be a tendency towards broader markets. (31)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_deutsche_post_ctt_jvs_2026_decision
+  page: '5'
+  quote_snippet: In terms of the geography of delivery services, the Commission has considered
+    the segmentation based on whether the parcels are picked up and delivered in the same country
+    (domestic) or in two different countries (international). Regarding international services
+    from EEA countries, the Commission considered a further distinction between deliveries with
+    a destination within the EEA (international intra-EEA) or outside the EEA (international
+    extra-EEA). (13)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_deutsche_post_ctt_jvs_2026_decision
+  page: '7'
+  quote_snippet: Overall, a strong majority of customer respondents who expressed a view during
+    the market investigation agreed that the segmentation of the market among the lines previously
+    put forward by the Commission, i.e. based on... (ii) the geographic extent of the services,
+    into domestic and cross-border parcel delivery services, with a further sub-segmentation
+    of the latter between cross-border intra-EEA and extra-EEA services... is accurate in Spain
+    and Portugal today. (21)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_deutsche_post_ctt_jvs_2026_decision
+  page: '4'
+  quote_snippet: The notified operation therefore has a Union dimension.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_deutsche_post_ctt_jvs_2026_decision
+  page: '23'
+  quote_snippet: For the reasons provided below, the Commission is of the view that the Transaction
+    does not raise serious doubts as to its compatibility with the internal market on the market
+    for the provision of parcel delivery services (or any plausible narrower markets in Spain.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_deutsche_post_ctt_jvs_2026_decision
+  page: '29'
+  quote_snippet: In this case, the Transaction does not give rise to any vertical relationships
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+case_type: merger
+ai_summary: null
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

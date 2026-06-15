@@ -1,0 +1,353 @@
+case_id: eu_nn_metlife_greece_metlife_poland_2021
+case_name: NN / METLIFE GREECE / METLIFE POLAND
+authority: European Commission
+jurisdiction: EU
+sector: financial
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2021-12-07'
+parties:
+- name: NN
+  role: acquirer
+- name: METLIFE GREECE
+  role: acquirer
+- name: METLIFE POLAND
+  role: target
+source_documents:
+- doc_id: eu_nn_metlife_greece_metlife_poland_2021_decision
+  title: NN / METLIFE GREECE / METLIFE POLAND — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10447
+  pdf_url: http://publications.europa.eu/resource/cellar/1349725a-a506-11ec-83e1-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Life insurance products
+  definition_status: left_open
+  notes: The Commission left open the exact scope of the product market definition for life
+    insurance. It assessed an overall market for savings and investment life insurance products,
+    as well as a plausible sub-segment of unit-linked products. Segmentation into pure risk
+    protection, pension products, savings/investment products, individual/group customers, and
+    unit-linked/non-unit-linked products was considered. The inclusion of health insurance within
+    life insurance was also left open.
+- market_id: pm_2
+  name: Pension products (Greece)
+  definition_status: left_open
+  notes: The Commission left open the exact scope of the product market definition for the supply
+    of pension products in Greece, specifically whether an overall market composed of Pillars
+    II and III exists, or if each Pillar II and Pillar III constitutes a separate market. The
+    Parties' activities overlap only in Pillar III, which consists of DAF group pension fund
+    products.
+- market_id: pm_3
+  name: Pension products – Open pension funds (Poland)
+  definition_status: considered
+  notes: The Commission's previous decisional practice had not concluded on the exact market
+    definition of the Polish pension system but indicated that obligatory pensions (pillars
+    one and two) and voluntary pensions (pillar three) might form two separate product markets.
+    For the purpose of this decision, the Commission considered the second pillar (Open Pension
+    Funds, OFE) of the Polish pension system in its analysis.
+- market_id: pm_4
+  name: Reinsurance
+  definition_status: left_open
+  notes: The Commission has previously considered a separate market for reinsurance but left
+    open whether it should be further segmented between life and non-life reinsurance. For this
+    decision, the exact scope of the product market definition for reinsurance was left open.
+- market_id: pm_5
+  name: Insurance distribution
+  definition_status: left_open
+  notes: The Commission has previously left open whether the market for insurance distribution
+    includes only outward distribution channels or also direct sales, and whether a distinction
+    could be made between life and non-life insurance products or a separate market for insurance
+    broking. For this decision, the exact scope of the product market definition for insurance
+    distribution was left open.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Life and health insurance products and its segments — national (Greece affected)
+  definition_status: defined
+  notes: The geographic scope for life and health insurance products and its segments was defined
+    as national, consistent with previous decisional practice and market investigation findings.
+- market_id: gm_2
+  name: DAF products — national (Greece affected)
+  definition_status: defined
+  notes: The geographic scope for DAF (Deposit Administration Fund) products in Greece was defined
+    as national, consistent with previous decisional practice and market investigation findings.
+- market_id: gm_3
+  name: OFE pension products — national (Poland affected)
+  definition_status: defined
+  notes: The geographic scope for Open Pension Fund (OFE) pension products in Poland was defined
+    as national, consistent with previous decisional practice and market investigation findings.
+- market_id: gm_4
+  name: Reinsurance — worldwide
+  definition_status: considered
+  notes: The geographic market for reinsurance was considered worldwide in scope, consistent
+    with the Commission's consistent decisional practice.
+- market_id: gm_5
+  name: Insurance distribution — left open (national/EEA-wide/worldwide, Greece affected)
+  definition_status: left_open
+  notes: The Commission previously considered insurance distribution to be national in scope
+    but left the exact definition open. For this decision, the exact scope of the geographic
+    market definition was left open between national, EEA-wide, and worldwide, noting that for
+    the distribution of life and health insurance and pension products in Greece, the most plausible
+    definition is national.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_nn_metlife_greece_metlife_poland_2021_decision
+  page: '4'
+  quote_snippet: 'As regards the product market definition for life insurance products, from
+    a demand-side perspective the Commission distinguished between the following product categories
+    in its decisional practice: (i) pure risk protection products, (ii) pension products17,
+    and (iii) savings/investment products.18'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_nn_metlife_greece_metlife_poland_2021_decision
+  page: '7'
+  quote_snippet: The Parties' activities with respect to pension products in Greece only overlap
+    in Pillar III.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_nn_metlife_greece_metlife_poland_2021_decision
+  page: '9'
+  quote_snippet: Moreover, the Commission notes that the majority of both competitors and customers
+    of the Parties consider that Pillar II products and Pillar III products closely compete
+    with each other and therefore can be seen as belonging to the same market.48
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_nn_metlife_greece_metlife_poland_2021_decision
+  page: '9'
+  quote_snippet: In any event, the Commission considers that, for the purposes of the present
+    decision, the exact scope of the product market definition for the supply of pension products
+    in Greece (that is if there is an overall market, composed of Pillars II and III, or if
+    each of Pillars II and III is a separate market) can be left open, since the Transaction
+    does not raise serious doubts as to its compatibility with the internal market under any
+    plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_nn_metlife_greece_metlife_poland_2021_decision
+  page: '11'
+  quote_snippet: The Commission has considered a separate market for reinsurance (distinguished
+    from the markets for the provision of life and non-life insurance) but has left open the
+    question of whether the reinsurance market should be further segmented between life and
+    non-life reinsurance.58
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_nn_metlife_greece_metlife_poland_2021_decision
+  page: '11'
+  quote_snippet: The Commission considers that, for the purposes of the present decision, the
+    exact scope of the product market definition for the supply of reinsurance can continue
+    to be left open, since the Transaction does not raise serious doubts as to its compatibility
+    with the internal market under any plausible product market definition (reinsurance overall
+    or subsegmentations for life and non-life reinsurance).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_nn_metlife_greece_metlife_poland_2021_decision
+  page: '12'
+  quote_snippet: In previous cases, the Commission has analysed whether the market for insurance
+    distribution comprises only outward distribution channels or whether it should also be considered
+    to include the sales force and office networks of the insurer (that is to say direct sales).
+    This question was ultimately left open. The Commission has also considered whether a distinction
+    could be made between the markets for the distribution of life and non-life insurance products,
+    but ultimately left open the relevant product market definitions 60 as well as whether there
+    was a potential separate market for insurance broking.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_nn_metlife_greece_metlife_poland_2021_decision
+  page: '12'
+  quote_snippet: The Commission considers that, for the purposes of the present decision, the
+    exact scope of the product market definition for the supply of insurance distribution can
+    be left open, since the Transaction does not raise serious doubts as to its compatibility
+    with the internal market under of the any plausible product market definitions discussed
+    in paragraph 68 above.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_nn_metlife_greece_metlife_poland_2021_decision
+  page: '6'
+  quote_snippet: The Commission typically considered that the sector for life insurance products
+    and its segments are likely to be national in scope, as a result of national distribution
+    channels, established market structures, fiscal constraints and specific regulatory systems
+    among Member States.35
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_nn_metlife_greece_metlife_poland_2021_decision
+  page: '7'
+  quote_snippet: The Commission’s market investigation did not reveal any reason to depart from
+    its decisional practice in the present case. 36 Therefore, life and health insurance products
+    and its segments are national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_nn_metlife_greece_metlife_poland_2021_decision
+  page: '9'
+  quote_snippet: The Commission typically considered that the sector for pension products are
+    likely to be national in scope, as a result of national distribution channels, established
+    market structures, fiscal constraints and specific regulatory systems among Member States.49
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_nn_metlife_greece_metlife_poland_2021_decision
+  page: '10'
+  quote_snippet: The Commission’s market investigation did not reveal any reason to depart from
+    its decisional practice in the present case. 50 Therefore, DAF products in Greece are national
+    in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_nn_metlife_greece_metlife_poland_2021_decision
+  page: '11'
+  quote_snippet: The Commission’s market investigation did not reveal any reason to depart from
+    its decisional practice in the present case. 57 Therefore, OFE pension products in Poland
+    are national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_nn_metlife_greece_metlife_poland_2021_decision
+  page: '11'
+  quote_snippet: The Commission has consistently held in its decisional practice that the relevant
+    geographic market for reinsurance is worldwide in scope due to the need to pool risks on
+    a global basis.59
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_nn_metlife_greece_metlife_poland_2021_decision
+  page: '12'
+  quote_snippet: The Commission’s investigation did not reveal any reason to depart from its
+    previousdecisional practice in the present case. Therefore, the Commission will consider
+    reinsurance as worldwide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_nn_metlife_greece_metlife_poland_2021_decision
+  page: '12'
+  quote_snippet: As regards the geographic scope of a potential market for insurance distribution,
+    the Commission has previously considered insurance distribution to be national in scope
+    but ultimately left the exact definition of the relevant geographic market open.62
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

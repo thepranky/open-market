@@ -1,0 +1,756 @@
+case_id: eu_orange_telekom_romania_communications_2021
+case_name: Orange / Telekom Romania Communications
+authority: European Commission
+jurisdiction: EU
+sector: tech
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2021-07-28'
+parties:
+- name: Orange
+  role: acquirer
+- name: Telekom Romania Communications
+  role: target
+source_documents:
+- doc_id: eu_orange_telekom_romania_communications_2021_decision
+  title: Orange / Telekom Romania Communications — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10153
+  pdf_url: http://publications.europa.eu/resource/cellar/b8ec34ec-a505-11ec-83e1-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Retail supply of mobile telecommunications services
+  definition_status: defined
+  notes: The Commission defined the relevant product market as the retail supply of mobile telecommunication
+    services, explicitly excluding M2M services. The question of whether OTT services should
+    be included was left open.
+- market_id: pm_2
+  name: Retail supply of fixed telephony services
+  definition_status: defined
+  notes: The Commission defined the market as the retail supply of fixed telephony services,
+    including VoIP services, and determined that no further segmentation was needed.
+- market_id: pm_3
+  name: Retail supply of fixed internet access services
+  definition_status: defined
+  notes: The Commission defined the market for retail supply of fixed internet access services
+    for residential and small business customers, including all product types, distribution
+    modes, and speeds/bandwidth. It explicitly excluded fixed internet access services provided
+    through mobile network infrastructure (fLTE) and concluded that services to large business
+    and government customers belong to a separate market (business connectivity services).
+- market_id: pm_4
+  name: Retail supply of audio-visual services
+  definition_status: left_open
+  notes: The Commission defined the relevant service market as the retail supply of AV services
+    encompassing all distribution technologies. However, the question of whether the market
+    should be further segmented between FTA and Pay AV services, basic and premium Pay AV services,
+    and linear and non-linear services was left open.
+- market_id: pm_5
+  name: Retail supply of multiple play services
+  definition_status: left_open
+  notes: The Commission left open the question of whether a separate product market for the
+    retail supply of multiple-play services exists and whether there are separate markets for
+    fixed bundles and FMC bundles.
+- market_id: pm_6
+  name: Retail supply of business connectivity services
+  definition_status: defined
+  notes: The Commission defined the relevant product market as the retail supply of business
+    connectivity services to large businesses and public sector customers, explicitly excluding
+    services to residential and small business customers. The question of whether this market
+    should be further segmented into broadband access for large business customers, leased lines,
+    and VPN services was left open.
+- market_id: pm_7
+  name: Wholesale supply of leased lines
+  definition_status: left_open
+  notes: The Commission concluded that the wholesale market for leased lines in Romania does
+    not need to be segmented based on transmission means, bandwidth/speed, or between active
+    and passive infrastructure. The exact product market definition for the wholesale supply
+    of leased lines and the question of whether it includes wholesale fixed backhaul services
+    was left open.
+- market_id: pm_8
+  name: Wholesale supply and acquisition of TV channels
+  definition_status: left_open
+  notes: The Commission concluded that the relevant product market for the wholesale supply
+    and acquisition of TV channels encompasses all infrastructures/distribution technologies.
+    However, the question of whether it should be further segmented between FTA TV channels
+    and Pay TV channels, basic Pay TV channels and premium Pay TV channels, by genre/thematic
+    content, and between linear and non-linear services was left open.
+- market_id: pm_9
+  name: Wholesale supply of broadband access
+  definition_status: left_open
+  notes: The Commission identified the relevant product market as the wholesale supply of broadband
+    access. The question of whether it should be segmented by type of access or infrastructure
+    was left open.
+- market_id: pm_10
+  name: Wholesale supply of call termination services on fixed networks
+  definition_status: defined
+  notes: The Commission concluded that the relevant product market is the wholesale supply of
+    call termination services on fixed networks, which is distinct from the market for wholesale
+    call termination services on mobile networks. Each individual fixed network constitutes
+    a separate market for termination.
+- market_id: pm_11
+  name: Wholesale supply of termination and hosting of calls to non-geographic numbers
+  definition_status: defined
+  notes: The Commission defined the relevant product market as the wholesale supply of termination
+    and hosting of calls to non-geographic numbers, distinct from other wholesale termination
+    services, without needing further segmentations.
+- market_id: pm_12
+  name: Wholesale supply of domestic call transit services on fixed networks
+  definition_status: defined
+  notes: The Commission defined the relevant product market as the wholesale supply of domestic
+    call transit services on fixed networks, noting it is a separate product market distinct
+    from global telecommunications services.
+- market_id: pm_13
+  name: Supply of global telecommunications services
+  definition_status: left_open
+  notes: The Commission identified the market for the supply of global telecommunications services.
+    The question of whether to segment this market between retail and wholesale services, and
+    between the lease of transmission capacity and the provision of related services to third
+    parties, was left open.
+- market_id: pm_14
+  name: Wholesale supply of internet connectivity services
+  definition_status: left_open
+  notes: The Commission identified the market for the wholesale supply of internet connectivity
+    services. The question of whether this market includes both transit and peering services,
+    whether it should be further segmented between them, and whether it can be further segmented
+    between Tier-1 and Tier-2 transit providers, was left open.
+- market_id: pm_15
+  name: Wholesale supply of access and call termination services on mobile networks
+  definition_status: defined
+  notes: The Commission concluded that the relevant product market is the wholesale supply of
+    access and call termination services on mobile networks, with each individual mobile network
+    constituting a separate market.
+- market_id: pm_16
+  name: Wholesale supply of access and call origination services on mobile networks
+  definition_status: defined
+  notes: The Commission concluded that the relevant product market is the wholesale supply of
+    access and call origination services on mobile networks, considering both services as key
+    elements generally supplied together.
+- market_id: pm_17
+  name: Wholesale supply of international roaming services
+  definition_status: defined
+  notes: The Commission concluded that the relevant product market is the wholesale supply of
+    international roaming services.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Retail supply of mobile telecommunications services — national (Romania affected)
+  definition_status: defined
+  notes: null
+- market_id: gm_2
+  name: Retail supply of fixed telephony services — national (Romania affected)
+  definition_status: defined
+  notes: null
+- market_id: gm_3
+  name: Retail supply of fixed internet access services — national (Romania affected)
+  definition_status: defined
+  notes: null
+- market_id: gm_4
+  name: Retail supply of audio-visual services — national (Romania affected)
+  definition_status: defined
+  notes: null
+- market_id: gm_5
+  name: Retail supply of multiple play services — national (Romania affected)
+  definition_status: defined
+  notes: null
+- market_id: gm_6
+  name: Retail supply of business connectivity services — national (Romania affected)
+  definition_status: defined
+  notes: null
+- market_id: gm_7
+  name: Wholesale supply of leased lines — national (Romania affected)
+  definition_status: defined
+  notes: null
+- market_id: gm_8
+  name: Wholesale supply and acquisition of TV channels — national (Romania affected)
+  definition_status: defined
+  notes: null
+- market_id: gm_9
+  name: Wholesale supply of broadband access — national (Romania affected)
+  definition_status: left_open
+  notes: The exact geographic scope of this market was left open, despite prior indications
+    that it is national in scope.
+- market_id: gm_10
+  name: Wholesale supply of call termination services on fixed networks — national (Romania
+    affected)
+  definition_status: defined
+  notes: null
+- market_id: gm_11
+  name: Wholesale supply of termination and hosting of calls to non-geographic numbers — national
+    (Romania affected)
+  definition_status: defined
+  notes: null
+- market_id: gm_12
+  name: Wholesale supply of domestic call transit services on fixed networks — national (Romania
+    affected)
+  definition_status: defined
+  notes: null
+- market_id: gm_13
+  name: Supply of global telecommunications services — worldwide (affected)
+  definition_status: left_open
+  notes: The exact geographic scope of this market was left open, although the Commission's
+    precedents indicated it is likely worldwide.
+- market_id: gm_14
+  name: Wholesale supply of internet connectivity services — global/regional (affected)
+  definition_status: left_open
+  notes: The exact geographic scope of this market was left open, although the Commission's
+    precedents indicated it is global or regional.
+- market_id: gm_15
+  name: Wholesale supply of access and call termination services on mobile networks — national
+    (Romania affected)
+  definition_status: defined
+  notes: null
+- market_id: gm_16
+  name: Wholesale supply of access and call origination services on mobile networks — national
+    (Romania affected)
+  definition_status: defined
+  notes: null
+- market_id: gm_17
+  name: Wholesale supply of international roaming services — national (Romania affected)
+  definition_status: considered
+  notes: The supplied text cites precedents indicating a national scope for Romania but does
+    not contain an explicit Commission conclusion on the geographic market definition for this
+    specific decision, nor does it include the Notifying Party's view or market investigation
+    results for the geographic scope in this particular section.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_orange_telekom_romania_communications_2021_decision
+  page: '5'
+  quote_snippet: A majority of respondents to the market investigation indicated that the market
+    for the retail supply of mobile telecommunications services would be distinct from the market
+    for the retail supply of fixed telecommunications services; and that no further segmentation
+    of such market would be warranted.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_orange_telekom_romania_communications_2021_decision
+  page: '5'
+  quote_snippet: With respect to M2M services, as suggested by the results of the market investigation,
+    the Commission considers that such services would fall into a market distinct from the market
+    for the retail supply of mobile telecommunications services. Relevant factors include the
+    fact that M2M services and retail mobile services are characterized by different usage patterns
+    and pricing models.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_orange_telekom_romania_communications_2021_decision
+  page: '6'
+  quote_snippet: In light of the above, the Commission considers that, for the purpose of this
+    Decision, the relevant product market is the market for the retail supply of mobile telecommunication
+    services, excluding M2M services. The question whether such product market should include
+    OTT services can be left open as the Transaction does not raise serious doubts as to its
+    compatibility with the internal market or the functioning of the EEA Agreement under any
+    considered product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_orange_telekom_romania_communications_2021_decision
+  page: '7'
+  quote_snippet: A majority of respondents to the market investigation indicated that an overall
+    market for the retail supply of fixed telephony services both through fixed telephony lines
+    and through VoIP is appropriate.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_orange_telekom_romania_communications_2021_decision
+  page: '7'
+  quote_snippet: In previous decisions, the Commission considered whether to distinguish between
+    residential and non-residential customers in the market for the retail supply of fixed telephony
+    services. While the Commission left the precise scope of the market for the retail supply
+    of fixed telephony services open in several decisions, it found in recent decisions that
+    such market does not contain further segmentations and that the overall product market for
+    fixed telephony services includes VoIP services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_orange_telekom_romania_communications_2021_decision
+  page: '8'
+  quote_snippet: In light of the above, the Commission considers that, for the purpose of this
+    Decision, the relevant product market is the market for the retail supply of fixed telephony
+    services including VoIP services, and that the market does not need to be segmented further.
+    In any event, the Transaction does not raise serious doubts as to its compatibility with
+    the internal market or the functioning of the EEA Agreement under any possible product market
+    definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_orange_telekom_romania_communications_2021_decision
+  page: '10'
+  quote_snippet: The Commission, therefore, concludes that services provided to residential
+    and small business customers, on the one hand, and to large business and government customers
+    belong to separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_orange_telekom_romania_communications_2021_decision
+  page: '10'
+  quote_snippet: In light of the above, the Commission considers that, for the purpose of this
+    Decision, the relevant product market is the market for the retail supply of fixed internet
+    access services, including all product types, distribution modes, and speeds/bandwidth,
+    to residential and small business customers, excluding fixed internet access services provided
+    through mobile network infrastructure.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_orange_telekom_romania_communications_2021_decision
+  page: '12'
+  quote_snippet: A majority of respondents to the market investigation indicated that Pay AV
+    services and FTA services would not fall into separate product markets. In particular, Pay
+    AV channels and FTA channels appear to be included in the same monthly subscription. In
+    a recent decision of the Romanian Competition Council (“RCC”), the RCC defined a single,
+    albeit differentiated, market for the provision of audio-visual services (i.e. FTA AV, basic
+    Pay AV, premium Pay AV) to end users was defined. Therefore, the Commission considers that
+    the retail market for the provision of AV services in Romania does not need to be further
+    segmented between FTA and Pay AV services, or between basic Pay AV and premium Pay AV services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_orange_telekom_romania_communications_2021_decision
+  page: '12'
+  quote_snippet: With respect to distribution technologies, from a demand-side perspective,
+    the results of the market investigation indicated that there is substitutability for end-customers
+    between all technical forms of AV distribution. The Commission also notes that this is also
+    in line with the precedents of the RCC, which defined a market for retail TV services including
+    both cable and satellite services (which are the main distribution technologies in Romania).
+    The Commission therefore considers that the retail market for the provision of AV services
+    includes all types of distribution technology.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_orange_telekom_romania_communications_2021_decision
+  page: '12'
+  quote_snippet: In light of the above, the Commission considers that, for the purpose of this
+    Decision, the relevant service market is the market for the retail supply of AV services
+    encompassing all distribution technologies. The question whether the market should be segmented
+    (i) between FTA and Pay AV services; (ii) basic and premium Pay AV services; and (iii) linear
+    and non-linear services can be left open as the Transaction does not raise serious doubts
+    as to its compatibility with the internal market under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_orange_telekom_romania_communications_2021_decision
+  page: '15'
+  quote_snippet: Based on the results of the market investigation, the Commission considers
+    that, due to the fact that different combinations of fixed and mobile telecommunications
+    services are mainly sold as soft bundles in Romania, allowing customers to choose different
+    suppliers for certain parts of the bundle, it appears that suppliers of standalone services
+    are still exerting significant competitive pressure on suppliers of bundles. Moreover, given
+    that there are no standard offers containing pre-defined fixed and mobile benefits, it is
+    difficult to identify which bundles would belong to a separate market or segment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_orange_telekom_romania_communications_2021_decision
+  page: '15'
+  quote_snippet: Therefore, the Commission will assess the effects of the Transaction as regards
+    any possible multiple play bundles, as well as each of the standalone markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_orange_telekom_romania_communications_2021_decision
+  page: '15'
+  quote_snippet: In light of the above, the Commission considers that the question whether there
+    a separate product market(s) for the retail supply of multiple-play-services exists and
+    whether there are separate markets for fixed bundles and FMC bundles can be left open as
+    the Transaction does not raise serious doubts as to its compatibility with the internal
+    market under any possible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_orange_telekom_romania_communications_2021_decision
+  page: '17'
+  quote_snippet: The results of the market investigation confirm that there is no need to distinguish
+    between residential and small business customers, and that these customers should not be
+    included in the market for business connectivity services along with connectivity services
+    to larger business customers, notably due to different customer requirements.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_orange_telekom_romania_communications_2021_decision
+  page: '17'
+  quote_snippet: In light of the above, the Commission considers that, for the purpose of this
+    Decision, the relevant product market is the market for the retail supply of business connectivity
+    services to large businesses and public sector customers, excluding the supply of such services
+    to residential and small business customers. The question whether such product market should
+    be further segmented into (i) broadband access for large business customers, (ii) leased
+    lines, and (iii) VPN services can be left open, as the Transaction does not raise competition
+    concerns under any possible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_orange_telekom_romania_communications_2021_decision
+  page: '6'
+  quote_snippet: A majority of the respondents to the market investigation indicated that -
+    in line with Vodafone/Certain Liberty Global Assets - it would be appropriate to consider
+    that the geographic scope of the market for the retail supply of mobile telecommunication
+    services in the present case is the territory of Romania.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_orange_telekom_romania_communications_2021_decision
+  page: '6'
+  quote_snippet: In light of the above, the Commission considers that, for the purpose of this
+    Decision, the relevant geographic market for the retail supply of mobile telecommunication
+    services is the territory of Romania.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_orange_telekom_romania_communications_2021_decision
+  page: '8'
+  quote_snippet: A majority of respondents to the market investigation indicated that – in line
+    with Vodafone/Certain Liberty Global Assets – it is appropriate to consider that the geographic
+    scope of the market for the retail supply of fixed telephony services in the present case
+    is the territory of Romania.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_orange_telekom_romania_communications_2021_decision
+  page: '8'
+  quote_snippet: In light of the above, the Commission considers that, for the purpose of this
+    Decision, the relevant geographic market for the retail supply of fixed telephony services
+    is the territory of Romania.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_orange_telekom_romania_communications_2021_decision
+  page: '11'
+  quote_snippet: A majority of respondents to the market investigation indicated that the geographic
+    scope of the market for the retail supply of fixed internet access services in the present
+    case would be the territory of Romania.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_orange_telekom_romania_communications_2021_decision
+  page: '11'
+  quote_snippet: In light of the above, the Commission considers that, for the purpose of this
+    Decision, the relevant geographic market for the retail supply of fixed internet access
+    services is the territory of Romania.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_orange_telekom_romania_communications_2021_decision
+  page: '13'
+  quote_snippet: A majority of respondents to the market investigation indicated that the geographic
+    scope of the market for the retail supply of audio-visual services in the present case is
+    the territory of Romania.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_orange_telekom_romania_communications_2021_decision
+  page: '13'
+  quote_snippet: In light of the above, the Commission considers that, for the purpose of this
+    Decision, the relevant geographic market for the retail supply of audio-visual services
+    is the territory of Romania.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_orange_telekom_romania_communications_2021_decision
+  page: '15'
+  quote_snippet: A majority of the respondents to the market investigation indicated that the
+    geographic scope of the market for the retail supply of multiple-play services in the present
+    case is the territory of Romania.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_orange_telekom_romania_communications_2021_decision
+  page: '15'
+  quote_snippet: In light of the above, the Commission considers that, for the purpose of this
+    Decision, the relevant geographic market for the retail supply of multiple play services
+    is the territory of Romania.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_orange_telekom_romania_communications_2021_decision
+  page: '17'
+  quote_snippet: A majority of respondents to the market investigation indicated that the geographic
+    scope of the market for the retail supply of business connectivity services in the present
+    case is the territory of Romania.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_orange_telekom_romania_communications_2021_decision
+  page: '17'
+  quote_snippet: In light of the above, the Commission considers that, for the purpose of this
+    Decision, the relevant geographic market for the retail supply of business connectivity
+    services is the territory of Romania.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_orange_telekom_romania_communications_2021_decision
+  page: '6'
+  quote_snippet: The question whether such product market should include OTT services can be
+    left open as the Transaction does not raise serious doubts as to its compatibility with
+    the internal market or the functioning of the EEA Agreement under any considered product
+    market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_orange_telekom_romania_communications_2021_decision
+  page: '8'
+  quote_snippet: In any event, the Transaction does not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement under any possible product
+    market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_orange_telekom_romania_communications_2021_decision
+  page: '12'
+  quote_snippet: The question whether the market should be segmented (i) between FTA and Pay
+    AV services; (ii) basic and premium Pay AV services; and (iii) linear and non-linear services
+    can be left open as the Transaction does not raise serious doubts as to its compatibility
+    with the internal market under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_orange_telekom_romania_communications_2021_decision
+  page: '15'
+  quote_snippet: The question whether there a separate product market(s) for the retail supply
+    of multiple-play-services exists and whether there are separate markets for fixed bundles
+    and FMC bundles can be left open as the Transaction does not raise serious doubts as to
+    its compatibility with the internal market under any possible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: eu_orange_telekom_romania_communications_2021_decision
+  page: '17'
+  quote_snippet: The question whether such product market should be further segmented into (i)
+    broadband access for large business customers, (ii) leased lines, and (iii) VPN services
+    can be left open, as the Transaction does not raise competition concerns under any possible
+    product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+ai_summary: null
+case_type: merger
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

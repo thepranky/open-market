@@ -1,0 +1,323 @@
+case_id: eu_biscuit_holding_continental_bakeries_holding_2022
+case_name: BISCUIT HOLDING / CONTINENTAL BAKERIES HOLDING
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2022-03-11'
+parties:
+- name: BISCUIT HOLDING
+  role: acquirer
+- name: CONTINENTAL BAKERIES HOLDING
+  role: target
+source_documents:
+- doc_id: eu_biscuit_holding_continental_bakeries_holding_2022_decision
+  title: BISCUIT HOLDING / CONTINENTAL BAKERIES HOLDING — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10543
+  pdf_url: http://publications.europa.eu/resource/cellar/dbb61db2-6efd-11ed-9887-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Sweet biscuits
+  definition_status: left_open
+  notes: The precise product market definition for the manufacture and supply of sweet biscuits
+    was left open. However, for the purpose of the decision and under a conservative approach,
+    the Commission factored into its assessment possible distinctions based on retail channel,
+    private label products, and categories of biscuits.
+- market_id: pm_2
+  name: Private label sweet biscuits
+  definition_status: considered
+  notes: Considered for the competitive assessment in France as a possible distinction within
+    the broader sweet biscuits market.
+- market_id: pm_3
+  name: Sandwich biscuits
+  definition_status: considered
+  notes: Considered for the competitive assessment in France, The Netherlands, and Belgium as
+    a possible category distinction within the broader sweet biscuits market.
+- market_id: pm_4
+  name: Plain biscuits
+  definition_status: considered
+  notes: Considered for the competitive assessment in Germany as a possible category distinction
+    within the broader sweet biscuits market.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Sweet biscuits — national (various countries affected)
+  definition_status: considered
+  notes: The precise geographic market definition was left open, but for the purposes of this
+    Decision and under a conservative approach, the Commission considered the geographic market
+    for the manufacture and supply of sweet biscuits to be national.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_biscuit_holding_continental_bakeries_holding_2022_decision
+  page: '3'
+  quote_snippet: In previous decisions,6 the Commission considered -albeit leaving the product
+    marked definition opened- that biscuits constitute a separate market from waffles and cakes.
+    The Commission also considered the distinction between sweet and savoury biscuit markets.
+    Within the sweet biscuits market, the Commission considered further segmentations (i) between
+    products which are branded (‘B’) or have a private label (‘PL’); (ii) by customer (retailers
+    vs food-service channel – restaurants, hotels, fast-food outlets, schools, hospitals) by
+    category (form – sandwiched/plain; and taste – chocolate coated, filled). The Commission
+    has however left in these previous decisions the precise product market definition open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_biscuit_holding_continental_bakeries_holding_2022_decision
+  page: '3'
+  quote_snippet: The Notifying Party argues that sweet biscuits, waffles and cakes should be
+    considered part of the same product market. However, as the Parties’ activities do not overlap
+    in the production of waffles or cakes, it considers that the exact product market definition
+    can be left open. As the Parties’ activities do not overlap on savoury biscuits, the Notifying
+    Party does not give its opinion on this plausible segmentation of the savoury biscuits market.
+    However, the Notifying Party considers that any further segmentation of the sweet biscuit
+    market is not warranted for the following reasons.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_biscuit_holding_continental_bakeries_holding_2022_decision
+  page: '5'
+  quote_snippet: For the purpose of assessing the present Transaction, the precise product market
+    definition can be left open as even under the narrowest possible market definition for the
+    manufacture and supply of sweet biscuits no serious concerns arise as to the compatibility
+    of the concentration with internal market as regards the overlapping activities of the Parties.
+    For the purposes of this Decision and under a conservative approach, the Commission will
+    factor into its assessment of the Transaction possible distinctions based on (i) retail
+    channel (ii) private label products, (iii) categories of biscuits.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_biscuit_holding_continental_bakeries_holding_2022_decision
+  page: '3'
+  quote_snippet: First, as regards the distinction between B and PL sweet biscuits, the market
+    investigation has shown that retailers and competitors do not consider branded and private
+    label sweet biscuits interchangeably. For retailers there is a considerable difference in
+    the margins made with one or the other product9 and confronted with a price increase in
+    a private label product, the majority of respondents said they would not switch to a branded
+    product10.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_biscuit_holding_continental_bakeries_holding_2022_decision
+  page: '5'
+  quote_snippet: For the purposes of this Decision and under a conservative approach, the Commission
+    will factor into its assessment of the Transaction possible distinctions based on (i) retail
+    channel (ii) private label products, (iii) categories of biscuits.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_biscuit_holding_continental_bakeries_holding_2022_decision
+  page: '12'
+  quote_snippet: In France, the Transaction would lead to a combined share of [30-40]% in the
+    overall private label sweet biscuit market with an increment of [0-5]%. The Combined Entity
+    would nonetheless be closely followed by Bouvard with a market share of [30-40]%.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_biscuit_holding_continental_bakeries_holding_2022_decision
+  page: '4'
+  quote_snippet: 'Based on the results of the market investigation, the following categories
+    of sweet biscuits were consistently considered ‘must-stock’: sandwich biscuits, plain biscuits
+    and cookies by the majority of retailers15.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_biscuit_holding_continental_bakeries_holding_2022_decision
+  page: '5'
+  quote_snippet: For the purposes of this Decision and under a conservative approach, the Commission
+    will factor into its assessment of the Transaction possible distinctions based on (i) retail
+    channel (ii) private label products, (iii) categories of biscuits.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_biscuit_holding_continental_bakeries_holding_2022_decision
+  page: '13'
+  quote_snippet: First, in France, the Transaction would lead to a large combined share of [30-40]%
+    in the sandwich biscuits segment with a significant increment of [10-20]%. Nevertheless,
+    important alternative suppliers such as Griesson (with a market share of [20-30]%), Bouvard
+    (with a market share of [20-30]%), Gullón (with a market share of [5-10]%), would remain
+    post-Transaction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_biscuit_holding_continental_bakeries_holding_2022_decision
+  page: '4'
+  quote_snippet: 'Based on the results of the market investigation, the following categories
+    of sweet biscuits were consistently considered ‘must-stock’: sandwich biscuits, plain biscuits
+    and cookies by the majority of retailers15.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_biscuit_holding_continental_bakeries_holding_2022_decision
+  page: '5'
+  quote_snippet: For the purposes of this Decision and under a conservative approach, the Commission
+    will factor into its assessment of the Transaction possible distinctions based on (i) retail
+    channel (ii) private label products, (iii) categories of biscuits.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_biscuit_holding_continental_bakeries_holding_2022_decision
+  page: '15'
+  quote_snippet: In Germany, the Transaction would lead to a combined market share of [30-40]%
+    with an increment of [0-5]% in the plain biscuits segment. The Combined Entity would still
+    face competition from the market leader Griesson (with a market share of [50-60]%) and from
+    a smaller competitor the Balsen Family (with a market share of [0-5]%).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_biscuit_holding_continental_bakeries_holding_2022_decision
+  page: '5'
+  quote_snippet: In its prior decisional practice, the Commission concluded that the biscuit
+    markets are national in view of the consumption patterns and established local brands.22
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_biscuit_holding_continental_bakeries_holding_2022_decision
+  page: '5'
+  quote_snippet: The Notifying Party agrees with the Commission’s precedent; it however points
+    to the ability of suppliers to address demand in neighbouring countries and suggests these
+    constraints should be taking into account in the competitive assessment of the Transaction.23
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_biscuit_holding_continental_bakeries_holding_2022_decision
+  page: '6'
+  quote_snippet: For the purpose of assessing the present Transaction, the precise geographic
+    market definition can be left open as no serious concerns arise as to the compatibility
+    of the concentration with the internal market as regards the overlapping activities of the
+    Parties in the market for the manufacture and supply of sweet biscuits. For the purposes
+    of this Decision and under a conservative approach, the Commission will consider the geographic
+    market to be national since the Parties’ market shares would be lower if the geographic
+    market were to be considered regional or EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_biscuit_holding_continental_bakeries_holding_2022_decision
+  page: '15'
+  quote_snippet: In light of the above considerations and taking account of the results of the
+    market investigation and of all the evidence available to it, in particular the existence
+    of sufficient alternative suppliers, the Commission concludes that the Transaction does
+    not raise serious doubts as to its compatibility with the internal market in relation to
+    the overall sweet biscuits market in France, as well as in the segment markets of sandwich
+    biscuits in France, Belgium and in The Netherlands, and in the plain biscuits in Germany.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

@@ -1,0 +1,161 @@
+case_id: eu_ec_m9962_2020
+case_name: M.9962
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2020-10-15'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9962_2020_decision
+  title: M.9962 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9962
+  pdf_url: http://publications.europa.eu/resource/cellar/90c49510-3ac6-11eb-b27b-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Fixed Dose Pharmaceuticals (FDPs) for antithrombotic products
+  definition_status: left_open
+  notes: The Commission considered various segmentations, including ATC4 classes B1B1 (heparin)
+    and B1B2 (antithrombin III), ATC3 class B1X (other antithrombotic agents), and molecule
+    level. However, it was not necessary to conclude on the exact definition for the purpose
+    of this decision.
+- market_id: pm_2
+  name: Contract Manufacturing Organisation (CMO)
+  definition_status: left_open
+  notes: The Commission considered potential segmentations by pharmaceutical form (solid dose
+    and powder, liquids and semi-solid, sterile liquid, medicated confectionary) and specific
+    manufacturing conditions. While the assessment focused on sterile liquid pharmaceuticals,
+    the precise market definition for CMO was left open.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Antithrombotic FDPs — national
+  definition_status: defined
+  notes: null
+- market_id: gm_2
+  name: Contract Manufacturing Organisation (CMO) — worldwide or at least EEA-wide
+  definition_status: left_open
+  notes: The Commission left open whether the geographic market for CMO services is worldwide
+    or at least EEA-wide, as the transaction did not raise serious doubts under either definition.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9962_2020_decision
+  page: '3'
+  quote_snippet: As regards the product market, the Commission found in a past decision,7 that
+    antithrombotic FDPs falling into ATC4 classes B1B1 (heparin) and B1B2 (antithrombin III),
+    along with those falling into ATC3 class B1X (other antithrombotic agents) that have the
+    same applications as heparins, belong to the same product market as they have the same mode
+    of action (injectable) and range of indications.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9962_2020_decision
+  page: '3'
+  quote_snippet: In any event, for the purposes of this Decision, it is not necessary to conclude
+    on the exact product market definition for antithrombotic FDPs, that is (i) whether classes
+    B1B1 and B1B2 are each a separate product market or if together they constitute a product
+    market (under class B1B), and (ii) whether class B1X is a separate market or it should be
+    considered together with class B1B, as the Transaction does not give rise to serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA agreement
+    under any of those plausible market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9962_2020_decision
+  page: '3'
+  quote_snippet: CMO is an arrangement under which a manufacturer provides upstream manufacturing
+    services of FDPs under contract on behalf of third party pharmaceutical companies.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9962_2020_decision
+  page: '4'
+  quote_snippet: In any event, for the purpose of this Decision, the precise product market
+    definition of CMO can be left open as, regardless of the market definition considered (an
+    overall market for CMO, or a market for CMO services for sterile liquid pharmaceuticals),
+    the Transaction does not give rise to serious doubts as to its compatibility with the internal
+    market and the functioning of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9962_2020_decision
+  page: '3'
+  quote_snippet: As regards the geographic market, in line with numerous Commission precedents9,
+    the relevant market for antithrombotic FDPs is national.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9962_2020_decision
+  page: '4'
+  quote_snippet: With regard to the geographic market, in line with past decisions of the Commission12,
+    the precise market definition for CMO services can be considered to be worldwide, or at
+    least EEA-wide. No further elaboration is necessary, since the transaction does not give
+    rise to serious doubts under either of the above possible geographic market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9962_2020_decision
+  page: '1'
+  quote_snippet: |
+    Subject: Case M.9962 – MYLAN / ASPEN’S EU THROMBOSIS BUSINESS
+    Commission decision pursuant to Article 6(1)(b) of Council Regulation No 139/20041 and Article 57 of the Agreement on the European Economic Area2
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

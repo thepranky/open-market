@@ -1,0 +1,680 @@
+case_id: eu_safran_part_of_collins_aerospaces_act_2025
+case_name: SAFRAN / PART OF COLLINS AEROSPACE’S ACTUATION AND FLIGHT CONTROL ACTIVITIES
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2025-04-04'
+parties:
+- name: SAFRAN
+  role: acquirer
+- name: PART OF COLLINS AEROSPACE’S ACTUATION AND FLIGHT CONTROL ACTIVITIES
+  role: target
+source_documents:
+- doc_id: eu_safran_part_of_collins_aerospaces_act_2025_decision
+  title: SAFRAN / PART OF COLLINS AEROSPACE’S ACTUATION AND FLIGHT CONTROL ACTIVITIES — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11253
+  pdf_url: http://publications.europa.eu/resource/cellar/d45c5d4f-a5d7-11f0-a7c5-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Valves for space launchers
+  definition_status: left_open
+  notes: The Commission previously defined valves for space launchers as a separate market.
+    It also considered a further segmentation between cryogenic valves and non-cryogenic valves
+    due to product characteristics, but left this segmentation open. The market investigation
+    results were in line with previous findings, indicating technical difficulties and high
+    costs in switching between cryogenic and non-cryogenic valves (demand perspective) but mixed
+    results on supply-side substitutability. The Commission ultimately left the segmentation
+    open as the Transaction would not raise serious doubts irrespective of the delineation.
+- market_id: pm_2
+  name: Prime contracting for ESA space launchers
+  definition_status: left_open
+  notes: The Commission previously analysed this market but left its existence and scope open.
+    For developed programmes (Ariane and Vega), prime contractors were designated based on the
+    juste retour principle without competitive tender, limiting the competitive process. The
+    market investigation indicated a new approach for future small launchers (European Launcher
+    Challenge), where competitive tenders will be organised, and the juste retour principle
+    will be limited. This suggests a possible distinction between developed and prospective
+    programmes. The Commission left the existence and scope, as well as the distinction between
+    developed and prospective programmes, open as the Transaction would not raise serious doubts.
+- market_id: pm_3
+  name: Trimmable Horizontal Stabiliser Actuator (THSA) systems
+  definition_status: defined
+  notes: The Commission finds that THSA systems are distinct from other actuation products due
+    to characteristics, price, functionalities, intended use, power, and flight-critical nature.
+    Customers cannot substitute THSA systems for PFCA or SFCA systems. The Commission explicitly
+    found that the supply of THSA systems constitutes a separate product market in UTC/Collins.
+    The Commission finds it not appropriate to segment by technology (H-THSA vs. E-THSA) as
+    suppliers compete at the aircraft design stage. Segmentation by demand segment (civil/military)
+    or type of aircraft (size) was left open as the outcome of the assessment would not change.
+- market_id: pm_4
+  name: Primary Flight Control Actuators (PFCA) systems
+  definition_status: defined
+  notes: PFCA systems are distinct from other actuation products, particularly SFCA and THSA
+    systems, serving a different purpose and having higher flight-critical importance. They
+    are technologically demanding and almost exclusively hydraulic. The Commission found that
+    the supply of PFCA systems constitutes a product market separate from other flight actuators.
+    Segmentation by segment of demand (civil/military) or type of aircraft (size) was left open.
+- market_id: pm_5
+  name: Secondary Flight Control Actuators (SFCA) systems
+  definition_status: defined
+  notes: SFCA systems are distinct from other actuation products, serving a distinct purpose,
+    having a different risk-profile (not flight-critical), and are less used during flight compared
+    to PFCA systems. They are more often electric. The Commission found it appropriate to consider
+    the supply of SFCA systems as separate from other flight control actuators. Segmentation
+    by segment of demand (civil/military), type of aircraft (size), or technology was left open.
+- market_id: pm_6
+  name: Thrust Reverser Actuation Systems (TRAS)
+  definition_status: defined
+  notes: TRAS are distinct products from other actuation products and are an input component
+    of thrust reversers, not directly substitutable. Suppliers of TRAS are often distinct from
+    those supplying thrust reversers. The Commission finds it appropriate to distinguish the
+    supply of TRAS from other actuators. Segmentation by segment of demand (civil/military),
+    type of aircraft (size), or technology (H-TRAS vs. E-TRAS) was left open.
+- market_id: pm_7
+  name: Thrust reversers
+  definition_status: defined
+  notes: Thrust reversers are components of nacelles used to decrease aircraft speed. The Commission
+    previously found that the supply of thrust reversers belongs to a separate product market
+    and that segmentation by type (cascade, door, target) is not appropriate, as most suppliers
+    offer all types. Segmentation by type of aircraft or segment of demand (civil/military)
+    was left open.
+- market_id: pm_8
+  name: Pilot control sticks
+  definition_status: defined
+  notes: Pilot control sticks provide man-machine interface for piloting functions. The Commission,
+    consistent with past practice and market investigation, found that the supply of pilot control
+    sticks belongs to a separate product market. Segmentation between centre yokes and sidesticks,
+    as well as by segment of demand (civil/military) and type of aircraft, was left open.
+- market_id: pm_9
+  name: Rudder Brake Pedals Systems (RBPS)
+  definition_status: defined
+  notes: RBPS are equipment directly accessible to the pilot in the cockpit. The Commission,
+    consistent with past practice and market investigation, found that the supply of RBPS belongs
+    to a separate product market. Segmentation by segment of demand (civil/military) and type
+    of aircraft was left open.
+- market_id: pm_10
+  name: Throttle Quadrant Assembly (TQA)
+  definition_status: defined
+  notes: TQA allows the pilot to control fuel flow. The Commission, consistent with past practice
+    and market investigation, found that the supply of TQA belongs to a separate product market.
+    Segmentation by segment of demand (civil/military) and type of aircraft was left open.
+- market_id: pm_11
+  name: Flight control computers (FCC)
+  definition_status: defined
+  notes: FCCs process pilot commands and sensor measurements to control actuators. The Commission
+    previously defined a market for FCC and the market investigation confirmed FCC constitutes
+    a product market distinct from other flight control electronics. Potential further segmentation
+    (primary/secondary FCC, civil/military, type of aircraft) was left open as the outcome of
+    the assessment would not change.
+- market_id: pm_12
+  name: Aerospace wiring systems
+  definition_status: defined
+  notes: Wiring systems transmit electrical power, data, and signals. The Commission previously
+    found that the supply of wiring systems for the aerospace industry belongs to a product
+    market separate from other industries due to specific standards. This was confirmed by the
+    market investigation. The Commission also found that general harnesses and harsh environment
+    harnesses may belong to separate product markets, and that distinguishing supply by segment
+    of demand (civil/military) is appropriate, while distinction by type of aircraft is not.
+    Segmentation by type of harnesses (general/harsh), segment of demand, or type of aircraft/application
+    was left open.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Aerospace actuation systems (THSA, PFCA, SFCA, TRAS), thrust reversers, pilot controls,
+    flight control computers and wiring systems — worldwide
+  definition_status: defined
+  notes: The Commission consistently found in its past practice and confirmed in this investigation
+    that markets for these aerospace products are worldwide in scope, given global activity,
+    procurement, trade flows, and homogeneous prices. For products incorporated in military
+    aircraft, the existence of narrower EEA-wide markets was left open due to mixed responses
+    regarding trade barriers and regional preferences, but the overall assessment outcome would
+    not change.
+- market_id: gm_2
+  name: Valves for space launchers and prime contracting for developed ESA programmes — EEA-wide
+  definition_status: defined
+  notes: For already developed ESA launcher programmes (Ariane and Vega), competition for prime
+    contracting, systems, sub-systems and equipment (including valves) took place at EEA level.
+    This was due to the application of the juste retour principle, which geographically limited
+    the selection of suppliers and prime contractors.
+- market_id: gm_3
+  name: Valves for space launchers and prime contracting for prospective ESA programmes (European
+    Launcher Challenge) — EEA-wide for launch service providers, potentially global for component
+    suppliers
+  definition_status: considered
+  notes: ESA's new approach for future small launchers (European Launcher Challenge) will limit
+    the juste retour principle and organise competitive tenders for launch service providers,
+    which will be limited to European entities. These European launch service providers will
+    then independently select their component suppliers (e.g., valves), potentially opening
+    up the market for component suppliers to international (global) competition. The overall
+    geographic market definition was left open for these prospective programmes, as the Transaction
+    would not raise serious doubts irrespective of the exact delineation.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_safran_part_of_collins_aerospaces_act_2025_decision
+  page: '33'
+  quote_snippet: As regards the market for prime contracting for space launchers, the Commission
+    has previously analysed the prime contracting market for ESA space launchers, but the existence
+    of such market, as well as its scope, was left open.235
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_safran_part_of_collins_aerospaces_act_2025_decision
+  page: '33'
+  quote_snippet: First, as far as space programmes are concerned, ESA has been the only customer
+    of space launchers in Europe (e.g. for the Ariane and Vega launchers). For developed programmes,
+    such as the Ariane and the Vega programmes, ESA has designated the ArianeGroup and Avio
+    as prime contractors based on the juste retour principle. The market investigation confirmed
+    that the prime contractors have been already designated based on the juste retour principle,237
+    and thus without a competitive tender, and any change to such contractors may only be made
+    under stringent conditions and in accordance with the already established rules of each
+    program.238 Thus, for developed ESA programmes, it appears that the competitive process
+    has been limited by the application of the juste retour principle. Further, no new similar
+    programme (e.g. for heavy-lift space launchers) seems to be foreseen to materialise in the
+    upcoming years, where prime contractors can be selected.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_safran_part_of_collins_aerospaces_act_2025_decision
+  page: '17'
+  quote_snippet: The Commission finds that THSA systems are a product that is different in its
+    characteristics, price and functionalities relative to other actuation products. As mentioned
+    in greater detail in paragraphs (45), (46), (48) and (51), the intended use of THSA systems
+    in an aircraft is different from other flight control actuators (it moves the horizontal
+    stabiliser, whereas other flight control actuators move other flight control surfaces) and
+    it is observable that the products themselves are different pieces of equipment.107 Customers
+    cannot substitute a THSA system for a PFCA system, as the THSA merely adjusts the flight
+    path set by the PFCA system (and is not able to control the direction of the flight), or
+    for an SFCA system, which is used only in take-off or landing (whereas the THSA system moves
+    the horizontal stabiliser during flight).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_safran_part_of_collins_aerospaces_act_2025_decision
+  page: '20'
+  quote_snippet: In sum, the Commission finds that the supply of THSA systems is in a separate
+    product market, distinct from the supply of PFCA systems and of SFCA systems. The Commission
+    finds that it is not appropriate to segment the supply of THSA systems by technology (hydraulic
+    or electric THSA systems). With regard to the potential segmentation of the supply of THSA
+    systems by segment of demand (civil or military), or by type of aircraft (large commercial
+    aircraft, regional aircraft, business jets or general aviation), for the purposes of this
+    decision the Commission leaves the market definition open and will carry out the competitive
+    assessment for all plausible alternative market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_safran_part_of_collins_aerospaces_act_2025_decision
+  page: '20'
+  quote_snippet: In its past practice, the Commission found that the supply of PFCA systems
+    belongs to a separate product market relative to other flight control actuators.133 The
+    Commission has considered, but ultimately left open, whether separate product markets should
+    be retained for the supply of PFCA systems according to (i) the segment of demand (for civil
+    or military aircraft),134 and (ii) the type of aircraft (large commercial aircraft, regional
+    aircraft, etc.).135 The Commission has not considered a potential segmentation between hydraulic
+    or electrically powered PFCA systems.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_safran_part_of_collins_aerospaces_act_2025_decision
+  page: '22'
+  quote_snippet: Because the outcome of the Commission’s assessment would not change under the
+    various alternative plausible market definitions, the existence of separate markets for
+    the supply of PFCA systems according to the segment of demand and according to the type
+    (i.e. size) of aircraft can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_safran_part_of_collins_aerospaces_act_2025_decision
+  page: '23'
+  quote_snippet: Because the outcome of the Commission’s assessment would not change under the
+    various alternative plausible market definitions, the existence of separate markets for
+    the supply of SFCA systems according to the segment of demand and according to the size
+    of the aircraft can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_safran_part_of_collins_aerospaces_act_2025_decision
+  page: '23'
+  quote_snippet: In its past practice, the Commission has regarded the supply of TRAS as a separate
+    product market and an input for thrust reversers,156 although it left open whether the supply
+    of TRAS and of thrust reversers belong to the same product market in the most recent decision
+    in which the supply of TRAS was investigated.157 The Commission found that it was not appropriate
+    to consider separate markets for the supply of TRAS according to the type of aircraft in
+    which ultimately they are incorporated (large commercial aircraft, regional aircraft or
+    business jets).158 The Commission has not addressed a possible distinction with respect
+    to the segment of demand (civil or military aircraft), or the technology used in the TRAS
+    (H-TRAS or E-TRAS).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_safran_part_of_collins_aerospaces_act_2025_decision
+  page: '25'
+  quote_snippet: In summary, for the purposes of the decision, the Commission considers that
+    it is appropriate to distinguish the supply of TRAS from that of other actuators, namely
+    PFCA, SFCA and THSA systems. Because the outcome of the Commission’s assessment would not
+    change under the various alternative plausible market definitions, the existence of separate
+    markets for the supply of TRAS according to the segment of demand (civil or military aircraft)
+    and according to the size of the aircraft can be left open. Likewise, the Commission leaves
+    open whether it is appropriate to define separate product markets for the supply of of H-TRAS
+    and of E-TRAS. The Commission will therefore carry out the competitive assessment in all
+    plausible alternative market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_safran_part_of_collins_aerospaces_act_2025_decision
+  page: '26'
+  quote_snippet: In its past practice, the Commission has found that the supply of thrust reversers
+    belongs to a separate product market.182 The Commission found that a segmentation of thrust
+    reversers according to their type (cascade, door or target) is not appropriate because most
+    suppliers are able to supply the different types of thrust reversers.183 The Commission
+    considered but ultimately left open a potential segmentation of the market for the supply
+    of thrust reversers by types of aircraft (large commercial aircraft, regional aircraft,
+    etc.).184
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_safran_part_of_collins_aerospaces_act_2025_decision
+  page: '27'
+  quote_snippet: With respect to the different types of thrust reversers – with cascades, with
+    doors and with targets – the Commission finds that suppliers often offer all types of thrust
+    reversers, which indicates that suppliers are able to position their product offering across
+    the different types.189 By contrast, responses to the market investigation were mixed on
+    whether the different types of thrust reversers are directly substitutable or should be
+    regarded as belonging to separate product markets (an equal number of respondents indicated
+    that the different types of thrust reversers should or should not be regarded as belonging
+    to separate product markets, with a larger number of respondents not providing a definitive
+    view).190 During its investigation, and in particular through the analysis of the Parties’
+    internal documents, the Commission did not find a reason to deviate from its past practice.
+    As a result, the Commission finds that the market for the supply of thrust reversers includes
+    all types of thrust reversers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_safran_part_of_collins_aerospaces_act_2025_decision
+  page: '27'
+  quote_snippet: In summary, for the purposes of the decision, the Commission finds that the
+    supply of thrust reversers belongs to a separate product market. The Commission leaves open
+    whether it is appropriate to consider separate product markets according to the segment
+    of demand (civil or military aircraft), and the type of aircraft in which thrust reversers
+    are incorporated (large commercial aircraft, regional aircraft, etc.). The Commission will
+    therefore carry out the competitive assessment in all plausible alternative market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_safran_part_of_collins_aerospaces_act_2025_decision
+  page: '27'
+  quote_snippet: In its past practice, the Commission found that the supply of pilot control
+    sticks, the supply of RBPS and the supply of TQA belong to separate product markets.192
+    The Commission found that each type of pilot control performs a different function in an
+    aircraft, that individual pilot controls are priced differently, and that it was unclear
+    whether a supplier of one type of pilot control (e.g., a pilot control stick) would be able
+    to switch production to supply another type (e.g., a RBPS) in a manner that exercises a
+    sufficient and immediate competitive constraint.193
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_safran_part_of_collins_aerospaces_act_2025_decision
+  page: '28'
+  quote_snippet: The results of the market investigation confirmed that the supply of pilot
+    control sticks, the supply of RBPS and the supply of TQA belong to separate product markets.196
+    As regards the possible distinction between centre yokes and sidesticks, most respondents
+    to the market investigation indicated that these products should be regarded as belonging
+    to separate product markets.197
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_safran_part_of_collins_aerospaces_act_2025_decision
+  page: '28'
+  quote_snippet: In summary, for the purposes of this decision the Commission finds that the
+    supply of pilot control sticks, the supply of RBPS and the supply of TQA belong to separate
+    product markets. Even though there are indications that it may be appropriate to define
+    separate product markets within pilot control sticks, between centre yokes and sidesticks,
+    and according to the segment of demand (i.e., between the supply of pilot controls to civil
+    and military aircraft) and according to the type of aircraft (i.e., between large commercial
+    aircraft, regional aircraft, etc.), since the outcome of the Commission’s assessment would
+    not change under the various alternative plausible market definitions, those possible further
+    segmentations can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_safran_part_of_collins_aerospaces_act_2025_decision
+  page: '27'
+  quote_snippet: In its past practice, the Commission found that the supply of pilot control
+    sticks, the supply of RBPS and the supply of TQA belong to separate product markets.192
+    The Commission found that each type of pilot control performs a different function in an
+    aircraft, that individual pilot controls are priced differently, and that it was unclear
+    whether a supplier of one type of pilot control (e.g., a pilot control stick) would be able
+    to switch production to supply another type (e.g., a RBPS) in a manner that exercises a
+    sufficient and immediate competitive constraint.193
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_safran_part_of_collins_aerospaces_act_2025_decision
+  page: '28'
+  quote_snippet: The results of the market investigation confirmed that the supply of pilot
+    control sticks, the supply of RBPS and the supply of TQA belong to separate product markets.196
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_safran_part_of_collins_aerospaces_act_2025_decision
+  page: '28'
+  quote_snippet: In summary, for the purposes of this decision the Commission finds that the
+    supply of pilot control sticks, the supply of RBPS and the supply of TQA belong to separate
+    product markets. Even though there are indications that it may be appropriate to define
+    separate product markets within pilot control sticks, between centre yokes and sidesticks,
+    and according to the segment of demand (i.e., between the supply of pilot controls to civil
+    and military aircraft) and according to the type of aircraft (i.e., between large commercial
+    aircraft, regional aircraft, etc.), since the outcome of the Commission’s assessment would
+    not change under the various alternative plausible market definitions, those possible further
+    segmentations can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_safran_part_of_collins_aerospaces_act_2025_decision
+  page: '27'
+  quote_snippet: In its past practice, the Commission found that the supply of pilot control
+    sticks, the supply of RBPS and the supply of TQA belong to separate product markets.192
+    The Commission found that each type of pilot control performs a different function in an
+    aircraft, that individual pilot controls are priced differently, and that it was unclear
+    whether a supplier of one type of pilot control (e.g., a pilot control stick) would be able
+    to switch production to supply another type (e.g., a RBPS) in a manner that exercises a
+    sufficient and immediate competitive constraint.193
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_safran_part_of_collins_aerospaces_act_2025_decision
+  page: '28'
+  quote_snippet: The results of the market investigation confirmed that the supply of pilot
+    control sticks, the supply of RBPS and the supply of TQA belong to separate product markets.196
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_safran_part_of_collins_aerospaces_act_2025_decision
+  page: '28'
+  quote_snippet: In summary, for the purposes of this decision the Commission finds that the
+    supply of pilot control sticks, the supply of RBPS and the supply of TQA belong to separate
+    product markets. Even though there are indications that it may be appropriate to define
+    separate product markets within pilot control sticks, between centre yokes and sidesticks,
+    and according to the segment of demand (i.e., between the supply of pilot controls to civil
+    and military aircraft) and according to the type of aircraft (i.e., between large commercial
+    aircraft, regional aircraft, etc.), since the outcome of the Commission’s assessment would
+    not change under the various alternative plausible market definitions, those possible further
+    segmentations can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_safran_part_of_collins_aerospaces_act_2025_decision
+  page: '29'
+  quote_snippet: The Commission’s market investigation confirmed that FCC constitutes a product
+    market that is distinct from other flight control electronics, namely controllers, sensors
+    and the autopilot.203
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_safran_part_of_collins_aerospaces_act_2025_decision
+  page: '29'
+  quote_snippet: For the purposes of the present case the question whether a further segmentation
+    of the market for FCC is warranted can be left open, as the Transaction does not give rise
+    to serious doubts as to its compatibility with the internal market or the functioning of
+    the EEA agreement as regards the supply of FCC, irrespective of the precise product market
+    definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_safran_part_of_collins_aerospaces_act_2025_decision
+  page: '31'
+  quote_snippet: In summary, for the purpose of this decision, the Commission finds that aerospace
+    wiring systems constitute a distinct product market. The Commission also finds, within aerospace
+    wiring systems, that general harnesses and harsh environment harnesses may belong to separate
+    product markets. As regards a possible segmentation by segment of demand (civil or military
+    aircraft), the response from the market investigation indicates that a distinction in the
+    supply of wiring systems to civil and to military aircraft is appropriate, whereas a distinction
+    by type of aircraft (large commercial aircraft, regional aircraft, etc.) is not appropriate.
+    In line with its past practice, the Commission will consider the supply of wiring systems
+    by application (in particular, the supply of wiring systems for incorporation in actuation
+    products). However, since the outcome of the Commission’s assessment would not change under
+    the various alternative plausible market definitions, the existence of separate markets
+    for the supply of wiring systems according to the segment of demand or by type of aircraft
+    or application can be left open. The Commission will therefore carry out the competitive
+    assessment in all plausible alternative market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_safran_part_of_collins_aerospaces_act_2025_decision
+  page: '35'
+  quote_snippet: Consistent with its past practice, the Commission finds that the markets for
+    the supply of aerospace actuation systems (namely THSA systems, PFCA systems, SFCA systems
+    and TRAS), thrust reversers, pilot controls (including its relevant sub-segmentations),
+    flight control computers and wiring systems are worldwide in scope. The Commission finds
+    that aerospace companies are active,255 and procurement takes place, globally.256 The Commission
+    also finds that there are significant trade flows across countries around the globe.257
+    Finally, the Commission finds that prices do not vary significantly between different regions
+    of the world. Therefore, the Commission finds that, generally, in the supply of these aerospace
+    products, conditions of competition are sufficiently homogeneous for competition to take
+    place within a world-wide geographic market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_safran_part_of_collins_aerospaces_act_2025_decision
+  page: '36'
+  quote_snippet: Therefore, the Commission finds that the supply of THSA systems, PFCA systems,
+    SFCA systems, TRAS and thrust reversers, pilot controls (including its relevant sub-segmentations),
+    flight control computers and wiring systems, including their plausible sub-segmentations,
+    is worldwide in scope. With respect to the appropriateness of finding narrower EEA-wide
+    markets for the supply of these products to the military segment, because the outcome of
+    the Commission’s assessment would not change under the various plausible alternative market
+    definitions, the Commission leaves open whether it is appropriate to find that competition
+    for the supply to military aircraft takes place in a market limited to the EEA and will
+    carry out the competitive assessment in all plausible alternative market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_safran_part_of_collins_aerospaces_act_2025_decision
+  page: '37'
+  quote_snippet: Following ESA’s implementation of its new approach towards ensuring increased
+    competition for space launch service providers (and thus, limiting the application of the
+    juste retour principle), there are indications, also confirmed by the market investigation
+    that tenders will be limited to European launch service providers. Thus, competition between
+    these European launch service providers for ESA projects will still be expected to take
+    place at EEA level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

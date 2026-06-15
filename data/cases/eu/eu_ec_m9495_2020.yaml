@@ -1,0 +1,927 @@
+case_id: eu_ec_m9495_2020
+case_name: M.9495
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2020-09-21'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9495_2020_decision
+  title: M.9495 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9495
+  pdf_url: http://publications.europa.eu/resource/cellar/06f01901-4058-11eb-b27b-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Production and supply of food products dedicated to the retail distribution sector
+  definition_status: defined
+  notes: The Commission considered this market separate from the production and supply of food
+    products dedicated to the food service sector.
+- market_id: pm_2
+  name: Production and supply of food products dedicated to the food service sector
+  definition_status: defined
+  notes: The Commission considered this market separate from the production and supply of food
+    products dedicated to the retail distribution sector.
+- market_id: pm_3
+  name: Production and supply of ice cream products
+  definition_status: defined
+  notes: The Commission considered this market separate from the production and supply of other
+    frozen food products.
+- market_id: pm_4
+  name: Production and supply of other frozen food products
+  definition_status: defined
+  notes: The Commission considered this market separate from the production and supply of ice
+    cream products.
+- market_id: pm_5
+  name: Production and supply of industrial ice cream
+  definition_status: defined
+  notes: The Commission considered this market separate from the production and supply of artisanal
+    ice cream.
+- market_id: pm_6
+  name: Production and supply of artisanal ice cream
+  definition_status: defined
+  notes: The Commission considered this market separate from the production and supply of industrial
+    ice cream.
+- market_id: pm_7
+  name: Production and supply of take-home ice cream, impulse ice cream, and catering ice cream
+  definition_status: left_open
+  notes: Strong indications suggest these are separate product markets, but the precise definition
+    was left open as the transaction did not raise serious doubts regardless of the definition.
+- market_id: pm_8
+  name: Production and supply of crude seed oil
+  definition_status: defined
+  notes: Considered a separate market from BRSO and PRSO.
+- market_id: pm_9
+  name: Production and supply of BRSO (refined seed oil in bulk)
+  definition_status: defined
+  notes: Considered a separate market from crude seed oil and PRSO.
+- market_id: pm_10
+  name: Production and supply of PRSO (refined seed oil packaged for end-users)
+  definition_status: defined
+  notes: Considered a separate market from crude seed oil and BRSO.
+- market_id: pm_11
+  name: Production and supply of seed oil
+  definition_status: defined
+  notes: Considered a separate market from the production and supply of olive oil.
+- market_id: pm_12
+  name: Production and supply of olive oil
+  definition_status: defined
+  notes: Considered a separate market from the production and supply of seed oil.
+- market_id: pm_13
+  name: Production and supply of seed oil by seed type
+  definition_status: left_open
+  notes: A further segmentation by different seed type within PRSO could not be excluded, but
+    the exact market definition was left open as the transaction did not raise serious doubts.
+- market_id: pm_14
+  name: Production and supply of margarine
+  definition_status: defined
+  notes: The Commission found that the production and supply of margarine constitutes a separate
+    product market.
+- market_id: pm_15
+  name: Production and supply of spreadable cheese
+  definition_status: defined
+  notes: The Commission found spreadable cheese to be a distinct market, with no further segmentation
+    appropriate.
+- market_id: pm_16
+  name: Production and supply of fresh cheese
+  definition_status: defined
+  notes: The Commission found fresh cheese to be a distinct market.
+- market_id: pm_17
+  name: Production and supply of soft cheese
+  definition_status: defined
+  notes: The Commission found soft cheese to be a distinct market.
+- market_id: pm_18
+  name: Production and supply of semi-hard cheese
+  definition_status: defined
+  notes: The Commission found semi-hard cheese to be a distinct market.
+- market_id: pm_19
+  name: Production and supply of hard cheese
+  definition_status: defined
+  notes: The Commission found hard cheese to be a distinct market.
+- market_id: pm_20
+  name: Production and supply of cheese — further segmentation by presentation, milk type, or
+    protected geographic status
+  definition_status: left_open
+  notes: Responses from market participants were inconclusive regarding further segmentation,
+    except for spreadable cheese where no further segmentation was deemed appropriate.
+- market_id: pm_21
+  name: Production and supply of ketchup
+  definition_status: defined
+  notes: The Commission found ketchup to be a distinct product market.
+- market_id: pm_22
+  name: Production and supply of mayonnaise
+  definition_status: defined
+  notes: The Commission found mayonnaise to be a distinct product market.
+- market_id: pm_23
+  name: Supply of fresh meat for human consumption
+  definition_status: defined
+  notes: Considered a separate market from the production and supply of processed meat for human
+    consumption.
+- market_id: pm_24
+  name: Production and supply of processed meat for human consumption
+  definition_status: defined
+  notes: Considered a separate market from the supply of fresh meat for human consumption.
+- market_id: pm_25
+  name: Fresh meat — further segmentations
+  definition_status: left_open
+  notes: Further segmentations could not be excluded, but the transaction did not raise serious
+    doubts regardless of the definition.
+- market_id: pm_26
+  name: Production and supply of CSDs (Carbonated Soft Drinks)
+  definition_status: defined
+  notes: The Commission considered CSDs and NCSDs to be separate product markets within the
+    broader market for non-alcoholic drinks.
+- market_id: pm_27
+  name: Production and supply of NCSDs (Non-Carbonated Soft Drinks)
+  definition_status: defined
+  notes: The Commission considered CSDs and NCSDs to be separate product markets within the
+    broader market for non-alcoholic drinks.
+- market_id: pm_28
+  name: Production and supply of bottled water
+  definition_status: defined
+  notes: The Commission considered bottled water to constitute a separate product market.
+- market_id: pm_29
+  name: Production and supply of carbonated water, still water, and flavoured water
+  definition_status: left_open
+  notes: Market investigation indicated these might constitute separate markets, but the precise
+    definition was left open as the transaction did not raise serious doubts regardless of the
+    definition.
+- market_id: pm_30
+  name: Production and supply of branded vs private label products
+  definition_status: left_open
+  notes: Market investigation results were mixed, so the exact market definition was left open
+    as the transaction did not raise serious doubts regardless of the definition.
+- market_id: pm_31
+  name: Procurement of daily consumer goods
+  definition_status: defined
+  notes: The Commission found a specific market for the procurement of daily consumer goods
+    by customers like wholesalers, retailers, and other firms from upstream producers and suppliers.
+- market_id: pm_32
+  name: Procurement of daily consumer goods by 19 product categories
+  definition_status: considered
+  notes: The market investigation supported segmentation into 19 product categories, but the
+    exact market definition was left open as the transaction did not raise serious doubts regardless
+    of the definition.
+- market_id: pm_33
+  name: Procurement of daily consumer goods by sales channel
+  definition_status: left_open
+  notes: Strong indications suggested segmentation by sales channel, but the exact market definition
+    was left open as the transaction did not raise serious doubts regardless of the definition.
+- market_id: pm_34
+  name: Wholesale supply of non-food products
+  definition_status: defined
+  notes: The Commission confirmed previous findings that wholesale supply of non-food products
+    and food products are distinct markets.
+- market_id: pm_35
+  name: Wholesale supply of food products
+  definition_status: defined
+  notes: The Commission confirmed previous findings that wholesale supply of food products and
+    non-food products are distinct markets.
+- market_id: pm_36
+  name: Wholesale supply of daily consumer goods by product category
+  definition_status: considered
+  notes: The Commission found indications for separate product markets based on product categories,
+    but the exact definition was left open.
+- market_id: pm_37
+  name: Wholesale supply of daily consumer goods by mode of supply
+  definition_status: left_open
+  notes: A segmentation by mode of supply could not be excluded, but the exact market definition
+    was left open as the transaction did not raise serious doubts.
+- market_id: pm_38
+  name: Retail supply of daily consumer goods through hypermarkets, supermarkets and discount
+    chains (modern distribution channels)
+  definition_status: defined
+  notes: The Commission found a separate product market for the sale of daily consumer goods
+    mainly by modern distribution channels.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Production and supply of all ice cream — national
+  definition_status: defined
+  notes: The Commission concluded that the geographic market for all ice cream is national in
+    scope.
+- market_id: gm_2
+  name: Production and supply of edible oils — national or wider than national
+  definition_status: left_open
+  notes: Responses from market participants were not conclusive, with some indicating a wider
+    than national, EEA-wide, or even global scope. The definition was left open.
+- market_id: gm_3
+  name: Production and supply of PRSO (refined seed oil packaged for end-users) — national or
+    wider than national
+  definition_status: left_open
+  notes: The market investigation was inconclusive as to whether the geographic market for PRSO
+    is national or wider than national.
+- market_id: gm_4
+  name: Production and supply of margarine — at least national or wider than national
+  definition_status: left_open
+  notes: The market was concluded to be at least national in scope, but whether it is wider
+    than national was left open.
+- market_id: gm_5
+  name: Production and supply of cheese — national or wider than national
+  definition_status: left_open
+  notes: Responses from market participants were inconclusive, with half supporting a national
+    scope and half disagreeing, indicating regional or EEA-wide scope. The definition was left
+    open.
+- market_id: gm_6
+  name: Production and supply of cold sauces — at least national or wider than national
+  definition_status: left_open
+  notes: The markets were concluded to be at least national in scope, but whether they might
+    be wider than national was left open.
+- market_id: gm_7
+  name: Supply of fresh meat for human consumption — national
+  definition_status: defined
+  notes: Market investigation confirmed the national scope for this market.
+- market_id: gm_8
+  name: Production and supply of processed meat for human consumption — at least national or
+    wider than national
+  definition_status: left_open
+  notes: The markets were concluded to be at least national in scope, but whether they might
+    be wider than national was left open due to inconclusive market investigation results.
+- market_id: gm_9
+  name: Production and supply of bottled water — national
+  definition_status: defined
+  notes: Market investigation clearly indicated a national scope for this market.
+- market_id: gm_10
+  name: Procurement of daily consumer goods — at least national or wider than national
+  definition_status: left_open
+  notes: The markets were found to be at least national in scope, but a wider market definition
+    could not be fully excluded and was left open.
+- market_id: gm_11
+  name: Wholesale supply of daily consumer goods — national
+  definition_status: defined
+  notes: Market investigation confirmed a national scope for these markets, with a possible
+    exception for cash & carry mode of supply.
+- market_id: gm_12
+  name: Wholesale supply of daily consumer goods through cash & carry mode of supply — national
+    (Slovenia affected)
+  definition_status: considered
+  notes: Based on feedback from Slovenian market participants, the Commission considered this
+    market to be national in Slovenia.
+- market_id: gm_13
+  name: Wholesale supply of daily consumer goods through cash & carry mode of supply — smaller
+    than national (outside Slovenia affected)
+  definition_status: left_open
+  notes: The Commission left open whether this market might be smaller than national outside
+    Slovenia.
+- market_id: gm_14
+  name: Retail supply of daily consumer goods — local or national (Slovenia affected)
+  definition_status: left_open
+  notes: Market investigation showed that markets are likely local, but a national scope could
+    not be excluded, so the definition was left open.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '8'
+  quote_snippet: In light of the above, in line with previous cases and for the purposes of
+    this decision the Commission considers that the production and supply of food products dedicated
+    to the retail distribution sector and the production and supply of food products dedicated
+    to the food service sector constitute separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '8'
+  quote_snippet: In light of the above, in line with previous cases and for the purposes of
+    this decision the Commission considers that the production and supply of food products dedicated
+    to the retail distribution sector and the production and supply of food products dedicated
+    to the food service sector constitute separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '9'
+  quote_snippet: In light of the above and for the purposes of this decision the Commission
+    considers that the production and supply of ice creams constitutes a separate product market
+    from the production and supply of other frozen food.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '9'
+  quote_snippet: In light of the above and for the purposes of this decision the Commission
+    considers that the production and supply of ice creams constitutes a separate product market
+    from the production and supply of other frozen food.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '9'
+  quote_snippet: The Commission further considers that the production and supply of industrial
+    ice cream constitute a separate market from artisanal ice cream.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '9'
+  quote_snippet: The Commission further considers that the production and supply of industrial
+    ice cream constitute a separate market from artisanal ice cream.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '9'
+  quote_snippet: Further, there are strong indications that the production and supply of (i)
+    take-home ice cream; (ii) impulse ice cream and (iii) catering ice cream constitute separate
+    product markets. The exact market definition can, however, be left open. The Proposed Transaction
+    does not raise serious doubts as to its compatibility with the internal market irrespective
+    of this market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '10'
+  quote_snippet: In light of the above, in line with previous cases and for the purposes of
+    this decision the Commission considers cases that the production and supply of (i) crude
+    seed oil; (ii) BRSO; and (iii) PRSO constitute separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '10'
+  quote_snippet: In light of the above, in line with previous cases and for the purposes of
+    this decision the Commission considers cases that the production and supply of (i) crude
+    seed oil; (ii) BRSO; and (iii) PRSO constitute separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '10'
+  quote_snippet: In light of the above, in line with previous cases and for the purposes of
+    this decision the Commission considers cases that the production and supply of (i) crude
+    seed oil; (ii) BRSO; and (iii) PRSO constitute separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '10'
+  quote_snippet: Similarly, the Commission considers that the production and supply of seed
+    oil is separate from the production and supply of olive oil.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '10'
+  quote_snippet: Similarly, the Commission considers that the production and supply of seed
+    oil is separate from the production and supply of olive oil.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '10'
+  quote_snippet: A further segmentation of the three identified markets for the production and
+    supply of seed oil by seed type cannot be excluded. The exact market definition can, however,
+    be left open. The Proposed Transaction does not raise serious doubts as to its compatibility
+    with the internal market irrespective of this market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_13
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '10'
+  quote_snippet: In light of the above and for the purposes of this decision the Commission
+    finds that the production and supply of margarine constitutes a separate product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_14
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '11'
+  quote_snippet: In light of the above and for the purposes of this decision the Commission
+    considers that the production and supply of (i) spreadable, (ii) fresh, (iii) soft, (iv)
+    semi-hard and (iv) hard cheese each constitute separate product markets. A further segmentation
+    by type of presentation, type of milk used and/or protected geographic market can be excluded,
+    with the exception of spreadable cheese, where the market investigation suggests that no
+    further segmentation is appropriate.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_15
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '11'
+  quote_snippet: In light of the above and for the purposes of this decision the Commission
+    considers that the production and supply of (i) spreadable, (ii) fresh, (iii) soft, (iv)
+    semi-hard and (iv) hard cheese each constitute separate product markets. A further segmentation
+    by type of presentation, type of milk used and/or protected geographic market can be excluded,
+    with the exception of spreadable cheese, where the market investigation suggests that no
+    further segmentation is appropriate.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_16
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '11'
+  quote_snippet: In light of the above and for the purposes of this decision the Commission
+    considers that the production and supply of (i) spreadable, (ii) fresh, (iii) soft, (iv)
+    semi-hard and (iv) hard cheese each constitute separate product markets. A further segmentation
+    by type of presentation, type of milk used and/or protected geographic market can be excluded,
+    with the exception of spreadable cheese, where the market investigation suggests that no
+    further segmentation is appropriate.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_17
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '11'
+  quote_snippet: In light of the above and for the purposes of this decision the Commission
+    considers that the production and supply of (i) spreadable, (ii) fresh, (iii) soft, (iv)
+    semi-hard and (iv) hard cheese each constitute separate product markets. A further segmentation
+    by type of presentation, type of milk used and/or protected geographic market can be excluded,
+    with the exception of spreadable cheese, where the market investigation suggests that no
+    further segmentation is appropriate.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_18
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '11'
+  quote_snippet: In light of the above and for the purposes of this decision the Commission
+    considers that the production and supply of (i) spreadable, (ii) fresh, (iii) soft, (iv)
+    semi-hard and (iv) hard cheese each constitute separate product markets. A further segmentation
+    by type of presentation, type of milk used and/or protected geographic market can be excluded,
+    with the exception of spreadable cheese, where the market investigation suggests that no
+    further segmentation is appropriate.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_19
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '11'
+  quote_snippet: As regards a potential further segmentation based, for instance on type of
+    presentation (e.g. slice, fixed weight and variable weight), type of milk used and protected
+    geographic status, responses from market participants were inconclusive. Some said they
+    agreed with a further segmentation, while some said that they disagreed with a further segmentation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_20
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '11'
+  quote_snippet: The Commission therefore finds that, as in previous cases, for the purposes
+    of this decision, the production and supply of ketchup and the production and supply of
+    mayonnaise each form distinct product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_21
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '11'
+  quote_snippet: The Commission therefore finds that, as in previous cases, for the purposes
+    of this decision, the production and supply of ketchup and the production and supply of
+    mayonnaise each form distinct product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_22
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '12'
+  quote_snippet: In light of the above and for the purposes of this decision the Commission
+    considers that the supply of fresh meat for human consumption is a separate market from
+    the production and supply of processed meat for human consumption.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_23
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '12'
+  quote_snippet: In light of the above and for the purposes of this decision the Commission
+    considers that the supply of fresh meat for human consumption is a separate market from
+    the production and supply of processed meat for human consumption.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_24
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '12'
+  quote_snippet: Further segmentations cannot be excluded. However, irrespective of a further
+    segmentation, the Proposed Transaction does not raise serious doubts as regards its compatibility
+    with the internal market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_25
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '12'
+  quote_snippet: In light of its past decisions and for the purposes of this case, the Commission
+    considers that within the broader market for the production and supply of non-alcoholic
+    drinks, there are separate product markets each for the production and supply of CSDs and
+    for the production and supply of NCSDs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_26
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '12'
+  quote_snippet: In light of its past decisions and for the purposes of this case, the Commission
+    considers that within the broader market for the production and supply of non-alcoholic
+    drinks, there are separate product markets each for the production and supply of CSDs and
+    for the production and supply of NCSDs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_27
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '12'
+  quote_snippet: The Commission further considers in line with precedents that bottled water
+    constitutes a separate product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_28
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '12'
+  quote_snippet: While the market investigation indicates that the production and supply of
+    carbonated water, still water and flavoured watermight constitute separate product markets,
+    in absence of serious doubts as to the compatibility of the transaction with the internal
+    market under any alternative market definition, the precise product market definition can
+    be left open in the present case.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_29
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '13'
+  quote_snippet: In light of the above and for the purposes of this decision, the Commission
+    notes that although there are strong indications that branded and private label products
+    belong to the same production and supply markets across product categories, the results
+    of the market investigation are mixed. However, the exact market definition can be left
+    open. The Proposed Transaction does not raise serious doubts as to its compatibility with
+    the internal market irrespective of this product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_30
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '14'
+  quote_snippet: A vast majority of market participants who expressed a view responded that
+    there is a specific market for the procurement of daily consumer goods including food products
+    to customers such as wholesalers, retailers and other firms from upstream producers and
+    suppliers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_31
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '15'
+  quote_snippet: In light of the above and for the purposes of this case, the Commission considers
+    that there are strong indications for a segmentation of the procurement markets by the nineteen
+    product categories mentioned above. Similarly, there are strong indications for a segmentation
+    by sales channel. The exact market definition can, however, be left open. The Proposed Transaction
+    does not raise serious doubts as to its compatibility with the internal market irrespective
+    of this market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_32
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '15'
+  quote_snippet: In light of the above and for the purposes of this case, the Commission considers
+    that there are strong indications for a segmentation of the procurement markets by the nineteen
+    product categories mentioned above. Similarly, there are strong indications for a segmentation
+    by sales channel. The exact market definition can, however, be left open. The Proposed Transaction
+    does not raise serious doubts as to its compatibility with the internal market irrespective
+    of this market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_33
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_34
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '16'
+  quote_snippet: A clear majority of market participants who expressed a view68 confirmed the
+    finding of previous Commission decisions, that the market or markets for the wholesale supply
+    of non-food products and the market or markets for the wholesale supply of food products
+    are each distinct markets with their on supply-demand dynamics.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_34
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_35
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '16'
+  quote_snippet: A clear majority of market participants who expressed a view68 confirmed the
+    finding of previous Commission decisions, that the market or markets for the wholesale supply
+    of non-food products and the market or markets for the wholesale supply of food products
+    are each distinct markets with their on supply-demand dynamics.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_35
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_36
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '16'
+  quote_snippet: In light of the above and in line with previous Commission decisions, the Commission
+    considers for the purposes of this decision, that there are indications that there are separate
+    product markets for different product categories of wholesale supply of daily consumer goods
+    (e.g. fruit & vegetables, poultry, savoury bakery, sweet bakery, dairy, fish, confectionary,
+    desserts, meat, all other). A segmentation by mode of supply cannot also not be excluded.
+    The exact market definition can, however, be left open since the Transaction would not give
+    rise to serious doubts as to its compatibility with the internal market under the narrowest
+    possible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_36
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_37
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '16'
+  quote_snippet: In light of the above and in line with previous Commission decisions, the Commission
+    considers for the purposes of this decision, that there are indications that there are separate
+    product markets for different product categories of wholesale supply of daily consumer goods
+    (e.g. fruit & vegetables, poultry, savoury bakery, sweet bakery, dairy, fish, confectionary,
+    desserts, meat, all other). A segmentation by mode of supply cannot also not be excluded.
+    The exact market definition can, however, be left open since the Transaction would not give
+    rise to serious doubts as to its compatibility with the internal market under the narrowest
+    possible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_37
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_38
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '1'
+  quote_snippet: Commission decision pursuant to Article 6(1)(b) of Council Regulation No 139/20041
+    and Article 57 of the Agreement on the European Economic Area2
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_39
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '34'
+  quote_snippet: In light of the above, the Commission finds that the Proposed Transaction does
+    not raise serious doubts as to its compatibility with the internal market in relation to
+    horizontal overlaps in Slovenia or on any alternative geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_40
+  source_document_id: eu_ec_m9495_2020_decision
+  page: '47'
+  quote_snippet: In light of the considerations in Section 5.2, the Commission concludes that
+    the proposed Transaction does not give rise to serious doubts about its compatibility with
+    the internal market or the EEA Agreement due to input or customer foreclosure as regards
+    the markets for the retail supply of daily consumer goods, including bottled water, fresh
+    and processed meat, take-home ice cream, dairy/cheese products, mayonnaise and dairy/cheese
+    spread, ice cream overall, ketchup, edible oils, impulse ice cream, fresh fruit and vegetables,
+    and PRSO and as regards the markets for the production and supply of impulse ice cream overall,
+    branded impulse ice cream, branded take-home ice cream, branded all industrial ice cream,
+    private label ketchup,branded edible oils, margarine overall, mayonnaise overall, water
+    overall, PRSO and iced tea in Slovenia.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+ai_summary: null
+case_type: merger
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

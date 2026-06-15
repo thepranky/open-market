@@ -1,0 +1,366 @@
+case_id: eu_ec_m10059_2021
+case_name: M.10059
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2021-10-19'
+parties: []
+source_documents:
+- doc_id: eu_ec_m10059_2021_decision
+  title: M.10059 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10059
+  pdf_url: http://publications.europa.eu/resource/cellar/0a6b464f-162b-11ec-b4fe-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: DRAM
+  definition_status: considered
+  notes: 'The Commission assessed the overall product market for DRAM as including all possible
+    narrower markets: commodity DRAMs, and DRAM markets segmented by final product (servers,
+    PCs, mobiles, games, network devices, PC peripherals, and others).'
+- market_id: pm_2
+  name: NAND flash memory
+  definition_status: considered
+  notes: The Commission assessed the overall product market for NAND as including the possible
+    markets for 2D and 3D NAND.
+- market_id: pm_3
+  name: SSDs and HDDs
+  definition_status: considered
+  notes: The Commission assessed the product markets for SSDs and HDDs separately. Neither party
+    is active in HDDs.
+- market_id: pm_4
+  name: Enterprise SSDs (eSSDs) and Client SSDs (cSSDs)
+  definition_status: considered
+  notes: The Commission assessed the product markets for enterprise and client SSDs as separate
+    markets based on intended use.
+- market_id: pm_5
+  name: PCIe eSSDs, SAS eSSDs, and SATA eSSDs
+  definition_status: considered
+  notes: The Commission assessed the product markets for enterprise SSDs segmented by interface
+    (PCIe, SAS, SATA) as separate markets.
+geographic_markets_considered:
+- market_id: gm_1
+  name: DRAM — worldwide
+  definition_status: considered
+  notes: null
+- market_id: gm_2
+  name: NAND flash memory — worldwide
+  definition_status: considered
+  notes: null
+- market_id: gm_3
+  name: SSDs (and segmentations) — worldwide
+  definition_status: considered
+  notes: null
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m10059_2021_decision
+  page: '5'
+  quote_snippet: For the purpose of this decision and in light of the results of the market
+    investigation, the Commission will assess the overall product market for DRAM as including
+    all possible narrower markets, i.e. the market for commodity DRAMs, and the DRAM markets
+    for (i) servers, (ii) PCs, (iii) mobiles, (iv) games, (v) network devices, (vi) PC peripherals,
+    and others.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m10059_2021_decision
+  page: '4'
+  quote_snippet: In past decisions, the Commission examined whether it was necessary to differentiate
+    between the different types of DRAMs. In particular, the Commission considered whether commodity
+    DRAMs, used as components for personal computers, and high- speed DRAMs, used in high-performance
+    servers and workstations, are separate product markets but ultimately left the market definition
+    question open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m10059_2021_decision
+  page: '5'
+  quote_snippet: The market investigation confirmed that commodity DRAMs, used as components
+    for personal computers, and high-speed DRAMs, used in high-performance servers and workstations,
+    are separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m10059_2021_decision
+  page: '7'
+  quote_snippet: For the purpose of this decision and in light of the results of the market
+    investigation, the Commission will assess the overall product market for NAND as including
+    the possible markets for 2D and 3D NAND. In any event the market segmentation into 2D and
+    3D NAND does not impact the outcome of the competitive assessment of the Transaction and
+    the market definition can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m10059_2021_decision
+  page: '6'
+  quote_snippet: The Commission previously considered a separate market for NOR and NAND. The
+    Commission found that NOR and NAND should be distinguished due to low supply- side substitutability
+    between the types of flash memory.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m10059_2021_decision
+  page: '7'
+  quote_snippet: The market investigation confirmed the existence of separate markets for each
+    of NOR and NAND. As regards the existence of separate markets between 2D and 3D NAND, the
+    market investigation was inconclusive.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m10059_2021_decision
+  page: '8'
+  quote_snippet: For the purpose of this decision and in light of the results of the market
+    investigation, the Commission will assess the product markets for SSDs and HDDs32 separately.
+    In any event the market the market definition can be left open as the segmentation into
+    SSDs and HDDs does not impact the outcome of the competitive assessment of the Transaction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m10059_2021_decision
+  page: '8'
+  quote_snippet: The market investigation confirmed the segmentation by technology into HDD
+    and SSD.29 In particular, from the demand-side, the majority of market participants takes
+    the view that SSD and HDDs are not substitutable, as HDD customers seek large capacity storage
+    at the lowest per GB price and SSD is used in lower capacity storage with higher performance.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m10059_2021_decision
+  page: '9'
+  quote_snippet: For the purpose of this decision and in light of the results of the market
+    investigation, the Commission will assess the product markets for enterprise and client
+    SSDs as separate markets. In any event the market definition can be left open as the segmentation
+    into enterprise and client SSDs does not impact the outcome of the competitive assessment
+    of the Transaction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m10059_2021_decision
+  page: '9'
+  quote_snippet: Previously, the Commission found a distinction between enterprise and client
+    storage because enterprise storage generally requires higher performance and superior endurance,
+    compared to client storage.33 The Commission has however noted that in some cases, client
+    SSDs can be used for enterprise applications that do not require a high workload.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m10059_2021_decision
+  page: '9'
+  quote_snippet: 'The market investigation confirmed that the market for storage products should
+    be segmented by intended use into: (i) enterprise (eSSDs) and (ii) client (cSSDs).35 From
+    the demand-side, client storage and enterprise storage are not substitutable.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m10059_2021_decision
+  page: '11'
+  quote_snippet: For the purpose of this decision and in light of the results of the market
+    investigation, the Commission will assess the product markets for PCIe eSSDs, SAS eSSDs
+    or SATA eSSDs as separate markets. In any event, the market definition can be left open
+    as the segmentation into enterprise and client SSDs does not impact the outcome of the competitive
+    assessment of the Transaction.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m10059_2021_decision
+  page: '12'
+  quote_snippet: 'In light of the results of the market investigation, the Commission will assess
+    the worldwidemarket for DRAM including all its possible narrower markets, i.e. the market
+    for commodity DRAM,.and DRAM on the basis of the type of final product where it is installed
+    into: (i) servers, (ii) PCs, (iii) mobiles, (iv) games, (v) network devices, (vi) PC peripherals
+    and others.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m10059_2021_decision
+  page: '11'
+  quote_snippet: In its previous decisions concerning the markets for DRAMs and flash memories,
+    the Commission took the view that the geographic scope of all possible products markets
+    is worldwide.42
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m10059_2021_decision
+  page: '12'
+  quote_snippet: The market investigation has confirmed that the market for DRAMs and all its
+    possible segmentations is worldwide.43
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m10059_2021_decision
+  page: '12'
+  quote_snippet: In light of the results of the market investigation, the Commission will assess
+    the overall worldwide market for NAND, including 2D and 3D NAND.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m10059_2021_decision
+  page: '12'
+  quote_snippet: The Commission has previously concluded that the geographic market for NAND
+    flash memory is global in scope.44
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m10059_2021_decision
+  page: '12'
+  quote_snippet: The market investigation confirmed that the geographic market for NAND (and
+    also 2D and 3D NAND) is worldwide in scope.46
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m10059_2021_decision
+  page: '12'
+  quote_snippet: In the Commission's previous decisions, the geographic market for SSDs (including
+    any putative narrower markets thereunder) was considered to be worldwide in scope, because
+    (i) transport costs do not play a significant role and amount to less than 1% of total product
+    cost; (ii) there are no significant barriers to trade; (iii) prices do not typically differ
+    by region; (iv) products and product features do not differ by region; (v) manufacturers
+    are active on a global basis (thus competitors tend to be the same regardless of the regions
+    taken into consideration); and (vi) the market players decide their strategy on a global
+    level.47
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

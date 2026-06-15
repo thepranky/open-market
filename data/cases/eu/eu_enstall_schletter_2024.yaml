@@ -1,0 +1,182 @@
+case_id: eu_enstall_schletter_2024
+case_name: ENSTALL / SCHLETTER
+authority: European Commission
+jurisdiction: EU
+sector: retail
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2024-12-10'
+parties:
+- name: ENSTALL
+  role: acquirer
+- name: SCHLETTER
+  role: target
+source_documents:
+- doc_id: eu_enstall_schletter_2024_decision
+  title: ENSTALL / SCHLETTER — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11656
+  pdf_url: http://publications.europa.eu/resource/cellar/6452d43c-da3b-11ef-be2a-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: rooftop solar mounting systems
+  definition_status: considered
+  notes: ''
+- market_id: pm_2
+  name: ground-mount systems
+  definition_status: left_open
+  notes: ''
+geographic_markets_considered:
+- market_id: gm_1
+  name: Rooftop solar mounting systems — national (Netherlands affected)
+  definition_status: considered
+  notes: ''
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_enstall_schletter_2024_decision
+  page: '3'
+  quote_snippet: Rooftop solar mounting systems are structures used to fix solar panels on roofs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_enstall_schletter_2024_decision
+  page: '4'
+  quote_snippet: Market participants confirmed that there are separate relevant product markets
+    for rooftop solar mounting systems and ground-mount systems. These respective systems have
+    different product characteristics, intended use, suppliers, and customers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_enstall_schletter_2024_decision
+  page: '4'
+  quote_snippet: For the purposes of this decision, the Commission will carry out its competitive
+    assessment on the basis of the product market for rooftop solar mounting systems.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_enstall_schletter_2024_decision
+  page: '3'
+  quote_snippet: Ground-mount systems are used to fix solar panels on the ground.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_enstall_schletter_2024_decision
+  page: '4'
+  quote_snippet: Market participants confirmed that there are separate relevant product markets
+    for rooftop solar mounting systems and ground-mount systems. These respective systems have
+    different product characteristics, intended use, suppliers, and customers. Ground-mount
+    systems are typically much larger and require different type of construction compared to
+    rooftop solar mounting systems. Customers of ground-mount systems are typically engineering,
+    procurement, and construction (‘EPC’) contractors, whereas the customers of rooftop solar
+    mounting systems are typically wholesalers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_enstall_schletter_2024_decision
+  page: '3'
+  quote_snippet: The Transaction only gives rise to one horizontally affected market, i.e. the
+    market for rooftop solar mounting systems in the Netherlands.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_enstall_schletter_2024_decision
+  page: '4'
+  quote_snippet: Market participants suggested that the markets for rooftop solar systems are
+    rather national in scope. Customers procure these systems mostly from suppliers at national
+    level, especially because these suppliers’ products need to comply with national technical
+    and regulatory requirements which differ across EEA countries, and in addition to that are
+    readily available, and the brands are well-known. Moreover, it is important for suppliers
+    to have a national presence, in particular, to be able to offer customers trainings, technical
+    support, and aftersales services in their local language. Transport costs can play a material
+    role. Prices vary to a considerable degree across EEA countries.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_enstall_schletter_2024_decision
+  page: '5'
+  quote_snippet: As the Transaction does not give rise to serious doubts under any plausible
+    geographic market definition (i.e. EEA-wide or national), it is not necessary to conclude
+    on the exact scope of the geographic market. For the purposes of this decision, the Commission
+    will carry out its competitive assessment on the basis of the narrowest plausible geographic
+    market, i.e. the national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_enstall_schletter_2024_decision
+  page: '5'
+  quote_snippet: The remainder of this decision focuses on non-coordinated effects.13
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []
+case_type: merger
+ai_summary: null

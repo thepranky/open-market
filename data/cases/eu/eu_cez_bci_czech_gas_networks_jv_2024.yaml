@@ -1,0 +1,395 @@
+case_id: eu_cez_bci_czech_gas_networks_jv_2024
+case_name: CEZ / BCI / CZECH GAS NETWORKS JV
+authority: European Commission
+jurisdiction: EU
+sector: energy
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2024-08-08'
+parties:
+- name: CEZ
+  role: acquirer
+- name: BCI
+  role: acquirer
+- name: CZECH GAS NETWORKS JV
+  role: target
+source_documents:
+- doc_id: eu_cez_bci_czech_gas_networks_jv_2024_decision
+  title: CEZ / BCI / CZECH GAS NETWORKS JV — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11538
+  pdf_url: http://publications.europa.eu/resource/cellar/e79af28e-6cb0-11ef-a8ba-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Operation and management of lower-pressure gas distribution networks (DSOs)
+  definition_status: considered
+  notes: The Commission previously found the operation and management of a lower-pressure gas
+    distribution network to be a relevant product market and a natural monopoly. For the purposes
+    of the present case, the Commission will assess the effects of the Transaction by reference
+    to separate markets for the DSOs’ distribution networks and for the local distribution of
+    gas through LDSs.
+- market_id: pm_2
+  name: Local distribution of gas through LDSs
+  definition_status: considered
+  notes: The Commission has previously assessed, but left open, whether LDSs are part of a single
+    market for the distribution of natural gas. For the purposes of the present case, the Commission
+    will assess the effects of the Transaction by reference to separate markets for the DSOs’
+    distribution networks and for the local distribution of gas through LDSs.
+- market_id: pm_3
+  name: Retail supply of natural gas to small customers (annual consumption below 630 MWh)
+  definition_status: considered
+  notes: The exact product market definition of the retail supply of gas market in Czechia is
+    left open. The Commission will assess the effects of the Transaction on the market for small
+    customers, with an annual consumption below 630 MWh.
+- market_id: pm_4
+  name: Retail supply of natural gas to large customers (annual consumption above 630 MWh)
+  definition_status: considered
+  notes: The exact product market definition of the retail supply of gas market in Czechia is
+    left open. The Commission will assess the effects of the Transaction on the market for large
+    customers, with an annual consumption above 630 MWh.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Operation and management of lower-pressure gas distribution networks (DSOs) — local
+    (Czechia affected)
+  definition_status: considered
+  notes: The Commission will assess the effects of the Transaction by reference to the narrowest
+    plausible geographic market delimitations, i.e., geographic markets corresponding to the
+    territory covered by each (regional or local) distribution network.
+- market_id: gm_2
+  name: Local distribution of gas through LDSs — local (Czechia affected)
+  definition_status: considered
+  notes: The Commission will assess the effects of the Transaction by reference to the narrowest
+    plausible geographic market delimitations, i.e., geographic markets corresponding to the
+    territory covered by each (regional or local) distribution network.
+- market_id: gm_3
+  name: Retail supply of natural gas to large customers (annual consumption above 630 MWh) —
+    national (Czechia affected)
+  definition_status: left_open
+  notes: The exact geographic market definition can be left open. For the purposes of this decision,
+    the Commission will only assess the market for the retail supply of natural gas at the national
+    level.
+- market_id: gm_4
+  name: Retail supply of natural gas to small customers (annual consumption below 630 MWh) —
+    national (Czechia affected)
+  definition_status: left_open
+  notes: The exact geographic market definition can be left open. For the purposes of this decision,
+    the Commission will only assess the market for the retail supply of natural gas at the national
+    level.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_cez_bci_czech_gas_networks_jv_2024_decision
+  page: '6'
+  quote_snippet: In previous decisions, the Commission, the gas product markets have been segmented
+    into (i) exploration of crude oil and natural gas, (ii) the development, production, and
+    upstream wholesale supply of natural gas, (iii) downstream wholesale supply of natural gas,
+    (iv) gas transmission (via high- pressure systems), (v) gas distribution (via lower-pressure
+    systems), (vi) gas storage, (vii) gas trading, (viii) retail supply of gas (to end customers),
+    and (ix) the markets for the infrastructure for gas imports.26
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_cez_bci_czech_gas_networks_jv_2024_decision
+  page: '7'
+  quote_snippet: In relation to distribution networks, the Commission has found the operation
+    and management of a lower-pressure gas distribution network to be a relevant product market
+    and a natural monopoly.31
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_cez_bci_czech_gas_networks_jv_2024_decision
+  page: '7'
+  quote_snippet: During the Commission’s investigation, all respondents confirmed that the distribution
+    of gas constitutes a separate market from the transmission of gas.34 Respondents moreover
+    confirmed that DSOs do not face competition from alternative distribution grids for the
+    distribution of natural gas.35
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_cez_bci_czech_gas_networks_jv_2024_decision
+  page: '7'
+  quote_snippet: The Commission has previously assessed, but ultimately left open, whether LDSs
+    are part, along DSOs’ activities, of a single market for the distribution of natural gas.32
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_cez_bci_czech_gas_networks_jv_2024_decision
+  page: '7'
+  quote_snippet: For purposes of the present case, the exact product market definition, namely
+    the question of whether LDSs are part of DSOs’ distribution markets, may be left open, considering
+    that the Transaction does not raise serious doubts as to its compatibility with the internal
+    market under any plausible market definition. The Commission will assess the effects of
+    the Transaction by reference to the narrowest plausible product market delimitations, i.e.,
+    separate markets for the DSOs’ distribution networks and for the local distribution of gas
+    through LDSs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_cez_bci_czech_gas_networks_jv_2024_decision
+  page: '9'
+  quote_snippet: Most of the participants in the Commission’s market investigation confirmed
+    that it is appropriate to distinguish between (i) small customers, with an annual consumption
+    below 630 MWh and (ii) large customers, with an annual consumption above 630 MWh.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_cez_bci_czech_gas_networks_jv_2024_decision
+  page: '9'
+  quote_snippet: Therefore, for purposes of the present case, the Commission considers that
+    the exact product market definition of the retail supply of gas market in Czechia can be
+    left open as the Transaction does not raise serious doubts as to its compatibility with
+    the internal market under any plausible market definition. As market shares are not significantly
+    different in the additional sub-segmentations considered above, the Commission will assess
+    the effects of the Transaction only on the markets for (i) small customers, with an annual
+    consumption below 630 MWh (‘small customers’) and (ii) large customers, with an annual consumption
+    above 630 MWh (‘large customers’).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_cez_bci_czech_gas_networks_jv_2024_decision
+  page: '9'
+  quote_snippet: Most of the participants in the Commission’s market investigation confirmed
+    that it is appropriate to distinguish between (i) small customers, with an annual consumption
+    below 630 MWh and (ii) large customers, with an annual consumption above 630 MWh.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_cez_bci_czech_gas_networks_jv_2024_decision
+  page: '9'
+  quote_snippet: Therefore, for purposes of the present case, the Commission considers that
+    the exact product market definition of the retail supply of gas market in Czechia can be
+    left open as the Transaction does not raise serious doubts as to its compatibility with
+    the internal market under any plausible market definition. As market shares are not significantly
+    different in the additional sub-segmentations considered above, the Commission will assess
+    the effects of the Transaction only on the markets for (i) small customers, with an annual
+    consumption below 630 MWh (‘small customers’) and (ii) large customers, with an annual consumption
+    above 630 MWh (‘large customers’).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_cez_bci_czech_gas_networks_jv_2024_decision
+  page: '8'
+  quote_snippet: In its previous decisions, the Commission found the geographic market for gas
+    distribution to be in line with the territory covered by each distribution network, such
+    that each grid constitutes a distinct relevant geographic market.38
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_cez_bci_czech_gas_networks_jv_2024_decision
+  page: '8'
+  quote_snippet: All respondents to the Commission’s market investigation confirmed that it
+    is appropriate to consider the area that each DSO’s network covers to be a distinct geographic
+    market (as the networks of the different DSOs in Czechia do not overlap between themselves).41
+    Respondents indicated that each DSO is a natural monopolist in its geographic area, since
+    duplication of the infrastructure would be uneconomic.42
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_cez_bci_czech_gas_networks_jv_2024_decision
+  page: '8'
+  quote_snippet: For purposes of the present case, the exact geographic market definition may
+    be left open, considering that the Transaction does not raise serious doubts as to its compatibility
+    with the internal market under any plausible market definition. The Commission will assess
+    the effects of the Transaction by reference to the narrowest plausible geographic market
+    delimitations, i.e., geographic markets corresponding to the territory covered by each (regional
+    or local) distribution network.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_cez_bci_czech_gas_networks_jv_2024_decision
+  page: '8'
+  quote_snippet: Likewise, the Commission has previously considered that each LDS constitutes
+    a distinct relevant geographic market.39
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_cez_bci_czech_gas_networks_jv_2024_decision
+  page: '8'
+  quote_snippet: For the same reasons, the area that each LDS’s grid covers will also be considered,
+    for purposes of this decision, to be a distinct geographic market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_cez_bci_czech_gas_networks_jv_2024_decision
+  page: '8'
+  quote_snippet: For purposes of the present case, the exact geographic market definition may
+    be left open, considering that the Transaction does not raise serious doubts as to its compatibility
+    with the internal market under any plausible market definition. The Commission will assess
+    the effects of the Transaction by reference to the narrowest plausible geographic market
+    delimitations, i.e., geographic markets corresponding to the territory covered by each (regional
+    or local) distribution network.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_cez_bci_czech_gas_networks_jv_2024_decision
+  page: '9'
+  quote_snippet: In its decisional practice, the Commission considered the geographic market
+    for the retail supply of gas to large customers as well as the retail supply of gas to small
+    customers to be national, although for the retail supply to small customers the Commission
+    found local elements of competition.49
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_cez_bci_czech_gas_networks_jv_2024_decision
+  page: '9'
+  quote_snippet: Most of the respondents to the Commission’s market investigation confirmed
+    that the market for the retail supply of gas to large customers is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_cez_bci_czech_gas_networks_jv_2024_decision
+  page: '9'
+  quote_snippet: In its decisional practice, the Commission considered the geographic market
+    for the retail supply of gas to large customers as well as the retail supply of gas to small
+    customers to be national, although for the retail supply to small customers the Commission
+    found local elements of competition.49
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_cez_bci_czech_gas_networks_jv_2024_decision
+  page: '11'
+  quote_snippet: Since, regardless of the exact conclusion, the Transaction does not raise serious
+    doubts as to its compatibility with the internal market, the questions of whether ČEZ is
+    an economic unit with an independent power of decision can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

@@ -1,0 +1,265 @@
+case_id: eu_nvidia_runai_2024
+case_name: NVIDIA / RUN:AI
+authority: European Commission
+jurisdiction: EU
+sector: tech
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2024-12-20'
+parties:
+- name: NVIDIA
+  role: acquirer
+- name: RUN:AI
+  role: target
+source_documents:
+- doc_id: eu_nvidia_runai_2024_decision
+  title: NVIDIA / RUN:AI — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11766
+  pdf_url: http://publications.europa.eu/resource/cellar/d1931c13-1f4c-11f0-b1a3-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Supply of discrete GPUs for use in datacentres
+  definition_status: defined
+  notes: The Commission conducted a segmentation analysis, considering whether the market should
+    include integrated GPUs, other accelerators (ASICs, ASSPs, FPGAs), or accelerated compute
+    capacity as a service. Based on market investigation results, it concluded that these alternatives
+    are not suitable substitutes for discrete GPUs for specific workloads, and suppliers of
+    accelerated compute capacity also rely on discrete GPUs as inputs. Therefore, the Commission
+    maintained its previous decisional practice defining a separate market for discrete GPUs
+    for use in datacentres.
+- market_id: pm_2
+  name: Supply of GPU orchestration software
+  definition_status: defined
+  notes: The Commission conducted a segmentation analysis for GPU orchestration software, testing
+    whether the market should include native cloud solutions or MLOps offerings, and whether
+    it should be segmented by Kubernetes vs. non-Kubernetes, open-source vs. proprietary, or
+    AI vs. other workloads. The Commission concluded to exclude native cloud solutions and MLOps,
+    but not to segment based on the other criteria. It noted that Run:ai's advanced features
+    (single pane of glass, GPU fractioning, security auditability) would be considered elements
+    of differentiation in the competitive assessment.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Supply of discrete GPUs for use in datacentres — worldwide
+  definition_status: defined
+  notes: The Commission concluded the geographic market for discrete GPUs for use in datacentres
+    is worldwide, consistent with previous decisions and market investigation findings that
+    competition is global, customers source globally, products do not vary by geography, and
+    shipping costs are minimal.
+- market_id: gm_2
+  name: Supply of GPU orchestration software — worldwide
+  definition_status: defined
+  notes: The Commission concluded that the geographic market for GPU orchestration software
+    is worldwide, based on market investigation findings that competition is global, vendors
+    compete globally irrespective of geography, and there are no significant transportation
+    costs or regulatory barriers.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_nvidia_runai_2024_decision
+  page: '5'
+  quote_snippet: In the market investigation, the Commission tested whether, for use in datacentres,
+    there is a separate market for discrete GPUs or whether such a market should include (i)
+    integrated GPUs; (ii) other types of accelerators such as ASICs, application-specific standard
+    products (‘ASSPs’), FGPAs, or other accelerators. Furthermore, in view of the Notifying
+    Party’s arguments, the Commission tested whether the market should include renting accelerated
+    compute capacity as a service from cloud-based solutions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_nvidia_runai_2024_decision
+  page: '8'
+  quote_snippet: Overall, the results of the market investigation show that there are a number
+    of workloads for which customers rely on discrete GPUs for use in datacentres, and for which
+    they do not consider integrated GPUs, other accelerators, or accelerated compute capacity
+    as a service to be a suitable alternative. In addition, the suppliers of accelerated compute
+    capacity also have a concrete demand for discrete GPUs for use in datacentres that cannot
+    be completely satisfied with the use of in-house accelerators. Therefore, for the purpose
+    of this decision, the Commission concludes that there is no reason to deviate from previous
+    decisional practice in which the Commission found that there is a separate market for discrete
+    GPUs for use in datacentres.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_nvidia_runai_2024_decision
+  page: '8'
+  quote_snippet: In light of the above and in line with its previous decisional practice, for
+    the purposes of this decision, the Commission concludes that there is a separate market
+    for the supply of discrete GPUs for use in datacentres.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_nvidia_runai_2024_decision
+  page: '13'
+  quote_snippet: 'In the market investigation, the Commission tested whether: (a) there is a
+    separate market for GPU orchestration software to run workloads on-premises, on cloud, or
+    in hybrid environments (as the Notifying Party submits); (b) the relevant product market
+    should be considered wider than such market for GPU orchestration software and whether either
+    native cloud solutions (as the Notifying Party submits) or MLOps offerings should be included
+    in the relevant market (on which the Notifying Party does not take a position); and (c)
+    the relevant product market for GPU orchestration software should be further segmented into
+    (i) Kubernetes versus non-Kubernetes, (ii) open-source versus proprietary or (iii) AI workloads
+    versus other workloads (the Notifying Party opposes these segmentations).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_nvidia_runai_2024_decision
+  page: '14'
+  quote_snippet: In light of the above, for the purposes of this decision, the Commission concludes
+    that there is a separate market for the supply of GPU orchestration software. At the same
+    time, the Commission will be taking into account the above-mentioned advanced features of
+    Run:ai as elements of differentiation of the market in the competitive assessment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_nvidia_runai_2024_decision
+  page: '18'
+  quote_snippet: In light of the above, for the purposes of this decision, the Commission concludes
+    that there is a separate market for the supply of GPU orchestration software without any
+    further segmentation but excluding native cloud solutions and MLOps. The Commission will
+    be taking the advanced features of Run:ai as elements of differentiation of the market in
+    the competitive assessment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_nvidia_runai_2024_decision
+  page: '8'
+  quote_snippet: In previous decisions, the Commission considered that the potential market
+    for discrete datacentre GPUs is worldwide in scope, regardless of the exact product market
+    definition, as products are supplied on a worldwide basis and conditions of competition
+    do not differ depending on the location of the datacentre of the end-customer.40
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_nvidia_runai_2024_decision
+  page: '8'
+  quote_snippet: In light of the above and in line with its previous decisional practice, for
+    the purposes of this decision, the Commission concludes that the geographic scope of the
+    market for the supply of discrete GPUs for use in datacentres is worldwide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_nvidia_runai_2024_decision
+  page: '19'
+  quote_snippet: In the market investigation, the Commission investigated the geographic scope
+    of the market for GPU orchestration software. The results of the market investigation indicated
+    that the scope of the GPU orchestration software market is worldwide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_nvidia_runai_2024_decision
+  page: '19'
+  quote_snippet: Almost all respondents expressing an opinion submitted that competition takes
+    place on the market for GPU orchestration software at the global level.92
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_nvidia_runai_2024_decision
+  page: '19'
+  quote_snippet: In light of the above, for the purposes of this decision, the Commission concludes
+    that the geographic scope of the market for the supply of GPU orchestration software is
+    worldwide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_nvidia_runai_2024_decision
+  page: '2'
+  quote_snippet: On 30 September 2024, the Commission received a referral request pursuant to
+    Article 22(1) of the Merger Regulation from the Autorità Garante della Concorrenza e del
+    Mercato, the Italian competition authority (the ‘Italian NCA’) that was competent to review
+    the Transaction under Italian law.4 On 31 October 2024, the Commission accepted the request
+    and therefore decided to examine the Transaction pursuant to Article 22(3) of the Merger
+    Regulation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

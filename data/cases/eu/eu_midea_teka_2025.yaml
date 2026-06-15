@@ -1,0 +1,650 @@
+case_id: eu_midea_teka_2025
+case_name: MIDEA / TEKA
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2025-03-03'
+parties:
+- name: MIDEA
+  role: acquirer
+- name: TEKA
+  role: target
+source_documents:
+- doc_id: eu_midea_teka_2025_decision
+  title: MIDEA / TEKA — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11684
+  pdf_url: http://publications.europa.eu/resource/cellar/90d3f684-30cb-11f0-8a44-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Manufacture and supply of built-in kitchen hoods (at OBM level)
+  definition_status: left_open
+  notes: The Commission identified this as a horizontally affected market for further investigation.
+    While the market investigation generally confirmed segmentation into individual MDA products,
+    the further segmentation of kitchen hoods into built-in and freestanding was left open for
+    the purposes of this case.
+- market_id: pm_2
+  name: Manufacture and supply of microwave ovens for third parties (at OEM level)
+  definition_status: left_open
+  notes: The Commission identified this as a horizontally affected market. The distinction between
+    OBM and OEM sales was taken into account for market segmentation. However, the overall product
+    market definition for microwave ovens was left open.
+- market_id: pm_3
+  name: Wholesale market for the manufacture and supply of microwave ovens (at OEM level)
+  definition_status: left_open
+  notes: Identified as the upstream market in a vertically affected relationship for microwave
+    ovens. The overall product market definition for microwave ovens was left open.
+- market_id: pm_4
+  name: Retail market for microwave ovens (at OBM level)
+  definition_status: left_open
+  notes: Identified as the downstream market in a vertically affected relationship for microwave
+    ovens. The overall product market definition for microwave ovens was left open.
+- market_id: pm_5
+  name: Wholesale market for the manufacture and supply of built-in kitchen hoods (at OEM level)
+  definition_status: left_open
+  notes: Identified as the upstream market in a vertically affected relationship for kitchen
+    hoods. However, the specific vertical relationship for built-in kitchen hoods was not further
+    considered due to negligible market shares. The further segmentation of kitchen hoods into
+    built-in and freestanding was left open.
+- market_id: pm_6
+  name: Retail market for built-in kitchen hoods (at OBM level)
+  definition_status: left_open
+  notes: Identified as the downstream market in a vertically affected relationship for kitchen
+    hoods. However, the specific vertical relationship for built-in kitchen hoods was not further
+    considered due to negligible market shares. The further segmentation of kitchen hoods into
+    built-in and freestanding was left open.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Manufacture and supply of built-in kitchen hoods (at OBM level) — national (Spain affected)
+  definition_status: left_open
+  notes: The geographic market for the manufacture and supply of MDAs at OBM level is generally
+    national. The Commission indicated that the geographic market definition can be left open
+    for the purpose of this decision.
+- market_id: gm_2
+  name: Manufacture and supply of microwave ovens for third parties (at OEM level) — EEA-wide
+  definition_status: left_open
+  notes: The geographic market for the manufacture and supply of MDAs at OEM level is considered
+    to be at least EEA-wide or global. The Commission indicated that the geographic market definition
+    can be left open for the purpose of this decision.
+- market_id: gm_3
+  name: Retail market for microwave ovens (at OBM level) — national
+  definition_status: left_open
+  notes: Identified as a downstream market in a vertically affected relationship. The geographic
+    market for MDAs at OBM level is generally national, but the definition was left open.
+- market_id: gm_4
+  name: Wholesale market for the manufacture and supply of microwave ovens (at OEM level) —
+    EEA-wide
+  definition_status: left_open
+  notes: Identified as an upstream market in a vertically affected relationship. The geographic
+    market for MDAs at OEM level is at least EEA-wide, but the definition was left open.
+- market_id: gm_5
+  name: Wholesale market for the manufacture and supply of built-in kitchen hoods (at OEM level)
+    — EEA-wide
+  definition_status: left_open
+  notes: Identified as an upstream market in a vertically affected relationship, but this specific
+    vertical relationship was not further considered due to negligible market shares. The geographic
+    market for MDAs at OEM level is at least EEA-wide, but the definition was left open.
+- market_id: gm_6
+  name: Retail market for built-in kitchen hoods (at OBM level) — national (Spain affected)
+  definition_status: left_open
+  notes: Identified as a downstream market in a vertically affected relationship, but this specific
+    vertical relationship was not further considered due to negligible market shares. The geographic
+    market for MDAs at OBM level is generally national, but the definition was left open.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_midea_teka_2025_decision
+  page: '3'
+  quote_snippet: 'Among the large variety of products produced and supplied by both Parties
+    on a number of different markets (at national or EEA-wide level), only two products supplied
+    on two specific markets were identified where the combined market shares exceed the limit
+    values for the application of the simplified procedure and thus give rise to horizontally
+    affected markets requiring further investigation: (i) manufacture and supply of built-in
+    kitchen hoods at Original Brand Manufacturer (‘OBM’) level in Spain'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_midea_teka_2025_decision
+  page: '5'
+  quote_snippet: Further segmentation of kitchen hoods into built-in and freestanding can be
+    left open for the purposes of this case, since the Transaction does not give rise to competition
+    concerns regardless of any potential further segmentation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_midea_teka_2025_decision
+  page: '3'
+  quote_snippet: 'Among the large variety of products produced and supplied by both Parties
+    on a number of different markets (at national or EEA-wide level), only two products supplied
+    on two specific markets were identified where the combined market shares exceed the limit
+    values for the application of the simplified procedure and thus give rise to horizontally
+    affected markets requiring further investigation: (ii) manufacture and supply of microwave
+    ovens for third parties (at Original Equipment Manufacturer (‘OEM’) level), as described
+    in more detail below.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_midea_teka_2025_decision
+  page: '3'
+  quote_snippet: Since the Commission has not previously considered segmenting the relevant
+    markets at OBM and OEM levels, the present case takes into account these potential market
+    segmentations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_midea_teka_2025_decision
+  page: '5'
+  quote_snippet: The Commission nevertheless considers that the product the market definition
+    of the manufacture and supply of microwave ovens can be left open for the purposes of this
+    case, since the Transaction does not give rise to competition concerns regardless of any
+    potential further segmentation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_midea_teka_2025_decision
+  page: '3'
+  quote_snippet: The combined market shares of the Parties also exceed the thresholds for the
+    application of the simplified procedure to vertical links (30% of the combined market share
+    on either upstream or downstream market8) when considering (i) the wholesale market for
+    the manufacture and supply of microwave ovens (at OEM level) at the EEA level (upstream)
+    and the retail market for microwave ovens (at OBM level) at the EEA level (downstream)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_midea_teka_2025_decision
+  page: '5'
+  quote_snippet: The Commission nevertheless considers that the product the market definition
+    of the manufacture and supply of microwave ovens can be left open for the purposes of this
+    case, since the Transaction does not give rise to competition concerns regardless of any
+    potential further segmentation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_midea_teka_2025_decision
+  page: '3'
+  quote_snippet: The combined market shares of the Parties also exceed the thresholds for the
+    application of the simplified procedure to vertical links (30% of the combined market share
+    on either upstream or downstream market8) when considering (i) the wholesale market for
+    the manufacture and supply of microwave ovens (at OEM level) at the EEA level (upstream)
+    and the retail market for microwave ovens (at OBM level) at the EEA level (downstream)
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_midea_teka_2025_decision
+  page: '5'
+  quote_snippet: The Commission nevertheless considers that the product the market definition
+    of the manufacture and supply of microwave ovens can be left open for the purposes of this
+    case, since the Transaction does not give rise to competition concerns regardless of any
+    potential further segmentation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_midea_teka_2025_decision
+  page: '3'
+  quote_snippet: The combined market shares of the Parties also exceed the thresholds for the
+    application of the simplified procedure to vertical links (30% of the combined market share
+    on either upstream or downstream market8) when considering (ii) the wholesale market for
+    the manufacture and supply of built-in kitchen hoods in the EEA (upstream) and the retail
+    market for kitchen hoods in Spain (downstream).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_midea_teka_2025_decision
+  page: '5'
+  quote_snippet: Further segmentation of kitchen hoods into built-in and freestanding can be
+    left open for the purposes of this case, since the Transaction does not give rise to competition
+    concerns regardless of any potential further segmentation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_midea_teka_2025_decision
+  page: '7'
+  quote_snippet: Since the Parties’ combined market share in the downstream market is close
+    to 0 and the transaction specific increment in the upstream market is negligible, this vertical
+    relationship will not be further considered in this decision. On the upstream wholesale
+    market for the manufacture and supply of built-in kitchen hoods in the EEA, Midea’s market
+    share was [0-5]% in value and [0-5]% in volume, while the market share of Teka was [40-50]%
+    in value and [50-60]% in volume, resulting in a combined market share of [40-50]% in value
+    and [50-60]% in volume. The downstream market shares of the Parties in the retail market
+    for kitchen hoods in Spain are close to 0.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_midea_teka_2025_decision
+  page: '3'
+  quote_snippet: The combined market shares of the Parties also exceed the thresholds for the
+    application of the simplified procedure to vertical links (30% of the combined market share
+    on either upstream or downstream market8) when considering (ii) the wholesale market for
+    the manufacture and supply of built-in kitchen hoods in the EEA (upstream) and the retail
+    market for kitchen hoods in Spain (downstream).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_midea_teka_2025_decision
+  page: '5'
+  quote_snippet: Further segmentation of kitchen hoods into built-in and freestanding can be
+    left open for the purposes of this case, since the Transaction does not give rise to competition
+    concerns regardless of any potential further segmentation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_midea_teka_2025_decision
+  page: '7'
+  quote_snippet: Since the Parties’ combined market share in the downstream market is close
+    to 0 and the transaction specific increment in the upstream market is negligible, this vertical
+    relationship will not be further considered in this decision. On the upstream wholesale
+    market for the manufacture and supply of built-in kitchen hoods in the EEA, Midea’s market
+    share was [0-5]% in value and [0-5]% in volume, while the market share of Teka was [40-50]%
+    in value and [50-60]% in volume, resulting in a combined market share of [40-50]% in value
+    and [50-60]% in volume. The downstream market shares of the Parties in the retail market
+    for kitchen hoods in Spain are close to 0.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_midea_teka_2025_decision
+  page: '3'
+  quote_snippet: manufacture and supply of built-in kitchen hoods at Original Brand Manufacturer
+    (‘OBM’) level in Spain
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_midea_teka_2025_decision
+  page: '6'
+  quote_snippet: However, for the purpose of the present decision, the geographic market definition
+    can be left open, since the Transaction does not raise serious doubts as to its compatibility
+    with the internal market even on the basis of a narrower (i.e., national or EEA wide respectively)
+    geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_midea_teka_2025_decision
+  page: '3'
+  quote_snippet: manufacture and supply of microwave ovens for third parties (at Original Equipment
+    Manufacturer (‘OEM’) level), as described in more detail below.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_midea_teka_2025_decision
+  page: '6'
+  quote_snippet: Concerning the specificities of the manufacturing and supply of MDAs for third
+    parties at OEM level, this market is at least EEA if not global, while according to a competitor
+    ‘OEM customers are accustomed to turning to manufacturers located globally to source their
+    MDAs, and most MDA manufacturers are active on a global scale’22.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_midea_teka_2025_decision
+  page: '6'
+  quote_snippet: However, for the purpose of the present decision, the geographic market definition
+    can be left open, since the Transaction does not raise serious doubts as to its compatibility
+    with the internal market even on the basis of a narrower (i.e., national or EEA wide respectively)
+    geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_midea_teka_2025_decision
+  page: '7'
+  quote_snippet: The upstream wholesale market for the manufacture and supply of microwave ovens
+    (at OEM level) at the EEA level and the downstream retail market for microwave ovens (at
+    OBM level) at the national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_midea_teka_2025_decision
+  page: '6'
+  quote_snippet: However, for the purpose of the present decision, the geographic market definition
+    can be left open, since the Transaction does not raise serious doubts as to its compatibility
+    with the internal market even on the basis of a narrower (i.e., national or EEA wide respectively)
+    geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_midea_teka_2025_decision
+  page: '7'
+  quote_snippet: The upstream wholesale market for the manufacture and supply of microwave ovens
+    (at OEM level) at the EEA level and the downstream retail market for microwave ovens (at
+    OBM level) at the national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_midea_teka_2025_decision
+  page: '6'
+  quote_snippet: Concerning the specificities of the manufacturing and supply of MDAs for third
+    parties at OEM level, this market is at least EEA if not global, while according to a competitor
+    ‘OEM customers are accustomed to turning to manufacturers located globally to source their
+    MDAs, and most MDA manufacturers are active on a global scale’22.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_midea_teka_2025_decision
+  page: '6'
+  quote_snippet: However, for the purpose of the present decision, the geographic market definition
+    can be left open, since the Transaction does not raise serious doubts as to its compatibility
+    with the internal market even on the basis of a narrower (i.e., national or EEA wide respectively)
+    geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_midea_teka_2025_decision
+  page: '7'
+  quote_snippet: The upstream wholesale market for the manufacture and supply of built-in kitchen
+    hoods (at OEM level) in the EEA and the downstream retail market for built-in kitchen hoods
+    (at OBM level) in Spain.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_midea_teka_2025_decision
+  page: '7'
+  quote_snippet: Since the Parties’ combined market share in the downstream market is close
+    to 0 and the transaction specific increment in the upstream market is negligible, this vertical
+    relationship will not be further considered in this decision. On the upstream wholesale
+    market for the manufacture and supply of built-in kitchen hoods in the EEA, Midea’s market
+    share was [0-5]% in value and [0-5]% in volume, while the market share of Teka was [40-50]%
+    in value and [50-60]% in volume, resulting in a combined market share of [40-50]% in value
+    and [50-60]% in volume. The downstream market shares of the Parties in the retail market
+    for kitchen hoods in Spain are close to 0.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_midea_teka_2025_decision
+  page: '6'
+  quote_snippet: However, for the purpose of the present decision, the geographic market definition
+    can be left open, since the Transaction does not raise serious doubts as to its compatibility
+    with the internal market even on the basis of a narrower (i.e., national or EEA wide respectively)
+    geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_midea_teka_2025_decision
+  page: '7'
+  quote_snippet: The upstream wholesale market for the manufacture and supply of built-in kitchen
+    hoods (at OEM level) in the EEA and the downstream retail market for built-in kitchen hoods
+    (at OBM level) in Spain.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_midea_teka_2025_decision
+  page: '7'
+  quote_snippet: Since the Parties’ combined market share in the downstream market is close
+    to 0 and the transaction specific increment in the upstream market is negligible, this vertical
+    relationship will not be further considered in this decision. On the upstream wholesale
+    market for the manufacture and supply of built-in kitchen hoods in the EEA, Midea’s market
+    share was [0-5]% in value and [0-5]% in volume, while the market share of Teka was [40-50]%
+    in value and [50-60]% in volume, resulting in a combined market share of [40-50]% in value
+    and [50-60]% in volume. The downstream market shares of the Parties in the retail market
+    for kitchen hoods in Spain are close to 0.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_midea_teka_2025_decision
+  page: '6'
+  quote_snippet: However, for the purpose of the present decision, the geographic market definition
+    can be left open, since the Transaction does not raise serious doubts as to its compatibility
+    with the internal market even on the basis of a narrower (i.e., national or EEA wide respectively)
+    geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_midea_teka_2025_decision
+  page: '1'
+  quote_snippet: Commission decision pursuant to Article 6(1)(b) of Council Regulation No 139/20041
+    and Article 57 of the Agreement on the European Economic Area2
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: eu_midea_teka_2025_decision
+  page: '1'
+  quote_snippet: 'Subject: Case M.11684 – MIDEA / TEKA'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_34
+  source_document_id: eu_midea_teka_2025_decision
+  page: '1'
+  quote_snippet: Brussels, 3.3.2025
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

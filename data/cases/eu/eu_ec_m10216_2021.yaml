@@ -1,0 +1,254 @@
+case_id: eu_ec_m10216_2021
+case_name: M.10216
+authority: European Commission
+jurisdiction: EU
+sector: transport
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2021-09-06'
+parties: []
+source_documents:
+- doc_id: eu_ec_m10216_2021_decision
+  title: M.10216 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10216
+  pdf_url: http://publications.europa.eu/resource/cellar/a0ed2585-2791-11ec-bd8e-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Freight forwarding services
+  definition_status: left_open
+  notes: The Commission considered various sub-segmentations including domestic/cross-border,
+    mode of transport (air, land, sea), door-to-door multimodal, and type of transported cargo
+    (cold/ambient, fresh/frozen). While indications suggested a distinction between ambient
+    and cold cargo could be relevant, the market investigation results were inconclusive. A
+    further distinction between fresh and frozen cargo within cold cargo freight forwarding
+    was deemed not warranted. The Commission ultimately left the exact product market definition
+    open but adopted a conservative approach to assess the transaction on the potential segment
+    for cold cargo freight forwarding, including available direct and indirect routes.
+- market_id: pm_2
+  name: Short-sea shipping services
+  definition_status: considered
+  notes: The Commission investigated whether other modes of transportation (e.g., road) are
+    substitutable for short-sea shipping services. For routes between Northern Europe and the
+    British Isles (via the Channel Tunnel) and Scandinavia and the Baltic region, the relevant
+    product market was considered to include both road transportation and short-sea shipping
+    services. For other routes, the assessment was based on short-sea shipping services to the
+    exclusion of alternative modes. The Commission confirmed a distinction between RoRo/RoPax
+    and LoLo services and suggested a market for unitised cargo (containers and trailers) is
+    relevant. A segmentation between cold and ambient cargo was suggested but not definitively
+    concluded as most ferry operators can transport both.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Freight forwarding services — country pairs
+  definition_status: left_open
+  notes: The market investigation yielded mixed results regarding the geographic scope (national,
+    regional, EU, global). However, a vast majority of freight forwarders mentioned corridors
+    corresponding to country pairs. The Commission adopted a conservative approach, assessing
+    the transaction under the narrowest plausible market definition for international freight
+    forwarding, taking into account country pairs, but ultimately left the exact geographic
+    market definition open. The assessment of horizontal overlaps focused on cold cargo freight
+    forwarding between Denmark and the UK, including indirect transportation modes.
+- market_id: gm_2
+  name: Short-sea shipping services for unitised cargo on RoRo and RoPax vessels — country pairs
+    (Scandinavia-British Isles, Northern Europe-Baltic region)
+  definition_status: left_open
+  notes: The Commission confirmed that the broadest plausible market definition for short-sea
+    shipping services corresponds to trade routes (corridors) with possible further segmentation
+    by country-pairs. For the Scandinavia – British Isles corridor, the Commission assessed
+    on the basis of country pairs (Denmark-UK, Sweden-UK, Norway-UK), excluding indirect routes,
+    but left the exact definition open. For the Northern Europe – Baltic region corridor, the
+    Commission assessed on the basis of the Germany-Lithuania country pair, excluding indirect
+    routes, but left the exact definition open.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m10216_2021_decision
+  page: '4'
+  quote_snippet: (12) In its previous decisions, the Commission has considered the possibility
+    of sub-segmenting this market into domestic15 and cross-border freight forwarding,16 and
+    into freight forwarding by air, land (road and rail17) and sea.18 In CMA CGM/OPDR, however,
+    the Commission defined a market for door-to-door transport services,19 in which providers
+    compete for the same customers irrespective of the specific mode of transportation.20
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m10216_2021_decision
+  page: '8'
+  quote_snippet: |
+    (28) In light of the above, the Commission considers that the exact product market definition can be left open since the Transaction does not raise serious doubts as to its compatibility with the internal market under any plausible product market definition.
+    (29) Nevertheless, given the fact that HSF is specialised in cold cargo freight forwarding and that cold cargo freight forwarding appears to present certain constraints in terms of transportation timing and required equipment, the Commission considers that under the most conservative approach the Transaction should be assessed on the basis of the potential segment for cold cargo freight forwarding including available direct and indirect routes.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m10216_2021_decision
+  page: '10'
+  quote_snippet: (37) Short-sea shipping involves the provision of regular, scheduled, intracontinental
+    (usually, costal trade) services for the carriage of cargo by shipping companies.63
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m10216_2021_decision
+  page: '12'
+  quote_snippet: (49) In light of the results of the market investigation, the Commission concludes
+    with respect to the routes between (i) Northern Europe and the British Isles (via the Channel
+    Tunnel) and (ii) Scandinavia and the Baltic region that the relevant product market includes
+    both road transportation and short-sea shipping services. For the other routes, because
+    the market investigation elicited mixed results, the Commission will assess the Transaction
+    under the narrowest plausible product market definition (i.e., short-sea shipping services,
+    to the exclusion of alternative modes of transportation).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m10216_2021_decision
+  page: '9'
+  quote_snippet: (36) Conversely, when asked about their main points of origin and points of
+    destination, a vast majority of freight forwarders mentioned corridors corresponding to
+    country pairs (e.g., from Denmark to the UK or Sweden to the UK).61 Besides, some of the
+    market participants identified possible input foreclosure issues, which could possibly occur
+    on the routes connecting specific country pairs.62 In light of this, the Commission adopted
+    a conservative approach and, similarly to the approach adopted in DFDS / Norfolk, assessed
+    the Transaction under the narrowest plausible market definition for international freight
+    forwarding, taking into account country pairs. However, the exact geographic market definition
+    can be left open, as the Transaction does not raise serious doubts under any plausible market
+    definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m10216_2021_decision
+  page: '8'
+  quote_snippet: (30) In its prior decisional practice, the Commission has left open whether
+    the freight forwarding market or subdivisions thereof should be considered national in scope,
+    due to language and regulatory barriers, or larger in view of a trend by major competitors
+    to create transnational or even EEA-wide networks.52
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m10216_2021_decision
+  page: '21'
+  quote_snippet: (98) While the Parties’ activities overlap horizontally in the provision of
+    freight forwarding services, the Transaction only gives rise to horizontally affected markets
+    in the market for the provision of cold cargo freight forwarding services for the country
+    pair Denmark-UK144 (when taking into account indirect transportation modes).145
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m10216_2021_decision
+  page: '14'
+  quote_snippet: (59) The market investigation confirmed that the broadest plausible market
+    definition for short-sea shipping services corresponds to trade routes (i.e., corridors)
+    with a possible further segmentation by country-pairs on some routes.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m10216_2021_decision
+  page: '16'
+  quote_snippet: (64) Accordingly, the Commission will analyse the Transaction under the narrowest
+    plausible market definition, that is the country pairs between Scandinavia and the UK (i.e.,
+    Denmark – UK, Sweden – UK, Norway – UK).114
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m10216_2021_decision
+  page: '17'
+  quote_snippet: (76) For the purpose of this decision, however, the exact geographic market
+    definition for short-sea shipping between Scandinavia and the UK can be left open, as the
+    Transaction does not raise serious doubts as to its compatibility with the internal market
+    under any plausible market definition. Accordingly, the Commission will assess the effects
+    of the Transaction below on a market for short-sea shipping services for unitised cargo
+    between Scandinavia and the British Isles,126 with a further segmentation by country-pair
+    and to the exclusion of indirect routes.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m10216_2021_decision
+  page: '39'
+  quote_snippet: (186) For the above reasons, the European Commission has decided not to oppose
+    the notified operation and to declare it compatible with the internal market and with the
+    EEA Agreement. This decision is adopted in application of Article 6(1)(b) of the Merger
+    Regulation and Article 57 of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

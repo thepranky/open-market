@@ -1,0 +1,465 @@
+case_id: eu_iberdrola_bp_jv_2023
+case_name: IBERDROLA / BP / JV
+authority: European Commission
+jurisdiction: EU
+sector: transport
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2023-10-26'
+parties:
+- name: IBERDROLA
+  role: acquirer
+- name: BP
+  role: acquirer
+- name: JV
+  role: target
+source_documents:
+- doc_id: eu_iberdrola_bp_jv_2023_decision
+  title: IBERDROLA / BP / JV — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11128
+  pdf_url: http://publications.europa.eu/resource/cellar/01827354-2709-11ef-a195-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Installation, operation and maintenance of EV charging stations
+  definition_status: segmented
+  notes: The Commission segmented the product market between public and private EV charging
+    stations. It further segmented public EV charging stations by charging speeds (regular,
+    fast, and ultra-fast) and left open the exact delineation of these speed categories. It
+    also left open whether there are separate markets for on- and off-motorway public EV charging
+    stations.
+- market_id: pm_2
+  name: Provision of e-mobility services
+  definition_status: left_open
+  notes: The Commission considered there is a market for the provision of e-mobility services
+    and left open whether further segmentations based on charging speed or location (on-/off-motorway)
+    are required.
+- market_id: pm_3
+  name: Ownership or operation of land and sites suitable for EV charging stations
+  definition_status: left_open
+  notes: The Commission considered the relevant product market to be the ownership or operation
+    of land and sites suitable for EV charging stations, and left open whether it should be
+    further segmented by type of site (fuel station sites or non-fuel station sites).
+- market_id: pm_4
+  name: Retail supply of electricity to large customers connected to high and medium voltage
+    grid
+  definition_status: defined
+  notes: null
+- market_id: pm_5
+  name: Retail supply of electricity to small industrial and residential customers connected
+    to low voltage grid
+  definition_status: defined
+  notes: null
+geographic_markets_considered:
+- market_id: gm_1
+  name: Installation, operation and maintenance of public EV charging stations — national with
+    local elements (Spain and Portugal affected)
+  definition_status: considered
+  notes: The Commission considered the market to be national in scope with elements of local
+    competition in both Spain and Portugal. The local impact of the Transaction was analyzed
+    based on local catchment areas, using various distance metrics.
+- market_id: gm_2
+  name: Provision of e-mobility services — national (Spain and Portugal affected)
+  definition_status: defined
+  notes: null
+- market_id: gm_3
+  name: Ownership or operation of land and sites suitable for EV charging stations — national
+    (Spain and Portugal affected)
+  definition_status: defined
+  notes: null
+- market_id: gm_4
+  name: Retail supply of electricity — national (Spain and Portugal affected)
+  definition_status: defined
+  notes: null
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_iberdrola_bp_jv_2023_decision
+  page: '12'
+  quote_snippet: Based on the above, the Commission considers that, for the purposes of this
+    Decision, the product market for the installation, operation and maintenance of EV charging
+    stations should be segmented between public and private EV charging stations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_iberdrola_bp_jv_2023_decision
+  page: '12'
+  quote_snippet: Based on the above, the Commission considers that, for the purposes of this
+    Decision, the product market for the installation, operation and maintenance of public EV
+    charging stations should be segmented by charging speeds between regular, fast and ultra-fast,
+    and that the exact delineation of what constitutes regular, fast and ultra-fast charging
+    speeds can be left open because the Transaction does not raise serious doubts as to its
+    compatibility with the internal market under either of the two plausible delineations of
+    charging speed (i.e., either <22 kW / 22-100 kW / >100 kW or <22 kW / 22-150 kW / >150 kW).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_iberdrola_bp_jv_2023_decision
+  page: '13'
+  quote_snippet: Based on the above, the Commission considers that, for the purposes of this
+    Decision, it can be left open whether the product market for the installation, operation
+    and maintenance of public EV charging stations should be segmented between on- and off-motorway
+    charging stations, because the Transaction does not raise serious doubts as to its compatibility
+    with the internal market under any plausible market definition. The assessment will focus
+    on the narrowest plausible markets, i.e. separate markets for on- and off-motorway public
+    EV charging stations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_iberdrola_bp_jv_2023_decision
+  page: '17'
+  quote_snippet: The Commission has previously considered the market for the provision of e-mobility
+    services as a separate market from the market for the installation, operation and maintenance
+    of public EV charging stations. However, the Commission left open whether further segmentations
+    of this market are required, e.g., based on the charging speed of the EV charging stations
+    available through a particular e-mobility service.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_iberdrola_bp_jv_2023_decision
+  page: '18'
+  quote_snippet: Based on the above, the Commission considers that, for the purposes of this
+    Decision and in line with previous practice, there is a market for the provision of e-mobility
+    services, and that it can be left open as to whether further segmentations of this market
+    are required, i.e, based on the charging speed of the EV charging stations available through
+    a particular e-mobility service and/or for on- and off-motorway EV charging stations, because
+    the Transaction does not raise serious doubts as to its compatibility with the internal
+    market under any plausible segmentation of the market for the provision of e-mobility services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_iberdrola_bp_jv_2023_decision
+  page: '21'
+  quote_snippet: Based on the above, on balance, the Commission considers, for the purposes
+    of this Decision, that the relevant product market is the market for the ownership or operation
+    of land and sites suitable for EV charging stations, and that the question can be left open
+    as to whether the market for the ownership or operation of land and sites suitable for EV
+    charging stations should be further segmented by type of site (i.e., fuel station sites
+    or non-fuel station sites), since the Transaction does not raise serious doubts as to its
+    compatibility with the internal market under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_iberdrola_bp_jv_2023_decision
+  page: '22'
+  quote_snippet: In past decisions related to the e-mobility sector, the Commission distinguished
+    (i) the retail supply of electricity to large customers connected to high and medium voltage
+    grid from (ii) the retail supply of electricity to small industrial and residential customers
+    that are connected to the low voltage grid.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_iberdrola_bp_jv_2023_decision
+  page: '22'
+  quote_snippet: Based on the above, the Commission considers, for the purposes of this Decision,
+    that there are separate markets for (i) the retail supply of electricity to large customers
+    connected to high and medium voltage grid and for (ii) the retail supply of electricity
+    to small industrial and residential customers that are connected to the low voltage grid.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_iberdrola_bp_jv_2023_decision
+  page: '22'
+  quote_snippet: In past decisions related to the e-mobility sector, the Commission distinguished
+    (i) the retail supply of electricity to large customers connected to high and medium voltage
+    grid from (ii) the retail supply of electricity to small industrial and residential customers
+    that are connected to the low voltage grid.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_iberdrola_bp_jv_2023_decision
+  page: '22'
+  quote_snippet: Based on the above, the Commission considers, for the purposes of this Decision,
+    that there are separate markets for (i) the retail supply of electricity to large customers
+    connected to high and medium voltage grid and for (ii) the retail supply of electricity
+    to small industrial and residential customers that are connected to the low voltage grid.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_iberdrola_bp_jv_2023_decision
+  page: '15'
+  quote_snippet: A large majority of the CPOs who responded to the market investigation are
+    active at a national level in Spain and/or Portugal. Of those, the majority set their prices
+    uniformly at the national level, though some set prices at a regional or local level. This
+    confirms that the market has elements of national competition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_iberdrola_bp_jv_2023_decision
+  page: '15'
+  quote_snippet: In addition, in line with its previous practice, the Commission also considers
+    that there are elements of local competition in the markets for the installation, operation
+    and maintenance of public EV charging stations in Spain and Portugal.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_iberdrola_bp_jv_2023_decision
+  page: '16'
+  quote_snippet: Based on the above, the Commission considers that, for the purposes of this
+    Decision, for both Spain and Portugal the market for the installation, operation and maintenance
+    of public EV charging stations is national in scope with elements of local competition.
+    For that reason, in addition to the analysis at the national level, the local impact of
+    the Transaction will be analysed on the basis of local catchment areas.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_iberdrola_bp_jv_2023_decision
+  page: '18'
+  quote_snippet: The Commission’s recent decisional practice concluded that the geographic scope
+    of the market for e-mobility services is national. This is because eMSPs tend to provide
+    a unified nation-wide offer and pricing policy, particularly considering that these services
+    are offered as digital applications generally available throughout the country where eMSPs
+    are active.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_iberdrola_bp_jv_2023_decision
+  page: '19'
+  quote_snippet: Based on the above, the Commission considers that, for the purposes of this
+    Decision, the geographic scope of the market for the provision of e-mobility services is
+    national for each of Spain and Portugal respectively.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_iberdrola_bp_jv_2023_decision
+  page: '21'
+  quote_snippet: The market investigation confirmed that for the market for the ownership or
+    operation of land and sites suitable for EV charging stations the geographic scope is national.
+    The majority of the market participants indicated that considerations of a location’s characteristics
+    and strategic value as a potential site for an EV charging station are the same across the
+    entire country.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_iberdrola_bp_jv_2023_decision
+  page: '21'
+  quote_snippet: Based on the above, the Commission considers, for the purposes of this Decision,
+    that the geographic scope of the market for the ownership or operation of land and sites
+    suitable for EV charging stations is national for each of Spain and Portugal respectively.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_iberdrola_bp_jv_2023_decision
+  page: '23'
+  quote_snippet: The market investigation did not produce any evidence invalidating the Commission’s
+    decisional practice.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_iberdrola_bp_jv_2023_decision
+  page: '23'
+  quote_snippet: Based on the above, the Commission considers, for the purposes of this Decision,
+    that the geographic scope of the markets for the retail supply of electricity is national
+    for each of Spain and Portugal respectively.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_iberdrola_bp_jv_2023_decision
+  page: '12'
+  quote_snippet: the Transaction does not raise serious doubts as to its compatibility with
+    the internal market under either of the two plausible delineations of charging speed (i.e.,
+    either <22 kW / 22-100 kW / >100 kW or <22 kW / 22-150 kW / >150 kW).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_iberdrola_bp_jv_2023_decision
+  page: '12'
+  quote_snippet: the Transaction does not raise serious doubts as to its compatibility with
+    the internal market under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_iberdrola_bp_jv_2023_decision
+  page: '14'
+  quote_snippet: The Commission leaves open (i) whether there are separate markets for on- and
+    off-motorway public EV charging stations, and (ii) the exact delineation of what constitutes
+    regular, fast and ultra-fast charging speeds, because the Transaction does not raise serious
+    doubts as to its compatibility with the internal market under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_iberdrola_bp_jv_2023_decision
+  page: '18'
+  quote_snippet: the Transaction does not raise serious doubts as to its compatibility with
+    the internal market under any plausible segmentation of the market for the provision of
+    e-mobility services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_iberdrola_bp_jv_2023_decision
+  page: '21'
+  quote_snippet: since the Transaction does not raise serious doubts as to its compatibility
+    with the internal market under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

@@ -1,0 +1,629 @@
+case_id: eu_ec_m9736_2020
+case_name: M.9736
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2020-07-27'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9736_2020_decision
+  title: M.9736 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9736
+  pdf_url: http://publications.europa.eu/resource/cellar/ec376b30-04c7-11eb-a511-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Chemical-based admixtures
+  definition_status: defined
+  notes: The Commission concluded that chemical-based admixtures constitute a separate product
+    market, distinct from mineral-based admixtures, and that no further segmentation is necessary.
+- market_id: pm_2
+  name: Mortars
+  definition_status: left_open
+  notes: The Commission left open whether the appropriate product market definition is mortars
+    as a whole or whether separate product markets exist for various segmentations (premix vs.
+    on-site, dry/wet/paste, and application-based such as construction, façade, tile-fixing
+    mortars).
+- market_id: pm_3
+  name: AAC blocks
+  definition_status: considered
+  notes: The Commission left open whether AAC blocks constitute a separate product market or
+    are part of a wider market encompassing other building products, but for the purpose of
+    the decision, assessed it on the narrowest plausible definition of AAC blocks only.
+- market_id: pm_4
+  name: AAC large format units and aerated concrete roofing panels, fire walls and outer walls
+  definition_status: left_open
+  notes: The Commission left open whether AAC large format units constitute a separate product
+    market (including aerated concrete roofing panels, fire walls and outer walls) or are part
+    of a wider market encompassing other construction materials. It also left open whether a
+    sub-segmentation between units for industrial and residential construction is appropriate.
+- market_id: pm_5
+  name: Mineral insulation boards
+  definition_status: considered
+  notes: The Commission left open whether mineral insulation boards constitute a separate product
+    market or are part of a wider market encompassing other insulation products, but for the
+    purpose of the decision, assessed it on the narrowest plausible definition of mineral insulation
+    boards only.
+- market_id: pm_6
+  name: Distribution of building products
+  definition_status: left_open
+  notes: The Commission left open whether there should be a sub-segmentation of the distribution
+    of building materials between (i) wholesale sales to retailers; (ii) retail sales to professional
+    customers (B2B); and (iii) retail sales to non-professional customers (primarily through
+    DIY stores).
+geographic_markets_considered:
+- market_id: gm_1
+  name: Chemical-based admixtures — national
+  definition_status: considered
+  notes: The Commission left open whether the market was national, regional, EEA-wide or worldwide,
+    but conducted its assessment on a national market basis as the narrowest plausible definition.
+- market_id: gm_2
+  name: Mortars — national
+  definition_status: left_open
+  notes: The Commission left the geographic market definition open, but considered that the
+    market for mortars (other than large volume/low value heavy mortars) could be national in
+    scope.
+- market_id: gm_3
+  name: AAC blocks — national or local
+  definition_status: left_open
+  notes: The Commission left open whether the appropriate geographic market definition is national
+    or local (smaller than national). Past precedents indicated a local scope in Germany.
+- market_id: gm_4
+  name: AAC large format units and aerated concrete roofing panels, fire walls and outer walls
+    — national or local
+  definition_status: left_open
+  notes: The Commission left open whether the relevant geographic market for AAC large format
+    units should be considered as local or national in scope.
+- market_id: gm_5
+  name: Mineral insulation boards — national
+  definition_status: considered
+  notes: The Commission left open whether the market was national or wider (regional or EEA-wide),
+    but conducted its assessment on a national market basis as the narrowest plausible definition.
+- market_id: gm_6
+  name: Distribution of building products — national or local
+  definition_status: left_open
+  notes: The Commission left open whether the appropriate geographic market definition is national
+    or local (smaller than national).
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9736_2020_decision
+  page: '4'
+  quote_snippet: In the past, the Commission found that chemical-based and mineral-based admixtures
+    constitute separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9736_2020_decision
+  page: '4'
+  quote_snippet: The Notifying Party points out that BASF’s EB business is only active in chemical-based
+    (and in particular polymer-based) concrete admixtures, thus belonging to the wider market
+    of chemical admixtures.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9736_2020_decision
+  page: '4'
+  quote_snippet: In light of the above and for the purposes of the assessment of the Transaction,
+    the Commission considers that chemical-based admixtures constitute a separate product market,
+    distinct from the market for mineral-based admixtures, and that no further segmentation
+    is necessary.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9736_2020_decision
+  page: '5'
+  quote_snippet: 'In the past, the Commission has made a distinction between premix mortars,
+    which are mixed at the factory and on-site mortars, which are mixed on the construction
+    site. Within premix mortars, the Commission has distinguished between dry mortars (supplied
+    in a dry powder form), wet mortars (ready-mixed with water at the factory), and ready-to-use
+    paste mortars (supplied as paste, including organic compounds as binders. Moreover, the
+    Commission has also distinguished between mortars based on the application, namely: (i)
+    construction mortars, used for various building construction purposes, such as casting and
+    setting, masonry, plastering, floor levelling and concrete repair; (ii) façade mortars,
+    used as an outer layer of buildings for protective or aesthetic purposes, or as part of
+    insulation systems and (iii) tile-fixing mortars used for fixing tiles, both on substrate
+    (adhesive mortars) and as sealants between tiles (grouts).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9736_2020_decision
+  page: '6'
+  quote_snippet: Replies in the market investigation of competitors active in mortars confirmed
+    the relevance of the Commission’ precedents in this respect, as well as the absence of a
+    need to further sub-segment the market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9736_2020_decision
+  page: '6'
+  quote_snippet: The questions of whether the appropriate product market definition is mortars
+    as a whole or whether separate product markets exist for any of the segmentations listed
+    in paragraph (22), which were considered in previous decisions, can be left open, as the
+    Commission finds that no serious doubts arise for any of the possible product market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9736_2020_decision
+  page: '7'
+  quote_snippet: In the past, the Commission found that AAC blocks form a single relevant product
+    market, which is not likely to comprise other products. No further sub-segmentation was
+    considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9736_2020_decision
+  page: '7'
+  quote_snippet: The Notifying Party considers that the product market definition for AAC blocks
+    should encompass other products, such as aggregate blocks and potentially also other wall-building
+    materials, in particular bricks, sand-lime bricks/calcium silicate units and pumice blocks.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9736_2020_decision
+  page: '8'
+  quote_snippet: AAC large format units and aerated concrete roofing panels, fire walls and
+    outer walls were examined by the Commission in Case M.9406 – Lone Star – Stark group / Saint-Gobain
+    BDD. In this case, the Commission found that aerated concrete roofing panels, fire walls
+    and outer walls were part of the same market as AAC large format units. The Commission also
+    found indications that AAC large format units for industrial construction are not substitutable
+    with those for residential construction. However, the Commission ultimately left the exact
+    product definition for AAC large format prefabricated compound units open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9736_2020_decision
+  page: '9'
+  quote_snippet: The Notifying Party agrees that AAC large format units for industrial construction
+    are not substitutable with those for residential construction, but considers that each of
+    them form part of a broader product market. More specifically, the Notifying Party submits
+    that AAC large format units for industrial construction form part of a market that also
+    encompasses concrete panels and steel elements (but not elements made of in situ poured
+    concrete which is not a usual method of producing panels for industrial buildings) and that
+    AAC large format units for residential construction form part of a market that also encompasses
+    concrete floor elements and full assembly floors out of reinforced concrete.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9736_2020_decision
+  page: '9'
+  quote_snippet: In light of the above and for the purposes of the assessment of the Transaction,
+    the Commission considers that the question of whether AAC large format units constitute
+    a separate product market comprising aerated concrete roofing panels, fire walls and outer
+    walls or are part of a wider market also encompassing products such as AAC blocks, prefabricated
+    concrete panels or steel panels can be left open, as the Commission considers that the Transaction
+    does not raise serious doubts under either product market definition. The Commission also
+    considers that the question of whether a further sub-segmentation between AAC large format
+    units for industrial construction and AAC large format units for residential construction
+    is appropriate can be left open, as the Commission finds that the Transaction does not raise
+    serious doubts under any product market definition set out above, this being the most conservative
+    approach, since any wider product market definition for AAC large format units would lower
+    Xella’s market shares.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9736_2020_decision
+  page: '10'
+  quote_snippet: The Notifying Party considers that mineral insulation boards are part of a
+    broader market encompassing other solution for interior and exterior insulation of buildings.
+    The Notifying Party nonetheless explains that the exact product market definition for mineral
+    insulation boards can be left open since Xella’s market shares would not exceed 20% under
+    any plausible product or geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9736_2020_decision
+  page: '10'
+  quote_snippet: Mineral insulation boards manufacturers indicated that mineral insulation boards
+    are substitutable with some other insulation products and could thus be part of a broader
+    product market including those other products as well. They also replied that no further
+    sub-segmentation of mineral insulation boards by type or category was necessary.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m9736_2020_decision
+  page: '11'
+  quote_snippet: In light of the above and for the purposes of the assessment of the Transaction,
+    the Commission considers that the question of whether mineral insulation boards constitute
+    a separate product market or are part of a wider market also encompassing other insulation
+    products can be left open, as the Commission considers that the Transaction does not raise
+    serious doubts under either product market definition. The Commission also considers that
+    no further segmentation of mineral insulation boards is necessary. In this decision, the
+    Commission will carry out its assessment on the basis of a market restricted to mineral
+    insulation boards only as the narrowest plausible product market definition, this being
+    the most conservative approach (as indicated by the market investigation), since any wider
+    product market definition for mineral insulation boards would lower Xella’s market shares.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m9736_2020_decision
+  page: '12'
+  quote_snippet: 'In its previous decisions, the Commission considered that the markets for
+    the distribution of building materials in general can be divided into: (i) wholesale sales
+    to retailers; (ii) retail sales to professional customers (B2B); and (iii) retail sales
+    to non-professional customers (primarily through DIY stores), but left the precise product
+    market definition ultimately open.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m9736_2020_decision
+  page: '12'
+  quote_snippet: Replies of distributors of building materials fully confirmed the Commission’s
+    precedents regarding the product market definitions for the distribution of building products.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m9736_2020_decision
+  page: '12'
+  quote_snippet: Ultimately, the question of whether further sub-segmentation of the distribution
+    of building material, between (i) wholesale sales to retailers; (ii) retail sales to professional
+    customers (B2B); and (iii) retail sales to non-professional customers (primarily through
+    DIY stores) is appropriate or not can be left open, as the Commission finds that the Transaction
+    does not raise serious doubts under any product market definition set out above.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m9736_2020_decision
+  page: '5'
+  quote_snippet: Replies of admixture customers and competitors indicate that the market may
+    be wider than national. Responding customers are somewhat split between a regional market
+    (a cluster of neighbouring countries), an EEA-wide market, or even a worldwide market. The
+    majority of responding competitors see the market as worldwide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m9736_2020_decision
+  page: '5'
+  quote_snippet: Ultimately, the question of whether the appropriate geographic market definition
+    is national, or wider (regional, EEA-wide or worldwide) can be left open, as the Commission
+    considers that the Transaction does not raise serious doubts for either geographic market
+    definition. In this decision, the Commission will carry out its assessment on a national
+    market basis as the narrowest plausible geographic market definition, this being the most
+    conservative approach, since BASF EB business’ market shares would be lower under any broader
+    geographic market definitions for chemical-based admixtures.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m9736_2020_decision
+  page: '6'
+  quote_snippet: In the past, the Commission left the geographic market definition open and
+    conducted the competitive assessment both at national and at local/regional levels, assuming
+    a 120 km radius around the production plant. In its most recent decisional practice, the
+    Commission has carried out its competitive assessment on the basis of national markets but,
+    with regard to large volume/low value heavy mortars, it has also considered narrower hypothetical
+    regional/local markets, assuming a 120 km radius around production plants.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m9736_2020_decision
+  page: '7'
+  quote_snippet: The majority of the replies in the market investigation of competitors active
+    in mortars showed that the geographic scope for these products would be national. In light
+    of the above and for the purposes of the assessment of the Transaction, the Commission considers
+    that the market for mortars other than large volume/low value heavy mortars (which are of
+    no relevance in the case at hand) could be national in scope. In any event, the precise
+    geographic market definition can be left open, as the Transaction does not raise serious
+    doubts under any plausible market definition (see paragraphs (22) and (26) above).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m9736_2020_decision
+  page: '8'
+  quote_snippet: In the past, the Commission found that the relevant geographic market for AAC
+    blocks was local in scope and examined the market for AAC blocks in Germany under four separate
+    regions (North Germany, West Germany, South Germany and East Germany).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_ec_m9736_2020_decision
+  page: '8'
+  quote_snippet: The Notifying Party submits that the geographic market for AAC blocks is at
+    least national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_ec_m9736_2020_decision
+  page: '8'
+  quote_snippet: Ultimately, the question whether the appropriate geographic market definition
+    is national or local (smaller than national) can be left open, as the Commission considers
+    that the Transaction does not raise serious doubts for either geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_ec_m9736_2020_decision
+  page: '10'
+  quote_snippet: In Case M.9406 – Lone Star – Stark group / Saint-Gobain BDD, the Commission
+    left open whether the relevant geographic market for AAC large format units should be considered
+    as local or national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_ec_m9736_2020_decision
+  page: '10'
+  quote_snippet: The Notifying Party submits that the relevant geographic market is national.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_ec_m9736_2020_decision
+  page: '10'
+  quote_snippet: Ultimately, the question whether the appropriate geographic market definition
+    is national or local (smaller than national) can be left open, as the Commission considers
+    that the Transaction does not raise serious doubts for either geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_ec_m9736_2020_decision
+  page: '11'
+  quote_snippet: The Notifying Party believes that the relevant geographic market for mineral
+    insulation boards is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_ec_m9736_2020_decision
+  page: '11'
+  quote_snippet: Replies of mineral insulation boards manufacturers indicate that the geographic
+    scope for mineral insulation boards is national, or even wider.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_ec_m9736_2020_decision
+  page: '11'
+  quote_snippet: In light of the above and for the purposes of the assessment of the Transaction,
+    the Commission considers that the question whether the appropriate geographic market definition
+    is national, or wider (regional or EEA-wide) can be left open, as the Commission considers
+    that the Transaction does not raise serious doubts for either geographic market definition.
+    In this decision, the Commission will carry out its assessment on a national market base
+    as the narrowest plausible geographic market definition, this being the most conservative
+    approach (as confirmed by the market investigation), since any wider geographic market definition,
+    mineral insulation boards would lower Xella’s market shares.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_ec_m9736_2020_decision
+  page: '12'
+  quote_snippet: The Commission has previously considered that the scope of the market for the
+    distribution of building products as well as its potential sub-segments (retail sales to
+    professional customers and retail sales to non-professional customers) is either national
+    or potentially smaller than national.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_ec_m9736_2020_decision
+  page: '1'
+  quote_snippet: Commission decision pursuant to Article 6(1)(b) of Council Regulation No 139/20041
+    and Article 57 of the Agreement on the European Economic Area2
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

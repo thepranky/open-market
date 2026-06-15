@@ -1,0 +1,743 @@
+case_id: eu_ec_m10475_2021
+case_name: M.10475
+authority: European Commission
+jurisdiction: EU
+sector: tech
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2021-12-21'
+parties: []
+source_documents:
+- doc_id: eu_ec_m10475_2021_decision
+  title: M.10475 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10475
+  pdf_url: http://publications.europa.eu/resource/cellar/d691c1b3-09aa-11ed-b11c-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Retail supply of mobile telecommunications services
+  definition_status: considered
+  notes: The Commission considered an overall retail market for mobile telecommunications services,
+    distinct from retail fixed telecommunication services. It concluded that this market does
+    not need to be further segmented based on service type (voice calls, SMS, MMS, mobile Internet
+    data services) or network technology (2G, 3G, 4G). OTT and M2M services were excluded.
+- market_id: pm_2
+  name: Retail supply of fixed telephony services including VoIP services
+  definition_status: considered
+  notes: The Commission considered the relevant product market to be the retail supply of fixed
+    telephony services including VoIP services. The question of a distinction between residential
+    and non-residential (business) customers was left open, as it did not affect the outcome.
+- market_id: pm_3
+  name: Retail supply of fixed internet access services to residential and SOHO customers
+  definition_status: considered
+  notes: The Commission considered the market for the retail supply of fixed internet access
+    services, including all product types, distribution modes, and speeds/bandwidths, to residential
+    and SOHO customers. Fixed internet access services provided through mobile network infrastructure
+    (fLTE) were excluded.
+- market_id: pm_4
+  name: Retail supply of audio-visual services
+  definition_status: considered
+  notes: The Commission considered an overall retail market for AV services encompassing all
+    distribution technologies (cable, satellite, terrestrial, IPTV) as well as linear and non-linear
+    distribution. The questions of segmentation between Free-to-Air (FTA) and pay-TV services,
+    and between basic and premium pay-TV services, were left open.
+- market_id: pm_5
+  name: Retail provision of multiple-play services
+  definition_status: left_open
+  notes: The Commission considered the existence of a distinct product market for the retail
+    supply of multiple-play services and possible segmentations (fixed bundles vs. FMC bundles)
+    but ultimately left the question open.
+- market_id: pm_6
+  name: Wholesale market for termination and hosting of calls to non-geographic numbers
+  definition_status: considered
+  notes: The Commission considered that there is a distinct product market for the wholesale
+    supply of termination and hosting of calls to non-geographic numbers.
+- market_id: pm_7
+  name: Wholesale supply and acquisition of TV channels
+  definition_status: left_open
+  notes: The Commission considered a wholesale market for the acquisition and supply of TV channels.
+    It left open whether the market should be segmented between FTA and pay-TV channels, between
+    basic and premium pay-TV channels, or by genre/thematic content. It concluded that all technology
+    distribution platforms are part of the same market.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Retail supply of mobile telecommunications services — national (Greece affected)
+  definition_status: considered
+  notes: The Commission considered the relevant geographic market for the retail supply of mobile
+    telecommunication services to be the territory of Greece.
+- market_id: gm_2
+  name: Retail supply of fixed telephony services — national (Greece affected)
+  definition_status: considered
+  notes: The Commission considered the relevant geographic market for the retail supply of fixed
+    telephony services to be the territory of Greece.
+- market_id: gm_3
+  name: Retail supply of fixed internet access services — national (Greece affected)
+  definition_status: considered
+  notes: The Commission considered the relevant geographic market for the retail supply of fixed
+    internet access services to be the territory of Greece.
+- market_id: gm_4
+  name: Retail supply of audio-visual services — national (Greece affected)
+  definition_status: considered
+  notes: The Commission considered the relevant geographic market for the retail supply of audio-visual
+    services to be the territory of Greece.
+- market_id: gm_5
+  name: Retail supply of multiple play services — national (Greece affected)
+  definition_status: considered
+  notes: The Commission considered the relevant geographic market for the retail supply of multiple
+    play services to be the territory of Greece.
+- market_id: gm_6
+  name: Wholesale market for termination and hosting of calls to non-geographic numbers — national
+    (Greece affected)
+  definition_status: considered
+  notes: The Commission considered the relevant geographic market for the wholesale supply of
+    termination and hosting of calls to non-geographic numbers to be the territory of Greece.
+- market_id: gm_7
+  name: Wholesale supply and acquisition of TV channels — national (Greece affected)
+  definition_status: considered
+  notes: The Commission considered the relevant geographic market for the wholesale supply and
+    acquisition of TV channels to be the territory of Greece.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '3'
+  quote_snippet: (8) In previous decisions, the Commission has identified an overall retail
+    market for mobile telecommunications services constituting a separate market, distinct from
+    retail fixed telecommunication services. The Commission considered that the retail mobile
+    telecommunications market does not need to be further segmented based on the type of service
+    (voice calls, SMS, MMS, mobile Internet data services), or the type of network technology
+    (2G, 3G, 4G).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '4'
+  quote_snippet: (9) The Commission considered that Over-the-top (“OTT”) services, whether provided
+    over Wi-Fi or via mobile telecommunications data networks, were not part of the market for
+    mobile telecommunications services, as OTT rely on mobile telecommunications (data) services
+    and/or fixed broadband services to function. Finally, the Commission excluded Machine-to-Machine
+    (“M2M”, e.g. energy metering or burglar alarm) services from the overall retail mobile telecommunications
+    market, due to the particular characteristics of the demand for and supply of these services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '4'
+  quote_snippet: (12) In light of the above, for the purpose of this Decision, the Commission
+    considers that there is an overall retail market for mobile telecommunications services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '5'
+  quote_snippet: (17) In previous decisions, the Commission considered whether to distinguish
+    between residential and non-residential customers in the market for the retail supply of
+    fixed telephony services. While the Commission left the precise scope of the market for
+    the retail supply of fixed telephony services open in several decisions, it found in recent
+    decisions that such a market does not contain further segmentations and that the overall
+    product market for fixed telephony services includes fixed telephony services provided over
+    the Internet Protocol (Voice-over-IP or “VoIP” services).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '6'
+  quote_snippet: (19) The majority of the competitors responding to the market investigation
+    agreed that the market for fixed telephony services encompasses the retail provision of
+    fixed telephony services both through fixed telephony lines and through VoIP services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '7'
+  quote_snippet: (21) In light of the above, the Commission considers that, for the purpose
+    of this Decision, the relevant product market is the market for the retail supply of fixed
+    telephony services including VoIP services. With respect to a possible distinction between
+    residential and non-residential (business) customers, the Commission considers that the
+    market definition can be left open, as this distinction does not affect the outcome of the
+    assessment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '8'
+  quote_snippet: (27) In recent cases, the Commission has considered that the relevant product
+    market consists of the overall retail market for the provision of fixed internet access
+    services, including all product types (narrowband, broadband, dedicated access), distribution
+    modes (DSL, cable, fibre, fixed-wireless-access (“FWA”)) and speeds/bandwidths, to residential
+    and small business customers, excluding the supply of fixed internet services provided through
+    mobile network infrastructure (i.e. “fLTE”).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '9'
+  quote_snippet: (31) In line with the Notifying Party’s submission and the results of the market
+    investigation, the Commission considers that it would be appropriate to consider an overall
+    retail market for the supply of fixed internet access services, including all product types,
+    distribution modes and speeds/bandwidths, to residential and SOHO customers, but excluding
+    fLTE.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '10'
+  quote_snippet: (35) In light of the above, the Commission considers that, for the purpose
+    of this Decision, the relevant product market is the market for the retail supply of fixed
+    internet access services, including all product types, distribution modes, and speeds/bandwidth,
+    to residential and SOHO customers, excluding fixed internet access services provided through
+    mobile network infrastructure.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '10'
+  quote_snippet: (40) In previous cases, the Commission has identified a relevant product market
+    for the retail supply of audio-visual (“AV”) services, which includes suppliers of linear
+    and non-linear AV services and AV content to end customers. The Commission considered a
+    number of possible segmentations (i) between Free-to-Air (“FTA) and pay-TV services; (ii)
+    within pay-TV services, between linear and non-linear services (Pay-Per-View (“PPV”), Video-on-Demand
+    (“VOD”)); (iii) between distribution technologies (cable, satellite, terrestrial television
+    and Internet Protocol Television (“IPTV”)); and (iv) premium and basic pay AV services,
+    but ultimately left the exact product market definition open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '13'
+  quote_snippet: (47) With respect to distribution technologies, from a demand-side perspective,
+    the results of the market investigation indicated that there is substitutability for end-customers
+    between all technical forms of AV distribution.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '13'
+  quote_snippet: (48) In any event, and in light of the above, the Commission considers that,
+    for the purpose of this Decision, the relevant product market is the market for the retail
+    supply of AV services encompassing all distribution technologies as well as linear and non-linear
+    distribution. The question whether the market should be segmented (i) between FTA and pay-TV
+    services; and (ii) basic and premium pay-TV services can be left open as the Transaction
+    does not raise serious doubts as to its compatibility with the internal market under any
+    plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '14'
+  quote_snippet: '(53) Multiple-play services include varying combinations of mobile telecommunications
+    services, fixed internet access, fixed telephony services and TV services. When the offer
+    includes mobile telecommunications services, the fixed-mobile bundle is also referred to
+    with the “FMC” acronym (i.e. fixed-mobile convergence). In previous decisions, the Commission
+    has considered, but ultimately left open, the question as to whether there exists a multiple-play
+    services market, distinct from each of the underlying individual telecommunication services.
+    The Commission has previously also noted that, instead of one possible market for multiple-play,
+    there could be several possible multiple-play markets: a market for fixed bundles (dual
+    play, and triple play) and another separate market for FMC bundles.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '14'
+  quote_snippet: (55) Overall, the results of the market investigation highlighted a preference
+    of Greek consumers for multiple-play bundles, although they were inconclusive with respect
+    to the existence of a distinct product market for the retail supply of multiple-play services
+    as opposed to the various bundled options.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '15'
+  quote_snippet: (58) In any event, the Commission considers that the question whether a separate
+    product market for the retail supply of multiple-play services exists and whether there
+    are separate markets for fixed bundles and FMC bundles can be left open as the Transaction
+    does not raise serious doubts as to its compatibility with the internal market under any
+    possible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '16'
+  quote_snippet: (66) In previous decisions, the Commission considered that there is a product
+    market for the wholesale supply of termination and hosting of calls to non-geographic numbers
+    without it being necessary to consider further possible segmentations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '16'
+  quote_snippet: (69) In light of the above, the Commission considers that, for the purpose
+    of this Decision, the relevant product market is the market for the wholesale supply of
+    termination and hosting of calls to non-geographic numbers that is distinct from other wholesale
+    termination services.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '17'
+  quote_snippet: '(75) In previous decisions, the Commission identified a market for the wholesale
+    supply and acquisition of TV channels. Within that market, the Commission has identified
+    separate product markets for: (i) FTA TV channels; and (ii) pay-TV channels and more recently
+    left the exact product market definition open.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '20'
+  quote_snippet: (86) Based on the above, the Commission considers that the exact definition
+    of the wholesale market for the acquisition and supply of TV channels in Greece, and in
+    particular whether it should be segmented between FTA channels and pay-TV channels, as well
+    as between premium pay-TV and basic pay-TV channels can be left open. This, in fact, would
+    not change the outcome of the assessment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '5'
+  quote_snippet: (13) In previous decisions, the Commission found that the market for the retail
+    supply of mobile telecommunications services was national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '5'
+  quote_snippet: (15) A majority of the respondents to the market investigation indicated that
+    it would be appropriate to consider that the geographic scope of the market for the retail
+    supply of mobile telecommunications services in the present case is the territory of Greece.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '5'
+  quote_snippet: (16) In light of the above, the Commission considers that, for the purpose
+    of this Decision, the relevant geographic market for the retail supply of mobile telecommunication
+    services is the territory of Greece.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '7'
+  quote_snippet: (22) In Iliad/Play Communications, the Commission found the market for the
+    retail supply of fixed telephony services to be national in scope, in particular due to
+    the importance of national regulation in the telecommunications sector and the national
+    basis upon which upstream wholesale services are provided. The Commission has also found
+    such market to be national in scope several other decisions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '7'
+  quote_snippet: (24) A majority of respondents to the market investigation indicated that–
+    it is appropriate to consider that the geographic scope of the market for the retail supply
+    of fixed telephony services in the present case is the territory of Greece. In fact, through
+    a combination of their own infrastructure and the use of wholesale services, the same competitors
+    are active throughout the whole of Greece. Furthermore, all operators charge geographically
+    uniform prices for retail fixed telephony services and provide those services under the
+    same terms and conditions at national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '7'
+  quote_snippet: (25) In light of the above, the Commission considers that, for the purpose
+    of this Decision, the relevant geographic market for the retail supply of fixed telephony
+    services is the territory of Greece.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '10'
+  quote_snippet: (36) In previous decisions, the Commission has found the market for the retail
+    supply of fixed internet access services to be national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '10'
+  quote_snippet: (38) A majority of respondents to the market investigation indicated that the
+    geographic scope of the market for the retail supply of fixed internet access services in
+    the present case would be the territory of Greece. In fact, they explain, the market is
+    based on regulated, upstream wholesale access services available at national level. Pricing
+    policies are also homogenous depending on the wholesale access offer that is used and the
+    usage profiles.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '10'
+  quote_snippet: (39) In light of the above, the Commission considers that, for the purpose
+    of this Decision, the relevant geographic market for the retail supply of fixed internet
+    access services is the territory of Greece.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '13'
+  quote_snippet: (49) In previous decisions, the Commission concluded that the market for the
+    retail supply of audio-visual services is national in scope or at most corresponds to linguistically
+    homogenous areas.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '13'
+  quote_snippet: (51) A majority of respondents to the market investigation indicated that the
+    geographic scope of the market for the retail supply of audio-visual services in the present
+    case is the territory of Greece, because domestic audio-visual retailers offer their services
+    to residential or business subscribers across the Greek territory.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '14'
+  quote_snippet: (52) In light of the above, the Commission considers that, for the purpose
+    of this Decision, the relevant geographic market for the retail supply of audio-visual services
+    is the territory of Greece.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '15'
+  quote_snippet: (59) In previous decisions, the Commission considered that the geographic scope
+    of any possible retail market for multiple-play services would be (either regional or) at
+    most national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '15'
+  quote_snippet: (61) A majority of the respondents to the market investigation indicated that
+    the geographic scope of the market for the retail supply of multiple-play services in the
+    present case is the territory of Greece. This is because the constituent elements of multiple-play
+    offers are also offered individually on a national basis.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_34
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '16'
+  quote_snippet: (62) In light of the above, the Commission considers that, for the purpose
+    of this Decision, the relevant geographic market for the retail supply of multiple play
+    services is the territory of Greece.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_35
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '17'
+  quote_snippet: (70) In previous decisions, the Commission considered that the geographic scope
+    of the wholesale market for the supply of termination and hosting of calls to non-geographic
+    numbers is national.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_36
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '21'
+  quote_snippet: (92) In previous decisions, the Commission considered that the wholesale supply
+    and acquisition of TV channels is either national in scope or comprises a broader (or narrower)
+    linguistically homogeneous area.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_37
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '21'
+  quote_snippet: (94) A majority of responses by suppliers of TV channels indicated TV channels
+    are licensed on a national basis. This is due to the fact that the broadcasting rights for
+    content included in the channels are also allocated on a national basis.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_38
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '21'
+  quote_snippet: (94) In light of the above, the Commission considers that, for the purpose
+    of this Decision, the relevant geographic market for the wholesale supply and acquisition
+    of TV channels is the territory of Greece.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_39
+  source_document_id: eu_ec_m10475_2021_decision
+  page: '62'
+  quote_snippet: (303) For the above reasons, the European Commission has decided not to oppose
+    the notified operation and to declare it compatible with the internal market and with the
+    EEA Agreement. This decision is adopted in application of Article 6(1)(b) of the Merger
+    Regulation and Article 57 of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

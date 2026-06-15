@@ -1,0 +1,394 @@
+case_id: eu_rolex_bucherer_2024
+case_name: ROLEX / BUCHERER
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2024-07-10'
+parties:
+- name: ROLEX
+  role: acquirer
+- name: BUCHERER
+  role: target
+source_documents:
+- doc_id: eu_rolex_bucherer_2024_decision
+  title: ROLEX / BUCHERER — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11246
+  pdf_url: http://publications.europa.eu/resource/cellar/67cdcf39-d4a8-11ef-be2a-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Manufacturing and supply of luxury watches
+  definition_status: defined
+  notes: The Commission confirmed the existence of a separate relevant product market for manufacturing
+    and supply of luxury watches. Segmentations by price bands and gender were considered but
+    left open, with the Commission assessing the case based on the narrowest plausible market
+    including these segmentations.
+- market_id: pm_2
+  name: Retail of luxury watches
+  definition_status: defined
+  notes: The Commission confirmed the existence of a separate relevant product market for retailing
+    of luxury watches. Segmentations by price bands, gender, and sales channels (brick-and-mortar
+    vs. online) were considered but left open, with the Commission assessing the case based
+    on the narrowest plausible market including these segmentations.
+- market_id: pm_3
+  name: Repair and maintenance services for luxury watches
+  definition_status: left_open
+  notes: The market investigation was inconclusive on whether repair and maintenance services
+    constitute a separate product market from the sale of watches, but confirmed that services
+    are specific to each watch brand. The Commission left the exact market definition open but
+    assessed on the narrowest plausible market for Rolex and Tudor luxury watches separately.
+- market_id: pm_4
+  name: Supply of spare parts for luxury watches
+  definition_status: left_open
+  notes: The market investigation found that spare parts are specific to each luxury watch brand
+    and that consumers typically request original spare parts. Whether the supply of spare parts
+    constitutes a separate market from the sale of watches was inconclusive. The Commission
+    left the exact market definition open but assessed on the narrowest plausible markets for
+    Rolex and Tudor luxury watches separately.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Manufacturing and supply of luxury watches — global/EEA-wide (scope left open)
+  definition_status: left_open
+  notes: The market investigation suggested the market is likely global in scope, but the Commission
+    left the exact geographic market definition open as the transaction did not raise serious
+    doubts under any plausible definition (EEA-wide or global).
+- market_id: gm_2
+  name: Retail of luxury watches — national/EEA-wide (scope left open)
+  definition_status: left_open
+  notes: The market investigation suggested the market is likely EEA-wide but also presented
+    elements pointing to a national scope (e.g., importance of local presence, customer buying
+    habits, differing competing retailers per country). The Commission left the exact geographic
+    market definition open as no serious doubts were raised under any plausible definition (national
+    or EEA-wide).
+- market_id: gm_3
+  name: Repair and maintenance services for Rolex and Tudor luxury watches — national (assessment
+    at national level)
+  definition_status: considered
+  notes: Market investigation indicated importance of local presence and customer preference
+    for in-person service. The Commission left the exact geographic market definition open but
+    assessed the competitive effects at the national level for the purposes of the decision.
+- market_id: gm_4
+  name: Supply of spare parts for Rolex and Tudor luxury watches — EEA-wide (assessment at EEA-wide
+    level)
+  definition_status: considered
+  notes: Market investigation showed divergent views on geographic scope (worldwide supply by
+    manufacturers vs. EEA-wide sourcing by retailers). The Commission left the exact geographic
+    market definition open but assessed the competitive effects at the EEA-wide level for the
+    purposes of the decision.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_rolex_bucherer_2024_decision
+  page: '4'
+  quote_snippet: The results of the market investigation confirmed that a separate relevant
+    product market for the manufacturing and supply of luxury watches exists.14
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_rolex_bucherer_2024_decision
+  page: '5'
+  quote_snippet: The market investigation showed that there is no consensus among market participants
+    in respect of the segmentation of the market for manufacturing and supply of luxury watches
+    based on price bands or luxury watches designed for men, women, and unisex.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_rolex_bucherer_2024_decision
+  page: '5'
+  quote_snippet: In any event, the Commission considers that for the purpose of this decision
+    the exact definition of the relevant product market can be left open, as far as the segmentations
+    based on price bands and luxury watches designed for men, women, and unisex are concerned,
+    because the Transaction does not raise serious doubts on the basis of any plausible definition
+    of the relevant product market. Therefore, for the purposes of this decision, the Commission
+    will carry out its competitive assessment on the basis of the narrowest plausible market
+    for manufacturing and supply of luxury watches including segmentation by price bands and
+    luxury watches designed for men, women, and / or unisex.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_rolex_bucherer_2024_decision
+  page: '7'
+  quote_snippet: The results of the market investigation confirmed that there is a separate
+    relevant product market for retailing of luxury watches.29
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_rolex_bucherer_2024_decision
+  page: '8'
+  quote_snippet: On balance, the results of the market investigation did not call into question
+    the Commission’s past approach to assess competitive dynamics considering segmentations
+    of the retail of luxury watches based on price bands, luxury watches designed for men, women,
+    and unisex and luxury watches sold through brick-and-mortar stores and online.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_rolex_bucherer_2024_decision
+  page: '8'
+  quote_snippet: In any event, the Commission considers that for the purpose of this decision
+    the exact definition of the relevant product market can be left open, as far as the segmentations
+    based on price bands, luxury watches designed for men, women, and unisex, and sales through
+    brick-and-mortar stores and online sales is concerned, because the Transaction does not
+    raise serious doubts on the basis of any plausible definition of the relevant product market.
+    Therefore, for the purposes of this decision, the Commission will carry out its competitive
+    assessment on the basis of the narrowest plausible market for retail of luxury watches including
+    segmentation by price bands, luxury watches designed for men, women, and/or unisex as well
+    as brick-and-mortar stores and online sales.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_rolex_bucherer_2024_decision
+  page: '10'
+  quote_snippet: The results of the market investigation are not conclusive as to whether repair
+    and maintenance services for luxury watches constitute a separate product market from the
+    sale of such watches.46
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_rolex_bucherer_2024_decision
+  page: '10'
+  quote_snippet: Nevertheless, the market investigation confirmed that there is not a single
+    market for repair and maintenance services for all watch brands, as the majority of both
+    retailers and watch manufacturers held that repair and maintenance services are specific
+    to each watch brand,50 citing significant differences in terms of spare parts, tools, equipment
+    and know-how needed.51
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_rolex_bucherer_2024_decision
+  page: '10'
+  quote_snippet: Ultimately, whether repair and maintenance services for Rolex and Tudor luxury
+    watches are separate markets from the sale of these luxury watch brands can be left open,
+    as the Transaction does not under any plausible definition give rise to serious doubts with
+    regard to repair and maintenance services. For the purposes of this decision, the Commission
+    will carry out its competitive assessment in relation to repair and maintenance services
+    on the narrowest plausible market for Rolex and Tudor luxury watches separately.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_rolex_bucherer_2024_decision
+  page: '11'
+  quote_snippet: A majority of retailers argued that the supply of spare parts for luxury watches
+    is not separate from the sale of such watches,56 with one explaining that these activities
+    are closely connected and provided by the same watch manufacturer.57
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_rolex_bucherer_2024_decision
+  page: '12'
+  quote_snippet: Ultimately, whether the supply of spare parts for Rolex and Tudor luxury watches
+    are separate markets from the sale of these luxury watch brands can be left open, as the
+    Transaction does not under any plausible definition give rise to serious doubts with regard
+    to the supply of spare parts. For the purposes of this decision, the Commission will carry
+    out its competitive assessment in relation to the supply of spare parts on the narrowest
+    plausible markets for Rolex and Tudor luxury watches separately.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_rolex_bucherer_2024_decision
+  page: '6'
+  quote_snippet: As the Transaction does not give rise to serious doubts under any plausible
+    geographic market definition (i.e. EEA-wide or global), it is not necessary to conclude
+    on the exact scope of the geographic market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_rolex_bucherer_2024_decision
+  page: '9'
+  quote_snippet: The results of the market investigation showed that despite the majority of
+    market participants considering the market for retail of luxury watches as EEA-wide in scope
+    with a view to the competitive conditions, there are several elements that point to the
+    national scope of this market, such as the importance of local presence, end customers typically
+    buying luxury watches from retailers in their home country, and the identity of competing
+    retailers being to a large extent different from country to country.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_rolex_bucherer_2024_decision
+  page: '9'
+  quote_snippet: In any event, as the Transaction does not give rise to serious doubts under
+    any plausible geographic market definition (i.e. national or EEA-wide), it is not necessary
+    to conclude on the exact scope of the geographic market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_rolex_bucherer_2024_decision
+  page: '11'
+  quote_snippet: The exact geographic market definition can be left open, as the Transaction
+    does not under any plausible market definition give rise to serious doubts with regard to
+    repair and maintenance services. For the purposes of this decision, the Commission will
+    carry out its competitive assessment at national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_rolex_bucherer_2024_decision
+  page: '12'
+  quote_snippet: In the market investigation, a majority of watch manufacturers submitted that
+    they deliver spare parts to customers located worldwide, while a majority of retailers held
+    that they source spare parts from watch manufacturers located across the EEA.64
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_rolex_bucherer_2024_decision
+  page: '12'
+  quote_snippet: The exact geographic market definition can be left open, as the Transaction
+    does not give rise to serious doubts with regard to spare parts. For the purposes of this
+    decision, the Commission will carry out its competitive assessment at the EEA-wide level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_rolex_bucherer_2024_decision
+  page: '22'
+  quote_snippet: Thus, the Commission concludes that the Transaction does not give rise to serious
+    doubts of input foreclosure.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_rolex_bucherer_2024_decision
+  page: '24'
+  quote_snippet: Thus, the Commission concludes that the Transaction does not give rise to serious
+    doubts in relation to customer foreclosure.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+ai_summary: null
+case_type: merger
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

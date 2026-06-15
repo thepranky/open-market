@@ -1,0 +1,375 @@
+case_id: eu_apollo_management_tenneco_2022
+case_name: APOLLO MANAGEMENT / TENNECO
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2022-10-27'
+parties:
+- name: APOLLO MANAGEMENT
+  role: acquirer
+- name: TENNECO
+  role: target
+source_documents:
+- doc_id: eu_apollo_management_tenneco_2022_decision
+  title: APOLLO MANAGEMENT / TENNECO — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10712
+  pdf_url: http://publications.europa.eu/resource/cellar/806ca66d-eb48-11ed-a05c-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: PCW blankets
+  definition_status: left_open
+  notes: The Commission considered various segmentations including dry-laid versus wet-laid
+    PCW blankets, needle-punched versus non-needle-punched, and PCW blankets versus alternative
+    insulating materials. While the exact market definition was left open, the assessment focused
+    on dry-laid PCW blankets on a precautionary basis.
+- market_id: pm_2
+  name: Insulation components for automobile exhaust systems (PCW support mats)
+  definition_status: left_open
+  notes: The Commission confirmed the manufacture of PCW support mats as a separate market from
+    PCW blankets. It left open whether supporting mats made of alternative materials or different
+    types of PCW (dry-laid vs wet-laid) should belong to the same market, assessing the transaction
+    on the narrowest plausible market for dry-laid PCW supporting mats.
+- market_id: pm_3
+  name: Automobile exhaust systems (hot-ends)
+  definition_status: left_open
+  notes: The Commission previously left open whether exhaust systems should be one market or
+    segmented by hot-ends/other components, and whether hot-ends should be segmented by gasoline/diesel
+    engines. For this case, it left the definition open but assessed the transaction considering
+    the narrowest plausible markets for hot-ends separately for gasoline, diesel, and CTOHs,
+    with a focus on gasoline.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Dry-laid PCW blankets — worldwide
+  definition_status: considered
+  notes: The Commission considered the market to be worldwide based on sourcing patterns, global
+    operations of manufacturers, insignificant transport costs, and lack of hindering regulations,
+    despite some price differences across regions.
+- market_id: gm_2
+  name: Dry-laid PCW support mats — worldwide
+  definition_status: considered
+  notes: The Commission considered the market to be worldwide, based on market investigation
+    findings that hot-end manufacturers source globally, suppliers are active globally, transport
+    costs are insignificant, and there are no hindering regulations, despite some regional price
+    differences.
+- market_id: gm_3
+  name: Automobile exhaust systems (hot-ends) — at least EEA-wide
+  definition_status: considered
+  notes: The Commission previously left the geographic market for automotive components to OEMs
+    open, but found it to be at least EEA-wide. It maintained this approach, conducting its
+    assessment on an at least EEA-wide basis without departing from past findings.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_apollo_management_tenneco_2022_decision
+  page: '9'
+  quote_snippet: (44) The Commission considers that, for the purposes of the present case, it
+    may be left open whether PCW belongs to the same product market with other types of insulating
+    materials, and whether, within the plausible market for PCW blankets, there should be a
+    further distinction between dry-laid and wet-laid PCW, as the Transaction does not lead
+    to serious doubts as to its compatibility with the internal market, regardless of the market
+    definition adopted. Since MAFTEC only manufactures dry-laid PCW blankets, the Commission
+    will assess the Transaction under the most precautionary basis, considering a market for
+    dry-laid PCW blankets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_apollo_management_tenneco_2022_decision
+  page: '6'
+  quote_snippet: (24) The relevant product market comprises all products which are regarded
+    as interchangeable or substitutable by the customer, by reason of the products’ characteristics,
+    their prices and their intended use.11 The Commission has therefore investigated whether,
+    from a demand-side perspective, dry-laid PCW blankets are regarded as interchangeable with
+    (i) PCW mats or other forms of PCW, (ii) blankets made from other materials, and (iii) wet-laid
+    PCW blankets, and more narrowly, (iv) whether a distinction between needle-punched and non-needle-punched
+    PCW blankets was warranted. The Commission has further taken considerations of supply-side
+    substitutability and potential competition into account.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_apollo_management_tenneco_2022_decision
+  page: '7'
+  quote_snippet: (32) From a supply-side perspective, MAFTEC is currently the most important
+    manufacturer of PCW blankets globally. MAFTEC currently produces [80-90]% of all dry-laid
+    PCW blankets,23 [90-100]% of which are processed into support mats for the automotive industry.24
+    As also noted at paragraph (21) above, MAFTEC does not manufacture blankets made of materials
+    other than PCW. A switching in manufacturing would require significant investment, which
+    MAFTEC is unable to realize in a timely and sufficient manner [proprietary production details].25
+    It follows that there is no sufficient supply-side substitution between PCW blankets and
+    blankets made of alternative materials.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_apollo_management_tenneco_2022_decision
+  page: '11'
+  quote_snippet: (52) The market investigation confirmed that the manufacture of PCW support
+    mats constitutes a market that is separate from the market for the manufacture of PCW blankets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_apollo_management_tenneco_2022_decision
+  page: '12'
+  quote_snippet: (57) With regard to whether supporting mats made of alternative materials to
+    PCW, as well as supporting mats made out of dry-laid and wet-laid PCW should be considered
+    to belong to the same market, the same considerations as under (25) to (38) for PCW blankets
+    apply. The Commission therefore considers that the exact market definition can be left open,
+    as the Transaction does not lead to serious doubts as to its compatibility with the internal
+    market, regardless of the market definition retained. The Commission will, on a precautionary
+    basis, assess the Transaction considering the narrowest plausible market for dry-laid PCW
+    supporting mats.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_apollo_management_tenneco_2022_decision
+  page: '11'
+  quote_snippet: (53) First, the market investigation confirmed that processing PCW blankets
+    into mats is a capital-intensive process that requires specific equipment and know-how,
+    which is different from that required for the manufacture of PCW blankets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_apollo_management_tenneco_2022_decision
+  page: '12'
+  quote_snippet: (63) The Commission has previously examined, but ultimately left open, whether
+    exhaust systems should be considered as one single market or segmented between hot-ends
+    and other components.59 The Commission has also considered but left open, whether hot-ends
+    should be further segmented between (i) hot-ends for gasoline engines and (ii) hot-ends
+    for diesel engines.60
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_apollo_management_tenneco_2022_decision
+  page: '13'
+  quote_snippet: (65) The results of the market investigation also did not provide reasons for
+    the Commission to depart from the findings in its past decisions. For the purposes of this
+    decision the exact market definition for the manufacture and supply of automobile exhaust
+    systems can be left open, as the Transaction does not lead to serious doubts as to its compatibility
+    with the internal market, regardless of the market definition adopted.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_apollo_management_tenneco_2022_decision
+  page: '13'
+  quote_snippet: (67) The Commission will therefore assess the Transaction considering the narrowest
+    plausible markets for hot-ends separately for gasoline engine cars, diesel engine cars and
+    CTOHs, with a particular focus on gasoline engine cars, noting that the Commission’s assessment
+    does not change regardless of the specific segment of hot-ends.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_apollo_management_tenneco_2022_decision
+  page: '10'
+  quote_snippet: (48) On the basis of the foregoing, the Commission will conduct its assessment
+    of the Transaction considering a market for dry-laid PCW blankets that is worldwide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_apollo_management_tenneco_2022_decision
+  page: '10'
+  quote_snippet: (46) The results of the market investigation confirmed that manufacturers of
+    PCW support mats source PCW blankets on a worldwide level.38 The Notifying Party confirms
+    that MAFTEC, the most important supplier of dry-laid PCW blankets, supplies its blankets
+    on a worldwide basis.39 The majority of manufacturers of PCW support mats responded that
+    transportation costs for their products are insignificant, and in any case below 10% of
+    the product’s final price,40 while there are no regulations, certification processes or
+    other factors that would hinder the import of PCW blankets into the EEA from any region
+    worldwide.41
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_apollo_management_tenneco_2022_decision
+  page: '9'
+  quote_snippet: '(45) The Notifying Party submits that the market for the manufacture and supply
+    of PCW blankets is global in scope for the following reasons: (i) MAFTEC manufactures PCW
+    blankets in two plants in Japan and ships them worldwide; (ii) other manufacturers of PCW
+    blankets also operate on a worldwide basis; (iii) the transport costs do not generally represent
+    a material percentage of the final price; (iv) prices are uniform across geographies; and
+    (iv) there are no national regulations or tariffs that hinder the imports of blankets.37'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_apollo_management_tenneco_2022_decision
+  page: '12'
+  quote_snippet: (62) On the basis of the foregoing, the Commission will conduct its assessment
+    of the Transaction considering a market for, dry-laid PCW support mats that is worldwide
+    in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_apollo_management_tenneco_2022_decision
+  page: '12'
+  quote_snippet: (60) The results of the market investigation confirmed that manufacturers of
+    hot-ends source PCW support mats on a worldwide level.54 Suppliers of PCW mats confirmed
+    that they are active globally.55 The majority of manufacturers of hot-ends responded that
+    transportation costs for PCW support mats are insignificant and in any case below 10% of
+    the final price,56 while there are no regulations, certification processes or other factors
+    that would hinder the import of PCW support mats into the EEA from any region worldwide.57
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_apollo_management_tenneco_2022_decision
+  page: '12'
+  quote_snippet: (59) For the same reasons set out at paragraph (45) above, the Notifying Party
+    submits that the market should be considered worldwide in scope.53
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_apollo_management_tenneco_2022_decision
+  page: '13'
+  quote_snippet: (71) In line with its previous findings, the Commission will conduct its assessment
+    on the basis of an at least EEA-wide market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_apollo_management_tenneco_2022_decision
+  page: '13'
+  quote_snippet: (68) The Commission has previously found the market for the sale of automotive
+    components to OEMs to be at least EEA-wide, leaving the exact market definition open.62
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_apollo_management_tenneco_2022_decision
+  page: '13'
+  quote_snippet: (70) The results of the market investigation also did not provide reasons for
+    the Commission to depart from the findings in its past decisions. For the purposes of this
+    decision, the exact scope of the market for the manufacture and supply of automobile exhaust
+    systems can be left open, as the Transaction does not lead to serious doubts as to its compatibility
+    with the internal market, regardless of the market definition adopted.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

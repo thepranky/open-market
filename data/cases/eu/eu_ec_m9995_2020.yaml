@@ -1,0 +1,196 @@
+case_id: eu_ec_m9995_2020
+case_name: M.9995
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2020-12-04'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9995_2020_decision
+  title: M.9995 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9995
+  pdf_url: http://publications.europa.eu/resource/cellar/afbb80c1-5cbc-11eb-b487-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Finished Dose Pharmaceuticals (FDPs) for the treatment of CNS disorders
+  definition_status: left_open
+  notes: The Commission considered previous decisions using the Anatomical Therapeutic Classification
+    (ATC) system, specifically ATC3 and ATC4 levels, or groups of molecules or individual molecules.
+    However, for the purpose of this Decision, it was not necessary to conclude on the exact
+    product market definition.
+- market_id: pm_2
+  name: Contract Development and Manufacturing Organisation (CDMO) services
+  definition_status: left_open
+  notes: The Commission considered distinguishing CDMO for FDPs from CDMO for APIs, and further
+    segmentations for FDP CDMO based on pharmaceutical form, manufacturing conditions, API type,
+    and delivery mechanism. However, for the purpose of this Decision, it was not necessary
+    to conclude on the exact product market definition.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Finished Dose Pharmaceuticals (FDPs) — national (EU Member States affected)
+  definition_status: defined
+  notes: null
+- market_id: gm_2
+  name: Contract Development and Manufacturing Organisation (CDMO) services — worldwide or at
+    least EEA-wide
+  definition_status: defined
+  notes: null
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9995_2020_decision
+  page: '3'
+  quote_snippet: (7) In its previous decisions,4 the Commission used the Anatomical Therapeutic
+    Classification (“ATC”) system as the basis for the product market definition. The first
+    level (ATC 1) is the most general and the fourth level (ATC 4) the most detailed. More specifically,
+    the Commission referred to the ATC3 level, where pharmaceuticals are grouped in terms of
+    their therapeutic indications, i.e. their intended use, as the starting point for defining
+    the relevant product market, since these groups of products generally have the same therapeutic
+    indication and cannot be substituted by products belonging to other ATC 3 classes.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9995_2020_decision
+  page: '3'
+  quote_snippet: (9) The Notifying Party suggests to follow this approach in the present case.
+    It submits that its products fall into the C4A, N2B, N4A, N5A, N6A, N5B, N5C and N6D classifications
+    at ATC3 level and into the C4A1, N2B0, N4A0, N5A1, N5A9, N5B1, N6A9, N5C0 and N6D0 classifications
+    at ATC4 level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9995_2020_decision
+  page: '3'
+  quote_snippet: (10) In any event, for the purposes of this Decision, it is not necessary to
+    conclude on the exact product market definition for FDPs for the treatment of CNS disorders,
+    as, regardless of the market definition considered, the Transaction does not give rise to
+    serious doubts as to its compatibility with the internal market or the functioning of the
+    EEA agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9995_2020_decision
+  page: '4'
+  quote_snippet: (15) As regards the CDMO market for FDPs, further segmentations were considered
+    in relation to (i) the pharmaceutical form manufactured (e.g. solids, semi-solids, injectables),
+    (ii) the conditions of manufacture (toxicity, sterile environment, etc.), (iii) the type
+    of API used for its production and the delivery mechanism used (swallowing, intravenous,
+    injection, etc.).11 The Notifying Party suggests to follow this approach in the present
+    case.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9995_2020_decision
+  page: '4'
+  quote_snippet: (16) In any event, for the purposes of this Decision, it is not necessary to
+    conclude on the exact product market definition for CDMO services, as regardless of the
+    market definition considered, the Transaction does not give rise to serious doubts as to
+    its compatibility with the internal market and the functioning of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9995_2020_decision
+  page: '3'
+  quote_snippet: (11) According to Commission precedents,8 the relevant geographic market for
+    FDPs is national in scope, due to the regulatory barriers which result inter alia from the
+    national reimbursement systems of the EU Member States.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9995_2020_decision
+  page: '3'
+  quote_snippet: (12) The Notifying Party suggests to follow this approach in the present case.
+    The Commission did not find any reason to depart from this approach in the present case.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9995_2020_decision
+  page: '4'
+  quote_snippet: (17) The relevant geographic market for CDMO services according to Commission
+    precedents was found to be worldwide or at least EEA-wide12, as CDMO services are generally
+    procured anywhere in the EEA, regardless of the EEA country where the pharmaceutical products
+    are subsequently marketed, given the economics of the services under consideration, as well
+    as the lack of any trade or other barriers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9995_2020_decision
+  page: '4'
+  quote_snippet: (18) The Notifying Party suggests to follow this approach in the present case.
+    The Commission did not find any reason to depart from this approach in the present case.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

@@ -1,0 +1,224 @@
+case_id: eu_rwe_newco_eemshaven_2022
+case_name: RWE / NEWCO EEMSHAVEN
+authority: European Commission
+jurisdiction: EU
+sector: energy
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2022-12-21'
+parties:
+- name: RWE
+  role: acquirer
+- name: NEWCO EEMSHAVEN
+  role: target
+source_documents:
+- doc_id: eu_rwe_newco_eemshaven_2022_decision
+  title: RWE / NEWCO EEMSHAVEN — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10713
+  pdf_url: http://publications.europa.eu/resource/cellar/a5de0bd1-a305-11ed-b508-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Generation and wholesale supply of electricity
+  definition_status: defined
+  notes: The Commission defines this market as encompassing both the trading on the wholesale
+    market of generated electricity within a certain geographic market and electricity physically
+    imported via interconnectors, irrespective of the source of generation. A further segmentation
+    by hours of the day (peak/off-peak) or by source of electricity production (renewable/conventional)
+    was considered but not warranted.
+- market_id: pm_2
+  name: Balancing and ancillary services
+  definition_status: defined
+  notes: The Commission considers the provision of balancing and ancillary services to be a
+    distinct product market from the generation and wholesale supply of electricity.
+- market_id: pm_3
+  name: aFRR
+  definition_status: defined
+  notes: Within balancing and ancillary services, the Commission considers FCR, aFRR, and mFRR
+    to constitute separate product markets.
+- market_id: pm_4
+  name: aFRR upwards and downwards regulation
+  definition_status: left_open
+  notes: The market investigation was inconclusive on whether separate markets exist for upwards
+    and downwards regulation of aFRR, and the Commission left the question open.
+- market_id: pm_5
+  name: Congestion management services
+  definition_status: defined
+  notes: The Commission considers the market for the provision of congestion management services
+    to be distinct from the market for balancing and ancillary services due to different purposes
+    and bidding processes.
+- market_id: pm_6
+  name: Redispatching and capacity restriction agreements
+  definition_status: left_open
+  notes: The Commission left open whether the product market for congestion management services
+    should be segmented between redispatching and capacity restriction agreements.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Generation and wholesale supply of electricity — national (the Netherlands affected)
+  definition_status: defined
+  notes: The Commission's assessment, including a price-equality analysis, found that despite
+    interconnections, the geographic market is national in scope, corresponding to the Dutch
+    bidding zone. It also concluded there was no justification for a narrower-than-national
+    market.
+- market_id: gm_2
+  name: aFRR — national (the Netherlands affected)
+  definition_status: considered
+  notes: Based on previous practice and market investigation, the Commission conducted its competitive
+    assessment for aFRR at the national level.
+- market_id: gm_3
+  name: Congestion management services — national (the Netherlands affected)
+  definition_status: considered
+  notes: The Commission considers the geographic scope to be at least national, acknowledging
+    that specific congestion events have local elements and solutions might sometimes come from
+    cross-border areas. The question of a wider scope was left open.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_rwe_newco_eemshaven_2022_decision
+  page: '3'
+  quote_snippet: The Commission has a consolidated case practice of defining the product market
+    for the generation and wholesale supply of electricity as encompassing both (i) the trading
+    on the wholesale market of the generated electricity within a certain geographic market9
+    and (ii) the electricity that is physically imported into this geographic market via interconnectors,
+    irrespective of the source of generated electricity (such as nuclear, lignite, wind, solar,
+    etc.).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_rwe_newco_eemshaven_2022_decision
+  page: '5'
+  quote_snippet: For the purposes of this decision, and in light of the above, the Commission
+    finds no reason to deviate from its consolidated case practice. The Commission therefore
+    considers that the overall market for generation and wholesale supply of electricity constitutes
+    a separate market encompassing both the trading on the wholesale market of the generated
+    electricity within a certain geographic market and the electricity that is physically imported
+    into this geographic market via interconnectors, irrespective of the source of generated
+    electricity (such as nuclear, lignite, wind, solar, etc.).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_rwe_newco_eemshaven_2022_decision
+  page: '15'
+  quote_snippet: The Commission considers the market for the provision of congestion management
+    services to be a distinct market, separate from the market for the provision of balancing
+    and ancillary services. Potential congestion and imbalance in the network are different
+    problems for which TenneT is responsible and from the demand-side perspective of TenneT
+    the provision of such services are for different purposes. From a supply-side perspective,
+    there are different bidding processes for each of imbalance and congestion (see above paragraphs
+    (32) and (51) respectively).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_rwe_newco_eemshaven_2022_decision
+  page: '15'
+  quote_snippet: It can be left open whether the product market for the provision of congestion
+    management services should be segmented between redispatching and the use of capacity restriction
+    agreements as the Transaction does not raise serious doubts as to its compatibility with
+    the internal market and the functioning of the EEA Agreement, regardless of the exact product
+    market definition adopted.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_rwe_newco_eemshaven_2022_decision
+  page: '5'
+  quote_snippet: The Commission has previously defined the geographic market for the generation
+    and wholesale supply of electricity as national in scope.19 However, the Commission has
+    also recognised that the presence of a sufficiently large interconnection capacity between
+    Member States may justify a broader geographical scope.20 This could also be the case if
+    two or more Member States belong to the same bidding zone.21
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_rwe_newco_eemshaven_2022_decision
+  page: '8'
+  quote_snippet: In light of the foregoing, the Commission considers that the appropriate scope
+    of the market for the generation and wholesale supply of electricity regarding the Netherlands
+    is national, corresponding to the Dutch bidding zone, while acknowledging the reality of
+    flows from neighbouring bidding zones.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_rwe_newco_eemshaven_2022_decision
+  page: '16'
+  quote_snippet: The Commission considers that the geographic scope of the market for congestion
+    management services in relation to the Netherlands is at least national. While each specific
+    congestion event relates to a specific location, in general generation assets throughout
+    the Netherlands are active on the supply side of congestion management services. TenneT,
+    the only purchaser on the demand side, is also active on a national level. It can be left
+    open whether the geographic scope is wider than national as, based on the conservative assumption
+    of a national market, the Transaction does not lead to serious doubts as to its compatibility
+    with the internal market and the functioning of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_rwe_newco_eemshaven_2022_decision
+  page: '31'
+  quote_snippet: Therefore, the Commission considers that the Transaction does not raise serious
+    doubts as to its compatibility with the internal market or the functioning of the EEA Agreement
+    with respect to the market for the generation and wholesale supply of electricity in the
+    Netherlands.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

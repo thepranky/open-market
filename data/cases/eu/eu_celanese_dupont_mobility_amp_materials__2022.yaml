@@ -1,0 +1,303 @@
+case_id: eu_celanese_dupont_mobility_amp_materials__2022
+case_name: CELANESE / DUPONT (MOBILITY &amp; MATERIALS BUSINESS
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2022-10-11'
+parties:
+- name: CELANESE
+  role: acquirer
+- name: DUPONT (MOBILITY &amp; MATERIALS BUSINESS
+  role: target
+source_documents:
+- doc_id: eu_celanese_dupont_mobility_amp_materials__2022_decision
+  title: CELANESE / DUPONT (MOBILITY &amp; MATERIALS BUSINESS — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10721
+  pdf_url: http://publications.europa.eu/resource/cellar/401c80e4-0379-11ee-87ec-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: PA6.6 EP
+  definition_status: considered
+  notes: The Commission considered PA6.6 EP as a single product market distinct from PA6.6 BP,
+    PA6 EP, and not further sub-segmented by types or applications, for the purpose of assessing
+    the Transaction. This was based on previous decisional practice and market investigation
+    findings regarding limited substitutability.
+- market_id: pm_2
+  name: PA6.6 BP
+  definition_status: considered
+  notes: The Commission considered PA6.6 BP as a distinct product market from PA6.6 EP, based
+    on limited demand and supply-side substitutability and different production processes. PA6.6
+    BP serves as an input for PA6.6 EP.
+- market_id: pm_3
+  name: PA6 EP
+  definition_status: considered
+  notes: The Commission considered PA6 EP as a distinct product market from PA6.6 EP, based
+    on previous decisional practice and market investigation findings regarding different properties,
+    need for tooling changes, and limited price substitutability.
+- market_id: pm_4
+  name: TPC
+  definition_status: considered
+  notes: The Commission considered TPC as a separate product market from other thermoplastic
+    elastomers (like POE, TPS, TPU) due to limited demand-side substitutability and unique mechanical
+    and chemical properties, for the purpose of its assessment.
+- market_id: pm_5
+  name: TPC BP / TPC EP
+  definition_status: left_open
+  notes: The Commission investigated whether TPC should be further segmented into TPC BP and
+    TPC EP, noting potential for separate markets based on demand-side substitutability and
+    production process differences. However, the question was left open due to concerns for
+    TPC overall and Celanese's commitment to divest its global TPC business.
+- market_id: pm_6
+  name: Types of TPC
+  definition_status: left_open
+  notes: The Commission investigated whether TPC should be further sub-segmented by types (e.g.,
+    flame retardant, heat stabilised), noting differences between types but also that most producers
+    can readily produce most types. The question was left open due to concerns for TPC overall
+    and the divestment commitment.
+geographic_markets_considered:
+- market_id: gm_1
+  name: PA6.6 EP — EEA-wide
+  definition_status: considered
+  notes: The Commission considered the geographic market for PA6.6 EP to be EEA-wide, in line
+    with previous decisional practice and market investigation findings regarding sales output,
+    price differences between regions, and customer sourcing patterns.
+- market_id: gm_2
+  name: TPC — EEA-wide
+  definition_status: left_open
+  notes: The Commission considered that the exact geographic scope of the market for TPC could
+    be left open, given that the Transaction would raise concerns under both EEA-wide and global
+    market definitions. Market investigation indicated an EEA-wide scope based on differing
+    market conditions and customer sourcing within the EEA.
+- market_id: gm_3
+  name: TPC — Global
+  definition_status: left_open
+  notes: The Commission considered that the exact geographic scope of the market for TPC could
+    be left open, given that the Transaction would raise concerns under both EEA-wide and global
+    market definitions. The Notifying Party had submitted that the market was EEA-wide or global
+    in scope.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_celanese_dupont_mobility_amp_materials__2022_decision
+  page: '4'
+  quote_snippet: Therefore, and in line with previous decisional practice, the Commission considers
+    for the purpose of assessing the Transaction, a market for PA6.6 EP distinct from that of
+    PA6.6 BP.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_celanese_dupont_mobility_amp_materials__2022_decision
+  page: '5'
+  quote_snippet: Therefore, and in line with previous decisional practice, the Commission considers
+    for the purpose of assessing the Transaction, the market for PA6.6 EP is distinct from that
+    for PA6 EP.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_celanese_dupont_mobility_amp_materials__2022_decision
+  page: '5'
+  quote_snippet: Therefore, and in line with previous decisional practice, the Commission considers
+    for the purpose of assessing the Transaction, one single product market for PA6.6 EP, without
+    further sub-segmenting by types of PA6.6 EP.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_celanese_dupont_mobility_amp_materials__2022_decision
+  page: '4'
+  quote_snippet: The market investigation has shown that, in line with previous decisional practice,
+    PA6.6 BP and PA6.6 EP constitute separate product markets. Indeed, there is limited evidence
+    of demand and supply-side substitutability between these two products. Rather, PA6.6 BP
+    serves as an input into the production of PA6.6 EP.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_celanese_dupont_mobility_amp_materials__2022_decision
+  page: '4'
+  quote_snippet: The market investigation has also shown that, in line with previous decisional
+    practice, PA6 EP and PA6.6 EP constitute separate product markets. Indeed, a majority of
+    customers consider that they are not substitutable.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_celanese_dupont_mobility_amp_materials__2022_decision
+  page: '6'
+  quote_snippet: The market investigation has indicated that, in line with the Commission’s
+    precedents, the relevant geographic market is EEA-wide. Indeed, the majority of competitors
+    have indicated that, for their production centres located in the EEA, around 81-100% of
+    their PA6.6 EP output is sold to customers located in the EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_celanese_dupont_mobility_amp_materials__2022_decision
+  page: '6'
+  quote_snippet: Therefore, in line with previous decisional practice, and for the purposes
+    of this Transaction, the Commission considers that the relevant geographic market is EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_celanese_dupont_mobility_amp_materials__2022_decision
+  page: '13'
+  quote_snippet: The market investigation points towards the fact that the geographic market
+    for TPC would be EEA-wide in scope. Indeed, the majority of customers who have replied to
+    the market investigation that market conditions at a global level differ from market conditions
+    in the EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_celanese_dupont_mobility_amp_materials__2022_decision
+  page: '13'
+  quote_snippet: In any event, the Commission considers that, for the purpose of assessing the
+    Transaction, the exact geographic scope of the market can be left open, given that the Transaction
+    would raise concerns under both geographic market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_celanese_dupont_mobility_amp_materials__2022_decision
+  page: '13'
+  quote_snippet: The Notifying Party considers that markets for TPC are EEA-wide or global in
+    scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_celanese_dupont_mobility_amp_materials__2022_decision
+  page: '13'
+  quote_snippet: In any event, the Commission considers that, for the purpose of assessing the
+    Transaction, the exact geographic scope of the market can be left open, given that the Transaction
+    would raise concerns under both geographic market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_celanese_dupont_mobility_amp_materials__2022_decision
+  page: '9'
+  quote_snippet: Therefore, the Commission considers that the market structure, as described
+    above, indicates the absence of serious doubts as to the compatibility of the Transaction
+    with the internal market and the functioning of the EEA Agreement due to horizontal competition
+    concerns.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_celanese_dupont_mobility_amp_materials__2022_decision
+  page: '11'
+  quote_snippet: Based on the above, and in particular in light of (i) the moderate combined
+    market shares of the Parties and a moderate concentration level of the market, (ii) the
+    lack of closeness of competition between the Parties pre-Transaction, and (iii) the fact
+    that a number of credible competitors will remain present in the market, the Commission
+    concludes that the Transaction does not raise serious doubts as to its compatibility with
+    the internal market in relation to an EEA-wide market for PA6.6 EP.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_celanese_dupont_mobility_amp_materials__2022_decision
+  page: '29'
+  quote_snippet: The Commission considers that, for the reasons set out below, the Final Commitments
+    remove the serious doubts previously identified as to the compatibility of the Transaction
+    with the internal market with respect to the manufacture and supply of TPC at EEA-level
+    and global level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

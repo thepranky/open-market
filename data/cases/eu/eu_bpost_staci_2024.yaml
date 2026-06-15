@@ -1,0 +1,279 @@
+case_id: eu_bpost_staci_2024
+case_name: BPOST / STACI
+authority: European Commission
+jurisdiction: EU
+sector: transport
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2024-07-30'
+parties:
+- name: BPOST
+  role: acquirer
+- name: STACI
+  role: target
+source_documents:
+- doc_id: eu_bpost_staci_2024_decision
+  title: BPOST / STACI — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11558
+  pdf_url: http://publications.europa.eu/resource/cellar/7925eba7-b318-11ef-acb1-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Small package delivery services
+  definition_status: left_open
+  notes: The Commission considered segmentations for small package delivery services into express
+    vs deferred, domestic vs international (further segmented into international intra-EEA and
+    international extra-EEA), and by customer type (C2X, B2X, B2B, B2C). The market investigation
+    confirmed these segmentations to be accurate in Belgium. The Commission assessed the effects
+    of the Transaction by reference to the narrowest plausible product market definitions, specifically
+    'domestic deferred B2C small package delivery services in Belgium' for the vertical assessment.
+- market_id: pm_2
+  name: Contract logistics services
+  definition_status: left_open
+  notes: The Commission previously defined a separate market for contract logistics services.
+    It considered segmentations into (i) cross-border and domestic contract logistics, (ii)
+    by reference to the type of good handled or industry serviced (e.g., consumer goods), and
+    (iii) by type of provider (LLPs, 3PLs, 4PLs). The market investigation confirmed these plausible
+    segmentations remain relevant. The Commission assessed the effects of the Transaction by
+    reference to the narrowest plausible product market delimitations, including segmentations
+    based on type of operations, type of good handled (e.g., consumer goods), and type of logistics
+    provider.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Small package delivery services — national/EEA-wide
+  definition_status: left_open
+  notes: The Commission's previous practice found the market to be national. The market investigation
+    delivered mixed results, with a majority supporting national or EEA-wide, and a small majority
+    within that group supporting national. A small minority considered it worldwide. The Commission
+    left the exact scope open between national and EEA-wide, but assessed the effects by reference
+    to national markets as the narrowest plausible delimitation.
+- market_id: gm_2
+  name: Contract logistics services — national/EEA-wide
+  definition_status: left_open
+  notes: The Commission's previous practice found the market to be EEA-wide, leaving open plausible
+    segmentations into national markets. The market investigation results were mixed, with most
+    respondents supporting EEA-wide, but a third indicating national level competition. The
+    Commission left the exact scope open between national and EEA-wide, and assessed the effects
+    by reference to both national markets and the EEA level.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_bpost_staci_2024_decision
+  page: '4'
+  quote_snippet: (14) The Commission has in its previous decisional practice considered distinguishing
+    between express (that is to say, committed to delivery by next day/end of day at the latest)
+    and deferred (or standard) small package delivery services. This distinction was notably
+    based on the fact that the two services were provided with a different infrastructure, that
+    a significant number of customers depend on express delivery services, and that express
+    delivery services are also considerably more expensive. The Commission also considered a
+    plausible sub-segmentation of the express small package delivery services market according
+    to the specific time of delivery (such as mid-day delivery and end-of-day delivery), though
+    the Commission ultimately left the market definition open..
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_bpost_staci_2024_decision
+  page: '5'
+  quote_snippet: (20) The large majority of respondents to the market investigation that expressed
+    a view confirmed the market segmentations for small package delivery services (as previously
+    set forth in the Commission’s decisional practice) to be accurate in Belgium today.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_bpost_staci_2024_decision
+  page: '5'
+  quote_snippet: '(21) In light of the above, and for the purposes of this decision, the Commission
+    considers that the exact scope of the product market definition for the supply of small
+    package delivery services can be left open, since the Transaction does not raise serious
+    doubts as to its compatibility with the internal market under any plausible product market
+    definition. The Commission will assess the effects of the Transaction by reference to the
+    narrowest plausible product market definitions i.e. the markets for the provision of small
+    package delivery services that are: express, deferred, domestic, international, international
+    intra-EEA, international extra-EEA, C2X, B2X, B2B and/or B2C.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_bpost_staci_2024_decision
+  page: '7'
+  quote_snippet: (31) The Commission previously considered that contract logistics services
+    is the part of the supply chain process that plans, implements and controls the efficient,
+    effective flow and storage of goods, services and related information from the point of
+    origin to the point of consumption in order to meet customers’ requirements. This part of
+    the supply chain has as its focal point the provision of warehousing and management of the
+    flow of goods for customers. Hence, the Commission has previously defined a separate market
+    for contract logistics services in light of supply-side considerations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_bpost_staci_2024_decision
+  page: '9'
+  quote_snippet: (38) In light of the above, and for the purposes of this decision, the Commission
+    considers that the exact scope of the product market definition for the supply of contract
+    logistics services can be left open with respect to its plausible sub-segmentations as concerns
+    the further segmentations into (i) into cross-border and domestic logistics; (ii) by the
+    reference to the type of good handled or the industry serviced or; (iii) into LLPs, 3PLs
+    and 4PLs, since the Transaction does not raise serious doubts as to its compatibility with
+    the internal market under any plausible product market definition. The Commission will assess
+    the effects of the Transaction by reference to the narrowest plausible product market delimitations,
+    i.e., the markets for the provision of contract logistics services segmented based on the
+    (i) type of operations (domestic or cross-border), (ii) type of good handled or industry
+    serviced (i.e., consumer goods), and (iii) type of logistics provider (LLPs, 3PLs and 4PLs).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_bpost_staci_2024_decision
+  page: '6'
+  quote_snippet: (22) In previous decisions, the Commission found that a market for small package
+    delivery services, including all plausible narrower segments, is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_bpost_staci_2024_decision
+  page: '6'
+  quote_snippet: (25) The market investigation delivered mixed results as to the geographic
+    scope of the market. The majority of respondents that expressed a view submitted that the
+    relevant geographic scope of the market for small package delivery services (and any segmentations
+    thereof) is either national or EEA-wide. Within this group, a small majority submitted that
+    the market should be national. For example, one respondent indicated that “in some case[s]
+    competition might take place on a national level, in some on a broader, e.g. EEA level”.
+    Another respondent specified that markets “are mostly national, with international players
+    […] competing against the incumbent national post players”.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_bpost_staci_2024_decision
+  page: '6'
+  quote_snippet: (27) In any event, the Commission considers that, for the purposes of this
+    decision, the exact scope of the geographic market definition regarding the supply of small
+    package delivery services (and plausible segmentations thereof) can be left open between
+    national and EEA-wide, since the Transaction does not raise serious doubts as to its compatibility
+    with the internal market under either of these plausible geographic market definitions.
+    The Commission will assess the effects of the Transaction by reference to the narrowest
+    plausible geographic market delimitations, i.e., national markets, as only then the Transaction
+    gives rise to an affected market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_bpost_staci_2024_decision
+  page: '9'
+  quote_snippet: (39) As regards geographic market definition, the Commission previously found
+    that a contract logistics services market (and any plausible sub-segmentations thereof)
+    is EEA-wide, leaving open plausible segmentations into national markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_bpost_staci_2024_decision
+  page: '9'
+  quote_snippet: (42) The results of the market investigation were mixed as to the appropriate
+    geographic scope of the market for contract logistics services. While most of the respondents
+    that expressed a view supported an EEA-wide market for contract logistics services (and
+    plausible segmentations thereof), a third of the respondents that expressed a view indicated
+    that competition takes place at the national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_bpost_staci_2024_decision
+  page: '1'
+  quote_snippet: Commission decision pursuant to Article 6(1)(b) of Council Regulation No 139/20041
+    and Article 57 of the Agreement on the European Economic Area2
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_bpost_staci_2024_decision
+  page: '20'
+  quote_snippet: (90) For the reasons set out above, the Commission concludes that the Transaction
+    does not raise serious doubts as to its compatibility with the internal market with respect
+    to possible input foreclosure practices under any of the alternative product markets for
+    contract logistics services, irrespective of the geographic scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

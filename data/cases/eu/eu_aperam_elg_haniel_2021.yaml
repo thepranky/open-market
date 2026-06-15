@@ -1,0 +1,485 @@
+case_id: eu_aperam_elg_haniel_2021
+case_name: APERAM / ELG HANIEL
+authority: European Commission
+jurisdiction: EU
+sector: retail
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2021-11-25'
+parties:
+- name: APERAM
+  role: acquirer
+- name: ELG HANIEL
+  role: target
+source_documents:
+- doc_id: eu_aperam_elg_haniel_2021_decision
+  title: APERAM / ELG HANIEL — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10320
+  pdf_url: http://publications.europa.eu/resource/cellar/a25189c5-989e-11ec-8d29-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Collection, processing and blending of stainless steel scrap
+  definition_status: defined
+  notes: The Commission concluded that different types of scrap constitute different markets
+    due to lack of demand- and supply-side substitutability. It found that stainless steel scrap
+    forms a separate market. The analysis focused on the combined activities of collection,
+    processing, and blending.
+- market_id: pm_2
+  name: Collection, processing and blending of nickel alloy scrap
+  definition_status: defined
+  notes: The Commission applied the same reasoning as for stainless steel scrap, concluding
+    that nickel alloy scrap constitutes a separate market due to lack of substitutability with
+    other metal scrap types and the technical/cost challenges of substituting with primary raw
+    materials.
+- market_id: pm_3
+  name: Collection, processing and blending of titanium scrap
+  definition_status: considered
+  notes: The Commission decided to analyse this market by analogy with its decisional practice
+    on titanium scrap, as no evidence suggested otherwise. The analysis focuses on the combined
+    activities of collection, processing, and blending.
+- market_id: pm_4
+  name: Production and wholesale of stainless steel flat products
+  definition_status: considered
+  notes: For the purposes of its Decision, the Commission applied its previous decisional practice
+    to analyse this market as a downstream market for vertical links. This market includes sub-segments
+    where Aperam is active, such as hot rolled black band, hot rolled white band, and cold rolled
+    products.
+- market_id: pm_5
+  name: Nickel alloy products
+  definition_status: considered
+  notes: For the purposes of its Decision, the Commission applied its previous decisional practice
+    to analyse this market as a downstream market for vertical links. This market includes sub-segments
+    where Aperam is active, such as semis, bars, wire, wire rod, strip, and plates/sheets.
+- market_id: pm_6
+  name: Trade in metal scrap — ferrous scrap
+  definition_status: considered
+  notes: Referenced as a market defined in previous Commission decisions.
+- market_id: pm_7
+  name: Trade in metal scrap — non-ferrous scrap
+  definition_status: considered
+  notes: Referenced as a market defined in previous Commission decisions. Potential sub-segments
+    for aluminium, copper, and zinc scrap were left open in previous cases.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Collection, processing and blending of stainless steel scrap — at most EEA-wide
+  definition_status: considered
+  notes: The Commission considers the geographic market for the processing and blending of stainless
+    steel scrap to be at most EEA-wide, acknowledging that smaller suppliers may operate on
+    a more regional basis. Transport costs and customer location are key drivers.
+- market_id: gm_2
+  name: Collection, processing and blending of nickel alloy scrap — EEA-wide
+  definition_status: considered
+  notes: The market investigation results suggest an EEA-wide geographic market for the supply
+    of nickel alloy scrap, with transport costs being less relevant due to its higher value.
+- market_id: gm_3
+  name: Collection, processing and blending of titanium scrap — EEA-wide
+  definition_status: considered
+  notes: By analogy with previous decisional practice and given that transport costs play a
+    lesser role due to its high value, the Commission will analyse this market on an EEA-wide
+    basis.
+- market_id: gm_4
+  name: Production and wholesale of stainless steel flat products — EEA-wide
+  definition_status: considered
+  notes: The Commission's previous decisional practice for the production and wholesale of stainless
+    steel products considered the market to be at least EEA-wide in scope, and no evidence in
+    this case suggested otherwise.
+- market_id: gm_5
+  name: Nickel alloy products — EEA-wide
+  definition_status: considered
+  notes: The Commission's previous decisional practice for the production and wholesale of nickel
+    alloys considered the market to be at least EEA-wide in scope, and no evidence in this case
+    suggested otherwise.
+- market_id: gm_6
+  name: Trade in metal scrap — at least EEA-wide
+  definition_status: considered
+  notes: Referenced as a market found to be at least EEA-wide in previous Commission decisions.
+- market_id: gm_7
+  name: Collection and processing of metal scrap — national or regional (possible radius of
+    approx. 200 km)
+  definition_status: left_open
+  notes: Referenced as a market where the geographic dimension was considered smaller than the
+    trade market, and its scope (national or regional with a 200 km catchment radius) was left
+    open in previous Commission decisions.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_aperam_elg_haniel_2021_decision
+  page: '4'
+  quote_snippet: In line with the Commission’s previous practice, the results of the market
+    investigation indicate that different types of scrap constitute different markets. The majority
+    of respondents replied in the market investigation that stainless steel scrap and other
+    types of metal scrap are not interchangeable in stainless steel production.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_aperam_elg_haniel_2021_decision
+  page: '5'
+  quote_snippet: Given the lack of both demand- and supply- side substitutability, stainless
+    steel scrap constitutes a separate market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_aperam_elg_haniel_2021_decision
+  page: '6'
+  quote_snippet: With a view to the above, the Commission will analyse the effects of the Transaction
+    on the basis of markets for the collection, processing and blending of stainless steel scrap,
+    the collection, processing and blending of nickel alloy scrap and the collection, processing
+    and blending of titanium scrap.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_aperam_elg_haniel_2021_decision
+  page: '5'
+  quote_snippet: 'The same reasoning applies for nickel alloy scrap. A majority of respondents
+    replied that nickel alloy scrap is not substitutable with any other types of metal scrap.19
+    As a customer explained: “Substitution with primary raw materials is technically possible,
+    but would incur a non sustainable cost disadvantage. Substitution with other types of metal
+    scrap is technically impossible, since the chemical contents would not be appropriate for
+    the intended production”.20 This indicates that nickel alloy scrap also constitutes a separate
+    market.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_aperam_elg_haniel_2021_decision
+  page: '6'
+  quote_snippet: With a view to the above, the Commission will analyse the effects of the Transaction
+    on the basis of markets for the collection, processing and blending of stainless steel scrap,
+    the collection, processing and blending of nickel alloy scrap and the collection, processing
+    and blending of titanium scrap.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_aperam_elg_haniel_2021_decision
+  page: '6'
+  quote_snippet: The evidence in the Commission’s file has not provided any indication that
+    would suggest that applying by analogy the Commission’s decisional practice on titanium
+    scrap would not be appropriate in the present case. For the purposes of this Decision, the
+    Commission will therefore analyse the market for the collection, processing and blending
+    of titanium scrap.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_aperam_elg_haniel_2021_decision
+  page: '6'
+  quote_snippet: With a view to the above, the Commission will analyse the effects of the Transaction
+    on the basis of markets for the collection, processing and blending of stainless steel scrap,
+    the collection, processing and blending of nickel alloy scrap and the collection, processing
+    and blending of titanium scrap.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_aperam_elg_haniel_2021_decision
+  page: '9'
+  quote_snippet: 'The evidence in the Commission’s file has not provided any indication that
+    would suggest that applying the Commission’s decisional practice on stainless steel products
+    and nickel alloy products would not be appropriate in the present case. For the purposes
+    of this Decision, the Commission will analyse the markets for: (i) production and wholesale
+    of stainless steel flat products as well as for (ii) nickel alloy products.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_aperam_elg_haniel_2021_decision
+  page: '9'
+  quote_snippet: The stainless steel markets where Aperam is active are (i) production and wholesale
+    of stainless steel flat hot rolled black band products, (ii) production and wholesale of
+    stainless steel flat hot rolled white band products, (iii) production and wholesale of stainless
+    steel flat cold rolled products and (iv) production and wholesale of stainless steel welded
+    tubes.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_aperam_elg_haniel_2021_decision
+  page: '9'
+  quote_snippet: The Commission considers that for the purposes of the analysis of vertical
+    links between Aperam and ELG, these are the relevant downstream markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_aperam_elg_haniel_2021_decision
+  page: '9'
+  quote_snippet: 'The evidence in the Commission’s file has not provided any indication that
+    would suggest that applying the Commission’s decisional practice on stainless steel products
+    and nickel alloy products would not be appropriate in the present case. For the purposes
+    of this Decision, the Commission will analyse the markets for: (i) production and wholesale
+    of stainless steel flat products as well as for (ii) nickel alloy products.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_aperam_elg_haniel_2021_decision
+  page: '9'
+  quote_snippet: The nickel alloy markets where Aperam is active are (i) production and sale
+    of nickel alloy semis, (ii) production and sale of nickel alloy bars, (iii) production and
+    sale of nickel alloy wire, (iv) production and sale of nickel alloy wire rod, (v) production
+    and sale of nickel alloy strip and (vi) production and sale of nickel alloy “plates and
+    sheets”.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_aperam_elg_haniel_2021_decision
+  page: '9'
+  quote_snippet: The Commission considers that for the purposes of the analysis of vertical
+    links between Aperam and ELG, these are the relevant downstream markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_aperam_elg_haniel_2021_decision
+  page: '3'
+  quote_snippet: 'The Commission has identified a market for trade in metal scrap, which it
+    has divided into separate markets for trade in: (i) ferrous scrap and in (ii) non-ferrous
+    scrap.11'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_aperam_elg_haniel_2021_decision
+  page: '3'
+  quote_snippet: 'The Commission has identified a market for trade in metal scrap, which it
+    has divided into separate markets for trade in: (i) ferrous scrap and in (ii) non-ferrous
+    scrap.11 The Commission also considered, but left open, potential sub-segments of non-ferrous
+    scrap for trade in: (a) aluminium scrap, (b) copper scrap and (c) zinc scrap.12'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_aperam_elg_haniel_2021_decision
+  page: '7'
+  quote_snippet: For the purposes of the assessment of the vertical link between stainless steel
+    scrap and the production of stainless steel products, the Commission considers that the
+    relevant level of the supply chain at which to conduct the assessment is the processing
+    and supply of the blended stainless steel scrap to the customer. Therefore, the geographic
+    market for the processing and blending of stainless steel scrap is at most EEA-wide. The
+    fact that smaller stainless steel scrap suppliers are not active throughout the EEA will
+    be taken into account in the competitive assessment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_aperam_elg_haniel_2021_decision
+  page: '6'
+  quote_snippet: A slight majority of stainless steel scrap suppliers active in the collection
+    of stainless steel scrap replied that they usually travel between 100 and 500km from their
+    facilities to collect this scrap.32
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_aperam_elg_haniel_2021_decision
+  page: '6'
+  quote_snippet: The Commission will therefore analyse the effects of the Transaction on the
+    basis of an EEA-wide market for the markets for the processing and blending of stainless
+    steel scrap, nickel alloy scrap and titanium scrap, while taking into account in the competitive
+    assessment that as far as stainless steel scrap is concerned, not all market participants
+    are active on an EEA-wide level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_aperam_elg_haniel_2021_decision
+  page: '6'
+  quote_snippet: The Commission will therefore analyse the effects of the Transaction on the
+    basis of an EEA-wide market for the markets for the processing and blending of stainless
+    steel scrap, nickel alloy scrap and titanium scrap, while taking into account in the competitive
+    assessment that as far as stainless steel scrap is concerned, not all market participants
+    are active on an `EEA-wide level`.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_aperam_elg_haniel_2021_decision
+  page: '6'
+  quote_snippet: The Commission will therefore analyse the effects of the Transaction on the
+    basis of an EEA-wide market for the markets for the processing and blending of stainless
+    steel scrap, nickel alloy scrap and titanium scrap, while taking into account in the competitive
+    assessment that as far as stainless steel scrap is concerned, not all market participants
+    are active on an EEA-wide level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_aperam_elg_haniel_2021_decision
+  page: '9'
+  quote_snippet: In previous decisions, the Commission has considered that the relevant geographic
+    markets for production and wholesale of stainless steel and nickel alloys is at least EEA-wide
+    in scope.58
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_aperam_elg_haniel_2021_decision
+  page: '9'
+  quote_snippet: In previous decisions, the Commission has considered that the relevant geographic
+    markets for production and wholesale of stainless steel and nickel alloys is at least EEA-wide
+    in scope.58
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_aperam_elg_haniel_2021_decision
+  page: '6'
+  quote_snippet: In its previous decisions, the Commission found the market for trade in metal
+    scrap to be at least EEA-wide.29
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+ai_summary: null
+case_type: merger
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

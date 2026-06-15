@@ -1,0 +1,253 @@
+case_id: eu_epcg_ids_2025
+case_name: EPCG / IDS
+authority: European Commission
+jurisdiction: EU
+sector: transport
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2025-01-13'
+parties:
+- name: EPCG
+  role: acquirer
+- name: IDS
+  role: target
+source_documents:
+- doc_id: eu_epcg_ids_2025_decision
+  title: EPCG / IDS — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11625
+  pdf_url: http://publications.europa.eu/resource/cellar/8c1a80c0-29b2-11f0-8a44-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Small package delivery services (under 31.5 kg)
+  definition_status: defined
+  notes: The Commission defines the core product market as the delivery of small packages weighing
+    under 31.5 kg, which are commonly referred to as 'parcels' and can be handled by a single
+    person without mechanical aids. This market is distinguished from mail delivery services
+    and freight forwarding.
+- market_id: pm_2
+  name: Small package delivery services by speed (express and deferred)
+  definition_status: left_open
+  notes: The Commission considered a distinction between express and deferred services based
+    on different customer needs, infrastructure, and pricing. While the market investigation
+    suggested this differentiation remains relevant, especially due to guaranteed timeframes
+    and distinct infrastructure for some services, the exact scope was left open.
+- market_id: pm_3
+  name: Small package delivery services by geography of delivery (domestic, international intra-EEA,
+    international extra-EEA)
+  definition_status: left_open
+  notes: The Commission previously considered segmentation based on whether packages are picked
+    up and delivered in the same country (domestic) or different countries (international),
+    with further distinction for international intra-EEA and extra-EEA. The market investigation
+    confirmed this view, noting differences due to customs clearance and transport modes. However,
+    the exact scope was left open.
+- market_id: pm_4
+  name: Small package delivery services by customer type (C2X, B2C, B2B)
+  definition_status: left_open
+  notes: The Commission previously distinguished between small package delivery services to
+    consumers (C2X) and businesses (B2C and B2B). The market investigation yielded inconclusive
+    feedback regarding the blurriness of this distinction, with some competitors noting converging
+    expectations and shared infrastructure, while others highlighted remaining differences in
+    network requirements and delivery patterns. The exact scope was left open.
+- market_id: pm_5
+  name: Out-of-home (OOH) small package delivery services
+  definition_status: left_open
+  notes: A competitor highlighted OOH deliveries (lockers/Automated Parcel Machines and pick-up
+    drop-off points) as a potential subsegment. Both PostNL and GLS are active in this segment.
+    The Commission noted this potential, but found no further indication that this delineation
+    was pertinent for the case, and thus left the exact scope open.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Small package delivery services — national (Netherlands affected)
+  definition_status: left_open
+  notes: The Commission's previous practice considered geographic markets for small package
+    delivery services to be likely national. The Parties proposed a Benelux regional market.
+    The market investigation generally confirmed the national scope, despite some indications
+    of broader-than-national characteristics. For the purpose of this decision, the exact geographic
+    scope was left open, but the effects of the Transaction were assessed under the narrowest
+    plausible definition, the national market for the Netherlands.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_epcg_ids_2025_decision
+  page: '15'
+  quote_snippet: The Commission has previously considered mail delivery services (postal mail
+    delivery), small package delivery services (which are the delivery of smaller packages,
+    commonly defined according to weight, which a single person can handle without specific
+    equipment) and freight forwarding (which is the organisation of transportation of items
+    (including possible ancillary activities such as customs clearance, warehousing, ground
+    services etc.), on behalf of customers according to their needs) as separate relevant markets.72
+    With regard to small package delivery services, the Commission in its previous practice
+    has defined it as relating to smaller parcels which weigh under 31.5 kg.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_epcg_ids_2025_decision
+  page: '17'
+  quote_snippet: Based on the above, the Commission considers that the delivery of small packages
+    under 31.5 kg falls into a separate product market from freight forwarding.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_epcg_ids_2025_decision
+  page: '21'
+  quote_snippet: In light of the above, and for the purposes of this decision, the Commission
+    considers that (i) there is a separate product market for the delivery of small packages
+    under 31.5 kg, and (ii) the further exact scope of the product market definition for the
+    supply of small package delivery services can be left open, since the Transaction does not
+    raise serious doubts as to its compatibility with the internal market under any plausible
+    product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_epcg_ids_2025_decision
+  page: '16'
+  quote_snippet: In terms of speed, the Commission has considered a distinction between express
+    and deferred services, as they serve different customer needs, are based on different infrastructure,
+    and are priced differently.77
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_epcg_ids_2025_decision
+  page: '18'
+  quote_snippet: In any event, the Commission considers that, for the purposes of this decision,
+    the exact scope of the product market definition can be left open, since the Transaction
+    does not raise serious doubts as to its compatibility with the internal market under any
+    plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_epcg_ids_2025_decision
+  page: '18'
+  quote_snippet: Competitors and customers agreed with the Commission’s previous segmentation
+    between domestic, intra-EEA and extra-EEA small package delivery services.92 For instance,
+    a competitor explained that it internally divides its portfolio along similar lines and
+    considers that competitors maintain a similar division.93
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_epcg_ids_2025_decision
+  page: '19'
+  quote_snippet: In any event, the Commission considers that, for the purposes of this decision,
+    the exact scope of the product market definition can be left open, since the Transaction
+    does not raise serious doubts as to its compatibility with the internal market under any
+    plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_epcg_ids_2025_decision
+  page: '16'
+  quote_snippet: In addition, the Commission distinguished between small package delivery services
+    to consumers (C2X) and businesses (B2C and B2B) in its previous decisions.79
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_epcg_ids_2025_decision
+  page: '19'
+  quote_snippet: In any event, the Commission considers that, for the purposes of this decision,
+    the exact scope of the product market definition can be left open, since the Transaction
+    does not raise serious doubts as to its compatibility with the internal market under any
+    plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_epcg_ids_2025_decision
+  page: '20'
+  quote_snippet: At the same time, the Commission has no further indication that such a delineation
+    of the market is pertinent in the context of the present case.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_epcg_ids_2025_decision
+  page: '20'
+  quote_snippet: In any event, the Commission considers that, for the purposes of this decision,
+    the exact scope of the product market definition can be left open, since the Transaction
+    does not raise serious doubts as to its compatibility with the internal market under any
+    plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

@@ -1,0 +1,343 @@
+case_id: eu_pkn_orlen_normbenz_selected_hungarian_and_slovak__2022
+case_name: PKN ORLEN / NORMBENZ / SELECTED HUNGARIAN AND SLOVAK ASSETS OF MOL
+authority: European Commission
+jurisdiction: EU
+sector: retail
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2022-07-15'
+parties:
+- name: PKN ORLEN
+  role: acquirer
+- name: NORMBENZ
+  role: acquirer
+- name: SELECTED HUNGARIAN AND SLOVAK ASSETS OF MOL
+  role: target
+source_documents:
+- doc_id: eu_pkn_orlen_normbenz_selected_hungarian_and_slovak__2022_decision
+  title: PKN ORLEN / NORMBENZ / SELECTED HUNGARIAN AND SLOVAK ASSETS OF MOL — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10649
+  pdf_url: http://publications.europa.eu/resource/cellar/f7bebf08-1a12-11ed-8fa0-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Retail sale of motor fuels
+  definition_status: considered
+  notes: The Commission considered this broad market in previous decisions, encompassing all
+    types of motor fuels available at service stations, including LPG. The current decision's
+    market investigation supported this view, but the assessment was further segmented.
+- market_id: pm_2
+  name: Retail sale of motor fuels to B2C customers
+  definition_status: defined
+  notes: The Commission's market investigation confirmed that B2C sales belong to a distinct
+    market from B2B sales due to different customer structures, needs, and price setting/levels.
+- market_id: pm_3
+  name: Retail sale of motor fuels to B2B customers
+  definition_status: defined
+  notes: The Commission's market investigation confirmed that B2B sales belong to a distinct
+    market from B2C sales. However, the proposed transaction did not result in an affected market
+    for B2B customers, so it was not further discussed.
+- market_id: pm_4
+  name: Retail sale of motor fuels to B2C customers at off-motorway stations
+  definition_status: considered
+  notes: While the Commission left open a general sub-segmentation between on and off-motorway
+    stations, it explicitly stated that it would only assess the impact of the transaction on
+    off-motorway stations, as affected markets only arose in this segment.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Retail sale of motor fuels to B2C customers — national (Hungary and Slovakia affected)
+  definition_status: defined
+  notes: The Commission defined the market for retail supply of motor fuels as national, with
+    a local dimension for B2C customers in Hungary and Slovakia, in line with previous cases.
+- market_id: gm_2
+  name: Retail sale of motor fuels to B2C customers at off-motorway stations — local (Hungary
+    and Slovakia affected)
+  definition_status: considered
+  notes: The Commission decided to assess competition concerns at the local level, focusing
+    on off-motorway stations, using isochrones based on driving distances (2.5 km for cities,
+    5 km for suburban, 20 km for rural areas).
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_pkn_orlen_normbenz_selected_hungarian_and_slovak__2022_decision
+  page: '4'
+  quote_snippet: The Commission has considered in previous decisions that the market for the
+    retail supply of motor fuel products constitutes a distinct relevant product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_pkn_orlen_normbenz_selected_hungarian_and_slovak__2022_decision
+  page: '4'
+  quote_snippet: The Commission has concluded that the retail supply of motor fuels should not
+    be further sub-segmented by type of fuel product (diesel, gasoline and automotive liquefied
+    petroleum gas (‘LPG’)),7 and it has defined the market for the retail sales of motor fuels
+    as encompassing the sales of all motor fuels at service stations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_pkn_orlen_normbenz_selected_hungarian_and_slovak__2022_decision
+  page: '5'
+  quote_snippet: The Commission’s market investigation supports the view that the retail supply
+    of motor fuels encompasses all types of motor fuels available at stations, including LPG,
+    with all respondents unanimously confirming this point.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_pkn_orlen_normbenz_selected_hungarian_and_slovak__2022_decision
+  page: '5'
+  quote_snippet: Finally, the Commission has also considered a segmentation for the retail supply
+    of motor fuels between sales to B2B customers (via a fuel card) and to B2C customers. In
+    PKN Orlen / Grupa Lotos, the Commission concluded that such a segmentation was appropriate
+    mainly because of the different price setting/levels, diverse needs of each group of customers
+    (notably in terms of network coverage, of number of on-motorways stations, toll payment
+    system, online invoicing tools, and payment conditions).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_pkn_orlen_normbenz_selected_hungarian_and_slovak__2022_decision
+  page: '6'
+  quote_snippet: The market investigation has also confirmed that B2B and B2C sales belong to
+    distinct markets, with all but one respondents confirming this point.22 Respondents pointed
+    to the different customer structures in both segments, and to the difference in customers’
+    needs. One respondent explained that while B2B customers primarily decide based on price
+    and on the locations of the stations which are members of the network, B2C customers tend
+    to be more demanding, and to expect a variety of other products and services to be available
+    at petrol stations, and to place importance on the cleanliness of the facilities and the
+    friendliness of the staff.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_pkn_orlen_normbenz_selected_hungarian_and_slovak__2022_decision
+  page: '6'
+  quote_snippet: In conclusion, the Commission will only assess the impact of the Proposed Transaction
+    on the market for the retail sale of fuel to B2C customers at off-motorway stations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_pkn_orlen_normbenz_selected_hungarian_and_slovak__2022_decision
+  page: '5'
+  quote_snippet: Finally, the Commission has also considered a segmentation for the retail supply
+    of motor fuels between sales to B2B customers (via a fuel card) and to B2C customers. In
+    PKN Orlen / Grupa Lotos, the Commission concluded that such a segmentation was appropriate
+    mainly because of the different price setting/levels, diverse needs of each group of customers
+    (notably in terms of network coverage, of number of on-motorways stations, toll payment
+    system, online invoicing tools, and payment conditions).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_pkn_orlen_normbenz_selected_hungarian_and_slovak__2022_decision
+  page: '6'
+  quote_snippet: The market investigation has also confirmed that B2B and B2C sales belong to
+    distinct markets, with all but one respondents confirming this point.22 Respondents pointed
+    to the different customer structures in both segments, and to the difference in customers’
+    needs... Given that the Proposed Transaction does not result in an affected market as regards
+    B2B customers, the retail sale of motor fuels to B2B customers will not be further discussed
+    in this Decision.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_pkn_orlen_normbenz_selected_hungarian_and_slovak__2022_decision
+  page: '6'
+  quote_snippet: For the purpose of the present case, the Commission will leave open a possible
+    sub-segmentation between on and off-motorway stations, given that neither approach would
+    give rise to competition concerns. Given that affected markets only arise on local markets
+    comprising off-motorway stations, only the off-motorway stations (i.e. the narrowest plausible
+    segment) will be further discussed in this decision.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_pkn_orlen_normbenz_selected_hungarian_and_slovak__2022_decision
+  page: '6'
+  quote_snippet: In conclusion, the Commission will only assess the impact of the Proposed Transaction
+    on the market for the retail sale of fuel to B2C customers at off-motorway stations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_pkn_orlen_normbenz_selected_hungarian_and_slovak__2022_decision
+  page: '8'
+  quote_snippet: The Proposed Transaction gives rise to horizontally affected markets for the
+    retail supply of motor fuels to B2C customers in Hungary and Slovakia, at the local level
+    (off-motorways).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_pkn_orlen_normbenz_selected_hungarian_and_slovak__2022_decision
+  page: '6'
+  quote_snippet: The Commission previously considered that the market for retail sale of motor
+    fuel products to B2C customers is characterised by competition taking place at both the
+    national24 and local level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_pkn_orlen_normbenz_selected_hungarian_and_slovak__2022_decision
+  page: '7'
+  quote_snippet: The Commission considers that there are no reasons to depart from the approach
+    taken in previous cases, such that the market for the retail supply of motor fuels is national,
+    with a local dimension for B2C customers.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_pkn_orlen_normbenz_selected_hungarian_and_slovak__2022_decision
+  page: '7'
+  quote_snippet: For the purpose of this decision, the Commission considers that the market
+    for the retail sale of motor fuels to B2C customers in Hungary and Slovakia is national
+    in scope with local elements.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_pkn_orlen_normbenz_selected_hungarian_and_slovak__2022_decision
+  page: '8'
+  quote_snippet: As regards the local level, the Commission's market investigation in the present
+    case suggests that the motor fuel retail supply of motor fuels in Slovakia and Hungary has
+    a significant local dimension for B2C customers. For the purpose of assessing the local
+    dimension of competition, a majority of respondents confirmed that isochrones based on driving
+    distances of 2.5 km, 5 km and 20 km in cities, suburban areas and rural areas respectively
+    reflect the distance within which motorists consider competing alternatives.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_pkn_orlen_normbenz_selected_hungarian_and_slovak__2022_decision
+  page: '8'
+  quote_snippet: Given the absence of affected markets at a national level, the Commission will
+    only assess competition concerns at the local level. It will examine local areas where the
+    Parties’ stations overlap, using isochrones based on driving distances of 2.5 km, 5 km and
+    20 km in cities, suburban areas and rural areas respectively.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_pkn_orlen_normbenz_selected_hungarian_and_slovak__2022_decision
+  page: '8'
+  quote_snippet: The Proposed Transaction gives rise to horizontally affected markets for the
+    retail supply of motor fuels to B2C customers in Hungary and Slovakia, at the local level
+    (off-motorways).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []
+case_type: merger
+ai_summary: null

@@ -1,0 +1,457 @@
+case_id: eu_ec_m9502_2020
+case_name: M.9502
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2020-01-15'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9502_2020_decision
+  title: M.9502 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9502
+  pdf_url: http://publications.europa.eu/resource/cellar/9543802d-7ff7-11ea-b94a-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Vinyl pyridine latex (VP Latex)
+  definition_status: defined
+  notes: The Commission concluded that VP Latex constitutes a distinct product market from other
+    synthetic latex products, without the need for further segmentation by application or grade.
+- market_id: pm_2
+  name: Carboxylated nitrile butadiene latex (XNBR)
+  definition_status: left_open
+  notes: The exact scope of the product market definition (XNBR as a single product or sub-segmented
+    by applications) was left open as the transaction did not give rise to serious doubts under
+    any alternative.
+- market_id: pm_3
+  name: Carboxylated styrene butadiene latex (XSBR)
+  definition_status: left_open
+  notes: The exact scope of the product market definition (XSBR as a single product or sub-segmented
+    by applications) was left open as the transaction did not give rise to serious doubts under
+    any alternative. The Commission noted strong supply-side substitutability across grades
+    and applications.
+- market_id: pm_4
+  name: Styrene acrylic (SA)
+  definition_status: left_open
+  notes: The exact scope of the product market definition (overall SA market or segmentation
+    by application) was left open as the transaction did not raise serious doubts under any
+    alternative.
+- market_id: pm_5
+  name: High solids styrene butadiene (HS-SB)
+  definition_status: left_open
+  notes: The exact scope of the product market definition (overall HS-SB market or segmentation
+    by application or grade) was left open as the transaction did not raise serious doubts under
+    any alternative.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Vinyl pyridine latex (VP Latex) — EEA-wide
+  definition_status: considered
+  notes: The Commission considered the relevant geographic market for VP Latex to be EEA-wide,
+    despite arguments for a worldwide market, but stated the assessment would not change even
+    if it were worldwide.
+- market_id: gm_2
+  name: Carboxylated nitrile butadiene latex (XNBR) — EEA-wide/worldwide
+  definition_status: left_open
+  notes: The exact scope of the geographic market definition (worldwide or EEA-wide) was left
+    open as the transaction did not raise serious doubts under any alternative.
+- market_id: gm_3
+  name: Carboxylated styrene butadiene latex (XSBR) — EEA-wide/worldwide
+  definition_status: considered
+  notes: The Commission considered the relevant geographic market for XSBR to be EEA-wide, but
+    stated the assessment would not raise serious doubts regardless of whether the market is
+    considered EEA-wide or worldwide, so it was left open.
+- market_id: gm_4
+  name: Styrene acrylic (SA) — EEA-wide/worldwide
+  definition_status: left_open
+  notes: The exact scope of the geographic market definition (EEA or worldwide) was left open
+    as the transaction did not raise serious doubts under any alternative.
+- market_id: gm_5
+  name: High solids styrene butadiene (HS-SB) — EEA-wide/worldwide
+  definition_status: left_open
+  notes: The exact scope of the geographic market definition (EEA or worldwide) was left open
+    as the transaction did not raise serious doubts under any alternative.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9502_2020_decision
+  page: '4'
+  quote_snippet: (16) VP Latex is an aqueous polymer used in heavy duty rubber goods, primarily
+    tyres, to promote the adhesion between reinforcing cords or fabric and rubber compounds.
+    The most common use of VP Latex is in the tyre cord application, whereby nylon or polyester
+    yarns are dipped or coated in VP Latex before being embedded in a tyre to reinforce it against
+    high pressure and temperatures. Both Parties are active in the production and sale of VP
+    Latex, primarily for the tyre cord application.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9502_2020_decision
+  page: '6'
+  quote_snippet: (24) For the reasons set out above, the Commission considers that, for the
+    purposes of this decision, VP Latex constitutes a distinct product market from other synthetic
+    latex products, without the need for further segmentation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9502_2020_decision
+  page: '11'
+  quote_snippet: (48) XNBR is an aqueous emulsion polymer of acrylonitrile-butadiene, stabilized
+    with antioxydants. It is mainly used in the production of rubber gloves, but also in other
+    applications such as the binding of nonwoven fabrics and the production of textile and rubber
+    goods. Its good resistance to other chemicals (such as water, oils, fats, greases, alcohols
+    as well as various solvents), and high abrasion and tear resistance make it commonly used
+    in applications requiring the material to perform its elastomeric function in the presence
+    of chemical agents.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9502_2020_decision
+  page: '12'
+  quote_snippet: (57) The results of the market investigation confirmed that the vast majority
+    of customers do not consider XNBR to be substitutable with any other types of latex dispersion.47
+    In particular, none of the customers that considered potential substitutability between
+    XNBR and other types of latex dispersions identified NBR as a substitute for XNBR.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9502_2020_decision
+  page: '13'
+  quote_snippet: '(60) In view of the above, the distinction between XNBR for different applications
+    appears relevant. However, for assessing the Transaction, the exact scope of the product
+    market definition can be left open since the Transaction does not give rise to serious doubts
+    as to its compatibility with the internal market under any of the two above-mentioned alternative
+    market definitions (XNBR as a single product or sub-segmented by applications, namely: glove
+    dipping, textile, non-woven, rubber goods and others).'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9502_2020_decision
+  page: '18'
+  quote_snippet: (83) XSBR is an aqueous emulsion polymer of styrene and butadiene used predominantly
+    in the paper and carpet-backing industries.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9502_2020_decision
+  page: '19'
+  quote_snippet: (89) In any event, for the purposes of assessing the Transaction the exact
+    scope of the product market definition can be left open since the Transaction does not give
+    rise to serious doubts as to its compatibility with the internal market under any of the
+    two above-mentioned alternative market definitions (XSBR as a single product or sub-segmented
+    by applications).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9502_2020_decision
+  page: '21'
+  quote_snippet: (99) SA is a copolymer of styrene monomers with acrylic acid esters. It is
+    mainly used in paints and coatings, as well as paper, and is also used in printing inks,
+    floor polishes, adhesives (for ceramic tile, laminating, and cold sealing), sealants and
+    caulks, cement additives, mortar mixes, self-levelling floor screeds, concrete roof tile
+    and fibrocement coatings, flexible roofing membranes, elastomeric crack-bridging wall coatings,
+    and nonwoven fabric applications.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9502_2020_decision
+  page: '22'
+  quote_snippet: (103) In any event, the Commission considers that, for the purpose of the present
+    case, the exact scope of the product market definition for SA can be left open, since the
+    Transaction does not raise serious doubts as to its compatibility with the internal market,
+    regardless of the product market definition (i.e. an overall market for SA or a segmentation
+    by application).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9502_2020_decision
+  page: '24'
+  quote_snippet: (114) HS-SB is a type of emulsion-polymerised latex. It is primarily used for
+    carpet backing and moulded foam products (such as mattresses and pillows), but it can also
+    be used in other applications, including footwear (insoles), adhesives and sealants, construction,
+    tyres, glove dipping, and other rubber goods (e.g. conveyor belts).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9502_2020_decision
+  page: '25'
+  quote_snippet: (118) In any event, the Commission considers that, for the purpose of the present
+    case, the exact scope of the product market definition for HS-SB can be left open, since
+    the Transaction does not raise serious doubts as to its compatibility with the internal
+    market, regardless of the product market definition (i.e. overall market for HS-SB or segmentation
+    by application or grade).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9502_2020_decision
+  page: '6'
+  quote_snippet: (25) The Commission has previously considered the relevant geographic market
+    for all types of synthetic latex products (including VP Latex specifically) to be EEA-wide.17
+    In particular, the Commission pointed to differences in price levels between continents
+    and the fact that the flow of supply between continents was not significant.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9502_2020_decision
+  page: '7'
+  quote_snippet: (31) The results of the market investigation did not confirm the view of the
+    Notifying Party, but rather pointed to the existence of an EEA-wide market for VP Latex.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m9502_2020_decision
+  page: '8'
+  quote_snippet: (37) In light of the above, the Commission considers that, for the case at
+    hand, the relevant geographic market for VP Latex is EEA-wide. Nevertheless, the Commission
+    considers that the assessment of the Transaction would not change even if the relevant geographic
+    market were instead considered to be worldwide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m9502_2020_decision
+  page: '13'
+  quote_snippet: (61) The Commission has previously considered the relevant geographic market
+    for all types of synthetic latex products (and more specifically for nitrile butadiene latex)
+    to be EEA-wide.49
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m9502_2020_decision
+  page: '14'
+  quote_snippet: (70) In any event, for the purposes of assessing the Transaction, the exact
+    scope of the geographic market definition can be left open since under all above-mentioned
+    plausible alternative geographic market definitions, (worldwide or EEA-wide), the conclusion
+    of the Commission as to the compatibility of the Transaction with the internal market will
+    remain unchanged.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m9502_2020_decision
+  page: '19'
+  quote_snippet: (90) The Commission has previously considered the relevant geographic market
+    for all types of synthetic latex products to be EEA-wide.81
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m9502_2020_decision
+  page: '19'
+  quote_snippet: (92) The market investigation did not provide the Commission with strong reasons
+    to depart from its previous practice.83 Therefore, the Commission considers that, for the
+    case at hand, the relevant geographic market for XSBR is EEA-wide. Nevertheless, the appropriate
+    geographic market definition can be left open, given that the Transaction would not raise
+    serious doubts regarding the market for XSBR regardless of whether the market is considered
+    EEA-wide or worldwide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m9502_2020_decision
+  page: '23'
+  quote_snippet: (104) The Commission has previously considered the relevant geographic market
+    for SA to be EEA-wide.99
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m9502_2020_decision
+  page: '23'
+  quote_snippet: (106) The market investigation did not provide any indications suggesting that
+    the Commission should depart from its past decisional practice.101
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m9502_2020_decision
+  page: '23'
+  quote_snippet: (107) In any event, the Commission considers that, for the purpose of the present
+    case, the exact scope of the geographic market definition for SA and its sub-segments can
+    be left open, since the Transaction does not raise serious doubts as to its compatibility
+    with the internal market, regardless of the geographic market definition (i.e. EEA or worldwide).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m9502_2020_decision
+  page: '25'
+  quote_snippet: (122) In any event, the Commission considers that, for the purpose of the present
+    case, the exact scope of the geographic market definition for HS-SB can be left open, since
+    the Transaction does not raise serious doubts as to its compatibility with the internal
+    market, regardless of the geographic market definition (i.e. EEA or worldwide).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_ec_m9502_2020_decision
+  page: '26'
+  quote_snippet: (127) Where a concentration raises serious doubts as regards its compatibility
+    with the internal market, the parties may undertake to modify the concentration to remove
+    the grounds for the serious doubts identified by the Commission. Pursuant to Article 6(2)
+    of the Merger Regulation, where the Commission finds that, following modification by the
+    undertakings concerned, a notified concentration no longer raises serious doubts, it shall
+    declare the concentration compatible with the internal market pursuant to Article 6(1)(b)
+    of the Merger Regulation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

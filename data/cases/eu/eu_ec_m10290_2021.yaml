@@ -1,0 +1,604 @@
+case_id: eu_ec_m10290_2021
+case_name: M.10290
+authority: European Commission
+jurisdiction: EU
+sector: tech
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2021-12-21'
+parties: []
+source_documents:
+- doc_id: eu_ec_m10290_2021_decision
+  title: M.10290 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10290
+  pdf_url: http://publications.europa.eu/resource/cellar/c3c7e63d-0f19-11ed-8fa0-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Transcription software for healthcare
+  definition_status: defined
+  notes: The Commission defines a separate market for transcription software for healthcare,
+    including ambient transcription software for healthcare, due to specific linguistic and
+    technical integration issues (e.g., with EHR systems).
+- market_id: pm_2
+  name: Transcription software outside healthcare
+  definition_status: left_open
+  notes: The Commission leaves open whether there is an overall market for transcription software
+    outside healthcare, with a possible segmentation by industry, as it does not affect the
+    assessment's outcome. This market also includes accessibility software and different levels
+    of supply chain (APIs/SDKs vs. out-of-the-box solutions) as segmentations that are left
+    open.
+- market_id: pm_3
+  name: Customer engagement solutions
+  definition_status: left_open
+  notes: The Commission considers customer engagement solutions (possibly segmented into voice
+    engagement, digital engagement, and voice biometrics) distinct from transcription software
+    due to additional elements and different use cases. It leaves open whether the segments
+    are part of the same market.
+- market_id: pm_4
+  name: Cloud services and data analytics
+  definition_status: defined
+  notes: The Commission concludes the relevant product market is the overall market for cloud
+    services and data analytics, without further segmentation between PaaS and IaaS, consistent
+    with market investigation findings.
+- market_id: pm_5
+  name: Enterprise communication services
+  definition_status: segmented
+  notes: The Commission considers that the relevant product market includes enterprise communications
+    services, distinct from consumer services. The question of a separate market for enterprise
+    communication services in the healthcare sector is left open.
+- market_id: pm_6
+  name: Productivity software for PCs (desktop and laptops)
+  definition_status: defined
+  notes: The Commission concludes that the relevant product market is productivity software
+    for PCs (desktop and laptops), excluding mobile productivity applications, without further
+    segmentations. This is based on differences in features, functionality, user-friendliness,
+    hardware environments, and typical user behaviour.
+- market_id: pm_7
+  name: OS for PCs
+  definition_status: defined
+  notes: The Commission concludes that the relevant product market is the market for OS for
+    PCs, distinguishing it from OS for mobile devices, a view supported by the market investigation.
+- market_id: pm_8
+  name: CRM software
+  definition_status: left_open
+  notes: The Commission leaves the exact product market definition for CRM software open, including
+    whether it should be segmented by industry, functionality, type of service, and customer
+    size, as this does not affect the competitive assessment's outcome.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Transcription software for healthcare — at least EEA-wide, if not global
+  definition_status: defined
+  notes: The Commission concludes the relevant geographic market for transcription software
+    for healthcare is at least EEA-wide, if not global, noting fundamental supply-side substitutability
+    despite language differences and specific medical requirements.
+- market_id: gm_2
+  name: Transcription software outside healthcare — at least EEA-wide, if not global
+  definition_status: defined
+  notes: The Commission concludes the relevant geographic market for transcription software
+    outside healthcare is at least EEA-wide, if not global, based on supply-side substitutability.
+- market_id: gm_3
+  name: Customer engagement solutions — at least EEA-wide, if not global
+  definition_status: left_open
+  notes: The Commission considers the relevant geographic market for customer engagement solutions
+    to be at least EEA-wide, if not global, but leaves the exact definition open as it does
+    not affect the assessment's outcome.
+- market_id: gm_4
+  name: Cloud services and data analytics — worldwide
+  definition_status: defined
+  notes: The Commission concludes that the relevant geographic market for cloud and data analytics
+    services is worldwide, based on multinational suppliers and global accessibility of solutions.
+- market_id: gm_5
+  name: Enterprise communication services — global or at least EEA-wide
+  definition_status: defined
+  notes: The Commission concludes that the market for enterprise communication services is global
+    or at least EEA-wide, considering that services are provided on a global scale despite some
+    regional differences.
+- market_id: gm_6
+  name: Productivity software — worldwide
+  definition_status: defined
+  notes: The Commission concludes that the relevant geographic market for productivity software
+    is worldwide, as it is installed in globally sold devices and provided as globally accessible
+    SaaS.
+- market_id: gm_7
+  name: OS for PCs — worldwide
+  definition_status: defined
+  notes: The Commission concludes that the relevant geographic market for OS for PCs is worldwide,
+    based on global demand and installation on globally sold PCs.
+- market_id: gm_8
+  name: CRM software — at least EEA-wide
+  definition_status: left_open
+  notes: The Commission considers the market for CRM software to be at least EEA-wide but leaves
+    the exact geographic market definition open as it does not affect the competitive assessment's
+    outcome.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m10290_2021_decision
+  page: '6'
+  quote_snippet: Since transcription software for healthcare raises specific linguistic and
+    technical integration issues (because transcription software for healthcare needs to be
+    integrated with EHR systems to enable doctors to directly dictate patient’s medical information
+    in it),20 the Commission considers that transcription software for healthcare belongs to
+    a separate market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m10290_2021_decision
+  page: '7'
+  quote_snippet: Based on the above considerations, the Commission considers that there is a
+    separate market for transcription software for healthcare, including ambient transcription
+    software for healthcare, and that it can be left open whether there is an overall market
+    for transcription software outside healthcare (with a possible segmentation by industry).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m10290_2021_decision
+  page: '7'
+  quote_snippet: As to the possible distinction between transcription software and ambient transcription
+    software, the replies to the market investigation have further indicated that there are
+    similarities between transcription software and ambient transcription software, as they
+    are both based on transcription technology.24 Ambient transcription, however, is different
+    in that it is able to capture conversation between individuals. To implement such functionality,
+    the software needs to be able to distinguish and recognise different speakers. At the moment,
+    ambient transcription software does not appear to be fully developed yet. Therefore, its
+    current functions are mostly based on transcription software. It is possible, in the future,
+    that ambient transcription software develops into a separate product market as it distinguishes
+    itself further from dictation transcription software. The Commission considers that, at
+    the moment, ambient transcription software belongs to the same market as transcription software.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m10290_2021_decision
+  page: '6'
+  quote_snippet: It can be left open whether there is an overall market for transcription software
+    outside healthcare, without industry distinction, as this does not affect the outcome of
+    the assessment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m10290_2021_decision
+  page: '7'
+  quote_snippet: The Commission also considers that, with respect to the possible distinctions
+    between (i) transcription software outside healthcare and accessibility software, and (ii)
+    out-of-the-box solutions and SDK/APIs modules, the exact product market definition may be
+    left open, as this does not affect the outcome of the competitive assessment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m10290_2021_decision
+  page: '6'
+  quote_snippet: As regards the question whether transcription software used to enhance user
+    accessibility (“accessibility software”) should be distinguished from transcription software,
+    the market investigation did not provide elements indicating that accessibility software
+    is separate from transcription software, but rather a specific use case of the latter.21
+    The Commission considers that such distinction can be left open, as the Transaction does
+    not lead to anticompetitive concerns, regardless of the market definition adopted.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m10290_2021_decision
+  page: '10'
+  quote_snippet: Based on the above, the Commission considers that customer engagement solutions,
+    possibly segmented into voice engagement, digital engagement and voice biometrics, are part
+    of a product market distinct from transcription software, due to the additional elements
+    a customer engagement solution requires compared to transcription software as well as the
+    different use cases the two technologies address.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m10290_2021_decision
+  page: '10'
+  quote_snippet: The Commission considers that it can be left open whether voice engagement,
+    digital engagement and voice biometrics are part of the same market, as this does not affect
+    the outcome of the competitive assessment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m10290_2021_decision
+  page: '12'
+  quote_snippet: All the Parties’ competitors responding to the market investigation agree with
+    the Commission’s previous definition of an overall market for cloud services and data analytics
+    without further segmentation between PaaS and IaaS.41
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m10290_2021_decision
+  page: '12'
+  quote_snippet: The Commission therefore concludes that the relevant product market is the
+    overall market for cloud services and data analytics without further segmentation between
+    PaaS and IaaS.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m10290_2021_decision
+  page: '14'
+  quote_snippet: The majority of respondents to the market investigation agrees with the Commission’s
+    previous market definition of communication services separating consumer from enterprise
+    communication services.50 As some respondents pointed out, typically, enterprise tools require
+    significantly more scalability, higher accuracy, and more configuration options than consumer
+    tools.51
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m10290_2021_decision
+  page: '14'
+  quote_snippet: The Commission therefore considers that the relevant product market includes
+    enterprise communications services, distinct from consumer services. The question whether
+    a separate market exists for enterprise communication services used in the healthcare sector
+    can be left open, as this does not affect the outcome of the competitive assessment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m10290_2021_decision
+  page: '16'
+  quote_snippet: The majority of customers responding to the market investigation agrees that
+    a separate market for the productivity software for PCs (desktops and laptops) exists, without
+    it being necessary to consider whether this market could be further segmented depending
+    on the type of productivity software (e.g., personal productivity applications.61
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m10290_2021_decision
+  page: '16'
+  quote_snippet: 'In the above respect, the Commission observes that mobile productivity applications
+    have fewer features, provide less functionality and are less user-friendly than applications
+    designed for PCs. From the supply-side perspective, productivity applications for PCs are
+    written for different hardware environments: faster processors, larger screens and also
+    the presence of a mouse and physical keyboard. From the demand point of view, typically,
+    users use their smart mobile devices mainly to read and check items or make small edits,
+    and not for intensive work over extended periods of time. The Commission therefore considers
+    that the relevant product market is the market for productivity software for PCs (desktop
+    and laptops), excluding mobile productivity applications, without further segmentations.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m10290_2021_decision
+  page: '18'
+  quote_snippet: Based on the above considerations, the Commission therefore considers that
+    the relevant product market is the market for OS for PCs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m10290_2021_decision
+  page: '19'
+  quote_snippet: The Commission considers that the exact product market definition, including
+    whether CRM should be segmented by industry, functionality, type of service and customer
+    size, can be left open, as this does not affect the outcome of the competitive assessment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m10290_2021_decision
+  page: '8'
+  quote_snippet: 'The market investigation indicates that transcription software is considered
+    in principle part of a global geographic market 28 As a customer explains: “The main difference
+    is that each language needs support for speech recognition in that language. Apart from
+    that they are mostly similar”.29 A possible exception exists for transcription software
+    for healthcare, which requires specific medical vocabulary and integration with EHR systems
+    in each country, in order to be developed and made available in additional languages.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m10290_2021_decision
+  page: '8'
+  quote_snippet: Based on the above considerations, the Commission observes that fundamental
+    supply-side substitutability exists between different geographic areas. Transcription technology
+    remains the same, regardless of the territory, and its adaptation to a specific language
+    merely depends on the existence of sufficient business opportunities. The Commission, therefore,
+    concludes that the relevant geographic markets for transcription software for healthcare
+    and for transcription software outside healthcare, and relevant segmentations thereof, are
+    at least EEA-wide, if not global.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m10290_2021_decision
+  page: '8'
+  quote_snippet: 'The market investigation indicates that transcription software is considered
+    in principle part of a global geographic market 28 As a customer explains: “The main difference
+    is that each language needs support for speech recognition in that language. Apart from
+    that they are mostly similar”.29 A possible exception exists for transcription software
+    for healthcare, which requires specific medical vocabulary and integration with EHR systems
+    in each country, in order to be developed and made available in additional languages.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m10290_2021_decision
+  page: '8'
+  quote_snippet: Based on the above considerations, the Commission observes that fundamental
+    supply-side substitutability exists between different geographic areas. Transcription technology
+    remains the same, regardless of the territory, and its adaptation to a specific language
+    merely depends on the existence of sufficient business opportunities. The Commission, therefore,
+    concludes that the relevant geographic markets for transcription software for healthcare
+    and for transcription software outside healthcare, and relevant segmentations thereof, are
+    at least EEA-wide, if not global.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m10290_2021_decision
+  page: '11'
+  quote_snippet: The Commission therefore considers that the relevant geographic market is at
+    least EEA-wide, if not global. The exact geographic market definition, however, can be left
+    open, as this does not affect the outcome of the competitive assessment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m10290_2021_decision
+  page: '13'
+  quote_snippet: All the Parties’ competitors responding to the market investigation consider
+    the relevant geographic market for cloud and data analytics services to be worldwide in
+    scope.44
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_ec_m10290_2021_decision
+  page: '13'
+  quote_snippet: The Commission observes that suppliers of cloud services (e.g., Microsoft,
+    Amazon, Google, etc.) are multinational technology providers, all active at global level.
+    In addition, cloud solutions, whether IaaS or PaaS, consist of solutions accessible from
+    any geographic location, not of physical hardware. The Commission therefore concludes that
+    the relevant geographic market for cloud and data analytics services is worldwide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_ec_m10290_2021_decision
+  page: '15'
+  quote_snippet: Almost all respondents to the market investigation agree that the geographic
+    scope of the market for communication services is global.56 There are some geographic differences
+    (for example, a different legal framework for privacy in the EEA and in the United States)
+    that could militate toward having markets divided by region, such as the EEA.57 Generally,
+    however, in view to the globalisation of many business sectors, communication services are
+    provided on a global scale. The Commission therefore concludes that the market for enterprise
+    communication services is global or at least EEA-wide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_ec_m10290_2021_decision
+  page: '17'
+  quote_snippet: Almost all market respondents agree that the relevant geographic market for
+    productivity software is worldwide in scope.63 In particular, it is noted that productivity
+    software is installed in devices, which are sold globally and also provided as SaaS that
+    can be accessed and used worldwide.64
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_ec_m10290_2021_decision
+  page: '17'
+  quote_snippet: The Commission therefore concludes that the relevant geographic market definition
+    for productivity software is worldwide in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_ec_m10290_2021_decision
+  page: '18'
+  quote_snippet: Almost all market respondents agree that the relevant geographic market for
+    OS is worldwide in scope.71
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_ec_m10290_2021_decision
+  page: '18'
+  quote_snippet: Based on the above considerations and on the fact that OS are installed on
+    PCs sold worldwide to satisfy a global demand, the Commission therefore considers that the
+    relevant geographic market for OS for PCs is worldwide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_ec_m10290_2021_decision
+  page: '20'
+  quote_snippet: The Commission considers that there are no elements on its file suggesting
+    a departure from its previous decisional practice. The Commission considers that the market
+    for CRM software is at least EEA-wide but that the exact geographic market definition can
+    be left open, as this does not affect the outcome of the competitive assessment.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_8
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

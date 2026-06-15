@@ -1,0 +1,302 @@
+case_id: eu_eiffage_eqos_2024
+case_name: EIFFAGE / EQOS
+authority: European Commission
+jurisdiction: EU
+sector: construction
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2024-10-16'
+parties:
+- name: EIFFAGE
+  role: acquirer
+- name: EQOS
+  role: target
+source_documents:
+- doc_id: eu_eiffage_eqos_2024_decision
+  title: EIFFAGE / EQOS — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11577
+  pdf_url: http://publications.europa.eu/resource/cellar/752b3eeb-dccd-11f0-8da2-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Installation and maintenance of catenaries and overhead contact lines
+  definition_status: segmented
+  notes: The Commission previously defined a separate market for the installation and maintenance
+    of catenaries and overhead contact lines, distinct from the manufacture and supply of equipment
+    and from third rail systems. Previous decisions left open further segmentations between
+    long-distance and metropolitan rail, and within long-distance rail, between conventional
+    and high-speed lines. The market investigation confirmed the distinction from third rail
+    systems but was inconclusive regarding a distinction between installation and maintenance
+    services, and between long-distance and metropolitan rails. It found a distinction between
+    conventional and high-speed lines within long-distance lines not relevant. For the purpose
+    of this Decision, the Commission assessed the effects on the narrowest plausible market
+    for the installation of catenaries and overhead contact lines for conventional long-distance
+    lines, as well as on a broader market encompassing both conventional long-distance lines
+    and metropolitan rails.
+- market_id: pm_2
+  name: Electrical engineering services for the installation of high voltage overhead power
+    lines
+  definition_status: considered
+  notes: The Commission previously distinguished electrical engineering services from mechanical
+    and HVAC engineering services, and segmented them by type of work (installation vs. maintenance)
+    and type of customers (residential vs. non-residential, infrastructure, industrial, tertiary).
+    For infrastructure projects, different types were distinguished (telecommunication, electrical
+    substations, power lines, public lighting). For power lines, segmentation by voltage (high
+    vs. medium/low) and installation type (overhead vs. underground) was previously left open.
+    The market investigation confirmed distinctions between power lines and substations, and
+    between high voltage and medium/low voltage power lines. However, results were mixed for
+    segmentation between overhead and underground power lines. The exact product market definition
+    was ultimately left open, but for the purpose of this Decision, the Commission assessed
+    the effects of the Transaction on engineering services for the installation of high voltage
+    powerlines, as this was the only segment leading to affected markets.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Installation and maintenance of catenaries and overhead contact lines — national (Belgium
+    affected)
+  definition_status: defined
+  notes: Previous Commission decisions considered this market to be national. The market investigation
+    confirmed that the relevant geographic market is not broader than national, due to national
+    infrastructure managers with specific requirements, local supplier bases, and national standards
+    and certification bodies.
+- market_id: gm_2
+  name: Installation and maintenance of catenaries and overhead contact lines for long distance
+    lines — regional (Wallonia, including Brussels affected)
+  definition_status: considered
+  notes: While the overall market is national, the market investigation elicited mixed results
+    concerning a segmentation in Belgium between Flanders and Wallonia (including Brussels).
+    Factors supporting segmentation included different framework agreements, specialized suppliers,
+    and language barriers, while factors against included a single customer (Infrabel) across
+    both regions and competitors able to operate in both. For the purpose of this Decision,
+    the Commission assessed the effects of the Transaction on this market at both national and
+    regional levels.
+- market_id: gm_3
+  name: Electrical engineering services for the installation of high voltage overhead power
+    lines — national (France affected)
+  definition_status: defined
+  notes: Previous decisions considered markets for electrical engineering services to be at
+    least national. The market investigation confirmed a national market in France, with customers
+    launching national calls for tenders and framework agreements, and one main customer allocating
+    projects nationally. This was consistent with competitor views.
+- market_id: gm_4
+  name: Electrical engineering services for the installation of high voltage overhead power
+    lines — regional (France affected)
+  definition_status: considered
+  notes: Previous decisions contemplated regional markets within France but left the exact delineation
+    open. The Notifying Party argued against regional segmentation. The exact geographic market
+    definition was left open as the Transaction did not raise serious doubts under any plausible
+    definition. However, for the purpose of this Decision, the Commission assessed the effects
+    at the regional level in France because this was the only geographic market definition that
+    triggered an affected market for the installation of high voltage overhead power lines.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_eiffage_eqos_2024_decision
+  page: '3'
+  quote_snippet: In previous decisions, the Commission defined a separate market for the installation
+    and maintenance of catenaries and overhead contact lines, distinct from the manufacture
+    and supply of such equipment.11 The Commission also distinguished this market from the installation
+    and maintenance of third rail systems.12
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_eiffage_eqos_2024_decision
+  page: '4'
+  quote_snippet: Third, the results of the market investigation were inconclusive concerning
+    a segmentation between the installation and maintenance of catenaries and overhead contact
+    lines for long distance lines and metropolitan rails.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_eiffage_eqos_2024_decision
+  page: '5'
+  quote_snippet: In this context and for the purpose of this Decision, the Commission will assess
+    the effects of the Transaction on the narrowest plausible market for the installation of
+    catenaries and overhead contact lines for conventional long-distance lines, as well as on
+    a broader market for the installation of catenaries and overhead contact lines for both
+    conventional long-distance lines and metropolitan rails.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_eiffage_eqos_2024_decision
+  page: '7'
+  quote_snippet: For power lines in particular, the Commission also contemplated, but ultimately
+    left open, a possible segmentation by (i) type of voltage (between high voltage,49 and medium/low
+    voltage)50 and (ii) type of installation (between overhead and underground power lines).51
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_eiffage_eqos_2024_decision
+  page: '8'
+  quote_snippet: However, the market investigation elicited mixed results as to the relevance
+    of a segmentation between the installation of overhead and underground power lines.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_eiffage_eqos_2024_decision
+  page: '9'
+  quote_snippet: In any event, the exact product market definition can be left open as the Transaction
+    does not give rise to serious doubts as to its compatibility with the internal market under
+    any plausible market definition. The overlaps between the Parties’ activities lead to affected
+    markets only in engineering services for the installation of high voltage powerlines. Therefore,
+    for the purpose of this Decision, the Commission will assess the effects of the Transaction
+    on that market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_eiffage_eqos_2024_decision
+  page: '5'
+  quote_snippet: In past decisions, the Commission considered the market for the installation
+    and maintenance of catenaries and overhead contact lines to be national, although it did
+    not exclude that such market could extend to multiple Member States or to the EEA.30 In
+    Bouygues / Equans, however, the Commission found clear indications that this market and
+    its narrower segments for long-distance rail and metropolitan rail were national.31
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_eiffage_eqos_2024_decision
+  page: '6'
+  quote_snippet: Concerning a segmentation in Belgium between Flanders and Wallonia (including
+    Brussels), the market investigation elicited mixed results.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_eiffage_eqos_2024_decision
+  page: '6'
+  quote_snippet: On the one hand, the only customer for long distance line in Belgium has different
+    framework agreements in each region,36 and certain suppliers specialize in one region,37
+    generally because of the difference in language in these two regions, which can play as
+    barrier to entry and expansion.38
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_eiffage_eqos_2024_decision
+  page: '9'
+  quote_snippet: In previous decisions, the Commission considered the markets for the provision
+    of electrical engineering services to be at least national in scope.62
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_eiffage_eqos_2024_decision
+  page: '9'
+  quote_snippet: The Notifying Party considers that the market for the provision of electrical
+    engineering services for high-voltage power lines is at least national in scope, and that
+    a segmentation at regional level in France is not relevant because suppliers provide services
+    throughout France and RTE, which represents […]% of the demand for the installation of high-voltage
+    power lines, sources these services exclusively in the context of national framework agreements.65
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_eiffage_eqos_2024_decision
+  page: '2'
+  quote_snippet: The Transaction therefore has a Union dimension pursuant to Article 1(2) of
+    the Merger Regulation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_eiffage_eqos_2024_decision
+  page: '20'
+  quote_snippet: Where, as in this case, a notified concentration raises serious doubts as to
+    its compatibility with the internal market or the functioning of the EEA agreement, the
+    parties may modify the notified concentration so as to remove the grounds for the serious
+    doubts identified by the Commission with a view to having it declared compatible with the
+    internal market pursuant to Article 6(1)(b) in conjunction with Article 6(2) of the Merger
+    Regulation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

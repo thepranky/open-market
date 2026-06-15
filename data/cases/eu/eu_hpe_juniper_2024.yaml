@@ -1,0 +1,812 @@
+case_id: eu_hpe_juniper_2024
+case_name: HPE / JUNIPER
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2024-08-01'
+parties:
+- name: HPE
+  role: acquirer
+- name: JUNIPER
+  role: target
+source_documents:
+- doc_id: eu_hpe_juniper_2024_decision
+  title: HPE / JUNIPER — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11457
+  pdf_url: http://publications.europa.eu/resource/cellar/f105ed13-b934-11ef-91ed-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Switches
+  definition_status: left_open
+  notes: The Commission considered various segmentations for switches, including by underlying
+    protocols/technologies (TDM, ATM, Ethernet, MS), bandwidth, type of activity, and customer
+    size. It also considered a broader market including both switches and routers. While the
+    market investigation supported a separate market for Ethernet switches and a distinction
+    between campus and datacentre switches, the exact product market definition was left open
+    for the purpose of this Decision.
+- market_id: pm_2
+  name: Ethernet campus switches
+  definition_status: considered
+  notes: The Commission carried out its competitive assessment for this market segment, noting
+    it was the only potential market segment on which the Parties had a combined market share
+    of more than 20%, thus warranting further review, even though the broader switches market
+    definition was left open.
+- market_id: pm_3
+  name: WLAN equipment
+  definition_status: left_open
+  notes: The Commission considered a market for WLAN equipment, noting it includes WAPs and
+    WLAN controllers. It also considered a potential segmentation at the level of single components
+    (WAPs and WLAN controllers) and a distinction from LAN equipment. The market investigation
+    supported a separate market for WLAN from LAN equipment and also segmentation at the component
+    level. However, the exact product market definition was left open for the purpose of this
+    Decision.
+- market_id: pm_4
+  name: WAPs (Wireless Access Points)
+  definition_status: considered
+  notes: The Commission carried out its competitive assessment for this plausible narrower market
+    within WLAN equipment, as it was one of the plausible product markets where the Transaction
+    gave rise to affected markets.
+- market_id: pm_5
+  name: SD-WAN
+  definition_status: left_open
+  notes: There is no Commission precedent specifically for SD-WAN. The Commission left the market
+    definition open because the Transaction would not give rise to an affected market even under
+    the narrowest plausible definition.
+- market_id: pm_6
+  name: Enterprise network security solutions
+  definition_status: left_open
+  notes: The Commission noted that there are no specific precedents for SSE, NAC, SASE, and
+    firewalls but precedents exist for general enterprise security software. The Notifying Party
+    referred to Gartner's segmentation. The Commission left the market definition open because
+    the Transaction would not give rise to an affected market even under the narrowest plausible
+    definition.
+- market_id: pm_7
+  name: Routers
+  definition_status: left_open
+  notes: The Commission referenced previous decisions that considered various segmentations
+    for routers, or a broader market including both switches and routers, but ultimately left
+    the market definition open. For this Decision, the exact product market definition was left
+    open as the Transaction would not give rise to an affected market.
+- market_id: pm_8
+  name: Cloud networking
+  definition_status: left_open
+  notes: There is no Commission precedent specifically for cloud networking. The Commission
+    left the market definition open because the Transaction would not give rise to an affected
+    market even under the narrowest plausible definition.
+- market_id: pm_9
+  name: Servers
+  definition_status: left_open
+  notes: The Commission considered an overall market for servers with a possible segmentation
+    by price band based on previous decisions. The market investigation was inconclusive on
+    which segmentation should apply. For this Decision, the exact product market definition
+    was left open, but an assessment was carried out based on IDC's price segmentation (mid-range
+    servers) as the narrowest plausible market.
+- market_id: pm_10
+  name: Mid-range servers (USD 25,000 – USD 250,000)
+  definition_status: considered
+  notes: The Commission carried out an assessment based on this market, which was submitted
+    by the Notifying Party using IDC's price segmentation, due to HPE's market share exceeding
+    30% and its relation to Juniper's datacentre switches.
+- market_id: pm_11
+  name: High performance computing (HPC) systems
+  definition_status: left_open
+  notes: There is no Commission precedent specifically for HPC systems. The Commission left
+    the market definition open because the Transaction would not give rise to an affected market.
+    An assessment was carried out on the basis of a 'potential market for the supply of HPC
+    systems'.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Switches — EEA-wide or worldwide
+  definition_status: left_open
+  notes: The Commission referred to precedents considering the market to be at least EEA-wide,
+    if not worldwide. The market investigation indicated a worldwide scope. For the purpose
+    of this Decision, the exact geographic market definition was left open.
+- market_id: gm_2
+  name: Ethernet campus switches — EEA-wide
+  definition_status: considered
+  notes: The Commission conducted its assessment based on an EEA-wide market for Ethernet campus
+    switches, as this was the only level at which the Parties had a combined market share of
+    more than 20%, warranting further review.
+- market_id: gm_3
+  name: WLAN equipment — worldwide or EEA-wide
+  definition_status: left_open
+  notes: Commission precedents considered the geographic market to be EEA-wide or worldwide.
+    The market investigation indicated a worldwide scope. For this Decision, the Commission
+    concluded the market is likely worldwide but left the exact geographic definition open.
+- market_id: gm_4
+  name: WAPs (Wireless Access Points) — worldwide
+  definition_status: considered
+  notes: The Commission carried out its assessment based on a worldwide market for WAPs as the
+    narrowest affected market, in line with its overall consideration that the WLAN equipment
+    market is likely worldwide.
+- market_id: gm_5
+  name: SD-WAN — worldwide or EEA-wide
+  definition_status: left_open
+  notes: The Commission considered the geographic market for SD-WAN to be worldwide or EEA-wide,
+    in line with precedents for routers. The exact definition was left open as the transaction
+    did not give rise to an affected market.
+- market_id: gm_6
+  name: Enterprise network security solutions — worldwide or EEA-wide
+  definition_status: left_open
+  notes: The Commission referred to precedents for infrastructure/security software considering
+    the market to be at least EEA-wide, if not worldwide. The exact definition was left open
+    as the transaction did not give rise to an affected market.
+- market_id: gm_7
+  name: Routers — worldwide or EEA-wide
+  definition_status: left_open
+  notes: The Commission referenced previous decisions considering the market to be at least
+    EEA-wide, if not worldwide. The exact definition was left open as the transaction did not
+    give rise to an affected market.
+- market_id: gm_8
+  name: Cloud networking — worldwide or EEA-wide
+  definition_status: left_open
+  notes: The Commission referenced precedents for IT services noting the market is likely broader
+    than national. The exact definition was left open as the transaction did not give rise to
+    an affected market.
+- market_id: gm_9
+  name: Servers — worldwide
+  definition_status: left_open
+  notes: The Commission referred to precedents where the geographic scope for datacentre servers
+    was worldwide. The market investigation also supported a worldwide scope. For this Decision,
+    the exact geographic market definition was left open, but an assessment was carried out
+    based on a worldwide market.
+- market_id: gm_10
+  name: High performance computing (HPC) systems — worldwide or EEA-wide
+  definition_status: left_open
+  notes: The Commission referenced precedents for network interconnect products used in HPC
+    as worldwide. The exact definition was left open as the transaction did not give rise to
+    an affected market.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '3'
+  quote_snippet: 'In Broadcom/Brocade9, Hewlett-Packard/3Com10, Gores Group/Siemens Enterprise
+    Communications11, Alcatel/Lucent Technologies12 and Nvidia/Mellanox13, the Commission considered
+    segmenting the market for switches: (i) by underlying protocols and technologies, such as
+    time-division multiplexing (“TDM”) switches, asynchronous transfer mode (“ATM”) categories
+    that are available in each data source were used to identify the relevant markets. Whereas
+    the market reports from most abovementioned sources cover all product segmentations referred
+    to by the Notifying Party, a few of the narrowest product segmentations are based on only
+    a smaller subset of sources. switches, Internet Protocol /Ethernet switches14 and multi-service
+    (“MS”) switches15; (ii) by bandwidth, within a potential segment for Ethernet switches,
+    considering segmentations of bandwidth above or below 25 Gb/s16; (iii) by type of activity
+    (manufacture, distribution and offering of integrated solutions)17; (iv) by size of the
+    customer (e.g., the number of network users)18.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '7'
+  quote_snippet: However, for the purpose of this Decision, the exact product market definition
+    can be left open, as the Transaction does not raise serious doubts as to its compatibility
+    with the internal market even under the narrowest plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '7'
+  quote_snippet: In Section 6.2.4 below, the Commission carries out an assessment of a potential
+    market for Ethernet campus switches as this is the only potential market segment on which
+    the Parties have a combined market share of more than 20%, thus warranting further review.41
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '8'
+  quote_snippet: In Hewlett-Packard/3Com47 and Gores Group LLC/Siemens Enterprise Communications,48
+    the Commission considered, but ultimately left open, (i) a market for WLAN equipment that
+    is separate from a market for LAN equipment, and (ii) distinct market segments for single
+    components of the WLAN system (i.e., WAPs and WLAN controllers).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '9'
+  quote_snippet: However, for the purpose of this Decision, the exact product market definition
+    with regard to the supply of WLAN equipment can be left open, as the Transaction does not
+    raise serious doubts as to its compatibility with the internal market under any plausible
+    product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '9'
+  quote_snippet: In Section 6.2.3 below, the Commission carries out an assessment of a potential
+    market for WLAN equipment (that is separate from a potential market for LAN equipment) and
+    of a plausible narrower market for WAPs, as these are the only plausible product markets
+    within WLAN equipment where the Transaction gives rise to affected markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '29'
+  quote_snippet: In this Section, the Commission carries out its competitive assessment for
+    WLAN equipment alongside its assessment on the basis of the narrowest possible market definition,
+    i.e., the worldwide market for the supply of WAPs.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '11'
+  quote_snippet: The Commission considers that, for the purpose of this Decision, the exact
+    product market definition with regard to the supply of SD-WAN can be left open, as the Transaction
+    would not give rise to an affected market even under the narrowest plausible product market
+    definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '12'
+  quote_snippet: The are no Commission precedents that consider SSE, NAC, SASE and firewalls
+    specifically. However, the Commission did consider in previous decisions a potential market
+    for (enterprise) security software.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '14'
+  quote_snippet: The Commission notes that, for the purpose of this Decision, the exact product
+    market definition with regard to the supply of enterprise network security solutions can
+    be left open, as the Transaction would not give rise to an affected market even under the
+    narrowest plausible product market definition.75
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '15'
+  quote_snippet: In Hewlett-Packard/3Com and Broadcom/Brocade, the Commission considered whether
+    the market could be segmented (i) according to the technology used (TDM, ATM, and Ethernet);
+    (ii) by type of activity (manufacture, distribution and offering of integrated solutions);
+    or (iii) on the basis of number of users; and (iv) whether there is a broader product market
+    including both switches and routers.81
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '15'
+  quote_snippet: In light of the above, the Commission considers that, for the purpose of this
+    Decision, the exact product market definition with regard to the supply of routers can be
+    left open, as the Transaction would not give rise to an affected market even under the narrowest
+    plausible product market definition.84
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '16'
+  quote_snippet: There is no Commission precedent with regard to cloud networking.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '17'
+  quote_snippet: In light of the above, the Commission considers that, for the purpose of this
+    Decision, the exact product market definition with regard to the supply of cloud networking
+    can be left open, as the Transaction would not give rise to an affected market even under
+    the narrowest plausible product market definition.92
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '18'
+  quote_snippet: In previous decisions, the Commission considered an overall market for servers,
+    with a possible segmentation by price band into (i) entry level (below USD 100 000), (ii)
+    mid-range (USD 100 000 – USD 999 999) and (iii) high-end (USD 1 million and above).96
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '18'
+  quote_snippet: In light of the above, the Commission considers that, for the purpose of this
+    Decision, the exact product market definition with regard to the supply of servers can be
+    left open, as the Transaction would not raise serious doubts as to its compatibility with
+    the internal market even under the narrowest plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '19'
+  quote_snippet: In Section 6.3.3 below, the Commission carries out an assessment on the basis
+    of the narrowest plausible market submitted by the Notifying Party, which is based on IDC’s
+    price segmentation.102
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '38'
+  quote_snippet: Given that HPE’s market share in 2022 exceeded 30% on the worldwide market
+    for the supply of mid-range servers according to the segmentation applied by IDC,213 this
+    section assesses whether the merged entity could foreclose its networking rivals by tying
+    or bundling Juniper’s networking products, and in particular its datacentre switches, to
+    HPE’s servers in this putative market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '7'
+  quote_snippet: In Hewlett-Packard/3Com,42 the Commission considered that the relevant geographic
+    market for switches or any subsegment thereof is at least EEA-wide, if not worldwide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '7'
+  quote_snippet: In the market investigation, the vast majority of respondents expressing a
+    view indicated that the geographic scope of the market for switches is worldwide in scope.44
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '8'
+  quote_snippet: In any event, the Commission considers that, for the purpose of this Decision,
+    the exact geographic market definition with regard to the supply of switches and any potential
+    subsegment therein can be left open, as the Transaction does not raise serious doubts as
+    to its compatibility with the internal market irrespective of whether a worldwide or EEA-wide
+    market is considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '8'
+  quote_snippet: In Section 6.2.2 below, the Commission carries out an assessment based on an
+    EEA-wide market for Ethernet campus switches as this is the only level at which the Parties
+    have a combined market share of more than 20% thus warranting further review.45
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '10'
+  quote_snippet: In Hewlett-Packard/3Com56 and Gores Group LLC/Siemens Enterprise Communications,57
+    the Commission considered that the relevant geographic market for WLAN equipment is EEA-wide
+    or worldwide, but ultimately left the exact geographic market definition open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '10'
+  quote_snippet: In the market investigation, the vast majority of respondents expressing a
+    view indicate that the geographic of the market for WLAN equipment is worldwide in scope.59
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '10'
+  quote_snippet: In light of the above, the Commission considers that the relevant geographic
+    market for WLAN equipment is likely worldwide. However, for the purpose of this Decision,
+    the Commission considers that the exact geographic market definition with regard to the
+    supply of WLAN equipment can be left open, as the Transaction does not raise serious doubts
+    as to its compatibility with the internal market irrespective of whether a worldwide or
+    EEA-wide market is considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '10'
+  quote_snippet: In Section 6.2.3 below, the Commission carries out an assessment based on worldwide
+    market for WAPs as the narrowest market where the Transaction gives rise to an affected
+    market, as well as a worldwide market for WLAN equipment which is also affected.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '11'
+  quote_snippet: In Broadcom/Brocade and Hewlett-Packard/3Com, the Commission considered that
+    the relevant geographic market for routers is at least EEA-wide, if not worldwide, but ultimately
+    left the geographic market definition open.65
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '12'
+  quote_snippet: For the purpose of this Decision and in line with its previous decisional practice,
+    the Commission considers that the exact geographic market definition with regard to the
+    supply of SD-WAN can be left open, as the Transaction does not give rise to an affected
+    market irrespective of whether a worldwide or EEA-wide market is considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '14'
+  quote_snippet: In Hewlett-Packard/3Com76 and Broadcom/Symantec Enterprise Security Business77,
+    the Commission considered that the relevant geographic market for infrastructure software
+    (as well as any potential segmentation of that market, including security software) is at
+    least EEA-wide, if not worldwide, but ultimately left the geographic market definition open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '14'
+  quote_snippet: The Notifying Party considers that the geographic market for the supply of
+    enterprise network security solutions is worldwide, given the low transport costs, the similarity
+    of product specifications and the sales patterns of the main manufacturers, which operate
+    worldwide.78
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '14'
+  quote_snippet: For the purpose of this Decision and in line with its previous decisional practice,
+    the Commission considers that the exact geographic market definition with regard to the
+    supply of enterprise network security solutions can be left open, as the Transaction does
+    not give rise to an affected market irrespective of whether a worldwide or EEA-wide market
+    is considered.79
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '16'
+  quote_snippet: In previous decisions, the Commission considered that the geographic scope
+    of the markets for routers is at least EEA-wide, if not worldwide.85
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '16'
+  quote_snippet: For the purpose of this Decision and in line with its previous decisional practice,
+    the Commission considers that the exact geographic market definition with regard to the
+    supply of routers can be left open, as the Transaction does not give rise to an affected
+    market irrespective of whether a worldwide or EEA-wide market is considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_34
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '19'
+  quote_snippet: In Nvidia/Mellanox, the Commission considered that the geographic scope of
+    the market for datacentre servers (including a potential market for mid-range servers) is
+    worldwide.103
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_9
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_35
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '19'
+  quote_snippet: In the market investigation, all the respondents that expressed a view indicated
+    that the market for servers is worldwide in scope.105
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_9
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_36
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '19'
+  quote_snippet: In light of the above, for the purpose of this Decision and in line with its
+    previous decisional practice, the Commission considers that the exact geographic market
+    definition with regard to the supply of servers can be left open, as the Transaction does
+    not raise serious doubts as to its compatibility with the internal market irrespective of
+    the geographic scope of the market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_9
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_37
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '20'
+  quote_snippet: In Nvidia/Mellanox, the Commission considered that the geographic scope of
+    the various markets for network interconnect products was worldwide.110
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_10
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_38
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '20'
+  quote_snippet: The Notifying Party considers the geographic market to be worldwide in scope
+    given the global production and distribution of HPC, low relative transport costs, similar
+    prices across regions, and the absence of regulatory barriers.111
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_10
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_39
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '21'
+  quote_snippet: For the purpose of this Decision, and in line with its previous decisional
+    practice, the Commission considers that the exact geographic market definition with regard
+    to the supply of HPC can be left open, as the Transaction does not raise serious doubts
+    as to its compatibility with the internal market irrespective of whether a worldwide or
+    EEA-wide market is considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_10
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_40
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '1'
+  quote_snippet: Commission decision pursuant to Article 6(1)(b) of Council Regulation No 139/20041
+    and Article 57 of the Agreement on the European Economic Area2
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_41
+  source_document_id: eu_hpe_juniper_2024_decision
+  page: '42'
+  quote_snippet: For the above reasons, the European Commission has decided not to oppose the
+    notified operation and to declare it compatible with the internal market and with the EEA
+    Agreement. This decision is adopted in application of Article 6(1)(b) of the Merger Regulation
+    and Article 57 of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

@@ -1,0 +1,682 @@
+case_id: eu_partners_group_forterro_2022
+case_name: PARTNERS GROUP / FORTERRO
+authority: European Commission
+jurisdiction: EU
+sector: tech
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2022-06-24'
+parties:
+- name: PARTNERS GROUP
+  role: acquirer
+- name: FORTERRO
+  role: target
+source_documents:
+- doc_id: eu_partners_group_forterro_2022_decision
+  title: PARTNERS GROUP / FORTERRO — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10709
+  pdf_url: http://publications.europa.eu/resource/cellar/b3cbfeb6-82b7-11ed-9887-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Enterprise application software (EAS)
+  definition_status: considered
+  notes: The Commission's assessment, supported by market investigation, aligns with previous
+    decisions on EAS and its segments.
+- market_id: pm_2
+  name: ERP software
+  definition_status: left_open
+  notes: The Commission left open the question of whether the ERP software market should be
+    further segmented by functionality (HCM, FMS, EPM) and whether these sub-segments should
+    be divided into high-function and mid-market solutions. For its assessment, the Commission
+    examined the overall ERP market and each potential sub-segment separately.
+- market_id: pm_3
+  name: HCM software
+  definition_status: left_open
+  notes: HCM software is considered a potential sub-segment of ERP software. The Commission
+    left open whether this sub-segment should be further divided into high-function and mid-market
+    solutions, but examined these possibilities for the purpose of the decision.
+- market_id: pm_4
+  name: FMS software
+  definition_status: left_open
+  notes: FMS software is considered a potential sub-segment of ERP software. The Commission
+    left open whether this sub-segment should be further divided into high-function and mid-market
+    solutions, but examined these possibilities for the purpose of the decision.
+- market_id: pm_5
+  name: EPM software
+  definition_status: left_open
+  notes: EPM software is considered a potential sub-segment of ERP software. The Commission
+    left open whether this sub-segment should be further divided into high-function and mid-market
+    solutions, but examined these possibilities for the purpose of the decision.
+- market_id: pm_6
+  name: BA software
+  definition_status: considered
+  notes: BA software is considered a segment of EAS, consistent with past decisions and supported
+    by market investigation respondents.
+- market_id: pm_7
+  name: Content services
+  definition_status: considered
+  notes: Content services is recognized as an EAS segment by Gartner and is where the Parties'
+    activities overlap.
+- market_id: pm_8
+  name: Infrastructure software
+  definition_status: considered
+  notes: Categorized as business software in previous decisions, distinct from application software.
+    While market investigation respondents found this distinction accurate, it is not a market
+    formally assessed for competitive effects in this decision.
+- market_id: pm_9
+  name: Application software
+  definition_status: considered
+  notes: Categorized as business software in previous decisions, distinct from infrastructure
+    software. While market investigation respondents found this distinction accurate, it is
+    not a market formally assessed for competitive effects in this decision.
+geographic_markets_considered:
+- market_id: gm_1
+  name: EAS and its segments — EEA-wide
+  definition_status: left_open
+  notes: The Commission noted previous decisions considered markets for EAS and its segments
+    to be at least EEA-wide or worldwide. Market investigation respondents largely supported
+    this view. The Commission ultimately left the geographic scope open, assessing both EEA
+    and worldwide levels.
+- market_id: gm_2
+  name: EAS and its segments — worldwide
+  definition_status: left_open
+  notes: The Commission noted previous decisions considered markets for EAS and its segments
+    to be at least EEA-wide or worldwide. Market investigation respondents largely supported
+    this view. The Commission ultimately left the geographic scope open, assessing both EEA
+    and worldwide levels.
+- market_id: gm_3
+  name: ERP software and its sub-segments — national (Poland affected)
+  definition_status: left_open
+  notes: The Commission noted that affected markets arose only in Poland and focused its investigation
+    there. While previous decisions considered at least EEA-wide scope for ERP and its sub-segments,
+    one respondent indicated a national scope, particularly for HCM software, due to localization
+    requirements. The Commission left the geographic scope open, assessing national, EEA, and
+    worldwide levels.
+- market_id: gm_4
+  name: ERP software and its sub-segments — EEA-wide
+  definition_status: left_open
+  notes: The Commission previously found the scope for ERP software and its sub-segments to
+    be at least EEA-wide or worldwide. Market investigation did not justify a departure from
+    this. The Commission left the geographic scope open, assessing national, EEA, and worldwide
+    levels.
+- market_id: gm_5
+  name: ERP software and its sub-segments — worldwide
+  definition_status: left_open
+  notes: The Commission previously found the scope for ERP software and its sub-segments to
+    be at least EEA-wide or worldwide. Market investigation did not justify a departure from
+    this. The Commission left the geographic scope open, assessing national, EEA, and worldwide
+    levels.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_partners_group_forterro_2022_decision
+  page: '3'
+  quote_snippet: (8) The Transaction concerns the provision of business software, and in particular,
+    the market for the provision of enterprise application software (“EAS”) and its segment
+    ERP software, as well as potential ERP sub-segments (HCM software and FMS).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_partners_group_forterro_2022_decision
+  page: '4'
+  quote_snippet: (15) The Commission considered that the market for EAS solutions can be divided
+    between ERP, CRM, SCM, supplier relationship management (“SRM”), product lifecycle management
+    (“PLM”) and BA software.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_partners_group_forterro_2022_decision
+  page: '4'
+  quote_snippet: (18) The results of the market investigation generally support the approach
+    that the Commission has taken in previous cases with regard to the market for the supply
+    of EAS and segments thereof. There are therefore no reasons for the Commission to depart
+    from the approach it has taken previously.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_partners_group_forterro_2022_decision
+  page: '3'
+  quote_snippet: (8) The Transaction concerns the provision of business software, and in particular,
+    the market for the provision of enterprise application software (“EAS”) and its segment
+    ERP software, as well as potential ERP sub-segments (HCM software and FMS).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_partners_group_forterro_2022_decision
+  page: '4'
+  quote_snippet: '(16) Within a market for the supply of ERP software, the Commission has previously
+    considered, but ultimately left open, segments based on functionality: HCM software, FMS
+    software and enterprise project management (“EPM”) software.9 The Commission finally considered
+    whether each of these three ERP sub-segments can be divided between high-function solutions
+    and mid-market solutions.10'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_partners_group_forterro_2022_decision
+  page: '5'
+  quote_snippet: '(21) In light of the above, the Commission considers that the question of
+    whether the market for the supply of ERP software should be further segmented based on functionality
+    to HCM, FMS and EPM software, and whether each of these ERP sub-segments can be divided
+    between high-function and mid-market solutions, can be left open, as the Transaction does
+    not raise serious doubts as to its compatibility with the internal market under any plausible
+    product market definition. For the purpose of this Decision, the Commission has thus examined:
+    (i) the overall ERP software market; and (ii) each ERP sub-segment per functionality (HCM,
+    FMS and EPM) separately, each potentially divided between high-function and mid-market solutions.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_partners_group_forterro_2022_decision
+  page: '3'
+  quote_snippet: (8) The Transaction concerns the provision of business software, and in particular,
+    the market for the provision of enterprise application software (“EAS”) and its segment
+    ERP software, as well as potential ERP sub-segments (HCM software and FMS).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_partners_group_forterro_2022_decision
+  page: '4'
+  quote_snippet: '(16) Within a market for the supply of ERP software, the Commission has previously
+    considered, but ultimately left open, segments based on functionality: HCM software, FMS
+    software and enterprise project management (“EPM”) software.9 The Commission finally considered
+    whether each of these three ERP sub-segments can be divided between high-function solutions
+    and mid-market solutions.10'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_partners_group_forterro_2022_decision
+  page: '5'
+  quote_snippet: '(21) In light of the above, the Commission considers that the question of
+    whether the market for the supply of ERP software should be further segmented based on functionality
+    to HCM, FMS and EPM software, and whether each of these ERP sub-segments can be divided
+    between high-function and mid-market solutions, can be left open, as the Transaction does
+    not raise serious doubts as to its compatibility with the internal market under any plausible
+    product market definition. For the purpose of this Decision, the Commission has thus examined:
+    (i) the overall ERP software market; and (ii) each ERP sub-segment per functionality (HCM,
+    FMS and EPM) separately, each potentially divided between high-function and mid-market solutions.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_partners_group_forterro_2022_decision
+  page: '3'
+  quote_snippet: (8) The Transaction concerns the provision of business software, and in particular,
+    the market for the provision of enterprise application software (“EAS”) and its segment
+    ERP software, as well as potential ERP sub-segments (HCM software and FMS).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_partners_group_forterro_2022_decision
+  page: '4'
+  quote_snippet: '(16) Within a market for the supply of ERP software, the Commission has previously
+    considered, but ultimately left open, segments based on functionality: HCM software, FMS
+    software and enterprise project management (“EPM”) software.9 The Commission finally considered
+    whether each of these three ERP sub-segments can be divided between high-function solutions
+    and mid-market solutions.10'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_partners_group_forterro_2022_decision
+  page: '5'
+  quote_snippet: '(21) In light of the above, the Commission considers that the question of
+    whether the market for the supply of ERP software should be further segmented based on functionality
+    to HCM, FMS and EPM software, and whether each of these ERP sub-segments can be divided
+    between high-function and mid-market solutions, can be left open, as the Transaction does
+    not raise serious doubts as to its compatibility with the internal market under any plausible
+    product market definition. For the purpose of this Decision, the Commission has thus examined:
+    (i) the overall ERP software market; and (ii) each ERP sub-segment per functionality (HCM,
+    FMS and EPM) separately, each potentially divided between high-function and mid-market solutions.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_partners_group_forterro_2022_decision
+  page: '4'
+  quote_snippet: '(16) Within a market for the supply of ERP software, the Commission has previously
+    considered, but ultimately left open, segments based on functionality: HCM software, FMS
+    software and enterprise project management (“EPM”) software.9 The Commission finally considered
+    whether each of these three ERP sub-segments can be divided between high-function solutions
+    and mid-market solutions.10'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_partners_group_forterro_2022_decision
+  page: '5'
+  quote_snippet: '(21) In light of the above, the Commission considers that the question of
+    whether the market for the supply of ERP software should be further segmented based on functionality
+    to HCM, FMS and EPM software, and whether each of these ERP sub-segments can be divided
+    between high-function and mid-market solutions, can be left open, as the Transaction does
+    not raise serious doubts as to its compatibility with the internal market under any plausible
+    product market definition. For the purpose of this Decision, the Commission has thus examined:
+    (i) the overall ERP software market; and (ii) each ERP sub-segment per functionality (HCM,
+    FMS and EPM) separately, each potentially divided between high-function and mid-market solutions.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_partners_group_forterro_2022_decision
+  page: '4'
+  quote_snippet: '(15) The Commission considered that the market for EAS solutions can be divided
+    between ERP, CRM, SCM, supplier relationship management (“SRM”), product lifecycle management
+    (“PLM”) and BA software.7 In addition to previous decisions, the Commission further notes
+    that the Parties’ activities overlap in one other EAS segment recognized by Gartner, a technological
+    research and consulting firm : content services.8'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_partners_group_forterro_2022_decision
+  page: '4'
+  quote_snippet: (19) All respondents expressing an opinion indicate that a distinction between
+    infrastructure software and application software is accurate in Poland.12 The vast majority
+    of respondents moreover confirm that the distinction the Commission has previously made
+    between the supply of ERP, CRM, SRM, SCM, PLM and BA software is accurate in Poland today.13
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_partners_group_forterro_2022_decision
+  page: '4'
+  quote_snippet: '(15) The Commission considered that the market for EAS solutions can be divided
+    between ERP, CRM, SCM, supplier relationship management (“SRM”), product lifecycle management
+    (“PLM”) and BA software.7 In addition to previous decisions, the Commission further notes
+    that the Parties’ activities overlap in one other EAS segment recognized by Gartner, a technological
+    research and consulting firm : content services.8'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_partners_group_forterro_2022_decision
+  page: '3'
+  quote_snippet: (14) In previous decisions, the Commission categorised business software into
+    “infrastructure software” and “application software”.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_partners_group_forterro_2022_decision
+  page: '4'
+  quote_snippet: (19) All respondents expressing an opinion indicate that a distinction between
+    infrastructure software and application software is accurate in Poland.12
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_partners_group_forterro_2022_decision
+  page: '3'
+  quote_snippet: (14) In previous decisions, the Commission categorised business software into
+    “infrastructure software” and “application software”.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_partners_group_forterro_2022_decision
+  page: '4'
+  quote_snippet: (19) All respondents expressing an opinion indicate that a distinction between
+    infrastructure software and application software is accurate in Poland.12
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_partners_group_forterro_2022_decision
+  page: '5'
+  quote_snippet: (22) The Commission has previously considered that markets for EAS and its
+    segments were at least EEA-wide and possibly worldwide.15
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_partners_group_forterro_2022_decision
+  page: '5'
+  quote_snippet: (24) The vast majority of the respondents expressing an opinion indicate that
+    competition on the market for the supply of EAS and its segments takes place either on an
+    EEA-level or worldwide level.18
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_partners_group_forterro_2022_decision
+  page: '6'
+  quote_snippet: '(25) In light of the above, the Commission considers that the results of the
+    market investigation do not justify a departure from its previous conclusions regarding
+    the geographic scope of the relevant market. In any event, it can be left open whether the
+    geographic scope of the market should be defined as EEA or worldwide for EAS and its segments,
+    or national, EEA or worldwide for ERP software and its sub-segments, as the Transaction
+    does not raise serious doubts as to its compatibility with the internal market under any
+    plausible geographic market definition. For the purpose of this Decision, the Commission
+    has thus examined: (i) the EEA and worldwide level for the EAS and its segments; and (ii)
+    the national, EEA and worldwide level for the ERP software and its sub-segments.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_partners_group_forterro_2022_decision
+  page: '5'
+  quote_snippet: (22) The Commission has previously considered that markets for EAS and its
+    segments were at least EEA-wide and possibly worldwide.15
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_partners_group_forterro_2022_decision
+  page: '5'
+  quote_snippet: (24) The vast majority of the respondents expressing an opinion indicate that
+    competition on the market for the supply of EAS and its segments takes place either on an
+    EEA-level or worldwide level.18
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_partners_group_forterro_2022_decision
+  page: '6'
+  quote_snippet: '(25) In light of the above, the Commission considers that the results of the
+    market investigation do not justify a departure from its previous conclusions regarding
+    the geographic scope of the relevant market. In any event, it can be left open whether the
+    geographic scope of the market should be defined as EEA or worldwide for EAS and its segments,
+    or national, EEA or worldwide for ERP software and its sub-segments, as the Transaction
+    does not raise serious doubts as to its compatibility with the internal market under any
+    plausible geographic market definition. For the purpose of this Decision, the Commission
+    has thus examined: (i) the EEA and worldwide level for the EAS and its segments; and (ii)
+    the national, EEA and worldwide level for the ERP software and its sub-segments.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_partners_group_forterro_2022_decision
+  page: '3'
+  quote_snippet: (13) Considering all plausible product markets and the assessment of the geographic
+    scope of the market for the supply of ERP software and any segmentation thereof as set out
+    in Sections 4.1.2 and 4.1.3 below, the Transaction only gives rise to horizontally affected
+    markets in Poland. Therefore, the market investigation focused on the ERP software market
+    participants active in Poland.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_partners_group_forterro_2022_decision
+  page: '6'
+  quote_snippet: '(25) In light of the above, the Commission considers that the results of the
+    market investigation do not justify a departure from its previous conclusions regarding
+    the geographic scope of the relevant market. In any event, it can be left open whether the
+    geographic scope of the market should be defined as EEA or worldwide for EAS and its segments,
+    or national, EEA or worldwide for ERP software and its sub-segments, as the Transaction
+    does not raise serious doubts as to its compatibility with the internal market under any
+    plausible geographic market definition. For the purpose of this Decision, the Commission
+    has thus examined: (i) the EEA and worldwide level for the EAS and its segments; and (ii)
+    the national, EEA and worldwide level for the ERP software and its sub-segments.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_partners_group_forterro_2022_decision
+  page: '5'
+  quote_snippet: (22) The Commission has previously considered that markets for EAS and its
+    segments were at least EEA-wide and possibly worldwide.15 With respect to ERP software and
+    its sub-segments, when the Commission also assessed national markets for ERP software and
+    HCM software, the results of the market investigation did not provide any new elements that
+    would justify a departure from the Commission’s previous conclusions that the scope of the
+    market would be at least EEA-wide and possibly worldwide.16
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_partners_group_forterro_2022_decision
+  page: '6'
+  quote_snippet: '(25) In light of the above, the Commission considers that the results of the
+    market investigation do not justify a departure from its previous conclusions regarding
+    the geographic scope of the relevant market. In any event, it can be left open whether the
+    geographic scope of the market should be defined as EEA or worldwide for EAS and its segments,
+    or national, EEA or worldwide for ERP software and its sub-segments, as the Transaction
+    does not raise serious doubts as to its compatibility with the internal market under any
+    plausible geographic market definition. For the purpose of this Decision, the Commission
+    has thus examined: (i) the EEA and worldwide level for the EAS and its segments; and (ii)
+    the national, EEA and worldwide level for the ERP software and its sub-segments.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_partners_group_forterro_2022_decision
+  page: '5'
+  quote_snippet: (22) The Commission has previously considered that markets for EAS and its
+    segments were at least EEA-wide and possibly worldwide.15 With respect to ERP software and
+    its sub-segments, when the Commission also assessed national markets for ERP software and
+    HCM software, the results of the market investigation did not provide any new elements that
+    would justify a departure from the Commission’s previous conclusions that the scope of the
+    market would be at least EEA-wide and possibly worldwide.16
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: eu_partners_group_forterro_2022_decision
+  page: '6'
+  quote_snippet: '(25) In light of the above, the Commission considers that the results of the
+    market investigation do not justify a departure from its previous conclusions regarding
+    the geographic scope of the relevant market. In any event, it can be left open whether the
+    geographic scope of the market should be defined as EEA or worldwide for EAS and its segments,
+    or national, EEA or worldwide for ERP software and its sub-segments, as the Transaction
+    does not raise serious doubts as to its compatibility with the internal market under any
+    plausible geographic market definition. For the purpose of this Decision, the Commission
+    has thus examined: (i) the EEA and worldwide level for the EAS and its segments; and (ii)
+    the national, EEA and worldwide level for the ERP software and its sub-segments.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+ai_summary: null
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []
+case_type: merger

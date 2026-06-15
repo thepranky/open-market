@@ -1,0 +1,438 @@
+case_id: eu_ec_m9866_2020
+case_name: M.9866
+authority: European Commission
+jurisdiction: EU
+sector: tech
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2020-08-13'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9866_2020_decision
+  title: M.9866 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9866
+  pdf_url: http://publications.europa.eu/resource/cellar/1b6f30e2-660a-11eb-aeb5-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Retail supply of pay-TV services
+  definition_status: left_open
+  notes: The Commission considered segmentations of retail TV services between FTA and pay-TV,
+    and within pay-TV services, according to linear vs. non-linear, basic vs. premium, and distribution
+    technology employed. However, it ultimately left the exact product market definition open
+    as the transaction did not raise serious doubts under any possible definition.
+- market_id: pm_2
+  name: Wholesale mobile call termination services
+  definition_status: defined
+  notes: The Commission defined this market as termination on each individual mobile network,
+    based on the principle that there is no substitute for call termination on an individual
+    network.
+- market_id: pm_3
+  name: Wholesale fixed call termination services
+  definition_status: defined
+  notes: The Commission defined this market as termination on each individual fixed network,
+    based on the principle that there are no potential substitutes for call termination on an
+    individual fixed network.
+- market_id: pm_4
+  name: Retail mobile communications services
+  definition_status: left_open
+  notes: The Commission considered potential segmentations by type of service (voice, SMS, data)
+    or network technology, as well as by pre-paid/post-paid and private/business customers,
+    but left the exact market definition open.
+- market_id: pm_5
+  name: Retail supply of fixed telephony services
+  definition_status: left_open
+  notes: The Commission considered whether the market should be segmented into fixed voice services
+    and VoIP services but left the exact product market definition open.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Retail supply of pay-TV services — national (Greece affected)
+  definition_status: considered
+  notes: The Commission considered the market to be national in Greece, noting that pay-TV operators
+    offer services nationally and are subject to a national regulatory framework. It also stated
+    the assessment would be the same if the market was limited to the coverage area of each
+    cable operator.
+- market_id: gm_2
+  name: Retail mobile communication services — national (Greece, Cyprus, Slovenia, Croatia,
+    Bulgaria affected)
+  definition_status: considered
+  notes: The Commission consistently found the market for retail mobile communication services
+    to be national in scope, particularly due to national licensing.
+- market_id: gm_3
+  name: Retail supply of fixed telephony services — national (Greece, Cyprus, Slovenia, Croatia,
+    Bulgaria affected)
+  definition_status: considered
+  notes: The Commission consistently found the market for fixed telephony services to be national
+    in scope, reflecting the importance of national regulation and upstream services provided
+    on a national basis.
+- market_id: gm_4
+  name: Wholesale mobile call termination services — national (Greece, Cyprus, Slovenia, Croatia,
+    Bulgaria affected)
+  definition_status: considered
+  notes: The Commission found this market to be national in scope, as each wholesale market
+    for call termination corresponds to the dimensions of the operator’s network and is limited
+    to national territory due to regulatory barriers.
+- market_id: gm_5
+  name: Wholesale fixed call termination services — national (Greece, Cyprus, Slovenia, Croatia,
+    Bulgaria affected)
+  definition_status: considered
+  notes: The Commission found this market to be national in scope, as each wholesale market
+    for call termination corresponds to the dimensions of the operator’s network and is limited
+    to national borders due to regulatory barriers.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9866_2020_decision
+  page: '3'
+  quote_snippet: The Transaction gives rise to a limited horizontal overlap in respect to the
+    market for the retail supply of pay-TV services, where both United Group and Forthnet are
+    active.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9866_2020_decision
+  page: '5'
+  quote_snippet: 'For the purpose of the present decision, the Commission considers that the
+    question whether the retail supply of TV services can be segmented between FTA and pay TV
+    services and in turn pay TV services should be further segmented according to: (i) linear
+    and non-linear pay TV services, (ii) basic and premium pay TV services, and (iii) the distribution
+    technology employed, can be left open since the Transaction does not raise serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA Agreement
+    under any of the possible product market definitions set out in this paragraph.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9866_2020_decision
+  page: '3'
+  quote_snippet: 'at the upstream level: the supply of (i) wholesale mobile call terminations
+    services and (ii) wholesale fixed call terminations services, in the countries where United
+    Group and Forthnet operate;'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9866_2020_decision
+  page: '8'
+  quote_snippet: In previous decisions, the Commission has found that there is no substitute
+    for call termination on each individual network, as the operator transmitting the call can
+    reach the intended recipient only through the operator of the network to which the recipient
+    is connected.34
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9866_2020_decision
+  page: '9'
+  quote_snippet: Consequently, for the purpose of the present decision, and in line with its
+    previous decisional practice, the Commission considers that, as regards wholesale call termination
+    services, termination on each individual mobile network constitutes a separate product market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9866_2020_decision
+  page: '3'
+  quote_snippet: 'at the upstream level: the supply of (i) wholesale mobile call terminations
+    services and (ii) wholesale fixed call terminations services, in the countries where United
+    Group and Forthnet operate;'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9866_2020_decision
+  page: '9'
+  quote_snippet: As in the case of wholesale mobile call termination services, in previous decisions
+    the Commission has established that there are no potential substitutes for call termination
+    on each fixed network since the operator transmitting the call can reach the intended recipient
+    only through the operator of the network to which the recipient is connected.36
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9866_2020_decision
+  page: '3'
+  quote_snippet: 'at the downstream level: (i) retail mobile communications services and (ii)
+    retail supply of fixed telephony services in the countries where United Group and Forthnet
+    operate (see table 3).19'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9866_2020_decision
+  page: '6'
+  quote_snippet: For the purpose of the present decision, the Commission considers that the
+    exact product market definition in relation to the provision of retail mobile telecommunications
+    services (whether there is an overall market for retail mobile communication services or
+    whether this market should be segmented between pre-paid and post-paid or between private
+    and business customers) can be left open since the Transaction does not give rise to serious
+    doubts as to its compatibility with the internal market or the functioning of the EEA Agreement
+    under any such product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9866_2020_decision
+  page: '3'
+  quote_snippet: 'at the downstream level: (i) retail mobile communications services and (ii)
+    retail supply of fixed telephony services in the countries where United Group and Forthnet
+    operate (see table 3).19'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m9866_2020_decision
+  page: '7'
+  quote_snippet: In previous decisions, the Commission considered that managed Voice over Internet
+    Protocol (“VoIP”)30 services and fixed voice services provided through fixed lines are interchangeable
+    and therefore belong to the same market.31
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m9866_2020_decision
+  page: '7'
+  quote_snippet: For the purpose of the present decision, the Commission considers that the
+    exact product market definition (whether there is an overall market for the retail supply
+    of fixed telephony services or whether this market should be segmented into fixed voice
+    services and VoIP services) can be left open as the Transaction does not give rise to serious
+    doubts as to its compatibility with the internal market or the functioning of the EEA Agreement
+    under any such possible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m9866_2020_decision
+  page: '5'
+  quote_snippet: In its previous decisions, the Commission has considered that the geographic
+    scope of the market for the retail provision of TV services is either national, since TV
+    distributors compete on a nationwide basis or limited to the coverage area of each cable
+    operator.26
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m9866_2020_decision
+  page: '5'
+  quote_snippet: In light of the above and for the purpose of the present decision, the Commission
+    considers that the relevant market for the retail supply of TV services is national in scope.
+    The Commission considers that the competitive assessment in Section 5.3 would remain the
+    same also on a geographic market comprising the coverage area of each cable operator.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m9866_2020_decision
+  page: '6'
+  quote_snippet: The Commission has consistently found the market for retail mobile communication
+    services to be national in scope.29
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m9866_2020_decision
+  page: '7'
+  quote_snippet: The Commission observes that nothing in the present case indicates that it
+    would be justified to depart from its position – in particular considering that licences
+    to mobile operators are granted on a national basis. Consequently, for the purpose of the
+    present decision and in line with its previous decisional practice, the Commission considers
+    the market for retail mobile services to be national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m9866_2020_decision
+  page: '7'
+  quote_snippet: In previous decisions, the Commission has consistently found the market for
+    the supply of fixed telephony services to be national in scope, as this reflects the continuing
+    importance of the role of national regulation in the telecommunications sector, the supply
+    of upstream wholesale services on a national basis, as well as the fact that the pricing
+    policies of telecommunications providers are predominantly national.32
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m9866_2020_decision
+  page: '8'
+  quote_snippet: The Commission observes that nothing in the present case indicates that it
+    would be justified to depart from its position –in particular taking into account the importance
+    of national regulation in the telecommunications sector and the fact that the upstream wholesale
+    services are provided on a national basis. Consequently, or the purpose of the present decision
+    and in line with its previous decisional practice, the Commission considers that the market
+    for the supply of fixed telephony services is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m9866_2020_decision
+  page: '9'
+  quote_snippet: In previous decisions, the Commission considered that the market for wholesale
+    mobile call termination services is national in scope, as each wholesale market for call
+    termination corresponds to the dimensions of the operator’s network and is limited to the
+    national territory of the operator's network.35 This is primarily due to regulatory barriers
+    as the geographic scope of a network licence is, in principle, limited to areas which do
+    not extend beyond the borders of a Member State.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m9866_2020_decision
+  page: '9'
+  quote_snippet: The Commission observes that nothing in the present case indicates that it
+    would be justified to depart from its position – in particular, considering that the geographic
+    scope of each wholesale market for mobile call termination corresponds to the geographic
+    dimension of each mobile operator’s network which, due to regulatory barriers, is limited
+    to the national territory within which it operates. Consequently, for the purpose of the
+    present decision, and in line with its previous decisional practice the Commission considers
+    that the market for wholesale mobile call termination services is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m9866_2020_decision
+  page: '10'
+  quote_snippet: The Commission observes that nothing in the present case indicates that it
+    would be justified to depart from its position –in particular, considering that the geographic
+    scope of each wholesale market for fixed call termination corresponds to the dimension of
+    each operator’s network which, due to regulatory barriers, is limited to the national territory
+    within it operates. Consequently, for the purpose of the present decision, and in line with
+    its previous decisional practice the Commission considers that the market for wholesale
+    fixed call termination services is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

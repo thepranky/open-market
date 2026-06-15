@@ -1,0 +1,225 @@
+case_id: eu_ec_m9677_2020
+case_name: M.9677
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2020-12-07'
+parties: []
+source_documents:
+- doc_id: eu_ec_m9677_2020_decision
+  title: M.9677 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.9677
+  pdf_url: http://publications.europa.eu/resource/cellar/8b4ca625-d28d-11eb-ac72-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Pigments
+  definition_status: left_open
+  notes: The Commission considered the appropriate definition to be at least the level of chemical
+    class, and possibly the narrower level of colour index, but ultimately left the question
+    open as it did not materially affect the assessment.
+- market_id: pm_2
+  name: Printing inks
+  definition_status: left_open
+  notes: The Commission considered segmentations between liquid and paste inks, and further
+    segmentations within these types (e.g., heatset, coldset, sheetfed for paste; gravure, flexographic,
+    jet for liquid), but ultimately left the exact scope open.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Pigments — worldwide (with geographic differentiation between Chinese and Indian suppliers
+    and the rest of the world)
+  definition_status: defined
+  notes: The Commission considered the market to be worldwide, but with a geographic differentiation
+    between Chinese and Indian suppliers and the rest of the world, particularly for perylene
+    and quinacridone. The assessment would not change under an EEA-wide definition.
+- market_id: gm_2
+  name: Printing inks — EEA-wide or worldwide
+  definition_status: left_open
+  notes: The Commission left the exact scope of the geographic market open, as the Transaction
+    did not raise serious doubts under either an EEA-wide or worldwide definition.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m9677_2020_decision
+  page: '9'
+  quote_snippet: (34) In summary, the market investigation provides evidence that there is only
+    very limited demand-side substitutability between chemical classes, and even between different
+    products within a colour index. In situations where substitution is possible, it is often
+    a time-consuming and costly process.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m9677_2020_decision
+  page: '14'
+  quote_snippet: (64) In any event, the Commission considers that, for the purpose of the present
+    case, the exact scope of the product market definition for printing inks can be left open,
+    since no serious doubts as to the compatibility of the Transaction with the internal market
+    arise under any plausible product market definition (i.e. segmented between liquid and paste
+    inks or further segmented between heatset, coldset and sheetfed inks within paste inks and
+    between gravure, flexographic and jet inks within liquid inks).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m9677_2020_decision
+  page: '14'
+  quote_snippet: (63) From the supply-side, while the market investigation provided strong indications
+    that switching between paste and liquid ink constitutes a major strategic decision, involving
+    considerable costs and efforts,72 it was inconclusive as to whether printing inks manufacturers
+    had the ability to switch easily and in a timely manner between heatset, coldset and sheetfed
+    inks within paste inks.73 In a similar fashion, the feedback received from the market investigation
+    did not allow the Commission to form a conclusion as to whether there would be a sufficient
+    degree of supply-side substitutability between gravure, flexographic and jet inks within
+    liquid inks to consider these three types of liquid inks as forming a single product market.74
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m9677_2020_decision
+  page: '11'
+  quote_snippet: (54) In light of the above, the Commission considers that, to the effect of
+    the present decision, the relevant geographic market for pigments is worldwide, however
+    with a geographic differentiation between Chinese and Indian suppliers and the rest of the
+    world, in particular as regards perylene and quinacridone. Accordingly, the Commission considers
+    that the assessment of the Transaction would not change under a possible relevant geographic
+    market definition as EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m9677_2020_decision
+  page: '12'
+  quote_snippet: (50) The Commission’s market investigation gave sufficient evidence to conclude
+    that the market for pigments is global.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m9677_2020_decision
+  page: '12'
+  quote_snippet: (52) Second, a majority of pigments manufacturers either already supply their
+    EEA customers from plants outside the EEA or consider that plants outside the EEA could
+    credibly do so,60 and a majority of customers either already purchase their pigments globally
+    or would consider doing so in case of a SSNIP within the EEA.61 As such, it does not appear
+    important for customers that their supplier’s factory be close to their production plants.62
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m9677_2020_decision
+  page: '15'
+  quote_snippet: (69) In any event, the Commission considers that, for the purpose of the present
+    case, the exact scope of the geographic market definition for printing inks can be left
+    open, since the Transaction does not raise serious doubts as to its compatibility with the
+    internal market, regardless of the precise geographic market definition (i.e. EEA-wide or
+    worldwide).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m9677_2020_decision
+  page: '15'
+  quote_snippet: (68) From the supply-side, while the vast majority of printing inks manufacturers
+    indicated that suppliers from outside the EEA could credibly supply customers within the
+    EEA,77 the market investigation proved inconclusive as to whether the respondents themselves
+    would have the ability to supply customers within the EEA from plants outside the EEA without
+    incurring additional costs and efforts.78 Some respondents, though a minority, even suggested
+    that they primarily supplied their customers from manufacturing facilities close to their
+    customer’s plant in South-West Europe or the Mediterranean area.79 Some respondents also
+    suggested that the geographic market could be wider for paste inks than for liquid inks,
+    since liquid inks are more voluminous and transport costs per unit of value would are more
+    important.80
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m9677_2020_decision
+  page: '5'
+  quote_snippet: (downstream). This relationship is affected within the meaning of EU merger
+    control14 because upstream the Parties’ market shares would exceed 30% in the sales of certain
+    pigment chemistries which are used to produce printing inks. Moreover, the relationship
+    is also affected because DIC’s market share for the manufacture of printing inks downstream
+    exceeds 30% in one potential sub-segment, namely the manufacture of gravure liquid inks
+    in the EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m9677_2020_decision
+  page: '29'
+  quote_snippet: (122) The Notifying Party indicates that because of the capacity expansions,
+    global production capacities exceeded demand by [more than 20]% in 2018, putting pressure
+    on prices.183 Additionally, it indicates that DPP, since its patent expiry, has become a
+    lower-cost alternative to quinacridone, putting further downward pressure on prices.184
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

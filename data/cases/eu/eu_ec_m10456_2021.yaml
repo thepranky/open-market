@@ -1,0 +1,414 @@
+case_id: eu_ec_m10456_2021
+case_name: M.10456
+authority: European Commission
+jurisdiction: EU
+sector: tech
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2021-12-01'
+parties: []
+source_documents:
+- doc_id: eu_ec_m10456_2021_decision
+  title: M.10456 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10456
+  pdf_url: http://publications.europa.eu/resource/cellar/2bc7e4bb-a506-11ec-83e1-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Production and supply of AV content
+  definition_status: segmented
+  notes: The Commission concluded that the production and supply of AV content forms a relevant
+    product market but left open further distinctions between commissioned and pre-produced
+    AV content, different content types, and exhibition windows.
+- market_id: pm_2
+  name: Wholesale supply of TV channels
+  definition_status: segmented
+  notes: The Commission considers the relevant product market to be the wholesale supply of
+    TV channels, including their ancillary services and covering all types of infrastructure,
+    but left open further distinctions by genre, distribution technology, or between FTA and
+    pay TV channels (including basic and premium splits).
+- market_id: pm_3
+  name: Retail supply of AV services to end customers
+  definition_status: segmented
+  notes: The Commission concluded that a relevant product market exists for the retail supply
+    of AV services, but left open further distinctions between FTA TV channels and pay TV channels,
+    basic and premium pay TV channels, linear and non-linear TV channels, or different distribution
+    technologies.
+- market_id: pm_4
+  name: Sale of advertising space
+  definition_status: segmented
+  notes: The Commission identified the relevant product market as the sale of advertising space,
+    but left open further distinctions between online and offline advertising, different media
+    channels, advertising sold directly by the publisher or through an intermediary, and online
+    search and non-search advertising.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Production and supply of AV content — national (Spain affected)
+  definition_status: defined
+  notes: null
+- market_id: gm_2
+  name: Wholesale supply of TV channels — national (Denmark affected)
+  definition_status: defined
+  notes: null
+- market_id: gm_3
+  name: Retail supply of AV services to end customers — national (Spain and Denmark affected)
+  definition_status: defined
+  notes: null
+- market_id: gm_4
+  name: Sale of advertising space — national (Denmark affected)
+  definition_status: defined
+  notes: null
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m10456_2021_decision
+  page: '4'
+  quote_snippet: |
+    This Transaction concerns all three levels of the AV value chain (from upstream to downstream):
+    a) The production and supply of AV content (including the supply of pre-produced
+    AV content and commissioned AV content), where Comcast/Sky and
+    ViacomCBS are active on the demand- and supply-side of the market, and the JV
+    will be active on the demand-side of the market only;
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m10456_2021_decision
+  page: '6'
+  quote_snippet: |
+    The Commission focused its investigation in relation to this market on Spain, given
+    that only the Spanish production and supply of AV content market is affected (see
+    below Section 5.2). Respondents to the market investigation agree that there is a
+    relevant product market for the production and supply of AV content.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m10456_2021_decision
+  page: '8'
+  quote_snippet: |
+    In light of the above, the Commission concludes, for the purpose of this decision,
+    that the production and supply of AV content forms a relevant product market. The
+    Commission also considers that, for the purpose of this decision, the question
+    whether within this product market further distinctions could be made (i) between
+    commissioned and pre-produced AV content; (ii) between different content types;
+    and (iii) based on the exhibition window, can be left open, since the Transaction
+    does not raise serious doubts as to its compatibility with the internal market or the
+    functioning of the EEA Agreement under any such plausible product market
+    definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m10456_2021_decision
+  page: '4'
+  quote_snippet: |
+    b) The wholesale supply of TV channels, where Comcast/Sky, ViacomCBS and the
+    JV16 will be active mainly on the supply-side of the market; and
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m10456_2021_decision
+  page: '10'
+  quote_snippet: |
+    The Commission focused its investigation in relation to this market on Denmark,
+    given that only the Danish wholesale supply of TV channels market is affected (see
+    below Section 5.2). With reference to whether FTA TV and pay TV channels form
+    separate relevant product markets, respondents to the market investigation provided
+    a mixed reply.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m10456_2021_decision
+  page: '11'
+  quote_snippet: |
+    In light of the above, the Commission considers that, for the purpose of this decision
+    and in line with its decisional practice, the relevant product market is the market for
+    the wholesale supply of TV channels, including their ancillary services and covering
+    all types of infrastructure. The question whether this product market can be further
+    distinguished (i) by genre, (ii) by distribution technology, or between (iii) FTA and
+    pay TV channels, and in turn whether pay TV channels can be further split into basic
+    pay and premium pay TV channels, or (iv) FTA and basic pay TV channels on the
+    one hand, and premium pay TV channels on the other hand can be left open since the
+    Transaction does not raise serious doubts as to its compatibility with the internal
+    market or the functioning of the EEA Agreement under any such plausible product
+    market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m10456_2021_decision
+  page: '4'
+  quote_snippet: |
+    c) The retail supply of AV services to end customers, where the JV will be active
+    both (i) DTC, and (ii) via third-party multichannel video programming
+    distribution (“MVPD”) platforms, and Sky and ViacomCBS will also remain
+    independently active (mostly) outside the territories where the JV will operate.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m10456_2021_decision
+  page: '14'
+  quote_snippet: |
+    The Commission focused its investigation in relation to this market on Denmark and
+    Spain given that both the Danish and Spanish retail supply of AV services markets
+    are relevant (see below Section 5.2). Respondents to the market investigation agree
+    that there is a relevant product market for the retail supply of AV content.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m10456_2021_decision
+  page: '15'
+  quote_snippet: |
+    In light of the above, the Commission considers that, for the purpose of this decision,
+    there exists a relevant product market for the retail supply of AV services, separate
+    from the production and supply of AV content and the wholesale supply of TV
+    channels. However, the Commission considers that the question whether within this
+    product market a further distinction can be made (i) between FTA TV channels and
+    pay TV channels; (ii) between basic and premium pay TV channels; (iii) between
+    linear and non-linear TV channels (and further sub-segmentations thereof); or (iv)
+    between different distribution technologies, can be left open, since the Transaction
+    does not raise serious doubts as to its compatibility with the internal market or the
+    functioning of the EEA Agreement under any such plausible product market
+    definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m10456_2021_decision
+  page: '4'
+  quote_snippet: |
+    In addition, the Transaction concerns the sale of advertising on TV channels, where
+    both Comcast/Sky and ViacomCBS will remain independently active from the JV,
+    while the JV will not be active in the supply of advertising space.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m10456_2021_decision
+  page: '17'
+  quote_snippet: |
+    The Commission focused its investigation in relation to this market on Denmark
+    given that only the Danish advertising market is relevant (see below Section 5.2).
+    The majority of respondents to the market investigation submit that online and
+    offline advertising do not form separate relevant product markets.101 In this regard,
+    some respondents consider that the advertising market is converging and such
+    distinction is no longer relevant as it no longer reflects the mechanisms of the
+    market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m10456_2021_decision
+  page: '18'
+  quote_snippet: |
+    The Commission considers that, for the purpose of this decision, the question
+    whether within the relevant product market for the sale of advertising space should
+    be a further distinction should be made between: (i) online and offline advertising;
+    (ii) the different media channels; (iii) advertising sold directly by the publisher or
+    through an intermediary; and (iv) online search and non-search advertising, can be
+    left open, since the Transaction does not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement under any such
+    plausible product market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m10456_2021_decision
+  page: '9'
+  quote_snippet: |
+    Almost all suppliers of AV content in Spain licence their content on a national basis.
+    Some respondents pointed out that, in some cases, they also license content on a
+    regional basis. One respondent replied that it is active in the licencing at all
+    geographic levels, from national to worldwide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m10456_2021_decision
+  page: '8'
+  quote_snippet: |
+    In light of the above, for the purpose of this decision, the Commission concludes that
+    in Spain the relevant geographic market for the production and supply of AV
+    content, including all its possible sub-segments, is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m10456_2021_decision
+  page: '12'
+  quote_snippet: |
+    In light of the above, for the purpose of this decision, the Commission concludes that
+    in Denmark the relevant geographic market for the wholesale supply of TV channels,
+    including all its possible sub-segments, is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m10456_2021_decision
+  page: '16'
+  quote_snippet: |
+    Almost all respondents to the market investigation consider that the relevant
+    geographic market for the retail supply of AV services is national in scope.94 One
+    respondent submitted that, although some OTT broadcasters are present on a
+    worldwide basis, content licensed for a specific country can’t be broadcasted outside
+    of such country.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m10456_2021_decision
+  page: '16'
+  quote_snippet: |
+    In light of the above, for the purpose of this decision, the Commission concludes that
+    in Spain and Denmark the relevant geographic market for the retail supply of AV
+    services, including all its possible sub-segments, is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m10456_2021_decision
+  page: '19'
+  quote_snippet: |
+    In light of the above, for the purpose of this decision, the Commission considers that
+    the relevant geographic market for the sale of advertising space, including all its
+    possible sub-segments, is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m10456_2021_decision
+  page: '39'
+  quote_snippet: |
+    For the above reasons, the European Commission has decided not to oppose the
+    notified operation and to declare it compatible with the internal market and with the
+    EEA Agreement. This decision is adopted in application of Article 6(1)(b) of the
+    Merger Regulation and Article 57 of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

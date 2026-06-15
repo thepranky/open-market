@@ -1,0 +1,424 @@
+case_id: eu_carlsberg_britvic_2024
+case_name: CARLSBERG / BRITVIC
+authority: European Commission
+jurisdiction: EU
+sector: retail
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2024-12-16'
+parties:
+- name: CARLSBERG
+  role: acquirer
+- name: BRITVIC
+  role: target
+source_documents:
+- doc_id: eu_carlsberg_britvic_2024_decision
+  title: CARLSBERG / BRITVIC — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11675
+  pdf_url: http://publications.europa.eu/resource/cellar/1c4d3b5c-e000-11ef-be2a-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Production and supply of non-alcoholic beverages
+  definition_status: considered
+  notes: The Commission previously found this market to be segmented into carbonated and non-carbonated
+    soft drinks.
+- market_id: pm_2
+  name: Production and supply of carbonated soft drinks
+  definition_status: considered
+  notes: Previously found to be a separate product market from non-carbonated soft drinks.
+- market_id: pm_3
+  name: Production and supply of non-carbonated soft drinks
+  definition_status: segmented
+  notes: Previously found to be a separate product market from carbonated soft drinks. Further
+    potential segmentations within this market (water, ready-to-drink teas, fruit juices, energy
+    and sport drinks, dilutables) were considered or left open.
+- market_id: pm_4
+  name: Water (within non-carbonated soft drinks)
+  definition_status: considered
+  notes: The Commission previously considered water to belong to a separate product market within
+    non-carbonated soft drinks.
+- market_id: pm_5
+  name: Ready-to-drink teas (within non-carbonated soft drinks)
+  definition_status: considered
+  notes: The Commission previously considered ready-to-drink teas to belong to a separate product
+    market within non-carbonated soft drinks.
+- market_id: pm_6
+  name: Fruit juices, energy and sport drinks (potential segmentations within non-carbonated
+    soft drinks)
+  definition_status: left_open
+  notes: The Commission considered further potential segmentations within non-carbonated soft
+    drinks for these categories but left the question open.
+- market_id: pm_7
+  name: Dilutables
+  definition_status: left_open
+  notes: The exact product market definition for dilutables was left open, but it was considered
+    that if it were a separate market, it would be vertically affected and subject to analysis.
+- market_id: pm_8
+  name: Wholesale distribution of beverages
+  definition_status: left_open
+  notes: The Commission previously identified a separate market for wholesale distribution of
+    beverages. A potential distinction between 'off trade' and 'on trade' channels was considered
+    but left open. In the present case, the exact product market definition was left open as
+    no competition concerns would arise.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Production and supply of non-alcoholic beverages — national
+  definition_status: considered
+  notes: The Commission previously assessed these markets on a national basis and, while leaving
+    the exact definition open, continued to assess the transaction under a conservative national
+    approach.
+- market_id: gm_2
+  name: Wholesale distribution of beverages — national (France affected)
+  definition_status: considered
+  notes: The Commission previously considered this market to be national in scope and confirmed
+    this for France in the present case for its assessment.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_carlsberg_britvic_2024_decision
+  page: '2'
+  quote_snippet: The Commission has previously found that the market for the production and
+    supply of non-alcoholic beverages was further segmented into the production and supply of
+    carbonated soft drinks and non-carbonated soft drinks, which were found to constitute two
+    separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_carlsberg_britvic_2024_decision
+  page: '2'
+  quote_snippet: The Commission has previously found that the market for the production and
+    supply of non-alcoholic beverages was further segmented into the production and supply of
+    carbonated soft drinks and non-carbonated soft drinks, which were found to constitute two
+    separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_carlsberg_britvic_2024_decision
+  page: '2'
+  quote_snippet: The Commission has previously found that the market for the production and
+    supply of non-alcoholic beverages was further segmented into the production and supply of
+    carbonated soft drinks and non-carbonated soft drinks, which were found to constitute two
+    separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_carlsberg_britvic_2024_decision
+  page: '2'
+  quote_snippet: Within non-carbonated soft drinks, the Commission has considered that water
+    and ready-to-drink teas belong to separate product markets. The Commission has considered
+    further potential segmentations within non-carbonated soft drinks (namely fruit juices,
+    energy and sport drinks), but has ultimately left this question open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_carlsberg_britvic_2024_decision
+  page: '2'
+  quote_snippet: Within non-carbonated soft drinks, the Commission has considered that water
+    and ready-to-drink teas belong to separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_carlsberg_britvic_2024_decision
+  page: '2'
+  quote_snippet: Within non-carbonated soft drinks, the Commission has considered that water
+    and ready-to-drink teas belong to separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_carlsberg_britvic_2024_decision
+  page: '2'
+  quote_snippet: The Commission has considered further potential segmentations within non-carbonated
+    soft drinks (namely fruit juices, energy and sport drinks), but has ultimately left this
+    question open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_carlsberg_britvic_2024_decision
+  page: '3'
+  quote_snippet: In the present case, the Commission considers that the exact product market
+    definition can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_carlsberg_britvic_2024_decision
+  page: '3'
+  quote_snippet: If dilutables were part of a separate market, that market would be vertically
+    affected but – for the reasons explained in the following sections – the Transaction would
+    not raise competition concerns.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_carlsberg_britvic_2024_decision
+  page: '5'
+  quote_snippet: |
+    Table 1 – Britvic’s market shares for the production and supply of dilutables in France (upstream) (2023, volume and value)
+    Upstream market (Britvic)
+    Product market definition Geographic market Market share
+    definition
+    Production and supply of National [50-60]% by value for supply to
+    dilutables both the on-trade and off-trade
+    [30-40]% by volume for supply to
+    both the on-trade and the off-trade
+    [0-5]% by volume for supply to the
+    on-trade only
+    Source: Form CO, Table 6.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_carlsberg_britvic_2024_decision
+  page: '3'
+  quote_snippet: In the past, the Commission has identified a separate product market for the
+    wholesale distribution of both alcoholic and non-alcoholic beverages, which is downstream
+    from production.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_carlsberg_britvic_2024_decision
+  page: '3'
+  quote_snippet: Moreover, the Commission has considered, but ultimately left open, a potential
+    distinction of the market for the wholesale distribution of beverages depending on whether
+    beverages are sold to retail outlets (‘off trade’ channel) or to points of sale for direct
+    consumption, e.g. restaurants or hotels (‘on trade’ channel).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_carlsberg_britvic_2024_decision
+  page: '3'
+  quote_snippet: In the present case, the Commission considers that the exact product market
+    definition can be left open, as the Transaction would not give rise to competition concerns
+    under any plausible market definitions.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_carlsberg_britvic_2024_decision
+  page: '3'
+  quote_snippet: The Commission has previously assessed the markets for the production and supply
+    of non-alcoholic beverages under a conservative approach based on national markets, while
+    noting that the market investigation indicated competitive pressure from neighbouring countries
+    and sometimes pointed to a wider than national scope of the market.7
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_carlsberg_britvic_2024_decision
+  page: '3'
+  quote_snippet: In line with this approach, the Commission considers that the exact geographic
+    market definition can be left open as the Transaction would not give rise to competition
+    concerns under any plausible market definitions and will assess the Transaction under a
+    conservative approach based on national markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_carlsberg_britvic_2024_decision
+  page: '3'
+  quote_snippet: The Commission has previously considered the market for the wholesale distribution
+    of beverages to be national in scope.9 The market investigation in the present case confirmed
+    that distributors are generally able to sell beverages across the entire French territory
+    (which is affected by the Transaction).10 The Commission will therefore assess the Transaction
+    based on a national scope of the market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_carlsberg_britvic_2024_decision
+  page: '4'
+  quote_snippet: The Transaction also gives rise to one vertically affected market in France,
+    where Britvic is active in the production of dilutables (upstream) and Carlsberg is active
+    in the wholesale supply of beverages (downstream).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_carlsberg_britvic_2024_decision
+  page: '5'
+  quote_snippet: |
+    Table 2 – Carlsberg’s market shares for the wholesale distribution of beverages in
+    France (downstream) (2023, volume and value)
+    Downstream market (Carlsberg)
+    Product market definition Geographic market Market share / Share of
+    definition purchase
+    Wholesale distribution of National Market share: less than 30%18
+    beverages
+    Share of purchase of dilutables:
+    [0-5]% in value and [0-5]% in
+    volume
+    Source: Form CO, Table 6.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_carlsberg_britvic_2024_decision
+  page: '6'
+  quote_snippet: Moreover, the merged entity would not have an incentive to pursue an input
+    foreclosure strategy, because this is unlikely to prove profitable.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_carlsberg_britvic_2024_decision
+  page: '7'
+  quote_snippet: Indeed, the low market shares of Tafanel downstream (less than 30%), its minimal
+    purchasing share of dilutables (less than [0-5]%) and its limited geographic presence (mostly
+    limited to the Paris area), show that competitors of Britvic would have access to sufficient
+    wholesalers downstream for their supply of dilutables.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_carlsberg_britvic_2024_decision
+  page: '7'
+  quote_snippet: Carlsberg and Britvic both supply a broad range of different beverages belonging
+    to different product markets, which are typically purchased by the same set of customers
+    (e.g. distributors, retailers or horeca customers) for the same end use (i.e. sale to final
+    consumers for on-trade or off-trade consumption). However, the Commission considers that
+    the merged entity will not be able to leverage its position to engage in exclusionary practices
+    in these related markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+ai_summary: null
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []
+case_type: merger

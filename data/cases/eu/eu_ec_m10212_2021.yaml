@@ -1,0 +1,842 @@
+case_id: eu_ec_m10212_2021
+case_name: M.10212
+authority: European Commission
+jurisdiction: EU
+sector: energy
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2021-10-29'
+parties: []
+source_documents:
+- doc_id: eu_ec_m10212_2021_decision
+  title: M.10212 — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10212
+  pdf_url: http://publications.europa.eu/resource/cellar/401c9a56-8f04-11ec-8c40-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Retail supply of electricity to all large industrial customers (annual consumption above
+    0.1 GWh)
+  definition_status: considered
+  notes: The Commission decided to analyze the effects of the proposed transaction on the basis
+    of this market, although the exact product market definition was left open for the purposes
+    of the decision.
+- market_id: pm_2
+  name: Retail supply of electricity to large industrial customers with annual consumption levels
+    between 0.1 GWh and 2 GWh
+  definition_status: considered
+  notes: The Commission decided to analyze the effects of the proposed transaction on the basis
+    of this market, although the exact product market definition was left open for the purposes
+    of the decision. This segment emerged from market investigation findings.
+- market_id: pm_3
+  name: Retail supply of electricity to large industrial customers with annual consumption levels
+    between 2 GWh and 10 GWh
+  definition_status: considered
+  notes: The Commission decided to analyze the effects of the proposed transaction on the basis
+    of this market, although the exact product market definition was left open for the purposes
+    of the decision. This segment emerged from market investigation findings.
+- market_id: pm_4
+  name: Retail supply of electricity to large industrial customers with annual consumption levels
+    above 10 GWh
+  definition_status: considered
+  notes: The Commission decided to analyze the effects of the proposed transaction on the basis
+    of this market, although the exact product market definition was left open for the purposes
+    of the decision. This segment emerged from market investigation findings.
+- market_id: pm_5
+  name: Retail supply of “green” electricity to large industrial customers through PPAs
+  definition_status: considered
+  notes: The Commission decided to analyze the effects of the proposed transaction on the basis
+    of this market, although the exact product market definition was left open for the purposes
+    of the decision. This market segment emerged from market investigation findings, distinguishing
+    it from general 'green' electricity supplied via Guarantees of Origin (GoOs).
+- market_id: pm_6
+  name: Retail sale of natural gas to large industrial customers
+  definition_status: left_open
+  notes: Although the exact market definition was left open, it was identified as a horizontally
+    affected market.
+- market_id: pm_7
+  name: Generation and wholesale supply of electricity
+  definition_status: left_open
+  notes: Identified as a vertically affected market.
+- market_id: pm_8
+  name: Financial trading of electricity
+  definition_status: left_open
+  notes: Identified as a vertically affected market.
+- market_id: pm_9
+  name: Distribution of electricity
+  definition_status: left_open
+  notes: Identified as a vertically affected market.
+- market_id: pm_10
+  name: Certificates trading
+  definition_status: left_open
+  notes: The Commission noted that it previously found distinct markets for CO2 allowances and
+    Guarantees of Origin (GoOs). Identified as a vertically affected market.
+- market_id: pm_11
+  name: Balancing power/ancillary services
+  definition_status: left_open
+  notes: Identified as a vertically affected market. Previous segmentation based on type of
+    regulation was considered but left open.
+- market_id: pm_12
+  name: E-mobility services
+  definition_status: left_open
+  notes: Identified as a vertically affected market. Previous decisions considered segmentation
+    of public EV charging stations on-motorways and off-motorways.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Retail supply of electricity to all large industrial customers (annual consumption above
+    0.1 GWh) — national (Denmark affected)
+  definition_status: left_open
+  notes: The Commission considered the geographic scope to be 'most likely national' but formally
+    left the exact definition open as national or wider (e.g., Nordic countries). This applies
+    to all segments of the retail supply of electricity to large industrial customers.
+- market_id: gm_2
+  name: Retail sale of natural gas to large industrial customers — national (Denmark affected)
+  definition_status: left_open
+  notes: null
+- market_id: gm_3
+  name: Generation and wholesale supply of electricity — wider than national (Nordic countries
+    affected)
+  definition_status: left_open
+  notes: The Commission previously found the geographic market not narrower than national and
+    considered a wider, regional market in the Nordic countries, leaving the exact delineation
+    open.
+- market_id: gm_4
+  name: Financial trading of electricity — global/EEA-wide (Nord Pool area affected)
+  definition_status: left_open
+  notes: Previous decisions considered the market global or at least EEA-wide, and in relation
+    to the Nord Pool area, comprising at least the Nord Pool region.
+- market_id: gm_5
+  name: Distribution of electricity — grid-wide (Denmark affected)
+  definition_status: left_open
+  notes: Previous decisions considered the geographic market to be limited to the geographic
+    area of the network in question (grid wide scope).
+- market_id: gm_6
+  name: Certificates trading — area covered by relevant regulation (unknown affected countries)
+  definition_status: left_open
+  notes: Previous decisions considered the geographic scope to comprise the geographical area
+    covered by the relevant regulation.
+- market_id: gm_7
+  name: Balancing power/ancillary services — national (Denmark affected)
+  definition_status: left_open
+  notes: Previous decisions considered the market to be at most national, but potentially limited
+    to the TSO's control area (national in Denmark) or regional.
+- market_id: gm_8
+  name: E-mobility services — local/national (Denmark affected)
+  definition_status: left_open
+  notes: Previous decisions left open whether the relevant geographic market was local or national
+    with local elements of competition.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '3'
+  quote_snippet: The main horizontal overlap between the Parties is therefore in the retail
+    sale of electricity to large industrial customers with annual consumption above 0.1 GWh
+    in Denmark and this is the focus of our market investigation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '5'
+  quote_snippet: 'However, for the purposes of this decision, the exact product market definition
+    can be left open as the proposed Transaction does not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement under any plausible market
+    definition. The Commission will therefore analyse the effects of the proposed Transaction
+    on the basis of separate product markets for: (i) the retail supply of electricity to all
+    large industrial customers (ie. those with an annual consumption above 0.1 GWh); (ii) the
+    retail supply of electricity to large industrial customers with annual consumption levels
+    between 0.1 GWh and 2 GWh; (iii) the retail supply of electricity to large industrial customers
+    with annual consumption levels between 2 GWh and 10 GWh; (iv) the retail supply of electricity
+    to large industrial customers with annual consumption levels above 10 GWh and; (v) the retail
+    supply of “green” electricity to large industrial customers through PPAs.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '4'
+  quote_snippet: 'The market investigation therefore indicated that there could be additional
+    separate product markets regarding large industrial customers, according to the size of
+    yearly electricity consumption. The vast majority of competitors noted that the retail supply
+    of electricity to large industrial should be further segmented according to: (i) customers
+    with annual consumption between 0.1 and 2 GWh; (ii) customers with annual consumption between
+    2 and 10 GWh; and (iii) customers with annual consumption above 10 GWh in view of their
+    different consumption patterns.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '5'
+  quote_snippet: 'However, for the purposes of this decision, the exact product market definition
+    can be left open as the proposed Transaction does not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement under any plausible market
+    definition. The Commission will therefore analyse the effects of the proposed Transaction
+    on the basis of separate product markets for: (i) the retail supply of electricity to all
+    large industrial customers (ie. those with an annual consumption above 0.1 GWh); (ii) the
+    retail supply of electricity to large industrial customers with annual consumption levels
+    between 0.1 GWh and 2 GWh; (iii) the retail supply of electricity to large industrial customers
+    with annual consumption levels between 2 GWh and 10 GWh; (iv) the retail supply of electricity
+    to large industrial customers with annual consumption levels above 10 GWh and; (v) the retail
+    supply of “green” electricity to large industrial customers through PPAs.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '4'
+  quote_snippet: 'The market investigation therefore indicated that there could be additional
+    separate product markets regarding large industrial customers, according to the size of
+    yearly electricity consumption. The vast majority of competitors noted that the retail supply
+    of electricity to large industrial should be further segmented according to: (i) customers
+    with annual consumption between 0.1 and 2 GWh; (ii) customers with annual consumption between
+    2 and 10 GWh; and (iii) customers with annual consumption above 10 GWh in view of their
+    different consumption patterns.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '5'
+  quote_snippet: 'However, for the purposes of this decision, the exact product market definition
+    can be left open as the proposed Transaction does not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement under any plausible market
+    definition. The Commission will therefore analyse the effects of the proposed Transaction
+    on the basis of separate product markets for: (i) the retail supply of electricity to all
+    large industrial customers (ie. those with an annual consumption above 0.1 GWh); (ii) the
+    retail supply of electricity to large industrial customers with annual consumption levels
+    between 0.1 GWh and 2 GWh; (iii) the retail supply of electricity to large industrial customers
+    with annual consumption levels between 2 GWh and 10 GWh; (iv) the retail supply of electricity
+    to large industrial customers with annual consumption levels above 10 GWh and; (v) the retail
+    supply of “green” electricity to large industrial customers through PPAs.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '4'
+  quote_snippet: 'The market investigation therefore indicated that there could be additional
+    separate product markets regarding large industrial customers, according          to the
+    size of yearly electricity consumption. The vast majority of competitors noted that the
+    retail supply of electricity to large industrial should be further segmented according to:
+    (i) customers with annual consumption between 0.1 and 2 GWh; (ii) customers with annual
+    consumption between 2 and 10 GWh; and (iii) customers with annual consumption above 10 GWh
+    in view of their different consumption patterns.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '5'
+  quote_snippet: 'However, for the purposes of this decision, the exact product market definition
+    can be left open as the proposed Transaction does not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement under any plausible market
+    definition. The Commission will therefore analyse the effects of the proposed Transaction
+    on the basis of separate product markets for: (i) the retail supply of electricity to all
+    large industrial customers (ie. those with an annual consumption above 0.1 GWh); (ii) the
+    retail supply of electricity to large industrial customers with annual consumption levels
+    between 0.1 GWh and 2 GWh; (iii) the retail supply of electricity to large industrial customers
+    with annual consumption levels between 2 GWh and 10 GWh; (iv) the retail supply of electricity
+    to large industrial customers with annual consumption levels above 10 GWh and; (v) the retail
+    supply of “green” electricity to large industrial customers through PPAs.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '5'
+  quote_snippet: The market investigation also provided indications that there could also be
+    a separate market for electricity produced from renewable sources (“green” electricity),
+    with a majority of both customers and competitors expressing this view.17 However, certain
+    market participants considered that this should only be the case for “green” electricity
+    that is supplied through corporate power purchase agreements (“PPAs”).18 Indeed, a majority
+    of customers and competitors who replied to the market investigation noted that it was appropriate
+    to distinguish a separate market for the supply of “green” electricity through PPAs with
+    the owner of renewable generation assets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '5'
+  quote_snippet: 'However, for the purposes of this decision, the exact product market definition
+    can be left open as the proposed Transaction does not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement under any plausible market
+    definition. The Commission will therefore analyse the effects of the proposed Transaction
+    on the basis of separate product markets for: (i) the retail supply of electricity to all
+    large industrial customers (ie. those with an annual consumption above 0.1 GWh); (ii) the
+    retail supply of electricity to large industrial customers with annual consumption levels
+    between 0.1 GWh and 2 GWh; (iii) the retail supply of electricity to large industrial customers
+    with annual consumption levels between 2 GWh and 10 GWh; (iv) the retail supply of electricity
+    to large industrial customers with annual consumption levels above 10 GWh and; (v) the retail
+    supply of “green” electricity to large industrial customers through PPAs.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '7'
+  quote_snippet: The Commission has consistently found a separate relevant product market for
+    the retail sale of gas. In the most recent decisions, the Commission considered a further
+    segmentation into (i) the supply of gas to gas-fired power plants, (ii) the supply of gas
+    to large industrial customers, (iii) the supply of gas to small industrial and commercial
+    customers, and (iv) the supply of gas to household customers with reference to various past
+    cases, where various delineations between the segments were considered.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '7'
+  quote_snippet: The Notifying Party argues that for the purposes of the Transaction, the market
+    definition can be left open. The Commission agrees that for the purposes of this decision,
+    the exact market definition can be left open as the proposed Transaction does not raise
+    serious doubts as to its compatibility with the internal market or the functioning of the
+    EEA Agreement under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '7'
+  quote_snippet: The Commission has consistently found a relevant market for the generation
+    and wholesale supply of electricity, which comprises electricity generated in power stations,
+    traded on the wholesale market (through bilateral agreements, regulated market places, and
+    power exchanges) as well as electricity physically imported via interconnectors.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '8'
+  quote_snippet: The Commission considers that for the purposes of this decision, the exact
+    market definition can be left open as the proposed Transaction does not raise serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA Agreement
+    under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '8'
+  quote_snippet: The Commission has found that the financial trading of electricity constitutes
+    a relevant product market, separate from the generation and wholesale supply of electricity.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '8'
+  quote_snippet: The Commission considers that for the purposes of this decision, the exact
+    market definition can be left open as the proposed Transaction does not raise serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA Agreement
+    under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '8'
+  quote_snippet: 'In previous cases, the Commission has identified two separate markets for
+    the transportation of electricity: transmission and distribution. In relation to distribution
+    networks, the Commission has found the operation and management of lower voltage (distribution)
+    networks to be a relevant product market.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '8'
+  quote_snippet: The Commission considers that for the purposes of this decision, the exact
+    market definition can be left open as the proposed Transaction does not raise serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA Agreement
+    under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '8'
+  quote_snippet: The Commission has previously found that a separate relevant market exists
+    for the trading of CO2 allowances, which possibly also includes Certified Emission Reductions
+    (CER credits). In addition, the Commission has found that trading of GoOs form a distinct
+    market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '9'
+  quote_snippet: The Commission considers that for the purposes of this decision, the exact
+    market definition can be left open as the proposed Transaction does not raise serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA Agreement
+    under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_10
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '9'
+  quote_snippet: The Commission has previously taken the view that a separate product market
+    exists for balancing power and ancillary services. Also, the Commission has considered a
+    further segmentation based on the type of regulation of the balancing service, however the
+    segmentation has been left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '9'
+  quote_snippet: The Commission considers that for the purposes of this decision, the exact
+    market definition can be left open as the proposed Transaction does not raise serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA Agreement
+    under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '9'
+  quote_snippet: In its early decisions considering e-mobility services, the Commission had
+    considered (i) a broad market for the provision of e-mobility solutions and (ii) a market
+    for the manufacturing, supply and installation of charging infrastructure for e-mobility
+    solutions.45 In a more recent decision, the Commission considered whether the market for
+    installation and operation of public electric vehicle (“EV”) charging stations may be further
+    segmented. In that case, the Commission considered that the installation and operation of
+    public EV charging stations on- motorways and off-motorways should be considered as separate
+    product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '9'
+  quote_snippet: The Commission considers that for the purposes of this decision, the exact
+    market definition can be left open as the proposed Transaction does not raise serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA Agreement
+    under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '6'
+  quote_snippet: In its previous decisions, the Commission has defined retail electricity markets
+    as national in scope26 but has also considered whether the market may be narrower than national.27
+    However, as regards the Nordics, it has also considered that there may be a wider, regional
+    market for the retail supply of electricity.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '6'
+  quote_snippet: All of the competitors replying to the Commission’s market investigation confirmed
+    that they were active in supplying electricity to large industrial customers in Denmark
+    only, as opposed to two or more Nordic countries.30 A majority of competitors also indicated
+    that the majority of Danish suppliers retailing electricity to large industrial customers
+    were not active in other Nord Pool countries.31 A majority of customers replying to the
+    Commission’s market investigation also indicated that their suppliers were also active throughout
+    Denmark, as opposed to two or more Nordic countries.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '7'
+  quote_snippet: The Commission considers that the geographic scope of the market is most likely
+    national. However, for the purposes of this decision, the exact geographic market definition
+    can be left open as to whether it is national or wider than national e.g. extending to other
+    Nordic countries, as the proposed Transaction does not raise serious doubts as to its compatibility
+    with the internal market or the functioning of the EEA Agreement under any plausible market
+    definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '7'
+  quote_snippet: Regarding the geographical scope of the market, the Commission has generally
+    held that the geographic markets for gas supply were national in scope, whilst also considering
+    a regional scope in a few older cases.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '7'
+  quote_snippet: The Commission agrees that for the purposes of this decision, the exact market
+    definition can be left open as the proposed Transaction does not raise serious doubts as
+    to its compatibility with the internal market or the functioning of the EEA Agreement under
+    any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '8'
+  quote_snippet: The Commission has found that the geographic market is not narrower than national
+    and considered, with regard to the Nordic countries, whether the relevant geographic market
+    is wider than national. The exact delineation was left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '8'
+  quote_snippet: The Commission considers that for the purposes of this decision, the exact
+    market definition can be left open as the proposed Transaction does not raise serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA Agreement
+    under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '8'
+  quote_snippet: The Commission has considered the market for financial trading of electricity
+    to be global or at least EEA-wide, and in relation to the Nord Pool area, comprising at
+    least the Nord Pool region.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '8'
+  quote_snippet: The Commission considers that for the purposes of this decision, the exact
+    market definition can be left open as the proposed Transaction does not raise serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA Agreement
+    under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_34
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '8'
+  quote_snippet: The Commission has previously considered the relevant geographic market for
+    the operation of electricity distribution networks to be limited to the geographic area
+    of the network in question (grid wide scope), with each grid constituting a relevant geographic
+    market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_35
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '8'
+  quote_snippet: The Commission considers that for the purposes of this decision, the exact
+    market definition can be left open as the proposed Transaction does not raise serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA Agreement
+    under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_36
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '9'
+  quote_snippet: Regarding the geographical scope of the markets, the Commission has considered
+    that it comprises the geographical area covered by the relevant regulation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_37
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '9'
+  quote_snippet: The Commission considers that for the purposes of this decision, the exact
+    market definition can be left open as the proposed Transaction does not raise serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA Agreement
+    under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_38
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '9'
+  quote_snippet: The Commission has previously considered the market to be at most national
+    but potentially limited to the relevant Transmission System Operator’s (“TSO”) control area
+    (which is national in Denmark) or regional.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_39
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '9'
+  quote_snippet: The Commission considers that for the purposes of this decision, the exact
+    market definition can be left open as the proposed Transaction does not raise serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA Agreement
+    under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_40
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '9'
+  quote_snippet: As regards the geographic market definition, the Commission left open whether
+    the relevant geographic market definition was local or national with local elements of competition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_8
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_41
+  source_document_id: eu_ec_m10212_2021_decision
+  page: '9'
+  quote_snippet: The Commission considers that for the purposes of this decision, the exact
+    market definition can be left open as the proposed Transaction does not raise serious doubts
+    as to its compatibility with the internal market or the functioning of the EEA Agreement
+    under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_8
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

@@ -1,0 +1,988 @@
+case_id: eu_cacf_stellantis_fca_bank_2022
+case_name: CACF / STELLANTIS / FCA BANK / F2ML
+authority: European Commission
+jurisdiction: EU
+sector: financial
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2022-12-20'
+parties:
+- name: CACF
+  role: acquirer
+- name: STELLANTIS
+  role: acquirer
+- name: FCA BANK
+  role: acquirer
+- name: F2ML
+  role: target
+source_documents:
+- doc_id: eu_cacf_stellantis_fca_bank_2022_decision
+  title: CACF / STELLANTIS / FCA BANK / F2ML — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10728
+  pdf_url: http://publications.europa.eu/resource/cellar/3da76795-8a2c-11ef-a67d-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Automotive financing services
+  definition_status: left_open
+  notes: The Commission considered various plausible distinctions within this market but left
+    the exact definition open as the transaction did not raise serious doubts under any plausible
+    definition.
+- market_id: pm_2
+  name: Motor vehicle lending
+  definition_status: left_open
+  notes: Considered as a separate market within consumer credit for the purchase of motor vehicles.
+    The distinction between captive and non-captive activities was also left open.
+- market_id: pm_3
+  name: Lending to SMEs
+  definition_status: left_open
+  notes: A segmentation of the corporate banking market based on customer group. The exact definition
+    was left open, including a potential separate segment for lending to car dealerships.
+- market_id: pm_4
+  name: Lending to car dealerships
+  definition_status: considered
+  notes: Considered as a plausible narrower market within lending to SMEs. Market investigation
+    results were not conclusive regarding a separate market identification, but the Commission
+    analyzed it as the narrowest plausible market.
+- market_id: pm_5
+  name: Motor vehicle leasing services (overall)
+  definition_status: left_open
+  notes: The Commission left open the exact product market definition for motor vehicle leasing,
+    but focused its assessment on plausible separate markets for operational and financial leasing,
+    and standalone fleet management services.
+- market_id: pm_6
+  name: Operational leasing for motor vehicles
+  definition_status: considered
+  notes: Considered a separate product market from financial leasing. Includes leasing of the
+    vehicle coupled with fleet management services. Segmentation by customer size (large corporate
+    vs. SMEs) and for vehicles up to 3.5 tons was considered.
+- market_id: pm_7
+  name: Financial leasing for motor vehicles
+  definition_status: considered
+  notes: Considered a separate product market from operational leasing. The primary objective
+    is the financing of the acquisition of a vehicle, leading to ownership by the lessee.
+- market_id: pm_8
+  name: Standalone fleet management services
+  definition_status: left_open
+  notes: The Commission considered whether a distinction should be drawn between 'funded' and
+    'unfunded' fleet leasing, leaving the market definition open in past decisions. For this
+    decision, it focuses on it as a plausible separate market.
+- market_id: pm_9
+  name: Savings accounts
+  definition_status: defined
+  notes: Identified as a separate market based on past practice, but not assessed further due
+    to no affected markets arising from the transaction.
+- market_id: pm_10
+  name: Insurance distribution
+  definition_status: left_open
+  notes: Identified as separate from insurance provision, with potential segmentation between
+    life/non-life and specific non-life products (motor vehicle insurance, extended warranties,
+    maintenance contracts). Not assessed further as no affected markets arose.
+- market_id: pm_11
+  name: Manufacturing and supply of passenger cars
+  definition_status: left_open
+  notes: Considered separate from commercial vehicles, with various sub-segments for car types
+    (mini, small, medium, large, executive, luxury, sport, SUVs, multipurpose, electric cars).
+    The question of segmentation was left open.
+- market_id: pm_12
+  name: Manufacturing and supply of commercial vehicles
+  definition_status: left_open
+  notes: Considered separate from passenger cars, with potential segmentation into LCVs, medium
+    trucks, and heavy trucks, and further sub-segmentation for LCVs. The question of segmentation
+    was left open.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Automotive financing services — national
+  definition_status: considered
+  notes: The geographic markets for automotive financing services (including motor vehicle lending
+    and leasing services) have previously been considered national in scope.
+- market_id: gm_2
+  name: Motor vehicle lending — national
+  definition_status: considered
+  notes: The geographic markets for motor vehicle lending have previously been considered national
+    in scope, and market investigation confirmed this.
+- market_id: gm_3
+  name: Lending to SMEs — national
+  definition_status: considered
+  notes: Past decisions considered this market national, and market investigation results confirmed
+    this.
+- market_id: gm_4
+  name: Lending to car dealerships — national
+  definition_status: considered
+  notes: Though a narrow plausible market, its geographic scope is national, in line with the
+    broader lending to SMEs market.
+- market_id: gm_5
+  name: Motor vehicle leasing services — national
+  definition_status: left_open
+  notes: The Commission found that the scope of leasing markets is at least national due to
+    differences between Member States. Market investigation results suggested national scope,
+    so the Commission assessed effects on national markets, but left the exact definition open.
+- market_id: gm_6
+  name: Operational leasing for motor vehicles — national
+  definition_status: left_open
+  notes: The Commission found that the scope of leasing markets is at least national due to
+    differences between Member States. Market investigation results suggested national scope,
+    so the Commission assessed effects on national markets, but left the exact definition open.
+- market_id: gm_7
+  name: Financial leasing for motor vehicles — national
+  definition_status: left_open
+  notes: The Commission found that the scope of leasing markets is at least national due to
+    differences between Member States. Market investigation results suggested national scope,
+    so the Commission assessed effects on national markets, but left the exact definition open.
+- market_id: gm_8
+  name: Standalone fleet management services — national
+  definition_status: left_open
+  notes: The geographic scope for standalone fleet management services is inferred to be national,
+    aligned with other leasing markets. The overall geographic definition for leasing was left
+    open.
+- market_id: gm_9
+  name: Savings accounts — national
+  definition_status: defined
+  notes: This market was identified as national in scope in past practice and the current market
+    investigation did not suggest diverging from this practice.
+- market_id: gm_10
+  name: Insurance distribution — national
+  definition_status: considered
+  notes: The Commission acknowledged that insurance distribution channels may be national or
+    wider, or even local (for Italy), but left the question open in prior decisions. The exact
+    geographic scope was not conclusively defined for this case as no affected markets arose.
+- market_id: gm_11
+  name: Manufacturing and supply of passenger cars and commercial vehicles — EEA-wide or national
+  definition_status: left_open
+  notes: The Commission ultimately left open whether the geographic scope of these markets is
+    EEA-wide or national. For LCVs, it considered national scope in previous decisions.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '7'
+  quote_snippet: (31) In any event, the exact product market definition for automotive financing
+    services can be left open, as the Transaction does not raise any serious doubts as to its
+    compatibility with the internal market under any plausible market definition. Similarly,
+    the exact market definition can be left open in relation to a potential segmentation between
+    non-captive and captive services since the Transaction does not raise any serious doubts
+    as to its compatibility with the internal market under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '7'
+  quote_snippet: (33) For the purposes of this decision, the Commission will analyse the overall
+    market for automotive financing services and the narrowest plausible market for motor vehicle
+    lending (based on a market encompassing both captive and non-captive services, as well as
+    non-captive services separately) at national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '6'
+  quote_snippet: (23) The Commission did not reach a conclusion as to whether the market for
+    motor vehicle lending should be limited to non-captive activities or whether it should also
+    include captive activities, i.e., financing services offered by car manufacturers’ financing
+    subsidiaries to customers purchasing a vehicle of their own car brand.23
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '7'
+  quote_snippet: (31) In any event, the exact product market definition for automotive financing
+    services can be left open, as the Transaction does not raise any serious doubts as to its
+    compatibility with the internal market under any plausible market definition. Similarly,
+    the exact market definition can be left open in relation to a potential segmentation between
+    non-captive and captive services since the Transaction does not raise any serious doubts
+    as to its compatibility with the internal market under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '8'
+  quote_snippet: (39) In any event, the exact definition of the product market for lending to
+    SMEs can be left open, as the Transaction does not raise any serious doubts as to its compatibility
+    with the internal market under any plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '9'
+  quote_snippet: (41) For the purposes of this decision, the Commission will analyse the market
+    for lending to SMEs considering both an overall market for lending to SMEs and the narrowest
+    plausible market of lending to car dealerships only, in both scenarios at national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '9'
+  quote_snippet: (41) For the purposes of this decision, the Commission will analyse the market
+    for lending to SMEs considering both an overall market for lending to SMEs and the narrowest
+    plausible market of lending to car dealerships only, in both scenarios at national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '12'
+  quote_snippet: (57) For the purposes of the present decision, the definition of the exact
+    product market can be left open, as no competition concerns would arise under any plausible
+    product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '12'
+  quote_snippet: (58) The assessment of the effects of the Transaction focuses on the plausible
+    separate markets for operational leasing (as defined in paragraph (46) above), financial
+    leasing (as defined in paragraph (44)) and standalone fleet management services (as defined
+    in paragraph (47)).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '11'
+  quote_snippet: (52) The Notifying Parties submit that for the purposes of this case, the exact
+    delineation of the relevant product markets for motor vehicle leasing should be left open
+    as the Transaction will not give rise to competition concerns regardless of the precise
+    market definition.48
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '5'
+  quote_snippet: '(16) The Transaction primarily concerns automotive financing services. Specifically,
+    the LeaseCo Transaction concerns the following plausible markets where the Parties’ activities
+    overlap: (i) operational leasing in Austria, Belgium, France, Germany, Italy, the Netherlands,
+    Poland, Portugal and Spain;'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '9'
+  quote_snippet: (42) In past cases, the Commission has considered that financial leasing and
+    operational leasing constitute separate product markets, as leasing agreements for financial
+    leases are concluded with the main purpose of financing vehicles to enable a customer to
+    ultimately purchase a vehicle and do not generally involve any of the additional services
+    which are usually included in an operational leasing contract.36 However, in the Daimler/BMW/Car
+    Sharing JV decision, in light of the supply-side substitutability in that specific case,
+    the Commission conducted its assessment on the basis of an overall leasing market combining
+    operational and financial leasing.37
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '10'
+  quote_snippet: (46) Operational leasing includes the leasing of the vehicle (as described
+    above) coupled with the provision of a range of fleet management services, such as maintenance,
+    repair, fuel cards, tire replacement, insurance etc. Such services can also be sourced on
+    a stand-alone basis separately from an operational leasing contract and without the supply
+    of vehicles. This is typically done by customers having their own vehicle fleet or that
+    sourced their fleet through financial leasing.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '9'
+  quote_snippet: (42) In past cases, the Commission has considered that financial leasing and
+    operational leasing constitute separate product markets, as leasing agreements for financial
+    leases are concluded with the main purpose of financing vehicles to enable a customer to
+    ultimately purchase a vehicle and do not generally involve any of the additional services
+    which are usually included in an operational leasing contract.36 However, in the Daimler/BMW/Car
+    Sharing JV decision, in light of the supply-side substitutability in that specific case,
+    the Commission conducted its assessment on the basis of an overall leasing market combining
+    operational and financial leasing.37
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '9'
+  quote_snippet: (44) On one hand, a financial lease is a financial product that functions as
+    a loan by the lessor to enable the lessee to purchase a vehicle and pay in instalments.38
+    Therefore, in a financial lease contract it is generally the lessee that bears the operational
+    and residual value risk of the vehicle.39
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '12'
+  quote_snippet: (58) The assessment of the effects of the Transaction focuses on the plausible
+    separate markets for operational leasing (as defined in paragraph (46) above), financial
+    leasing (as defined in paragraph (44)) and standalone fleet management services (as defined
+    in paragraph (47)).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '10'
+  quote_snippet: (47) In past decisions, the Commission considered whether a distinction should
+    be drawn between ‘funded’ fleet leasing (operational leasing accompanied by fleet management
+    services) and ‘unfunded’ fleet leasing (fleet management services provided on a standalone
+    basis).41 Although the Commission left the market definition open, a previous Commission
+    investigation suggested that the segmentation into funded and unfunded was not appropriate,
+    because the main function of full fleet leasing and management services is the outsourcing
+    of the management of the vehicle fleet to a leasing company which may or may not be backed
+    by an operational lease component; and both funded and unfunded vehicle leasing can be offered
+    by the same suppliers.42
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '12'
+  quote_snippet: (58) The assessment of the effects of the Transaction focuses on the plausible
+    separate markets for operational leasing (as defined in paragraph (46) above), financial
+    leasing (as defined in paragraph (44)) and standalone fleet management services (as defined
+    in paragraph (47)).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '12'
+  quote_snippet: (61) In its past practice, the Commission identified a separate market for
+    savings accounts, including various forms of deposits, and considered this market to be
+    national in its geographic scope.56
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '14'
+  quote_snippet: (70) The Commission has in the past considered separate markets for the manufacturing
+    and supply of passenger cars, on the one hand, and of commercial vehicles, on the other
+    hand.65
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '15'
+  quote_snippet: '(71) For passenger cars, the Commission’s decisional practice has defined
+    separate product markets for: (i) mini cars; (ii) small cars; (iii) medium cars; (iv) large
+    cars; (v) executive cars; (vi) luxury cars; (vii) sport cars; (viii) sport utility vehicles
+    (”SUVs”); and (ix) multipurpose vehicles.66'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '15'
+  quote_snippet: (77) The Commission considers that, for the purpose of the present decision,
+    the question whether there are separate markets for passenger cars and commercial vehicles
+    and whether they should be further sub-segmented as indicated at paragraphs (70) - (74)
+    can be left open, as the Transaction does not raise serious doubts as to its compatibility
+    with the internal market under any plausible market definition for the manufacturing and
+    supply of passenger cars and commercial vehicles.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_11
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '14'
+  quote_snippet: (70) The Commission has in the past considered separate markets for the manufacturing
+    and supply of passenger cars, on the one hand, and of commercial vehicles, on the other
+    hand.65
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '15'
+  quote_snippet: '(73) In previous decisions, the Commission considered a possible segmentation
+    of the market for commercial vehicles into: (i) LCVs with a gross weight below 6 tons; (ii)
+    medium trucks between 6 and 16 tons; and (iii) heavy trucks above 16 tons.68'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '15'
+  quote_snippet: (77) The Commission considers that, for the purpose of the present decision,
+    the question whether there are separate markets for passenger cars and commercial vehicles
+    and whether they should be further sub-segmented as indicated at paragraphs (70) - (74)
+    can be left open, as the Transaction does not raise serious doubts as to its compatibility
+    with the internal market under any plausible market definition for the manufacturing and
+    supply of passenger cars and commercial vehicles.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_12
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '6'
+  quote_snippet: (25) As regards the geographic market definition the Commission has previously
+    considered the geographic markets for automotive financing (motor vehicle lending and leasing
+    services for motor vehicles) to be national in scope.25
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '7'
+  quote_snippet: (32) Regarding the geographic market definition, the vast majority of respondents
+    confirmed that the market for automotive financing services (including the plausible narrower
+    market for motor vehicle lending) is national in scope.30
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '7'
+  quote_snippet: (33) For the purposes of this decision, the Commission will analyse the overall
+    market for automotive financing services and the narrowest plausible market for motor vehicle
+    lending (based on a market encompassing both captive and non-captive services, as well as
+    non-captive services separately) at national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_29
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '6'
+  quote_snippet: (25) As regards the geographic market definition the Commission has previously
+    considered the geographic markets for automotive financing (motor vehicle lending and leasing
+    services for motor vehicles) to be national in scope.25
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_30
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '7'
+  quote_snippet: (32) Regarding the geographic market definition, the vast majority of respondents
+    confirmed that the market for automotive financing services (including the plausible narrower
+    market for motor vehicle lending) is national in scope.30
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_31
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '7'
+  quote_snippet: (33) For the purposes of this decision, the Commission will analyse the overall
+    market for automotive financing services and the narrowest plausible market for motor vehicle
+    lending (based on a market encompassing both captive and non-captive services, as well as
+    non-captive services separately) at national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_32
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '8'
+  quote_snippet: (35) In relation to the geographic market definition, in its previous decisions,
+    the Commission has considered the market for corporate banking and specifically the potential
+    market for lending to SMEs, to be national in scope.32
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_33
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '9'
+  quote_snippet: (40) Regarding the geographic market definition, the vast majority of respondents
+    who replied to the market investigation confirmed that the market for lending to SMEs is
+    national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_34
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '9'
+  quote_snippet: (41) For the purposes of this decision, the Commission will analyse the market
+    for lending to SMEs considering both an overall market for lending to SMEs and the narrowest
+    plausible market of lending to car dealerships only, in both scenarios at national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_35
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '8'
+  quote_snippet: (35) In relation to the geographic market definition, in its previous decisions,
+    the Commission has considered the market for corporate banking and specifically the potential
+    market for lending to SMEs, to be national in scope.32
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_36
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '9'
+  quote_snippet: (41) For the purposes of this decision, the Commission will analyse the market
+    for lending to SMEs considering both an overall market for lending to SMEs and the narrowest
+    plausible market of lending to car dealerships only, in both scenarios at national level.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_37
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '10'
+  quote_snippet: '(51) In past cases, while leaving the definition of the relevant geographic
+    market open, the Commission found that the scope of the leasing markets is at least national
+    in scope because of differences between Member States in: (i) tax and duty regimes (and
+    the way different leasing formulas are treated under these regimes, impacting heavily their
+    fiscal ‘attractiveness’ for customers), (ii) customer needs and preferences and (iii) different
+    levels of wear in vehicles due to road conditions.46'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_38
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '12'
+  quote_snippet: (60) The results of the market investigation suggest that the leasing markets
+    are national in scope.55 For the present decision, the Commission will assess the effects
+    of the Transaction on national markets. However, the definition of the exact geographic
+    market can be left open, as no competition concerns would arise under any plausible geographic
+    market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_39
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '11'
+  quote_snippet: (56) The Notifying Parties suggest that the exact delineation of the relevant
+    geographic market can be left open because the Transaction will not give rise to competition
+    concerns regardless of the precise market definition.53
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_5
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_40
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '10'
+  quote_snippet: '(51) In past cases, while leaving the definition of the relevant geographic
+    market open, the Commission found that the scope of the leasing markets is at least national
+    in scope because of differences between Member States in: (i) tax and duty regimes (and
+    the way different leasing formulas are treated under these regimes, impacting heavily their
+    fiscal ‘attractiveness’ for customers), (ii) customer needs and preferences and (iii) different
+    levels of wear in vehicles due to road conditions.46'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_41
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '12'
+  quote_snippet: (60) The results of the market investigation suggest that the leasing markets
+    are national in scope.55 For the present decision, the Commission will assess the effects
+    of the Transaction on national markets. However, the definition of the exact geographic
+    market can be left open, as no competition concerns would arise under any plausible geographic
+    market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_6
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_42
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '10'
+  quote_snippet: '(51) In past cases, while leaving the definition of the relevant geographic
+    market open, the Commission found that the scope of the leasing markets is at least national
+    in scope because of differences between Member States in: (i) tax and duty regimes (and
+    the way different leasing formulas are treated under these regimes, impacting heavily their
+    fiscal ‘attractiveness’ for customers), (ii) customer needs and preferences and (iii) different
+    levels of wear in vehicles due to road conditions.46'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_43
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '12'
+  quote_snippet: (60) The results of the market investigation suggest that the leasing markets
+    are national in scope.55 For the present decision, the Commission will assess the effects
+    of the Transaction on national markets. However, the definition of the exact geographic
+    market can be left open, as no competition concerns would arise under any plausible geographic
+    market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_7
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_44
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '10'
+  quote_snippet: '(51) In past cases, while leaving the definition of the relevant geographic
+    market open, the Commission found that the scope of the leasing markets is at least national
+    in scope because of differences between Member States in: (i) tax and duty regimes (and
+    the way different leasing formulas are treated under these regimes, impacting heavily their
+    fiscal ‘attractiveness’ for customers), (ii) customer needs and preferences and (iii) different
+    levels of wear in vehicles due to road conditions.46'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_8
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_45
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '12'
+  quote_snippet: (60) The results of the market investigation suggest that the leasing markets
+    are national in scope.55 For the present decision, the Commission will assess the effects
+    of the Transaction on national markets. However, the definition of the exact geographic
+    market can be left open, as no competition concerns would arise under any plausible geographic
+    market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_8
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_46
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '12'
+  quote_snippet: (61) In its past practice, the Commission identified a separate market for
+    savings accounts, including various forms of deposits, and considered this market to be
+    national in its geographic scope.56
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_9
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_47
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '15'
+  quote_snippet: (75) In previous decisions, the Commission has ultimately left open whether
+    the geographic scope of the markets for manufacturing and supply of passenger cars and commercial
+    vehicles is EEA-wide or national in scope.70 In relation to LCVs in particular, the Commission
+    has considered the market to be national in scope, while recognising the presence of some
+    degree of out-of-market constraints from other countries.71
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_11
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_48
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '15'
+  quote_snippet: (78) The Commission considers that for the purpose of the present decision
+    the question whether the market for manufacturing and supply of passenger cars and commercial
+    vehicles (and possible sub-segments) is EEA-wide or national can be left open. The Transaction
+    does not raise serious doubts as to its compatibility with the internal market under any
+    plausible market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_11
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_49
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '19'
+  quote_snippet: (93) In light of the above, and considering that no respondent raised any substantiated
+    complaint as to whether competition would be negatively impacted as a result of the LeaseCo
+    Transaction, the Commission considers that the LeaseCo Transaction does not raise serious
+    doubts as to its compatibility with the internal market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_50
+  source_document_id: eu_cacf_stellantis_fca_bank_2022_decision
+  page: '24'
+  quote_snippet: '(115) Finally, respondents point out that the FCA Bank Transaction will generally
+    have no or very limited impact on the markets for motor vehicle lending in France and Portugal.
+    One competitor explains that there would be no impact because: “the companies/brands involved
+    already have a strong partnership with one of the financial institutions that act as captive
+    in this deal”. Respondents’ feedback to the market investigation supports the Commission’s
+    understanding that the Transaction is a mere reorganisation of activities and will not bring
+    any acquisition of control by CACF over activities it did not already jointly control with
+    Stellantis. The Transaction will only lead to a change from joint to sole control.99 Hence,
+    the Commission considers that the FCA Bank Transaction will not raise any competition concerns
+    in relation to motor vehicle lending, segment for non-captive activities, in France and
+    Portugal.'
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+case_type: merger
+ai_summary: null
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

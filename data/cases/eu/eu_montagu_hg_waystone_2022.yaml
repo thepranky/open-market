@@ -1,0 +1,358 @@
+case_id: eu_montagu_hg_waystone_2022
+case_name: MONTAGU / HG / WAYSTONE / KB ASSOCIATES
+authority: European Commission
+jurisdiction: EU
+sector: financial
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2022-06-30'
+parties:
+- name: MONTAGU
+  role: acquirer
+- name: HG
+  role: acquirer
+- name: WAYSTONE
+  role: acquirer
+- name: KB ASSOCIATES
+  role: target
+source_documents:
+- doc_id: eu_montagu_hg_waystone_2022_decision
+  title: MONTAGU / HG / WAYSTONE / KB ASSOCIATES — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10660
+  pdf_url: http://publications.europa.eu/resource/cellar/e1287866-4ac2-11ed-92ed-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Provision of ManCo services
+  definition_status: left_open
+  notes: ''
+- market_id: pm_2
+  name: Provision of third-party ManCo services
+  definition_status: considered
+  notes: ''
+- market_id: pm_3
+  name: Provision of third-party ManCo services to UCITS funds
+  definition_status: considered
+  notes: ''
+geographic_markets_considered:
+- market_id: gm_1
+  name: Provision of ManCo services — EEA or national
+  definition_status: left_open
+  notes: ''
+- market_id: gm_2
+  name: Provision of third-party ManCo services — national (Ireland affected)
+  definition_status: considered
+  notes: ''
+- market_id: gm_3
+  name: Provision of third-party ManCo services to UCITS funds — national (Ireland affected)
+  definition_status: considered
+  notes: ''
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_montagu_hg_waystone_2022_decision
+  page: '6'
+  quote_snippet: In any event, for the purposes of this decision, the Commission considers that
+    it is not necessary to conclude whether the market for the provision of ManCo services should
+    be further segmented (by types of funds served, by ManCo services provided, into proprietary
+    and third-party ManCo services, or by a combination of these segmentations), since competition
+    concerns are unlikely to arise under any plausible product market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_montagu_hg_waystone_2022_decision
+  page: '6'
+  quote_snippet: The results of the market investigation generally support the Notifying Parties’
+    view of an overall product market encompassing all types of ManCo services and offered to
+    both AIF and UCITS funds. However, the results of the market investigation were inconclusive
+    as to whether the market for the provision of ManCo services should be further segmented
+    depending on whether ManCo services are offered as part of a bundled mandate, together with
+    other asset management services, or not.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_montagu_hg_waystone_2022_decision
+  page: '5'
+  quote_snippet: The Notifying Parties claim that the relevant product market is the market
+    for the provision of ManCo services, without any further segmentations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_montagu_hg_waystone_2022_decision
+  page: '8'
+  quote_snippet: On the basis of the above market definitions, the proposed concentration gives
+    rise to horizontally affected markets in relation to (i) the provision of third-party ManCo
+    services in Ireland and (ii) the provision of third-party ManCo services to UCITS funds
+    in Ireland.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_montagu_hg_waystone_2022_decision
+  page: '6'
+  quote_snippet: ManCo services offered on a standalone basis are usually offered by ‘third-party
+    players’ such as the Targets. Finally, some ManCo firms, ‘hybrid’ ManCo service providers,
+    offer ManCo services both as part of bundled mandates and on a standalone basis.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_montagu_hg_waystone_2022_decision
+  page: '7'
+  quote_snippet: While some competitors are aware of instances where proprietary ManCo competed
+    with third-party ManCo to provide standalone ManCo services,29 the vast majority of them
+    indicated that third-party ManCo service providers do not usually have the required expertise
+    to compete for bundled mandates.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_montagu_hg_waystone_2022_decision
+  page: '8'
+  quote_snippet: On the basis of the above market definitions, the proposed concentration gives
+    rise to horizontally affected markets in relation to (i) the provision of third-party ManCo
+    services in Ireland and (ii) the provision of third-party ManCo services to UCITS funds
+    in Ireland.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_montagu_hg_waystone_2022_decision
+  page: '10'
+  quote_snippet: On the market for provision of third-party ManCo services to UCITS funds in
+    Ireland, the Notifying Parties submit that they would hold a combined market shares of [25-30]%,
+    with an increment of [5-10]% brought about by UI/Waystone. Generally all competing ManCo
+    service providers have the relevant expertise and service UCITS funds.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_montagu_hg_waystone_2022_decision
+  page: '5'
+  quote_snippet: A segmentation based on the type of funds served, namely between the provision
+    of ManCo services to (i) Alternative Investment Funds (“AIFs”), and (ii) Undertakings for
+    Collective Investments in Transferable Securities (“UCITS”) funds.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_montagu_hg_waystone_2022_decision
+  page: '7'
+  quote_snippet: In any event, for the purposes of this decision, the Commission considers that
+    it is not necessary to conclude whether the market for the provision of ManCo services and
+    its plausible segmentations are EEA or national in scope, since competition concerns are
+    unlikely to arise under any plausible geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_montagu_hg_waystone_2022_decision
+  page: '7'
+  quote_snippet: The market investigation was not conclusive as to whether the geographic scope
+    of the market for the provision of ManCo services and its plausible segmentations are national
+    or EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_montagu_hg_waystone_2022_decision
+  page: '7'
+  quote_snippet: The Notifying Parties claim that the relevant geographic market definition
+    is at least EU or EEA-wide, as this mirrors the geographic scope of relevant EU legislation,
+    based on which funds domiciled anywhere in the EEA may be serviced by a ManCo service provider
+    located anywhere in the EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_montagu_hg_waystone_2022_decision
+  page: '8'
+  quote_snippet: On the basis of the above market definitions, the proposed concentration gives
+    rise to horizontally affected markets in relation to (i) the provision of third-party ManCo
+    services in Ireland and (ii) the provision of third-party ManCo services to UCITS funds
+    in Ireland.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_montagu_hg_waystone_2022_decision
+  page: '7'
+  quote_snippet: On the other hand, there appear to be some national aspects to the geographic
+    market. In particular, Irish funds appear to have a preference for ManCo service providers
+    established in Ireland, which have local presence and good knowledge of the Irish legislation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_montagu_hg_waystone_2022_decision
+  page: '7'
+  quote_snippet: In any event, for the purposes of this decision, the Commission considers that
+    it is not necessary to conclude whether the market for the provision of ManCo services and
+    its plausible segmentations are EEA or national in scope, since competition concerns are
+    unlikely to arise under any plausible geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_montagu_hg_waystone_2022_decision
+  page: '8'
+  quote_snippet: On the basis of the above market definitions, the proposed concentration gives
+    rise to horizontally affected markets in relation to (i) the provision of third-party ManCo
+    services in Ireland and (ii) the provision of third-party ManCo services to UCITS funds
+    in Ireland.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_montagu_hg_waystone_2022_decision
+  page: '7'
+  quote_snippet: On the other hand, there appear to be some national aspects to the geographic
+    market. In particular, Irish funds appear to have a preference for ManCo service providers
+    established in Ireland, which have local presence and good knowledge of the Irish legislation.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_montagu_hg_waystone_2022_decision
+  page: '7'
+  quote_snippet: In any event, for the purposes of this decision, the Commission considers that
+    it is not necessary to conclude whether the market for the provision of ManCo services and
+    its plausible segmentations are EEA or national in scope, since competition concerns are
+    unlikely to arise under any plausible geographic market definition.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_montagu_hg_waystone_2022_decision
+  page: '11'
+  quote_snippet: For the above reasons, the European Commission has decided not to oppose the
+    notified operation and to declare it compatible with the internal market and with the functioning
+    of the EEA Agreement. This decision is adopted in application of Article 6(1)(b) of the
+    Merger Regulation and Article 57 of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

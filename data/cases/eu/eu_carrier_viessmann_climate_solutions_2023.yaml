@@ -1,0 +1,322 @@
+case_id: eu_carrier_viessmann_climate_solutions_2023
+case_name: CARRIER / VIESSMANN CLIMATE SOLUTIONS
+authority: European Commission
+jurisdiction: EU
+sector: manufacturing
+outcome: cleared
+procedure_stage: unknown
+decision_date: '2023-12-15'
+parties:
+- name: CARRIER
+  role: acquirer
+- name: VIESSMANN CLIMATE SOLUTIONS
+  role: target
+source_documents:
+- doc_id: eu_carrier_viessmann_climate_solutions_2023_decision
+  title: CARRIER / VIESSMANN CLIMATE SOLUTIONS — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.11160
+  pdf_url: http://publications.europa.eu/resource/cellar/016187c6-75d4-11ef-bbbe-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Heat pumps
+  definition_status: left_open
+  notes: The Commission considered segmenting the market for heat pumps based on (i) application
+    into residential/light commercial and commercial/industrial, (ii) input source and output
+    medium (e.g., Air-to-air, Air-to-water, Ground/Water/Waste-to-water), (iii) structure (wall-mounted
+    and floor-standing), and (iv) architecture (monobloc and split heat pumps). However, the
+    exact scope was left open due to no serious doubts under any delineation. The Commission
+    noted that residential/light commercial and commercial/industrial applications generally
+    differ in features, capacity (20-25kW often considered a threshold), and route-to-market.
+    Also, G/W/W2W heat pumps are likely part of the same product market, while the status of
+    A2A heat pumps (whether part of heat pump market or other HVAC systems) was left open.
+- market_id: pm_2
+  name: Boilers
+  definition_status: left_open
+  notes: 'The Commission considered segmenting the boiler market based on several parameters
+    including: (i) application (residential/light commercial vs. commercial/industrial, with
+    a 70kW threshold for assessment), (ii) capacity/power ranges (e.g., 0-69.9kW, 70-399.9kW),
+    (iii) fuel used (oil, gas, hydrogen, biofuel, biomass), (iv) structure (wall hung/floor
+    standing), (v) technology (condensing/non-condensing), (vi) pressure (up to 10 bar/110°C
+    vs higher), and (vii) type (conventional heating-only vs. combination). The exact product
+    market definition for boilers was left open as the transaction did not raise serious doubts
+    under any alternative delineation, but these segmentations would be considered in the competitive
+    assessment.'
+- market_id: pm_3
+  name: Commercial/industrial burners (above 70kW)
+  definition_status: left_open
+  notes: The Commission considered a product market for commercial/industrial burners, distinct
+    from residential burners, based on features, capacity (70kW threshold for assessment), and
+    other factors like fuel used. Further segmentations based on capacity/power ranges (e.g.,
+    70-399.9kW, 400-999.9kW, above 1000 kW) and fuel type (oil, gas, dual fuel, green energy)
+    were also considered for the competitive assessment. While temperature, technology, and
+    application were mentioned in precedents, market participants did not consider them particularly
+    relevant for further segmentation in this case. The exact product market definition was
+    left open as the transaction did not raise serious doubts.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Heat pumps — national or EEA-wide
+  definition_status: left_open
+  notes: The market investigation indicated the market for heat pumps is national in scope due
+    to differing competition conditions, regulatory differences between EEA Member States, the
+    importance of local distributors/installers, and national customer preferences. However,
+    the exact geographic market definition was left open between national or EEA-wide, as no
+    competition concerns arose under any plausible definition.
+- market_id: gm_2
+  name: Boilers — national or EEA-wide
+  definition_status: left_open
+  notes: The Commission's market investigation for boilers indicated that suppliers often depend
+    on local sales presence or distributors/installers, customers typically source nationally,
+    conditions of competition differ between EEA countries, and there are barriers to entry
+    related to local networks. While some suppliers are active across the EEA, local considerations
+    are key. The exact geographic market definition was left open between national or EEA-wide,
+    as the transaction did not raise serious doubts under any alternative definition.
+- market_id: gm_3
+  name: Commercial/industrial burners — at least EEA-wide
+  definition_status: defined
+  notes: The Commission concluded that the geographic market for commercial/industrial burners
+    is at least EEA-wide. This was supported by OEM customers sourcing at EEA or worldwide levels
+    with standard framework contracts, suppliers active worldwide, and regulatory differences
+    between EEA Member States not having a significant impact. Even non-OEM customers, while
+    sourcing nationally, would consider regional or EEA-level suppliers.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_carrier_viessmann_climate_solutions_2023_decision
+  page: '9'
+  quote_snippet: (36) The results of the market investigation support a further segmentation
+    of the market for heat pumps based on several factors such as (i) application into residential/light
+    commercial and commercial/industrial and (ii) input source and output medium, and (iii)
+    other factors such as structure and architecture.26
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_carrier_viessmann_climate_solutions_2023_decision
+  page: '14'
+  quote_snippet: (54) For the purposes of assessing the Transaction, the exact scope of the
+    product market definition can be left open, as the Transaction does not give rise to serious
+    doubts under any of the alternative product market delineations considered above in this
+    Section 6.1.1.3.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_carrier_viessmann_climate_solutions_2023_decision
+  page: '17'
+  quote_snippet: (74) The Commission’s market investigation shows that market participants generally
+    consider the segmentations considered in the Commission’s precedent decisions as relevant.84
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_carrier_viessmann_climate_solutions_2023_decision
+  page: '19'
+  quote_snippet: (80) For the purpose of the assessment in this case, a threshold of 70kW will
+    be considered to distinguish between residential/light commercial boilers and commercial/industrial
+    boilers. In any case, as further discussed below, it is also appropriate to separately consider
+    different capacity categories in both the residential/light commercial and the commercial/industrial
+    boiler markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_carrier_viessmann_climate_solutions_2023_decision
+  page: '22'
+  quote_snippet: (93) The exact product market definition for boilers can be left open, as the
+    Transaction does not give rise to serious doubts under any of these alternative product
+    market delineations.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_carrier_viessmann_climate_solutions_2023_decision
+  page: '25'
+  quote_snippet: (109) The results of the market investigation support a product market definition
+    for commercial/industrial burners.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_carrier_viessmann_climate_solutions_2023_decision
+  page: '26'
+  quote_snippet: (113) For purposes of the assessment in the present case, a threshold of 70kW
+    will be considered to distinguish between residential burners and commercial/industrial
+    burners. The competitive assessment in the present case will concern only the upstream market
+    for commercial/industrial burners (i.e. burners above 70 kW), as the Transaction does not
+    lead to any vertical links involving the upstream market for residential burners.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_carrier_viessmann_climate_solutions_2023_decision
+  page: '28'
+  quote_snippet: (125) As the Transaction does not raise doubts as to its compatibility with
+    the internal market under any plausible product market definition, the exact product market
+    definition in relation to commercial/industrial burners can be left open.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_carrier_viessmann_climate_solutions_2023_decision
+  page: '14'
+  quote_snippet: (58) The outcome of the market investigation indicates that the market for
+    heat pumps is national in scope.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_carrier_viessmann_climate_solutions_2023_decision
+  page: '15'
+  quote_snippet: (62) For the purpose of this decision, the exact geographic market definition
+    for the market for heat pumps can be left open since no competition concerns arise as a
+    result of the Transaction under all plausible geographic market definitions (i.e. national
+    or EEA).
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_carrier_viessmann_climate_solutions_2023_decision
+  page: '23'
+  quote_snippet: (97) Most suppliers of boilers active in the EEA supply boilers across multiple
+    EEA countries or the entire EEA.121 However, in most cases suppliers depend on either a
+    local sales presence or a local distributor or installer to make sales in any specific country.122
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_carrier_viessmann_climate_solutions_2023_decision
+  page: '23'
+  quote_snippet: (98) The majority of customers responding to the market investigation indicate
+    that they source boilers only in one EEA country and that the suppliers they source from
+    (or the sales outlets of suppliers) are located at national level.125 They further indicate
+    that their contracts for the purchase of boilers cover individual countries instead of the
+    entire EEA.126
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_carrier_viessmann_climate_solutions_2023_decision
+  page: '24'
+  quote_snippet: (102) The above discussed geographic market features appear to apply across
+    the different types of boilers. The exact geographic market definition for boilers can in
+    any case be left open, as the Transaction does not give rise to serious doubts under any
+    of the alternative geographic market definitions, i.e. EEA-wide or national.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_carrier_viessmann_climate_solutions_2023_decision
+  page: '29'
+  quote_snippet: (129) The majority of OEM burner customers responding to the market investigation
+    indicate that they source burners at EEA level or worldwide,167 and that their contracts
+    to purchase burners cover multiple countries or the entire EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_carrier_viessmann_climate_solutions_2023_decision
+  page: '29'
+  quote_snippet: (133) The Commission considers that, for commercial/industrial burners, the
+    scope of the geographic market is at least EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-12'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []

@@ -1,0 +1,538 @@
+case_id: eu_salmar_nts_2022
+case_name: SALMAR / NTS
+authority: European Commission
+jurisdiction: EU
+sector: agriculture
+outcome: cleared
+procedure_stage: phase1
+decision_date: '2022-10-31'
+parties:
+- name: SALMAR
+  role: acquirer
+- name: NTS
+  role: target
+source_documents:
+- doc_id: eu_salmar_nts_2022_decision
+  title: SALMAR / NTS — Decision
+  doc_type: decision
+  case_page_url: https://competition-cases.ec.europa.eu/cases/M.10699
+  pdf_url: http://publications.europa.eu/resource/cellar/0dfad44a-7704-11ed-9887-01aa75ed71a1.0005.01/DOC_1
+product_markets_considered:
+- market_id: pm_1
+  name: Farmed salmon vs. wild salmon
+  definition_status: considered
+  notes: The Commission's past practice distinguishes between farmed salmon and wild salmon.
+- market_id: pm_2
+  name: Farming and primary processing of salmon vs. secondary processing of salmon
+  definition_status: considered
+  notes: The Commission's past practice distinguishes between farming and primary processing
+    of salmon and secondary processing of salmon.
+- market_id: pm_3
+  name: Salmon farmed within the EEA vs. salmon farmed outside the EEA
+  definition_status: considered
+  notes: The Commission's past practice considered salmon farmed within the EEA as a separate
+    product market from salmon farmed outside the EEA.
+- market_id: pm_4
+  name: Salmon farmed in Scotland vs. salmon farmed elsewhere in the EEA
+  definition_status: considered
+  notes: The Commission's past practice considered salmon farmed in Scotland as a separate product
+    market due to consumer preference and price premium.
+- market_id: pm_5
+  name: Farming and primary processing of Icelandic salmon
+  definition_status: considered
+  notes: The Commission, for the purpose of this decision, considered primary processed Icelandic
+    salmon a separate product market from Norwegian salmon, supported by market investigation
+    findings on quality, labelling, price, availability, and transport.
+- market_id: pm_6
+  name: Farming and primary processing of Norwegian salmon
+  definition_status: considered
+  notes: The Commission, for the purpose of this decision, considered primary processed Norwegian
+    salmon a separate product market from Icelandic salmon. The possibility of further segmentation
+    between North and South Norway was left open.
+- market_id: pm_7
+  name: Farming and primary processing of salmon in North Norway vs. South Norway
+  definition_status: left_open
+  notes: The Commission considered further segmentation of the Norwegian salmon market into
+    North and South Norway, based on quality, price, availability, and environmental conditions.
+    However, the question was left open as the transaction did not raise concerns under either
+    definition.
+- market_id: pm_8
+  name: Supply of pens for the aquaculture industry
+  definition_status: left_open
+  notes: The Commission did not conclude on the exact product market definition for the supply
+    of pens, as the outcome of the assessment would remain the same under plausible definitions,
+    but noted the Notifying Party's view.
+- market_id: pm_9
+  name: Supply of cameras for the aquaculture industry
+  definition_status: left_open
+  notes: The Commission did not conclude on the exact product market definition for the supply
+    of cameras, as the outcome of the assessment would remain the same under plausible definitions,
+    but noted the Notifying Party's view.
+geographic_markets_considered:
+- market_id: gm_1
+  name: Farming and primary processing of Icelandic salmon — EEA-wide
+  definition_status: considered
+  notes: The geographic market for farming and primary processing of Icelandic salmon was considered
+    EEA-wide, in line with past Commission decisions and market investigation findings.
+- market_id: gm_2
+  name: Farming and primary processing of Norwegian salmon — EEA-wide
+  definition_status: considered
+  notes: The geographic market for farming and primary processing of Norwegian salmon was considered
+    EEA-wide, in line with past Commission decisions and market investigation findings, regardless
+    of potential further product market segmentation.
+- market_id: gm_3
+  name: Supply of pens for the aquaculture industry — global
+  definition_status: left_open
+  notes: The Notifying Party submitted that the market for pens is global. However, the Commission
+    did not find it necessary to conclude on the exact geographic market definition as the overall
+    outcome would remain the same.
+- market_id: gm_4
+  name: Supply of cameras for the aquaculture industry — global
+  definition_status: left_open
+  notes: The Notifying Party submitted that the market for camera systems is global. However,
+    the Commission did not find it necessary to conclude on the exact geographic market definition
+    as the overall outcome would remain the same.
+theories_of_harm: []
+commitments: []
+source_passages:
+- passage_id: sp_1
+  source_document_id: eu_salmar_nts_2022_decision
+  page: '3'
+  quote_snippet: The Commission has previously distinguished between farmed salmon and wild
+    salmon, as wild salmon is subject to seasonal availability and since farmed and wild salmon
+    are perceived to be different in terms of taste, quality and price.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_1
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_2
+  source_document_id: eu_salmar_nts_2022_decision
+  page: '3'
+  quote_snippet: The Commission has also found that farming and primary processing of salmon
+    constitute a separate product market from secondary processing of salmon.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_2
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_3
+  source_document_id: eu_salmar_nts_2022_decision
+  page: '3'
+  quote_snippet: In addition, the Commission has previously considered that salmon farmed within
+    the EEA is a separate product market from salmon farmed outside the EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_3
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_4
+  source_document_id: eu_salmar_nts_2022_decision
+  page: '3'
+  quote_snippet: The Commission has also considered that salmon farmed in Scotland constitutes
+    a separate product market from salmon farmed elsewhere in the EEA, mainly due to consumer
+    preference leading to a price premium for Scottish salmon in the market.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_4
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_5
+  source_document_id: eu_salmar_nts_2022_decision
+  page: '4'
+  quote_snippet: The market investigation has shown that primary processed Icelandic and Norwegian
+    salmon constitute separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_6
+  source_document_id: eu_salmar_nts_2022_decision
+  page: '5'
+  quote_snippet: First, although there do not appear to be any genetic differences between Icelandic
+    and Norwegian salmon, numerous customers and competitors have pointed out that there are
+    exogenous factors, such as water temperature and the risk of disease, that differ between
+    the Iceland and Norway. Some customers highlighted that this leads to differences in the
+    quality of the salmon.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_7
+  source_document_id: eu_salmar_nts_2022_decision
+  page: '6'
+  quote_snippet: In view of the above, and for the purpose of this decision, the Commission
+    considers the market for farming and primary processing of Icelandic salmon constitutes
+    a separate product market from the market for farming and primary processing of Norwegian
+    salmon.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_5
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_8
+  source_document_id: eu_salmar_nts_2022_decision
+  page: '4'
+  quote_snippet: The market investigation has shown that primary processed Icelandic and Norwegian
+    salmon constitute separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_9
+  source_document_id: eu_salmar_nts_2022_decision
+  page: '6'
+  quote_snippet: In view of the above, and for the purpose of this decision, the Commission
+    considers the market for farming and primary processing of Icelandic salmon constitutes
+    a separate product market from the market for farming and primary processing of Norwegian
+    salmon.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_10
+  source_document_id: eu_salmar_nts_2022_decision
+  page: '7'
+  quote_snippet: However, for the purposes of this decision, the question of whether a further
+    segmentation is appropriate can ultimately be left open, since in either market definition
+    considered, the Transaction does not raise concerns as to its compatibility with the market
+    for farming and primary processing of Norwegian salmon.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_6
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_11
+  source_document_id: eu_salmar_nts_2022_decision
+  page: '6'
+  quote_snippet: A majority of customers having expressed their opinion stated that the quality,
+    texture, appearance and processability differ between salmon farmed in North Norway and
+    salmon farmed in South Norway.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_12
+  source_document_id: eu_salmar_nts_2022_decision
+  page: '7'
+  quote_snippet: Nevertheless, with regard to demand-side substitutability, the results of the
+    market investigation varied. Close to half of the customers have explained that they could
+    replace North Norwegian salmon with South Norwegian salmon, while a non-negligible number
+    of customers have indicated that they could not always do so.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_13
+  source_document_id: eu_salmar_nts_2022_decision
+  page: '7'
+  quote_snippet: However, for the purposes of this decision, the question of whether a further
+    segmentation is appropriate can ultimately be left open, since in either market definition
+    considered, the Transaction does not raise concerns as to its compatibility with the market
+    for farming and primary processing of Norwegian salmon.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_7
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_14
+  source_document_id: eu_salmar_nts_2022_decision
+  page: '24'
+  quote_snippet: The Notifying Party submits that the relevant product markets are the market
+    for the supply of pens for the aquaculture industry and the market for the supply of cameras
+    for the aquaculture industry.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_15
+  source_document_id: eu_salmar_nts_2022_decision
+  page: '24'
+  quote_snippet: In any case, it is not necessary to conclude on the exact product market definition,
+    as the outcome of the assessment of the Transaction remains the same under all plausible
+    market definitions, regardless of whether the supply of cameras and pens for the aquaculture
+    industry constitute one product market or separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_8
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_16
+  source_document_id: eu_salmar_nts_2022_decision
+  page: '24'
+  quote_snippet: The Notifying Party submits that the relevant product markets are the market
+    for the supply of pens for the aquaculture industry and the market for the supply of cameras
+    for the aquaculture industry.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_17
+  source_document_id: eu_salmar_nts_2022_decision
+  page: '24'
+  quote_snippet: In any case, it is not necessary to conclude on the exact product market definition,
+    as the outcome of the assessment of the Transaction remains the same under all plausible
+    market definitions, regardless of whether the supply of cameras and pens for the aquaculture
+    industry constitute one product market or separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets:
+  - pm_9
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_18
+  source_document_id: eu_salmar_nts_2022_decision
+  page: '7'
+  quote_snippet: In previous decisions, the Commission considered the geographical scope of
+    the market for salmon farming and primary processing to be EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_19
+  source_document_id: eu_salmar_nts_2022_decision
+  page: '7'
+  quote_snippet: The Commission’s market investigation confirmed its case practice and the Notifying
+    Party’s view. It revealed that a majority of competitors sell the product to customers across
+    the EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_20
+  source_document_id: eu_salmar_nts_2022_decision
+  page: '8'
+  quote_snippet: In view of the above, and for the purpose of this decision, the Commission
+    considers that the geographic market for farming and primary processing of Icelandic salmon
+    is EEA-wide and that the geographic market for farming and primary processing of Norwegian
+    salmon is EEA-wide, regardless of whether the product market for farming and primary processing
+    of Norwegian salmon should be further segmented.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_1
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_21
+  source_document_id: eu_salmar_nts_2022_decision
+  page: '7'
+  quote_snippet: In previous decisions, the Commission considered the geographical scope of
+    the market for salmon farming and primary processing to be EEA-wide.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_22
+  source_document_id: eu_salmar_nts_2022_decision
+  page: '7'
+  quote_snippet: The Commission’s market investigation confirmed its case practice and the Notifying
+    Party’s view. It revealed that a majority of competitors sell the product to customers across
+    the EEA.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_23
+  source_document_id: eu_salmar_nts_2022_decision
+  page: '8'
+  quote_snippet: In view of the above, and for the purpose of this decision, the Commission
+    considers that the geographic market for farming and primary processing of Icelandic salmon
+    is EEA-wide and that the geographic market for farming and primary processing of Norwegian
+    salmon is EEA-wide, regardless of whether the product market for farming and primary processing
+    of Norwegian salmon should be further segmented.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_2
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_24
+  source_document_id: eu_salmar_nts_2022_decision
+  page: '24'
+  quote_snippet: Similarly, the Parties argue that the market for pens is global. Pens are purchased
+    either as a result of a tender process or as a call of from an existing non-exclusive framework
+    agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_25
+  source_document_id: eu_salmar_nts_2022_decision
+  page: '24'
+  quote_snippet: In any case, it is not necessary to conclude on the exact product market definition,
+    as the outcome of the assessment of the Transaction remains the same under all plausible
+    market definitions, regardless of whether the supply of cameras and pens for the aquaculture
+    industry constitute one product market or separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_3
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_26
+  source_document_id: eu_salmar_nts_2022_decision
+  page: '24'
+  quote_snippet: The Notifying Party submits that the geographic market for cameras systems
+    is global, based on the following elements. ScaleAQ and its competitors supply underwater
+    camera systems for the aquaculture industry on a global basis.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_27
+  source_document_id: eu_salmar_nts_2022_decision
+  page: '24'
+  quote_snippet: In any case, it is not necessary to conclude on the exact product market definition,
+    as the outcome of the assessment of the Transaction remains the same under all plausible
+    market definitions, regardless of whether the supply of cameras and pens for the aquaculture
+    industry constitute one product market or separate product markets.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets:
+  - gm_4
+  supports_theories: []
+  supports_commitments: []
+- passage_id: sp_28
+  source_document_id: eu_salmar_nts_2022_decision
+  page: '35'
+  quote_snippet: For the above reasons, the Commission has decided not to oppose the notified
+    operation as modified by the commitments and to declare it compatible with the internal
+    market and with the functioning of the EEA Agreement, subject to full compliance with the
+    conditions in Section B of the Final Commitments annexed to the present decision and with
+    the obligations contained in the other sections of the said commitments. This decision is
+    adopted in application of Article 6(1)(b) in conjunction with Article 6(2) of the Merger
+    Regulation and Article 57 of the EEA Agreement.
+  extraction_method: pdf_extracted
+  review_status: unreviewed
+  confidence_score: 0.7
+  last_checked_date: '2026-06-13'
+  supports_markets: []
+  supports_geographic_markets: []
+  supports_theories: []
+  supports_commitments: []
+ai_summary: null
+case_type: merger
+metadata:
+  extraction_method: ai_extracted
+  review_status: unreviewed
+  overall_confidence: 0.7
+  created_date: '2026-06-13'
+  last_updated_date: '2026-06-13'
+  tags: []
