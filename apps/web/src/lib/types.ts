@@ -197,3 +197,372 @@ export interface GraphNeighbourhood {
   jurisdiction?: Record<string, unknown>;
   source?: string;
 }
+
+export interface GraphNode {
+  id: string;
+  label: string;
+  type: string;
+  data_layer?: string;
+  record_status?: string;
+  href?: string;
+}
+
+export interface GraphEdge {
+  id: string;
+  source: string;
+  target: string;
+  type: string;
+  quality_level?: string;
+  provenance?: string;
+}
+
+export interface GraphNeighborhoodResponse {
+  center_case_id: string;
+  nodes: GraphNode[];
+  edges: GraphEdge[];
+  source: string;
+}
+
+// ── Search hit (shared by keyword and semantic results) ──────────────────────
+
+export interface CaseSearchHit {
+  data_layer: string;
+  record_status: string;
+  case_id: string;
+  case_name: string;
+  jurisdiction: string;
+  authority: string;
+  decision_date: string;
+  sector: string;
+  outcome: Outcome;
+  case_type: string;
+  source_url?: string;
+  ai_summary?: string;
+  parties: Party[];
+  concept_refs: ConceptRef[];
+  product_market_count: number;
+  theory_count: number;
+  source_passage_count: number;
+  similarity_score?: number;
+}
+
+// ── Entity-centric graph types ───────────────────────────────────────────────
+
+export interface MarketSummary {
+  market_name: string;
+  case_count: number;
+  case_ids: string[];
+  sectors: string[];
+  definition_status_breakdown: Record<string, number>;
+  dominant_status: string;
+}
+
+export interface TheorySummary {
+  theory_name: string;
+  case_count: number;
+  case_ids: string[];
+  sectors: string[];
+  outcome_breakdown: Record<string, number>;
+}
+
+export interface EntityCase {
+  case_id: string;
+  case_name: string;
+  jurisdiction: string;
+  authority: string;
+  decision_date: string;
+  outcome: string;
+  market_id?: string;
+  definition_status?: string;
+  notes?: string;
+  theory_id?: string;
+  description?: string;
+  similarity?: number;
+}
+
+// ── Home page stats ───────────────────────────────────────────────────────────
+
+export interface AppStats {
+  canonical_case_count: number;
+  indexed_case_count: number;
+  total_case_count: number;
+  unique_market_count: number;
+  jurisdiction_count: number;
+  jurisdictions: string[];
+}
+
+// ── Drill-down navigation graph types ────────────────────────────────────────
+
+export interface SectorSummary {
+  sector: string;
+  case_count: number;
+  market_count: number;
+  outcome_breakdown: Record<string, number>;
+}
+
+export interface SectorMarketCase {
+  case_id: string;
+  case_name: string;
+  outcome: string;
+  definition_status: string;
+  jurisdiction: string;
+}
+
+export interface SectorMarket {
+  market_name: string;
+  case_count: number;
+  dominant_status: string;
+  definition_status_breakdown: Record<string, number>;
+  cases: SectorMarketCase[];
+}
+
+export interface SimilarMarket {
+  market_name: string;
+  shared_case_count: number;
+  shared_case_ids: string[];
+  case_count: number;
+  dominant_status: string;
+}
+
+// ── Jurisdiction threshold types ──────────────────────────────────────────────
+
+export type SourceType =
+  | "primary_legislation"
+  | "official_guidance"
+  | "authority_announcement"
+  | "practitioner";
+
+export type MetricType =
+  | "revenue"
+  | "assets"
+  | "deal_value"
+  | "revenue_or_assets"
+  | "market_share"
+  | "incremental_share";
+
+export type ScopeType =
+  | "worldwide"
+  | "domestic"
+  | "eu_eea"
+  | "eu_member_state"
+  | "single_member_state"
+  | "uk"
+  | "us"
+  | "eea_member_state";
+
+export type PartyType =
+  | "combined"
+  | "acquirer_group"
+  | "target_group"
+  | "either_party"
+  | "each_party"
+  | "each_of_at_least_two";
+
+export interface ThresholdCondition {
+  condition_id: string;
+  metric: MetricType;
+  scope: ScopeType;
+  party: PartyType;
+  operator: ">" | ">=" | "<" | "<=";
+  value: number;
+  currency?: string;
+  source: string;
+  source_type: SourceType;
+  source_url?: string;
+  verified_via: string[];
+  note?: string;
+}
+
+export interface ThresholdTest {
+  test_id: string;
+  description: string;
+  legal_basis: string;
+  source_url: string;
+  note?: string;
+  annual_adjustment: boolean;
+  effective_date?: string;
+  status?: string;
+  conditions: ThresholdCondition[];
+  exclusions: { exclusion_id: string; description: string; source: string; effect: string }[];
+  exceptions: { exception_id: string; description: string; source: string; effect?: string }[];
+}
+
+export interface JurisdictionAuthority {
+  name: string;
+  abbreviation: string;
+  url: string;
+  filing_url: string;
+}
+
+export interface JurisdictionRegime {
+  mandatory: boolean;
+  suspensory: boolean;
+  voluntary: boolean;
+}
+
+export interface LegalBasisEntry {
+  citation: string;
+  url: string;
+  note?: string;
+  source_type: SourceType;
+}
+
+export interface ReviewPeriod {
+  days: number;
+  day_type?: string;
+  day_unit?: string;
+  extendable_to_days?: number;
+  day_unit_extended?: string;
+  legal_basis: string;
+  note?: string;
+}
+
+export interface ReviewPeriods {
+  phase_1: ReviewPeriod;
+  phase_2: ReviewPeriod;
+}
+
+export interface SourcePassage {
+  passage_id: string;
+  document_title: string;
+  article_reference: string;
+  document_url: string;
+  quoted_text: string;
+  source_type: SourceType;
+  supports_conditions: string[];
+}
+
+export interface JurisdictionScope {
+  concentration_definition?: string;
+  concentration_definition_source?: string;
+  concentration_definition_url?: string;
+  trigger_events: string[];
+  control_threshold?: string;
+  intra_group_exempt?: boolean;
+  foreign_to_foreign_rule?: string;
+  substantive_test?: string;
+  substantive_test_note?: string;
+  substantive_test_url?: string;
+  note?: string;
+}
+
+export interface Fees {
+  structure?: string;
+  source?: string;
+  source_type?: SourceType;
+  source_url?: string;
+  annual_adjustment?: boolean;
+  note?: string;
+}
+
+export interface GunJumping {
+  automatic_void?: boolean;
+  voidable?: boolean;
+  max_fine_pct_turnover?: number;
+  max_fine_fixed?: number;
+  max_fine_currency?: string;
+  per_day_fine?: number;
+  criminal_sanctions?: boolean;
+  legal_basis?: string;
+  legal_basis_url?: string;
+  note?: string;
+}
+
+export interface FdiScreening {
+  applicable: boolean;
+  regime_name?: string;
+  authority?: string;
+  url?: string;
+  legislation_url?: string;
+  sectors_covered: string[];
+  note?: string;
+}
+
+export interface JurisdictionRule {
+  jurisdiction_id: string;
+  jurisdiction_name: string;
+  last_verified: string;
+  authority: JurisdictionAuthority;
+  regime: JurisdictionRegime;
+  legal_basis: LegalBasisEntry[];
+  filing: {
+    deadline_from_signing_days?: number;
+    deadline_from_closing_days?: number;
+    pre_closing_required: boolean;
+    note?: string;
+  };
+  review_periods: ReviewPeriods;
+  threshold_tests: ThresholdTest[];
+  notes: string[];
+  scope?: JurisdictionScope;
+  gun_jumping?: GunJumping;
+  fdi_screening?: FdiScreening;
+  fees?: Fees;
+  source_passages: SourcePassage[];
+}
+
+export interface JurisdictionSummary {
+  jurisdiction_id: string;
+  jurisdiction_name: string;
+  authority: string;
+  mandatory: boolean;
+  suspensory: boolean;
+  last_verified: string;
+  test_count: number;
+}
+
+// ── Screening request / response types ───────────────────────────────────────
+
+export interface RevenueByScopeInput {
+  worldwide?: number;
+  domestic?: number;
+  eu_eea?: number;
+  uk?: number;
+  us?: number;
+  by_country?: Record<string, number>;
+}
+
+export interface ScreeningRequest {
+  acquirer: RevenueByScopeInput;
+  target: RevenueByScopeInput;
+  acquirer_assets?: number;
+  target_assets?: number;
+  deal_value?: number;
+  deal_currency?: string;
+  revenue_currency?: string;
+  fx_rates?: Record<string, number>;
+  combined_market_share?: Record<string, number>;
+  acquirer_market_share?: Record<string, number>;
+  incremental_share?: Record<string, number>;
+}
+
+export interface ConditionResult {
+  condition_id: string;
+  met?: boolean;
+  actual_value?: number;
+  threshold_value: number;
+  gap?: number;
+  note?: string;
+  missing_data?: string;
+}
+
+export interface TestResult {
+  test_id: string;
+  fired?: boolean;
+  description?: string;
+  excluded: boolean;
+  exclusion_reason?: string;
+  conditions: ConditionResult[];
+}
+
+export interface ScreeningResult {
+  jurisdiction_id: string;
+  jurisdiction_name: string;
+  status: "triggered" | "not_triggered" | "unclear" | "data_insufficient";
+  triggered_by: string[];
+  confidence: "high" | "medium" | "low";
+  filing_type?: string;
+  suspensory?: boolean;
+  test_results: TestResult[];
+  notes: string[];
+}

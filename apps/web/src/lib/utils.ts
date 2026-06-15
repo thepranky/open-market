@@ -1,10 +1,12 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import type { Outcome, ReviewStatus } from "./types";
+import type { DefinitionStatus, Outcome, ReviewStatus } from "./types";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
+
+// ── Outcome ──────────────────────────────────────────────────────────────────
 
 export function formatOutcome(outcome: Outcome): string {
   const labels: Record<Outcome, string> = {
@@ -25,32 +27,86 @@ export function formatOutcome(outcome: Outcome): string {
   return labels[outcome] ?? outcome;
 }
 
+export function outcomeTone(outcome: Outcome): "pos" | "ai" | "neg" | "slatey" {
+  switch (outcome) {
+    case "cleared": return "pos";
+    case "cleared_with_remedies":
+    case "cleared_with_conditions": return "ai";
+    case "blocked": return "neg";
+    default: return "slatey";
+  }
+}
+
+// ── Definition status ────────────────────────────────────────────────────────
+
+export function defnLabel(status: DefinitionStatus): string {
+  const labels: Record<DefinitionStatus, string> = {
+    defined: "Defined",
+    discussed: "Discussed",
+    segmented: "Segmented",
+    left_open: "Left open",
+  };
+  return labels[status] ?? status;
+}
+
+export function defnTone(status: DefinitionStatus): "pos" | "ai" | "seg" | "slatey" {
+  switch (status) {
+    case "defined": return "pos";
+    case "left_open": return "ai";
+    case "segmented": return "seg";
+    default: return "slatey";
+  }
+}
+
+// ── Jurisdiction ─────────────────────────────────────────────────────────────
+
+const JURIS_META: Record<string, { authority: string }> = {
+  EU: { authority: "European Commission" },
+  UK: { authority: "Competition & Markets Authority" },
+  US: { authority: "DOJ / FTC" },
+};
+
+export function jurisdictionAuthority(j: string): string {
+  return JURIS_META[j]?.authority ?? j;
+}
+
+// Kept for any remaining callers
+export function jurisdictionFlag(j: string): string {
+  switch (j) {
+    case "EU": return "🇪🇺";
+    case "UK": return "🇬🇧";
+    case "US": return "🇺🇸";
+    default: return "🌐";
+  }
+}
+
+// Kept for any remaining callers
 export function outcomeColor(outcome: Outcome): string {
   switch (outcome) {
-    case "cleared":
-      return "bg-green-100 text-green-800";
+    case "cleared": return "bg-pos-soft text-pos-ink";
     case "cleared_with_remedies":
-    case "cleared_with_conditions":
-      return "bg-yellow-100 text-yellow-800";
-    case "blocked":
-      return "bg-red-100 text-red-800";
-    case "abandoned":
-      return "bg-gray-100 text-gray-700";
-    case "referred":
-      return "bg-blue-100 text-blue-800";
-    case "pending":
-    case "pending_litigation":
-      return "bg-orange-100 text-orange-800";
-    case "under_appeal":
-      return "bg-purple-100 text-purple-800";
-    case "annulled":
-    case "partially_annulled":
-      return "bg-pink-100 text-pink-800";
-    case "upheld_on_appeal":
-      return "bg-teal-100 text-teal-800";
-    default:
-      return "bg-gray-100 text-gray-700";
+    case "cleared_with_conditions": return "bg-ai-soft text-ai-ink";
+    case "blocked": return "bg-neg-soft text-neg-ink";
+    case "abandoned": return "bg-slatey-soft text-slatey-ink";
+    case "referred": return "bg-seg-soft text-seg-ink";
+    default: return "bg-slatey-soft text-slatey-ink";
   }
+}
+
+// ── Dates & misc ─────────────────────────────────────────────────────────────
+
+export function formatDate(d: string): string {
+  try {
+    return new Date(d).toLocaleDateString("en-GB", {
+      day: "numeric", month: "short", year: "numeric",
+    });
+  } catch {
+    return d;
+  }
+}
+
+export function confidencePct(score: number): string {
+  return `${Math.round(score * 100)}%`;
 }
 
 export function caseHistoryStatusLabel(status: string): string {
@@ -74,20 +130,13 @@ export function caseHistoryStatusColor(status: string): string {
   switch (status) {
     case "final_no_known_challenge":
     case "upheld":
-    case "upheld_on_appeal":
-      return "bg-green-100 text-green-800";
+    case "upheld_on_appeal": return "bg-pos-soft text-pos-ink";
     case "challenged":
     case "pending_litigation":
-    case "under_appeal":
-      return "bg-orange-100 text-orange-800";
+    case "under_appeal": return "bg-ai-soft text-ai-ink";
     case "annulled":
-    case "partially_annulled":
-      return "bg-red-100 text-red-800";
-    case "withdrawn":
-    case "settled":
-      return "bg-gray-100 text-gray-700";
-    default:
-      return "bg-slate-100 text-slate-600";
+    case "partially_annulled": return "bg-neg-soft text-neg-ink";
+    default: return "bg-slatey-soft text-slatey-ink";
   }
 }
 
@@ -102,40 +151,10 @@ export function reviewStatusLabel(status: ReviewStatus): string {
 
 export function reviewStatusColor(status: ReviewStatus): string {
   switch (status) {
-    case "lawyer_reviewed":
-      return "bg-green-100 text-green-800";
-    case "spot_checked":
-      return "bg-yellow-100 text-yellow-800";
-    case "unreviewed":
-      return "bg-red-100 text-red-700";
-    default:
-      return "bg-gray-100 text-gray-600";
+    case "lawyer_reviewed": return "bg-pos-soft text-pos-ink";
+    case "spot_checked": return "bg-ai-soft text-ai-ink";
+    default: return "bg-neg-soft text-neg-ink";
   }
-}
-
-export function jurisdictionFlag(j: string): string {
-  switch (j) {
-    case "EU": return "🇪🇺";
-    case "UK": return "🇬🇧";
-    case "US": return "🇺🇸";
-    default: return "🌐";
-  }
-}
-
-export function formatDate(d: string): string {
-  try {
-    return new Date(d).toLocaleDateString("en-GB", {
-      day: "numeric",
-      month: "short",
-      year: "numeric",
-    });
-  } catch {
-    return d;
-  }
-}
-
-export function confidencePct(score: number): string {
-  return `${Math.round(score * 100)}%`;
 }
 
 const CONCEPT_PREFIXES = ["toh_", "sector_", "proc_", "market_"] as const;
@@ -143,17 +162,14 @@ const CONCEPT_PREFIXES = ["toh_", "sector_", "proc_", "market_"] as const;
 export function formatConceptId(id: string): string {
   let label = id;
   for (const prefix of CONCEPT_PREFIXES) {
-    if (label.startsWith(prefix)) {
-      label = label.slice(prefix.length);
-      break;
-    }
+    if (label.startsWith(prefix)) { label = label.slice(prefix.length); break; }
   }
   return label.replace(/_/g, " ").replace(/\b\w/g, (l) => l.toUpperCase());
 }
 
 export function conceptCategoryColor(conceptId: string): string {
-  if (conceptId.startsWith("toh_")) return "bg-blue-50 text-blue-700 border border-blue-200";
-  if (conceptId.startsWith("sector_")) return "bg-slate-100 text-slate-600 border border-slate-200";
-  if (conceptId.startsWith("proc_")) return "bg-purple-50 text-purple-700 border border-purple-200";
-  return "bg-gray-100 text-gray-600 border border-gray-200";
+  if (conceptId.startsWith("toh_"))    return "bg-seg-soft text-seg-ink border border-seg";
+  if (conceptId.startsWith("sector_")) return "bg-slatey-soft text-slatey-ink border border-line-strong";
+  if (conceptId.startsWith("proc_"))   return "bg-brand-soft text-brand-ink border border-brand";
+  return "bg-slatey-soft text-slatey-ink border border-line-strong";
 }
