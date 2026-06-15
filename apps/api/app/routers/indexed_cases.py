@@ -16,6 +16,8 @@ def list_indexed_cases(
     jurisdiction: str | None = Query(None),
     sector: str | None = Query(None),
     outcome: str | None = Query(None),
+    year_from: int | None = Query(None),
+    year_to: int | None = Query(None),
 ):
     entries = get_all_indexed()
     if jurisdiction:
@@ -24,6 +26,10 @@ def list_indexed_cases(
         entries = [e for e in entries if sector.lower() in e.sector.lower()]
     if outcome:
         entries = [e for e in entries if e.outcome.value == outcome]
+    if year_from:
+        entries = [e for e in entries if e.decision_date.year >= year_from]
+    if year_to:
+        entries = [e for e in entries if e.decision_date.year <= year_to]
     return [_to_detail(e) for e in entries]
 
 

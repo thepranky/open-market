@@ -9,6 +9,31 @@ from app.models.case import Outcome, Party
 from app.models.concept import ConceptRef
 
 
+class GraphNode(BaseModel):
+    id: str
+    label: str
+    type: str  # "case" | "authority" | "sector" | "outcome" | "party" | "concept" | "product_market" | "geographic_market" | "theory_of_harm"
+    data_layer: Optional[str] = None  # "canonical" | "indexed"
+    record_status: Optional[str] = None  # "canonical_reviewed" | "indexed_metadata"
+    href: Optional[str] = None
+
+
+class GraphEdge(BaseModel):
+    id: str
+    source: str
+    target: str
+    type: str
+    quality_level: Optional[str] = None
+    provenance: Optional[str] = None
+
+
+class GraphNeighborhoodResponse(BaseModel):
+    center_case_id: str
+    nodes: list[GraphNode]
+    edges: list[GraphEdge]
+    source: str = "yaml"
+
+
 class IndexedCaseDetail(BaseModel):
     """Lightweight record from data/case_index/. No source-backed legal propositions."""
 
@@ -56,3 +81,6 @@ class CaseSearchHit(BaseModel):
     product_market_count: int = 0
     theory_count: int = 0
     source_passage_count: int = 0
+
+    # Only present for semantic search results.
+    similarity_score: Optional[float] = None

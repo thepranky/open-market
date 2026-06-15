@@ -38,7 +38,12 @@ except ImportError:
 _REPO_ROOT = Path(__file__).resolve().parents[4]
 DEFAULT_CACHE_DIR = _REPO_ROOT / "data" / "source_text"
 
-_HEADERS = {"User-Agent": "CompMap-SourceGrounding/1.0 (open-source research tool)"}
+_HEADERS = {
+    "User-Agent": "CompMap-SourceGrounding/1.0 (open-source research tool)",
+    # Required for EUR-Lex/cellar URLs (http://publications.europa.eu/resource/celex/*.pdf)
+    # which content-negotiate between RDF and PDF based on Accept.
+    "Accept": "application/pdf, application/octet-stream, */*;q=0.8",
+}
 
 
 # ---------------------------------------------------------------------------

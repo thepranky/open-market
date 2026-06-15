@@ -4,14 +4,16 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import settings
-from app.core.neo4j_client import close_driver
+from app.core.pg_client import close_pool
 from app.routers import cases, graph, health, indexed_cases, search
+from app.routers import graph_entities
+from app.routers import jurisdictions
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     yield
-    await close_driver()
+    await close_pool()
 
 
 app = FastAPI(
@@ -22,7 +24,13 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://web:3000"],
+    allow_origins=[
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+        "http://localhost:3001",
+        "http://127.0.0.1:3001",
+        "http://web:3000",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -33,6 +41,8 @@ app.include_router(cases.router)
 app.include_router(indexed_cases.router)
 app.include_router(search.router)
 app.include_router(graph.router)
+app.include_router(graph_entities.router)
+app.include_router(jurisdictions.router)
 
 
 @app.get("/")
