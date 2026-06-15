@@ -88,7 +88,21 @@ _SEED_PRIORITY_FIELDS: frozenset[str] = frozenset({
     "case_history",
     "ai_summary",
     "similar_cases",
+    "decision_date",  # always prefer the human-curated date from the case index
 })
+
+# LLM sometimes produces definition_status values outside the enum.
+# Map them to the nearest valid value rather than failing promotion.
+_DEFINITION_STATUS_REMAP: dict[str, str] = {
+    "precedent_only":      "considered",
+    "not_conclusive":      "left_open",
+    "assessed_no_overlap": "considered",
+    "unknown":             "considered",
+    "possible_segmentation": "discussed",
+    "not_appropriate":     "considered",
+    "incomplete_source":   "considered",
+    "background":          "considered",
+}
 
 # List fields where the seed value is preferred when the seed has a non-empty
 # list but the draft has an empty or absent list.  This prevents a new AI
@@ -208,6 +222,16 @@ def _apply_seed_nonempty_fallbacks(record: dict, seed: dict) -> None:
                 record[field] = seed_val
 
 
+def _normalize_draft_inplace(record: dict) -> None:
+    """Remap LLM hallucinations to valid enum values so validation passes."""
+    _valid_ds = {"defined", "discussed", "segmented", "left_open", "considered"}
+    for key in ("product_markets_considered", "geographic_markets_considered"):
+        for market in record.get(key) or []:
+            ds = market.get("definition_status")
+            if ds and ds not in _valid_ds:
+                market["definition_status"] = _DEFINITION_STATUS_REMAP.get(ds, "considered")
+
+
 def check_draft_warnings(draft: dict) -> list[str]:
     """Return a list of human-readable warnings about quality issues in *draft*.
 
@@ -269,6 +293,9 @@ def build_canonical(
     # CLI override always wins for procedure_stage.
     if procedure_stage_override:
         result["procedure_stage"] = procedure_stage_override
+
+    # Normalize LLM hallucinations to valid enum values.
+    _normalize_draft_inplace(result)
 
     # Strip draft-only fields.
     _strip_draft_fields_inplace(result)
@@ -383,7 +410,16 @@ def main(argv: Optional[list[str]] = None) -> int:
         seed = yaml.safe_load(canonical_path.read_text(encoding="utf-8"))
         print(f"Seed:      {canonical_path}")
     else:
-        print("Seed:      (none)")
+        # Fall back to the case_index entry so metadata fields like decision_date
+        # and parties are always populated even on first promotion.
+        index_root = _REPO_ROOT / "data" / "case_index"
+        jur = args.case_id.split("_")[0]
+        index_path = index_root / jur / f"{args.case_id}.yaml"
+        if index_path.exists():
+            seed = yaml.safe_load(index_path.read_text(encoding="utf-8"))
+            print(f"Seed:      {index_path}  (case_index fallback)")
+        else:
+            print("Seed:      (none)")
 
     # ------------------------------------------------------------------
     # 3. Determine output path

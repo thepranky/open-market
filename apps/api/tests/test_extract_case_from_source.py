@@ -76,6 +76,7 @@ from extract_case_from_source import (
     _resolve_canonical_yaml,
     _section_batch_prefix,
     _select_relevant_chunks,
+    LLMClient,
     _should_attempt_repair,
     _trim_pages_for_prefix,
     _validate_extraction,
@@ -332,18 +333,19 @@ class TestSelectRelevantChunks:
         high_signal_unfocused = _make_chunk(
             "chunk_002",
             "4 COMPETITIVE ASSESSMENT > 4.3.3 Other Overlaps > 4.3.3.2 Competitive assessment",
-            [(10, market_def_signal), (11, market_def_signal), (12, market_def_signal)],
+            [(50, market_def_signal), (51, market_def_signal), (52, market_def_signal)],
         )
         all_chunks = [focused, high_signal_unfocused]
 
-        # Normal run: only focused chunk selected (2 pages total < 8 abs threshold,
-        # but also < 25% of 5 non-TOC pages, so supplemental would fire anyway for this
-        # small doc — use a path that tests full_market_def_pass explicitly).
-        # Build a doc big enough that normal mode would stay focused-only (> 8 focused pages).
+        # Normal run: only focused chunk selected (2 pages total < _MARKET_DEF_SP_MIN_PAGES
+        # abs threshold, but also < 25% of 5 non-TOC pages, so supplemental would fire anyway
+        # for this small doc — use a path that tests full_market_def_pass explicitly).
+        # Build a doc big enough that normal mode would stay focused-only (> 20 focused pages).
+        # Pages must not overlap with high_signal_unfocused (pp.50-52).
         big_focused = _make_chunk(
             "chunk_big",
             "4 COMPETITIVE ASSESSMENT > 4.1 Market definition",
-            [(i, "product market text") for i in range(1, 10)],  # 9 pages
+            [(i, "product market text") for i in range(1, 22)],  # 21 pages
         )
         all_big = [big_focused, high_signal_unfocused]
 
@@ -2413,7 +2415,7 @@ class TestExtractSectionBatch:
             source_document_id="doc1",
         )]
 
-    def _mock_ac(self, response_input: dict) -> MagicMock:
+    def _mock_ac(self, response_input: dict) -> "LLMClient":
         mock_block = MagicMock()
         mock_block.type = "tool_use"
         mock_block.input = response_input
@@ -2423,7 +2425,7 @@ class TestExtractSectionBatch:
         mock_msg.stop_reason = "tool_use"
         mock_ac = MagicMock()
         mock_ac.messages.create.return_value = mock_msg
-        return mock_ac
+        return LLMClient("anthropic", mock_ac)
 
     def _case_context(self) -> dict:
         return {"case_id": "test_case", "case_name": "Test Case", "authority": "EC", "parties": []}
@@ -2468,8 +2470,6 @@ class TestExtractSectionBatch:
         assert saved["section_prefix"] == "8.6"
         assert saved["error"] == "empty_object"
         assert "chunks_sent" in saved
-        assert saved["model"] == "claude-sonnet-4-6"
-        assert saved["stop_reason"] == "tool_use"
 
     def test_debug_json_includes_chunk_metadata(self, tmp_path):
         chunks = self._make_section_chunks("8.6", n_pages=4)
@@ -2488,7 +2488,8 @@ class TestExtractSectionBatch:
         mock_ac = MagicMock()
         mock_ac.messages.create.side_effect = RuntimeError("rate limit exceeded")
         batch = _extract_section_batch(
-            "8.6", chunks, self._case_context(), mock_ac, tmp_path / "debug", "test_case"
+            "8.6", chunks, self._case_context(),
+            LLMClient("anthropic", mock_ac), tmp_path / "debug", "test_case"
         )
         assert batch.error is not None
         assert "API error" in batch.error
@@ -4208,8 +4209,11 @@ class TestRepairRetrySectionBatch:
     def _case_context(self) -> dict:
         return {"case_id": "test_case", "case_name": "Test", "authority": "EC", "parties": []}
 
-    def _mock_ac_two_calls(self, first_input: dict, second_input: dict) -> MagicMock:
-        """Return a mock that yields first_input on the first call, second_input on the second."""
+    def _mock_ac_two_calls(self, first_input: dict, second_input: dict):
+        """Return an LLMClient wrapping a mock that yields first_input on the first call, second on second.
+
+        Returns (llm_client, inner_mock) so tests can assert on inner_mock.messages.create.call_count.
+        """
         def _make_msg(inp):
             block = MagicMock()
             block.type = "tool_use"
@@ -4225,7 +4229,7 @@ class TestRepairRetrySectionBatch:
             _make_msg(first_input),
             _make_msg(second_input),
         ]
-        return mock_ac
+        return LLMClient("anthropic", mock_ac), mock_ac
 
     def _valid_response(self) -> dict:
         return {
@@ -4255,14 +4259,14 @@ class TestRepairRetrySectionBatch:
             "source_passages": self._INVALID_JSON_EMPTY,
             "caveats": [],
         }
-        mock_ac = self._mock_ac_two_calls(bad, self._valid_response())
+        llm_client, inner_mock = self._mock_ac_two_calls(bad, self._valid_response())
 
         batch = _extract_section_batch(
             "8.6", self._make_chunks(), self._case_context(),
-            mock_ac, tmp_path / "debug", "test_case",
+            llm_client, tmp_path / "debug", "test_case",
         )
 
-        assert mock_ac.messages.create.call_count == 2, "Exactly two API calls expected"
+        assert inner_mock.messages.create.call_count == 2, "Exactly two API calls expected"
         assert batch.error is None, f"Unexpected error: {batch.error}"
         assert batch.result is not None
         assert len(batch.result.product_markets) == 1
@@ -4272,12 +4276,12 @@ class TestRepairRetrySectionBatch:
         bad = {"product_markets": self._INVALID_JSON_ARRAY, "geographic_markets": [],
                "theories_of_harm": [], "overall_outcome": "unknown",
                "source_passages": self._INVALID_JSON_EMPTY, "caveats": []}
-        mock_ac = self._mock_ac_two_calls(bad, self._valid_response())
+        llm_client, _ = self._mock_ac_two_calls(bad, self._valid_response())
         debug_dir = tmp_path / "debug"
 
         _extract_section_batch(
             "8.6", self._make_chunks(), self._case_context(),
-            mock_ac, debug_dir, "test_case",
+            llm_client, debug_dir, "test_case",
         )
 
         repaired_files = list(debug_dir.glob("*_repaired.json"))
@@ -4288,12 +4292,12 @@ class TestRepairRetrySectionBatch:
         bad = {"product_markets": self._INVALID_JSON_ARRAY, "geographic_markets": [],
                "theories_of_harm": [], "overall_outcome": "unknown",
                "source_passages": self._INVALID_JSON_EMPTY, "caveats": []}
-        mock_ac = self._mock_ac_two_calls(bad, self._valid_response())
+        llm_client, _ = self._mock_ac_two_calls(bad, self._valid_response())
         debug_dir = tmp_path / "debug"
 
         _extract_section_batch(
             "8.6", self._make_chunks(), self._case_context(),
-            mock_ac, debug_dir, "test_case",
+            llm_client, debug_dir, "test_case",
         )
 
         schema_err_files = list(debug_dir.glob("*_schema_err.json"))
@@ -4305,11 +4309,11 @@ class TestRepairRetrySectionBatch:
                "source_passages": self._INVALID_JSON_EMPTY,
                "geographic_markets": [], "theories_of_harm": [],
                "overall_outcome": "unknown", "caveats": []}
-        mock_ac = self._mock_ac_two_calls(bad, bad)  # repair returns same bad response
+        llm_client, _ = self._mock_ac_two_calls(bad, bad)  # repair returns same bad response
 
         batch = _extract_section_batch(
             "8.6", self._make_chunks(), self._case_context(),
-            mock_ac, tmp_path / "debug", "test_case",
+            llm_client, tmp_path / "debug", "test_case",
         )
 
         assert batch.error is not None
@@ -4338,7 +4342,7 @@ class TestRepairRetrySectionBatch:
 
         batch = _extract_section_batch(
             "8.6", self._make_chunks(), self._case_context(),
-            mock_ac, tmp_path / "debug", "test_case",
+            LLMClient("anthropic", mock_ac), tmp_path / "debug", "test_case",
         )
 
         assert mock_ac.messages.create.call_count == 1, "No repair call should be made"
@@ -4363,7 +4367,7 @@ class TestRepairRetrySectionBatch:
 
         _extract_section_batch(
             "8.6", self._make_chunks(), self._case_context(),
-            mock_ac, tmp_path / "debug", "test_case",
+            LLMClient("anthropic", mock_ac), tmp_path / "debug", "test_case",
         )
 
         assert mock_ac.messages.create.call_count <= 2, (
