@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { CaseSearchHit } from "@/lib/types";
 import { SemanticCaseCard } from "@/components/SemanticCaseCard";
+import { ViewToggle } from "@/components/ViewToggle";
 import { SearchForm } from "./SearchForm";
 
 interface ExploreClientProps {
@@ -10,63 +11,80 @@ interface ExploreClientProps {
   initialJurisdiction?: string;
   initialSector?: string;
   initialOutcome?: string;
-  initialTheory?: string;
   initialYearFrom?: string;
   initialYearTo?: string;
   serverResults: React.ReactNode;
 }
 
 export function ExploreClient({
-  initialQ, initialJurisdiction, initialSector, initialOutcome,
-  initialTheory, initialYearFrom, initialYearTo, serverResults,
+  initialQ,
+  initialJurisdiction,
+  initialSector,
+  initialOutcome,
+  initialYearFrom,
+  initialYearTo,
+  serverResults,
 }: ExploreClientProps) {
   const [semanticHits, setSemanticHits] = useState<CaseSearchHit[] | null>(null);
 
   return (
-    <div className="grid lg:grid-cols-[268px_1fr] gap-8">
-      <aside className="lg:sticky lg:top-[74px] self-start space-y-6">
-        <SearchForm
-          initialQ={initialQ}
-          initialJurisdiction={initialJurisdiction}
-          initialSector={initialSector}
-          initialOutcome={initialOutcome}
-          initialTheory={initialTheory}
-          initialYearFrom={initialYearFrom}
-          initialYearTo={initialYearTo}
-          onSemanticResults={setSemanticHits}
-          onKeywordMode={() => setSemanticHits(null)}
-        />
-      </aside>
-
-      <section>
-        {semanticHits !== null ? (
-          <SemanticResultList hits={semanticHits} />
-        ) : (
-          serverResults
-        )}
-      </section>
-    </div>
+    <SearchForm
+      initialQ={initialQ}
+      initialJurisdiction={initialJurisdiction}
+      initialSector={initialSector}
+      initialOutcome={initialOutcome}
+      initialYearFrom={initialYearFrom}
+      initialYearTo={initialYearTo}
+      onSemanticResults={setSemanticHits}
+      onKeywordMode={() => setSemanticHits(null)}
+    >
+      {semanticHits !== null ? (
+        <SemanticResultList hits={semanticHits} />
+      ) : (
+        serverResults
+      )}
+    </SearchForm>
   );
 }
 
 function SemanticResultList({ hits }: { hits: CaseSearchHit[] }) {
+  const [viewMode, setViewMode] = useState<"compact" | "detailed">("detailed");
+  const compact = viewMode === "compact";
+
   if (hits.length === 0) {
     return (
-      <div className="text-center py-20 text-muted">
-        <p className="text-[15px]">No semantic matches found. Try rephrasing your query.</p>
+      <div className="py-16 text-center text-muted">
+        <p className="text-[14px]">No semantic matches found. Try rephrasing your query.</p>
       </div>
     );
   }
 
   return (
     <div className="space-y-3">
-      <div className="flex items-baseline gap-2.5 pb-3 border-b border-line mb-5">
-        <span className="text-[15px] font-semibold text-ink">{hits.length} semantic {hits.length === 1 ? "match" : "matches"}</span>
-        <span className="text-[12px] font-medium text-brand-ink bg-brand-soft rounded-[5px] px-2 py-[3px]">semantic</span>
+      <div className="mb-4 flex items-center justify-between gap-3 border-b border-line pb-3">
+        <div className="flex min-w-0 items-baseline gap-2">
+          <span className="text-[14px] font-semibold text-ink">
+            {hits.length} semantic {hits.length === 1 ? "match" : "matches"}
+          </span>
+          <span className="rounded-[5px] bg-brand-soft px-2 py-0.5 text-[11px] font-medium text-brand-ink">
+            semantic
+          </span>
+        </div>
+        <ViewToggle
+          aria-label="Results card view"
+          options={[
+            { value: "compact", label: "Compact" },
+            { value: "detailed", label: "Detailed" },
+          ]}
+          value={viewMode}
+          onChange={setViewMode}
+        />
       </div>
-      {hits.map((hit) => (
-        <SemanticCaseCard key={hit.case_id} hit={hit} />
-      ))}
+      <div className={compact ? "space-y-2" : "space-y-3"}>
+        {hits.map((hit) => (
+          <SemanticCaseCard key={hit.case_id} hit={hit} compact={compact} />
+        ))}
+      </div>
     </div>
   );
 }
