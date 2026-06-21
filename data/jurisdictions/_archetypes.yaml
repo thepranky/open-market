@@ -1,0 +1,90 @@
+version: 1
+
+assignments:
+  eu: [eu_turnover, fdi_parallel]
+  us_hsr: [us_hsr_two_tier]
+  uk: [voluntary_slc, fdi_parallel]
+  de: [mandatory_turnover]
+  fr: [mandatory_turnover]
+  it: [mandatory_turnover]
+  es: [mandatory_turnover]
+  nl: [mandatory_turnover]
+  be: [mandatory_turnover]
+  at: [mandatory_turnover]
+  pl: [mandatory_turnover]
+  se: [mandatory_turnover]
+  "no": [mandatory_turnover]
+  fi: [mandatory_turnover]
+  dk: [mandatory_turnover]
+  pt: [mandatory_turnover]
+  cz: [mandatory_turnover]
+  hu: [mandatory_turnover]
+  ro: [mandatory_turnover]
+  gr: [mandatory_turnover]
+  br: [market_share_trigger]
+  au: [mandatory_turnover]
+  ca: [mandatory_turnover]
+  jp: [mandatory_turnover]
+  kr: [mandatory_turnover]
+  cn: [mandatory_turnover]
+  in: [mandatory_turnover]
+  sg: [mandatory_turnover]
+  nz: [mandatory_turnover]
+  mx: [mandatory_turnover]
+  ar: [mandatory_turnover]
+  cl: [mandatory_turnover]
+  co: [market_share_trigger]
+  pe: [mandatory_turnover]
+  za: [mandatory_turnover]
+  tr: [mandatory_turnover]
+  il: [mandatory_turnover]
+  sa: [mandatory_turnover]
+  uae: [mandatory_turnover]
+  eg: [mandatory_turnover]
+  ng: [mandatory_turnover]
+  ke: [mandatory_turnover]
+  ru: [mandatory_turnover]
+  tw: [mandatory_turnover]
+  id: [mandatory_turnover]
+  ph: [mandatory_turnover]
+  ch: [mandatory_turnover]
+
+archetypes:
+  eu_turnover:
+    description: EU Merger Regulation turnover thresholds with two-thirds exclusion
+    min_threshold_tests: 2
+    requires_exclusions: true
+    requires_gun_jumping: true
+    requires_mandatory_regime: true
+    requires_suspensory_regime: true
+    requires_source_passages: true
+
+  us_hsr_two_tier:
+    description: US HSR standard and large-transaction tiers with annual adjustment
+    min_threshold_tests: 2
+    requires_annual_adjustment_flag: true
+    requires_gun_jumping: true
+    requires_mandatory_regime: true
+    requires_suspensory_regime: true
+    requires_source_passages: true
+
+  voluntary_slc:
+    description: Voluntary UK-style SLC regime with turnover and share-of-supply tests
+    min_threshold_tests: 2
+    requires_voluntary_regime: true
+    requires_source_passages: true
+
+  mandatory_turnover:
+    description: Mandatory suspensory regime with domestic/worldwide turnover tests
+    min_threshold_tests: 1
+    requires_mandatory_regime: true
+    requires_suspensory_regime: true
+
+  market_share_trigger:
+    description: Jurisdiction with explicit market-share filing triggers
+    min_threshold_tests: 1
+    requires_mandatory_regime: true
+
+  fdi_parallel:
+    description: Parallel national-security / FDI screening regime documented separately
+    requires_fdi_screening: true
