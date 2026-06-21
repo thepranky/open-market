@@ -14,6 +14,22 @@ __pycache__/
 # macOS
 .DS_Store
 
+# Environment secrets (keep .env.example tracked)
+.env
+.env.local
+.env.*.local
+apps/api/.env
+apps/web/.env.local
+
+# TypeScript incremental build cache
+**/tsconfig.tsbuildinfo
+
+# Bulk extraction run outputs (local pipeline artifacts)
+data/batch_runs/
+
+# Cursor / local agent state
+.claude/
+
 # Local/generated extraction artifacts
 data/source_text/debug/
 data/drafts/
