@@ -659,6 +659,40 @@ function PractitionerNotesSection({ notes }: { notes: PractitionerNote[] }) {
 
 // ── Page ──────────────────────────────────────────────────────────────────────
 
+function fmtVerifiedDate(iso: string): string {
+  return new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+}
+
+function JurisdictionVerificationBadges({
+  verification,
+}: {
+  verification?: import("@/lib/types").JurisdictionVerificationMeta;
+}) {
+  const tier = verification?.source_verification_tier ?? 0;
+  const fresh = verification?.freshness_status ?? "unknown";
+  const tierLabel = tier >= 2 ? "Source verified" : tier >= 1 ? "Passages linked" : "Unverified source";
+  const tierCls =
+    tier >= 2 ? "bg-pos-soft text-pos" : tier >= 1 ? "bg-brand-soft text-brand" : "bg-[#FFF3CD] text-[#856404]";
+  const stale = fresh === "stale" || fresh === "drift_detected";
+  return (
+    <div className="flex flex-wrap items-center gap-1.5 mt-2">
+      <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium ${tierCls}`}>
+        {tierLabel}
+      </span>
+      {stale && (
+        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium bg-[#FFF3CD] text-[#856404]">
+          Stale data
+        </span>
+      )}
+      {verification?.regression_status === "passed" && (
+        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium bg-pos-soft text-pos">
+          Regression passed
+        </span>
+      )}
+    </div>
+  );
+}
+
 export default async function JurisdictionPage({
   params,
 }: {
@@ -695,6 +729,7 @@ export default async function JurisdictionPage({
           )}
         </div>
         <p className="text-[13px] text-muted">{rule.authority.name}</p>
+        <JurisdictionVerificationBadges verification={rule.verification} />
       </div>
 
       {/* Quick stats */}
@@ -703,7 +738,7 @@ export default async function JurisdictionPage({
           { label: "Phase 1", value: fmtPeriodLabel(p1) },
           { label: "Phase 2", value: p2 ? fmtPeriodLabel(p2) : "—" },
           { label: "Tests", value: String(rule.threshold_tests.length) },
-          { label: "Last updated", value: new Date().toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" }) },
+          { label: "Last updated", value: fmtVerifiedDate(rule.last_verified) },
         ].map((s) => (
           <div key={s.label} className="rounded-xl border border-line bg-surface px-4 py-3">
             <p className="text-[11px] text-faint uppercase tracking-wide mb-0.5">{s.label}</p>

@@ -10,6 +10,7 @@ from pydantic import BaseModel
 
 from app.core.config import settings
 from app.models.jurisdiction import JurisdictionRule
+from app.services.jurisdiction_data_service import load_bundle, list_bundles, verification_metadata
 from app.services.threshold_engine import (
     DealParameters,
     RevenueByScope,
@@ -97,6 +98,10 @@ class ScreeningResultResponse(BaseModel):
     status: str
     triggered_by: list[str]
     confidence: str
+    screening_confidence: str
+    source_verification_tier: int = 0
+    regression_status: str = "not_run"
+    freshness_status: str = "unknown"
     filing_type: Optional[str]
     suspensory: Optional[bool]
     test_results: list[TestResultResponse]
@@ -185,12 +190,18 @@ def _to_deal_for_jurisdiction(req: ScreeningRequest, jurisdiction_id: str) -> De
 
 
 def _serialise(r: JurisdictionScreeningResult) -> ScreeningResultResponse:
+    bundle = load_bundle(DATA_DIR, r.jurisdiction_id)
+    meta = verification_metadata(bundle)
     return ScreeningResultResponse(
         jurisdiction_id=r.jurisdiction_id,
         jurisdiction_name=r.jurisdiction_name,
         status=r.status.value,
         triggered_by=r.triggered_by,
         confidence=r.confidence,
+        screening_confidence=r.confidence,
+        source_verification_tier=meta["source_verification_tier"],
+        regression_status=meta["regression_status"],
+        freshness_status=meta["freshness_status"],
         filing_type=r.filing_type,
         suspensory=r.suspensory,
         test_results=[
@@ -250,10 +261,12 @@ def list_jurisdictions():
 def get_jurisdiction(jurisdiction_id: str):
     """Return the full rule set for a single jurisdiction."""
     try:
-        rule = load_jurisdiction(jurisdiction_id, DATA_DIR)
+        bundle = load_bundle(DATA_DIR, jurisdiction_id)
     except FileNotFoundError:
         raise HTTPException(status_code=404, detail=f"Jurisdiction '{jurisdiction_id}' not found")
-    return rule.model_dump()
+    payload = bundle.rule.model_dump()
+    payload["verification"] = verification_metadata(bundle)
+    return payload
 
 
 @router.get("/{jurisdiction_id}/passages", response_model=list[dict[str, Any]])

@@ -505,10 +505,18 @@ export interface PractitionerNote {
   summary: string;
 }
 
+export interface JurisdictionVerificationMeta {
+  source_verification_tier: number;
+  regression_status: "not_run" | "passed" | "failed";
+  freshness_status: "fresh" | "stale" | "drift_detected" | "unknown";
+  verified_at?: string | null;
+}
+
 export interface JurisdictionRule {
   jurisdiction_id: string;
   jurisdiction_name: string;
   last_verified: string;
+  verification?: JurisdictionVerificationMeta;
   authority: JurisdictionAuthority;
   regime: JurisdictionRegime;
   legal_basis: LegalBasisEntry[];
@@ -601,6 +609,10 @@ export interface ScreeningResult {
   status: "triggered" | "not_triggered" | "unclear" | "data_insufficient";
   triggered_by: string[];
   confidence: "high" | "medium" | "low";
+  screening_confidence?: "high" | "medium" | "low";
+  source_verification_tier?: number;
+  regression_status?: "not_run" | "passed" | "failed";
+  freshness_status?: "fresh" | "stale" | "drift_detected" | "unknown";
   filing_type?: string;
   suspensory?: boolean;
   test_results: TestResult[];
