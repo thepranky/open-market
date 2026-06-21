@@ -18,6 +18,14 @@ class MetricType(str, Enum):
     incremental_share = "incremental_share"
 
 
+class RelationshipType(str, Enum):
+    horizontal = "horizontal"        # between competitors
+    vertical = "vertical"            # supply chain / upstream-downstream
+    conglomerate = "conglomerate"    # unrelated markets
+    non_horizontal = "non_horizontal"  # vertical + conglomerate combined
+    any = "any"                      # applies regardless of relationship
+
+
 class ScopeType(str, Enum):
     worldwide = "worldwide"
     domestic = "domestic"
@@ -39,10 +47,10 @@ class PartyType(str, Enum):
 
 
 class CountQualifier(BaseModel):
-    type: Literal["count_of_countries"]
+    type: Literal["count_of_countries", "count_of_parties"]
     operator: Literal[">=", ">"]
     count: int
-    country_set: str
+    country_set: Optional[str] = None
     cross_reference: Optional[str] = None
 
 
@@ -126,7 +134,7 @@ class FilingDeadlines(BaseModel):
 
 class ReviewPeriod(BaseModel):
     days: int
-    day_type: Optional[Literal["calendar", "working"]] = None
+    day_type: Optional[Literal["calendar", "working", "months"]] = None
     day_unit: Optional[str] = None
     extendable_to_days: Optional[int] = None
     day_unit_extended: Optional[str] = None
@@ -136,7 +144,7 @@ class ReviewPeriod(BaseModel):
 
 class ReviewPeriods(BaseModel):
     phase_1: ReviewPeriod
-    phase_2: ReviewPeriod
+    phase_2: Optional[ReviewPeriod] = None
 
 
 # ── Source passages (anti-hallucination: verbatim statutory text) ─────────────
@@ -150,6 +158,45 @@ class SourcePassage(BaseModel):
     quoted_text: str                  # verbatim text in English (or official translation)
     source_type: SourceType = SourceType.primary_legislation
     supports_conditions: list[str] = []   # condition_ids backed by this passage
+
+
+# ── Minority acquisition thresholds ───────────────────────────────────────────
+
+class MinorityThresholdRule(BaseModel):
+    """A single rule governing when a minority stake becomes notifiable."""
+    rule_id: str
+    relationship_type: RelationshipType = RelationshipType.any
+    pct_threshold: Optional[float] = None   # 0–100; None = any stake size triggers
+    operator: Literal[">=", ">"] = ">="
+    # Additional qualitative condition on top of %; None = percentage alone suffices
+    rights_required: Optional[str] = None   # "board_seat" | "veto_ordinary" | "veto_strategic"
+    source: str
+    source_type: SourceType = SourceType.primary_legislation
+    source_url: Optional[str] = None
+    note: Optional[str] = None
+
+
+class MinorityThresholds(BaseModel):
+    """
+    Structured rules for when a minority stake (no full control) is notifiable.
+
+    standard values:
+      percentage_based  — explicit statutory % thresholds exist (check rules list)
+      control_based     — decisive influence standard; minority without influence = not caught
+      material_influence — lower bar; minorities with board/veto rights may be caught
+      any_acquisition   — any acquisition of shares is potentially reviewable (SLC regimes)
+      none              — jurisdiction explicitly excludes minority stakes
+    """
+    applies: bool
+    standard: Literal[
+        "percentage_based",
+        "control_based",
+        "material_influence",
+        "any_acquisition",
+        "none",
+    ]
+    note: Optional[str] = None
+    rules: list[MinorityThresholdRule] = []
 
 
 # ── Scope / trigger event section ─────────────────────────────────────────────
@@ -207,6 +254,15 @@ class Fees(BaseModel):
     note: Optional[str] = None
 
 
+class PractitionerNote(BaseModel):
+    """A curated practitioner reference (law firm guide, practice note, etc.)."""
+    title: str
+    firm: str            # e.g. "Freshfields Bruckhaus Deringer"
+    url: str
+    date: Optional[str] = None   # e.g. "2024-Q1" or "2024-03"
+    summary: str         # 1–2 sentences on what the note covers
+
+
 class JurisdictionRule(BaseModel):
     jurisdiction_id: str
     jurisdiction_name: str
@@ -220,7 +276,9 @@ class JurisdictionRule(BaseModel):
     notes: list[str] = []
     # Optional enrichment sections (added progressively)
     scope: Optional[JurisdictionScope] = None
+    minority_thresholds: Optional[MinorityThresholds] = None
     gun_jumping: Optional[GunJumping] = None
     fdi_screening: Optional[FdiScreening] = None
     fees: Optional[Fees] = None
     source_passages: list[SourcePassage] = []
+    practitioner_notes: list[PractitionerNote] = []

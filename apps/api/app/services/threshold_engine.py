@@ -17,7 +17,7 @@ from typing import Optional
 import yaml
 from pydantic import ValidationError
 
-from app.models.jurisdiction import JurisdictionRule, MetricType, PartyType, ScopeType, ThresholdTest
+from app.models.jurisdiction import JurisdictionRule, MetricType, PartyType, RelationshipType, ScopeType, ThresholdTest
 
 # ---------------------------------------------------------------------------
 # Deal intake model
@@ -51,6 +51,12 @@ class DealParameters:
 
     deal_value: Optional[float] = None
     deal_currency: str = "EUR"
+
+    # Transaction structure — used for scope pre-filtering
+    deal_type: Optional[str] = None          # merger | share_acquisition | asset_acquisition | joint_venture | minority_stake
+    pct_shares_acquired: Optional[float] = None   # 0–100
+    post_closing_control: Optional[str] = None    # sole_control | joint_control | material_influence | no_control
+    relationship_type: Optional[str] = None  # horizontal | vertical | conglomerate
 
     # Market shares (0.0–1.0) keyed by scope
     combined_market_share: dict[str, float] = field(default_factory=dict)
@@ -98,6 +104,12 @@ class TestResult:
 
 
 @dataclass
+class LegalCitation:
+    citation: str
+    url: Optional[str] = None
+
+
+@dataclass
 class JurisdictionScreeningResult:
     jurisdiction_id: str
     jurisdiction_name: str
@@ -108,6 +120,8 @@ class JurisdictionScreeningResult:
     suspensory: Optional[bool] = None
     test_results: list[TestResult] = field(default_factory=list)
     notes: list[str] = field(default_factory=list)
+    legal_basis: list[LegalCitation] = field(default_factory=list)
+    authority_url: Optional[str] = None
 
 
 # ---------------------------------------------------------------------------
@@ -482,6 +496,156 @@ def _confidence(test_results: list[TestResult], triggered_tests: list[TestResult
 
 
 # ---------------------------------------------------------------------------
+# Transaction-scope pre-filter
+# ---------------------------------------------------------------------------
+
+def _scope_pre_filter(
+    deal: DealParameters,
+    rule: JurisdictionRule,
+) -> Optional[JurisdictionScreeningResult]:
+    """Return an early not_triggered / unclear result if the transaction is clearly out of scope.
+
+    Returns None if the transaction should proceed to threshold evaluation.
+    Decision logic is driven entirely by YAML data (minority_thresholds block).
+    """
+    jid = rule.jurisdiction_id
+
+    def _not_triggered(note: str, confidence: str = "high") -> JurisdictionScreeningResult:
+        legal_basis = [
+            LegalCitation(citation=lb.citation, url=str(lb.url) if lb.url else None)
+            for lb in (rule.legal_basis or [])[:1]
+        ]
+        return JurisdictionScreeningResult(
+            jurisdiction_id=jid,
+            jurisdiction_name=rule.jurisdiction_name,
+            status=ScreeningStatus.not_triggered,
+            triggered_by=[],
+            confidence=confidence,
+            filing_type="mandatory" if rule.regime.mandatory else "voluntary",
+            suspensory=rule.regime.suspensory,
+            test_results=[],
+            notes=[note],
+            legal_basis=legal_basis,
+            authority_url=str(rule.authority.url) if rule.authority and rule.authority.url else None,
+        )
+
+    # 1. Transaction type not in scope (e.g. minority_stake not listed as trigger event)
+    if deal.deal_type and rule.scope and rule.scope.trigger_events:
+        if deal.deal_type not in rule.scope.trigger_events:
+            return _not_triggered(
+                f"Transaction type '{deal.deal_type}' is not a notifiable trigger event in this jurisdiction "
+                f"(covered: {', '.join(rule.scope.trigger_events)})."
+            )
+
+    # 2. Minority stake / no-control transactions: data-driven evaluation from YAML
+    is_minority = (
+        deal.deal_type == "minority_stake"
+        or deal.post_closing_control == "no_control"
+    )
+    if is_minority and rule.minority_thresholds is not None:
+        mt = rule.minority_thresholds
+        return _evaluate_minority_thresholds(deal, rule, mt, _not_triggered)
+
+    return None
+
+
+def _relationship_matches(rule_rel: RelationshipType, deal_rel: Optional[str]) -> bool:
+    """Return True if the YAML rule's relationship_type covers this deal's relationship."""
+    if rule_rel == RelationshipType.any:
+        return True
+    if deal_rel is None:
+        return True  # unknown relationship — assume applies (conservative)
+    if rule_rel.value == deal_rel:
+        return True
+    if rule_rel == RelationshipType.non_horizontal and deal_rel in ("vertical", "conglomerate"):
+        return True
+    return False
+
+
+def _evaluate_minority_thresholds(
+    deal: DealParameters,
+    rule: JurisdictionRule,
+    mt,
+    not_triggered_fn,
+) -> Optional[JurisdictionScreeningResult]:
+    """Evaluate minority_thresholds block. Returns not_triggered if clearly out of scope;
+    None if the transaction should proceed to revenue threshold evaluation."""
+
+    if not mt.applies:
+        return not_triggered_fn(
+            "This jurisdiction does not apply merger control to minority stakes that do not "
+            "confer decisive influence or control. A purely passive minority acquisition is "
+            "not a notifiable concentration."
+        )
+
+    if mt.standard == "any_acquisition":
+        # SLC-style — any share acquisition may be reviewable; proceed to revenue tests
+        return None
+
+    if mt.standard == "control_based":
+        if deal.post_closing_control == "no_control":
+            return not_triggered_fn(
+                "No control or decisive influence acquired; transaction does not constitute "
+                "a notifiable concentration under this jurisdiction's control standard."
+            )
+        return None
+
+    if mt.standard == "material_influence":
+        # A minority with board representation or veto rights over strategic decisions
+        # may still be caught. Without knowing the exact rights granted, we cannot
+        # definitively clear — return None to let revenue tests run and flag uncertainty.
+        if deal.post_closing_control == "no_control":
+            return not_triggered_fn(
+                "No material influence acquired; transaction does not meet this jurisdiction's "
+                "control standard for notifiable concentrations.",
+                confidence="medium",
+            )
+        return None
+
+    if mt.standard == "percentage_based":
+        if not mt.rules:
+            # No rules defined yet — cannot evaluate; proceed conservatively
+            return None
+
+        pct = deal.pct_shares_acquired
+        rel = deal.relationship_type
+
+        # Check if any rule is triggered for the deal's relationship type
+        for r in mt.rules:
+            if not _relationship_matches(r.relationship_type, rel):
+                continue
+            if r.pct_threshold is None:
+                # Any stake in this relationship type triggers
+                return None
+            if pct is None:
+                # Percentage unknown — cannot clear
+                return None
+            op = r.operator
+            if (op == ">=" and pct >= r.pct_threshold) or (op == ">" and pct > r.pct_threshold):
+                return None  # threshold met — proceed to revenue tests
+
+        # No rule triggered for this relationship type / percentage
+        if pct is not None:
+            relevant_rules = [r for r in mt.rules if _relationship_matches(r.relationship_type, rel)]
+            if relevant_rules:
+                thresholds = ", ".join(
+                    f"{r.relationship_type.value} {r.operator}{r.pct_threshold}%"
+                    for r in relevant_rules if r.pct_threshold is not None
+                )
+                return not_triggered_fn(
+                    f"Acquisition of {pct:.1f}% does not meet the minority notification thresholds "
+                    f"for this jurisdiction ({thresholds}). Filing not required solely on ownership percentage."
+                )
+
+        return not_triggered_fn(
+            "Minority stake does not meet the notification thresholds for this jurisdiction."
+        )
+
+    # Unknown standard — proceed conservatively
+    return None
+
+
+# ---------------------------------------------------------------------------
 # Main screening function
 # ---------------------------------------------------------------------------
 
@@ -490,6 +654,11 @@ def screen_jurisdiction(
     rule: JurisdictionRule,
 ) -> JurisdictionScreeningResult:
     """Screen a deal against a single jurisdiction's rules."""
+    # Scope pre-filter: check transaction type / control before running revenue tests
+    pre_filter = _scope_pre_filter(deal, rule)
+    if pre_filter is not None:
+        return pre_filter
+
     jur_currency = _infer_currency(rule)
 
     test_results: list[TestResult] = []
@@ -511,6 +680,11 @@ def screen_jurisdiction(
 
     confidence = _confidence(test_results, triggered)
 
+    legal_basis = [
+        LegalCitation(citation=lb.citation, url=str(lb.url) if lb.url else None)
+        for lb in (rule.legal_basis or [])
+    ]
+
     return JurisdictionScreeningResult(
         jurisdiction_id=rule.jurisdiction_id,
         jurisdiction_name=rule.jurisdiction_name,
@@ -521,6 +695,8 @@ def screen_jurisdiction(
         suspensory=rule.regime.suspensory,
         test_results=test_results,
         notes=rule.notes,
+        legal_basis=legal_basis,
+        authority_url=str(rule.authority.url) if rule.authority and rule.authority.url else None,
     )
 
 
