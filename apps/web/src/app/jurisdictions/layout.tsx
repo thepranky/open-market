@@ -1,19 +1,18 @@
 import { getJurisdictions } from "@/lib/api";
 import { JurisdictionSidebar } from "./JurisdictionSidebar";
+import { JurisdictionChat } from "@/components/JurisdictionChat";
 
 export default async function JurisdictionsLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  let jurisdictions = await getJurisdictions().catch(() => []);
-  // Sort list but keep raw; sidebar sorts by region order
-  jurisdictions = [...jurisdictions].sort((a, b) =>
+  const jurisdictions = [...(await getJurisdictions().catch(() => []))].sort((a, b) =>
     a.jurisdiction_name.localeCompare(b.jurisdiction_name)
   );
 
   return (
-    <div className="flex" style={{ minHeight: "calc(100vh - 58px)" }}>
+    <div className="flex">
       <aside
         className="hidden md:flex md:flex-col flex-shrink-0 border-r border-line"
         style={{
@@ -30,6 +29,8 @@ export default async function JurisdictionsLayout({
       <div className="flex-1 min-w-0">
         {children}
       </div>
+
+      <JurisdictionChat jurisdictions={jurisdictions} />
     </div>
   );
 }

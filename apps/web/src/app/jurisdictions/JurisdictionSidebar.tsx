@@ -5,8 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { JurisdictionSummary } from "@/lib/types";
 
-const REGION_ORDER = ["EU", "US", "UK", "DE", "FR", "AT", "PL", "CA", "BR", "JP", "KR", "CN", "IN", "AU", "ZA", "TR", "SG", "MX", "IL", "UAE", "SA", "TW", "AR", "NG", "NZ", "RU", "CO", "KE", "EG"];
-
 export function JurisdictionSidebar({ jurisdictions }: { jurisdictions: JurisdictionSummary[] }) {
   const pathname = usePathname();
   const [query, setQuery] = useState("");
@@ -23,15 +21,7 @@ export function JurisdictionSidebar({ jurisdictions }: { jurisdictions: Jurisdic
   }, [jurisdictions, query]);
 
   const sorted = useMemo(
-    () =>
-      [...filtered].sort((a, b) => {
-        const ai = REGION_ORDER.indexOf(a.jurisdiction_id.toUpperCase());
-        const bi = REGION_ORDER.indexOf(b.jurisdiction_id.toUpperCase());
-        if (ai === -1 && bi === -1) return a.jurisdiction_name.localeCompare(b.jurisdiction_name);
-        if (ai === -1) return 1;
-        if (bi === -1) return -1;
-        return ai - bi;
-      }),
+    () => [...filtered].sort((a, b) => a.jurisdiction_name.localeCompare(b.jurisdiction_name)),
     [filtered]
   );
 

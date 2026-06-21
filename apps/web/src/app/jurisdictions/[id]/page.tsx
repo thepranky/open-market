@@ -1,5 +1,6 @@
 import { getJurisdiction } from "@/lib/api";
 import { notFound } from "next/navigation";
+import { SourcePill } from "@/components/SourcePill";
 import type {
   ThresholdCondition,
   ThresholdTest,
@@ -7,13 +8,34 @@ import type {
   MetricType,
   SourcePassage,
   JurisdictionScope,
+  MinorityThresholds,
+  MinorityThresholdRule,
   GunJumping,
   FdiScreening,
   Fees,
   ReviewPeriod,
+  PractitionerNote,
 } from "@/lib/types";
 
 // ── Formatting helpers ────────────────────────────────────────────────────────
+
+const FX_TO_USD: Record<string, number> = {
+  EUR: 0.92, GBP: 0.79, CNY: 7.24, CAD: 1.37, BRL: 5.10,
+  JPY: 150.0, KRW: 1370.0, INR: 84.0, AUD: 1.53, ZAR: 18.5,
+  TRY: 32.0, MXN: 17.0, PLN: 4.0, ILS: 3.7, AED: 3.67,
+  SAR: 3.75, NTD: 32.0, ARS: 1050.0, NGN: 1600.0, NZD: 1.63,
+  RUB: 90.0, COP: 4200.0, KES: 130.0, EGP: 50.0, SGD: 1.35,
+  HUF: 370.0, CZK: 23.0, DKK: 6.9, SEK: 10.5, NOK: 10.8,
+  CHF: 0.9, RON: 4.6,
+};
+
+function fmtNum(value: number): string {
+  if (value >= 1e12) return `${(value / 1e12).toFixed(1).replace(/\.0$/, "")}tn`;
+  if (value >= 1e9)  return `${(value / 1e9).toFixed(1).replace(/\.0$/, "")}bn`;
+  if (value >= 1e6)  return `${(value / 1e6).toFixed(0)}m`;
+  if (value >= 1e3)  return `${(value / 1e3).toFixed(0)}k`;
+  return value.toLocaleString();
+}
 
 function fmtVal(value: number, currency?: string, metric?: MetricType): string {
   if (metric === "market_share" || metric === "incremental_share") {
@@ -21,13 +43,12 @@ function fmtVal(value: number, currency?: string, metric?: MetricType): string {
     const r = Math.round(pct * 10) / 10;
     return r === Math.round(r) ? `${r.toFixed(0)}%` : `${r.toFixed(1)}%`;
   }
-  let s: string;
-  if (value >= 1e12) s = `${(value / 1e12).toFixed(1).replace(/\.0$/, "")}tn`;
-  else if (value >= 1e9) s = `${(value / 1e9).toFixed(1).replace(/\.0$/, "")}bn`;
-  else if (value >= 1e6) s = `${(value / 1e6).toFixed(0)}m`;
-  else if (value >= 1e3) s = `${(value / 1e3).toFixed(0)}k`;
-  else s = value.toLocaleString();
-  return currency ? `${currency} ${s}` : s;
+  const base = currency ? `${currency} ${fmtNum(value)}` : fmtNum(value);
+  if (!currency || currency === "USD") return base;
+  const rate = FX_TO_USD[currency];
+  if (!rate) return base;
+  const usd = value / rate;
+  return `${base} (≈ USD ${fmtNum(usd)})`;
 }
 
 const PARTY_LABELS: Record<string, string> = {
@@ -84,28 +105,6 @@ function fmtExtendedLabel(period: ReviewPeriod): string | null {
   return `Extendable to ${period.extendable_to_days} ${unit}`;
 }
 
-// ── Source type badge ─────────────────────────────────────────────────────────
-
-const SOURCE_STYLES: Record<SourceType, { label: string; cls: string }> = {
-  primary_legislation:   { label: "Primary legislation",  cls: "bg-brand-soft text-brand" },
-  official_guidance:     { label: "Official guidance",     cls: "bg-pos-soft text-pos" },
-  authority_announcement:{ label: "Authority notice",      cls: "bg-slatey-soft text-slatey" },
-  practitioner:          { label: "Practitioner",          cls: "bg-neg-soft text-neg" },
-};
-
-function SourceChip({ type, href }: { type: SourceType; href?: string }) {
-  const s = SOURCE_STYLES[type] ?? SOURCE_STYLES.practitioner;
-  const cls = `inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium whitespace-nowrap ${s.cls}`;
-  if (href) {
-    return (
-      <a href={href} target="_blank" rel="noopener noreferrer" className={`${cls} hover:opacity-80 underline-offset-2 hover:underline`}>
-        {s.label} ↗
-      </a>
-    );
-  }
-  return <span className={cls}>{s.label}</span>;
-}
-
 // ── Condition row ─────────────────────────────────────────────────────────────
 
 function ConditionRow({
@@ -115,7 +114,22 @@ function ConditionRow({
   c: ThresholdCondition;
   passages: SourcePassage[];
 }) {
-  const linked = passages.filter((p) => p.supports_conditions.includes(c.condition_id));
+  // Derive pills from source passages linked to this condition
+  const seenUrls = new Set<string>();
+  const pills: Array<{ type: SourceType; href: string; quotedText?: string; articleRef?: string }> = [];
+
+  for (const p of passages) {
+    if (p.supports_conditions.includes(c.condition_id) && !seenUrls.has(p.document_url)) {
+      seenUrls.add(p.document_url);
+      pills.push({ type: p.source_type, href: p.document_url, quotedText: p.quoted_text, articleRef: p.article_reference });
+    }
+  }
+
+  // Fallback: use the condition's own source_url if no passages are linked
+  if (pills.length === 0 && c.source_url) {
+    pills.push({ type: c.source_type, href: c.source_url });
+  }
+
   return (
     <div className="py-3 px-4 border-b border-line last:border-0">
       <div className="flex flex-wrap items-start gap-x-4 gap-y-1.5">
@@ -131,64 +145,17 @@ function ConditionRow({
         <span className="text-[13px] font-semibold text-ink flex-shrink-0">
           {c.operator}{" "}{fmtVal(c.value, c.currency, c.metric)}
         </span>
-        <div className="flex-shrink-0">
-          <SourceChip type={c.source_type} href={c.source_url ?? c.verified_via?.[0]} />
-        </div>
+        {pills.length > 0 && (
+          <div className="flex flex-wrap gap-1.5 flex-shrink-0">
+            {pills.map((p, i) => (
+              <SourcePill key={i} type={p.type} href={p.href} quotedText={p.quotedText} articleRef={p.articleRef} />
+            ))}
+          </div>
+        )}
       </div>
       {c.note && (
-        <p className="mt-1.5 text-[12px] text-faint leading-relaxed">
-          {c.note.trim()}
-        </p>
+        <p className="mt-1.5 text-[12px] text-faint leading-relaxed">{c.note.trim()}</p>
       )}
-      {c.source && (
-        <p className="mt-0.5 text-[11px] text-faint italic">
-          {c.source_url ? (
-            <a href={c.source_url} target="_blank" rel="noopener noreferrer"
-               className="hover:underline text-brand/70">
-              {c.source} ↗
-            </a>
-          ) : c.source}
-        </p>
-      )}
-      {c.verified_via && c.verified_via.length > 0 && (
-        <p className="mt-0.5 text-[11px] text-faint">
-          Also cited in:{" "}
-          {c.verified_via.map((url, i) => {
-            const host = (() => { try { return new URL(url).hostname.replace(/^www\./, ""); } catch { return url; } })();
-            return (
-              <span key={url}>
-                {i > 0 && ", "}
-                <a href={url} target="_blank" rel="noopener noreferrer"
-                   className="hover:underline text-faint underline-offset-2">
-                  {host} ↗
-                </a>
-              </span>
-            );
-          })}
-        </p>
-      )}
-      {/* Source passages for this condition */}
-      {linked.map((p) => (
-        <div key={p.passage_id} className="mt-2 rounded-lg border border-line bg-canvas/60 px-3 py-2">
-          <div className="flex items-center gap-2 mb-1.5">
-            <span className="text-[10px] font-semibold uppercase tracking-wide text-faint">
-              Source text
-            </span>
-            <span className="text-[11px] text-brand font-medium">{p.article_reference}</span>
-            <a
-              href={p.document_url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ml-auto text-[11px] text-brand hover:underline flex-shrink-0"
-            >
-              {p.document_title.split("(")[0].trim()} ↗
-            </a>
-          </div>
-          <blockquote className="text-[12px] text-muted leading-relaxed border-l-2 border-brand/30 pl-2.5 font-mono">
-            {p.quoted_text.trim()}
-          </blockquote>
-        </div>
-      ))}
     </div>
   );
 }
@@ -205,7 +172,7 @@ const TRIGGER_LABELS: Record<string, string> = {
 
 function ScopeSection({ scope }: { scope: JurisdictionScope }) {
   return (
-    <section className="mb-8">
+    <section id="scope" className="mb-8">
       <h2 className="text-[15px] font-semibold text-ink mb-3">Scope &amp; trigger events</h2>
       <div className="rounded-xl border border-line bg-surface divide-y divide-line overflow-hidden">
         {scope.trigger_events.length > 0 && (
@@ -233,15 +200,14 @@ function ScopeSection({ scope }: { scope: JurisdictionScope }) {
             <p className="text-[13px] text-muted leading-relaxed">
               {scope.concentration_definition.trim()}
             </p>
-            {scope.concentration_definition_source && (
-              <p className="mt-1 text-[11px] text-faint italic">
-                {scope.concentration_definition_url ? (
-                  <a href={scope.concentration_definition_url} target="_blank" rel="noopener noreferrer"
-                     className="hover:underline text-brand/70">
-                    {scope.concentration_definition_source} ↗
-                  </a>
-                ) : scope.concentration_definition_source}
-              </p>
+            {scope.concentration_definition_url && (
+              <div className="mt-2">
+                <SourcePill
+                  type="official_guidance"
+                  href={scope.concentration_definition_url}
+                  label={scope.concentration_definition_source}
+                />
+              </div>
             )}
           </div>
         )}
@@ -285,23 +251,22 @@ function ScopeSection({ scope }: { scope: JurisdictionScope }) {
               Substantive test
             </p>
             <div className="flex-1 min-w-0">
-              <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-[12px] font-semibold mb-1 ${
-                scope.substantive_test === "siec" ? "bg-brand-soft text-brand" :
-                scope.substantive_test === "slc"  ? "bg-pos-soft text-pos" :
-                "bg-slatey-soft text-slatey"
-              }`}>
-                {scope.substantive_test === "dominance"          ? "Dominance test" :
-                 scope.substantive_test === "siec"               ? "SIEC" :
-                 scope.substantive_test === "slc"                ? "SLC (substantial lessening of competition)" :
-                 scope.substantive_test === "dominance_and_siec" ? "Dominance + SIEC" :
-                 scope.substantive_test}
-              </span>
-              {scope.substantive_test_url && (
-                <a href={scope.substantive_test_url} target="_blank" rel="noopener noreferrer"
-                   className="ml-2 text-[11px] text-brand/70 hover:underline">
-                  Source ↗
-                </a>
-              )}
+              <div className="flex flex-wrap items-center gap-2 mb-1">
+                <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-[12px] font-semibold ${
+                  scope.substantive_test === "siec" ? "bg-brand-soft text-brand" :
+                  scope.substantive_test === "slc"  ? "bg-pos-soft text-pos" :
+                  "bg-slatey-soft text-slatey"
+                }`}>
+                  {scope.substantive_test === "dominance"          ? "Dominance test" :
+                   scope.substantive_test === "siec"               ? "SIEC" :
+                   scope.substantive_test === "slc"                ? "SLC (substantial lessening of competition)" :
+                   scope.substantive_test === "dominance_and_siec" ? "Dominance + SIEC" :
+                   scope.substantive_test}
+                </span>
+                {scope.substantive_test_url && (
+                  <SourcePill type="primary_legislation" href={scope.substantive_test_url} />
+                )}
+              </div>
               {scope.substantive_test_note && (
                 <p className="text-[12px] text-muted leading-relaxed mt-0.5">{scope.substantive_test_note.trim()}</p>
               )}
@@ -318,11 +283,104 @@ function ScopeSection({ scope }: { scope: JurisdictionScope }) {
   );
 }
 
+// ── Minority thresholds section ───────────────────────────────────────────────
+
+const REL_LABELS: Record<string, string> = {
+  horizontal:     "Horizontal (competitors)",
+  vertical:       "Vertical (supply chain)",
+  conglomerate:   "Conglomerate",
+  non_horizontal: "Non-horizontal (vertical + conglomerate)",
+  any:            "Any relationship",
+};
+
+const STANDARD_LABELS: Record<string, { label: string; cls: string }> = {
+  percentage_based:   { label: "Percentage-based thresholds", cls: "bg-neg-soft text-neg" },
+  material_influence: { label: "Material influence standard", cls: "bg-brand-soft text-brand" },
+  control_based:      { label: "Decisive influence / control standard", cls: "bg-slatey-soft text-slatey" },
+  any_acquisition:    { label: "Any acquisition reviewable", cls: "bg-neg-soft text-neg" },
+  none:               { label: "Not applicable", cls: "bg-pos-soft text-pos" },
+};
+
+const RIGHTS_LABELS: Record<string, string> = {
+  board_seat:      "Board seat / director appointment",
+  veto_ordinary:   "Veto over ordinary decisions",
+  veto_strategic:  "Veto over strategic decisions (business plan, budget)",
+};
+
+function MinorityRuleRow({ rule }: { rule: MinorityThresholdRule }) {
+  return (
+    <div className="py-3 px-4 border-b border-line last:border-0">
+      <div className="flex flex-wrap items-start gap-x-4 gap-y-1.5">
+        <span className="text-[13px] font-medium text-ink w-56 flex-shrink-0">
+          {REL_LABELS[rule.relationship_type] ?? rule.relationship_type}
+        </span>
+        <span className="text-[13px] font-semibold text-ink flex-shrink-0">
+          {rule.pct_threshold != null
+            ? `${rule.operator} ${rule.pct_threshold}%`
+            : "Any stake"}
+        </span>
+        {rule.rights_required && (
+          <span className="text-[12px] px-2 py-0.5 rounded-full bg-slatey-soft text-slatey flex-shrink-0">
+            + {RIGHTS_LABELS[rule.rights_required] ?? rule.rights_required.replace(/_/g, " ")}
+          </span>
+        )}
+        {rule.source_url && (
+          <SourcePill type={rule.source_type} href={rule.source_url} />
+        )}
+      </div>
+      {rule.note && (
+        <p className="mt-1.5 text-[12px] text-faint leading-relaxed">{rule.note.trim()}</p>
+      )}
+    </div>
+  );
+}
+
+function MinorityThresholdsSection({ mt }: { mt: MinorityThresholds }) {
+  const stdStyle = STANDARD_LABELS[mt.standard] ?? STANDARD_LABELS.control_based;
+  return (
+    <section id="minority-stakes" className="mb-8">
+      <h2 className="text-[15px] font-semibold text-ink mb-3">Minority stake acquisitions</h2>
+      <div className="rounded-xl border border-line bg-surface divide-y divide-line overflow-hidden">
+        <div className="px-4 py-3 flex flex-wrap items-center gap-2">
+          <span className={`text-[12px] font-semibold px-2.5 py-1 rounded-full ${stdStyle.cls}`}>
+            {stdStyle.label}
+          </span>
+          <span className={`text-[12px] font-medium px-2.5 py-1 rounded-full ${
+            mt.applies ? "bg-neg-soft text-neg" : "bg-pos-soft text-pos"
+          }`}>
+            {mt.applies ? "Minority stakes can trigger filing" : "Minority stakes generally not caught"}
+          </span>
+        </div>
+        {mt.note && (
+          <div className="px-4 py-3">
+            <p className="text-[13px] text-muted leading-relaxed">{mt.note.trim()}</p>
+          </div>
+        )}
+        {mt.rules.length > 0 && (
+          <>
+            <div className="px-4 pt-2 pb-1 bg-canvas/50">
+              <div className="flex flex-wrap gap-x-4 text-[11px] font-medium uppercase tracking-wide text-faint">
+                <span className="w-56">Relationship type</span>
+                <span>Threshold</span>
+              </div>
+            </div>
+            <div>
+              {mt.rules.map((r) => (
+                <MinorityRuleRow key={r.rule_id} rule={r} />
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+    </section>
+  );
+}
+
 // ── Gun-jumping section ───────────────────────────────────────────────────────
 
 function GunJumpingSection({ gj }: { gj: GunJumping }) {
   return (
-    <section className="mb-8">
+    <section id="gun-jumping" className="mb-8">
       <h2 className="text-[15px] font-semibold text-ink mb-3">
         Standstill obligation &amp; gun-jumping consequences
       </h2>
@@ -369,16 +427,13 @@ function GunJumpingSection({ gj }: { gj: GunJumping }) {
             </div>
           )}
         </div>
-        {gj.legal_basis && (
-          <div className="px-4 py-2">
-            <p className="text-[11px] text-faint italic">
-              {gj.legal_basis_url ? (
-                <a href={gj.legal_basis_url} target="_blank" rel="noopener noreferrer"
-                   className="hover:underline text-brand/70">
-                  {gj.legal_basis} ↗
-                </a>
-              ) : gj.legal_basis}
-            </p>
+        {gj.legal_basis_url && (
+          <div className="px-4 py-2.5">
+            <SourcePill
+              type="primary_legislation"
+              href={gj.legal_basis_url}
+              label={gj.legal_basis}
+            />
           </div>
         )}
         {gj.note && (
@@ -395,7 +450,7 @@ function GunJumpingSection({ gj }: { gj: GunJumping }) {
 
 function FdiSection({ fdi }: { fdi: FdiScreening }) {
   return (
-    <section className="mb-8">
+    <section id="fdi-screening" className="mb-8">
       <h2 className="text-[15px] font-semibold text-ink mb-3">
         FDI / national security screening
       </h2>
@@ -411,12 +466,9 @@ function FdiSection({ fdi }: { fdi: FdiScreening }) {
           {fdi.regime_name && (
             <span className="text-[13px] font-medium text-ink">{fdi.regime_name}</span>
           )}
-          <div className="ml-auto flex items-center gap-3">
+          <div className="ml-auto flex items-center gap-2">
             {fdi.legislation_url && (
-              <a href={fdi.legislation_url} target="_blank" rel="noopener noreferrer"
-                 className="text-[12px] text-brand/70 hover:underline">
-                Legislation ↗
-              </a>
+              <SourcePill type="primary_legislation" href={fdi.legislation_url} />
             )}
             {fdi.url && (
               <a href={fdi.url} target="_blank" rel="noopener noreferrer"
@@ -441,7 +493,7 @@ function FdiSection({ fdi }: { fdi: FdiScreening }) {
 function FeesSection({ fees }: { fees: Fees }) {
   const hasFees = fees.structure && fees.structure.trim() !== "none";
   return (
-    <section className="mb-8">
+    <section id="filing-fees" className="mb-8">
       <h2 className="text-[15px] font-semibold text-ink mb-3">Filing fees</h2>
       <div className="rounded-xl border border-line bg-surface overflow-hidden">
         <div className="px-4 py-3 flex items-center gap-3 border-b border-line">
@@ -456,29 +508,19 @@ function FeesSection({ fees }: { fees: Fees }) {
             </span>
           )}
           {fees.source_url && (
-            <a href={fees.source_url} target="_blank" rel="noopener noreferrer"
-               className="ml-auto text-[12px] text-brand hover:underline flex-shrink-0">
-              Source ↗
-            </a>
+            <div className="ml-auto">
+              <SourcePill
+                type={fees.source_type ?? "official_guidance"}
+                href={fees.source_url}
+                label={fees.source}
+              />
+            </div>
           )}
         </div>
         {hasFees && (
-          <pre className="px-4 py-3 text-[12px] text-muted font-mono whitespace-pre-wrap leading-relaxed border-b border-line">
+          <div className="px-4 py-3 text-[12px] text-muted whitespace-pre-wrap leading-relaxed border-b border-line">
             {fees.structure!.trim()}
-          </pre>
-        )}
-        {fees.source && (
-          <p className="px-4 py-2 text-[11px] text-faint italic">
-            {fees.source_url ? (
-              <a href={fees.source_url} target="_blank" rel="noopener noreferrer"
-                 className="hover:underline text-brand/70">
-                {fees.source} ↗
-              </a>
-            ) : fees.source}
-            {fees.source_type && (
-              <> · <SourceChip type={fees.source_type} href={fees.source_url} /></>
-            )}
-          </p>
+          </div>
         )}
         {fees.note && (
           <div className="px-4 py-3 bg-canvas/40">
@@ -499,7 +541,6 @@ function TestCard({ test, passages }: { test: ThresholdTest; passages: SourcePas
       <div className="px-4 py-3 bg-canvas border-b border-line flex flex-wrap items-start gap-2">
         <div className="flex-1 min-w-0">
           <div className="flex flex-wrap items-center gap-2 mb-0.5">
-            <code className="text-[11px] text-faint font-mono">{test.test_id}</code>
             {test.annual_adjustment && (
               <span className="text-[10px] bg-[#FFF3CD] text-[#856404] px-1.5 py-0.5 rounded-full font-medium">
                 Annual update
@@ -519,14 +560,13 @@ function TestCard({ test, passages }: { test: ThresholdTest; passages: SourcePas
           <p className="text-[13px] font-medium text-ink leading-snug">{test.description}</p>
         </div>
         {test.source_url && (
-          <a
-            href={test.source_url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-shrink-0 text-[12px] text-brand hover:underline"
-          >
-            Source ↗
-          </a>
+          <div className="flex-shrink-0">
+            <SourcePill
+              type="primary_legislation"
+              href={test.source_url}
+              label={test.legal_basis || undefined}
+            />
+          </div>
         )}
       </div>
 
@@ -553,7 +593,6 @@ function TestCard({ test, passages }: { test: ThresholdTest; passages: SourcePas
           <p className="text-[11px] font-medium uppercase tracking-wide text-faint mb-2">Exceptions</p>
           {test.exceptions.map((ex) => (
             <div key={ex.exception_id} className="text-[12px] text-muted mb-1">
-              <span className="font-medium text-ink">{ex.exception_id}: </span>
               {ex.description}
             </div>
           ))}
@@ -566,7 +605,6 @@ function TestCard({ test, passages }: { test: ThresholdTest; passages: SourcePas
           <p className="text-[11px] font-medium uppercase tracking-wide text-faint mb-2">Exclusions</p>
           {test.exclusions.map((ex) => (
             <div key={ex.exclusion_id} className="text-[12px] text-muted mb-1">
-              <span className="font-medium text-ink">{ex.exclusion_id}: </span>
               {ex.description}
             </div>
           ))}
@@ -580,6 +618,42 @@ function TestCard({ test, passages }: { test: ThresholdTest; passages: SourcePas
         </div>
       )}
     </div>
+  );
+}
+
+// ── Practitioner notes section ────────────────────────────────────────────────
+
+function PractitionerNotesSection({ notes }: { notes: PractitionerNote[] }) {
+  if (!notes || notes.length === 0) return null;
+  return (
+    <section className="mb-8">
+      <h2 className="text-[15px] font-semibold text-ink mb-1">Practitioner resources</h2>
+      <p className="text-[12px] text-muted mb-3">
+        Selected practitioner guides and firm notes on this jurisdiction&apos;s merger control regime.
+      </p>
+      <div className="space-y-3">
+        {notes.map((n, i) => (
+          <a
+            key={i}
+            href={n.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block rounded-xl border border-line bg-surface px-4 py-3 hover:border-brand/40 hover:bg-canvas transition-colors group"
+          >
+            <div className="flex flex-wrap items-start gap-x-3 gap-y-1 mb-1">
+              <p className="text-[13px] font-medium text-ink group-hover:text-brand transition-colors flex-1 min-w-0">
+                {n.title} ↗
+              </p>
+              <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium bg-neg-soft text-neg whitespace-nowrap flex-shrink-0">
+                Practitioner
+              </span>
+            </div>
+            <p className="text-[12px] text-faint mb-1">{n.firm}{n.date ? ` · ${n.date}` : ""}</p>
+            <p className="text-[12px] text-muted leading-relaxed">{n.summary}</p>
+          </a>
+        ))}
+      </div>
+    </section>
   );
 }
 
@@ -605,7 +679,7 @@ export default async function JurisdictionPage({
   const p2 = rule.review_periods.phase_2;
 
   return (
-    <div className="px-6 py-8 max-w-4xl">
+    <div className="px-6 py-8 lg:px-8">
       {/* Header */}
       <div className="mb-6">
         <div className="flex flex-wrap items-center gap-2 mb-1">
@@ -629,7 +703,7 @@ export default async function JurisdictionPage({
           { label: "Phase 1", value: fmtPeriodLabel(p1) },
           { label: "Phase 2", value: p2 ? fmtPeriodLabel(p2) : "—" },
           { label: "Tests", value: String(rule.threshold_tests.length) },
-          { label: "Last verified", value: rule.last_verified },
+          { label: "Last updated", value: new Date().toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" }) },
         ].map((s) => (
           <div key={s.label} className="rounded-xl border border-line bg-surface px-4 py-3">
             <p className="text-[11px] text-faint uppercase tracking-wide mb-0.5">{s.label}</p>
@@ -661,8 +735,11 @@ export default async function JurisdictionPage({
       {/* Scope / trigger events */}
       {rule.scope && <ScopeSection scope={rule.scope} />}
 
+      {/* Minority stake thresholds */}
+      {rule.minority_thresholds && <MinorityThresholdsSection mt={rule.minority_thresholds} />}
+
       {/* Threshold tests */}
-      <section className="mb-8">
+      <section id="threshold-tests" className="mb-8">
         <h2 className="text-[15px] font-semibold text-ink mb-4">
           Threshold tests
           <span className="ml-2 text-[12px] font-normal text-faint">
@@ -674,9 +751,9 @@ export default async function JurisdictionPage({
         ))}
       </section>
 
-      {/* Filing deadlines */}
+      {/* Filing */}
       {rule.filing && (
-        <section className="mb-8">
+        <section id="filing" className="mb-8">
           <h2 className="text-[15px] font-semibold text-ink mb-3">Filing</h2>
           <div className="rounded-xl border border-line bg-surface p-4 text-[13px] text-muted space-y-1.5">
             <div className="flex gap-2">
@@ -706,7 +783,7 @@ export default async function JurisdictionPage({
       {rule.fees && <FeesSection fees={rule.fees} />}
 
       {/* Review periods */}
-      <section className="mb-8">
+      <section id="review-periods" className="mb-8">
         <h2 className="text-[15px] font-semibold text-ink mb-3">Review periods</h2>
         <div className="grid sm:grid-cols-2 gap-3">
           {[
@@ -748,27 +825,19 @@ export default async function JurisdictionPage({
 
       {/* Legal basis */}
       {rule.legal_basis?.length > 0 && (
-        <section className="mb-8">
+        <section id="legal-basis" className="mb-8">
           <h2 className="text-[15px] font-semibold text-ink mb-3">Legal basis</h2>
           <div className="space-y-2">
             {rule.legal_basis.map((lb, i) => (
               <div key={i} className="rounded-xl border border-line bg-surface p-4">
                 <div className="flex flex-wrap items-start gap-2 mb-1">
                   <p className="flex-1 text-[13px] font-medium text-ink">{lb.citation}</p>
-                  <SourceChip type={lb.source_type ?? "primary_legislation"} href={lb.url} />
+                  {lb.url && (
+                    <SourcePill type={lb.source_type ?? "primary_legislation"} href={lb.url} />
+                  )}
                 </div>
                 {lb.note && (
                   <p className="text-[12px] text-muted leading-relaxed mt-1">{lb.note.trim()}</p>
-                )}
-                {lb.url && (
-                  <a
-                    href={lb.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-1.5 inline-block text-[11px] text-brand hover:underline"
-                  >
-                    {lb.url}
-                  </a>
                 )}
               </div>
             ))}
@@ -778,7 +847,7 @@ export default async function JurisdictionPage({
 
       {/* Notes */}
       {rule.notes?.length > 0 && (
-        <section className="mb-8">
+        <section id="notes" className="mb-8">
           <h2 className="text-[15px] font-semibold text-ink mb-3">Notes</h2>
           <ul className="space-y-2">
             {rule.notes.map((note, i) => (
@@ -791,6 +860,11 @@ export default async function JurisdictionPage({
             ))}
           </ul>
         </section>
+      )}
+
+      {/* Practitioner resources */}
+      {rule.practitioner_notes && rule.practitioner_notes.length > 0 && (
+        <PractitionerNotesSection notes={rule.practitioner_notes} />
       )}
     </div>
   );

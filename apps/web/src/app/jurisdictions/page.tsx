@@ -2,7 +2,9 @@ import { getJurisdictions } from "@/lib/api";
 import { redirect } from "next/navigation";
 
 export default async function JurisdictionsIndexPage() {
-  const jurisdictions = await getJurisdictions().catch(() => []);
+  const jurisdictions = [...(await getJurisdictions().catch(() => []))].sort((a, b) =>
+    a.jurisdiction_name.localeCompare(b.jurisdiction_name)
+  );
   if (jurisdictions.length > 0) {
     redirect(`/jurisdictions/${jurisdictions[0].jurisdiction_id}`);
   }
