@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans, IBM_Plex_Serif, IBM_Plex_Mono } from "next/font/google";
 import { NavBar } from "@/components/NavBar";
+import { ConditionalFooter } from "@/components/ConditionalFooter";
 import "./globals.css";
 
 const plexSans = IBM_Plex_Sans({
@@ -42,22 +43,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
       </head>
-      <body className={`${plexSans.variable} ${plexSerif.variable} ${plexMono.variable} font-sans min-h-screen flex flex-col bg-canvas text-ink antialiased`}>
+      <body className={`${plexSans.variable} ${plexSerif.variable} ${plexMono.variable} font-sans min-h-screen flex flex-col overflow-x-hidden bg-canvas text-ink antialiased`}>
         <NavBar />
-        <main className="flex-1">{children}</main>
-        <footer className="mt-16 border-t border-line">
-          <div className="mx-auto max-w-content px-6 lg:px-8 py-8 flex flex-wrap items-center justify-between gap-4 text-[13px] text-faint">
-            <div className="flex items-center gap-2">
-              <span className="font-serif text-muted">Meridian</span>
-              <span>·</span>
-              <span>Market-definition research</span>
-            </div>
-            <div className="flex items-center gap-5">
-              <span>EU · UK · US precedent</span>
-              <span className="text-[12px]">Not legal advice.</span>
-            </div>
-          </div>
-        </footer>
+        <main className="flex-1 min-h-0">{children}</main>
+        <ConditionalFooter />
       </body>
     </html>
   );

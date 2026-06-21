@@ -446,6 +446,25 @@ export interface JurisdictionScope {
   note?: string;
 }
 
+export interface MinorityThresholdRule {
+  rule_id: string;
+  relationship_type: "horizontal" | "vertical" | "conglomerate" | "non_horizontal" | "any";
+  pct_threshold?: number;
+  operator: ">=" | ">";
+  rights_required?: string;
+  source: string;
+  source_type: SourceType;
+  source_url?: string;
+  note?: string;
+}
+
+export interface MinorityThresholds {
+  applies: boolean;
+  standard: "percentage_based" | "control_based" | "material_influence" | "any_acquisition" | "none";
+  note?: string;
+  rules: MinorityThresholdRule[];
+}
+
 export interface Fees {
   structure?: string;
   source?: string;
@@ -478,6 +497,14 @@ export interface FdiScreening {
   note?: string;
 }
 
+export interface PractitionerNote {
+  title: string;
+  firm: string;
+  url: string;
+  date?: string;
+  summary: string;
+}
+
 export interface JurisdictionRule {
   jurisdiction_id: string;
   jurisdiction_name: string;
@@ -498,7 +525,9 @@ export interface JurisdictionRule {
   gun_jumping?: GunJumping;
   fdi_screening?: FdiScreening;
   fees?: Fees;
+  minority_thresholds?: MinorityThresholds;
   source_passages: SourcePassage[];
+  practitioner_notes?: PractitionerNote[];
 }
 
 export interface JurisdictionSummary {
@@ -527,10 +556,16 @@ export interface ScreeningRequest {
   target: RevenueByScopeInput;
   acquirer_assets?: number;
   target_assets?: number;
+  acquirer_assets_by_country?: Record<string, number>;
+  target_assets_by_country?: Record<string, number>;
   deal_value?: number;
   deal_currency?: string;
   revenue_currency?: string;
   fx_rates?: Record<string, number>;
+  deal_type?: string;
+  pct_shares_acquired?: number;
+  post_closing_control?: string;
+  relationship_type?: string;
   combined_market_share?: Record<string, number>;
   acquirer_market_share?: Record<string, number>;
   incremental_share?: Record<string, number>;
@@ -555,6 +590,11 @@ export interface TestResult {
   conditions: ConditionResult[];
 }
 
+export interface LegalCitation {
+  citation: string;
+  url?: string;
+}
+
 export interface ScreeningResult {
   jurisdiction_id: string;
   jurisdiction_name: string;
@@ -565,4 +605,6 @@ export interface ScreeningResult {
   suspensory?: boolean;
   test_results: TestResult[];
   notes: string[];
+  legal_basis?: LegalCitation[];
+  authority_url?: string;
 }
