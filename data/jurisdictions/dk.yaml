@@ -1,0 +1,268 @@
+jurisdiction_id: dk
+jurisdiction_name: Denmark
+last_verified: "2026-06-17"
+
+authority:
+  name: Danish Competition and Consumer Authority (Konkurrence- og Forbrugerstyrelsen)
+  abbreviation: DCCA
+  url: https://en.kfst.dk/
+  filing_url: https://en.kfst.dk/competition/mergers
+
+regime:
+  mandatory: true
+  suspensory: true   # Section 12c(4) Competition Act — standstill obligation
+  voluntary: false
+
+legal_basis:
+  - citation: "Danish Competition Act (Konkurrenceloven), Consolidated Act No 360 of 4 April 2022, Sections 12–12o (merger control)"
+    url: "https://en.kfst.dk/competition/mergers"
+    note: >
+      Merger control is governed by Sections 12–12o of the Competition Act.
+      Section 12a defines concentrations. Section 12b sets notification thresholds.
+      Section 12c imposes the standstill obligation. The 2022 consolidation is the
+      current operative version.
+  - citation: "Executive Order on Merger Notification (Bekendtgørelse om anmeldelse af fusioner) No 946 of 26 June 2013 (as amended)"
+    url: "https://en.kfst.dk/competition/mergers"
+    source_type: official_guidance
+    note: "Procedural rules for merger notifications, including form and content requirements."
+
+filing:
+  deadline_from_signing_days: null   # no fixed deadline from signing
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Parties must file before implementing the concentration. There is no fixed deadline
+    from signing or announcement. The DCCA must clear the transaction before it can be
+    implemented. The DCCA publishes informal guidance on pre-notification contacts.
+
+review_periods:
+  phase_1:
+    days: 25
+    day_type: working
+    extendable_to_days: null
+    legal_basis: "Section 12c(5) Competition Act (Consolidated Act No 360 of 2022)"
+    note: >
+      Phase I: 25 working days from receipt of a complete notification. If the DCCA
+      does not initiate a Phase II investigation within this period, the merger is
+      deemed cleared. The clock can be stopped if the DCCA requests additional information.
+  phase_2:
+    days: 90
+    day_type: working
+    extendable_to_days: 105
+    legal_basis: "Section 12g(1) Competition Act (Consolidated Act No 360 of 2022)"
+    note: >
+      Phase II: 90 working days from the initiation of the in-depth investigation.
+      Extendable by 15 working days if parties offer remedies. The DCCA may clear,
+      clear with conditions, or prohibit the concentration.
+
+fees:
+  structure: "No filing fee."
+  source: "Danish Competition and Consumer Authority (DCCA)"
+  source_type: official_guidance
+  annual_adjustment: false
+
+# ── Threshold tests ───────────────────────────────────────────────────────────
+
+threshold_tests:
+  - test_id: dk_domestic_combined_and_each_party
+    description: >
+      Combined aggregate turnover in Denmark exceeds DKK 900m AND at least two
+      parties each have Danish turnover exceeding DKK 100m.
+    legal_basis: "Section 12b(1)(i) Competition Act (Consolidated Act No 360 of 2022)"
+    source_url: "https://en.kfst.dk/competition/mergers"
+    annual_adjustment: false
+    effective_date: null
+
+    conditions:
+      - condition_id: dk_combined_dk_gt_900m
+        metric: revenue
+        scope: domestic
+        party: combined
+        operator: ">"
+        value: 900000000
+        currency: DKK
+        source: "Section 12b(1)(i)(a) Competition Act"
+        source_type: primary_legislation
+
+      - condition_id: dk_each_party_dk_gt_100m
+        metric: revenue
+        scope: domestic
+        party: each_of_at_least_two
+        operator: ">"
+        value: 100000000
+        currency: DKK
+        source: "Section 12b(1)(i)(b) Competition Act"
+        source_type: primary_legislation
+        qualifier:
+          type: "count_of_parties"
+          operator: ">="
+          count: 2
+
+    exclusions:
+      - exclusion_id: dk_eu_one_stop_shop
+        description: >
+          Concentration with EU dimension is exclusively within EC jurisdiction.
+        source: "Section 12b(5) Competition Act; Council Regulation (EC) No 139/2004"
+        effect: excludes_jurisdiction
+
+  - test_id: dk_worldwide_and_domestic_single_party
+    description: >
+      Combined worldwide turnover exceeds DKK 3.8bn AND at least one party has
+      Danish turnover exceeding DKK 300m.
+    legal_basis: "Section 12b(1)(ii) Competition Act (Consolidated Act No 360 of 2022)"
+    source_url: "https://en.kfst.dk/competition/mergers"
+    annual_adjustment: false
+    effective_date: null
+
+    conditions:
+      - condition_id: dk_combined_worldwide_gt_3_8bn
+        metric: revenue
+        scope: worldwide
+        party: combined
+        operator: ">"
+        value: 3800000000
+        currency: DKK
+        source: "Section 12b(1)(ii)(a) Competition Act"
+        source_type: primary_legislation
+
+      - condition_id: dk_one_party_dk_gt_300m
+        metric: revenue
+        scope: domestic
+        party: either_party
+        operator: ">"
+        value: 300000000
+        currency: DKK
+        source: "Section 12b(1)(ii)(b) Competition Act"
+        source_type: primary_legislation
+
+    exclusions:
+      - exclusion_id: dk_eu_one_stop_shop_2
+        description: "EU dimension one-stop-shop applies."
+        source: "Section 12b(5) Competition Act; Council Regulation (EC) No 139/2004"
+        effect: excludes_jurisdiction
+
+# ── Scope / trigger events ────────────────────────────────────────────────────
+
+scope:
+  concentration_definition: >
+    A concentration arises where a lasting change of control results from: (a) the
+    merger of two or more previously independent undertakings; or (b) the acquisition
+    by one or more persons already controlling at least one undertaking, or by one or
+    more undertakings, whether by purchase of securities or assets, by contract, or by
+    any other means, of direct or indirect control over one or more other undertakings.
+    (Section 12a Competition Act.)
+  concentration_definition_source: "Section 12a, Danish Competition Act (Consolidated Act No 360 of 2022)"
+  concentration_definition_url: "https://en.kfst.dk/competition/mergers"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture
+  control_threshold: >
+    Decisive influence over the acquired undertaking (sole or joint control).
+    Consistent with EU concept of control.
+  intra_group_exempt: true
+  foreign_to_foreign_rule: >
+    Danish merger control applies to any concentration meeting the Danish turnover
+    thresholds, regardless of where the parties are incorporated.
+  substantive_test: "siec"
+  substantive_test_note: >
+    The DCCA applies an SIEC test (significant impediment to effective competition)
+    aligned with the EU Merger Regulation standard.
+  substantive_test_url: "https://en.kfst.dk/competition/mergers"
+
+# ── Gun-jumping / standstill ──────────────────────────────────────────────────
+
+gun_jumping:
+  automatic_void: false
+  voidable: true
+  max_fine_pct_turnover: 10.0
+  max_fine_fixed: null
+  max_fine_currency: "DKK"
+  per_day_fine: null
+  criminal_sanctions: false
+  legal_basis: "Section 23 Competition Act (Consolidated Act No 360 of 2022)"
+  legal_basis_url: "https://en.kfst.dk/competition/mergers"
+  note: >
+    Implementing a notifiable concentration before clearance or failure to notify
+    can result in a fine. The DCCA may also impose daily penalty payments to enforce
+    compliance. Fines for undertakings can reach up to 10% of annual worldwide turnover.
+
+# ── FDI / national security screening ────────────────────────────────────────
+
+fdi_screening:
+  applicable: true
+  regime_name: "Investment Screening Act (Lov om screening af visse udenlandske direkte investeringer m.v.) No 842 of 10 May 2021"
+  authority: "Danish Business Authority (Erhvervsstyrelsen)"
+  url: "https://erhvervsstyrelsen.dk/en/investment-screening"
+  legislation_url: "https://www.retsinformation.dk/eli/lta/2021/842"
+  sectors_covered:
+    - defense
+    - critical_infrastructure
+    - sensitive_technology
+    - energy
+    - telecommunications
+    - data
+    - financial_infrastructure
+  note: >
+    Denmark implemented EU Regulation 2019/452 (FDI Screening Regulation) and its own
+    national Investment Screening Act effective 1 July 2021. Two tracks: (1) mandatory
+    notification for investments in sensitive sectors; (2) voluntary mechanism for other
+    investments. The Danish Business Authority administers the regime. Foreign investors
+    acquiring ≥10% of shares/voting rights in sensitive sectors must notify.
+
+# ── Minority acquisition thresholds ───────────────────────────────────────────
+minority_thresholds:
+  applies: false
+  standard: "control_based"
+  note: >
+    Danish merger control under the Competition Act (Konkurrenceloven, consolidated
+    Act No. 842 of 2021 and successor consolidations) is triggered by acquisitions of
+    "control" (kontrol) over an undertaking on a lasting basis. Section 12a defines a
+    concentration as arising from, inter alia, the acquisition of control, whether sole
+    or joint, by one or more persons or undertakings over the whole or part of one or
+    more other undertakings. Control is the ability to exercise decisive influence
+    (afgörende indflydelse). There is no standalone sub-control minority-stake
+    notification trigger in Danish competition law. The Danish Competition and Consumer
+    Authority (DCCA — Konkurrence- og Forbrugerstyrelsen) follows the EU decisive-
+    influence standard. Passive minority investments not conferring decisive influence
+    are outside merger control scope.
+  rules:
+    - rule_id: "dk_minority_decisive_influence"
+      relationship_type: "any"
+      pct_threshold: null
+      operator: ">="
+      rights_required: null
+      source: "Section 12a, Konkurrenceloven (Danish Competition Act, consolidated Act No. 842/2021)"
+      source_type: "primary_legislation"
+      source_url: "https://www.retsinformation.dk/eli/lta/2021/842"
+      note: >
+        Decisive influence (afgörende indflydelse) is the operative standard.
+        No sub-control percentage trigger for minority stakes exists in Danish law.
+        DCCA practice mirrors the EC's Jurisdictional Notice on decisive influence.
+
+# Practitioner nuance:
+# - DCCA applies EU doctrine; a minority stake with strategic veto rights may constitute
+#   decisive influence if the vetoes cover ordinary business decisions, not just protection.
+# - Danish law has no transaction-value test or sub-decisive-influence trigger.
+# - FDI screening thresholds (≥10% in sensitive sectors) are entirely separate from
+#   competition law merger control and administered by the Danish Business Authority.
+# - Below the decisive-influence threshold, voluntary notification to DCCA is permitted
+#   but not required.
+
+practitioner_notes:
+  - title: "Merger Control Laws and Regulations 2025 — Denmark"
+    firm: "Global Legal Insights"
+    url: "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/denmark/"
+    date: "2025"
+    summary: "GLI chapter on Danish merger control covering the Danish Competition and Consumer Authority (DCCA) jurisdiction, the combined worldwide and Danish domestic turnover thresholds, and the 25-working-day Phase I review period."
+  - title: "Merger Control 2025 — Denmark"
+    firm: "Chambers and Partners"
+    url: "https://practiceguides.chambers.com/practice-guides/merger-control-2025/denmark"
+    date: "2025"
+    summary: "Chambers practice guide on Danish merger control with coverage of DCCA filing requirements, Phase I and Phase II timelines, substantive dominance and SIEC assessment, and recent enforcement decisions."
+  - title: "Catch-22 and Other Issues in Merger Control in Europe"
+    firm: "ICLG"
+    url: "https://iclg.com/practice-areas/merger-control-laws-and-regulations/01-catch-22-and-other-issues-in-merger-control-in-europe"
+    date: "2025"
+    summary: "ICLG analysis of European merger control coordination issues, including Nordic authority cooperation (SCA/DCCA/NCA/FCA) and below-threshold referral mechanics relevant to Danish transactions with cross-border dimensions."

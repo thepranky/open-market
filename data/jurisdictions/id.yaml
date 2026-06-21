@@ -1,0 +1,212 @@
+jurisdiction_id: id
+jurisdiction_name: Indonesia
+last_verified: "2026-06-17"
+
+authority:
+  name: Business Competition Supervisory Commission (Komisi Pengawas Persaingan Usaha)
+  abbreviation: KPPU
+  url: https://www.kppu.go.id/en/
+  filing_url: https://www.kppu.go.id/en/merger-and-acquisition/
+
+regime:
+  mandatory: false   # Indonesia has POST-merger notification, not pre-merger
+  suspensory: false  # No standstill; parties may close before notifying
+  voluntary: false
+  note: >
+    IMPORTANT: Indonesia requires POST-CLOSING notification (within 30 working days
+    of closing). The KPPU reviews completed transactions. This is not a suspensory
+    pre-merger regime; parties may close before notifying. The KPPU can, however, order
+    divestitures or impose fines for transactions found to lessen competition.
+
+legal_basis:
+  - citation: "Law No 5 of 1999 on the Prohibition of Monopolistic Practices and Unfair Business Competition, Article 29"
+    url: "https://www.kppu.go.id/en/about-kppu/regulations/"
+    note: >
+      Article 29 of Law No 5/1999 establishes post-merger notification obligations.
+      Government Regulation No 57 of 2010 implements the notification requirements.
+      The KPPU reviews completed mergers, consolidations, and acquisitions.
+  - citation: "Government Regulation No 57 of 2010 on Merger or Consolidation of Business Entities and Acquisition of Company Shares that May Cause Monopolistic Practices and Unfair Business Competition"
+    url: "https://www.kppu.go.id/en/about-kppu/regulations/"
+    source_type: primary_legislation
+
+filing:
+  deadline_from_signing_days: null
+  deadline_from_closing_days: 30
+  pre_closing_required: false
+  note: >
+    POST-CLOSING notification within 30 working days of the effective date (closing).
+    Failure to notify is an administrative infraction. The KPPU may investigate
+    and review the transaction even after closing; the review period is 90 working days.
+    Pre-notification consultation is available and recommended for large transactions.
+
+review_periods:
+  phase_1:
+    days: 90
+    day_type: working
+    extendable_to_days: null
+    legal_basis: "Article 6 Government Regulation No 57/2010"
+    note: >
+      The KPPU has 90 working days from receipt of a complete post-closing notification
+      to review the transaction and issue a decision. No Phase I/Phase II distinction.
+
+fees:
+  structure: "No filing fee."
+  source: "KPPU merger notification rules"
+  source_type: official_guidance
+  annual_adjustment: false
+
+# ── Threshold tests ───────────────────────────────────────────────────────────
+
+threshold_tests:
+  - test_id: id_combined_assets_or_revenues
+    description: >
+      Combined Indonesian assets of all parties exceed IDR 2.5tn (approximately USD 160m)
+      OR combined Indonesian sales revenues exceed IDR 5tn (approximately USD 325m).
+      Post-closing notification required; not a pre-clearance regime.
+    legal_basis: "Article 5 Government Regulation No 57/2010"
+    source_url: "https://www.kppu.go.id/en/merger-and-acquisition/"
+    annual_adjustment: false
+    effective_date: "2010-07-20"
+    note: >
+      The OR logic means a single threshold on either assets or revenues triggers
+      the notification obligation. Both thresholds are Indonesian-specific (not worldwide).
+      KPPU Regulation No 3/2012 provides further procedural guidance.
+
+    conditions:
+      - condition_id: id_combined_assets_gt_2_5tn
+        metric: assets
+        scope: domestic
+        party: combined
+        operator: ">"
+        value: 2500000000000
+        currency: IDR
+        source: "Article 5(1)(a) Government Regulation No 57/2010"
+        source_type: primary_legislation
+
+    exceptions:
+      - exception_id: id_revenue_alternative
+        description: >
+          Alternatively, notification is triggered if combined Indonesian sales revenues
+          exceed IDR 5tn, even if assets threshold is not met.
+        source: "Article 5(1)(b) Government Regulation No 57/2010"
+        effect: "triggers_notification_via_revenue"
+
+# ── Scope ─────────────────────────────────────────────────────────────────────
+
+scope:
+  concentration_definition: >
+    Mergers (fusion of two or more business entities into a new entity),
+    consolidations (combination of two entities resulting in dissolution of both and
+    creation of a new entity), and acquisitions (purchase of shares giving control
+    over a company). (Law No 5/1999; Government Regulation No 57/2010.)
+  concentration_definition_source: "Article 29, Law No 5/1999; Government Regulation No 57/2010"
+  concentration_definition_url: "https://www.kppu.go.id/en/about-kppu/regulations/"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+  control_threshold: >
+    Acquisition of shares that results in control over the target company.
+    Control typically means ability to determine company policy through majority
+    shareholding or through shareholder agreements.
+  intra_group_exempt: true
+  substantive_test: "slc"
+  substantive_test_note: >
+    Indonesia applies a competition effects standard, prohibiting acts that cause
+    monopolistic practices or unfair business competition. The KPPU assesses
+    whether the transaction substantially lessens competition in Indonesian markets.
+  substantive_test_url: "https://www.kppu.go.id/en/"
+
+# ── Gun-jumping ───────────────────────────────────────────────────────────────
+
+minority_thresholds:
+  applies: true
+  standard: "control_based"
+  note: >
+    Indonesia's Law No. 5/1999 on the Prohibition of Monopoly and Unfair Business
+    Competition, Articles 28–29, requires post-closing notification (within 30 business
+    days) of mergers, consolidations, and share acquisitions. KPPU Regulation No. 3/2023
+    revised the framework. Control for merger purposes is established at ownership of more
+    than 50% of shares or voting rights, but sub-50% holdings that 'influence and determine
+    policies and/or management' also constitute a reportable acquisition. The regime is
+    post-closing — not suspensory. Value thresholds: combined Indonesian assets >IDR 2.5
+    trillion OR combined Indonesian annual sales >IDR 5 trillion (IDR 20 trillion for
+    banking). There is no explicit safe-harbour percentage below 50% for passive minority
+    stakes that do not influence management.
+  rules:
+    - rule_id: "id_minority_50pct"
+      relationship_type: "any"
+      pct_threshold: 50.0
+      operator: ">"
+      rights_required: null
+      source: "Law No. 5/1999, Arts. 28-29; KPPU Regulation No. 3/2023"
+      source_type: "primary_legislation"
+      source_url: "https://arma-law.com/news-event/newsflash/peraturan-kppu-no-3-tahun-2023-the-new-revamped-merger-control-regulation-in-indonesia/"
+      note: >
+        Ownership of more than 50% of shares or control of more than 50% of voting rights
+        automatically constitutes 'control' triggering post-closing notification obligation,
+        subject to value thresholds: combined Indonesian assets >IDR 2.5 trillion OR combined
+        Indonesian annual sales >IDR 5 trillion (IDR 20 trillion for banking).
+    - rule_id: "id_minority_de_facto_control"
+      relationship_type: "any"
+      pct_threshold: null
+      operator: ">="
+      rights_required: "veto_strategic"
+      source: "Law No. 5/1999, Art. 7 (definition of control); KPPU Reg. No. 3/2023"
+      source_type: "primary_legislation"
+      source_url: "https://arma-law.com/news-event/newsflash/peraturan-kppu-no-3-tahun-2023-the-new-revamped-merger-control-regulation-in-indonesia/"
+      note: >
+        A stake below 50% that nonetheless 'influences and determines the policies and/or
+        management' of the company is also treated as a control acquisition requiring
+        post-closing notification. Whether minority governance rights (veto on strategy,
+        board appointment) rise to this standard is assessed case-by-case. There is no
+        explicit safe-harbour percentage below 50% for non-influential passive stakes.
+
+gun_jumping:
+  automatic_void: false
+  voidable: false
+  criminal_sanctions: false
+  legal_basis: "Article 6 Government Regulation No 57/2010"
+  legal_basis_url: "https://www.kppu.go.id/en/about-kppu/regulations/"
+  note: >
+    Failure to file a post-closing notification within 30 working days is subject to
+    an administrative fine of IDR 1bn per day of delay (maximum IDR 25bn, approximately
+    USD 1.6m). No standstill obligation; gun-jumping in the traditional sense is not applicable.
+
+# ── FDI screening ─────────────────────────────────────────────────────────────
+
+fdi_screening:
+  applicable: true
+  regime_name: "Investment Law No 25 of 2007 and Negative Investment List (Daftar Negatif Investasi)"
+  authority: "Indonesia Investment Coordinating Board (Badan Koordinasi Penanaman Modal, BKPM / BKBI)"
+  url: "https://www.bkpm.go.id/en/"
+  sectors_covered:
+    - defense
+    - media
+    - financial_infrastructure
+    - telecommunications
+    - agriculture
+    - natural_resources
+  note: >
+    Indonesia maintains a Negative Investment List (DNI) restricting or prohibiting
+    foreign ownership in certain sectors. Maximum foreign ownership varies: some sectors
+    100%, others 49% or 0%. The list is periodically revised. BKPM (Investment Coordinating
+    Board) coordinates investment approvals. Separate from KPPU merger review.
+    Verify current DNI restrictions before structuring any acquisition of Indonesian company.
+
+practitioner_notes:
+  - title: "Merger Control Laws and Regulations 2025 — Indonesia"
+    firm: "Global Legal Insights"
+    url: "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/indonesia/"
+    date: "2025"
+    summary: "GLI chapter on Indonesian merger control covering KPPU post-completion notification regime under Government Regulation No. 57/2010, combined worldwide and Indonesian domestic asset and turnover thresholds, and the 30-day post-closing reporting obligation."
+  - title: "Merger Control 2025 — Indonesia"
+    firm: "Chambers and Partners"
+    url: "https://practiceguides.chambers.com/practice-guides/merger-control-2025/indonesia"
+    date: "2025"
+    summary: "Chambers guide to Indonesian merger control providing practical coverage of the KPPU post-notification system, asset and turnover thresholds, substantive assessment criteria, and KPPU's enforcement record including fines for late notification."
+  - title: "APAC Antitrust: Looking Back at 2024 and Forward into 2025"
+    firm: "White & Case LLP"
+    url: "https://www.whitecase.com/insight-our-thinking/apac-antitrust-looking-back-2024-and-forward-2025"
+    date: "2025"
+    summary: "White & Case APAC survey covering Indonesian merger control developments, KPPU enforcement trends, and the regulatory landscape for foreign investment in restricted sectors alongside merger notification requirements."

@@ -1,0 +1,210 @@
+jurisdiction_id: ro
+jurisdiction_name: Romania
+last_verified: "2026-06-17"
+
+authority:
+  name: Romanian Competition Council (Consiliul Concurenței)
+  abbreviation: RCC
+  url: https://www.consiliulconcurentei.ro/en/competition/merger-control/
+  filing_url: https://www.consiliulconcurentei.ro/en/competition/merger-control/
+
+regime:
+  mandatory: true
+  suspensory: true   # Article 15(5) Competition Law — standstill obligation
+  voluntary: false
+
+legal_basis:
+  - citation: "Competition Law No 21/1996 (as republished and amended), Articles 10–26 (merger control)"
+    url: "https://www.consiliulconcurentei.ro/en/competition/merger-control/legislation/competition-law/"
+    note: >
+      Merger control is governed by Articles 10–26 of Competition Law No 21/1996. Article 10
+      defines concentrations. Article 14 sets the notification thresholds. Article 15(5)
+      imposes the standstill obligation. Significantly amended by Emergency Ordinance No 31/2022
+      to align more closely with the EU Merger Regulation.
+  - citation: "Regulation on the economic concentration notification form (Order No 388/2010)"
+    url: "https://www.consiliulconcurentei.ro/en/competition/merger-control/"
+    source_type: official_guidance
+
+filing:
+  deadline_from_signing_days: 30
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Notification must be submitted within 30 calendar days of the conclusion of the
+    agreement or public announcement of the concentration, whichever is earlier. The
+    standstill obligation requires waiting for RCC clearance before implementation.
+
+review_periods:
+  phase_1:
+    days: 45
+    day_type: calendar
+    extendable_to_days: null
+    legal_basis: "Article 19(1) Competition Law No 21/1996"
+    note: >
+      Phase I: 45 calendar days from receipt of a complete notification. If the RCC
+      does not open a Phase II investigation within this period, the concentration is
+      deemed cleared. Clock can be stopped for information requests.
+  phase_2:
+    days: 5
+    day_type: months
+    extendable_to_days: 180
+    legal_basis: "Article 19(3) Competition Law No 21/1996"
+    note: >
+      Phase II: up to 5 months from opening. The RCC may clear, clear with conditions,
+      or prohibit. Complex cases can be extended. Remedies extend the deadline.
+
+fees:
+  structure: >
+    Filing fee: RON 25,000 (approximately €5,000 at current exchange rates).
+    Flat fee payable at time of notification. No tiered structure.
+  source: "Article 36 Competition Law No 21/1996"
+  source_type: primary_legislation
+  source_url: "https://www.consiliulconcurentei.ro/en/competition/merger-control/"
+  annual_adjustment: false
+
+# ── Threshold tests ───────────────────────────────────────────────────────────
+
+threshold_tests:
+  - test_id: ro_combined_worldwide_and_each_domestic
+    description: >
+      Combined worldwide turnover of all parties exceeds €10m AND at least two parties
+      each have Romanian turnover exceeding €4m.
+    legal_basis: "Article 14(1) Competition Law No 21/1996 (as amended)"
+    source_url: "https://www.consiliulconcurentei.ro/en/competition/merger-control/"
+    annual_adjustment: false
+    effective_date: null
+
+    conditions:
+      - condition_id: ro_combined_worldwide_gt_10m
+        metric: revenue
+        scope: worldwide
+        party: combined
+        operator: ">"
+        value: 10000000
+        currency: EUR
+        source: "Article 14(1)(a) Competition Law No 21/1996"
+        source_type: primary_legislation
+
+      - condition_id: ro_each_party_domestic_gt_4m
+        metric: revenue
+        scope: domestic
+        party: each_of_at_least_two
+        operator: ">"
+        value: 4000000
+        currency: EUR
+        source: "Article 14(1)(b) Competition Law No 21/1996"
+        source_type: primary_legislation
+        qualifier:
+          type: "count_of_parties"
+          operator: ">="
+          count: 2
+
+    exclusions:
+      - exclusion_id: ro_eu_one_stop_shop
+        description: "EU dimension one-stop-shop: EC has exclusive jurisdiction."
+        source: "Article 10(5) Competition Law No 21/1996; Council Regulation (EC) No 139/2004"
+        effect: excludes_jurisdiction
+
+# ── Scope ─────────────────────────────────────────────────────────────────────
+
+scope:
+  concentration_definition: >
+    A concentration arises where a durable change of control results from: (a) the
+    merger of two or more previously independent undertakings; or (b) acquisition of
+    direct or indirect control over the whole or parts of one or more undertakings.
+    (Article 10 Competition Law No 21/1996.)
+  concentration_definition_source: "Article 10, Competition Law No 21/1996"
+  concentration_definition_url: "https://www.consiliulconcurentei.ro/en/competition/merger-control/legislation/competition-law/"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture
+  control_threshold: "Decisive influence (sole or joint control)."
+  intra_group_exempt: true
+  substantive_test: "dominance_and_siec"
+  substantive_test_url: "https://www.consiliulconcurentei.ro/en/competition/merger-control/"
+
+# ── Gun-jumping ───────────────────────────────────────────────────────────────
+
+gun_jumping:
+  automatic_void: false
+  voidable: true
+  max_fine_pct_turnover: 10.0
+  max_fine_currency: "RON"
+  criminal_sanctions: false
+  legal_basis: "Article 55 Competition Law No 21/1996"
+  legal_basis_url: "https://www.consiliulconcurentei.ro/en/competition/merger-control/legislation/competition-law/"
+  note: >
+    Failure to notify or implementing before RCC clearance is sanctionable by a fine
+    of up to 10% of aggregate worldwide turnover for the preceding financial year.
+
+# ── FDI screening ─────────────────────────────────────────────────────────────
+
+fdi_screening:
+  applicable: true
+  regime_name: "Government Emergency Ordinance No 46/2022 on FDI Screening"
+  authority: "Ministry of Economy (Ministerul Economiei)"
+  url: "https://economie.gov.ro"
+  sectors_covered:
+    - defense
+    - critical_infrastructure
+    - energy
+    - telecommunications
+    - financial_infrastructure
+  note: >
+    Romania adopted FDI screening legislation in 2022 implementing the EU FDI Screening
+    Regulation. The Ministry of Economy reviews investments in critical and strategic sectors.
+    Separate from merger control. Verify current implementation regulations.
+
+# ── Minority acquisition thresholds ───────────────────────────────────────────
+minority_thresholds:
+  applies: false
+  standard: "control_based"
+  note: >
+    Romanian merger control under Competition Law No. 21/1996 (republished, as amended)
+    is triggered by the acquisition of "decisive influence" over a previously independent
+    undertaking. Article 10 defines a concentration as arising from a change of control
+    on a lasting basis. "Control" means the possibility of exercising decisive influence
+    over an undertaking through rights, contracts, or other means. There is no standalone
+    sub-control minority-stake notification threshold in Romanian competition law. The
+    Consiliul Concurentei (Competition Council) applies the decisive-influence test
+    consistent with EU merger control practice. Purely passive financial minority
+    investments below the decisive-influence threshold are outside scope.
+  rules:
+    - rule_id: "ro_minority_decisive_influence"
+      relationship_type: "any"
+      pct_threshold: null
+      operator: ">="
+      rights_required: null
+      source: "Article 10, Competition Law No. 21/1996 (republished)"
+      source_type: "primary_legislation"
+      source_url: "https://www.consiliulconcurentei.ro/legislatie/legi/"
+      note: >
+        Control means the possibility of exercising decisive influence over an
+        undertaking. No sub-control percentage-based minority notification trigger
+        exists. The standard is qualitative and mirrors EU Merger Regulation doctrine.
+
+# Practitioner nuance:
+# - The Competition Council follows EC Jurisdictional Notice guidance on decisive influence.
+# - A minority stake of 25%+ with veto rights over strategic decisions may be treated
+#   as conferring decisive influence requiring notification.
+# - Romania does not have a market-share based alternative trigger for minority stakes.
+# - Smaller transactions may escape notification even above 25% if no decisive influence.
+
+practitioner_notes:
+  - title: "Romania — Merger Control Laws and Regulations 2026"
+    firm: "ICLG"
+    url: "https://iclg.com/practice-areas/merger-control-laws-and-regulations/romania/"
+    date: "2026"
+    summary: "ICLG chapter on Romanian merger control covering RCC jurisdiction, the combined worldwide and Romanian domestic turnover thresholds, Phase I (45 days) and Phase II (5 months) review periods, and substantive dominance assessment."
+  - title: "Merger Control Laws and Regulations 2025 — Romania"
+    firm: "Global Legal Insights"
+    url: "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/romania/"
+    date: "2025"
+    summary: "GLI practitioner chapter on Romanian merger control with guidance on RCC filing requirements, simplified procedure, substantive test, and recent enforcement practice including conditional clearances."
+  - title: "Merger Control 2025 — Romania"
+    firm: "Chambers and Partners"
+    url: "https://practiceguides.chambers.com/practice-guides/merger-control-2025/romania"
+    date: "2025"
+    summary: "Chambers guide to Romanian merger control covering RCC jurisdictional thresholds, procedural rules, the interplay with EU merger review, and Romania's 2022 competition law amendments."

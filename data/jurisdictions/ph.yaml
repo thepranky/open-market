@@ -1,0 +1,221 @@
+jurisdiction_id: ph
+jurisdiction_name: Philippines
+last_verified: "2026-06-17"
+
+authority:
+  name: Philippine Competition Commission
+  abbreviation: PCC
+  url: https://www.phcc.gov.ph/
+  filing_url: https://www.phcc.gov.ph/
+
+regime:
+  mandatory: true
+  suspensory: true   # Section 17 Philippine Competition Act — standstill obligation
+  voluntary: false
+
+legal_basis:
+  - citation: "Republic Act No 10667 (Philippine Competition Act) of 2015, Chapter IV (Mergers and Acquisitions, Sections 16–23)"
+    url: "https://www.phcc.gov.ph/"
+    note: >
+      Merger control is governed by Chapter IV of the Philippine Competition Act.
+      Section 16 defines mergers and acquisitions. Section 17 sets the compulsory
+      notification thresholds and imposes the standstill obligation. Amended by
+      Republic Act No 11337 (2019 amendment).
+  - citation: "PCC Merger Procedure Rules (as amended 2021)"
+    url: "https://www.phcc.gov.ph/"
+    source_type: official_guidance
+    note: "Procedural rules governing merger notifications, adopted and periodically revised by the PCC."
+
+filing:
+  deadline_from_signing_days: 30
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Notification must be filed within 30 days of signing the definitive agreement.
+    Parties must await PCC clearance or the expiry of the review period before closing.
+    The PCC has 30 days to decide in Phase I; if no decision, the transaction is
+    deemed approved. Phase II investigations are more common for complex deals.
+
+review_periods:
+  phase_1:
+    days: 30
+    day_type: calendar
+    extendable_to_days: null
+    legal_basis: "Section 17(c) Republic Act No 10667 (as amended)"
+    note: >
+      Phase I: 30 calendar days from receipt of a complete notification. If no
+      PCC decision is issued within 30 days, the transaction is deemed approved.
+  phase_2:
+    days: 60
+    day_type: calendar
+    extendable_to_days: 90
+    legal_basis: "Section 17(c)(ii) Republic Act No 10667 (as amended)"
+    note: >
+      Phase II: additional 60 calendar days (extendable to 90) if the PCC opens
+      a full investigation. The PCC may clear, clear with conditions, or prohibit.
+
+fees:
+  structure: >
+    Filing fee: PHP 1,000,000 for transactions valued at USD 100m–250m; PHP 5,000,000
+    for transactions above USD 250m. Fee schedule published by PCC and subject to revision.
+  source: "PCC Rules of Procedure on Merger Review (as amended)"
+  source_type: official_guidance
+  source_url: "https://www.phcc.gov.ph/"
+  annual_adjustment: true
+  note: "Verify current fees with PCC before filing as they are revised periodically."
+
+# ── Threshold tests ───────────────────────────────────────────────────────────
+
+threshold_tests:
+  - test_id: ph_size_of_transaction_and_parties
+    description: >
+      Transaction value exceeds PHP 2.4bn (approximately USD 42m) AND at least one
+      party has Philippine annual gross revenues or total assets exceeding PHP 5bn
+      (approximately USD 88m). Thresholds revised annually for inflation.
+    legal_basis: "Section 17(a)–(b) Republic Act No 10667 (as amended by RA 11337)"
+    source_url: "https://www.phcc.gov.ph/"
+    annual_adjustment: true
+    effective_date: "2019-01-01"
+    note: >
+      The PCC revises thresholds annually to account for GDP growth. The 2024 thresholds
+      were approximately PHP 2.8bn for transaction size and PHP 6.6bn for party size.
+      Always verify the current year thresholds with the PCC before advising on filing.
+
+    conditions:
+      - condition_id: ph_transaction_value_gt_threshold
+        metric: deal_value
+        scope: worldwide
+        party: combined
+        operator: ">"
+        value: 2800000000
+        currency: PHP
+        source: "Section 17(a) RA 10667 (as amended); Annual PCC Threshold Notice 2024"
+        source_type: authority_announcement
+        note: "VERIFY: threshold revised annually. Amount shown is approximate 2024 figure."
+
+      - condition_id: ph_either_party_revenues_gt_threshold
+        metric: revenue
+        scope: domestic
+        party: either_party
+        operator: ">"
+        value: 6600000000
+        currency: PHP
+        source: "Section 17(b) RA 10667 (as amended); Annual PCC Threshold Notice 2024"
+        source_type: authority_announcement
+        note: "VERIFY: threshold revised annually. Amount shown is approximate 2024 figure."
+
+# ── Scope ─────────────────────────────────────────────────────────────────────
+
+scope:
+  concentration_definition: >
+    Mergers or acquisitions that substantially prevent, restrict, or lessen competition
+    in the relevant market or in the market for goods or services. Section 16 RA 10667
+    covers mergers, acquisitions, joint ventures, and other arrangements that transfer
+    ownership or control of assets between entities.
+  concentration_definition_source: "Section 16, Republic Act No 10667"
+  concentration_definition_url: "https://www.phcc.gov.ph/"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture
+  control_threshold: "Acquisition of control or decisive influence."
+  intra_group_exempt: true
+  substantive_test: "slc"
+  substantive_test_note: >
+    Philippines applies an SLC (substantial lessening of competition) test.
+    The PCC assesses whether the merger substantially prevents, restricts, or
+    lessens competition in the relevant Philippine market.
+  substantive_test_url: "https://www.phcc.gov.ph/"
+
+# ── Gun-jumping ───────────────────────────────────────────────────────────────
+
+minority_thresholds:
+  applies: true
+  standard: "percentage_based"
+  note: >
+    The Philippine Competition Act (PCA), Republic Act No. 10667, Section 17 and its
+    Implementing Rules and Regulations (IRR) impose mandatory pre-merger notification
+    based on explicit equity percentage thresholds, independent of whether the transaction
+    confers formal 'control.' The Philippine Competition Commission (PCC) updated the Size
+    of Party (SOP) and Size of Transaction (SOT) thresholds in March 2024. Control under
+    the PCA is defined as the ability to substantially influence or direct actions or
+    decisions of an entity; majority ownership (>50%) creates a presumption of control.
+    The Philippine regime creates a two-step structure: notification at 35% crossing, then
+    again at 50% crossing.
+  rules:
+    - rule_id: "ph_minority_35pct"
+      relationship_type: "any"
+      pct_threshold: 35.0
+      operator: ">"
+      rights_required: null
+      source: "RA 10667 (Philippine Competition Act), Sec. 17; PCA-IRR Rule 4, Sec. 2"
+      source_type: "primary_legislation"
+      source_url: "https://www.phcc.gov.ph/philippine-competition-law-ra-10667"
+      note: >
+        Notification is mandatory when an acquisition of voting securities would result in
+        the acquirer holding, in aggregate, more than 35% of the votes attached to all
+        outstanding voting shares, subject to SOP/SOT thresholds: SOP >PHP 9.1bn (as
+        adjusted March 2024) AND SOT >PHP 3.8bn.
+    - rule_id: "ph_minority_50pct"
+      relationship_type: "any"
+      pct_threshold: 50.0
+      operator: ">"
+      rights_required: null
+      source: "RA 10667 PCA-IRR Rule 4, Sec. 2"
+      source_type: "primary_legislation"
+      source_url: "https://www.phcc.gov.ph/philippine-competition-law-ra-10667"
+      note: >
+        Where the acquirer already holds ≥35% of outstanding voting shares, a further
+        notification obligation arises when the acquirer subsequently crosses 50% of total
+        outstanding voting shares. Same SOP/SOT thresholds apply.
+
+gun_jumping:
+  automatic_void: false
+  voidable: true
+  max_fine_pct_turnover: null
+  max_fine_fixed: 100000000
+  max_fine_currency: "PHP"
+  criminal_sanctions: false
+  legal_basis: "Section 29 Republic Act No 10667"
+  legal_basis_url: "https://www.phcc.gov.ph/"
+  note: >
+    Failure to comply with the notification requirement or implementing before clearance
+    can result in fines of up to PHP 100 million (approximately USD 1.8 million). The
+    PCC may also void the transaction. Administrative and civil sanctions apply.
+
+# ── FDI screening ─────────────────────────────────────────────────────────────
+
+fdi_screening:
+  applicable: true
+  regime_name: "Foreign Investment Act (Republic Act No 7042) and sector-specific restrictions"
+  authority: "Board of Investments / Foreign Investment Negative List"
+  url: "https://www.boi.gov.ph/"
+  sectors_covered:
+    - defense
+    - media
+    - telecommunications
+    - financial_infrastructure
+  note: >
+    Philippines maintains a Foreign Investment Negative List limiting or prohibiting
+    foreign ownership in certain sectors (e.g. mass media 0% foreign ownership; retail
+    trade requiring minimum paid-in capital). Economic Constitution (1987 Philippine
+    Constitution) also restricts foreign ownership in strategic sectors to 40%.
+    Separate from PCC merger control; verify sector-specific caps before structuring.
+
+practitioner_notes:
+  - title: "Merger Control 2025 — Philippines (Trends and Developments)"
+    firm: "Chambers and Partners"
+    url: "https://practiceguides.chambers.com/practice-guides/merger-control-2025/philippines/trends-and-developments/O24301"
+    date: "2025"
+    summary: "Chambers trends guide covering the Philippine Competition Commission's updated Size of Party (PHP 8.5 bn) and Size of Transaction (PHP 3.5 bn) thresholds effective March 2025, review timelines, and PCC's enforcement focus on digital markets and conglomerates."
+  - title: "Merger Control Laws and Regulations 2025 — Philippines"
+    firm: "Global Legal Insights"
+    url: "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/philippines/"
+    date: "2025"
+    summary: "GLI practitioner chapter on Philippine merger control covering PCC jurisdiction under the Philippine Competition Act, Size of Party/Transaction thresholds, Phase I (30 days) and Phase II (60 days) review periods, and motu proprio review powers."
+  - title: "APAC Antitrust: Looking Back at 2024 and Forward into 2025"
+    firm: "White & Case LLP"
+    url: "https://www.whitecase.com/insight-our-thinking/apac-antitrust-looking-back-2024-and-forward-2025"
+    date: "2025"
+    summary: "White & Case regional overview covering Philippine Competition Commission developments including 2025 threshold increases, PCC enforcement trends, and the regulatory treatment of joint ventures and conglomerate transactions."

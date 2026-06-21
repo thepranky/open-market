@@ -1,0 +1,258 @@
+jurisdiction_id: cz
+jurisdiction_name: Czech Republic
+last_verified: "2026-06-17"
+
+authority:
+  name: Office for the Protection of Competition (Úřad pro ochranu hospodářské soutěže)
+  abbreviation: UOHS
+  url: https://uohs.gov.cz/en/homepage.html
+  filing_url: https://uohs.gov.cz/en/homepage.html
+
+regime:
+  mandatory: true
+  suspensory: true   # Section 16(1) Act on the Protection of Competition — standstill obligation
+  voluntary: false
+
+legal_basis:
+  - citation: "Act No 143/2001 Coll. on the Protection of Competition (zákon o ochraně hospodářské soutěže), as amended, Sections 12–20 (merger control)"
+    url: "https://uohs.gov.cz/en/homepage.html"
+    note: >
+      Merger control is governed by Sections 12–20 of Act No 143/2001. Section 12
+      defines concentrations. Section 13 sets notification thresholds. Section 16
+      imposes the standstill obligation. Frequently amended; verify current version.
+  - citation: "Decree No 424/2001 Coll. on the Form and Manner of Notification of Concentration of Undertakings"
+    url: "https://uohs.gov.cz/en/homepage.html"
+    source_type: official_guidance
+
+filing:
+  deadline_from_signing_days: null
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Notification must be submitted before closing. No fixed deadline from signing.
+    Parties must await UOHS clearance or expiry of the Phase I review period
+    before implementing. Pre-notification contacts with UOHS are common.
+
+review_periods:
+  phase_1:
+    days: 30
+    day_type: calendar
+    extendable_to_days: null
+    legal_basis: "Section 16(3) Act No 143/2001"
+    note: >
+      Phase I: 30 calendar days from receipt of a complete notification. If UOHS
+      does not initiate an in-depth investigation within this period, the merger
+      is deemed cleared. Clock stops on requests for additional information.
+  phase_2:
+    days: 150
+    day_type: calendar
+    extendable_to_days: null
+    legal_basis: "Section 17(1) Act No 143/2001"
+    note: >
+      Phase II: up to 150 calendar days (5 months) from opening of Phase II. UOHS
+      may clear, clear with conditions, or prohibit. In practice Phase II investigations
+      can be complex for cross-border or media/tech transactions.
+
+fees:
+  structure: >
+    Filing fee: CZK 100,000 (approximately €4,000–€4,500 at current exchange rates).
+    Fee is payable at time of notification. No tiered fee structure.
+  source: "Section 22(a) Act No 143/2001 and related decree"
+  source_type: primary_legislation
+  source_url: "https://uohs.gov.cz/en/homepage.html"
+  annual_adjustment: false
+
+# ── Threshold tests ───────────────────────────────────────────────────────────
+
+threshold_tests:
+  - test_id: cz_domestic_combined_and_each_party
+    description: >
+      Combined aggregate Czech net turnover of all parties exceeds CZK 1.5bn AND
+      each of at least two parties has Czech net turnover exceeding CZK 250m.
+    legal_basis: "Section 13(1)(a) Act No 143/2001"
+    source_url: "https://uohs.gov.cz/en/homepage.html"
+    annual_adjustment: false
+    effective_date: null
+
+    conditions:
+      - condition_id: cz_combined_domestic_gt_1_5bn
+        metric: revenue
+        scope: domestic
+        party: combined
+        operator: ">"
+        value: 1500000000
+        currency: CZK
+        source: "Section 13(1)(a)(i) Act No 143/2001"
+        source_type: primary_legislation
+
+      - condition_id: cz_each_party_domestic_gt_250m
+        metric: revenue
+        scope: domestic
+        party: each_of_at_least_two
+        operator: ">"
+        value: 250000000
+        currency: CZK
+        source: "Section 13(1)(a)(ii) Act No 143/2001"
+        source_type: primary_legislation
+        qualifier:
+          type: "count_of_parties"
+          operator: ">="
+          count: 2
+
+    exclusions:
+      - exclusion_id: cz_eu_one_stop_shop
+        description: "EU dimension one-stop-shop: EC has exclusive jurisdiction."
+        source: "Section 12(4) Act No 143/2001; Council Regulation (EC) No 139/2004"
+        effect: excludes_jurisdiction
+
+  - test_id: cz_one_large_domestic_and_worldwide
+    description: >
+      One party has Czech net turnover exceeding CZK 1.5bn AND another party has
+      worldwide turnover exceeding CZK 1.5bn.
+    legal_basis: "Section 13(1)(b) Act No 143/2001"
+    source_url: "https://uohs.gov.cz/en/homepage.html"
+    annual_adjustment: false
+    effective_date: null
+
+    conditions:
+      - condition_id: cz_acquirer_domestic_gt_1_5bn
+        metric: revenue
+        scope: domestic
+        party: acquirer_group
+        operator: ">"
+        value: 1500000000
+        currency: CZK
+        source: "Section 13(1)(b)(i) Act No 143/2001"
+        source_type: primary_legislation
+
+      - condition_id: cz_target_worldwide_gt_1_5bn
+        metric: revenue
+        scope: worldwide
+        party: target_group
+        operator: ">"
+        value: 1500000000
+        currency: CZK
+        source: "Section 13(1)(b)(ii) Act No 143/2001"
+        source_type: primary_legislation
+
+    exclusions:
+      - exclusion_id: cz_eu_one_stop_shop_2
+        description: "EU dimension one-stop-shop applies."
+        source: "Section 12(4) Act No 143/2001"
+        effect: excludes_jurisdiction
+
+# ── Scope ─────────────────────────────────────────────────────────────────────
+
+scope:
+  concentration_definition: >
+    A concentration arises where a lasting change of control results from: (a) the
+    merger of two or more previously independent undertakings; or (b) the acquisition
+    of control over the whole or part of another undertaking by one or more undertakings.
+    (Section 12 Act No 143/2001.)
+  concentration_definition_source: "Section 12, Act No 143/2001"
+  concentration_definition_url: "https://uohs.gov.cz/en/homepage.html"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture
+  control_threshold: "Decisive influence (sole or joint control)."
+  intra_group_exempt: true
+  substantive_test: "dominance_and_siec"
+  substantive_test_note: >
+    UOHS applies a dominance/SIEC test. It assesses whether the concentration would
+    significantly impede effective competition, in particular through the creation or
+    strengthening of a dominant position.
+  substantive_test_url: "https://uohs.gov.cz/en/homepage.html"
+
+# ── Gun-jumping ───────────────────────────────────────────────────────────────
+
+gun_jumping:
+  automatic_void: false
+  voidable: true
+  max_fine_pct_turnover: 10.0
+  max_fine_currency: "CZK"
+  criminal_sanctions: false
+  legal_basis: "Section 22(a) Act No 143/2001"
+  legal_basis_url: "https://uohs.gov.cz/en/homepage.html"
+  note: >
+    Failure to notify or gun-jumping (implementing before UOHS clearance) is an
+    administrative offence punishable by a fine of up to 10% of the undertaking's
+    net turnover for the preceding accounting period.
+
+# ── FDI screening ─────────────────────────────────────────────────────────────
+
+fdi_screening:
+  applicable: true
+  regime_name: "Act No 34/2021 Coll. on the Screening of Foreign Investments"
+  authority: "Ministry of Industry and Trade (Ministerstvo průmyslu a obchodu)"
+  url: "https://mpo.gov.cz/en/industry/fdi-screening/"
+  legislation_url: "https://www.zakonyprolidi.cz/cs/2021-34"
+  sectors_covered:
+    - defense
+    - critical_infrastructure
+    - sensitive_technology
+    - energy
+    - telecommunications
+    - media
+    - artificial_intelligence
+    - semiconductors
+  note: >
+    Czech FDI screening law (Act 34/2021) entered into force on 1 May 2021,
+    implementing the EU FDI Screening Regulation. Investments in critical sectors
+    by non-EU investors require prior notification to and approval from the Ministry
+    of Industry and Trade. Threshold: ≥10% equity stake in a Czech company in a
+    sensitive sector. Separate from merger control.
+
+# ── Minority acquisition thresholds ───────────────────────────────────────────
+minority_thresholds:
+  applies: false
+  standard: "control_based"
+  note: >
+    Czech merger control under Act No. 143/2001 Coll. on Protection of Competition
+    (as amended) is based on the acquisition of "control" over an undertaking — meaning
+    the possibility of exercising decisive influence. There is no standalone sub-control
+    minority-stake notification trigger. Section 12(3) defines control as the
+    possibility to exercise decisive influence. A purely passive financial minority
+    investment below the control threshold does not trigger notification. The UOHS
+    (Urad pro ochranu hospodarske souteze) follows a qualitative control analysis
+    consistent with the EU approach. No explicit percentage threshold below full control
+    (e.g., a German-style "competitive influence" test) exists in Czech law.
+  rules:
+    - rule_id: "cz_minority_decisive_influence"
+      relationship_type: "any"
+      pct_threshold: null
+      operator: ">="
+      rights_required: null
+      source: "Section 12(3), Act No. 143/2001 Coll. on Protection of Competition"
+      source_type: "primary_legislation"
+      source_url: "https://www.uohs.cz/en/legislation/competition/acts.html"
+      note: >
+        Control means the possibility of exercising decisive influence over the activity
+        of another competitor on the basis of rights, agreements, or any other factual
+        circumstances. No sub-control percentage-based minority trigger exists.
+
+# Practitioner nuance:
+# - UOHS applies a qualitative decisive-influence analysis; 25%+ with veto rights
+#   is often viewed as indicative of control requiring notification.
+# - Purely passive minority stakes (no board rights, no veto rights) below the
+#   decisive-influence threshold are outside Czech merger control scope.
+# - Czech law does not have an "any acquisition" or "material influence" test —
+#   the threshold is decisive influence only.
+
+practitioner_notes:
+  - title: "Merger Control Laws and Regulations 2025 — Czech Republic"
+    firm: "Global Legal Insights"
+    url: "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/czech-republic/"
+    date: "2025"
+    summary: "GLI chapter on Czech merger control covering UOHS jurisdiction, the combined worldwide and domestic turnover thresholds, one-month Phase I and five-month Phase II review timelines, and substantive assessment criteria."
+  - title: "Merger Control 2025 — Czech Republic"
+    firm: "Chambers and Partners"
+    url: "https://practiceguides.chambers.com/practice-guides/merger-control-2025/czech-republic"
+    date: "2025"
+    summary: "Chambers practice guide on Czech merger control with practical guidance on UOHS filing requirements, simplified procedure, the SIEC substantive test, and recent enforcement decisions."
+  - title: "The International Comparative Legal Guide — Merger Control 2025"
+    firm: "Schoenherr Attorneys at Law"
+    url: "https://www.schoenherr.eu/content/the-international-comparative-legal-guide-merger-control-2025"
+    date: "2025"
+    summary: "Schoenherr's contribution to the ICLG Merger Control 2025 guide covering CEE jurisdictions; the Czech chapter provides practitioner-focused analysis of UOHS procedure and control assessment standards."

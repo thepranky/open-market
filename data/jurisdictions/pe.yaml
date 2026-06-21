@@ -1,0 +1,193 @@
+jurisdiction_id: pe
+jurisdiction_name: Peru
+last_verified: "2026-06-17"
+
+authority:
+  name: Instituto Nacional de Defensa de la Competencia y de la Protección de la Propiedad Intelectual
+  abbreviation: INDECOPI
+  url: https://www.indecopi.gob.pe/
+  filing_url: https://www.indecopi.gob.pe/
+
+regime:
+  mandatory: true
+  suspensory: true   # Article 11 Legislative Decree 1034 (as amended) — standstill obligation
+  voluntary: false
+
+legal_basis:
+  - citation: "Legislative Decree No 1034 (Antitrust Law / Ley de Represión de Conductas Anticompetitivas), as amended by Legislative Decree No 1510 of 2020 — Chapter III (Concentrations, Articles 8–17a)"
+    url: "https://www.indecopi.gob.pe/"
+    note: >
+      Mandatory pre-merger notification was introduced in Peru by Legislative Decree
+      No 1510 of March 2020 (in force 14 June 2021 for the notification obligation).
+      Prior to 2021, Peru had no mandatory pre-merger notification. Articles 8–17a of
+      Legislative Decree 1034 govern concentrations. Article 8 defines concentrations.
+      Article 9 sets the notification thresholds. Article 11 imposes the standstill obligation.
+  - citation: "Regulation for the Control of Business Concentrations (Reglamento para el Control de Concentraciones Empresariales), approved by Supreme Decree No 039-2021-PCM"
+    url: "https://www.indecopi.gob.pe/"
+    source_type: official_guidance
+
+filing:
+  deadline_from_signing_days: 30
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Notification must be filed within 30 calendar days of the concentration agreement
+    being concluded (signing). The standstill obligation requires awaiting INDECOPI
+    clearance or expiry of the review period before implementing.
+
+review_periods:
+  phase_1:
+    days: 30
+    day_type: working
+    extendable_to_days: null
+    legal_basis: "Article 14(1) Legislative Decree 1034 (as amended)"
+    note: >
+      Phase I: 30 working days from receipt of a complete notification. If INDECOPI
+      does not initiate a Phase II investigation, the concentration is cleared.
+  phase_2:
+    days: 90
+    day_type: working
+    extendable_to_days: 120
+    legal_basis: "Article 14(2) Legislative Decree 1034 (as amended)"
+    note: >
+      Phase II: up to 90 working days, extendable to 120. INDECOPI may clear,
+      clear with conditions, or prohibit.
+
+fees:
+  structure: >
+    Filing fee applies; amount based on deal size (verify current UIT-based amounts
+    with INDECOPI before filing). Peru uses the UIT (Unidad Impositiva Tributaria)
+    to index fees annually.
+  source: "INDECOPI fee schedule (subject to annual revision)"
+  source_type: official_guidance
+  source_url: "https://www.indecopi.gob.pe/"
+  annual_adjustment: true
+
+# ── Threshold tests ───────────────────────────────────────────────────────────
+
+threshold_tests:
+  - test_id: pe_combined_domestic_and_each_party
+    description: >
+      Combined gross income in Peru of all parties in the preceding year exceeds
+      approximately S/ 1,250,000,000 (PEN, ~USD 330m) AND at least two parties
+      individually have gross Peruvian income exceeding approximately S/ 250,000,000
+      (PEN, ~USD 65m). Thresholds expressed in UIT units and revised annually.
+    legal_basis: "Article 9(1) Legislative Decree 1034 (as amended by LD 1510)"
+    source_url: "https://www.indecopi.gob.pe/"
+    annual_adjustment: true
+    effective_date: "2021-06-14"
+    note: >
+      Peru's thresholds are expressed in UIT (Unidad Impositiva Tributaria), which is
+      revised annually by Supreme Decree. As of 2024, 1 UIT ≈ PEN 5,150. The combined
+      threshold is 5,000 UIT and the individual threshold is 1,000 UIT (approximate figures;
+      verify with INDECOPI for current UIT value and exact threshold amounts).
+
+    conditions:
+      - condition_id: pe_combined_domestic_gt_threshold
+        metric: revenue
+        scope: domestic
+        party: combined
+        operator: ">"
+        value: 1250000000
+        currency: PEN
+        source: "Article 9(1)(a) Legislative Decree 1034 (as amended); Annual UIT decree"
+        source_type: authority_announcement
+        note: "VERIFY: Amount in PEN is indicative based on 2024 UIT value. Threshold changes annually."
+
+      - condition_id: pe_each_party_domestic_gt_threshold
+        metric: revenue
+        scope: domestic
+        party: each_of_at_least_two
+        operator: ">"
+        value: 250000000
+        currency: PEN
+        source: "Article 9(1)(b) Legislative Decree 1034 (as amended)"
+        source_type: authority_announcement
+        qualifier:
+          type: "count_of_parties"
+          operator: ">="
+          count: 2
+
+# ── Scope ─────────────────────────────────────────────────────────────────────
+
+scope:
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture
+  intra_group_exempt: true
+  substantive_test: "siec"
+  substantive_test_url: "https://www.indecopi.gob.pe/"
+
+# ── Gun-jumping ───────────────────────────────────────────────────────────────
+
+minority_thresholds:
+  applies: false
+  standard: "control_based"
+  note: >
+    Peru's merger control law (Law No. 31112, in force June 2021, enforced by INDECOPI)
+    requires prior notification and clearance only for acquisitions resulting in 'control'
+    over an economic agent, defined as the power to exercise 'lasting and decisive
+    influence' (influencia duradera y determinante) over the target's governing bodies or
+    competitive strategy. Minority acquisitions that do not confer such decisive influence
+    are expressly excluded. There are no percentage-based thresholds and no post-closing
+    minority notification regime. INDECOPI has published limited decisional practice —
+    analysis of what constitutes decisive influence relies primarily on the statute and
+    Supreme Decree No. 039-2021-PCM. Sector-specific regulators (banking, insurance,
+    telecoms) may impose additional approval requirements at thresholds below the INDECOPI
+    control standard.
+  rules:
+    - rule_id: "pe_minority_control_only"
+      relationship_type: "any"
+      pct_threshold: null
+      operator: ">="
+      rights_required: "veto_strategic"
+      source: "Law No. 31112, Article 5; Supreme Decree No. 039-2021-PCM (Regulation)"
+      source_type: "primary_legislation"
+      source_url: "https://www.indecopi.gob.pe/web/control-de-fusiones"
+      note: >
+        Notification is required only on acquisition of 'control' — the power to exercise
+        lasting and decisive influence over the target's governing bodies, directly or
+        indirectly affecting competitive strategy. A minority stake with veto rights over
+        strategic decisions in a shareholder agreement may constitute control even for a
+        minority holder. Purely passive minority stakes without governance rights are
+        entirely outside the regime.
+
+gun_jumping:
+  automatic_void: false
+  voidable: true
+  max_fine_pct_turnover: null
+  criminal_sanctions: false
+  legal_basis: "Article 17(a) Legislative Decree 1034 (as amended)"
+  legal_basis_url: "https://www.indecopi.gob.pe/"
+  note: >
+    Failure to notify or gun-jumping results in fines expressed in UIT units
+    (verify current maximum amounts with INDECOPI).
+
+# ── FDI screening ─────────────────────────────────────────────────────────────
+
+fdi_screening:
+  applicable: false
+  note: >
+    Peru does not maintain a general FDI screening or national security investment
+    review regime. Foreign investment is generally open. Sector-specific licensing
+    requirements may apply (e.g., mining, hydrocarbons, financial services), but
+    these are not a centralised national security review mechanism.
+
+practitioner_notes:
+  - title: "Peru: Indecopi Cleared 45 Filings and Rejected 1 in the First Three Years of Its Antitrust Merger Control Regime"
+    firm: "Garrigues"
+    url: "https://www.garrigues.com/en_GB/new/peru-indecopi-cleared-45-filings-and-rejected-1-first-three-years-its-antitrust-merger-control"
+    date: "2024"
+    summary: "Reviews INDECOPI's enforcement record in the first three years of Law 31112, covering 61 merger filings with outcomes including 43 Phase-I approvals, 2 Phase-II approvals, and 1 rejection; analyses decision timelines and the legal and economic criteria applied across Peru's economic sectors."
+  - title: "Perú: The New Merger Control Law Has Been Officially Published"
+    firm: "Garrigues"
+    url: "https://www.garrigues.com/en_GB/new/peru-new-merger-control-law-has-been-officially-published"
+    date: "2021"
+    summary: "Foundational alert on Law No. 31112, which introduced mandatory pre-merger control across all economic sectors in Peru. Covers notification thresholds (combined or individual sales/assets), INDECOPI's ex officio powers, voluntary notification option, and special provisions for financial and insurance sector transactions."
+  - title: "Peru — Merger Control Laws and Regulations 2024"
+    firm: "ICLG"
+    url: "https://iclg.com/practice-areas/merger-control-laws-and-regulations/peru"
+    date: "2024"
+    summary: "Comprehensive country chapter on Peru's merger control framework under Law 31112, covering INDECOPI's authority, jurisdictional thresholds based on UITs, two-phase review timelines (30 + 90 business days), substantive assessment criteria, remedies, and enforcement mechanisms including fines up to 1,000 UIT for gun-jumping."

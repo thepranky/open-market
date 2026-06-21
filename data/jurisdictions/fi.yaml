@@ -1,0 +1,251 @@
+jurisdiction_id: fi
+jurisdiction_name: Finland
+last_verified: "2026-06-17"
+
+authority:
+  name: Finnish Competition and Consumer Authority (Kilpailu- ja kuluttajavirasto)
+  abbreviation: KKV
+  url: https://www.kkv.fi/en/
+  filing_url: https://www.kkv.fi/en/competition-affairs/merger-control/
+
+regime:
+  mandatory: true
+  suspensory: true   # Section 25 Competition Act — standstill until KKV decision or Phase I deadline
+  voluntary: false
+
+legal_basis:
+  - citation: "Competition Act (Kilpailulaki) 948/2011, Chapter 4 (Sections 21–32), as amended"
+    url: "https://www.kkv.fi/en/"
+    note: >
+      Chapter 4 of the Competition Act governs merger control. Section 22 defines concentrations.
+      Section 23 sets the notification thresholds. Section 25 imposes the standstill obligation.
+      Significant amendments were made in 2023 (Law 595/2023) aligning Finnish merger control
+      more closely with the EU Merger Regulation framework.
+  - citation: "Government Decree on the Calculation of Turnover (Valtioneuvoston asetus liikevaihdon laskemisesta) 1012/2011"
+    url: "https://www.kkv.fi/en/"
+    source_type: primary_legislation
+    note: "Specifies how turnover is calculated for notification purposes."
+
+filing:
+  deadline_from_signing_days: null   # no fixed deadline from signing
+  deadline_from_closing_days: null
+  pre_closing_required: true         # standstill obligation: must wait for KKV clearance
+  note: >
+    Parties must notify before implementing the concentration. There is no fixed deadline
+    running from signing. The obligation arises when the concentration agreement is
+    concluded and the notification thresholds are met. Notification must be submitted
+    before implementation. Early termination or automatic clearance: if the KKV fails
+    to act within the Phase I period, the concentration is deemed cleared.
+
+review_periods:
+  phase_1:
+    days: 23
+    day_type: working
+    extendable_to_days: null
+    legal_basis: "Section 26(1) Competition Act 948/2011"
+    note: >
+      Phase I: 23 working days from receipt of a complete notification.
+      If the KKV does not initiate an in-depth investigation within 23 working
+      days, the concentration is deemed cleared. Clock can be stopped if KKV
+      requests supplementary information.
+  phase_2:
+    days: 69
+    day_type: working
+    extendable_to_days: 92
+    legal_basis: "Section 28(1) Competition Act 948/2011"
+    note: >
+      Phase II: KKV has 69 working days from the Phase II decision to clear or
+      prohibit. Extendable by 23 working days if parties offer commitments.
+      KKV may also extend the Phase II period by agreement with the parties.
+
+fees:
+  structure: "No filing fee."
+  source: "Finnish Competition and Consumer Authority (KKV)"
+  source_type: official_guidance
+  annual_adjustment: false
+
+# ── Threshold tests ───────────────────────────────────────────────────────────
+
+threshold_tests:
+  - test_id: fi_combined_worldwide_and_domestic
+    description: >
+      Combined worldwide turnover of all parties exceeds €350m AND at least two
+      parties each have Finnish (domestic) turnover exceeding €20m.
+    legal_basis: "Section 23(1) Competition Act 948/2011"
+    source_url: "https://www.kkv.fi/en/"
+    annual_adjustment: false
+    effective_date: "2011-11-01"
+
+    conditions:
+      - condition_id: fi_combined_worldwide_gt_350m
+        metric: revenue
+        scope: worldwide
+        party: combined
+        operator: ">"
+        value: 350000000
+        currency: EUR
+        source: "Section 23(1)(a) Competition Act 948/2011"
+        source_type: primary_legislation
+
+      - condition_id: fi_each_party_domestic_gt_20m
+        metric: revenue
+        scope: domestic
+        party: each_of_at_least_two
+        operator: ">"
+        value: 20000000
+        currency: EUR
+        source: "Section 23(1)(b) Competition Act 948/2011"
+        source_type: primary_legislation
+        qualifier:
+          type: "count_of_parties"
+          operator: ">="
+          count: 2
+
+    exclusions:
+      - exclusion_id: fi_eu_one_stop_shop
+        description: >
+          Concentration with an EU dimension under Regulation (EC) No 139/2004 is
+          exclusively within EC jurisdiction (one-stop-shop). Finnish rules do not apply
+          unless the EC refers the matter to the KKV.
+        source: "Section 21(3) Competition Act 948/2011; Council Regulation (EC) No 139/2004"
+        effect: excludes_jurisdiction
+
+# ── Scope / trigger events ────────────────────────────────────────────────────
+
+scope:
+  concentration_definition: >
+    A concentration arises where: (a) two or more previously independent undertakings
+    merge; or (b) one or more persons already controlling at least one undertaking, or
+    one or more undertakings, acquire, whether by purchase of shares or assets, by
+    contract or by any other means, direct or indirect control of the whole or parts
+    of one or more other undertakings. (Section 22 Competition Act 948/2011.)
+  concentration_definition_source: "Section 22, Competition Act (Kilpailulaki) 948/2011"
+  concentration_definition_url: "https://www.kkv.fi/en/"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture
+  control_threshold: >
+    Decisive influence or sole/joint control over the acquired undertaking.
+    Negative control (veto over strategic decisions) can constitute control.
+    Consistent with EU concept of control.
+  intra_group_exempt: true
+  foreign_to_foreign_rule: >
+    Finnish merger control applies if both conditions (combined worldwide > €350m AND
+    at least two parties Finnish > €20m) are satisfied, regardless of incorporation.
+  substantive_test: "siec"
+  substantive_test_note: >
+    The KKV applies a SIEC (significant impediment to effective competition) test,
+    aligned with the EU Merger Regulation standard. (Section 25(1) Competition Act.)
+  substantive_test_url: "https://www.kkv.fi/en/"
+
+# ── Gun-jumping / standstill ──────────────────────────────────────────────────
+
+gun_jumping:
+  automatic_void: false
+  voidable: true
+  max_fine_pct_turnover: 10.0
+  max_fine_fixed: null
+  max_fine_currency: "EUR"
+  per_day_fine: null
+  criminal_sanctions: false
+  legal_basis: "Section 46 Competition Act 948/2011"
+  legal_basis_url: "https://www.kkv.fi/en/"
+  note: >
+    Failure to notify or implementing before clearance can result in a fine of up to
+    10% of the annual worldwide turnover of the undertaking concerned (Section 46 KL).
+    The KKV may also order dissolution or other remedial measures for illegal concentrations.
+
+# ── FDI / national security screening ────────────────────────────────────────
+
+fdi_screening:
+  applicable: true
+  regime_name: "Act on the Monitoring of Foreign Corporate Acquisitions in Finland (172/2012)"
+  authority: "Ministry of Economic Affairs and Employment (Työ- ja elinkeinoministeriö, TEM)"
+  url: "https://tem.fi/frontpage"
+  legislation_url: "https://tem.fi/frontpage"
+  sectors_covered:
+    - defense
+    - critical_infrastructure
+    - sensitive_technology
+    - energy
+    - telecommunications
+  note: >
+    Finland operates a separate FDI screening regime under Act 172/2012, as amended.
+    The screening covers acquisitions in "sectors vital for national security or
+    public order." The Ministry of Economic Affairs and Employment monitors acquisitions
+    by foreign acquirers. Thresholds and sectors subject to monitoring were expanded
+    in 2022 amendments. Separate from merger control.
+
+# ── Source passages ───────────────────────────────────────────────────────────
+
+source_passages:
+  - passage_id: "fi_kilpailulaki_s23"
+    document_title: "Competition Act (Kilpailulaki) 948/2011 (English translation)"
+    article_reference: "Section 23"
+    document_url: "https://www.kkv.fi/en/"
+    source_type: primary_legislation
+    quoted_text: >
+      "Section 23 — Obligation to notify: A concentration shall be notified to the
+      Finnish Competition and Consumer Authority if (1) the combined aggregate worldwide
+      turnover of all the undertakings concerned exceeds 350 million euros, and (2) the
+      aggregate turnover within Finland of each of at least two of the undertakings
+      concerned exceeds 20 million euros."
+    supports_conditions:
+      - fi_combined_worldwide_gt_350m
+      - fi_each_party_domestic_gt_20m
+
+# ── Minority acquisition thresholds ───────────────────────────────────────────
+minority_thresholds:
+  applies: false
+  standard: "control_based"
+  note: >
+    Finnish merger control under the Competition Act (Kilpailulaki 948/2011) is
+    triggered by a "concentration" as defined in Section 21. A concentration arises
+    from the acquisition of control — the possibility of exercising decisive or
+    controlling influence (ratkaiseva vaikutus) over an undertaking. Section 21(1)
+    mirrors the EU Merger Regulation definition. There is no standalone sub-control
+    minority-stake notification threshold in Finnish competition law. The Finnish
+    Competition and Consumer Authority (KKV — Kilpailu- ja kuluttajavirasto) applies
+    a decisive-influence analysis. Passive minority acquisitions below the
+    decisive-influence threshold do not trigger mandatory notification.
+  rules:
+    - rule_id: "fi_minority_decisive_influence"
+      relationship_type: "any"
+      pct_threshold: null
+      operator: ">="
+      rights_required: null
+      source: "Section 21(1), Competition Act (Kilpailulaki) 948/2011"
+      source_type: "primary_legislation"
+      source_url: "https://www.finlex.fi/en/laki/kaannokset/2011/en20110948.pdf"
+      note: >
+        Control (ratkaiseva vaikutus) — the possibility of exercising decisive
+        influence — is the operative threshold. No sub-control minority percentage
+        trigger exists. KKV follows EU doctrine on decisive influence analysis.
+
+# Practitioner nuance:
+# - KKV guidance follows EC Jurisdictional Notice closely; decisive influence requires
+#   more than mere blocking minority rights over purely protective matters.
+# - A minority stake of 25%–49% paired with strategic vetoes may be notifiable;
+#   purely protective minority rights (dividend, capital structure) generally are not.
+# - Finland has no transaction-value test or sub-control influence standard.
+# - Joint ventures created by minority stakeholders may independently trigger notification
+#   if both parents have Finnish nexus and the JV is full-function.
+
+practitioner_notes:
+  - title: "Finland — Merger Control Laws and Regulations 2026"
+    firm: "ICLG"
+    url: "https://iclg.com/practice-areas/merger-control-laws-and-regulations/finland/"
+    date: "2026"
+    summary: "ICLG chapter on Finnish merger control covering the Finnish Competition and Consumer Authority (FCCA) jurisdiction, combined worldwide and Finnish domestic turnover thresholds, Phase I (23 working days) and Phase II (69 working days) review periods."
+  - title: "Merger Control Laws and Regulations 2025 — Finland"
+    firm: "Global Legal Insights"
+    url: "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/finland/"
+    date: "2025"
+    summary: "GLI practitioner chapter on Finnish merger control covering FCCA filing requirements, simplified procedure, substantive SIC test assessment, and Finland's call-in mechanism for below-threshold mergers."
+  - title: "Merger Control 2025 — Finland"
+    firm: "Chambers and Partners"
+    url: "https://practiceguides.chambers.com/practice-guides/merger-control-2025/finland"
+    date: "2025"
+    summary: "Chambers guide to Finnish merger control with practical coverage of FCCA procedure, jurisdictional thresholds, substantive assessment criteria, and recent enforcement trends."

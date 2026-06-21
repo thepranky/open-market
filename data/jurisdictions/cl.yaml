@@ -1,0 +1,216 @@
+jurisdiction_id: cl
+jurisdiction_name: Chile
+last_verified: "2026-06-17"
+
+authority:
+  name: Fiscalía Nacional Económica (National Economic Prosecutor's Office)
+  abbreviation: FNE
+  url: https://www.fne.gob.cl/en/
+  filing_url: https://www.fne.gob.cl/concentraciones-3/
+
+regime:
+  mandatory: true
+  suspensory: true   # Article 48(d) DL 211 — prior notification and standstill required
+  voluntary: false
+
+legal_basis:
+  - citation: "Decree Law No 211 of 1973 on the Defence of Free Competition (DL 211), as amended by Law No 20,945 of 2016 — Title IV (Concentrations, Articles 46–68)"
+    url: "https://www.fne.gob.cl/en/"
+    note: >
+      Mandatory pre-merger notification was introduced by Law 20,945 (in force 29 September 2017).
+      Title IV of DL 211 (Articles 46–68) governs concentrations. Article 46 defines acts
+      subject to notification. Article 48 sets threshold triggers. Article 49 imposes the
+      standstill obligation. Law 20,945 was a significant reform; prior to 2017, Chile had
+      a voluntary filing system.
+  - citation: "Normative Instruction No 8 of 2017 of the FNE on Concentrations Procedures"
+    url: "https://www.fne.gob.cl/concentraciones-3/"
+    source_type: official_guidance
+    note: "FNE procedural instruction setting out form and content of merger notifications."
+
+filing:
+  deadline_from_signing_days: null
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Mandatory prior notification. Parties must notify before implementation.
+    No fixed deadline running from signing; must notify and receive clearance or
+    await expiry of the review period before closing. Pre-notification contacts
+    with the FNE are available and common for complex transactions.
+
+review_periods:
+  phase_1:
+    days: 30
+    day_type: working
+    extendable_to_days: null
+    legal_basis: "Article 57(1) DL 211 (as amended by Law 20,945/2016)"
+    note: >
+      Phase I: 30 working days from receipt of a complete notification.
+      The FNE may clear, extend to Phase II, or conditionally clear. If no
+      decision is issued within 30 working days, the concentration is deemed cleared.
+  phase_2:
+    days: 90
+    day_type: working
+    extendable_to_days: 120
+    legal_basis: "Article 57(2) DL 211 (as amended by Law 20,945/2016)"
+    note: >
+      Phase II: up to 90 working days from opening of in-depth review.
+      Extendable by a further 30 working days (to 120 working days total) if
+      the parties offer commitments. The FNE may clear, clear with conditions,
+      or prohibit. Prohibited transactions are referred to the Competition Tribunal
+      (Tribunal de Defensa de la Libre Competencia, TDLC).
+
+fees:
+  structure: "No filing fee."
+  source: "Fiscalía Nacional Económica (FNE)"
+  source_type: official_guidance
+  annual_adjustment: false
+
+# ── Threshold tests ───────────────────────────────────────────────────────────
+
+threshold_tests:
+  - test_id: cl_combined_revenue_or_individual
+    description: >
+      Notification required if: (a) combined Chilean annual sales of the parties exceed
+      approximately UF 1,800,000 (approximately USD 75m / CLP ~63bn at 2026 values); OR
+      (b) each of at least two parties individually has Chilean annual sales exceeding
+      approximately UF 290,000.
+    legal_basis: "Article 48 DL 211 (as amended by Law 20,945/2016); FNE Instructions"
+    source_url: "https://www.fne.gob.cl/concentraciones-3/"
+    annual_adjustment: true
+    effective_date: "2017-09-29"
+    note: >
+      Thresholds are expressed in Unidades de Fomento (UF), a Chilean inflation-indexed
+      unit of account updated daily. The specific UF values are periodically reviewed.
+      As of 2023-2024: combined threshold ~UF 1,800,000 AND each of at least two parties
+      > UF 290,000. Verify current UF amounts with FNE before filing. Alternatively,
+      the notification obligation is triggered if one party has combined worldwide revenue
+      exceeding UF 4,500,000 (approximately USD 200m) in the preceding year and the
+      other party has Chilean revenue > UF 290,000. (Multiple alternative triggers exist.)
+
+    conditions:
+      - condition_id: cl_combined_chilean_gt_1800000_uf
+        metric: revenue
+        scope: domestic
+        party: combined
+        operator: ">"
+        value: 1800000
+        currency: UF
+        source: "Article 48(a) DL 211 (as amended)"
+        source_type: primary_legislation
+        note: "UF (Unidad de Fomento) is an inflation-indexed unit; verify current CLP equivalent."
+
+      - condition_id: cl_each_party_chilean_gt_290000_uf
+        metric: revenue
+        scope: domestic
+        party: each_of_at_least_two
+        operator: ">"
+        value: 290000
+        currency: UF
+        source: "Article 48(a) DL 211 (as amended)"
+        source_type: primary_legislation
+        qualifier:
+          type: "count_of_parties"
+          operator: ">="
+          count: 2
+
+# ── Scope ─────────────────────────────────────────────────────────────────────
+
+scope:
+  concentration_definition: >
+    Acts constituting concentrations include: mergers, acquisitions of control, acquisition
+    of assets as a going concern, and joint ventures. The key concept is an act that implies
+    a change of control between two or more undertakings that previously operated independently,
+    or that implies a transfer of control from one undertaking to another. (Article 46 DL 211.)
+  concentration_definition_source: "Article 46, Decree Law No 211 (as amended by Law 20,945/2016)"
+  concentration_definition_url: "https://www.fne.gob.cl/en/"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture
+  control_threshold: >
+    Change of control (direct or indirect). The FNE broadly interprets control to include
+    decisive influence over strategic decisions.
+  intra_group_exempt: true
+  substantive_test: "siec"
+  substantive_test_note: >
+    Chile applies a competition effects standard: concentrations may be prohibited if
+    they substantially lessen competition in Chilean markets. The TDLC (Tribunal de Defensa
+    de la Libre Competencia) has final authority to prohibit; the FNE may recommend clearance
+    with conditions.
+  substantive_test_url: "https://www.fne.gob.cl/concentraciones-3/"
+
+# ── Gun-jumping ───────────────────────────────────────────────────────────────
+
+minority_thresholds:
+  applies: true
+  standard: "percentage_based"
+  note: >
+    Chile operates a dual-track system: (i) the standard pre-closing mandatory
+    clearance regime for full concentrations under DL 211, Article 47 et seq. (as
+    amended by Law 20.945/2016); and (ii) a distinct post-closing mandatory
+    notification obligation for minority acquisitions of more than 10% of a
+    competing company's equity under DL 211, Article 4 bis (in force November 2021).
+    The Article 4 bis notification is informational — filing is post-closing (within
+    60 days) and does not block the transaction. The monetary threshold for the
+    minority notification is low (UF 100,000 annual revenues for each party,
+    approximately USD 4m / CLP 3.5bn), reached by most businesses of meaningful size.
+    The FNE actively uses these notifications as intelligence inputs.
+  rules:
+    - rule_id: "cl_minority_horizontal_postclosing"
+      relationship_type: "horizontal"
+      pct_threshold: 10.0
+      operator: ">"
+      rights_required: null
+      source: "DL 211, Article 4 bis (inserted by Law 20.945/2016; in force November 2021)"
+      source_type: "primary_legislation"
+      source_url: "https://www.fne.gob.cl/wp-content/uploads/2018/09/DL_211_English.pdf"
+      note: >
+        Acquirer (or any member of its business group) that acquires a direct or
+        indirect participation of more than 10% of the capital of a competing company
+        must notify the FNE within 60 days of completion. Both the acquirer group and
+        the target must each have annual revenues on sales in Chile exceeding UF 100,000
+        (~USD 4m). Successive acquisitions are aggregated — the obligation arises when
+        total holding first exceeds 10%. 'Competing company' is interpreted broadly by
+        the FNE to include potential or indirect competitors.
+
+gun_jumping:
+  automatic_void: false
+  voidable: false
+  max_fine_pct_turnover: null
+  max_fine_fixed: null
+  max_fine_currency: null
+  criminal_sanctions: false
+  legal_basis: "Article 62 DL 211 (as amended)"
+  legal_basis_url: "https://www.fne.gob.cl/en/"
+  note: >
+    Implementing a notifiable concentration before notification or clearance is a
+    sanctionable infraction. The TDLC may impose fines. Fines for gun-jumping or
+    failure to notify can reach significant amounts in UF. The FNE may also seek
+    dissolution orders through the TDLC. Verify current sanction levels.
+
+# ── FDI screening ─────────────────────────────────────────────────────────────
+
+fdi_screening:
+  applicable: false
+  note: >
+    Chile does not have a separate FDI screening or national security review mechanism
+    for foreign investments as of 2026. The standard merger control review under DL 211
+    is the primary regulatory pathway for acquisitions of Chilean companies.
+
+practitioner_notes:
+  - title: "Concentration Transaction Reporting Thresholds in 2025"
+    firm: "Estudio Lizana"
+    url: "https://estudiolizana.cl/en/2025/02/18/concentration-transaction-reporting-thresholds-in-2025/"
+    date: "2025"
+    summary: "Practical guide to Chile's 2025 mandatory notification thresholds: joint threshold of UF 2,500,000 (approximately CLP 96.04bn) for combined in-Chile sales of all parties, and individual threshold of UF 450,000 (approximately CLP 17.29bn) for at least two parties separately. Explains threshold calculation across transaction types including mergers, joint ventures, and asset acquisitions."
+  - title: "Chilean FNE and Ministry of Economy Issue New Merger Notification Regulation"
+    firm: "Carey Abogados"
+    url: "https://www.carey.cl/en/chilean-fne-and-ministry-of-economy-issue-new-merger-notification-regulation/"
+    date: "2021"
+    summary: "Covers the September 2021 revised notification regulation that introduced simplified information requirements, a new fast-track (super-simplified) procedure for transactions with no overlaps or vertical relationships, and an expanded failing-firm defence. Foundational reference for understanding the current FNE filing forms and procedures."
+  - title: "Chile — Merger Control Laws and Regulations 2026"
+    firm: "ICLG"
+    url: "https://iclg.com/practice-areas/merger-control-laws-and-regulations/chile"
+    date: "2026"
+    summary: "Comprehensive country chapter on Chile's merger control under Decree Law 211, covering FNE authority, the UF-based thresholds, mandatory pre-merger suspensory regime, two-phase review (30 + 90 working days), remedies framework, appeals to the TDLC, and recent enforcement including gun-jumping and false information penalties."

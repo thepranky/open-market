@@ -1,0 +1,215 @@
+jurisdiction_id: gr
+jurisdiction_name: Greece
+last_verified: "2026-06-17"
+
+authority:
+  name: Hellenic Competition Commission (Επιτροπή Ανταγωνισμού)
+  abbreviation: HCC
+  url: https://www.epant.gr/en/
+  filing_url: https://www.epant.gr/en/
+
+regime:
+  mandatory: true
+  suspensory: true   # Article 9 Law 3959/2011 — standstill obligation
+  voluntary: false
+
+legal_basis:
+  - citation: "Law 3959/2011 on the Protection of Free Competition (Ν. 3959/2011), as amended, Articles 6–10 (merger control)"
+    url: "https://www.epant.gr/en/"
+    note: >
+      Merger control is governed by Articles 6–10 of Law 3959/2011. Article 6 defines
+      concentrations. Article 7 sets the notification thresholds. Article 9 imposes the
+      standstill obligation. Law 3959/2011 was substantially amended by Law 4886/2022
+      to align with ECN+ Directive and modernise enforcement. Verify current consolidated text.
+  - citation: "Decision No 622/VII/2013 of the HCC on the detailed procedure for merger notifications (as amended)"
+    url: "https://www.epant.gr/en/"
+    source_type: official_guidance
+
+filing:
+  deadline_from_signing_days: null
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Notification must be submitted before implementation. No fixed deadline from
+    signing or announcement. The HCC must clear the transaction before it can be
+    implemented (or the review period must expire without Phase II being opened).
+
+review_periods:
+  phase_1:
+    days: 35
+    day_type: working
+    extendable_to_days: null
+    legal_basis: "Article 9(2) Law 3959/2011 (as amended by Law 4886/2022)"
+    note: >
+      Phase I: 35 working days from receipt of a complete notification. If the HCC
+      does not open a Phase II investigation within this period, the concentration is
+      cleared. Clock stops for information requests.
+  phase_2:
+    days: 90
+    day_type: working
+    extendable_to_days: 120
+    legal_basis: "Article 9(4) Law 3959/2011 (as amended)"
+    note: >
+      Phase II: up to 90 working days from Phase II opening. Extendable by 30 working
+      days where commitments are offered. HCC may clear, clear with conditions, or prohibit.
+
+fees:
+  structure: >
+    Filing fee: 0.1% of combined Greek turnover, with a minimum of €600 and a maximum
+    of €200,000. Fee payable at the time of notification.
+  source: "Article 7(5) Law 3959/2011"
+  source_type: primary_legislation
+  source_url: "https://www.epant.gr/en/"
+  annual_adjustment: false
+  note: "Verify current fee schedule and minimum/maximum caps with HCC."
+
+# ── Threshold tests ───────────────────────────────────────────────────────────
+
+threshold_tests:
+  - test_id: gr_combined_worldwide_and_each_domestic
+    description: >
+      Combined worldwide turnover of all parties exceeds €150m AND at least two
+      parties each have Greek turnover exceeding €15m.
+    legal_basis: "Article 7(1) Law 3959/2011 (as amended)"
+    source_url: "https://www.epant.gr/en/"
+    annual_adjustment: false
+    effective_date: null
+
+    conditions:
+      - condition_id: gr_combined_worldwide_gt_150m
+        metric: revenue
+        scope: worldwide
+        party: combined
+        operator: ">"
+        value: 150000000
+        currency: EUR
+        source: "Article 7(1)(a) Law 3959/2011"
+        source_type: primary_legislation
+
+      - condition_id: gr_each_party_domestic_gt_15m
+        metric: revenue
+        scope: domestic
+        party: each_of_at_least_two
+        operator: ">"
+        value: 15000000
+        currency: EUR
+        source: "Article 7(1)(b) Law 3959/2011"
+        source_type: primary_legislation
+        qualifier:
+          type: "count_of_parties"
+          operator: ">="
+          count: 2
+
+    exclusions:
+      - exclusion_id: gr_eu_one_stop_shop
+        description: "EU dimension one-stop-shop: EC has exclusive jurisdiction."
+        source: "Article 6(6) Law 3959/2011; Council Regulation (EC) No 139/2004"
+        effect: excludes_jurisdiction
+
+# ── Scope ─────────────────────────────────────────────────────────────────────
+
+scope:
+  concentration_definition: >
+    A concentration arises where a lasting change of control of the whole or parts of
+    one or more undertakings results from: (a) the merger of two or more previously
+    independent undertakings; or (b) the acquisition of control by one or more undertakings
+    over the whole or part of one or more other undertakings. (Article 6(1) Law 3959/2011.)
+  concentration_definition_source: "Article 6(1), Law 3959/2011 (as amended)"
+  concentration_definition_url: "https://www.epant.gr/en/"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture
+  control_threshold: "Decisive influence (sole or joint control)."
+  intra_group_exempt: true
+  substantive_test: "dominance_and_siec"
+  substantive_test_url: "https://www.epant.gr/en/"
+
+# ── Gun-jumping ───────────────────────────────────────────────────────────────
+
+gun_jumping:
+  automatic_void: false
+  voidable: true
+  max_fine_pct_turnover: 10.0
+  max_fine_currency: "EUR"
+  criminal_sanctions: false
+  legal_basis: "Article 25 Law 3959/2011 (as amended)"
+  legal_basis_url: "https://www.epant.gr/en/"
+  note: >
+    Failure to notify or gun-jumping is subject to fines of up to 10% of annual
+    worldwide turnover. The HCC may also declare the concentration void or impose
+    structural remedies.
+
+# ── FDI screening ─────────────────────────────────────────────────────────────
+
+fdi_screening:
+  applicable: true
+  regime_name: "Law 4887/2022 implementing EU FDI Screening Regulation (EU) 2019/452"
+  authority: "Ministry of Development and Investment"
+  url: "https://www.mindev.gov.gr"
+  sectors_covered:
+    - defense
+    - critical_infrastructure
+    - energy
+    - telecommunications
+    - media
+    - financial_infrastructure
+  note: >
+    Greece implemented the EU FDI Screening Regulation through Law 4887/2022.
+    The Ministry of Development and Investment coordinates FDI screening.
+    Targeted at investments from non-EU/EEA investors in strategic sectors.
+
+# ── Minority acquisition thresholds ───────────────────────────────────────────
+minority_thresholds:
+  applies: false
+  standard: "control_based"
+  note: >
+    Greek merger control under Law 3959/2011 on the Protection of Free Competition
+    (as amended) is triggered by the acquisition of "control" over an undertaking on
+    a lasting basis. Article 5(2) defines control as the possibility of exercising
+    decisive influence (apofasistiki epiroi) over an undertaking through rights,
+    contracts, or other means. The Hellenic Competition Commission (HCC —
+    Epitropi Antagonismou) applies a decisive-influence test consistent with EU
+    Merger Regulation doctrine. There is no standalone sub-control minority-stake
+    notification threshold in Greek competition law. Passive minority acquisitions
+    that do not confer decisive influence are outside merger control scope.
+  rules:
+    - rule_id: "gr_minority_decisive_influence"
+      relationship_type: "any"
+      pct_threshold: null
+      operator: ">="
+      rights_required: null
+      source: "Article 5(2), Law 3959/2011 on the Protection of Free Competition"
+      source_type: "primary_legislation"
+      source_url: "https://www.epant.gr/en/legislation.html"
+      note: >
+        Decisive influence (apofasistiki epiroi) is the operative standard.
+        No sub-control percentage-based minority notification trigger exists.
+        HCC decisional practice aligns with EU Merger Regulation jurisdictional notice.
+
+# Practitioner nuance:
+# - HCC follows EC Jurisdictional Notice; controlling minority stakes (25%+ with vetoes)
+#   may require notification where turnover thresholds are met.
+# - Greek law does not have a transaction-value test or sub-decisive-influence trigger.
+# - Media sector transactions may attract additional regulatory scrutiny under sector-
+#   specific media concentration legislation (Law 4339/2015), separate from competition law.
+# - Greece is an EU member state: transactions with Community dimension fall under EC
+#   exclusive jurisdiction and HCC does not apply.
+
+practitioner_notes:
+  - title: "Greece — Merger Control Laws and Regulations 2026"
+    firm: "ICLG"
+    url: "https://iclg.com/practice-areas/merger-control-laws-and-regulations/greece/"
+    date: "2026"
+    summary: "ICLG chapter on Greek merger control covering the Hellenic Competition Commission (HCC) jurisdiction, the combined worldwide and Greek domestic turnover thresholds, Phase I (35 calendar days) and Phase II (90 calendar days) review timelines, and media concentration rules under Law 4339/2015."
+  - title: "Merger Control Laws and Regulations 2025 — Greece"
+    firm: "Global Legal Insights"
+    url: "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/greece/"
+    date: "2025"
+    summary: "GLI practitioner chapter on Greek merger control with coverage of HCC filing requirements, market-share based alternative jurisdictional trigger, simplified procedure, and substantive assessment criteria."
+  - title: "Merger Control 2025 — Greece"
+    firm: "Chambers and Partners"
+    url: "https://practiceguides.chambers.com/practice-guides/merger-control-2025/greece"
+    date: "2025"
+    summary: "Chambers guide to Greek merger control providing practical guidance on HCC procedure, the Law 3959/2011 framework, media sector concentration rules, and recent HCC enforcement decisions."

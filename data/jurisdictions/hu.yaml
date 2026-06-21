@@ -1,0 +1,220 @@
+jurisdiction_id: hu
+jurisdiction_name: Hungary
+last_verified: "2026-06-17"
+
+authority:
+  name: Hungarian Competition Authority (Gazdasági Versenyhivatal)
+  abbreviation: GVH
+  url: https://www.gvh.hu/en
+  filing_url: https://www.gvh.hu/en/
+
+regime:
+  mandatory: true
+  suspensory: true   # Section 30(4) Competition Act — standstill obligation
+  voluntary: false
+
+legal_basis:
+  - citation: "Act LVII of 1996 on the Prohibition of Unfair Market Practices and Restriction of Competition (Tpvt.), as amended, Sections 23–36 (merger control)"
+    url: "https://www.gvh.hu/en/"
+    note: >
+      Merger control in Hungary is governed by Sections 23–36 of the Tpvt. (Competition
+      Act). Section 23 defines concentrations. Section 24 sets notification thresholds.
+      Section 30(4) imposes the standstill obligation. The Act has been amended multiple
+      times; verify the current consolidated text. Significant amendments were made in
+      2017 and 2022.
+  - citation: "Government Decree No 284/2010 on the detailed rules of merger notifications"
+    url: "https://www.gvh.hu/en/"
+    source_type: official_guidance
+
+filing:
+  deadline_from_signing_days: null
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Notification must be filed before the transaction is implemented. No fixed
+    deadline running from signing or announcement. The GVH must clear the transaction
+    or the Phase I period must expire before implementation. Pre-notification contacts
+    are common and encouraged by the GVH for complex transactions.
+
+review_periods:
+  phase_1:
+    days: 30
+    day_type: calendar
+    extendable_to_days: null
+    legal_basis: "Section 31(2) Tpvt."
+    note: >
+      Phase I: 30 calendar days from receipt of a complete notification. If the GVH
+      does not open a Phase II investigation within 30 calendar days, the concentration
+      is deemed cleared. The clock can be stopped for information requests.
+  phase_2:
+    days: 120
+    day_type: calendar
+    extendable_to_days: 180
+    legal_basis: "Section 31(5) Tpvt."
+    note: >
+      Phase II: up to 4 months (120 calendar days) from opening. Extendable to 6 months
+      (180 calendar days) in complex cases. The GVH may clear, clear with conditions,
+      or prohibit the concentration.
+
+fees:
+  structure: >
+    Filing fee: HUF 2,000,000 (approximately €5,000–€6,000 at current exchange rates).
+    Flat fee regardless of deal size. Payable at time of notification.
+  source: "Section 65(1)(a) Tpvt."
+  source_type: primary_legislation
+  source_url: "https://www.gvh.hu/en/"
+  annual_adjustment: false
+  note: "Verify current fee amount; HUF/EUR rate fluctuates."
+
+# ── Threshold tests ───────────────────────────────────────────────────────────
+
+threshold_tests:
+  - test_id: hu_combined_domestic_and_each_party
+    description: >
+      Combined aggregate net Hungarian turnover of all parties exceeds HUF 15bn
+      AND each of at least two parties has Hungarian net turnover exceeding HUF 500m.
+    legal_basis: "Section 24(1) Tpvt. (Act LVII of 1996)"
+    source_url: "https://www.gvh.hu/en/"
+    annual_adjustment: false
+    effective_date: null
+
+    conditions:
+      - condition_id: hu_combined_domestic_gt_15bn
+        metric: revenue
+        scope: domestic
+        party: combined
+        operator: ">"
+        value: 15000000000
+        currency: HUF
+        source: "Section 24(1)(a) Tpvt."
+        source_type: primary_legislation
+
+      - condition_id: hu_each_party_domestic_gt_500m
+        metric: revenue
+        scope: domestic
+        party: each_of_at_least_two
+        operator: ">"
+        value: 500000000
+        currency: HUF
+        source: "Section 24(1)(b) Tpvt."
+        source_type: primary_legislation
+        qualifier:
+          type: "count_of_parties"
+          operator: ">="
+          count: 2
+
+    exclusions:
+      - exclusion_id: hu_eu_one_stop_shop
+        description: "EU dimension one-stop-shop: EC has exclusive jurisdiction."
+        source: "Section 23(3) Tpvt.; Council Regulation (EC) No 139/2004"
+        effect: excludes_jurisdiction
+
+# ── Scope ─────────────────────────────────────────────────────────────────────
+
+scope:
+  concentration_definition: >
+    A concentration arises where one or more undertakings, persons exercising control
+    over one or more undertakings, or groups of undertakings, acquire direct or indirect
+    control over other undertakings, or where two or more previously independent
+    undertakings merge. (Section 23(1) Tpvt.)
+  concentration_definition_source: "Section 23(1), Act LVII of 1996 (Tpvt.)"
+  concentration_definition_url: "https://www.gvh.hu/en/"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture
+  control_threshold: "Decisive influence (sole or joint control)."
+  intra_group_exempt: true
+  substantive_test: "dominance_and_siec"
+  substantive_test_url: "https://www.gvh.hu/en/"
+
+# ── Gun-jumping ───────────────────────────────────────────────────────────────
+
+gun_jumping:
+  automatic_void: false
+  voidable: true
+  max_fine_pct_turnover: 10.0
+  max_fine_currency: "HUF"
+  criminal_sanctions: false
+  legal_basis: "Section 78(1)(a) Tpvt."
+  legal_basis_url: "https://www.gvh.hu/en/"
+  note: >
+    Gun-jumping or failure to notify can result in a fine of up to 10% of the
+    undertaking's annual net turnover for the preceding financial year. The GVH
+    can also order dissolution of an illegally implemented concentration.
+
+# ── FDI screening ─────────────────────────────────────────────────────────────
+
+fdi_screening:
+  applicable: true
+  regime_name: "Act LVIII of 2020 on Monitoring Investments Qualifying as Strategic"
+  authority: "Ministry of Foreign Affairs and Trade (Külgazdasági és Külügyminisztérium)"
+  url: "https://kormany.hu/kulgazdasagi-es-kulugyminiszterium"
+  sectors_covered:
+    - defense
+    - critical_infrastructure
+    - energy
+    - telecommunications
+    - financial_infrastructure
+    - healthcare
+    - agriculture
+  note: >
+    Hungary enacted comprehensive strategic investment screening legislation in 2020,
+    implementing and expanding beyond the EU FDI Screening Regulation. Sectors covered
+    include energy, transport, water, telecoms, healthcare, and financial services.
+    Investments exceeding defined thresholds (typically 25% equity stake) in strategic
+    sectors require prior government approval. The regime is broad and has been applied
+    actively. Verify current scope as the law has been amended.
+
+# ── Minority acquisition thresholds ───────────────────────────────────────────
+minority_thresholds:
+  applies: false
+  standard: "control_based"
+  note: >
+    Hungarian merger control under Act LVII of 1996 on the Prohibition of Unfair
+    Market Practices and Restriction of Competition (Competition Act), as amended,
+    is triggered by the acquisition of "decisive influence" over an undertaking.
+    Section 23 defines a concentration as, inter alia, the acquisition of control
+    (decisive influence) directly or indirectly over a previously independent
+    undertaking. There is no explicit standalone sub-control minority-stake trigger
+    in Hungarian competition law. The GVH (Gazdasagi Versenyhivatal) applies a
+    qualitative decisive-influence test. Passive minority investments not conferring
+    decisive influence are outside merger control scope.
+  rules:
+    - rule_id: "hu_minority_decisive_influence"
+      relationship_type: "any"
+      pct_threshold: null
+      operator: ">="
+      rights_required: null
+      source: "Section 23, Act LVII of 1996 on Prohibition of Unfair Market Practices and Restriction of Competition"
+      source_type: "primary_legislation"
+      source_url: "https://www.gvh.hu/en/legislation"
+      note: >
+        Decisive influence is the operative standard. Acquisition of 25%+ of shares
+        or voting rights is often indicative but not an automatic statutory trigger.
+        No sub-control percentage-based minority notification rule exists in Hungarian law.
+
+# Practitioner nuance:
+# - GVH practice mirrors the EU Commission's qualitative approach to decisive influence.
+# - A minority stake paired with shareholder agreement veto rights over strategic
+#   business decisions may constitute decisive influence triggering notification.
+# - Hungary does not have a transaction-value test or a sub-control influence test.
+# - FDI screening thresholds (25% for strategic sectors) are separate from merger control.
+
+practitioner_notes:
+  - title: "Merger Control Laws and Regulations 2025 — Hungary"
+    firm: "Global Legal Insights"
+    url: "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/hungary/"
+    date: "2025"
+    summary: "GLI chapter on Hungarian merger control covering GVH jurisdiction, the combined worldwide and Hungarian domestic turnover thresholds, simplified procedure, Phase I (30 working days) and Phase II (4 months) timelines."
+  - title: "Merger Control 2025 — Hungary"
+    firm: "Chambers and Partners"
+    url: "https://practiceguides.chambers.com/practice-guides/merger-control-2025/hungary"
+    date: "2025"
+    summary: "Chambers practice guide on Hungarian merger control with coverage of the GVH's review process, substantive assessment standards, the 2022 competition law amendments, and Hungary's FDI screening regime."
+  - title: "The International Comparative Legal Guide — Merger Control 2025"
+    firm: "Schoenherr Attorneys at Law"
+    url: "https://www.schoenherr.eu/content/the-international-comparative-legal-guide-merger-control-2025"
+    date: "2025"
+    summary: "Schoenherr's CEE-focused contribution to the ICLG 2025 guide; the Hungarian chapter addresses GVH procedure, threshold application, and control analysis under Hungarian competition law."

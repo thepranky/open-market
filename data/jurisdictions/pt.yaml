@@ -1,0 +1,280 @@
+jurisdiction_id: pt
+jurisdiction_name: Portugal
+last_verified: "2026-06-17"
+
+authority:
+  name: Autoridade da Concorrência (Competition Authority)
+  abbreviation: AdC
+  url: https://www.concorrencia.pt/en
+  filing_url: https://www.concorrencia.pt/en/
+
+regime:
+  mandatory: true
+  suspensory: true   # Article 41(4) Competition Act — standstill until AdC clearance
+  voluntary: false
+
+legal_basis:
+  - citation: "Competition Act (Lei da Concorrência) No 19/2012 of 8 May 2012, as amended, Articles 37–60 (merger control)"
+    url: "https://www.concorrencia.pt/en/"
+    note: >
+      The Competition Act No 19/2012 governs merger control. Article 37 defines
+      concentrations. Article 38 sets the notification thresholds. Article 41 imposes
+      the standstill obligation. Amended by Law No 23/2018 and subsequent legislation.
+  - citation: "Regulation No 252/2013 of the Autoridade da Concorrência on Merger Notification Procedures"
+    url: "https://www.concorrencia.pt/en/"
+    source_type: official_guidance
+    note: "Implementing regulation specifying notification procedures and form requirements."
+
+filing:
+  deadline_from_signing_days: null
+  deadline_from_closing_days: null
+  pre_closing_required: true
+  note: >
+    Notification must be submitted before implementation of the concentration.
+    No fixed deadline from signing. The AdC must issue a decision before closing.
+    Pre-notification contacts are recommended for complex transactions.
+
+review_periods:
+  phase_1:
+    days: 30
+    day_type: working
+    extendable_to_days: null
+    legal_basis: "Article 44(1) Competition Act No 19/2012"
+    note: >
+      Phase I: 30 working days from receipt of a complete notification. If the AdC
+      does not open a Phase II investigation within this period, the concentration is
+      deemed cleared. The clock stops during requests for information.
+  phase_2:
+    days: 90
+    day_type: working
+    extendable_to_days: 120
+    legal_basis: "Article 48(1) Competition Act No 19/2012"
+    note: >
+      Phase II: up to 90 working days from the Phase II opening decision. Extendable
+      to 120 working days in complex cases or where remedies are offered. The AdC may
+      clear, clear with conditions, or prohibit.
+
+fees:
+  structure: >
+    AdC filing fees apply (approximate, verify current amounts):
+    Simplified/Phase I clearance: €15,000–€25,000 depending on combined turnover.
+    Phase II investigation: additional fee.
+    Fee schedule published by AdC and subject to annual revision.
+  source: "Autoridade da Concorrência fee schedule"
+  source_type: official_guidance
+  source_url: "https://www.concorrencia.pt/en/"
+  annual_adjustment: true
+  note: "Verify current fee amounts with AdC before filing."
+
+# ── Threshold tests ───────────────────────────────────────────────────────────
+
+threshold_tests:
+  - test_id: pt_domestic_combined_and_each_party
+    description: >
+      Combined aggregate Portuguese turnover of all parties exceeds €100m AND each of
+      at least two parties has Portuguese turnover exceeding €5m (individual threshold).
+    legal_basis: "Article 38(1)(a) Competition Act No 19/2012"
+    source_url: "https://www.concorrencia.pt/en/"
+    annual_adjustment: false
+    effective_date: null
+
+    conditions:
+      - condition_id: pt_combined_domestic_gt_100m
+        metric: revenue
+        scope: domestic
+        party: combined
+        operator: ">"
+        value: 100000000
+        currency: EUR
+        source: "Article 38(1)(a)(i) Competition Act No 19/2012"
+        source_type: primary_legislation
+
+      - condition_id: pt_each_party_domestic_gt_5m
+        metric: revenue
+        scope: domestic
+        party: each_of_at_least_two
+        operator: ">"
+        value: 5000000
+        currency: EUR
+        source: "Article 38(1)(a)(ii) Competition Act No 19/2012"
+        source_type: primary_legislation
+        qualifier:
+          type: "count_of_parties"
+          operator: ">="
+          count: 2
+
+    exclusions:
+      - exclusion_id: pt_eu_one_stop_shop
+        description: "EU dimension one-stop-shop applies. EC has exclusive jurisdiction."
+        source: "Article 37(4) Competition Act No 19/2012; Council Regulation (EC) No 139/2004"
+        effect: excludes_jurisdiction
+
+  - test_id: pt_worldwide_and_domestic
+    description: >
+      Combined worldwide turnover exceeds €2.5bn AND at least two parties each have
+      Portuguese turnover exceeding €250m.
+    legal_basis: "Article 38(1)(b) Competition Act No 19/2012"
+    source_url: "https://www.concorrencia.pt/en/"
+    annual_adjustment: false
+    effective_date: null
+
+    conditions:
+      - condition_id: pt_combined_worldwide_gt_2_5bn
+        metric: revenue
+        scope: worldwide
+        party: combined
+        operator: ">"
+        value: 2500000000
+        currency: EUR
+        source: "Article 38(1)(b)(i) Competition Act No 19/2012"
+        source_type: primary_legislation
+
+      - condition_id: pt_each_party_domestic_gt_250m
+        metric: revenue
+        scope: domestic
+        party: each_of_at_least_two
+        operator: ">"
+        value: 250000000
+        currency: EUR
+        source: "Article 38(1)(b)(ii) Competition Act No 19/2012"
+        source_type: primary_legislation
+        qualifier:
+          type: "count_of_parties"
+          operator: ">="
+          count: 2
+
+    exclusions:
+      - exclusion_id: pt_eu_one_stop_shop_2
+        description: "EU dimension one-stop-shop applies."
+        source: "Article 37(4) Competition Act No 19/2012; Council Regulation (EC) No 139/2004"
+        effect: excludes_jurisdiction
+
+# ── Scope ─────────────────────────────────────────────────────────────────────
+
+scope:
+  concentration_definition: >
+    A concentration arises where a lasting change of control over the whole or part of
+    one or more undertakings results from: (a) the merger of two or more previously
+    independent undertakings; (b) the acquisition, by one or more persons already
+    controlling at least one undertaking, or by one or more undertakings, of direct or
+    indirect control over the whole or parts of one or more other undertakings.
+    (Article 37(1) Competition Act No 19/2012.)
+  concentration_definition_source: "Article 37(1), Competition Act No 19/2012"
+  concentration_definition_url: "https://www.concorrencia.pt/en/"
+  trigger_events:
+    - merger
+    - share_acquisition
+    - asset_acquisition
+    - joint_venture
+  control_threshold: >
+    Decisive influence. Consistent with EU merger control concept of control.
+  intra_group_exempt: true
+  substantive_test: "siec"
+  substantive_test_url: "https://www.concorrencia.pt/en/"
+
+# ── Gun-jumping ───────────────────────────────────────────────────────────────
+
+gun_jumping:
+  automatic_void: false
+  voidable: true
+  max_fine_pct_turnover: 10.0
+  max_fine_currency: "EUR"
+  criminal_sanctions: false
+  legal_basis: "Article 68 Competition Act No 19/2012"
+  legal_basis_url: "https://www.concorrencia.pt/en/"
+  note: >
+    Failure to notify or gun-jumping (implementing before clearance) can result in a fine
+    of up to 10% of annual worldwide turnover of the undertaking. The AdC can also
+    declare the transaction void or order dissolution.
+
+# ── FDI screening ─────────────────────────────────────────────────────────────
+
+fdi_screening:
+  applicable: true
+  regime_name: "Decree-Law No 138/2014 and subsequent amendments implementing EU FDI Screening Regulation"
+  authority: "Agência para o Investimento e Comércio Externo de Portugal (AICEP) / Ministry of Economy"
+  url: "https://www.portugalglobal.pt/en"
+  sectors_covered:
+    - defense
+    - critical_infrastructure
+    - energy
+    - telecommunications
+    - media
+  note: >
+    Portugal implemented the EU FDI Screening Regulation (2019/452) and has a
+    national FDI screening mechanism. AICEP coordinates with sectoral ministries.
+    The regime focuses on strategic/critical sectors. Verify current requirements
+    as Portuguese FDI screening legislation was evolving as of 2024-2025.
+
+# ── Minority acquisition thresholds ───────────────────────────────────────────
+minority_thresholds:
+  applies: true
+  standard: "percentage_based"
+  note: >
+    Portuguese merger control under Law No. 19/2012 (Lei da Concorrência, as amended
+    by Law No. 17/2022) contains an explicit minority-stake notification trigger.
+    Article 37(1)(b) provides that a concentration arises not only from the acquisition
+    of decisive influence but also from the acquisition of "shares or units representing
+    at least 50%" — i.e., a majority — and Article 36(3) captures acquisitions of
+    "minority participations" where the acquirer obtains "the possibility of exercising
+    decisive influence." However, the distinctive Portuguese rule is in Article 37(5):
+    the Autoridade da Concorrência (AdC) may, under certain circumstances, also review
+    acquisitions of stakes of 25% or more even absent decisive influence, where the
+    acquisition is by a competitor (horizontal overlap). This 25% horizontal trigger
+    is the key minority threshold differentiating Portugal from most EU peers. Verify
+    with AdC directly as interpretive practice may have evolved since Law 17/2022.
+  rules:
+    - rule_id: "pt_minority_decisive_influence"
+      relationship_type: "any"
+      pct_threshold: null
+      operator: ">="
+      rights_required: null
+      source: "Article 36(3), Law No. 19/2012 (Lei da Concorrência), as amended by Law No. 17/2022"
+      source_type: "primary_legislation"
+      source_url: "https://www.concorrencia.pt/en/legislation"
+      note: >
+        Acquisition of "the possibility of exercising decisive influence" over an
+        undertaking constitutes a concentration. The decisive-influence standard mirrors
+        the EU Merger Regulation approach.
+    - rule_id: "pt_minority_25pct_horizontal"
+      relationship_type: "horizontal"
+      pct_threshold: 25
+      operator: ">="
+      rights_required: null
+      source: "Article 37(5), Law No. 19/2012 (Lei da Concorrência), as amended"
+      source_type: "primary_legislation"
+      source_url: "https://www.concorrencia.pt/en/legislation"
+      note: >
+        Acquisition of 25% or more of shares in a competing undertaking may be reviewed
+        by the AdC as a concentration even absent decisive influence, under Portugal's
+        expanded horizontal minority-stake rule. This is a distinctive Portuguese trigger
+        not present in most EU member states. Verify current AdC practice as interpretive
+        guidance may have been updated post-Law 17/2022.
+
+# Practitioner nuance:
+# - Portugal's 25% horizontal trigger for minority stakes is an outlier in the EU and
+#   requires careful assessment in deals involving competing Portuguese operations.
+# - The decisive-influence standard (applicable to all transaction types, not just
+#   horizontal) is separate and mirrors EU Merger Regulation doctrine.
+# - Portugal is an EU member: EU Community dimension transactions fall under EC
+#   exclusive jurisdiction and AdC does not apply.
+# - The AdC has actively used its minority-stake review powers in media and telecoms.
+# - Law 17/2022 updated the merger control framework; verify specific thresholds and
+#   procedural rules with current AdC guidance before relying on this entry.
+
+practitioner_notes:
+  - title: "Portugal — Merger Control Laws and Regulations 2026"
+    firm: "ICLG"
+    url: "https://iclg.com/practice-areas/merger-control-laws-and-regulations/portugal/"
+    date: "2026"
+    summary: "ICLG chapter on Portuguese merger control covering the AdC jurisdiction, the combined worldwide and Portuguese domestic turnover thresholds, Phase I (30 working days) and Phase II (90 working days) review periods, and Law 17/2022 amendments."
+  - title: "Merger Control Laws and Regulations 2025 — Portugal"
+    firm: "ICLG / MLGTS"
+    url: "https://www.mlgts.pt/xms/files/site_2018/publicacoes/2024/ICLG_to_Merger_Control_LAws_and_Regulations_2025_Capitulo_Portugal.pdf"
+    date: "2025"
+    summary: "MLGTS (Morais Leitão) authored chapter in ICLG Merger Control 2025 covering Portugal's merger control framework, AdC procedure, minority stake analysis, media sector restrictions, and 2022 legislative changes."
+  - title: "Merger Control Laws and Regulations 2025 — Portugal"
+    firm: "Global Legal Insights"
+    url: "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/portugal/"
+    date: "2025"
+    summary: "GLI practitioner chapter on Portuguese merger control with coverage of AdC jurisdictional thresholds, simplified notification, substantive SIC test, and the AdC's active enforcement record in media and telecoms sectors."
