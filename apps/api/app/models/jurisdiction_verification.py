@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import warnings
 from datetime import datetime
 from enum import Enum
 from typing import Literal, Optional
@@ -117,7 +118,16 @@ class ArchetypeConfig(BaseModel):
 
     def archetypes_for(self, jurisdiction_id: str) -> list[tuple[str, ArchetypeRequirements]]:
         names = self.assignments.get(jurisdiction_id, [])
-        return [(name, self.archetypes[name]) for name in names if name in self.archetypes]
+        result = []
+        for name in names:
+            if name in self.archetypes:
+                result.append((name, self.archetypes[name]))
+            else:
+                warnings.warn(
+                    f"Archetype '{name}' assigned to '{jurisdiction_id}' is not defined in archetypes",
+                    stacklevel=2,
+                )
+        return result
 
 
 class BaselineJurisdictionRow(BaseModel):

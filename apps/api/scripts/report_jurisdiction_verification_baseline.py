@@ -32,14 +32,16 @@ def main() -> int:
 
     report = compute_baseline_report(DATA_DIR, ARCHETYPES_PATH)
 
+    md = render_baseline_markdown(report)
+
     if args.json:
         print(json.dumps(report.model_dump(mode="json"), indent=2))
     else:
-        print(render_baseline_markdown(report))
+        print(md)
 
     if args.write:
         args.output.parent.mkdir(parents=True, exist_ok=True)
-        args.output.write_text(render_baseline_markdown(report))
+        args.output.write_text(md)
         print(f"Wrote {args.output}", file=sys.stderr)
 
     return 0

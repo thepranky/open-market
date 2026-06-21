@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -11,8 +12,6 @@ import yaml
 REPO_ROOT = Path(__file__).resolve().parents[3]
 DATA_DIR = REPO_ROOT / "data" / "jurisdictions"
 ARCHETYPES_PATH = DATA_DIR / "_archetypes.yaml"
-
-import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
