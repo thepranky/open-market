@@ -33,6 +33,12 @@ jobs:
           tests/test_eval_pipeline.py
           tests/test_benchmark_runner.py
           tests/test_extract_case_from_source.py
+          tests/test_jurisdiction_verification_model.py
+          tests/test_source_fetcher.py
+          tests/test_jurisdiction_completeness.py
+          tests/test_verify_jurisdiction_passages.py
+          tests/test_jurisdiction_regression.py
+          tests/test_monitor_jurisdiction_staleness.py
 
       - name: Run market-definition benchmark (CI fixtures)
         run: >
