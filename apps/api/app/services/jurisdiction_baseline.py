@@ -22,7 +22,7 @@ def _load_archetypes(path: Path) -> ArchetypeConfig:
     return ArchetypeConfig.model_validate(raw)
 
 
-def _supported_condition_ids(rule: JurisdictionRule) -> set[str]:
+def supported_condition_ids(rule: JurisdictionRule) -> set[str]:
     supported: set[str] = set()
     for passage in rule.source_passages:
         supported.update(passage.supports_conditions)
@@ -56,7 +56,7 @@ def compute_baseline_report(
     annual_tests = 0
 
     for rule in sorted(rules, key=lambda r: r.jurisdiction_id):
-        supported = _supported_condition_ids(rule)
+        supported = supported_condition_ids(rule)
         jid = rule.jurisdiction_id
         if not rule.source_passages:
             no_passages.append(jid)
