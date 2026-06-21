@@ -666,19 +666,26 @@ def screen_jurisdiction(
         result = _evaluate_test(deal, test, jur_currency)
         test_results.append(result)
 
-    triggered = [r for r in test_results if r.fired is True]
-    data_insufficient = all(r.fired is None for r in test_results)
+    active_pairs = [
+        (test, result)
+        for test, result in zip(rule.threshold_tests, test_results)
+        if test.status != "pending_commencement"
+    ]
+    active_results = [result for _, result in active_pairs]
+
+    triggered = [r for r in active_results if r.fired is True]
+    data_insufficient = bool(active_results) and all(r.fired is None for r in active_results)
 
     if data_insufficient:
         status = ScreeningStatus.data_insufficient
     elif triggered:
         status = ScreeningStatus.triggered
-    elif any(r.fired is None for r in test_results):
+    elif any(r.fired is None for r in active_results):
         status = ScreeningStatus.unclear
     else:
         status = ScreeningStatus.not_triggered
 
-    confidence = _confidence(test_results, triggered)
+    confidence = _confidence(active_results, triggered)
 
     legal_basis = [
         LegalCitation(citation=lb.citation, url=str(lb.url) if lb.url else None)

@@ -1,0 +1,181 @@
+deals:
+  - deal_id: eu_below_threshold
+    description: Combined and EU turnovers below EUMR Article 1(2) thresholds
+    jurisdictions: [eu]
+    expected:
+      eu: not_triggered
+    deal:
+      acquirer: { worldwide: 3000000000, eu_eea: 200000000 }
+      target: { worldwide: 500000000, eu_eea: 100000000 }
+    source_url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32004R0139"
+
+  - deal_id: eu_above_threshold
+    description: Standard Community dimension thresholds met
+    jurisdictions: [eu]
+    expected:
+      eu: triggered
+    deal:
+      acquirer: { worldwide: 6000000000, eu_eea: 300000000 }
+      target: { worldwide: 2000000000, eu_eea: 400000000 }
+    source_url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32004R0139"
+
+  - deal_id: us_hsr_below_standard
+    description: Size of transaction and person tests not met (2026 thresholds)
+    jurisdictions: [us_hsr]
+    expected:
+      us_hsr: not_triggered
+    deal:
+      deal_value: 100000000
+      deal_currency: USD
+      revenue_currency: USD
+      acquirer: { worldwide: 200000000 }
+      target: { worldwide: 20000000 }
+      acquirer_assets: 200000000
+      target_assets: 20000000
+    source_url: "https://www.ftc.gov/enforcement/premerger-notification-program"
+
+  - deal_id: us_hsr_above_standard
+    description: Standard HSR filing threshold met
+    jurisdictions: [us_hsr]
+    expected:
+      us_hsr: triggered
+    deal:
+      deal_value: 200000000
+      deal_currency: USD
+      revenue_currency: USD
+      acquirer: { worldwide: 300000000 }
+      target: { worldwide: 50000000 }
+      acquirer_assets: 300000000
+      target_assets: 50000000
+    source_url: "https://www.ftc.gov/enforcement/premerger-notification-program"
+
+  - deal_id: us_hsr_large_transaction
+    description: Large transaction tier — person test waived
+    jurisdictions: [us_hsr]
+    expected:
+      us_hsr: triggered
+    deal:
+      deal_value: 600000000
+      deal_currency: USD
+      revenue_currency: USD
+      acquirer: { worldwide: 10000000 }
+      target: { worldwide: 10000000 }
+      acquirer_assets: 10000000
+      target_assets: 10000000
+    source_url: "https://www.ftc.gov/enforcement/premerger-notification-program"
+
+  - deal_id: uk_below_turnover
+    description: Target UK turnover below £70m
+    jurisdictions: [uk]
+    expected:
+      uk: not_triggered
+    deal:
+      revenue_currency: GBP
+      target: { uk: 50000000 }
+      combined_market_share: { uk: 0.10 }
+      incremental_share: { uk: 0.0 }
+    source_url: "https://www.legislation.gov.uk/ukpga/2002/40/section/23"
+
+  - deal_id: uk_above_turnover
+    description: Target UK turnover exceeds £70m
+    jurisdictions: [uk]
+    expected:
+      uk: triggered
+    deal:
+      revenue_currency: GBP
+      target: { uk: 80000000 }
+      combined_market_share: { uk: 0.10 }
+      incremental_share: { uk: 0.0 }
+    source_url: "https://www.legislation.gov.uk/ukpga/2002/40/section/23"
+
+  - deal_id: de_below_domestic
+    description: German domestic turnover thresholds not met
+    jurisdictions: [de]
+    expected:
+      de: not_triggered
+    deal:
+      revenue_currency: EUR
+      acquirer: { worldwide: 100000000, domestic: 10000000 }
+      target: { worldwide: 80000000, domestic: 8000000 }
+    source_url: "https://www.gesetze-im-internet.de/gwb/__35.html"
+
+  - deal_id: de_above_domestic
+    description: German turnover test triggered
+    jurisdictions: [de]
+    expected:
+      de: triggered
+    deal:
+      revenue_currency: EUR
+      acquirer: { worldwide: 600000000, domestic: 60000000 }
+      target: { worldwide: 400000000, domestic: 40000000 }
+    source_url: "https://www.gesetze-im-internet.de/gwb/__35.html"
+
+  - deal_id: fr_below_threshold
+    description: French turnover thresholds not met (standard and retail tests)
+    jurisdictions: [fr]
+    expected:
+      fr: not_triggered
+    deal:
+      revenue_currency: EUR
+      acquirer: { worldwide: 40000000, domestic: 10000000 }
+      target: { worldwide: 30000000, domestic: 10000000 }
+    source_url: "https://www.autoritedelaconcurrence.fr/en"
+
+  - deal_id: fr_above_threshold
+    description: French turnover test triggered
+    jurisdictions: [fr]
+    expected:
+      fr: triggered
+    deal:
+      revenue_currency: EUR
+      acquirer: { worldwide: 200000000, domestic: 80000000 }
+      target: { worldwide: 180000000, domestic: 70000000 }
+    source_url: "https://www.autoritedelaconcurrence.fr/en"
+
+  - deal_id: eu_data_insufficient
+    description: Missing EU revenue inputs
+    jurisdictions: [eu]
+    expected:
+      eu: data_insufficient
+    deal:
+      acquirer: { worldwide: 6000000000 }
+      target: { worldwide: 2000000000 }
+    source_url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32004R0139"
+
+  - deal_id: uk_share_only_low
+    description: Low UK turnover and shares — share-of-supply test not met
+    jurisdictions: [uk]
+    expected:
+      uk: not_triggered
+    deal:
+      revenue_currency: GBP
+      acquirer: { uk: 1000000 }
+      target: { uk: 1000000 }
+      combined_market_share: { uk: 0.10 }
+      incremental_share: { uk: 0.0 }
+    source_url: "https://www.legislation.gov.uk/ukpga/2002/40/section/23"
+
+  - deal_id: us_hsr_borderline_not_triggered
+    description: Just below 2026 size-of-transaction threshold
+    jurisdictions: [us_hsr]
+    expected:
+      us_hsr: not_triggered
+    deal:
+      deal_value: 133000000
+      deal_currency: USD
+      revenue_currency: USD
+      acquirer: { worldwide: 300000000 }
+      target: { worldwide: 50000000 }
+      acquirer_assets: 300000000
+      target_assets: 50000000
+    source_url: "https://www.ftc.gov/enforcement/premerger-notification-program"
+
+  - deal_id: eu_single_member_low
+    description: EU thresholds not met — low worldwide and EU turnover
+    jurisdictions: [eu]
+    expected:
+      eu: not_triggered
+    deal:
+      acquirer: { worldwide: 1000000000, eu_eea: 50000000 }
+      target: { worldwide: 800000000, eu_eea: 40000000 }
+    source_url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32004R0139"
