@@ -190,6 +190,38 @@ scope:
     Transactions with UAE nexus should be assessed under both the turnover (AED 300m)
     and market share (40%) thresholds — notification is required if EITHER is met.
 
+minority_thresholds:
+  applies: true
+  standard: "control_based"
+  note: >
+    The UAE Federal Decree-Law No. 36 of 2023 defines an 'economic concentration' as any
+    act resulting in a transfer of control over an enterprise (Article 14). Control means
+    the ability to exercise decisive influence over an enterprise's activities — consistent
+    with the EU EUMR paradigm. A purely passive minority stake that does not confer decisive
+    influence is NOT caught. There is no equivalent of the UK material influence standard
+    and no explicit percentage-based minority threshold below decisive influence. Cabinet
+    Resolution No. 3 of 2025 specifies the financial notification thresholds (AED 300m
+    combined UAE sales OR 40% combined UAE market share) but does not alter the control
+    standard. The UAE merger control regime became operational 31 March 2025 — decisional
+    practice is limited. Sector-specific approvals (Central Bank, NMC for media) may be
+    triggered at lower percentage thresholds, independently of merger control.
+  rules:
+    - rule_id: "uae_minority_decisive_influence"
+      relationship_type: "any"
+      pct_threshold: null
+      operator: ">="
+      rights_required: "veto_strategic"
+      source: "Federal Decree-Law No. 36 of 2023 on Competition, Article 14; Cabinet Resolution No. 3 of 2025"
+      source_type: "primary_legislation"
+      source_url: "https://www.economy.gov.ae/English/BusinessLegislation/Pages/CompetitionLaw.aspx"
+      note: >
+        Article 14 catches acquisitions resulting in 'control' — the ability to exercise
+        decisive influence over the activities of an enterprise. The Ministry of Economy
+        (MoE) has not published formal guidelines on when minority stakes constitute
+        control, but the standard tracks the EU approach. A minority stake with veto rights
+        over the business plan, budget, or key executive appointments may confer joint
+        control and trigger notification if the financial thresholds are met.
+
 # ── Gun-jumping / standstill obligation ───────────────────────────────────────
 gun_jumping:
   automatic_void: false
@@ -252,3 +284,20 @@ source_passages:
     supports_conditions:
       - uae_combined_domestic_revenue
       - uae_combined_market_share
+
+practitioner_notes:
+  - title: "Overhaul of the UAE's Competition Law: Key Changes and Next Steps"
+    firm: "Bracewell LLP"
+    url: "https://www.bracewell.com/resources/overhaul-uaes-competition-law-key-changes-and-next-steps/"
+    date: "2024"
+    summary: "Practitioner overview of Federal Decree-Law No. 36 of 2023 replacing the 2012 law, covering the new 90-day pre-closing notification mandate, turnover- and market-share-based thresholds, stricter penalties (2-10% of revenues), and removal of automatic sector exemptions."
+  - title: "Navigating the New UAE Competition Law: Moving Towards EU Principles? Part 2 — UAE Merger Control vs. EU Merger Regulation"
+    firm: "K&L Gates"
+    url: "https://www.klgates.com/Navigating-the-New-UAE-Competition-Law-Moving-Towards-EU-Principles-10-14-2024"
+    date: "2024"
+    summary: "Comparative analysis of the UAE's 2023 merger control framework against EU Merger Regulation, examining economic concentration definitions, dual AED 300M turnover / 40% market-share thresholds, and pre-closing suspension obligations."
+  - title: "Doing Business in the UAE: Competition Law and Merger Control"
+    firm: "Pinsent Masons"
+    url: "https://www.pinsentmasons.com/out-law/guides/doing-business-uae-competition-law-merger-control"
+    date: "2024"
+    summary: "Practical guide for foreign businesses on UAE merger filing requirements, including the 40% combined market-share test, 90-day review period, exemptions for government-owned entities, and penalties ranging from AED 500,000 to AED 5,000,000."

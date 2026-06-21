@@ -224,6 +224,51 @@ scope:
     allowing the Commission to review deals below all national and EU thresholds in
     exceptional cases involving nascent competition concerns.
 
+minority_thresholds:
+  applies: false
+  standard: "control_based"
+  note: >
+    The EUMR (Regulation 139/2004) catches only concentrations — defined under Article 3
+    as acquisitions of control (sole or joint) conferring the ability to exercise decisive
+    influence on a lasting basis. Non-controlling minority shareholdings are NOT caught,
+    regardless of size. The Commission's 2014 White Paper proposed a transparency system
+    for non-controlling minority stakes but this was never legislated. A minority stake
+    can constitute a concentration if it confers de facto sole control (e.g. dispersed
+    remaining shareholders — Vivendi/Telecom Italia: 29.94% = de facto sole control) or
+    negative joint control (strategic veto rights over business plan, budget, management
+    appointments). The EC Consolidated Jurisdictional Notice (2008/C 95/01) paragraphs
+    54–67 set out the control analysis framework used across the EU.
+  rules:
+    - rule_id: "eu_minority_de_facto_sole"
+      relationship_type: "any"
+      pct_threshold: null
+      operator: ">="
+      rights_required: null
+      source: "EUMR Art. 3(2); EC Consolidated Jurisdictional Notice (2008/C 95/01) paras. 54–60"
+      source_type: "official_guidance"
+      source_url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52008XC0416(03)"
+      note: >
+        A minority stake without a formal majority can confer de facto sole control where
+        the remaining shareholding is so widely dispersed that no other shareholder can
+        achieve a blocking minority in practice. Assessment is entirely qualitative — no
+        fixed percentage. Example: Vivendi/Telecom Italia (2017): 29.94% = de facto sole
+        control due to atomised remaining shareholders.
+    - rule_id: "eu_minority_negative_control"
+      relationship_type: "any"
+      pct_threshold: null
+      operator: ">="
+      rights_required: "veto_strategic"
+      source: "EUMR Art. 3(2); Consolidated Jurisdictional Notice paras. 62–67"
+      source_type: "official_guidance"
+      source_url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52008XC0416(03)"
+      note: >
+        A minority shareholder holding veto rights over strategic decisions — business
+        plan approval, major capex, budget, or appointment of senior management — acquires
+        joint control (negative control). The vetoes must cover strategy, not day-to-day
+        management. 'Protective' vetoes (anti-dilution, related-party transactions) do not
+        confer control. This IS a notifiable concentration under the EUMR if turnover
+        thresholds are met.
+
 # ── Gun-jumping / standstill obligation ───────────────────────────────────────
 gun_jumping:
   automatic_void: false
@@ -347,3 +392,20 @@ source_passages:
       implementation, unless they are expressly authorised to do so by Article 7(2) or by a
       decision taken pursuant to Article 7(3)..."
     supports_conditions: []
+
+practitioner_notes:
+  - title: "EU Merger Control: What You Need to Know From 2024 to Navigate 2025"
+    firm: "WilmerHale"
+    url: "https://www.wilmerhale.com/en/insights/client-alerts/20250131-eu-merger-control-what-you-need-to-know-from-2024-to-navigate-2025"
+    date: "2025"
+    summary: "Annual review covering landmark ECJ rulings (Illumina/GRAIL), the revised Market Definition Notice, leadership changes at DG Comp, and Foreign Subsidies Regulation compliance; includes 2024 statistics (392 notifications) and 2025 outlook."
+  - title: "Merger Control Laws and Regulations 2026 – European Union"
+    firm: "ICLG (International Comparative Legal Guides)"
+    url: "https://iclg.com/practice-areas/merger-control-laws-and-regulations/european-union/"
+    date: "2025"
+    summary: "Comprehensive multi-author chapter covering EUMR jurisdictional thresholds, Phase I/II procedure, SIEC substantive test, remedies, enforcement record, and digital-markets considerations; updated December 2025."
+  - title: "Merger Control 2025 – EU"
+    firm: "Chambers and Partners (Van Bael & Bellis)"
+    url: "https://practiceguides.chambers.com/practice-guides/merger-control-2025/eu"
+    date: "2025"
+    summary: "Chambers Global Practice Guide chapter on EU merger control: one-stop-shop principle, turnover thresholds, Phase I/II timelines, SIEC test, remedies, and Foreign Subsidies Regulation overlay."

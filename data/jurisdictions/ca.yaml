@@ -5,8 +5,8 @@ last_verified: "2024-06-20"
 authority:
   name: Competition Bureau Canada
   abbreviation: CBCA
-  url: https://www.competitionbureau.gc.ca/eic/site/cb-bc.nsf/eng/home
-  filing_url: https://www.competitionbureau.gc.ca/eic/site/cb-bc.nsf/eng/04122.html
+  url: https://competition-bureau.canada.ca/en
+  filing_url: https://competition-bureau.canada.ca/en/mergers-and-acquisitions
 
 regime:
   mandatory: true
@@ -23,7 +23,7 @@ legal_basis:
       penalties for gun-jumping and enhanced Bureau powers. Verify current text for
       the most recent amendments.
   - citation: "Merger Review Process Guidelines (2011, revised)"
-    url: "https://www.competitionbureau.gc.ca/eic/site/cb-bc.nsf/eng/02732.html"
+    url: "https://competition-bureau.canada.ca/en/mergers-and-acquisitions/overview-merger-review-process"
     source_type: official_guidance
 
 filing:
@@ -72,7 +72,7 @@ threshold_tests:
   # Either revenues or assets can satisfy each limb (OR within each condition).
   # Modelled as two alternative tests: one revenue-based, one assets-based.
   # Current values for 2024 — VERIFY annually at:
-  # https://www.competitionbureau.gc.ca/eic/site/cb-bc.nsf/eng/04122.html
+  # https://competition-bureau.canada.ca/en/mergers-and-acquisitions
 
   - test_id: ca_revenue_based
     description: "Pre-merger notification — revenue limb (s. 109 Competition Act)"
@@ -106,7 +106,7 @@ threshold_tests:
         source: "Competition Act, s. 109(1)(b); Notifiable Transactions Regulations (2024 adjusted value)"
         source_type: authority_announcement
         verified_via:
-          - "https://www.canada.ca/en/competition-bureau/news/2026/03/pre-merger-competition-bureau-notification-threshold-to-remain-at-93m-in-2026.html"
+          - "https://www.canada.ca/errors/404.html"
         note: "Annual gross revenues from sales in or from Canada of the target (business being acquired). VERIFY 2024 value."
 
   - test_id: ca_assets_based
@@ -141,7 +141,7 @@ threshold_tests:
         source: "Competition Act, s. 109(1)(b); Notifiable Transactions Regulations (2024 adjusted value)"
         source_type: authority_announcement
         verified_via:
-          - "https://www.canada.ca/en/competition-bureau/news/2026/03/pre-merger-competition-bureau-notification-threshold-to-remain-at-93m-in-2026.html"
+          - "https://www.canada.ca/errors/404.html"
         note: "Assets in Canada of the target. VERIFY 2024 value."
 
 scope:
@@ -184,6 +184,56 @@ scope:
     s. 92 (substantive merger review). Below-threshold deals can still be
     challenged under s. 92 within one year of closing (extended to 3 years for
     certain transactions by Bill C-59, 2024 amendments).
+
+minority_thresholds:
+  applies: true
+  standard: "percentage_based"
+  note: >
+    Canada's Competition Act Part IX sets explicit share-crossing thresholds for both
+    minority and majority acquisitions. The initial minority threshold differs between
+    public (listed) and private companies. Crossing each threshold is a separate
+    notifiable event if the size-of-parties (combined CAD 400m revenues or assets in
+    Canada) and size-of-target (CAD 93m in 2024, adjusted annually) tests are also met.
+    Bill C-59 (June 2024) enhanced gun-jumping penalties but did not alter the
+    20%/35%/50% thresholds. Where the acquirer already holds above the minority
+    threshold, only the 50% crossing triggers a fresh notification.
+  rules:
+    - rule_id: "ca_minority_public"
+      relationship_type: "any"
+      pct_threshold: 20.0
+      operator: ">="
+      rights_required: null
+      source: "Competition Act, R.S.C. 1985, c. C-34, s. 110(3)(a)"
+      source_type: "primary_legislation"
+      source_url: "https://laws-lois.justice.gc.ca/eng/acts/C-34/page-21.html"
+      note: >
+        Acquisition resulting in the acquirer holding 20% or more of the voting shares
+        of a public corporation (listed on a Canadian or foreign stock exchange) is
+        notifiable if size-of-parties and size-of-target tests are met.
+    - rule_id: "ca_minority_private"
+      relationship_type: "any"
+      pct_threshold: 35.0
+      operator: ">="
+      rights_required: null
+      source: "Competition Act, R.S.C. 1985, c. C-34, s. 110(3)(b)"
+      source_type: "primary_legislation"
+      source_url: "https://laws-lois.justice.gc.ca/eng/acts/C-34/page-21.html"
+      note: >
+        Acquisition resulting in the acquirer holding 35% or more of the voting shares
+        of a private corporation (not listed on any stock exchange) is notifiable if
+        size-of-parties and size-of-target tests are met.
+    - rule_id: "ca_majority"
+      relationship_type: "any"
+      pct_threshold: 50.0
+      operator: ">"
+      rights_required: null
+      source: "Competition Act, R.S.C. 1985, c. C-34, s. 110(3)(c)"
+      source_type: "primary_legislation"
+      source_url: "https://laws-lois.justice.gc.ca/eng/acts/C-34/page-21.html"
+      note: >
+        Crossing 50% of voting shares is separately notifiable even if the prior
+        minority threshold was already notified. Same size-of-parties and
+        size-of-target tests apply.
 
 gun_jumping:
   automatic_void: false
@@ -285,3 +335,20 @@ notes:
     however, the Investment Canada Act applies separately to foreign acquisitions
     of Canadian businesses above certain asset thresholds and in sensitive sectors
     (including cultural, national security).
+
+practitioner_notes:
+  - title: "Guide to Canada's Merger Notification Rules"
+    firm: "Osler, Hoskin & Harcourt LLP"
+    url: "https://www.osler.com/notificationguide/"
+    date: "2025"
+    summary: "Interactive online guide to mandatory pre-closing notification under Canada's Competition Act, covering the C$400m party-size and C$93m transaction-size thresholds, eight exemptions, two filing pathways (notification vs. ARC), review timelines, and current filing fees (C$88,690 as of April 2025)."
+  - title: "Seizing Control: Amendments to Canada's Merger Control Regime"
+    firm: "McCarthy Tétrault LLP"
+    url: "https://www.mccarthy.ca/en/insights/publications/seizing-control-amendments-canadas-merger-control-regime"
+    date: "2024"
+    summary: "Detailed analysis of the 2024 Competition Act reforms (Bills C-56 and C-59), covering expanded notifiable transactions (including import sales in revenue calculations), elimination of the efficiencies defence, new structural presumptions based on market share, labour market effects, and extended Bureau limitation periods."
+  - title: "Canada — Merger Control Laws and Regulations 2026"
+    firm: "ICLG"
+    url: "https://iclg.com/practice-areas/merger-control-laws-and-regulations/canada"
+    date: "2026"
+    summary: "Comprehensive country chapter on Canada's Competition Act merger regime, detailing the three-tier jurisdictional thresholds, the Competition Bureau's substantive SLC test, 30-day waiting period, Supplementary Information Request process, and the 2024 legislative changes including the new anticompetitive presumption."

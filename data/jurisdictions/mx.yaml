@@ -114,6 +114,38 @@ scope:
     Dual notification may be required for telecom/broadcast acquisitions.
 
 # ── Gun-jumping / standstill ──────────────────────────────────────────────────
+
+minority_thresholds:
+  applies: true
+  standard: "any_acquisition"
+  note: >
+    Mexico does not carve out minority acquisitions from merger control under the
+    Federal Antitrust Law (LFCE), now enforced by the Comisión Nacional Antimonopolio
+    (CNA) following the July 2025 reform. Any acquisition of shares, assets, or rights
+    meeting the monetary value threshold (~USD 95.9m as of July 2025, set as multiples
+    of the UMA) requires prior notification regardless of the percentage of capital
+    acquired. The sole meaningful minority exemption applies to acquisitions in publicly
+    listed companies where: (a) the resulting stake is below 10% of issued capital; AND
+    (b) the acquirer obtains no board appointment rights, no 10%+ voting rights, and no
+    ability to directly or indirectly influence administration, strategy, or key policies.
+    Both conditions must be satisfied simultaneously — a board seat right at even 8%
+    destroys the exemption.
+  rules:
+    - rule_id: "mx_minority_listed_exception"
+      relationship_type: "any"
+      pct_threshold: 10.0
+      operator: ">="
+      rights_required: null
+      source: "LFCE Article 86, paragraph 3 (as amended July 2025)"
+      source_type: "primary_legislation"
+      source_url: "https://www.dof.gob.mx/"
+      note: >
+        Below 10% of issued capital of a listed company AND no influence rights =
+        exempt from notification. Above 10%, or below 10% with any governance rights
+        (board appointment, 10%+ voting, influence over strategy), the full Article 86
+        monetary threshold test applies. The exemption is narrow and must be construed
+        strictly. For unlisted companies, no percentage-based exemption exists.
+
 gun_jumping:
   automatic_void: true
   voidable: true
@@ -296,3 +328,20 @@ notes:
     Sector-specific rules: telecommunications and broadcasting transactions are reviewed
     concurrently by the IFT (Instituto Federal de Telecomunicaciones), which retains
     its sector-specific merger control jurisdiction separate from the CNA.
+
+practitioner_notes:
+  - title: "Amendments to the Mexican Competition Law: Key Changes to Merger Control"
+    firm: "Greenberg Traurig LLP"
+    url: "https://www.gtlaw.com/en/insights/2025/7/cambios-en-materia-reformas-a-la-ley-federal-de-competencia-economica"
+    date: "2025"
+    summary: "Covers the July 2025 Federal Economic Competition Law reform that abolished COFECE and created the National Antitrust Commission (CNA), lowered merger notification thresholds to MXN 1.81bn, reduced the review period to 30 business days, and extended the statute of limitations for uninvestigated mergers to three years."
+  - title: "New Competition Legal Framework in Mexico: What You Need to Know"
+    firm: "Norton Rose Fulbright"
+    url: "https://www.nortonrosefulbright.com/en-419/knowledge/publications/890d857b/new-competition-legal-framework-in-mexico-what-you-need-to-know"
+    date: "2025"
+    summary: "Explains the full scope of Mexico's July 2025 competition reform, including the CNA's expanded jurisdiction over all sectors (previously split between COFECE and IFT), doubled cartel penalties (up to 20% of annual revenue), modified state-owned enterprise exemptions, and transitory provisions governing the transition from COFECE and IFT."
+  - title: "Mexico — Merger Control Laws and Regulations 2026"
+    firm: "ICLG"
+    url: "https://iclg.com/practice-areas/merger-control-laws-and-regulations/mexico"
+    date: "2026"
+    summary: "Comprehensive country chapter covering the CNA's merger review powers, current jurisdictional thresholds, the mandatory suspensory regime, 30-business-day statutory review period, substantive assessment framework, and sector-specific considerations following the 2025 institutional overhaul."

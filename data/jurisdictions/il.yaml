@@ -273,3 +273,85 @@ source_passages:
       - il_combined_domestic
       - il_each_party_domestic
       - il_monopoly_share
+
+# ── Minority acquisition thresholds ───────────────────────────────────────────
+minority_thresholds:
+  applies: true
+  standard: "percentage_based"
+  note: >
+    Israeli merger control under the Economic Competition Law 5748-1988 (formerly
+    Restrictive Trade Practices Law, as amended most recently in 2022) defines a
+    "merger" (mizug) in Section 1 to include not only a full merger or acquisition of
+    majority control but also the acquisition of "control" over a company. "Control"
+    (section 1 of the Law) is defined to mean the ability to direct the activities of
+    a company, and is presumed where a person holds MORE THAN 50% of the voting rights,
+    the right to appoint MORE THAN 50% of directors, or has veto rights over resolutions
+    of the general meeting or the board. A sub-50% minority stake generally does not
+    constitute a "merger" requiring notification unless the acquirer thereby obtains
+    "control" as defined. However, acquisitions that result in a change of control —
+    even if the acquirer does not reach a majority — can be notifiable where the acquirer
+    thereby acquires the ability to direct the company's activities. The Israel
+    Competition Authority (ICA — Rashut HaTacharut) has taken the position that
+    acquisition of effective control through a minority stake triggers notification.
+    Verify current ICA guidance as the 2022 amendments to the Economic Competition Law
+    may have refined the control definition and merger notification scope.
+  rules:
+    - rule_id: "il_minority_control_presumption_50pct"
+      relationship_type: "any"
+      pct_threshold: 50
+      operator: ">"
+      rights_required: null
+      source: "Section 1 (definition of 'control'), Economic Competition Law 5748-1988, as amended"
+      source_type: "primary_legislation"
+      source_url: "https://www.gov.il/en/departments/israel_competition_authority"
+      note: >
+        Control (and thus a notifiable merger) is presumed where the acquirer holds
+        MORE THAN 50% of voting rights or the right to appoint more than 50% of
+        directors. This is a statutory rebuttable presumption of control. A stake
+        of 50% or below does not trigger the presumption but may still constitute
+        control based on a factual analysis.
+    - rule_id: "il_minority_effective_control"
+      relationship_type: "any"
+      pct_threshold: null
+      operator: ">="
+      rights_required: "veto_strategic"
+      source: "Section 1 (definition of 'control') and Section 17, Economic Competition Law 5748-1988, as amended"
+      source_type: "primary_legislation"
+      source_url: "https://www.gov.il/en/departments/israel_competition_authority"
+      note: >
+        Acquisition of the "ability to direct the activities" of a company through any
+        means — including veto rights, contractual rights, or de facto control — may
+        constitute "control" and therefore a merger requiring ICA pre-approval, even
+        below 50% voting rights. The ICA applies a factual control analysis in such cases.
+
+# Practitioner nuance:
+# - Israel's control definition creates a >50% presumption threshold, distinguishing it
+#   from the EU's "decisive influence" standard — the Israeli bar is explicitly set at
+#   above-50% for the presumption, but factual effective control below 50% can still apply.
+# - A minority stake below 50% that confers the ability to direct business activities
+#   (e.g., through a shareholder agreement granting veto over all material decisions)
+#   may trigger notification; ICA has reviewed such structures.
+# - The 2022 amendments to the Economic Competition Law modernised the framework;
+#   verify current ICA administrative guidance for any new bright-line tests below 50%.
+# - Israel's merger control is separate from bank shareholding restrictions under the
+#   Banking Law and media concentration rules, which impose independent percentage caps.
+# - The ICA has applied the monopoly-share trigger (resulting combined share constituting
+#   a monopoly ≥50%) independently of the control test, so transactions creating a
+#   monopoly position trigger notification even absent decisive influence.
+
+practitioner_notes:
+  - title: "Israel — Merger Control (Legal 500 Country Comparative Guide)"
+    firm: "Legal 500"
+    url: "https://www.legal500.com/guides/wp-content/uploads/sites/1/2025/10/Israel-Merger-Control.pdf"
+    date: "2025"
+    summary: "Legal 500 country comparative guide covering Israeli merger control under ICA jurisdiction, notification thresholds (market-share and turnover triggers), 30-day review period, and the ICA's approach to cross-border transactions."
+  - title: "Merger Control Laws and Regulations 2025 — Israel"
+    firm: "Global Legal Insights"
+    url: "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/israel/"
+    date: "2025"
+    summary: "GLI practitioner chapter on Israeli merger control covering ICA jurisdiction, the market-share based monopoly trigger (≥50%), turnover thresholds, pre-filing engagement practice, and ICA's substantive assessment approach."
+  - title: "Merger Control 2025 — Israel"
+    firm: "Chambers and Partners"
+    url: "https://practiceguides.chambers.com/practice-guides/merger-control-2025/israel"
+    date: "2025"
+    summary: "Chambers guide to Israeli merger control with coverage of ICA jurisdictional triggers, notification procedure, the ICA's active enforcement record, and digital economy considerations in merger review."

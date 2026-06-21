@@ -5,8 +5,8 @@ last_verified: "2026-06-13"
 authority:
   name: "Office of Competition and Consumer Protection (Urzad Ochrony Konkurencji i Konsumentow)"
   abbreviation: UOKiK
-  url: https://uokik.gov.pl/en/
-  filing_url: https://uokik.gov.pl/en/
+  url: https://uokik.gov.pl/public/en
+  filing_url: https://uokik.gov.pl/public/en
 
 regime:
   mandatory: true
@@ -15,13 +15,13 @@ regime:
 
 legal_basis:
   - citation: "Act of 16 February 2007 on Competition and Consumer Protection (ustawa o ochronie konkurencji i konsumentow), Articles 13-18a, as amended"
-    url: "https://uokik.gov.pl/en/"
+    url: "https://uokik.gov.pl/public/en"
     note: >
       Primary legislation. The EUR 1bn worldwide / EUR 50m Polish turnover thresholds
       are set directly in Article 13(1) of the Act. These are statutory values and
       do not require separate implementing instruments.
   - citation: "UOKiK Guidelines on the assessment of concentrations (revised October 2024, updated April 2025)"
-    url: "https://uokik.gov.pl/en/"
+    url: "https://uokik.gov.pl/public/en"
     note: >
       Updated guidelines effective October 2024 (further updated April 2025). Introduced
       clarifications on the local effects test and a de facto safe harbour for extraterritorial
@@ -67,7 +67,7 @@ fees:
     (payable in PLN at the NBP exchange rate on the filing date)
   source: "Act on Competition and Consumer Protection, Article 94(1); Regulation on merger control fees"
   source_type: primary_legislation
-  source_url: "https://uokik.gov.pl/en/"
+  source_url: "https://uokik.gov.pl/public/en"
   annual_adjustment: false
 
 threshold_tests:
@@ -86,7 +86,7 @@ threshold_tests:
   - test_id: pl_worldwide
     description: "Worldwide turnover test — combined worldwide > EUR 1bn (Article 13(1)(1))"
     legal_basis: "Act on Competition and Consumer Protection, Article 13(1)(1)"
-    source_url: "https://uokik.gov.pl/en/"
+    source_url: "https://uokik.gov.pl/public/en"
     note: >
       Filing required if the combined worldwide turnover of all participating undertakings
       in the preceding financial year exceeded EUR 1bn. This test captures large international
@@ -126,7 +126,7 @@ threshold_tests:
   - test_id: pl_domestic
     description: "Polish turnover test — combined Polish turnover > EUR 50m (Article 13(1)(2))"
     legal_basis: "Act on Competition and Consumer Protection, Article 13(1)(2)"
-    source_url: "https://uokik.gov.pl/en/"
+    source_url: "https://uokik.gov.pl/public/en"
     note: >
       Filing required if the combined Polish turnover of all participating undertakings
       in the preceding financial year exceeded EUR 50m. This test captures Poland-
@@ -195,7 +195,7 @@ scope:
     functions of an autonomous economic entity. Control constitutes the ability to
     exercise a decisive influence over the management of an undertaking.
   concentration_definition_source: "Article 13(1), Act on Competition and Consumer Protection of 16 February 2007"
-  concentration_definition_url: "https://uokik.gov.pl/en/"
+  concentration_definition_url: "https://uokik.gov.pl/public/en"
   trigger_events:
     - merger
     - share_acquisition
@@ -214,7 +214,7 @@ scope:
     thresholds are met. If EU Community dimension thresholds are satisfied, EC has
     exclusive jurisdiction and Polish merger control does not apply.
   substantive_test: "siec"
-  substantive_test_url: "https://uokik.gov.pl/en/"
+  substantive_test_url: "https://uokik.gov.pl/public/en"
   substantive_test_note: >
     Poland adopted the SIEC standard in the 2015 amendment to the Act on Competition
     and Consumer Protection. Article 20(2) provides that UOKiK shall prohibit a
@@ -239,7 +239,7 @@ gun_jumping:
   per_day_fine: 10000.0
   criminal_sanctions: false
   legal_basis: "Articles 97, 106 Act on Competition and Consumer Protection of 16 February 2007"
-  legal_basis_url: "https://uokik.gov.pl/en/"
+  legal_basis_url: "https://uokik.gov.pl/public/en"
   note: >
     Article 97(1) imposes the standstill obligation: undertakings intending to
     concentrate must notify UOKiK and must not implement the concentration before
@@ -258,7 +258,7 @@ fdi_screening:
   applicable: true
   regime_name: "Act on Control of Certain Investments (Ustawa o kontroli niektorych inwestycji)"
   authority: "Minister responsible for state assets / Council of Ministers"
-  url: "https://www.gov.pl/web/aktywa-panstwowe/kontrola-inwestycji"
+  url: "https://www.gov.pl/"
   sectors_covered:
     - energy
     - oil_and_gas
@@ -286,7 +286,7 @@ source_passages:
   - passage_id: pl_act_art13_1
     document_title: "Act of 16 February 2007 on Competition and Consumer Protection"
     article_reference: "Article 13(1)"
-    document_url: "https://uokik.gov.pl/en/"
+    document_url: "https://uokik.gov.pl/public/en"
     source_type: primary_legislation
     quoted_text: >
       "Article 13. 1. The obligation to notify the President of the Office of the
@@ -304,7 +304,7 @@ source_passages:
   - passage_id: pl_act_art14_1
     document_title: "Act of 16 February 2007 on Competition and Consumer Protection"
     article_reference: "Article 14(1)"
-    document_url: "https://uokik.gov.pl/en/"
+    document_url: "https://uokik.gov.pl/public/en"
     source_type: primary_legislation
     quoted_text: >
       "Article 14. 1. The obligation referred to in Article 13 shall not apply to a
@@ -313,3 +313,57 @@ source_passages:
       EUR 10,000,000 in either of the two financial years preceding the year of
       the notification."
     supports_conditions: []
+
+# ── Minority acquisition thresholds ───────────────────────────────────────────
+minority_thresholds:
+  applies: false
+  standard: "control_based"
+  note: >
+    Polish merger control (Act of 16 February 2007, Articles 13–14) is triggered by
+    the acquisition of "decisive influence" (decydujacy wplyw) over the management of
+    an undertaking. There is no standalone minority-stake notification trigger below
+    the decisive-influence threshold. Acquisition of 25%+ of shares/voting rights is
+    a common indicator that may evidence decisive influence in context, but it is not
+    an automatic threshold. Purely passive minority investments that do not confer any
+    influence over competitive behaviour are outside scope. The Act contains no
+    explicit sub-control percentage thresholds analogous to Germany's "competitively
+    significant influence" (§37(1)(4) GWB) test.
+  rules:
+    - rule_id: "pl_minority_decisive_influence"
+      relationship_type: "any"
+      pct_threshold: null
+      operator: ">="
+      rights_required: null
+      source: "Article 13(1)(2), Act of 16 February 2007 on Competition and Consumer Protection"
+      source_type: "primary_legislation"
+      source_url: "https://uokik.gov.pl/public/en"
+      note: >
+        A concentration is notifiable where one or more undertakings acquire "direct
+        or indirect control over the whole or part of one or more other undertakings."
+        Control = ability to exercise decisive influence. No separate sub-control
+        minority threshold exists; the test is qualitative, not percentage-based.
+
+# Practitioner nuance:
+# - UOKiK guidelines note 25%+ as an indicative marker, but the authority examines
+#   board appointment rights, veto rights, and shareholder agreement terms holistically.
+# - A minority stake accompanied by a shareholders' agreement granting strategic
+#   veto rights may cross the decisive-influence threshold and trigger notification.
+# - Below decisive influence, no mandatory notification applies even if a stake
+#   exceeds 25%. UOKiK has not (as of 2025) proposed a German-style sub-control test.
+
+practitioner_notes:
+  - title: "Merger Control Laws and Regulations 2025 — Poland"
+    firm: "Global Legal Insights"
+    url: "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/poland/"
+    date: "2025"
+    summary: "GLI chapter on Polish merger control covering UOKiK jurisdiction, the combined worldwide and Polish turnover thresholds, simplified procedure, Phase I (one month) review, and UOKiK's active enforcement record."
+  - title: "Poland Competition Law — Country Note 2025"
+    firm: "CELIS Institute"
+    url: "https://www.celis.institute/wp-content/uploads/2025/09/Country_Note_Poland_2025.pdf"
+    date: "2025"
+    summary: "CELIS academic-practitioner country note on Polish competition law, including merger control procedure, UOKiK enforcement statistics, and analysis of recent UOKiK decisions in 2024–2025."
+  - title: "Merger Control 2025 — Poland"
+    firm: "Chambers and Partners"
+    url: "https://practiceguides.chambers.com/practice-guides/merger-control-2025/poland"
+    date: "2025"
+    summary: "Chambers practice guide on Polish merger control with coverage of filing requirements, UOKiK review timelines, substantive assessment approach, and the interplay of Polish and EU-level merger review."

@@ -202,6 +202,26 @@ scope:
     transaction. Enforcement of the SLC standard is via federal court action under
     Clayton Act § 7 and FTC Act § 5.
 
+minority_thresholds:
+  applies: true
+  standard: "any_acquisition"
+  note: >
+    The HSR Act is transaction-value driven and does not create a separate "minority
+    acquisition" category. Any acquisition of voting securities is potentially
+    notifiable if the size-of-transaction and size-of-person tests are met.
+    Two passive exemptions carve out most purely financial minority investments:
+    (1) 16 C.F.R. § 802.9 — the general passive exemption exempts acquisitions
+    resulting in ≤10% of outstanding voting securities held 'solely for investment'
+    (no intent to participate in business decisions). (2) 16 C.F.R. § 802.64 —
+    institutional investors may hold up to 15% in the ordinary course of business
+    solely for investment. Both exemptions are forfeited upon activist engagement
+    (director nomination, strategy input, proxy contest). Once forfeited, even a
+    single additional share can require filing. There is no investment-only exemption
+    for stakes over 10% (general) or 15% (institutional). Foreign minority investors
+    should also assess CFIUS separately — CFIUS applies to TID US business investments
+    at 10%+ independently of HSR.
+  rules: []
+
 gun_jumping:
   automatic_void: false
   voidable: true
@@ -296,3 +316,20 @@ notes:
   - >
     Minority stake acquisitions may be exempt under the investment-only exemption
     (16 C.F.R. § 802.9) or the institutional investor exemption (16 C.F.R. § 802.64).
+
+practitioner_notes:
+  - title: "Final HSR Rules: Major Changes Ahead for Premerger Filings"
+    firm: "Skadden, Arps, Slate, Meagher & Flom LLP"
+    url: "https://www.skadden.com/insights/publications/2024/10/final-hsr-rules-major-changes-ahead-for-premerger-filings"
+    date: "2024"
+    summary: "Analyses the FTC's October 2024 overhaul of the HSR notification form — the most sweeping changes in 48 years — which dramatically expanded information and document requirements, transformed filings from narrow technical notices into substantive submissions, and added two to four weeks to typical deal timelines."
+  - title: "UPDATE: Changes to U.S. Premerger (HSR) Rules to Take Effect on February 10, 2025"
+    firm: "Cleary Gottlieb Steen & Hamilton LLP"
+    url: "https://www.clearygottlieb.com/news-and-insights/publication-listing/update-changes-to-us-premerger-hsr-rules-to-take-effect-on-february-10-2025"
+    date: "2025"
+    summary: "Practical guide to the February 2025 new HSR form requirements, detailing extensive new obligations for transactions with competitive overlaps or vertical relationships, including the new 'Supervisory Deal Team Lead' designation, customer data disclosure, foreign government subsidy reporting, and English translation requirements for foreign-language documents."
+  - title: "United States — Merger Control Laws and Regulations 2026"
+    firm: "ICLG"
+    url: "https://iclg.com/practice-areas/merger-control-laws-and-regulations/usa"
+    date: "2026"
+    summary: "Comprehensive country chapter on US merger control under the HSR Act and Clayton Act, covering FTC/DOJ jurisdiction, annually adjusted size-of-transaction and size-of-person thresholds, the 30-day waiting period, Second Request procedures, substantive SLC standard, remedies, and the new HSR form requirements introduced in 2025."

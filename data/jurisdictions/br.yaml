@@ -75,7 +75,7 @@ threshold_tests:
       other party exceeds BRL 75m. The thresholds apply to Brazilian gross revenues
       or billings in Brazil (faturamento bruto no Brasil ou volume de negócios no Brasil)
       in the fiscal year prior to the transaction. These figures were set in 2012 and
-      as of last_verified have not been officially updated — verify current ordinance.
+      as of the last verified date, have not been officially updated — verify current ordinance.
     annual_adjustment: false
     effective_date: "2012-05-30"
 
@@ -165,6 +165,49 @@ scope:
     parties are incorporated, provided that at least one party meets the Brazilian
     revenue threshold. Foreign-to-foreign deals with Brazilian revenue are caught.
 
+minority_thresholds:
+  applies: true
+  standard: "percentage_based"
+  note: >
+    Brazil's minority stake rules are set by CADE Resolution No. 33/2022, which
+    operationalises Article 90 of Lei No. 12.529/2011. The regime uses a bifurcated
+    percentage threshold depending on whether the acquirer and target are in a
+    horizontal (competitor) or vertical (supply chain) relationship, or not. Thresholds
+    are cumulative — prior holdings count toward the trigger. The standard BRL 750m +
+    BRL 75m monetary thresholds (Article 88, Lei 12.529/2011) must also be met.
+    There is no investment-only exemption analogous to the US HSR 802.9 rule.
+    Brazil is the key Latin American jurisdiction where even small competitor stakes
+    trigger mandatory filing obligations.
+  rules:
+    - rule_id: "br_minority_horizontal_vertical"
+      relationship_type: "horizontal"
+      pct_threshold: 5.0
+      operator: ">="
+      rights_required: null
+      source: "CADE Resolution No. 33/2022, Article 9; Lei No. 12.529/2011, Article 90"
+      source_type: "official_guidance"
+      source_url: "https://www.gov.br/cade/en"
+      note: >
+        Acquisition of 5% or more of the total capital or voting shares is notifiable
+        where the acquirer group and the target are in a horizontal (competing) or
+        vertical (supply chain) relationship. Cumulative holdings are aggregated across
+        related transactions. The 5% threshold reflects CADE's view that even small
+        competitor stakes raise coordination and transparency concerns.
+    - rule_id: "br_minority_non_horizontal"
+      relationship_type: "non_horizontal"
+      pct_threshold: 20.0
+      operator: ">="
+      rights_required: null
+      source: "CADE Resolution No. 33/2022, Article 9; Lei No. 12.529/2011, Article 90"
+      source_type: "official_guidance"
+      source_url: "https://www.gov.br/cade/en"
+      note: >
+        Acquisition of 20% or more of the total capital or voting shares is notifiable
+        where there is no horizontal or vertical relationship between the acquirer group
+        and the target (conglomerate / unrelated acquisition). This mirrors the economic
+        group definition under which a 20% holder is included in the economic group for
+        Brazilian turnover calculation purposes.
+
 # ── Gun-jumping / standstill obligation ───────────────────────────────────────
 gun_jumping:
   automatic_void: true
@@ -222,3 +265,20 @@ source_passages:
     supports_conditions:
       - br_large_party
       - br_smaller_party
+
+practitioner_notes:
+  - title: "CADE's Highlights and Key Developments in Brazil"
+    firm: "Demarest Advogados"
+    url: "https://www.demarest.com.br/en/cades-highlights-and-key-developments-in-brazil/"
+    date: "2025"
+    summary: "Annual eBook reviewing CADE's merger enforcement activity, leadership transitions, and regulatory developments including digital platform regulation and competitor cooperation guidelines. A practical overview for practitioners assessing CADE's current enforcement priorities."
+  - title: "CADE Updates FAQ List for Merger Filing Criteria in Brazil"
+    firm: "Mattos Filho"
+    url: "https://www.mattosfilho.com.br/en/unico/merger-filing-criteria-brazil/"
+    date: "2025"
+    summary: "Summarises CADE's April 2025 update to its FAQ on merger filing criteria, clarifying rules on revenue calculation, economic group definition, cross-border transaction nexus, and eligibility for fast-track proceedings. Essential reading before assessing whether a Brazilian filing is required."
+  - title: "Brazil — Merger Control Laws and Regulations 2025"
+    firm: "ICLG"
+    url: "https://iclg.com/practice-areas/merger-control-laws-and-regulations/brazil"
+    date: "2025"
+    summary: "Comprehensive country chapter covering CADE's authority and composition, jurisdictional thresholds (BRL 750m/75m), notification procedures, substantive assessment, remedies, and the August 2024 effects-doctrine update for foreign-to-foreign transactions."

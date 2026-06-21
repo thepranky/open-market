@@ -5,8 +5,8 @@ last_verified: "2026-06-14"
 authority:
   name: Authority for Consumers and Markets (Autoriteit Consument & Markt)
   abbreviation: ACM
-  url: https://www.acm.nl/en/markets/antitrust/mergers
-  filing_url: https://www.acm.nl/en/markets/antitrust/mergers/merger-notification
+  url: https://www.acm.nl/en/competition-and-markets
+  filing_url: https://www.acm.nl/en/competition-and-markets
 
 regime:
   mandatory: true
@@ -111,6 +111,40 @@ scope:
     has Dutch turnover ≥ EUR 30m. This is not yet in force as of this filing date.
 
 # ── Gun-jumping / standstill ──────────────────────────────────────────────────
+
+minority_thresholds:
+  applies: false
+  standard: "control_based"
+  note: >
+    The Netherlands applies a pure decisive-influence / control standard under Articles 27
+    and 29 of the Mededingingswet (Mw). Minority shareholdings below 50% are only notifiable
+    if they lead to a change of control, defined as the ability to exercise decisive influence
+    on a lasting basis over the strategic commercial decisions of the target. The ACM
+    interprets this in line with the EU Merger Regulation and the EC's Consolidated
+    Jurisdictional Notice. Non-controlling minority interests are not caught. As of 2026,
+    draft legislation to grant the ACM call-in powers for below-threshold transactions is
+    advancing in Dutch Parliament — this is a general tool, not minority-specific, and is
+    not yet in force. Healthcare sector transactions also require parallel NZa (Netherlands
+    Healthcare Authority) notification under the WMG, with lower thresholds. The EU
+    one-stop-shop applies: no Dutch filing required if EUMR thresholds are met.
+  rules:
+    - rule_id: "nl_minority_decisive_influence"
+      relationship_type: "any"
+      pct_threshold: null
+      operator: ">="
+      rights_required: "veto_strategic"
+      source: "Mededingingswet Article 27 (concentration definition); Article 29 (notification)"
+      source_type: "primary_legislation"
+      source_url: "https://wetten.overheid.nl/BWBR0008691"
+      note: >
+        A minority shareholding triggers notification only if it confers 'decisive influence'
+        — the ability to determine strategic decisions (not day-to-day management) of the
+        target. This includes negative control via strategic veto rights (over business
+        plan, budget, major investments, senior management appointments), de facto sole
+        control in dispersed-shareholding structures, and joint control through contractual
+        arrangements. No fixed percentage threshold. Dutch thresholds (Art. 29 Mw): combined
+        worldwide >EUR 150m AND each of ≥2 parties Dutch domestic >EUR 30m.
+
 gun_jumping:
   automatic_void: false
   voidable: true
@@ -131,7 +165,7 @@ fdi_screening:
   applicable: true
   regime_name: "Wet veiligheidstoets investeringen, fusies en overnames (Wet vifo) — Investment Screening Act"
   authority: "Bureau Toetsing Investeringen (BTI), Ministry of Economic Affairs and Climate Policy"
-  url: "https://www.bureautoesinginvesteringen.nl"
+  url: "https://english.rvo.nl/"
   legislation_url: "https://wetten.overheid.nl/BWBR0045744"
 
   sectors_covered:
@@ -178,8 +212,8 @@ threshold_tests:
         source_type: primary_legislation
         source_url: "https://wetten.overheid.nl/BWBR0008691"
         verified_via:
-          - "https://www.acm.nl/en/markets/antitrust/mergers"
-          - "https://iclg.com/practice-areas/merger-control"
+          - "https://www.acm.nl/en/competition-and-markets"
+          - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/-laws-and-regulations/"
         note: "EUR 150m combined worldwide turnover of all merging parties in last financial year."
 
       - condition_id: nl_each_party_dutch
@@ -193,7 +227,7 @@ threshold_tests:
         source_type: primary_legislation
         source_url: "https://wetten.overheid.nl/BWBR0008691"
         verified_via:
-          - "https://www.acm.nl/en/markets/antitrust/mergers"
+          - "https://www.acm.nl/en/competition-and-markets"
         note: "Each of at least two parties must individually have Dutch turnover > EUR 30m."
 
 notes:
@@ -232,3 +266,20 @@ source_passages:
     supports_conditions:
       - nl_combined_worldwide
       - nl_each_party_dutch
+
+practitioner_notes:
+  - title: "Merger Control Laws and Regulations 2025 — Netherlands"
+    firm: "Global Legal Insights"
+    url: "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/netherlands/"
+    date: "2025"
+    summary: "GLI chapter on Dutch merger control covering ACM jurisdiction, the combined worldwide and Dutch turnover thresholds, simplified procedure, Phase I/II review timelines, and recent ACM enforcement trends."
+  - title: "Merger Control 2025 — Netherlands"
+    firm: "Chambers and Partners"
+    url: "https://practiceguides.chambers.com/practice-guides/merger-control-2025/netherlands"
+    date: "2025"
+    summary: "Chambers practice guide on Netherlands merger control with coverage of ACM jurisdictional thresholds, substantive assessment under the SIC test, and the interplay with EU one-stop-shop jurisdiction."
+  - title: "Global Merger Control Trends and Outlook 2025–2026"
+    firm: "White & Case LLP"
+    url: "https://www.whitecase.com/insight-alert/global-merger-control-trends-and-outlook-2025-2026"
+    date: "2025"
+    summary: "White & Case global survey providing comparative analysis of merger control regimes including the Netherlands, covering threshold adjustments, procedural reforms, and cross-border coordination."

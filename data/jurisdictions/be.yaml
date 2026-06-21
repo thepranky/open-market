@@ -6,7 +6,7 @@ authority:
   name: Belgian Competition Authority (Autorité belge de la Concurrence / Belgische Mededingingsautoriteit)
   abbreviation: BCA
   url: https://www.belgiancompetition.be/en/mergers
-  filing_url: https://www.belgiancompetition.be/en/
+  filing_url: https://www.belgiancompetition.be/en
 
 regime:
   mandatory: true
@@ -15,7 +15,7 @@ regime:
 
 legal_basis:
   - citation: "Code of Economic Law (Code de droit économique / Wetboek van Economisch Recht), Book IV (Competition), Articles IV.7–IV.77, as amended by the Act of 2 May 2019"
-    url: "https://www.belgiancompetition.be/en/"
+    url: "https://www.belgiancompetition.be/en"
     note: >
       Belgian merger control is codified in Book IV of the Code of Economic Law (CEL).
       The Act of 2 May 2019 (in force 12 June 2019) introduced significant procedural
@@ -25,7 +25,7 @@ legal_basis:
       Article IV.10 imposes the standstill obligation; Articles IV.63–IV.69 govern
       Phase I and Phase II procedures.
   - citation: "Royal Decree of 22 June 2019 implementing Book IV CEL"
-    url: "https://www.belgiancompetition.be/en/"
+    url: "https://www.belgiancompetition.be/en"
     source_type: official_guidance
     note: "Implementing decree with procedural rules and notification forms."
 
@@ -71,7 +71,7 @@ fees:
     (Fees updated periodically; confirm at belgiancompetition.be before filing.)
   source: "Royal Decree implementing Book IV CEL, fee schedule"
   source_type: official_guidance
-  source_url: "https://www.belgiancompetition.be/en/"
+  source_url: "https://www.belgiancompetition.be/en"
   annual_adjustment: false
 
 # ── Scope / trigger events ────────────────────────────────────────────────────
@@ -83,7 +83,7 @@ scope:
     or parts thereof; or (c) the creation of a full-function joint venture (Art. IV.7 CEL,
     aligned with Art. 3 EU Merger Regulation).
   concentration_definition_source: "Article IV.7, Code of Economic Law (Book IV)"
-  concentration_definition_url: "https://www.belgiancompetition.be/en/"
+  concentration_definition_url: "https://www.belgiancompetition.be/en"
   trigger_events:
     - merger
     - share_acquisition
@@ -102,7 +102,7 @@ scope:
     of at least two parties Belgian > EUR 40m) are satisfied. If EU EUMR thresholds
     are met, the EU one-stop-shop applies and BCA has no jurisdiction.
   substantive_test: "siec"
-  substantive_test_url: "https://www.belgiancompetition.be/en/"
+  substantive_test_url: "https://www.belgiancompetition.be/en"
   substantive_test_note: >
     Belgium applies a hybrid SIEC/dominance test (Art. IV.9 Code of Economic Law, 2019 Act): BCA prohibits a concentration that would significantly impede effective competition in Belgium, in particular by creating or strengthening a dominant position.
   note: >
@@ -113,6 +113,39 @@ scope:
     when one or more parties is a regulated financial institution.
 
 # ── Gun-jumping / standstill ──────────────────────────────────────────────────
+
+minority_thresholds:
+  applies: false
+  standard: "control_based"
+  note: >
+    Belgium applies a decisive-influence / control standard under Article IV.7 of the Code
+    of Economic Law (CEL), Book IV. There are no fixed percentage thresholds for minority
+    shareholdings. Non-controlling minority interests do not trigger notification. The BCA
+    applies a broad contextual analysis: Picanol NV/Tessenderlo Chemie NV (BCA 2013-C/C-01)
+    established that a 27.6% stake can constitute de facto sole control where remaining
+    shares are dispersed among a large number of shareholders. The CEL control definition
+    (Art. IV.6(3)–(4)) encompasses any factual or legal means conferring decisive influence.
+    Financial institutions acquiring for resale are not automatically exempt — assess case-
+    by-case. Belgian thresholds (Art. IV.8 CEL): combined worldwide >EUR 100m AND each of
+    ≥2 parties Belgian domestic >EUR 40m.
+  rules:
+    - rule_id: "be_minority_decisive_influence"
+      relationship_type: "any"
+      pct_threshold: null
+      operator: ">="
+      rights_required: null
+      source: "CEL Article IV.7 (concentration); Art. IV.6(3)–(4) (control definition)"
+      source_type: "primary_legislation"
+      source_url: "https://www.belgiancompetition.be/en/mergers"
+      note: >
+        A minority stake triggers notification if it confers decisive influence — the ability
+        to exercise decisive influence on the activities of an undertaking. Control under
+        Art. IV.6 CEL arises from rights, agreements, or other means (factual or legal)
+        enabling decisive influence over governance, voting, or strategic decisions. De facto
+        sole control can arise from a sub-majority stake in a dispersed shareholding structure
+        (Picanol/Tessenderlo: 27.6% = sole control). Joint control arises through strategic
+        veto rights or voting agreements. No fixed percentage floor.
+
 gun_jumping:
   automatic_void: false
   voidable: true
@@ -120,7 +153,7 @@ gun_jumping:
   per_day_fine: null
   criminal_sanctions: false
   legal_basis: "Articles IV.10(2) and IV.70, Code of Economic Law"
-  legal_basis_url: "https://www.belgiancompetition.be/en/"
+  legal_basis_url: "https://www.belgiancompetition.be/en"
   note: >
     Article IV.10(2) CEL prohibits implementation without BCA clearance. The BCA
     Competition College may impose fines of up to 10% of the parties' combined
@@ -190,7 +223,7 @@ threshold_tests:
         source_type: primary_legislation
         source_url: "https://www.belgiancompetition.be/en/mergers"
         verified_via:
-          - "https://iclg.com/practice-areas/merger-control"
+          - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/-laws-and-regulations/"
           - "https://www.gtlaw.com/en/insights/merger-control-belgium"
         note: "EUR 100m combined worldwide turnover of all parties in last financial year."
 
@@ -205,7 +238,7 @@ threshold_tests:
         source_type: primary_legislation
         source_url: "https://www.belgiancompetition.be/en/mergers"
         verified_via:
-          - "https://iclg.com/practice-areas/merger-control"
+          - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/-laws-and-regulations/"
           - "https://www.lexology.com/library/detail.aspx?g=belgium-merger-control"
         note: >
           EUR 40m Belgian domestic turnover for each of at least two of the parties.
@@ -240,7 +273,7 @@ source_passages:
   - passage_id: be_cel_iv8
     document_title: "Code de droit économique (Code of Economic Law) — Livre IV (Competition)"
     article_reference: "Article IV.8(1)"
-    document_url: "https://www.belgiancompetition.be/en/"
+    document_url: "https://www.belgiancompetition.be/en"
     source_type: primary_legislation
     quoted_text: >
       "Article IV.8. — § 1. Concentrations of undertakings as referred to in Article IV.7
@@ -260,7 +293,7 @@ source_passages:
   - passage_id: be_cel_iv10
     document_title: "Code de droit économique (Code of Economic Law) — Livre IV (Competition)"
     article_reference: "Article IV.10(2)"
-    document_url: "https://www.belgiancompetition.be/en/"
+    document_url: "https://www.belgiancompetition.be/en"
     source_type: primary_legislation
     quoted_text: >
       "Article IV.10. — § 2. A concentration of undertakings subject to the notification
@@ -268,3 +301,20 @@ source_passages:
       declared compatible with the protection of economic competition by the Competition
       College or before the expiry of the period referred to in Article IV.63, § 1."
     supports_conditions: []
+
+practitioner_notes:
+  - title: "Merger Control Laws and Regulations 2025 — Belgium"
+    firm: "Global Legal Insights"
+    url: "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/belgium/"
+    date: "2025"
+    summary: "GLI practitioner chapter on Belgian merger control covering BMA (Belgian Competition Authority) jurisdiction, the combined and individual turnover thresholds, Phase I/II timelines, and recent decisional practice."
+  - title: "Merger Control 2025 — Belgium"
+    firm: "Chambers and Partners"
+    url: "https://practiceguides.chambers.com/practice-guides/merger-control-2025/belgium"
+    date: "2025"
+    summary: "Chambers guide to Belgian merger control with practical coverage of filing requirements, simplified procedure eligibility, substantive SIC test assessment, and the BMA's enforcement approach."
+  - title: "Catch-22 and Other Issues in Merger Control in Europe"
+    firm: "ICLG"
+    url: "https://iclg.com/practice-areas/merger-control-laws-and-regulations/01-catch-22-and-other-issues-in-merger-control-in-europe"
+    date: "2025"
+    summary: "ICLG cross-jurisdictional analysis of key European merger control issues including multi-filing obligations, referral mechanics, and below-threshold call-in powers applicable to Belgium and other EU member states."

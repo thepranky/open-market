@@ -206,6 +206,49 @@ scope:
     orders if the CCCS subsequently finds an SLC. Sector-specific regulators (MAS,
     IMDA, EMA) have separate merger-review powers in regulated industries.
 
+minority_thresholds:
+  applies: true
+  standard: "any_acquisition"
+  note: >
+    Singapore's Competition Act 2004 Section 54 prohibits mergers that substantially
+    lessen competition (SLC) in any Singapore market. The regime is voluntary — no
+    mandatory notification threshold. The CCCS's Merger Guidelines (2022) establish
+    market-share indicators as the primary proxy for whether notification is advisable:
+    (1) post-merger market share ≥40% in any relevant Singapore market; or (2) post-merger
+    market share 20–40% AND three-firm concentration ratio (CR3) ≥70%. These are market-
+    share (not equity-stake) indicators. Minority acquisitions that confer competitive
+    influence — board representation, information rights on competitively sensitive data,
+    veto rights over product/pricing decisions — may trigger Section 54 scrutiny even at
+    small equity percentages. Common ownership concerns (overlapping financial investors
+    across competing portfolio companies) are an emerging focus in CCCS's 2022 guidelines.
+  rules:
+    - rule_id: "sg_minority_slc_general"
+      relationship_type: "any"
+      pct_threshold: null
+      operator: ">="
+      rights_required: null
+      source: "Competition Act 2004 (Cap. 50B), Sec. 54"
+      source_type: "primary_legislation"
+      source_url: "https://www.cccs.gov.sg/anti-competitive-practices/legislation-and-guidelines/competition-act-and-guidelines"
+      note: >
+        Any minority acquisition can trigger Section 54 scrutiny — including purely
+        structural minority stakes — if the CCCS concludes they substantially lessen
+        competition. Parties must self-assess. CCCS can investigate even after closing.
+    - rule_id: "sg_minority_market_share_40pct"
+      relationship_type: "any"
+      pct_threshold: null
+      operator: ">="
+      rights_required: null
+      source: "CCCS Merger Guidelines (2022), para. 3.5"
+      source_type: "official_guidance"
+      source_url: "https://www.cccs.gov.sg/docs/default-source/media-release/2022/cccs-guidelines-on-the-substantive-assessment-of-mergers-2022.pdf"
+      note: >
+        CCCS advises notification where the post-merger combined entity will have a market
+        share of ≥40% in a relevant Singapore market, or 20–40% with CR3 ≥70%. These
+        thresholds apply to any acquisition including minority stakes that confer effective
+        market influence. Note: these are market-share indicators, not equity-stake
+        percentages.
+
 # ── Gun-jumping / standstill obligation ───────────────────────────────────────
 gun_jumping:
   automatic_void: false
@@ -268,3 +311,20 @@ source_passages:
       enterprises; or (c) any other transaction or arrangement of a similar character to
       those mentioned in paragraphs (a) and (b)."
     supports_conditions: []
+
+practitioner_notes:
+  - title: "Singapore — Merger Control Laws and Regulations 2026"
+    firm: "ICLG"
+    url: "https://iclg.com/practice-areas/merger-control-laws-and-regulations/singapore/"
+    date: "2026"
+    summary: "ICLG chapter on Singapore's voluntary merger control regime under the Competition Act 2004 and CCCS guidelines, covering the CCCS assessment framework, safe harbours (combined share <20%, or <40% with HHI increment <250), and the CCCS pre-notification consultation practice."
+  - title: "Merger Control 2025 — Singapore"
+    firm: "Chambers and Partners"
+    url: "https://practiceguides.chambers.com/practice-guides/merger-control-2025/singapore"
+    date: "2025"
+    summary: "Chambers guide to Singapore merger control providing practical coverage of the CCCS voluntary regime, market-share safe harbours, substantive SLC test assessment, and the CCCS's approach to digital platform and cross-border transactions."
+  - title: "Merger Control Laws and Regulations 2025 — Singapore"
+    firm: "Global Legal Insights"
+    url: "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/singapore/"
+    date: "2025"
+    summary: "GLI practitioner chapter on Singapore merger control with coverage of CCCS filing practice, the voluntary notification regime, safe harbour thresholds, and coordination with sector-specific regulators (MAS, IMDA) for regulated industries."

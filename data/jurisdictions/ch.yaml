@@ -5,8 +5,8 @@ last_verified: "2026-06-14"
 authority:
   name: Swiss Competition Commission (Wettbewerbskommission / Commission de la concurrence)
   abbreviation: WEKO
-  url: https://www.weko.admin.ch/weko/en/home.html
-  filing_url: https://www.weko.admin.ch/weko/en/home/mergers.html
+  url: https://www.weko.admin.ch/en
+  filing_url: https://www.weko.admin.ch/en/notifications-2
 
 regime:
   mandatory: true
@@ -71,7 +71,7 @@ fees:
     (New hourly billing system in force since 1 January 2025; prior system used fixed fees.)
   source: "Article 53a KG; WEKO fee schedule"
   source_type: official_guidance
-  source_url: "https://www.weko.admin.ch/weko/en/home/mergers.html"
+  source_url: "https://www.weko.admin.ch/en/notifications-2"
   annual_adjustment: false
 
 # ── Scope / trigger events ────────────────────────────────────────────────────
@@ -285,3 +285,64 @@ source_passages:
       1 The in-depth investigation must be concluded within four months of the
       decision to initiate it."
     supports_conditions: []
+
+# ── Minority acquisition thresholds ───────────────────────────────────────────
+minority_thresholds:
+  applies: false
+  standard: "control_based"
+  note: >
+    Swiss merger control under the Federal Act on Cartels and Other Restraints of
+    Competition (KG/LCart, SR 251, as amended) is triggered by the acquisition of
+    "control" over an undertaking. Article 4(3) KG defines an enterprise combination
+    (Unternehmenszusammenschluss / concentration d'entreprises) as arising from, inter
+    alia, the acquisition of control — the possibility of exercising a decisive
+    influence (beherrschender Einfluss / influence dominante) over the business
+    activities of another enterprise. The Swiss Competition Commission (WEKO —
+    Wettbewerbskommission / COMCO) applies a decisive-influence standard. There is
+    no standalone sub-control minority-stake notification trigger in Swiss cartel law.
+    Switzerland is not an EU or EEA member state; EU Merger Regulation does not apply.
+    Passive minority investments not conferring decisive influence are outside scope.
+    WEKO follows doctrine broadly consistent with EU Merger Regulation practice.
+  rules:
+    - rule_id: "ch_minority_decisive_influence"
+      relationship_type: "any"
+      pct_threshold: null
+      operator: ">="
+      rights_required: null
+      source: "Article 4(3), Federal Act on Cartels and Other Restraints of Competition (KG/LCart, SR 251)"
+      source_type: "primary_legislation"
+      source_url: "https://www.fedlex.admin.ch/eli/cc/1996/546_546_546/en"
+      note: >
+        Decisive influence (beherrschender Einfluss) over business activities is the
+        operative standard. No sub-control percentage-based minority notification
+        trigger exists in Swiss law. WEKO decisional practice broadly mirrors EU/EC
+        doctrine on decisive influence, with independent Swiss law application.
+
+# Practitioner nuance:
+# - Switzerland is not subject to EU Merger Regulation; all transactions meeting Swiss
+#   thresholds must be notified to WEKO regardless of EC clearance.
+# - WEKO's decisive-influence analysis follows EU doctrine; a 25%–49% minority stake
+#   with strategic veto rights (business plan, budget, key personnel) may constitute
+#   decisive influence requiring notification.
+# - Purely protective minority rights (anti-dilution, pre-emption, liquidation
+#   preference) generally do not confer decisive influence.
+# - Switzerland has no transaction-value test or sub-decisive-influence trigger.
+# - WEKO has concurrent jurisdiction with EC in relevant cases; both filings may be
+#   required for transactions meeting both jurisdictions' thresholds.
+
+practitioner_notes:
+  - title: "Switzerland — Merger Control Laws and Regulations 2026"
+    firm: "ICLG"
+    url: "https://iclg.com/practice-areas/merger-control-laws-and-regulations/switzerland/"
+    date: "2026"
+    summary: "ICLG chapter on Swiss merger control covering WEKO jurisdiction, CHF 2 bn worldwide and CHF 500 m Swiss turnover thresholds, Phase I (one month) and Phase II timelines, and the 2024 reform proposal to replace the dominance-plus test with a SIEC standard."
+  - title: "Merger Control 2025 — Switzerland"
+    firm: "Chambers and Partners"
+    url: "https://practiceguides.chambers.com/practice-guides/merger-control-2025/switzerland"
+    date: "2025"
+    summary: "Chambers guide to Swiss merger control with practical coverage of WEKO procedure, the current dominance-plus substantive test, SIEC reform proposals, and the parallel Swiss/EU filing obligations for cross-border transactions."
+  - title: "Merger Control Laws and Regulations 2025 — Switzerland"
+    firm: "Global Legal Insights"
+    url: "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/switzerland/"
+    date: "2025"
+    summary: "GLI practitioner chapter on Swiss merger control covering WEKO jurisdictional thresholds, pre-notification consultation practice, simplified notification procedure, and WEKO's 2024 enforcement statistics."

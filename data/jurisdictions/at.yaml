@@ -17,7 +17,7 @@ legal_basis:
   - citation: "Kartellgesetz 2005 (KartG), §§ 7-17, BGBl. I Nr. 61/2005 as amended"
     url: "https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=20004171"
   - citation: "Wettbewerbsgesetz (WettbG), §§ 1-3"
-    url: "https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=20003601"
+    url: "https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=20004171"
     note: "Establishes the BWB; procedural rules for merger review"
 
 filing:
@@ -220,6 +220,38 @@ scope:
     the BWB nor the Cartel Prosecutor can themselves prohibit a concentration — only the
     court can. This judicial model is distinct from all other major EU merger control regimes.
 
+minority_thresholds:
+  applies: true
+  standard: "percentage_based"
+  note: >
+    Austria explicitly catches minority acquisitions under §7(1) of the Kartellgesetz 2005
+    (KartG 2005). Acquisition of shares resulting in a post-acquisition stake of 25% or more
+    (or 50% or more) constitutes a notifiable concentration — no control, decisive influence,
+    or additional rights are required at the 25% level. This is one of the few EU
+    jurisdictions (alongside Germany) with a mechanical percentage trigger below the control
+    threshold. Sub-25% acquisitions may still be notifiable if structured to evade the 25%
+    threshold via equivalent voting rights, or if the acquirer in fact exercises decisive
+    influence. Austrian thresholds (§9 KartG): combined worldwide >EUR 300m AND combined
+    Austrian domestic >EUR 15m AND ≥2 parties each with Austrian domestic >EUR 1m.
+    Notifications go to both the Federal Competition Authority (BWB) and the Federal Cartel
+    Prosecutor (Bundeskartellanwalt). Media sector: KommAustria regime applies in parallel.
+  rules:
+    - rule_id: "at_minority_25pct"
+      relationship_type: "any"
+      pct_threshold: 25.0
+      operator: ">="
+      rights_required: null
+      source: "§7(1) Kartellgesetz 2005 (KartG 2005)"
+      source_type: "primary_legislation"
+      source_url: "https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=20003058"
+      note: >
+        Acquisition of a shareholding resulting in a post-acquisition stake of 25% or more
+        of shares (capital or voting rights) in an Austrian undertaking constitutes a
+        concentration per se under §7(1) KartG 2005. No additional rights, control, or
+        influence required — bright-line percentage rule. Both direct and indirect holdings
+        are included. Group shareholdings are aggregated. The 50% crossing is a separately
+        notifiable event within the same provision.
+
 # ── Gun-jumping / standstill obligation ───────────────────────────────────────
 gun_jumping:
   automatic_void: false
@@ -246,7 +278,7 @@ fdi_screening:
   applicable: true
   regime_name: "Investitionskontrollgesetz 2020 (InvKG)"
   authority: "Bundesminister fuer Wirtschaft und Arbeit (Federal Minister for Economic Affairs and Labour)"
-  url: "https://www.bmaw.gv.at/Themen/Wirtschaftsstandort/Investitionskontrolle.html"
+  url: "https://www.bmaw.gv.at/en"
   sectors_covered:
     - defense
     - security
@@ -310,3 +342,20 @@ source_passages:
       - at_combined_worldwide
       - at_combined_domestic
       - at_each_party_worldwide
+
+practitioner_notes:
+  - title: "Austria — Merger Control Laws and Regulations 2026"
+    firm: "ICLG / bpv Hügel"
+    url: "https://iclg.com/practice-areas/merger-control-laws-and-regulations/austria/"
+    date: "2026"
+    summary: "ICLG chapter on Austrian merger control covering BWB and FCA (cartel court) jurisdiction, the four-limb turnover test, simplified procedure, Phase I/II timelines, and the Austrian Cartel Act amendments."
+  - title: "Merger Control 2025 — Austria"
+    firm: "Chambers and Partners / bpv Hügel"
+    url: "https://practiceguides.chambers.com/practice-guides/merger-control-2025/austria"
+    date: "2025"
+    summary: "Chambers guide to Austrian merger control with current coverage of the dominance and SIEC tests, Phase II cartel court procedure, recent Supreme Cartel Court rulings through 2025, and media-sector concentration rules."
+  - title: "Merger Control Laws and Regulations 2025 — Austria"
+    firm: "Global Legal Insights"
+    url: "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/austria/"
+    date: "2025"
+    summary: "GLI country chapter on Austrian merger control with practitioner-focused guidance on jurisdictional thresholds, filing obligations, minority acquisition analysis, and FDI screening under the InvKG regime."

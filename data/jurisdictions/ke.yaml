@@ -104,7 +104,7 @@ threshold_tests:
         source_type: primary_legislation
         verified_via:
           - "https://www.cak.go.ke/"
-          - "https://iclg.com/practice-areas/merger-control"
+          - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/-laws-and-regulations/"
         note: >
           KES 1bn (~USD 7.7m) combined Kenya annual turnover of all merging parties.
           Includes revenues from Kenyan operations of non-Kenyan entities.
@@ -194,6 +194,38 @@ scope:
     The East African Community (EAC) has its own developing competition framework but
     national filings remain primary.
 
+minority_thresholds:
+  applies: true
+  standard: "control_based"
+  note: >
+    Kenya's Competition Act No. 12 of 2010 Section 41 defines a merger as the 'direct or
+    indirect acquisition or establishment of control over the whole or part of the business
+    of another undertaking.' The Competition Authority of Kenya (CAK) applies a decisive
+    influence standard for control, consistent with the EU approach. A purely passive
+    minority stake without governance rights does not constitute a 'merger' under the Act.
+    The KES 1bn (~USD 7.7m) combined turnover/assets threshold is low, meaning most
+    minority acquisitions involving a Kenyan company with meaningful revenues will trigger
+    the financial threshold test — at which point the control analysis determines whether
+    notification is required. COMESA filing obligations run concurrently for regional
+    transactions meeting COMESA thresholds (combined African revenues >USD 50m AND each
+    of ≥2 parties >USD 10m).
+  rules:
+    - rule_id: "ke_minority_decisive_influence"
+      relationship_type: "any"
+      pct_threshold: null
+      operator: ">="
+      rights_required: "veto_strategic"
+      source: "Competition Act No. 12 of 2010 (Kenya), Section 41"
+      source_type: "primary_legislation"
+      source_url: "https://www.cak.go.ke/"
+      note: >
+        Section 41 defines a merger as an acquisition of 'control over the whole or part
+        of the business of another undertaking.' Control is the ability to exercise decisive
+        influence over management and strategic decisions. A minority shareholder with board
+        representation and veto rights over strategic decisions (budget, business plan, key
+        management appointments) may be found to control the target. Purely passive financial
+        stakes with standard minority investor protections are unlikely to constitute control.
+
 # ── Gun-jumping / standstill obligation ───────────────────────────────────────
 gun_jumping:
   automatic_void: false
@@ -246,3 +278,20 @@ source_passages:
     supports_conditions:
       - ke_combined_domestic_revenue
       - ke_combined_domestic_assets
+
+practitioner_notes:
+  - title: "Navigating Kenya's Evolving Merger Control Landscape in 2026"
+    firm: "TripleOKLaw LLP"
+    url: "https://www.tripleoklaw.com/navigating-kenyas-evolving-merger-control-landscape-in-2026/"
+    date: "2026"
+    summary: "Current practitioner guide covering Kenya's dual competition and public interest merger test, mandatory notification for foreign-to-foreign deals with Kenyan effect, the Competition (Amendment) Bill 2024's digital-market provisions, and the new EAC regional merger control regime effective November 2025."
+  - title: "Regulations of Mergers in Kenya by CAK Explainer"
+    firm: "CM Advocates LLP"
+    url: "https://cmadvocates.com/blog/regulation-of-mergers-in-kenya/"
+    date: "2024"
+    summary: "Step-by-step explainer on CAK merger notification requirements, including the KES 1B combined turnover/assets threshold, filing fee schedule (up to KES 4M for deals above KES 50B), implementation prohibitions, sector-specific (banking, insurance, telecoms) considerations, and COMESA overlay for cross-border transactions."
+  - title: "Kenya: Competition (Amendment) Bill, 2024 – A New Chapter in Competition Law Enforcement"
+    firm: "Bowmans"
+    url: "https://bowmanslaw.com/insights/kenya-competition-amendment-bill-2024-a-new-chapter-in-competition-law-enforcement/"
+    date: "2024"
+    summary: "Analysis of the Competition (Amendment) Bill 2024 introducing digital market dominance rules, enhanced bargaining-position regulations, and expanded stakeholder participation requirements affecting merger review practice in Kenya."

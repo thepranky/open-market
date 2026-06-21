@@ -231,6 +231,39 @@ scope:
     approach and allowing the TCA to challenge oligopolistic/coordinated effects cases
     without requiring proof of dominance.
 
+minority_thresholds:
+  applies: true
+  standard: "control_based"
+  note: >
+    Turkey's Law No. 4054, Article 7 and Communiqué No. 2010/4 (as amended) require
+    notification for 'concentrations' — defined as mergers and acquisitions of direct or
+    indirect control. Control means the ability to exercise 'decisive influence' over an
+    undertaking (Article 5(1) of Communiqué 2010/4). Turkey does not have a standalone
+    minority acquisition regime below the decisive influence threshold — it follows the EU
+    EUMR control paradigm. A purely passive minority stake that does not confer decisive
+    influence or de facto control is not a concentration requiring TCA notification.
+    Joint control (veto rights over key strategic decisions in a JV) is caught. The TCA
+    applies EU EUMR-style criteria and the EC Jurisdictional Notice is instructive for
+    control analysis.
+  rules:
+    - rule_id: "tr_minority_decisive_influence"
+      relationship_type: "any"
+      pct_threshold: null
+      operator: ">="
+      rights_required: "veto_strategic"
+      source: "Law No. 4054 on the Protection of Competition, Article 7; Communiqué No. 2010/4 (as amended), Article 5(1)"
+      source_type: "primary_legislation"
+      source_url: "https://www.rekabet.gov.tr/en/Sayfa/Birlesme-ve-devralmalar"
+      note: >
+        A concentration exists when one or more undertakings acquire direct or indirect
+        control (decisive influence) over the whole or part of another undertaking. Decisive
+        influence covers: majority voting rights; ability to appoint a majority of the
+        supervisory or management board; and structural rights enabling veto over strategic
+        decisions (capex, business plan, budget approval, key personnel). A minority stake
+        without any structural governance rights does NOT constitute a concentration. Joint
+        control arises where parties must agree on strategic commercial behaviour and neither
+        can act alone.
+
 # ── Gun-jumping / standstill obligation ───────────────────────────────────────
 gun_jumping:
   automatic_void: false
@@ -254,7 +287,7 @@ fdi_screening:
   applicable: true
   regime_name: "Foreign Direct Investment Law No. 4875/2003"
   authority: "Ministry of Industry and Technology (general coordination); sector-specific ministries"
-  url: "https://www.invest.gov.tr/en/"
+  url: "https://www.invest.gov.tr/en/pages/home-page.aspx"
   sectors_covered:
     - defense
     - aviation
@@ -291,3 +324,20 @@ source_passages:
     supports_conditions:
       - tr_std_combined_domestic
       - tr_std_each_party_domestic
+
+practitioner_notes:
+  - title: "Türkiye Updates Merger Control Rules to Reflect Economic Reality"
+    firm: "CMS"
+    url: "https://cms.law/en/fra/legal-updates/tuerkiye-updates-merger-control-rules-to-reflect-economic-reality"
+    date: "2026"
+    summary: "Alert on the February 2026 TCA communiqué amendments that nearly quadrupled notification thresholds (TL 1B individual / TL 3B aggregate Turkish turnover), narrowed the technology-sector special regime to Turkey-established undertakings, and streamlined private equity filing requirements."
+  - title: "Merger Control Laws and Regulations 2025 – Türkiye"
+    firm: "ELIG Gürkaynak Attorneys-at-Law / Global Legal Insights"
+    url: "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/turkey/"
+    date: "2025"
+    summary: "Annual jurisdiction chapter covering the SIEC test introduced in 2020, current TL 750M/TL 250M thresholds, sector-specific exemptions for digital platforms and biotech, Phase I/II review timelines, and 2024 enforcement statistics (311 transactions reviewed, 293 approved unconditionally)."
+  - title: "Merger Control Laws and Regulations Report 2026 – Turkey/Türkiye"
+    firm: "ICLG / ELIG Gürkaynak Attorneys-at-Law"
+    url: "https://iclg.com/practice-areas/merger-control-laws-and-regulations/turkey-trkiye"
+    date: "2026"
+    summary: "Current ICLG jurisdiction chapter on Turkish merger control covering the Competition Board's jurisdiction under Law No. 4054, mandatory pre-closing notification, Phase I (30-day) and Phase II (6-month) review procedures, and the special notification regime for technology undertakings."

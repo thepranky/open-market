@@ -5,8 +5,8 @@ last_verified: "2026-06-14"
 authority:
   name: Autorità Garante della Concorrenza e del Mercato
   abbreviation: AGCM
-  url: https://en.agcm.it/en/
-  filing_url: https://en.agcm.it/en/notification-forms
+  url: https://www.agcm.it/competenze/tutela-della-concorrenza/operazioni-di-concentrazione/
+  filing_url: https://www.agcm.it/competenze/tutela-della-concorrenza/operazioni-di-concentrazione/
 
 regime:
   mandatory: true
@@ -26,7 +26,7 @@ legal_basis:
       Thresholds are adjusted annually (typically in March) based on the national GDP
       price deflator index (Art. 16(1) Law 287/1990).
   - citation: "AGCM Annual Threshold Update — Bulletin"
-    url: "https://en.agcm.it/en/turnover-thresholds"
+    url: "https://www.agcm.it/competenze/tutela-della-concorrenza/operazioni-di-concentrazione/"
     source_type: authority_announcement
     note: >
       AGCM publishes updated threshold values each spring. As of March 2025: combined
@@ -78,7 +78,7 @@ fees:
     (Fees are set by AGCM administrative regulation and updated periodically.)
   source: "AGCM Fee Regulation; Law No. 287/1990 Art. 16"
   source_type: official_guidance
-  source_url: "https://en.agcm.it/en/"
+  source_url: "https://www.agcm.it/competenze/tutela-della-concorrenza/operazioni-di-concentrazione/"
   annual_adjustment: false
 
 # ── Scope / trigger events ────────────────────────────────────────────────────
@@ -122,6 +122,40 @@ scope:
     digital and pharmaceutical sectors.
 
 # ── Gun-jumping / standstill ──────────────────────────────────────────────────
+
+minority_thresholds:
+  applies: false
+  standard: "control_based"
+  note: >
+    Italian merger control under Law 287/1990 follows the EU decisive-influence / control
+    standard (Article 7 of Law 287/1990). There are no special percentage-based minority
+    triggers. Minority shareholdings are caught only when they confer control (sole or
+    joint) — the ability to exercise decisive influence over the target's strategic
+    commercial decisions. A minority stake can confer joint control via shareholders'
+    agreements or veto rights over strategic decisions, or sole control in cases of widely
+    dispersed remaining shareholding. The AGCM may call in below-threshold transactions
+    within 30 days of completion where competition concerns arise (Article 16(1-bis), 2022),
+    though this is a general competition power, not minority-specific. Financial institutions
+    are exempt if they hold shares for resale within 24 months without exercising voting
+    rights (Article 5(2) Law 287/1990).
+  rules:
+    - rule_id: "it_minority_decisive_influence"
+      relationship_type: "any"
+      pct_threshold: null
+      operator: ">="
+      rights_required: "veto_strategic"
+      source: "Law 287/1990, Articles 5(1) and 7; AGCM procedural guidance"
+      source_type: "primary_legislation"
+      source_url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1990-10-10;287"
+      note: >
+        A minority stake triggers notification only when it confers control — the ability
+        to exercise decisive influence over the target's strategic commercial decisions.
+        Control arises through: (1) veto powers over strategic decisions via shareholders'
+        agreements; (2) de facto control where remaining shares are widely dispersed; (3)
+        joint control through contractual or structural arrangements. No fixed percentage
+        floor. Financial institution carve-out (Art. 5(2)): exempt for stakes held purely
+        for resale within 24 months where voting rights are not exercised.
+
 gun_jumping:
   automatic_void: false
   voidable: true
@@ -148,7 +182,7 @@ fdi_screening:
   applicable: true
   regime_name: "Golden Power — Poteri speciali del Governo nelle imprese strategiche"
   authority: "Presidency of the Council of Ministers (Presidenza del Consiglio dei Ministri) — Coordination Unit"
-  url: "https://en.agcm.it/en/"
+  url: "https://www.agcm.it/competenze/tutela-della-concorrenza/operazioni-di-concentrazione/"
   sectors_covered:
     - defense
     - national_security
@@ -187,7 +221,7 @@ threshold_tests:
   - test_id: it_standard
     description: "Combined Italian >EUR 582m AND each of ≥2 parties Italian >EUR 35m (March 2025 values, Art. 16 Law 287/1990)"
     legal_basis: "Article 16(1), Law No. 287/1990, as amended by Article 32 of Law No. 118/2022"
-    source_url: "https://en.agcm.it/en/turnover-thresholds"
+    source_url: "https://www.agcm.it/competenze/tutela-della-concorrenza/operazioni-di-concentrazione/"
     note: >
       Both conditions must be met simultaneously (AND logic). Turnover is calculated
       based on Italian operations only (revenues from the sale of goods/provision of
@@ -210,7 +244,7 @@ threshold_tests:
         currency: EUR
         source: "Article 16(1)(a) Law 287/1990 — March 2025 AGCM threshold update"
         source_type: authority_announcement
-        source_url: "https://en.agcm.it/en/turnover-thresholds"
+        source_url: "https://www.agcm.it/competenze/tutela-della-concorrenza/operazioni-di-concentrazione/"
         verified_via:
           - "https://natlawreview.com/article/italian-merger-control-thresholds-update"
           - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/italy"
@@ -229,7 +263,7 @@ threshold_tests:
         currency: EUR
         source: "Article 16(1)(b) Law 287/1990 as amended by Art. 32 Law 118/2022 — March 2025 update"
         source_type: authority_announcement
-        source_url: "https://en.agcm.it/en/turnover-thresholds"
+        source_url: "https://www.agcm.it/competenze/tutela-della-concorrenza/operazioni-di-concentrazione/"
         verified_via:
           - "https://natlawreview.com/article/italian-merger-control-thresholds-update"
           - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/italy"
@@ -308,3 +342,20 @@ source_passages:
       within the period set by the Authority, the transaction shall be deemed to be
       approved at the expiry of thirty days from the notification."
     supports_conditions: []
+
+practitioner_notes:
+  - title: "Italy — Merger Control Laws and Regulations 2026"
+    firm: "ICLG / Portolano Cavallo"
+    url: "https://iclg.com/practice-areas/merger-control-laws-and-regulations/italy/"
+    date: "2026"
+    summary: "ICLG chapter covering Italian merger control under AGCM jurisdiction, notification thresholds (global and domestic turnover tests), procedural timelines, substantive dominance test, and recent enforcement trends."
+  - title: "Merger Control Laws and Regulations 2025 — Italy"
+    firm: "Global Legal Insights"
+    url: "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/italy/"
+    date: "2025"
+    summary: "GLI practitioner guide to Italian merger control covering AGCM filing requirements, Phase I/II review periods, remedies practice, and sector-specific considerations including media transactions."
+  - title: "Merger Control 2025 — Italy"
+    firm: "Chambers and Partners"
+    url: "https://practiceguides.chambers.com/practice-guides/merger-control-2025/italy"
+    date: "2025"
+    summary: "Chambers practice guide on Italian merger control providing current coverage of thresholds, jurisdictional scope, substantive assessment criteria, and recent AGCM enforcement decisions."

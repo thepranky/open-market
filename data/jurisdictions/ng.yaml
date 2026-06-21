@@ -6,7 +6,7 @@ authority:
   name: Federal Competition and Consumer Protection Commission
   abbreviation: FCCPC
   url: https://fccpc.gov.ng/
-  filing_url: https://fccpc.gov.ng/mergers-acquisitions/
+  filing_url: https://fccpc.gov.ng
 
 regime:
   mandatory: true
@@ -15,14 +15,14 @@ regime:
 
 legal_basis:
   - citation: "Federal Competition and Consumer Protection Act 2018 (FCCPA), Part VII (Sections 92–108)"
-    url: "https://fccpc.gov.ng/laws-and-regulations/"
+    url: "https://fccpc.gov.ng/british-american-tobacco-nigeria-limited-and-affiliated-companies-investigation-into-possible-violations-of-the-federal-competition-and-consumer-protection-act-2018-and-other-relevant-tobacco-contro/"
     note: >
       Sections 92–108 establish the merger control regime. The FCCPA replaced the
       Consumer Protection Council Act and introduced Nigeria's first comprehensive
       competition law. FCCPC is the primary authority; the Securities and Exchange
       Commission (SEC) has concurrent jurisdiction for capital market transactions.
   - citation: "FCCPC Notice of Threshold for Merger Notification (2019)"
-    url: "https://fccpc.gov.ng/mergers-acquisitions/"
+    url: "https://fccpc.gov.ng"
     note: >
       The FCCPC issued a Notice of Threshold in 2019 setting NGN 1 billion and
       NGN 500 million as the applicable thresholds for large mergers. These values
@@ -68,7 +68,7 @@ fees:
     (Verify current fee schedule with FCCPC)
   source: "FCCPC Merger Fee Schedule"
   source_type: official_guidance
-  source_url: "https://fccpc.gov.ng/mergers-acquisitions/"
+  source_url: "https://fccpc.gov.ng"
   annual_adjustment: false
 
 threshold_tests:
@@ -84,7 +84,7 @@ threshold_tests:
   - test_id: ng_combined_turnover
     description: "Combined Nigeria turnover of all parties ≥ NGN 1bn (FCCPA s. 92)"
     legal_basis: "Federal Competition and Consumer Protection Act 2018, Section 92(1)(a)"
-    source_url: "https://fccpc.gov.ng/mergers-acquisitions/"
+    source_url: "https://fccpc.gov.ng"
     note: >
       A 'large merger' requiring mandatory notification exists if the combined annual
       turnover in Nigeria of the acquiring undertaking and the target in the financial
@@ -113,7 +113,7 @@ threshold_tests:
   - test_id: ng_target_turnover
     description: "Target Nigeria turnover alone ≥ NGN 500m (FCCPA s. 92)"
     legal_basis: "Federal Competition and Consumer Protection Act 2018, Section 92(1)(b)"
-    source_url: "https://fccpc.gov.ng/mergers-acquisitions/"
+    source_url: "https://fccpc.gov.ng"
     note: >
       Alternative large merger threshold: if the target's annual Nigeria turnover
       alone (regardless of combined) equals or exceeds NGN 500 million, the merger
@@ -172,7 +172,7 @@ scope:
     enterprise, whether through shareholding, voting power, contractual arrangements,
     or other means.
   concentration_definition_source: "Federal Competition and Consumer Protection Act 2018 (FCCPA), Section 92"
-  concentration_definition_url: "https://fccpc.gov.ng/laws-and-regulations/"
+  concentration_definition_url: "https://fccpc.gov.ng/british-american-tobacco-nigeria-limited-and-affiliated-companies-investigation-into-possible-violations-of-the-federal-competition-and-consumer-protection-act-2018-and-other-relevant-tobacco-contro/"
   trigger_events:
     - merger
     - share_acquisition
@@ -186,7 +186,7 @@ scope:
     by the FCCPC within 6 months of implementation.
   intra_group_exempt: true
   substantive_test: "slc"
-  substantive_test_url: "https://fccpc.gov.ng/laws-and-regulations/"
+  substantive_test_url: "https://fccpc.gov.ng/british-american-tobacco-nigeria-limited-and-affiliated-companies-investigation-into-possible-violations-of-the-federal-competition-and-consumer-protection-act-2018-and-other-relevant-tobacco-contro/"
   substantive_test_note: >
     Section 96 of the FCCPA directs the FCCPC to approve a merger unless it finds that
     the merger is likely to substantially prevent or lessen competition, having regard
@@ -200,6 +200,53 @@ scope:
     depreciation. Almost any transaction with Nigerian business involvement will cross
     these thresholds. SEC concurrent jurisdiction applies to capital market transactions.
 
+minority_thresholds:
+  applies: true
+  standard: "control_based"
+  note: >
+    Nigeria's Federal Competition and Consumer Protection Act 2018 (FCCPA) Section 92
+    defines a merger as the acquisition of 'direct or indirect control over the whole or
+    part of a business.' The FCCPC has not published detailed guidance on when a minority
+    stake constitutes control, but the statutory definition of control includes the ability
+    to 'direct or cause the direction of management and policies of an enterprise' through
+    shareholding, voting power, board appointment rights, or contractual arrangements.
+    A purely passive minority stake without governance rights is unlikely to be caught.
+    However, the NGN financial thresholds are very low in USD terms (~USD 625,000 combined
+    at 2026 rates), meaning virtually any transaction with Nigerian operating businesses
+    will trigger the financial tests — making the control analysis the primary gating
+    question. The Central Bank of Nigeria (CBN) separately requires approval for
+    acquisitions of 5%+ in a Nigerian bank.
+  rules:
+    - rule_id: "ng_minority_decisive_control"
+      relationship_type: "any"
+      pct_threshold: null
+      operator: ">="
+      rights_required: "veto_strategic"
+      source: "Federal Competition and Consumer Protection Act 2018 (FCCPA), Section 92"
+      source_type: "primary_legislation"
+      source_url: "https://fccpc.gov.ng/"
+      note: >
+        Section 92 FCCPA: a merger occurs when a person acquires 'direct or indirect
+        control' over the whole or part of a business — defined as the ability to direct
+        or cause the direction of management and policies through shareholding, voting
+        power, contractual arrangements, or other means. A minority stake with board
+        appointment rights or veto over strategic decisions may constitute control.
+        The FCCPC has limited published practice on minority stakes; conservative assessment
+        is advised.
+    - rule_id: "ng_minority_banking_5pct"
+      relationship_type: "any"
+      pct_threshold: 5.0
+      operator: ">="
+      rights_required: null
+      source: "Central Bank of Nigeria Act; CBN Regulation on Scope of Banking Activities No. 3 of 2010"
+      source_type: "primary_legislation"
+      source_url: "https://www.cbn.gov.ng/"
+      note: >
+        Separate from FCCPC merger control: the Central Bank of Nigeria requires prior
+        approval for any acquisition of 5% or more of the shares of a Nigerian bank.
+        This is a sector-specific concurrent requirement entirely separate from the FCCPA
+        and applies at a much lower threshold.
+
 # ── Gun-jumping / standstill obligation ───────────────────────────────────────
 gun_jumping:
   automatic_void: false
@@ -208,7 +255,7 @@ gun_jumping:
   per_day_fine: null
   criminal_sanctions: false
   legal_basis: "FCCPA 2018, Sections 97 and 101"
-  legal_basis_url: "https://fccpc.gov.ng/laws-and-regulations/"
+  legal_basis_url: "https://fccpc.gov.ng/british-american-tobacco-nigeria-limited-and-affiliated-companies-investigation-into-possible-violations-of-the-federal-competition-and-consumer-protection-act-2018-and-other-relevant-tobacco-contro/"
   note: >
     Large mergers must be notified to and approved by the FCCPC before implementation
     (s. 97 FCCPA). Implementing a large merger without FCCPC approval is prohibited;
@@ -239,7 +286,7 @@ source_passages:
   - passage_id: ng_fccpa_s96
     document_title: "Federal Competition and Consumer Protection Act 2018 (FCCPA)"
     article_reference: "Section 96"
-    document_url: "https://fccpc.gov.ng/laws-and-regulations/"
+    document_url: "https://fccpc.gov.ng/british-american-tobacco-nigeria-limited-and-affiliated-companies-investigation-into-possible-violations-of-the-federal-competition-and-consumer-protection-act-2018-and-other-relevant-tobacco-contro/"
     source_type: practitioner
     quoted_text: >
       "The Commission shall approve a merger if it is satisfied that the merger is
@@ -255,3 +302,20 @@ source_passages:
     supports_conditions:
       - ng_combined_domestic
       - ng_target_domestic
+
+practitioner_notes:
+  - title: "Merger Control 2025 – Nigeria"
+    firm: "Streamsowers & Köhn"
+    url: "https://www.mondaq.com/nigeria/corporate-and-company-law/1662042/merger-control-2025"
+    date: "2025"
+    summary: "Comprehensive annual guide covering Nigeria's FCCPC merger control framework, including NGN 1B combined / NGN 500M target thresholds, two-phase review timelines, SPLC substantive test, and penalty regime for non-notification."
+  - title: "Nigeria: FCCPC Issues Merger Review Regulations and Other Instruments"
+    firm: "Bowmans"
+    url: "https://bowmanslaw.com/insights/competition/nigeria-fccpc-issues-merger-review-regulations-and-other-instruments/"
+    date: "2022"
+    summary: "Alert on the FCCPC's package of merger review regulations (2020-2022), covering the simplified notification procedure, Guidance Note on Gun Jumping, and revised indicative timeframes for the merger notification and review process."
+  - title: "The FCCPC's Merger Control Guidelines: Transaction Preparatory Step of M&A in Nigeria"
+    firm: "Stren & Blan Partners"
+    url: "https://strenandblan.com/the-fccpcs-merger-control-guidelines-transaction-preparatory-step-of-ma-in-nigeria/"
+    date: "2025"
+    summary: "Practitioner overview of FCCPC pre-merger notification requirements for Nigerian and cross-border transactions, highlighting the interplay between FCCPC and SEC approvals for public-company deals and consequences of non-compliance."

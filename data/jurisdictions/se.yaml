@@ -23,7 +23,7 @@ legal_basis:
       effective competition) substantive test. The Competition Authority (KKV) may
       refer decisions to the Patent and Market Court (PMD) for prohibition or remedy orders.
   - citation: "Competition Ordinance (Konkurrensförordning 2010:591)"
-    url: "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/konkurrensforordning-2010591_sfs-2010-591/"
+    url: "https://rkrattsbaser.gov.se/sfsr?bet=2010:591"
     source_type: official_guidance
     note: "Implementing regulation. Specifies procedural rules and notification form requirements."
 
@@ -137,7 +137,7 @@ fdi_screening:
   applicable: true
   regime_name: "Lag (2023:560) om granskning av utländska direktinvesteringar — Foreign Direct Investments Screening Act"
   authority: "Inspektionen för strategiska produkter (ISP) — Inspectorate of Strategic Products"
-  url: "https://www.isp.se/en/foreign-direct-investments/"
+  url: "https://www.isp.se"
   sectors_covered:
     - critical_infrastructure
     - sensitive_technology
@@ -192,7 +192,7 @@ threshold_tests:
         source_type: primary_legislation
         source_url: "https://www.konkurrensverket.se/en/mergers/when-is-a-concentration-notifiable/"
         verified_via:
-          - "https://iclg.com/practice-areas/merger-control"
+          - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/-laws-and-regulations/"
           - "https://www.konkurrensverket.se/en/mergers/"
         note: "SEK 1bn combined Swedish turnover of all parties in last financial year."
 
@@ -207,7 +207,7 @@ threshold_tests:
         source_type: primary_legislation
         source_url: "https://www.konkurrensverket.se/en/mergers/when-is-a-concentration-notifiable/"
         verified_via:
-          - "https://iclg.com/practice-areas/merger-control"
+          - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/-laws-and-regulations/"
           - "https://www.konkurrensverket.se/en/mergers/"
         note: >
           SEK 200m individual Swedish turnover for each of at least two of the parties.
@@ -267,3 +267,56 @@ source_passages:
       the period for such decision has expired without the Competition Authority having
       decided to review the concentration."
     supports_conditions: []
+
+# ── Minority acquisition thresholds ───────────────────────────────────────────
+minority_thresholds:
+  applies: false
+  standard: "control_based"
+  note: >
+    Swedish merger control under the Competition Act (Konkurrenslag 2008:579) is
+    triggered by the acquisition of "control" over an undertaking. Chapter 4, § 1
+    defines a concentration as arising, inter alia, from an acquisition that leads
+    to a lasting change of control over the whole or part of one or more undertakings.
+    Control is defined as the ability to exercise a decisive influence (avgörande
+    inflytande) over an undertaking. There is no standalone sub-control minority-stake
+    notification trigger in Swedish competition law. The Konkurrensverket (Swedish
+    Competition Authority) applies a decisive-influence standard consistent with EU
+    merger control practice. Passive minority investments not conferring decisive
+    influence are outside scope.
+  rules:
+    - rule_id: "se_minority_decisive_influence"
+      relationship_type: "any"
+      pct_threshold: null
+      operator: ">="
+      rights_required: null
+      source: "Chapter 4, § 1, Konkurrenslag (2008:579) — Swedish Competition Act"
+      source_type: "primary_legislation"
+      source_url: "https://www.konkurrensverket.se/globalassets/english/legislation/the-competition-act-2008_579.pdf"
+      note: >
+        Decisive influence (avgörande inflytande) is the operative standard. No
+        explicit sub-control percentage trigger exists. The Konkurrensverket examines
+        rights to appoint board members, veto rights, and contractual mechanisms.
+
+# Practitioner nuance:
+# - Konkurrensverket guidance mirrors EU Commission practice on decisive influence.
+# - A 25%–49% minority stake with strategic veto rights (over business plan, budget,
+#   key appointments) may be found to confer decisive influence and trigger notification.
+# - Sweden does not have a transaction-value test analogous to Germany's €400m threshold.
+# - Purely financial passive minority stakes are consistently outside merger control scope.
+
+practitioner_notes:
+  - title: "Sweden — Merger Control Laws and Regulations 2026"
+    firm: "ICLG"
+    url: "https://iclg.com/practice-areas/merger-control-laws-and-regulations/sweden/"
+    date: "2026"
+    summary: "ICLG chapter on Swedish merger control covering SCA jurisdiction, the combined worldwide and Swedish domestic turnover thresholds, 25-working-day Phase I and special investigation Phase II timelines, and the SCA's 2024 enforcement statistics (91 notifications)."
+  - title: "Merger Control Laws and Regulations 2025 — Sweden"
+    firm: "Global Legal Insights"
+    url: "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/sweden/"
+    date: "2025"
+    summary: "GLI practitioner chapter on Swedish merger control with coverage of SCA filing requirements, substantive assessment under the SIC test, Nordic competition authority cooperation agreements, and recent decisional practice."
+  - title: "Merger Control 2025 — Sweden"
+    firm: "Chambers and Partners"
+    url: "https://practiceguides.chambers.com/practice-guides/merger-control-2025/sweden"
+    date: "2025"
+    summary: "Chambers guide to Swedish merger control covering SCA procedure, call-in powers for below-threshold transactions, special investigation timelines, and the SCA's approach to media and digital sector mergers."

@@ -226,6 +226,56 @@ scope:
     substantive safe harbour for markets with sales below EUR 20m that have existed
     for at least 5 years.
 
+minority_thresholds:
+  applies: true
+  standard: "percentage_based"
+  note: >
+    Germany operates two distinct minority triggers under §37(1) GWB — both broader than
+    the EUMR control standard. §37(1) No. 3: a bare acquisition of 25% or more of capital
+    OR voting rights is a concentration per se — no control, veto rights, or plus factors
+    required. §37(1) No. 4: any arrangement below 25% that confers 'competitively
+    significant influence' (wettbewerblich erheblicher Einfluss) is also a concentration,
+    assessed via a plus-factors test requiring a competitive nexus between the parties.
+    Both tests feed into the §35 turnover thresholds (combined worldwide >EUR 500m, German
+    domestic >EUR 50m for one party, >EUR 17.5m for another) or the §35(1a) transaction-
+    value test (deal value >EUR 400m with significant domestic activities). Germany has the
+    broadest minority acquisition jurisdiction of any major EU state. The 10th GWB Amendment
+    (2021) confirmed §37(1) No. 4 for digital platform contexts.
+  rules:
+    - rule_id: "de_minority_25pct"
+      relationship_type: "any"
+      pct_threshold: 25.0
+      operator: ">="
+      rights_required: null
+      source: "§37(1) No. 3 GWB (Gesetz gegen Wettbewerbsbeschränkungen)"
+      source_type: "primary_legislation"
+      source_url: "https://www.gesetze-im-internet.de/englisch_gwb/englisch_gwb.html"
+      note: >
+        Acquisition of shares equalling or exceeding 25% of capital OR voting rights
+        triggers a notifiable concentration regardless of whether control or influence is
+        actually obtained. Existing group shareholdings are aggregated. Financial institutions
+        acquiring shares for resale within 12 months without exercising voting rights are
+        exempt (§37(1) No. 3 proviso). This is unique among EU jurisdictions — the 25% test
+        requires NO additional rights or control.
+    - rule_id: "de_minority_competitive_influence"
+      relationship_type: "horizontal"
+      pct_threshold: null
+      operator: ">="
+      rights_required: null
+      source: "§37(1) No. 4 GWB; FCO Guidance on Competitively Significant Influence"
+      source_type: "primary_legislation"
+      source_url: "https://www.gesetze-im-internet.de/englisch_gwb/englisch_gwb.html"
+      note: >
+        For stakes below 25%, a concentration arises if the acquirer obtains 'competitively
+        significant influence' — the ability to influence the commercial policy and competitive
+        behaviour of the target. Requires: (a) plus factors such as board representation
+        rights, veto/voting rights, information rights on operative business, options,
+        personal links, or cooperation agreements; AND (b) a competitive nexus — the acquirer
+        must compete with the target, control a target competitor, or have a significant
+        vertical supply relationship. Confirmed for digital platforms in 10th GWB Amendment
+        (2021). Recent examples: DFL/Dyn Media (6.5% stake triggered); Lufthansa/airBaltic
+        (10% + wet-lease rights triggered).
+
 # ── Gun-jumping / standstill obligation ───────────────────────────────────────
 gun_jumping:
   automatic_void: true
@@ -314,3 +364,20 @@ source_passages:
       market share of more than 15 percent in an upstream or downstream market, shall
       not be prohibited (de minimis clause)."
     supports_conditions: []
+
+practitioner_notes:
+  - title: "Merger Control Laws and Regulations 2026 – Germany"
+    firm: "ICLG (BUNTSCHECK)"
+    url: "https://iclg.com/practice-areas/merger-control-laws-and-regulations/germany/"
+    date: "2025"
+    summary: "Detailed country chapter on German merger control: GWB turnover and transaction-value thresholds, FCO procedure, SIEC test, digital-sector considerations including acqui-hires, hospital-merger exemption, and 2024 enforcement statistics (870 notifications)."
+  - title: "Merger Control Laws and Regulations 2025 – Germany"
+    firm: "Global Legal Insights (GLI)"
+    url: "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/germany/"
+    date: "2025"
+    summary: "Annual practitioner chapter covering GWB §35–43, the §35(1a) transaction-value threshold for killer acquisitions, FCO's 2024 enforcement record, hospital-sector reform, and upcoming threshold-reform proposals under the new German government."
+  - title: "Merger Control 2025 – Germany"
+    firm: "Chambers and Partners"
+    url: "https://practiceguides.chambers.com/practice-guides/merger-control-2025/germany/trends-and-developments"
+    date: "2025"
+    summary: "Chambers Global Practice Guide chapter with trends-and-developments section covering Germany's 870-case notification volume, increased focus on the transaction-value threshold, Phase II enforcement actions, and forthcoming GWB reform discussions."

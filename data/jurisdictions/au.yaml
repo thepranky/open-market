@@ -6,7 +6,7 @@ authority:
   name: Australian Competition and Consumer Commission
   abbreviation: ACCC
   url: https://www.accc.gov.au/business/mergers-and-acquisitions
-  filing_url: https://www.accc.gov.au/business/mergers-and-acquisitions/merger-control-regime
+  filing_url: https://www.accc.gov.au/business/mergers-and-acquisitions
 
 regime:
   mandatory: true
@@ -324,6 +324,50 @@ scope:
     tiered filing fees, a 30-day Phase 1 / 90-day Phase 2 review structure, and a
     waiver mechanism for clearly non-problematic deals.
 
+minority_thresholds:
+  applies: true
+  standard: "any_acquisition"
+  note: >
+    Australia replaced its voluntary informal clearance regime with a mandatory and
+    suspensory regime effective 1 January 2026, with voting-power percentage thresholds
+    for share acquisitions applying from 1 April 2026 (new Part VII, Competition and
+    Consumer Act 2010). Under the new regime, crossing the 20% voting power threshold
+    in a non-listed entity is a notifiable event (subject to monetary thresholds). Section
+    50 of the CCA continues to prohibit any acquisition of shares or assets that
+    substantially lessens competition (SLC), regardless of the percentage acquired —
+    even a sub-20% stake that facilitates anti-competitive information exchange or forms
+    part of a creeping acquisition strategy can be challenged. A separate cumulative
+    acquisition threshold targets serial minority-stake strategies.
+  rules:
+    - rule_id: "au_minority_20pct_voting"
+      relationship_type: "any"
+      pct_threshold: 20.0
+      operator: ">"
+      rights_required: null
+      source: "Competition and Consumer Act 2010 (Cth), new Part VII; ACCC Amended Determination effective 1 April 2026"
+      source_type: "primary_legislation"
+      source_url: "https://www.accc.gov.au/business/mergers-and-acquisitions/thresholds-for-notifying-acquisitions"
+      note: >
+        From 1 April 2026, notification is mandatory when a person's voting power in a
+        non-listed entity moves from ≤20% to >20%, provided monetary thresholds are also
+        met: combined Australian revenue of merger parties ≥AUD 200m (or AUD 500m for a
+        very large acquirer), plus the target's Australian revenue ≥AUD 10m. This means
+        minority acquisitions without technical 'control' are captured.
+    - rule_id: "au_slc_general"
+      relationship_type: "any"
+      pct_threshold: null
+      operator: ">="
+      rights_required: null
+      source: "Competition and Consumer Act 2010 (Cth), Sec. 50"
+      source_type: "primary_legislation"
+      source_url: "https://www.legislation.gov.au/C2004A00109/latest/"
+      note: >
+        Section 50 applies to any acquisition of shares or assets regardless of the
+        percentage acquired. A sub-20% stake that facilitates exchange of competitively
+        sensitive information, confers effective influence over a rival, or forms part of
+        a creeping acquisition strategy can be challenged as substantially lessening
+        competition.
+
 # ── Gun-jumping / standstill obligation ───────────────────────────────────────
 gun_jumping:
   automatic_void: false
@@ -405,3 +449,20 @@ source_passages:
       the body or the person whose assets are acquired carries on business in
       Australia, or the assets are used in carrying on business in Australia."
     supports_conditions: []
+
+practitioner_notes:
+  - title: "Merger Control 2025 — Australia"
+    firm: "Chambers and Partners / Clayton Utz"
+    url: "https://practiceguides.chambers.com/practice-guides/merger-control-2025/australia"
+    date: "2025"
+    summary: "Chambers guide to Australia's new mandatory merger control regime (effective 1 January 2026), covering ACCC notification thresholds, the five-step Phase I and Phase II review process, fees, and transitional arrangements during the July–December 2025 voluntary period."
+  - title: "Australia's New Mandatory Merger Control Regime"
+    firm: "Norton Rose Fulbright"
+    url: "https://www.nortonrosefulbright.com/en/knowledge/publications/06692609/australias-new-mandatory-merger-control-regime"
+    date: "2026"
+    summary: "Norton Rose Fulbright April 2026 guide to Australia's mandatory merger regime covering notification thresholds, waiver procedures, ACCC Phase I/II timelines, supermarket acquisition rules, and transitional filing guidance."
+  - title: "Transition to Australia's New Merger Control Regime"
+    firm: "Australian Competition and Consumer Commission (ACCC)"
+    url: "https://www.accc.gov.au/business/mergers-and-acquisitions/transition-to-a-new-merger-control-regime"
+    date: "2025"
+    summary: "Official ACCC guidance on the transition to the mandatory merger regime under the Treasury Laws Amendment (Mergers and Acquisitions Reform) Act 2024, covering phase-in timeline, notification requirements, and interim voluntary filing arrangements."

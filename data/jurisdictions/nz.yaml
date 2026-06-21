@@ -5,8 +5,8 @@ last_verified: "2026-06-14"
 authority:
   name: Commerce Commission New Zealand (Te Komihana Tūāhuatanga o Aotearoa)
   abbreviation: ComCom
-  url: https://comcom.govt.nz/
-  filing_url: https://comcom.govt.nz/clearances-and-authorisations/
+  url: https://www.comcom.govt.nz/
+  filing_url: https://www.comcom.govt.nz/business-competition/mergers-and-acquisitions/
 
 regime:
   mandatory: false   # no mandatory pre-merger notification requirement
@@ -21,7 +21,7 @@ legal_basis:
       substantially lessening competition (SLC) in a market in New Zealand. There is no
       separate mandatory pre-merger notification provision in the Commerce Act.
   - citation: "Commerce Commission Mergers and Acquisitions Guidelines (2022)"
-    url: "https://comcom.govt.nz/regulated-industries"
+    url: "https://www.comcom.govt.nz/regulated-industries"
     note: >
       Sets out the Commission's analytical framework, safe harbours, and indicative
       market concentration thresholds. Not binding law; represents Commission practice.
@@ -67,7 +67,7 @@ fees:
     (verify current fee schedule at comcom.govt.nz)
   source: "Commerce Commission fee schedule"
   source_type: official_guidance
-  source_url: "https://comcom.govt.nz/clearances-and-authorisations/"
+  source_url: "https://www.comcom.govt.nz/business-competition/mergers-and-acquisitions/"
   annual_adjustment: false
 
 threshold_tests:
@@ -85,7 +85,7 @@ threshold_tests:
   - test_id: nz_combined_market_share
     description: "Indicative safe harbour — combined NZ market share < 40% (Commission unlikely to intervene)"
     legal_basis: "Commerce Act 1986, s. 47; Commerce Commission Mergers and Acquisitions Guidelines (2022)"
-    source_url: "https://comcom.govt.nz/regulated-industries"
+    source_url: "https://www.comcom.govt.nz/regulated-industries"
     note: >
       NOT a mandatory notification trigger. The Commission is generally unlikely to
       intervene if the merged entity's combined market share is below 40%. If the
@@ -171,6 +171,47 @@ scope:
     provides legal certainty in approximately 40 working days. New Zealand's small
     domestic market means combined shares can be high even for modest-sized transactions.
 
+minority_thresholds:
+  applies: true
+  standard: "material_influence"
+  note: >
+    New Zealand's Commerce Act 1986 Section 47 prohibits acquisitions of shares or assets
+    that substantially lessen competition (SLC) in any New Zealand market. The regime is
+    voluntary — no mandatory notification threshold exists as of mid-2026 (proposed reforms
+    under the Commerce Amendment Bill are pending). Minority acquisitions are caught when
+    they create a 'substantial degree of influence' (SDI) over the target, assessed by
+    reference to voting rights, board appointment powers, veto rights, economic dependency,
+    or contractual arrangements. Parties may apply for voluntary clearance under Section 66
+    for protection against post-closing challenge. The Commerce Commission has challenged
+    minority stakes in small, concentrated New Zealand markets.
+  rules:
+    - rule_id: "nz_minority_slc"
+      relationship_type: "any"
+      pct_threshold: null
+      operator: ">="
+      rights_required: null
+      source: "Commerce Act 1986 (NZ), Sec. 47"
+      source_type: "primary_legislation"
+      source_url: "https://www.legislation.govt.nz/act/public/1986/0005/188.0/DLM88421.html"
+      note: >
+        Any acquisition of shares, regardless of percentage, is caught by Section 47 if
+        it substantially lessens competition. No percentage floor. The Commission considers
+        the full economic effect: information sharing, board influence, veto powers, and
+        structural links to competitors.
+    - rule_id: "nz_minority_substantial_influence"
+      relationship_type: "any"
+      pct_threshold: null
+      operator: ">="
+      rights_required: "veto_strategic"
+      source: "Commerce Act 1986, Sec. 47; Commerce Commission Merger Guidelines"
+      source_type: "official_guidance"
+      source_url: "https://www.comcom.govt.nz/business-competition/guidelines/"
+      note: >
+        A minority stake satisfying any of the SDI factors — voting rights enabling
+        blocking, board appointment, veto powers over strategic decisions, economic
+        dependency — can render the acquirer an 'associated person' of the target,
+        bringing the combined position within the Section 47 SLC analysis.
+
 # ── Gun-jumping / standstill obligation ───────────────────────────────────────
 gun_jumping:
   automatic_void: false
@@ -231,3 +272,20 @@ source_passages:
       in a market."
     supports_conditions:
       - nz_combined_share
+
+practitioner_notes:
+  - title: "Merger Control Laws and Regulations 2025 — New Zealand"
+    firm: "Global Legal Insights"
+    url: "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/new-zealand/"
+    date: "2025"
+    summary: "GLI practitioner chapter on New Zealand's voluntary merger regime covering Commerce Commission jurisdiction under the Commerce Act 1986, the substantial lessening of competition (SLC) test, and the NZCC's informal clearance and authorisation pathways."
+  - title: "ICLG Mergers and Acquisitions Laws and Regulations 2024 — New Zealand"
+    firm: "Russell McVeagh"
+    url: "https://www.russellmcveagh.com/insights-news/iclg-mergers-acquisitions-laws-and-regulations-2024-new-zealand/"
+    date: "2024"
+    summary: "Russell McVeagh's contribution to the ICLG M&A guide covering New Zealand deal mechanics, Commerce Commission clearance procedure, market definition practice, and the ComCom's 2023 merger guidelines update."
+  - title: "Merger Control 2025 — New Zealand"
+    firm: "Chambers and Partners"
+    url: "https://practiceguides.chambers.com/practice-guides/merger-control-2025/new-zealand"
+    date: "2025"
+    summary: "Chambers guide to New Zealand merger control covering Commerce Commission procedure, the informal clearance and formal authorisation tracks, the SLC substantive test, and the ComCom's concurrent review of Australia-NZ cross-border transactions."

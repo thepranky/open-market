@@ -310,6 +310,36 @@ scope:
     statutory exemptions in FTA Art. 11(3) may apply — including financial holding
     company mergers and intra-group restructurings.
 
+minority_thresholds:
+  applies: true
+  standard: "percentage_based"
+  note: >
+    Taiwan's Fair Trade Act (FTA) Article 10 defines 'combination' (merger) to include
+    any acquisition of one-third or more of the voting shares or capital contributions of
+    another enterprise. This is a hard statutory definition: reaching the one-third
+    threshold constitutes a combination regardless of whether operational control changes.
+    Article 11 then establishes whether the combination must be pre-notified to the Fair
+    Trade Commission (FTC) based on market share or turnover tests. All shares and capital
+    contributions held by the acquirer's group (including affiliates) are aggregated for
+    the one-third calculation. The FTC has a strict gun-jumping posture with fines up to
+    NTD 50m for consummating a notifiable combination before clearance.
+  rules:
+    - rule_id: "tw_minority_one_third"
+      relationship_type: "any"
+      pct_threshold: 33.33
+      operator: ">"
+      rights_required: null
+      source: "Fair Trade Act (Taiwan), Art. 10(1)(ii)"
+      source_type: "primary_legislation"
+      source_url: "https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=J0150002"
+      note: >
+        Acquiring 'more than one-third' of the total voting shares or capital of another
+        enterprise is a statutory 'combination.' All shares and capital contributions held
+        by the acquirer (including affiliates) are aggregated. The trigger is the equity
+        percentage itself; no separate control test applies at the definitional stage.
+        Pre-notification under Article 11 is then required if the notional market-share
+        or turnover tests are also met.
+
 # ── Gun-jumping / standstill obligation ───────────────────────────────────────
 gun_jumping:
   automatic_void: true
@@ -367,3 +397,20 @@ source_passages:
       - tw_pre_either_party_share
       - tw_gen_combined_worldwide
       - tw_gen_each_party_taiwan
+
+practitioner_notes:
+  - title: "Taiwan — Merger Control Laws and Regulations 2026"
+    firm: "ICLG"
+    url: "https://iclg.com/practice-areas/merger-control-laws-and-regulations/taiwan/"
+    date: "2026"
+    summary: "ICLG chapter on Taiwanese merger control covering TFTC jurisdiction under the Fair Trade Act, the combined worldwide and Taiwan domestic turnover thresholds, 30-business-day Phase I review, and TFTC's approach to digital platform transactions."
+  - title: "Merger Control 2025 — Taiwan (Trends and Developments)"
+    firm: "Chambers and Partners"
+    url: "https://practiceguides.chambers.com/practice-guides/merger-control-2025/taiwan/trends-and-developments"
+    date: "2025"
+    summary: "Chambers trends guide to Taiwanese merger control covering the TFTC's 2024 enforcement activity (62 cases, 1 prohibition), digital economy focus, and the TFTC's cooperation agreements with foreign competition authorities."
+  - title: "Merger Control Laws and Regulations 2025 — Taiwan"
+    firm: "Global Legal Insights"
+    url: "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/taiwan/"
+    date: "2025"
+    summary: "GLI practitioner chapter on Taiwanese merger control with coverage of TFTC notification requirements, simplified procedure, substantive SLC assessment, and sector-specific considerations for semiconductor and technology transactions."

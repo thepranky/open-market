@@ -319,3 +319,93 @@ source_passages:
       - ru_target_assets
       - ru_combined_worldwide_revenue
       - ru_rev_target_assets
+
+# ── Minority acquisition thresholds ───────────────────────────────────────────
+minority_thresholds:
+  applies: true
+  standard: "percentage_based"
+  note: >
+    Russia has explicit statutory minority-stake notification thresholds under Federal
+    Law No. 135-FZ "On Protection of Competition" (2006), Article 28(5). Unlike most
+    EU jurisdictions that apply only a qualitative decisive-influence test, Russian law
+    requires pre-approval from the Federal Antimonopoly Service (FAS) whenever an
+    acquisition causes the acquirer to cross the 25%, 50%, or 75% voting-share
+    thresholds in a Russian joint-stock company (AO), provided the size thresholds
+    (combined assets or revenue, plus target assets) are met. These are hard percentage
+    triggers — crossing each threshold independently requires pre-approval, meaning three
+    separate filings may be required if a transaction is structured in stages. For
+    limited liability companies (OOO), acquisitions of rights that enable determination
+    of the company's decisions trigger notification. NOTE: Comprehensive international
+    sanctions make most transactions involving Russian entities legally impermissible
+    for Western parties; this entry documents the legal framework only.
+  rules:
+    - rule_id: "ru_minority_25pct"
+      relationship_type: "any"
+      pct_threshold: 25
+      operator: ">="
+      rights_required: null
+      source: "Article 28(5)(1), Federal Law No. 135-FZ 'On Protection of Competition' (2006)"
+      source_type: "primary_legislation"
+      source_url: "https://fas.gov.ru/merger-control/"
+      note: >
+        Pre-approval required when an acquisition results in the acquirer obtaining
+        the right to dispose of MORE THAN 25% of voting shares in a Russian JSC
+        (AO), where previously the acquirer held less than 25%, subject to size
+        thresholds (combined assets/revenue of acquirer group > RUB 7bn or > RUB 10bn
+        revenue, AND target assets > RUB 400m). The trigger is crossing the 25% floor,
+        not a majority or decisive influence standard.
+    - rule_id: "ru_minority_50pct"
+      relationship_type: "any"
+      pct_threshold: 50
+      operator: ">="
+      rights_required: null
+      source: "Article 28(5)(1), Federal Law No. 135-FZ 'On Protection of Competition' (2006)"
+      source_type: "primary_legislation"
+      source_url: "https://fas.gov.ru/merger-control/"
+      note: >
+        Separate pre-approval required when crossing the 50% threshold in a Russian
+        JSC, subject to the same size thresholds. Each percentage threshold (25%, 50%,
+        75%) is an independent notification trigger under Article 28(5).
+    - rule_id: "ru_minority_75pct"
+      relationship_type: "any"
+      pct_threshold: 75
+      operator: ">="
+      rights_required: null
+      source: "Article 28(5)(1), Federal Law No. 135-FZ 'On Protection of Competition' (2006)"
+      source_type: "primary_legislation"
+      source_url: "https://fas.gov.ru/merger-control/"
+      note: >
+        Separate pre-approval required when crossing the 75% threshold (supermajority)
+        in a Russian JSC, subject to the same size thresholds. This is the highest
+        explicit statutory minority/control notification level in Article 28(5).
+
+# Practitioner nuance:
+# - Russia's 25% threshold is one of the most permissive (lowest) minority acquisition
+#   triggers among major jurisdictions globally and is entirely percentage-based, not
+#   control-based. Even a passive 26% stake triggers mandatory FAS pre-approval.
+# - Each threshold crossing (25%, 50%, 75%) is independently notifiable — staged
+#   acquisitions crossing multiple thresholds require multiple sequential FAS approvals.
+# - For OOOs (limited liability companies), the trigger is the acquisition of rights
+#   enabling determination of the company's decisions, without explicit percentages.
+# - SANCTIONS: As of 2022, comprehensive US, EU, UK, and other international sanctions
+#   make most transactions involving Russian entities legally impermissible for Western
+#   parties. Merger control analysis should only proceed after sanctions clearance.
+# - Russia also enacted legislation in 2022 restricting exit of foreign investors from
+#   Russian investments, creating additional regulatory layers beyond FAS merger control.
+
+practitioner_notes:
+  - title: "Russia: Merger Control"
+    firm: "Noerr"
+    url: "https://www.noerr.com/en/insights/russia-merger-control"
+    date: "2023"
+    summary: "Noerr Q&A guide (Legal 500 Merger Control Country Comparative Guide) covering FAS jurisdiction, Russian turnover and asset thresholds, review timelines, and procedural requirements; note that Western firm engagement in Russia has changed significantly since February 2022 sanctions."
+  - title: "Russia — Merger Control Notification (Lex Mundi Guide)"
+    firm: "Lex Mundi"
+    url: "https://www.lexmundi.com/guides/lex-mundi-global-merger-notification-guide/jurisdictions/europe/russia/"
+    date: "2024"
+    summary: "Lex Mundi global merger notification guide chapter on Russia covering FAS filing thresholds, documentation requirements, RUB 35,000 filing fee, and review periods; current as of 2024 but note sanctions context for non-Russian parties."
+  - title: "Merger Control Laws and Regulations 2025 — Russia"
+    firm: "Global Legal Insights"
+    url: "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/russia/"
+    date: "2025"
+    summary: "GLI chapter on Russian merger control covering FAS jurisdiction under the Competition Law, anti-monopoly package reforms through 2023, and the practical implications of 2022 sanctions and Russia's regulatory response for cross-border transactions."

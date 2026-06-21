@@ -181,6 +181,38 @@ scope:
     is available but voluntary. The annual UA-based threshold changes significantly
     each year due to high inflation; always verify the current-year value.
 
+minority_thresholds:
+  applies: true
+  standard: "material_influence"
+  note: >
+    Argentina's merger control under Law 27.442 (in force May 2018, enforced by the
+    National Competition Authority / ANC from November 2025) extends to any acquisition
+    giving the acquirer 'control or substantial influence' (control o influencia
+    sustancial) over the target. No explicit statutory percentage thresholds exist for
+    minority acquisitions — the test is qualitative, assessing whether the stake grants
+    the ability to influence strategic or commercial decisions. The monetary threshold
+    (100,000,000 Adjustable Units, approximately ARS 110.2bn / USD 104.7m as of
+    February 2025, adjusted annually) must also be met. A purely passive minority stake
+    with no governance rights has generally not been treated as notifiable even where
+    the monetary threshold is met.
+  rules:
+    - rule_id: "ar_minority_substantial_influence"
+      relationship_type: "any"
+      pct_threshold: null
+      operator: ">="
+      rights_required: "veto_strategic"
+      source: "Law 27.442, Article 7; Decree 480/2018"
+      source_type: "primary_legislation"
+      source_url: "https://www.argentina.gob.ar/normativa/nacional/ley-27442-313411"
+      note: >
+        Law 27.442 Article 7 defines 'economic concentration' to include acquisitions
+        conferring 'control or substantial influence' over an undertaking. Substantial
+        influence is assessed qualitatively: minority stakes with veto rights over
+        strategic decisions (pricing, investment, business plan) are treated as
+        conferring substantial influence and are notifiable. Purely passive financial
+        minority stakes with no governance rights have generally not been treated as
+        notifiable by the CNDC/ANC.
+
 # ── Gun-jumping / standstill obligation ───────────────────────────────────────
 gun_jumping:
   automatic_void: true
@@ -231,3 +263,20 @@ source_passages:
       economic agents involved in the transaction during the preceding fiscal year."
     supports_conditions:
       - ar_combined_argentina_revenue
+
+practitioner_notes:
+  - title: "Argentine Antitrust Authority Updates Merger Control Thresholds and Monetary Penalties"
+    firm: "Allende & Brea"
+    url: "https://allende.com/en/antitrust-competition/argentine-antitrust-authority-updates-merger-control-thresholds-and-monetary-penalties-3-02-25-2025/"
+    date: "2025"
+    summary: "Client alert covering Resolution 21/2025, which raised the Adjustable Unit to ARS 1,102.28 and set the 2025 merger notification threshold at ARS 110.2 billion. Essential annual reference for confirming the current UA value before advising on filings."
+  - title: "Argentina Becomes a Pre-Closing Jurisdiction by Nov. 2026"
+    firm: "Marval, O'Farrell & Mairal"
+    url: "https://www.marval.com/publicacion/argentina-sistema-pre-closing-a-partir-de-nov2026-17383?lang=en"
+    date: "2025"
+    summary: "Explains the establishment of the new National Competition Authority (ANC) via Decree 810/2025 and the transition of Argentina's merger control regime from post-closing to pre-closing notification effective November 2026. Key read for deal teams timing closings around the new suspensory obligation."
+  - title: "New Merger Control Review Regulation in Argentina"
+    firm: "Marval, O'Farrell & Mairal"
+    url: "https://www.marval.com/publicacion/nuevo-reglamento-para-la-notificacion-de-operaciones-de-concentracion-economica-15483&lang=en?lang=en"
+    date: "2023"
+    summary: "Covers Resolution 905/2023, which replaced the 22-year-old notification regulation and introduced two notification pathways (Summary and Ordinary), three submission forms (F0/F1/F2), and a new pre-notification consultation option. Foundational reference for preparing Argentine merger filings."

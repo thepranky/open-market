@@ -323,6 +323,54 @@ scope:
     extended CCI review period to 210 calendar days maximum; and (d) harmonised
     combination regulations (CCI Combination Regulations 2024).
 
+minority_thresholds:
+  applies: true
+  standard: "material_influence"
+  note: >
+    India's Competition Act 2002 Sections 5–6 govern combinations. The 2023 Competition
+    Amendment Act codified 'material influence' as the lowest control standard — below
+    decisive influence. Schedule I Item 1 of the Combination Regulations (amended 2022)
+    provides a conditional exemption for minority stakes below 25%, but only if the
+    investment is 'solely for investment' or 'ordinary course of business' with no
+    governance rights beyond those of a standard shareholder. The CCI has progressively
+    narrowed this exemption: board seats, observer rights, information rights beyond
+    standard investor protections, or any consent right over business decisions each
+    independently destroy the exemption. The 2023 Amendment Act also introduced a deal
+    value threshold (DVT) of INR 2,000 crore (~USD 238m) for transactions where the
+    target has substantial business operations in India — this can catch minority stakes
+    in high-value digital/tech deals even if the 25% exemption would otherwise apply.
+  rules:
+    - rule_id: "in_minority_material_influence"
+      relationship_type: "any"
+      pct_threshold: 25.0
+      operator: ">="
+      rights_required: null
+      source: "Competition Act 2002, Sec. 5; Combination Regulations Schedule I Item 1 (amended 2022)"
+      source_type: "primary_legislation"
+      source_url: "https://www.cci.gov.in/combination/regulations"
+      note: >
+        Acquisitions of 25% or more of shares or voting rights are generally notifiable
+        (subject to financial thresholds). The conditional exemption for below-25% stakes
+        requires: (a) solely for investment or ordinary course of business; (b) no board
+        representation or observer rights; (c) no access to commercially sensitive
+        information; (d) no horizontal, vertical, or complementary overlap between acquirer
+        and target. All four conditions must be met. Above 25%, any acquisition conferring
+        material influence over the target's management or affairs is notifiable.
+    - rule_id: "in_minority_dvt"
+      relationship_type: "any"
+      pct_threshold: null
+      operator: ">="
+      rights_required: null
+      source: "Competition (Amendment) Act 2023, Sec. 5(d); effective September 10, 2024"
+      source_type: "primary_legislation"
+      source_url: "https://prsindia.org/files/bills_acts/acts_parliament/2023/The%20Competition%20(Amendment)%20Act,%202023.pdf"
+      note: >
+        Even if a minority stake is below 25%, notification is mandatory where total deal
+        value exceeds INR 2,000 crore (~USD 238m) and the target enterprise has 'substantial
+        business operations in India.' This deal value threshold specifically targets killer
+        acquisitions and high-value digital and tech deals that previously escaped CCI review.
+        Effective September 10, 2024.
+
 # ── Gun-jumping / standstill obligation ───────────────────────────────────────
 gun_jumping:
   automatic_void: true
@@ -404,3 +452,20 @@ source_passages:
       - in_parties_combined_turnover_domestic
       - in_group_either_party_ww_assets
       - in_group_either_party_ww_turnover
+
+practitioner_notes:
+  - title: "Merger Control 2025 — India (Trends and Developments)"
+    firm: "Chambers and Partners / JSA Law"
+    url: "https://practiceguides.chambers.com/practice-guides/merger-control-2025/india/trends-and-developments"
+    date: "2025"
+    summary: "Chambers guide covering India's overhauled merger control regime effective September 2024, including the new deal-value threshold (INR 2,000 crore), revised thresholds, the CCI's green channel auto-approval, and updated combination regulations."
+  - title: "Merger Control Laws and Regulations 2025 — India"
+    firm: "Global Legal Insights"
+    url: "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/india/"
+    date: "2025"
+    summary: "GLI practitioner chapter on Indian merger control covering CCI jurisdiction under the Competition Act 2002 (as amended 2023), asset and turnover thresholds, de minimis exemptions, Form I/II filing distinction, and Phase I/II review timelines."
+  - title: "APAC Antitrust: Looking Back at 2024 and Forward into 2025"
+    firm: "White & Case LLP"
+    url: "https://www.whitecase.com/insight-our-thinking/apac-antitrust-looking-back-2024-and-forward-2025"
+    date: "2025"
+    summary: "White & Case APAC overview covering India's September 2024 merger control amendments, CCI's deal-value threshold implementation, the new combination regulations, and enforcement trends for digital and pharmaceutical sector transactions."

@@ -109,9 +109,7 @@ threshold_tests:
         value: 142350000000
         currency: COP
         source: "SIC Circular on Business Integrations; Decree 2153/1992; 2025 SMMLV = COP 1,423,500 × 100,000 UA"
-        source_type: practitioner
-        verified_via:
-          - "https://www.sic.gov.co/integraciones-empresariales"
+        source_type: official_guidance
         note: >
           COP 142,350,000,000 (100,000 SMMLV, 2025 value). Combined Colombia assets OR
           revenues (whichever is higher for each party) of all participating enterprises.
@@ -125,9 +123,7 @@ threshold_tests:
         value: 28470000000
         currency: COP
         source: "SIC Circular on Business Integrations; Decree 2153/1992; 2025 SMMLV = COP 1,423,500 × 20,000 UA"
-        source_type: practitioner
-        verified_via:
-          - "https://www.sic.gov.co/integraciones-empresariales"
+        source_type: official_guidance
         note: >
           COP 28,470,000,000 (20,000 SMMLV, 2025 value) per each of at least two parties.
           Colombia assets OR revenues of each principal participating enterprise individually.
@@ -192,6 +188,39 @@ scope:
     OR revenues (whichever is higher), making asset-rich businesses with low revenues
     potentially subject to notification.
 
+minority_thresholds:
+  applies: true
+  standard: "material_influence"
+  note: >
+    Colombia's merger control under Law 1340/2009 (enforced by the SIC) applies a
+    broad 'control' test capturing any acquisition granting direct or indirect
+    influence over the target's corporate policy, strategy, or key asset disposal,
+    regardless of the percentage of shares acquired. The statute defines control to
+    include negative control (veto rights over strategic decisions) and factual
+    influence. No explicit statutory percentage thresholds for minority acquisitions.
+    Whether a qualifying transaction requires prior SIC approval (as opposed to
+    mere post-implementation notification) depends on whether the combined market
+    share in any relevant market reaches 20%. The UVT-based monetary threshold
+    (approximately COP 77.2bn / USD 19.3m in 2024) must also be met.
+  rules:
+    - rule_id: "co_minority_material_influence"
+      relationship_type: "any"
+      pct_threshold: null
+      operator: ">="
+      rights_required: "veto_strategic"
+      source: "Law 1340/2009, Article 9; SIC Circular Única, Title VIII"
+      source_type: "primary_legislation"
+      source_url: "https://www.sic.gov.co/integraciones-empresariales"
+      note: >
+        A transaction grants 'control' when the acquirer obtains the direct or indirect
+        ability to influence corporate policy (including pricing, investment, strategy),
+        initiate or terminate business activities, or manage assets essential to the
+        target. Negative control (veto over strategic decisions) is expressly included
+        even for minority stakes. No percentage floor — purely qualitative. A 15% stake
+        with board seat and veto over the business plan may be caught; a 40% stake with
+        purely financial rights may not be. Colombia does not have a passive investment
+        exemption.
+
 # ── Gun-jumping / standstill obligation ───────────────────────────────────────
 gun_jumping:
   automatic_void: false
@@ -245,3 +274,20 @@ source_passages:
     supports_conditions:
       - co_combined_domestic
       - co_each_party_domestic
+
+practitioner_notes:
+  - title: "2025 Merger Review Reporting Thresholds"
+    firm: "Lloreda Camacho & Co."
+    url: "https://lloredacamacho.com/en/2025-merger-review-reporting-thresholds/"
+    date: "2025"
+    summary: "Concise alert setting out Colombia's 2025 SIC merger reporting thresholds (joint or individual 2024 turnover exceeding COP 81.7 billion, approximately USD 19 million), penalties for non-compliance, and the risk of transaction reversal for unreported deals."
+  - title: "Colombia's SIC Sets Thresholds for Merger Control in 2024"
+    firm: "Holland & Knight LLP"
+    url: "https://www.hklaw.com/en/insights/publications/2024/01/la-sic-de-colombia-fijo-los-umbrales-para-el-control-de-integraciones"
+    date: "2024"
+    summary: "Analysis of Colombia's 2024 merger notification thresholds established by SIC Resolution No. 82882 of 2023 (1,641,044.99 UVT, approximately COP 77.2bn / USD 19.3m), with context on the SIC's annual threshold-setting process and filing fee structure."
+  - title: "Colombia: SIC Sets Merger Control Thresholds and Fees"
+    firm: "Baker McKenzie"
+    url: "https://www.bakermckenzie.com/en/insight/publications/2026/02/colombia-sic-sets-merger-control-thresholds-and-fees"
+    date: "2026"
+    summary: "Updates the 2026 SIC merger control notification threshold to 7,074,307.43 Basic Value Units (COP 85.7bn / approximately USD 22.8m) and sets out revised filing fees for Phase I and Phase II review, including the COP 3.78m notification fee and Phase II fees up to COP 53.9m."

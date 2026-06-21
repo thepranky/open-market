@@ -5,8 +5,8 @@ last_verified: "2026-06-14"
 authority:
   name: Norwegian Competition Authority (Konkurransetilsynet)
   abbreviation: NCA
-  url: https://www.konkurransetilsynet.no/en/mergers/
-  filing_url: https://www.konkurransetilsynet.no/en/mergers/notification-of-mergers/
+  url: https://konkurransetilsynet.no/fusjoner-og-oppkjop-%c2%a716/mer-om-fusjoner-og-oppkjop/
+  filing_url: https://konkurransetilsynet.no/fusjoner-og-oppkjop-%c2%a716/mer-om-fusjoner-og-oppkjop/
 
 regime:
   mandatory: true
@@ -15,7 +15,7 @@ regime:
 
 legal_basis:
   - citation: "Competition Act (Konkurranseloven) of 5 March 2004 No. 12, as amended — §§ 17–21 (merger control)"
-    url: "https://lovdata.no/lov/2004-03-05-12"
+    url: "https://lovdata.no/dokument/NL/lov/2004-03-05-12"
     note: >
       §§ 17–21 of the Competition Act (KRL) govern merger control in Norway. § 17 defines
       concentrations. § 18 sets the notification obligation and thresholds. § 19 imposes
@@ -24,7 +24,7 @@ legal_basis:
       Norway, as an EEA/EFTA state, coordinates with the EFTA Surveillance Authority
       (ESA) for EEA-dimension transactions but has its own domestic regime.
   - citation: "Regulation on Notification of Concentrations (Forskrift om melding av foretakssammenslutninger) OF-2004-04-26-673"
-    url: "https://lovdata.no/dokument/SF/forskrift/2004-04-26-673"
+    url: "https://lovdata.no/dokument/NL/lov/2004-03-05-12"
     source_type: official_guidance
     note: >
       Implementing regulation specifying form and content of notifications. The NCA also
@@ -72,7 +72,7 @@ fees:
     (Fees may be updated; verify current amount via NCA website before filing.)
   source: "Norwegian Competition Authority fee schedule"
   source_type: authority_announcement
-  source_url: "https://www.konkurransetilsynet.no/en/mergers/notification-of-mergers/"
+  source_url: "https://konkurransetilsynet.no/fusjoner-og-oppkjop-%c2%a716/mer-om-fusjoner-og-oppkjop/"
   annual_adjustment: true
 
 # ── Scope / trigger events ────────────────────────────────────────────────────
@@ -84,7 +84,7 @@ scope:
     over the whole or part of one or more other undertakings; or (c) the creation of
     a full-function joint venture (§ 17 KRL, aligned with EU Merger Regulation definition).
   concentration_definition_source: "§ 17, Konkurranseloven (Competition Act, 2004:12)"
-  concentration_definition_url: "https://lovdata.no/lov/2004-03-05-12"
+  concentration_definition_url: "https://lovdata.no/dokument/NL/lov/2004-03-05-12"
   trigger_events:
     - merger
     - share_acquisition
@@ -106,7 +106,7 @@ scope:
     independent jurisdiction (EEA one-stop-shop applies for EEA-dimension cases
     reviewed by the EFTA Surveillance Authority).
   substantive_test: "siec"
-  substantive_test_url: "https://lovdata.no/lov/2004-03-05-12"
+  substantive_test_url: "https://lovdata.no/dokument/NL/lov/2004-03-05-12"
   substantive_test_note: >
     Norway applies the SIEC test (§ 16 Konkurranseloven, as amended 2016): NCA may intervene against a concentration that significantly impedes effective competition in Norway, in particular by creating or strengthening a dominant position.
   note: >
@@ -125,7 +125,7 @@ gun_jumping:
   per_day_fine: null
   criminal_sanctions: false
   legal_basis: "§§ 19(2) and 29 Konkurranseloven"
-  legal_basis_url: "https://lovdata.no/lov/2004-03-05-12"
+  legal_basis_url: "https://lovdata.no/dokument/NL/lov/2004-03-05-12"
   note: >
     § 19(2) KRL prohibits implementation before NCA clearance. § 29 KRL allows the
     NCA (or the King in Council) to impose fines of up to 10% of annual worldwide
@@ -139,7 +139,7 @@ fdi_screening:
   applicable: true
   regime_name: "Lov om nasjonal sikkerhet (National Security Act) + Lov om kontroll med eksport av strategiske varer (Export Control Act)"
   authority: "Norwegian Ministry of Justice and Public Security; National Security Authority (Nasjonal sikkerhetsmyndighet, NSM)"
-  url: "https://www.nsm.no/en/themes/national-security/"
+  url: "https://nsm.no/en/"
   sectors_covered:
     - national_security
     - defense
@@ -173,7 +173,7 @@ threshold_tests:
   - test_id: no_standard
     description: "Combined worldwide >NOK 1bn AND each of ≥2 parties Norwegian >NOK 100m (§ 18 KRL)"
     legal_basis: "§ 18(1), Konkurranseloven (Competition Act, 5 March 2004 No. 12)"
-    source_url: "https://www.konkurransetilsynet.no/en/mergers/when-must-you-notify/"
+    source_url: "https://konkurransetilsynet.no/fusjoner-og-oppkjop-%c2%a716/mer-om-fusjoner-og-oppkjop/"
     note: >
       Both conditions must be met simultaneously (AND logic). The combined aggregate
       worldwide turnover of all undertakings concerned must exceed NOK 1 billion in
@@ -197,10 +197,10 @@ threshold_tests:
         currency: NOK
         source: "§ 18(1)(a) Konkurranseloven"
         source_type: primary_legislation
-        source_url: "https://lovdata.no/lov/2004-03-05-12"
+        source_url: "https://lovdata.no/dokument/NL/lov/2004-03-05-12"
         verified_via:
-          - "https://iclg.com/practice-areas/merger-control"
-          - "https://www.konkurransetilsynet.no/en/mergers/when-must-you-notify/"
+          - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/-laws-and-regulations/"
+          - "https://konkurransetilsynet.no/fusjoner-og-oppkjop-%c2%a716/mer-om-fusjoner-og-oppkjop/"
         note: "NOK 1bn combined worldwide turnover of all parties in last financial year."
 
       - condition_id: no_each_party_norwegian
@@ -212,10 +212,10 @@ threshold_tests:
         currency: NOK
         source: "§ 18(1)(b) Konkurranseloven"
         source_type: primary_legislation
-        source_url: "https://lovdata.no/lov/2004-03-05-12"
+        source_url: "https://lovdata.no/dokument/NL/lov/2004-03-05-12"
         verified_via:
-          - "https://iclg.com/practice-areas/merger-control"
-          - "https://www.konkurransetilsynet.no/en/mergers/when-must-you-notify/"
+          - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/-laws-and-regulations/"
+          - "https://konkurransetilsynet.no/fusjoner-og-oppkjop-%c2%a716/mer-om-fusjoner-og-oppkjop/"
         note: "NOK 100m individual Norwegian turnover for each of at least two of the parties."
 
 notes:
@@ -250,7 +250,7 @@ source_passages:
   - passage_id: no_krl_s18
     document_title: "Konkurranseloven (Competition Act, Act No. 12 of 5 March 2004)"
     article_reference: "§ 18(1)"
-    document_url: "https://lovdata.no/lov/2004-03-05-12"
+    document_url: "https://lovdata.no/dokument/NL/lov/2004-03-05-12"
     source_type: primary_legislation
     quoted_text: >
       "§ 18 Notification obligation
@@ -267,7 +267,7 @@ source_passages:
   - passage_id: no_krl_s19_20
     document_title: "Konkurranseloven (Competition Act, Act No. 12 of 5 March 2004)"
     article_reference: "§§ 19 and 20"
-    document_url: "https://lovdata.no/lov/2004-03-05-12"
+    document_url: "https://lovdata.no/dokument/NL/lov/2004-03-05-12"
     source_type: primary_legislation
     quoted_text: >
       "§ 19 Suspensive effect
@@ -281,3 +281,60 @@ source_passages:
       2. If the competition authority decides to open an investigation, it must conclude
       the investigation within seventy working days of the decision."
     supports_conditions: []
+
+# ── Minority acquisition thresholds ───────────────────────────────────────────
+minority_thresholds:
+  applies: false
+  standard: "control_based"
+  note: >
+    Norwegian merger control under the Competition Act of 5 March 2004 No. 12
+    (Konkurranseloven) is triggered by the acquisition of "control" (kontroll) over
+    an undertaking. Section 17 defines a concentration as arising from a lasting change
+    in control. Control means the ability to exercise decisive influence (avgjörende
+    innflytelse) over an undertaking. As an EEA member state (not EU member), Norway
+    applies its national merger control rules for transactions below the EU Merger
+    Regulation thresholds. There is no standalone sub-control minority-stake
+    notification trigger in Norwegian competition law. The Norwegian Competition
+    Authority (Konkurransetilsynet — KT) follows decisive-influence doctrine consistent
+    with EEA merger practice. Passive minority investments not conferring decisive
+    influence are outside scope. Norway does not have an analogue to Germany's
+    "competitively significant influence" test.
+  rules:
+    - rule_id: "no_minority_decisive_influence"
+      relationship_type: "any"
+      pct_threshold: null
+      operator: ">="
+      rights_required: null
+      source: "Section 17, Lov om konkurranse mellom foretak og kontroll med foretakssammenslutninger (Konkurranseloven), 5 March 2004 No. 12"
+      source_type: "primary_legislation"
+      source_url: "https://lovdata.no/dokument/NL/lov/2004-03-05-12"
+      note: >
+        Decisive influence (avgjörende innflytelse) is the operative standard.
+        No sub-control percentage-based minority trigger exists in Norwegian law.
+        KT guidance follows EEA/EU decisional practice on control analysis.
+
+# Practitioner nuance:
+# - Norway participates in the EEA: if a transaction meets EU Merger Regulation thresholds
+#   (Community dimension), the EC has exclusive jurisdiction and KT does not apply.
+# - Below EU thresholds, KT applies Norwegian law; control analysis follows EC doctrine.
+# - A minority stake with strategic veto rights (board appointment, business plan,
+#   budget) may constitute decisive influence requiring notification.
+# - Norway has no transaction-value test or sub-decisive-influence minority threshold.
+# - KT has been active in challenging transactions in media/telecom sectors.
+
+practitioner_notes:
+  - title: "Merger Control Laws and Regulations 2025 — Norway"
+    firm: "Global Legal Insights"
+    url: "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/norway/"
+    date: "2025"
+    summary: "GLI practitioner chapter on Norwegian merger control covering the Norwegian Competition Authority (NCA) jurisdiction, the combined worldwide and Norwegian domestic turnover thresholds, and Phase I (25 working days) and Phase II timelines."
+  - title: "Merger Control 2025 — Norway"
+    firm: "Chambers and Partners"
+    url: "https://practiceguides.chambers.com/practice-guides/merger-control-2025/norway"
+    date: "2025"
+    summary: "Chambers guide to Norwegian merger control with practical guidance on NCA filing requirements, EEA Agreement interplay, substantive assessment under the SIC test, and NCA's recent enforcement focus on media and telecom sectors."
+  - title: "Catch-22 and Other Issues in Merger Control in Europe"
+    firm: "ICLG"
+    url: "https://iclg.com/practice-areas/merger-control-laws-and-regulations/01-catch-22-and-other-issues-in-merger-control-in-europe"
+    date: "2025"
+    summary: "ICLG analysis of European merger control complexities including EEA-specific considerations for Norway (non-EU member but EEA party), Nordic authority cooperation, and referral mechanics."

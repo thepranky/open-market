@@ -5,7 +5,7 @@ last_verified: "2026-06-13"
 authority:
   name: Competition Commission of South Africa
   abbreviation: CompCom
-  url: https://www.compcom.co.za/mergers-and-acquisitions/
+  url: https://www.compcom.co.za/mergers-and-acquisitions-division/
   filing_url: https://www.compcom.co.za/
 
 regime:
@@ -22,7 +22,7 @@ legal_basis:
       Competition Commission only) and large mergers (notified to both the Competition
       Commission and the Competition Tribunal).
   - citation: "Government Notice — Competition Threshold Notice (updated 1 May 2026)"
-    url: "https://www.compcom.co.za/mergers-and-acquisitions/merger-thresholds/"
+    url: "https://www.compcom.co.za/mergers-and-acquisitions-division/merger-thresholds/"
     note: >
       The Minister of Trade, Industry and Competition adjusts threshold amounts by
       Government Gazette notice, in consultation with the Competition Commission.
@@ -70,7 +70,7 @@ fees:
     (effective 1 May 2026; previously ZAR 165,000 and ZAR 550,000)
   source: "Government Gazette No. 52199 (2 May 2026) — Competition Threshold Notice"
   source_type: authority_announcement
-  source_url: "https://www.compcom.co.za/mergers-and-acquisitions/merger-thresholds/"
+  source_url: "https://www.compcom.co.za/mergers-and-acquisitions-division/merger-thresholds/"
   annual_adjustment: false
 
 threshold_tests:
@@ -94,7 +94,7 @@ threshold_tests:
   - test_id: za_intermediate_revenue
     description: "Intermediate merger — combined SA revenue ≥ ZAR 1bn AND acquired firm SA revenue ≥ ZAR 200m"
     legal_basis: "Competition Act 1998, s. 11(1)(a); Government Threshold Notice, effective 1 May 2026"
-    source_url: "https://www.compcom.co.za/mergers-and-acquisitions/merger-thresholds/"
+    source_url: "https://www.compcom.co.za/mergers-and-acquisitions-division/merger-thresholds/"
     note: >
       Revenue-based limb of the intermediate threshold. If a transaction meets this test
       but falls below the large merger thresholds, it is an intermediate merger requiring
@@ -136,7 +136,7 @@ threshold_tests:
   - test_id: za_intermediate_assets
     description: "Intermediate merger — combined SA assets ≥ ZAR 1bn AND acquired firm SA assets ≥ ZAR 200m"
     legal_basis: "Competition Act 1998, s. 11(1)(a); Government Threshold Notice, effective 1 May 2026"
-    source_url: "https://www.compcom.co.za/mergers-and-acquisitions/merger-thresholds/"
+    source_url: "https://www.compcom.co.za/mergers-and-acquisitions-division/merger-thresholds/"
     note: "Assets-based alternative limb of the intermediate threshold."
     annual_adjustment: false
     effective_date: "2026-05-01"
@@ -171,7 +171,7 @@ threshold_tests:
   - test_id: za_large_revenue
     description: "Large merger — combined SA revenue ≥ ZAR 9.5bn AND acquired firm SA revenue ≥ ZAR 280m"
     legal_basis: "Competition Act 1998, s. 11(1)(b); Government Threshold Notice, effective 1 May 2026"
-    source_url: "https://www.compcom.co.za/mergers-and-acquisitions/merger-thresholds/"
+    source_url: "https://www.compcom.co.za/mergers-and-acquisitions-division/merger-thresholds/"
     note: >
       Large mergers require notification to both the Competition Commission and the
       Competition Tribunal. Revenue-based limb of the large merger threshold.
@@ -210,7 +210,7 @@ threshold_tests:
   - test_id: za_large_assets
     description: "Large merger — combined SA assets ≥ ZAR 9.5bn AND acquired firm SA assets ≥ ZAR 280m"
     legal_basis: "Competition Act 1998, s. 11(1)(b); Government Threshold Notice, effective 1 May 2026"
-    source_url: "https://www.compcom.co.za/mergers-and-acquisitions/merger-thresholds/"
+    source_url: "https://www.compcom.co.za/mergers-and-acquisitions-division/merger-thresholds/"
     note: "Assets-based alternative limb of the large merger threshold."
     annual_adjustment: false
     effective_date: "2026-05-01"
@@ -303,6 +303,51 @@ scope:
     the competition assessment was otherwise favourable. Employment effects and BEE
     ownership considerations are routinely assessed.
 
+minority_thresholds:
+  applies: true
+  standard: "control_based"
+  note: >
+    South Africa's Competition Act 89/1998 Section 12 defines a 'merger' as the acquisition
+    of 'direct or indirect control over the whole or part of the business of another firm.'
+    Control is broadly defined and includes the ability to 'materially influence' the policy
+    of the firm — meaning South Africa, like the UK, uses a sub-decisive-influence standard.
+    Section 12(2) lists four bases of control: (a) majority voting rights; (b) appointing
+    or removing a majority of directors; (c) ability to materially influence policy through
+    shareholding, agreement, or otherwise; (d) 35%+ of voting rights where no single other
+    person holds more. The 35% threshold in Section 12(2)(d) is a specific statutory
+    presumption of control, but control can arise below 35% via the material influence limb.
+    There is no standalone passive minority exemption — any acquisition conferring material
+    influence is a merger requiring notification if the financial thresholds are met.
+  rules:
+    - rule_id: "za_minority_35pct_statutory"
+      relationship_type: "any"
+      pct_threshold: 35.0
+      operator: ">="
+      rights_required: null
+      source: "Competition Act 89 of 1998, Section 12(2)(d)"
+      source_type: "primary_legislation"
+      source_url: "https://www.compcom.co.za/"
+      note: >
+        A firm directly or indirectly controls another if it holds 35% or more of the
+        voting rights and no other single person holds more voting rights — a statutory
+        presumption of control. At 35%+, the transaction is treated as a merger subject
+        to mandatory notification (if financial thresholds are met) without further
+        analysis.
+    - rule_id: "za_minority_material_influence"
+      relationship_type: "any"
+      pct_threshold: null
+      operator: ">="
+      rights_required: "veto_strategic"
+      source: "Competition Act 89 of 1998, Section 12(2)(c); Competition Commission practice"
+      source_type: "primary_legislation"
+      source_url: "https://www.compcom.co.za/"
+      note: >
+        Section 12(2)(c): control includes the ability to materially influence policy
+        through shareholding, agreement, or any other means. The Competition Commission
+        and Tribunal have found material influence at minority stakes well below 35% where
+        the acquirer held blocking rights over significant operational or strategic
+        decisions. No statutory percentage floor for this limb — assessed on facts.
+
 # ── Gun-jumping / standstill obligation ───────────────────────────────────────
 gun_jumping:
   automatic_void: false
@@ -352,3 +397,20 @@ source_passages:
       - za_int_target_revenue
       - za_large_combined_revenue
       - za_large_target_revenue
+
+practitioner_notes:
+  - title: "The ABCs of Merger Investigations in South Africa: When Do the Competition Authorities Need to Know About Your Deal?"
+    firm: "Cliffe Dekker Hofmeyr"
+    url: "https://www.cliffedekkerhofmeyr.com/en/news/publications/2024/Practice/Competition/competition-law-alert-20-november-merger-investigations"
+    date: "2024"
+    summary: "Practical guide on South African merger notification triggers under the Competition Act, distinguishing small, intermediate, and large mergers by financial thresholds, and explaining the two-stage Commission/Tribunal process for large mergers."
+  - title: "Navigating Merger Waters: The Competition Commission's Final Guidelines on Indivisible Transactions"
+    firm: "Cliffe Dekker Hofmeyr"
+    url: "https://www.cliffedekkerhofmeyr.com/news/publications/2024/Practice/Competition/competition-law-alert-17-october-2024-navigating-merger-waters-the-competition-commissions-final-guidelines-on-indivisible-transactions"
+    date: "2024"
+    summary: "Analysis of the October 2024 Competition Commission guidelines clarifying when multiple separate transactions must be notified as a single indivisible merger, including the Crown Gold Recoveries precedent and practical structuring implications."
+  - title: "South Africa: Final Guidelines on the Revised Approach to Public Interest in Merger Control"
+    firm: "Bowmans"
+    url: "https://bowmanslaw.com/insights/south-africa-final-guidelines-on-the-revised-approach-to-public-interest-in-merger-control/"
+    date: "2024"
+    summary: "Overview of the March 2024 Competition Commission Public Interest Guidelines requiring all mergers (including foreign-to-foreign) to promote greater spread of ownership under section 12A(3)(e) of the Competition Act, with broad application to private equity and minority acquisitions."

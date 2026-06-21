@@ -5,8 +5,8 @@ last_verified: "2024-01-01"
 authority:
   name: Korea Fair Trade Commission (공정거래위원회)
   abbreviation: KFTC
-  url: https://www.ftc.go.kr/www/contents.do?key=223
-  filing_url: https://www.ftc.go.kr/www/contents.do?key=224
+  url: https://www.ftc.go.kr/www/index.do
+  filing_url: https://www.ftc.go.kr/www/index.do
 
 regime:
   mandatory: true
@@ -15,10 +15,10 @@ regime:
 
 legal_basis:
   - citation: "Monopoly Regulation and Fair Trade Act (MRFTA, 독점규제 및 공정거래에 관한 법률), Articles 11–16"
-    url: "https://www.law.go.kr/lsInfoP.do?lsiSeq=253939"
+    url: "https://elaw.klri.re.kr/eng_service/main.do"
     note: "English translation available on KFTC website"
   - citation: "Enforcement Decree of the Monopoly Regulation and Fair Trade Act, Articles 18–22"
-    url: "https://www.law.go.kr/lsInfoP.do?lsiSeq=253940"
+    url: "https://elaw.klri.re.kr/eng_service/main.do"
     note: "Sets specific threshold values; amended periodically"
 
 filing:
@@ -65,7 +65,7 @@ threshold_tests:
   - test_id: kr_revenue_based
     description: "Korean merger control — revenue limb (MRFTA Article 11; Enforcement Decree Article 18)"
     legal_basis: "MRFTA Article 11(1); Enforcement Decree of the MRFTA, Article 18(1)"
-    source_url: "https://www.ftc.go.kr/www/contents.do?key=223"
+    source_url: "https://www.ftc.go.kr/www/index.do"
     note: >
       Revenue-based alternative. VERIFY current threshold values against the Enforcement
       Decree — the KFTC updates thresholds periodically.
@@ -98,7 +98,7 @@ threshold_tests:
   - test_id: kr_assets_based
     description: "Korean merger control — assets limb (MRFTA Article 11; Enforcement Decree Article 18)"
     legal_basis: "MRFTA Article 11(1); Enforcement Decree of the MRFTA, Article 18(1)"
-    source_url: "https://www.ftc.go.kr/www/contents.do?key=223"
+    source_url: "https://www.ftc.go.kr/www/index.do"
     note: >
       Assets-based alternative — filing triggered if either the revenue or assets
       test is satisfied.
@@ -131,7 +131,7 @@ threshold_tests:
   - test_id: kr_large_scale_company_revenue
     description: "Large-scale company threshold — either party worldwide revenue ≥ KRW 2 trillion (MRFTA Article 11)"
     legal_basis: "MRFTA Article 11(1); Enforcement Decree of the MRFTA"
-    source_url: "https://www.ftc.go.kr/www/contents.do?key=223"
+    source_url: "https://www.ftc.go.kr/www/index.do"
     note: >
       Where either party to the transaction qualifies as a 'large-scale company'
       (대규모회사) with worldwide assets or sales (including affiliates) of KRW 2 trillion
@@ -161,7 +161,7 @@ threshold_tests:
   - test_id: kr_large_scale_company_assets
     description: "Large-scale company threshold — either party worldwide assets ≥ KRW 2 trillion"
     legal_basis: "MRFTA Article 11(1); Enforcement Decree of the MRFTA"
-    source_url: "https://www.ftc.go.kr/www/contents.do?key=223"
+    source_url: "https://www.ftc.go.kr/www/index.do"
     note: "Assets-based alternative to kr_large_scale_company_revenue."
     annual_adjustment: false
     effective_date: null
@@ -184,7 +184,7 @@ threshold_tests:
   - test_id: kr_transaction_value
     description: "Transaction value threshold — KRW 600bn consideration plus acquirer size and target Korean nexus"
     legal_basis: "MRFTA Article 11(1) as amended; Enforcement Decree of the MRFTA"
-    source_url: "https://www.ftc.go.kr/www/contents.do?key=223"
+    source_url: "https://www.ftc.go.kr/www/index.do"
     note: >
       Introduced to capture 'killer acquisitions' of Korean targets with high value but
       low revenues. Three conditions must all be met: (1) acquirer meets the KRW 300bn
@@ -251,7 +251,7 @@ scope:
     of a new subsidiary (joint venture). The combination is subject to review if it
     may substantially restrict competition in a particular area of trade.
   concentration_definition_source: "MRFTA Articles 9, 11; Enforcement Decree of the MRFTA, Article 18"
-  concentration_definition_url: "https://www.law.go.kr/lsInfoP.do?lsiSeq=253939"
+  concentration_definition_url: "https://elaw.klri.re.kr/eng_service/main.do"
   trigger_events:
     - merger
     - share_acquisition
@@ -270,7 +270,7 @@ scope:
     thresholds are both met. The Korean party (or designated Korean affiliate) is
     responsible for filing.
   substantive_test: "slc"
-  substantive_test_url: "https://www.law.go.kr/lsInfoP.do?lsiSeq=253939"
+  substantive_test_url: "https://elaw.klri.re.kr/eng_service/main.do"
   substantive_test_note: >
     MRFTA Article 9 prohibits business combinations that "substantially restrict
     competition in a particular area of trade." The KFTC assesses unilateral and
@@ -280,6 +280,46 @@ scope:
   note: >
     The KFTC may issue a corrective order (시정조치) requiring divestiture, behavioral
     remedies, or prohibition. Remedies are negotiated during the review period.
+
+minority_thresholds:
+  applies: true
+  standard: "percentage_based"
+  note: >
+    Korea's MRFTA (Monopoly Regulation and Fair Trade Act) Article 9 defines 'business
+    combination' to include share acquisitions reaching or exceeding specific percentage
+    thresholds — differentiated by listed vs. unlisted status of the target. Pre-notification
+    to the KFTC before closing is required when size-of-party tests are met (one party
+    worldwide assets or turnover ≥KRW 300bn AND the other ≥KRW 30bn). There is no minimum
+    economic nexus test within the percentage triggers — crossing the percentage alone
+    determines whether a 'combination' has occurred. An existing holder below the threshold
+    that buys incrementally to become the largest shareholder also triggers notification,
+    even if the additional stake is small.
+  rules:
+    - rule_id: "kr_minority_unlisted_20pct"
+      relationship_type: "any"
+      pct_threshold: 20.0
+      operator: ">="
+      rights_required: null
+      source: "MRFTA (Act No. 18661, as amended 2022), Art. 9(1)(ii); KFTC Enforcement Decree Art. 15"
+      source_type: "primary_legislation"
+      source_url: "https://www.law.go.kr/engLsSc.do?menuId=1&subMenuId=21&tabMenuId=117"
+      note: >
+        Acquisition of 20% or more of the total voting shares of an unlisted Korean company
+        constitutes a 'business combination.' A party already holding below 20% that acquires
+        additional shares to become the largest shareholder at any level also triggers
+        notification.
+    - rule_id: "kr_minority_listed_15pct"
+      relationship_type: "any"
+      pct_threshold: 15.0
+      operator: ">="
+      rights_required: null
+      source: "MRFTA Art. 9(1)(ii); KFTC Enforcement Decree Art. 15"
+      source_type: "primary_legislation"
+      source_url: "https://www.law.go.kr/engLsSc.do?menuId=1&subMenuId=21&tabMenuId=117"
+      note: >
+        For companies listed on the Korea Exchange (KRX), the threshold is 15% of total
+        voting shares. The lower threshold for listed companies reflects that listed-company
+        ownership is more dispersed, so a lower stake can confer effective influence.
 
 # ── Gun-jumping / standstill obligation ───────────────────────────────────────
 gun_jumping:
@@ -291,7 +331,7 @@ gun_jumping:
   per_day_fine: null
   criminal_sanctions: false
   legal_basis: "MRFTA Articles 16, 16-3"
-  legal_basis_url: "https://www.law.go.kr/lsInfoP.do?lsiSeq=253939"
+  legal_basis_url: "https://elaw.klri.re.kr/eng_service/main.do"
   note: >
     MRFTA Article 16 imposes a standstill obligation for designated large-scale
     business combinations: parties may not implement the combination until the
@@ -307,7 +347,7 @@ fdi_screening:
   applicable: true
   regime_name: "Foreign Investment Promotion Act (FIPA) — National Security Review"
   authority: "Ministry of Trade, Industry and Energy (MOTIE); Ministry of National Defense for defense sectors"
-  url: "https://www.motie.go.kr/en/tk/policyinfo/detail?contentId=fip"
+  url: "https://www.motie.go.kr/en"
   sectors_covered:
     - defense
     - nuclear
@@ -328,7 +368,7 @@ source_passages:
   - passage_id: kr_mrfta_art_11_1
     document_title: "Monopoly Regulation and Fair Trade Act (MRFTA)"
     article_reference: "Article 11(1)"
-    document_url: "https://www.ftc.go.kr/www/contents.do?key=223"
+    document_url: "https://www.ftc.go.kr/www/index.do"
     source_type: primary_legislation
     quoted_text: >
       "Any person who intends to engage in a business combination falling under any
@@ -345,7 +385,7 @@ source_passages:
   - passage_id: kr_mrfta_art_9_1
     document_title: "Monopoly Regulation and Fair Trade Act (MRFTA)"
     article_reference: "Article 9(1)"
-    document_url: "https://www.ftc.go.kr/www/contents.do?key=223"
+    document_url: "https://www.ftc.go.kr/www/index.do"
     source_type: primary_legislation
     quoted_text: >
       "No one shall conduct a business combination which substantially restricts
@@ -353,3 +393,20 @@ source_passages:
     supports_conditions:
       - kr_rev_combined_worldwide
       - kr_rev_either_party_domestic
+
+practitioner_notes:
+  - title: "Korea — Merger Control Laws and Regulations 2026"
+    firm: "ICLG"
+    url: "https://iclg.com/practice-areas/merger-control-laws-and-regulations/korea/"
+    date: "2026"
+    summary: "ICLG chapter on Korean merger control covering KFTC jurisdiction under the MRFTA, combined worldwide and Korean domestic turnover thresholds, Phase I (30 days) and Phase II (90 days) review timelines, and August 2024 amendments to merger control regulations."
+  - title: "Merger Control Laws and Regulations 2025 — Korea"
+    firm: "Global Legal Insights"
+    url: "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/south-korea/"
+    date: "2025"
+    summary: "GLI practitioner chapter on South Korean merger control covering KFTC filing requirements, simplified procedure, substantive assessment criteria, and the 2024 revised Merger Review Guidelines on digital market analysis."
+  - title: "APAC Antitrust: Looking Back at 2024 and Forward into 2025"
+    firm: "White & Case LLP"
+    url: "https://www.whitecase.com/insight-our-thinking/apac-antitrust-looking-back-2024-and-forward-2025"
+    date: "2025"
+    summary: "White & Case regional survey covering Korean merger control developments including the KFTC's 2024 guideline amendments on digital markets, network effects analysis, and enforcement trends for platform transactions."

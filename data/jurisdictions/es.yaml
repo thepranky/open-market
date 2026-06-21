@@ -5,8 +5,8 @@ last_verified: "2026-06-14"
 authority:
   name: Comisión Nacional de Mercados y la Competencia
   abbreviation: CNMC
-  url: https://www.cnmc.es/ambitos-de-actuacion/concentraciones
-  filing_url: https://www.cnmc.es/ambitos-de-actuacion/concentraciones/notificacion
+  url: https://www.cnmc.es/concentraciones
+  filing_url: https://www.cnmc.es/concentraciones
 
 regime:
   mandatory: true
@@ -22,7 +22,7 @@ legal_basis:
       tests). Article 9 deals with the one-stop-shop (EU dimension). Article 10 imposes
       the standstill obligation. Article 57 (as amended) sets out sanctions for breach.
   - citation: "Real Decreto 261/2008, de 22 de febrero, por el que se aprueba el Reglamento de Defensa de la Competencia (RDC)"
-    url: "https://www.boe.es/buscar/act.php?id=BOE-A-2008-3616"
+    url: "https://www.boe.es/buscar/doc.php?id=BOE-A-2008-3616"
     source_type: official_guidance
     note: "Implementing regulation providing procedural detail and the notification forms (Formulario CO, Formulario CO Abreviado)."
 
@@ -75,7 +75,7 @@ fees:
     (Fees are indexed periodically; verify current amounts via CNMC.)
   source: "Real Decreto 261/2008, Article 26; CNMC published fee schedule"
   source_type: official_guidance
-  source_url: "https://www.cnmc.es/ambitos-de-actuacion/concentraciones/notificacion"
+  source_url: "https://www.cnmc.es/concentraciones"
   annual_adjustment: false
 
 # ── Scope / trigger events ────────────────────────────────────────────────────
@@ -116,6 +116,38 @@ scope:
     than EUR 10 million (Art. 8(3) LDC).
 
 # ── Gun-jumping / standstill ──────────────────────────────────────────────────
+
+minority_thresholds:
+  applies: false
+  standard: "control_based"
+  note: >
+    Spain follows a decisive-influence / control standard under Article 7 of the Ley de
+    Defensa de la Competencia (LDC). There are no percentage-based minority triggers.
+    Non-controlling minority interests are not notifiable. Spain also has a market share-
+    based notification trigger (Article 8 LDC): the CNMC has jurisdiction if the parties'
+    combined Spanish market share reaches 30% in any affected market, regardless of
+    turnover. However, this market share gate requires a qualifying concentration (i.e.,
+    a control change) — it does NOT catch non-controlling minority acquisitions regardless
+    of post-combination market share. A de minimis exemption applies: no notification if
+    the target's Spanish turnover or acquired assets are below EUR 10m AND combined market
+    share does not reach 50%.
+  rules:
+    - rule_id: "es_minority_decisive_influence"
+      relationship_type: "any"
+      pct_threshold: null
+      operator: ">="
+      rights_required: "veto_strategic"
+      source: "LDC Article 7(2) (Ley 15/2007 de Defensa de la Competencia)"
+      source_type: "primary_legislation"
+      source_url: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-12946"
+      note: >
+        Control under Article 7(2) LDC arises from contracts, rights, or any other means
+        (factual or legal) conferring decisive influence over the target's strategic
+        commercial decisions. A minority shareholding triggers notification only when it
+        confers decisive influence through veto rights over strategic decisions, board
+        control, or de facto power arising from dispersed remaining shareholding. Pure
+        financial minority investments without influence rights are not notifiable.
+
 gun_jumping:
   automatic_void: false
   voidable: true
@@ -137,7 +169,7 @@ fdi_screening:
   applicable: true
   regime_name: "Régimen de control de inversiones extranjeras en España — Foreign Investment Screening"
   authority: "Dirección General de Comercio Internacional e Inversiones, Ministerio de Economía, Comercio y Empresa"
-  url: "https://www.mineco.gob.es/portal/site/mineco/inversion-extranjera"
+  url: "https://www.mineco.gob.es"
   sectors_covered:
     - defense
     - national_security
@@ -196,7 +228,7 @@ threshold_tests:
         source_url: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-12946"
         verified_via:
           - "https://www.antitrust-alliance.org/fiche/merger-control-investment-spain/"
-          - "https://iclg.com/practice-areas/merger-control"
+          - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/-laws-and-regulations/"
         note: >
           30% combined Spain market share in any relevant product/service market.
           Market definition and share estimates must be made by the parties at the time
@@ -228,7 +260,7 @@ threshold_tests:
         source_url: "https://www.boe.es/buscar/act.php?id=BOE-A-2007-12946"
         verified_via:
           - "https://www.antitrust-alliance.org/fiche/merger-control-investment-spain/"
-          - "https://iclg.com/practice-areas/merger-control"
+          - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/-laws-and-regulations/"
         note: "EUR 240m combined Spanish turnover of all parties in last financial year."
 
       - condition_id: es_each_party_spain
@@ -309,3 +341,20 @@ source_passages:
       for in this Law without a resolution having been made, unless the Competition
       Authority has, by reasoned decision, permitted implementation of the operation."
     supports_conditions: []
+
+practitioner_notes:
+  - title: "Merger Control Laws and Regulations 2025 — Spain"
+    firm: "Global Legal Insights"
+    url: "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/spain/"
+    date: "2025"
+    summary: "GLI chapter on Spanish merger control covering CNMC jurisdiction, the dual turnover and market-share thresholds, simplified procedure, Phase I/II timelines, and public interest considerations."
+  - title: "Merger Control 2025 — Spain"
+    firm: "Chambers and Partners"
+    url: "https://practiceguides.chambers.com/practice-guides/merger-control-2025/spain"
+    date: "2025"
+    summary: "Chambers practice guide on Spanish merger control with practical coverage of filing obligations, the Council of Ministers' power to intervene on public interest grounds, and recent CNMC decisional practice."
+  - title: "Global Merger Control Trends and Outlook 2025–2026"
+    firm: "White & Case LLP"
+    url: "https://www.whitecase.com/insight-alert/global-merger-control-trends-and-outlook-2025-2026"
+    date: "2025"
+    summary: "White & Case global survey covering enforcement trends across major jurisdictions including Spain and the EU, with analysis of threshold changes, procedural reforms, and cross-border filing considerations."

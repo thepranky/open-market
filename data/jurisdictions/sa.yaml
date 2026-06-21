@@ -197,6 +197,39 @@ scope:
     Sector-specific concurrent approvals (SAMA for banking, CST for telecoms) apply
     in addition to GAC merger control.
 
+minority_thresholds:
+  applies: true
+  standard: "material_influence"
+  note: >
+    Saudi Arabia's Competition Law (Royal Decree No. M/75 of 2019) Article 12 defines an
+    'economic concentration' to include any act enabling an enterprise to 'control or
+    materially influence the management, conduct, or affairs of another enterprise.' The
+    GAC's Economic Concentration Review Guidelines (5th edition, April 2025) explicitly
+    extend the regime to minority stakes that confer material influence — analogous to the
+    UK standard but with less decisional history. The GAC 5th edition guidelines also
+    introduced de minimis exemptions for investment funds acquiring minority stakes purely
+    for investment purposes (passive financial investment with no governance rights beyond
+    standard investor protections). Three-way AND threshold structure: SAR 200m worldwide /
+    SAR 40m Saudi combined / SAR 40m target worldwide — if any one limb is missed, no
+    filing is required regardless of influence conferred.
+  rules:
+    - rule_id: "sa_minority_material_influence"
+      relationship_type: "any"
+      pct_threshold: null
+      operator: ">="
+      rights_required: "veto_strategic"
+      source: "Saudi Competition Law, Royal Decree No. M/75 of 2019, Article 12; GAC Economic Concentration Review Guidelines (5th edition, April 2025)"
+      source_type: "official_guidance"
+      source_url: "https://www.gac.gov.sa/en/economic-concentration/"
+      note: >
+        Article 12 catches any act enabling an enterprise to 'materially influence' the
+        management, conduct, or affairs of another. The GAC 5th edition guidelines confirm
+        that a minority stake combined with structural rights (veto over strategic decisions,
+        board seat, right to appoint key management) may constitute a notifiable economic
+        concentration. The GAC assesses the totality of the transaction — share percentage,
+        contractual rights, governance documents, and commercial context. No statutory
+        percentage floor for the material influence limb.
+
 # ── Gun-jumping / standstill obligation ───────────────────────────────────────
 gun_jumping:
   automatic_void: false
@@ -219,7 +252,7 @@ fdi_screening:
   applicable: true
   regime_name: "Foreign Investment Law (Royal Decree No. M/1 of 2000); National Investment Strategy"
   authority: "Ministry of Investment of Saudi Arabia (MISA, formerly SAGIA)"
-  url: "https://www.misa.gov.sa/en/"
+  url: "https://misa.gov.sa/"
   legislation_url: "https://www.gac.gov.sa/en/economic-concentration/"
 
   sectors_covered:
@@ -261,3 +294,20 @@ source_passages:
       - sa_combined_worldwide
       - sa_combined_saudi
       - sa_target_worldwide
+
+practitioner_notes:
+  - title: "Saudi Arabia's GAC Issues New Merger Guidelines: A Closer Look At What's Changed"
+    firm: "Bremer LF"
+    url: "https://www.mondaq.com/saudiarabia/antitrust-eu-competition/1617388/saudi-arabias-gac-issues-new-merger-guidelines-a-closer-look-at-whats-changed"
+    date: "2025"
+    summary: "Detailed analysis of the GAC's fifth-edition merger guidelines (effective July 2024), covering changes to control definitions, joint-venture exemptions, investment-fund carve-outs, and the new one-year clearance validity cap."
+  - title: "Saudi Competition Authority Introduces Amendments to Merger Guidelines"
+    firm: "Bremer LF"
+    url: "https://www.bremerlf.com/resources/saudi-competition-authority-introduces-amendments-to-merger-guidelines"
+    date: "2024"
+    summary: "Practitioner alert on the August 2024 GAC amendments introducing a local nexus requirement for targets, negative versus positive control distinctions, and an investment-fund minority-stake exemption."
+  - title: "Merger Control Laws and Regulations 2025 – Saudi Arabia"
+    firm: "Global Legal Insights / Bremer LF"
+    url: "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/saudi-arabia/"
+    date: "2025"
+    summary: "Annual jurisdiction chapter covering GAC notification thresholds (SAR 200M combined worldwide, SAR 40M Saudi, SAR 40M target), procedural timelines, substantive assessment standards, and 2024 enforcement statistics."

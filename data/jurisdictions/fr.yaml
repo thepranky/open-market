@@ -5,8 +5,8 @@ last_verified: "2026-06-13"
 authority:
   name: "Autorite de la concurrence"
   abbreviation: AdlC
-  url: https://www.autoritedelaconcurrence.fr/en/mergers
-  filing_url: https://www.autoritedelaconcurrence.fr/en/article/procedures-merger-control
+  url: https://www.autoritedelaconcurrence.fr/en/comment-notifier-une-operation-de-concentration
+  filing_url: https://www.autoritedelaconcurrence.fr/en/comment-notifier-une-operation-de-concentration
 
 regime:
   mandatory: true
@@ -17,7 +17,7 @@ legal_basis:
   - citation: "Code de commerce, Articles L. 430-1 to L. 430-10"
     url: "https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000005634379/LEGISCTA000006161935/"
   - citation: "Lignes directrices de l'Autorite de la concurrence relatives au controle des concentrations (2020)"
-    url: "https://www.autoritedelaconcurrence.fr/fr/document/lignes-directrices-de-lautorite-de-la-concurrence-relatives-au-controle-des-concentrations"
+    url: "https://www.autoritedelaconcurrence.fr/en"
     source_type: official_guidance
 
 filing:
@@ -200,6 +200,37 @@ scope:
     approximately August 2026. The Minister of Economy retains concurrent powers in
     certain retail sector cases (Article L. 430-7-1).
 
+minority_thresholds:
+  applies: false
+  standard: "control_based"
+  note: >
+    France follows a pure decisive-influence / control standard under Article L430-1 of the
+    Code de Commerce. There are no special minority-specific thresholds — non-controlling
+    minority interests are not subject to merger control. Notification is required only when
+    an acquisition results in a change of control on a lasting basis. A minority stake can
+    achieve this through veto rights over strategic decisions, joint voting agreements, or
+    de facto control arising from dispersed remaining shareholding. The Autorité de la
+    concurrence applies the EC Consolidated Jurisdictional Notice by analogy. Protective/
+    minority investor vetoes (anti-dilution, tag/drag, related-party transaction limits)
+    typically do not confer control.
+  rules:
+    - rule_id: "fr_minority_decisive_influence"
+      relationship_type: "any"
+      pct_threshold: null
+      operator: ">="
+      rights_required: "veto_strategic"
+      source: "Article L430-1, Code de Commerce"
+      source_type: "primary_legislation"
+      source_url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006231929/"
+      note: >
+        A minority stake triggers notification only if it confers the ability to exercise
+        decisive influence on a lasting basis: (1) veto rights over strategic decisions
+        (business plan, budget, management appointments, major capex); (2) joint control
+        through voting agreements enabling blocking or direction of key decisions; (3) de
+        facto sole or joint control based on dispersed shareholder structure. No fixed
+        percentage threshold. Purely financial minority stakes without influence rights
+        are not notifiable.
+
 # ── Gun-jumping / standstill obligation ───────────────────────────────────────
 gun_jumping:
   automatic_void: true
@@ -226,7 +257,7 @@ fdi_screening:
   applicable: true
   regime_name: "Controle des investissements etrangers en France (IEF)"
   authority: "Ministere de l'Economie et des Finances — Direction Generale du Tresor (DGT)"
-  url: "https://www.tresor.economie.gouv.fr/Institutionnel/gouvernance-economique/le-controle-des-investissements-etrangers-en-france"
+  url: "https://www.tresor.economie.gouv.fr"
   sectors_covered:
     - defense
     - dual_use_technologies
@@ -295,3 +326,20 @@ source_passages:
     supports_conditions:
       - fr_combined_worldwide
       - fr_each_party_domestic
+
+practitioner_notes:
+  - title: "France — Merger Control Laws and Regulations 2025"
+    firm: "ICLG / Ashurst LLP"
+    url: "https://iclg.com/practice-areas/merger-control-laws-and-regulations/france/"
+    date: "2025"
+    summary: "Comprehensive ICLG chapter on French merger control covering FCA jurisdiction, notification thresholds under the French Commercial Code, Phase I/II timelines, and 2024–2025 reform proposals including a proposed call-in power for below-threshold mergers."
+  - title: "Merger Control 2025 — France (Trends and Developments)"
+    firm: "Bredin Prat / Chambers and Partners"
+    url: "https://practiceguides.chambers.com/practice-guides/merger-control-2025/france/trends-and-developments"
+    date: "2025"
+    summary: "Chambers practice guide covering the French Competition Authority's 2024 enforcement activity (295 decisions), procedural developments post-Illumina/Grail, and the FCA's consultation on a proposed call-in mechanism."
+  - title: "Merger Control Laws and Regulations 2025 — France"
+    firm: "Global Legal Insights"
+    url: "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/france/"
+    date: "2025"
+    summary: "GLI country chapter on French merger control providing practitioner-oriented coverage of thresholds, procedural timelines, substantive assessment, and recent FCA decisional practice."

@@ -229,6 +229,38 @@ scope:
     threshold values (EGP 900m worldwide, EGP 100m Egypt) should be verified with
     the ECA before advising, given EGP depreciation since 2022.
 
+minority_thresholds:
+  applies: true
+  standard: "control_based"
+  note: >
+    Egypt's Competition Protection Law No. 3 of 2005 (as amended by Law No. 175 of 2022)
+    Article 19 defines an economic concentration to include any act enabling an enterprise
+    to 'directly or indirectly acquire a controlling share in or over another enterprise.'
+    A 'controlling share' means an interest enabling a party to direct or significantly
+    influence the management and policies of another. The 'significant influence' language
+    may be slightly broader than the EU decisive influence standard, closer to the UK
+    material influence or South African material influence concepts. The ECA has limited
+    published practice since the 2022 amendment — conservative assessment and informal
+    ECA engagement is advisable. EGP depreciation has made the EGP-denominated thresholds
+    substantially lower in USD terms (EGP 900m worldwide threshold ~USD 18m at 2025 rates).
+  rules:
+    - rule_id: "eg_minority_significant_influence"
+      relationship_type: "any"
+      pct_threshold: null
+      operator: ">="
+      rights_required: "veto_strategic"
+      source: "Competition Protection Law No. 3 of 2005 (as amended by Law No. 175 of 2022), Article 19"
+      source_type: "primary_legislation"
+      source_url: "https://eca.gov.eg/en/MergerControl"
+      note: >
+        Article 19 catches any act enabling a party to 'acquire a controlling share' —
+        an interest enabling the party to direct or significantly influence the management
+        and policies of another enterprise. This 'significant influence' language is
+        potentially broader than the EU decisive influence standard. A minority stake with
+        board representation plus veto rights over strategic or operational decisions is
+        likely to be treated as conferring a 'controlling share.' Purely passive financial
+        investments without governance rights are unlikely to be caught.
+
 # ── Gun-jumping / standstill obligation ───────────────────────────────────────
 gun_jumping:
   automatic_void: false
@@ -280,3 +312,20 @@ source_passages:
     supports_conditions:
       - eg_combined_worldwide
       - eg_combined_domestic
+
+practitioner_notes:
+  - title: "Egypt Issues New Merger Control Regime Under the Executive Regulations of the Competition Law"
+    firm: "GLA & Company"
+    url: "https://www.glaco.com/blog/egypt-issues-new-merger-control-regime-under-the-executive-regulations-of-the-competition-law/"
+    date: "2024"
+    summary: "Practical guide to Egypt's pre-closing merger control regime effective June 1, 2024, covering the EGP 900M domestic and EGP 5B worldwide thresholds, material influence triggers at 25% voting rights, filing fees, and 30-working-day initial review timeline."
+  - title: "Practical Insights into the Egypt Ex-Ante Merger Control Regime and the Most Recent Roundtable Discussions Held by the Regulator"
+    firm: "GLA & Company"
+    url: "https://www.glaco.com/blog/practical-insights-into-the-egypt-ex-ante-merger-control-regime-and-the-most-recent-rountable-discussions-held-by-the-regultor/"
+    date: "2024"
+    summary: "Insights from Egyptian Competition Authority roundtable discussions on the new regime, including clarification on pre-notification meetings, simplified 20-business-day clearance procedures, joint-venture notification rules, and multi-authority approvals for FRA-regulated entities."
+  - title: "Egypt Merger Control Regime: Wave of Change"
+    firm: "GLA & Company"
+    url: "https://www.glaco.com/blog/egypt-merger-control-regime-wave-of-change/"
+    date: "2023"
+    summary: "Overview of Egypt's 2022 competition law amendment introducing mandatory pre-closing notification, detailing the two threshold pathways, ECA review timelines (30 days extendable to 75 days for second-stage review), and penalty range of 1-10% of global turnover."

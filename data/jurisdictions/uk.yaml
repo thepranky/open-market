@@ -6,7 +6,7 @@ authority:
   name: Competition and Markets Authority
   abbreviation: CMA
   url: https://www.gov.uk/government/organisations/competition-and-markets-authority
-  filing_url: https://www.gov.uk/guidance/mergers-how-to-notify-the-cma-of-a-merger
+  filing_url: https://www.gov.uk/guidance/tell-the-cma-about-your-merger
 
 regime:
   mandatory: false   # UK merger control is voluntary
@@ -67,7 +67,7 @@ fees:
     £120m and above: £160,000
   source: "Enterprise Act 2002, Schedule 9 (as amended); current fee schedule"
   source_type: primary_legislation
-  source_url: "https://www.gov.uk/guidance/mergers-how-to-notify-the-cma-of-a-merger-of-a-merger"
+  source_url: "https://www.gov.uk/guidance/tell-the-cma-about-your-merger"
   source_type: official_guidance
   annual_adjustment: false
 
@@ -100,7 +100,7 @@ threshold_tests:
           £70m threshold. Note: the DMCC Act 2024 gave the Secretary of State power
           to update thresholds by secondary legislation. Verify current threshold at
           https://www.legislation.gov.uk/ukpga/2002/40/section/23 before relying
-          on this figure. As of last_verified date this remains £70m.
+          on this figure. As of the last verified date this remains £70m.
 
   - test_id: uk_share_of_supply
     description: "UK share of supply test"
@@ -153,7 +153,7 @@ threshold_tests:
       New threshold introduced by the DMCC Act 2024 to capture acquisitions by
       large strategic players below traditional revenue/share thresholds. Targets
       'killer acquisitions' by digital and other large incumbents. This threshold
-      is NOT yet in force as of the last_verified date — commencement depends on
+      is NOT yet in force as of the last verified date — commencement depends on
       secondary legislation. Monitor CMA announcements for commencement date.
       TREAT AS PENDING until confirmed in force.
     annual_adjustment: false
@@ -219,6 +219,53 @@ scope:
     However, the CMA has a four-month window to open an investigation after
     completion or public announcement. Phase 2 inquiries use a "balance of
     probabilities" SLC standard.
+
+minority_thresholds:
+  applies: true
+  standard: "material_influence"
+  note: >
+    The UK uses a 'material influence' standard — the lowest of the three levels of control
+    under Enterprise Act 2002 ss. 26–29. Material influence is below decisive influence
+    (the EU EUMR standard) and can be established by shareholding alone or in combination
+    with board rights, veto rights, or other structural factors. The CMA's Mergers Guidance
+    (CMA2revised, September 2021, paras. 4.16–4.32) establishes that a 25%+ stake
+    presumptively confers material influence (blocking minority over special resolutions
+    under the Companies Act 2006). Stakes as low as 15–20% can confer material influence
+    when combined with board representation, observer rights, or commercially significant
+    veto rights. There is no statutory safe-harbour percentage — the CMA assesses the full
+    factual matrix in every case. The NSI Act 2021 applies separately at 25%/50%/75% hard
+    thresholds in 17 sensitive sectors, independently of the CMA material influence test.
+  rules:
+    - rule_id: "uk_minority_25pct_presumptive"
+      relationship_type: "any"
+      pct_threshold: 25.0
+      operator: ">="
+      rights_required: null
+      source: "Enterprise Act 2002, ss. 26–29; CMA2revised (September 2021), paras. 4.16–4.17"
+      source_type: "official_guidance"
+      source_url: "https://www.gov.uk/government/publications/mergers-guidance-on-the-cmas-jurisdiction-and-procedure"
+      note: >
+        A 25%+ stake is presumed to confer material influence under CMA2revised para. 4.17
+        because it enables the holder to block special resolutions under the Companies Act
+        2006. This creates a rebuttable presumption that the CMA has jurisdiction. The
+        parties may rebut by demonstrating the 25%+ stake is held by a passive financial
+        investor with no structural influence rights.
+    - rule_id: "uk_minority_board_rights"
+      relationship_type: "any"
+      pct_threshold: 15.0
+      operator: ">="
+      rights_required: "board_seat"
+      source: "Enterprise Act 2002, ss. 26–29; CMA2revised (September 2021), paras. 4.18–4.28"
+      source_type: "official_guidance"
+      source_url: "https://www.gov.uk/government/publications/mergers-guidance-on-the-cmas-jurisdiction-and-procedure"
+      note: >
+        The CMA has found material influence in several cases involving stakes of 15–24%
+        where the acquirer held a board seat or had rights to appoint a director, or held
+        commercially significant veto rights over business plans, budgets, or strategy.
+        The 15% figure reflects the lower end of the CMA's practice, not a statutory floor.
+        The full factual matrix is assessed: size of stake relative to other shareholders,
+        board composition, shareholder agreements, and any de facto ability to block
+        commercial decisions (CMA2revised, paras. 4.20–4.28).
 
 gun_jumping:
   automatic_void: false
@@ -323,3 +370,20 @@ notes:
     must supply goods/services in the UK (Enterprise Act 2002, s. 23). Pure foreign-
     to-foreign deals with no UK activity are outside jurisdiction even if thresholds
     are technically met.
+
+practitioner_notes:
+  - title: "UK Merger Control in 2024/25: Key Takeaways"
+    firm: "WilmerHale"
+    url: "https://www.wilmerhale.com/en/insights/client-alerts/20250611-uk-merger-control-in-202425-key-takeaways"
+    date: "2025"
+    summary: "Comprehensive review of UK merger control developments in fiscal 2024/25, covering the DMCC Act's new thresholds, Vodafone/Three clearance, AI partnership scrutiny, and the CMA's 4Ps reform agenda."
+  - title: "UK's New Merger Control Rules Go Live"
+    firm: "Sidley Austin LLP"
+    url: "https://www.sidley.com/en/insights/newsupdates/2025/01/uk-s-new-merger-control-rules-go-live"
+    date: "2025"
+    summary: "Practical alert on the January 2025 DMCC Act threshold changes, including the new hybrid/acquirer test at 33% share of supply, updated hold-separate order guidance, and extraterritorial information-gathering powers."
+  - title: "CMA Publishes Updated Guidance on UK Merger Procedure"
+    firm: "Ashurst"
+    url: "https://www.ashurst.com/en/insights/cma-publishes-updated-guidance-on-uk-merger-procedure/"
+    date: "2025"
+    summary: "Analysis of the CMA's October 2025 updated CMA2 guidance implementing the 4Ps framework, including targets of 25 working days for Phase 1 clearances, revised material influence thresholds, and the new 'wait and see' approach for global transactions."
