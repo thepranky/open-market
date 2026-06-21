@@ -3666,8 +3666,8 @@ def _promotion_action(
 
     # Rules 6–9: core_assessed (requires conclusive status + refs for promotion)
     if imp == "core_assessed":
-        # Rule 7: core_assessed + segmented → needs explicit review
-        if status == "segmented":
+        # Rule 7: core_assessed + segmented/possible_segmentation → needs explicit review
+        if status in ("segmented", "possible_segmentation"):
             return (
                 "promote_with_uncertainty",
                 "Commission formally assessed this market but left segmentation open. "
@@ -3694,8 +3694,8 @@ def _promotion_action(
             "definition status; manual review required before canonical promotion.",
         )
 
-    # Rule 11: segmented (implicit importance classification)
-    if status == "segmented":
+    # Rule 11: segmented/possible_segmentation (implicit importance classification)
+    if status in ("segmented", "possible_segmentation"):
         return (
             "promote_with_uncertainty",
             "Segmentation was considered but left open by the Commission. "
