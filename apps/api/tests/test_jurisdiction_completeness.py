@@ -11,6 +11,8 @@ from app.models.jurisdiction import (
     GunJumping,
     JurisdictionRule,
     LegalBasis,
+    MinorityThresholdRule,
+    MinorityThresholds,
     Regime,
     ReviewPeriod,
     ReviewPeriods,
@@ -19,7 +21,12 @@ from app.models.jurisdiction import (
     ThresholdCondition,
     ThresholdTest,
 )
-from app.models.jurisdiction_verification import ArchetypeConfig, GateStatus, SourceVerificationTier
+from app.models.jurisdiction_verification import (
+    ArchetypeConfig,
+    ArchetypeRequirements,
+    GateStatus,
+    SourceVerificationTier,
+)
 from app.services.jurisdiction_completeness import build_sidecar_update, evaluate_all, evaluate_completeness
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
@@ -119,6 +126,114 @@ def test_mandatory_suspensory_requires_gun_jumping():
     assert any(f.code == "missing_gun_jumping" for f in report.failures)
 
 
+def test_missing_effective_date_on_annual_adjustment_test():
+    rule = _minimal_rule(
+        threshold_tests=[
+            ThresholdTest(
+                test_id="t1",
+                description="annual test",
+                legal_basis="s.1",
+                source_url="https://a.test/s1",
+                annual_adjustment=True,
+                effective_date=None,
+                conditions=[
+                    ThresholdCondition(
+                        condition_id="c1",
+                        metric="revenue",
+                        scope="domestic",
+                        party="target_group",
+                        operator=">",
+                        value=100,
+                        currency="EUR",
+                        source="s.1",
+                        source_type=SourceType.primary_legislation,
+                    )
+                ],
+            )
+        ]
+    )
+    report = evaluate_completeness(rule, ArchetypeConfig())
+    assert any(f.code == "missing_effective_date" for f in report.failures)
+
+
+def test_practitioner_condition_requires_note():
+    rule = _minimal_rule(
+        threshold_tests=[
+            ThresholdTest(
+                test_id="t1",
+                description="test",
+                legal_basis="s.1",
+                source_url="https://a.test/s1",
+                annual_adjustment=False,
+                conditions=[
+                    ThresholdCondition(
+                        condition_id="c1",
+                        metric="revenue",
+                        scope="domestic",
+                        party="target_group",
+                        operator=">",
+                        value=100,
+                        currency="EUR",
+                        source="s.1",
+                        source_type=SourceType.practitioner,
+                        note=None,
+                    )
+                ],
+            )
+        ],
+        source_passages=[],
+    )
+    report = evaluate_completeness(rule, ArchetypeConfig())
+    assert any(f.code == "practitioner_missing_note" for f in report.failures)
+
+
+def test_orphan_passage_support_fails():
+    rule = _minimal_rule(
+        source_passages=[
+            SourcePassage(
+                passage_id="p_orphan",
+                document_title="Act",
+                article_reference="s.1",
+                document_url="https://a.test/s1",
+                quoted_text="100",
+                supports_conditions=["nonexistent_condition"],
+            )
+        ]
+    )
+    report = evaluate_completeness(rule, ArchetypeConfig())
+    assert any(f.code == "orphan_passage_support" for f in report.failures)
+
+
+def test_minority_thresholds_applies_without_rules_fails():
+    rule = _minimal_rule(
+        minority_thresholds=MinorityThresholds(applies=True, standard="percentage_based", rules=[])
+    )
+    report = evaluate_completeness(rule, ArchetypeConfig())
+    assert any(f.code == "minority_missing_rules" for f in report.failures)
+
+
+def test_minority_thresholds_rule_missing_source_fails():
+    rule = _minimal_rule(
+        minority_thresholds=MinorityThresholds(
+            applies=True,
+            standard="percentage_based",
+            rules=[
+                MinorityThresholdRule(rule_id="m1", pct_threshold=25.0, source=""),
+            ],
+        )
+    )
+    report = evaluate_completeness(rule, ArchetypeConfig())
+    assert any(f.code == "minority_missing_source" for f in report.failures)
+
+
+def test_minority_thresholds_not_applies_is_skipped():
+    rule = _minimal_rule(
+        minority_thresholds=MinorityThresholds(applies=False, standard="none", rules=[])
+    )
+    report = evaluate_completeness(rule, ArchetypeConfig())
+    assert not any(f.code.startswith("minority_") for f in report.failures)
+
+
 def test_eu_archetype_has_required_elements():
     reports = {r.jurisdiction_id: r for r in evaluate_all(DATA_DIR, ARCHETYPES_PATH)}
     eu = reports["eu"]
@@ -133,9 +248,25 @@ def test_build_sidecar_marks_structure_complete():
     assert sidecar.source_verification_tier == SourceVerificationTier.structure_complete
 
 
-def test_archetype_passage_requirements():
-    reports = {r.jurisdiction_id: r for r in evaluate_all(DATA_DIR, ARCHETYPES_PATH)}
-    us = reports["us_hsr"]
-    assert not any(f.code == "archetype_requires_passages" for f in us.failures)
-    cl = reports["cl"]
-    assert not any(f.code == "archetype_requires_passages" for f in cl.failures)
+def test_build_sidecar_demotes_tier_on_failure():
+    rule = _minimal_rule(gun_jumping=None)
+    report = evaluate_completeness(rule, ArchetypeConfig())
+    assert not report.passed
+    sidecar = build_sidecar_update(report)
+    assert sidecar.source_tier_breakdown.structure_complete == GateStatus.fail
+    assert sidecar.source_verification_tier.value < SourceVerificationTier.structure_complete.value
+
+
+def test_archetype_requires_passages_detects_missing():
+    archetype_config = ArchetypeConfig(
+        version=1,
+        assignments={"xx": ["needs_passages"]},
+        archetypes={
+            "needs_passages": ArchetypeRequirements(description="test", requires_source_passages=True)
+        },
+    )
+    report_missing = evaluate_completeness(_minimal_rule(source_passages=[]), archetype_config)
+    assert any(f.code == "archetype_requires_passages" for f in report_missing.failures)
+
+    report_present = evaluate_completeness(_minimal_rule(), archetype_config)
+    assert not any(f.code == "archetype_requires_passages" for f in report_present.failures)

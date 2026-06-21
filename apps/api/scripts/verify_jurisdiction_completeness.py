@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+from dataclasses import asdict
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -46,7 +47,7 @@ def main() -> int:
             {
                 "jurisdiction_id": r.jurisdiction_id,
                 "passed": r.passed,
-                "failures": [f.__dict__ for f in r.failures],
+                "failures": [asdict(f) for f in r.failures],
             }
             for r in reports
         ],

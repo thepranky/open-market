@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from collections import Counter
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Iterable, Optional
@@ -19,7 +20,7 @@ from app.models.jurisdiction_verification import (
     SourceTierBreakdown,
     VerificationFailure,
 )
-from app.services.jurisdiction_baseline import _supported_condition_ids
+from app.services.jurisdiction_baseline import supported_condition_ids
 from app.services.threshold_engine import load_all_jurisdictions
 
 
@@ -60,9 +61,9 @@ def _check_duplicates(rule: JurisdictionRule) -> list[CompletenessFailure]:
         test_ids.append(test.test_id)
         for condition in test.conditions:
             condition_ids.append(condition.condition_id)
-    for test_id in sorted({x for x in test_ids if test_ids.count(x) > 1}):
+    for test_id in sorted(tid for tid, n in Counter(test_ids).items() if n > 1):
         failures.append(_fail("duplicate_test_id", f"Duplicate test_id '{test_id}'", f"threshold_tests.{test_id}"))
-    for condition_id in sorted({x for x in condition_ids if condition_ids.count(x) > 1}):
+    for condition_id in sorted(cid for cid, n in Counter(condition_ids).items() if n > 1):
         failures.append(
             _fail("duplicate_condition_id", f"Duplicate condition_id '{condition_id}'", f"conditions.{condition_id}")
         )
@@ -203,7 +204,7 @@ def evaluate_completeness(
     rule: JurisdictionRule,
     archetypes: ArchetypeConfig,
 ) -> CompletenessReport:
-    supported = _supported_condition_ids(rule)
+    supported = supported_condition_ids(rule)
     failures: list[CompletenessFailure] = []
     failures.extend(_check_duplicates(rule))
     failures.extend(_check_tests_and_conditions(rule, supported))
@@ -245,7 +246,10 @@ def build_sidecar_update(report: CompletenessReport, existing: Optional[Jurisdic
         if sidecar.source_verification_tier.value < SourceVerificationTier.structure_complete.value:
             sidecar.source_verification_tier = SourceVerificationTier.structure_complete
     elif sidecar.source_verification_tier.value >= SourceVerificationTier.structure_complete.value:
-        sidecar.source_verification_tier = SourceVerificationTier.numbers_confirmed
+        # Demote to one tier below structure_complete when this gate fails
+        sidecar.source_verification_tier = SourceVerificationTier(
+            SourceVerificationTier.structure_complete.value - 1
+        )
 
     return sidecar
 
