@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import io
 import re
 import unicodedata
 from dataclasses import dataclass, field
@@ -23,7 +22,7 @@ _HEADERS = {
     "Accept": "text/html,application/xhtml+xml,application/pdf,*/*;q=0.8",
 }
 
-_BOT_PROTECTED_STATUSES = {400, 403}
+_BOT_PROTECTED_STATUSES = {403}
 _SSL_ERROR_MARKERS = ("CERTIFICATE_VERIFY_FAILED", "SSL:", "[SSL")
 
 
@@ -46,9 +45,9 @@ class SourceFetchResult:
 def normalize_text(text: str) -> str:
     """Collapse whitespace and normalize unicode for quote matching."""
     text = unicodedata.normalize("NFKC", text)
-    text = text.replace("\u00a0", " ")
-    text = text.replace("\u2019", "'").replace("\u2018", "'")
-    text = text.replace("\u201c", '"').replace("\u201d", '"')
+    text = text.replace(" ", " ")
+    text = text.replace("’", "'").replace("‘", "'")
+    text = text.replace("“", '"').replace("”", '"')
     text = re.sub(r"\s+", " ", text).strip()
     return text
 
@@ -60,16 +59,21 @@ def html_to_text(html: str) -> str:
 
 
 def pdf_bytes_to_text(content: bytes) -> str:
-    pages = extract_pages(content)
-    return normalize_text("\n".join(page.get("text", "") for page in pages))
+    try:
+        pages = extract_pages(content)
+        return normalize_text("\n".join(page.get("text", "") for page in pages))
+    except Exception:
+        return ""
 
 
 def bytes_to_text(content: bytes, content_type: str) -> Optional[str]:
     ct = (content_type or "").lower()
+    # Check PDF magic bytes before the text/ catch-all — some servers serve PDFs
+    # with Content-Type: text/plain.
+    if content[:4] == b"%PDF" or "pdf" in ct:
+        return pdf_bytes_to_text(content)
     if "html" in ct or ct.startswith("text/"):
         return html_to_text(content.decode("utf-8", errors="replace"))
-    if "pdf" in ct or content[:4] == b"%PDF":
-        return pdf_bytes_to_text(content)
     return None
 
 
@@ -84,20 +88,40 @@ def token_overlap_ratio(left: str, right: str) -> float:
     return len(a & b) / len(a | b)
 
 
-def quote_in_text(quote: str, text: str, *, min_overlap: float = 0.95) -> bool:
-    """Return True if quote appears exactly or with high token overlap."""
+def quote_in_text(quote: str, text: str, *, min_recall: float = 0.85) -> bool:
+    """Return True if quote appears exactly or its tokens are locally dense in text.
+
+    The fuzzy path uses a sliding window (1.5× quote length) and checks that
+    at least min_recall fraction of the quote's tokens appear in that window.
+    Jaccard against the full document is not used because its denominator grows
+    with document size, making the threshold effectively unreachable on real pages.
+    """
     q = normalize_text(quote)
     t = normalize_text(text)
     if not q or not t:
         return False
     if q in t:
         return True
-    return token_overlap_ratio(q, t) >= min_overlap
+    q_toks = [tok for tok in re.findall(r"[a-z0-9]+", q.lower()) if len(tok) > 1]
+    t_toks = [tok for tok in re.findall(r"[a-z0-9]+", t.lower()) if len(tok) > 1]
+    if not q_toks or len(t_toks) < len(q_toks):
+        return False
+    q_set = frozenset(q_toks)
+    window = len(q_toks) + len(q_toks) // 2  # 1.5× to absorb minor insertions
+    if len(t_toks) <= window:
+        # Target shorter than window — compare against the full token set
+        return len(q_set & frozenset(t_toks)) / len(q_set) >= min_recall
+    for i in range(len(t_toks) - window + 1):
+        if len(q_set & frozenset(t_toks[i : i + window])) / len(q_set) >= min_recall:
+            return True
+    return False
 
 
 def _guess_language(content_type: Optional[str], text: str) -> Optional[str]:
-    if content_type and "lang=" in content_type:
-        return None
+    if content_type:
+        m = re.search(r"\blang=([a-z]{2,3})", content_type, re.I)
+        if m:
+            return m.group(1).lower()
     if "eur-lex" in text[:200].lower():
         return "en"
     return None
