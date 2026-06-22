@@ -5,6 +5,8 @@ from __future__ import annotations
 from datetime import date
 from pathlib import Path
 
+import yaml
+
 from app.models.jurisdiction import (
     Authority,
     FilingDeadlines,
@@ -80,6 +82,21 @@ def test_numeric_parses_gbp_millions():
     assert value_in_text(text, 70_000_000, metric=MetricType.revenue, currency="GBP")
 
 
+def test_bare_numbers_do_not_falsely_confirm():
+    # Years, section numbers and day counts must not be read as monetary values.
+    text = "Enterprise Act 2002, section 23, phase 1 is 40 working days."
+    assert not value_in_text(text, 2002, metric=MetricType.revenue)
+    assert not value_in_text(text, 40, metric=MetricType.revenue)
+    assert not value_in_text(text, 23, metric=MetricType.revenue)
+
+
+def test_share_value_requires_close_match():
+    # The absolute floor must not let any share in [0, 1] match an expected share.
+    text = "a combined market share of 60%"
+    assert value_in_text(text, 0.60, metric=MetricType.market_share)
+    assert not value_in_text(text, 0.25, metric=MetricType.market_share)
+
+
 def test_offline_uk_passage_gate_passes():
     fetch = build_offline_fetch(FIXTURES)
     report = verify_passages(_uk_rule(), fetch_fn=fetch)
@@ -94,3 +111,20 @@ def test_quote_mismatch_fails():
     report = verify_passages(rule, fetch_fn=build_offline_fetch(FIXTURES))
     assert not report.passages_grounded
     assert any(f.code == "quote_not_found" for f in report.failures)
+
+
+def test_sidecar_not_loaded_as_jurisdiction(tmp_path):
+    # Verification sidecars live alongside jurisdiction YAML; load_all must skip
+    # them rather than try to validate them as JurisdictionRule.
+    from app.models.jurisdiction_verification import JurisdictionVerification
+    from app.services.jurisdiction_verification_store import write_sidecar
+    from app.services.threshold_engine import load_all_jurisdictions
+
+    rule = _uk_rule()
+    (tmp_path / "uk.yaml").write_text(
+        yaml.safe_dump(rule.model_dump(mode="json", exclude_none=True))
+    )
+    write_sidecar(tmp_path, JurisdictionVerification(jurisdiction_id="uk"))
+
+    rules = load_all_jurisdictions(str(tmp_path))
+    assert [r.jurisdiction_id for r in rules] == ["uk"]

@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+from dataclasses import asdict
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
@@ -28,8 +29,11 @@ def main() -> int:
     parser.add_argument("--data-dir", type=Path, default=DATA_DIR)
     args = parser.parse_args()
 
-    fetch_fn = build_offline_fetch(Path(__file__).resolve().parents[1] / "tests" / "fixtures" / "jurisdiction_sources")
-    if not args.offline:
+    if args.offline:
+        fetch_fn = build_offline_fetch(
+            Path(__file__).resolve().parents[1] / "tests" / "fixtures" / "jurisdiction_sources"
+        )
+    else:
         fetch_fn = fetch_source
 
     if args.jurisdiction:
@@ -56,7 +60,7 @@ def main() -> int:
                 "jurisdiction_id": r.jurisdiction_id,
                 "passages_grounded": r.passages_grounded,
                 "numbers_confirmed": r.numbers_confirmed,
-                "failures": [f.__dict__ for f in r.failures],
+                "failures": [asdict(f) for f in r.failures],
             }
             for r in reports
         ],
