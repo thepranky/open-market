@@ -14,18 +14,17 @@ ANCHORS_PATH = DATA_DIR / "_staleness_anchors.yaml"
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from app.services.jurisdiction_staleness import evaluate_all, update_sidecar_freshness, load_anchors
+from app.models.jurisdiction_verification import FreshnessStatus
+from app.services.jurisdiction_staleness import evaluate_all, load_anchors, update_sidecar_freshness
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--json", action="store_true")
     parser.add_argument("--write-sidecar", action="store_true")
-    parser.add_argument("--annual-adjustment-only", action="store_true", default=True)
     args = parser.parse_args()
 
     reports = evaluate_all(DATA_DIR, ANCHORS_PATH)
-    anchors = load_anchors(ANCHORS_PATH)
     failed = [r for r in reports if r.freshness_status in {FreshnessStatus.drift_detected, FreshnessStatus.unknown}]
 
     payload = {
@@ -52,6 +51,7 @@ def main() -> int:
                 print(f"    drift: {item}")
 
     if args.write_sidecar:
+        anchors = load_anchors(ANCHORS_PATH)
         for report in reports:
             update_sidecar_freshness(DATA_DIR, report, anchors.get(report.jurisdiction_id))
 
