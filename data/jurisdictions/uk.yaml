@@ -1,6 +1,6 @@
 jurisdiction_id: uk
 jurisdiction_name: United Kingdom
-last_verified: "2024-06-01"
+last_verified: "2026-06-22"
 
 authority:
   name: Competition and Markets Authority
@@ -349,6 +349,20 @@ source_passages:
     supports_conditions:
       - uk_share_combined
       - uk_share_increment
+
+  - passage_id: "uk_ea2002_s23a"
+    document_title: "Enterprise Act 2002 (as inserted by DMCC Act 2024, Schedule 4)"
+    article_reference: "Section 23A(2)"
+    document_url: "https://www.legislation.gov.uk/ukpga/2024/13/schedule/4"
+    source_type: primary_legislation
+    quoted_text: >
+      The conditions are that — (a) in relation to the supply of goods or services
+      of any description, the share of supply in the United Kingdom of the enterprise
+      carrying on the activities to which the description relates is at least 25%; and
+      (b) the value of the consideration for the acquisition is at least £10 million.
+    supports_conditions:
+      - strategic_acquirer_share
+      - strategic_acquirer_deal_value
 
 notes:
   - >
