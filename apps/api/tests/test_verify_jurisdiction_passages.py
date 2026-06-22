@@ -113,6 +113,36 @@ def test_quote_mismatch_fails():
     assert any(f.code == "quote_not_found" for f in report.failures)
 
 
+def test_no_passages_is_unverified_not_confirmed():
+    # A jurisdiction with no source_passages must not score as grounded/confirmed
+    # just because there is nothing to check (the vacuous-pass flaw).
+    rule = _uk_rule()
+    rule.source_passages = []
+    report = verify_passages(rule, fetch_fn=build_offline_fetch(FIXTURES))
+    assert not report.conditions_verified
+    assert not report.passages_grounded
+    assert not report.numbers_confirmed
+
+
+def test_annual_adjustment_value_skips_numeric_grounding():
+    # Annually adjusted values live in the annual notice, not the statute, so a
+    # numeric mismatch against the statute passage must NOT be reported.
+    rule = _uk_rule()
+    rule.threshold_tests[0].annual_adjustment = True
+    rule.threshold_tests[0].effective_date = date(2026, 1, 1)
+    rule.threshold_tests[0].conditions[0].value = 999_999_999  # not present in the fixture text
+    report = verify_passages(rule, fetch_fn=build_offline_fetch(FIXTURES))
+    assert report.passages_grounded  # quote still grounds
+    assert not any(f.code == "numeric_mismatch" for f in report.failures)
+
+
+def test_sentinel_zero_value_skips_numeric_grounding():
+    rule = _uk_rule()
+    rule.threshold_tests[0].conditions[0].value = 0  # "any" sentinel
+    report = verify_passages(rule, fetch_fn=build_offline_fetch(FIXTURES))
+    assert not any(f.code == "numeric_mismatch" for f in report.failures)
+
+
 def test_sidecar_not_loaded_as_jurisdiction(tmp_path):
     # Verification sidecars live alongside jurisdiction YAML; load_all must skip
     # them rather than try to validate them as JurisdictionRule.

@@ -36,7 +36,16 @@ class PassageReport:
 
     @property
     def passages_grounded(self) -> bool:
-        return not any(f.code.startswith("quote_") or f.code == "fetch_failed" for f in self.failures)
+        # Honest grounding requires that we actually verified at least one
+        # authoritative condition against fetched source text — a jurisdiction
+        # with no passages is "unverified", not "grounded". It also fails if any
+        # authoritative condition is left unsupported (missing_passage_support).
+        if not self.conditions_verified:
+            return False
+        return not any(
+            f.code.startswith("quote_") or f.code in ("fetch_failed", "missing_passage_support")
+            for f in self.failures
+        )
 
     @property
     def numbers_confirmed(self) -> bool:
@@ -84,6 +93,15 @@ def verify_passages(
 ) -> PassageReport:
     report = PassageReport(jurisdiction_id=rule.jurisdiction_id)
     conditions = _condition_map(rule)
+    # Conditions whose parent test is annually adjusted: their current value lives
+    # in the annual notice, not the statute, so numeric grounding against the
+    # cited primary source is expected to miss — the staleness monitor tracks them.
+    annual_adjusted = {
+        condition.condition_id
+        for test in rule.threshold_tests
+        if test.annual_adjustment
+        for condition in test.conditions
+    }
     fetch_cache: dict[str, SourceFetchResult] = {}
 
     for passage in rule.source_passages:
@@ -125,8 +143,13 @@ def verify_passages(
                 )
                 continue
 
+            # Skip numeric grounding for sentinel thresholds (value 0 means
+            # "any increment") and annually adjusted values, which legitimately
+            # do not appear verbatim in the cited statute.
+            skip_numeric = condition.value == 0 or condition_id in annual_adjusted
+
             numeric_match: Optional[bool] = None
-            if condition.source_type in AUTHORITATIVE_SOURCE_TYPES:
+            if condition.source_type in AUTHORITATIVE_SOURCE_TYPES and not skip_numeric:
                 numeric_match = value_in_text(
                     passage.quoted_text,
                     condition.value,

@@ -51,15 +51,24 @@ def main() -> int:
         for rule in rules
     ]
 
+    # Three honest buckets: confirmed (number grounded), grounded-only, and
+    # unverified (no authoritative condition could be checked — e.g. no passages).
+    confirmed = [r for r in reports if r.numbers_confirmed]
+    grounded_only = [r for r in reports if r.passages_grounded and not r.numbers_confirmed]
+    unverified = [r for r in reports if not r.conditions_verified]
     failed = [r for r in reports if not r.numbers_confirmed]
     payload = {
         "checked": len(reports),
+        "confirmed": len(confirmed),
+        "grounded_only": len(grounded_only),
+        "unverified": len(unverified),
         "failed": len(failed),
         "results": [
             {
                 "jurisdiction_id": r.jurisdiction_id,
                 "passages_grounded": r.passages_grounded,
                 "numbers_confirmed": r.numbers_confirmed,
+                "unverified": not r.conditions_verified,
                 "failures": [asdict(f) for f in r.failures],
             }
             for r in reports
@@ -69,7 +78,11 @@ def main() -> int:
     if args.json:
         print(json.dumps(payload, indent=2))
     else:
-        print(f"Checked {len(reports)} jurisdictions — {len(failed)} failed numeric/passage gate")
+        print(
+            f"Checked {len(reports)} jurisdictions — "
+            f"{len(confirmed)} confirmed, {len(grounded_only)} grounded-only, "
+            f"{len(unverified)} unverified, {len(failed)} not numbers-confirmed"
+        )
         if args.verbose or len(reports) <= 5:
             for report in failed:
                 print(f"\n{report.jurisdiction_id}:")
