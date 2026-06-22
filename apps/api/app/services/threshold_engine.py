@@ -147,7 +147,11 @@ def load_jurisdiction(jurisdiction_id: str, data_dir: str) -> JurisdictionRule:
 def load_all_jurisdictions(data_dir: str) -> list[JurisdictionRule]:
     rules = []
     for path in sorted(glob.glob(os.path.join(data_dir, "*.yaml"))):
-        name = os.path.basename(path).replace(".yaml", "")
+        basename = os.path.basename(path)
+        # Skip verification sidecars and underscore-prefixed config files.
+        if basename.endswith(".verification.yaml"):
+            continue
+        name = basename.replace(".yaml", "")
         if name.startswith("_"):
             continue
         with open(path) as f:
