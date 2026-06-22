@@ -1,0 +1,10 @@
+anchors:
+  us_hsr:
+    policy_source: "https://www.ftc.gov/news-events/news/press-releases/2026/01/ftc-announces-2026-update-jurisdictional-fee-thresholds-premerger-notification-filings"
+    effective_date: "2026-02-17"
+    policy_window_days: 180
+    thresholds:
+      size_of_transaction: 133900000
+      size_of_person_larger: 267800000
+      size_of_person_smaller: 26800000
+      large_transaction_value: 535500000
