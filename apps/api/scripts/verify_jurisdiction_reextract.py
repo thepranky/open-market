@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+from dataclasses import asdict
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
@@ -40,7 +41,7 @@ def main() -> int:
             {
                 "jurisdiction_id": r.jurisdiction_id,
                 "passed": r.passed,
-                "mismatches": [m.__dict__ for m in r.mismatches],
+                "mismatches": [asdict(m) for m in r.mismatches],
             }
             for r in reports
         ],

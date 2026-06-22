@@ -127,13 +127,15 @@ def _extract_from_passages(rule: JurisdictionRule) -> dict[str, float]:
             if condition is None:
                 continue
             if condition.metric in {MetricType.market_share, MetricType.incremental_share}:
-                shares = parse_share_values(text)
-                if shares:
-                    extracted[condition_id] = shares[0]
+                candidates = parse_share_values(text)
             else:
-                values = parse_monetary_values(text, currency=condition.currency)
-                if values:
-                    extracted[condition_id] = values[0]
+                candidates = parse_monetary_values(text, currency=condition.currency)
+            if not candidates:
+                continue
+            # A passage may mention several numbers; compare against the one
+            # closest to the YAML value so unrelated figures (dates, other
+            # thresholds) don't produce spurious mismatches.
+            extracted[condition_id] = min(candidates, key=lambda c: abs(c - condition.value))
     return extracted
 
 

@@ -10,7 +10,7 @@ from typing import Optional
 import yaml
 
 from app.models.jurisdiction import JurisdictionRule
-from app.models.jurisdiction_verification import FreshnessStatus, GateStatus, JurisdictionVerification
+from app.models.jurisdiction_verification import FreshnessStatus, JurisdictionVerification
 from app.services.jurisdiction_verification_store import load_sidecar, write_sidecar
 from app.services.threshold_engine import load_all_jurisdictions
 
@@ -84,12 +84,16 @@ def update_sidecar_freshness(
 ) -> JurisdictionVerification:
     existing = load_sidecar(data_dir, report.jurisdiction_id)
     sidecar = existing or JurisdictionVerification(jurisdiction_id=report.jurisdiction_id)
+    now = datetime.now(timezone.utc)
     sidecar.freshness_status = report.freshness_status
-    sidecar.freshness.checked_at = datetime.now(timezone.utc)
+    sidecar.freshness.checked_at = now
     if anchor:
         sidecar.freshness.policy_window_days = anchor.policy_window_days
         sidecar.freshness.anchors_checked = [anchor.policy_source]
-    sidecar.verified_at = datetime.now(timezone.utc)
+    # Only advance verified_at when the check actually confirmed freshness;
+    # drift/stale/unknown should not look freshly verified to downstream gates.
+    if report.freshness_status == FreshnessStatus.fresh:
+        sidecar.verified_at = now
     write_sidecar(data_dir, sidecar)
     return sidecar
 
