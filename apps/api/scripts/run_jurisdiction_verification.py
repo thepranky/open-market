@@ -8,9 +8,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
 API_DIR = Path(__file__).resolve().parents[1]
-DATA_DIR = REPO_ROOT / "data" / "jurisdictions"
 PYTHON = sys.executable
 
 
@@ -72,6 +70,7 @@ def main() -> int:
                 "tests/test_jurisdiction_completeness.py",
                 "tests/test_verify_jurisdiction_passages.py",
                 "tests/test_monitor_jurisdiction_staleness.py",
+                "tests/test_jurisdiction_data_service.py",
             ],
         )
 

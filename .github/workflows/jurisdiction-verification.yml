@@ -16,9 +16,13 @@ on:
           - nightly
           - full
 
+permissions:
+  contents: read
+
 jobs:
   verify:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     defaults:
       run:
         working-directory: apps/api
@@ -38,6 +42,13 @@ jobs:
           .venv/bin/pip install -r requirements.txt
 
       - name: Run verification orchestrator
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          INPUT_TIER: ${{ inputs.tier }}
         run: |
-          TIER="${{ github.event_name == 'schedule' && 'nightly' || inputs.tier || 'push' }}"
+          if [ "$EVENT_NAME" = "schedule" ]; then
+            TIER="nightly"
+          else
+            TIER="${INPUT_TIER:-push}"
+          fi
           .venv/bin/python scripts/run_jurisdiction_verification.py --tier "$TIER"
