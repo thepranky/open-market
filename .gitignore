@@ -53,3 +53,6 @@ data/evals/gold/*.auto.repaired.yaml
 # Generated benchmark result outputs (local only — not committed)
 data/evals/results/*
 !data/evals/results/.gitkeep
+
+# Local Exa API key (do not commit)
+.exa.env
