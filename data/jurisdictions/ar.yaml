@@ -10,7 +10,7 @@ authority:
 
 regime:
   mandatory: true
-  suspensory: false  # post-closing notification is standard; pre-clearance optional but possible
+  suspensory: false  # post-closing today; pre-closing SUSPENSORY regime takes effect ~18 Nov 2026 (Decrees 810/803 2025) — flip to true then
   voluntary: false
 
 legal_basis:
@@ -185,8 +185,10 @@ minority_thresholds:
   applies: true
   standard: "material_influence"
   note: >
-    Argentina's merger control under Law 27.442 (in force May 2018, enforced by the
-    National Competition Authority / ANC from November 2025) extends to any acquisition
+    Argentina's merger control under Law 27.442 (in force May 2018; the National
+    Competition Authority / ANC was constituted in November 2025 (Decree 810/2025), and
+    the pre-closing SUSPENSORY regime takes effect ~18 November 2026 — one year later;
+    until then the regime remains post-closing) extends to any acquisition
     giving the acquirer 'control or substantial influence' (control o influencia
     sustancial) over the target. No explicit statutory percentage thresholds exist for
     minority acquisitions — the test is qualitative, assessing whether the stake grants
