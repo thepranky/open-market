@@ -7,7 +7,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Callable, Optional
 
-from app.models.jurisdiction import JurisdictionRule, SourceType, ThresholdCondition
+from app.models.jurisdiction import JurisdictionRule, ThresholdCondition
 from app.models.jurisdiction_verification import (
     AUTHORITATIVE_SOURCE_TYPES,
     ConditionVerification,
@@ -150,13 +150,13 @@ def verify_passages(
                         )
                     )
 
-            tier = SourceVerificationTier.numbers_confirmed if numeric_match else SourceVerificationTier.passages_grounded
-            if numeric_match is False:
-                tier = SourceVerificationTier.passages_grounded
-            elif numeric_match is True:
-                tier = SourceVerificationTier.numbers_confirmed
-            elif numeric_match is None and condition.source_type in AUTHORITATIVE_SOURCE_TYPES:
-                tier = SourceVerificationTier.passages_grounded
+            # Only a confirmed numeric match reaches the top tier; an unverified
+            # (None) or failed (False) match stays at passages_grounded.
+            tier = (
+                SourceVerificationTier.numbers_confirmed
+                if numeric_match is True
+                else SourceVerificationTier.passages_grounded
+            )
 
             report.conditions_verified[condition_id] = ConditionVerification(
                 tier=tier,
@@ -236,8 +236,7 @@ def default_fixtures_dir() -> Path:
 
 
 def build_offline_fetch(fixtures_dir: Path) -> Callable[[str], SourceFetchResult]:
-    fixtures = {path.stem.replace("_", "."): path for path in fixtures_dir.glob("*") if path.is_file()}
-    # Also map by filename substring keys used in tests
+    # Map fixtures by filename and by the URL substrings used in tests.
     named: dict[str, Path] = {}
     for path in fixtures_dir.glob("*"):
         if path.is_file():
