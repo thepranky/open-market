@@ -10,7 +10,7 @@ from pydantic import BaseModel
 
 from app.core.config import settings
 from app.models.jurisdiction import JurisdictionRule
-from app.services.jurisdiction_data_service import load_bundle, list_bundles, verification_metadata
+from app.services.jurisdiction_data_service import load_bundle, verification_metadata
 from app.services.threshold_engine import (
     DealParameters,
     RevenueByScope,

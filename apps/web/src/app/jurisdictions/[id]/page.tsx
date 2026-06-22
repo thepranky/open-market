@@ -1,6 +1,7 @@
 import { getJurisdiction } from "@/lib/api";
 import { notFound } from "next/navigation";
 import { SourcePill } from "@/components/SourcePill";
+import { VerificationBadges } from "@/components/VerificationBadges";
 import type {
   ThresholdCondition,
   ThresholdTest,
@@ -663,36 +664,6 @@ function fmtVerifiedDate(iso: string): string {
   return new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
 }
 
-function JurisdictionVerificationBadges({
-  verification,
-}: {
-  verification?: import("@/lib/types").JurisdictionVerificationMeta;
-}) {
-  const tier = verification?.source_verification_tier ?? 0;
-  const fresh = verification?.freshness_status ?? "unknown";
-  const tierLabel = tier >= 2 ? "Source verified" : tier >= 1 ? "Passages linked" : "Unverified source";
-  const tierCls =
-    tier >= 2 ? "bg-pos-soft text-pos" : tier >= 1 ? "bg-brand-soft text-brand" : "bg-[#FFF3CD] text-[#856404]";
-  const stale = fresh === "stale" || fresh === "drift_detected";
-  return (
-    <div className="flex flex-wrap items-center gap-1.5 mt-2">
-      <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium ${tierCls}`}>
-        {tierLabel}
-      </span>
-      {stale && (
-        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium bg-[#FFF3CD] text-[#856404]">
-          Stale data
-        </span>
-      )}
-      {verification?.regression_status === "passed" && (
-        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium bg-pos-soft text-pos">
-          Regression passed
-        </span>
-      )}
-    </div>
-  );
-}
-
 export default async function JurisdictionPage({
   params,
 }: {
@@ -729,7 +700,12 @@ export default async function JurisdictionPage({
           )}
         </div>
         <p className="text-[13px] text-muted">{rule.authority.name}</p>
-        <JurisdictionVerificationBadges verification={rule.verification} />
+        <VerificationBadges
+          tier={rule.verification?.source_verification_tier}
+          freshness={rule.verification?.freshness_status}
+          regression={rule.verification?.regression_status}
+          className="mt-2"
+        />
       </div>
 
       {/* Quick stats */}

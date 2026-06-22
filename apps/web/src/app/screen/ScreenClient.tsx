@@ -10,6 +10,7 @@ import type {
   ReviewPeriod,
 } from "@/lib/types";
 import { ChatIntake } from "./ChatIntake";
+import { VerificationBadges } from "@/components/VerificationBadges";
 
 // ── Formatting helpers ────────────────────────────────────────────────────────
 
@@ -67,27 +68,6 @@ function ConfidenceDot({ confidence }: { confidence: string }) {
       <span className={`w-2 h-2 rounded-full flex-shrink-0 ${cls}`} />
       {confidence} inputs
     </span>
-  );
-}
-
-function VerificationBadges({ result }: { result: ScreeningResult }) {
-  const tier = result.source_verification_tier ?? 0;
-  const fresh = result.freshness_status ?? "unknown";
-  const tierLabel = tier >= 2 ? "Source verified" : tier >= 1 ? "Passages linked" : "Unverified source";
-  const tierCls =
-    tier >= 2 ? "bg-pos-soft text-pos" : tier >= 1 ? "bg-brand-soft text-brand" : "bg-[#FFF3CD] text-[#856404]";
-  const stale = fresh === "stale" || fresh === "drift_detected";
-  return (
-    <div className="flex flex-wrap items-center gap-1.5">
-      <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium ${tierCls}`}>
-        {tierLabel}
-      </span>
-      {stale && (
-        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium bg-[#FFF3CD] text-[#856404]">
-          Stale data
-        </span>
-      )}
-    </div>
   );
 }
 
@@ -470,7 +450,10 @@ function JurisdictionPanel({
           </div>
           <div className="flex items-center gap-2 mt-0.5 flex-wrap">
             <ConfidenceDot confidence={result.screening_confidence ?? result.confidence} />
-            <VerificationBadges result={result} />
+            <VerificationBadges
+              tier={result.source_verification_tier}
+              freshness={result.freshness_status}
+            />
             {result.suspensory && (
               <span className="text-[11px] text-brand">Suspensory</span>
             )}
@@ -598,7 +581,10 @@ function ResultsView({
                       <StatusBadge status={r.status} />
                     </td>
                     <td className="px-3 py-3 hidden lg:table-cell">
-                      <VerificationBadges result={r} />
+                      <VerificationBadges
+                        tier={r.source_verification_tier}
+                        freshness={r.freshness_status}
+                      />
                     </td>
                     <td className="px-3 py-3 hidden sm:table-cell">
                       <ConfidenceDot confidence={r.screening_confidence ?? r.confidence} />
