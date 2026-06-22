@@ -1,6 +1,7 @@
 import { getJurisdiction } from "@/lib/api";
 import { notFound } from "next/navigation";
 import { SourcePill } from "@/components/SourcePill";
+import { VerificationBadges } from "@/components/VerificationBadges";
 import type {
   ThresholdCondition,
   ThresholdTest,
@@ -659,6 +660,10 @@ function PractitionerNotesSection({ notes }: { notes: PractitionerNote[] }) {
 
 // ── Page ──────────────────────────────────────────────────────────────────────
 
+function fmtVerifiedDate(iso: string): string {
+  return new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+}
+
 export default async function JurisdictionPage({
   params,
 }: {
@@ -695,6 +700,12 @@ export default async function JurisdictionPage({
           )}
         </div>
         <p className="text-[13px] text-muted">{rule.authority.name}</p>
+        <VerificationBadges
+          tier={rule.verification?.source_verification_tier}
+          freshness={rule.verification?.freshness_status}
+          regression={rule.verification?.regression_status}
+          className="mt-2"
+        />
       </div>
 
       {/* Quick stats */}
@@ -703,7 +714,7 @@ export default async function JurisdictionPage({
           { label: "Phase 1", value: fmtPeriodLabel(p1) },
           { label: "Phase 2", value: p2 ? fmtPeriodLabel(p2) : "—" },
           { label: "Tests", value: String(rule.threshold_tests.length) },
-          { label: "Last updated", value: new Date().toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" }) },
+          { label: "Last updated", value: fmtVerifiedDate(rule.last_verified) },
         ].map((s) => (
           <div key={s.label} className="rounded-xl border border-line bg-surface px-4 py-3">
             <p className="text-[11px] text-faint uppercase tracking-wide mb-0.5">{s.label}</p>
