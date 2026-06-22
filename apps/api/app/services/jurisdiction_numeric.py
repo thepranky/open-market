@@ -31,11 +31,13 @@ def parse_monetary_values(text: str, *, currency: Optional[str] = None) -> list[
     """Return monetary magnitudes found in text, normalised to base units."""
     values: list[float] = []
     cur = (currency or "").upper()
+    # A money prefix is a currency symbol or (if supplied) the currency code.
+    money_prefix = rf"(?:{re.escape(cur)}|[$€£¥])" if cur else r"[$€£¥]"
+    # Require a currency symbol/code or a magnitude word so bare integers
+    # (years, section numbers, day counts) are not treated as monetary values.
     patterns = [
-        rf"(?:{cur}\s*)?([\d][\d,\.\s]*)\s*(thousand|million|billion|bn|m|k)\b",
-        rf"(?:{cur}|[$€£¥])?\s*([\d][\d,\.\s]*)\s*(thousand|million|billion|bn|m|k)\b",
-        rf"(?:{cur}|[$€£¥])\s*([\d][\d,\.\s]*)",
-        r"\b([\d][\d,\.\s]{2,})\b",
+        rf"(?:{money_prefix}\s*)?([\d][\d,\.\s]*)\s*(thousand|million|billion|bn|m|k)\b",
+        rf"{money_prefix}\s*([\d][\d,\.\s]*)",
     ]
     for pattern in patterns:
         for match in re.finditer(pattern, text, flags=re.I):
@@ -71,8 +73,12 @@ def value_in_text(
     """Return True if expected value appears in text within tolerance."""
     if metric in {MetricType.market_share, MetricType.incremental_share}:
         candidates = parse_share_values(text)
+        # Shares are fractions in [0, 1]; rely on the relative tolerance only.
+        floor = 0.0
     else:
         candidates = parse_monetary_values(text, currency=currency)
+        # Monetary values are large; a one-unit absolute floor avoids float noise.
+        floor = 1.0
 
     if not candidates:
         return False
@@ -81,6 +87,6 @@ def value_in_text(
         return any(abs(c) <= tolerance for c in candidates)
 
     for candidate in candidates:
-        if abs(candidate - expected) <= max(abs(expected) * tolerance, 1.0):
+        if abs(candidate - expected) <= max(abs(expected) * tolerance, floor):
             return True
     return False
