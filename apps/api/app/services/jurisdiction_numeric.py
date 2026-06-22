@@ -59,6 +59,16 @@ def parse_share_values(text: str) -> list[float]:
         val = float(match.group(0))
         if 0 <= val <= 1:
             shares.append(val)
+    # UK and similar statutes often express thresholds as fractions in words.
+    for pattern, fraction in (
+        (r"\bone[- ]quarter\b", 0.25),
+        (r"\bthree[- ]quarters\b", 0.75),
+        (r"\bone[- ]third\b", 1 / 3),
+        (r"\btwo[- ]thirds\b", 2 / 3),
+        (r"\bone[- ]half\b", 0.5),
+    ):
+        if re.search(pattern, text, flags=re.I):
+            shares.append(fraction)
     return shares
 
 

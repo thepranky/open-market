@@ -1,0 +1,39 @@
+jurisdiction_id: uk
+verified_at: '2026-06-22T19:43:47.491948Z'
+source_verification_tier: 2
+source_tier_breakdown:
+  passages_grounded: pass
+  numbers_confirmed: pass
+  structure_complete: not_run
+  cross_checked: not_run
+regression_status: not_run
+freshness_status: unknown
+freshness:
+  policy_window_days: 180
+  anchors_checked: []
+failures: []
+conditions_verified:
+  uk_turnover_target:
+    tier: 2
+    passage_id: uk_ea2002_s23_1
+    numeric_match: true
+    source_type: primary_legislation
+  uk_share_combined:
+    tier: 2
+    passage_id: uk_ea2002_s23_2
+    numeric_match: true
+    source_type: primary_legislation
+  uk_share_increment:
+    tier: 1
+    passage_id: uk_ea2002_s23_2
+    source_type: primary_legislation
+  strategic_acquirer_share:
+    tier: 2
+    passage_id: uk_ea2002_s23a
+    numeric_match: true
+    source_type: primary_legislation
+  strategic_acquirer_deal_value:
+    tier: 2
+    passage_id: uk_ea2002_s23a
+    numeric_match: true
+    source_type: primary_legislation

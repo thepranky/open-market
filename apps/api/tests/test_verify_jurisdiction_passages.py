@@ -97,6 +97,11 @@ def test_share_value_requires_close_match():
     assert not value_in_text(text, 0.25, metric=MetricType.market_share)
 
 
+def test_share_fraction_words():
+    text = "at least one-quarter of all the goods of that description"
+    assert value_in_text(text, 0.25, metric=MetricType.market_share)
+
+
 def test_offline_uk_passage_gate_passes():
     fetch = build_offline_fetch(FIXTURES)
     report = verify_passages(_uk_rule(), fetch_fn=fetch)

@@ -266,9 +266,13 @@ def build_offline_fetch(fixtures_dir: Path) -> Callable[[str], SourceFetchResult
             named[path.name] = path
             if "uk_section" in path.name:
                 named["legislation.gov.uk/ukpga/2002/40/section/23"] = path
-            if "eu_article" in path.name:
+            if "uk_dmcc" in path.name:
+                named["legislation.gov.uk/ukpga/2024/13"] = path
+            if "eu_merger" in path.name or "eu_article" in path.name:
                 named["eur-lex.europa.eu"] = path
-            if "us_hsr" in path.name:
+            if path.name == "us_hsr_18a.txt":
+                named["uscode.house.gov"] = path
+            elif path.name == "us_hsr_notice.txt":
                 named["ftc.gov"] = path
 
     def fetch(url: str) -> SourceFetchResult:
