@@ -1,0 +1,25 @@
+jurisdiction_id: ro
+verified_at: '2026-06-22T21:19:55.517151Z'
+source_verification_tier: 2
+source_tier_breakdown:
+  passages_grounded: pass
+  numbers_confirmed: pass
+  structure_complete: not_run
+  cross_checked: not_run
+regression_status: not_run
+freshness_status: unknown
+freshness:
+  policy_window_days: 180
+  anchors_checked: []
+failures: []
+conditions_verified:
+  ro_combined_worldwide_gt_10m:
+    tier: 2
+    passage_id: ro_l21_art14
+    numeric_match: true
+    source_type: primary_legislation
+  ro_each_party_domestic_gt_4m:
+    tier: 2
+    passage_id: ro_l21_art14
+    numeric_match: true
+    source_type: primary_legislation

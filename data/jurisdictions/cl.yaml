@@ -93,9 +93,9 @@ threshold_tests:
         scope: domestic
         party: combined
         operator: ">"
-        value: 1800000
+        value: 2500000
         currency: UF
-        source: "Article 48(a) DL 211 (as amended)"
+        source: "Article 48(a) DL 211 (as amended); FNE Exempt Resolution 157/2019"
         source_type: primary_legislation
         note: "UF (Unidad de Fomento) is an inflation-indexed unit; verify current CLP equivalent."
 
@@ -104,9 +104,9 @@ threshold_tests:
         scope: domestic
         party: each_of_at_least_two
         operator: ">"
-        value: 290000
+        value: 450000
         currency: UF
-        source: "Article 48(a) DL 211 (as amended)"
+        source: "Article 48(a) DL 211 (as amended); FNE Exempt Resolution 157/2019"
         source_type: primary_legislation
         qualifier:
           type: "count_of_parties"
@@ -197,6 +197,20 @@ fdi_screening:
     Chile does not have a separate FDI screening or national security review mechanism
     for foreign investments as of 2026. The standard merger control review under DL 211
     is the primary regulatory pathway for acquisitions of Chilean companies.
+
+source_passages:
+  - passage_id: cl_dl211_art48
+    document_title: "Decree Law No 211 — Defence of Free Competition"
+    article_reference: "Article 48(a)"
+    document_url: "https://www.fne.gob.cl/concentraciones-3/"
+    source_type: primary_legislation
+    quoted_text: >
+      the sum of the sales in Chile of the economic agents that plan to concentrate exceeds
+      UF 2,500,000 and the sales in Chile, separately, of at least two of the economic
+      agents that plan to concentrate exceeds UF 450,000 each
+    supports_conditions:
+      - cl_combined_chilean_gt_1800000_uf
+      - cl_each_party_chilean_gt_290000_uf
 
 practitioner_notes:
   - title: "Concentration Transaction Reporting Thresholds in 2025"

@@ -87,9 +87,9 @@ threshold_tests:
         scope: worldwide
         party: combined
         operator: ">"
-        value: 2800000000
+        value: 3800000000
         currency: PHP
-        source: "Section 17(a) RA 10667 (as amended); Annual PCC Threshold Notice 2024"
+        source: "Section 17(a) RA 10667 (as amended); PCC threshold notice March 2026"
         source_type: authority_announcement
         note: "VERIFY: threshold revised annually. Amount shown is approximate 2024 figure."
 
@@ -98,9 +98,9 @@ threshold_tests:
         scope: domestic
         party: either_party
         operator: ">"
-        value: 6600000000
+        value: 9100000000
         currency: PHP
-        source: "Section 17(b) RA 10667 (as amended); Annual PCC Threshold Notice 2024"
+        source: "Section 17(b) RA 10667 (as amended); PCC threshold notice March 2026"
         source_type: authority_announcement
         note: "VERIFY: threshold revised annually. Amount shown is approximate 2024 figure."
 
@@ -202,6 +202,20 @@ fdi_screening:
     trade requiring minimum paid-in capital). Economic Constitution (1987 Philippine
     Constitution) also restricts foreign ownership in strategic sectors to 40%.
     Separate from PCC merger control; verify sector-specific caps before structuring.
+
+source_passages:
+  - passage_id: ph_ra10667_s17
+    document_title: "Republic Act No 10667 (Philippine Competition Act)"
+    article_reference: "Section 17"
+    document_url: "https://www.phcc.gov.ph/"
+    source_type: authority_announcement
+    quoted_text: >
+      Size of Party (SOP) and Size of Transaction (SOT) exceed PHP 9,100,000,000 and
+      PHP 3,800,000,000, respectively. Both thresholds must be met for a transaction
+      to be notifiable under Section 17 of the Philippine Competition Act
+    supports_conditions:
+      - ph_transaction_value_gt_threshold
+      - ph_either_party_revenues_gt_threshold
 
 practitioner_notes:
   - title: "Merger Control 2025 — Philippines (Trends and Developments)"

@@ -1,0 +1,23 @@
+jurisdiction_id: ph
+verified_at: '2026-06-22T21:19:54.690474Z'
+source_verification_tier: 2
+source_tier_breakdown:
+  passages_grounded: pass
+  numbers_confirmed: pass
+  structure_complete: not_run
+  cross_checked: not_run
+regression_status: not_run
+freshness_status: unknown
+freshness:
+  policy_window_days: 180
+  anchors_checked: []
+failures: []
+conditions_verified:
+  ph_transaction_value_gt_threshold:
+    tier: 1
+    passage_id: ph_ra10667_s17
+    source_type: authority_announcement
+  ph_either_party_revenues_gt_threshold:
+    tier: 1
+    passage_id: ph_ra10667_s17
+    source_type: authority_announcement

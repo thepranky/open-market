@@ -197,6 +197,22 @@ minority_thresholds:
 # - Greece is an EU member state: transactions with Community dimension fall under EC
 #   exclusive jurisdiction and HCC does not apply.
 
+source_passages:
+  - passage_id: gr_l3959_art6
+    document_title: "Law 3959/2011 on the Protection of Free Competition"
+    article_reference: "Article 6(1)"
+    document_url: "https://www.epant.gr/en/"
+    source_type: primary_legislation
+    quoted_text: >
+      ο συνολικός κύκλος εργασιών όλων των επιχειρήσεων που συμμετέχουν στη συγκέντρωση
+      ανέρχεται, στην παγκόσμια αγορά τουλάχιστον σε εκατόν πενήντα εκατομμύρια (150.000.000)
+      ευρώ και δύο τουλάχιστον από τις συμμετέχουσες επιχειρήσεις πραγματοποιούν, η καθεμία
+      χωριστά, συνολικό κύκλο εργασιών άνω των δεκαπέντε εκατομμυρίων (15.000.000) ευρώ
+      στην ελληνική αγορά
+    supports_conditions:
+      - gr_combined_worldwide_gt_150m
+      - gr_each_party_domestic_gt_15m
+
 practitioner_notes:
   - title: "Greece — Merger Control Laws and Regulations 2026"
     firm: "ICLG"

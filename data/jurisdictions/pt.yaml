@@ -262,6 +262,25 @@ minority_thresholds:
 # - Law 17/2022 updated the merger control framework; verify specific thresholds and
 #   procedural rules with current AdC guidance before relying on this entry.
 
+source_passages:
+  - passage_id: pt_lc_art38
+    document_title: "Competition Act (Lei da Concorrência) No 19/2012"
+    article_reference: "Article 38(1)"
+    document_url: "https://www.concorrencia.pt/en/"
+    source_type: primary_legislation
+    quoted_text: >
+      O volume de negócios realizado em Portugal seja superior a 100 milhões de euros,
+      tendo cada uma de, pelo menos, duas das empresas envolvidas realizado em Portugal
+      um volume de negócios superior a 5 milhões de euros; o volume de negócios realizado
+      a nível mundial seja superior a 2 500 milhões de euros, tendo cada uma de, pelo
+      menos, duas das empresas envolvidas realizado em Portugal um volume de negócios
+      superior a 250 milhões de euros
+    supports_conditions:
+      - pt_combined_domestic_gt_100m
+      - pt_each_party_domestic_gt_5m
+      - pt_combined_worldwide_gt_2_5bn
+      - pt_each_party_domestic_gt_250m
+
 practitioner_notes:
   - title: "Portugal — Merger Control Laws and Regulations 2026"
     firm: "ICLG"

@@ -108,7 +108,7 @@ threshold_tests:
   - test_id: dk_worldwide_and_domestic_single_party
     description: >
       Combined worldwide turnover exceeds DKK 3.8bn AND at least one party has
-      Danish turnover exceeding DKK 300m.
+      Danish turnover exceeding DKK 3.8bn (and another party worldwide exceeding DKK 3.8bn).
     legal_basis: "Section 12b(1)(ii) Competition Act (Consolidated Act No 360 of 2022)"
     source_url: "https://en.kfst.dk/competition/mergers"
     annual_adjustment: false
@@ -125,14 +125,14 @@ threshold_tests:
         source: "Section 12b(1)(ii)(a) Competition Act"
         source_type: primary_legislation
 
-      - condition_id: dk_one_party_dk_gt_300m
+      - condition_id: dk_one_party_dk_gt_3_8bn
         metric: revenue
         scope: domestic
         party: either_party
         operator: ">"
-        value: 300000000
+        value: 3800000000
         currency: DKK
-        source: "Section 12b(1)(ii)(b) Competition Act"
+        source: "Section 12b(1)(ii)(a) Competition Act"
         source_type: primary_legislation
 
     exclusions:
@@ -249,6 +249,25 @@ minority_thresholds:
 #   competition law merger control and administered by the Danish Business Authority.
 # - Below the decisive-influence threshold, voluntary notification to DCCA is permitted
 #   but not required.
+
+source_passages:
+  - passage_id: dk_competition_act_s12b
+    document_title: "Danish Competition Act (Consolidated Act No 360 of 2022)"
+    article_reference: "Section 12b(1)"
+    document_url: "https://en.kfst.dk/competition/mergers"
+    source_type: official_guidance
+    quoted_text: >
+      the aggregate annual turnover in Denmark of all undertakings involved is more than
+      DKK 900 million and the aggregate annual turnover in Denmark of each of at least two
+      of the undertakings concerned is more than DKK 100 million; the aggregate annual
+      turnover in Denmark of at least one of the undertakings involved is more than DKK
+      3.8 billion and the aggregate annual worldwide turnover of at least one of the other
+      undertakings concerned is more than DKK 3.8 billion
+    supports_conditions:
+      - dk_combined_dk_gt_900m
+      - dk_each_party_dk_gt_100m
+      - dk_combined_worldwide_gt_3_8bn
+      - dk_one_party_dk_gt_3_8bn
 
 practitioner_notes:
   - title: "Merger Control Laws and Regulations 2025 — Denmark"

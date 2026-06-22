@@ -240,6 +240,40 @@ minority_thresholds:
 # - Czech law does not have an "any acquisition" or "material influence" test —
 #   the threshold is decisive influence only.
 
+source_passages:
+  - passage_id: cz_act143_s13
+    document_title: "Act No 143/2001 Coll. on the Protection of Competition"
+    article_reference: "§ 13(1)"
+    document_url: "https://www.zakonyprolidi.cz/cs/2001-143"
+    source_type: primary_legislation
+    quoted_text: >
+      celkový čistý obrat všech spojujících se soutěžitelů dosažený za poslední účetní
+      období na trhu České republiky je vyšší než 1,5 miliardy Kč a alespoň dva ze
+      spojujících se soutěžitelů dosáhli každý za poslední účetní období na trhu České
+      republiky čistého obratu vyššího než 250 milionů Kč
+    supports_conditions:
+      - cz_combined_domestic_gt_1_5bn
+      - cz_each_party_domestic_gt_250m
+      - cz_acquirer_domestic_gt_1_5bn
+      - cz_target_worldwide_gt_1_5bn
+
+source_passages:
+  - passage_id: cz_act143_s13
+    document_title: "Act No 143/2001 Coll. on the Protection of Competition"
+    article_reference: "§ 13(1)"
+    document_url: "https://www.zakonyprolidi.cz/cs/2001-143"
+    source_type: primary_legislation
+    quoted_text: >
+      celkový čistý obrat všech spojujících se soutěžitelů dosažený za poslední účetní období
+      na trhu České republiky je vyšší než 1,5 miliardy Kč a alespoň dva ze spojujících se
+      soutěžitelů dosáhli každý za poslední účetní období na trhu České republiky čistého
+      obratu vyššího než 250 milionů Kč
+    supports_conditions:
+      - cz_combined_domestic_gt_1_5bn
+      - cz_each_party_domestic_gt_250m
+      - cz_acquirer_domestic_gt_1_5bn
+      - cz_target_worldwide_gt_1_5bn
+
 practitioner_notes:
   - title: "Merger Control Laws and Regulations 2025 — Czech Republic"
     firm: "Global Legal Insights"

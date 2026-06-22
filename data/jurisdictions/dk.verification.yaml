@@ -1,0 +1,35 @@
+jurisdiction_id: dk
+verified_at: '2026-06-22T21:19:53.557650Z'
+source_verification_tier: 2
+source_tier_breakdown:
+  passages_grounded: pass
+  numbers_confirmed: pass
+  structure_complete: not_run
+  cross_checked: not_run
+regression_status: not_run
+freshness_status: unknown
+freshness:
+  policy_window_days: 180
+  anchors_checked: []
+failures: []
+conditions_verified:
+  dk_combined_dk_gt_900m:
+    tier: 2
+    passage_id: dk_competition_act_s12b
+    numeric_match: true
+    source_type: primary_legislation
+  dk_each_party_dk_gt_100m:
+    tier: 2
+    passage_id: dk_competition_act_s12b
+    numeric_match: true
+    source_type: primary_legislation
+  dk_combined_worldwide_gt_3_8bn:
+    tier: 2
+    passage_id: dk_competition_act_s12b
+    numeric_match: true
+    source_type: primary_legislation
+  dk_one_party_dk_gt_3_8bn:
+    tier: 2
+    passage_id: dk_competition_act_s12b
+    numeric_match: true
+    source_type: primary_legislation

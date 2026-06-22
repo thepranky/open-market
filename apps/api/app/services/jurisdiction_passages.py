@@ -274,6 +274,29 @@ def build_offline_fetch(fixtures_dir: Path) -> Callable[[str], SourceFetchResult
                 named["uscode.house.gov"] = path
             elif path.name == "us_hsr_notice.txt":
                 named["ftc.gov"] = path
+            elif path.name == "cz_s13.txt":
+                named["zakonyprolidi.cz"] = path
+            elif path.name == "dk_s12b.txt":
+                named["en.kfst.dk"] = path
+            elif path.name == "gr_art6.txt":
+                named["epant.gr"] = path
+            elif path.name == "hu_s24.txt":
+                named["gvh.hu"] = path
+            elif path.name == "ro_art14.txt":
+                named["consiliulconcurentei.ro"] = path
+                named["legeaz.net"] = path
+            elif path.name == "cl_art48.txt":
+                named["fne.gob.cl"] = path
+            elif path.name == "id_pp57_p5.txt":
+                named["kppu.go.id"] = path
+                named["peraturan.go.id"] = path
+            elif path.name == "pe_art9.txt":
+                named["indecopi.gob.pe"] = path
+            elif path.name == "ph_s17.txt":
+                named["phcc.gov.ph"] = path
+            elif path.name == "pt_art38.txt":
+                named["concorrencia.pt"] = path
+                named["dre.pt"] = path
 
     def fetch(url: str) -> SourceFetchResult:
         return _fetch_with_fixtures(url, named, lambda u: fetch_source(u))

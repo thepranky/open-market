@@ -175,6 +175,20 @@ fdi_screening:
     requirements may apply (e.g., mining, hydrocarbons, financial services), but
     these are not a centralised national security review mechanism.
 
+source_passages:
+  - passage_id: pe_ld1034_art9
+    document_title: "Legislative Decree No 1034 (Antitrust Law)"
+    article_reference: "Article 9(1)"
+    document_url: "https://www.indecopi.gob.pe/"
+    source_type: authority_announcement
+    quoted_text: >
+      gross income in Peru of all participating agents in the preceding fiscal year exceeds
+      5,000 UIT and at least two participating agents each have gross income in Peru
+      exceeding 1,000 UIT
+    supports_conditions:
+      - pe_combined_domestic_gt_threshold
+      - pe_each_party_domestic_gt_threshold
+
 practitioner_notes:
   - title: "Peru: Indecopi Cleared 45 Filings and Rejected 1 in the First Three Years of Its Antitrust Merger Control Regime"
     firm: "Garrigues"

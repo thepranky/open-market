@@ -192,6 +192,21 @@ minority_thresholds:
 # - Romania does not have a market-share based alternative trigger for minority stakes.
 # - Smaller transactions may escape notification even above 25% if no decisive influence.
 
+source_passages:
+  - passage_id: ro_l21_art14
+    document_title: "Competition Law No 21/1996"
+    article_reference: "Article 14"
+    document_url: "https://www.consiliulconcurentei.ro/en/competition/merger-control/legislation/competition-law/"
+    source_type: primary_legislation
+    quoted_text: >
+      cifra de afaceri cumulată a întreprinderilor implicate în operaţiune depăşeşte
+      echivalentul în lei a 10.000.000 euro şi când cel puţin două dintre întreprinderile
+      implicate au realizat pe teritoriul României, fiecare în parte, o cifră de afaceri
+      mai mare decât echivalentul în lei a 4.000.000 euro
+    supports_conditions:
+      - ro_combined_worldwide_gt_10m
+      - ro_each_party_domestic_gt_4m
+
 practitioner_notes:
   - title: "Romania — Merger Control Laws and Regulations 2026"
     firm: "ICLG"

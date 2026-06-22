@@ -202,6 +202,20 @@ minority_thresholds:
 # - Hungary does not have a transaction-value test or a sub-control influence test.
 # - FDI screening thresholds (25% for strategic sectors) are separate from merger control.
 
+source_passages:
+  - passage_id: hu_tpvt_s24
+    document_title: "Act LVII of 1996 on the Prohibition of Unfair Market Practices (Tpvt.)"
+    article_reference: "Section 24(1)"
+    document_url: "https://www.gvh.hu/en"
+    source_type: primary_legislation
+    quoted_text: >
+      the combined net turnover in Hungary of all undertakings concerned exceeds fifteen
+      billion forints, and the net turnover in Hungary of each of at least two of the
+      undertakings concerned exceeds five hundred million forints
+    supports_conditions:
+      - hu_combined_domestic_gt_15bn
+      - hu_each_party_domestic_gt_500m
+
 practitioner_notes:
   - title: "Merger Control Laws and Regulations 2025 — Hungary"
     firm: "Global Legal Insights"
