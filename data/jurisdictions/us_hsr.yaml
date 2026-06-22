@@ -220,7 +220,49 @@ minority_thresholds:
     for stakes over 10% (general) or 15% (institutional). Foreign minority investors
     should also assess CFIUS separately — CFIUS applies to TID US business investments
     at 10%+ independently of HSR.
-  rules: []
+  rules:
+    - rule_id: us_hsr_passive_investment_10pct
+      relationship_type: any
+      pct_threshold: 10.0
+      operator: ">"
+      rights_required: null
+      source: "16 C.F.R. § 802.9 (implementing 15 U.S.C. § 18a(c)(9))"
+      source_type: primary_legislation
+      source_url: "https://www.law.cornell.edu/cfr/text/16/802.9"
+      note: >
+        The general passive-investment exemption applies where, as a result of the
+        acquisition, the acquirer would hold 10% or less of the issuer's outstanding
+        voting securities AND the securities are held solely for the purpose of
+        investment (no intention to participate in the formulation, determination, or
+        direction of the issuer's basic business decisions). It is a post-acquisition
+        holdings cap, not a per-transaction cap, and applies regardless of dollar value.
+        Above 10% there is no general investment-only exemption: an acquisition meeting
+        the size-of-transaction / size-of-person tests is reportable. The exemption is
+        forfeited by activist engagement (nominating/appointing a director, board-observer
+        roles with substantive involvement, proposing corporate action, soliciting proxies);
+        once forfeited, subsequent acquisitions are non-exempt. Unchanged by the 2024 HSR
+        rulemaking (effective 10 Feb 2025), which amended 16 C.F.R. Parts 801/803 and the
+        Notification & Report Form, not the Part 802 exemptions.
+    - rule_id: us_hsr_institutional_investor_15pct
+      relationship_type: any
+      pct_threshold: 15.0
+      operator: ">"
+      rights_required: null
+      source: "16 C.F.R. § 802.64(b)-(c)"
+      source_type: primary_legislation
+      source_url: "https://www.law.cornell.edu/cfr/text/16/802.64"
+      note: >
+        Institutional investors (an enumerated list: banks, insurers, registered
+        investment companies, broker-dealers, pension/profit-sharing trusts, bank holding
+        companies, etc.) may hold up to 15% of an issuer's outstanding voting securities
+        without filing, provided the acquisition is (b)(1) made directly by the
+        institutional investor, (b)(2) in the ordinary course of business, and (b)(3)
+        solely for the purpose of investment. Not available where the issuer is itself a
+        same-type institutional investor, or where a non-institutional entity within the
+        acquiring person already holds any of the issuer's voting securities (§ 802.64(c)).
+        Forfeited by intent to participate in management. Unchanged by the 2024 HSR
+        rulemaking. (Foreign investors should assess CFIUS separately under 31 C.F.R.
+        § 800.243, which can require a mandatory declaration for TID US businesses at 10%+.)
 
 gun_jumping:
   automatic_void: false

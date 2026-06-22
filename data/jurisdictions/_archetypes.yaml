@@ -1,7 +1,7 @@
 version: 1
 
 assignments:
-  eu: [eu_turnover, fdi_parallel]
+  eu: [eu_turnover]
   us_hsr: [us_hsr_two_tier]
   uk: [voluntary_slc, fdi_parallel]
   de: [mandatory_turnover]
@@ -28,10 +28,10 @@ assignments:
   kr: [mandatory_turnover]
   cn: [mandatory_turnover]
   in: [mandatory_turnover]
-  sg: [mandatory_turnover]
-  nz: [mandatory_turnover]
+  sg: [voluntary_notification]
+  nz: [voluntary_notification]
   mx: [mandatory_turnover]
-  ar: [mandatory_turnover]
+  ar: [mandatory_post_closing]
   cl: [mandatory_turnover]
   co: [market_share_trigger]
   pe: [mandatory_turnover]
@@ -45,7 +45,7 @@ assignments:
   ke: [mandatory_turnover]
   ru: [mandatory_turnover]
   tw: [mandatory_turnover]
-  id: [mandatory_turnover]
+  id: [mandatory_post_closing]
   ph: [mandatory_turnover]
   ch: [mandatory_turnover]
 
@@ -79,6 +79,16 @@ archetypes:
     min_threshold_tests: 1
     requires_mandatory_regime: true
     requires_suspensory_regime: true
+
+  mandatory_post_closing:
+    description: Mandatory but non-suspensory regime (notification required after closing, e.g. Indonesia; Argentina until the pre-closing regime takes effect ~18 Nov 2026)
+    min_threshold_tests: 1
+    requires_mandatory_regime: true
+
+  voluntary_notification:
+    description: Voluntary notification regime with no mandatory filing threshold (e.g. New Zealand, Singapore)
+    min_threshold_tests: 1
+    requires_voluntary_regime: true
 
   market_share_trigger:
     description: Jurisdiction with explicit market-share filing triggers

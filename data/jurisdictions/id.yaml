@@ -9,7 +9,7 @@ authority:
   filing_url: https://www.kppu.go.id/en/merger-and-acquisition/
 
 regime:
-  mandatory: false   # Indonesia has POST-merger notification, not pre-merger
+  mandatory: true    # Notification is legally required (penalty up to IDR 1bn/day) — but POST-closing, not pre-merger
   suspensory: false  # No standstill; parties may close before notifying
   voluntary: false
   note: >
