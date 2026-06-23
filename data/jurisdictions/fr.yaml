@@ -138,6 +138,45 @@ threshold_tests:
           Each of at least two parties must have French turnover > EUR 15m. Applies only
           to parties active in retail trade (commerce de detail) in France.
 
+  - test_id: fr_overseas
+    description: "Overseas-territories thresholds (Article L. 430-2 III Code de commerce)"
+    legal_basis: "Article L. 430-2 III, Code de commerce"
+    source_url: "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006233997/"
+    note: >
+      Applies where at least one party operates wholly or partly in an overseas
+      département, Mayotte, Wallis-et-Futuna, or the collectivités of Saint-Pierre-et-
+      Miquelon, Saint-Martin or Saint-Barthélemy. Combined worldwide turnover > EUR 75m
+      AND each of at least two parties has turnover > EUR 15m in at least one of the
+      relevant territories (> EUR 5m in the retail sector). Marked indicative_only because
+      the screening engine does not carry per-overseas-territory turnover; evaluate manually.
+    annual_adjustment: false
+    effective_date: "2004-01-01"
+    status: indicative_only
+
+    conditions:
+      - condition_id: fr_overseas_combined_worldwide
+        metric: revenue
+        scope: worldwide
+        party: combined
+        operator: ">"
+        value: 75000000
+        currency: EUR
+        source: "Article L. 430-2 III (1 degrees) Code de commerce"
+        source_type: primary_legislation
+
+      - condition_id: fr_overseas_each_party_territory
+        metric: revenue
+        scope: domestic
+        party: each_of_at_least_two
+        operator: ">"
+        value: 15000000
+        currency: EUR
+        source: "Article L. 430-2 III (2 degrees) Code de commerce"
+        source_type: primary_legislation
+        note: >
+          Turnover in at least one relevant overseas territory (not metropolitan France),
+          > EUR 15m for each of at least two parties, or > EUR 5m in the retail sector.
+
 notes:
   - >
     The retail thresholds (fr_retail) apply only to concentrations where at least
@@ -145,8 +184,10 @@ notes:
     to include supermarkets, hypermarkets, hard discounters, and similar formats.
   - >
     French turnover (chiffre d'affaires realise en France) excludes inter-group sales
-    and VAT. For financial institutions, special computation rules apply under Article
-    L. 430-2 III Code de commerce.
+    and VAT. Turnover is computed in accordance with Article 5 of EU Merger Regulation
+    139/2004 (per Article L. 430-2 V Code de commerce); special rules apply to credit and
+    financial institutions. (Article L. 430-2 III is the overseas-territories test, modelled
+    as fr_overseas above.)
   - >
     The Minister of Economy retains concurrent powers in the retail sector to issue
     injunctions in Phase 1, even for concentrations cleared by the AdlC (Article L.

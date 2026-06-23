@@ -58,19 +58,17 @@ fees:
 # ── Threshold tests ───────────────────────────────────────────────────────────
 
 threshold_tests:
-  - test_id: id_combined_assets_or_revenues
+  # The thresholds are an ALTERNATIVE (assets OR sales) — modelled as two separate
+  # single-condition tests so either one independently triggers notification.
+  # Figures are in Article 5(2) of GR 57/2010 (Art 5(1) is the 30-day notification
+  # clause). Post-closing notification; not a pre-clearance regime.
+  - test_id: id_combined_assets
     description: >
-      Combined Indonesian assets of all parties exceed IDR 2.5tn (approximately USD 160m)
-      OR combined Indonesian sales revenues exceed IDR 5tn (approximately USD 325m).
-      Post-closing notification required; not a pre-clearance regime.
-    legal_basis: "Article 5 Government Regulation No 57/2010"
+      Combined Indonesian assets of all parties exceed IDR 2.5tn (approximately USD 160m).
+    legal_basis: "Article 5(2)(a) Government Regulation No 57/2010"
     source_url: "https://www.kppu.go.id/en/merger-and-acquisition/"
     annual_adjustment: false
     effective_date: "2010-07-20"
-    note: >
-      The OR logic means a single threshold on either assets or revenues triggers
-      the notification obligation. Both thresholds are Indonesian-specific (not worldwide).
-      KPPU Regulation No 3/2012 provides further procedural guidance.
 
     conditions:
       - condition_id: id_combined_assets_gt_2_5tn
@@ -80,16 +78,33 @@ threshold_tests:
         operator: ">"
         value: 2500000000000
         currency: IDR
-        source: "Article 5(1)(a) Government Regulation No 57/2010"
+        source: "Article 5(2)(a) Government Regulation No 57/2010"
         source_type: primary_legislation
 
-    exceptions:
-      - exception_id: id_revenue_alternative
-        description: >
-          Alternatively, notification is triggered if combined Indonesian sales revenues
-          exceed IDR 5tn, even if assets threshold is not met.
-        source: "Article 5(1)(b) Government Regulation No 57/2010"
-        effect: "triggers_notification_via_revenue"
+  - test_id: id_combined_sales
+    description: >
+      Combined Indonesian sales revenues of all parties exceed IDR 5tn (approximately USD 325m).
+    legal_basis: "Article 5(2)(b) Government Regulation No 57/2010"
+    source_url: "https://www.kppu.go.id/en/merger-and-acquisition/"
+    annual_adjustment: false
+    effective_date: "2010-07-20"
+    note: >
+      Banking-sector carve-out (Article 5(3) GR 57/2010): where BOTH parties are in
+      banking, the notification trigger is combined Indonesian assets exceeding
+      IDR 20tn (not the standard 2.5tn assets / 5tn sales). Modelled as a documented
+      carve-out rather than a structured condition because it is sector- and
+      both-parties-conditional, which the screening engine does not represent.
+
+    conditions:
+      - condition_id: id_combined_sales_gt_5tn
+        metric: revenue
+        scope: domestic
+        party: combined
+        operator: ">"
+        value: 5000000000000
+        currency: IDR
+        source: "Article 5(2)(b) Government Regulation No 57/2010"
+        source_type: primary_legislation
 
 # ── Scope ─────────────────────────────────────────────────────────────────────
 
@@ -193,6 +208,20 @@ fdi_screening:
     100%, others 49% or 0%. The list is periodically revised. BKPM (Investment Coordinating
     Board) coordinates investment approvals. Separate from KPPU merger review.
     Verify current DNI restrictions before structuring any acquisition of Indonesian company.
+
+source_passages:
+  - passage_id: id_pp57_art5
+    document_title: "Government Regulation (PP) No 57 of 2010, Article 5(2)"
+    article_reference: "Article 5(2)"
+    document_url: "https://peraturan.go.id/id/pp-no-57-tahun-2010"
+    source_type: primary_legislation
+    quoted_text: >
+      Jumlah tertentu sebagaimana dimaksud pada ayat (1) terdiri atas: a. nilai aset
+      sebesar Rp2.500.000.000.000,00 (dua triliun lima ratus miliar rupiah); dan/atau
+      b. nilai penjualan sebesar Rp5.000.000.000.000,00 (lima triliun rupiah)
+    supports_conditions:
+      - id_combined_assets_gt_2_5tn
+      - id_combined_sales_gt_5tn
 
 practitioner_notes:
   - title: "Merger Control Laws and Regulations 2025 — Indonesia"

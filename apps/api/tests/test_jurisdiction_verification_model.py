@@ -76,26 +76,15 @@ def test_archetypes_yaml_validates():
 def test_baseline_report_counts():
     report = compute_baseline_report(DATA_DIR, ARCHETYPES_PATH)
     assert report.jurisdiction_count == 47
-    assert report.threshold_condition_count == 163
-    assert report.primary_legislation_condition_count == 119
-    assert report.authoritative_condition_count == 155
+    assert report.threshold_condition_count == 167
+    assert report.primary_legislation_condition_count == 123
+    assert report.authoritative_condition_count == 159
     assert report.condition_with_source_url_count == 17
-    assert report.source_passage_count == 61
-    assert report.supported_condition_count == 105
-    assert report.authoritative_missing_passage_count == 52
+    assert report.source_passage_count == 71
+    assert report.supported_condition_count == 132
+    assert report.authoritative_missing_passage_count == 29
     assert report.annual_adjustment_test_count == 12
-    assert report.jurisdictions_without_source_passages == [
-        "cl",
-        "cz",
-        "dk",
-        "gr",
-        "hu",
-        "id",
-        "pe",
-        "ph",
-        "pt",
-        "ro",
-    ]
+    assert report.jurisdictions_without_source_passages == []
 
 
 def test_baseline_report_serializes():

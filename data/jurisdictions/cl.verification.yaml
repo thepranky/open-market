@@ -1,0 +1,23 @@
+jurisdiction_id: cl
+verified_at: '2026-06-23T19:24:28.465496Z'
+source_verification_tier: 2
+source_tier_breakdown:
+  passages_grounded: pass
+  numbers_confirmed: pass
+  structure_complete: not_run
+  cross_checked: not_run
+regression_status: not_run
+freshness_status: unknown
+freshness:
+  policy_window_days: 180
+  anchors_checked: []
+failures: []
+conditions_verified:
+  cl_combined_chilean_uf:
+    tier: 1
+    passage_id: cl_dl211_art48
+    source_type: primary_legislation
+  cl_each_party_chilean_uf:
+    tier: 1
+    passage_id: cl_dl211_art48
+    source_type: primary_legislation

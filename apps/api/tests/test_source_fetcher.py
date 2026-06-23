@@ -38,10 +38,12 @@ def test_html_fixture_extracts_uk_section_text():
     assert quote_in_text("exceeds £70 million", text)
 
 
-def test_us_notice_fixture_quote_match():
-    text = normalize_text((FIXTURES / "us_hsr_notice.txt").read_text())
-    assert quote_in_text("greater than $119.5 million", text)
-    assert quote_in_text("adjusted annually", text)
+def test_us_hsr_statute_fixture_quote_match():
+    text = normalize_text((FIXTURES / "us_hsr_18a.txt").read_text())
+    assert quote_in_text(
+        "no person shall acquire, directly or indirectly, any voting securities or assets",
+        text,
+    )
 
 
 def test_quote_in_text_fuzzy_match():

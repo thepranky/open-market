@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
@@ -258,6 +259,33 @@ def default_fixtures_dir() -> Path:
     return Path(__file__).resolve().parents[2] / "tests" / "fixtures" / "jurisdiction_sources"
 
 
+# A fixture must declare where its text came from, so AI-paraphrased "sources"
+# (text written by an agent with no official origin) cannot ground a passage.
+# Provenance = an explicit "Source"/"Sources" marker AND an http(s) URL within the
+# header region. This is a static guardrail; it does not by itself prove the text
+# is verbatim — that is the job of periodic live re-grounding against the URL.
+_PROVENANCE_HEADER_CHARS = 1200
+_URL_RE = re.compile(r"https?://", re.IGNORECASE)
+_SOURCE_MARKER_RE = re.compile(r"\bsource[s]?\b", re.IGNORECASE)
+_FIXTURE_SUFFIXES = {".txt", ".html", ".htm"}
+
+
+def fixture_provenance_issues(fixtures_dir: Path) -> list[str]:
+    """Return the names of fixture files that lack a provenance header.
+
+    A compliant fixture's first ~1200 characters contain both a "Source"/"Sources"
+    marker and an http(s) URL pointing at the official document it was captured from.
+    """
+    issues: list[str] = []
+    for path in sorted(fixtures_dir.glob("*")):
+        if not path.is_file() or path.suffix.lower() not in _FIXTURE_SUFFIXES:
+            continue
+        head = path.read_text(encoding="utf-8")[:_PROVENANCE_HEADER_CHARS]
+        if not (_URL_RE.search(head) and _SOURCE_MARKER_RE.search(head)):
+            issues.append(path.name)
+    return issues
+
+
 def build_offline_fetch(fixtures_dir: Path) -> Callable[[str], SourceFetchResult]:
     # Map fixtures by filename and by the URL substrings used in tests.
     named: dict[str, Path] = {}
@@ -272,8 +300,30 @@ def build_offline_fetch(fixtures_dir: Path) -> Callable[[str], SourceFetchResult
                 named["eur-lex.europa.eu"] = path
             if path.name == "us_hsr_18a.txt":
                 named["uscode.house.gov"] = path
-            elif path.name == "us_hsr_notice.txt":
-                named["ftc.gov"] = path
+            elif path.name == "cz_s13.txt":
+                named["zakonyprolidi.cz"] = path
+            elif path.name == "dk_s12b.txt":
+                named["en.kfst.dk"] = path
+            elif path.name == "gr_art6.txt":
+                named["epant.gr"] = path
+            elif path.name == "hu_s24.txt":
+                named["gvh.hu"] = path
+            elif path.name == "ro_art14.txt":
+                named["consiliulconcurentei.ro"] = path
+                named["legeaz.net"] = path
+            elif path.name == "cl_art48.txt":
+                named["fne.gob.cl"] = path
+            elif path.name == "id_pp57_p5.txt":
+                named["kppu.go.id"] = path
+                named["peraturan.go.id"] = path
+            elif path.name == "pe_ley31112_art6.txt":
+                named["per203283"] = path
+                named["indecopi.gob.pe"] = path
+            elif path.name == "ph_s17.txt":
+                named["phcc.gov.ph"] = path
+            elif path.name == "pt_art37.txt":
+                named["concorrencia.pt"] = path
+                named["dre.pt"] = path
 
     def fetch(url: str) -> SourceFetchResult:
         return _fetch_with_fixtures(url, named, lambda u: fetch_source(u))

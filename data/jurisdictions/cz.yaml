@@ -69,7 +69,7 @@ threshold_tests:
     description: >
       Combined aggregate Czech net turnover of all parties exceeds CZK 1.5bn AND
       each of at least two parties has Czech net turnover exceeding CZK 250m.
-    legal_basis: "Section 13(1)(a) Act No 143/2001"
+    legal_basis: "Section 13(a) Act No 143/2001 Coll."
     source_url: "https://uohs.gov.cz/en/homepage.html"
     annual_adjustment: false
     effective_date: null
@@ -82,7 +82,7 @@ threshold_tests:
         operator: ">"
         value: 1500000000
         currency: CZK
-        source: "Section 13(1)(a)(i) Act No 143/2001"
+        source: "Section 13(a) Act No 143/2001 Coll."
         source_type: primary_legislation
 
       - condition_id: cz_each_party_domestic_gt_250m
@@ -92,7 +92,7 @@ threshold_tests:
         operator: ">"
         value: 250000000
         currency: CZK
-        source: "Section 13(1)(a)(ii) Act No 143/2001"
+        source: "Section 13(a) Act No 143/2001 Coll."
         source_type: primary_legislation
         qualifier:
           type: "count_of_parties"
@@ -109,7 +109,7 @@ threshold_tests:
     description: >
       One party has Czech net turnover exceeding CZK 1.5bn AND another party has
       worldwide turnover exceeding CZK 1.5bn.
-    legal_basis: "Section 13(1)(b) Act No 143/2001"
+    legal_basis: "Section 13(b) Act No 143/2001 Coll."
     source_url: "https://uohs.gov.cz/en/homepage.html"
     annual_adjustment: false
     effective_date: null
@@ -122,7 +122,7 @@ threshold_tests:
         operator: ">"
         value: 1500000000
         currency: CZK
-        source: "Section 13(1)(b)(i) Act No 143/2001"
+        source: "Section 13(b) Act No 143/2001 Coll."
         source_type: primary_legislation
 
       - condition_id: cz_target_worldwide_gt_1_5bn
@@ -132,7 +132,7 @@ threshold_tests:
         operator: ">"
         value: 1500000000
         currency: CZK
-        source: "Section 13(1)(b)(ii) Act No 143/2001"
+        source: "Section 13(b) Act No 143/2001 Coll."
         source_type: primary_legislation
 
     exclusions:
@@ -239,6 +239,40 @@ minority_thresholds:
 #   decisive-influence threshold are outside Czech merger control scope.
 # - Czech law does not have an "any acquisition" or "material influence" test —
 #   the threshold is decisive influence only.
+
+source_passages:
+  - passage_id: cz_act143_s13
+    document_title: "Act No 143/2001 Coll. on the Protection of Competition"
+    article_reference: "§ 13"
+    document_url: "https://www.zakonyprolidi.cz/cs/2001-143"
+    source_type: primary_legislation
+    quoted_text: >
+      celkový čistý obrat všech spojujících se soutěžitelů dosažený za poslední účetní
+      období na trhu České republiky je vyšší než 1,5 miliardy Kč a alespoň dva ze
+      spojujících se soutěžitelů dosáhli každý za poslední účetní období na trhu České
+      republiky čistého obratu vyššího než 250 milionů Kč
+    supports_conditions:
+      - cz_combined_domestic_gt_1_5bn
+      - cz_each_party_domestic_gt_250m
+      - cz_acquirer_domestic_gt_1_5bn
+      - cz_target_worldwide_gt_1_5bn
+
+source_passages:
+  - passage_id: cz_act143_s13
+    document_title: "Act No 143/2001 Coll. on the Protection of Competition"
+    article_reference: "§ 13"
+    document_url: "https://www.zakonyprolidi.cz/cs/2001-143"
+    source_type: primary_legislation
+    quoted_text: >
+      celkový čistý obrat všech spojujících se soutěžitelů dosažený za poslední účetní období
+      na trhu České republiky je vyšší než 1,5 miliardy Kč a alespoň dva ze spojujících se
+      soutěžitelů dosáhli každý za poslední účetní období na trhu České republiky čistého
+      obratu vyššího než 250 milionů Kč
+    supports_conditions:
+      - cz_combined_domestic_gt_1_5bn
+      - cz_each_party_domestic_gt_250m
+      - cz_acquirer_domestic_gt_1_5bn
+      - cz_target_worldwide_gt_1_5bn
 
 practitioner_notes:
   - title: "Merger Control Laws and Regulations 2025 — Czech Republic"

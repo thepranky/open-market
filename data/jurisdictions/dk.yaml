@@ -66,10 +66,10 @@ fees:
 threshold_tests:
   - test_id: dk_domestic_combined_and_each_party
     description: >
-      Combined aggregate turnover in Denmark exceeds DKK 900m AND at least two
-      parties each have Danish turnover exceeding DKK 100m.
-    legal_basis: "Section 12b(1)(i) Competition Act (Consolidated Act No 360 of 2022)"
-    source_url: "https://en.kfst.dk/competition/mergers"
+      Combined aggregate turnover in Denmark is at least DKK 900m AND at least two
+      parties each have Danish turnover of at least DKK 100m.
+    legal_basis: "Section 12(1)(i) Competition Act (Consolidation Act No 1150 of 3 November 2024)"
+    source_url: "https://en.kfst.dk/media/s4ybfdap/the-danish-competition-act-1150-af-03112024.pdf"
     annual_adjustment: false
     effective_date: null
 
@@ -78,20 +78,20 @@ threshold_tests:
         metric: revenue
         scope: domestic
         party: combined
-        operator: ">"
+        operator: ">="
         value: 900000000
         currency: DKK
-        source: "Section 12b(1)(i)(a) Competition Act"
+        source: "Section 12(1)(i) Competition Act"
         source_type: primary_legislation
 
       - condition_id: dk_each_party_dk_gt_100m
         metric: revenue
         scope: domestic
         party: each_of_at_least_two
-        operator: ">"
+        operator: ">="
         value: 100000000
         currency: DKK
-        source: "Section 12b(1)(i)(b) Competition Act"
+        source: "Section 12(1)(i) Competition Act"
         source_type: primary_legislation
         qualifier:
           type: "count_of_parties"
@@ -107,33 +107,37 @@ threshold_tests:
 
   - test_id: dk_worldwide_and_domestic_single_party
     description: >
-      Combined worldwide turnover exceeds DKK 3.8bn AND at least one party has
-      Danish turnover exceeding DKK 300m.
-    legal_basis: "Section 12b(1)(ii) Competition Act (Consolidated Act No 360 of 2022)"
-    source_url: "https://en.kfst.dk/competition/mergers"
+      At least one party has Danish turnover of at least DKK 3.8bn AND at least one
+      OTHER party has worldwide turnover of at least DKK 3.8bn.
+    legal_basis: "Section 12(1)(ii) Competition Act (Consolidation Act No 1150 of 3 November 2024)"
+    source_url: "https://en.kfst.dk/media/s4ybfdap/the-danish-competition-act-1150-af-03112024.pdf"
     annual_adjustment: false
     effective_date: null
 
     conditions:
-      - condition_id: dk_combined_worldwide_gt_3_8bn
-        metric: revenue
-        scope: worldwide
-        party: combined
-        operator: ">"
-        value: 3800000000
-        currency: DKK
-        source: "Section 12b(1)(ii)(a) Competition Act"
-        source_type: primary_legislation
-
-      - condition_id: dk_one_party_dk_gt_300m
+      - condition_id: dk_one_party_dk_gt_3_8bn
         metric: revenue
         scope: domestic
         party: either_party
-        operator: ">"
-        value: 300000000
+        operator: ">="
+        value: 3800000000
         currency: DKK
-        source: "Section 12b(1)(ii)(b) Competition Act"
+        source: "Section 12(1)(ii) Competition Act"
         source_type: primary_legislation
+
+      - condition_id: dk_other_party_worldwide_gt_3_8bn
+        metric: revenue
+        scope: worldwide
+        party: either_party
+        operator: ">="
+        value: 3800000000
+        currency: DKK
+        source: "Section 12(1)(ii) Competition Act"
+        source_type: primary_legislation
+        note: >
+          The statute requires at least one OTHER undertaking (distinct from the party
+          meeting the DKK 3.8bn Danish-turnover limb) to have worldwide turnover of at
+          least DKK 3.8bn — not combined worldwide turnover.
 
     exclusions:
       - exclusion_id: dk_eu_one_stop_shop_2
@@ -249,6 +253,25 @@ minority_thresholds:
 #   competition law merger control and administered by the Danish Business Authority.
 # - Below the decisive-influence threshold, voluntary notification to DCCA is permitted
 #   but not required.
+
+source_passages:
+  - passage_id: dk_competition_act_s12
+    document_title: "Danish Competition Act (Consolidation Act No 1150 of 3 November 2024)"
+    article_reference: "Section 12(1)"
+    document_url: "https://en.kfst.dk/media/s4ybfdap/the-danish-competition-act-1150-af-03112024.pdf"
+    source_type: primary_legislation
+    quoted_text: >
+      the combined aggregate annual turnover in Denmark of the undertakings concerned is at
+      least DKK 900 million and the aggregate annual turnover in Denmark of each of at least
+      two of the undertakings concerned is at least DKK 100 million; the aggregate annual
+      turnover in Denmark of at least one of the undertakings concerned is at least DKK 3.8
+      billion and the aggregate annual worldwide turnover of at least one of the other
+      undertakings concerned is at least DKK 3.8 billion
+    supports_conditions:
+      - dk_combined_dk_gt_900m
+      - dk_each_party_dk_gt_100m
+      - dk_one_party_dk_gt_3_8bn
+      - dk_other_party_worldwide_gt_3_8bn
 
 practitioner_notes:
   - title: "Merger Control Laws and Regulations 2025 — Denmark"

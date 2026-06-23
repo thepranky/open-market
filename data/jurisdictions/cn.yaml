@@ -214,8 +214,9 @@ minority_thresholds:
     in practice due to dispersed other shareholders). Article 26 of the 2022 AML also
     creates a SAMR call-in power for below-threshold concentrations that may restrict
     competition. Notification thresholds (January 2024): combined global turnover >CNY 12bn
-    AND one party's China turnover >CNY 800m. There is no passive investment exemption
-    for acquisitions meeting the turnover thresholds.
+    (or combined China turnover >CNY 4bn) AND each of at least two parties' China turnover
+    >CNY 800m. There is no passive investment exemption for acquisitions meeting the
+    turnover thresholds.
   rules:
     - rule_id: "cn_minority_decisive_influence"
       relationship_type: "any"

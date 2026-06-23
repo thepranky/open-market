@@ -146,11 +146,13 @@ threshold_tests:
         scope: domestic
         party: acquirer_group
         operator: ">"
-        value: 30000000000
+        value: 20000000000
         currency: JPY
-        source: "Cabinet Office Ordinance, Article 7(1)"
+        source: "AMA Art. 16(2); Cabinet Office Ordinance (JFTC business-transfer notification page, 200億円)"
         source_type: primary_legislation
-        note: "Acquirer group domestic net sales > JPY 30bn."
+        note: >
+          Assignee (acquiring) group domestic net sales > JPY 20bn (200億円). The
+          transferred business's domestic sales must exceed JPY 3bn (jp_asset_transferred_domestic).
 
       - condition_id: jp_asset_transferred_domestic
         metric: revenue

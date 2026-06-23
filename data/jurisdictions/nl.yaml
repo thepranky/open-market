@@ -220,10 +220,10 @@ threshold_tests:
         metric: revenue
         scope: domestic
         party: each_of_at_least_two
-        operator: ">"
+        operator: ">="
         value: 30000000
         currency: EUR
-        source: "Article 29(1)(b) Mededingingswet"
+        source: "Article 29(1)(b) Mededingingswet (statute: 'ten minste € 30 000 000' = at least, hence >=)"
         source_type: primary_legislation
         source_url: "https://wetten.overheid.nl/BWBR0008691"
         verified_via:

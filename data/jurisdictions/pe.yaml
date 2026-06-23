@@ -68,40 +68,43 @@ fees:
 threshold_tests:
   - test_id: pe_combined_domestic_and_each_party
     description: >
-      Combined gross income in Peru of all parties in the preceding year exceeds
-      approximately S/ 1,250,000,000 (PEN, ~USD 330m) AND at least two parties
-      individually have gross Peruvian income exceeding approximately S/ 250,000,000
-      (PEN, ~USD 65m). Thresholds expressed in UIT units and revised annually.
-    legal_basis: "Article 9(1) Legislative Decree 1034 (as amended by LD 1510)"
-    source_url: "https://www.indecopi.gob.pe/"
+      Combined value (sales/gross income or assets) in Peru of all parties in the
+      preceding year is at least 118,000 UIT (≈ PEN 649,000,000 at the 2026 UIT of
+      S/ 5,500) AND at least two parties individually reach at least 18,000 UIT each
+      (≈ PEN 99,000,000). Thresholds are fixed in UIT and the PEN equivalent moves
+      with the annually revised UIT.
+    legal_basis: "Article 6(1) Law No 31112 (2021); Reglamento, Supreme Decree 039-2021-PCM"
+    source_url: "https://www.gob.pe/institucion/indecopi/normas-legales/1736208-31112"
     annual_adjustment: true
-    effective_date: "2021-06-14"
+    effective_date: "2026-01-01"
     note: >
-      Peru's thresholds are expressed in UIT (Unidad Impositiva Tributaria), which is
-      revised annually by Supreme Decree. As of 2024, 1 UIT ≈ PEN 5,150. The combined
-      threshold is 5,000 UIT and the individual threshold is 1,000 UIT (approximate figures;
-      verify with INDECOPI for current UIT value and exact threshold amounts).
+      Peru's merger-control thresholds are set by Law No 31112 (2021), Article 6 — NOT
+      the older Legislative Decree 1034 (which governs anticompetitive conduct). They are
+      fixed in UIT (Unidad Impositiva Tributaria): combined >= 118,000 UIT and at least two
+      parties >= 18,000 UIT each. The UIT is revised annually by Supreme Decree; for 2026
+      it is S/ 5,500 (DS 301-2025-EF), giving PEN 649,000,000 and PEN 99,000,000. Update
+      the PEN values each year from the current UIT; the UIT multiples are fixed.
 
     conditions:
       - condition_id: pe_combined_domestic_gt_threshold
         metric: revenue
         scope: domestic
         party: combined
-        operator: ">"
-        value: 1250000000
+        operator: ">="
+        value: 649000000
         currency: PEN
-        source: "Article 9(1)(a) Legislative Decree 1034 (as amended); Annual UIT decree"
+        source: "Article 6(1)(a) Law No 31112 (118,000 UIT); UIT 2026 = S/ 5,500 (DS 301-2025-EF)"
         source_type: authority_announcement
-        note: "VERIFY: Amount in PEN is indicative based on 2024 UIT value. Threshold changes annually."
+        note: "118,000 UIT × S/ 5,500 (2026 UIT). Recompute annually from the current UIT."
 
       - condition_id: pe_each_party_domestic_gt_threshold
         metric: revenue
         scope: domestic
         party: each_of_at_least_two
-        operator: ">"
-        value: 250000000
+        operator: ">="
+        value: 99000000
         currency: PEN
-        source: "Article 9(1)(b) Legislative Decree 1034 (as amended)"
+        source: "Article 6(1)(b) Law No 31112 (18,000 UIT); UIT 2026 = S/ 5,500 (DS 301-2025-EF)"
         source_type: authority_announcement
         qualifier:
           type: "count_of_parties"
@@ -174,6 +177,23 @@ fdi_screening:
     review regime. Foreign investment is generally open. Sector-specific licensing
     requirements may apply (e.g., mining, hydrocarbons, financial services), but
     these are not a centralised national security review mechanism.
+
+source_passages:
+  - passage_id: pe_ley31112_art6
+    document_title: "Ley N° 31112 — Ley de control previo de operaciones de concentración empresarial, Artículo 6"
+    article_reference: "Artículo 6.1"
+    document_url: "https://faolex.fao.org/docs/pdf/per203283.pdf"
+    source_type: primary_legislation
+    quoted_text: >
+      a. La suma total del valor de las ventas o ingresos brutos anuales o valor de activos
+      en el país de las empresas involucradas [...] haya alcanzado [...] un valor igual o
+      superior a ciento dieciocho mil (118 000) unidades impositivas tributarias (UIT). b.
+      El valor de las ventas o ingresos brutos anuales o valor de activos en el país de al
+      menos dos de las empresas involucradas [...] hayan alcanzado [...] un valor igual o
+      superior a dieciocho mil (18 000) unidades impositivas tributarias (UIT) cada una
+    supports_conditions:
+      - pe_combined_domestic_gt_threshold
+      - pe_each_party_domestic_gt_threshold
 
 practitioner_notes:
   - title: "Peru: Indecopi Cleared 45 Filings and Rejected 1 in the First Three Years of Its Antitrust Merger Control Regime"

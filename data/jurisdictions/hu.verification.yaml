@@ -1,0 +1,35 @@
+jurisdiction_id: hu
+verified_at: '2026-06-23T18:43:12.765407Z'
+source_verification_tier: 1
+source_tier_breakdown:
+  passages_grounded: pass
+  numbers_confirmed: fail
+  structure_complete: not_run
+  cross_checked: not_run
+regression_status: not_run
+freshness_status: unknown
+freshness:
+  policy_window_days: 180
+  anchors_checked: []
+failures:
+- gate: verify_jurisdiction_passages
+  code: numeric_mismatch
+  message: Condition 'hu_combined_domestic_gt_20bn' value 20000000000.0 not found
+    in passage/source text
+  field_path: conditions.hu_combined_domestic_gt_20bn.value
+- gate: verify_jurisdiction_passages
+  code: numeric_mismatch
+  message: Condition 'hu_each_party_domestic_gt_1_5bn' value 1500000000.0 not found
+    in passage/source text
+  field_path: conditions.hu_each_party_domestic_gt_1_5bn.value
+conditions_verified:
+  hu_combined_domestic_gt_20bn:
+    tier: 1
+    passage_id: hu_tpvt_s24
+    numeric_match: false
+    source_type: primary_legislation
+  hu_each_party_domestic_gt_1_5bn:
+    tier: 1
+    passage_id: hu_tpvt_s24
+    numeric_match: false
+    source_type: primary_legislation

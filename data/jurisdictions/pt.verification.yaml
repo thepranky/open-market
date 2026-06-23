@@ -1,0 +1,55 @@
+jurisdiction_id: pt
+verified_at: '2026-06-23T18:43:13.353218Z'
+source_verification_tier: 1
+source_tier_breakdown:
+  passages_grounded: pass
+  numbers_confirmed: fail
+  structure_complete: not_run
+  cross_checked: not_run
+regression_status: not_run
+freshness_status: unknown
+freshness:
+  policy_window_days: 180
+  anchors_checked: []
+failures:
+- gate: verify_jurisdiction_passages
+  code: numeric_mismatch
+  message: Condition 'pt_each_party_domestic_gt_5m_b' value 5000000.0 not found in
+    passage/source text
+  field_path: conditions.pt_each_party_domestic_gt_5m_b.value
+- gate: verify_jurisdiction_passages
+  code: numeric_mismatch
+  message: Condition 'pt_combined_domestic_gt_100m' value 100000000.0 not found in
+    passage/source text
+  field_path: conditions.pt_combined_domestic_gt_100m.value
+- gate: verify_jurisdiction_passages
+  code: numeric_mismatch
+  message: Condition 'pt_each_party_domestic_gt_5m' value 5000000.0 not found in passage/source
+    text
+  field_path: conditions.pt_each_party_domestic_gt_5m.value
+conditions_verified:
+  pt_market_share_gte_50:
+    tier: 2
+    passage_id: pt_lc_art37
+    numeric_match: true
+    source_type: primary_legislation
+  pt_market_share_gte_30:
+    tier: 2
+    passage_id: pt_lc_art37
+    numeric_match: true
+    source_type: primary_legislation
+  pt_each_party_domestic_gt_5m_b:
+    tier: 1
+    passage_id: pt_lc_art37
+    numeric_match: false
+    source_type: primary_legislation
+  pt_combined_domestic_gt_100m:
+    tier: 1
+    passage_id: pt_lc_art37
+    numeric_match: false
+    source_type: primary_legislation
+  pt_each_party_domestic_gt_5m:
+    tier: 1
+    passage_id: pt_lc_art37
+    numeric_match: false
+    source_type: primary_legislation

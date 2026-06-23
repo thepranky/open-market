@@ -69,12 +69,82 @@ fees:
 # ── Threshold tests ───────────────────────────────────────────────────────────
 
 threshold_tests:
+  # Article 37(1) of Lei n.º 19/2012 has THREE alternative notification triggers:
+  # (a) market share >= 50%; (b) market share 30-50% with each of >=2 parties PT > EUR 5m;
+  # (c) combined PT turnover > EUR 100m with each of >=2 parties PT > EUR 5m.
+  - test_id: pt_market_share_50
+    description: >
+      The concentration acquires, creates or reinforces a market share of at least 50%
+      in the national market for a product/service (or a substantial part of it).
+    legal_basis: "Article 37(1)(a) Competition Act (Lei n.º 19/2012)"
+    source_url: "https://www.concorrencia.pt/sites/default/files/documentos/legislacao/Law_19_2012_bilingual_en_0.pdf"
+    annual_adjustment: false
+    effective_date: null
+    status: indicative_only
+
+    conditions:
+      - condition_id: pt_market_share_gte_50
+        metric: market_share
+        scope: domestic
+        party: combined
+        operator: ">="
+        value: 0.50
+        currency: null
+        source: "Article 37(1)(a) Competition Act (Lei n.º 19/2012)"
+        source_type: primary_legislation
+
+    exclusions:
+      - exclusion_id: pt_eu_one_stop_shop
+        description: "EU dimension one-stop-shop applies. EC has exclusive jurisdiction."
+        source: "Council Regulation (EC) No 139/2004"
+        effect: excludes_jurisdiction
+
+  - test_id: pt_market_share_30_and_turnover
+    description: >
+      The concentration acquires, creates or reinforces a market share of at least 30%
+      but less than 50% in the national market, AND at least two parties each had
+      Portuguese turnover above EUR 5m in the previous financial year.
+    legal_basis: "Article 37(1)(b) Competition Act (Lei n.º 19/2012)"
+    source_url: "https://www.concorrencia.pt/sites/default/files/documentos/legislacao/Law_19_2012_bilingual_en_0.pdf"
+    annual_adjustment: false
+    effective_date: null
+    status: indicative_only
+
+    conditions:
+      - condition_id: pt_market_share_gte_30
+        metric: market_share
+        scope: domestic
+        party: combined
+        operator: ">="
+        value: 0.30
+        currency: null
+        source: "Article 37(1)(b) Competition Act (Lei n.º 19/2012)"
+        source_type: primary_legislation
+        note: >
+          Statute: market share "igual ou superior a 30% e inferior a 50%" (>=30% and
+          <50%). The <50% upper bound is not modelled separately because >=50% is already
+          caught by test pt_market_share_50.
+
+      - condition_id: pt_each_party_domestic_gt_5m_b
+        metric: revenue
+        scope: domestic
+        party: each_of_at_least_two
+        operator: ">"
+        value: 5000000
+        currency: EUR
+        source: "Article 37(1)(b) Competition Act (Lei n.º 19/2012)"
+        source_type: primary_legislation
+        qualifier:
+          type: "count_of_parties"
+          operator: ">="
+          count: 2
+
   - test_id: pt_domestic_combined_and_each_party
     description: >
-      Combined aggregate Portuguese turnover of all parties exceeds €100m AND each of
-      at least two parties has Portuguese turnover exceeding €5m (individual threshold).
-    legal_basis: "Article 38(1)(a) Competition Act No 19/2012"
-    source_url: "https://www.concorrencia.pt/en/"
+      Combined aggregate Portuguese turnover of all parties exceeds EUR 100m AND each of
+      at least two parties has Portuguese turnover exceeding EUR 5m.
+    legal_basis: "Article 37(1)(c) Competition Act (Lei n.º 19/2012)"
+    source_url: "https://www.concorrencia.pt/sites/default/files/documentos/legislacao/Law_19_2012_bilingual_en_0.pdf"
     annual_adjustment: false
     effective_date: null
 
@@ -86,7 +156,7 @@ threshold_tests:
         operator: ">"
         value: 100000000
         currency: EUR
-        source: "Article 38(1)(a)(i) Competition Act No 19/2012"
+        source: "Article 37(1)(c) Competition Act (Lei n.º 19/2012)"
         source_type: primary_legislation
 
       - condition_id: pt_each_party_domestic_gt_5m
@@ -96,47 +166,7 @@ threshold_tests:
         operator: ">"
         value: 5000000
         currency: EUR
-        source: "Article 38(1)(a)(ii) Competition Act No 19/2012"
-        source_type: primary_legislation
-        qualifier:
-          type: "count_of_parties"
-          operator: ">="
-          count: 2
-
-    exclusions:
-      - exclusion_id: pt_eu_one_stop_shop
-        description: "EU dimension one-stop-shop applies. EC has exclusive jurisdiction."
-        source: "Article 37(4) Competition Act No 19/2012; Council Regulation (EC) No 139/2004"
-        effect: excludes_jurisdiction
-
-  - test_id: pt_worldwide_and_domestic
-    description: >
-      Combined worldwide turnover exceeds €2.5bn AND at least two parties each have
-      Portuguese turnover exceeding €250m.
-    legal_basis: "Article 38(1)(b) Competition Act No 19/2012"
-    source_url: "https://www.concorrencia.pt/en/"
-    annual_adjustment: false
-    effective_date: null
-
-    conditions:
-      - condition_id: pt_combined_worldwide_gt_2_5bn
-        metric: revenue
-        scope: worldwide
-        party: combined
-        operator: ">"
-        value: 2500000000
-        currency: EUR
-        source: "Article 38(1)(b)(i) Competition Act No 19/2012"
-        source_type: primary_legislation
-
-      - condition_id: pt_each_party_domestic_gt_250m
-        metric: revenue
-        scope: domestic
-        party: each_of_at_least_two
-        operator: ">"
-        value: 250000000
-        currency: EUR
-        source: "Article 38(1)(b)(ii) Competition Act No 19/2012"
+        source: "Article 37(1)(c) Competition Act (Lei n.º 19/2012)"
         source_type: primary_legislation
         qualifier:
           type: "count_of_parties"
@@ -146,7 +176,7 @@ threshold_tests:
     exclusions:
       - exclusion_id: pt_eu_one_stop_shop_2
         description: "EU dimension one-stop-shop applies."
-        source: "Article 37(4) Competition Act No 19/2012; Council Regulation (EC) No 139/2004"
+        source: "Council Regulation (EC) No 139/2004"
         effect: excludes_jurisdiction
 
 # ── Scope ─────────────────────────────────────────────────────────────────────
@@ -261,6 +291,32 @@ minority_thresholds:
 # - The AdC has actively used its minority-stake review powers in media and telecoms.
 # - Law 17/2022 updated the merger control framework; verify specific thresholds and
 #   procedural rules with current AdC guidance before relying on this entry.
+
+source_passages:
+  - passage_id: pt_lc_art37
+    document_title: "Competition Act (Lei da Concorrência) n.º 19/2012, Article 37(1) — AdC official bilingual text"
+    article_reference: "Article 37(1)"
+    document_url: "https://www.concorrencia.pt/sites/default/files/documentos/legislacao/Law_19_2012_bilingual_en_0.pdf"
+    source_type: primary_legislation
+    quoted_text: >
+      As concentrações de empresas estão sujeitas a notificação prévia quando preencham
+      uma das seguintes condições: a) Em consequência da concentração se adquira, crie ou
+      reforce uma quota igual ou superior a 50 % no mercado nacional de determinado bem ou
+      serviço, ou numa parte substancial deste; b) Em consequência da concentração se
+      adquira, crie ou reforce uma quota igual ou superior a 30 % e inferior a 50 % no
+      mercado nacional ..., desde que o volume de negócios realizado individualmente em
+      Portugal por, pelo menos, duas das empresas que participam na concentração seja
+      superior a cinco milhões de euros; c) O conjunto das empresas que participam na
+      concentração tenha realizado em Portugal, no último exercício, um volume de negócios
+      superior a 100 milhões de euros, desde que o volume de negócios realizado
+      individualmente em Portugal por, pelo menos, duas dessas empresas seja superior a
+      cinco milhões de euros
+    supports_conditions:
+      - pt_market_share_gte_50
+      - pt_market_share_gte_30
+      - pt_each_party_domestic_gt_5m_b
+      - pt_combined_domestic_gt_100m
+      - pt_each_party_domestic_gt_5m
 
 practitioner_notes:
   - title: "Portugal — Merger Control Laws and Regulations 2026"
