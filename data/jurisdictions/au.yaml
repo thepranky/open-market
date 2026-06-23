@@ -208,15 +208,20 @@ threshold_tests:
           - "https://www.accc.gov.au/business/mergers-and-acquisitions/thresholds-for-notifying-acquisitions"
         note: "AUD 10m target Australian revenue."
 
-  - test_id: au_very_large_acquirer_deal_value
-    description: "Very large acquirer — acquirer AU revenue ≥ AUD 500m AND global deal value ≥ AUD 50m"
-    legal_basis: "Competition and Consumer (Notification of Acquisitions) Determination 2025"
+  - test_id: au_asset_acquisition_very_large
+    description: "Asset acquisition (very large acquirer) — acquirer AU revenue ≥ AUD 500m AND global deal value ≥ AUD 50m"
+    legal_basis: "Competition and Consumer (Notification of Acquisitions) Determination 2025, circumstance 2-4"
     source_url: "https://www.accc.gov.au/business/mergers-and-acquisitions/thresholds-for-notifying-acquisitions"
     note: >
-      Deal value alternative for very large acquirers. Also covers asset acquisitions
-      by very large acquirers (same threshold applies from 1 April 2026 for assets).
+      CORRECTION: this AUD 500m + AUD 50m tuple is the ASSET-ACQUISITION threshold, not a
+      general very-large-acquirer share/business test. It applies only to acquisitions of
+      assets that are NOT all, or substantially all, of a business, and commences
+      1 April 2026 (not 1 January 2026). There is no general "AUD 500m + AUD 50m deal value"
+      share/business limb — the general very-large-acquirer test triggers on target AU
+      revenue ≥ AUD 10m (see au_very_large_acquirer_revenue).
     annual_adjustment: false
-    effective_date: "2026-01-01"
+    effective_date: "2026-04-01"
+    status: indicative_only
 
     conditions:
       - condition_id: au_vla_deal_acquirer_revenue
@@ -246,6 +251,18 @@ threshold_tests:
         note: "AUD 50m global transaction value."
 
 notes:
+  - >
+    ADDITIONAL NOTIFICATION LIMBS NOT MODELLED AS structured tests (they require deal data
+    the screening engine does not carry): (1) CREEPING/SERIAL acquisitions — combined AU
+    revenue ≥ AUD 200m AND cumulative AU revenue from same/substitutable acquisitions over
+    the prior 3 years ≥ AUD 50m; or acquirer AU revenue ≥ AUD 500m with the 3-year
+    cumulative ≥ AUD 10m (individual deals < AUD 2m AU revenue excluded). (2) ASSET
+    acquisitions (from 1 April 2026) — AUD 200m acquirer + AUD 200m global value; and the
+    AUD 500m + AUD 50m limb modelled above. (3) SUPERMARKET sector — mandatory for
+    designated supermarket businesses (Coles/Woolworths) regardless of monetary thresholds,
+    plus land acquisitions ≥ 1,000 sqm GLA. (4) VOTING-POWER limbs (from 1 April 2026) —
+    crossing 20% (unlisted not-widely-held) or 20%→50%+ where monetary thresholds also met.
+    Source: Determination 2025, circumstances 2-1 to 2-4; ACCC thresholds page.
   - >
     Mandatory regime started 1 January 2026. Prior to this, Australia operated a voluntary
     informal clearance system under s. 50 CCA. Parties may still seek informal guidance
