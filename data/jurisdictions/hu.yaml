@@ -71,32 +71,33 @@ fees:
 threshold_tests:
   - test_id: hu_combined_domestic_and_each_party
     description: >
-      Combined aggregate net Hungarian turnover of all parties exceeds HUF 15bn
-      AND each of at least two parties has Hungarian net turnover exceeding HUF 500m.
-    legal_basis: "Section 24(1) Tpvt. (Act LVII of 1996)"
-    source_url: "https://www.gvh.hu/en/"
+      Combined aggregate net Hungarian turnover of all parties exceeds HUF 20bn
+      AND each of at least two parties has Hungarian net turnover exceeding HUF 1.5bn.
+      (Thresholds raised effective 1 January 2023 by Act LV of 2022.)
+    legal_basis: "Section 24(1) Tpvt. (Act LVII of 1996, as amended by Act LV of 2022)"
+    source_url: "https://kartell.gvh.hu/vallalkozasoknak/ceget-veszek"
     annual_adjustment: false
-    effective_date: null
+    effective_date: "2023-01-01"
 
     conditions:
-      - condition_id: hu_combined_domestic_gt_15bn
+      - condition_id: hu_combined_domestic_gt_20bn
         metric: revenue
         scope: domestic
         party: combined
         operator: ">"
-        value: 15000000000
+        value: 20000000000
         currency: HUF
-        source: "Section 24(1)(a) Tpvt."
+        source: "Section 24(1)(a) Tpvt. (as amended by Act LV of 2022, eff. 1 Jan 2023)"
         source_type: primary_legislation
 
-      - condition_id: hu_each_party_domestic_gt_500m
+      - condition_id: hu_each_party_domestic_gt_1_5bn
         metric: revenue
         scope: domestic
         party: each_of_at_least_two
         operator: ">"
-        value: 500000000
+        value: 1500000000
         currency: HUF
-        source: "Section 24(1)(b) Tpvt."
+        source: "Section 24(1)(b) Tpvt. (as amended by Act LV of 2022, eff. 1 Jan 2023)"
         source_type: primary_legislation
         qualifier:
           type: "count_of_parties"
@@ -204,17 +205,18 @@ minority_thresholds:
 
 source_passages:
   - passage_id: hu_tpvt_s24
-    document_title: "Act LVII of 1996 on the Prohibition of Unfair Market Practices (Tpvt.)"
+    document_title: "GVH (Hungarian Competition Authority) — official guidance on merger notification thresholds (Tpvt. Section 24, as amended by Act LV of 2022)"
     article_reference: "Section 24(1)"
-    document_url: "https://www.gvh.hu/en"
-    source_type: primary_legislation
+    document_url: "https://kartell.gvh.hu/vallalkozasoknak/ceget-veszek"
+    source_type: official_guidance
     quoted_text: >
-      the combined net turnover in Hungary of all undertakings concerned exceeds fifteen
-      billion forints, and the net turnover in Hungary of each of at least two of the
-      undertakings concerned exceeds five hundred million forints
+      a fúzióban érintett vállalkozáscsoportok előző évi magyarországi együttes nettó
+      árbevétele meghaladja a 20 milliárd forintot, és van legalább két olyan érintett
+      vállalkozáscsoport az összefonódás során, amelyeknek nettó árbevétele külön-külön
+      1,5 milliárd forint felett van
     supports_conditions:
-      - hu_combined_domestic_gt_15bn
-      - hu_each_party_domestic_gt_500m
+      - hu_combined_domestic_gt_20bn
+      - hu_each_party_domestic_gt_1_5bn
 
 practitioner_notes:
   - title: "Merger Control Laws and Regulations 2025 — Hungary"

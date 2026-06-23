@@ -1,9 +1,9 @@
 jurisdiction_id: cz
-verified_at: '2026-06-22T21:19:53.362253Z'
-source_verification_tier: 2
+verified_at: '2026-06-23T18:43:12.361632Z'
+source_verification_tier: 1
 source_tier_breakdown:
   passages_grounded: pass
-  numbers_confirmed: pass
+  numbers_confirmed: fail
   structure_complete: not_run
   cross_checked: not_run
 regression_status: not_run
@@ -11,25 +11,45 @@ freshness_status: unknown
 freshness:
   policy_window_days: 180
   anchors_checked: []
-failures: []
+failures:
+- gate: verify_jurisdiction_passages
+  code: numeric_mismatch
+  message: Condition 'cz_combined_domestic_gt_1_5bn' value 1500000000.0 not found
+    in passage/source text
+  field_path: conditions.cz_combined_domestic_gt_1_5bn.value
+- gate: verify_jurisdiction_passages
+  code: numeric_mismatch
+  message: Condition 'cz_each_party_domestic_gt_250m' value 250000000.0 not found
+    in passage/source text
+  field_path: conditions.cz_each_party_domestic_gt_250m.value
+- gate: verify_jurisdiction_passages
+  code: numeric_mismatch
+  message: Condition 'cz_acquirer_domestic_gt_1_5bn' value 1500000000.0 not found
+    in passage/source text
+  field_path: conditions.cz_acquirer_domestic_gt_1_5bn.value
+- gate: verify_jurisdiction_passages
+  code: numeric_mismatch
+  message: Condition 'cz_target_worldwide_gt_1_5bn' value 1500000000.0 not found in
+    passage/source text
+  field_path: conditions.cz_target_worldwide_gt_1_5bn.value
 conditions_verified:
   cz_combined_domestic_gt_1_5bn:
-    tier: 2
+    tier: 1
     passage_id: cz_act143_s13
-    numeric_match: true
+    numeric_match: false
     source_type: primary_legislation
   cz_each_party_domestic_gt_250m:
-    tier: 2
+    tier: 1
     passage_id: cz_act143_s13
-    numeric_match: true
+    numeric_match: false
     source_type: primary_legislation
   cz_acquirer_domestic_gt_1_5bn:
-    tier: 2
+    tier: 1
     passage_id: cz_act143_s13
-    numeric_match: true
+    numeric_match: false
     source_type: primary_legislation
   cz_target_worldwide_gt_1_5bn:
-    tier: 2
+    tier: 1
     passage_id: cz_act143_s13
-    numeric_match: true
+    numeric_match: false
     source_type: primary_legislation

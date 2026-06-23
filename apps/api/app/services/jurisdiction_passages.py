@@ -290,11 +290,12 @@ def build_offline_fetch(fixtures_dir: Path) -> Callable[[str], SourceFetchResult
             elif path.name == "id_pp57_p5.txt":
                 named["kppu.go.id"] = path
                 named["peraturan.go.id"] = path
-            elif path.name == "pe_art9.txt":
+            elif path.name == "pe_ley31112_art6.txt":
+                named["per203283"] = path
                 named["indecopi.gob.pe"] = path
             elif path.name == "ph_s17.txt":
                 named["phcc.gov.ph"] = path
-            elif path.name == "pt_art38.txt":
+            elif path.name == "pt_art37.txt":
                 named["concorrencia.pt"] = path
                 named["dre.pt"] = path
 

@@ -70,7 +70,7 @@ threshold_tests:
     description: >
       Combined worldwide turnover of all parties exceeds €150m AND at least two
       parties each have Greek turnover exceeding €15m.
-    legal_basis: "Article 7(1) Law 3959/2011 (as amended)"
+    legal_basis: "Article 6(1) Law 3959/2011 (as amended, incl. Law 5255/2025)"
     source_url: "https://www.epant.gr/en/"
     annual_adjustment: false
     effective_date: null
@@ -80,11 +80,13 @@ threshold_tests:
         metric: revenue
         scope: worldwide
         party: combined
-        operator: ">"
+        operator: ">="
         value: 150000000
         currency: EUR
-        source: "Article 7(1)(a) Law 3959/2011"
+        source: "Article 6(1) Law 3959/2011"
         source_type: primary_legislation
+        note: >
+          The statute uses "τουλάχιστον" (at least) for the worldwide limb, hence >=.
 
       - condition_id: gr_each_party_domestic_gt_15m
         metric: revenue
@@ -93,7 +95,7 @@ threshold_tests:
         operator: ">"
         value: 15000000
         currency: EUR
-        source: "Article 7(1)(b) Law 3959/2011"
+        source: "Article 6(1) Law 3959/2011"
         source_type: primary_legislation
         qualifier:
           type: "count_of_parties"
