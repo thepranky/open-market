@@ -33,7 +33,7 @@ FIXTURES = Path(__file__).parent / "fixtures" / "jurisdiction_sources"
 
 # Fixtures still holding AI-paraphrased text pending replacement with verbatim
 # official source text. This set must only ever shrink. Empty = goal reached.
-PENDING_REAL_SOURCE = {"cl_art48.txt", "ph_s17.txt"}
+PENDING_REAL_SOURCE: set[str] = set()
 
 
 def test_fixtures_declare_provenance():

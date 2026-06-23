@@ -91,18 +91,18 @@ threshold_tests:
         metric: revenue
         scope: domestic
         party: combined
-        operator: ">"
+        operator: ">="
         value: 2500000
         currency: UF
         source: "Article 48(a) DL 211 (as amended); FNE Exempt Resolution 157/2019"
         source_type: primary_legislation
-        note: "UF (Unidad de Fomento) is an inflation-indexed unit; verify current CLP equivalent."
+        note: "UF (Unidad de Fomento) is an inflation-indexed unit; verify current CLP equivalent. Statute: 'iguales o superiores a' (>=)."
 
       - condition_id: cl_each_party_chilean_uf
         metric: revenue
         scope: domestic
         party: each_of_at_least_two
-        operator: ">"
+        operator: ">="
         value: 450000
         currency: UF
         source: "Article 48(a) DL 211 (as amended); FNE Exempt Resolution 157/2019"
@@ -199,14 +199,17 @@ fdi_screening:
 
 source_passages:
   - passage_id: cl_dl211_art48
-    document_title: "Decree Law No 211 — Defence of Free Competition"
-    article_reference: "Article 48(a)"
-    document_url: "https://www.fne.gob.cl/concentraciones-3/"
-    source_type: primary_legislation
+    document_title: "Fiscalía Nacional Económica (FNE) — umbrales de notificación (Resolución Exenta 157/2019, Artículo 48 DL 211)"
+    article_reference: "Resolución Exenta 157/2019 (Artículo 48 DL 211)"
+    document_url: "https://www.fne.gob.cl/hoy-comienzan-a-regir-nuevos-umbrales-para-notificar-operaciones-de-concentracion/"
+    source_type: authority_announcement
     quoted_text: >
-      the sum of the sales in Chile of the economic agents that plan to concentrate exceeds
-      UF 2,500,000 and the sales in Chile, separately, of at least two of the economic
-      agents that plan to concentrate exceeds UF 450,000 each
+      la suma de las ventas en Chile de los agentes económicos que proyectan concentrarse
+      haya alcanzado, durante el ejercicio anterior a aquel en que se verifique la
+      notificación, montos iguales o superiores a UF 2.500.000 ... al menos dos de los
+      agentes económicos que proyectan concentrarse hayan generado ventas en Chile, por
+      separado, durante el ejercicio anterior a aquel en que se verifique la notificación,
+      por montos iguales o superiores a UF 450.000
     supports_conditions:
       - cl_combined_chilean_uf
       - cl_each_party_chilean_uf
