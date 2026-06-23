@@ -89,9 +89,11 @@ threshold_tests:
     note: >
       Primary test applicable to mergers and acquisitions. The 'at least two parties'
       condition means that each of at least two transaction parties must independently
-      have Turkish turnover exceeding TRY 1bn. For technology undertakings (defined in
-      Article 7(3) of the amended Communiqué), the TRY 1bn threshold for that party
-      is reduced to TRY 250m. Modelled using each_of_at_least_two party type.
+      have Turkish turnover exceeding TRY 1bn. For technology undertakings ESTABLISHED IN
+      TÜRKIYE (Art 4(e)/7(2) as amended by Communiqué 2026/2: digital platforms, software/
+      game software, fintech, biotechnology, pharmacology, agrochemicals, health
+      technologies), the TRY 1bn threshold for the target/transferred party is REDUCED to
+      TRY 250m (not waived). Modelled using each_of_at_least_two party type.
     annual_adjustment: false
     effective_date: "2026-02-11"
 

@@ -98,8 +98,8 @@ threshold_tests:
     legal_basis: "Competition Act 2002, s. 5(a)(i) read with CCI Regulations 2024"
     source_url: "https://www.cci.gov.in/combination/regulations"
     note: >
-      Filing required if combined Indian assets of the merging parties exceed INR 2,000
-      crore (INR 20bn). De minimis exemption: no filing if target Indian assets ≤ INR
+      Filing required if combined Indian assets of the merging parties exceed INR 2,500
+      crore (INR 25bn). De minimis exemption: no filing if target Indian assets ≤ INR
       450 crore AND target Indian turnover ≤ INR 1,250 crore (both must be met).
     annual_adjustment: false
     effective_date: "2024-09-10"
@@ -110,13 +110,13 @@ threshold_tests:
         scope: domestic
         party: combined
         operator: ">"
-        value: 20000000000
+        value: 25000000000
         currency: INR
         source: "Competition Act 2002, s. 5(a)(i); MCA notification September 2024"
         source_type: authority_announcement
         verified_via:
           - "https://trilegal.com/wp-content/uploads/2024/09/Trilegal-Update_New-Era-for-Indian-Merger-Control-Begins-on-10-September-2024.pdf"
-        note: "INR 2,000 crore (~USD 240m). Combined Indian assets of all transaction parties."
+        note: "INR 2,500 crore (raised from 2,000cr by MCA notification 7 March 2024). Combined Indian assets of all transaction parties."
 
     exceptions:
       - exception_id: in_de_minimis_target
@@ -143,13 +143,13 @@ threshold_tests:
         scope: domestic
         party: combined
         operator: ">"
-        value: 60000000000
+        value: 75000000000
         currency: INR
         source: "Competition Act 2002, s. 5(a)(ii); MCA notification September 2024"
         source_type: authority_announcement
         verified_via:
           - "https://trilegal.com/wp-content/uploads/2024/09/Trilegal-Update_New-Era-for-Indian-Merger-Control-Begins-on-10-September-2024.pdf"
-        note: "INR 6,000 crore (~USD 720m). Combined Indian turnover of all transaction parties."
+        note: "INR 7,500 crore (raised from 6,000cr, MCA 7 March 2024). Combined Indian turnover of all transaction parties."
 
     exceptions:
       - exception_id: in_de_minimis_target
@@ -176,14 +176,14 @@ threshold_tests:
         scope: worldwide
         party: either_party
         operator: ">"
-        value: 80000000000
+        value: 100000000000
         currency: INR
         source: "Competition Act 2002, s. 5(b)(i); MCA notification September 2024"
         source_type: authority_announcement
         verified_via:
           - "https://trilegal.com/wp-content/uploads/2024/09/Trilegal-Update_New-Era-for-Indian-Merger-Control-Begins-on-10-September-2024.pdf"
         note: >
-          INR 8,000 crore (~USD 960m). Worldwide assets of the enterprise group of
+          INR 10,000 crore (raised from 8,000cr, MCA 7 March 2024). Worldwide assets of the enterprise group of
           either the acquirer or the target (whichever is larger).
 
     exceptions:
@@ -208,13 +208,13 @@ threshold_tests:
         scope: worldwide
         party: either_party
         operator: ">"
-        value: 240000000000
+        value: 300000000000
         currency: INR
         source: "Competition Act 2002, s. 5(b)(ii); MCA notification September 2024"
         source_type: authority_announcement
         verified_via:
           - "https://trilegal.com/wp-content/uploads/2024/09/Trilegal-Update_New-Era-for-Indian-Merger-Control-Begins-on-10-September-2024.pdf"
-        note: "INR 24,000 crore (~USD 2.9bn). Worldwide turnover of the enterprise group of either party."
+        note: "INR 30,000 crore (raised from 24,000cr, MCA 7 March 2024). Worldwide turnover of the enterprise group of either party."
 
     exceptions:
       - exception_id: in_de_minimis_target
@@ -246,7 +246,7 @@ threshold_tests:
         operator: ">"
         value: 20000000000
         currency: INR
-        source: "Competition Act 2002, s. 5(d); Competition (Amendment) Act 2023"
+        source: "Competition Act 2002, s. 5(d); Competition (Amendment) Act 2023 (DVT, INR 2,000 crore, in force 10 Sep 2024)"
         source_type: primary_legislation
         verified_via:
           - "https://www.morganlewis.com/pubs/2024/09/competition-commission-of-india-provides-updated-deal-value-threshold"
