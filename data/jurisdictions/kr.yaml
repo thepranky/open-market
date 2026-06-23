@@ -73,27 +73,33 @@ threshold_tests:
     effective_date: null
 
     conditions:
-      - condition_id: kr_rev_combined_worldwide
+      - condition_id: kr_rev_larger_party_worldwide
         metric: revenue
         scope: worldwide
-        party: combined
-        operator: ">"
+        party: either_party
+        operator: ">="
         value: 300000000000
         currency: KRW
         source: "Enforcement Decree of the MRFTA, Article 18(1)(i)"
         source_type: primary_legislation
-        note: "Combined worldwide turnover of all parties > KRW 300bn (~EUR 200m)."
+        note: >
+          One party's worldwide turnover (or assets) >= KRW 300bn. This is a TWO-PARTY
+          size test, not a combined figure: one party >= KRW 300bn and the other
+          >= KRW 30bn (assets OR sales qualifies for each party independently).
 
-      - condition_id: kr_rev_either_party_domestic
+      - condition_id: kr_rev_each_party_worldwide
         metric: revenue
-        scope: domestic
-        party: either_party
-        operator: ">"
+        scope: worldwide
+        party: each_of_at_least_two
+        operator: ">="
         value: 30000000000
         currency: KRW
         source: "Enforcement Decree of the MRFTA, Article 18(1)(ii)"
         source_type: primary_legislation
-        note: "At least one party has Korean turnover > KRW 30bn (~EUR 20m)."
+        note: >
+          Each of the two parties has worldwide turnover (or assets) >= KRW 30bn.
+          ADDITIONAL foreign-to-foreign condition (not modelled here): in foreign-to-
+          foreign deals each party must ALSO have Korean sales > KRW 30bn.
 
   - test_id: kr_assets_based
     description: "Korean merger control — assets limb (MRFTA Article 11; Enforcement Decree Article 18)"
@@ -106,27 +112,27 @@ threshold_tests:
     effective_date: null
 
     conditions:
-      - condition_id: kr_assets_combined_worldwide
+      - condition_id: kr_assets_larger_party_worldwide
         metric: assets
         scope: worldwide
-        party: combined
-        operator: ">"
+        party: either_party
+        operator: ">="
         value: 300000000000
         currency: KRW
         source: "Enforcement Decree of the MRFTA, Article 18(1)(i)"
         source_type: primary_legislation
-        note: "Combined worldwide total assets of all parties > KRW 300bn."
+        note: "One party's worldwide total assets >= KRW 300bn (two-party size test; see revenue limb)."
 
-      - condition_id: kr_assets_either_party_domestic
+      - condition_id: kr_assets_each_party_worldwide
         metric: assets
-        scope: domestic
-        party: either_party
-        operator: ">"
+        scope: worldwide
+        party: each_of_at_least_two
+        operator: ">="
         value: 30000000000
         currency: KRW
         source: "Enforcement Decree of the MRFTA, Article 18(1)(ii)"
         source_type: primary_legislation
-        note: "At least one party has Korean assets > KRW 30bn."
+        note: "Each of the two parties has worldwide total assets >= KRW 30bn."
 
   - test_id: kr_large_scale_company_revenue
     description: "Large-scale company threshold — either party worldwide revenue ≥ KRW 2 trillion (MRFTA Article 11)"
@@ -377,10 +383,10 @@ source_passages:
       of the enterprise group to which either party to the business combination
       belongs meets the standards prescribed by Presidential Decree."
     supports_conditions:
-      - kr_rev_combined_worldwide
-      - kr_rev_either_party_domestic
-      - kr_assets_combined_worldwide
-      - kr_assets_either_party_domestic
+      - kr_rev_larger_party_worldwide
+      - kr_rev_each_party_worldwide
+      - kr_assets_larger_party_worldwide
+      - kr_assets_each_party_worldwide
 
   - passage_id: kr_mrfta_art_9_1
     document_title: "Monopoly Regulation and Fair Trade Act (MRFTA)"
@@ -391,8 +397,8 @@ source_passages:
       "No one shall conduct a business combination which substantially restricts
       competition in a particular area of trade, including the following acts."
     supports_conditions:
-      - kr_rev_combined_worldwide
-      - kr_rev_either_party_domestic
+      - kr_rev_larger_party_worldwide
+      - kr_rev_each_party_worldwide
 
 practitioner_notes:
   - title: "Korea — Merger Control Laws and Regulations 2026"
