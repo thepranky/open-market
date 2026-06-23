@@ -80,15 +80,14 @@ threshold_tests:
     effective_date: "2017-09-29"
     note: >
       Thresholds are expressed in Unidades de Fomento (UF), a Chilean inflation-indexed
-      unit of account updated daily. The specific UF values are periodically reviewed.
-      As of 2023-2024: combined threshold ~UF 1,800,000 AND each of at least two parties
-      > UF 290,000. Verify current UF amounts with FNE before filing. Alternatively,
-      the notification obligation is triggered if one party has combined worldwide revenue
-      exceeding UF 4,500,000 (approximately USD 200m) in the preceding year and the
-      other party has Chilean revenue > UF 290,000. (Multiple alternative triggers exist.)
+      unit of account updated daily. Current thresholds (FNE Exempt Resolution 157/2019,
+      Article 48(a) DL 211): combined Chilean sales > UF 2,500,000 AND each of at least two
+      parties > UF 450,000. Verify the current CLP equivalent of the UF with the FNE before
+      filing. (The UF figures themselves are fixed by Resolution 157/2019; only the
+      UF-to-CLP conversion moves daily.)
 
     conditions:
-      - condition_id: cl_combined_chilean_gt_1800000_uf
+      - condition_id: cl_combined_chilean_uf
         metric: revenue
         scope: domestic
         party: combined
@@ -99,7 +98,7 @@ threshold_tests:
         source_type: primary_legislation
         note: "UF (Unidad de Fomento) is an inflation-indexed unit; verify current CLP equivalent."
 
-      - condition_id: cl_each_party_chilean_gt_290000_uf
+      - condition_id: cl_each_party_chilean_uf
         metric: revenue
         scope: domestic
         party: each_of_at_least_two
@@ -209,8 +208,8 @@ source_passages:
       UF 2,500,000 and the sales in Chile, separately, of at least two of the economic
       agents that plan to concentrate exceeds UF 450,000 each
     supports_conditions:
-      - cl_combined_chilean_gt_1800000_uf
-      - cl_each_party_chilean_gt_290000_uf
+      - cl_combined_chilean_uf
+      - cl_each_party_chilean_uf
 
 practitioner_notes:
   - title: "Concentration Transaction Reporting Thresholds in 2025"
