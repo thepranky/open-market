@@ -29,9 +29,10 @@ legal_basis:
     url: "https://www.agcm.it/competenze/tutela-della-concorrenza/operazioni-di-concentrazione/"
     source_type: authority_announcement
     note: >
-      AGCM publishes updated threshold values each spring. As of March 2025: combined
-      Italian turnover > EUR 582 million AND each of at least two parties Italian
-      > EUR 35 million. Verify current-year values via AGCM website before filing.
+      AGCM publishes updated threshold values each spring. As of 2026 (Decision 31873
+      of 10 March 2026, effective 16 March 2026): combined Italian turnover > EUR 595
+      million AND each of at least two parties Italian > EUR 36 million. Verify
+      current-year values via AGCM website before filing.
 
 filing:
   deadline_from_signing_days: null    # no fixed deadline from signing
@@ -215,24 +216,25 @@ threshold_tests:
   # Italy's merger control has a single test with two cumulative (AND) conditions.
   # Both must be met for notification to be mandatory.
   # Thresholds are updated annually (typically in March) via AGCM Bulletin.
-  # Values below reflect the March 2025 update (EUR 582m / EUR 35m).
+  # Values below reflect the 2026 update (EUR 595m / EUR 36m; AGCM Decision 31873).
   # VERIFY CURRENT-YEAR VALUES at https://en.agcm.it before filing.
 
   - test_id: it_standard
-    description: "Combined Italian >EUR 582m AND each of ≥2 parties Italian >EUR 35m (March 2025 values, Art. 16 Law 287/1990)"
+    description: "Combined Italian >EUR 595m AND each of ≥2 parties Italian >EUR 36m (2026 values, Art. 16 Law 287/1990)"
     legal_basis: "Article 16(1), Law No. 287/1990, as amended by Article 32 of Law No. 118/2022"
-    source_url: "https://www.agcm.it/competenze/tutela-della-concorrenza/operazioni-di-concentrazione/"
+    source_url: "https://en.agcm.it/en/areas-of-activity/competition/mergers-and-acquisitions/turnover-thresholds"
     note: >
       Both conditions must be met simultaneously (AND logic). Turnover is calculated
       based on Italian operations only (revenues from the sale of goods/provision of
       services in Italy). The individual-party threshold was changed in October 2022
       from "turnover of the target" to "turnover of each of at least two of the parties"
-      — meaning BOTH the acquirer AND the target must individually exceed EUR 35m in Italy.
-      Thresholds update annually in March based on the Italian GDP price deflator.
-      The EUR 582m / EUR 35m values below reflect the March 2025 update.
+      — meaning BOTH the acquirer AND the target must individually exceed the individual
+      threshold in Italy. Thresholds update annually in March based on the Italian GDP
+      price deflator. The EUR 595m / EUR 36m values below reflect the 2026 update
+      (AGCM Decision 31873 of 10 March 2026, effective 16 March 2026).
       VERIFY CURRENT VALUES before relying on this data.
     annual_adjustment: true
-    effective_date: "2025-03-24"
+    effective_date: "2026-03-16"
 
     conditions:
       - condition_id: it_combined_italian
@@ -240,35 +242,28 @@ threshold_tests:
         scope: domestic
         party: combined
         operator: ">"
-        value: 582000000
+        value: 595000000
         currency: EUR
-        source: "Article 16(1)(a) Law 287/1990 — March 2025 AGCM threshold update"
+        source: "Article 16(1)(a) Law 287/1990 — AGCM Decision 31873 of 10 March 2026 (eff. 16 March 2026)"
         source_type: authority_announcement
-        source_url: "https://www.agcm.it/competenze/tutela-della-concorrenza/operazioni-di-concentrazione/"
-        verified_via:
-          - "https://natlawreview.com/article/italian-merger-control-thresholds-update"
-          - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/italy"
+        source_url: "https://en.agcm.it/en/areas-of-activity/competition/mergers-and-acquisitions/turnover-thresholds"
         note: >
-          EUR 582m combined Italian turnover of all parties (March 2025 value).
-          Adjusted annually in March; verify current year's threshold at AGCM website.
-          The 2024 (March 2024) threshold was EUR 567m/EUR 35m; the 2025 update
-          increased the combined threshold to EUR 582m reflecting GDP deflator movement.
+          EUR 595m combined Italian turnover of all parties (2026 value, AGCM Decision
+          31873). Adjusted annually in March; verify current year's threshold at AGCM.
+          Prior values: EUR 567m (2024), EUR 582m (2025), EUR 595m (2026).
 
       - condition_id: it_each_party_italian
         metric: revenue
         scope: domestic
         party: each_of_at_least_two
         operator: ">"
-        value: 35000000
+        value: 36000000
         currency: EUR
-        source: "Article 16(1)(b) Law 287/1990 as amended by Art. 32 Law 118/2022 — March 2025 update"
+        source: "Article 16(1)(b) Law 287/1990 as amended by Art. 32 Law 118/2022 — AGCM Decision 31873 (eff. 16 March 2026)"
         source_type: authority_announcement
-        source_url: "https://www.agcm.it/competenze/tutela-della-concorrenza/operazioni-di-concentrazione/"
-        verified_via:
-          - "https://natlawreview.com/article/italian-merger-control-thresholds-update"
-          - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/italy"
+        source_url: "https://en.agcm.it/en/areas-of-activity/competition/mergers-and-acquisitions/turnover-thresholds"
         note: >
-          EUR 35m Italian turnover for each of at least two of the parties. Since the
+          EUR 36m Italian turnover for each of at least two of the parties. Since the
           October 2022 reform (Law 118/2022 Art. 32), BOTH the acquirer AND target
           must each individually exceed EUR 35m in Italy — it is no longer sufficient
           for only the target to exceed the individual threshold. This change increased
@@ -277,10 +272,11 @@ threshold_tests:
 
 notes:
   - >
-    ANNUAL THRESHOLD UPDATE: The EUR 582m / EUR 35m values reflect the March 2025 AGCM
-    update. The AGCM publishes new threshold values each March based on the Italian GDP
-    price deflator for the preceding year. Always verify current-year thresholds at the
-    AGCM's website (en.agcm.it) before advising on a filing obligation.
+    ANNUAL THRESHOLD UPDATE: The EUR 595m / EUR 36m values reflect the 2026 AGCM update
+    (Decision 31873 of 10 March 2026, effective 16 March 2026). The AGCM publishes new
+    threshold values each March based on the Italian GDP price deflator for the preceding
+    year. Always verify current-year thresholds at the AGCM's website (en.agcm.it) before
+    advising on a filing obligation.
   - >
     2022 REFORM: The October 2022 amendment (Law 118/2022, Art. 32) made two key changes:
     (1) changed the individual threshold from "the turnover of the undertaking being acquired"
