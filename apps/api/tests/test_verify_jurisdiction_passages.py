@@ -22,10 +22,33 @@ from app.models.jurisdiction import (
     ThresholdTest,
 )
 from app.services.jurisdiction_numeric import value_in_text
-from app.services.jurisdiction_passages import build_offline_fetch, verify_passages
+from app.services.jurisdiction_passages import (
+    build_offline_fetch,
+    fixture_provenance_issues,
+    verify_passages,
+)
 from app.models.jurisdiction import MetricType
 
 FIXTURES = Path(__file__).parent / "fixtures" / "jurisdiction_sources"
+
+# Fixtures still holding AI-paraphrased text pending replacement with verbatim
+# official source text. This set must only ever shrink. Empty = goal reached.
+PENDING_REAL_SOURCE = {"cl_art48.txt", "ph_s17.txt"}
+
+
+def test_fixtures_declare_provenance():
+    """Every fixture must declare a Source + URL; no AI-paraphrase-only fixtures.
+
+    The only permitted non-compliant fixtures are the documented PENDING_REAL_SOURCE
+    set being migrated to verbatim official text. New violations fail the build.
+    """
+    issues = set(fixture_provenance_issues(FIXTURES))
+    unexpected = issues - PENDING_REAL_SOURCE
+    assert not unexpected, f"fixtures lack a Source+URL provenance header: {sorted(unexpected)}"
+    resolved = PENDING_REAL_SOURCE - issues
+    assert not resolved, (
+        f"these fixtures now comply — remove them from PENDING_REAL_SOURCE: {sorted(resolved)}"
+    )
 
 
 def _uk_rule() -> JurisdictionRule:
