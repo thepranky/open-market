@@ -70,7 +70,7 @@ threshold_tests:
   # Test 1 (Assets — global): Combined book value of assets of the acquirer group AND
   # target group (on last balance sheet) EXCEEDS RUB 7bn. OR combined revenues of
   # acquirer group + target group EXCEED RUB 10bn.
-  # PLUS: Book value of assets of the entity being acquired EXCEEDS RUB 400m.
+  # PLUS: Book value of assets of the entity being acquired EXCEEDS RUB 800m.
   #
   # Test 2 (Russia nexus): The entity being acquired (or one of the merger parties)
   # must have assets or revenues in Russia exceeding the applicable thresholds.
@@ -85,13 +85,13 @@ threshold_tests:
   # Federal Law No. 135-FZ. Verify against current FAS guidance.
 
   - test_id: ru_assets_based
-    description: "Combined worldwide group assets >RUB 7bn AND acquired entity assets >RUB 400m"
+    description: "Combined worldwide group assets >RUB 7bn AND acquired entity assets >RUB 800m"
     legal_basis: "Federal Law No. 135-FZ, Article 28(1)"
     source_url: "https://fas.gov.ru/merger-control/"
     note: >
       Pre-approval required if the combined book value of assets of all group members
       of the acquirer AND the target (on the last balance sheet) exceeds RUB 7 billion
-      AND the book value of assets of the entity being acquired exceeds RUB 400 million.
+      AND the book value of assets of the entity being acquired exceeds RUB 800 million.
       'Group members' includes all entities under common control (affiliates).
       VERIFY: thresholds confirmed via practitioner sources. FAS has not published
       updated official English-language guidance post-2022.
@@ -119,24 +119,24 @@ threshold_tests:
         scope: worldwide
         party: target_group
         operator: ">"
-        value: 400000000
+        value: 800000000
         currency: RUB
         source: "Federal Law No. 135-FZ, Article 28(1)(2)"
         source_type: primary_legislation
         verified_via:
           - "https://fas.gov.ru/merger-control/"
         note: >
-          RUB 400m (~EUR 4m) book value of assets of the entity being acquired (target).
+          RUB 800m (~EUR 8m) book value of assets of the entity being acquired (target).
           This is the minimum target size for the assets-based test to fire.
 
   - test_id: ru_revenue_based
-    description: "Combined worldwide group revenues >RUB 10bn AND acquired entity assets >RUB 400m"
+    description: "Combined worldwide group revenues >RUB 10bn AND acquired entity assets >RUB 800m"
     legal_basis: "Federal Law No. 135-FZ, Article 28(1)"
     source_url: "https://fas.gov.ru/merger-control/"
     note: >
       Alternative to the assets test: pre-approval required if combined revenues of
       all group members of the acquirer AND target exceed RUB 10bn (instead of assets
-      exceeding RUB 7bn), AND the target entity's assets still exceed RUB 400m.
+      exceeding RUB 7bn), AND the target entity's assets still exceed RUB 800m.
       Either the assets test or the revenue test can trigger the obligation.
     annual_adjustment: false
     effective_date: null
@@ -162,13 +162,13 @@ threshold_tests:
         scope: worldwide
         party: target_group
         operator: ">"
-        value: 400000000
+        value: 800000000
         currency: RUB
         source: "Federal Law No. 135-FZ, Article 28(1)(2)"
         source_type: primary_legislation
         verified_via:
           - "https://fas.gov.ru/merger-control/"
-        note: "RUB 400m target entity assets (same threshold as in assets-based test)."
+        note: "RUB 800m target entity assets (same threshold as in assets-based test)."
 
 notes:
   - >
@@ -297,7 +297,7 @@ source_passages:
   - passage_id: ru_fz135_art28
     document_title: "Federal Law No. 135-FZ 'On Protection of Competition' (26 July 2006), as amended"
     article_reference: "Article 28(1)"
-    document_url: "https://fas.gov.ru/merger-control/"
+    document_url: "https://www.consultant.ru/document/cons_doc_LAW_61763/4a4e6ea6b5e539634e86cdac45b31ca347b3669e/"
     source_type: practitioner
     quoted_text: >
       "Prior consent of the antimonopoly authority shall be required for the following
@@ -313,7 +313,7 @@ source_passages:
       rubles, or if their aggregate revenue from sale of goods for the calendar year
       preceding the year of the transaction exceeds ten billion rubles, and if the total
       value of the assets of the joint-stock company and its group of persons according
-      to the latest balance sheet exceeds four hundred million rubles."
+      to the latest balance sheet exceeds eight hundred million rubles."
     supports_conditions:
       - ru_combined_worldwide_assets
       - ru_target_assets
@@ -352,7 +352,7 @@ minority_thresholds:
         the right to dispose of MORE THAN 25% of voting shares in a Russian JSC
         (AO), where previously the acquirer held less than 25%, subject to size
         thresholds (combined assets/revenue of acquirer group > RUB 7bn or > RUB 10bn
-        revenue, AND target assets > RUB 400m). The trigger is crossing the 25% floor,
+        revenue, AND target assets > RUB 800m). The trigger is crossing the 25% floor,
         not a majority or decisive influence standard.
     - rule_id: "ru_minority_50pct"
       relationship_type: "any"
