@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import type { CaseSearchHit } from "@/lib/types";
-import { SemanticCaseCard } from "@/components/SemanticCaseCard";
-import { ViewToggle } from "@/components/ViewToggle";
+import { SemanticCaseCard } from "@/features/cases/components/SemanticCaseCard";
+import { ViewToggle } from "@/features/cases/components/ViewToggle";
 import { SearchForm } from "./SearchForm";
 
 interface ExploreClientProps {

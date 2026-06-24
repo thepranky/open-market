@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { CaseRecord } from "@/lib/types";
 import { formatDate, outcomeTone, formatOutcome, defnTone, defnLabel } from "@/lib/utils";
-import { Badge } from "./Badge";
+import { Badge } from "@/components/Badge";
 import { Juris } from "./Juris";
 
 interface CaseCardProps {

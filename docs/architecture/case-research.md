@@ -45,11 +45,11 @@ See [operations/ingestion.md](../operations/ingestion.md) and
 
 ## Frontend
 
-| Route | Components |
-|-------|------------|
-| `/explore` | `ExploreClient.tsx`, `SearchForm.tsx` |
-| `/graph` | `GraphView.tsx`, `MarketMapView.tsx`, `TheoryMapView.tsx` |
-| `/cases/[case_id]` | `Evidence.tsx`, `SourcePill.tsx`, `CaseHistory.tsx` |
+| Route | Feature module |
+|-------|----------------|
+| `/explore` | `features/cases/explore/` (`ExploreClient`, `SearchForm`, …) |
+| `/graph` | `features/cases/graph/` (`NavigationGraph`, `GraphView`, …) |
+| `/cases/[case_id]` | `features/cases/components/` (`Evidence`, `CaseHistory`, …) |
 
 ## Embed step
 

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { IndexedCaseDetail } from "@/lib/types";
 import { formatDate, outcomeTone, formatOutcome } from "@/lib/utils";
-import { Badge } from "./Badge";
+import { Badge } from "@/components/Badge";
 import { Juris } from "./Juris";
 
 interface IndexedCaseCardProps {

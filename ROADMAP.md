@@ -9,7 +9,7 @@ See [`.cursor/rules/meridian.mdc`](.cursor/rules/meridian.mdc) for spec-driven w
 | | 0.2 | Layout spec + DDR-0 | `docs/specs/restructure-layout.md`, `ddr-0-repo-layout.md` | Clear boundaries before deep-dives | Done |
 | **1 Restructure** | 1.1 | API packages (`cases/`, `screening/`, `shared/`) | `apps/api/app/` | Learnable module boundaries | Done (PR 1) |
 | | 1.2 | Script subdirs | `apps/api/scripts/` | Pipeline discoverability | Done (PR 2) |
-| | 1.3 | Web feature folders | `apps/web/src/features/` | Frontend boundaries | PR 3 |
+| | 1.3 | Web feature folders | `apps/web/src/features/` | Frontend boundaries | Done (PR 3) |
 | **2 Understand** | 2.1–2.9 | DDR deep-dives (0, A–I) | `docs/architecture/decisions/` | Defensible understanding | 1 day each; after restructure |
 | **3 CI** | 3.1 | Add schema validation to PR CI | `.github/workflows/api-ci.yml` | Canonical YAML breaks silently today | Run `test_schema.py` + `validate_cases.py` on PR |
 | | 3.2 | Jurisdiction push tier on PR | `api-ci.yml` | Screening regressions not gated on merge | `run_jurisdiction_verification.py --tier push` |

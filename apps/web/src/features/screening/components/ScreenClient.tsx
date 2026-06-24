@@ -10,7 +10,7 @@ import type {
   ReviewPeriod,
 } from "@/lib/types";
 import { ChatIntake } from "./ChatIntake";
-import { VerificationBadges } from "@/components/VerificationBadges";
+import { VerificationBadges } from "@/features/screening/components/VerificationBadges";
 
 // ── Formatting helpers ────────────────────────────────────────────────────────
 

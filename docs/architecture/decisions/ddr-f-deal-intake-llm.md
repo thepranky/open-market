@@ -6,8 +6,8 @@
 
 Read/trace:
 - `apps/api/app/routers/jurisdictions.py` — chat, knowledge-chat, parse-financials endpoints
-- `apps/web/src/app/screen/ChatIntake.tsx` (skim structure: state, API calls)
-- `apps/web/src/components/JurisdictionChat.tsx`
+- `apps/web/src/features/screening/components/ChatIntake.tsx` (skim structure: state, API calls)
+- `apps/web/src/features/screening/components/JurisdictionChat.tsx`
 
 Use `/screen` in browser; watch network tab for API calls.
 

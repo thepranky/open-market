@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { getGraphMarket, getGraphMarkets } from "@/lib/api";
+import { getGraphMarket, getGraphMarkets } from "@/features/cases/api";
 import type { EntityCase, MarketSummary } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { EntityDetailPanel } from "./EntityDetailPanel";

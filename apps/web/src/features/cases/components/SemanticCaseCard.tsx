@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { CaseSearchHit } from "@/lib/types";
 import { formatDate, outcomeTone, formatOutcome } from "@/lib/utils";
-import { Badge } from "./Badge";
+import { Badge } from "@/components/Badge";
 import { Juris } from "./Juris";
 
 export function SemanticCaseCard({ hit, compact = false }: { hit: CaseSearchHit; compact?: boolean }) {

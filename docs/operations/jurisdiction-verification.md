@@ -500,7 +500,7 @@ Branches follow `jurisdiction-verification/<slug>`. Each PR is one reviewable un
 |-------------|------|
 | Jurisdiction data loader/service reads YAML + sidecar | `apps/api/app/services/jurisdiction_data_service.py` |
 | Verification metadata in screening API | `apps/api/app/routers/jurisdictions.py` |
-| Staleness/verification badges | `apps/web/src/app/screen/ScreenClient.tsx`, `jurisdictions/[id]/page.tsx` |
+| Staleness/verification badges | `apps/web/src/features/screening/components/ScreenClient.tsx`, `app/jurisdictions/[id]/page.tsx` |
 | TypeScript types | `apps/web/src/lib/types.ts` |
 | Fix jurisdiction detail "Last updated" to use `rule.last_verified` | `apps/web/src/app/jurisdictions/[id]/page.tsx` |
 

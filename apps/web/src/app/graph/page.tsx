@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 };
 
 const NavigationGraph = dynamic(
-  () => import("./NavigationGraph").then((m) => m.NavigationGraph),
+  () => import("@/features/cases/graph/NavigationGraph").then((m) => m.NavigationGraph),
   {
     ssr: false,
     loading: () => (

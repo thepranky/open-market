@@ -1,4 +1,4 @@
-import { ScreenClient } from "./ScreenClient";
+import { ScreenClient } from "@/features/screening/components/ScreenClient";
 
 export default function ScreenPage() {
   return (

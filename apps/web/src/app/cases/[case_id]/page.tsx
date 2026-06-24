@@ -1,15 +1,15 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getCase } from "@/lib/api";
+import { getCase } from "@/features/cases/api";
 import { formatDate, formatOutcome, outcomeTone, defnTone, defnLabel, jurisdictionAuthority } from "@/lib/utils";
 import { Badge } from "@/components/Badge";
-import { Juris } from "@/components/Juris";
+import { Juris } from "@/features/cases/components/Juris";
 import { SourceChip } from "@/components/SourceChip";
 import { CopyButton } from "@/components/CopyButton";
 import {
   EvidenceSection, SourceNeededBadge, VerifiedBadge, effectiveVerificationStatus,
-} from "@/components/Evidence";
-import { CaseHistoryPanel } from "@/components/CaseHistory";
+} from "@/features/cases/components/Evidence";
+import { CaseHistoryPanel } from "@/features/cases/components/CaseHistory";
 import type { CaseRecord, SourcePassage } from "@/lib/types";
 
 interface Props {

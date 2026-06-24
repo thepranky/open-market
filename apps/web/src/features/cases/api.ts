@@ -1,3 +1,4 @@
+import { apiFetch } from "@/lib/api-client";
 import type {
   AppStats,
   CaseRecord,
@@ -6,46 +7,12 @@ import type {
   GraphNeighbourhood,
   GraphNeighborhoodResponse,
   IndexedCaseDetail,
-  JurisdictionRule,
-  JurisdictionSummary,
   MarketSummary,
-  ScreeningRequest,
-  ScreeningResult,
-  SectorSummary,
   SectorMarket,
+  SectorSummary,
   SimilarMarket,
   TheorySummary,
-} from "./types";
-
-/**
- * Server-side fetches run inside the Docker network and must use the
- * internal service name (API_INTERNAL_URL = http://api:8000).
- * Browser fetches use the host-visible URL (NEXT_PUBLIC_API_URL = http://localhost:8000).
- * typeof window is the standard Next.js guard for server vs browser.
- */
-function getBaseUrl(): string {
-  if (typeof window === "undefined") {
-    // Server-side (Docker container or Node.js)
-    return process.env.API_INTERNAL_URL ?? process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
-  }
-  // Browser
-  return process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
-}
-
-async function apiFetch<T>(path: string): Promise<T> {
-  const baseUrl = getBaseUrl();
-  const url = `${baseUrl}${path}`;
-  let res: Response;
-  try {
-    res = await fetch(url, { cache: "no-store" });
-  } catch (err) {
-    throw new Error(`Could not reach API at ${url}: ${err instanceof Error ? err.message : err}`);
-  }
-  if (!res.ok) {
-    throw new Error(`API ${res.status} at ${url}`);
-  }
-  return res.json() as Promise<T>;
-}
+} from "@/lib/types";
 
 export async function getCases(params?: {
   jurisdiction?: string;
@@ -127,40 +94,6 @@ export async function searchAllCases(q: string): Promise<
   return apiFetch(`/search/all?q=${encodeURIComponent(q)}`);
 }
 
-// ── Semantic search ──────────────────────────────────────────────────────────
-
-// ── Jurisdiction threshold endpoints ─────────────────────────────────────────
-
-export async function getJurisdictions(): Promise<JurisdictionSummary[]> {
-  return apiFetch<JurisdictionSummary[]>("/jurisdictions/");
-}
-
-export async function getJurisdiction(id: string): Promise<JurisdictionRule> {
-  return apiFetch<JurisdictionRule>(`/jurisdictions/${id}`);
-}
-
-async function apiPost<T>(path: string, body: unknown): Promise<T> {
-  const baseUrl = getBaseUrl();
-  const url = `${baseUrl}${path}`;
-  let res: Response;
-  try {
-    res = await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body),
-      cache: "no-store",
-    });
-  } catch (err) {
-    throw new Error(`Could not reach API at ${url}: ${err instanceof Error ? err.message : err}`);
-  }
-  if (!res.ok) throw new Error(`API ${res.status} at ${url}`);
-  return res.json() as Promise<T>;
-}
-
-export async function screenDeal(req: ScreeningRequest): Promise<ScreeningResult[]> {
-  return apiPost<ScreeningResult[]>("/jurisdictions/screen", req);
-}
-
 export async function searchSemantic(
   q: string,
   topK = 10
@@ -169,8 +102,6 @@ export async function searchSemantic(
     `/search/semantic?q=${encodeURIComponent(q)}&top_k=${topK}`
   );
 }
-
-// ── Entity-centric graph endpoints ───────────────────────────────────────────
 
 export async function getGraphMarkets(): Promise<MarketSummary[]> {
   return apiFetch<MarketSummary[]>("/graph/markets");
@@ -197,8 +128,6 @@ export async function getGraphTheory(
     `/graph/theory/${encodeURIComponent(name)}?semantic=${semantic}`
   );
 }
-
-// ── Drill-down navigation graph ───────────────────────────────────────────────
 
 export async function getGraphSectors(): Promise<SectorSummary[]> {
   return apiFetch<SectorSummary[]>("/graph/sectors");

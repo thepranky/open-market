@@ -1,6 +1,6 @@
 # Spec: repository layout restructure
 
-**Status:** draft  
+**Status:** accepted (PRs 1–3 landed 2026-06-24)  
 **Goal:** Mechanical package boundaries so case research and jurisdiction screening are obvious in the tree. Move-only — no logic changes.
 
 **Out of scope:** router splits, symbol renames, Neo4j removal, auth, CI expansion (separate specs).

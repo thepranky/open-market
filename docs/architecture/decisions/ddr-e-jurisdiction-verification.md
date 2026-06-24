@@ -9,7 +9,7 @@ Read/trace:
 - `apps/api/scripts/screening/run_jurisdiction_verification.py`
 - `apps/api/app/services/jurisdiction_completeness.py`, `jurisdiction_passages.py`, `jurisdiction_staleness.py`, `jurisdiction_regression.py`
 - `apps/api/app/models/jurisdiction_verification.py`
-- `apps/web/src/components/VerificationBadges.tsx`
+- `apps/web/src/features/screening/components/VerificationBadges.tsx`
 
 Run: `run_jurisdiction_verification.py --tier push`
 

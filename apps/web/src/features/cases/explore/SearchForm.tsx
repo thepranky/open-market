@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { searchSemantic, getGraphSectors } from "@/lib/api";
+import { searchSemantic, getGraphSectors } from "@/features/cases/api";
 import type { CaseSearchHit } from "@/lib/types";
 
 interface SearchFormProps {

@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getIndexedCase } from "@/lib/api";
+import { getIndexedCase } from "@/features/cases/api";
 import {
   formatDate, formatOutcome, outcomeTone,
   conceptCategoryColor, formatConceptId,
 } from "@/lib/utils";
 import { Badge } from "@/components/Badge";
-import { Juris } from "@/components/Juris";
+import { Juris } from "@/features/cases/components/Juris";
 import type { ConceptRef } from "@/lib/types";
 
 interface Props {

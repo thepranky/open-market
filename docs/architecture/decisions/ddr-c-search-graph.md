@@ -9,7 +9,7 @@ Read/trace:
 - `apps/api/app/services/semantic_search_service.py`, `embedding_service.py`, `graph_service.py`, `graph_entity_service.py`
 - `apps/api/migrations/001_create_vector_schema.sql`
 - `apps/api/scripts/cases/index_embeddings.py`
-- `apps/web/src/app/explore/`, `graph/`
+- `apps/web/src/features/cases/explore/`, `features/cases/graph/`
 
 Optional: `core/neo4j_client.py`, `graph/seed_graph.py` (legacy path).
 

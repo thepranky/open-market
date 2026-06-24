@@ -1,6 +1,6 @@
 import { cn, caseHistoryStatusColor, caseHistoryStatusLabel, formatDate } from "@/lib/utils";
 import type { CaseHistory, CaseHistoryEvent } from "@/lib/types";
-import { Badge } from "./Badge";
+import { Badge } from "@/components/Badge";
 
 function HistoryEvent({ event, isLast }: { event: CaseHistoryEvent; isLast: boolean }) {
   return (

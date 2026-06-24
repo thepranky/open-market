@@ -76,16 +76,26 @@ Group them mentally (and in code ownership) as two blobs:
 
 Screening reads YAML in memory — no database table for jurisdiction data.
 
-## Code layout (after PR 1)
+## Code layout
 
 ```
 apps/api/app/
   shared/       # core/config, pg_client, health, pdf_extractor
   cases/        # models, routers, services, loader
   screening/    # models, routers, services
-```
 
-Domain models are **not** in `shared/` — `CaseRecord` under `cases/models/`, `JurisdictionRule` under `screening/models/`.
+apps/api/scripts/
+  cases/        # extraction, promotion, validation, embed
+  screening/    # jurisdiction verification
+
+apps/web/src/
+  app/          # Next.js routes (thin wrappers)
+  features/
+    cases/      # explore, graph modules; case components; api.ts
+    screening/  # screen, jurisdiction UI; api.ts
+  components/   # shared chrome (NavBar, Badge, ThemeToggle, …)
+  lib/          # api-client.ts, types.ts, utils.ts
+```
 
 ## Layering (backend, today)
 

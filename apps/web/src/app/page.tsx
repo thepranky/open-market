@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getAppStats } from "@/lib/api";
+import { getAppStats } from "@/features/cases/api";
 import type { AppStats } from "@/lib/types";
 
 async function StatsStrip() {

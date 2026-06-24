@@ -53,10 +53,10 @@ See [operations/jurisdiction-verification.md](../operations/jurisdiction-verific
 
 ## Frontend
 
-| Route | Components |
-|-------|------------|
-| `/jurisdictions`, `/jurisdictions/[id]` | `JurisdictionSidebar.tsx`, `VerificationBadges.tsx` |
-| `/screen` | `ScreenClient.tsx`, `ChatIntake.tsx` |
+| Route | Feature module |
+|-------|----------------|
+| `/jurisdictions`, `/jurisdictions/[id]` | `features/screening/components/` (`JurisdictionSidebar`, `VerificationBadges`, …) |
+| `/screen` | `features/screening/components/` (`ScreenClient`, `ChatIntake`) |
 
 Verification metadata (`source_verification_tier`, `freshness_status`, `regression_status`)
 is surfaced in jurisdiction detail and screening results.

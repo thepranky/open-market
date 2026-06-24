@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { getGraphTheories, getGraphTheory } from "@/lib/api";
+import { getGraphTheories, getGraphTheory } from "@/features/cases/api";
 import type { EntityCase, TheorySummary } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { EntityDetailPanel } from "./EntityDetailPanel";

@@ -104,8 +104,8 @@ cd ../web && npm run lint && npm run build
 ```
 open-market/
   apps/
-    api/          FastAPI — routers, services, models, scripts, tests
-    web/          Next.js 14 — /explore, /graph, /cases, /jurisdictions, /screen
+    api/          FastAPI — app/{cases,screening,shared}/, scripts/{cases,screening}/
+    web/          Next.js 14 — src/app/ routes; src/features/{cases,screening}/
   data/
     cases/        Canonical case YAML (270+ records)
     drafts/       AI extraction output (never auto-promoted)

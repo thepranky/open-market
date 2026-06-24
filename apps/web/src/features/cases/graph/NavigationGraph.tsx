@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { CaseRecord, EntityCase, SectorMarket, SectorSummary, SimilarMarket } from "@/lib/types";
-import { getCase, getGraphMarket, getGraphSectorMarkets, getGraphSectors, getGraphSimilarMarkets } from "@/lib/api";
+import { getCase, getGraphMarket, getGraphSectorMarkets, getGraphSectors, getGraphSimilarMarkets } from "@/features/cases/api";
 import { CaseSidePanel } from "./CaseSidePanel";
 
 // ─── Nav state ────────────────────────────────────────────────────────────────

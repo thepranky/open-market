@@ -1,4 +1,4 @@
-import { getJurisdictions } from "@/lib/api";
+import { getJurisdictions } from "@/features/screening/api";
 import { redirect } from "next/navigation";
 
 export default async function JurisdictionsIndexPage() {

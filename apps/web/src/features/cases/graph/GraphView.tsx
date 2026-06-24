@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import type { EntityCase, GraphNeighborhoodResponse, GraphNode } from "@/lib/types";
-import { getGraphMarket, getGraphTheory } from "@/lib/api";
+import { getGraphMarket, getGraphTheory } from "@/features/cases/api";
 import { cn } from "@/lib/utils";
 import { EntityDetailPanel } from "./EntityDetailPanel";
 import { MarketMapView } from "./MarketMapView";

@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import type { CaseRecord, IndexedCaseDetail } from "@/lib/types";
-import { CaseCard } from "@/components/CaseCard";
-import { IndexedCaseCard } from "@/components/IndexedCaseCard";
-import { ViewToggle } from "@/components/ViewToggle";
+import { CaseCard } from "@/features/cases/components/CaseCard";
+import { IndexedCaseCard } from "@/features/cases/components/IndexedCaseCard";
+import { ViewToggle } from "@/features/cases/components/ViewToggle";
 
 type CardViewMode = "compact" | "detailed";
 
