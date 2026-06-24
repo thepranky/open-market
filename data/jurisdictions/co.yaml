@@ -14,19 +14,20 @@ regime:
   voluntary: false
 
 legal_basis:
-  - citation: "Law 155 of 1959 (Ley 155 de 1959) and Decree 2153 of 1992 (Decreto 2153 de 1992) — merger control framework"
+  - citation: "Law 1340 of 2009 (Ley 1340 de 2009), Article 9 — amending Article 4 of Law 155 of 1959"
+    url: "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=36912"
+    note: >
+      The operative merger-control provision. Article 9 obliges parties in the same
+      economic activity or value chain to inform the SIC where their operating income
+      OR total assets (aggregate or individual) exceed the annual SIC-set figure, and
+      sets the 20% relevant-market-share line between prior approval and mere notification.
+    source_type: primary_legislation
+  - citation: "SIC Resolution setting the annual threshold (Res. 81005 of 2024 for 2025; Res. 15 of 2026 for 2026)"
     url: "https://www.sic.gov.co/integraciones-empresariales"
     note: >
-      Colombia's merger control is primarily based on Law 155/1959 as interpreted
-      by the SIC and Decree 2153/1992. The specific notification thresholds are set
-      by SIC Circular and updated periodically.
-  - citation: "SIC Circular on Business Integration (Instrucciones sobre Integraciones Empresariales)"
-    url: "https://www.sic.gov.co/integraciones-empresariales"
-    note: >
-      The SIC's binding instructions on merger notification, including the SMMLV-based
-      threshold. The threshold is expressed in units of the current legal monthly
-      minimum wage (Salario Mínimo Mensual Legal Vigente — SMMLV), updated annually
-      on 1 January. For 2025: SMMLV = COP 1,423,500/month.
+      The SIC fixes the monetary figure each year-end for the following year. Statutorily
+      60,000 SMLMV; since 2024/2025 expressed as 7,074,307.43 UVB (Unidad de Valor Básico)
+      ≈ COP 82bn (2025) / COP 85.7bn (2026). The figure cannot be changed mid-year.
     source_type: official_guidance
 
 filing:
@@ -65,69 +66,67 @@ fees:
   note: "Colombia does not charge merger notification fees."
 
 threshold_tests:
-  # Colombia's notification threshold: mandatory filing if:
-  # (1) The combined assets OR revenues in Colombia of ALL participating parties
-  #     in the preceding fiscal year exceed 100,000 SMMLV; AND
-  # (2) Each of at least two of the principal participating parties individually
-  #     has Colombian assets OR revenues exceeding 20,000 SMMLV.
+  # Colombia's notification regime (Law 1340 of 2009, Article 9):
+  # Parties in the same economic activity / value chain MUST inform the SIC when, in
+  # the preceding fiscal year, they had — IN AGGREGATE OR INDIVIDUALLY ("en conjunto o
+  # individualmente consideradas") — operating income (ingresos operacionales) OR total
+  # assets (activos totales) above the figure the SIC sets annually in minimum-wage units
+  # (statutorily 60,000 SMLMV; since 2024/2025 the SIC expresses it as 7,074,307.43 UVB).
   #
-  # Both conditions must be met (AND logic between conditions within the test).
-  # The SMMLV for 2025 is COP 1,423,500/month.
+  # Whether the operation needs PRIOR APPROVAL or only NOTIFICATION turns on market share:
+  #   - combined relevant-market share >= 20%  -> prior evaluation/approval required
+  #   - combined relevant-market share  < 20%  -> deemed authorised; notify SIC only
   #
-  # 2025 threshold values:
-  # Combined: 100,000 × COP 1,423,500 = COP 142,350,000,000 (~USD 34m)
-  # Per party: 20,000 × COP 1,423,500 = COP 28,470,000,000 (~USD 7m)
-  #
-  # SOURCE NOTE: These values are based on practitioner analysis of the SIC Circular
-  # and Decree 2153/1992. The SMMLV is updated annually. Verify current-year values
-  # at https://www.sic.gov.co before advising.
+  # 2026 figure: 7,074,307.43 UVB ~= COP 85.7 billion (~USD 22.8m) — SIC Resolution
+  # 15 of 2 Jan 2026. 2025 was the same UVB count (~COP 82bn) — SIC Res. 81005/2024.
+  # There is NO separate per-party "20,000 SMMLV" leg; the single threshold applies
+  # aggregate-or-individually. The figure is reset annually and may not change mid-year.
 
   - test_id: co_standard
-    description: "Combined Colombia >COP 142bn AND each of ≥2 parties Colombia >COP 28bn (2025 SMMLV values)"
-    legal_basis: "Law 155 of 1959; Decree 2153 of 1992, Article 9(13); SIC Circular on Business Integrations"
-    source_url: "https://www.sic.gov.co/integraciones-empresariales"
+    description: "Operating income OR assets (aggregate or individual) > ~COP 85.7bn (7,074,307.43 UVB, 2026) AND combined market share ≥ 20%"
+    legal_basis: "Law 1340 of 2009, Article 9 (amending Article 4 of Law 155 of 1959); SIC Resolution 15 of 2026 (2026 threshold)"
+    source_url: "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=36912"
     note: >
-      Both conditions must be met (AND logic). The combined Colombia assets/revenue
-      condition captures the overall size of the transaction, while the individual
-      party condition ensures there are at least two substantial Colombian businesses
-      involved (preventing purely foreign-to-foreign deals from being caught if only
-      one party has minimal Colombia presence).
-      SMMLV-INDEXED: the COP amounts are recalculated every January when the government
-      announces the new SMMLV. Always verify the current-year threshold.
-      PRACTITIONER SOURCE: SIC does not publish an easily accessible English-language
-      threshold notice. Values confirmed via Creel / Greenberg Traurig Colombia
-      practitioner sources.
+      Two limbs. The monetary limb is met where the parties' operating income OR total
+      assets, taken in aggregate OR individually, exceed the SIC's annual figure
+      (7,074,307.43 UVB ≈ COP 85.7bn for 2026). The market-share limb determines the
+      consequence: at or above 20% combined share the operation requires prior SIC
+      approval; below 20% it is deemed authorised and only a notification is filed.
+      UVB/SMLMV-INDEXED: the figure is set by SIC resolution each year-end for the
+      following year and cannot be changed mid-year (Law 1340/2009 Art. 9).
     annual_adjustment: true
-    effective_date: "2025-01-01"
+    effective_date: "2026-01-01"
 
     conditions:
-      - condition_id: co_combined_domestic
+      - condition_id: co_threshold_monetary
         metric: revenue
-        scope: domestic
+        scope: worldwide
         party: combined
         operator: ">"
-        value: 142350000000
+        value: 85700000000
         currency: COP
-        source: "SIC Circular on Business Integrations; Decree 2153/1992; 2025 SMMLV = COP 1,423,500 × 100,000 UA"
-        source_type: official_guidance
+        source: "Law 1340/2009 Art. 9; SIC Resolution 15 of 2026 = 7,074,307.43 UVB"
+        source_type: primary_legislation
         note: >
-          COP 142,350,000,000 (100,000 SMMLV, 2025 value). Combined Colombia assets OR
-          revenues (whichever is higher for each party) of all participating enterprises.
-          VERIFY ANNUALLY: recalculated each January per new SMMLV.
+          ~COP 85.7bn (7,074,307.43 UVB, 2026). Measured on operating income OR total
+          assets, whichever is higher, and met whether the parties reach it in aggregate
+          or individually. Art. 9 does not impose an explicit domestic-only carve-out;
+          Colombian nexus is applied through the "same economic activity in Colombia"
+          requirement. VERIFY ANNUALLY: reset each January by SIC resolution.
 
-      - condition_id: co_each_party_domestic
-        metric: revenue
+      - condition_id: co_market_share_20pct
+        metric: market_share
         scope: domestic
-        party: each_of_at_least_two
-        operator: ">"
-        value: 28470000000
-        currency: COP
-        source: "SIC Circular on Business Integrations; Decree 2153/1992; 2025 SMMLV = COP 1,423,500 × 20,000 UA"
-        source_type: official_guidance
+        party: combined
+        operator: ">="
+        value: 0.20
+        currency: null
+        source: "Law 1340 of 2009, Article 9"
+        source_type: primary_legislation
         note: >
-          COP 28,470,000,000 (20,000 SMMLV, 2025 value) per each of at least two parties.
-          Colombia assets OR revenues of each principal participating enterprise individually.
-          VERIFY ANNUALLY: recalculated each January per new SMMLV.
+          Combined share of the relevant market. At or above 20% the operation requires
+          prior SIC evaluation and approval; below 20% it is deemed authorised and the
+          parties need only notify the SIC ("se entenderá autorizada la operación").
 
 notes:
   - >
@@ -258,22 +257,31 @@ fdi_screening:
 # ── Source passages (verbatim statutory text) ─────────────────────────────────
 source_passages:
 
-  - passage_id: co_dec2153_art9
-    document_title: "Decree 2153 of 1992 (Decreto 2153 de 1992), as modified by Law 1340 of 2009"
-    article_reference: "Article 9(13)"
-    document_url: "https://www.sic.gov.co/integraciones-empresariales"
-    source_type: practitioner
+  - passage_id: co_ley1340_art9
+    document_title: "Ley 1340 de 2009, Artículo 9 (modifica el Artículo 4 de la Ley 155 de 1959)"
+    article_reference: "Artículo 9"
+    document_url: "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=36912"
+    source_type: primary_legislation
     quoted_text: >
-      "The Superintendencia de Industria y Comercio shall have the following functions:
-      [...] (13) to approve or object to business integrations that, in the terms of
-      the law, require its authorisation. No business integration that requires
-      authorisation may be carried out without prior approval by the Superintendent.
-      The Superintendent shall issue the corresponding decision within thirty (30)
-      calendar days of receipt of a complete application. In the absence of a decision
-      within that period, the integration shall be deemed approved."
+      "Las empresas que se dediquen a la misma actividad económica o participen en la
+      misma cadena de valor, y que cumplan con las siguientes condiciones, estarán
+      obligadas a informar a la Superintendencia de Industria y Comercio sobre las
+      operaciones que proyecten llevar a cabo para efectos de fusionarse, consolidarse,
+      adquirir el control o integrarse cualquiera sea la forma jurídica de la operación
+      proyectada: 1. Cuando, en conjunto o individualmente consideradas, hayan tenido
+      durante el año fiscal anterior a la operación proyectada ingresos operacionales
+      superiores al monto que, en salarios mínimos legales mensuales vigentes, haya
+      establecido la Superintendencia de Industria y Comercio, o 2. Cuando al finalizar
+      el año fiscal anterior a la operación proyectada tuviesen, en conjunto o
+      individualmente consideradas, activos totales superiores al monto que, en salarios
+      mínimos legales mensuales vigentes, haya establecido la Superintendencia de
+      Industria y Comercio. En los eventos en que los interesados cumplan con alguna de
+      las dos condiciones anteriores pero en conjunto cuenten con menos del 20% mercado
+      relevante, se entenderá autorizada la operación. Para este último caso se deberá
+      únicamente notificar a la Superintendencia de Industria y Comercio de esta operación."
     supports_conditions:
-      - co_combined_domestic
-      - co_each_party_domestic
+      - co_threshold_monetary
+      - co_market_share_20pct
 
 practitioner_notes:
   - title: "2025 Merger Review Reporting Thresholds"
