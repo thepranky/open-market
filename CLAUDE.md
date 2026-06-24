@@ -8,11 +8,11 @@ Market-definition research + merger-control threshold screening for competition 
 1. **Case research** — source-linked EU/UK/US merger YAML; keyword + semantic search; graph views.
 2. **Jurisdiction screening** — ~60 `data/jurisdictions/*.yaml` profiles; `threshold_engine.py`; `/screen` deal intake.
 
-## Layout (current → target in `docs/specs/restructure-layout.md`)
+## Layout
 
 ```
-apps/api/     FastAPI — app/, scripts/, tests/
-apps/web/     Next.js 14 — App Router
+apps/api/     FastAPI — app/{cases,screening,shared}/, scripts/{cases,screening}/, tests/
+apps/web/     Next.js 14 — src/app/ (routes), src/features/{cases,screening}/, src/components/ (shared)
 data/         YAML source of truth
 docs/         architecture/, operations/, specs/, architecture/decisions/
 ```
@@ -29,23 +29,21 @@ docs/         architecture/, operations/, specs/, architecture/decisions/
 ## Architecture
 
 ```
-routers/ → services/ → loader/ (cases) | threshold_engine.py (jurisdictions)
-              ↓
-         models/ — CaseRecord, JurisdictionRule
-              ↓
-         data/*.yaml
+app/cases/routers → app/cases/services → app/cases/loader → data/cases/
+app/screening/routers → app/screening/services (threshold_engine) → data/jurisdictions/
+app/shared/ — config, pg_client, health only
 ```
 
-**Pipeline:** PDF → `scripts/cases/extract_case_from_source.py` / `ingest_case.py` → `data/drafts/` → integrity gates → human review → `promote_case_pipeline.py` → `data/cases/`.
+**Pipeline:** PDF → `scripts/cases/extract_case_from_source.py` / `ingest_case.py` → `data/drafts/` → integrity gates → human review → `scripts/cases/promote_case_pipeline.py` → `data/cases/`.
 
 **Screening:** in-memory YAML at `POST /jurisdictions/screen`.
 
 ## Product boundaries
 
-| Product | API (today) | Web routes |
-|---------|-------------|------------|
-| Case research | `cases`, `indexed_cases`, `search`, `graph` | `/explore`, `/graph`, `/cases`, `/indexed-cases` |
-| Screening | `jurisdictions`, `threshold_engine`, `jurisdiction_*` | `/jurisdictions`, `/screen` |
+| Product | API | Web routes + features |
+|---------|-----|----------------------|
+| Case research | `app/cases/` | `/explore`, `/graph`, `/cases`, `/indexed-cases` → `src/features/cases/` |
+| Screening | `app/screening/` | `/jurisdictions`, `/screen` → `src/features/screening/` |
 
 **`jurisdiction` overloaded:** cases = regulator (`EU`/`UK`/`US`); screening = country id (`au`, `de`).
 
@@ -114,5 +112,5 @@ step work, state a brief plan with a verify step each.
 
 - `README.md` — onboarding
 - `docs/architecture/overview.md` — system map
-- `docs/specs/restructure-layout.md` — repo restructure plan
+- `docs/specs/restructure-layout.md` — repo layout reference (completed 2026-06-24)
 - `ROADMAP.md` — phased work to production

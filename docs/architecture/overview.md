@@ -8,8 +8,14 @@ graph code is legacy and optional.
 ```mermaid
 flowchart TB
     subgraph web [apps/web]
-        Explore["/explore /graph /cases"]
-        Screen["/screen /jurisdictions"]
+        subgraph webRoutes [src/app routes]
+            Explore["/explore /graph /cases"]
+            Screen["/screen /jurisdictions"]
+        end
+        subgraph webFeatures [src/features]
+            FeatCases[cases]
+            FeatScreen[screening]
+        end
     end
     subgraph api [apps/api]
         CasePkg[cases package]
@@ -26,8 +32,10 @@ flowchart TB
         PG[(Postgres pgvector)]
         Neo4j[(Neo4j optional)]
     end
-    Explore --> CasePkg
-    Screen --> ScreenPkg
+    Explore --> FeatCases
+    Screen --> FeatScreen
+    FeatCases --> CasePkg
+    FeatScreen --> ScreenPkg
     CasePkg --> Cases
     ScreenPkg --> Juris
     CasePkg --> PG
@@ -63,7 +71,7 @@ Group them mentally (and in code ownership) as two blobs:
 | `data/review_learning/` | Human correction deltas from promotion |
 | `data/batch_runs/` | Batch extraction run metadata |
 
-**Critical boundary:** `drafts/` → human review → `cases/` via `promote_case_pipeline.py` only.
+**Critical boundary:** `drafts/` → human review → `cases/` via `scripts/cases/promote_case_pipeline.py` only.
 
 ### Screening blob
 
@@ -97,15 +105,15 @@ apps/web/src/
   lib/          # api-client.ts, types.ts, utils.ts
 ```
 
-## Layering (backend, today)
+## Layering (backend)
 
 ```
-routers/  →  services/  →  loader/ (cases) | threshold_engine (jurisdictions)
-                ↓
-           models/ (Pydantic — moving to product packages)
-                ↓
-           data/*.yaml
+app/cases/routers → app/cases/services → app/cases/loader → data/cases/
+app/screening/routers → app/screening/services → data/jurisdictions/
+app/shared/ — config, pg_client, health, pdf_extractor only
 ```
+
+Domain models live in product packages (`app/cases/models/`, `app/screening/models/`), not in `shared/`.
 
 ## Naming caveat
 

@@ -4,7 +4,7 @@ Short DDRs documenting why the system is built this way. Fill one per deep-dive 
 
 | Session | File | Topic |
 |---------|------|-------|
-| 0 | [ddr-0-repo-layout.md](ddr-0-repo-layout.md) | Monorepo + cases/screening packages (review before PR 1) |
+| 0 | [ddr-0-repo-layout.md](ddr-0-repo-layout.md) | Monorepo + cases/screening packages (**accepted** 2026-06-24) |
 | A | [ddr-a-data-contracts.md](ddr-a-data-contracts.md) | Pydantic models, YAML layout, source integrity |
 | B | [ddr-b-extraction-pipeline.md](ddr-b-extraction-pipeline.md) | Draft → promote pipeline, scripts |
 | C | [ddr-c-search-graph.md](ddr-c-search-graph.md) | Keyword + semantic search, graph, pgvector |

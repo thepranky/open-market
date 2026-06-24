@@ -22,7 +22,7 @@ explicit source-verification tiers, not assumed accurate from research alone.
 
 | Layer | Status |
 |-------|--------|
-| **Schema** | Rich Pydantic model in `apps/api/app/models/jurisdiction.py`; spec in `data/jurisdictions/_schema.md` |
+| **Schema** | Rich Pydantic model in `apps/api/app/screening/models/jurisdiction.py`; spec in `data/jurisdictions/_schema.md` |
 | **Data** | 47 jurisdiction YAMLs with thresholds, `source_passages`, `minority_thresholds`, practitioner notes |
 | **Screening** | `threshold_engine.py` evaluates deals; `/jurisdictions/screen` returns status + legal citations |
 | **URL check** | `apps/api/scripts/screening/verify_jurisdiction_urls.py` — async link checker (live links ≠ accurate content) |
@@ -247,7 +247,7 @@ Archetypes are config, not code — easy to extend without redeploying gates.
 
 ## Source fetcher design
 
-Shared library: `apps/api/app/services/source_fetcher.py`
+Shared library: `apps/api/app/screening/services/source_fetcher.py`
 
 | Source | Strategy |
 |--------|----------|
@@ -256,7 +256,7 @@ Shared library: `apps/api/app/services/source_fetcher.py`
 | uscode.house.gov | HTML fetch; extract section text |
 | ecfr.gov | HTML fetch; extract § text |
 | ftc.gov press releases | HTML/PDF for annual threshold notices |
-| Official PDFs / gazettes | Download/extract text using `app.utils.pdf_extractor` cache pattern |
+| Official PDFs / gazettes | Download/extract text using `app.shared.utils.pdf_extractor` cache pattern |
 | Non-English official pages | Normalize text; record `language` when available; accept official English translations separately |
 | Bot-protected sites | Mark `fetch_status: bot_protected`; skip numeric check, flag tier 0 |
 
@@ -267,7 +267,7 @@ Normalization pipeline:
 3. Unicode normalize (NFKC)
 4. Fuzzy match threshold: exact first, then normalized substring (≥95% token overlap)
 
-Reuse patterns from `repair_source_passages.py` and `app.utils.pdf_extractor` where applicable. Do not build an HTML-only verifier; many jurisdiction sources are PDFs, official gazettes, and authority threshold notices.
+Reuse patterns from `apps/api/scripts/cases/repair_source_passages.py` and `app.shared.utils.pdf_extractor` where applicable. Do not build an HTML-only verifier; many jurisdiction sources are PDFs, official gazettes, and authority threshold notices.
 
 Fetcher output should include:
 
@@ -401,7 +401,7 @@ Branches follow `jurisdiction-verification/<slug>`. Each PR is one reviewable un
 
 | Deliverable | Path |
 |-------------|------|
-| Verification tier enums + sidecar Pydantic models | `apps/api/app/models/jurisdiction_verification.py` |
+| Verification tier enums + sidecar Pydantic models | `apps/api/app/screening/models/jurisdiction_verification.py` |
 | Archetype templates | `data/jurisdictions/_archetypes.yaml` |
 | Sidecar schema doc | `data/jurisdictions/_verification_schema.md` |
 | Baseline coverage report script | `apps/api/scripts/screening/report_jurisdiction_verification_baseline.py` |
@@ -420,7 +420,7 @@ Branches follow `jurisdiction-verification/<slug>`. Each PR is one reviewable un
 
 | Deliverable | Path |
 |-------------|------|
-| Fetch + normalize service | `apps/api/app/services/source_fetcher.py` |
+| Fetch + normalize service | `apps/api/app/screening/services/source_fetcher.py` |
 | HTML/PDF text fixture files for CI | `apps/api/tests/fixtures/jurisdiction_sources/` |
 | Unit tests (offline) | `apps/api/tests/test_source_fetcher.py` |
 
@@ -436,7 +436,7 @@ Branches follow `jurisdiction-verification/<slug>`. Each PR is one reviewable un
 | Deliverable | Path |
 |-------------|------|
 | Full implementation | `apps/api/scripts/screening/verify_jurisdiction_passages.py` |
-| Numeric extraction helpers | `apps/api/app/services/jurisdiction_numeric.py` |
+| Numeric extraction helpers | `apps/api/app/screening/services/jurisdiction_numeric.py` |
 | Tests with fixtures | `apps/api/tests/test_verify_jurisdiction_passages.py` |
 
 **Acceptance:** Runs against EU, UK, US HSR fixtures offline; produces sidecar with source tier 1–2 status; exit code reflects pass/fail.
@@ -498,8 +498,8 @@ Branches follow `jurisdiction-verification/<slug>`. Each PR is one reviewable un
 
 | Deliverable | Path |
 |-------------|------|
-| Jurisdiction data loader/service reads YAML + sidecar | `apps/api/app/services/jurisdiction_data_service.py` |
-| Verification metadata in screening API | `apps/api/app/routers/jurisdictions.py` |
+| Jurisdiction data loader/service reads YAML + sidecar | `apps/api/app/screening/services/jurisdiction_data_service.py` |
+| Verification metadata in screening API | `apps/api/app/screening/routers/jurisdictions.py` |
 | Staleness/verification badges | `apps/web/src/features/screening/components/ScreenClient.tsx`, `app/jurisdictions/[id]/page.tsx` |
 | TypeScript types | `apps/web/src/lib/types.ts` |
 | Fix jurisdiction detail "Last updated" to use `rule.last_verified` | `apps/web/src/app/jurisdictions/[id]/page.tsx` |

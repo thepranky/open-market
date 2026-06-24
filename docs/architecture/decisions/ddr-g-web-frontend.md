@@ -9,7 +9,7 @@ Read/trace:
 - `apps/web/src/features/cases/`, `features/screening/` — product UI + `api.ts`
 - `apps/web/src/lib/api-client.ts`, `types.ts`
 - `apps/web/src/components/NavBar.tsx`
-- Key components: `Evidence.tsx`, `SemanticCaseCard.tsx`, `VerificationBadges.tsx`
+- Key components: `features/cases/components/Evidence.tsx`, `SemanticCaseCard.tsx`, `features/screening/components/VerificationBadges.tsx`
 
 Run: `npm run dev`; click through all nav routes.
 

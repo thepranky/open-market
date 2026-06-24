@@ -5,7 +5,7 @@
 ## Before you start
 
 Read/trace:
-- `apps/api/app/routers/jurisdictions.py` — chat, knowledge-chat, parse-financials endpoints
+- `apps/api/app/screening/routers/jurisdictions.py` — chat, knowledge-chat, parse-financials endpoints
 - `apps/web/src/features/screening/components/ChatIntake.tsx` (skim structure: state, API calls)
 - `apps/web/src/features/screening/components/JurisdictionChat.tsx`
 

@@ -10,9 +10,9 @@ See [`.cursor/rules/meridian.mdc`](.cursor/rules/meridian.mdc) for spec-driven w
 | **1 Restructure** | 1.1 | API packages (`cases/`, `screening/`, `shared/`) | `apps/api/app/` | Learnable module boundaries | Done (PR 1) |
 | | 1.2 | Script subdirs | `apps/api/scripts/` | Pipeline discoverability | Done (PR 2) |
 | | 1.3 | Web feature folders | `apps/web/src/features/` | Frontend boundaries | Done (PR 3) |
-| **2 Understand** | 2.1–2.9 | DDR deep-dives (0, A–I) | `docs/architecture/decisions/` | Defensible understanding | 1 day each; after restructure |
+| **2 Understand** | 2.1–2.9 | DDR deep-dives (0, A–I) | `docs/architecture/decisions/` | Defensible understanding | Ready — restructure complete |
 | **3 CI** | 3.1 | Add schema validation to PR CI | `.github/workflows/api-ci.yml` | Canonical YAML breaks silently today | Run `test_schema.py` + `validate_cases.py` on PR |
-| | 3.2 | Jurisdiction push tier on PR | `api-ci.yml` | Screening regressions not gated on merge | `run_jurisdiction_verification.py --tier push` |
+| | 3.2 | Jurisdiction push tier on PR | `api-ci.yml` | Screening regressions not gated on merge | `scripts/screening/run_jurisdiction_verification.py --tier push` |
 | | 3.3 | Web lint + build in CI | new `web-ci.yml` | Frontend breaks undetected | `npm run lint && npm run build` |
 | | 3.4 | Ruff in CI | `api-ci.yml` | Style/errors only caught locally | `ruff check .` step |
 | | 3.5 | Benchmark artifacts | `api-ci.yml` | Eval trends discarded | Upload benchmark JSON as artifact |
@@ -29,7 +29,7 @@ See [`.cursor/rules/meridian.mdc`](.cursor/rules/meridian.mdc) for spec-driven w
 | | 6.2 | Managed Postgres + pgvector | env docs, migrations | Local-only DB today | Neon/Supabase/RDS; connection pooling |
 | | 6.3 | API deploy (Fly/Railway/ECS) | `apps/api/`, CI | No hosted API | Container deploy + `DATABASE_URL` secrets |
 | | 6.4 | Web deploy (Vercel) | `apps/web/`, env | No hosted frontend | `NEXT_PUBLIC_API_URL` to prod API |
-| | 6.5 | Embed job as one-shot / cron | `index_embeddings.py`, CI or scheduler | Manual embed step | Post-deploy or nightly re-embed |
+| | 6.5 | Embed job as one-shot / cron | `scripts/cases/index_embeddings.py`, CI or scheduler | Manual embed step | Post-deploy or nightly re-embed |
 | **7 Auth** | 7.1 | Auth provider choice + spec | `docs/specs/auth.md` | Open API not production-safe | Clerk/Auth0; scope read vs write |
 | | 7.2 | API middleware | `apps/api/main.py`, deps | Protect write/LLM endpoints | JWT validation on POST routes |
 | | 7.3 | Web auth shell | `apps/web/` middleware | Gated routes | Sign-in, session, protected `/screen` |

@@ -5,16 +5,17 @@
 ## Before you start
 
 Read/trace:
-- `apps/api/app/cases/models/case.py`, `app/screening/models/jurisdiction.py`, `case_index.py` (post-restructure paths; until PR 1: `app/models/`)
+- `apps/api/app/cases/models/case.py`, `app/screening/models/jurisdiction.py`, `app/cases/models/case_index.py`
 - `data/cases/` (one EU example), `data/jurisdictions/_schema.md`
 - `docs/data/source-integrity.md`
-- `apps/api/app/loader/validator.py`
+- `apps/api/app/cases/loader/validator.py`
+- `apps/api/scripts/cases/check_source_integrity.py`
 
-Trace one `quote_snippet` from YAML → `check_source_integrity.py` logic → `Evidence.tsx`.
+Trace one `quote_snippet` from YAML → integrity script → `features/cases/components/Evidence.tsx`.
 
 ## Agent prompt
 
-> Walk me through CompMap's data contracts and source-integrity model. Start from `CaseRecord` and `JurisdictionRule` field-by-field (only non-obvious fields). Explain the `data/` folder layout (cases vs drafts vs case_index vs jurisdictions). Trace how `check_source_integrity.py` validates a quote. Compare why YAML is SoT vs storing cases in Postgres. End with what's missing and what you'd change. Teach bottom-up then summarize top-down.
+> Walk me through Meridian's data contracts and source-integrity model. Start from `CaseRecord` and `JurisdictionRule` field-by-field (only non-obvious fields). Explain the `data/` folder layout (cases vs drafts vs case_index vs jurisdictions). Trace how `scripts/cases/check_source_integrity.py` validates a quote. Compare why YAML is SoT vs storing cases in Postgres. End with what's missing and what you'd change. Teach bottom-up then summarize top-down.
 
 ---
 

@@ -14,12 +14,12 @@ source verification and deal-intake chat.
 
 ## Backend
 
-| Layer | Key files |
+| Layer | Key files (under `apps/api/app/`) |
 |-------|-----------|
-| Contract | `app/screening/models/jurisdiction.py`, `jurisdiction_verification.py` |
-| Engine | `app/screening/services/threshold_engine.py` (loads YAML inline) |
-| Verification | `app/screening/services/jurisdiction_*.py`, `source_fetcher.py` |
-| Router | `app/screening/routers/jurisdictions.py` |
+| Contract | `screening/models/jurisdiction.py`, `jurisdiction_verification.py` |
+| Engine | `screening/services/threshold_engine.py` (loads YAML inline) |
+| Verification | `screening/services/jurisdiction_*.py`, `source_fetcher.py` |
+| Router | `screening/routers/jurisdictions.py` |
 
 ## Threshold engine
 
@@ -41,7 +41,7 @@ citations. Pure in-memory — no database.
 
 ## Verification tiers
 
-Orchestrator: `scripts/screening/run_jurisdiction_verification.py`
+Orchestrator: `apps/api/scripts/screening/run_jurisdiction_verification.py`
 
 | Tier | When | Gates |
 |------|------|-------|

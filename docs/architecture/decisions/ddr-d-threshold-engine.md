@@ -5,11 +5,11 @@
 ## Before you start
 
 Read/trace:
-- `apps/api/app/services/threshold_engine.py` (full file)
-- `apps/api/app/models/jurisdiction.py` — `threshold_tests`, conditions
+- `apps/api/app/screening/services/threshold_engine.py` (full file)
+- `apps/api/app/screening/models/jurisdiction.py` — `threshold_tests`, conditions
 - `data/jurisdictions/_gold_deals.yaml`
 - `apps/api/tests/test_jurisdiction_regression.py`
-- POST `/jurisdictions/screen` in `routers/jurisdictions.py` → `ScreenClient.tsx`
+- `apps/api/app/screening/routers/jurisdictions.py` → `features/screening/components/ScreenClient.tsx`
 
 Screen a test deal via API docs or curl.
 

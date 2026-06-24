@@ -1,6 +1,6 @@
 # DDR-0: Repository layout
 
-**Status:** accepted | **Date:** 2026-06-24
+**Status:** accepted | **Date:** 2026-06-24 | **Implemented:** PRs 1–3 (`067b68b`, `cb84966`, `8d8973e`)
 
 ## Decision
 
@@ -8,7 +8,7 @@ Keep **one monorepo** (`open-market`) under `apps/` (api + web unchanged). Split
 
 ## Context
 
-Two products share one deployable API and one web app. Data top-level folders already group by workflow (see overview § Data layout). Code mixing is the problem: flat `routers/`, `services/`, `scripts/`, and `lib/api.ts` hide boundaries.
+Two products share one deployable API and one web app. Data top-level folders already group by workflow (see overview § Data layout). The prior flat `routers/`, `services/`, `scripts/`, and monolithic `lib/api.ts` hid product boundaries and made onboarding harder.
 
 ## Why monorepo (not two repos)
 
@@ -34,6 +34,8 @@ Two products share one deployable API and one web app. Data top-level folders al
 
 **Scripts:** `scripts/cases/` (including `pipeline_profile.py`) and `scripts/screening/` — no `scripts/shared/`.
 
+**Web:** `src/features/cases/` and `src/features/screening/` with product `api.ts` modules; `src/app/` holds route wrappers only; shared chrome in `src/components/`.
+
 ## Alternatives considered
 
 - **Status quo** — works but hard to learn; overloaded names (`jurisdiction`).
@@ -48,16 +50,16 @@ Two products share one deployable API and one web app. Data top-level folders al
 - Removing Neo4j (DDR-C).
 - Flattening `apps/` to root-level `api/` + `web/`.
 
-See `docs/specs/restructure-layout.md` for move list and doc update checklist.
+See `docs/specs/restructure-layout.md` for the full move list and verification commands.
 
 ## Consequences
 
 - **Positive:** Imports document ownership; deep-dives A–I use stable product paths.
-- **Negative:** Three PRs of import churn; docs must update (checklist in spec).
+- **Negative:** Three PRs of import churn; docs updated in sync (see spec § Documentation sync).
 - **Risk:** Screening imports `shared/utils/pdf_extractor` — acceptable infra dependency, not cases→screening domain coupling.
 
 ## Next steps
 
-1. Review this DDR + `docs/specs/restructure-layout.md`.
-2. PR 1: API package moves (pytest + ruff).
-3. Update doc checklist; then start DDR-A on new paths.
+1. DDR deep-dives A–I on the new paths (ROADMAP phase 2).
+2. CI hardening — schema validation, jurisdiction push tier, web build (ROADMAP phase 3).
+3. Deferred refactors only after relevant DDR (router split, symbol renames, Neo4j).

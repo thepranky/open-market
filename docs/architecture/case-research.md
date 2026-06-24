@@ -18,18 +18,18 @@ and graph views.
 
 ## Backend
 
-| Layer | Key files |
+| Layer | Key files (under `apps/api/app/`) |
 |-------|-----------|
-| Contract | `app/cases/models/case.py`, `case_index.py` |
-| Loaders | `app/cases/loader/yaml_loader.py`, `index_loader.py`, `validator.py` |
-| Services | `app/cases/services/case_service.py`, `index_case_service.py`, `semantic_search_service.py`, `embedding_service.py`, `graph_service.py`, `graph_entity_service.py` |
-| Routers | `app/cases/routers/cases.py`, `indexed_cases.py`, `search.py`, `graph.py`, `graph_entities.py` |
-| Derived store | `app/shared/core/pg_client.py`, `migrations/001_create_vector_schema.sql` |
+| Contract | `cases/models/case.py`, `case_index.py` |
+| Loaders | `cases/loader/yaml_loader.py`, `index_loader.py`, `validator.py` |
+| Services | `cases/services/case_service.py`, `index_case_service.py`, `semantic_search_service.py`, `embedding_service.py`, `graph_service.py`, `graph_entity_service.py` |
+| Routers | `cases/routers/cases.py`, `indexed_cases.py`, `search.py`, `graph.py`, `graph_entities.py` |
+| Derived store | `shared/core/pg_client.py`, `migrations/001_create_vector_schema.sql` |
 
 ## Pipeline (scripts)
 
-Source PDF → `extract_case_from_source.py` / `ingest_case.py` → draft → integrity gates →
-`review_draft.py` → human review → `promote_case_pipeline.py` → canonical.
+Source PDF → `scripts/cases/extract_case_from_source.py` / `ingest_case.py` → draft → integrity gates →
+`scripts/cases/review_draft.py` → human review → `scripts/cases/promote_case_pipeline.py` → canonical.
 
 See [operations/ingestion.md](../operations/ingestion.md) and
 [promotion-checklist.md](../operations/promotion-checklist.md).
@@ -50,6 +50,7 @@ See [operations/ingestion.md](../operations/ingestion.md) and
 | `/explore` | `features/cases/explore/` (`ExploreClient`, `SearchForm`, …) |
 | `/graph` | `features/cases/graph/` (`NavigationGraph`, `GraphView`, …) |
 | `/cases/[case_id]` | `features/cases/components/` (`Evidence`, `CaseHistory`, …) |
+| `/indexed-cases/[case_id]` | `features/cases/components/` + `app/indexed-cases/` route wrapper |
 
 ## Embed step
 
