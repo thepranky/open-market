@@ -6,7 +6,7 @@
 
 Read/trace:
 - `docs/operations/jurisdiction-verification.md`
-- `apps/api/scripts/run_jurisdiction_verification.py`
+- `apps/api/scripts/screening/run_jurisdiction_verification.py`
 - `apps/api/app/services/jurisdiction_completeness.py`, `jurisdiction_passages.py`, `jurisdiction_staleness.py`, `jurisdiction_regression.py`
 - `apps/api/app/models/jurisdiction_verification.py`
 - `apps/web/src/components/VerificationBadges.tsx`

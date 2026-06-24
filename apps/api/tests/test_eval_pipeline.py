@@ -1,8 +1,8 @@
 """
 Tests for the eval + gold-draft pipeline:
-  - scripts/create_gold_draft.py
-  - scripts/evaluate_extraction.py
-  - scripts/validate_gold_quotes.py
+  - scripts/cases/create_gold_draft.py
+  - scripts/cases/evaluate_extraction.py
+  - scripts/cases/validate_gold_quotes.py
 
 No network access, no Claude API calls, no canonical YAML mutation.
 """

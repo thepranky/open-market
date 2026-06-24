@@ -1,5 +1,5 @@
 """
-Unit tests for scripts/extract_case_from_source.py
+Unit tests for scripts/cases/extract_case_from_source.py
 
 No network access, no PDF downloads, no real Claude calls, no filesystem writes
 to production YAML.
@@ -7104,7 +7104,7 @@ class TestDeviceContextDiscrimination:
 
     def test_pcs_similarity_penalized_below_rename_threshold(self):
         """After device-context penalty, 'OSs for PCs' must not reach the rename threshold."""
-        from scripts.extract_case_from_source import _SIMILARITY_RENAME
+        from scripts.cases.extract_case_from_source import _SIMILARITY_RENAME
         raw = _market_similarity("Wearable OS / platforms", "OSs for PCs")
         penalized = raw * _device_context_factor("Wearable OS / platforms", "OSs for PCs")
         assert penalized < _SIMILARITY_RENAME, (
@@ -7113,7 +7113,7 @@ class TestDeviceContextDiscrimination:
 
     def test_wrist_worn_wearable_similarity_above_rename_threshold(self):
         """No penalty: 'Supply of licensable OSs for wrist-worn wearable devices' stays above threshold."""
-        from scripts.extract_case_from_source import _SIMILARITY_RENAME
+        from scripts.cases.extract_case_from_source import _SIMILARITY_RENAME
         sim = _market_similarity(
             "Wearable OS / platforms",
             "Supply of licensable OSs for wrist-worn wearable devices",

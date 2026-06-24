@@ -80,11 +80,11 @@ NEXT_PUBLIC_API_URL=http://localhost:8000 npm run dev
 Run from `apps/api/` with venv active:
 
 ```bash
-.venv/bin/python scripts/validate_cases.py --cases-dir ../../data/cases
-.venv/bin/python scripts/check_source_links.py
-.venv/bin/python scripts/check_source_integrity.py --cases-dir ../../data/cases
-.venv/bin/python scripts/run_eval_benchmark.py --config ../../data/evals/benchmark.market_definition.ci.yaml
-.venv/bin/python scripts/run_jurisdiction_verification.py --tier push
+.venv/bin/python scripts/cases/validate_cases.py --cases-dir ../../data/cases
+.venv/bin/python scripts/cases/check_source_links.py
+.venv/bin/python scripts/cases/check_source_integrity.py --cases-dir ../../data/cases
+.venv/bin/python scripts/cases/run_eval_benchmark.py --config ../../data/evals/benchmark.market_definition.ci.yaml
+.venv/bin/python scripts/screening/run_jurisdiction_verification.py --tier push
 ```
 
 ---

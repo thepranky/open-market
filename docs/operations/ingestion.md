@@ -71,7 +71,7 @@ The model proposes `source_passages` with `quote_snippet` values. Before
 writing each passage:
 
 1. Run `quote_found_in_text(quote, extracted_text)` from
-   `scripts/check_source_integrity.py`.
+   `scripts/cases/check_source_integrity.py`.
 2. If the quote is **not found**: do not write the passage. Log a WARNING.
    The model may have hallucinated the quote or cited the wrong page.
 3. If the quote **is found**: record the page number and section heading if
@@ -89,7 +89,7 @@ Run `check_source_integrity.py` against the candidate YAML. The pipeline must
 exit non-zero (and must not commit) if any **ERROR**-level issues remain:
 
 ```bash
-.venv/bin/python scripts/check_source_integrity.py --cases-dir <draft_dir>
+.venv/bin/python scripts/cases/check_source_integrity.py --cases-dir <draft_dir>
 ```
 
 Warnings may be reviewed and accepted by a human; errors must be resolved.
@@ -99,7 +99,7 @@ Warnings may be reviewed and accepted by a human; errors must be resolved.
 After Stage 5 (integrity gate) passes, an optional LLM critic stage evaluates the
 draft semantically before human promotion.
 
-**Script:** `apps/api/scripts/review_draft.py`
+**Script:** `apps/api/scripts/cases/review_draft.py`
 
 **What it checks:**
 - Whether each quote actually supports the proposition it is linked to
@@ -128,7 +128,7 @@ draft semantically before human promotion.
 
 Run standalone or via `ingest_case.py --llm-review`:
 ```bash
-python apps/api/scripts/review_draft.py \\
+python apps/api/scripts/cases/review_draft.py \\
     --case-id eu_sika_dry_mix_2019 \\
     --focus market_definition \\
     --max-cost 0.50
@@ -141,7 +141,7 @@ python apps/api/scripts/review_draft.py \\
 Run `validate_cases.py` against the candidate YAML:
 
 ```bash
-.venv/bin/python scripts/validate_cases.py --cases-dir <draft_dir>
+.venv/bin/python scripts/cases/validate_cases.py --cases-dir <draft_dir>
 ```
 
 This validates Pydantic types, enum values, required fields, and referential
@@ -196,12 +196,12 @@ after verifying passages against the source, then commits.
 
 ## Source integrity script
 
-`apps/api/scripts/check_source_integrity.py` is the enforcement point for
+`apps/api/scripts/cases/check_source_integrity.py` is the enforcement point for
 Stages 5. It can be run at any time against any directory of YAML files:
 
 ```bash
 cd apps/api
-.venv/bin/python scripts/check_source_integrity.py --cases-dir ../../data/cases
+.venv/bin/python scripts/cases/check_source_integrity.py --cases-dir ../../data/cases
 ```
 
 **ERROR** issues block ingestion. **WARNING** issues require human judgment.
@@ -305,9 +305,9 @@ now triggers supplemental fallback, raising coverage to ≈ 84% of non-TOC pages
 |------|---------|
 | `ingestion/` | Reserved for future ingestion pipeline code |
 | `data/pipeline_rules/market_definition_rules.yaml` | Central rule registry |
-| `apps/api/scripts/check_source_integrity.py` | Source validation gate |
-| `apps/api/scripts/check_source_links.py` | Lightweight HTTP link checker |
-| `apps/api/scripts/validate_cases.py` | Pydantic schema validator |
+| `apps/api/scripts/cases/check_source_integrity.py` | Source validation gate |
+| `apps/api/scripts/cases/check_source_links.py` | Lightweight HTTP link checker |
+| `apps/api/scripts/cases/validate_cases.py` | Pydantic schema validator |
 | `apps/api/tests/test_source_integrity.py` | Unit tests for the gate |
 | `data/cases/**/*.yaml` | Canonical case records (human-reviewed) |
 | `docs/operations/hard-cases.md` | Multi-pass extraction review + diagnostics |

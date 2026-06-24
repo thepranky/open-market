@@ -57,7 +57,7 @@ After adding cases, run semantic indexing:
 
 ```bash
 docker compose --profile embed up embed
-# or: apps/api/scripts/index_embeddings.py
+# or: apps/api/scripts/cases/index_embeddings.py
 ```
 
 Requires `GOOGLE_API_KEY` for `gemini-embedding-001` (768-dim).

@@ -157,5 +157,5 @@ def render_baseline_markdown(report: BaselineCoverageReport) -> str:
             f"{row.missing_passage_support_count} | {row.annual_adjustment_test_count} | {archetypes} |"
         )
 
-    lines.extend(["", "---", "", "Regenerate with:", "", "```bash", "python apps/api/scripts/report_jurisdiction_verification_baseline.py --write", "```", ""])
+    lines.extend(["", "---", "", "Regenerate with:", "", "```bash", "python apps/api/scripts/screening/report_jurisdiction_verification_baseline.py --write", "```", ""])
     return "\n".join(lines)

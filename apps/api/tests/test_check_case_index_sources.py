@@ -21,7 +21,7 @@ import yaml
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from app.cases.models.case_index import CaseIndexEntry
-from scripts.check_case_index_sources import (
+from scripts.cases.check_case_index_sources import (
     CaseResult,
     CheckItem,
     check_domain_official,
@@ -437,7 +437,7 @@ class TestMain:
         }))
         url = "https://competition-cases.ec.europa.eu/cases/M.10000"
         mock_client = _mock_http_client({url: 200})
-        with patch("scripts.check_case_index_sources.httpx.Client", return_value=mock_client):
+        with patch("scripts.cases.check_case_index_sources.httpx.Client", return_value=mock_client):
             rc = main(["--index-dir", str(tmp_path)])
         assert rc == 0
 
@@ -457,7 +457,7 @@ class TestMain:
         }))
         url = "https://competition-cases.ec.europa.eu/cases/M.10000"
         mock_client = _mock_http_client({url: 404})
-        with patch("scripts.check_case_index_sources.httpx.Client", return_value=mock_client):
+        with patch("scripts.cases.check_case_index_sources.httpx.Client", return_value=mock_client):
             rc = main(["--index-dir", str(tmp_path)])
         assert rc == 1
         out = capsys.readouterr().out

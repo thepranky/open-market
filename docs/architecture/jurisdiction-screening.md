@@ -41,7 +41,7 @@ citations. Pure in-memory — no database.
 
 ## Verification tiers
 
-Orchestrator: `scripts/run_jurisdiction_verification.py`
+Orchestrator: `scripts/screening/run_jurisdiction_verification.py`
 
 | Tier | When | Gates |
 |------|------|-------|

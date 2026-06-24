@@ -25,7 +25,7 @@ import yaml
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from scripts.merge_drafts import (
+from scripts.cases.merge_drafts import (
     _IdMap,
     _commitment_key,
     _finding_key,

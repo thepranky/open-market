@@ -36,7 +36,7 @@ routers/ → services/ → loader/ (cases) | threshold_engine.py (jurisdictions)
          data/*.yaml
 ```
 
-**Pipeline:** PDF → `scripts/extract_case_from_source.py` / `ingest_case.py` → `data/drafts/` → integrity gates → human review → `promote_case_pipeline.py` → `data/cases/`.
+**Pipeline:** PDF → `scripts/cases/extract_case_from_source.py` / `ingest_case.py` → `data/drafts/` → integrity gates → human review → `promote_case_pipeline.py` → `data/cases/`.
 
 **Screening:** in-memory YAML at `POST /jurisdictions/screen`.
 
@@ -59,11 +59,11 @@ docker compose --profile embed up embed   # needs GOOGLE_API_KEY
 # apps/api/ (.venv active)
 .venv/bin/uvicorn main:app --reload
 .venv/bin/python -m pytest tests/ -v
-.venv/bin/python scripts/validate_cases.py --cases-dir ../../data/cases
-.venv/bin/python scripts/check_source_links.py
-.venv/bin/python scripts/check_source_integrity.py --cases-dir ../../data/cases
-.venv/bin/python scripts/run_eval_benchmark.py --config ../../data/evals/benchmark.market_definition.ci.yaml
-.venv/bin/python scripts/run_jurisdiction_verification.py --tier push
+.venv/bin/python scripts/cases/validate_cases.py --cases-dir ../../data/cases
+.venv/bin/python scripts/cases/check_source_links.py
+.venv/bin/python scripts/cases/check_source_integrity.py --cases-dir ../../data/cases
+.venv/bin/python scripts/cases/run_eval_benchmark.py --config ../../data/evals/benchmark.market_definition.ci.yaml
+.venv/bin/python scripts/screening/run_jurisdiction_verification.py --tier push
 .venv/bin/ruff check .
 
 # apps/web/

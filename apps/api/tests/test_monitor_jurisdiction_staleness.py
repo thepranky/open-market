@@ -29,7 +29,7 @@ from app.screening.services.jurisdiction_staleness import (
 )
 
 ANCHORS = Path(__file__).resolve().parents[3] / "data" / "jurisdictions" / "_staleness_anchors.yaml"
-SCRIPT = Path(__file__).resolve().parents[1] / "scripts" / "monitor_jurisdiction_staleness.py"
+SCRIPT = Path(__file__).resolve().parents[1] / "scripts" / "screening" / "monitor_jurisdiction_staleness.py"
 
 
 def _hsr_rule(**overrides) -> JurisdictionRule:

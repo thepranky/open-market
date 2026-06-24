@@ -11,7 +11,7 @@ Use this checklist when promoting a draft from `data/drafts/` to `data/cases/`.
 - [ ] Deterministic review report exists and shows `**Status: PASS**`  
       `data/drafts/{jurisdiction}/{case_id}.{focus}.review.md`
 - [ ] Source integrity check passed (0 errors):  
-      `apps/api/.venv/bin/python apps/api/scripts/check_source_integrity.py --cases-dir data/drafts --no-cache`
+      `apps/api/.venv/bin/python apps/api/scripts/cases/check_source_integrity.py --cases-dir data/drafts --no-cache`
 - [ ] LLM review report read and triage understood:  
       `data/drafts/{jurisdiction}/{case_id}.{focus}.llm_review.md`
 - [ ] Source PDF open and accessible for passage verification
@@ -129,11 +129,11 @@ Run these in order. Both must pass cleanly before promoting.
 # From repo root
 
 # 1. Structural validation against draft (enum values, referential integrity)
-apps/api/.venv/bin/python apps/api/scripts/ingest_case.py \
+apps/api/.venv/bin/python apps/api/scripts/cases/ingest_case.py \
     --case-id {case_id} --focus market_definition --no-claude
 
 # 2. Source integrity gate (no errors permitted)
-apps/api/.venv/bin/python apps/api/scripts/check_source_integrity.py \
+apps/api/.venv/bin/python apps/api/scripts/cases/check_source_integrity.py \
     --cases-dir data/drafts --no-cache
 ```
 
@@ -184,14 +184,14 @@ metadata:
 
 ```bash
 # Dry run first — checks draft integrity and prints what would be written
-apps/api/.venv/bin/python apps/api/scripts/promote_case_pipeline.py \
+apps/api/.venv/bin/python apps/api/scripts/cases/promote_case_pipeline.py \
     --case-id {case_id} \
     --focus market_definition \
     --procedure-stage phase1 \
     --dry-run
 
 # Full promotion (runs all gates, seeds graph, writes learning log)
-apps/api/.venv/bin/python apps/api/scripts/promote_case_pipeline.py \
+apps/api/.venv/bin/python apps/api/scripts/cases/promote_case_pipeline.py \
     --case-id {case_id} \
     --focus market_definition \
     --procedure-stage phase1 \

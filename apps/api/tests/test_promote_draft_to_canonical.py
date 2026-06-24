@@ -25,7 +25,7 @@ import yaml
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from scripts.promote_draft_to_canonical import (
+from scripts.cases.promote_draft_to_canonical import (
     _DRAFT_MARKET_STRIP,
     _DRAFT_PASSAGE_STRIP,
     _DRAFT_TOP_STRIP,

@@ -5,8 +5,8 @@
 ## Before you start
 
 Read/trace:
-- `apps/api/scripts/extract_case_from_source.py`, `ingest_case.py`
-- `apps/api/scripts/review_draft.py`, `promote_case_pipeline.py`
+- `apps/api/scripts/cases/extract_case_from_source.py`, `ingest_case.py`
+- `apps/api/scripts/cases/review_draft.py`, `promote_case_pipeline.py`
 - `docs/operations/ingestion.md`, `promotion-checklist.md`
 - `data/pipeline_profiles/` (one example)
 - `data/review_learning/` structure

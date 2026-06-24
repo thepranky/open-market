@@ -2,7 +2,7 @@
 
 Reference for the automated jurisdiction profile verification programme. Profiles
 live in `data/jurisdictions/*.yaml`; verification is orchestrated by
-`apps/api/scripts/run_jurisdiction_verification.py` (tiers: `push`, `nightly`, `full`).
+`apps/api/scripts/screening/run_jurisdiction_verification.py` (tiers: `push`, `nightly`, `full`).
 
 ---
 
@@ -25,7 +25,7 @@ explicit source-verification tiers, not assumed accurate from research alone.
 | **Schema** | Rich Pydantic model in `apps/api/app/models/jurisdiction.py`; spec in `data/jurisdictions/_schema.md` |
 | **Data** | 47 jurisdiction YAMLs with thresholds, `source_passages`, `minority_thresholds`, practitioner notes |
 | **Screening** | `threshold_engine.py` evaluates deals; `/jurisdictions/screen` returns status + legal citations |
-| **URL check** | `apps/api/scripts/verify_jurisdiction_urls.py` — async link checker (live links ≠ accurate content) |
+| **URL check** | `apps/api/scripts/screening/verify_jurisdiction_urls.py` — async link checker (live links ≠ accurate content) |
 | **Maintenance** | `fix_jurisdiction_redirects.py`, `insert_minority_thresholds.py` |
 | **UI** | Chat intake (`/screen`), jurisdiction detail pages, `last_verified` dates |
 
@@ -308,7 +308,7 @@ Authoritative source types for hard-fact gates:
 
 **CLI:**
 ```bash
-python apps/api/scripts/verify_jurisdiction_passages.py [--jurisdiction uk] [--fix] [--verbose]
+python apps/api/scripts/screening/verify_jurisdiction_passages.py [--jurisdiction uk] [--fix] [--verbose]
 ```
 
 **Tests:** Fixture HTML/PDF text snippets for EU Art 1(2), UK s.23, US HSR threshold notices/§801 — no live network in CI.
@@ -332,7 +332,7 @@ python apps/api/scripts/verify_jurisdiction_passages.py [--jurisdiction uk] [--f
 
 **CLI:**
 ```bash
-python apps/api/scripts/verify_jurisdiction_completeness.py [--jurisdiction all]
+python apps/api/scripts/screening/verify_jurisdiction_completeness.py [--jurisdiction all]
 ```
 
 ---
@@ -404,9 +404,9 @@ Branches follow `jurisdiction-verification/<slug>`. Each PR is one reviewable un
 | Verification tier enums + sidecar Pydantic models | `apps/api/app/models/jurisdiction_verification.py` |
 | Archetype templates | `data/jurisdictions/_archetypes.yaml` |
 | Sidecar schema doc | `data/jurisdictions/_verification_schema.md` |
-| Baseline coverage report script | `apps/api/scripts/report_jurisdiction_verification_baseline.py` |
+| Baseline coverage report script | `apps/api/scripts/screening/report_jurisdiction_verification_baseline.py` |
 | Baseline report snapshot | `docs/jurisdiction-verification-baseline.md` |
-| Stub CLI entrypoints (no logic yet) | `apps/api/scripts/verify_jurisdiction_passages.py` (skeleton) |
+| Stub CLI entrypoints (no logic yet) | `apps/api/scripts/screening/verify_jurisdiction_passages.py` (skeleton) |
 | Unit tests for model load | `apps/api/tests/test_jurisdiction_verification_model.py` |
 
 **Acceptance:** Models load; archetypes validate; stubs run `--help`; baseline report reproduces counts for conditions, source passages, missing passage support, and annual-adjustment tests.
@@ -435,7 +435,7 @@ Branches follow `jurisdiction-verification/<slug>`. Each PR is one reviewable un
 
 | Deliverable | Path |
 |-------------|------|
-| Full implementation | `apps/api/scripts/verify_jurisdiction_passages.py` |
+| Full implementation | `apps/api/scripts/screening/verify_jurisdiction_passages.py` |
 | Numeric extraction helpers | `apps/api/app/services/jurisdiction_numeric.py` |
 | Tests with fixtures | `apps/api/tests/test_verify_jurisdiction_passages.py` |
 
@@ -452,7 +452,7 @@ Branches follow `jurisdiction-verification/<slug>`. Each PR is one reviewable un
 
 | Deliverable | Path |
 |-------------|------|
-| Completeness verifier | `apps/api/scripts/verify_jurisdiction_completeness.py` |
+| Completeness verifier | `apps/api/scripts/screening/verify_jurisdiction_completeness.py` |
 | Tests | `apps/api/tests/test_verify_jurisdiction_completeness.py` |
 
 **Acceptance:** All 47 YAMLs run; report lists missing elements per archetype; source tier 3 computed in sidecar.
@@ -466,7 +466,7 @@ Branches follow `jurisdiction-verification/<slug>`. Each PR is one reviewable un
 
 | Deliverable | Path |
 |-------------|------|
-| Re-extraction diff script | `apps/api/scripts/verify_jurisdiction_reextract.py` |
+| Re-extraction diff script | `apps/api/scripts/screening/verify_jurisdiction_reextract.py` |
 | Gold deal fixtures (v1) | `data/jurisdictions/_gold_deals.yaml` |
 | Regression tests | `apps/api/tests/test_jurisdiction_regression.py` |
 
@@ -483,7 +483,7 @@ Branches follow `jurisdiction-verification/<slug>`. Each PR is one reviewable un
 
 | Deliverable | Path |
 |-------------|------|
-| Staleness script | `apps/api/scripts/monitor_jurisdiction_staleness.py` |
+| Staleness script | `apps/api/scripts/screening/monitor_jurisdiction_staleness.py` |
 | Anchor config | `data/jurisdictions/_staleness_anchors.yaml` |
 | Tests with mocked anchors | `apps/api/tests/test_monitor_jurisdiction_staleness.py` |
 
@@ -516,7 +516,7 @@ Branches follow `jurisdiction-verification/<slug>`. Each PR is one reviewable un
 | Deliverable | Path |
 |-------------|------|
 | GitHub Actions workflow | `.github/workflows/jurisdiction-verification.yml` |
-| Orchestrator script | `apps/api/scripts/run_jurisdiction_verification.py` |
+| Orchestrator script | `apps/api/scripts/screening/run_jurisdiction_verification.py` |
 
 **CI tiers:**
 
@@ -628,25 +628,25 @@ Each data-fix PR:
 
 ```bash
 # Run all offline gates
-python apps/api/scripts/run_jurisdiction_verification.py --offline
+python apps/api/scripts/screening/run_jurisdiction_verification.py --offline
 
 # Run passage gate for one jurisdiction
-python apps/api/scripts/verify_jurisdiction_passages.py --jurisdiction uk --verbose
+python apps/api/scripts/screening/verify_jurisdiction_passages.py --jurisdiction uk --verbose
 
 # Run completeness for all
-python apps/api/scripts/verify_jurisdiction_completeness.py
+python apps/api/scripts/screening/verify_jurisdiction_completeness.py
 
 # Run gold deal regression
 pytest apps/api/tests/test_jurisdiction_regression.py -v
 
 # Check staleness (live)
-python apps/api/scripts/monitor_jurisdiction_staleness.py --annual-adjustment-only
+python apps/api/scripts/screening/monitor_jurisdiction_staleness.py --annual-adjustment-only
 
 # Existing URL check (tier 0)
-python apps/api/scripts/verify_jurisdiction_urls.py
+python apps/api/scripts/screening/verify_jurisdiction_urls.py
 
 # Baseline source coverage report
-python apps/api/scripts/report_jurisdiction_verification_baseline.py
+python apps/api/scripts/screening/report_jurisdiction_verification_baseline.py
 ```
 
 ---

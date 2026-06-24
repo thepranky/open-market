@@ -19,7 +19,7 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from scripts.promote_case_pipeline import check_draft_integrity, find_merged_draft, main
+from scripts.cases.promote_case_pipeline import check_draft_integrity, find_merged_draft, main
 
 # ---------------------------------------------------------------------------
 # Helpers
@@ -64,42 +64,42 @@ def _proc(returncode: int, stdout: str = "", stderr: str = "") -> subprocess.Com
 
 class TestCheckDraftIntegrity:
     def test_parses_zero_errors_zero_warnings(self):
-        with patch("scripts.promote_case_pipeline._run_capture") as mock_run:
+        with patch("scripts.cases.promote_case_pipeline._run_capture") as mock_run:
             mock_run.return_value = _proc(0, _INTEGRITY_OUTPUT_PASS)
             errors, warnings = check_draft_integrity(CASE_ID)
         assert errors == 0
         assert warnings == 0
 
     def test_parses_errors(self):
-        with patch("scripts.promote_case_pipeline._run_capture") as mock_run:
+        with patch("scripts.cases.promote_case_pipeline._run_capture") as mock_run:
             mock_run.return_value = _proc(1, _INTEGRITY_OUTPUT_WITH_ERRORS)
             errors, warnings = check_draft_integrity(CASE_ID)
         assert errors == 1
         assert warnings == 0
 
     def test_parses_warnings(self):
-        with patch("scripts.promote_case_pipeline._run_capture") as mock_run:
+        with patch("scripts.cases.promote_case_pipeline._run_capture") as mock_run:
             mock_run.return_value = _proc(0, _INTEGRITY_OUTPUT_WITH_WARNINGS)
             errors, warnings = check_draft_integrity(CASE_ID)
         assert errors == 0
         assert warnings == 2
 
     def test_fallback_on_nonzero_exit_without_parseable_output(self):
-        with patch("scripts.promote_case_pipeline._run_capture") as mock_run:
+        with patch("scripts.cases.promote_case_pipeline._run_capture") as mock_run:
             mock_run.return_value = _proc(1, "unexpected output")
             errors, warnings = check_draft_integrity(CASE_ID)
         assert errors == 1
         assert warnings == 0
 
     def test_no_error_on_clean_exit_without_summary_line(self):
-        with patch("scripts.promote_case_pipeline._run_capture") as mock_run:
+        with patch("scripts.cases.promote_case_pipeline._run_capture") as mock_run:
             mock_run.return_value = _proc(0, "No YAML files found")
             errors, warnings = check_draft_integrity(CASE_ID)
         assert errors == 0
         assert warnings == 0
 
     def test_passes_correct_args_to_check_source_integrity(self):
-        with patch("scripts.promote_case_pipeline._run_capture") as mock_run:
+        with patch("scripts.cases.promote_case_pipeline._run_capture") as mock_run:
             mock_run.return_value = _proc(0, _INTEGRITY_OUTPUT_PASS)
             check_draft_integrity("eu_foo_bar_2021")
         cmd = mock_run.call_args[0][0]
@@ -158,8 +158,8 @@ class TestMainPipelineAbortOnDraftIntegrityErrors:
     def test_abort_on_errors(self, capsys):
         mocks = _patch_all(integrity_stdout=_INTEGRITY_OUTPUT_WITH_ERRORS, integrity_rc=1)
         with (
-            patch("scripts.promote_case_pipeline._run_capture", mocks["run_capture"]),
-            patch("scripts.promote_case_pipeline._run", mocks["run"]),
+            patch("scripts.cases.promote_case_pipeline._run_capture", mocks["run_capture"]),
+            patch("scripts.cases.promote_case_pipeline._run", mocks["run"]),
         ):
             rc = main(["--case-id", CASE_ID, "--focus", FOCUS])
 
@@ -170,8 +170,8 @@ class TestMainPipelineAbortOnDraftIntegrityErrors:
     def test_abort_on_warnings(self, capsys):
         mocks = _patch_all(integrity_stdout=_INTEGRITY_OUTPUT_WITH_WARNINGS, integrity_rc=0)
         with (
-            patch("scripts.promote_case_pipeline._run_capture", mocks["run_capture"]),
-            patch("scripts.promote_case_pipeline._run", mocks["run"]),
+            patch("scripts.cases.promote_case_pipeline._run_capture", mocks["run_capture"]),
+            patch("scripts.cases.promote_case_pipeline._run", mocks["run"]),
         ):
             rc = main(["--case-id", CASE_ID, "--focus", FOCUS])
 
@@ -181,8 +181,8 @@ class TestMainPipelineAbortOnDraftIntegrityErrors:
     def test_abort_message_in_stderr(self, capsys):
         mocks = _patch_all(integrity_stdout=_INTEGRITY_OUTPUT_WITH_ERRORS, integrity_rc=1)
         with (
-            patch("scripts.promote_case_pipeline._run_capture", mocks["run_capture"]),
-            patch("scripts.promote_case_pipeline._run", mocks["run"]),
+            patch("scripts.cases.promote_case_pipeline._run_capture", mocks["run_capture"]),
+            patch("scripts.cases.promote_case_pipeline._run", mocks["run"]),
         ):
             main(["--case-id", CASE_ID, "--focus", FOCUS])
 
@@ -199,9 +199,9 @@ class TestMainPipelineHappyPath:
             return _proc(0)
 
         with (
-            patch("scripts.promote_case_pipeline._run_capture",
+            patch("scripts.cases.promote_case_pipeline._run_capture",
                   return_value=_proc(0, _INTEGRITY_OUTPUT_PASS)),
-            patch("scripts.promote_case_pipeline._run", side_effect=run_side_effect),
+            patch("scripts.cases.promote_case_pipeline._run", side_effect=run_side_effect),
         ):
             rc = main(["--case-id", CASE_ID, "--focus", FOCUS, "--overwrite"])
 
@@ -223,9 +223,9 @@ class TestMainPipelineHappyPath:
             return _proc(0)
 
         with (
-            patch("scripts.promote_case_pipeline._run_capture",
+            patch("scripts.cases.promote_case_pipeline._run_capture",
                   return_value=_proc(0, _INTEGRITY_OUTPUT_PASS)),
-            patch("scripts.promote_case_pipeline._run", side_effect=run_side_effect),
+            patch("scripts.cases.promote_case_pipeline._run", side_effect=run_side_effect),
         ):
             main(["--case-id", CASE_ID, "--focus", FOCUS, "--overwrite"])
 
@@ -240,9 +240,9 @@ class TestMainPipelineHappyPath:
             return _proc(0)
 
         with (
-            patch("scripts.promote_case_pipeline._run_capture",
+            patch("scripts.cases.promote_case_pipeline._run_capture",
                   return_value=_proc(0, _INTEGRITY_OUTPUT_PASS)),
-            patch("scripts.promote_case_pipeline._run", side_effect=run_side_effect),
+            patch("scripts.cases.promote_case_pipeline._run", side_effect=run_side_effect),
         ):
             main(["--case-id", CASE_ID, "--focus", FOCUS, "--procedure-stage", STAGE])
 
@@ -252,9 +252,9 @@ class TestMainPipelineHappyPath:
 
     def test_returns_zero_on_success(self):
         with (
-            patch("scripts.promote_case_pipeline._run_capture",
+            patch("scripts.cases.promote_case_pipeline._run_capture",
                   return_value=_proc(0, _INTEGRITY_OUTPUT_PASS)),
-            patch("scripts.promote_case_pipeline._run", return_value=_proc(0)),
+            patch("scripts.cases.promote_case_pipeline._run", return_value=_proc(0)),
         ):
             rc = main(["--case-id", CASE_ID, "--focus", FOCUS])
         assert rc == 0
@@ -270,9 +270,9 @@ class TestMainPipelineDownstreamFailures:
             return _proc(1 if counter[0] == fail_at else 0)
 
         with (
-            patch("scripts.promote_case_pipeline._run_capture",
+            patch("scripts.cases.promote_case_pipeline._run_capture",
                   return_value=_proc(0, _INTEGRITY_OUTPUT_PASS)),
-            patch("scripts.promote_case_pipeline._run", side_effect=run_side_effect),
+            patch("scripts.cases.promote_case_pipeline._run", side_effect=run_side_effect),
         ):
             return main(["--case-id", CASE_ID, "--focus", FOCUS, "--overwrite"])
 
@@ -307,9 +307,9 @@ class TestDryRun:
             return _proc(0)
 
         with (
-            patch("scripts.promote_case_pipeline._run_capture",
+            patch("scripts.cases.promote_case_pipeline._run_capture",
                   return_value=_proc(0, _INTEGRITY_OUTPUT_PASS)),
-            patch("scripts.promote_case_pipeline._run", side_effect=run_side_effect),
+            patch("scripts.cases.promote_case_pipeline._run", side_effect=run_side_effect),
         ):
             rc = main(["--case-id", CASE_ID, "--focus", FOCUS, "--dry-run"])
 
@@ -328,9 +328,9 @@ class TestDryRun:
             return _proc(0)
 
         with (
-            patch("scripts.promote_case_pipeline._run_capture",
+            patch("scripts.cases.promote_case_pipeline._run_capture",
                   return_value=_proc(0, _INTEGRITY_OUTPUT_PASS)),
-            patch("scripts.promote_case_pipeline._run", side_effect=run_side_effect),
+            patch("scripts.cases.promote_case_pipeline._run", side_effect=run_side_effect),
         ):
             main(["--case-id", CASE_ID, "--focus", FOCUS, "--dry-run", "--overwrite"])
 
@@ -341,8 +341,8 @@ class TestDryRun:
         run_capture_mock = MagicMock(return_value=_proc(0, _INTEGRITY_OUTPUT_PASS))
 
         with (
-            patch("scripts.promote_case_pipeline._run_capture", run_capture_mock),
-            patch("scripts.promote_case_pipeline._run", return_value=_proc(0)),
+            patch("scripts.cases.promote_case_pipeline._run_capture", run_capture_mock),
+            patch("scripts.cases.promote_case_pipeline._run", return_value=_proc(0)),
         ):
             main(["--case-id", CASE_ID, "--focus", FOCUS, "--dry-run"])
 
@@ -354,9 +354,9 @@ class TestDryRun:
         run_mock = MagicMock()
 
         with (
-            patch("scripts.promote_case_pipeline._run_capture",
+            patch("scripts.cases.promote_case_pipeline._run_capture",
                   return_value=_proc(1, _INTEGRITY_OUTPUT_WITH_ERRORS)),
-            patch("scripts.promote_case_pipeline._run", run_mock),
+            patch("scripts.cases.promote_case_pipeline._run", run_mock),
         ):
             rc = main(["--case-id", CASE_ID, "--focus", FOCUS, "--dry-run"])
 
@@ -394,10 +394,10 @@ class TestDraftFlagPassthrough:
             return _proc(0)
 
         with (
-            patch("scripts.promote_case_pipeline._run_capture",
+            patch("scripts.cases.promote_case_pipeline._run_capture",
                   return_value=_proc(0, _INTEGRITY_OUTPUT_PASS)),
-            patch("scripts.promote_case_pipeline._run", side_effect=run_side_effect),
-            patch("scripts.promote_case_pipeline.find_merged_draft", return_value=None),
+            patch("scripts.cases.promote_case_pipeline._run", side_effect=run_side_effect),
+            patch("scripts.cases.promote_case_pipeline.find_merged_draft", return_value=None),
         ):
             rc = main([
                 "--case-id", CASE_ID,
@@ -423,10 +423,10 @@ class TestDraftFlagPassthrough:
             return _proc(0)
 
         with (
-            patch("scripts.promote_case_pipeline._run_capture",
+            patch("scripts.cases.promote_case_pipeline._run_capture",
                   return_value=_proc(0, _INTEGRITY_OUTPUT_PASS)),
-            patch("scripts.promote_case_pipeline._run", side_effect=run_side_effect),
-            patch("scripts.promote_case_pipeline._DRAFTS_DIR", tmp_path),
+            patch("scripts.cases.promote_case_pipeline._run", side_effect=run_side_effect),
+            patch("scripts.cases.promote_case_pipeline._DRAFTS_DIR", tmp_path),
         ):
             rc = main(["--case-id", CASE_ID])
 
@@ -444,10 +444,10 @@ class TestDraftFlagPassthrough:
             return _proc(0)
 
         with (
-            patch("scripts.promote_case_pipeline._run_capture",
+            patch("scripts.cases.promote_case_pipeline._run_capture",
                   return_value=_proc(0, _INTEGRITY_OUTPUT_PASS)),
-            patch("scripts.promote_case_pipeline._run", side_effect=run_side_effect),
-            patch("scripts.promote_case_pipeline.find_merged_draft", return_value=None),
+            patch("scripts.cases.promote_case_pipeline._run", side_effect=run_side_effect),
+            patch("scripts.cases.promote_case_pipeline.find_merged_draft", return_value=None),
         ):
             rc = main(["--case-id", CASE_ID, "--focus", FOCUS])
 
@@ -471,10 +471,10 @@ class TestDraftFlagPassthrough:
             return _proc(0)
 
         with (
-            patch("scripts.promote_case_pipeline._run_capture",
+            patch("scripts.cases.promote_case_pipeline._run_capture",
                   return_value=_proc(0, _INTEGRITY_OUTPUT_PASS)),
-            patch("scripts.promote_case_pipeline._run", side_effect=run_side_effect),
-            patch("scripts.promote_case_pipeline._DRAFTS_DIR", tmp_path),
+            patch("scripts.cases.promote_case_pipeline._run", side_effect=run_side_effect),
+            patch("scripts.cases.promote_case_pipeline._DRAFTS_DIR", tmp_path),
         ):
             rc = main(["--case-id", CASE_ID, "--draft", explicit_draft])
 
@@ -485,10 +485,10 @@ class TestDraftFlagPassthrough:
     def test_summary_shows_draft_path(self, capsys):
         """Promotion summary must print the draft path being promoted."""
         with (
-            patch("scripts.promote_case_pipeline._run_capture",
+            patch("scripts.cases.promote_case_pipeline._run_capture",
                   return_value=_proc(0, _INTEGRITY_OUTPUT_PASS)),
-            patch("scripts.promote_case_pipeline._run", return_value=_proc(0)),
-            patch("scripts.promote_case_pipeline.find_merged_draft", return_value=None),
+            patch("scripts.cases.promote_case_pipeline._run", return_value=_proc(0)),
+            patch("scripts.cases.promote_case_pipeline.find_merged_draft", return_value=None),
         ):
             main([
                 "--case-id", CASE_ID,
@@ -502,9 +502,9 @@ class TestDraftFlagPassthrough:
 class TestSummaryOutput:
     def test_summary_printed_on_success(self, capsys):
         with (
-            patch("scripts.promote_case_pipeline._run_capture",
+            patch("scripts.cases.promote_case_pipeline._run_capture",
                   return_value=_proc(0, _INTEGRITY_OUTPUT_PASS)),
-            patch("scripts.promote_case_pipeline._run", return_value=_proc(0)),
+            patch("scripts.cases.promote_case_pipeline._run", return_value=_proc(0)),
         ):
             main(["--case-id", CASE_ID, "--focus", FOCUS])
 
@@ -514,9 +514,9 @@ class TestSummaryOutput:
 
     def test_summary_printed_on_abort(self, capsys):
         with (
-            patch("scripts.promote_case_pipeline._run_capture",
+            patch("scripts.cases.promote_case_pipeline._run_capture",
                   return_value=_proc(1, _INTEGRITY_OUTPUT_WITH_ERRORS)),
-            patch("scripts.promote_case_pipeline._run", return_value=_proc(0)),
+            patch("scripts.cases.promote_case_pipeline._run", return_value=_proc(0)),
         ):
             main(["--case-id", CASE_ID, "--focus", FOCUS])
 
