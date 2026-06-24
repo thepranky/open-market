@@ -13,31 +13,34 @@
 
 ```
 app/
-├── shared/
-│   ├── core/           # config.py, pg_client.py, neo4j_client.py
-│   ├── models/         # all Pydantic models (shared contracts)
-│   └── utils/          # pdf_extractor.py
+├── shared/                 # infrastructure only — not domain models
+│   ├── core/               # config.py, pg_client.py, neo4j_client.py
+│   ├── routers/            # health.py
+│   └── utils/              # pdf_extractor.py (used by cases pipeline + screening fetcher)
 ├── cases/
-│   ├── routers/        # cases, indexed_cases, search, graph, graph_entities
-│   ├── services/       # case_*, semantic_*, embedding_*, graph_*, source_fetcher
-│   └── loader/         # yaml_loader, index_loader, concept_loader, validator
-├── screening/
-│   ├── routers/        # jurisdictions.py (unchanged file, new path)
-│   └── services/       # threshold_engine, jurisdiction_*
-└── routers/
-    └── health.py       # stays at app level OR moves to shared/routers/
+│   ├── models/             # case.py, case_index.py, concept.py, api_responses.py
+│   ├── routers/            # cases, indexed_cases, search, graph, graph_entities
+│   ├── services/           # case_*, semantic_*, embedding_*, graph_*
+│   └── loader/             # yaml_loader, index_loader, concept_loader, validator
+└── screening/
+    ├── models/             # jurisdiction.py, jurisdiction_verification.py
+    ├── routers/            # jurisdictions.py
+    └── services/           # threshold_engine, jurisdiction_*, source_fetcher
 ```
 
-`main.py` imports from `app.cases.routers`, `app.screening.routers`, `app.shared` (or `app.routers.health`).
+`main.py` imports from `app.cases.routers`, `app.screening.routers`, `app.shared.routers`.
+
+**No `shared/models/`.** `CaseRecord` and `JurisdictionRule` are product-owned. Note: `SourcePassage` exists in both model files as **different schemas** (same name) — splitting models makes that explicit.
 
 ### Scripts — `apps/api/scripts/`
 
 ```
 scripts/
-├── cases/              # extract, ingest, promote, validate, check_source_*, eval, scrape, merge, review_learning
-├── screening/          # verify_jurisdiction_*, run_jurisdiction_verification, monitor_*, fix_jurisdiction_*
-└── shared/             # pipeline_profile.py (if used by both)
+├── cases/              # extract, ingest, promote, validate, pipeline_profile, …
+└── screening/          # verify_jurisdiction_*, run_jurisdiction_verification, …
 ```
+
+No `scripts/shared/`. `pipeline_profile.py` → `scripts/cases/` (extraction profiles only).
 
 ### Web — `apps/web/src/`
 
@@ -53,13 +56,20 @@ src/
 
 `features/cases/api.ts` and `features/screening/api.ts` replace monolithic `lib/api.ts`.
 
-### Data — no moves
+### Data — no moves (documented grouping)
+
+Top-level folders stay as-is. See [architecture/overview.md](../architecture/overview.md#data-layout) for case vs screening groupings.
 
 ```
-data/cases/ | data/drafts/ | data/case_index/ | data/jurisdictions/
+data/
+  # Case research blob
+  cases/ | drafts/ | case_index/ | source_text/ | concepts/
+  evals/ | pipeline_profiles/ | review_learning/ | batch_runs/
+  # Screening blob
+  jurisdictions/
 ```
 
-Already product-split. Do not restructure `data/`.
+Do not nest everything under `data/cases/` — high churn, and `drafts/` vs `cases/` sibling boundary is intentional.
 
 ---
 
@@ -82,12 +92,17 @@ Already product-split. Do not restructure `data/`.
 | `app/services/embedding_service.py` | `app/cases/services/embedding_service.py` |
 | `app/services/graph_service.py` | `app/cases/services/graph_service.py` |
 | `app/services/graph_entity_service.py` | `app/cases/services/graph_entity_service.py` |
-| `app/services/source_fetcher.py` | `app/cases/services/source_fetcher.py` |
+| `app/services/source_fetcher.py` | `app/screening/services/source_fetcher.py` |
 | `app/services/threshold_engine.py` | `app/screening/services/threshold_engine.py` |
 | `app/services/jurisdiction_*.py` | `app/screening/services/` |
 | `app/loader/*` | `app/cases/loader/*` |
 | `app/core/*` | `app/shared/core/*` |
-| `app/models/*` | `app/shared/models/*` |
+| `app/models/case.py` | `app/cases/models/case.py` |
+| `app/models/case_index.py` | `app/cases/models/case_index.py` |
+| `app/models/concept.py` | `app/cases/models/concept.py` |
+| `app/models/api_responses.py` | `app/cases/models/api_responses.py` |
+| `app/models/jurisdiction.py` | `app/screening/models/jurisdiction.py` |
+| `app/models/jurisdiction_verification.py` | `app/screening/models/jurisdiction_verification.py` |
 | `app/utils/*` | `app/shared/utils/*` |
 
 Update all `from app.` imports in `app/`, `tests/`, `scripts/`, `main.py`.
@@ -100,12 +115,10 @@ cd apps/api && .venv/bin/python -m pytest tests/ -v && .venv/bin/ruff check .
 ### PR 2 — Script subdirs (`3b`)
 
 **`scripts/cases/`:**  
-`extract_case_from_source`, `ingest_case`, `promote_*`, `validate_*`, `check_source_*`, `check_review_readiness`, `check_case_index_sources`, `review_draft`, `merge_drafts`, `run_bulk_extraction`, `run_controlled_case`, `run_unit_assessment_batch`, `plan_*`, `create_gold_draft`, `repair_*`, `evaluate_extraction`, `run_eval_benchmark`, `create_review_learning_log`, `apply_review_learning`, `bulk_promote_pass`, `index_embeddings`, `scrape_*`, `resolve_*`
+`extract_case_from_source`, `ingest_case`, `promote_*`, `validate_*`, `check_source_*`, `check_review_readiness`, `check_case_index_sources`, `review_draft`, `merge_drafts`, `run_bulk_extraction`, `run_controlled_case`, `run_unit_assessment_batch`, `plan_*`, `create_gold_draft`, `repair_*`, `evaluate_extraction`, `run_eval_benchmark`, `create_review_learning_log`, `apply_review_learning`, `bulk_promote_pass`, `index_embeddings`, `scrape_*`, `resolve_*`, **`pipeline_profile.py`**
 
 **`scripts/screening/`:**  
 `run_jurisdiction_verification`, `verify_jurisdiction_*`, `monitor_jurisdiction_staleness`, `fix_jurisdiction_redirects`, `insert_minority_thresholds`, `report_jurisdiction_verification_baseline`
-
-**`scripts/shared/` (optional):** `pipeline_profile.py`
 
 Update: `promote_case_pipeline.py` subprocess paths, CI workflows, docs command blocks, DDR/script references.
 
@@ -138,7 +151,8 @@ cd apps/web && npm run lint && npm run build
 | Rename `Juris.tsx`, `jurisdiction_count` | Needs DDR-G; cosmetic + import churn |
 | `data_jurisdictions_path` config key | Small spec after screening package exists |
 | Neo4j / `graph/` removal | DDR-C decision |
-| `data/` tree | Already correct |
+| `data/` tree | Paths stable; grouping documented in overview |
+| Flatten `apps/` to root `api/` + `web/` | Unrelated churn; revisit only if monorepo grows |
 | Two repos or npm packages | Overkill |
 | CI workflow expansion | `ROADMAP` phase 2 spec |
 
@@ -163,7 +177,7 @@ Update paths in the same PR as each phase (or immediately after). Checklist:
 
 | File | What to update |
 |------|----------------|
-| `docs/architecture/decisions/ddr-a-data-contracts.md` | `Before you start` paths → `app/shared/models/`, `app/cases/loader/` |
+| `docs/architecture/decisions/ddr-a-data-contracts.md` | `Before you start` → `app/cases/models/`, `app/screening/models/`, `app/cases/loader/` |
 | `ddr-b-extraction-pipeline.md` | services/loader references |
 | `ddr-c-search-graph.md` | routers + services paths |
 | `ddr-d-threshold-engine.md` | `app/screening/services/threshold_engine.py` |

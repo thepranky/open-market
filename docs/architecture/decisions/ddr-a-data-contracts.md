@@ -5,7 +5,7 @@
 ## Before you start
 
 Read/trace:
-- `apps/api/app/models/case.py`, `jurisdiction.py`, `case_index.py`
+- `apps/api/app/cases/models/case.py`, `app/screening/models/jurisdiction.py`, `case_index.py` (post-restructure paths; until PR 1: `app/models/`)
 - `data/cases/` (one EU example), `data/jurisdictions/_schema.md`
 - `docs/data/source-integrity.md`
 - `apps/api/app/loader/validator.py`

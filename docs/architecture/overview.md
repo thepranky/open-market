@@ -1,8 +1,9 @@
 # Architecture overview
 
-CompMap is a monorepo with two products sharing one FastAPI backend and one Next.js
-frontend. **YAML under `data/` is the source of truth.** Postgres/pgvector is a derived
-store for case semantic search only. Neo4j graph code is legacy and optional.
+Meridian is a monorepo (`open-market`) with two products sharing one FastAPI backend
+(`apps/api`) and one Next.js frontend (`apps/web`). **YAML under `data/` is the source
+of truth.** Postgres/pgvector is a derived store for case semantic search only. Neo4j
+graph code is legacy and optional.
 
 ```mermaid
 flowchart TB
@@ -11,42 +12,96 @@ flowchart TB
         Screen["/screen /jurisdictions"]
     end
     subgraph api [apps/api]
-        CaseRouters[cases search graph]
-        JurisRouters[jurisdictions screen chat]
-        Threshold[threshold_engine]
-        Pipeline[scripts/ pipeline]
+        CasePkg[cases package]
+        ScreenPkg[screening package]
+        SharedPkg[shared infra]
     end
-    subgraph data [data/]
-        Cases[cases drafts case_index]
+    subgraph dataCase [Case research data]
+        Cases[cases drafts case_index source_text evals]
+    end
+    subgraph dataScreen [Screening data]
         Juris[jurisdictions]
     end
     subgraph derived [Derived stores]
         PG[(Postgres pgvector)]
         Neo4j[(Neo4j optional)]
     end
-    Explore --> CaseRouters
-    Screen --> JurisRouters
-    CaseRouters --> Cases
-    JurisRouters --> Threshold
-    Threshold --> Juris
-    CaseRouters --> PG
-    Pipeline --> Cases
-    CaseRouters -.-> Neo4j
+    Explore --> CasePkg
+    Screen --> ScreenPkg
+    CasePkg --> Cases
+    ScreenPkg --> Juris
+    CasePkg --> PG
+    CasePkg -.-> Neo4j
+    SharedPkg --> CasePkg
+    SharedPkg --> ScreenPkg
 ```
 
 ## Products
 
-| Product | User-facing routes | Canonical data | Core logic |
-|---------|-------------------|----------------|------------|
-| **Case research** | `/explore`, `/graph`, `/cases`, `/indexed-cases` | `data/cases/`, `data/case_index/` | Loaders, semantic search, graph services |
-| **Jurisdiction screening** | `/jurisdictions`, `/screen` | `data/jurisdictions/` | `threshold_engine.py`, verification services |
+| Product | User-facing routes | Primary data | Core logic |
+|---------|-------------------|--------------|------------|
+| **Case research** | `/explore`, `/graph`, `/cases`, `/indexed-cases` | See [case research blob](#case-research-blob) | Loaders, semantic search, graph services |
+| **Jurisdiction screening** | `/jurisdictions`, `/screen` | See [screening blob](#screening-blob) | `threshold_engine.py`, verification services |
 
-## Layering (backend)
+## Data layout
+
+Top-level `data/` folders are **not** nested under two parents — paths stay stable.
+Group them mentally (and in code ownership) as two blobs:
+
+### Case research blob
+
+| Path | Role |
+|------|------|
+| `data/cases/` | Canonical reviewed `CaseRecord` YAML |
+| `data/drafts/` | AI extraction output — **never auto-promoted** |
+| `data/case_index/` | Lighter discovery metadata (`CaseIndexEntry`) |
+| `data/source_text/` | Cached PDF text for quote integrity checks |
+| `data/concepts/` | Shared concept nodes for graph views |
+| `data/evals/` | Gold fixtures and extraction benchmarks |
+| `data/pipeline_profiles/` | Per-jurisdiction/doc-type extraction config |
+| `data/pipeline_rules/` | Pipeline rule helpers |
+| `data/review_learning/` | Human correction deltas from promotion |
+| `data/batch_runs/` | Batch extraction run metadata |
+
+**Critical boundary:** `drafts/` → human review → `cases/` via `promote_case_pipeline.py` only.
+
+### Screening blob
+
+| Path | Role |
+|------|------|
+| `data/jurisdictions/*.yaml` | Threshold profiles (`JurisdictionRule`) |
+| `data/jurisdictions/_schema.md` | Field reference |
+| `data/jurisdictions/_archetypes.yaml` | Completeness rules by regime type |
+| `data/jurisdictions/_gold_deals.yaml` | Regression deals for threshold engine |
+
+Screening reads YAML in memory — no database table for jurisdiction data.
+
+## Code layout (target after restructure)
+
+See `docs/specs/restructure-layout.md` for the full move list.
+
+```
+apps/api/app/
+  shared/       # config, pg_client, health, pdf_extractor — infrastructure only
+  cases/        # models, routers, services, loader
+  screening/    # models, routers, services (incl. source_fetcher)
+
+apps/api/scripts/
+  cases/        # extraction, promotion, validation, pipeline_profile
+  screening/    # jurisdiction verification
+
+apps/web/src/features/
+  cases/ | screening/
+```
+
+Domain models are **not** in `shared/` — `CaseRecord` under `cases/models/`, `JurisdictionRule` under `screening/models/`.
+
+## Layering (backend, today)
 
 ```
 routers/  →  services/  →  loader/ (cases) | threshold_engine (jurisdictions)
                 ↓
-           models/ (Pydantic contracts)
+           models/ (Pydantic — moving to product packages)
                 ↓
            data/*.yaml
 ```
@@ -60,13 +115,15 @@ routers/  →  services/  →  loader/ (cases) | threshold_engine (jurisdictions
 
 ## Key boundaries
 
-- **Draft vs canonical:** AI writes `data/drafts/` only; `promote_case_pipeline.py` is the only promotion path.
-- **Indexed vs canonical cases:** `case_index/` is lighter metadata; `cases/` is fully reviewed records.
+- **Draft vs canonical:** AI writes `data/drafts/` only.
+- **Indexed vs canonical cases:** `case_index/` is discovery metadata; `cases/` is fully reviewed records.
 - **Screening has no DB:** threshold evaluation is in-memory over YAML.
+- **Shared code:** infra only — not domain models or business rules.
 
 ## Further reading
 
 - [case-research.md](case-research.md)
 - [jurisdiction-screening.md](jurisdiction-screening.md)
+- [specs/restructure-layout.md](../specs/restructure-layout.md)
 - [operations/ingestion.md](../operations/ingestion.md)
 - [operations/jurisdiction-verification.md](../operations/jurisdiction-verification.md)
