@@ -59,7 +59,7 @@ _REPO_ROOT = _API_DIR.parents[1]
 
 sys.path.insert(0, str(_API_DIR))
 
-from app.loader.yaml_loader import load_yaml_file
+from app.cases.loader.yaml_loader import load_yaml_file
 
 # ---------------------------------------------------------------------------
 # Fields that belong only in drafts
@@ -328,7 +328,7 @@ def validate_canonical_dict(record: dict) -> tuple[bool, str]:
     """
     try:
         from pydantic import ValidationError
-        from app.models import CaseRecord
+        from app.cases.models import CaseRecord
         CaseRecord.model_validate(record)
         return True, ""
     except Exception as exc:

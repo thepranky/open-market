@@ -254,7 +254,7 @@ def stage_fetch_source(
         )
 
     try:
-        from app.utils.pdf_extractor import fetch_and_extract, save_cache
+        from app.shared.utils.pdf_extractor import fetch_and_extract, save_cache
         import httpx
 
         with httpx.Client(follow_redirects=True, timeout=90) as client:

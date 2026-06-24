@@ -52,7 +52,7 @@ for _p in (str(_API_DIR), str(_SCRIPTS_DIR)):
 
 import yaml
 
-from app.utils.pdf_extractor import DEFAULT_CACHE_DIR
+from app.shared.utils.pdf_extractor import DEFAULT_CACHE_DIR
 from extract_case_from_source import _resolve_canonical_yaml, extract_case
 from plan_extraction_ranges import (
     ProbeWindow,

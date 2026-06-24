@@ -20,7 +20,7 @@ import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from app.models.case_index import CaseIndexEntry
+from app.cases.models.case_index import CaseIndexEntry
 from scripts.check_case_index_sources import (
     CaseResult,
     CheckItem,

@@ -75,7 +75,7 @@ sys.path.insert(0, str(_API_DIR))
 sys.path.insert(0, str(_API_DIR / "scripts"))
 
 from validate_gold_quotes import validate_gold_passages
-from app.utils.pdf_extractor import DEFAULT_CACHE_DIR
+from app.shared.utils.pdf_extractor import DEFAULT_CACHE_DIR
 
 _MAX_CANDIDATES = 5  # nearest-draft-candidates limit per FN
 

@@ -76,7 +76,7 @@ _API_DIR = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(_API_DIR))
 sys.path.insert(0, str(Path(__file__).parent))
 
-from app.utils.pdf_extractor import DEFAULT_CACHE_DIR, load_cache
+from app.shared.utils.pdf_extractor import DEFAULT_CACHE_DIR, load_cache
 from create_gold_draft import (
     _FoldedStr,
     _build_market_id_index,

@@ -46,7 +46,7 @@ try:
 except ImportError:
     pass
 
-from app.utils.pdf_extractor import DEFAULT_CACHE_DIR, iter_pages, load_cache
+from app.shared.utils.pdf_extractor import DEFAULT_CACHE_DIR, iter_pages, load_cache
 from check_source_integrity import quote_found_in_text
 from pipeline_profile import select_profile
 from repair_source_passages import _extract_section_map, _is_toc_page

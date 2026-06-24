@@ -1,6 +1,6 @@
 # DDR-0: Repository layout
 
-**Status:** draft | **Date:**
+**Status:** accepted | **Date:** 2026-06-24
 
 ## Decision
 

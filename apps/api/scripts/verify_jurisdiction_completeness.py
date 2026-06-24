@@ -16,7 +16,7 @@ ARCHETYPES_PATH = DATA_DIR / "_archetypes.yaml"
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from app.services.jurisdiction_completeness import (
+from app.screening.services.jurisdiction_completeness import (
     build_sidecar_update,
     evaluate_all,
     load_sidecar,

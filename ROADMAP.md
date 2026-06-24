@@ -6,8 +6,8 @@ See [`.cursor/rules/meridian.mdc`](.cursor/rules/meridian.mdc) for spec-driven w
 | Phase | Step | What | Files / areas | Why | How |
 |-------|------|------|---------------|-----|-----|
 | **0 Docs** | 0.1 | Doc consolidation | `docs/`, `README.md`, `CLAUDE.md` | Single source of truth for onboarding | Done |
-| | 0.2 | Layout spec + DDR-0 | `docs/specs/restructure-layout.md`, `ddr-0-repo-layout.md` | Clear boundaries before deep-dives | Done — review then PR 1 |
-| **1 Restructure** | 1.1 | API packages (`cases/`, `screening/`, `shared/`) | `apps/api/app/` | Learnable module boundaries | Spec: restructure-layout PR 1 |
+| | 0.2 | Layout spec + DDR-0 | `docs/specs/restructure-layout.md`, `ddr-0-repo-layout.md` | Clear boundaries before deep-dives | Done |
+| **1 Restructure** | 1.1 | API packages (`cases/`, `screening/`, `shared/`) | `apps/api/app/` | Learnable module boundaries | Done (PR 1) |
 | | 1.2 | Script subdirs | `apps/api/scripts/` | Pipeline discoverability | PR 2 |
 | | 1.3 | Web feature folders | `apps/web/src/features/` | Frontend boundaries | PR 3 |
 | **2 Understand** | 2.1–2.9 | DDR deep-dives (0, A–I) | `docs/architecture/decisions/` | Defensible understanding | 1 day each; after restructure |

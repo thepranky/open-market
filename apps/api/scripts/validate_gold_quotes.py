@@ -39,7 +39,7 @@ import yaml
 _API_DIR = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(_API_DIR))
 
-from app.utils.pdf_extractor import DEFAULT_CACHE_DIR, load_cache
+from app.shared.utils.pdf_extractor import DEFAULT_CACHE_DIR, load_cache
 
 
 # ---------------------------------------------------------------------------

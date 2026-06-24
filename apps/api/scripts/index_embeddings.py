@@ -17,10 +17,10 @@ import asyncpg
 import numpy as np
 from pgvector.asyncpg import register_vector
 
-from app.core.config import settings
-from app.core.pg_client import close_pool, get_pool
-from app.services.case_service import get_all_cases
-from app.services.embedding_service import embed_text
+from app.shared.core.config import settings
+from app.shared.core.pg_client import close_pool, get_pool
+from app.cases.services.case_service import get_all_cases
+from app.cases.services.embedding_service import embed_text
 
 
 def _vec(values: list[float]) -> np.ndarray:

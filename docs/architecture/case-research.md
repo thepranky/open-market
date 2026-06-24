@@ -20,11 +20,11 @@ and graph views.
 
 | Layer | Key files |
 |-------|-----------|
-| Contract | `app/models/case.py`, `case_index.py` |
-| Loaders | `app/loader/yaml_loader.py`, `index_loader.py`, `validator.py` |
-| Services | `case_service.py`, `index_case_service.py`, `semantic_search_service.py`, `embedding_service.py`, `graph_service.py`, `graph_entity_service.py` |
-| Routers | `cases.py`, `indexed_cases.py`, `search.py`, `graph.py`, `graph_entities.py` |
-| Derived store | `core/pg_client.py`, `migrations/001_create_vector_schema.sql` |
+| Contract | `app/cases/models/case.py`, `case_index.py` |
+| Loaders | `app/cases/loader/yaml_loader.py`, `index_loader.py`, `validator.py` |
+| Services | `app/cases/services/case_service.py`, `index_case_service.py`, `semantic_search_service.py`, `embedding_service.py`, `graph_service.py`, `graph_entity_service.py` |
+| Routers | `app/cases/routers/cases.py`, `indexed_cases.py`, `search.py`, `graph.py`, `graph_entities.py` |
+| Derived store | `app/shared/core/pg_client.py`, `migrations/001_create_vector_schema.sql` |
 
 ## Pipeline (scripts)
 

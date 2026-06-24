@@ -12,7 +12,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from app.loader.validator import validate_all
+from app.cases.loader.validator import validate_all
 
 
 def main():

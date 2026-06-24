@@ -52,7 +52,7 @@ try:
 except ImportError:
     pass
 
-from app.utils.pdf_extractor import DEFAULT_CACHE_DIR, fetch_and_extract
+from app.shared.utils.pdf_extractor import DEFAULT_CACHE_DIR, fetch_and_extract
 from check_source_integrity import Level, check_record
 from extract_case_from_source import (
     ExtractionReport,

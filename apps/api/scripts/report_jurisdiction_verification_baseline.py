@@ -15,7 +15,7 @@ DEFAULT_OUTPUT = REPO_ROOT / "docs" / "jurisdiction-verification-baseline.md"
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from app.services.jurisdiction_baseline import compute_baseline_report, render_baseline_markdown
+from app.screening.services.jurisdiction_baseline import compute_baseline_report, render_baseline_markdown
 
 
 def main() -> int:

@@ -76,22 +76,13 @@ Group them mentally (and in code ownership) as two blobs:
 
 Screening reads YAML in memory — no database table for jurisdiction data.
 
-## Code layout (target after restructure)
-
-See `docs/specs/restructure-layout.md` for the full move list.
+## Code layout (after PR 1)
 
 ```
 apps/api/app/
-  shared/       # config, pg_client, health, pdf_extractor — infrastructure only
+  shared/       # core/config, pg_client, health, pdf_extractor
   cases/        # models, routers, services, loader
-  screening/    # models, routers, services (incl. source_fetcher)
-
-apps/api/scripts/
-  cases/        # extraction, promotion, validation, pipeline_profile
-  screening/    # jurisdiction verification
-
-apps/web/src/features/
-  cases/ | screening/
+  screening/    # models, routers, services
 ```
 
 Domain models are **not** in `shared/` — `CaseRecord` under `cases/models/`, `JurisdictionRule` under `screening/models/`.

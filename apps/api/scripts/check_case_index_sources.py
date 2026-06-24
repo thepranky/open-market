@@ -29,8 +29,8 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 DEFAULT_INDEX_DIR = REPO_ROOT / "data" / "case_index"
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from app.loader.index_loader import load_all_index_cases
-from app.models.case_index import CaseIndexEntry
+from app.cases.loader.index_loader import load_all_index_cases
+from app.cases.models.case_index import CaseIndexEntry
 
 HEADERS = {
     "User-Agent": "CompMap-IndexChecker/1.0 (open-source research tool; contact: open-market)",

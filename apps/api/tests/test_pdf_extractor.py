@@ -14,7 +14,7 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from app.utils.pdf_extractor import (
+from app.shared.utils.pdf_extractor import (
     DEFAULT_CACHE_DIR,
     extract_pages,
     fetch_and_extract,

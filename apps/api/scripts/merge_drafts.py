@@ -791,7 +791,7 @@ def _validate_merged(record: dict) -> tuple[bool, str]:
         }
 
     try:
-        from app.models import CaseRecord
+        from app.cases.models import CaseRecord
         CaseRecord.model_validate(candidate)
         return True, ""
     except Exception as exc:

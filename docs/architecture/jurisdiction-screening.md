@@ -16,10 +16,10 @@ source verification and deal-intake chat.
 
 | Layer | Key files |
 |-------|-----------|
-| Contract | `app/models/jurisdiction.py`, `jurisdiction_verification.py` |
-| Engine | `app/services/threshold_engine.py` (loads YAML inline — not via `app/loader/`) |
-| Verification | `jurisdiction_completeness.py`, `jurisdiction_passages.py`, `jurisdiction_staleness.py`, `jurisdiction_regression.py`, `jurisdiction_data_service.py` |
-| Router | `app/routers/jurisdictions.py` (screening + chat + CRUD) |
+| Contract | `app/screening/models/jurisdiction.py`, `jurisdiction_verification.py` |
+| Engine | `app/screening/services/threshold_engine.py` (loads YAML inline) |
+| Verification | `app/screening/services/jurisdiction_*.py`, `source_fetcher.py` |
+| Router | `app/screening/routers/jurisdictions.py` |
 
 ## Threshold engine
 

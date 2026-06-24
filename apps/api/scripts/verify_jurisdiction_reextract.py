@@ -14,8 +14,8 @@ DATA_DIR = REPO_ROOT / "data" / "jurisdictions"
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from app.services.jurisdiction_regression import diff_reextract
-from app.services.threshold_engine import load_all_jurisdictions, load_jurisdiction
+from app.screening.services.jurisdiction_regression import diff_reextract
+from app.screening.services.threshold_engine import load_all_jurisdictions, load_jurisdiction
 
 
 def main() -> int:

@@ -14,8 +14,8 @@ ANCHORS_PATH = DATA_DIR / "_staleness_anchors.yaml"
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from app.models.jurisdiction_verification import FreshnessStatus
-from app.services.jurisdiction_staleness import evaluate_all, load_anchors, update_sidecar_freshness
+from app.screening.models.jurisdiction_verification import FreshnessStatus
+from app.screening.services.jurisdiction_staleness import evaluate_all, load_anchors, update_sidecar_freshness
 
 
 def main() -> int:

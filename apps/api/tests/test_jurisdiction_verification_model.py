@@ -15,8 +15,8 @@ ARCHETYPES_PATH = DATA_DIR / "_archetypes.yaml"
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from app.models.jurisdiction import SourceType
-from app.models.jurisdiction_verification import (
+from app.screening.models.jurisdiction import SourceType
+from app.screening.models.jurisdiction_verification import (
     ArchetypeConfig,
     FreshnessStatus,
     GateStatus,
@@ -24,7 +24,7 @@ from app.models.jurisdiction_verification import (
     RegressionStatus,
     SourceVerificationTier,
 )
-from app.services.jurisdiction_baseline import compute_baseline_report
+from app.screening.services.jurisdiction_baseline import compute_baseline_report
 
 
 def test_sidecar_example_loads():
@@ -95,7 +95,7 @@ def test_baseline_report_serializes():
 
 
 def test_authoritative_source_types_exclude_practitioner():
-    from app.models.jurisdiction_verification import AUTHORITATIVE_SOURCE_TYPES
+    from app.screening.models.jurisdiction_verification import AUTHORITATIVE_SOURCE_TYPES
 
     assert SourceType.practitioner not in AUTHORITATIVE_SOURCE_TYPES
     assert SourceType.primary_legislation in AUTHORITATIVE_SOURCE_TYPES

@@ -6,13 +6,13 @@ from pathlib import Path
 
 import pytest
 
-from app.services.jurisdiction_regression import (
+from app.screening.services.jurisdiction_regression import (
     _extract_from_passages,
     diff_reextract,
     load_gold_deals,
     run_gold_deal,
 )
-from app.services.threshold_engine import load_jurisdiction
+from app.screening.services.threshold_engine import load_jurisdiction
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 DATA_DIR = REPO_ROOT / "data" / "jurisdictions"
