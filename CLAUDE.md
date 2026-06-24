@@ -112,5 +112,4 @@ step work, state a brief plan with a verify step each.
 
 - `README.md` — onboarding
 - `docs/architecture/overview.md` — system map
-- `docs/specs/2026-06-24-restructure-layout.md` — repo layout reference (completed 2026-06-24)
 - `ROADMAP.md` — phased work to production
