@@ -1,14 +1,18 @@
-# Jurisdiction Verification Build — Planning & Implementation Guide
+# Jurisdiction verification
 
-*Created 2026-06-20. Reference doc for the automated jurisdiction profile verification programme.*
+Reference for the automated jurisdiction profile verification programme. Profiles
+live in `data/jurisdictions/*.yaml`; verification is orchestrated by
+`apps/api/scripts/run_jurisdiction_verification.py` (tiers: `push`, `nightly`, `full`).
 
 ---
 
 ## Purpose
 
-CompMap has 47 jurisdiction YAML profiles covering merger control thresholds, regime flags, review periods, gun-jumping, FDI screening, and practical nuance. These were largely produced by research agents. Before lawyers can rely on screening results for first-instance transaction review, each profile must be **machine-verified against authoritative sources** — not manually lawyer-reviewed, but grounded with explicit source-verification tiers.
-
-This document is the single reference for scope, architecture, PR plan, and acceptance criteria. **Do not start implementation until this doc is signed off.**
+CompMap maintains ~60 jurisdiction YAML profiles covering merger control thresholds,
+regime flags, review periods, gun-jumping, FDI screening, and practitioner nuance.
+Before lawyers rely on screening results for first-instance transaction review, each
+profile must be **machine-verified against authoritative sources** — grounded with
+explicit source-verification tiers, not assumed accurate from research alone.
 
 ---
 

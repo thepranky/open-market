@@ -205,7 +205,7 @@ The pipeline will, in order:
 3. Run `validate_cases.py` (Pydantic schema validation on all canonical records).
 4. Run `check_source_links.py` (live URL liveness check on canonical records).
 5. Run `check_source_integrity.py --no-cache` (quote/locator checks on canonical).
-6. Run `graph/seed_graph.py` (seed Neo4j with the updated case set).
+6. Run `graph/seed_graph.py` (optional Neo4j seed; graph routes fall back to YAML if Neo4j is unavailable).
 7. Run `create_review_learning_log.py` (capture human corrections as a delta log).
 8. Run `apply_review_learning.py` (aggregate proposals from all learning logs).
 

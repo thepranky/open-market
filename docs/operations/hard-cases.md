@@ -1,17 +1,14 @@
-# Hard-Case Merged-Draft Review Checklist
+# Hard-case merged-draft review
 
 Use this checklist when reviewing a merged draft assembled from multiple extraction
-passes on a long decision (typically 400+ pages). It complements
-`human-promotion-checklist.md`, which covers the standard case promotion workflow.
-Run this checklist **before** opening `human-promotion-checklist.md`.
+passes on a long decision (typically 400+ pages). Run it **before**
+[`promotion-checklist.md`](promotion-checklist.md).
 
-Hard cases are long decisions that required multi-pass extraction:
-- Multiple `market_definition` focus passes covering different page ranges
-- One or more `theories` focus passes for each major theory cluster
-- A `unit_assessment` batch covering many repeated sub-markets (crops, routes,
-  indications, countries)
-- One or more `remedies` focus passes
-- A final `merge_drafts.py` run assembling all component drafts
+Hard cases require multi-pass extraction: multiple `market_definition` focus passes,
+`theories` passes, `unit_assessment` batches, `remedies` passes, and a final
+`merge_drafts.py` run. The pipeline was designed for Phase I / short Phase II
+decisions; mega-mergers expose batch page caps and embedded market-analysis
+structures. See **Multi-focus design** at the end of this doc.
 
 ---
 
@@ -86,7 +83,7 @@ For each orphaned entry:
 No entry should remain at `unknown` after the pre-review cleanup. If any remain:
 
 - [ ] Locate the Commission's actual language in the source decision
-- [ ] Apply the mapping table in `human-promotion-checklist.md § Step 2`
+- [ ] Apply the mapping table in `promotion-checklist.md` Step 2
 - [ ] If the text cannot be found (passage genuinely missing), use `discussed` with
       a note explaining what evidence is absent
 
@@ -211,7 +208,7 @@ The most common role misuse in hard cases:
 
 ## 7 — Promotion blockers
 
-Do not proceed to `human-promotion-checklist.md` until all blockers are resolved:
+Do not proceed to `promotion-checklist.md` until all blockers are resolved:
 
 | Blocker | Resolution |
 |---------|-----------|
