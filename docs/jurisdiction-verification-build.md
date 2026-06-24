@@ -6,7 +6,7 @@
 
 ## Purpose
 
-CompMap has 47 jurisdiction YAML profiles covering merger control thresholds, regime flags, review periods, gun-jumping, FDI screening, and practical nuance. These were largely produced by research agents. Before lawyers can rely on screening results for first-instance transaction review, each profile must be **machine-verified against primary sources** — not manually lawyer-reviewed, but grounded with explicit confidence tiers.
+CompMap has 47 jurisdiction YAML profiles covering merger control thresholds, regime flags, review periods, gun-jumping, FDI screening, and practical nuance. These were largely produced by research agents. Before lawyers can rely on screening results for first-instance transaction review, each profile must be **machine-verified against authoritative sources** — not manually lawyer-reviewed, but grounded with explicit source-verification tiers.
 
 This document is the single reference for scope, architecture, PR plan, and acceptance criteria. **Do not start implementation until this doc is signed off.**
 
@@ -25,6 +25,26 @@ This document is the single reference for scope, architecture, PR plan, and acce
 | **Maintenance** | `fix_jurisdiction_redirects.py`, `insert_minority_thresholds.py` |
 | **UI** | Chat intake (`/screen`), jurisdiction detail pages, `last_verified` dates |
 
+### Baseline data coverage snapshot
+
+Measured locally on 2026-06-20:
+
+| Metric | Count |
+|--------|-------|
+| Jurisdiction YAML profiles | 47 |
+| Threshold conditions | 163 |
+| Conditions with `source_type: primary_legislation` | 119 |
+| Conditions with direct `source_url` | 17 |
+| `source_passages[]` entries | 60 |
+| Condition IDs supported by passages | 103 |
+| Primary-legislation conditions missing passage support | 46 |
+| Jurisdictions with no `source_passages` | 10 |
+| Annual-adjustment threshold tests | 12 |
+
+Jurisdictions currently lacking `source_passages`: `cl`, `cz`, `dk`, `gr`, `hu`, `id`, `pe`, `ph`, `pt`, `ro`.
+
+This means v1 is partly an automation build and partly a data-remediation programme. The verification gates are expected to fail many profiles initially; that is useful output, not implementation failure.
+
 ### What is missing
 
 | Gap | Risk |
@@ -35,6 +55,7 @@ This document is the single reference for scope, architecture, PR plan, and acce
 | Logic correctness | Engine may mis-evaluate even with correct YAML |
 | Staleness | Annual-adjustment jurisdictions (e.g. US HSR) drift without detection |
 | Confidence surfacing | UI treats all fields as equally reliable |
+| Confidence semantics | Existing `confidence` means deal-input sufficiency / close-call risk, not legal-source reliability |
 
 ### Precedent in this repo
 
@@ -51,31 +72,62 @@ The case ingestion pipeline already solves a similar problem:
 
 ## Quality model
 
-### Verification tiers
+### Three separate signals
 
-Every jurisdiction profile (and optionally every field) carries a tier. Screening confidence is capped by the **lowest tier among fields used in that result**.
+Do **not** overload the existing screening `confidence` field. Today `confidence` is calculated in `threshold_engine.py` from missing deal inputs and close-call thresholds. It should remain transaction-specific, or be renamed to `screening_confidence`.
+
+The build adds three separate legal-data signals:
+
+| Signal | Meaning | Where surfaced |
+|--------|---------|----------------|
+| `source_verification_tier` | Whether YAML facts are grounded in authoritative source text | Sidecar, API, UI badges |
+| `regression_status` | Whether known deal fixtures produce expected screening results | Sidecar, CI |
+| `freshness_status` | Whether annual-adjustment and recently updated regimes are current | Sidecar, UI stale badge |
+
+Product rule: a result may still have `screening_confidence: high` because the transaction inputs are complete and not close to thresholds, but the UI must separately show if `source_verification_tier < 2` or `freshness_status != fresh`.
+
+### Source verification tiers
+
+Every jurisdiction profile, and eventually every hard-fact field, carries a source-verification tier.
 
 | Tier | Name | Meaning | Automated gate |
 |------|------|---------|----------------|
-| 0 | `schema_valid` | Pydantic load + URL live | Existing schema + `verify_jurisdiction_urls.py` |
-| 1 | `passages_grounded` | All primary-legislation conditions have verbatim quotes found in linked sources | `verify_jurisdiction_passages.py` |
-| 2 | `numbers_confirmed` | Extracted numbers from passages match condition values | Same script, numeric pass |
-| 3 | `structure_complete` | Archetype checklist satisfied; condition↔passage linkage enforced | `verify_jurisdiction_completeness.py` |
-| 4 | `cross_checked` | Independent re-extraction agrees on all numeric conditions | `verify_jurisdiction_reextract.py` |
-| 5 | `regression_passed` | Gold deal suite passes for jurisdiction archetype | `test_jurisdiction_regression.py` |
-| 6 | `fresh` | Staleness monitor green (<6 months, or post official update) | `monitor_jurisdiction_staleness.py` |
+| 0 | `schema_valid` | Pydantic load passes; URLs are present/live or explicitly unreachable/bot-protected | Existing schema + `verify_jurisdiction_urls.py` |
+| 1 | `passages_grounded` | Hard-fact source passages are found verbatim or near-verbatim in linked authoritative sources | `verify_jurisdiction_passages.py` |
+| 2 | `numbers_confirmed` | Extracted numbers/dates/currencies from grounded passages match YAML values | Same script, numeric/date pass |
+| 3 | `structure_complete` | Archetype checklist satisfied; hard-fact condition↔passage linkage enforced | `verify_jurisdiction_completeness.py` |
+| 4 | `cross_checked` | Independent re-extraction agrees on hard-fact numeric conditions | `verify_jurisdiction_reextract.py` |
+
+Regression and freshness are intentionally not higher tiers. They can change independently from source grounding.
+
+### Regression status
+
+| Status | Meaning | Automated gate |
+|--------|---------|----------------|
+| `not_run` | No gold deal suite exists for this jurisdiction/archetype | Default |
+| `passed` | Gold deal fixtures pass against current engine + YAML | `test_jurisdiction_regression.py` |
+| `failed` | At least one fixture result differs from expected | `test_jurisdiction_regression.py` |
+
+### Freshness status
+
+| Status | Meaning | Automated gate |
+|--------|---------|----------------|
+| `fresh` | Last source check is within policy window and annual-adjustment anchors match | `monitor_jurisdiction_staleness.py` |
+| `stale` | Last source check exceeds policy window, but no contrary value detected | `monitor_jurisdiction_staleness.py` |
+| `drift_detected` | Official anchor values differ from YAML | `monitor_jurisdiction_staleness.py` |
+| `unknown` | Source unavailable, bot-protected, or no anchor configured | `monitor_jurisdiction_staleness.py` |
 
 ### Field classes
 
 Not all fields need the same tier to be useful:
 
-| Class | Examples | Required tier for high-confidence screening |
+| Class | Examples | Required source tier for legal-data confidence |
 |-------|----------|---------------------------------------------|
 | **Hard facts** | Threshold numbers, mandatory/suspensory flags, phase days | Tier 2+ |
 | **Structured nuance** | Exclusions, minority threshold rules with citations | Tier 1+ |
 | **Practitioner synthesis** | Control threshold narrative, CMA discretion notes | Tier 0; show as guidance only |
 
-Hard facts drive screening results. Synthesis fields are displayed but never raise confidence above `medium` unless passage-grounded.
+Hard facts drive screening results. Synthesis fields are displayed as guidance and cannot raise `source_verification_tier`. Practitioner-sourced hard facts remain low-tier unless replaced or independently backed by official source text.
 
 ---
 
@@ -102,8 +154,8 @@ flowchart TB
     subgraph outputs [Outputs]
         Report[Verification report JSON]
         Sidecar[.verification.yaml sidecar]
-        API[Screening API confidence]
-        UI[UI tier badges]
+        API[Screening API verification metadata]
+        UI[Verification + stale badges]
     end
 
     YAML --> G0
@@ -113,8 +165,9 @@ flowchart TB
     G2 --> G3
     G3 --> G4
     Gold --> G5
-    G4 --> G5
-    G5 --> G6
+    Primary --> G6
+    G4 --> Report
+    G5 --> Report
     G6 --> Report
     Report --> Sidecar
     Sidecar --> API
@@ -134,23 +187,38 @@ data/jurisdictions/uk.verification.yaml   ← generated by gates, committed afte
 # uk.verification.yaml (example)
 jurisdiction_id: uk
 verified_at: "2026-06-20T14:00:00Z"
-overall_tier: 4
-tier_breakdown:
+source_verification_tier: 3
+source_tier_breakdown:
   passages_grounded: pass
   numbers_confirmed: pass
   structure_complete: pass
   cross_checked: pass
-  regression_passed: fail   # pending gold deals for UK
-  fresh: pass
+regression_status: not_run
+freshness_status: fresh
+freshness:
+  checked_at: "2026-06-20T14:00:00Z"
+  policy_window_days: 180
+  anchors_checked: []
 failures: []
 conditions_verified:
   uk_turnover_target:
     tier: 2
     passage_id: uk_ea2002_s23_1
     numeric_match: true
+    source_type: primary_legislation
 ```
 
-The threshold engine reads sidecar at load time to set per-jurisdiction `confidence` caps.
+Sidecars are read by the jurisdiction loader/API layer and included in screening responses as verification metadata. The existing screening `confidence` field should not be silently capped; expose legal-source reliability separately as `source_verification_tier`, `regression_status`, and `freshness_status`.
+
+### Loader boundary
+
+Do not bolt sidecar parsing directly into every endpoint. Add a small jurisdiction data service/loader that returns:
+
+- `JurisdictionRule`
+- optional `JurisdictionVerification`
+- helper methods for condition-level verification lookups
+
+`threshold_engine.py` should remain focused on evaluating deal parameters against rules. The API serializer can combine engine output with sidecar metadata.
 
 ### Archetype templates
 
@@ -184,6 +252,8 @@ Shared library: `apps/api/app/services/source_fetcher.py`
 | uscode.house.gov | HTML fetch; extract section text |
 | ecfr.gov | HTML fetch; extract § text |
 | ftc.gov press releases | HTML/PDF for annual threshold notices |
+| Official PDFs / gazettes | Download/extract text using `app.utils.pdf_extractor` cache pattern |
+| Non-English official pages | Normalize text; record `language` when available; accept official English translations separately |
 | Bot-protected sites | Mark `fetch_status: bot_protected`; skip numeric check, flag tier 0 |
 
 Normalization pipeline:
@@ -193,7 +263,18 @@ Normalization pipeline:
 3. Unicode normalize (NFKC)
 4. Fuzzy match threshold: exact first, then normalized substring (≥95% token overlap)
 
-Reuse patterns from `repair_source_passages.py` where applicable.
+Reuse patterns from `repair_source_passages.py` and `app.utils.pdf_extractor` where applicable. Do not build an HTML-only verifier; many jurisdiction sources are PDFs, official gazettes, and authority threshold notices.
+
+Fetcher output should include:
+
+```yaml
+url: "https://..."
+final_url: "https://..."
+content_type: "text/html"
+fetch_status: ok              # ok | broken | bot_protected | ssl_uncertain | unsupported
+text: "normalized source text"
+retrieved_at: "2026-06-20T14:00:00Z"
+```
 
 ---
 
@@ -201,14 +282,23 @@ Reuse patterns from `repair_source_passages.py` where applicable.
 
 ### Gate 1: `verify_jurisdiction_passages.py`
 
-**Purpose:** Prove quoted statutory text exists at the linked URL; prove numbers match.
+**Purpose:** Prove quoted authoritative text exists at the linked URL; prove hard-fact values match.
 
 **Checks per `source_passages[]` entry:**
 - Fetch `document_url`
 - Assert `quoted_text` found (normalized)
 - For each `supports_conditions[]` ID, find matching condition in `threshold_tests`
 - Extract numbers/currency from quote; compare to `condition.value` and `condition.currency`
-- Fail if `source_type: primary_legislation` condition has no supporting passage
+- Extract dates and percentages where relevant; compare to `effective_date`, review periods, fines, and market-share thresholds where linked
+- Fail if a hard-fact condition from an authoritative source type has no supporting passage
+
+Authoritative source types for hard-fact gates:
+
+- `primary_legislation`
+- `official_guidance`
+- `authority_announcement`
+
+`practitioner` can support display guidance and gap triage, but cannot satisfy tier 1/2 for hard facts without an accepted exception in the sidecar.
 
 **Output:** JSON report + update sidecar. Exit 1 if any hard failure.
 
@@ -217,7 +307,7 @@ Reuse patterns from `repair_source_passages.py` where applicable.
 python apps/api/scripts/verify_jurisdiction_passages.py [--jurisdiction uk] [--fix] [--verbose]
 ```
 
-**Tests:** Fixture HTML snippets for EU Art 1(2), UK s.23, US HSR §801 — no live network in CI.
+**Tests:** Fixture HTML/PDF text snippets for EU Art 1(2), UK s.23, US HSR threshold notices/§801 — no live network in CI.
 
 ---
 
@@ -226,13 +316,15 @@ python apps/api/scripts/verify_jurisdiction_passages.py [--jurisdiction uk] [--f
 **Purpose:** Structural completeness without fetching law.
 
 **Checks:**
-- Every `primary_legislation` condition has `source_url` or linked passage
+- Every hard-fact authoritative-source condition has `source_url` or linked passage
 - Every `threshold_tests[]` has `legal_basis` + `source_url`
 - `annual_adjustment: true` → `effective_date` present
 - Regime consistency: `mandatory: true` + `suspensory: true` → `gun_jumping` section exists
 - Archetype checklist for jurisdiction's assigned archetype(s)
 - No duplicate `condition_id` or `test_id`
 - `practitioner` source_type requires `note` explaining why
+- `source_passages[].supports_conditions[]` references existing condition IDs
+- Conditions used by scope pre-filtering, especially `minority_thresholds`, have citation/source coverage appropriate to their effect on screening
 
 **CLI:**
 ```bash
@@ -246,7 +338,7 @@ python apps/api/scripts/verify_jurisdiction_completeness.py [--jurisdiction all]
 **Purpose:** Independent extraction cross-check.
 
 **Flow:**
-1. For each jurisdiction, collect all `source_url` / `document_url` from primary-legislation conditions
+1. For each jurisdiction, collect all `source_url` / `document_url` from authoritative hard-fact conditions
 2. Run structured extraction (Gemini with strict JSON schema): thresholds only, no prose
 3. Diff against existing YAML numerics (value, operator, party, scope)
 4. Report mismatches; do not auto-write YAML
@@ -300,39 +392,41 @@ Branches follow `jurisdiction-verification/<slug>`. Each PR is one reviewable un
 
 ### PR 1 — Scaffolding & verification model
 **Branch:** `jurisdiction-verification/scaffolding`  
-**Size:** ~400 lines  
-**Review focus:** Data model, sidecar format, archetype config
+**Size:** ~500 lines  
+**Review focus:** Data model, sidecar format, archetype config, baseline gap reporting
 
 | Deliverable | Path |
 |-------------|------|
 | Verification tier enums + sidecar Pydantic models | `apps/api/app/models/jurisdiction_verification.py` |
 | Archetype templates | `data/jurisdictions/_archetypes.yaml` |
 | Sidecar schema doc | `data/jurisdictions/_verification_schema.md` |
+| Baseline coverage report script | `apps/api/scripts/report_jurisdiction_verification_baseline.py` |
+| Baseline report snapshot | `docs/jurisdiction-verification-baseline.md` |
 | Stub CLI entrypoints (no logic yet) | `apps/api/scripts/verify_jurisdiction_passages.py` (skeleton) |
 | Unit tests for model load | `apps/api/tests/test_jurisdiction_verification_model.py` |
 
-**Acceptance:** Models load; archetypes validate; stubs run `--help`.
+**Acceptance:** Models load; archetypes validate; stubs run `--help`; baseline report reproduces counts for conditions, source passages, missing passage support, and annual-adjustment tests.
 
 ---
 
 ### PR 2 — Source fetcher library
 **Branch:** `jurisdiction-verification/source-fetcher`  
-**Size:** ~500 lines  
+**Size:** ~650 lines  
 **Review focus:** Fetch reliability, text normalization, offline fixtures
 
 | Deliverable | Path |
 |-------------|------|
 | Fetch + normalize service | `apps/api/app/services/source_fetcher.py` |
-| HTML fixture files for CI | `apps/api/tests/fixtures/jurisdiction_sources/` |
+| HTML/PDF text fixture files for CI | `apps/api/tests/fixtures/jurisdiction_sources/` |
 | Unit tests (offline) | `apps/api/tests/test_source_fetcher.py` |
 
-**Acceptance:** Fixtures normalize and match expected text; live fetch works for eur-lex + legislation.gov.uk in manual smoke test.
+**Acceptance:** Fixtures normalize and match expected text; PDF/text cache path works offline; live fetch works for eur-lex + legislation.gov.uk in manual smoke test.
 
 ---
 
 ### PR 3 — Passage grounding gate
 **Branch:** `jurisdiction-verification/passage-gate`  
-**Size:** ~700 lines  
+**Size:** ~750 lines  
 **Review focus:** Quote matching logic, numeric extraction, failure reporting
 
 | Deliverable | Path |
@@ -341,7 +435,7 @@ Branches follow `jurisdiction-verification/<slug>`. Each PR is one reviewable un
 | Numeric extraction helpers | `apps/api/app/services/jurisdiction_numeric.py` |
 | Tests with fixtures | `apps/api/tests/test_verify_jurisdiction_passages.py` |
 
-**Acceptance:** Runs against EU, UK, US HSR fixtures offline; produces sidecar with tier 1–2 status; exit code reflects pass/fail.
+**Acceptance:** Runs against EU, UK, US HSR fixtures offline; produces sidecar with source tier 1–2 status; exit code reflects pass/fail.
 
 **Note:** First PR that should be run against real YAML data. Expect failures — that's the point.
 
@@ -357,13 +451,13 @@ Branches follow `jurisdiction-verification/<slug>`. Each PR is one reviewable un
 | Completeness verifier | `apps/api/scripts/verify_jurisdiction_completeness.py` |
 | Tests | `apps/api/tests/test_verify_jurisdiction_completeness.py` |
 
-**Acceptance:** All 47 YAMLs run; report lists missing elements per archetype; tier 3 computed in sidecar.
+**Acceptance:** All 47 YAMLs run; report lists missing elements per archetype; source tier 3 computed in sidecar.
 
 ---
 
 ### PR 5 — Cross-check & gold deal regression
 **Branch:** `jurisdiction-verification/regression-suite`  
-**Size:** ~650 lines  
+**Size:** ~700 lines  
 **Review focus:** Gold deal selection, regression test design
 
 | Deliverable | Path |
@@ -395,17 +489,18 @@ Branches follow `jurisdiction-verification/<slug>`. Each PR is one reviewable un
 
 ### PR 7 — Product integration (API + UI)
 **Branch:** `jurisdiction-verification/product-integration`  
-**Size:** ~400 lines  
-**Review focus:** Confidence capping, UX clarity
+**Size:** ~500 lines  
+**Review focus:** Verification metadata, confidence semantics, UX clarity
 
 | Deliverable | Path |
 |-------------|------|
-| Load sidecar in threshold engine | `apps/api/app/services/threshold_engine.py` |
-| Verification tier in screening API | `apps/api/app/routers/jurisdictions.py` |
+| Jurisdiction data loader/service reads YAML + sidecar | `apps/api/app/services/jurisdiction_data_service.py` |
+| Verification metadata in screening API | `apps/api/app/routers/jurisdictions.py` |
 | Staleness/verification badges | `apps/web/src/app/screen/ScreenClient.tsx`, `jurisdictions/[id]/page.tsx` |
 | TypeScript types | `apps/web/src/lib/types.ts` |
+| Fix jurisdiction detail "Last updated" to use `rule.last_verified` | `apps/web/src/app/jurisdictions/[id]/page.tsx` |
 
-**Acceptance:** Screening results show verification tier; stale jurisdictions show yellow badge; low-tier nuance fields labeled as guidance.
+**Acceptance:** Screening results show `source_verification_tier`, `regression_status`, and `freshness_status`; stale jurisdictions show yellow badge; low-tier nuance fields labeled as guidance; existing `confidence` is either renamed to `screening_confidence` or clearly documented as transaction-input confidence.
 
 ---
 
@@ -442,16 +537,16 @@ Defer until PRs 1–8 ship. Automated red-team: proponent/skeptic/arbiter agents
 
 | # | Branch | Est. lines | Depends on | Reviewer focus |
 |---|--------|------------|------------|----------------|
-| 1 | `scaffolding` | 400 | — | Models, sidecar format |
-| 2 | `source-fetcher` | 500 | 1 | Text normalization |
-| 3 | `passage-gate` | 700 | 2 | Core verification logic |
+| 1 | `scaffolding` | 500 | — | Models, sidecar format, baseline gap report |
+| 2 | `source-fetcher` | 650 | 1 | Text/PDF normalization |
+| 3 | `passage-gate` | 750 | 2 | Core verification logic |
 | 4 | `completeness-gate` | 450 | 1 | Archetype rules |
-| 5 | `regression-suite` | 650 | 1, 3 | Gold deals + engine correctness |
+| 5 | `regression-suite` | 700 | 1, 3 | Gold deals + engine correctness |
 | 6 | `staleness-monitor` | 300 | 2 | Drift detection |
-| 7 | `product-integration` | 400 | 1–6 | UX + confidence |
+| 7 | `product-integration` | 500 | 1–6 | UX + verification metadata |
 | 8 | `ci` | 150 | 1–7 | Pipeline wiring |
 
-**Total estimated:** ~3,550 lines across 8 PRs. At ~450 lines/PR average, each review should take 20–40 minutes.
+**Total estimated:** ~4,000 lines across 8 PRs. At ~500 lines/PR average, each review should take 20–45 minutes.
 
 ---
 
@@ -459,12 +554,12 @@ Defer until PRs 1–8 ship. Automated red-team: proponent/skeptic/arbiter agents
 
 | Week | PRs | Outcome |
 |------|-----|---------|
-| 1 | PR 1, 2 | Foundation + source fetching |
+| 1 | PR 1, 2 | Foundation, baseline gap report, source fetching |
 | 2 | PR 3, 4 | First real verification results; YAML gap list |
 | 3 | PR 5, 6 | Behavioral tests + staleness |
-| 4 | PR 7, 8 | Product-facing confidence + CI |
+| 4 | PR 7, 8 | Product-facing verification metadata + CI |
 
-After PR 3 lands, run passage gate against all 47 YAMLs and produce a **gap report** — jurisdictions failing tier 1/2 get targeted YAML fixes in separate small data PRs (not part of this build's code PRs).
+PR 1 produces the baseline structural/source-coverage report. After PR 3 lands, run passage gate against all 47 YAMLs and produce a **grounding gap report** — jurisdictions failing source tier 1/2 get targeted YAML fixes in separate small data PRs (not part of this build's code PRs).
 
 ---
 
@@ -492,7 +587,7 @@ Each data-fix PR:
 | Level | What | Where |
 |-------|------|-------|
 | Unit | Text normalization, numeric extraction, model load | `apps/api/tests/` |
-| Integration | Gate scripts against fixture YAML + fixture HTML | `apps/api/tests/` |
+| Integration | Gate scripts against fixture YAML + fixture HTML/PDF text | `apps/api/tests/` |
 | Regression | Gold deals through threshold engine | `test_jurisdiction_regression.py` |
 | Smoke | Manual run of full orchestrator on 3 jurisdictions | Pre-merge checklist |
 | CI | Offline gates every push; live fetch nightly | GitHub Actions |
@@ -503,13 +598,15 @@ Each data-fix PR:
 
 ## Success criteria (v1 complete)
 
-- [ ] All 47 jurisdictions pass tier 3 (completeness) in CI
-- [ ] ≥35 jurisdictions pass tier 2 (passages + numbers) — remaining flagged explicitly
+- [ ] Baseline coverage report committed and reproducible from local script
+- [ ] All 47 jurisdictions pass source tier 3 structural completeness, or have explicit sidecar failures that prevent high-source-confidence UI treatment
+- [ ] ≥35 jurisdictions pass source tier 2 (passages + numbers) — remaining flagged explicitly
 - [ ] Gold deal regression suite: 15+ deals, 100% pass rate
 - [ ] US HSR staleness monitor detects 2026 threshold values
-- [ ] Screening UI shows verification tier and staleness badge
+- [ ] Screening UI shows source verification tier, regression status, and staleness badge
 - [ ] Orchestrator script runs all gates with single command
-- [ ] No screening result shows `confidence: high` when jurisdiction tier < 2
+- [ ] No UI copy implies source-backed reliability when `source_verification_tier < 2`
+- [ ] Existing screening `confidence` is not used as a proxy for legal-source reliability
 
 ---
 
@@ -543,6 +640,9 @@ python apps/api/scripts/monitor_jurisdiction_staleness.py --annual-adjustment-on
 
 # Existing URL check (tier 0)
 python apps/api/scripts/verify_jurisdiction_urls.py
+
+# Baseline source coverage report
+python apps/api/scripts/report_jurisdiction_verification_baseline.py
 ```
 
 ---
@@ -552,10 +652,12 @@ python apps/api/scripts/verify_jurisdiction_urls.py
 | # | Question | Recommendation |
 |---|----------|----------------|
 | 1 | Sidecar files committed to repo, or generated in CI only? | **Commit** — makes tier visible in PR diffs and powers UI offline |
-| 2 | Block merge if any jurisdiction below tier 2? | **No** — block only on tier 0/1 failures in CI; show tiers in UI |
+| 2 | Block merge if any jurisdiction below source tier 2? | **No** — block schema/loader regressions and broken sidecar format; allow low-tier jurisdictions if explicit in sidecar/UI |
 | 3 | Gold deals: who curates the initial 15? | **Bhavya** — 2h research using public filing announcements |
 | 4 | Re-extraction: Gemini or Claude? | **Gemini** — consistent with chat intake; strict JSON schema |
 | 5 | Run data-fix PRs before or after PR 7 (UI)? | **Before PR 7** — UI should reflect real tiers, not all-red |
+| 6 | Rename existing `confidence` field? | **Prefer yes** — migrate to `screening_confidence` to avoid confusing deal-input confidence with source confidence |
+| 7 | How to handle bot-protected official sources? | **Explicit `unknown`** — never silently pass; record `fetch_status` and require accepted exception for tier promotion |
 
 ---
 

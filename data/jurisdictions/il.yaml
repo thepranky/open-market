@@ -90,7 +90,10 @@ threshold_tests:
       or provision of services in Israel. Calculated from the most recently completed
       financial year preceding the merger. A 'party' for the individual threshold means
       each of the merging entities (at least two must exceed ILS 22.5m independently).
-    annual_adjustment: false
+      The ILS figures are linked to the Consumer Price Index and re-published annually
+      by the ICA, so the values below are a dated snapshot (applicable from 18 May 2022),
+      not a fixed bright line — confirm the current ICA-published figure before advising.
+    annual_adjustment: true
     effective_date: "2022-05-18"
 
     conditions:
@@ -178,12 +181,13 @@ notes:
 # ── Scope / trigger events ────────────────────────────────────────────────────
 scope:
   concentration_definition: >
-    A merger under the Economic Competition Law 5748-1988 includes: (i) acquisition
-    of more than 50% of any class of means of control (shares, voting rights, rights
-    to appoint directors, or rights to profits) in a corporation; (ii) merger of two
-    or more corporations into one; or (iii) any other act by which effective control
-    over a company is acquired. The definition is narrower than many jurisdictions —
-    a 50%+ threshold applies rather than a decisive influence/control test.
+    A "merger of companies" under Section 1 of the Economic Competition Law 5748-1988
+    includes the acquisition of MORE THAN 25% (a quarter or more) of any class of means
+    of control — the nominal value of issued share capital, voting rights, the right to
+    appoint directors, or the right to participate in profits — as well as the merger of
+    two or more corporations into one. (The separate concept of "control" is presumed at
+    MORE THAN 50% and is used to aggregate group turnover, not as the merger trigger.)
+    The 25% acquisition trigger is lower than the EU decisive-influence standard.
   concentration_definition_source: "Economic Competition Law 5748-1988, Chapter E (s. 22)"
   concentration_definition_url: "https://www.gov.il/en/departments/legal_info/competition_law"
   trigger_events:
@@ -191,10 +195,11 @@ scope:
     - share_acquisition
     - asset_acquisition
   control_threshold: >
-    Acquisition of more than 50% of any class of means of control, or otherwise
-    acquiring effective control over a corporation. Joint ventures are assessed
-    case by case; full-function JVs may be treated as mergers if they meet the
-    50%+ or effective control criteria.
+    A notifiable merger is triggered by acquisition of MORE THAN 25% of any class of
+    means of control (Section 1 ECL). "Control" proper (the ability to direct activities)
+    is separately presumed at more than 50% and is used for group-turnover aggregation.
+    Joint ventures are assessed case by case; full-function JVs may be treated as mergers
+    where the 25% acquisition trigger or effective-control criteria are met.
   intra_group_exempt: true
   substantive_test: "dominance"
   substantive_test_url: "https://www.gov.il/en/departments/legal_info/competition_law"
@@ -206,10 +211,10 @@ scope:
     structure of the market post-merger and the ability of the merged entity to
     exercise unilateral market power.
   note: >
-    Israel's merger definition (50%+ of means of control) is narrower than the
-    EU's decisive influence standard. Minority acquisitions below 50% generally
-    do not constitute a merger requiring notification unless effective control is
-    acquired. Sector-specific concurrent review applies for banks and communications.
+    Israel's merger definition (acquisition of more than 25% of means of control)
+    captures transactions well below majority ownership. The >50% figure is the
+    separate "control" presumption used to aggregate group turnover, not the merger
+    trigger itself. Sector-specific concurrent review applies for banks and communications.
 
 # ── Gun-jumping / standstill obligation ───────────────────────────────────────
 gun_jumping:
@@ -280,23 +285,30 @@ minority_thresholds:
   standard: "percentage_based"
   note: >
     Israeli merger control under the Economic Competition Law 5748-1988 (formerly
-    Restrictive Trade Practices Law, as amended most recently in 2022) defines a
-    "merger" (mizug) in Section 1 to include not only a full merger or acquisition of
-    majority control but also the acquisition of "control" over a company. "Control"
-    (section 1 of the Law) is defined to mean the ability to direct the activities of
-    a company, and is presumed where a person holds MORE THAN 50% of the voting rights,
-    the right to appoint MORE THAN 50% of directors, or has veto rights over resolutions
-    of the general meeting or the board. A sub-50% minority stake generally does not
-    constitute a "merger" requiring notification unless the acquirer thereby obtains
-    "control" as defined. However, acquisitions that result in a change of control —
-    even if the acquirer does not reach a majority — can be notifiable where the acquirer
-    thereby acquires the ability to direct the company's activities. The Israel
-    Competition Authority (ICA — Rashut HaTacharut) has taken the position that
-    acquisition of effective control through a minority stake triggers notification.
-    Verify current ICA guidance as the 2022 amendments to the Economic Competition Law
-    may have refined the control definition and merger notification scope.
+    Restrictive Trade Practices Law) defines a "merger of companies" (mizug) in Section 1
+    to include the acquisition of MORE THAN 25% of any class of means of control — the
+    nominal value of issued share capital, voting rights, the right to appoint directors,
+    or the right to participate in profits. This 25% acquisition trigger — NOT a 50%
+    majority — is the bright line for a notifiable merger. The separate concept of
+    "control" (the ability to direct a company's activities) is presumed at MORE THAN
+    50% of voting rights or director-appointment rights and is used principally to
+    aggregate the turnover of a corporate group. Acquisitions conferring effective
+    control through a minority stake can also be notifiable. Verify current ICA guidance,
+    as the 2022 amendments refined the framework.
   rules:
-    - rule_id: "il_minority_control_presumption_50pct"
+    - rule_id: "il_merger_trigger_25pct"
+      relationship_type: "any"
+      pct_threshold: 25
+      operator: ">"
+      rights_required: null
+      source: "Section 1 (definition of 'merger of companies'), Economic Competition Law 5748-1988"
+      source_type: "primary_legislation"
+      source_url: "https://www.gov.il/en/departments/israel_competition_authority"
+      note: >
+        A notifiable merger arises on acquisition of MORE THAN 25% of any class of means
+        of control (share capital, voting rights, director-appointment rights, or profit
+        rights). This is the operative merger-notification trigger.
+    - rule_id: "il_control_presumption_50pct"
       relationship_type: "any"
       pct_threshold: 50
       operator: ">"
@@ -305,11 +317,9 @@ minority_thresholds:
       source_type: "primary_legislation"
       source_url: "https://www.gov.il/en/departments/israel_competition_authority"
       note: >
-        Control (and thus a notifiable merger) is presumed where the acquirer holds
-        MORE THAN 50% of voting rights or the right to appoint more than 50% of
-        directors. This is a statutory rebuttable presumption of control. A stake
-        of 50% or below does not trigger the presumption but may still constitute
-        control based on a factual analysis.
+        "Control" (ability to direct activities) is presumed at MORE THAN 50% of voting
+        rights or director-appointment rights. This presumption governs group-turnover
+        aggregation, not the merger trigger itself (which is the lower 25% test above).
     - rule_id: "il_minority_effective_control"
       relationship_type: "any"
       pct_threshold: null
