@@ -10,7 +10,7 @@ Two products in one repo:
 2. **Jurisdiction screening** — ~60 jurisdiction threshold profiles; screen deals via
    rules engine and deal-intake chat.
 
-> **Disclaimer:** CompMap is a research aid, not legal advice. Records may be
+> **Disclaimer:** Meridian is a research aid, not legal advice. Records may be
 > AI-assisted. Verify all propositions against linked source materials before relying
 > on them.
 

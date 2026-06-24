@@ -359,7 +359,7 @@ def seed_concept(session, concept: ConceptNode):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Seed CompMap graph from YAML records")
+    parser = argparse.ArgumentParser(description="Seed Meridian graph from YAML records")
     parser.add_argument("--cases-dir", default="data/cases", help="Path to canonical cases directory")
     parser.add_argument("--case-index-dir", default=None, help="Path to indexed cases directory")
     parser.add_argument("--concepts-dir", default=None, help="Path to concepts directory")

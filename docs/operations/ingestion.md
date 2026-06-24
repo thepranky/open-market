@@ -1,4 +1,4 @@
-# CompMap ingestion pipeline
+# Meridian ingestion pipeline
 
 Design and operational reference for the AI-assisted case extraction pipeline
 implemented in `apps/api/scripts/`. Drafts are written to `data/drafts/` only;

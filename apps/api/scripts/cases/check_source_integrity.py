@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-check_source_integrity.py — source validation gate for CompMap YAML case records.
+check_source_integrity.py — source validation gate for Meridian YAML case records.
 
 For each source document:
   - fetches the URL and records HTTP status / content-type
@@ -66,7 +66,7 @@ DATA_DIR = Path(__file__).resolve().parents[4] / "data" / "cases"
 _DEFAULT_CACHE_DIR = Path(__file__).resolve().parents[4] / "data" / "source_text"
 
 HEADERS = {
-    "User-Agent": "CompMap-IntegrityChecker/1.0 (open-source research tool)"
+    "User-Agent": "Meridian-IntegrityChecker/1.0 (open-source research tool)"
 }
 
 # Keywords expected to appear somewhere in the URL for a given doc_type.
@@ -620,7 +620,7 @@ def _classify(issues: list[Issue]) -> tuple[int, int, int]:
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="Source integrity gate for CompMap YAML case records"
+        description="Source integrity gate for Meridian YAML case records"
     )
     parser.add_argument(
         "--cases-dir",
@@ -688,7 +688,7 @@ def main() -> int:
     cache_dir: Optional[Path] = None if args.no_cache else Path(args.cache_dir)
     cache_note = f" (page cache: {cache_dir})" if cache_dir else " (page cache: disabled)"
 
-    print(f"CompMap Source Integrity Check{cache_note}")
+    print(f"Meridian Source Integrity Check{cache_note}")
     print(f"Checking {len(yaml_files)} case file(s) …\n")
 
     total_errors = total_warnings = 0

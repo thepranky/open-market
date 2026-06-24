@@ -24,7 +24,7 @@ DATA_DIR = Path(__file__).resolve().parents[4] / "data" / "jurisdictions"
 
 HEADERS = {
     "User-Agent": (
-        "Mozilla/5.0 (compatible; CompMap-LinkChecker/1.0; "
+        "Mozilla/5.0 (compatible; Meridian-LinkChecker/1.0; "
         "+https://github.com/open-market)"
     ),
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",

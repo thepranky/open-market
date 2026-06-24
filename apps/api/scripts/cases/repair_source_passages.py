@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-repair_source_passages.py — ground CompMap source_passages in real PDF text.
+repair_source_passages.py — ground Meridian source_passages in real PDF text.
 
 For each existing source_passage:
   1. Loads the PDF text cache (builds it from the pdf_url if missing).
@@ -1579,7 +1579,7 @@ def serialize_reports(
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="Validate and repair CompMap source_passages against PDF text"
+        description="Validate and repair Meridian source_passages against PDF text"
     )
     source_group = parser.add_mutually_exclusive_group(required=True)
     source_group.add_argument("--case-id", help="Repair a single case by case_id")
@@ -1645,7 +1645,7 @@ def main() -> int:
         return 1
 
     mode_label = "DRY-RUN" if args.dry_run else "WRITE"
-    print(f"CompMap Source Passage Repair [{mode_label}]")
+    print(f"Meridian Source Passage Repair [{mode_label}]")
     print(f"Cases: {len(yaml_files)}  |  Cache: {cache_dir}  |  "
           f"Build cache: {args.build_cache}  |  Claude: {args.use_claude}\n")
 

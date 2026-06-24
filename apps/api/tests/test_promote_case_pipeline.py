@@ -30,7 +30,7 @@ FOCUS = "market_definition"
 STAGE = "phase1"
 
 _INTEGRITY_OUTPUT_PASS = (
-    "CompMap Source Integrity Check (page cache: disabled)\n"
+    "Meridian Source Integrity Check (page cache: disabled)\n"
     "Checking 1 case file(s) …\n\n"
     "✓ eu_test_case_2020  (2 doc(s), 3 passage(s))  0 error(s), 0 warning(s)\n\n"
     "────────────────────────────────────────────────────────────\n"
@@ -38,7 +38,7 @@ _INTEGRITY_OUTPUT_PASS = (
 )
 
 _INTEGRITY_OUTPUT_WITH_ERRORS = (
-    "CompMap Source Integrity Check (page cache: disabled)\n"
+    "Meridian Source Integrity Check (page cache: disabled)\n"
     "Checking 1 case file(s) …\n\n"
     "✗ eu_test_case_2020  (2 doc(s), 3 passage(s))  1 error(s), 0 warning(s)\n\n"
     "────────────────────────────────────────────────────────────\n"
@@ -46,7 +46,7 @@ _INTEGRITY_OUTPUT_WITH_ERRORS = (
 )
 
 _INTEGRITY_OUTPUT_WITH_WARNINGS = (
-    "CompMap Source Integrity Check (page cache: disabled)\n"
+    "Meridian Source Integrity Check (page cache: disabled)\n"
     "Checking 1 case file(s) …\n\n"
     "⚠ eu_test_case_2020  (2 doc(s), 3 passage(s))  0 error(s), 2 warning(s)\n\n"
     "────────────────────────────────────────────────────────────\n"

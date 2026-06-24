@@ -23,7 +23,7 @@ import yaml
 DATA_DIR = Path(__file__).resolve().parents[4] / "data" / "cases"
 
 HEADERS = {
-    "User-Agent": "CompMap-LinkChecker/1.0 (open-source research tool; contact: open-market)",
+    "User-Agent": "Meridian-LinkChecker/1.0 (open-source research tool; contact: open-market)",
 }
 
 
@@ -130,7 +130,7 @@ def classify_results(
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Check source URLs in CompMap YAML case files")
+    parser = argparse.ArgumentParser(description="Check source URLs in Meridian YAML case files")
     parser.add_argument("--timeout", type=int, default=15, help="Request timeout in seconds (default: 15)")
     parser.add_argument("--verbose", "-v", action="store_true", help="Print results for all URLs, not just failures")
     args = parser.parse_args(argv)

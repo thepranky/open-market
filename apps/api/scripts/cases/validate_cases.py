@@ -16,7 +16,7 @@ from app.cases.loader.validator import validate_all
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Validate CompMap YAML case records")
+    parser = argparse.ArgumentParser(description="Validate Meridian YAML case records")
     parser.add_argument("--cases-dir", default="data/cases")
     args = parser.parse_args()
 

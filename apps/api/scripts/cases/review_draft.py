@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-review_draft.py — LLM review / promotion triage for CompMap draft YAML records.
+review_draft.py — LLM review / promotion triage for Meridian draft YAML records.
 
 Sits after all deterministic checks (Stages 1-4) and before human promotion.
 Produces:
@@ -151,7 +151,7 @@ _MARKET_REVIEW_ITEM = {
 _REVIEW_TOOL_SCHEMA = {
     "name": "record_llm_review",
     "description": (
-        "Record the structured LLM critic review of a CompMap draft YAML. "
+        "Record the structured LLM critic review of a Meridian draft YAML. "
         "This is a critic's assessment to assist human review — not a verification or approval."
     ),
     "input_schema": {
@@ -305,7 +305,7 @@ language) is NOT automatically disqualified. Only set outcome_passage_misuse = t
 when the passage contains NO substantive market-definition content."""
 
 _REVIEW_SYSTEM_PROMPT = """\
-You are a competition law critic reviewing a DRAFT case record for the CompMap \
+You are a competition law critic reviewing a DRAFT case record for the Meridian \
 source-first legal research pipeline.
 
 Your job is to find problems. Be skeptical. Do not confirm that everything looks correct \
@@ -328,14 +328,14 @@ for a given market entry, set outcome_passage_misuse = true — even if other \
 non-outcome passages also support the market. \
 Market definition and merger outcome are related but distinct: a clearance conclusion \
 does not prove a product or geographic market was defined or considered.
-7. definition_status semantics — CompMap uses these values: \
+7. definition_status semantics — Meridian uses these values: \
 "defined": authority conclusively determined market scope; \
 "left_open": authority explicitly said it was unnecessary to conclude on the exact \
 definition (e.g. "the exact scope of the market can be left open"); \
 "considered": authority assessed the transaction on this market basis using cautious / \
 context-specific wording — e.g. "for the purpose of this decision, the Commission will \
 consider…", "for assessing the Transaction…", "the Commission assessed the transaction \
-on the basis of…". This IS a valid, documented CompMap status. Do NOT flag "considered" \
+on the basis of…". This IS a valid, documented Meridian status. Do NOT flag "considered" \
 as undocumented, incorrect, or requiring upgrade to "defined" or "left_open" merely \
 because it is not one of those values. It captures working assumptions that carry \
 lower precedential weight than "defined" but are more concrete than "left_open"; \
@@ -1059,7 +1059,7 @@ def run_llm_review(
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="LLM review / promotion triage for CompMap draft YAML records",
+        description="LLM review / promotion triage for Meridian draft YAML records",
     )
     parser.add_argument("--case-id", required=True, help="Case ID (e.g. eu_sika_dry_mix_2019)")
     parser.add_argument(

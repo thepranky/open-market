@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-ingest_case.py — end-to-end ingestion orchestrator for CompMap.
+ingest_case.py — end-to-end ingestion orchestrator for Meridian.
 
 Orchestrates the full pipeline for a single case:
   1. Fetch / cache source PDFs
@@ -641,7 +641,7 @@ def _build_scaffold_from_index(index_entry: dict, pdf_url: str) -> dict:
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="End-to-end ingestion orchestrator for CompMap cases",
+        description="End-to-end ingestion orchestrator for Meridian cases",
     )
     parser.add_argument("--case-id", required=True, help="Case ID (e.g. eu_sika_mbcc_2023)")
     parser.add_argument(

@@ -320,7 +320,7 @@ def _infer_definition_status_reason(before: str, after: str, market: dict) -> st
         return (
             f"Market '{name}': Commission used a working-assumption formula "
             "('for assessing the Transaction' / 'for the purpose of this decision') "
-            "rather than a definitive determination. CompMap policy maps this to 'considered'."
+            "rather than a definitive determination. Meridian policy maps this to 'considered'."
         )
     if before == "considered" and after == "defined":
         return (

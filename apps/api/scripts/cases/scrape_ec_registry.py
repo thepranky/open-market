@@ -46,7 +46,7 @@ CELLAR_BASE = "https://publications.europa.eu/resource/cellar"
 CELLAR_EN_LANG_IDX = "0006"
 
 HEADERS = {
-    "User-Agent": "CompMap-Scraper/1.0 (open-source research tool; contact: open-market)",
+    "User-Agent": "Meridian-Scraper/1.0 (open-source research tool; contact: open-market)",
     "Accept": "application/sparql-results+json",
 }
 

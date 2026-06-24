@@ -1,5 +1,5 @@
 """
-pdf_extractor.py — PDF text extraction cache for CompMap source grounding.
+pdf_extractor.py — PDF text extraction cache for Meridian source grounding.
 
 Downloads PDFs and extracts text page-by-page using pdfplumber (falls back
 to pypdf).  Results are cached in data/source_text/{source_document_id}.json
@@ -39,7 +39,7 @@ _REPO_ROOT = Path(__file__).resolve().parents[4]
 DEFAULT_CACHE_DIR = _REPO_ROOT / "data" / "source_text"
 
 _HEADERS = {
-    "User-Agent": "CompMap-SourceGrounding/1.0 (open-source research tool)",
+    "User-Agent": "Meridian-SourceGrounding/1.0 (open-source research tool)",
     # Required for EUR-Lex/cellar URLs (http://publications.europa.eu/resource/celex/*.pdf)
     # which content-negotiate between RDF and PDF based on Accept.
     "Accept": "application/pdf, application/octet-stream, */*;q=0.8",

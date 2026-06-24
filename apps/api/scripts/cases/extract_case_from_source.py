@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-extract_case_from_source.py — source-first extraction/reconciliation for CompMap.
+extract_case_from_source.py — source-first extraction/reconciliation for Meridian.
 
 Loads the existing PDF text cache for a case, extracts a fresh draft CaseRecord
 via Claude, then reconciles the draft against the existing YAML.
@@ -4711,7 +4711,7 @@ def replay_section_debug(
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        description="Source-first extraction and reconciliation for CompMap cases"
+        description="Source-first extraction and reconciliation for Meridian cases"
     )
     parser.add_argument("--case-id", required=True, help="Case ID to process")
     parser.add_argument(

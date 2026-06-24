@@ -16,7 +16,7 @@ from app.shared.utils.pdf_extractor import extract_pages
 
 _HEADERS = {
     "User-Agent": (
-        "Mozilla/5.0 (compatible; CompMap-SourceFetcher/1.0; "
+        "Mozilla/5.0 (compatible; Meridian-SourceFetcher/1.0; "
         "+https://github.com/open-market)"
     ),
     "Accept": "text/html,application/xhtml+xml,application/pdf,*/*;q=0.8",

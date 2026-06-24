@@ -20,7 +20,7 @@ def client():
     with patch("app.shared.core.config.settings") as mock_settings:
         mock_settings.data_cases_path = CASES_DIR
         mock_settings.data_case_index_path = INDEX_DIR
-        mock_settings.app_title = "CompMap API"
+        mock_settings.app_title = "Meridian API"
         mock_settings.app_version = "0.1.0"
         mock_settings.neo4j_uri = "bolt://localhost:7687"
         mock_settings.neo4j_user = "neo4j"
@@ -39,7 +39,7 @@ def client():
 def test_root(client):
     r = client.get("/")
     assert r.status_code == 200
-    assert "CompMap" in r.json()["name"]
+    assert "Meridian" in r.json()["name"]
 
 
 def test_health(client):

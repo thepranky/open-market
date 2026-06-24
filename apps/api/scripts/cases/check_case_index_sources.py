@@ -33,7 +33,7 @@ from app.cases.loader.index_loader import load_all_index_cases
 from app.cases.models.case_index import CaseIndexEntry
 
 HEADERS = {
-    "User-Agent": "CompMap-IndexChecker/1.0 (open-source research tool; contact: open-market)",
+    "User-Agent": "Meridian-IndexChecker/1.0 (open-source research tool; contact: open-market)",
 }
 
 # Official domains per jurisdiction.  Subdomains of listed entries are also accepted.

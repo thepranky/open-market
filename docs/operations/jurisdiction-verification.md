@@ -8,7 +8,7 @@ live in `data/jurisdictions/*.yaml`; verification is orchestrated by
 
 ## Purpose
 
-CompMap maintains ~60 jurisdiction YAML profiles covering merger control thresholds,
+Meridian maintains ~60 jurisdiction YAML profiles covering merger control thresholds,
 regime flags, review periods, gun-jumping, FDI screening, and practitioner nuance.
 Before lawyers rely on screening results for first-instance transaction review, each
 profile must be **machine-verified against authoritative sources** — grounded with

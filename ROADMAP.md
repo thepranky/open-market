@@ -6,7 +6,7 @@ See [`.cursor/rules/meridian.mdc`](.cursor/rules/meridian.mdc) for spec-driven w
 | Phase | Step | What | Files / areas | Why | How |
 |-------|------|------|---------------|-----|-----|
 | **0 Docs** | 0.1 | Doc consolidation | `docs/`, `README.md`, `CLAUDE.md` | Single source of truth for onboarding | Done |
-| | 0.2 | Layout spec + DDR-0 | `docs/specs/restructure-layout.md`, `ddr-0-repo-layout.md` | Clear boundaries before deep-dives | Done |
+| | 0.2 | Layout spec + DDR-0 | `docs/specs/2026-06-24-restructure-layout.md`, `ddr-0-repo-layout.md` | Clear boundaries before deep-dives | Done |
 | **1 Restructure** | 1.1 | API packages (`cases/`, `screening/`, `shared/`) | `apps/api/app/` | Learnable module boundaries | Done (PR 1) |
 | | 1.2 | Script subdirs | `apps/api/scripts/` | Pipeline discoverability | Done (PR 2) |
 | | 1.3 | Web feature folders | `apps/web/src/features/` | Frontend boundaries | Done (PR 3) |
@@ -20,7 +20,7 @@ See [`.cursor/rules/meridian.mdc`](.cursor/rules/meridian.mdc) for spec-driven w
 | | 4.2 | `data_jurisdictions_path` config | `app/shared/core/config.py` | Path derived from cases path | Explicit env var |
 | | 4.3 | Rename overloaded symbols | `Juris.tsx`, home stats | Naming collision | `CaseRegulatorBadge`, `case_regulator_count` |
 | | 4.4 | Neo4j deprecation decision | `graph/`, `neo4j_client.py` | Legacy noise | DDR-C then spec |
-| **5 Product** | 5.1 | Unify branding | `README`, web nav, API title | CompMap vs Meridian | **Meridian** — align web + API title |
+| **5 Product** | 5.1 | Unify branding | `README`, web nav, API title | CompMap vs Meridian | Done |
 | | 5.2 | Document indexed vs canonical | `docs/architecture/case-research.md` | Two case layers confuse users | UX copy + maybe merge long-term |
 | | 5.3 | Eval metrics in UI (admin) | new `/admin` or debug panel | Reliability story hidden | Read-only view of benchmark output |
 | | 5.4 | Threshold engine unit tests | `tests/test_threshold_engine.py` | Only gold-deal regression today | Direct tests per test type |

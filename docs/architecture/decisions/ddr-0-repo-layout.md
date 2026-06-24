@@ -50,7 +50,7 @@ Two products share one deployable API and one web app. Data top-level folders al
 - Removing Neo4j (DDR-C).
 - Flattening `apps/` to root-level `api/` + `web/`.
 
-See `docs/specs/restructure-layout.md` for the full move list and verification commands.
+See `docs/specs/2026-06-24-restructure-layout.md` for the full move list and verification commands.
 
 ## Consequences
 

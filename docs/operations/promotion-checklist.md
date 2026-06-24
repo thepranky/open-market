@@ -1,4 +1,4 @@
-# CompMap — Human Promotion Checklist
+# Meridian — Human Promotion Checklist
 
 Use this checklist when promoting a draft from `data/drafts/` to `data/cases/`.
 
@@ -81,7 +81,7 @@ For each product and geographic market entry:
 
 **`defined` vs `left_open`:** If the text says the definition was "left open", "not necessary to conclude", or "inconclusive", the status must be `left_open` or `discussed` — not `defined`. "For the purpose of this decision, it will consider X" is a working assumption: use `considered`.
 
-**`considered` (CompMap internal status):** Captures cases where the Commission assessed the transaction on a specific market basis with cautious or context-specific wording — e.g. "for the purpose of this decision, the Commission will consider…" or "for assessing the Transaction, the relevant geographic market could be national in scope". This is a valid status with lower precedential weight than `defined` but more concrete than `left_open` (the authority committed to a working basis for its assessment). It reflects the 2024 Commission Market Definition Notice's acknowledgment that in merger cases the exact definition may be left open where the outcome does not depend on it.
+**`considered` (Meridian internal status):** Captures cases where the Commission assessed the transaction on a specific market basis with cautious or context-specific wording — e.g. "for the purpose of this decision, the Commission will consider…" or "for assessing the Transaction, the relevant geographic market could be national in scope". This is a valid status with lower precedential weight than `defined` but more concrete than `left_open` (the authority committed to a working basis for its assessment). It reflects the 2024 Commission Market Definition Notice's acknowledgment that in merger cases the exact definition may be left open where the outcome does not depend on it.
 
 **Geographic markets:** EC phrases like "for the purpose of this decision, it will consider the relevant geographic market national in scope" are working assumptions for the competitive assessment. Use `considered`, not `defined`, unless the Commission explicitly adopts the market as formally defined.
 

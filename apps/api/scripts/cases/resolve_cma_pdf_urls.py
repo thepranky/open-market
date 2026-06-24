@@ -188,7 +188,7 @@ def main() -> int:
 
     session = requests.Session()
     session.headers["User-Agent"] = (
-        "CompMap-research-bot/1.0 (academic legal research; bhavyasharma1510@gmail.com)"
+        "Meridian-research-bot/1.0 (academic legal research; bhavyasharma1510@gmail.com)"
     )
 
     resolved = skipped_phase1 = skipped_exists = no_pdf = errors = 0

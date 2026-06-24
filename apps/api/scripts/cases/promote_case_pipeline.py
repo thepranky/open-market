@@ -226,7 +226,7 @@ def main(argv: list[str] | None = None) -> int:
     status: dict[str, str] = {}
 
     print(f"\n{'='*60}")
-    print(f"CompMap Promotion Pipeline: {args.case_id}")
+    print(f"Meridian Promotion Pipeline: {args.case_id}")
     if effective_draft:
         print(f"draft={effective_draft}  ({draft_source})")
     else:

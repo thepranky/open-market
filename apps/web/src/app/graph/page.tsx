@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Graph — CompMap",
+  title: "Graph — Meridian",
   description: "Navigate cases through sectors, markets, and related precedent.",
 };
 

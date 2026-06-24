@@ -424,7 +424,7 @@ def format_batch_report(results: list[WindowResult], case_id: str) -> str:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
-        description="Generic unit assessment batch runner for CompMap"
+        description="Generic unit assessment batch runner for Meridian"
     )
     parser.add_argument(
         "--case-id", required=True,
