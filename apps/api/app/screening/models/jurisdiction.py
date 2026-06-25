@@ -274,7 +274,6 @@ class JurisdictionRule(BaseModel):
     review_periods: ReviewPeriods
     threshold_tests: list[ThresholdTest]
     notes: list[str] = []
-    # Optional enrichment sections (added progressively)
     scope: Optional[JurisdictionScope] = None
     minority_thresholds: Optional[MinorityThresholds] = None
     gun_jumping: Optional[GunJumping] = None

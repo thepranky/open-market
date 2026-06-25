@@ -19,6 +19,7 @@ class CaseIndexEntry(BaseModel):
     outcome: Outcome
     case_type: str = "merger"
     source_url: Optional[str] = None
+    pdf_url: Optional[str] = None
     ai_summary: Optional[str] = None
     parties: list[Party] = Field(default_factory=list)
     concept_refs: list[ConceptRef] = Field(default_factory=list)

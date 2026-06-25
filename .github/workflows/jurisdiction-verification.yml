@@ -4,6 +4,10 @@ on:
   schedule:
     # Nightly: offline passage fixtures + staleness anchors (no live fetch by default).
     - cron: "0 4 * * *"
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/jurisdictions/**'
   workflow_dispatch:
     inputs:
       tier:
@@ -48,6 +52,8 @@ jobs:
         run: |
           if [ "$EVENT_NAME" = "schedule" ]; then
             TIER="nightly"
+          elif [ "$EVENT_NAME" = "pull_request" ]; then
+            TIER="push"
           else
             TIER="${INPUT_TIER:-push}"
           fi

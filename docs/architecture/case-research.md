@@ -16,6 +16,9 @@ and graph views.
 | `data/pipeline_profiles/` | Per-jurisdiction extraction config |
 | `data/review_learning/` | Human correction deltas |
 
+The shape and grounding rules for these records are the data contracts described in
+[DDR-A: Data contracts and source integrity](decisions/ddr-a-data-contracts.md).
+
 ## Backend
 
 | Layer | Key files (under `apps/api/app/`) |
