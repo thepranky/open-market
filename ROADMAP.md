@@ -11,11 +11,11 @@ See [`.cursor/rules/meridian.mdc`](.cursor/rules/meridian.mdc) for spec-driven w
 | | ✅ 1.2 | Script subdirs | `apps/api/scripts/` | Pipeline discoverability | ✅ Done (PR 2) |
 | | ✅ 1.3 | Web feature folders | `apps/web/src/features/` | Frontend boundaries | ✅ Done (PR 3) |
 | **2 Understand** | ✅ 2.A | DDR-A data contracts + source integrity | `ddr-a-data-contracts.md` | Contract and grounding model understood | ✅ Done |
-| | 2.1–2.I | DDR deep-dives (0, B–I) | `docs/architecture/decisions/` | Defensible understanding | Ready — restructure complete |
-| **3 CI** | 3.1 | Canonical case schema gate on PR | `.github/workflows/api-ci.yml`, `validate_cases.py` | Canonical YAML breaks silently today | Path-filtered `validate_cases.py` + `test_schema.py` when `data/cases/` changes |
-| | 3.2 | Jurisdiction push tier on PR | `api-ci.yml`, `run_jurisdiction_verification.py` | Screening regressions not gated on merge | `--tier push` when `data/jurisdictions/` changes (nightly workflow stays) |
-| | 3.3 | Case index schema gate on PR | `validate_case_index.py` or `validator.py` | Index YAML drifts from `CaseIndexEntry` | Validate `data/case_index/` on path change |
-| | 3.4 | Link DDR-A from case-research doc | `docs/architecture/case-research.md` | Onboarding misses contract reference | One link in Data layout section |
+| | 2.B–2.I | DDR deep-dives (0, B–I) | `docs/architecture/decisions/` | Defensible understanding | Ready — restructure complete |
+| **3 CI** | ✅ 3.1 | Canonical case schema gate on PR | `.github/workflows/data-contracts.yml`, `validate_cases.py` | Canonical YAML breaks silently today | ✅ Done (#19) |
+| | ✅ 3.2 | Jurisdiction push tier on PR | `jurisdiction-verification.yml`, `run_jurisdiction_verification.py` | Screening regressions not gated on merge | ✅ Done (#19) |
+| | ✅ 3.3 | Case index schema gate on PR | `validate_case_index.py` | Index YAML drifts from `CaseIndexEntry` | ✅ Done (#19) |
+| | ✅ 3.4 | Link DDR-A from case-research doc | `docs/architecture/case-research.md` | Onboarding misses contract reference | ✅ Done (#19) |
 | | 3.5 | Web lint + build in CI | new `web-ci.yml` | Frontend breaks undetected | `npm run lint && npm run build` |
 | | 3.6 | Ruff in CI | `api-ci.yml` | Style/errors only caught locally | `ruff check .` step |
 | | 3.7 | Benchmark artifacts | `api-ci.yml` | Eval trends discarded | Upload benchmark JSON as artifact |
