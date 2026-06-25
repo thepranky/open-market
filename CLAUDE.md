@@ -109,6 +109,7 @@ created — flag pre-existing dead code, don't delete it unasked.
 until met (e.g. "fix the bug" → write a failing test that reproduces it, 
 then make it pass; "refactor X" → tests green before and after). For multi-
 step work, state a brief plan with a verify step each.
+
 ## Key docs
 
 - `README.md` — onboarding
