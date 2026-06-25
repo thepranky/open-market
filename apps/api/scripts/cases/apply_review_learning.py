@@ -266,7 +266,7 @@ def _render_pattern_block(p: dict) -> list[str]:
     lines.append("")
     lines.append(f"**Proposed action:** `{action}`  ")
     if rule:
-        lines.append(f"**Rule candidate:** {_truncate(rule)}")
+        lines.append(f"**Rule candidate:** {rule}")
     lines.append("")
     for ev in p["evidence"]:
         oid = f" `{ev['object_id']}`" if ev.get("object_id") else ""

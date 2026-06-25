@@ -299,6 +299,16 @@ now triggers supplemental fallback, raising coverage to ≈ 84% of non-TOC pages
 
 ---
 
+## Draft and canonical artifacts
+
+- `data/drafts/{jurisdiction}/{case_id}.{focus}.draft.yaml` — output of a single focus pass via `ingest_case.py`.
+- `data/drafts/{jurisdiction}/{case_id}.merged.draft.yaml` — output of `merge_drafts.py`, combining multiple focus passes for a hard case.
+- `data/cases/{jurisdiction}/{case_id}.yaml` — the promoted, human-reviewed canonical record.
+
+**Bulk EU Phase I lane** (separate from the single-case path): `scrape_ec_registry.py` populates `data/case_index/`; `run_bulk_extraction.py` is a thin, resumable wrapper that loops `ingest_case.py` over index entries with no LLM review. It stays a wrapper by design.
+
+---
+
 ## File locations
 
 | Path | Purpose |

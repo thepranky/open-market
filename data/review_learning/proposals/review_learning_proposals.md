@@ -1,6 +1,6 @@
 # Review Learning Proposals
 
-Generated: 2026-06-02T03:00:11Z  
+Generated: 2026-06-25T23:40:16Z  
 Cases reviewed: 6  |  Total corrections: 19  |  Patterns identified: 8
 
 ---
@@ -19,28 +19,28 @@ Cases reviewed: 6  |  Total corrections: 19  |  Patterns identified: 8
 ### `definition_status_mapping` — 1 occurrence (cases: `eu_apple_shazam_2018`)
 
 **Proposed action:** `extraction_prompt_update`  
-**Rule candidate:** Article 8(1) EUMR unconditional clearance decisions should map to outcome=cleared. The operative part of the decision (dispositif) is the authoritative source for outcome; it should be preferred over …
+**Rule candidate:** Article 8(1) EUMR unconditional clearance decisions should map to outcome=cleared. The operative part of the decision (dispositif) is the authoritative source for outcome; it should be preferred over incidental references in recitals.
 
 - Case `eu_apple_shazam_2018` `eu_apple_shazam_2018` (case): `outcome`: `None` → `cleared`
 
 ### `missing_market_added` — 1 occurrence (cases: `eu_apple_shazam_2018`)
 
 **Proposed action:** `extraction_prompt_update`  
-**Rule candidate:** When a product market is extracted, the extraction prompt should explicitly probe for a corresponding geographic market assessment. Decisions that discuss EEA-wide or global scope should yield at leas…
+**Rule candidate:** When a product market is extracted, the extraction prompt should explicitly probe for a corresponding geographic market assessment. Decisions that discuss EEA-wide or global scope should yield at least one geographic market entry per product market.
 
 - Case `eu_apple_shazam_2018` `eu_apple_shazam_2018` (geographic_market): added: ['count_added', 'description']
 
 ### `missing_market_added` — 1 occurrence (cases: `eu_apple_shazam_2018`)
 
 **Proposed action:** `extraction_prompt_update`  
-**Rule candidate:** When a decision explicitly uses language such as "narrowest relevant product market" or names a sub-segment separately, that sub-segment should be extracted as its own product_market entry with defini…
+**Rule candidate:** When a decision explicitly uses language such as "narrowest relevant product market" or names a sub-segment separately, that sub-segment should be extracted as its own product_market entry with definition_status=defined.
 
 - Case `eu_apple_shazam_2018` `eu_apple_shazam_2018` (product_market): added: ['count_added', 'description']
 
 ### `outcome_passage_misuse` — 1 occurrence (cases: `eu_apple_shazam_2018`)
 
 **Proposed action:** `extraction_prompt_update`  
-**Rule candidate:** Passages whose quote indicates that a market was "left open" or "need not be resolved" because competitive harm was excluded should not be linked to product_markets_considered or geographic_markets_co…
+**Rule candidate:** Passages whose quote indicates that a market was "left open" or "need not be resolved" because competitive harm was excluded should not be linked to product_markets_considered or geographic_markets_considered entries as primary evidence. They may be retained in source_passages with source_role=outcome_finding.
 
 - Case `eu_apple_shazam_2018` `eu_apple_shazam_2018` (source_passage): `action`: `None` → `Passages re-classified or de-linked from market definitions.`; `passages_affected`: `['sp_3', 'sp_9', 'sp_12']` → `None`; `pattern`: `Passages concluding "left open because no competitive harm" were linked to market entries as primary market-definition evidence.` → `None`
 
