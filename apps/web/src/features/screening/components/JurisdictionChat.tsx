@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import type { JurisdictionSummary } from "@/lib/types";
+import { getBaseUrl } from "@/lib/api-client";
 
 interface CitationRef {
   n: number;
@@ -46,7 +47,7 @@ interface JurisdictionChatProps {
   jurisdictions: JurisdictionSummary[];
 }
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
+const API_BASE = getBaseUrl();
 
 export function JurisdictionChat({ jurisdictions }: JurisdictionChatProps) {
   const [open, setOpen] = useState(false);

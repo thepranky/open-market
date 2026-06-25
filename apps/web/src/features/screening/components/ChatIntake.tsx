@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect, useCallback } from "react";
 import type { ScreeningRequest } from "@/lib/types";
+import { getBaseUrl } from "@/lib/api-client";
 
 // ── Jurisdiction metadata ────────────────────────────────────────────────────
 
@@ -1114,7 +1115,7 @@ function buildInitialRows(selectedIds: string[]): Record<string, FigureRow> {
 // ── Main export ────────────────────────────────────────────────────────────────
 
 export function ChatIntake({ onScreeningRequest }: { onScreeningRequest: (req: ScreeningRequest, selectedIds: string[]) => void }) {
-  const baseUrl = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
+  const baseUrl = getBaseUrl();
 
   const [stage, setStage] = useState<Stage>("chat");
   const [messages, setMessages] = useState<ChatMessage[]>([]);

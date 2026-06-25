@@ -33,7 +33,7 @@ from typing import Any, Optional
 import yaml
 
 _SCRIPTS_DIR = Path(__file__).resolve().parent
-_API_DIR = _SCRIPTS_DIR.parent
+_API_DIR = _SCRIPTS_DIR.parent.parent
 _REPO_ROOT = _API_DIR.parents[1]
 
 sys.path.insert(0, str(_API_DIR))

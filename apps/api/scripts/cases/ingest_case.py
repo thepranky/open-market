@@ -37,7 +37,7 @@ import yaml
 # ---------------------------------------------------------------------------
 
 _SCRIPTS_DIR = Path(__file__).resolve().parent
-_API_DIR = _SCRIPTS_DIR.parent
+_API_DIR = _SCRIPTS_DIR.parent.parent
 _REPO_ROOT = _API_DIR.parents[1]
 
 for _p in (str(_API_DIR), str(_SCRIPTS_DIR)):

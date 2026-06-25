@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import type { EntityCase, GraphNeighborhoodResponse, GraphNode } from "@/lib/types";
 import { getGraphMarket, getGraphTheory } from "@/features/cases/api";
 import { cn } from "@/lib/utils";
+import { getBaseUrl } from "@/lib/api-client";
 import { EntityDetailPanel } from "./EntityDetailPanel";
 import { MarketMapView } from "./MarketMapView";
 import { TheoryMapView } from "./TheoryMapView";
@@ -53,12 +54,8 @@ class GraphError extends Error {
   }
 }
 
-function getApiBase(): string {
-  return process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
-}
-
 async function fetchNeighborhood(caseId: string): Promise<GraphNeighborhoodResponse> {
-  const url = `${getApiBase()}/graph/neighborhood/${caseId}`;
+  const url = `${getBaseUrl()}/graph/neighborhood/${caseId}`;
   let res: Response;
   try {
     res = await fetch(url);
@@ -77,7 +74,7 @@ async function fetchNeighborhood(caseId: string): Promise<GraphNeighborhoodRespo
 }
 
 async function fetchFirstSearchResult(q: string): Promise<SearchHit | null> {
-  const url = `${getApiBase()}/search/all?q=${encodeURIComponent(q)}`;
+  const url = `${getBaseUrl()}/search/all?q=${encodeURIComponent(q)}`;
   let res: Response;
   try {
     res = await fetch(url);
@@ -210,7 +207,7 @@ export function GraphView({ initialCaseId, initialTab = "case" }: Props) {
           return;
         }
         const hit = await fetchFirstSearchResult("microsoft");
-        if (!hit) throw new GraphError("No cases found for default query 'microsoft'", `${getApiBase()}/search/all?q=microsoft`);
+        if (!hit) throw new GraphError("No cases found for default query 'microsoft'", `${getBaseUrl()}/search/all?q=microsoft`);
         const data = await fetchNeighborhood(hit.case_id);
         applyNeighborhood(data, hit.case_name);
       } catch (e) {
@@ -228,7 +225,7 @@ export function GraphView({ initialCaseId, initialTab = "case" }: Props) {
     const tid = setTimeout(async () => {
       setSearching(true);
       try {
-        const url = `${getApiBase()}/search/all?q=${encodeURIComponent(q)}`;
+        const url = `${getBaseUrl()}/search/all?q=${encodeURIComponent(q)}`;
         const res = await fetch(url);
         if (res.ok) {
           const data: SearchHit[] = await res.json();

@@ -10,6 +10,7 @@ import type {
   ReviewPeriod,
 } from "@/lib/types";
 import { ChatIntake } from "./ChatIntake";
+import { getBaseUrl } from "@/lib/api-client";
 import { VerificationBadges } from "@/features/screening/components/VerificationBadges";
 
 // ── Formatting helpers ────────────────────────────────────────────────────────
@@ -429,7 +430,7 @@ function JurisdictionPanel({
   useEffect(() => {
     setRule(null);
     setLoading(true);
-    const baseUrl = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
+    const baseUrl = getBaseUrl();
     fetch(`${baseUrl}/jurisdictions/${result.jurisdiction_id}`)
       .then((r) => (r.ok ? r.json() : null))
       .then((data) => { setRule(data); })
@@ -659,10 +660,7 @@ export function ScreenClient() {
     setError(null);
     setResults(null);
     try {
-      const baseUrl =
-        typeof window !== "undefined"
-          ? (process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000")
-          : "http://localhost:8000";
+      const baseUrl = getBaseUrl();
       const res = await fetch(`${baseUrl}/jurisdictions/screen`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
