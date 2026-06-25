@@ -1,10 +1,12 @@
 # DDR-0: Repository layout
 
-**Status:** accepted | **Date:** 2026-06-24 | **Implemented:** PRs 1–3 (`067b68b`, `cb84966`, `8d8973e`)
+**Date:** 2026-06-24
 
 ## Decision
 
 Keep **one monorepo** (`open-market`) under `apps/` (api + web unchanged). Split API code into **`app/cases/`**, **`app/screening/`**, and **`app/shared/`** (infrastructure only). Mirror in `scripts/cases/`, `scripts/screening/`, and `src/features/`. Do not split repos or move `data/` paths.
+
+Implementation move list: [`docs/specs/2026-06-24-restructure-layout.md`](../../specs/2026-06-24-restructure-layout.md).
 
 ## Context
 
@@ -43,23 +45,15 @@ Two products share one deployable API and one web app. Data top-level folders al
 - **Nest all data under `data/cases/` + `data/jurisdictions/`** — rejected; massive path churn; `drafts/` vs `cases/` sibling boundary is valuable.
 - **Two repos / microservices** — rejected for capstone scale.
 
-## What we are not deciding here
+## Deferred (not part of this decision)
 
-- Splitting `jurisdictions.py` into multiple routers (DDR-F).
-- Renaming `Juris.tsx` / stats labels (DDR-G).
-- Removing Neo4j (DDR-C).
-- Flattening `apps/` to root-level `api/` + `web/`.
-
-See `docs/specs/2026-06-24-restructure-layout.md` for the full move list and verification commands.
+- Splitting `jurisdictions.py` into multiple routers → DDR-F
+- Renaming `Juris.tsx` / stats labels → DDR-G
+- Removing Neo4j → DDR-C
+- Flattening `apps/` to root-level `api/` + `web/`
 
 ## Consequences
 
-- **Positive:** Imports document ownership; deep-dives A–I use stable product paths.
-- **Negative:** Three PRs of import churn; docs updated in sync (see spec § Documentation sync).
+- **Positive:** Imports document ownership; subsystem deep-dives use stable product paths.
+- **Negative:** Multi-PR import churn when landing the layout change.
 - **Risk:** Screening imports `shared/utils/pdf_extractor` — acceptable infra dependency, not cases→screening domain coupling.
-
-## Next steps
-
-1. DDR deep-dives A–I on the new paths (ROADMAP phase 2).
-2. CI hardening — schema validation, jurisdiction push tier, web build (ROADMAP phase 3).
-3. Deferred refactors only after relevant DDR (router split, symbol renames, Neo4j).

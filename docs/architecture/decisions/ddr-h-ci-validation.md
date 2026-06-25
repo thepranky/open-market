@@ -1,6 +1,5 @@
 # DDR-H: CI, tests, and validation gates
 
-**Status:** draft | **Date:**
 
 ## Before you start
 
@@ -26,5 +25,3 @@ Run locally: `pytest tests/test_schema.py -v` and compare to CI test list.
 ## Alternatives considered
 
 ## Gaps
-
-## Next steps

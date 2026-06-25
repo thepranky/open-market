@@ -1,15 +1,14 @@
 # Spec: repository layout restructure
 
-**Status:** accepted — implemented 2026-06-24 (PRs 1–3 on `repo/restructuring`)  
-**Goal:** Mechanical package boundaries so case research and jurisdiction screening are obvious in the tree. Move-only — no logic changes.
+Mechanical package boundaries so case research and jurisdiction screening are obvious in the tree. Move-only — no logic changes.
+
+**Decision rationale:** [ddr-0-repo-layout.md](../architecture/decisions/ddr-0-repo-layout.md)
 
 **Out of scope:** router splits, symbol renames, Neo4j removal, auth, CI expansion (separate specs).
 
-**Commits:** `067b68b` (API packages) · `cb84966` (script subdirs) · `8d8973e` (web features)
-
 ---
 
-## Target tree (current)
+## Target tree
 
 ### API — `apps/api/app/`
 
@@ -55,11 +54,11 @@ src/
 ├── components/         # shared chrome: NavBar, ThemeToggle, Badge, …
 └── lib/
     ├── api-client.ts   # shared fetch helpers (server vs browser base URL)
-    ├── types.ts        # all TS types (split by feature deferred — ROADMAP 4.x)
+    ├── types.ts        # all TS types (split by feature is a separate change)
     └── utils.ts
 ```
 
-`features/cases/api.ts` and `features/screening/api.ts` replaced monolithic `lib/api.ts`.
+`features/cases/api.ts` and `features/screening/api.ts` replace monolithic `lib/api.ts`.
 
 ### Data — no moves (documented grouping)
 
@@ -78,11 +77,13 @@ Do not nest everything under `data/cases/` — high churn, and `drafts/` vs `cas
 
 ---
 
-## Phased execution (completed)
+## Phased execution
 
-### PR 1 — API packages ✅
+Three independent PRs (API packages → script subdirs → web features).
 
-Moved flat `app/routers/`, `services/`, `models/`, `loader/`, `core/`, `utils/` into `app/cases/`, `app/screening/`, `app/shared/` per move table below. Updated all `from app.` imports in `app/`, `tests/`, `scripts/`, `main.py`.
+### PR 1 — API packages
+
+Move flat `app/routers/`, `services/`, `models/`, `loader/`, `core/`, `utils/` into product packages. Update all `from app.` imports in `app/`, `tests/`, `scripts/`, `main.py`.
 
 | From | To |
 |------|-----|
@@ -112,9 +113,7 @@ Moved flat `app/routers/`, `services/`, `models/`, `loader/`, `core/`, `utils/` 
 | `app/models/jurisdiction_verification.py` | `app/screening/models/jurisdiction_verification.py` |
 | `app/utils/*` | `app/shared/utils/*` |
 
-**Verified:** pytest 2142 passed (17 pre-existing failures unrelated to restructure).
-
-### PR 2 — Script subdirs ✅
+### PR 2 — Script subdirs
 
 **`scripts/cases/`:**  
 `extract_case_from_source`, `ingest_case`, `promote_*`, `validate_*`, `check_source_*`, `check_review_readiness`, `check_case_index_sources`, `review_draft`, `merge_drafts`, `run_bulk_extraction`, `run_controlled_case`, `run_unit_assessment_batch`, `plan_*`, `create_gold_draft`, `repair_*`, `evaluate_extraction`, `run_eval_benchmark`, `create_review_learning_log`, `apply_review_learning`, `bulk_promote_pass`, `index_embeddings`, `scrape_*`, `resolve_*`, **`pipeline_profile.py`**
@@ -122,11 +121,9 @@ Moved flat `app/routers/`, `services/`, `models/`, `loader/`, `core/`, `utils/` 
 **`scripts/screening/`:**  
 `run_jurisdiction_verification`, `verify_jurisdiction_*`, `monitor_jurisdiction_staleness`, `fix_jurisdiction_redirects`, `insert_minority_thresholds`, `report_jurisdiction_verification_baseline`
 
-Updated: `promote_case_pipeline.py` subprocess paths, CI workflows, docs command blocks, DDR/script references.
+Also update: `promote_case_pipeline.py` subprocess paths, CI workflows, and path references in docs that cite script locations.
 
-**Verified:** pytest + `--help` on one script per subdir.
-
-### PR 3 — Web feature folders ✅
+### PR 3 — Web feature folders
 
 | From | To |
 |------|-----|
@@ -137,54 +134,25 @@ Updated: `promote_case_pipeline.py` subprocess paths, CI workflows, docs command
 
 **Next.js:** `src/app/*/page.tsx` remain as thin wrappers importing from `features/`. URL paths unchanged.
 
-**Verified:** `npm run build` passes.
-
 ---
 
-## Explicitly does NOT move yet
+## Explicitly out of scope for this spec
 
 | Item | Why defer |
 |------|-----------|
-| Split `jurisdictions.py` into screening + chat routers | Needs DDR-F; behaviour change risk |
-| Rename `Juris.tsx`, `jurisdiction_count` | Needs DDR-G; cosmetic + import churn |
-| Split `lib/types.ts` by feature | ROADMAP 4.x; re-exports work for now |
-| `data_jurisdictions_path` config key | Small spec after screening package exists |
+| Split `jurisdictions.py` into screening + chat routers | Behaviour change; see DDR-F |
+| Rename `Juris.tsx`, `jurisdiction_count` | Cosmetic; see DDR-G |
+| Split `lib/types.ts` by feature | Separate change |
+| `data_jurisdictions_path` config key | Small follow-up spec |
 | Neo4j / `graph/` removal | DDR-C decision |
-| `data/` tree | Paths stable; grouping documented in overview |
-| Flatten `apps/` to root `api/` + `web/` | Unrelated churn; revisit only if monorepo grows |
+| `data/` tree moves | Paths stable; grouping in overview |
+| Flatten `apps/` to root `api/` + `web/` | Unrelated churn |
 | Two repos or npm packages | Overkill |
-| CI workflow expansion | ROADMAP phase 3 spec |
+| CI workflow expansion | Separate spec |
 
 ---
 
-## Documentation sync (completed 2026-06-24)
-
-All paths below reflect the post-restructure tree.
-
-| File | Updated |
-|------|---------|
-| `.cursor/rules/meridian.mdc` | Layout, architecture, commands |
-| `CLAUDE.md` | Same |
-| `README.md` | Repo structure block |
-| `ROADMAP.md` | Phase 1 steps 1.1–1.3 marked done |
-| `docs/architecture/overview.md` | Code layout, layering, mermaid |
-| `docs/architecture/case-research.md` | Backend + frontend paths |
-| `docs/architecture/jurisdiction-screening.md` | Backend + frontend paths |
-| `docs/architecture/decisions/README.md` | DDR-0 status |
-| `docs/architecture/decisions/ddr-0-repo-layout.md` | Accepted; next steps → DDR deep-dives |
-| `docs/architecture/decisions/ddr-a` through `ddr-i` | `Before you start` paths |
-| `docs/operations/ingestion.md` | Script paths |
-| `docs/operations/promotion-checklist.md` | Command paths |
-| `docs/operations/jurisdiction-verification.md` | Service, model, script, web paths |
-| `docs/operations/hard-cases.md` | Script paths |
-| `.github/workflows/api-ci.yml` | `scripts/cases/run_eval_benchmark.py` |
-| `.github/workflows/jurisdiction-verification.yml` | `scripts/screening/run_jurisdiction_verification.py` |
-
-**No path updates needed:** `docs/data/source-integrity.md`, `docs/specs/_template.md`, `data/jurisdictions/_schema.md`.
-
----
-
-## Verification (full restructure)
+## Verification
 
 ```bash
 cd apps/api && .venv/bin/python -m pytest tests/ -v
@@ -192,6 +160,8 @@ cd apps/api && .venv/bin/ruff check .
 cd apps/web && npm run lint && npm run build
 docker compose up --build   # smoke: /health, /explore, /screen
 ```
+
+After PR 2: run one script from each subdir with `--help`.
 
 ---
 

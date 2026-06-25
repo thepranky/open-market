@@ -1,6 +1,5 @@
 # DDR-I: Infrastructure and deployment
 
-**Status:** draft | **Date:**
 
 ## Before you start
 
@@ -25,5 +24,3 @@ Sketch: what breaks if Postgres is down? if `GOOGLE_API_KEY` missing?
 ## Alternatives considered
 
 ## Gaps
-
-## Next steps

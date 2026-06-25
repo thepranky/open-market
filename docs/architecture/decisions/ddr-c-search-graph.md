@@ -1,6 +1,5 @@
 # DDR-C: Search, embeddings, and graph
 
-**Status:** draft | **Date:**
 
 ## Before you start
 
@@ -26,5 +25,3 @@ Optional: `app/shared/core/neo4j_client.py`, `graph/seed_graph.py` (legacy path)
 ## Alternatives considered
 
 ## Gaps
-
-## Next steps

@@ -1,7 +1,5 @@
 # DDR-A: Data contracts and source integrity
 
-**Status:** draft | **Date:**
-
 ## Before you start
 
 Read/trace:
@@ -33,8 +31,4 @@ _(What else could work; why not)_
 
 ## Gaps
 
-_(What's missing or weak)_
-
-## Next steps
-
-_(Concrete items for ROADMAP; spec-sized)_
+_(What's missing or weak — add follow-ups to ROADMAP.md if you act on them)_

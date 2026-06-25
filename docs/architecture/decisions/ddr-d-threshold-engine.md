@@ -1,6 +1,5 @@
 # DDR-D: Threshold engine
 
-**Status:** draft | **Date:**
 
 ## Before you start
 
@@ -26,5 +25,3 @@ Screen a test deal via API docs or curl.
 ## Alternatives considered
 
 ## Gaps
-
-## Next steps

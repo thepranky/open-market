@@ -1,6 +1,5 @@
 # DDR-B: Extraction pipeline
 
-**Status:** draft | **Date:**
 
 ## Before you start
 
@@ -26,5 +25,3 @@ Run (read-only): `promote_case_pipeline.py --dry-run` on a known case if availab
 ## Alternatives considered
 
 ## Gaps
-
-## Next steps

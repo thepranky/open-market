@@ -1,6 +1,5 @@
 # DDR-E: Jurisdiction verification
 
-**Status:** draft | **Date:**
 
 ## Before you start
 
@@ -26,5 +25,3 @@ Run: `run_jurisdiction_verification.py --tier push`
 ## Alternatives considered
 
 ## Gaps
-
-## Next steps

@@ -10,7 +10,7 @@
 | [operations/hard-cases.md](operations/hard-cases.md) | Multi-pass extraction review |
 | [operations/jurisdiction-verification.md](operations/jurisdiction-verification.md) | Jurisdiction verification tiers and gates |
 | [data/source-integrity.md](data/source-integrity.md) | Quote/locator rules and enforcement |
-| [specs/2026-06-24-restructure-layout.md](specs/2026-06-24-restructure-layout.md) | Repo layout restructure (completed 2026-06-24) |
+| [specs/2026-06-24-restructure-layout.md](specs/2026-06-24-restructure-layout.md) | Repo layout restructure spec |
 | [architecture/decisions/](architecture/decisions/) | Design decision records (DDRs) |
 | [ROADMAP.md](../ROADMAP.md) | Phased work plan to production |
 

@@ -91,11 +91,12 @@ Env: `DATABASE_URL`, `DATA_CASES_PATH`, `DATA_CASE_INDEX_PATH`, `GOOGLE_API_KEY`
 
 **Non-trivial** (>3 files, schema change, restructure, new feature):
 
-1. **Spec** in `docs/specs/YYYY-MM-DD-name.md` — goal, approach, files, verification.
+1. **Spec** in `docs/specs/YYYY-MM-DD-name.md` — goal, approach, files, verification (not progress/status).
 2. **Small PR** — one spec, one change set.
 3. **Verify** — every command/check from the spec.
+4. **Progress** — update `ROADMAP.md` only; do not duplicate status in specs or DDRs.
 
-**DDRs** (`docs/architecture/decisions/`) — for understanding subsystems; reference when changing that area.
+**DDRs** (`docs/architecture/decisions/`) — decisions and rationale; reference when changing that area.
 
 ## How to work (bias to caution over speed; use judgment on trivial tasks)
 - **Think before coding.** State assumptions explicitly; if uncertain, ask. 
@@ -118,5 +119,5 @@ step work, state a brief plan with a verify step each.
 
 - `README.md` — onboarding
 - `docs/architecture/overview.md` — system map
-- `docs/specs/2026-06-24-restructure-layout.md` — repo layout reference (completed 2026-06-24)
-- `ROADMAP.md` — phased work to production
+- `ROADMAP.md` — phased work to production (single source of truth for progress)
+- `docs/specs/2026-06-24-restructure-layout.md` — repo layout spec

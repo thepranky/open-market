@@ -1,6 +1,5 @@
 # DDR-G: Web frontend
 
-**Status:** draft | **Date:**
 
 ## Before you start
 
@@ -26,5 +25,3 @@ Run: `npm run dev`; click through all nav routes.
 ## Alternatives considered
 
 ## Gaps
-
-## Next steps

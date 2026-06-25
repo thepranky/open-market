@@ -1,6 +1,5 @@
 # DDR-F: Deal-intake LLM
 
-**Status:** draft | **Date:**
 
 ## Before you start
 
@@ -24,5 +23,3 @@ Use `/screen` in browser; watch network tab for API calls.
 ## Alternatives considered
 
 ## Gaps
-
-## Next steps
