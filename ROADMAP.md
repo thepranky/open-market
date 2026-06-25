@@ -6,12 +6,13 @@ See [`.cursor/rules/meridian.mdc`](.cursor/rules/meridian.mdc) for spec-driven w
 | Phase | Step | What | Files / areas | Why | How |
 |-------|------|------|---------------|-----|-----|
 | **0 Docs** | ✅ 0.1 | Doc consolidation | `docs/`, `README.md`, `CLAUDE.md` | Single source of truth for onboarding | ✅ Done |
-| | ✅ 0.2 | Layout spec + DDR-0 | `docs/specs/2026-06-24-restructure-layout.md`, `ddr-0-repo-layout.md` | Clear boundaries before deep-dives | ✅ Done |
+| | ✅ 0.2 | Layout spec + DDR-0 | `docs/specs/completed/2026-06-24-restructure-layout.md`, `ddr-0-repo-layout.md` | Clear boundaries before deep-dives | ✅ Done |
 | **1 Restructure** | ✅ 1.1 | API packages (`cases/`, `screening/`, `shared/`) | `apps/api/app/` | Learnable module boundaries | ✅ Done (PR 1) |
 | | ✅ 1.2 | Script subdirs | `apps/api/scripts/` | Pipeline discoverability | ✅ Done (PR 2) |
 | | ✅ 1.3 | Web feature folders | `apps/web/src/features/` | Frontend boundaries | ✅ Done (PR 3) |
 | **2 Understand** | ✅ 2.A | DDR-A data contracts + source integrity | `ddr-a-data-contracts.md` | Contract and grounding model understood | ✅ Done |
-| | 2.B–2.I | DDR deep-dives (0, B–I) | `docs/architecture/decisions/` | Defensible understanding | Ready — restructure complete |
+| | ✅ 2.B | DDR-B extraction pipeline | `ddr-b-extraction-pipeline.md` | Draft → promote pipeline, scripts, review loop | ✅ Done |
+| | 2.C–2.I | DDR deep-dives (C–I) | `docs/architecture/decisions/` | Defensible understanding | Ready — restructure complete |
 | **3 CI** | ✅ 3.1 | Canonical case schema gate on PR | `.github/workflows/data-contracts.yml`, `validate_cases.py` | Canonical YAML breaks silently today | ✅ Done (#19) |
 | | ✅ 3.2 | Jurisdiction push tier on PR | `jurisdiction-verification.yml`, `run_jurisdiction_verification.py` | Screening regressions not gated on merge | ✅ Done (#19) |
 | | ✅ 3.3 | Case index schema gate on PR | `validate_case_index.py` | Index YAML drifts from `CaseIndexEntry` | ✅ Done (#19) |
@@ -25,9 +26,11 @@ See [`.cursor/rules/meridian.mdc`](.cursor/rules/meridian.mdc) for spec-driven w
 | | 4.4 | Neo4j deprecation decision | `graph/`, `neo4j_client.py` | Legacy noise | DDR-C then spec |
 | | 4.5 | Case YAML semantic lint | `validator.py` or new script | Lawyer rules not enforced by Pydantic | `complaint`→`discussed`, outcome passages not in `supports_markets` (ddr-a) |
 | | 4.6 | Jurisdiction quote integrity | `scripts/screening/` | `quoted_text` / `supports_conditions` unvalidated | Parity with `check_source_integrity.py` |
+| | 4.6a | Expand grounding to non-threshold fields | `jurisdiction.py`, `jurisdiction_passages.py`, `jurisdiction_verification.py`, `jurisdiction_baseline.py` | Review periods, fees, gun-jumping fines, regime flags ungrounded; errors found in Batch A/B sweep | [spec](docs/specs/2026-06-25-expand-field-grounding.md): add `supports_fields` to `SourcePassage`; field-path resolver; qualitative fields get passage-existence check; Tier 4 re-extraction handles interpretation cross-check |
 | | 4.7 | Unify SourcePassage contracts | `case.py`, `jurisdiction.py`, integrity scripts | Two passage types, one grounding concept | Shared fields or aliases; one check module |
 | | 4.8 | Deprecate `SourceDocument.url` | `case.py`, `data/cases/` | Legacy fallback after `pdf_url` / `case_page_url` | Audit records; migrate; then remove field |
 | | 4.9 | Printed-folio detection in PDF cache | `pdf_extractor.py`, `source_text/` | EC folio vs PDF-index offset is manual | Optional folio parse when building page cache |
+| | 4.10 | Regroup `scripts/cases/` by stage | `apps/api/scripts/cases/` | Flat folder mixes discovery / extract / review / promote / integrity (ddr-b Q3a) | Spec first; subfolders `discovery/ extract/ review/ promote/`; path-only churn, no behaviour change |
 | **5 Product** | ✅ 5.1 | Unify branding | `README`, web nav, API title | CompMap vs Meridian | ✅ Done |
 | | 5.2 | Indexed vs canonical decision | `case-research.md`, web UX | Two case layers confuse users (ddr-a Q7) | UX copy now; later merge or keep dual layer |
 | | 5.3 | Eval metrics in UI (admin) | new `/admin` or debug panel | Reliability story hidden | Read-only view of benchmark output |
@@ -36,6 +39,10 @@ See [`.cursor/rules/meridian.mdc`](.cursor/rules/meridian.mdc) for spec-driven w
 | | 5.6 | Wire verification to integrity | `Evidence.tsx`, models | `PropositionVerification` vs passage status diverge | Single trust signal from integrity results |
 | | 5.7 | `case_type` enum expansion | `case.py` | JV / minority cases need typed `case_type` | When ingesting non-merger cases |
 | | 5.8 | Automated `similar_cases` | graph / search services | Curated manually in YAML today | Scoring pipeline with quality bar |
+| | 5.9 | Dual extraction for case ingestion | `ingest_case.py`, new `compare_extractions.py`, `promote_case_pipeline.py` | Human reviews every promoted case; not scalable beyond hundreds | [spec](docs/specs/2026-06-25-case-dual-extraction.md): two cold extractions → LLM-assisted diff → human reviews conflicts only; ~2x extraction cost, eliminates per-case full review |
+| | 5.10 | Multi-jurisdiction PDF resolution | `resolve_pdf_urls.py`, new per-authority resolvers, `ingest_case.py --from-index` | Only EU Phase I auto-resolves; Phase II / UK / US need manual URLs (ddr-b gap) | Shared resolver interface; per-authority adapters (EUR-Lex, CMA, FTC/DOJ); dedup with EU path |
+| | 5.11 | Hard-case orchestration automation | `plan_extraction_ranges.py`, `run_unit_assessment_batch.py`, `merge_drafts.py`, `run_controlled_case.py` | ~60 manual commands per mega-merger (ddr-b Q8) | Emit runnable batch plan; all-focus batch runner; auto-invoke merge + `check_review_readiness` |
+| | 5.12 | Workflow engine evaluation (conditional) | pipeline orchestration | Only if extraction (not human review) throughput becomes the bottleneck near 1000 cases (ddr-b Q7) | Evaluate Temporal/Prefect for durable resume + parallel fan-out; defer until justified |
 | **6 Deploy** | 6.1 | Production Docker / compose prod | `docker-compose.prod.yml`, Dockerfiles | Dev compose not production-ready | Multi-stage builds, non-root, healthchecks |
 | | 6.2 | Managed Postgres + pgvector | env docs, migrations | Local-only DB today | Neon/Supabase/RDS; connection pooling |
 | | 6.3 | API deploy (Fly/Railway/ECS) | `apps/api/`, CI | No hosted API | Container deploy + `DATABASE_URL` secrets |

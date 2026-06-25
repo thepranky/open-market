@@ -6,7 +6,7 @@
 
 Keep **one monorepo** (`open-market`) under `apps/` (api + web unchanged). Split API code into **`app/cases/`**, **`app/screening/`**, and **`app/shared/`** (infrastructure only). Mirror in `scripts/cases/`, `scripts/screening/`, and `src/features/`. Do not split repos or move `data/` paths.
 
-Implementation move list: [`docs/specs/2026-06-24-restructure-layout.md`](../../specs/2026-06-24-restructure-layout.md).
+Implementation move list: [`docs/specs/completed/2026-06-24-restructure-layout.md`](../../specs/completed/2026-06-24-restructure-layout.md).
 
 ## Context
 

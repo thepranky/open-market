@@ -133,6 +133,6 @@ Domain models live in product packages (`app/cases/models/`, `app/screening/mode
 
 - [case-research.md](case-research.md)
 - [jurisdiction-screening.md](jurisdiction-screening.md)
-- [specs/2026-06-24-restructure-layout.md](../specs/2026-06-24-restructure-layout.md)
+- [specs/completed/2026-06-24-restructure-layout.md](../specs/completed/2026-06-24-restructure-layout.md)
 - [operations/ingestion.md](../operations/ingestion.md)
 - [operations/jurisdiction-verification.md](../operations/jurisdiction-verification.md)

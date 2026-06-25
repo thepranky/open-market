@@ -2,7 +2,7 @@
 
 Mechanical package boundaries so case research and jurisdiction screening are obvious in the tree. Move-only — no logic changes.
 
-**Decision rationale:** [ddr-0-repo-layout.md](../architecture/decisions/ddr-0-repo-layout.md)
+**Decision rationale:** [ddr-0-repo-layout.md](../../architecture/decisions/ddr-0-repo-layout.md)
 
 **Out of scope:** router splits, symbol renames, Neo4j removal, auth, CI expansion (separate specs).
 
@@ -62,7 +62,7 @@ src/
 
 ### Data — no moves (documented grouping)
 
-Top-level folders stay as-is. See [architecture/overview.md](../architecture/overview.md#data-layout) for case vs screening groupings.
+Top-level folders stay as-is. See [architecture/overview.md](../../architecture/overview.md#data-layout) for case vs screening groupings.
 
 ```
 data/

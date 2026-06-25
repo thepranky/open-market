@@ -10,10 +10,9 @@
 | [operations/hard-cases.md](operations/hard-cases.md) | Multi-pass extraction review |
 | [operations/jurisdiction-verification.md](operations/jurisdiction-verification.md) | Jurisdiction verification tiers and gates |
 | [data/source-integrity.md](data/source-integrity.md) | Quote/locator rules and enforcement |
-| [specs/2026-06-24-restructure-layout.md](specs/2026-06-24-restructure-layout.md) | Repo layout restructure spec |
+| [specs/](specs/) | Completed (specs/completed/) and in progress specs|
 | [architecture/decisions/](architecture/decisions/) | Design decision records (DDRs) |
 | [ROADMAP.md](../ROADMAP.md) | Phased work plan to production |
 
-**Data contracts (in repo):** `data/jurisdictions/_schema.md`, `_verification_schema.md`
 
 **Agent onboarding:** root [`README.md`](../README.md), [`CLAUDE.md`](../CLAUDE.md), [`.cursor/rules/meridian.mdc`](../.cursor/rules/meridian.mdc)

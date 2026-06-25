@@ -4,7 +4,7 @@
 
 Gate PR merges on data-contract validation when relevant YAML changes, without touching
 unrelated PRs. Three path-filtered CI jobs enforce the contracts defined in
-[DDR-A](../architecture/decisions/ddr-a-data-contracts.md): canonical case schema
+[DDR-A](../../architecture/decisions/ddr-a-data-contracts.md): canonical case schema
 (`data/cases/**`), jurisdiction push-tier verification (`data/jurisdictions/**`), and
 case-index schema (`data/case_index/**`). A fourth change adds the DDR-A cross-link to
 the case-research architecture doc. All jobs run in `apps/api/` with the existing Python

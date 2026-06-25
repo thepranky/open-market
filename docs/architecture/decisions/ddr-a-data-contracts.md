@@ -196,7 +196,7 @@ Jurisdictions never touch Postgres — loaded in-memory from YAML.
 
 ## 9. Gaps — implement now
 
-Tracked in `ROADMAP.md` Phase 3. Implement via one spec (see prompt below).
+Tracked in `ROADMAP.md` Phase 3. Implement via one spec.
 
 1. **PR CI: canonical schema gate** — `validate_cases.py` + `tests/test_schema.py` when `data/cases/` changes (3.1).
 
