@@ -198,7 +198,7 @@ source_passages:
       million times the daily value of the UMA."
     supports_conditions:
       - mx_tv_deal_value
-      - mx_acquired_assets_domestic
+      - mx_asset_accumulation_domestic
       - mx_combined_domestic
 
 threshold_tests:
@@ -220,20 +220,16 @@ threshold_tests:
   # client alert July 2025; Creel Abogados client alerts.
 
   - test_id: mx_transaction_value
-    description: "Transaction value test — deal value in Mexico > MXN 1,810m (post-July 2025 reform, 2025 UMA-based)"
-    legal_basis: "LFCE Article 86(I) as amended July 2025"
-    source_url: "https://www.cofece.mx/concentraciones/"
+    description: "Transaction value test (Art 86 I) — deal value in Mexico > 16,000,000 UMA (MXN 1,876,960,000 at 2026 UMA)"
+    legal_basis: "LFCE Article 86, fracción I (reformada DOF 16-07-2025)"
+    source_url: "https://mley.mx/LFCE/articulo/86/"
     note: >
-      Filing required if the transaction value in Mexico (directly or indirectly)
-      exceeds the prescribed UMA-based threshold. The July 2025 reform (effective July 16,
-      2025) REDUCED the multiplier from 18 million to 16 million times the daily UMA value.
-      At the 2025 UMA daily rate of MXN 113.14, this gives MXN 16,000,000 × 113.14 =
-      MXN 1,810,240,000. The prior (pre-reform) threshold based on 18M × daily UMA was
-      approximately MXN 2,036,520,000 — that figure is no longer in force.
-      The threshold changes each January when INEGI announces the new annual UMA rate.
-      Verify current-year amount before filing.
+      Filing required if the transaction value in Mexico (directly or indirectly) exceeds
+      16,000,000 times the daily UMA. The July 2025 reform reduced the multiplier from 18M
+      to 16M UMA. At the 2026 daily UMA of MXN 117.31 (INEGI, eff. 1 Feb 2026), this is
+      16,000,000 × 117.31 = MXN 1,876,960,000. Recomputed each February per the new UMA.
     annual_adjustment: true
-    effective_date: "2025-07-16"
+    effective_date: "2026-02-01"
 
     conditions:
       - condition_id: mx_tv_deal_value
@@ -241,64 +237,79 @@ threshold_tests:
         scope: domestic
         party: combined
         operator: ">"
-        value: 1810240000
+        value: 1876960000
         currency: MXN
-        source: "LFCE Article 86(I) as amended by July 2025 reform; 16,000,000 × MXN 113.14 (2025 daily UMA)"
+        source: "LFCE Art. 86 fracción I (16,000,000 UMA); 2026 daily UMA MXN 117.31 (INEGI)"
         source_type: primary_legislation
-        verified_via:
-          - "https://natlawreview.com/article/cna-charge-thresholds-down-fines"
-          - "https://www.perezllorca.com/en-mx/news/legal-briefing/antitrust-2025-merger-filing-thresholds/"
-          - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/mexico"
         note: >
-          MXN 1,810,240,000 (~USD 107m) at 2025 UMA. The July 2025 LFCE reform
-          reduced the multiplier from 18 million to 16 million times the daily UMA —
-          the MXN 2,036m figure that circulated in early-2025 practitioner alerts
-          reflects the pre-reform (pre-July 2025) threshold and is no longer applicable.
-          Recalculated each January per new INEGI annual UMA rate.
+          16,000,000 UMA × MXN 117.31 (2026) = MXN 1,876,960,000. Recompute each February.
 
-  - test_id: mx_assets_and_combined
-    description: "Assets/capital + combined test — acquired Mexico assets > MXN 837m AND combined Mexico > MXN 4,525m"
-    legal_basis: "LFCE Article 86(II) as amended July 2025"
-    source_url: "https://www.cofece.mx/concentraciones/"
+  - test_id: mx_acquisition_30pct
+    description: "30%+ acquisition test (Art 86 II) — target Mexico sales/assets > 16,000,000 UMA (MXN 1,876,960,000)"
+    legal_basis: "LFCE Article 86, fracción II (reformada DOF 16-07-2025)"
+    source_url: "https://mley.mx/LFCE/articulo/86/"
     note: >
-      Second notification trigger. Both conditions must be met simultaneously.
-      Condition 1: the assets or capital stock in Mexico being acquired exceed the
-      lower threshold. Condition 2: the combined Mexican annual sales or assets of
-      all economic agents involved (combined/separately) exceed the upper threshold.
-      The July 2025 reform lowered these thresholds (from MXN 950m/5,430m to MXN 837m/
-      4,525m), meaning more transactions now require notification.
+      Triggered where the transaction accumulates 30% or more of the assets or shares of
+      an economic agent whose annual sales in Mexico OR assets in Mexico exceed 16,000,000
+      UMA. The 30%-acquisition element is not modelled as a structured condition (the
+      screening engine carries pct_shares_acquired separately); evaluate it alongside the
+      monetary condition below.
     annual_adjustment: true
-    effective_date: "2025-07-16"
+    effective_date: "2026-02-01"
+    status: indicative_only
 
     conditions:
-      - condition_id: mx_acquired_assets_domestic
-        metric: assets
+      - condition_id: mx_acq30_target_size
+        metric: revenue_or_assets
         scope: domestic
         party: target_group
         operator: ">"
-        value: 837236000
+        value: 1876960000
         currency: MXN
-        source: "LFCE Article 86(II) as amended July 2025; post-reform confirmed by Pérez-Llorca July 2025"
+        source: "LFCE Art. 86 fracción II (16,000,000 UMA); 2026 daily UMA MXN 117.31"
         source_type: primary_legislation
-        verified_via:
-          - "https://www.perezllorca.com/wp-content/uploads/2025/07/Legal-Briefing-Antitrust-Merger-Filing-Thresholds-after-the-Antitrust-Reform.pdf"
-          - "https://www.gtlaw.com/en/insights/2025/7/cambios-en-materia-reformas-a-la-ley-federal-de-competencia-economica"
         note: >
-          MXN 837m assets or capital stock in Mexico being acquired. Lowered from MXN 950m
-          by the July 2025 reform. Subject to annual UMA adjustment.
+          Target's annual Mexico sales OR Mexico assets > 16,000,000 UMA = MXN 1,876,960,000
+          (2026). Applies only to a 30%+ acquisition of the target's assets/shares.
+
+  - test_id: mx_assets_and_combined
+    description: "Asset accumulation + combined test (Art 86 III) — accumulation > 7,400,000 UMA AND combined Mexico > 40,000,000 UMA"
+    legal_basis: "LFCE Article 86, fracción III (reformada DOF 16-07-2025)"
+    source_url: "https://mley.mx/LFCE/articulo/86/"
+    note: >
+      Third notification trigger (both limbs cumulative). Limb 1: accumulation in Mexico of
+      assets or capital stock exceeding 7,400,000 UMA. Limb 2: two or more economic agents
+      whose annual Mexico sales or assets (jointly or separately) exceed 40,000,000 UMA.
+      Recomputed each February per the new UMA (2026: MXN 117.31).
+    annual_adjustment: true
+    effective_date: "2026-02-01"
+
+    conditions:
+      - condition_id: mx_asset_accumulation_domestic
+        metric: assets
+        scope: domestic
+        party: combined
+        operator: ">"
+        value: 868094000
+        currency: MXN
+        source: "LFCE Art. 86 fracción III, limb 1 (7,400,000 UMA); 2026 daily UMA MXN 117.31"
+        source_type: primary_legislation
+        note: >
+          Accumulation of assets or capital stock in Mexico > 7,400,000 UMA × MXN 117.31
+          = MXN 868,094,000 (2026).
 
       - condition_id: mx_combined_domestic
         metric: revenue
         scope: domestic
         party: combined
         operator: ">"
-        value: 4525600000
+        value: 4692400000
         currency: MXN
-        source: "LFCE Article 86(II) as amended July 2025; post-reform confirmed by Pérez-Llorca July 2025"
+        source: "LFCE Art. 86 fracción III, limb 2 (40,000,000 UMA); 2026 daily UMA MXN 117.31"
         source_type: primary_legislation
-        verified_via:
-          - "https://www.perezllorca.com/wp-content/uploads/2025/07/Legal-Briefing-Antitrust-Merger-Filing-Thresholds-after-the-Antitrust-Reform.pdf"
-          - "https://www.gtlaw.com/en/insights/2025/7/cambios-en-materia-reformas-a-la-ley-federal-de-competencia-economica"
+        note: >
+          Combined Mexico annual sales or assets of two or more agents > 40,000,000 UMA ×
+          MXN 117.31 = MXN 4,692,400,000 (2026).
         note: >
           MXN 4,525m combined Mexican annual sales or assets of all economic agents jointly
           or separately. Lowered from MXN 5,430m by the July 2025 reform. Subject to UMA adjustment.

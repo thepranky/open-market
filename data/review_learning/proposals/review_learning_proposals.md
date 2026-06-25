@@ -92,7 +92,7 @@ Cases reviewed: 6  |  Total corrections: 19  |  Patterns identified: 8
 
 **Case `eu_sika_dry_mix_2019`** — triage status: `needs_legal_review`
 
-> Multiple product markets carry definition_status "defined" but the Commission's language consistently uses "should be considered as a separate product market for assessing the Transaction" — a working assumption formula that CompMap maps to "considered", not "defined". Additionally, sp_19 is a mixed passage (geographic left-open language combined with an outcome sentence) that warrants reviewer attention, and the UK overlap mentioned in sp_21 context suggests a possible missing geographic market entry for structural reinforcing/strengthening in the United Kingdom.
+> Multiple product markets carry definition_status "defined" but the Commission's language consistently uses "should be considered as a separate product market for assessing the Transaction" — a working assumption formula that Meridian maps to "considered", not "defined". Additionally, sp_19 is a mixed passage (geographic left-open language combined with an outcome sentence) that warrants reviewer attention, and the UK overlap mentioned in sp_21 context suggests a possible missing geographic market entry for structural reinforcing/strengthening in the United Kingdom.
 
 **Implied proposals (require human judgement before acting):**
 - `review_prompt_update`: Clarify `considered` vs `defined` working-assumption language in the LLM review prompt.

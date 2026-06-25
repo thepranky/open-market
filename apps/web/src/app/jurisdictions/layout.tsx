@@ -1,6 +1,6 @@
-import { getJurisdictions } from "@/lib/api";
-import { JurisdictionSidebar } from "./JurisdictionSidebar";
-import { JurisdictionChat } from "@/components/JurisdictionChat";
+import { getJurisdictions } from "@/features/screening/api";
+import { JurisdictionSidebar } from "@/features/screening/components/JurisdictionSidebar";
+import { JurisdictionChat } from "@/features/screening/components/JurisdictionChat";
 
 export default async function JurisdictionsLayout({
   children,

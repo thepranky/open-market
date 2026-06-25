@@ -16,17 +16,17 @@ INDEX_DIR = str(REPO_ROOT / "data" / "case_index")
 
 @pytest.fixture
 def client():
-    with patch("app.core.config.settings") as mock_settings:
+    with patch("app.shared.core.config.settings") as mock_settings:
         mock_settings.data_cases_path = CASES_DIR
         mock_settings.data_case_index_path = INDEX_DIR
-        mock_settings.app_title = "CompMap API"
+        mock_settings.app_title = "Meridian API"
         mock_settings.app_version = "0.1.0"
         mock_settings.neo4j_uri = "bolt://localhost:7687"
         mock_settings.neo4j_user = "neo4j"
         mock_settings.neo4j_password = "compmap_local"
         mock_settings.debug = False
 
-        from app.services import case_service, index_case_service
+        from app.cases.services import case_service, index_case_service
         case_service.invalidate_cache()
         index_case_service.invalidate_cache()
 

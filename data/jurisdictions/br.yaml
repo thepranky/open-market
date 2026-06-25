@@ -84,7 +84,7 @@ threshold_tests:
         metric: revenue
         scope: domestic
         party: either_party
-        operator: ">"
+        operator: ">="
         value: 750000000
         currency: BRL
         source: "Portaria Interministerial No. 994/2012, Article 1(I)"
@@ -99,7 +99,7 @@ threshold_tests:
         metric: revenue
         scope: domestic
         party: each_party
-        operator: ">"
+        operator: ">="
         value: 75000000
         currency: BRL
         source: "Portaria Interministerial No. 994/2012, Article 1(II)"

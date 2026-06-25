@@ -22,12 +22,13 @@ legal_basis:
       (amending Competition Law No. 3/2005) introduced mandatory PRE-MERGER notification
       for transactions meeting prescribed thresholds. The ECA issued implementing
       regulations specifying the threshold values.
-  - citation: "ECA Implementing Regulation on Pre-Merger Notification (2022/2023), issued pursuant to Law No. 175 of 2022"
-    url: "https://eca.gov.eg/en/MergerControl"
+  - citation: "Article 19 Bis (introduced by Law No. 175 of 2022); Prime Minister's Decree No. 1120 of 2024 (Executive Regulations), operative 1 June 2024"
+    url: "https://eca.org.eg"
     note: >
-      Implementing regulations setting the specific EGP threshold amounts. As of last
-      verified date these are: combined worldwide revenues > EGP 900m AND Egypt revenues
-      > EGP 100m (or equivalent assets). Confirm via ECA official site.
+      The mandatory ex-ante regime took effect 1 June 2024. Thresholds (Art. 19 Bis):
+      DOMESTIC — combined Egypt turnover/assets > EGP 900m AND ≥2 parties each > EGP 200m
+      in Egypt; WORLDWIDE — combined global turnover/assets > EGP 7.5bn AND ≥1 party
+      > EGP 200m in Egypt.
     source_type: official_guidance
 
 filing:
@@ -69,34 +70,72 @@ fees:
   annual_adjustment: false
 
 threshold_tests:
-  # Egypt's 2022 amendment introduced mandatory pre-merger notification.
-  # The threshold is two-limbed (AND logic):
-  # (1) Combined worldwide revenues of all parties > EGP 900m
-  # (2) Combined Egypt revenues of all parties > EGP 100m
+  # Egypt's mandatory ex-ante merger control (Article 19 Bis, introduced by Law No. 175
+  # of 2022, operative from 1 June 2024 via PM Decree No. 1120 of 2024) has TWO
+  # alternative pathways. An economic concentration is reviewable if it meets EITHER:
   #
-  # Alternatively, the test applies based on combined worldwide assets > EGP 900m
-  # and Egypt assets > EGP 100m.
+  #   DOMESTIC pathway (AND logic):
+  #     - combined annual turnover OR assets IN EGYPT of the parties > EGP 900,000,000; AND
+  #     - at least TWO parties EACH with turnover in Egypt > EGP 200,000,000.
   #
-  # SOURCE NOTE: The specific EGP threshold amounts are based on ECA implementing
-  # regulations issued pursuant to Law 175/2022. These values are confirmed by
-  # multiple practitioner sources but the ECA has not published official English
-  # guidance. Values should be verified with the ECA or Egyptian competition counsel
-  # before advising.
-  # Status: practitioner-confirmed; verify with ECA before relying.
+  #   WORLDWIDE pathway (AND logic):
+  #     - combined GLOBAL annual turnover OR consolidated assets > EGP 7,500,000,000; AND
+  #     - at least ONE party with turnover in Egypt > EGP 200,000,000.
+  #
+  # "Turnover or assets" are alternatives within each combined limb (whichever applies).
+  # Grounded in Art. 19 Bis verbatim + White & Case / Legal 500 / Meysan / Amereller.
 
-  - test_id: eg_revenue_based
-    description: "Combined worldwide revenues >EGP 900m AND combined Egypt revenues >EGP 100m (Law 175/2022)"
-    legal_basis: "Law No. 3 of 2005 (as amended by Law No. 175 of 2022), Article 19; ECA implementing regulations"
-    source_url: "https://eca.gov.eg/en/MergerControl"
+  - test_id: eg_domestic_pathway
+    description: "Combined Egypt turnover/assets >EGP 900m AND ≥2 parties each >EGP 200m in Egypt (Art. 19 Bis)"
+    legal_basis: "Law No. 3 of 2005, Article 19 Bis (introduced by Law No. 175 of 2022; operative via PM Decree No. 1120 of 2024)"
+    source_url: "https://eca.org.eg"
     note: >
-      Both conditions must be met (AND logic). The worldwide limb ensures that purely
-      foreign deals with minimal Egypt nexus are not captured; the Egypt limb provides
-      the local nexus requirement. The specific EGP values below are from the ECA's
-      2022/2023 implementing regulations, confirmed via practitioner sources.
-      VERIFY WITH ECA: the ECA may revise these thresholds by regulation. Always
-      confirm current threshold values at https://eca.gov.eg/en/MergerControl.
+      Domestic pathway. Both conditions must be met. The combined limb is measured on
+      turnover OR assets in Egypt (whichever applies); the per-party limb requires at
+      least two parties each exceeding EGP 200m of Egyptian turnover.
     annual_adjustment: false
-    effective_date: "2022-01-01"
+    effective_date: "2024-06-01"
+
+    conditions:
+      - condition_id: eg_combined_domestic
+        metric: revenue
+        scope: domestic
+        party: combined
+        operator: ">"
+        value: 900000000
+        currency: EGP
+        source: "Law No. 3 of 2005, Article 19 Bis (Law No. 175 of 2022)"
+        source_type: primary_legislation
+        note: >
+          EGP 900m combined turnover OR assets in Egypt of all parties. EGP has
+          depreciated sharply since 2022 — verify the USD-equivalent before assessing
+          practical impact.
+
+      - condition_id: eg_two_parties_domestic
+        metric: revenue
+        scope: domestic
+        party: each_of_at_least_two
+        operator: ">"
+        value: 200000000
+        currency: EGP
+        source: "Law No. 3 of 2005, Article 19 Bis (Law No. 175 of 2022)"
+        source_type: primary_legislation
+        qualifier:
+          type: "count_of_parties"
+          operator: ">="
+          count: 2
+        note: "At least two parties each with turnover in Egypt exceeding EGP 200m."
+
+  - test_id: eg_worldwide_pathway
+    description: "Combined worldwide turnover/assets >EGP 7.5bn AND ≥1 party >EGP 200m in Egypt (Art. 19 Bis)"
+    legal_basis: "Law No. 3 of 2005, Article 19 Bis (introduced by Law No. 175 of 2022; operative via PM Decree No. 1120 of 2024)"
+    source_url: "https://eca.org.eg"
+    note: >
+      Worldwide pathway. Both conditions must be met. The combined limb is measured on
+      global turnover OR consolidated assets; the local-nexus limb requires at least one
+      party exceeding EGP 200m of Egyptian turnover.
+    annual_adjustment: false
+    effective_date: "2024-06-01"
 
     conditions:
       - condition_id: eg_combined_worldwide
@@ -104,82 +143,38 @@ threshold_tests:
         scope: worldwide
         party: combined
         operator: ">"
-        value: 900000000
+        value: 7500000000
         currency: EGP
-        source: "ECA implementing regulations pursuant to Law No. 175 of 2022"
-        source_type: practitioner
-        verified_via:
-          - "https://eca.gov.eg/en/MergerControl"
-        note: >
-          EGP 900m (~USD 18m at 2025 rates) combined worldwide revenues. Note: EGP has
-          depreciated significantly since 2022 — verify the USD-equivalent before
-          assessing practical impact. Combined revenues of acquirer + target groups.
+        source: "Law No. 3 of 2005, Article 19 Bis (Law No. 175 of 2022)"
+        source_type: primary_legislation
+        note: "EGP 7.5bn combined global turnover OR consolidated assets of all parties."
 
-      - condition_id: eg_combined_domestic
+      - condition_id: eg_one_party_domestic
         metric: revenue
         scope: domestic
-        party: combined
+        party: either_party
         operator: ">"
-        value: 100000000
+        value: 200000000
         currency: EGP
-        source: "ECA implementing regulations pursuant to Law No. 175 of 2022"
-        source_type: practitioner
-        verified_via:
-          - "https://eca.gov.eg/en/MergerControl"
-        note: >
-          EGP 100m (~USD 2m at 2025 rates) combined Egypt revenues. Provides the local
-          nexus filter — transactions with minimal Egypt presence should not be captured.
-
-  - test_id: eg_assets_based
-    description: "Combined worldwide assets >EGP 900m AND combined Egypt assets >EGP 100m (Law 175/2022)"
-    legal_basis: "Law No. 3 of 2005 (as amended by Law No. 175 of 2022), Article 19; ECA implementing regulations"
-    source_url: "https://eca.gov.eg/en/MergerControl"
-    note: "Assets-based alternative to the revenue-based test. Same threshold values."
-    annual_adjustment: false
-    effective_date: "2022-01-01"
-
-    conditions:
-      - condition_id: eg_assets_combined_worldwide
-        metric: assets
-        scope: worldwide
-        party: combined
-        operator: ">"
-        value: 900000000
-        currency: EGP
-        source: "ECA implementing regulations pursuant to Law No. 175 of 2022"
-        source_type: practitioner
-        verified_via:
-          - "https://eca.gov.eg/en/MergerControl"
-        note: "EGP 900m combined worldwide total assets."
-
-      - condition_id: eg_assets_combined_domestic
-        metric: assets
-        scope: domestic
-        party: combined
-        operator: ">"
-        value: 100000000
-        currency: EGP
-        source: "ECA implementing regulations pursuant to Law No. 175 of 2022"
-        source_type: practitioner
-        verified_via:
-          - "https://eca.gov.eg/en/MergerControl"
-        note: "EGP 100m combined Egypt total assets."
+        source: "Law No. 3 of 2005, Article 19 Bis (Law No. 175 of 2022)"
+        source_type: primary_legislation
+        note: "At least one party with turnover in Egypt exceeding EGP 200m."
 
 notes:
   - >
-    PRE-MERGER SINCE 2022: Egypt moved from a post-closing notification regime to
-    mandatory pre-merger notification via Law No. 175 of 2022. Prior deals notified
-    post-closing are not retroactively subject to pre-clearance requirements.
+    MANDATORY EX-ANTE SINCE 1 JUNE 2024: Egypt moved from a post-closing notification
+    regime to mandatory pre-merger (ex-ante) control via Article 19 Bis (Law No. 175 of
+    2022), made operative by PM Decree No. 1120 of 2024 from 1 June 2024.
   - >
-    EGP DEPRECIATION: The Egyptian pound depreciated substantially in 2022–2024
-    (from ~USD 1 = EGP 16 to ~USD 1 = EGP 50+). The EGP thresholds (EGP 900m
-    worldwide, EGP 100m Egypt) represent approximately USD 18m and USD 2m respectively
-    at 2025 exchange rates — low in international terms. Verify current EGP/USD rate
-    before assessing whether the threshold has real practical impact for a given deal.
+    EGP DEPRECIATION: The Egyptian pound depreciated substantially in 2022–2024 (from
+    ~USD 1 = EGP 16 to ~USD 1 = EGP 50+), so the EGP-denominated thresholds (EGP 900m /
+    EGP 7.5bn / EGP 200m) are comparatively low in USD terms. Verify the current EGP/USD
+    rate before assessing the practical impact for a given deal.
   - >
-    VERIFY THRESHOLD VALUES: The EGP amounts in this file are from practitioner
-    sources cross-referencing ECA's 2022 implementing regulations. The ECA website
-    should be consulted for current official values before advising on a filing.
+    OTHER FIELDS PENDING RE-VERIFICATION: practitioner sources indicate the filing fee is
+    a sliding scale (EGP 80,000–100,000), the gun-jumping sanction is 1–10% of turnover/
+    assets/transaction value (fixed fallback EGP 30m–500m), and Phase I is ~30 business
+    days. The fees/gun_jumping/review_periods fields below predate this and need updating.
   - >
     REGIONAL CONTEXT: Egypt is also a member of the COMESA Common Market and may
     trigger a separate COMESA Competition Commission filing for transactions with
@@ -297,21 +292,22 @@ fdi_screening:
 # ── Source passages (verbatim statutory text) ─────────────────────────────────
 source_passages:
 
-  - passage_id: eg_cpl_art19
-    document_title: "Competition Protection Law No. 3 of 2005, as amended by Law No. 175 of 2022 (Egypt)"
-    article_reference: "Article 19"
-    document_url: "https://eca.gov.eg/en/Legislation"
-    source_type: practitioner
+  - passage_id: eg_cpl_art19bis
+    document_title: "Law No. 3 of 2005 on the Protection of Competition, as amended by Law No. 175 of 2022, Article 19 Bis"
+    article_reference: "Article 19 Bis"
+    document_url: "https://eg.andersen.com/wp-content/uploads/2025/05/Law-No.-3-of-2005-1.pdf"
+    source_type: primary_legislation
     quoted_text: >
-      "Any economic concentration that, during the year preceding the concentration,
-      results in the combined worldwide revenues or assets of all parties exceeding
-      nine hundred million Egyptian pounds (EGP 900,000,000), and the combined
-      revenues or assets of all parties in Egypt exceeding one hundred million
-      Egyptian pounds (EGP 100,000,000), shall be notified to the Authority not
-      less than thirty days prior to its completion."
+      "Article 19 Bis: Economic concentration shall be subject to review by the Authority
+      if it meets any of the following thresholds: ... The combined global annual turnover
+      or consolidated assets of the concerned persons exceed seven billion five hundred
+      million Egyptian pounds for the last year in the latest approved consolidated
+      financial statements, provided that the annual turnover in Egypt for at least one of
+      the concerned persons exceeds two hundred million Egyptian pounds in the latest
+      approved consolidated financial statements."
     supports_conditions:
       - eg_combined_worldwide
-      - eg_combined_domestic
+      - eg_one_party_domestic
 
 practitioner_notes:
   - title: "Egypt Issues New Merger Control Regime Under the Executive Regulations of the Competition Law"

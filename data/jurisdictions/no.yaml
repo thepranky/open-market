@@ -99,7 +99,7 @@ scope:
   foreign_to_foreign_rule: >
     Norwegian merger control applies if the Norwegian turnover thresholds are met,
     regardless of where the parties are incorporated. Foreign-to-foreign transactions
-    are subject to notification if both conditions (combined worldwide > NOK 1bn AND
+    are subject to notification if both conditions (combined Norwegian > NOK 1bn AND
     each of at least two parties Norwegian > NOK 100m) are met. Norway is an EEA/EFTA
     state. If the transaction falls within the EEA Agreement merger jurisdiction
     (i.e., under EFTA Surveillance Authority competence), the NCA may not have
@@ -188,14 +188,14 @@ threshold_tests:
     effective_date: "2013-01-01"
 
     conditions:
-      - condition_id: no_combined_worldwide
+      - condition_id: no_combined_norwegian
         metric: revenue
-        scope: worldwide
+        scope: domestic
         party: combined
         operator: ">"
         value: 1000000000
         currency: NOK
-        source: "§ 18(1)(a) Konkurranseloven"
+        source: "§ 18 Konkurranseloven (statute: 'samlet årlig omsetning i Norge' = combined annual turnover IN NORWAY, not worldwide)"
         source_type: primary_legislation
         source_url: "https://lovdata.no/dokument/NL/lov/2004-03-05-12"
         verified_via:
@@ -261,7 +261,7 @@ source_passages:
       b) each of at least two of the undertakings concerned has an aggregate turnover in
       Norway exceeding one hundred million Norwegian kroner."
     supports_conditions:
-      - no_combined_worldwide
+      - no_combined_norwegian
       - no_each_party_norwegian
 
   - passage_id: no_krl_s19_20

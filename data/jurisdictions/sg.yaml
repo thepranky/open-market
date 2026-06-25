@@ -164,11 +164,13 @@ scope:
   concentration_definition: >
     Competition Act 2004 (Cap. 50B) s. 54(1) prohibits mergers that have resulted,
     or may be expected to result, in a substantial lessening of competition (SLC)
-    within any market in Singapore. "Merger" is broadly defined under s. 54(5) to
-    include: (a) the merger of two or more enterprises into one enterprise; (b) the
-    acquisition of the whole or part of the assets of another enterprise; and (c) the
-    acquisition of a controlling interest in another enterprise. There are no mandatory
-    notification thresholds — the regime is purely voluntary.
+    within any market in Singapore. "Merger" is defined under s. 54(2) to occur where:
+    (a) two or more undertakings, previously independent of one another, merge; (b) one
+    or more persons or other undertakings acquire direct or indirect control of the whole
+    or part of one or more other undertakings; or (c) an acquisition of the assets (or a
+    substantial part) of another undertaking places the acquirer in a position to replace
+    or substantially replace that undertaking in the business concerned. There are no
+    mandatory notification thresholds — the regime is purely voluntary.
   concentration_definition_source: "Competition Act 2004 (Cap. 50B), Sections 54–55"
   concentration_definition_url: "https://sso.agc.gov.sg/Act/CA2004"
   trigger_events:
@@ -292,24 +294,28 @@ source_passages:
     document_url: "https://sso.agc.gov.sg/Act/CA2004"
     source_type: primary_legislation
     quoted_text: >
-      "Subject to section 55, mergers which have resulted, or may be expected to
+      "Subject to section 55, mergers that have resulted, or may be expected to
       result, in a substantial lessening of competition within any market in
-      Singapore are prohibited."
+      Singapore for goods or services are prohibited."
     supports_conditions:
       - sg_combined_market_share
       - sg_moderate_combined_share
 
-  - passage_id: sg_competition_act_s54_5
+  - passage_id: sg_competition_act_s54_2
     document_title: "Competition Act 2004 (Singapore Statutes Online, Cap. 50B)"
-    article_reference: "Section 54(5)"
+    article_reference: "Section 54(2)"
     document_url: "https://sso.agc.gov.sg/Act/CA2004"
     source_type: primary_legislation
     quoted_text: >
-      "For the purposes of this Part, a merger occurs if — (a) two or more enterprises,
-      previously independent of one another, merge; (b) one or more persons or enterprises
-      acquire direct or indirect control of the whole or part of one or more other
-      enterprises; or (c) any other transaction or arrangement of a similar character to
-      those mentioned in paragraphs (a) and (b)."
+      "For the purposes of this Part, a merger occurs if — (a) 2 or more undertakings,
+      previously independent of one another, merge; (b) one or more persons or other
+      undertakings acquire direct or indirect control of the whole or part of one or more
+      other undertakings; or (c) the result of an acquisition by one undertaking (the first
+      undertaking) of the assets (including goodwill), or a substantial part of the assets,
+      of another undertaking (the second undertaking) is to place the first undertaking in
+      a position to replace or substantially replace the second undertaking in the business
+      or the part concerned of the business in which that undertaking was engaged
+      immediately before the acquisition."
     supports_conditions: []
 
 practitioner_notes:

@@ -90,6 +90,24 @@ threshold_tests:
         source: "§9(1) No. 2 KartG"
         source_type: primary_legislation
 
+      - condition_id: at_each_party_domestic_nexus
+        metric: revenue
+        scope: domestic
+        party: each_of_at_least_two
+        operator: ">"
+        value: 1000000
+        currency: EUR
+        source: "§9(1) No. 2 KartG (second limb: 'davon mindestens zwei Unternehmen jeweils mehr als eine Million Euro')"
+        source_type: primary_legislation
+        note: >
+          Domestic-nexus element added by BGBl. I Nr. 176/2021: within the combined
+          Austrian turnover > EUR 30m, at least two undertakings must each have Austrian
+          turnover > EUR 1m.
+        qualifier:
+          type: "count_of_parties"
+          operator: ">="
+          count: 2
+
       - condition_id: at_each_party_worldwide
         metric: revenue
         scope: worldwide

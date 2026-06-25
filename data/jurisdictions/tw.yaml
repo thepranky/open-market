@@ -68,16 +68,17 @@ threshold_tests:
   # (1) Any participating enterprise will hold ≥ 1/3 market share post-merger
   # (2) Any participating enterprise holds ≥ 1/4 market share PRE-merger
   #
-  # Turnover tests (three scenarios, OR'd with each other):
-  # (3) General: combined global turnover > NTD 40bn AND each of ≥2 enterprises
-  #     has Taiwan turnover > NTD 2bn
-  # (4) Non-financial one-party: one enterprise Taiwan turnover > NTD 15bn AND
-  #     other enterprise Taiwan turnover > NTD 2bn
-  # (5) Financial enterprises: one enterprise annual turnover > NTD 30bn AND
-  #     other enterprise annual turnover > NTD 2bn
+  # Turnover/sales tests (three scenarios, OR'd) — figures per the TFTC Notice effective
+  # 28 January 2026 (1787th Commissioners' Meeting; Decree Kung Zi Tzu No. 1152160003):
+  # (3) General: combined worldwide sales > NTD 50bn AND each of ≥2 enterprises has
+  #     Taiwan (domestic) sales > NTD 3bn
+  # (4) Non-financial one-party: one enterprise Taiwan sales > NTD 20bn AND the other
+  #     enterprise Taiwan sales > NTD 3bn
+  # (5) Financial enterprises: one enterprise Taiwan (domestic) sales > NTD 40bn AND the
+  #     other enterprise Taiwan sales > NTD 3bn
   #
-  # Source: TFTC Fair Trade Act Article 11; ICLG Taiwan 2025 (confirmed via
-  # https://iclg.com/practice-areas/merger-control-laws-and-regulations/taiwan)
+  # Market-share fractions (1/3, 1/4) are in Article 11 itself and are unchanged.
+  # Sales figures: TFTC Notice 2026.01.28 (https://law.ftc.gov.tw/law/EngLawContent.aspx?id=28&lan=E)
 
   - test_id: tw_market_share_post_merger
     description: "Any party will hold ≥ 1/3 Taiwan market share post-merger (FTA Article 11(1))"
@@ -130,15 +131,15 @@ threshold_tests:
         note: "25% Taiwan market share held by any one party BEFORE the merger."
 
   - test_id: tw_turnover_general
-    description: "General turnover test: combined global >NTD 40bn AND each of ≥2 parties Taiwan >NTD 2bn"
-    legal_basis: "Fair Trade Act, Article 11(1)(3)(a)"
-    source_url: "https://www.ftc.gov.tw/internet/english/doc/docDetail.aspx?uid=188"
+    description: "General sales test: combined worldwide >NTD 50bn AND each of ≥2 parties Taiwan >NTD 3bn (2026)"
+    legal_basis: "Fair Trade Act, Article 11(1)(3)(a); TFTC Notice on Merger Filing Sales Thresholds (2026.01.28)"
+    source_url: "https://law.ftc.gov.tw/law/EngLawContent.aspx?id=28&lan=E"
     note: >
-      Primary turnover-based notification trigger for general (non-financial) enterprises.
+      Primary sales-based notification trigger for general (non-financial) enterprises.
       Both conditions must be met AND at least two enterprises must independently meet
-      the Taiwan threshold.
+      the Taiwan threshold. Figures updated by the TFTC Notice effective 28 Jan 2026.
     annual_adjustment: false
-    effective_date: null
+    effective_date: "2026-01-28"
 
     conditions:
       - condition_id: tw_gen_combined_worldwide
@@ -146,38 +147,38 @@ threshold_tests:
         scope: worldwide
         party: combined
         operator: ">"
-        value: 40000000000
+        value: 50000000000
         currency: TWD
-        source: "Fair Trade Act, Article 11(1)(3)(a)"
-        source_type: primary_legislation
+        source: "TFTC Notice on Merger Filing Sales Thresholds (2026.01.28); Fair Trade Act, Article 11(1)(3)(a)"
+        source_type: official_guidance
         verified_via:
-          - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/taiwan"
-        note: "NTD 40bn (~USD 1.25bn) combined global turnover of all participating enterprises."
+          - "https://law.ftc.gov.tw/law/EngLawContent.aspx?id=28&lan=E"
+        note: "NTD 50bn combined worldwide sales of all participating enterprises (2026 threshold)."
 
       - condition_id: tw_gen_each_party_taiwan
         metric: revenue
         scope: domestic
         party: each_of_at_least_two
         operator: ">"
-        value: 2000000000
+        value: 3000000000
         currency: TWD
-        source: "Fair Trade Act, Article 11(1)(3)(a)"
-        source_type: primary_legislation
+        source: "TFTC Notice on Merger Filing Sales Thresholds (2026.01.28); Fair Trade Act, Article 11(1)(3)(a)"
+        source_type: official_guidance
         verified_via:
-          - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/taiwan"
-        note: "NTD 2bn (~USD 62m) Taiwan turnover for each of at least two participating enterprises."
+          - "https://law.ftc.gov.tw/law/EngLawContent.aspx?id=28&lan=E"
+        note: "NTD 3bn domestic (Taiwan) sales for each of at least two enterprises (2026 threshold)."
 
   - test_id: tw_turnover_oneparty_taiwan
-    description: "One-party Taiwan test: one enterprise Taiwan >NTD 15bn AND other Taiwan >NTD 2bn"
-    legal_basis: "Fair Trade Act, Article 11(1)(3)(b)"
-    source_url: "https://www.ftc.gov.tw/internet/english/doc/docDetail.aspx?uid=188"
+    description: "One-party Taiwan test: one enterprise Taiwan >NTD 20bn AND other Taiwan >NTD 3bn (2026)"
+    legal_basis: "Fair Trade Act, Article 11(1)(3)(b); TFTC Notice on Merger Filing Sales Thresholds (2026.01.28)"
+    source_url: "https://law.ftc.gov.tw/law/EngLawContent.aspx?id=28&lan=E"
     note: >
-      Alternative turnover test for large domestic enterprises. Fires when one party
-      has very high Taiwan revenues even if the other is smaller.
+      Alternative sales test for large domestic enterprises. Fires when one party
+      has very high Taiwan sales even if the other is smaller.
       Captures domestic deals by Taiwan's largest companies where the combined
-      worldwide threshold (NTD 40bn) might not be reached.
+      worldwide threshold (NTD 50bn) might not be reached.
     annual_adjustment: false
-    effective_date: null
+    effective_date: "2026-01-28"
 
     conditions:
       - condition_id: tw_large_one_party_taiwan
@@ -185,67 +186,71 @@ threshold_tests:
         scope: domestic
         party: either_party
         operator: ">"
-        value: 15000000000
+        value: 20000000000
         currency: TWD
-        source: "Fair Trade Act, Article 11(1)(3)(b)"
-        source_type: primary_legislation
+        source: "TFTC Notice on Merger Filing Sales Thresholds (2026.01.28); Fair Trade Act, Article 11(1)(3)(b)"
+        source_type: official_guidance
         verified_via:
-          - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/taiwan"
-        note: "NTD 15bn (~USD 469m) Taiwan turnover for either party (the larger one)."
+          - "https://law.ftc.gov.tw/law/EngLawContent.aspx?id=28&lan=E"
+        note: "NTD 20bn Taiwan turnover for the larger (non-financial) party (2026 threshold)."
 
       - condition_id: tw_small_one_party_taiwan
         metric: revenue
         scope: domestic
         party: each_of_at_least_two
         operator: ">"
-        value: 2000000000
+        value: 3000000000
         currency: TWD
-        source: "Fair Trade Act, Article 11(1)(3)(b)"
-        source_type: primary_legislation
+        source: "TFTC Notice on Merger Filing Sales Thresholds (2026.01.28); Fair Trade Act, Article 11(1)(3)(b)"
+        source_type: official_guidance
         verified_via:
-          - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/taiwan"
+          - "https://law.ftc.gov.tw/law/EngLawContent.aspx?id=28&lan=E"
         note: >
-          NTD 2bn Taiwan turnover for the other (smaller) party. The each_of_at_least_two
-          type checks the minimum — if min(acquirer, target) > 2bn, both exceed 2bn,
-          which means the smaller party meets the threshold required by this sub-test.
+          NTD 3bn Taiwan sales for the other (smaller) party (2026 threshold). The
+          each_of_at_least_two type checks the minimum — if min(acquirer, target) > 3bn,
+          both exceed 3bn, so the smaller party meets this sub-test.
 
   - test_id: tw_turnover_financial
-    description: "Financial enterprise test: one enterprise turnover >NTD 30bn AND other Taiwan >NTD 2bn"
-    legal_basis: "Fair Trade Act, Article 11(1)(3)(c)"
-    source_url: "https://www.ftc.gov.tw/internet/english/doc/docDetail.aspx?uid=188"
+    description: "Financial enterprise test: one enterprise Taiwan sales >NTD 40bn AND other Taiwan >NTD 3bn (2026)"
+    legal_basis: "Fair Trade Act, Article 11(1)(3)(c); TFTC Notice on Merger Filing Sales Thresholds (2026.01.28)"
+    source_url: "https://law.ftc.gov.tw/law/EngLawContent.aspx?id=28&lan=E"
     note: >
       Applies to mergers involving financial enterprises (banks, insurance companies,
-      securities firms). For financial enterprises, 'annual turnover' means total
-      income, net premiums, or equivalent financial metrics rather than sales revenue.
+      securities firms). For financial enterprises, 'sales amount' means total income,
+      net premiums, or equivalent financial metrics rather than sales revenue. Both legs
+      are measured on domestic (Taiwan) sales under the 2026 TFTC Notice.
     annual_adjustment: false
-    effective_date: null
+    effective_date: "2026-01-28"
 
     conditions:
       - condition_id: tw_fin_large_party
         metric: revenue
-        scope: worldwide
+        scope: domestic
         party: either_party
         operator: ">"
-        value: 30000000000
+        value: 40000000000
         currency: TWD
-        source: "Fair Trade Act, Article 11(1)(3)(c)"
-        source_type: primary_legislation
+        source: "TFTC Notice on Merger Filing Sales Thresholds (2026.01.28); Fair Trade Act, Article 11(1)(3)(c)"
+        source_type: official_guidance
         verified_via:
-          - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/taiwan"
-        note: "NTD 30bn annual turnover for a financial enterprise (worldwide)."
+          - "https://law.ftc.gov.tw/law/EngLawContent.aspx?id=28&lan=E"
+        note: >
+          NTD 40bn domestic (Taiwan) sales for the larger financial enterprise (2026
+          threshold). The 2026 TFTC notice measures this leg on domestic sales (國內銷售金額),
+          not worldwide.
 
       - condition_id: tw_fin_other_party_taiwan
         metric: revenue
         scope: domestic
         party: each_of_at_least_two
         operator: ">"
-        value: 2000000000
+        value: 3000000000
         currency: TWD
-        source: "Fair Trade Act, Article 11(1)(3)(c)"
-        source_type: primary_legislation
+        source: "TFTC Notice on Merger Filing Sales Thresholds (2026.01.28); Fair Trade Act, Article 11(1)(3)(c)"
+        source_type: official_guidance
         verified_via:
-          - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/taiwan"
-        note: "NTD 2bn Taiwan turnover for the other enterprise."
+          - "https://law.ftc.gov.tw/law/EngLawContent.aspx?id=28&lan=E"
+        note: "NTD 3bn domestic (Taiwan) sales for the other enterprise (2026 threshold)."
 
 notes:
   - >
@@ -381,22 +386,46 @@ fdi_screening:
 source_passages:
 
   - passage_id: tw_fta_art11
-    document_title: "Fair Trade Act (公平交易法), Republic of China (Taiwan)"
+    document_title: "Fair Trade Act (公平交易法), Republic of China (Taiwan) — MOJ official English"
     article_reference: "Article 11(1)"
-    document_url: "https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=J0150001"
+    document_url: "https://law.moj.gov.tw/ENG/LawClass/LawAll.aspx?pcode=J0150002"
     source_type: primary_legislation
     quoted_text: >
-      "An enterprise which intends to combine with another enterprise shall notify the
-      central competent authority in advance when: (1) as a result of the combination,
-      the enterprise will hold one-third of the market; (2) one of the combining
-      enterprises holds one-fourth of the market; (3) the sales amount of one of the
-      combining enterprises for the preceding fiscal year surpasses the threshold
-      amount publicly announced by the central competent authority."
+      "Any merger that falls within any of the following circumstances shall be filed with
+      the competent authority in advance: 1. as a result of the merger the enterprise(s)
+      will have one third of the market share; 2. one of the enterprises in the merger has
+      one fourth of the market share; or 3. sales for the preceding fiscal year of one of
+      the enterprises in the merger exceeds the threshold amount publicly announced by the
+      competent authority."
     supports_conditions:
       - tw_post_combined_share
       - tw_pre_either_party_share
+
+  - passage_id: tw_tftc_sales_threshold_2026
+    document_title: "TFTC Notice — Thresholds and Calculation of Sales Amount which Enterprises of a Merger shall File with the Fair Trade Commission (2026.01.28)"
+    article_reference: "Paragraph 1"
+    document_url: "https://law.ftc.gov.tw/law/EngLawContent.aspx?id=28&lan=E"
+    source_type: official_guidance
+    quoted_text: >
+      "Under one of the following circumstances, the enterprises in the merger shall be
+      filed with the FTC in advance: (1) The combined worldwide sales in the preceding
+      fiscal year of the enterprises in the merger exceed NT$50 billion and the domestic
+      total sales of each of at least two of the enterprises in the merger in the preceding
+      fiscal year also surpass NT$3 billion. (2) The enterprises in the merger are not
+      financial institutions and the domestic total sales of one of the merging parties in
+      the preceding fiscal year exceed NT$20 billion while the domestic total sales of one
+      of the other merging parties in the preceding fiscal year also surpass NT$3 billion.
+      (3) The enterprises in the merger are financial institutions and the domestic total
+      sales of one of the merging parties in the preceding fiscal year exceed NT$40 billion
+      while the domestic total sales of one of the other merging parties in the preceding
+      fiscal year also surpass NT$3 billion."
+    supports_conditions:
       - tw_gen_combined_worldwide
       - tw_gen_each_party_taiwan
+      - tw_large_one_party_taiwan
+      - tw_small_one_party_taiwan
+      - tw_fin_large_party
+      - tw_fin_other_party_taiwan
 
 practitioner_notes:
   - title: "Taiwan — Merger Control Laws and Regulations 2026"

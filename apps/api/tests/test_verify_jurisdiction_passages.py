@@ -7,7 +7,7 @@ from pathlib import Path
 
 import yaml
 
-from app.models.jurisdiction import (
+from app.screening.models.jurisdiction import (
     Authority,
     FilingDeadlines,
     GunJumping,
@@ -21,13 +21,13 @@ from app.models.jurisdiction import (
     ThresholdCondition,
     ThresholdTest,
 )
-from app.services.jurisdiction_numeric import value_in_text
-from app.services.jurisdiction_passages import (
+from app.screening.services.jurisdiction_numeric import value_in_text
+from app.screening.services.jurisdiction_passages import (
     build_offline_fetch,
     fixture_provenance_issues,
     verify_passages,
 )
-from app.models.jurisdiction import MetricType
+from app.screening.models.jurisdiction import MetricType
 
 FIXTURES = Path(__file__).parent / "fixtures" / "jurisdiction_sources"
 
@@ -174,9 +174,9 @@ def test_sentinel_zero_value_skips_numeric_grounding():
 def test_sidecar_not_loaded_as_jurisdiction(tmp_path):
     # Verification sidecars live alongside jurisdiction YAML; load_all must skip
     # them rather than try to validate them as JurisdictionRule.
-    from app.models.jurisdiction_verification import JurisdictionVerification
-    from app.services.jurisdiction_verification_store import write_sidecar
-    from app.services.threshold_engine import load_all_jurisdictions
+    from app.screening.models.jurisdiction_verification import JurisdictionVerification
+    from app.screening.services.jurisdiction_verification_store import write_sidecar
+    from app.screening.services.threshold_engine import load_all_jurisdictions
 
     rule = _uk_rule()
     (tmp_path / "uk.yaml").write_text(

@@ -15,8 +15,8 @@ ARCHETYPES_PATH = DATA_DIR / "_archetypes.yaml"
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from app.models.jurisdiction import SourceType
-from app.models.jurisdiction_verification import (
+from app.screening.models.jurisdiction import SourceType
+from app.screening.models.jurisdiction_verification import (
     ArchetypeConfig,
     FreshnessStatus,
     GateStatus,
@@ -24,7 +24,7 @@ from app.models.jurisdiction_verification import (
     RegressionStatus,
     SourceVerificationTier,
 )
-from app.services.jurisdiction_baseline import compute_baseline_report
+from app.screening.services.jurisdiction_baseline import compute_baseline_report
 
 
 def test_sidecar_example_loads():
@@ -76,14 +76,14 @@ def test_archetypes_yaml_validates():
 def test_baseline_report_counts():
     report = compute_baseline_report(DATA_DIR, ARCHETYPES_PATH)
     assert report.jurisdiction_count == 47
-    assert report.threshold_condition_count == 167
+    assert report.threshold_condition_count == 171
     assert report.primary_legislation_condition_count == 123
-    assert report.authoritative_condition_count == 159
+    assert report.authoritative_condition_count == 167
     assert report.condition_with_source_url_count == 17
-    assert report.source_passage_count == 71
-    assert report.supported_condition_count == 132
+    assert report.source_passage_count == 75
+    assert report.supported_condition_count == 138
     assert report.authoritative_missing_passage_count == 29
-    assert report.annual_adjustment_test_count == 12
+    assert report.annual_adjustment_test_count == 14
     assert report.jurisdictions_without_source_passages == []
 
 
@@ -95,7 +95,7 @@ def test_baseline_report_serializes():
 
 
 def test_authoritative_source_types_exclude_practitioner():
-    from app.models.jurisdiction_verification import AUTHORITATIVE_SOURCE_TYPES
+    from app.screening.models.jurisdiction_verification import AUTHORITATIVE_SOURCE_TYPES
 
     assert SourceType.practitioner not in AUTHORITATIVE_SOURCE_TYPES
     assert SourceType.primary_legislation in AUTHORITATIVE_SOURCE_TYPES

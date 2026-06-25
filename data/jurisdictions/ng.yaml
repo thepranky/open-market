@@ -82,8 +82,8 @@ threshold_tests:
   # Notification (2019); confirmed via ICLG Nigeria 2025 merger control chapter.
 
   - test_id: ng_combined_turnover
-    description: "Combined Nigeria turnover of all parties ≥ NGN 1bn (FCCPA s. 92)"
-    legal_basis: "Federal Competition and Consumer Protection Act 2018, Section 92(1)(a)"
+    description: "Combined Nigeria turnover of all parties ≥ NGN 1bn (Threshold Notice S.I. 32/2019 para 1.1(a))"
+    legal_basis: "FCCPC Notice of Threshold for Merger Notification (S.I. 32 of 2019), para 1.1(a) [FCCPA 2018 s. 93(4)]"
     source_url: "https://fccpc.gov.ng"
     note: >
       A 'large merger' requiring mandatory notification exists if the combined annual
@@ -91,7 +91,7 @@ threshold_tests:
       year preceding the merger equals or exceeds NGN 1 billion. Turnover is measured
       'in, into or from Nigeria.'
     annual_adjustment: false
-    effective_date: "2019-01-01"
+    effective_date: "2019-09-09"
 
     conditions:
       - condition_id: ng_combined_domestic
@@ -101,7 +101,7 @@ threshold_tests:
         operator: ">="
         value: 1000000000
         currency: NGN
-        source: "FCCPA 2018, Section 92(1)(a); FCCPC Notice of Threshold for Merger Notification (2019)"
+        source: "FCCPC Notice of Threshold for Merger Notification (S.I. 32 of 2019), para 1.1(a), pursuant to FCCPA 2018 s. 93(4)"
         source_type: authority_announcement
         verified_via:
           - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/nigeria"
@@ -111,8 +111,8 @@ threshold_tests:
           that catches many transactions with even modest Nigerian presence.
 
   - test_id: ng_target_turnover
-    description: "Target Nigeria turnover alone ≥ NGN 500m (FCCPA s. 92)"
-    legal_basis: "Federal Competition and Consumer Protection Act 2018, Section 92(1)(b)"
+    description: "Target Nigeria turnover alone ≥ NGN 500m (Threshold Notice S.I. 32/2019 para 1.1(b))"
+    legal_basis: "FCCPC Notice of Threshold for Merger Notification (S.I. 32 of 2019), para 1.1(b) [FCCPA 2018 s. 93(4)]"
     source_url: "https://fccpc.gov.ng"
     note: >
       Alternative large merger threshold: if the target's annual Nigeria turnover
@@ -120,7 +120,7 @@ threshold_tests:
       is notifiable. This captures acquisitions of medium-sized Nigerian businesses
       even where the acquirer has no Nigerian revenues.
     annual_adjustment: false
-    effective_date: "2019-01-01"
+    effective_date: "2019-09-09"
 
     conditions:
       - condition_id: ng_target_domestic
@@ -130,7 +130,7 @@ threshold_tests:
         operator: ">="
         value: 500000000
         currency: NGN
-        source: "FCCPA 2018, Section 92(1)(b); FCCPC Notice of Threshold for Merger Notification (2019)"
+        source: "FCCPC Notice of Threshold for Merger Notification (S.I. 32 of 2019), para 1.1(b), pursuant to FCCPA 2018 s. 93(4)"
         source_type: authority_announcement
         verified_via:
           - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/nigeria"
@@ -148,10 +148,12 @@ notes:
     these thresholds. Always flag Nigeria for review in any transaction involving
     African operations.
   - >
-    SEC concurrent jurisdiction: the Securities and Exchange Commission (SEC) has
-    jurisdiction over mergers involving listed companies or capital market transactions
-    under the Investments and Securities Act 2007 (ISA). SEC approval may be required
-    in addition to FCCPC approval for public company transactions.
+    SEC NO LONGER HAS COMPETITION MERGER ROLE: the FCCPA 2018 repealed the merger
+    provisions of the Investments and Securities Act (ISA ss. 118–128), removing the
+    SEC's competition merger-review function. The SEC retains a capital-markets/
+    securities-approval role for public-company deals (now under the Investments and
+    Securities Act 2025, which replaced the ISA 2007), but competition merger control
+    sits solely with the FCCPC.
   - >
     Small mergers: transactions below both NGN thresholds are 'small mergers' under
     the FCCPA. The FCCPC may still require notification of a small merger within
@@ -299,6 +301,21 @@ source_passages:
       (e) the dynamic characteristics of the market, including growth, innovation, and
       product differentiation; (f) whether the business or part of the business of a
       party to the merger has failed or is likely to fail."
+    supports_conditions: []
+
+  - passage_id: ng_threshold_notice_2019
+    document_title: "FCCPA 2018 — Notice of Threshold for Merger Notification (S.I. 32 of 2019)"
+    article_reference: "Paragraph 1.1(a)-(b) (pursuant to FCCPA s. 93(4))"
+    document_url: "https://lite.judy.legal/amp/legislation/akn/ng/act/si/2019/32"
+    source_type: authority_announcement
+    quoted_text: >
+      "a merger shall be notifiable before implementation if, in the financial year
+      preceding the merger: (a) The combined annual turnover of the acquiring undertaking
+      and the target undertaking in, into or from Nigeria equals or exceeds N1,000,000,000;
+      or (b) The annual turnover of the target undertaking in, into or from Nigeria equals
+      or exceeds N500,000,000. It is presumed that a merger with an annual turnover below
+      the threshold will constitute a 'small merger' and those above the threshold would
+      constitute a 'large merger'."
     supports_conditions:
       - ng_combined_domestic
       - ng_target_domestic

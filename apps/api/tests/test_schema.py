@@ -10,9 +10,9 @@ REPO_ROOT = Path(__file__).parent.parent.parent.parent
 CASES_DIR = REPO_ROOT / "data" / "cases"
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from app.loader.yaml_loader import load_yaml_file
-from app.loader.validator import validate_all
-from app.models import CaseRecord, Outcome, RetrievalStatus, CaseHistoryStatus, VerificationStatus
+from app.cases.loader.yaml_loader import load_yaml_file
+from app.cases.loader.validator import validate_all
+from app.cases.models import CaseRecord, Outcome, RetrievalStatus, CaseHistoryStatus, VerificationStatus
 
 
 def _sample_files():
@@ -82,7 +82,7 @@ def test_proposition_verification_defaults():
 
 
 def test_new_outcome_values():
-    from app.models import Outcome
+    from app.cases.models import Outcome
     assert Outcome.cleared_with_conditions == "cleared_with_conditions"
     assert Outcome.annulled == "annulled"
     assert Outcome.under_appeal == "under_appeal"

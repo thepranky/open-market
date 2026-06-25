@@ -68,7 +68,7 @@ services:
       context: ./apps/api
       dockerfile: Dockerfile
     container_name: compmap-embed
-    command: python scripts/index_embeddings.py
+    command: python scripts/cases/index_embeddings.py
     environment:
       DATABASE_URL: postgresql://compmap:compmap_local@postgres:5432/compmap
       GOOGLE_API_KEY: ${GOOGLE_API_KEY:-}

@@ -22,12 +22,12 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent / "apps" / "api"))
 
 from neo4j import GraphDatabase
-from app.loader.yaml_loader import load_all_cases
-from app.loader.index_loader import load_all_index_cases
-from app.loader.concept_loader import load_all_concepts
-from app.models import CaseRecord
-from app.models.case_index import CaseIndexEntry
-from app.models.concept import ConceptNode
+from app.cases.loader.yaml_loader import load_all_cases
+from app.cases.loader.index_loader import load_all_index_cases
+from app.cases.loader.concept_loader import load_all_concepts
+from app.cases.models import CaseRecord
+from app.cases.models.case_index import CaseIndexEntry
+from app.cases.models.concept import ConceptNode
 
 
 def get_driver():
@@ -359,7 +359,7 @@ def seed_concept(session, concept: ConceptNode):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Seed CompMap graph from YAML records")
+    parser = argparse.ArgumentParser(description="Seed Meridian graph from YAML records")
     parser.add_argument("--cases-dir", default="data/cases", help="Path to canonical cases directory")
     parser.add_argument("--case-index-dir", default=None, help="Path to indexed cases directory")
     parser.add_argument("--concepts-dir", default=None, help="Path to concepts directory")

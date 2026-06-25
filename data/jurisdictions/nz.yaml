@@ -20,11 +20,19 @@ legal_basis:
       Section 47 prohibits acquisitions that have, or are likely to have, the effect of
       substantially lessening competition (SLC) in a market in New Zealand. There is no
       separate mandatory pre-merger notification provision in the Commerce Act.
-  - citation: "Commerce Commission Mergers and Acquisitions Guidelines (2022)"
-    url: "https://www.comcom.govt.nz/regulated-industries"
+  - citation: "Commerce Act 1986 (NZ), Sections 66 (clearance) and 67 (authorisation)"
+    url: "https://www.legislation.govt.nz/act/public/1986/0005/latest/DLM89064.html"
     note: >
-      Sets out the Commission's analytical framework, safe harbours, and indicative
-      market concentration thresholds. Not binding law; represents Commission practice.
+      The voluntary clearance route is s. 66; the authorisation route (weighing public
+      benefits) is s. 67, which carries a 60-working-day statutory determination clock
+      (s. 67(3)). Section 47 is the substantive prohibition; s. 66/67 are the procedural
+      pathways parties may use to obtain pre-completion certainty.
+  - citation: "Commerce Commission Mergers and Acquisitions Guidelines (May 2022)"
+    url: "https://www.comcom.govt.nz/__data/assets/pdf_file/0020/91019/Mergers-and-acquisitions-Guidelines-May-2022.pdf"
+    note: >
+      Sets out the Commission's analytical framework and the para 12 concentration
+      indicators (CR3 < 70% with merged share < 40%; or CR3 ≥ 70% with merged share
+      < 20%). Not binding law; represents Commission practice.
     source_type: official_guidance
 
 filing:
@@ -82,33 +90,63 @@ threshold_tests:
   # Source: Commerce Commission Mergers and Acquisitions Guidelines (2022); Commerce Act
   # 1986, Section 47.
 
-  - test_id: nz_combined_market_share
-    description: "Indicative safe harbour — combined NZ market share < 40% (Commission unlikely to intervene)"
-    legal_basis: "Commerce Act 1986, s. 47; Commerce Commission Mergers and Acquisitions Guidelines (2022)"
-    source_url: "https://www.comcom.govt.nz/regulated-industries"
+  - test_id: nz_low_concentration_share
+    description: "Indicative concentration indicator — merged share ≥ 40% where CR3 < 70% (Commission more likely to scrutinise)"
+    legal_basis: "Commerce Act 1986, s. 47; Commerce Commission Mergers and Acquisitions Guidelines (May 2022), para. 12.1"
+    source_url: "https://www.comcom.govt.nz/__data/assets/pdf_file/0020/91019/Mergers-and-acquisitions-Guidelines-May-2022.pdf"
     note: >
-      NOT a mandatory notification trigger. The Commission is generally unlikely to
-      intervene if the merged entity's combined market share is below 40%. If the
-      combined post-merger share meets or exceeds 40%, parties should seriously consider
-      voluntary clearance. TREAT AS ADVISORY — no filing obligation arises.
+      NOT a mandatory notification trigger. Per Guidelines para 12.1, a merger is LESS
+      likely to raise concerns where the three largest firms hold a combined share below
+      70% AND the merged firm's share is below 40%. So where CR3 < 70%, a merged share at
+      or above 40% sits outside the indicator and warrants considering voluntary clearance.
+      TREAT AS ADVISORY — no filing obligation arises. The indicators are "only initial
+      guides"; a merger within them may still substantially lessen competition.
     annual_adjustment: false
     effective_date: null
     status: "indicative_only"
 
     conditions:
-      - condition_id: nz_combined_share
+      - condition_id: nz_low_concentration_share
         metric: market_share
         scope: domestic
         party: combined
         operator: ">="
         value: 0.40
         currency: null
-        source: "Commerce Commission Mergers and Acquisitions Guidelines (2022)"
+        source: "Commerce Commission Mergers and Acquisitions Guidelines (May 2022), para. 12.1"
         source_type: official_guidance
         note: >
-          40% combined NZ market share is the key indicative threshold above which
-          the Commission is more likely to scrutinise a transaction. Not a statutory
-          notification trigger.
+          In a market where the three largest firms' combined share is below 70%, a
+          merged-firm share at or above 40% is outside the Commission's safe-harbour
+          indicator. Not a statutory notification trigger.
+
+  - test_id: nz_high_concentration_share
+    description: "Indicative concentration indicator — merged share ≥ 20% where CR3 ≥ 70% (Commission more likely to scrutinise)"
+    legal_basis: "Commerce Act 1986, s. 47; Commerce Commission Mergers and Acquisitions Guidelines (May 2022), para. 12.2"
+    source_url: "https://www.comcom.govt.nz/__data/assets/pdf_file/0020/91019/Mergers-and-acquisitions-Guidelines-May-2022.pdf"
+    note: >
+      NOT a mandatory notification trigger. Per Guidelines para 12.2, a merger is LESS
+      likely to raise concerns where the three largest firms hold a combined share of 70%
+      or more AND the merged firm's share is below 20%. So in a concentrated market (CR3
+      ≥ 70%), a merged share at or above 20% sits outside the indicator. TREAT AS ADVISORY.
+    annual_adjustment: false
+    effective_date: null
+    status: "indicative_only"
+
+    conditions:
+      - condition_id: nz_high_concentration_share
+        metric: market_share
+        scope: domestic
+        party: combined
+        operator: ">="
+        value: 0.20
+        currency: null
+        source: "Commerce Commission Mergers and Acquisitions Guidelines (May 2022), para. 12.2"
+        source_type: official_guidance
+        note: >
+          In a concentrated market (three-firm combined share ≥ 70%), a merged-firm share
+          at or above 20% is outside the Commission's safe-harbour indicator. Not a
+          statutory notification trigger.
 
 notes:
   - >
@@ -132,6 +170,15 @@ notes:
     and then facing a Commission investigation. The Commission has no statutory time limit
     on investigating completed mergers (though in practice it typically acts within
     12 months of the merger becoming public knowledge).
+  - >
+    REFORM IN PROGRESS (not yet in force): The Commerce (Promoting Competition and Other
+    Matters) Amendment Bill was introduced on 9 December 2025 and is before the Economic
+    Development, Science and Innovation Committee (officials' report March 2026; reported
+    back with amendments ~June 2026). As introduced, it expands the SLC test (to capture
+    creating/strengthening/entrenching substantial market power — "killer"/"creeping"
+    acquisitions, confined to mergers) and introduces a statutory notification regime.
+    New clearance/authorisation application forms apply to applications registered from
+    1 July 2026. The current law remains voluntary until the Bill is enacted and commenced.
 
 # ── Scope / trigger events ────────────────────────────────────────────────────
 scope:
@@ -270,8 +317,22 @@ source_passages:
       "No person shall acquire assets of a business or shares if that acquisition would
       have, or would be likely to have, the effect of substantially lessening competition
       in a market."
+    supports_conditions: []
+
+  - passage_id: nz_merger_guidelines_para12
+    document_title: "Commerce Commission Mergers and Acquisitions Guidelines (May 2022)"
+    article_reference: "Paragraph 12"
+    document_url: "https://www.comcom.govt.nz/__data/assets/pdf_file/0020/91019/Mergers-and-acquisitions-Guidelines-May-2022.pdf"
+    source_type: official_guidance
+    quoted_text: >
+      "12 The two indicators that a merger is less likely to raise competition concerns
+      are: 12.1 where post-merger the three largest firms in the market have a combined
+      market share of less than 70%, and the merged firm's market share is less than 40%;
+      and/or 12.2 where post-merger the three largest firms in the market have a combined
+      market share of 70% or more, and the merged firm's market share is less than 20%."
     supports_conditions:
-      - nz_combined_share
+      - nz_low_concentration_share
+      - nz_high_concentration_share
 
 practitioner_notes:
   - title: "Merger Control Laws and Regulations 2025 — New Zealand"

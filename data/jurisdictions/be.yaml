@@ -21,8 +21,8 @@ legal_basis:
       The Act of 2 May 2019 (in force 12 June 2019) introduced significant procedural
       changes, including a two-phase system modelled on the EU Merger Regulation,
       a new dominance + SIEC substantive test, and higher penalties for gun-jumping.
-      Article IV.7 defines concentrations; Article IV.8 sets out notification thresholds;
-      Article IV.10 imposes the standstill obligation; Articles IV.63–IV.69 govern
+      Article IV.7 §1 sets the notification thresholds; Article IV.8 governs how turnover
+      is computed; Article IV.10 imposes the standstill obligation; Articles IV.63–IV.69 govern
       Phase I and Phase II procedures.
   - citation: "Royal Decree of 22 June 2019 implementing Book IV CEL"
     url: "https://www.belgiancompetition.be/en"
@@ -198,8 +198,8 @@ threshold_tests:
   # If the EU EUMR thresholds are also met, the EU one-stop-shop applies instead.
 
   - test_id: be_standard
-    description: "Combined worldwide >EUR 100m AND each of ≥2 parties Belgian >EUR 40m (Art. IV.8 CEL)"
-    legal_basis: "Article IV.8(1), Code of Economic Law (Book IV)"
+    description: "Combined worldwide >EUR 100m AND each of ≥2 parties Belgian >=EUR 40m (Art. IV.7 §1 CEL)"
+    legal_basis: "Article IV.7, §1, Code of Economic Law (Book IV); turnover computed per Article IV.8"
     source_url: "https://www.belgiancompetition.be/en/mergers"
     note: >
       Both conditions must be met simultaneously (AND logic). The combined aggregate
@@ -219,7 +219,7 @@ threshold_tests:
         operator: ">"
         value: 100000000
         currency: EUR
-        source: "Article IV.8(1)(a) Code of Economic Law"
+        source: "Article IV.7, §1 Code of Economic Law (statute: 'de plus de 100 millions d'euros' = more than)"
         source_type: primary_legislation
         source_url: "https://www.belgiancompetition.be/en/mergers"
         verified_via:
@@ -231,10 +231,10 @@ threshold_tests:
         metric: revenue
         scope: domestic
         party: each_of_at_least_two
-        operator: ">"
+        operator: ">="
         value: 40000000
         currency: EUR
-        source: "Article IV.8(1)(b) Code of Economic Law"
+        source: "Article IV.7, §1 Code of Economic Law (statute: 'd'au moins 40 millions d'euros' = at least)"
         source_type: primary_legislation
         source_url: "https://www.belgiancompetition.be/en/mergers"
         verified_via:
@@ -270,22 +270,17 @@ notes:
 # ── Source passages ────────────────────────────────────────────────────────────
 source_passages:
 
-  - passage_id: be_cel_iv8
-    document_title: "Code de droit économique (Code of Economic Law) — Livre IV (Competition)"
-    article_reference: "Article IV.8(1)"
-    document_url: "https://www.belgiancompetition.be/en"
+  - passage_id: be_cel_iv7
+    document_title: "Code de droit économique, Livre IV — Autorité belge de la concurrence (official consolidated text)"
+    article_reference: "Article IV.7, §1"
+    document_url: "https://www.abc-bma.be/sites/default/files/content/download/files/cde_livre_4.pdf"
     source_type: primary_legislation
     quoted_text: >
-      "Article IV.8. — § 1. Concentrations of undertakings as referred to in Article IV.7
-      shall be notified to the Competition Authority prior to their implementation and
-      following conclusion of the agreement, announcement of a public bid, or acquisition
-      of a controlling interest, where in the most recent financial year:
-      1° the combined aggregate worldwide turnover of all undertakings concerned
-      exceeded 100 million euro; and
-      2° each of at least two of the undertakings concerned had an aggregate turnover
-      in Belgium exceeding 40 million euro;
-      provided that the thresholds set out in Article 1 of Regulation (EC) No 139/2004
-      are not met."
+      Art. IV.7. § 1er. Les dispositions du présent chapitre ne s'appliquent que lorsque
+      les entreprises concernées totalisent ensemble en Belgique un chiffre d'affaires,
+      déterminé selon les critères visés à l'article IV.8, de plus de 100 millions d'euros,
+      et qu'au moins deux des entreprises concernées réalisent chacune en Belgique un
+      chiffre d'affaires d'au moins 40 millions d'euros.
     supports_conditions:
       - be_combined_worldwide
       - be_each_party_belgian

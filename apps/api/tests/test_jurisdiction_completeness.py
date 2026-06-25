@@ -5,7 +5,7 @@ from __future__ import annotations
 from datetime import date
 from pathlib import Path
 
-from app.models.jurisdiction import (
+from app.screening.models.jurisdiction import (
     Authority,
     FilingDeadlines,
     GunJumping,
@@ -21,13 +21,13 @@ from app.models.jurisdiction import (
     ThresholdCondition,
     ThresholdTest,
 )
-from app.models.jurisdiction_verification import (
+from app.screening.models.jurisdiction_verification import (
     ArchetypeConfig,
     ArchetypeRequirements,
     GateStatus,
     SourceVerificationTier,
 )
-from app.services.jurisdiction_completeness import build_sidecar_update, evaluate_all, evaluate_completeness
+from app.screening.services.jurisdiction_completeness import build_sidecar_update, evaluate_all, evaluate_completeness
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 DATA_DIR = REPO_ROOT / "data" / "jurisdictions"

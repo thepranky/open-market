@@ -22,10 +22,14 @@ legal_basis:
       for mergers meeting the prescribed thresholds. Sections 43–57 cover the CAK's
       review procedure, timelines, and the distinction between 'approved' and
       'conditionally approved' mergers.
-  - citation: "Competition (General) Rules, 2014 — Rules 31–44 (Mergers and Acquisitions)"
-    url: "https://www.cak.go.ke/"
-    note: "Detailed procedural rules for merger filings, notification forms, and review process."
-    source_type: official_guidance
+  - citation: "Competition (General) Rules, 2019 (Legal Notice 176 of 2019), First Schedule — Merger Threshold Guidelines"
+    url: "https://kenyalaw.org/kl/fileadmin/pdfdownloads/LegalNotices/2019/LN176_2019.pdf"
+    note: >
+      The operative instrument for the merger thresholds (superseding the 2014 Rules).
+      Part B sets the notifiable-merger thresholds (combined ≥ KES 1bn AND target > KES
+      500m; or acquirer > KES 10bn); Part C sets the exclusion tiers and the fixed-band
+      filing-fee schedule (Nil / Nil / KES 1m / KES 2m / KES 4m).
+    source_type: primary_legislation
 
 filing:
   deadline_from_signing_days: null
@@ -59,80 +63,92 @@ review_periods:
 
 fees:
   structure: >
-    1% of the combined annual turnover of the merging parties in Kenya,
-    subject to a minimum of KES 20,000 and a maximum of KES 500,000.
-    (Verify current fee schedule with CAK)
-  source: "Competition (General) Rules, 2014, Rule 40"
+    Fixed bands by combined turnover/assets (Competition (General) Rules 2019, Part D):
+    up to KES 500m — Nil; KES 500m–1bn — Nil (exclusion application); KES 1bn–10bn —
+    KES 1,000,000; KES 10bn–50bn — KES 2,000,000; above KES 50bn — KES 4,000,000.
+  source: "Competition (General) Rules, 2019 (Legal Notice 176 of 2019), First Schedule, Part D"
   source_type: primary_legislation
-  source_url: "https://www.cak.go.ke/"
+  source_url: "https://kenyalaw.org/kl/fileadmin/pdfdownloads/LegalNotices/2019/LN176_2019.pdf"
   annual_adjustment: false
 
 threshold_tests:
-  # Kenya's mandatory notification thresholds are set under Competition Act Section 42
-  # and the Competition (General) Rules 2014.
+  # Kenya's tiered notification regime — Competition (General) Rules, 2019 (Legal Notice
+  # 176 of 2019), First Schedule (Merger Threshold Guidelines), made under s. 93 of the
+  # Competition Act No. 12 of 2010. The metric throughout is "turnover OR assets,
+  # whichever is higher" (a single value, not two alternative triggers).
   #
-  # Notification is required if the combined annual turnover OR combined assets of
-  # the merging parties in Kenya equals or exceeds KES 1 billion.
-  # (OR logic: either turnover or assets meeting the threshold triggers notification)
-  #
-  # SOURCE NOTE: The KES 1bn threshold is confirmed by the Competition Act and
-  # practitioner sources. The CAK periodically reviews thresholds. Verify current
-  # threshold at https://www.cak.go.ke before advising.
+  #   FULL notification (Part B para 4(a)): combined turnover/assets >= KES 1bn AND the
+  #     target's turnover/assets > KES 500m.
+  #   ACQUIRER test (Part B para 4(b)): acquirer turnover/assets > KES 10bn AND the
+  #     parties are in the same market or vertically integrable (COMESA carve-out aside).
+  #   Exclusion application / simplified (Part C para 5): combined KES 500m–1bn.
+  #   Excluded, no notice (Part C para 6): combined <= KES 500m, or COMESA deal with
+  #     <2/3 of turnover/assets in Kenya.
 
-  - test_id: ke_combined_turnover
-    description: "Combined Kenya annual turnover ≥ KES 1bn (Competition Act s. 42)"
-    legal_basis: "Competition Act No. 12 of 2010, Section 42(1); Competition (General) Rules 2014, Rule 31"
-    source_url: "https://www.cak.go.ke/"
+  - test_id: ke_full_notification
+    description: "Combined Kenya turnover/assets ≥ KES 1bn AND target Kenya turnover/assets > KES 500m (LN 176/2019, Part B para 4(a))"
+    legal_basis: "Competition (General) Rules, 2019 (Legal Notice 176 of 2019), First Schedule, Part B para 4(a) [Competition Act No. 12 of 2010, s. 93]"
+    source_url: "https://kenyalaw.org/kl/fileadmin/pdfdownloads/LegalNotices/2019/LN176_2019.pdf"
     note: >
-      Mandatory notification if the combined annual turnover of ALL merging parties in
-      Kenya in the preceding fiscal year equals or exceeds KES 1 billion. Both the
-      acquirer's and the target's Kenya revenues count toward the combined threshold.
-      NOTE: KES 1bn ≈ USD 7.7m at current exchange rates — a relatively low threshold
-      that catches many transactions involving Kenyan businesses.
+      Both conditions must be met (AND logic). The metric is turnover OR assets, whichever
+      is higher — not two separate triggers. A deal with combined ≥ KES 1bn but a target
+      at or below KES 500m is NOT a full notification (it may fall into the exclusion tiers).
+      KES 1bn ≈ USD 7–8m — a low threshold catching many Kenyan-nexus transactions.
     annual_adjustment: false
-    effective_date: null
+    effective_date: "2019-12-06"
 
     conditions:
-      - condition_id: ke_combined_domestic_revenue
+      - condition_id: ke_combined_domestic
         metric: revenue
         scope: domestic
         party: combined
         operator: ">="
         value: 1000000000
         currency: KES
-        source: "Competition Act No. 12 of 2010, Section 42(1)"
+        source: "Competition (General) Rules, 2019 (LN 176/2019), First Schedule, Part B para 4(a)"
         source_type: primary_legislation
-        verified_via:
-          - "https://www.cak.go.ke/"
-          - "https://iclg.com/practice-areas/merger-control-laws-and-regulations/-laws-and-regulations/"
         note: >
-          KES 1bn (~USD 7.7m) combined Kenya annual turnover of all merging parties.
-          Includes revenues from Kenyan operations of non-Kenyan entities.
+          KES 1bn combined turnover OR assets (whichever is higher) in Kenya of all
+          merging parties, including the Kenyan operations of non-Kenyan entities.
 
-  - test_id: ke_combined_assets
-    description: "Combined Kenya assets ≥ KES 1bn (Competition Act s. 42)"
-    legal_basis: "Competition Act No. 12 of 2010, Section 42(1); Competition (General) Rules 2014, Rule 31"
-    source_url: "https://www.cak.go.ke/"
+      - condition_id: ke_target_domestic
+        metric: revenue
+        scope: domestic
+        party: target_group
+        operator: ">"
+        value: 500000000
+        currency: KES
+        source: "Competition (General) Rules, 2019 (LN 176/2019), First Schedule, Part B para 4(a)"
+        source_type: primary_legislation
+        note: >
+          Target's turnover OR assets (whichever is higher) in Kenya must be ABOVE
+          KES 500m (strictly greater). Below this, the deal is not a full notification.
+
+  - test_id: ke_acquirer_threshold
+    description: "Acquirer Kenya turnover/assets > KES 10bn AND parties same-market/vertically integrable (LN 176/2019, Part B para 4(b))"
+    legal_basis: "Competition (General) Rules, 2019 (Legal Notice 176 of 2019), First Schedule, Part B para 4(b)"
+    source_url: "https://kenyalaw.org/kl/fileadmin/pdfdownloads/LegalNotices/2019/LN176_2019.pdf"
     note: >
-      Alternative to the turnover test: notification required if the combined total
-      assets (in Kenya) of all merging parties equal or exceed KES 1 billion, regardless
-      of turnover levels. Captures asset-intensive businesses with lower revenues.
+      Independent notification trigger: where the acquiring undertaking's turnover/assets
+      (whichever higher) in Kenya exceeds KES 10bn and the parties are in the same market
+      or can be vertically integrated — unless the transaction meets the COMESA Competition
+      Commission notification thresholds (in which case COMESA review applies instead).
     annual_adjustment: false
-    effective_date: null
+    effective_date: "2019-12-06"
 
     conditions:
-      - condition_id: ke_combined_domestic_assets
-        metric: assets
+      - condition_id: ke_acquirer_domestic
+        metric: revenue
         scope: domestic
-        party: combined
-        operator: ">="
-        value: 1000000000
+        party: acquirer_group
+        operator: ">"
+        value: 10000000000
         currency: KES
-        source: "Competition Act No. 12 of 2010, Section 42(1)"
+        source: "Competition (General) Rules, 2019 (LN 176/2019), First Schedule, Part B para 4(b)"
         source_type: primary_legislation
-        verified_via:
-          - "https://www.cak.go.ke/"
-        note: "KES 1bn combined Kenya total assets of all merging parties."
+        note: >
+          KES 10bn acquirer turnover OR assets (whichever higher) in Kenya, conditioned on
+          the parties being in the same market or vertically integrable.
 
 notes:
   - >
@@ -262,22 +278,33 @@ fdi_screening:
 # ── Source passages (verbatim statutory text) ─────────────────────────────────
 source_passages:
 
-  - passage_id: ke_compet_s42
-    document_title: "Competition Act No. 12 of 2010 (Kenya)"
-    article_reference: "Section 42(1)"
-    document_url: "https://www.cak.go.ke/"
-    source_type: practitioner
+  - passage_id: ke_general_rules_2019_sch1
+    document_title: "Competition (General) Rules, 2019 (Legal Notice 176 of 2019), First Schedule — Merger Threshold Guidelines"
+    article_reference: "First Schedule, Part B para 4; Part C paras 5–6"
+    document_url: "https://kenyalaw.org/kl/fileadmin/pdfdownloads/LegalNotices/2019/LN176_2019.pdf"
+    source_type: primary_legislation
     quoted_text: >
-      "A person shall not implement a merger unless the proposed merger has been approved
-      by the Authority. A merger shall be deemed to occur where a person or business
-      enterprise directly or indirectly acquires or establishes control over the whole
-      or part of the business of another enterprise and the combined annual turnover or
-      assets, in Kenya, of the merging enterprises equals or exceeds one billion Kenya
-      shillings (KES 1,000,000,000), or such other sum as may be prescribed by the
-      Cabinet Secretary."
+      "PART B — TRANSACTIONS SUBJECT TO NOTIFICATION. 4. Notifiable mergers — A merger
+      which meets the following threshold shall be notified to the Authority — (a) where
+      the undertakings have a minimum combined turnover or assets (whichever is higher) of
+      one billion shillings and the turnover or assets (whichever is higher) of the target
+      undertaking is above five hundred million shillings; (b) where the turnover or assets
+      (whichever is higher) of the acquiring undertaking is above ten billion shillings and
+      the merging parties are in the same market or can be vertically integrated, unless the
+      transaction meets the COMESA Competition Commission Merger Notification Thresholds ...
+      PART C — TRANSACTIONS EXCLUDED FROM NOTIFICATION. 5. Excluded transactions requiring
+      approval of the Authority (1) A merger which meets the following threshold may be
+      considered for exclusion from notification — (a) where the combined turnover or assets
+      (whichever is higher) of the merging parties is between five hundred million shillings
+      and one billion shillings ... 6. Excluded transactions not requiring approval of the
+      Authority — (a) the combined turnover or assets (whichever is higher) of the merging
+      parties does not exceed five hundred million shillings; or (b) the merger meets the
+      COMESA Competition Commission Merger Notification threshold and at least two-thirds of
+      the turnover or assets (whichever is higher) is not generated or located in Kenya."
     supports_conditions:
-      - ke_combined_domestic_revenue
-      - ke_combined_domestic_assets
+      - ke_combined_domestic
+      - ke_target_domestic
+      - ke_acquirer_domestic
 
 practitioner_notes:
   - title: "Navigating Kenya's Evolving Merger Control Landscape in 2026"

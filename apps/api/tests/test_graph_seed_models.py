@@ -11,9 +11,9 @@ REPO_ROOT = Path(__file__).parent.parent.parent.parent
 sys.path.insert(0, str(Path(__file__).parent.parent))
 sys.path.insert(0, str(REPO_ROOT))
 
-from app.models.case_index import CaseIndexEntry
-from app.models.concept import ConceptNode, ConceptRef
-from app.models import Outcome
+from app.cases.models.case_index import CaseIndexEntry
+from app.cases.models.concept import ConceptNode, ConceptRef
+from app.cases.models import Outcome
 
 
 # ---------------------------------------------------------------------------
@@ -188,7 +188,7 @@ def test_seed_case_sets_canonical_data_layer():
     if not yaml_path.exists():
         pytest.skip("eu_sika_dry_mix_2019.yaml not present")
 
-    from app.loader.yaml_loader import load_yaml_file
+    from app.cases.loader.yaml_loader import load_yaml_file
     case = load_yaml_file(yaml_path)
 
     session = _make_session()
