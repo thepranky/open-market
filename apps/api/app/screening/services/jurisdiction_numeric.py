@@ -34,7 +34,6 @@ _MULTIPLIERS: dict[str, int] = {
     "mrd": 1_000_000_000,  # German/Dutch Milliarde abbreviation
     # German
     "tausend": 1_000,
-    "million": 1_000_000,
     "millionen": 1_000_000,
     "milliarde": 1_000_000_000,
     "milliarden": 1_000_000_000,
@@ -322,11 +321,12 @@ def _parse_spelled_values(text: str) -> list[float]:
             i += 1
             continue
         if scale is not None:
-            multiplicand = (current + group) or 1
-            current = multiplicand * scale
-            group = 0
-            saw_scale = True
-            consumed_any = True
+            multiplicand = current + group
+            if multiplicand > 0:
+                current = multiplicand * scale
+                group = 0
+                saw_scale = True
+                consumed_any = True
             i += 1
             continue
         # A non-number token ends the current spelled number.

@@ -9,8 +9,8 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from app.models.jurisdiction import MetricType
-from app.services.jurisdiction_numeric import (
+from app.screening.models.jurisdiction import MetricType
+from app.screening.services.jurisdiction_numeric import (
     parse_monetary_values,
     value_in_text,
 )
@@ -100,9 +100,14 @@ def test_adjacent_numbers_not_merged():
 
 def test_inconsistent_grouping_rejected():
     # "12 34 567" is not validly grouped (2-digit groups) → no monetary value.
-    assert parse_monetary_values("EUR 12 34 567", currency="EUR") == [] or all(
-        v != 1_234_567 for v in parse_monetary_values("EUR 12 34 567", currency="EUR")
-    )
+    assert parse_monetary_values("EUR 12 34 567", currency="EUR") == []
+
+
+def test_digit_word_no_spurious_bare_scale():
+    # Digit + magnitude word must NOT also emit the bare scale (1 × multiplier).
+    vals = parse_monetary_values("превышает 7 миллиардов рублей", currency="RUB")
+    assert 7_000_000_000 in vals
+    assert 1_000_000_000 not in vals
 
 
 # ── Russian source-passage style (the ru.yaml Article 28 case) ────────────────
