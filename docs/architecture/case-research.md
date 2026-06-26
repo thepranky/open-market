@@ -31,8 +31,8 @@ The shape and grounding rules for these records are the data contracts described
 
 ## Pipeline (scripts)
 
-Source PDF → `scripts/cases/extract_case_from_source.py` / `ingest_case.py` → draft → integrity gates →
-`scripts/cases/review_draft.py` → human review → `scripts/cases/promote_case_pipeline.py` → canonical.
+Source PDF → `scripts/cases/extract/extract_case_from_source.py` / `ingest_case.py` → draft → integrity gates →
+`scripts/cases/review/review_draft.py` → human review → `scripts/cases/promote/promote_case_pipeline.py` → canonical.
 
 See [operations/ingestion.md](../operations/ingestion.md) and
 [promotion-checklist.md](../operations/promotion-checklist.md).
@@ -61,7 +61,7 @@ After adding cases, run semantic indexing:
 
 ```bash
 docker compose --profile embed up embed
-# or: apps/api/scripts/cases/index_embeddings.py
+# or: apps/api/scripts/cases/embeddings/index_embeddings.py
 ```
 
 Requires `GOOGLE_API_KEY` for `gemini-embedding-001` (768-dim).

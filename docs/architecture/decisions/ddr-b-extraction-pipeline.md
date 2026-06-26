@@ -4,8 +4,8 @@
 ## Before you start
 
 Read/trace:
-- `apps/api/scripts/cases/extract_case_from_source.py`, `ingest_case.py`
-- `apps/api/scripts/cases/review_draft.py`, `promote_case_pipeline.py`
+- `apps/api/scripts/cases/extract/extract_case_from_source.py`, `ingest_case.py`
+- `apps/api/scripts/cases/review/review_draft.py`, `promote_case_pipeline.py`
 - `docs/operations/ingestion.md`, `promotion-checklist.md`
 - `data/pipeline_profiles/` (one example)
 - `data/review_learning/` structure
@@ -24,7 +24,7 @@ Turns a source PDF into a human-reviewed canonical `CaseRecord`. Machines extrac
 and gate; a human attests; only then does YAML enter `data/cases/`.
 
 ```
-scrape_ec_registry.py ──▶ data/case_index/    (EU Phase I bulk lane only)
+scrape_eu_index.py ──▶ data/case_index/    (EU Phase I bulk lane only)
         │                       │
    (manual seed YAML in data/cases/ for Phase II / UK / US)
         │                       │

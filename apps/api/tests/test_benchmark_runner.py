@@ -1,5 +1,5 @@
 """
-Tests for scripts/cases/run_eval_benchmark.py.
+Tests for scripts/cases/evals/run_eval_benchmark.py.
 
 No network access; no Claude API calls; no canonical YAML mutation.
 """

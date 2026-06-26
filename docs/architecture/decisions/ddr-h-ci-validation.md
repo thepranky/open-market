@@ -7,7 +7,7 @@ Read/trace:
 - `.github/workflows/api-ci.yml`, `jurisdiction-verification.yml`
 - `apps/api/tests/` — list files; skim `test_schema.py`, `test_eval_pipeline.py`
 - `data/evals/benchmark.market_definition.ci.yaml`
-- `apps/api/scripts/cases/validate_cases.py`, `apps/api/scripts/cases/run_eval_benchmark.py`, `apps/api/scripts/screening/run_jurisdiction_verification.py`
+- `apps/api/scripts/cases/integrity/validate_cases.py`, `apps/api/scripts/cases/evals/run_eval_benchmark.py`, `apps/api/scripts/screening/run_jurisdiction_verification.py`
 - `CLAUDE.md` validation gates section vs what CI actually runs
 
 Run locally: `pytest tests/test_schema.py -v` and compare to CI test list.

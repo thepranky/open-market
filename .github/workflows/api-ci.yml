@@ -51,7 +51,7 @@ jobs:
 
       - name: Run market-definition benchmark (CI fixtures)
         run: >
-          .venv/bin/python scripts/cases/run_eval_benchmark.py
+          .venv/bin/python scripts/cases/evals/run_eval_benchmark.py
           --config ../../data/evals/benchmark.market_definition.ci.yaml
           --output-json /tmp/benchmark.market_definition.ci.summary.json
           --output-markdown /tmp/benchmark.market_definition.ci.summary.md

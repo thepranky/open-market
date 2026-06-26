@@ -696,7 +696,7 @@ class TestFormatBatchReport:
             uab.WindowResult(
                 label="x", page_range=(1, 5), output_suffix="unit_x_1",
                 draft_path=Path("/tmp/x.yaml"), status="dry_run",
-                command="apps/api/.venv/bin/python apps/api/scripts/cases/ingest_case.py --focus unit_assessment",
+                command="apps/api/.venv/bin/python apps/api/scripts/cases/extract/ingest_case.py --focus unit_assessment",
             )
         ]
         report = uab.format_batch_report(results, "tc")
@@ -722,7 +722,7 @@ class TestFormatBatchReport:
 class TestNoHardcodedNames:
     """Ensure the script contains no domain-specific hard-coded names."""
 
-    _script = Path(__file__).parent.parent / "scripts" / "cases" / "run_unit_assessment_batch.py"
+    _script = Path(__file__).parent.parent / "scripts" / "cases" / "extract" / "run_unit_assessment_batch.py"
 
     @pytest.mark.parametrize("term", [
         "cucumber", "eggplant", "carrot", "lettuce", "onion",

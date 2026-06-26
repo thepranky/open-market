@@ -24,7 +24,7 @@ import yaml
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from scripts.cases.promote_draft_to_canonical import (
+from scripts.cases.promote.promote_draft_to_canonical import (
     _SEED_NONEMPTY_FALLBACK_FIELDS,
     _apply_seed_nonempty_fallbacks,
     _dump_canonical_yaml,

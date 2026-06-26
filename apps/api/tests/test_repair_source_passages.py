@@ -1,5 +1,5 @@
 """
-Unit tests for scripts/cases/repair_source_passages.py
+Unit tests for scripts/cases/integrity/repair_source_passages.py
 
 No network access, no PDF downloads, no filesystem writes to real YAML.
 """

@@ -71,7 +71,7 @@ Group them mentally (and in code ownership) as two blobs:
 | `data/review_learning/` | Human correction deltas from promotion |
 | `data/batch_runs/` | Batch extraction run metadata |
 
-**Critical boundary:** `drafts/` → human review → `cases/` via `scripts/cases/promote_case_pipeline.py` only.
+**Critical boundary:** `drafts/` → human review → `cases/` via `scripts/cases/promote/promote_case_pipeline.py` only.
 
 ### Screening blob
 

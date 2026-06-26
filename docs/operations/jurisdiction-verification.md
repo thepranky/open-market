@@ -267,7 +267,7 @@ Normalization pipeline:
 3. Unicode normalize (NFKC)
 4. Fuzzy match threshold: exact first, then normalized substring (≥95% token overlap)
 
-Reuse patterns from `apps/api/scripts/cases/repair_source_passages.py` and `app.shared.utils.pdf_extractor` where applicable. Do not build an HTML-only verifier; many jurisdiction sources are PDFs, official gazettes, and authority threshold notices.
+Reuse patterns from `apps/api/scripts/cases/integrity/repair_source_passages.py` and `app.shared.utils.pdf_extractor` where applicable. Do not build an HTML-only verifier; many jurisdiction sources are PDFs, official gazettes, and authority threshold notices.
 
 Fetcher output should include:
 

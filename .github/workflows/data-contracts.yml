@@ -33,10 +33,10 @@ jobs:
           .venv/bin/pip install -r requirements.txt
 
       - name: Validate case schema
-        run: .venv/bin/python scripts/cases/validate_cases.py --cases-dir ../../data/cases
+        run: .venv/bin/python scripts/cases/integrity/validate_cases.py --cases-dir ../../data/cases
 
       - name: Semantic lint
-        run: .venv/bin/python scripts/cases/lint_case_semantics.py --cases-dir ../../data/cases
+        run: .venv/bin/python scripts/cases/integrity/lint_case_semantics.py --cases-dir ../../data/cases
 
       - name: Run schema tests
         run: .venv/bin/python -m pytest tests/test_schema.py -v
@@ -63,4 +63,4 @@ jobs:
           .venv/bin/pip install -r requirements.txt
 
       - name: Validate case-index schema
-        run: .venv/bin/python scripts/cases/validate_case_index.py --index-dir ../../data/case_index
+        run: .venv/bin/python scripts/cases/discovery/validate_case_index.py --index-dir ../../data/case_index
