@@ -560,6 +560,115 @@ def stage_llm_review(
 
 
 # ---------------------------------------------------------------------------
+# Stage 2b — Dual extraction (Draft B + comparison)
+# ---------------------------------------------------------------------------
+
+# Human-facing model labels for the conflict report header.
+_PROVIDER_MODEL_LABEL = {
+    "anthropic": "anthropic/claude-sonnet-4-6",
+    "gemini": "gemini/gemini-2.5-flash",
+}
+
+
+def _build_llm_client(provider: str) -> Optional["LLMClient"]:
+    """Build an LLMClient for *provider*; return None if its API key/SDK is missing."""
+    if provider == "gemini":
+        try:
+            from google import genai as _genai
+            raw = _genai.Client(api_key=os.environ["GOOGLE_API_KEY"])
+            return LLMClient("gemini", raw)
+        except (ImportError, KeyError) as exc:
+            print(f"  WARN: gemini client unavailable ({exc})")
+            return None
+    try:
+        import anthropic as _anthropic
+        ac = _anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+        return LLMClient("anthropic", ac)
+    except (ImportError, KeyError) as exc:
+        print(f"  WARN: anthropic client unavailable ({exc})")
+        return None
+
+
+def stage_dual_extract(
+    *,
+    yaml_path: Path,
+    cache_dir: Path,
+    draft_b_path: Path,
+    conflicts_path: Path,
+    case_id: str,
+    focus: str,
+    primary_provider: str,
+    same_model: bool,
+    max_cost: float,
+    batch_by_section: bool,
+    full_market_def_pass: bool,
+    page_range: Optional[tuple[int, int]],
+) -> Optional[Path]:
+    """Run Draft B (independent extraction) and diff A↔B into a ConflictReport.
+
+    Returns the conflict report path on success, or None if Draft B could not be
+    produced (missing secondary API key, extraction error). Never raises — a failed
+    Draft B leaves Draft A's normal pipeline output intact.
+    """
+    secondary_provider = (
+        primary_provider if same_model
+        else ("gemini" if primary_provider == "anthropic" else "anthropic")
+    )
+    print(f"Stage 2b — Dual extraction (Draft B, provider={secondary_provider})")
+    client_b = _build_llm_client(secondary_provider)
+    if client_b is None:
+        print("  WARN: Draft B skipped — secondary provider unavailable")
+        return None
+
+    report_b = extract_case(
+        yaml_path,
+        cache_dir=cache_dir,
+        output_path=draft_b_path,
+        use_claude=True,
+        llm_client=client_b,
+        focus=focus,
+        max_cost=max_cost,
+        batch_by_section=batch_by_section,
+        full_market_def_pass=full_market_def_pass,
+        page_range=page_range,
+    )
+    if report_b.error:
+        print(f"  WARN: Draft B extraction failed — {report_b.error}")
+        return None
+    print(f"  Draft B written:  {draft_b_path}")
+
+    # Draft A is at draft_b_path's sibling (…draft_a.yaml); load both and compare.
+    draft_a_path = draft_b_path.parent / draft_b_path.name.replace(".draft_b.yaml", ".draft_a.yaml")
+    try:
+        from compare_extractions import build_conflict_report
+    except ImportError as exc:
+        print(f"  WARN: comparison skipped — could not import compare_extractions: {exc}")
+        return None
+
+    draft_a = yaml.safe_load(draft_a_path.read_text(encoding="utf-8"))
+    draft_b = yaml.safe_load(draft_b_path.read_text(encoding="utf-8"))
+    report = build_conflict_report(
+        case_id, draft_a, draft_b,
+        focus=focus,
+        model_a=_PROVIDER_MODEL_LABEL.get(primary_provider, primary_provider),
+        model_b=_PROVIDER_MODEL_LABEL.get(secondary_provider, secondary_provider),
+        same_model=same_model,
+    )
+    conflicts_path.write_text(
+        yaml.dump(report, allow_unicode=True, default_flow_style=False, sort_keys=False),
+        encoding="utf-8",
+    )
+    cr = report["conflict_report"]
+    print(
+        f"  Comparison:       {len(cr['agreed_fields'])} agreed, "
+        f"{len(cr['conflicts'])} conflict(s), {len(cr['auto_resolved'])} auto-resolved"
+    )
+    print(f"  Conflict report:  {conflicts_path}")
+    print()
+    return conflicts_path
+
+
+# ---------------------------------------------------------------------------
 # --from-index helpers
 # ---------------------------------------------------------------------------
 
@@ -723,6 +832,25 @@ def main() -> int:
         choices=["anthropic", "gemini"],
         help="LLM provider to use for extraction (default: anthropic)",
     )
+    parser.add_argument(
+        "--dual-extract",
+        action="store_true",
+        help=(
+            "Run two independent extractions (Draft A + Draft B) and diff them into "
+            "a ConflictReport for human review of conflicts only (ROADMAP 5.9). "
+            "By default Draft B uses a different provider than Draft A so that "
+            "agreement between the two implies confidence. Skips Stage 5a."
+        ),
+    )
+    parser.add_argument(
+        "--dual-same-model",
+        action="store_true",
+        help=(
+            "With --dual-extract, run Draft B on the same provider as Draft A "
+            "(fallback when the secondary provider is unavailable). Weakens the "
+            "agreement signal; recorded in the conflict report header."
+        ),
+    )
     args = parser.parse_args()
 
     # Parse and validate --page-range
@@ -811,7 +939,16 @@ def main() -> int:
     _stem = f"{args.case_id}.{args.focus}"
     if output_suffix:
         _stem = f"{_stem}.{output_suffix}"
-    draft_path = draft_dir / f"{_stem}.draft.yaml"
+    # In dual-extract mode Draft A keeps the focus/suffix convention but is named
+    # .draft_a; Draft B and the conflict report are siblings.
+    if args.dual_extract:
+        draft_path = draft_dir / f"{_stem}.draft_a.yaml"
+        draft_b_path = draft_dir / f"{_stem}.draft_b.yaml"
+        conflicts_path = draft_dir / f"{_stem}.conflicts.yaml"
+    else:
+        draft_path = draft_dir / f"{_stem}.draft.yaml"
+        draft_b_path = None
+        conflicts_path = None
     report_path = (
         Path(args.report_md)
         if args.report_md
@@ -954,6 +1091,31 @@ def main() -> int:
             print(f"  Using existing draft: {draft_path}")
     print()
 
+    # -----------------------------------------------------------------------
+    # Stage 2b — Dual extraction (Draft B + comparison), only after Draft A is ready
+    # -----------------------------------------------------------------------
+    dual_conflicts_path: Optional[Path] = None
+    if (
+        args.dual_extract
+        and not args.no_claude
+        and not extraction_report.error
+        and draft_path.exists()
+    ):
+        dual_conflicts_path = stage_dual_extract(
+            yaml_path=yaml_path,
+            cache_dir=cache_dir,
+            draft_b_path=draft_b_path,
+            conflicts_path=conflicts_path,
+            case_id=args.case_id,
+            focus=args.focus,
+            primary_provider=provider,
+            same_model=args.dual_same_model,
+            max_cost=args.max_cost,
+            batch_by_section=args.batch_by_section,
+            full_market_def_pass=getattr(args, "full_market_definition_pass", False),
+            page_range=page_range,
+        )
+
     # Load the draft for subsequent stages
     draft_record = yaml.safe_load(draft_path.read_text(encoding="utf-8"))
 
@@ -1007,8 +1169,10 @@ def main() -> int:
     llm_json_path: Optional[Path] = None
     llm_md_path: Optional[Path] = None
 
+    # Dual extraction supersedes Stage 5a: the conflict surface is a strictly better
+    # review signal than a self-critique of one draft (spec §"Relationship to Stage 5a").
     stage4_passed = not (bool(extraction_report.error) or not schema_ok or int_errors > 0)
-    if getattr(args, "llm_review", False) and stage4_passed:
+    if getattr(args, "llm_review", False) and stage4_passed and not args.dual_extract:
         llm_triage, llm_json_path, llm_md_path = stage_llm_review(
             draft_path=draft_path,
             report_path=report_path,
@@ -1068,6 +1232,8 @@ def main() -> int:
         print(f"RESULT: PASS with {int_warnings} warning(s) — review before promoting")
     else:
         print("RESULT: PASS — draft ready for human review")
+    if dual_conflicts_path is not None:
+        print(f"        Dual extraction: review conflicts at {dual_conflicts_path}")
     return 0
 
 
