@@ -2,7 +2,6 @@
 
 Mechanical package boundaries so case research and jurisdiction screening are obvious in the tree. Move-only — no logic changes.
 
-**Decision rationale:** [ddr-0-repo-layout.md](../../architecture/decisions/ddr-0-repo-layout.md)
 
 **Out of scope:** router splits, symbol renames, Neo4j removal, auth, CI expansion (separate specs).
 

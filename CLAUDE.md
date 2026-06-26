@@ -89,7 +89,8 @@ Env: `DATABASE_URL`, `DATA_CASES_PATH`, `DATA_CASE_INDEX_PATH`, `GOOGLE_API_KEY`
 1. **Spec** in `docs/specs/YYYY-MM-DD-name.md` — goal, approach, files, verification (not progress/status).
 2. **Small PR** — one spec, one change set.
 3. **Verify** — every command/check from the spec.
-4. **Progress** — update `ROADMAP.md` only; do not duplicate status in specs or DDRs.
+4. **Independent review** — once the PR is open and the user has no outstanding comments, spawn a *fresh* sub-agent on a different model (e.g. Sonnet, for uncorrelated judgement — same reason the pipeline favours independent extraction over one model rubber-stamping another) to critically review the diff. Triage its findings, fix the real ones, and report what you accepted or rejected and why.
+5. **Progress** — update `ROADMAP.md` only; do not duplicate status in specs or DDRs. Move the implemented spec to `docs/specs/completed/`.
 
 **DDRs** (`docs/architecture/decisions/`) — decisions and rationale; reference when changing that area.
 
