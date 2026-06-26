@@ -12,9 +12,12 @@ measures it, on the gold eval fixtures, before the workflow is trusted at scale:
     (all fields >=1 draft got wrong). Quantifies the blind spot: a field both drafts
     get wrong the *same* way agrees, is skipped, and is invisible to the human.
 
-Both metrics are measured against the SAME alignment the real workflow uses
-(`align_drafts` from compare_extractions), so the gate measures the agreement
-signal as actually produced, not a parallel re-implementation.
+Both metrics are measured with the SAME alignment machinery the real workflow
+uses (`align_drafts` from compare_extractions) and the same name-equivalence rules
+(`_trivial_equivalent`), so the gate scores the same skip-review surface the
+pipeline produces. (The pipeline aligns Draft A directly against Draft B; the
+calibration aligns each draft against gold, since gold is what defines "correct" —
+a different baseline, but the same matcher and equivalence rules.)
 
 The score functions are pure and run with no API key (the unit tests drive them
 directly). Producing the two drafts is the only step that calls a model; pass
@@ -54,6 +57,7 @@ from compare_extractions import (  # noqa: E402
     _RECORD_SCALAR_FIELDS,
     _index_markets_by_name,
     _normalize_for_similarity,
+    _trivial_equivalent,
     align_drafts,
 )
 
@@ -77,6 +81,11 @@ def _gold_field_table(gold: dict, is_partial: bool) -> dict:
     Only fields the gold actually carries a value for are included — those are the
     propositions with a known-correct answer. For partial golds, only `reviewed`
     markets are scored (an unreviewed market has no binding gold value).
+
+    Assumes the gold's populated lists match the extraction focus (the benchmark
+    golds carry only the focus's propositions, e.g. market_definition golds have
+    empty `theories_of_harm`). A gold list out of focus would be scored as all
+    blind spots, since the focus-limited drafts never align to it.
     """
     table: dict[str, object] = {}
     for list_key, label in _MARKET_LISTS:
@@ -135,7 +144,13 @@ def _field_eq(path: str, x: object, y: object) -> bool:
         return False
     sx, sy = str(x).strip(), str(y).strip()
     if path.endswith("/name"):
-        return _normalize_for_similarity(sx) == _normalize_for_similarity(sy)
+        # Mirror the conflict report's name matcher: a normalized match, or a trivial
+        # equivalence (whitespace/case/country abbreviation) the pipeline auto-resolves
+        # and skips review on — so calibration scores that same skip-review surface.
+        return (
+            _normalize_for_similarity(sx) == _normalize_for_similarity(sy)
+            or _trivial_equivalent(sx, sy)
+        )
     return sx.lower() == sy.lower()
 
 

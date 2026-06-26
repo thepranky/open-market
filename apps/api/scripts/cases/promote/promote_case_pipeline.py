@@ -117,9 +117,17 @@ def unresolved_conflicts(report_path: Path) -> list[str]:
     Report-only check: a conflict is unresolved when its `resolution` is null /
     empty / whitespace. An empty list means the report is fully resolved and
     promotion may proceed. (Keep/drop wording is validated at merge time.)
+
+    Raises ValueError if the file is not a conflict report (no `conflicts` key,
+    wrapped or unwrapped). Without this guard a draft YAML passed by mistake would
+    yield no conflicts and silently pass the gate.
     """
     data = yaml.safe_load(report_path.read_text(encoding="utf-8")) or {}
-    cr = data.get("conflict_report", data) or {}
+    cr = data.get("conflict_report", data)
+    if not isinstance(cr, dict) or "conflicts" not in cr:
+        raise ValueError(
+            f"{report_path} is not a conflict report (missing 'conflicts' key)"
+        )
     open_fields: list[str] = []
     for c in (cr.get("conflicts") or []):
         if not str(c.get("resolution") or "").strip():

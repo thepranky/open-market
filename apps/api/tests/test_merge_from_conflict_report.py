@@ -216,6 +216,33 @@ def test_b_only_keep_drops_dangling_multimarket_passage_ref():
     assert merged["source_passages"][0]["supports_markets"] == [slag["market_id"]]
 
 
+def test_b_only_keep_two_markets_sharing_one_passage():
+    # A B passage grounds two B-only markets, both kept. The shared passage must
+    # end up referencing BOTH merged markets, not just the first one copied.
+    a = _draft([_market("pm_1", "Cement")])
+    b = _draft(
+        [_market("pm_1", "Cement"), _market("pm_2", "Slag"), _market("pm_3", "Other")],
+        passages=[{
+            "passage_id": "sp_b1", "quote_snippet": "...slag and other...",
+            "page": 12, "source_document_id": "doc_1",
+            "supports_markets": ["pm_2", "pm_3"],
+        }],
+    )
+    report = _report([
+        {"field": "product_markets", "kind": "b_only",
+         "draft_a": None, "draft_b": "Slag", "resolution": "keep"},
+        {"field": "product_markets", "kind": "b_only",
+         "draft_a": None, "draft_b": "Other", "resolution": "keep"},
+    ])
+    merged = merge_from_conflict_report(a, b, report, focus="market_definition")
+    slag = next(m for m in merged["product_markets_considered"] if m["name"] == "Slag")
+    other = next(m for m in merged["product_markets_considered"] if m["name"] == "Other")
+    # Exactly one copy of the shared passage, grounding both kept markets.
+    shared = [sp for sp in merged["source_passages"] if sp["passage_id"] == "sp_b1"]
+    assert len(shared) == 1
+    assert set(shared[0]["supports_markets"]) == {slag["market_id"], other["market_id"]}
+
+
 def test_b_only_drop_omits_market():
     a = _draft([_market("pm_1", "Cement")])
     b = _draft([_market("pm_1", "Cement"), _market("pm_2", "Slag")])

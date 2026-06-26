@@ -8,6 +8,7 @@ testable without invoking the real promotion steps.
 import sys
 from pathlib import Path
 
+import pytest
 import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -61,3 +62,21 @@ def test_main_blocks_on_missing_report(tmp_path):
         "--conflict-report", str(tmp_path / "does_not_exist.yaml"),
     ])
     assert rc == 1
+
+
+def test_non_report_yaml_is_rejected(tmp_path):
+    # A draft YAML (no `conflicts` key) must not silently pass the gate.
+    p = tmp_path / "not_a_report.yaml"
+    p.write_text(yaml.dump({
+        "case_id": "eu_test_2023",
+        "product_markets_considered": [{"name": "Cement", "definition_status": "defined"}],
+    }), encoding="utf-8")
+    with pytest.raises(ValueError, match="not a conflict report"):
+        unresolved_conflicts(p)
+
+
+def test_unwrapped_report_is_accepted(tmp_path):
+    # A report without the `conflict_report:` wrapper is still a valid report.
+    p = tmp_path / "unwrapped.yaml"
+    p.write_text(yaml.dump({"conflicts": [{"field": "outcome", "resolution": None}]}), encoding="utf-8")
+    assert unresolved_conflicts(p) == ["outcome"]

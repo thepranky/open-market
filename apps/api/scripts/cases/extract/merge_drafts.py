@@ -1105,16 +1105,24 @@ def _add_market_from_b(merged: dict, draft_b: dict, list_key: str, name: str, no
 
     # Ids valid for this support field after the market was added.
     valid_ids = {m.get(id_field) for m in (merged.get(list_key) or [])}
-    existing_pids = {sp.get("passage_id") for sp in (merged.get("source_passages") or [])}
+    merged_passages = merged.setdefault("source_passages", [])
+    by_pid = {sp.get("passage_id"): sp for sp in merged_passages}
     for sp in (draft_b.get("source_passages") or []):
         if old_id not in (sp.get(support_key) or []):
             continue
-        if sp.get("passage_id") in existing_pids:
+        rewritten = [new_id if r == old_id else r for r in (sp.get(support_key) or [])]
+        kept = [r for r in rewritten if r in valid_ids]
+        existing = by_pid.get(sp.get("passage_id"))
+        if existing is not None:
+            # Passage already copied for another kept B-only market that shares it;
+            # add this market's now-valid ref instead of dropping it.
+            refs = existing.setdefault(support_key, [])
+            refs.extend(r for r in kept if r not in refs)
             continue
         sp_copy = _copy.deepcopy(sp)
-        rewritten = [new_id if r == old_id else r for r in (sp.get(support_key) or [])]
-        sp_copy[support_key] = [r for r in rewritten if r in valid_ids]
-        merged.setdefault("source_passages", []).append(sp_copy)
+        sp_copy[support_key] = kept
+        merged_passages.append(sp_copy)
+        by_pid[sp_copy.get("passage_id")] = sp_copy
 
 
 def merge_from_conflict_report(
