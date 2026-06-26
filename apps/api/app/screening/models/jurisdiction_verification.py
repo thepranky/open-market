@@ -5,7 +5,7 @@ from __future__ import annotations
 import warnings
 from datetime import datetime
 from enum import Enum
-from typing import Literal, Optional
+from typing import Optional
 
 from pydantic import BaseModel, Field
 

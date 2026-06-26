@@ -8,14 +8,12 @@ import json
 import sys
 from pathlib import Path
 
-import pytest
 import yaml
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 sys.path.insert(0, str(Path(__file__).parent.parent / "scripts"))
 
 from run_eval_benchmark import (
-    _FAIL_GATING,
     _case_passes,
     _case_summary_row,
     _format_summary_markdown,
@@ -473,7 +471,6 @@ class TestRunBenchmarkIntegration:
 
     def test_canonical_yaml_not_modified(self, tmp_path):
         """run_benchmark does not mutate the gold YAML file on disk."""
-        import copy as _copy
         config_path = _write_fixture(tmp_path)
         gold_path = (
             tmp_path / "data" / "evals" / "gold"

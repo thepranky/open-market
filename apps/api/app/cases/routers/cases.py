@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException, Query
 
 from app.cases.models import CaseRecord
-from app.cases.services.case_service import get_all_cases, get_case, search_cases
+from app.cases.services.case_service import get_all_cases, get_case
 
 router = APIRouter(prefix="/cases", tags=["cases"])
 

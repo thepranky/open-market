@@ -15,20 +15,16 @@ from datetime import date
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 
-import pytest
 import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from app.cases.models.case_index import CaseIndexEntry
 from scripts.cases.check_case_index_sources import (
-    CaseResult,
-    CheckItem,
     check_domain_official,
     check_ec_case_format,
     check_entry,
     check_ftc_matter_format,
-    check_http,
     check_url_present,
     main,
     run_checks,

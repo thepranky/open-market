@@ -609,7 +609,7 @@ def write_run_report(
             "  Next steps:",
             f"    1. Review the packet: data/drafts/{_infer_jurisdiction(result.case_id)}/{result.case_id}.review_packet.md",
             "    2. Spot-check source passages against the PDF.",
-            f"    3. When satisfied, run:",
+            "    3. When satisfied, run:",
             f"       python apps/api/scripts/cases/promote_case_pipeline.py --case-id {result.case_id}",
         ]
     elif result.status == NOT_READY:
@@ -665,13 +665,12 @@ def print_summary(result: RunResult, packet_path: Optional[Path]) -> None:
         print(f"\n  Review packet: {packet_path.relative_to(_REPO_ROOT)}")
 
     print("\n  Next commands:")
-    jur = _infer_jurisdiction(result.case_id)
     if result.status == READY:
-        print(f"    # Spot-check then promote:")
+        print("    # Spot-check then promote:")
         print(f"    python apps/api/scripts/cases/promote_case_pipeline.py --case-id {result.case_id}")
     elif result.status == NOT_READY:
-        print(f"    # Fix blockers then re-run:")
-        print(f"    python apps/api/scripts/cases/run_controlled_case.py \\")
+        print("    # Fix blockers then re-run:")
+        print("    python apps/api/scripts/cases/run_controlled_case.py \\")
         print(f"        --case-id {result.case_id} [original flags]")
     else:
         print("    # Investigate errors in the stage summary above, then re-run.")

@@ -314,9 +314,11 @@ def _resolve_count_qualifier_value(
             "FR", "GR", "HR", "HU", "IE", "IT", "LT", "LU", "LV", "MT",
             "NL", "PL", "PT", "RO", "SE", "SI", "SK",
         }
-        filter_fn = lambda c: c in eu_ms
+        def filter_fn(c):
+            return c in eu_ms
     else:
-        filter_fn = lambda c: True
+        def filter_fn(c):
+            return True
 
     if metric == MetricType.revenue:
         if party == PartyType.combined:

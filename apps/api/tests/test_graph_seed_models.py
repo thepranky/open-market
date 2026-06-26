@@ -1,9 +1,8 @@
 """Tests for CaseIndexEntry, ConceptNode, and graph seed functions (no Neo4j required)."""
 
 import sys
-from datetime import date
 from pathlib import Path
-from unittest.mock import MagicMock, call, patch
+from unittest.mock import MagicMock
 
 import pytest
 
@@ -141,7 +140,6 @@ def test_seed_index_case_sets_data_layer():
 
     # Verify property values passed
     props_call = next(c for c in session.run.call_args_list if "data_layer" in str(c.args[0]))
-    kwargs = props_call.kwargs if props_call.kwargs else {}
     # data_layer is a literal in the Cypher string ('indexed'), not a parameter
     assert "'indexed'" in props_call.args[0] or "indexed" in props_call.args[0]
 

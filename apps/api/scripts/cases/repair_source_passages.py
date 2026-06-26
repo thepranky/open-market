@@ -48,7 +48,7 @@ import json
 import os
 import re
 import sys
-from dataclasses import asdict, dataclass, field
+from dataclasses import dataclass, field
 from datetime import date, datetime, timezone
 from pathlib import Path
 from typing import Optional
@@ -1281,7 +1281,7 @@ def repair_case(
                     pr.selected_page = cand.page_number
                     print(f"           → page {cand.page_number}: {quote[:80]!r}…")
                 else:
-                    print(f"           → no support found")
+                    print("           → no support found")
 
     # Step 6: write-back (only in write mode)
     if not dry_run:
@@ -1436,7 +1436,7 @@ def print_report(report: RepairReport, verbose: bool = False) -> None:
         if pr.status == "no_candidates":
             print(f"\n  ✗ {pr.proposition_id} ({pr.proposition_type}){invalidated_note}")
             print(f"    {pr.proposition_name[:70]}")
-            print(f"    → no candidate passages found in PDF")
+            print("    → no candidate passages found in PDF")
         elif pr.status == "candidates_found":
             warn_tag = f"  ⚠ WARNING: {pr.warning}" if pr.warning else ""
             print(f"\n  ~ {pr.proposition_id} ({pr.proposition_type}){invalidated_note}{warn_tag}")

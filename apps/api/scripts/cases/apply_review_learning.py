@@ -469,7 +469,7 @@ def _print_summary(proposals: dict, md_path: Path, yaml_path: Path) -> None:
     print(f"Cases: {', '.join(cases)}")
     print(f"Total corrections: {total}  |  Patterns: {n_patterns}")
     print(f"Priority: {n_high} high, {n_med} medium, {n_low} low")
-    print(f"\nOutput:")
+    print("\nOutput:")
     print(f"  Markdown: {md_path}")
     print(f"  YAML:     {yaml_path}")
     print()

@@ -4,18 +4,17 @@ Unit tests for app/utils/pdf_extractor.py
 PDF download calls are mocked — no network access required.
 A minimal real PDF is built with pypdf so pdfplumber can extract from it.
 """
+import importlib.util
 import io
-import json
 import sys
 from pathlib import Path
-from unittest.mock import MagicMock, patch
+from unittest.mock import MagicMock
 
 import pytest
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from app.shared.utils.pdf_extractor import (
-    DEFAULT_CACHE_DIR,
     extract_pages,
     fetch_and_extract,
     get_page_text,
@@ -93,10 +92,10 @@ class TestExtractPages:
         assert page_nums[0] == 1
 
     def test_text_extraction_with_pdfplumber(self):
-        try:
-            import pdfplumber
-            import reportlab.pdfgen.canvas as _
-        except ImportError:
+        if (
+            importlib.util.find_spec("pdfplumber") is None
+            or importlib.util.find_spec("reportlab") is None
+        ):
             pytest.skip("pdfplumber + reportlab not available")
 
         pdf_bytes = _make_pdf_bytes(["The Court finds market X relevant."])

@@ -590,9 +590,6 @@ def _build_review_prompt(draft: dict, cache_dir: Path) -> str:
         for mid in (sp.get("supports_geographic_markets") or []):
             passages_by_market.setdefault(mid, []).append(pid)
 
-    # Build set of all passage_ids for validation
-    all_passage_ids = {sp.get("passage_id", "") for sp in passages_raw}
-
     # Cap passages sent to reviewer
     passages_to_review = passages_raw[:_MAX_PASSAGES_TO_REVIEWER]
     capped = len(passages_raw) > _MAX_PASSAGES_TO_REVIEWER
@@ -1093,7 +1090,6 @@ def main() -> int:
         )
         return 1
 
-    jurisdiction = draft_path.parent.name
     draft_dir = draft_path.parent
     review_md_path = draft_dir / f"{args.case_id}.{args.focus}.review.md"
     json_out = draft_dir / f"{args.case_id}.{args.focus}.llm_review.json"

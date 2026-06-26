@@ -7,10 +7,9 @@ All extractions are mocked; draft files are written to pytest tmp_path.
 from __future__ import annotations
 
 import sys
-from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Optional
-from unittest.mock import MagicMock, call, patch
+from unittest.mock import MagicMock, patch
 
 import pytest
 import yaml
@@ -829,7 +828,6 @@ class TestSkipExisting:
     def test_skip_when_draft_missing_runs_extraction(self, tmp_path):
         """No draft → extraction runs even with skip_existing=True."""
         w = _window(70, 78, "alpha_70")
-        suffix = uab._make_suffix(w.context_suffix)
         # do NOT pre-create the draft
 
         with patch("run_unit_assessment_batch.extract_case", return_value=_mock_rpt()) as mock_ec:

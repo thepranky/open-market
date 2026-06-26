@@ -6,7 +6,6 @@ to production YAML.
 """
 import json
 import sys
-import tempfile
 from pathlib import Path
 from unittest.mock import MagicMock
 
@@ -23,11 +22,9 @@ from extract_case_from_source import (
     ExtractedPassage,
     ExtractedTheory,
     _filter_chunks_to_range,
-    _CONCLUSIVE_SOURCE_ROLES,
     _DEVICE_CONTEXT_CONFLICT_FACTOR,
     _GEO_CONTEXT_MIN_OVERLAP,
     _PROMOTION_ACTIONS,
-    _RECON_GROUP,
     _VALID_COMMITMENT_TYPES,
     _VALID_THEORY_TYPES,
     _VALID_PROCEDURE_STAGES,
@@ -42,11 +39,9 @@ from extract_case_from_source import (
     _build_reconciliation_triage,
     _detect_device_contexts,
     _device_context_factor,
-    _extract_section_caveats,
     _finding_to_dict,
     _geo_product_context_overlap,
     _group_reconciliation,
-    _has_conclusive_source_role,
     _is_truncated_quote,
     _market_similarity,
     _merge_geo_market_pair,
@@ -56,13 +51,10 @@ from extract_case_from_source import (
     ExtractionReport,
     ExtractionResult,
     ReconciliationFinding,
-    SectionBatchResult,
     _DEFAULT_EXTRACTION_ENVELOPE,
     _FOCUS_TERMS,
     _build_chunks,
     _build_draft_record,
-    _build_extraction_prompt,
-    _call_claude_repair,
     _extract_section_batch,
     _extract_spillover_pages,
     _group_chunks_by_section_prefix,
@@ -89,9 +81,6 @@ from extract_case_from_source import (
     _MARKET_DEF_FALLBACK_SIGNALS,
     _MARKET_DEF_FALLBACK_MIN_SCORE,
     _MARKET_DEF_SP_MIN_PAGES,
-    _MARKET_DEF_COVERAGE_MIN_RATIO,
-    _MARKET_DEF_COVERAGE_MIN_DOC_PAGES,
-    _MAX_FALLBACK_PAGES,
     _MAX_FALLBACK_CHUNKS,
     _score_page_market_def,
     _select_market_def_fallback_chunks,
@@ -325,17 +314,11 @@ class TestSelectRelevantChunks:
             "relevant product market left open plausible market definition "
             "market investigation demand-side substitutability geographic market"
         )
-        focused = _make_chunk(
-            "chunk_001",
-            "4 COMPETITIVE ASSESSMENT > 4.1 Market definition",
-            [(1, "product market text"), (2, "product market text")],
-        )
         high_signal_unfocused = _make_chunk(
             "chunk_002",
             "4 COMPETITIVE ASSESSMENT > 4.3.3 Other Overlaps > 4.3.3.2 Competitive assessment",
             [(50, market_def_signal), (51, market_def_signal), (52, market_def_signal)],
         )
-        all_chunks = [focused, high_signal_unfocused]
 
         # Normal run: only focused chunk selected (2 pages total < _MARKET_DEF_SP_MIN_PAGES
         # abs threshold, but also < 25% of 5 non-TOC pages, so supplemental would fire anyway
@@ -2064,7 +2047,7 @@ class TestIndustryOverviewExtraction:
 
         from unittest.mock import patch
         with patch("extract_case_from_source.load_cache", return_value=self._industry_cache()):
-            rpt = extract_case(
+            extract_case(
                 yaml_path,
                 cache_dir=tmp_path / "cache",
                 output_path=draft_path,
@@ -3492,7 +3475,7 @@ class TestCostTokenGuard:
             "pages": [
                 {
                     "page_number": i,
-                    "text": f"8.6 Online advertising\n8.6.1 Product market definition\n"
+                    "text": "8.6 Online advertising\n8.6.1 Product market definition\n"
                             + "x" * 2000  # ~500 tokens/page
                 }
                 for i in range(1, page_count + 1)
@@ -7470,7 +7453,6 @@ class TestPromotionAction:
 
     def test_promotion_plan_summary_groups_by_action(self):
         # Test that promotion_plan_summary correctly groups entries by action
-        from extract_case_from_source import _build_promotion_plan_summary
 
         plan = [
             {"draft_name": "Market A", "recommended_action": "promote_to_canonical",
@@ -7506,7 +7488,6 @@ class TestPromotionAction:
 
     def test_promotion_plan_summary_market_type_breakdown(self):
         # Test that summary correctly breaks down by market type
-        from extract_case_from_source import _build_promotion_plan_summary
 
         plan = [
             {"draft_name": "Product 1", "recommended_action": "promote_to_canonical",
@@ -7796,7 +7777,8 @@ class TestSerializeReportPromotion:
         yaml_path = tmp_path / "t.yaml"
         yaml_path.write_text(yaml.dump(existing))
 
-        mock_block = MagicMock(); mock_block.type = "tool_use"
+        mock_block = MagicMock()
+        mock_block.type = "tool_use"
         mock_block.input = {
             "product_markets": [
                 {"name": "Core market", "definition_status": "defined",
@@ -7810,8 +7792,10 @@ class TestSerializeReportPromotion:
             "source_passages": [],
             "caveats": [],
         }
-        mock_msg = MagicMock(); mock_msg.content = [mock_block]
-        mock_ac = MagicMock(); mock_ac.messages.create.return_value = mock_msg
+        mock_msg = MagicMock()
+        mock_msg.content = [mock_block]
+        mock_ac = MagicMock()
+        mock_ac.messages.create.return_value = mock_msg
         page_cache = {"source_document_id": "doc1", "source_url": "x",
                       "page_count": 1, "pages": [{"page_number": 1, "text": "8.6 Market."}],
                       "extracted_at": "2026-01-01T00:00:00+00:00"}
@@ -8124,7 +8108,6 @@ class TestFallbackBatchGrouping:
     def test_estimate_cost_compatible_with_fallback(self, tmp_path):
         """estimate-cost path must not crash with fallback chunks."""
         from unittest.mock import patch
-        import sys, io
 
         existing = {
             "case_id": "tc_fallback", "case_name": "Alpha / Beta",

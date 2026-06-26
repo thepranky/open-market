@@ -14,7 +14,6 @@ Usage:
 
 from __future__ import annotations
 
-import sys
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Optional
@@ -136,7 +135,6 @@ def _infer_profile_from_case_meta(case_meta: dict) -> Optional[str]:
     Returns None if no confident match.
     """
     jurisdiction = str(case_meta.get("jurisdiction") or "").lower()
-    procedure_stage = str(case_meta.get("procedure_stage") or "").lower()
     authority = str(case_meta.get("authority") or "").lower()
 
     # US jurisdiction: court opinions (district court, appellate, etc.)

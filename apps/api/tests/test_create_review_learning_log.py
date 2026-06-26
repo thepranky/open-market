@@ -6,7 +6,6 @@ draft-only field stripping, metadata completion, and end-to-end file writing.
 No network access; no LLM calls; isolated filesystem via tmp_path.
 """
 
-import json
 import sys
 from pathlib import Path
 

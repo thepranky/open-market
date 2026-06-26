@@ -10,7 +10,6 @@ No network access; no LLM calls; isolated filesystem via tmp_path.
 import sys
 from pathlib import Path
 
-import pytest
 import yaml
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
@@ -104,7 +103,7 @@ def test_load_review_logs_reads_all_delta_files(tmp_path):
 
     loaded = load_review_logs(tmp_path)
     assert len(loaded) == 2
-    case_ids = {l["case_id"] for l in loaded}
+    case_ids = {entry["case_id"] for entry in loaded}
     assert case_ids == {"eu_case_a_2024", "eu_case_b_2024"}
 
 

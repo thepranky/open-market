@@ -987,7 +987,7 @@ def _print_report(
     output_path: Optional[Path],
     dry_run: bool,
 ) -> None:
-    print(f"\nMerge report")
+    print("\nMerge report")
     print(f"  Input drafts : {len(draft_paths)}")
     for p in draft_paths:
         print(f"    {p}")
@@ -1004,7 +1004,7 @@ def _print_report(
     for w in warnings:
         print(f"    {w}")
     if dry_run:
-        print(f"  Output            : (dry-run — not written)")
+        print("  Output            : (dry-run — not written)")
     else:
         print(f"  Output            : {output_path}")
 

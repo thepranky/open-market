@@ -17,7 +17,6 @@ from app.screening.models.jurisdiction_verification import (
     GateStatus,
     JurisdictionVerification,
     SourceVerificationTier,
-    SourceTierBreakdown,
     VerificationFailure,
 )
 from app.screening.services.jurisdiction_baseline import supported_condition_ids

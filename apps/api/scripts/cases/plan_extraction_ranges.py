@@ -39,8 +39,8 @@ _API_DIR = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(_API_DIR))
 sys.path.insert(0, str(Path(__file__).parent))
 
-from app.shared.utils.pdf_extractor import DEFAULT_CACHE_DIR, iter_pages, load_cache
-from repair_source_passages import _extract_section_map, _is_toc_page
+from app.shared.utils.pdf_extractor import DEFAULT_CACHE_DIR
+from repair_source_passages import _extract_section_map
 
 _CASES_DIR = Path(__file__).resolve().parents[4] / "data" / "cases"
 

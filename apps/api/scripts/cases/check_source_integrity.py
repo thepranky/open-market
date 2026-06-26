@@ -40,7 +40,7 @@ import json
 import re
 import sys
 import unicodedata
-from dataclasses import dataclass, field as dc_field
+from dataclasses import dataclass
 from enum import Enum
 from pathlib import Path
 from typing import Optional

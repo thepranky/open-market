@@ -84,9 +84,7 @@ from create_gold_draft import (
     gold_yaml_dump,
 )
 from validate_gold_quotes import (
-    GoldQuoteReport,
     load_gold_yaml,
-    validate_gold_passages,
     validate_quote_on_page,
 )
 
@@ -366,7 +364,6 @@ def repair_gold_passages(
         for market in (repaired.get(list_key) or []):
             market_name = market.get("name", "")
             market_type = market.get("market_type", "")
-            aliases = list(market.get("aliases") or [])
 
             candidates, strategy, direct_ids = _find_draft_passages(
                 market, passage_index, name_to_id, page_to_passages

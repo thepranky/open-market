@@ -23,7 +23,6 @@ from pathlib import Path
 from typing import Optional
 
 import requests
-import yaml
 
 REPO_ROOT = Path(__file__).resolve().parents[4]
 UK_INDEX_DIR = REPO_ROOT / "data" / "case_index" / "uk"
@@ -174,7 +173,6 @@ def _build_record(slug: str, detail: dict) -> Optional[dict]:
     if case_type != "mergers":
         return None
 
-    case_state = meta.get("case_state")
     outcome_type = meta.get("outcome_type")
     closed_date = meta.get("closed_date")
 

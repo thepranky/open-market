@@ -2094,7 +2094,6 @@ def _validate_unit_assessment(
     raw_id_to_quote: dict[str, str] = {}
     for rp in (raw.get("source_passages") or []):
         if isinstance(rp, dict):
-            pid = str(rp.get("chunk_id", "") or rp.get("passage_id", "") or "")
             quote = (rp.get("quote") or "").strip()
             # Claude uses the passage_id field as the ref target
             raw_pid = str(rp.get("passage_id", "") or "").strip()
@@ -4840,7 +4839,7 @@ def main() -> int:
             print(f"ERROR: {rpt.error}", file=sys.stderr)
         if rpt.result:
             r = rpt.result
-            print(f"Extraction (replayed):")
+            print("Extraction (replayed):")
             print(f"  Product markets:    {len(r.product_markets)}")
             print(f"  Geographic markets: {len(r.geographic_markets)}")
             print(f"  Theories of harm:   {len(r.theories)}")
@@ -4910,7 +4909,7 @@ def main() -> int:
     elif estimate_mode:
         print("Mode:    estimate-cost (no Claude call)")
     elif args.batch_by_section or args.section_prefix:
-        batch_desc = f"batched by section"
+        batch_desc = "batched by section"
         if args.section_prefix:
             batch_desc += f" (prefix: {args.section_prefix})"
         if args.max_section_batches:
@@ -5019,7 +5018,7 @@ def main() -> int:
 
     if rpt.result:
         r = rpt.result
-        print(f"\nExtraction:")
+        print("\nExtraction:")
         print(f"  Product markets:    {len(r.product_markets)}")
         print(f"  Geographic markets: {len(r.geographic_markets)}")
         print(f"  Theories of harm:   {len(r.theories)}")
