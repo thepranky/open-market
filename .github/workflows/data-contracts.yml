@@ -35,6 +35,9 @@ jobs:
       - name: Validate case schema
         run: .venv/bin/python scripts/cases/validate_cases.py --cases-dir ../../data/cases
 
+      - name: Semantic lint
+        run: .venv/bin/python scripts/cases/lint_case_semantics.py --cases-dir ../../data/cases
+
       - name: Run schema tests
         run: .venv/bin/python -m pytest tests/test_schema.py -v
 
