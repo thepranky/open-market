@@ -17,10 +17,11 @@ legal_basis:
   - citation: "Competition Act (Kilpailulaki) 948/2011, Chapter 4 (Sections 21–32), as amended"
     url: "https://www.kkv.fi/en/"
     note: >
-      Chapter 4 of the Competition Act governs merger control. Section 22 defines concentrations.
-      Section 23 sets the notification thresholds. Section 25 imposes the standstill obligation.
-      Significant amendments were made in 2023 (Law 595/2023) aligning Finnish merger control
-      more closely with the EU Merger Regulation framework.
+      Chapter 4 of the Competition Act governs merger control. Section 22 sets the
+      notification thresholds (scope of application); Section 23 governs the notification
+      procedure; Section 25 imposes the standstill obligation. Act 1297/2022 (effective
+      1 January 2023) replaced the former worldwide EUR 350m / Finnish EUR 20m thresholds
+      with combined Finnish EUR 100m AND per-party Finnish EUR 10m.
   - citation: "Government Decree on the Calculation of Turnover (Valtioneuvoston asetus liikevaihdon laskemisesta) 1012/2011"
     url: "https://www.kkv.fi/en/"
     source_type: primary_legislation
@@ -67,34 +68,36 @@ fees:
 # ── Threshold tests ───────────────────────────────────────────────────────────
 
 threshold_tests:
-  - test_id: fi_combined_worldwide_and_domestic
+  - test_id: fi_combined_and_each_party_domestic
     description: >
-      Combined worldwide turnover of all parties exceeds €350m AND at least two
-      parties each have Finnish (domestic) turnover exceeding €20m.
-    legal_basis: "Section 23(1) Competition Act 948/2011"
+      Combined Finnish turnover of all parties exceeds €100m AND at least two
+      parties each have Finnish turnover exceeding €10m. (Thresholds reformed
+      effective 1 January 2023 by Act 1297/2022 — both legs are now Finnish
+      turnover; the former worldwide €350m leg was removed.)
+    legal_basis: "Section 22 Competition Act 948/2011 (as amended by Act 1297/2022)"
     source_url: "https://www.kkv.fi/en/"
     annual_adjustment: false
-    effective_date: "2011-11-01"
+    effective_date: "2023-01-01"
 
     conditions:
-      - condition_id: fi_combined_worldwide_gt_350m
+      - condition_id: fi_combined_domestic_gt_100m
         metric: revenue
-        scope: worldwide
+        scope: domestic
         party: combined
         operator: ">"
-        value: 350000000
+        value: 100000000
         currency: EUR
-        source: "Section 23(1)(a) Competition Act 948/2011"
+        source: "Section 22 Competition Act 948/2011 (Act 1297/2022)"
         source_type: primary_legislation
 
-      - condition_id: fi_each_party_domestic_gt_20m
+      - condition_id: fi_each_party_domestic_gt_10m
         metric: revenue
         scope: domestic
         party: each_of_at_least_two
         operator: ">"
-        value: 20000000
+        value: 10000000
         currency: EUR
-        source: "Section 23(1)(b) Competition Act 948/2011"
+        source: "Section 22 Competition Act 948/2011 (Act 1297/2022)"
         source_type: primary_legislation
         qualifier:
           type: "count_of_parties"
@@ -132,8 +135,9 @@ scope:
     Consistent with EU concept of control.
   intra_group_exempt: true
   foreign_to_foreign_rule: >
-    Finnish merger control applies if both conditions (combined worldwide > €350m AND
-    at least two parties Finnish > €20m) are satisfied, regardless of incorporation.
+    Finnish merger control applies if both conditions (combined Finnish > €100m AND
+    at least two parties Finnish > €10m) are satisfied, regardless of incorporation.
+    Both legs are Finnish turnover since the Act 1297/2022 reform (1 Jan 2023).
   substantive_test: "siec"
   substantive_test_note: >
     The KKV applies a SIEC (significant impediment to effective competition) test,
@@ -181,20 +185,20 @@ fdi_screening:
 # ── Source passages ───────────────────────────────────────────────────────────
 
 source_passages:
-  - passage_id: "fi_kilpailulaki_s23"
-    document_title: "Competition Act (Kilpailulaki) 948/2011 (English translation)"
-    article_reference: "Section 23"
-    document_url: "https://www.kkv.fi/en/"
+  - passage_id: "fi_kilpailulaki_s22"
+    document_title: "Competition Act 948/2011, Section 22 — Finlex official English translation (amendments up to Act 1297/2022)"
+    article_reference: "Section 22"
+    document_url: "https://www.finlex.fi/api/media/statute-foreign-language-translation/688061/mainPdf/main.pdf"
     source_type: primary_legislation
     quoted_text: >
-      "Section 23 — Obligation to notify: A concentration shall be notified to the
-      Finnish Competition and Consumer Authority if (1) the combined aggregate worldwide
-      turnover of all the undertakings concerned exceeds 350 million euros, and (2) the
-      aggregate turnover within Finland of each of at least two of the undertakings
-      concerned exceeds 20 million euros."
+      Section 22 — Scope of application. The provisions on the control of concentrations
+      apply to concentrations where the combined turnover accrued by the parties to the
+      concentration from Finland exceeds EUR 100 million and the turnover accrued by each
+      of at least two of the parties to the concentration from Finland exceeds EUR 10
+      million. (1297/2022)
     supports_conditions:
-      - fi_combined_worldwide_gt_350m
-      - fi_each_party_domestic_gt_20m
+      - fi_combined_domestic_gt_100m
+      - fi_each_party_domestic_gt_10m
 
 # ── Minority acquisition thresholds ───────────────────────────────────────────
 minority_thresholds:

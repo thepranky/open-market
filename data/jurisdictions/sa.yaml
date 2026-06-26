@@ -14,12 +14,15 @@ regime:
   voluntary: false
 
 legal_basis:
-  - citation: "Competition Law (نظام المنافسة), Royal Decree No. M/75 of 1 Ramadan 1440H (6 May 2019), Articles 12–14"
-    url: "https://www.gac.gov.sa/en/legislation/"
+  - citation: "Competition Law (نظام المنافسة), Royal Decree No. M/75 (1440H / 2019), Article 7"
+    url: "https://www.wipo.int/wipolex/en/legislation/details/19748"
     note: >
-      Primary competition legislation. Chapter 3 (Articles 12–14) establishes the
-      mandatory pre-merger notification requirement. Formerly known as Competition
-      Law No. M/24 of 2004; comprehensively revised in 2019.
+      Primary competition legislation. Article 7 establishes the mandatory pre-merger
+      notification requirement (90 days before completion) and defers the monetary
+      threshold to the Implementing Regulations. Formerly Competition Law No. M/24 of
+      2004; comprehensively revised in 2019. (Note: earlier drafts of this file cited
+      "Articles 12–14"; Article 12 of the enacted law concerns confidentiality, not
+      concentrations.)
   - citation: "Implementing Regulations of the Competition Law, issued by the GAC, as amended"
     url: "https://www.gac.gov.sa/en/legislation/"
     note: "Sets out detailed procedural requirements and the specific SAR threshold values."
@@ -76,11 +79,11 @@ threshold_tests:
   # Source: GAC Economic Concentration Review Guidelines (November 2023 / 5th edition
   # April 2025); confirmed via Global Legal Insights Saudi Arabia chapter (2025);
   # Baker McKenzie Saudi Arabia merger control overview.
-  # Legal basis: Competition Law Article 12; GAC Implementing Regulations.
+  # Legal basis: Competition Law Article 7 (notification); thresholds in the Implementing Regulations.
 
   - test_id: sa_standard
     description: "Combined worldwide >SAR 200m AND combined Saudi >SAR 40m AND target worldwide >SAR 40m"
-    legal_basis: "Saudi Competition Law (Royal Decree No. M/75 of 2019), Article 12; GAC Implementing Regulations"
+    legal_basis: "Saudi Competition Law (Royal Decree No. M/75 of 2019), Article 7 (notification obligation); thresholds set by the Implementing Regulations / GAC Guidelines"
     source_url: "https://www.gac.gov.sa/en/economic-concentration/"
     note: >
       All three conditions must be met (AND logic). The GAC will only review a
@@ -88,8 +91,10 @@ threshold_tests:
       Exception for JVs: the target worldwide threshold (SAR 40m) does not apply
       to greenfield joint ventures. Saudi-only presence (e.g. via exports to Saudi
       Arabia without a local subsidiary) can satisfy the combined Saudi threshold.
+      The three-legged test (with the Saudi local-nexus leg) was introduced in
+      November 2023 and refined by the 5th-edition Guidelines (April 2025).
     annual_adjustment: false
-    effective_date: null
+    effective_date: "2023-11-01"
 
     conditions:
       - condition_id: sa_combined_worldwide
@@ -99,8 +104,8 @@ threshold_tests:
         operator: ">="
         value: 200000000
         currency: SAR
-        source: "Saudi Competition Law, Article 12; GAC Economic Concentration Review Guidelines (5th ed., April 2025)"
-        source_type: primary_legislation
+        source: "Saudi Competition Law, Article 7 (notification obligation); thresholds set by the Implementing Regulations / GAC Economic Concentration Review Guidelines (5th ed., April 2025)"
+        source_type: official_guidance
         verified_via:
           - "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/saudi-arabia/"
           - "https://www.bakermckenzie.com/en/insight/publications/2026/01/saudi-arabia-merger-control-activity-in-2025"
@@ -113,8 +118,8 @@ threshold_tests:
         operator: ">="
         value: 40000000
         currency: SAR
-        source: "Saudi Competition Law, Article 12; GAC Economic Concentration Review Guidelines (5th ed., April 2025)"
-        source_type: primary_legislation
+        source: "Saudi Competition Law, Article 7 (notification obligation); thresholds set by the Implementing Regulations / GAC Economic Concentration Review Guidelines (5th ed., April 2025)"
+        source_type: official_guidance
         verified_via:
           - "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/saudi-arabia/"
         note: >
@@ -128,8 +133,8 @@ threshold_tests:
         operator: ">="
         value: 40000000
         currency: SAR
-        source: "Saudi Competition Law, Article 12; GAC Economic Concentration Review Guidelines (5th ed., April 2025)"
-        source_type: primary_legislation
+        source: "Saudi Competition Law, Article 7 (notification obligation); thresholds set by the Implementing Regulations / GAC Economic Concentration Review Guidelines (5th ed., April 2025)"
+        source_type: official_guidance
         verified_via:
           - "https://www.globallegalinsights.com/practice-areas/merger-control-laws-and-regulations/saudi-arabia/"
         note: >
@@ -165,9 +170,9 @@ scope:
     arrangement that results in enabling an enterprise to control or materially
     influence the management, conduct, or affairs of another enterprise — including
     mergers, acquisitions of controlling interests, and full-function joint ventures
-    (Saudi Competition Law, Royal Decree No. M/75, Articles 12–14; GAC Economic
+    (Saudi Competition Law, Royal Decree No. M/75, Articles 1 and 7; GAC Economic
     Concentration Review Guidelines, 5th edition, April 2025).
-  concentration_definition_source: "Saudi Competition Law, Royal Decree No. M/75 of 2019, Article 12"
+  concentration_definition_source: "Saudi Competition Law, Royal Decree No. M/75 of 2019, Articles 1 and 7"
   concentration_definition_url: "https://www.gac.gov.sa/en/legislation/"
   trigger_events:
     - merger
@@ -186,8 +191,8 @@ scope:
   substantive_test_note: >
     The GAC applies a substantive test focused on whether the concentration would
     result in a substantial reduction of competition or the creation or strengthening
-    of a dominant position in any relevant market in Saudi Arabia. Article 12 of the
-    Competition Law prohibits concentrations that substantially reduce competition.
+    of a dominant position in any relevant market in Saudi Arabia. The Competition Law
+    prohibits concentrations that substantially reduce competition.
     The GAC's analytical approach resembles the EU SIEC test in practice, though the
     statutory language uses a dominance/substantial competition reduction formulation.
   note: >
@@ -201,7 +206,7 @@ minority_thresholds:
   applies: true
   standard: "material_influence"
   note: >
-    Saudi Arabia's Competition Law (Royal Decree No. M/75 of 2019) Article 12 defines an
+    Saudi Arabia's Competition Law (Royal Decree No. M/75 of 2019) Article 1 defines an
     'economic concentration' to include any act enabling an enterprise to 'control or
     materially influence the management, conduct, or affairs of another enterprise.' The
     GAC's Economic Concentration Review Guidelines (5th edition, April 2025) explicitly
@@ -218,11 +223,11 @@ minority_thresholds:
       pct_threshold: null
       operator: ">="
       rights_required: "veto_strategic"
-      source: "Saudi Competition Law, Royal Decree No. M/75 of 2019, Article 12; GAC Economic Concentration Review Guidelines (5th edition, April 2025)"
+      source: "Saudi Competition Law, Royal Decree No. M/75 of 2019, Articles 1 and 7; GAC Economic Concentration Review Guidelines (5th edition, April 2025)"
       source_type: "official_guidance"
       source_url: "https://www.gac.gov.sa/en/economic-concentration/"
       note: >
-        Article 12 catches any act enabling an enterprise to 'materially influence' the
+        The Article 1 definition catches any act enabling an enterprise to 'materially influence' the
         management, conduct, or affairs of another. The GAC 5th edition guidelines confirm
         that a minority stake combined with structural rights (veto over strategic decisions,
         board seat, right to appoint key management) may constitute a notifiable economic
@@ -277,19 +282,16 @@ fdi_screening:
 # ── Source passages (verbatim statutory text) ─────────────────────────────────
 source_passages:
 
-  - passage_id: sa_complaw_art12
-    document_title: "Saudi Competition Law, Royal Decree No. M/75 of 1 Ramadan 1440H (6 May 2019)"
-    article_reference: "Article 12"
-    document_url: "https://www.gac.gov.sa/en/legislation/"
-    source_type: practitioner
+  - passage_id: sa_complaw_art7
+    document_title: "Saudi Competition Law, Royal Decree No. M/75 (1440H / 2019) — official English translation (WIPO Lex)"
+    article_reference: "Article 7"
+    document_url: "https://www.wipo.int/wipolex/en/legislation/details/19748"
+    source_type: primary_legislation
     quoted_text: >
-      "Any economic concentration shall be notified to the Authority prior to its
-      completion if: (1) the combined worldwide annual revenues of all parties to the
-      transaction is two hundred million Saudi riyals (SAR 200,000,000) or more;
-      and (2) the combined Saudi annual revenues of all parties to the transaction is
-      forty million Saudi riyals (SAR 40,000,000) or more; and (3) the worldwide
-      annual revenues of the party being acquired is forty million Saudi riyals
-      (SAR 40,000,000) or more."
+      "Entities seeking to participate in an economic concentration transaction must
+      inform GAC at least ninety (90) days before completion if the total annual sales
+      value of the entities seeking to participate in the economic concentration exceeds
+      the amount determined by the Regulations."
     supports_conditions:
       - sa_combined_worldwide
       - sa_combined_saudi
