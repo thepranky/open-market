@@ -28,6 +28,7 @@ Usage (from repo root):
 """
 
 import argparse
+import re
 import sys
 from pathlib import Path
 from typing import Callable, Optional
@@ -100,17 +101,37 @@ def _canonical_country(token: str) -> str:
     return _COUNTRY_ABBREV.get(t, t)
 
 
-def _trivial_equivalent(value_a: str, value_b: str) -> bool:
-    """True when two values differ only by whitespace, case, or a country abbreviation.
+# Punctuation that separates words but carries no meaning in a market name:
+# hyphen, en/em dash, slash, comma. Folding these (and case/whitespace) to single
+# spaces lets "end-customers" == "end customers" and "A / B" == "A , B" without an
+# LLM call. Lexical differences (km vs kilometres, "or" vs "/") are NOT folded —
+# those are left to the adjudicator/human, since expanding words risks suppressing
+# a real conflict.
+_PUNCT_SEPARATORS = re.compile(r"[\-–—/,]+")
 
-    Splits each value on an em/en dash so "Ready-mix concrete — DE" and
-    "Ready-mix concrete — Germany" compare segment by segment. Country
-    canonicalization is applied ONLY to multi-segment values: a lone value that
-    happens to equal a country code (e.g. "IT" for IT services) must not be
+
+def _punct_fold(value: str) -> str:
+    """Lowercased form with cosmetic punctuation separators flattened to spaces."""
+    return " ".join(_PUNCT_SEPARATORS.sub(" ", value.lower()).split())
+
+
+def _trivial_equivalent(value_a: str, value_b: str) -> bool:
+    """True when two values differ only cosmetically — safe to auto-resolve.
+
+    Three cosmetic classes, in order:
+      1. whitespace / case
+      2. punctuation separators (hyphen, dash, slash, comma) — "end-customers" vs
+         "end customers"
+      3. a country abbreviation in a multi-segment value — "… — DE" vs "… — Germany"
+
+    Country canonicalization is applied ONLY to multi-segment values: a lone value
+    that happens to equal a country code (e.g. "IT" for IT services) must not be
     auto-equated to "Italy" — suppressing a real conflict is the dangerous
     direction, so single-segment values fall through to human review.
     """
     if value_a.strip().lower() == value_b.strip().lower():
+        return True
+    if _punct_fold(value_a) == _punct_fold(value_b):
         return True
     segs_a = _split_segments(value_a)
     segs_b = _split_segments(value_b)
@@ -122,12 +143,19 @@ def _trivial_equivalent(value_a: str, value_b: str) -> bool:
 def _expanded_form(value_a: str, value_b: str) -> str:
     """Canonical merged name for two trivially-equivalent values.
 
-    Per segment, prefer the expanded (non-abbreviation) variant so "Ready-mix
-    concrete — DE" + "— Germany" resolves to "…— Germany", never the abbreviation.
-    Assumes the two values already passed `_trivial_equivalent` (equal segments).
+    For equal-length multi-segment values, prefer the expanded (non-abbreviation)
+    country variant per segment so "Ready-mix concrete — DE" + "— Germany" resolves
+    to "…— Germany". For a purely cosmetic (punctuation/whitespace) difference where
+    the segment counts do not line up, keep the more descriptive (longer) form
+    rather than risk dropping a segment.
     """
+    segs_a = _split_segments(value_a)
+    segs_b = _split_segments(value_b)
+    if len(segs_a) != len(segs_b) or len(segs_a) < 2:
+        a, b = value_a.strip(), value_b.strip()
+        return b if len(b) > len(a) else a
     out: list[str] = []
-    for sa, sb in zip(_split_segments(value_a), _split_segments(value_b)):
+    for sa, sb in zip(segs_a, segs_b):
         a_is_code = sa.strip().lower() in _COUNTRY_ABBREV
         b_is_code = sb.strip().lower() in _COUNTRY_ABBREV
         if a_is_code and not b_is_code:

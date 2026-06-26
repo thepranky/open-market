@@ -107,6 +107,23 @@ def test_trivial_equivalent_helper():
     assert not _trivial_equivalent("Cement", "Ready-mix concrete")
 
 
+def test_trivial_equivalent_folds_cosmetic_punctuation():
+    # Hyphen vs space, and separator swaps (dash/slash/comma) are cosmetic.
+    assert _trivial_equivalent(
+        "Retail sale to end customers", "Retail sale to end-customers")
+    assert _trivial_equivalent("EEA-wide / regional", "EEA-wide, regional")
+    assert _trivial_equivalent("Aqueous ammonia — EEA-wide", "Aqueous ammonia, EEA-wide")
+    # Lexical differences are NOT folded — they stay conflicts for the human.
+    assert not _trivial_equivalent("1,000 km catchment", "1,000 kilometres catchment")
+    assert not _trivial_equivalent("Cement supply", "Cement distribution")
+
+
+def test_expanded_form_cosmetic_keeps_descriptive_form():
+    # Punctuation-only difference with mismatched segments → keep the longer form,
+    # never drop a segment.
+    assert _expanded_form("A,B", "A, B") == "A, B"
+
+
 def test_genuine_rename_surfaced_without_adjudicator():
     # Names similar enough to align but not trivially equivalent.
     a = _draft([_market("pm_1", "Ready-mix concrete supply")])
