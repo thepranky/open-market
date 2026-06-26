@@ -66,13 +66,15 @@ is set, Stage 5a is skipped.
   B = `gemini` (`gemini-2.5-flash`). `--dual-same-model` forces both to the primary
   provider as a fallback (e.g. when one provider is rate-limited or unavailable);
   this weakens the agreement signal and is recorded in the conflict report header.
-- **Variance when same-model.** The Anthropic API has no seed parameter, and the
-  current extraction path does not set `temperature` (defaults to 1.0). Same-model
-  mode therefore relies on default sampling variance only, which for tool-use
-  structured output can be low — another reason heterogeneous models are the
-  default. When `--dual-same-model` is used, Draft B is issued with `temperature`
-  raised (0.7 → 1.0 spread) to induce variation; this is documented in the report
-  header so a reviewer knows the agreement signal is weaker.
+- **Variance when same-model.** The Anthropic API has no seed parameter. To induce
+  variation under `--dual-same-model`, Draft B's `LLMClient` is constructed with
+  its sampling `temperature` raised to the API maximum (1.0) while Draft A runs at
+  the provider default, so two calls to the same model diverge under independent
+  sampling instead of agreeing trivially (which would manufacture a false
+  high-confidence signal). The `same_model: true` flag is recorded in the report
+  header so a reviewer knows the agreement signal is weaker. This is a fallback;
+  heterogeneous models remain the default because a different model is a stronger
+  source of independent error than temperature alone.
 - The source text feed (PDF page cache) is **shared** — both extractions read the
   same cached page text; re-fetching the PDF is waste.
 

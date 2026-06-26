@@ -570,29 +570,38 @@ _PROVIDER_MODEL_LABEL = {
 }
 
 
-def _build_llm_client(provider: str) -> Optional["LLMClient"]:
+def _build_llm_client(provider: str, temperature: Optional[float] = None) -> Optional["LLMClient"]:
     """Build an LLMClient for *provider*; return None if its API key/SDK is missing."""
     if provider == "gemini":
         try:
             from google import genai as _genai
             raw = _genai.Client(api_key=os.environ["GOOGLE_API_KEY"])
-            return LLMClient("gemini", raw)
+            return LLMClient("gemini", raw, temperature=temperature)
         except (ImportError, KeyError) as exc:
             print(f"  WARN: gemini client unavailable ({exc})")
             return None
     try:
         import anthropic as _anthropic
         ac = _anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
-        return LLMClient("anthropic", ac)
+        return LLMClient("anthropic", ac, temperature=temperature)
     except (ImportError, KeyError) as exc:
         print(f"  WARN: anthropic client unavailable ({exc})")
         return None
+
+
+# Temperature for Draft B in same-model mode: pushed to the API maximum so two
+# calls to the same model diverge under independent sampling rather than agreeing
+# trivially (which would manufacture a false high-confidence signal). Heterogeneous
+# mode leaves temperature at the provider default — the different model is the
+# source of variation.
+_DUAL_SAME_MODEL_TEMPERATURE = 1.0
 
 
 def stage_dual_extract(
     *,
     yaml_path: Path,
     cache_dir: Path,
+    draft_a_path: Path,
     draft_b_path: Path,
     conflicts_path: Path,
     case_id: str,
@@ -607,15 +616,19 @@ def stage_dual_extract(
     """Run Draft B (independent extraction) and diff A↔B into a ConflictReport.
 
     Returns the conflict report path on success, or None if Draft B could not be
-    produced (missing secondary API key, extraction error). Never raises — a failed
-    Draft B leaves Draft A's normal pipeline output intact.
+    produced (missing secondary API key, extraction error) or the comparison
+    failed. Never raises — any failure leaves Draft A's normal pipeline output and
+    exit code intact.
     """
     secondary_provider = (
         primary_provider if same_model
         else ("gemini" if primary_provider == "anthropic" else "anthropic")
     )
     print(f"Stage 2b — Dual extraction (Draft B, provider={secondary_provider})")
-    client_b = _build_llm_client(secondary_provider)
+    # Same-model fallback raises Draft B's temperature so it diverges from Draft A;
+    # heterogeneous mode relies on the different model for variation.
+    temperature_b = _DUAL_SAME_MODEL_TEMPERATURE if same_model else None
+    client_b = _build_llm_client(secondary_provider, temperature=temperature_b)
     if client_b is None:
         print("  WARN: Draft B skipped — secondary provider unavailable")
         return None
@@ -637,27 +650,28 @@ def stage_dual_extract(
         return None
     print(f"  Draft B written:  {draft_b_path}")
 
-    # Draft A is at draft_b_path's sibling (…draft_a.yaml); load both and compare.
-    draft_a_path = draft_b_path.parent / draft_b_path.name.replace(".draft_b.yaml", ".draft_a.yaml")
+    # Comparison + IO are guarded so an unexpected failure here never aborts the
+    # primary pipeline (per the "never raises" contract above).
     try:
         from compare_extractions import build_conflict_report
-    except ImportError as exc:
-        print(f"  WARN: comparison skipped — could not import compare_extractions: {exc}")
+
+        draft_a = yaml.safe_load(draft_a_path.read_text(encoding="utf-8"))
+        draft_b = yaml.safe_load(draft_b_path.read_text(encoding="utf-8"))
+        report = build_conflict_report(
+            case_id, draft_a, draft_b,
+            focus=focus,
+            model_a=_PROVIDER_MODEL_LABEL.get(primary_provider, primary_provider),
+            model_b=_PROVIDER_MODEL_LABEL.get(secondary_provider, secondary_provider),
+            same_model=same_model,
+        )
+        conflicts_path.write_text(
+            yaml.dump(report, allow_unicode=True, default_flow_style=False, sort_keys=False),
+            encoding="utf-8",
+        )
+    except Exception as exc:  # noqa: BLE001 — comparison must never break the pipeline
+        print(f"  WARN: comparison skipped — {exc}")
         return None
 
-    draft_a = yaml.safe_load(draft_a_path.read_text(encoding="utf-8"))
-    draft_b = yaml.safe_load(draft_b_path.read_text(encoding="utf-8"))
-    report = build_conflict_report(
-        case_id, draft_a, draft_b,
-        focus=focus,
-        model_a=_PROVIDER_MODEL_LABEL.get(primary_provider, primary_provider),
-        model_b=_PROVIDER_MODEL_LABEL.get(secondary_provider, secondary_provider),
-        same_model=same_model,
-    )
-    conflicts_path.write_text(
-        yaml.dump(report, allow_unicode=True, default_flow_style=False, sort_keys=False),
-        encoding="utf-8",
-    )
     cr = report["conflict_report"]
     print(
         f"  Comparison:       {len(cr['agreed_fields'])} agreed, "
@@ -1104,6 +1118,7 @@ def main() -> int:
         dual_conflicts_path = stage_dual_extract(
             yaml_path=yaml_path,
             cache_dir=cache_dir,
+            draft_a_path=draft_path,
             draft_b_path=draft_b_path,
             conflicts_path=conflicts_path,
             case_id=args.case_id,

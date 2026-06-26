@@ -48,7 +48,7 @@ def test_dual_extract_writes_conflict_report(tmp_path, monkeypatch):
     _write_draft(draft_a, "defined")
 
     # Secondary client is "available"; extract_case writes a divergent Draft B.
-    monkeypatch.setattr(ingest_case, "_build_llm_client", lambda provider: object())
+    monkeypatch.setattr(ingest_case, "_build_llm_client", lambda provider, temperature=None: object())
 
     def fake_extract_case(yaml_path, *, output_path, **kwargs):
         _write_draft(output_path, "discussed")  # disagree with Draft A
@@ -59,6 +59,7 @@ def test_dual_extract_writes_conflict_report(tmp_path, monkeypatch):
     result = ingest_case.stage_dual_extract(
         yaml_path=tmp_path / "canonical.yaml",
         cache_dir=tmp_path,
+        draft_a_path=draft_a,
         draft_b_path=draft_b,
         conflicts_path=conflicts,
         case_id="eu_test_2023",
@@ -89,10 +90,10 @@ def test_dual_same_model_uses_primary_provider(tmp_path, monkeypatch):
     conflicts = tmp_path / "eu_test_2023.market_definition.conflicts.yaml"
     _write_draft(draft_a, "defined")
 
-    seen_providers = []
+    seen = []
     monkeypatch.setattr(
         ingest_case, "_build_llm_client",
-        lambda provider: seen_providers.append(provider) or object(),
+        lambda provider, temperature=None: seen.append((provider, temperature)) or object(),
     )
     monkeypatch.setattr(
         ingest_case, "extract_case",
@@ -102,14 +103,43 @@ def test_dual_same_model_uses_primary_provider(tmp_path, monkeypatch):
 
     ingest_case.stage_dual_extract(
         yaml_path=tmp_path / "canonical.yaml", cache_dir=tmp_path,
-        draft_b_path=draft_b, conflicts_path=conflicts,
+        draft_a_path=draft_a, draft_b_path=draft_b, conflicts_path=conflicts,
         case_id="eu_test_2023", focus="market_definition",
         primary_provider="anthropic", same_model=True,
         max_cost=2.0, batch_by_section=False, full_market_def_pass=False, page_range=None,
     )
-    assert seen_providers == ["anthropic"]  # same model, not gemini
+    # Same model → primary provider, with a raised temperature so B diverges from A.
+    assert seen == [("anthropic", ingest_case._DUAL_SAME_MODEL_TEMPERATURE)]
     report = yaml.safe_load(conflicts.read_text())["conflict_report"]
     assert report["models"]["same_model"] is True
+
+
+def test_heterogeneous_mode_leaves_temperature_default(tmp_path, monkeypatch):
+    draft_a = tmp_path / "eu_test_2023.market_definition.draft_a.yaml"
+    draft_b = tmp_path / "eu_test_2023.market_definition.draft_b.yaml"
+    conflicts = tmp_path / "eu_test_2023.market_definition.conflicts.yaml"
+    _write_draft(draft_a, "defined")
+
+    seen = []
+    monkeypatch.setattr(
+        ingest_case, "_build_llm_client",
+        lambda provider, temperature=None: seen.append((provider, temperature)) or object(),
+    )
+    monkeypatch.setattr(
+        ingest_case, "extract_case",
+        lambda yaml_path, *, output_path, **kw: (_write_draft(output_path, "defined")
+                                                 or SimpleNamespace(error=None)),
+    )
+
+    ingest_case.stage_dual_extract(
+        yaml_path=tmp_path / "canonical.yaml", cache_dir=tmp_path,
+        draft_a_path=draft_a, draft_b_path=draft_b, conflicts_path=conflicts,
+        case_id="eu_test_2023", focus="market_definition",
+        primary_provider="anthropic", same_model=False,
+        max_cost=2.0, batch_by_section=False, full_market_def_pass=False, page_range=None,
+    )
+    # Heterogeneous → secondary provider, temperature left at provider default (None).
+    assert seen == [("gemini", None)]
 
 
 def test_dual_extract_skips_when_secondary_unavailable(tmp_path, monkeypatch):
@@ -117,10 +147,11 @@ def test_dual_extract_skips_when_secondary_unavailable(tmp_path, monkeypatch):
     conflicts = tmp_path / "eu_test_2023.market_definition.conflicts.yaml"
     _write_draft(draft_a, "defined")
 
-    monkeypatch.setattr(ingest_case, "_build_llm_client", lambda provider: None)
+    monkeypatch.setattr(ingest_case, "_build_llm_client", lambda provider, temperature=None: None)
 
     result = ingest_case.stage_dual_extract(
         yaml_path=tmp_path / "canonical.yaml", cache_dir=tmp_path,
+        draft_a_path=draft_a,
         draft_b_path=tmp_path / "eu_test_2023.market_definition.draft_b.yaml",
         conflicts_path=conflicts,
         case_id="eu_test_2023", focus="market_definition",
@@ -136,7 +167,7 @@ def test_dual_extract_skips_when_draft_b_errors(tmp_path, monkeypatch):
     conflicts = tmp_path / "eu_test_2023.market_definition.conflicts.yaml"
     _write_draft(draft_a, "defined")
 
-    monkeypatch.setattr(ingest_case, "_build_llm_client", lambda provider: object())
+    monkeypatch.setattr(ingest_case, "_build_llm_client", lambda provider, temperature=None: object())
     monkeypatch.setattr(
         ingest_case, "extract_case",
         lambda yaml_path, *, output_path, **kw: SimpleNamespace(error="boom"),
@@ -144,6 +175,7 @@ def test_dual_extract_skips_when_draft_b_errors(tmp_path, monkeypatch):
 
     result = ingest_case.stage_dual_extract(
         yaml_path=tmp_path / "canonical.yaml", cache_dir=tmp_path,
+        draft_a_path=draft_a,
         draft_b_path=tmp_path / "eu_test_2023.market_definition.draft_b.yaml",
         conflicts_path=conflicts,
         case_id="eu_test_2023", focus="market_definition",
