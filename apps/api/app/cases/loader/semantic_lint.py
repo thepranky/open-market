@@ -52,22 +52,23 @@ def _check_complaint_not_defined(record: CaseRecord) -> list[Issue]:
         return []
 
     issues: list[Issue] = []
+    # Keep product / geographic id namespaces separate: a passage supports a product
+    # market via supports_markets and a geographic market via supports_geographic_markets.
     markets = [
-        ("product market", m)
+        ("product market", m, "supports_markets")
         for m in record.product_markets_considered
     ] + [
-        ("geographic market", m)
+        ("geographic market", m, "supports_geographic_markets")
         for m in record.geographic_markets_considered
     ]
 
-    for kind, market in markets:
+    for kind, market, support_field in markets:
         if market.definition_status != DefinitionStatus.defined:
             continue
 
         supporting_docs: set[str] = set()
         for passage in record.source_passages:
-            links = passage.supports_markets + passage.supports_geographic_markets
-            if market.market_id in links:
+            if market.market_id in getattr(passage, support_field):
                 supporting_docs.add(passage.source_document_id)
 
         # Only flag markets actually grounded in passages, all of which are complaints.

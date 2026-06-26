@@ -37,6 +37,10 @@ def main() -> None:
     for issue in issues:
         print(f"ERROR: {issue}")
 
+    if args.case_id and checked == 0:
+        print(f"ERROR: no case with case_id '{args.case_id}' found in {args.cases_dir}")
+        sys.exit(1)
+
     print(f"\nResults: {checked} case(s) checked, {len(issues)} issue(s)")
 
     if issues or load_errors:

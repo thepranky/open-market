@@ -117,6 +117,48 @@ def test_geographic_complaint_only_defined_flagged():
     assert [i.rule for i in issues] == ["complaint_not_defined"]
 
 
+def test_complaint_doc_type_match_is_case_insensitive():
+    record = _record(
+        source_documents=[_doc("d1", "Redacted Complaint")],
+        product_markets_considered=[
+            ProductMarket(market_id="m1", name="M1", definition_status=DefinitionStatus.defined)
+        ],
+        source_passages=[_passage("p1", "d1", supports_markets=["m1"])],
+    )
+    assert [i.rule for i in lint_case(record)] == ["complaint_not_defined"]
+
+
+def test_defined_market_with_no_passages_not_flagged():
+    # Design invariant: under-evidenced is not this lint's concern.
+    record = _record(
+        source_documents=[_doc("d1", "complaint")],
+        product_markets_considered=[
+            ProductMarket(market_id="m1", name="M1", definition_status=DefinitionStatus.defined)
+        ],
+        source_passages=[],
+    )
+    assert lint_case(record) == []
+
+
+def test_product_geo_id_collision_kept_separate():
+    # Same id used for a product and a geographic market; a complaint passage that
+    # supports only the geographic market must not flag the (decision-backed) product market.
+    record = _record(
+        source_documents=[_doc("d_comp", "complaint"), _doc("d_dec", "decision")],
+        product_markets_considered=[
+            ProductMarket(market_id="x1", name="P", definition_status=DefinitionStatus.defined)
+        ],
+        geographic_markets_considered=[
+            GeographicMarket(market_id="x1", name="G", definition_status=DefinitionStatus.discussed)
+        ],
+        source_passages=[
+            _passage("p1", "d_dec", supports_markets=["x1"]),
+            _passage("p2", "d_comp", supports_geographic_markets=["x1"]),
+        ],
+    )
+    assert lint_case(record) == []
+
+
 # --- Rule 2: dangling_support_ref -----------------------------------------
 
 
