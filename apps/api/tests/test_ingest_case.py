@@ -1,5 +1,5 @@
 """
-Minimal tests for apps/api/scripts/cases/ingest_case.py.
+Minimal tests for apps/api/scripts/cases/extract/ingest_case.py.
 
 Covers: extraction mode is recorded correctly in the review report.
 No network access, no Claude calls, no filesystem writes to production YAML.

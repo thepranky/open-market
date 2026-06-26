@@ -1,5 +1,5 @@
 """
-Tests for apps/api/scripts/cases/create_review_learning_log.py.
+Tests for apps/api/scripts/cases/review/create_review_learning_log.py.
 
 Covers: definition_status change, support linkage corrections, outcome_passage_misuse,
 draft-only field stripping, metadata completion, and end-to-end file writing.

@@ -6,7 +6,7 @@ passes on a long decision (typically 400+ pages). Run it **before**
 
 Hard cases require multi-pass extraction: multiple `market_definition` focus passes,
 `theories` passes, `unit_assessment` batches, `remedies` passes, and a final
-`apps/api/scripts/cases/merge_drafts.py` run. The pipeline was designed for Phase I / short Phase II
+`apps/api/scripts/cases/extract/merge_drafts.py` run. The pipeline was designed for Phase I / short Phase II
 decisions; mega-mergers expose batch page caps and embedded market-analysis
 structures. See **Multi-focus design** at the end of this doc.
 
@@ -15,12 +15,12 @@ structures. See **Multi-focus design** at the end of this doc.
 ## 0 — Pre-flight: understand what was extracted
 
 Before reviewing any field, read the merge report embedded at the top of the draft
-or the last `apps/api/scripts/cases/merge_drafts.py` console output. Confirm:
+or the last `apps/api/scripts/cases/extract/merge_drafts.py` console output. Confirm:
 
 - [ ] Number of input drafts matches expectation (outcome + market + theories +
       remedies + unit_assessments)
 - [ ] No input draft was accidentally omitted (check file-count vs. what
-      `apps/api/scripts/cases/run_unit_assessment_batch.py` reported as pass/skipped_existing)
+      `apps/api/scripts/cases/extract/run_unit_assessment_batch.py` reported as pass/skipped_existing)
 - [ ] Deduplication counts are plausible — heavy dedup (>10% of units or passages
       collapsed) often signals overlapping windows and warrants spot-checking
 - [ ] Back-ref synthesis ran: each theory entry in `theories_of_harm` should have

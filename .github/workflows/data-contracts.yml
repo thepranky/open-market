@@ -10,6 +10,11 @@ on:
 permissions:
   contents: read
 
+# ci-gaps gap B: cancel superseded runs on the same ref (parity with api-ci/web-ci).
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   validate-cases:
     runs-on: ubuntu-latest
@@ -25,6 +30,8 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.10"
+          cache: pip                                  # ci-gaps gap C: cache pip downloads
+          cache-dependency-path: apps/api/requirements.txt
 
       - name: Install dependencies
         run: |
@@ -33,10 +40,10 @@ jobs:
           .venv/bin/pip install -r requirements.txt
 
       - name: Validate case schema
-        run: .venv/bin/python scripts/cases/validate_cases.py --cases-dir ../../data/cases
+        run: .venv/bin/python scripts/cases/integrity/validate_cases.py --cases-dir ../../data/cases
 
       - name: Semantic lint
-        run: .venv/bin/python scripts/cases/lint_case_semantics.py --cases-dir ../../data/cases
+        run: .venv/bin/python scripts/cases/integrity/lint_case_semantics.py --cases-dir ../../data/cases
 
       - name: Run schema tests
         run: .venv/bin/python -m pytest tests/test_schema.py -v
@@ -55,6 +62,8 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.10"
+          cache: pip                                  # ci-gaps gap C: cache pip downloads
+          cache-dependency-path: apps/api/requirements.txt
 
       - name: Install dependencies
         run: |
@@ -63,4 +72,4 @@ jobs:
           .venv/bin/pip install -r requirements.txt
 
       - name: Validate case-index schema
-        run: .venv/bin/python scripts/cases/validate_case_index.py --index-dir ../../data/case_index
+        run: .venv/bin/python scripts/cases/discovery/validate_case_index.py --index-dir ../../data/case_index

@@ -17,7 +17,7 @@ import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from scripts.cases.check_source_links import (
+from scripts.cases.integrity.check_source_links import (
     UrlSpec,
     classify_results,
     collect_url_specs,
@@ -286,7 +286,7 @@ class TestMain:
         return client
 
     def test_court_opinion_passing_pdf_failing_case_page_returns_zero(self, tmp_path, capsys):
-        from scripts.cases.check_source_links import main
+        from scripts.cases.integrity.check_source_links import main
 
         pdf_url = "https://court.gov/doc.pdf"
         page_url = "https://docket.gov/case/123"
@@ -296,8 +296,8 @@ class TestMain:
         mock_client = self._mock_client(url_ok)
 
         with (
-            patch("scripts.cases.check_source_links.DATA_DIR", tmp_path),
-            patch("scripts.cases.check_source_links.httpx.Client", return_value=mock_client),
+            patch("scripts.cases.integrity.check_source_links.DATA_DIR", tmp_path),
+            patch("scripts.cases.integrity.check_source_links.httpx.Client", return_value=mock_client),
         ):
             rc = main([])
 
@@ -306,7 +306,7 @@ class TestMain:
         assert "not blocking" in captured.out or "warning" in captured.out.lower()
 
     def test_court_opinion_failing_pdf_returns_one(self, tmp_path, capsys):
-        from scripts.cases.check_source_links import main
+        from scripts.cases.integrity.check_source_links import main
 
         pdf_url = "https://court.gov/doc.pdf"
         self._make_case_yaml(tmp_path, [_court_opinion_doc(pdf_url=pdf_url, case_page_url=None)])
@@ -315,8 +315,8 @@ class TestMain:
         mock_client = self._mock_client(url_ok)
 
         with (
-            patch("scripts.cases.check_source_links.DATA_DIR", tmp_path),
-            patch("scripts.cases.check_source_links.httpx.Client", return_value=mock_client),
+            patch("scripts.cases.integrity.check_source_links.DATA_DIR", tmp_path),
+            patch("scripts.cases.integrity.check_source_links.httpx.Client", return_value=mock_client),
         ):
             rc = main([])
 
@@ -325,7 +325,7 @@ class TestMain:
         assert "BROKEN" in captured.out
 
     def test_ec_decision_failing_case_page_url_returns_one(self, tmp_path, capsys):
-        from scripts.cases.check_source_links import main
+        from scripts.cases.integrity.check_source_links import main
 
         pdf_url = "https://ec.europa.eu/doc.pdf"
         page_url = "https://ec.europa.eu/cases/123"
@@ -339,8 +339,8 @@ class TestMain:
         mock_client = self._mock_client(url_ok)
 
         with (
-            patch("scripts.cases.check_source_links.DATA_DIR", tmp_path),
-            patch("scripts.cases.check_source_links.httpx.Client", return_value=mock_client),
+            patch("scripts.cases.integrity.check_source_links.DATA_DIR", tmp_path),
+            patch("scripts.cases.integrity.check_source_links.httpx.Client", return_value=mock_client),
         ):
             rc = main([])
 
@@ -349,7 +349,7 @@ class TestMain:
         assert "BROKEN" in captured.out
 
     def test_all_passing_returns_zero(self, tmp_path, capsys):
-        from scripts.cases.check_source_links import main
+        from scripts.cases.integrity.check_source_links import main
 
         pdf_url = "https://court.gov/doc.pdf"
         page_url = "https://docket.gov/case/123"
@@ -359,17 +359,17 @@ class TestMain:
         mock_client = self._mock_client(url_ok)
 
         with (
-            patch("scripts.cases.check_source_links.DATA_DIR", tmp_path),
-            patch("scripts.cases.check_source_links.httpx.Client", return_value=mock_client),
+            patch("scripts.cases.integrity.check_source_links.DATA_DIR", tmp_path),
+            patch("scripts.cases.integrity.check_source_links.httpx.Client", return_value=mock_client),
         ):
             rc = main([])
 
         assert rc == 0
 
     def test_no_yaml_files_returns_one(self, tmp_path, capsys):
-        from scripts.cases.check_source_links import main
+        from scripts.cases.integrity.check_source_links import main
 
-        with patch("scripts.cases.check_source_links.DATA_DIR", tmp_path):
+        with patch("scripts.cases.integrity.check_source_links.DATA_DIR", tmp_path):
             rc = main([])
 
         assert rc == 1

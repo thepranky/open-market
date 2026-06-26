@@ -1,5 +1,5 @@
 """
-Tests for apps/api/scripts/cases/apply_review_learning.py.
+Tests for apps/api/scripts/cases/review/apply_review_learning.py.
 
 Covers: loading review logs, grouping patterns, priority classification,
 proposal action mapping, proposal generation, markdown rendering,

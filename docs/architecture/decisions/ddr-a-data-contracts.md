@@ -11,7 +11,7 @@
 2. Promotion gate → `promote_case_pipeline.py` runs `validate_cases`, `check_source_links`, `check_source_integrity`
 3. UI → `Evidence.tsx` renders `source_passages` with page-anchored PDF links
 
-Key files: `app/cases/models/case.py`, `app/screening/models/jurisdiction.py`, `app/cases/models/case_index.py`, `docs/data/source-integrity.md`, `scripts/cases/check_source_integrity.py`
+Key files: `app/cases/models/case.py`, `app/screening/models/jurisdiction.py`, `app/cases/models/case_index.py`, `docs/data/source-integrity.md`, `scripts/cases/integrity/check_source_integrity.py`
 
 ---
 
