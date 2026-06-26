@@ -320,10 +320,8 @@ class TestSelectRelevantChunks:
             [(50, market_def_signal), (51, market_def_signal), (52, market_def_signal)],
         )
 
-        # Normal run: only focused chunk selected (2 pages total < _MARKET_DEF_SP_MIN_PAGES
-        # abs threshold, but also < 25% of 5 non-TOC pages, so supplemental would fire anyway
-        # for this small doc — use a path that tests full_market_def_pass explicitly).
-        # Build a doc big enough that normal mode would stay focused-only (> 20 focused pages).
+        # Build a doc big enough that normal mode would stay focused-only (> 20 focused pages),
+        # so the test exercises full_market_def_pass explicitly.
         # Pages must not overlap with high_signal_unfocused (pp.50-52).
         big_focused = _make_chunk(
             "chunk_big",
