@@ -64,6 +64,20 @@ _MARKET_LISTS = (
     ("theories_of_harm", "theories"),
 )
 
+# Reconciliation findings carry a draft_market_type ("product" | "geographic" | ""
+# for theories); map it to the right list + label so a name that exists in two
+# lists (e.g. a product "Cement" and a geographic "Cement") never collides.
+_TYPE_TO_LIST = {
+    "product": ("product_markets_considered", "product_markets"),
+    "geographic": ("geographic_markets_considered", "geographic_markets"),
+    "theory": ("theories_of_harm", "theories"),
+}
+
+
+def _list_for_type(market_type: str) -> tuple[str, str]:
+    """(list_key, label) for a finding's draft_market_type ('' / absent → theory)."""
+    return _TYPE_TO_LIST.get(market_type or "theory", _TYPE_TO_LIST["theory"])
+
 # An equivalence adjudicator decides whether two differently-phrased values are the
 # same thing. Returns True (equivalent → suppress) or False (genuine conflict).
 EquivalenceFn = Callable[[str, str, str], bool]  # (value_a, value_b, source_excerpt) -> bool
@@ -90,15 +104,37 @@ def _trivial_equivalent(value_a: str, value_b: str) -> bool:
     """True when two values differ only by whitespace, case, or a country abbreviation.
 
     Splits each value on an em/en dash so "Ready-mix concrete — DE" and
-    "Ready-mix concrete — Germany" compare segment by segment.
+    "Ready-mix concrete — Germany" compare segment by segment. Country
+    canonicalization is applied ONLY to multi-segment values: a lone value that
+    happens to equal a country code (e.g. "IT" for IT services) must not be
+    auto-equated to "Italy" — suppressing a real conflict is the dangerous
+    direction, so single-segment values fall through to human review.
     """
     if value_a.strip().lower() == value_b.strip().lower():
         return True
-    segs_a = [s for s in _split_segments(value_a)]
-    segs_b = [s for s in _split_segments(value_b)]
-    if len(segs_a) != len(segs_b):
+    segs_a = _split_segments(value_a)
+    segs_b = _split_segments(value_b)
+    if len(segs_a) != len(segs_b) or len(segs_a) < 2:
         return False
     return all(_canonical_country(a) == _canonical_country(b) for a, b in zip(segs_a, segs_b))
+
+
+def _expanded_form(value_a: str, value_b: str) -> str:
+    """Canonical merged name for two trivially-equivalent values.
+
+    Per segment, prefer the expanded (non-abbreviation) variant so "Ready-mix
+    concrete — DE" + "— Germany" resolves to "…— Germany", never the abbreviation.
+    Assumes the two values already passed `_trivial_equivalent` (equal segments).
+    """
+    out: list[str] = []
+    for sa, sb in zip(_split_segments(value_a), _split_segments(value_b)):
+        a_is_code = sa.strip().lower() in _COUNTRY_ABBREV
+        b_is_code = sb.strip().lower() in _COUNTRY_ABBREV
+        if a_is_code and not b_is_code:
+            out.append(sb.strip())
+        else:
+            out.append(sa.strip())
+    return " — ".join(out)
 
 
 def _split_segments(value: str) -> list[str]:
@@ -112,15 +148,33 @@ def _split_segments(value: str) -> list[str]:
 # Alignment + diff
 # ---------------------------------------------------------------------------
 
-def _index_markets_by_name(record: dict) -> dict[str, dict]:
-    """Map normalized market/theory name → market dict, across all market lists."""
-    index: dict[str, dict] = {}
+def _index_markets_by_name(record: dict) -> dict[str, dict[str, dict]]:
+    """Per-list map: list_key → {normalized name → market dict}.
+
+    Keyed per list (not flat) so a product market and a geographic market that
+    share a name do not overwrite each other in the lookup used for field diffs.
+    """
+    index: dict[str, dict[str, dict]] = {}
     for list_key, _label in _MARKET_LISTS:
+        bucket: dict[str, dict] = {}
         for m in (record.get(list_key) or []):
             name = m.get("name", "")
             if name:
-                index[_normalize_for_similarity(name)] = m
+                bucket[_normalize_for_similarity(name)] = m
+        index[list_key] = bucket
     return index
+
+
+def _label_for_name(record: dict, name: str) -> str:
+    """Find which market list contains *name* in *record*; return its path label.
+
+    Used for b_only (out_of_scope) findings, which do not carry a market type.
+    """
+    norm = _normalize_for_similarity(name)
+    for list_key, label in _MARKET_LISTS:
+        if any(_normalize_for_similarity(m.get("name", "")) == norm for m in (record.get(list_key) or [])):
+            return label
+    return "markets"
 
 
 def _diff_aligned_pair(
@@ -170,7 +224,7 @@ def _reconcile_name(
     if _trivial_equivalent(name_a, name_b):
         auto_resolved.append({
             "field": path, "draft_a": name_a, "draft_b": name_b,
-            "resolved_to": name_b or name_a, "resolved_by": "auto",
+            "resolved_to": _expanded_form(name_a, name_b), "resolved_by": "auto",
         })
         return
     if equivalence_fn is not None and equivalence_fn(name_a, name_b, ""):
@@ -217,9 +271,10 @@ def compare_drafts(
     for f in grouped.get("matched", []) + grouped.get("likely_rename", []):
         name_a = f.get("draft_name", "")
         name_b = f.get("existing_name", "")
-        market_a = index_a.get(_normalize_for_similarity(name_a), {})
-        market_b = index_b.get(_normalize_for_similarity(name_b), {})
-        prefix = f"markets/{name_b or name_a}"
+        list_key, label = _list_for_type(f.get("draft_market_type", ""))
+        market_a = index_a[list_key].get(_normalize_for_similarity(name_a), {})
+        market_b = index_b[list_key].get(_normalize_for_similarity(name_b), {})
+        prefix = f"{label}/{name_b or name_a}"
         _reconcile_name(
             name_a, name_b, f"{prefix}/name",
             equivalence_fn, agreed, conflicts, auto_resolved,
@@ -228,8 +283,9 @@ def compare_drafts(
 
     # candidate_addition → in A, not B.
     for f in grouped.get("candidate_addition", []):
+        _list_key, label = _list_for_type(f.get("draft_market_type", ""))
         conflicts.append({
-            "field": "markets",
+            "field": label,
             "kind": "a_only",
             "draft_a": f.get("draft_name", ""),
             "draft_b": None,
@@ -237,13 +293,15 @@ def compare_drafts(
             "resolution": None,
         })
 
-    # out_of_scope → in B, not A.
+    # out_of_scope → in B, not A. These findings carry no market type, so derive
+    # the label from whichever of B's lists contains the name.
     for f in grouped.get("out_of_scope", []):
+        name_b = f.get("existing_name", "")
         conflicts.append({
-            "field": "markets",
+            "field": _label_for_name(draft_b, name_b),
             "kind": "b_only",
             "draft_a": None,
-            "draft_b": f.get("existing_name", ""),
+            "draft_b": name_b,
             "source_excerpt": None,
             "resolution": None,
         })
