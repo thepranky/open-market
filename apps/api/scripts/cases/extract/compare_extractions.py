@@ -165,16 +165,17 @@ def _index_markets_by_name(record: dict) -> dict[str, dict[str, dict]]:
     return index
 
 
-def _label_for_name(record: dict, name: str) -> str:
-    """Find which market list contains *name* in *record*; return its path label.
+def _list_and_label_for_name(record: dict, name: str) -> tuple[str, str]:
+    """Find which market list contains *name* in *record*; return (list_key, label).
 
     Used for b_only (out_of_scope) findings, which do not carry a market type.
+    Falls back to the product list when the name is not found (defensive only).
     """
     norm = _normalize_for_similarity(name)
     for list_key, label in _MARKET_LISTS:
         if any(_normalize_for_similarity(m.get("name", "")) == norm for m in (record.get(list_key) or [])):
-            return label
-    return "markets"
+            return list_key, label
+    return _MARKET_LISTS[0]
 
 
 def _diff_aligned_pair(
@@ -240,24 +241,55 @@ def _reconcile_name(
     })
 
 
+def align_drafts(draft_a: dict, draft_b: dict, focus: Optional[str] = None) -> dict:
+    """Structural alignment of A↔B markets — the single source of truth for pairing.
+
+    Reuses `_reconcile` with draft_b as the baseline ("existing") and draft_a as the
+    "draft", so the four reconciliation groups map to:
+      matched / likely_rename → aligned pair (same proposition in A and B)
+      candidate_addition      → present in A, missing in B (a_only)
+      out_of_scope            → present in B, missing in A (b_only)
+
+    Returns dicts carrying enough to both diff (compare_drafts) and merge-back
+    (merge_drafts --from-conflict-report) without re-deriving the matching:
+      pairs:  [{list_key, label, name_a, name_b}]
+      a_only: [{list_key, label, name_a}]
+      b_only: [{list_key, label, name_b}]
+    """
+    findings = _reconcile(draft_a, draft_b, focus=focus)
+    grouped = _group_reconciliation(findings)
+
+    pairs: list[dict] = []
+    for f in grouped.get("matched", []) + grouped.get("likely_rename", []):
+        list_key, label = _list_for_type(f.get("draft_market_type", ""))
+        pairs.append({
+            "list_key": list_key, "label": label,
+            "name_a": f.get("draft_name", ""), "name_b": f.get("existing_name", ""),
+        })
+
+    a_only: list[dict] = []
+    for f in grouped.get("candidate_addition", []):
+        list_key, label = _list_for_type(f.get("draft_market_type", ""))
+        a_only.append({"list_key": list_key, "label": label, "name_a": f.get("draft_name", "")})
+
+    # out_of_scope findings carry no market type → derive list_key/label from B.
+    b_only: list[dict] = []
+    for f in grouped.get("out_of_scope", []):
+        name_b = f.get("existing_name", "")
+        list_key, label = _list_and_label_for_name(draft_b, name_b)
+        b_only.append({"list_key": list_key, "label": label, "name_b": name_b})
+
+    return {"pairs": pairs, "a_only": a_only, "b_only": b_only}
+
+
 def compare_drafts(
     draft_a: dict,
     draft_b: dict,
     focus: Optional[str] = None,
     equivalence_fn: Optional[EquivalenceFn] = None,
 ) -> dict:
-    """Align draft_a against draft_b and diff them; return ConflictReport fields.
-
-    Alignment reuses `_reconcile` with draft_b as the baseline ("existing") and
-    draft_a as the "draft", so the four reconciliation groups map to:
-      matched            → aligned pair → deterministic scalar diff
-      likely_rename      → aligned pair, names differ → rename candidate
-      candidate_addition → present in A, missing in B → a_only conflict
-      out_of_scope       → present in B, missing in A → b_only conflict
-    """
-    findings = _reconcile(draft_a, draft_b, focus=focus)
-    grouped = _group_reconciliation(findings)
-
+    """Align draft_a against draft_b and diff them; return ConflictReport fields."""
+    align = align_drafts(draft_a, draft_b, focus=focus)
     index_a = _index_markets_by_name(draft_a)
     index_b = _index_markets_by_name(draft_b)
 
@@ -265,45 +297,32 @@ def compare_drafts(
     conflicts: list[dict] = []
     auto_resolved: list[dict] = []
 
-    # matched + likely_rename are both aligned pairs (same proposition in A and B);
-    # they differ only in how confidently the matcher tied the names. Handle them
-    # the same way: reconcile the name, then diff the scalar fields.
-    for f in grouped.get("matched", []) + grouped.get("likely_rename", []):
-        name_a = f.get("draft_name", "")
-        name_b = f.get("existing_name", "")
-        list_key, label = _list_for_type(f.get("draft_market_type", ""))
-        market_a = index_a[list_key].get(_normalize_for_similarity(name_a), {})
-        market_b = index_b[list_key].get(_normalize_for_similarity(name_b), {})
-        prefix = f"{label}/{name_b or name_a}"
+    # Aligned pairs: reconcile the name, then diff the scalar fields.
+    for pair in align["pairs"]:
+        list_key = pair["list_key"]
+        market_a = index_a[list_key].get(_normalize_for_similarity(pair["name_a"]), {})
+        market_b = index_b[list_key].get(_normalize_for_similarity(pair["name_b"]), {})
+        prefix = f"{pair['label']}/{pair['name_b'] or pair['name_a']}"
         _reconcile_name(
-            name_a, name_b, f"{prefix}/name",
+            pair["name_a"], pair["name_b"], f"{prefix}/name",
             equivalence_fn, agreed, conflicts, auto_resolved,
         )
         _diff_aligned_pair(market_a, market_b, prefix, agreed, conflicts)
 
-    # candidate_addition → in A, not B.
-    for f in grouped.get("candidate_addition", []):
-        _list_key, label = _list_for_type(f.get("draft_market_type", ""))
+    # In A, not B.
+    for item in align["a_only"]:
         conflicts.append({
-            "field": label,
-            "kind": "a_only",
-            "draft_a": f.get("draft_name", ""),
-            "draft_b": None,
-            "source_excerpt": None,
-            "resolution": None,
+            "field": item["label"], "kind": "a_only",
+            "draft_a": item["name_a"], "draft_b": None,
+            "source_excerpt": None, "resolution": None,
         })
 
-    # out_of_scope → in B, not A. These findings carry no market type, so derive
-    # the label from whichever of B's lists contains the name.
-    for f in grouped.get("out_of_scope", []):
-        name_b = f.get("existing_name", "")
+    # In B, not A.
+    for item in align["b_only"]:
         conflicts.append({
-            "field": _label_for_name(draft_b, name_b),
-            "kind": "b_only",
-            "draft_a": None,
-            "draft_b": name_b,
-            "source_excerpt": None,
-            "resolution": None,
+            "field": item["label"], "kind": "b_only",
+            "draft_a": None, "draft_b": item["name_b"],
+            "source_excerpt": None, "resolution": None,
         })
 
     # Top-level scalar record fields.
