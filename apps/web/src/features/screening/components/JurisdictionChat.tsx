@@ -269,7 +269,7 @@ export function JurisdictionChat({ jurisdictions }: JurisdictionChatProps) {
                       : `Asking about ${selectedJurisdictions.map((j) => j.jurisdiction_name).join(", ")}`}
                   </p>
                   <p className="text-[12px] text-faint">
-                    Try: "What are the filing thresholds?" or "How does mandatory filing work here?"
+                    Try: &quot;What are the filing thresholds?&quot; or &quot;How does mandatory filing work here?&quot;
                   </p>
                   <p className="text-[11px] text-faint mt-3">
                     Type @ to switch jurisdiction mid-conversation

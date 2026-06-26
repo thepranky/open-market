@@ -15,9 +15,7 @@ Covers:
 """
 
 import copy
-import tempfile
 from pathlib import Path
-from unittest.mock import patch
 
 import pytest
 import yaml
@@ -27,23 +25,14 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from scripts.cases.merge_drafts import (
     _IdMap,
-    _commitment_key,
     _finding_key,
     _focus_of,
     _is_empty,
-    _market_key,
-    _merge_commitments,
-    _merge_markets,
-    _merge_passages,
     _merge_source_documents,
-    _merge_theories,
     _merge_unit_assessments,
     _norm,
     _normalize_definition_statuses,
-    _passage_key,
     _pick_metadata,
-    _synthesize_back_refs,
-    _theory_key,
     _unit_key,
     _validate_merged,
     main,

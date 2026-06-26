@@ -28,10 +28,9 @@ import sys
 import time
 import zipfile
 from dataclasses import dataclass, field
-from datetime import date, datetime
+from datetime import date
 from pathlib import Path
 from typing import Optional
-from urllib.parse import urlencode
 
 import httpx
 import yaml

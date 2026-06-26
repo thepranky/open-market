@@ -14,7 +14,7 @@ Exit 0 if all URLs return 2xx, exit 1 if any broken links found.
 import argparse
 import asyncio
 import sys
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
 
@@ -214,7 +214,7 @@ def print_report(results: list[CheckResult], verbose: bool) -> bool:
     ok = [r for r in results if r.ok and not r.redirected and not r.bot_protected and not r.ssl_uncertain]
 
     print(f"\n{'='*70}")
-    print(f"JURISDICTION URL VERIFICATION REPORT")
+    print("JURISDICTION URL VERIFICATION REPORT")
     print(f"{'='*70}")
     print(f"  Total URLs checked : {len(results)}")
     print(f"  OK (2xx)           : {len(ok)}")
@@ -226,7 +226,7 @@ def print_report(results: list[CheckResult], verbose: bool) -> bool:
     print()
 
     if broken:
-        print(f"BROKEN LINKS — must fix before launch:")
+        print("BROKEN LINKS — must fix before launch:")
         print(f"{'-'*70}")
         by_jid: dict[str, list[CheckResult]] = {}
         for r in broken:
@@ -241,7 +241,7 @@ def print_report(results: list[CheckResult], verbose: bool) -> bool:
         print()
 
     if redirected:
-        print(f"REDIRECTS — update URLs in YAML to avoid extra hops:")
+        print("REDIRECTS — update URLs in YAML to avoid extra hops:")
         print(f"{'-'*70}")
         for r in redirected:
             print(f"  [{r.entry.jurisdiction_id}] {r.entry.field_path}")
@@ -250,7 +250,7 @@ def print_report(results: list[CheckResult], verbose: bool) -> bool:
         print()
 
     if slow and verbose:
-        print(f"SLOW (>8s) — check these are real:")
+        print("SLOW (>8s) — check these are real:")
         for r in slow:
             print(f"  [{r.entry.jurisdiction_id}] {r.entry.url}")
         print()
@@ -259,7 +259,7 @@ def print_report(results: list[CheckResult], verbose: bool) -> bool:
     if any_broken:
         print(f"RESULT: FAIL — {len(broken)} broken link(s) found")
     else:
-        print(f"RESULT: PASS — all URLs reachable")
+        print("RESULT: PASS — all URLs reachable")
     return any_broken
 
 

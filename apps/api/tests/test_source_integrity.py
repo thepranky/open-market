@@ -3,13 +3,11 @@ Unit tests for check_source_integrity.py
 
 All HTTP calls are mocked — no network access required.
 """
-import io
 import sys
 import textwrap
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 
-import pytest
 
 # Make scripts importable
 sys.path.insert(0, str(Path(__file__).parent.parent))
@@ -17,7 +15,6 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "scripts"))
 
 from check_source_integrity import (
     FetchResult,
-    Issue,
     Level,
     _doc_type_hints_in_url,
     _pdf_url_looks_like_portal,
@@ -47,7 +44,7 @@ def _ok_pdf(text: str = "The Court finds the relevant market is X.") -> FetchRes
     # Build a minimal in-memory PDF using pypdf's writer so extract_text works
     try:
         import pypdf
-        writer = pypdf.PdfWriter()
+        pypdf.PdfWriter()
         # pypdf 4.x: add_blank_page then add annotation for text is complex;
         # instead we just return raw bytes that pypdf can partially parse.
         # For test purposes, we mock extract_text directly where needed.

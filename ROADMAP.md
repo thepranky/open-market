@@ -17,9 +17,9 @@ See [`.cursor/rules/meridian.mdc`](.cursor/rules/meridian.mdc) for spec-driven w
 | | ✅ 3.2 | Jurisdiction push tier on PR | `jurisdiction-verification.yml`, `run_jurisdiction_verification.py` | Screening regressions not gated on merge | ✅ Done (#19) |
 | | ✅ 3.3 | Case index schema gate on PR | `validate_case_index.py` | Index YAML drifts from `CaseIndexEntry` | ✅ Done (#19) |
 | | ✅ 3.4 | Link DDR-A from case-research doc | `docs/architecture/case-research.md` | Onboarding misses contract reference | ✅ Done (#19) |
-| | 3.5 | Web lint + build in CI | new `web-ci.yml` | Frontend breaks undetected | `npm run lint && npm run build` |
-| | 3.6 | Ruff in CI | `api-ci.yml` | Style/errors only caught locally | `ruff check .` step |
-| | 3.7 | Benchmark artifacts | `api-ci.yml` | Eval trends discarded | Upload benchmark JSON as artifact |
+| | ✅ 3.5 | Web lint + build in CI | new `web-ci.yml` | Frontend breaks undetected | ✅ Done — [spec](docs/specs/2026-06-25-ci-gaps.md): path-filtered Node-20 lint+build; baseline `.eslintrc.json` (`next/core-web-vitals` + `@typescript-eslint` plugin) + 2 entity escapes |
+| | ✅ 3.6 | Ruff in CI | `api-ci.yml` | Style/errors only caught locally | ✅ Done — [spec](docs/specs/2026-06-25-ci-gaps.md): parallel `lint` job; `pyproject.toml` ruff config (E402 ignored in `scripts/`+`tests/`); 236 baseline errors cleared |
+| | ✅ 3.7 | Benchmark artifacts | `api-ci.yml` | Eval trends discarded | ✅ Done — [spec](docs/specs/2026-06-25-ci-gaps.md): `upload-artifact` step (`if: always()`, 90-day) for benchmark JSON+MD. Concurrency-cancel (gap B) bundled into `web-ci.yml`+`api-ci.yml` |
 | **4 Refine** | 4.1 | Split `jurisdictions.py` router | `app/screening/routers/` | God-router | Spec: screening vs chat vs CRUD |
 | | 4.2 | `data_jurisdictions_path` config | `app/shared/core/config.py` | Path derived from cases path | Explicit env var |
 | | 4.3 | Rename overloaded symbols | `Juris.tsx`, home stats | Naming collision | `CaseRegulatorBadge`, `case_regulator_count` |

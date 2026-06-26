@@ -13,11 +13,9 @@ import sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", ".."))
 
-import asyncpg
 import numpy as np
 from pgvector.asyncpg import register_vector
 
-from app.shared.core.config import settings
 from app.shared.core.pg_client import close_pool, get_pool
 from app.cases.services.case_service import get_all_cases
 from app.cases.services.embedding_service import embed_text

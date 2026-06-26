@@ -5,10 +5,8 @@ Covers: extraction mode is recorded correctly in the review report.
 No network access, no Claude calls, no filesystem writes to production YAML.
 """
 import sys
-import tempfile
 from pathlib import Path
 
-import pytest
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 sys.path.insert(0, str(Path(__file__).parent.parent / "scripts"))
@@ -246,7 +244,6 @@ def test_review_report_no_coverage_warning_for_other_focus(tmp_path):
 # --page-range argument parsing (tested via main() with a minimal YAML fixture)
 # ---------------------------------------------------------------------------
 
-import io
 import textwrap
 from unittest.mock import patch
 
@@ -359,7 +356,6 @@ class TestPageRangeParsing:
         """Draft path uses pp{start}-{end} suffix when --output-suffix is omitted."""
         _write_minimal_seed(tmp_path)
         import ingest_case as ic
-        import yaml as _yaml
 
         with patch.object(ic, "_CASES_DIR", tmp_path):
             with patch("sys.argv", [
@@ -372,7 +368,8 @@ class TestPageRangeParsing:
                 # Capture the draft_path value by patching extract_case and reading
                 # what path ingest_case derives. We just need the suffix in the
                 # console header, which already includes Draft out: line.
-                import io, contextlib
+                import io
+                import contextlib
                 buf = io.StringIO()
                 with contextlib.redirect_stdout(buf):
                     ic.main()
@@ -393,14 +390,15 @@ class TestPageRangeParsing:
                 "--no-claude",
                 "--focus", "theories",
             ]):
-                import io, contextlib
+                import io
+                import contextlib
                 buf = io.StringIO()
                 with contextlib.redirect_stdout(buf):
                     ic.main()
         output = buf.getvalue()
         assert "section_viii" in output
         # Draft path uses the explicit suffix, not the auto-derived pp{start}-{end}
-        draft_line = next((l for l in output.splitlines() if "Draft out:" in l), "")
+        draft_line = next((line for line in output.splitlines() if "Draft out:" in line), "")
         assert "section_viii" in draft_line
         assert "pp100-200" not in draft_line
 
@@ -416,7 +414,8 @@ class TestPageRangeParsing:
                 "--no-claude",
                 "--focus", "market_definition",
             ]):
-                import io, contextlib
+                import io
+                import contextlib
                 buf = io.StringIO()
                 with contextlib.redirect_stdout(buf):
                     ic.main()

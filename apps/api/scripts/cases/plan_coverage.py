@@ -24,7 +24,6 @@ from __future__ import annotations
 import argparse
 import datetime
 import json
-import re
 import sys
 from pathlib import Path
 from typing import Optional
@@ -37,7 +36,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 from app.shared.utils.pdf_extractor import DEFAULT_CACHE_DIR
 from pipeline_profile import PipelineProfile, select_profile
-from repair_source_passages import _extract_section_map, _is_toc_page
+from repair_source_passages import _extract_section_map
 
 _REPO_ROOT = Path(__file__).resolve().parents[4]
 _CASES_DIR = _REPO_ROOT / "data" / "cases"

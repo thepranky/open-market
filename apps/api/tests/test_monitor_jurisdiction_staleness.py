@@ -22,7 +22,6 @@ from app.screening.models.jurisdiction import (
 from app.screening.models.jurisdiction import MetricType
 from app.screening.models.jurisdiction_verification import FreshnessStatus
 from app.screening.services.jurisdiction_staleness import (
-    StalenessAnchor,
     evaluate_staleness,
     load_anchors,
     update_sidecar_freshness,

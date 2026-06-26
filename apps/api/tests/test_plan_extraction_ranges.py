@@ -4,25 +4,19 @@ Unit tests for plan_extraction_ranges.py
 No network access, no PDF downloads, no real Claude calls, no filesystem writes.
 All tests use synthetic fixture data.
 """
-import json
 import sys
 from pathlib import Path
 
-import pytest
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 sys.path.insert(0, str(Path(__file__).parent.parent / "scripts"))
 
 from plan_extraction_ranges import (
     ProbeWindow,
-    _HIGH_PRIORITY,
-    _LOW_PRIORITY,
-    _UNIT_SECTION_EXCLUSIONS,
     _build_unit_assessment_windows,
     _build_windows,
     _find_split_points,
     _is_unit_label,
-    _make_window,
     _score_page,
     _top_prefix,
     format_plan,

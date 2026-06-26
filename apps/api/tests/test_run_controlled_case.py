@@ -253,7 +253,6 @@ class TestStageFetchSource:
                     mock_client.return_value.__enter__ = lambda s: s
                     mock_client.return_value.__exit__ = MagicMock(return_value=False)
                     # Patch the inner import
-                    import importlib
                     with patch.dict("sys.modules", {"app.shared.utils.pdf_extractor": MagicMock(
                         fetch_and_extract=MagicMock(side_effect=Exception("network timeout")),
                         save_cache=MagicMock(),

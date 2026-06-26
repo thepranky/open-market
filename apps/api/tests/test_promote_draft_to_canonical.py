@@ -17,7 +17,6 @@ Covers:
 
 import datetime
 from pathlib import Path
-from unittest.mock import patch
 
 import pytest
 import yaml
@@ -26,17 +25,12 @@ import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from scripts.cases.promote_draft_to_canonical import (
-    _DRAFT_MARKET_STRIP,
-    _DRAFT_PASSAGE_STRIP,
-    _DRAFT_TOP_STRIP,
     _SEED_NONEMPTY_FALLBACK_FIELDS,
     _apply_seed_nonempty_fallbacks,
     _dump_canonical_yaml,
     _strip_draft_fields_inplace,
     build_canonical,
     check_draft_warnings,
-    find_canonical,
-    find_draft,
     main,
     validate_canonical_dict,
 )

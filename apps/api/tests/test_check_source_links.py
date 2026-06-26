@@ -13,14 +13,12 @@ import sys
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 
-import pytest
 import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from scripts.cases.check_source_links import (
     UrlSpec,
-    check_url,
     classify_results,
     collect_url_specs,
     collect_urls,

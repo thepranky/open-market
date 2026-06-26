@@ -12,7 +12,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from app.cases.loader.yaml_loader import load_yaml_file
 from app.cases.loader.validator import validate_all
-from app.cases.models import CaseRecord, Outcome, RetrievalStatus, CaseHistoryStatus, VerificationStatus
+from app.cases.models import CaseRecord, Outcome, RetrievalStatus, CaseHistoryStatus
 
 
 def _sample_files():
@@ -29,7 +29,7 @@ def test_yaml_validates(yaml_path):
 
 def test_all_cases_valid():
     ok, errors, msgs = validate_all(str(CASES_DIR))
-    assert errors == 0, f"Validation errors:\n" + "\n".join(msgs)
+    assert errors == 0, "Validation errors:\n" + "\n".join(msgs)
     assert ok >= 3
 
 

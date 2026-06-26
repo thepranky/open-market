@@ -14,11 +14,9 @@ Usage:
 import argparse
 import asyncio
 import re
-import sys
 from pathlib import Path
 
 import httpx
-import yaml
 
 DATA_DIR = Path(__file__).resolve().parents[4] / "data" / "jurisdictions"
 
@@ -161,9 +159,9 @@ def main() -> None:
 
         if not args.dry_run:
             path.write_text(new_text)
-            print(f"  => written")
+            print("  => written")
         else:
-            print(f"  => (dry run, not written)")
+            print("  => (dry run, not written)")
         print()
 
     print(f"{'DRY RUN — ' if args.dry_run else ''}Fixed {total_replacements} redirected URLs in {fixed_files} files")

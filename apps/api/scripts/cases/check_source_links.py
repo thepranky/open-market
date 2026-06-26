@@ -13,7 +13,7 @@ Usage:
 """
 import argparse
 import sys
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from pathlib import Path
 
 import httpx
@@ -177,7 +177,7 @@ def main(argv: list[str] | None = None) -> int:
             err = res["error"] or res["status"]
             print(f"  ⚠ {err}  {spec.label}")
             print(f"    {spec.url}")
-            print(f"    court_opinion case_page_url failed, but pdf_url passed; not blocking")
+            print("    court_opinion case_page_url failed, but pdf_url passed; not blocking")
         print()
 
     if errors:
