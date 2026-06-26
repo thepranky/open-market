@@ -161,6 +161,61 @@ def test_b_only_keep_adds_market_and_passages_with_id_collision():
     assert merged["source_passages"][0]["supports_markets"] == [slag["market_id"]]
 
 
+def test_unrecognized_keep_drop_resolution_raises():
+    # A non-empty but unparseable keep/drop resolution must block, not silently
+    # default (which would drop a B-only market the human meant to keep).
+    a = _draft([_market("pm_1", "Cement")])
+    b = _draft([_market("pm_1", "Cement"), _market("pm_2", "Slag")])
+    report = _report([{
+        "field": "product_markets", "kind": "b_only",
+        "draft_a": None, "draft_b": "Slag", "resolution": "yes please keep it",
+    }])
+    try:
+        merge_from_conflict_report(a, b, report, focus="market_definition")
+        assert False, "expected ValueError"
+    except ValueError as exc:
+        assert "unrecognized resolution" in str(exc).lower()
+
+
+def test_unlocatable_resolved_conflict_raises():
+    # A resolved value_mismatch whose market is not present in Draft A must raise,
+    # not silently discard the resolution.
+    a = _draft([_market("pm_1", "Cement")])
+    b = _draft([_market("pm_1", "Cement")])
+    report = _report([{
+        "field": "product_markets/Nonexistent/definition_status",
+        "kind": "value_mismatch", "draft_a": "defined", "draft_b": "discussed",
+        "resolution": "discussed",
+    }])
+    try:
+        merge_from_conflict_report(a, b, report, focus="market_definition")
+        assert False, "expected ValueError"
+    except ValueError as exc:
+        assert "could not be located" in str(exc).lower()
+
+
+def test_b_only_keep_drops_dangling_multimarket_passage_ref():
+    # A copied B passage that also supports a B market we did NOT keep must not
+    # carry that dangling ref into the merged record.
+    a = _draft([_market("pm_1", "Cement")])
+    b = _draft(
+        [_market("pm_1", "Cement"), _market("pm_2", "Slag"), _market("pm_3", "Other")],
+        passages=[{
+            "passage_id": "sp_b1", "quote_snippet": "...slag and other...",
+            "page": 12, "source_document_id": "doc_1",
+            "supports_markets": ["pm_2", "pm_3"],  # pm_3 is NOT kept
+        }],
+    )
+    report = _report([{
+        "field": "product_markets", "kind": "b_only",
+        "draft_a": None, "draft_b": "Slag", "resolution": "keep",
+    }])
+    merged = merge_from_conflict_report(a, b, report, focus="market_definition")
+    slag = next(m for m in merged["product_markets_considered"] if m["name"] == "Slag")
+    # Only the kept market's ref survives; the dangling pm_3 ref is dropped.
+    assert merged["source_passages"][0]["supports_markets"] == [slag["market_id"]]
+
+
 def test_b_only_drop_omits_market():
     a = _draft([_market("pm_1", "Cement")])
     b = _draft([_market("pm_1", "Cement"), _market("pm_2", "Slag")])

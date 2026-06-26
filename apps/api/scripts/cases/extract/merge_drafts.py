@@ -1034,6 +1034,14 @@ _DROP_WORDS = {"drop", "remove", "reject", "discard", "exclude", "no"}
 _KEEP_WORDS = {"keep", "add", "accept", "include", "yes"}
 
 
+def _list_key_or_raise(label: str) -> str:
+    """Map a ConflictReport list label → draft list key; raise on an unknown label."""
+    list_key = _LABEL_TO_LIST_KEY.get(label)
+    if list_key is None:
+        raise ValueError(f"unknown market list label in conflict field: {label!r}")
+    return list_key
+
+
 def _decision(resolution: Any) -> str:
     """Normalize an a_only/b_only resolution to 'keep' | 'drop' | '' (unknown)."""
     val = str(resolution or "").strip().lower()
@@ -1051,8 +1059,16 @@ def _remove_market(record: dict, list_key: str, name: str, norm) -> None:
     ]
 
 
-def _fresh_id(id_field: str, existing: set) -> str:
-    prefix = "toh" if id_field == "theory_id" else "pm"
+# Per list: the market-id prefix used when minting a fresh (collision-free) id.
+_LIST_ID_PREFIX = {
+    "product_markets_considered": "pm",
+    "geographic_markets_considered": "gm",
+    "theories_of_harm": "toh",
+}
+
+
+def _fresh_id(list_key: str, existing: set) -> str:
+    prefix = _LIST_ID_PREFIX.get(list_key, "pm")
     n = 1
     while f"{prefix}_merged_{n}" in existing:
         n += 1
@@ -1063,8 +1079,11 @@ def _add_market_from_b(merged: dict, draft_b: dict, list_key: str, name: str, no
     """Copy a B-only market (and its supporting passages) into the merged record.
 
     Rewrites the market's id if it would collide with an existing merged id, keeping
-    the copied passages' support references consistent. Passages already present
-    (by passage_id) are not duplicated.
+    the copied passages' support references consistent. To avoid mis-grounding, a
+    copied passage's support list is filtered to ids that actually exist in the
+    merged record for that list — B-origin refs to markets that were not copied
+    (which would dangle or collide with an unrelated A market) are dropped.
+    Passages already present (by passage_id) are not duplicated.
     """
     import copy as _copy
 
@@ -1080,10 +1099,12 @@ def _add_market_from_b(merged: dict, draft_b: dict, list_key: str, name: str, no
     existing_ids = {m.get(id_field) for m in (merged.get(list_key) or [])}
     new_id = old_id
     if not new_id or new_id in existing_ids:
-        new_id = _fresh_id(id_field, existing_ids)
+        new_id = _fresh_id(list_key, existing_ids)
         market[id_field] = new_id
     merged.setdefault(list_key, []).append(market)
 
+    # Ids valid for this support field after the market was added.
+    valid_ids = {m.get(id_field) for m in (merged.get(list_key) or [])}
     existing_pids = {sp.get("passage_id") for sp in (merged.get("source_passages") or [])}
     for sp in (draft_b.get("source_passages") or []):
         if old_id not in (sp.get(support_key) or []):
@@ -1091,7 +1112,8 @@ def _add_market_from_b(merged: dict, draft_b: dict, list_key: str, name: str, no
         if sp.get("passage_id") in existing_pids:
             continue
         sp_copy = _copy.deepcopy(sp)
-        sp_copy[support_key] = [new_id if r == old_id else r for r in (sp.get(support_key) or [])]
+        rewritten = [new_id if r == old_id else r for r in (sp.get(support_key) or [])]
+        sp_copy[support_key] = [r for r in rewritten if r in valid_ids]
         merged.setdefault("source_passages", []).append(sp_copy)
 
 
@@ -1131,6 +1153,22 @@ def merge_from_conflict_report(
             f"{len(unresolved)} unresolved conflict(s) — fill 'resolution' for: {fields}"
         )
 
+    # keep/drop conflicts must carry a recognized decision — a non-empty but
+    # unparseable value (e.g. "merge", "yes please") must not silently default to
+    # keep/drop and lose or invent a market.
+    bad = [
+        c for c in conflicts
+        if c.get("kind") in ("a_only", "b_only") and not _decision(c.get("resolution"))
+    ]
+    if bad:
+        items = ", ".join(
+            f"{c.get('field')}={c.get('resolution')!r}" for c in bad
+        )
+        raise ValueError(
+            f"{len(bad)} keep/drop conflict(s) with an unrecognized resolution "
+            f"(must be 'keep' or 'drop'): {items}"
+        )
+
     merged = _copy.deepcopy(draft_a)
     align = align_drafts(draft_a, draft_b, focus=focus)
     idx_merged = _index_markets_by_name(merged)
@@ -1149,7 +1187,9 @@ def merge_from_conflict_report(
         return idx_merged[p["list_key"]].get(norm(p["name_a"]))
 
     # 1. Aligned-pair field resolutions (value_mismatch, rename_candidate) and
-    #    top-level record scalars (field path without a "/").
+    #    top-level record scalars (field path without a "/"). A resolved conflict
+    #    whose target cannot be located is raised, never silently skipped — that
+    #    would discard a human decision into the promotion record.
     for c in conflicts:
         if c.get("kind") not in ("value_mismatch", "rename_candidate"):
             continue
@@ -1159,8 +1199,12 @@ def merge_from_conflict_report(
             continue
         prefix, _, leaf = field.rpartition("/")
         m = _market_for_prefix(prefix)
-        if m is not None:
-            m[leaf] = c["resolution"]
+        if m is None:
+            raise ValueError(
+                f"resolved conflict '{field}' could not be located in Draft A "
+                "(alignment changed since the report was generated?)"
+            )
+        m[leaf] = c["resolution"]
 
     # 2. Auto-resolved names → apply the expanded canonical name.
     for a in auto_resolved:
@@ -1169,19 +1213,21 @@ def merge_from_conflict_report(
         if m is not None and leaf == "name" and a.get("resolved_to"):
             m["name"] = a["resolved_to"]
 
-    # 3. a_only — keep (default) or drop.
+    # 3. a_only — keep or drop (decision already validated above).
     for c in conflicts:
-        if c.get("kind") == "a_only" and _decision(c.get("resolution")) == "drop":
-            list_key = _LABEL_TO_LIST_KEY.get(c.get("field", ""))
-            if list_key:
-                _remove_market(merged, list_key, c.get("draft_a", ""), norm)
+        if c.get("kind") != "a_only":
+            continue
+        list_key = _list_key_or_raise(c.get("field", ""))
+        if _decision(c.get("resolution")) == "drop":
+            _remove_market(merged, list_key, c.get("draft_a", ""), norm)
 
-    # 4. b_only — keep (add from B with passages) or drop (default).
+    # 4. b_only — keep (add from B with passages) or drop.
     for c in conflicts:
-        if c.get("kind") == "b_only" and _decision(c.get("resolution")) == "keep":
-            list_key = _LABEL_TO_LIST_KEY.get(c.get("field", ""))
-            if list_key:
-                _add_market_from_b(merged, draft_b, list_key, c.get("draft_b", ""), norm)
+        if c.get("kind") != "b_only":
+            continue
+        list_key = _list_key_or_raise(c.get("field", ""))
+        if _decision(c.get("resolution")) == "keep":
+            _add_market_from_b(merged, draft_b, list_key, c.get("draft_b", ""), norm)
 
     return merged
 
@@ -1213,10 +1259,14 @@ def _main_conflict_report_merge(args) -> int:
     ok, err_msg = _validate_merged(merged)
     print("Validation: PASS" if ok else f"Validation: WARN — {err_msg}")
 
-    out_path = (
-        Path(args.output) if args.output
-        else draft_a_path.parent / draft_a_path.name.replace(".draft_a.yaml", ".merged.draft.yaml")
-    )
+    if args.output:
+        out_path = Path(args.output)
+    elif draft_a_path.name.endswith(".draft_a.yaml"):
+        out_path = draft_a_path.parent / draft_a_path.name.replace(
+            ".draft_a.yaml", ".merged.draft.yaml")
+    else:
+        # Never write back over an input draft when the name is unexpected.
+        out_path = draft_a_path.parent / (draft_a_path.name + ".merged.draft.yaml")
     yaml_text = _dump_yaml(merged)
     if args.dry_run:
         print("\n--- DRY RUN — merged YAML (not written) ---\n")
