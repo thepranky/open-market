@@ -23,7 +23,7 @@ on:
 permissions:
   contents: read
 
-# ci-gaps gap B: cancel superseded runs on the same ref (parity with api-ci/web-ci).
+# Cancel superseded runs on the same ref (parity with the API and web workflows).
 # A PR run and a nightly cron run use different refs, so they never cancel each other;
 # a manual workflow_dispatch on main shares the cron's ref and would supersede it (intended).
 concurrency:
@@ -45,7 +45,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.10"
-          cache: pip                                  # ci-gaps gap C: cache pip downloads
+          cache: pip  # cache pip downloads to speed installs
           cache-dependency-path: apps/api/requirements.txt
 
       - name: Install dependencies

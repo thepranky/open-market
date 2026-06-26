@@ -1,10 +1,10 @@
 name: API CI
 
 on:
-  # Path filter (ci-gaps gap A): main is currently unprotected, so skipping api-ci
-  # on docs/web-only changes is safe and saves minutes. If api-ci is ever made a
-  # *required* status check, revisit — a path-filtered required check stays pending
-  # on PRs that don't touch these paths.
+  # Only run when API code, shared data, or this workflow itself changes — saves
+  # minutes on docs/web-only PRs. Caveat: main is currently unprotected; if this
+  # workflow is ever made a *required* status check, a path filter leaves it
+  # "pending" on PRs that don't touch these paths, so reconsider then.
   push:
     branches: [main]
     paths:
@@ -40,7 +40,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.10"
-          cache: pip                                  # ci-gaps gap C: cache pip downloads
+          cache: pip  # cache pip downloads to speed installs
           cache-dependency-path: apps/api/requirements.txt
 
       - name: Install dependencies
@@ -94,7 +94,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.10"
-          cache: pip                                  # ci-gaps gap C: cache pip downloads
+          cache: pip  # cache pip downloads to speed installs
           cache-dependency-path: apps/api/requirements.txt
 
       - name: Install dependencies
