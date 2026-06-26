@@ -24,7 +24,8 @@ permissions:
   contents: read
 
 # ci-gaps gap B: cancel superseded runs on the same ref (parity with api-ci/web-ci).
-# Scheduled (cron) and PR runs use different refs, so they never cancel each other.
+# A PR run and a nightly cron run use different refs, so they never cancel each other;
+# a manual workflow_dispatch on main shares the cron's ref and would supersede it (intended).
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
