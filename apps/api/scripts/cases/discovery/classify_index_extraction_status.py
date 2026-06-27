@@ -62,15 +62,21 @@ def classify_entry(
     page_count_fn: PageCountFn,
     max_simplified_pages: int,
 ) -> str:
-    """Return the extraction_status for one entry. Pure given its inputs."""
+    """Classify one entry. Pure given its inputs.
+
+    Returns "extracted" / "not_applicable" / "pending" (all *confident*), or
+    "unknown" when the PDF could not be fetched or there is no URL — distinct from
+    a confident "pending" (a real, substantial decision). The caller must never
+    overwrite a settled status with an "unknown" result.
+    """
     if canonical_exists:
         return "extracted"
     pdf_url = entry.get("pdf_url")
     if not pdf_url:
-        return "pending"
+        return "unknown"
     pages = page_count_fn(pdf_url)
     if pages is None:
-        return "pending"
+        return "unknown"
     return "not_applicable" if pages <= max_simplified_pages else "pending"
 
 
@@ -79,7 +85,7 @@ def _apply_status(path: Path, status: str) -> None:
     text = path.read_text(encoding="utf-8")
     line = f"extraction_status: {status}"
     if _FIELD_RE.search(text):
-        text = _FIELD_RE.sub(line, text)
+        text = _FIELD_RE.sub(line, text, count=1)
     else:
         if not text.endswith("\n"):
             text += "\n"
@@ -101,9 +107,10 @@ def run(
     reclassify: bool,
     dry_run: bool,
     page_count_fn: PageCountFn,
+    canonical_exists_fn: Callable[[str, str], bool] = _canonical_exists,
 ) -> dict:
     """Classify entries across the given jurisdictions; return a count summary."""
-    counts = {"extracted": 0, "not_applicable": 0, "pending": 0, "skipped": 0}
+    counts = {"extracted": 0, "not_applicable": 0, "pending": 0, "unknown": 0, "skipped": 0}
     processed = 0
     for jur in jurisdictions:
         jur_dir = index_dir / jur
@@ -117,7 +124,7 @@ def run(
 
             entry = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
             current = entry.get("extraction_status", "pending")
-            canonical = _canonical_exists(jur, path.stem)
+            canonical = canonical_exists_fn(jur, path.stem)
 
             # Resume: a settled non-pending status is kept unless --reclassify, but
             # we still upgrade to `extracted` for free when a canonical now exists.
@@ -125,18 +132,26 @@ def run(
                 counts["skipped"] += 1
                 continue
 
-            status = classify_entry(
+            result = classify_entry(
                 entry,
                 canonical_exists=canonical,
                 page_count_fn=page_count_fn,
                 max_simplified_pages=max_simplified_pages,
             )
             processed += 1
-            counts[status] += 1
-            marker = "" if status == current else " *"
-            print(f"  {path.stem:<55} {status}{marker}")
-            if not dry_run and status != current:
-                _apply_status(path, status)
+            counts[result] += 1
+
+            # An "unknown" (no URL / failed fetch) must never overwrite a settled
+            # classification — a transient 404 during --reclassify would otherwise
+            # silently downgrade a correct not_applicable/extracted to pending.
+            if result == "unknown":
+                print(f"  {path.stem:<55} {current} (kept; could not determine)")
+                continue
+
+            marker = "" if result == current else " *"
+            print(f"  {path.stem:<55} {result}{marker}")
+            if not dry_run and result != current:
+                _apply_status(path, result)
 
     return counts
 
@@ -170,7 +185,7 @@ def main(argv: Optional[list[str]] = None) -> int:
     print(
         f"\nDone{tag}: {counts['extracted']} extracted, "
         f"{counts['not_applicable']} not_applicable, {counts['pending']} pending, "
-        f"{counts['skipped']} skipped"
+        f"{counts['unknown']} unknown, {counts['skipped']} skipped"
     )
     return 0
 

@@ -53,8 +53,10 @@ For each index entry:
 
 Page count is the detector because it is the same signal the pipeline already keys
 on (simplified EU clearances are 2 pages) and needs no LLM call. It is a heuristic,
-documented as such: the threshold is configurable, and a missing/failed fetch leaves
-the entry `pending` (the safe default — never hide a substantive case).
+documented as such: the threshold is configurable. A missing URL or failed fetch is
+treated as *unknown* (distinct from a confident `pending`): a never-classified entry
+stays `pending`, and a settled `not_applicable`/`extracted` is **kept** — a transient
+404 during `--reclassify` must never silently downgrade a correct classification.
 
 Flags: `--index-dir` (default `data/case_index`), `--jurisdiction eu|uk|us`,
 `--case-id` (single), `--limit N` (sampling), `--max-simplified-pages 3`,
