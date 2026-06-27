@@ -1,18 +1,14 @@
-# Jurisdiction verification
+# Jurisdiction Verification Build — Planning & Implementation Guide
 
-Reference for the automated jurisdiction profile verification programme. Profiles
-live in `data/jurisdictions/*.yaml`; verification is orchestrated by
-`apps/api/scripts/screening/run_jurisdiction_verification.py` (tiers: `push`, `nightly`, `full`).
+*Created 2026-06-20. Reference doc for the automated jurisdiction profile verification programme.*
 
 ---
 
 ## Purpose
 
-Meridian maintains ~60 jurisdiction YAML profiles covering merger control thresholds,
-regime flags, review periods, gun-jumping, FDI screening, and practitioner nuance.
-Before lawyers rely on screening results for first-instance transaction review, each
-profile must be **machine-verified against authoritative sources** — grounded with
-explicit source-verification tiers, not assumed accurate from research alone.
+CompMap has 47 jurisdiction YAML profiles covering merger control thresholds, regime flags, review periods, gun-jumping, FDI screening, and practical nuance. These were largely produced by research agents. Before lawyers can rely on screening results for first-instance transaction review, each profile must be **machine-verified against authoritative sources** — not manually lawyer-reviewed, but grounded with explicit source-verification tiers.
+
+This document is the single reference for scope, architecture, PR plan, and acceptance criteria. **Do not start implementation until this doc is signed off.**
 
 ---
 
@@ -22,10 +18,10 @@ explicit source-verification tiers, not assumed accurate from research alone.
 
 | Layer | Status |
 |-------|--------|
-| **Schema** | Rich Pydantic model in `apps/api/app/screening/models/jurisdiction.py`; spec in `data/jurisdictions/_schema.md` |
+| **Schema** | Rich Pydantic model in `apps/api/app/models/jurisdiction.py`; spec in `data/jurisdictions/_schema.md` |
 | **Data** | 47 jurisdiction YAMLs with thresholds, `source_passages`, `minority_thresholds`, practitioner notes |
 | **Screening** | `threshold_engine.py` evaluates deals; `/jurisdictions/screen` returns status + legal citations |
-| **URL check** | `apps/api/scripts/screening/verify_jurisdiction_urls.py` — async link checker (live links ≠ accurate content) |
+| **URL check** | `apps/api/scripts/verify_jurisdiction_urls.py` — async link checker (live links ≠ accurate content) |
 | **Maintenance** | `fix_jurisdiction_redirects.py`, `insert_minority_thresholds.py` |
 | **UI** | Chat intake (`/screen`), jurisdiction detail pages, `last_verified` dates |
 
@@ -247,7 +243,7 @@ Archetypes are config, not code — easy to extend without redeploying gates.
 
 ## Source fetcher design
 
-Shared library: `apps/api/app/screening/services/source_fetcher.py`
+Shared library: `apps/api/app/services/source_fetcher.py`
 
 | Source | Strategy |
 |--------|----------|
@@ -256,7 +252,7 @@ Shared library: `apps/api/app/screening/services/source_fetcher.py`
 | uscode.house.gov | HTML fetch; extract section text |
 | ecfr.gov | HTML fetch; extract § text |
 | ftc.gov press releases | HTML/PDF for annual threshold notices |
-| Official PDFs / gazettes | Download/extract text using `app.shared.utils.pdf_extractor` cache pattern |
+| Official PDFs / gazettes | Download/extract text using `app.utils.pdf_extractor` cache pattern |
 | Non-English official pages | Normalize text; record `language` when available; accept official English translations separately |
 | Bot-protected sites | Mark `fetch_status: bot_protected`; skip numeric check, flag tier 0 |
 
@@ -267,7 +263,7 @@ Normalization pipeline:
 3. Unicode normalize (NFKC)
 4. Fuzzy match threshold: exact first, then normalized substring (≥95% token overlap)
 
-Reuse patterns from `apps/api/scripts/cases/integrity/repair_source_passages.py` and `app.shared.utils.pdf_extractor` where applicable. Do not build an HTML-only verifier; many jurisdiction sources are PDFs, official gazettes, and authority threshold notices.
+Reuse patterns from `repair_source_passages.py` and `app.utils.pdf_extractor` where applicable. Do not build an HTML-only verifier; many jurisdiction sources are PDFs, official gazettes, and authority threshold notices.
 
 Fetcher output should include:
 
@@ -308,7 +304,7 @@ Authoritative source types for hard-fact gates:
 
 **CLI:**
 ```bash
-python apps/api/scripts/screening/verify_jurisdiction_passages.py [--jurisdiction uk] [--fix] [--verbose]
+python apps/api/scripts/verify_jurisdiction_passages.py [--jurisdiction uk] [--fix] [--verbose]
 ```
 
 **Tests:** Fixture HTML/PDF text snippets for EU Art 1(2), UK s.23, US HSR threshold notices/§801 — no live network in CI.
@@ -332,7 +328,7 @@ python apps/api/scripts/screening/verify_jurisdiction_passages.py [--jurisdictio
 
 **CLI:**
 ```bash
-python apps/api/scripts/screening/verify_jurisdiction_completeness.py [--jurisdiction all]
+python apps/api/scripts/verify_jurisdiction_completeness.py [--jurisdiction all]
 ```
 
 ---
@@ -401,12 +397,12 @@ Branches follow `jurisdiction-verification/<slug>`. Each PR is one reviewable un
 
 | Deliverable | Path |
 |-------------|------|
-| Verification tier enums + sidecar Pydantic models | `apps/api/app/screening/models/jurisdiction_verification.py` |
+| Verification tier enums + sidecar Pydantic models | `apps/api/app/models/jurisdiction_verification.py` |
 | Archetype templates | `data/jurisdictions/_archetypes.yaml` |
 | Sidecar schema doc | `data/jurisdictions/_verification_schema.md` |
-| Baseline coverage report script | `apps/api/scripts/screening/report_jurisdiction_verification_baseline.py` |
+| Baseline coverage report script | `apps/api/scripts/report_jurisdiction_verification_baseline.py` |
 | Baseline report snapshot | `docs/jurisdiction-verification-baseline.md` |
-| Stub CLI entrypoints (no logic yet) | `apps/api/scripts/screening/verify_jurisdiction_passages.py` (skeleton) |
+| Stub CLI entrypoints (no logic yet) | `apps/api/scripts/verify_jurisdiction_passages.py` (skeleton) |
 | Unit tests for model load | `apps/api/tests/test_jurisdiction_verification_model.py` |
 
 **Acceptance:** Models load; archetypes validate; stubs run `--help`; baseline report reproduces counts for conditions, source passages, missing passage support, and annual-adjustment tests.
@@ -420,7 +416,7 @@ Branches follow `jurisdiction-verification/<slug>`. Each PR is one reviewable un
 
 | Deliverable | Path |
 |-------------|------|
-| Fetch + normalize service | `apps/api/app/screening/services/source_fetcher.py` |
+| Fetch + normalize service | `apps/api/app/services/source_fetcher.py` |
 | HTML/PDF text fixture files for CI | `apps/api/tests/fixtures/jurisdiction_sources/` |
 | Unit tests (offline) | `apps/api/tests/test_source_fetcher.py` |
 
@@ -435,8 +431,8 @@ Branches follow `jurisdiction-verification/<slug>`. Each PR is one reviewable un
 
 | Deliverable | Path |
 |-------------|------|
-| Full implementation | `apps/api/scripts/screening/verify_jurisdiction_passages.py` |
-| Numeric extraction helpers | `apps/api/app/screening/services/jurisdiction_numeric.py` |
+| Full implementation | `apps/api/scripts/verify_jurisdiction_passages.py` |
+| Numeric extraction helpers | `apps/api/app/services/jurisdiction_numeric.py` |
 | Tests with fixtures | `apps/api/tests/test_verify_jurisdiction_passages.py` |
 
 **Acceptance:** Runs against EU, UK, US HSR fixtures offline; produces sidecar with source tier 1–2 status; exit code reflects pass/fail.
@@ -452,7 +448,7 @@ Branches follow `jurisdiction-verification/<slug>`. Each PR is one reviewable un
 
 | Deliverable | Path |
 |-------------|------|
-| Completeness verifier | `apps/api/scripts/screening/verify_jurisdiction_completeness.py` |
+| Completeness verifier | `apps/api/scripts/verify_jurisdiction_completeness.py` |
 | Tests | `apps/api/tests/test_verify_jurisdiction_completeness.py` |
 
 **Acceptance:** All 47 YAMLs run; report lists missing elements per archetype; source tier 3 computed in sidecar.
@@ -466,7 +462,7 @@ Branches follow `jurisdiction-verification/<slug>`. Each PR is one reviewable un
 
 | Deliverable | Path |
 |-------------|------|
-| Re-extraction diff script | `apps/api/scripts/screening/verify_jurisdiction_reextract.py` |
+| Re-extraction diff script | `apps/api/scripts/verify_jurisdiction_reextract.py` |
 | Gold deal fixtures (v1) | `data/jurisdictions/_gold_deals.yaml` |
 | Regression tests | `apps/api/tests/test_jurisdiction_regression.py` |
 
@@ -483,7 +479,7 @@ Branches follow `jurisdiction-verification/<slug>`. Each PR is one reviewable un
 
 | Deliverable | Path |
 |-------------|------|
-| Staleness script | `apps/api/scripts/screening/monitor_jurisdiction_staleness.py` |
+| Staleness script | `apps/api/scripts/monitor_jurisdiction_staleness.py` |
 | Anchor config | `data/jurisdictions/_staleness_anchors.yaml` |
 | Tests with mocked anchors | `apps/api/tests/test_monitor_jurisdiction_staleness.py` |
 
@@ -498,9 +494,9 @@ Branches follow `jurisdiction-verification/<slug>`. Each PR is one reviewable un
 
 | Deliverable | Path |
 |-------------|------|
-| Jurisdiction data loader/service reads YAML + sidecar | `apps/api/app/screening/services/jurisdiction_data_service.py` |
-| Verification metadata in screening API | `apps/api/app/screening/routers/jurisdictions.py` |
-| Staleness/verification badges | `apps/web/src/features/screening/components/ScreenClient.tsx`, `app/jurisdictions/[id]/page.tsx` |
+| Jurisdiction data loader/service reads YAML + sidecar | `apps/api/app/services/jurisdiction_data_service.py` |
+| Verification metadata in screening API | `apps/api/app/routers/jurisdictions.py` |
+| Staleness/verification badges | `apps/web/src/app/screen/ScreenClient.tsx`, `jurisdictions/[id]/page.tsx` |
 | TypeScript types | `apps/web/src/lib/types.ts` |
 | Fix jurisdiction detail "Last updated" to use `rule.last_verified` | `apps/web/src/app/jurisdictions/[id]/page.tsx` |
 
@@ -516,7 +512,7 @@ Branches follow `jurisdiction-verification/<slug>`. Each PR is one reviewable un
 | Deliverable | Path |
 |-------------|------|
 | GitHub Actions workflow | `.github/workflows/jurisdiction-verification.yml` |
-| Orchestrator script | `apps/api/scripts/screening/run_jurisdiction_verification.py` |
+| Orchestrator script | `apps/api/scripts/run_jurisdiction_verification.py` |
 
 **CI tiers:**
 
@@ -628,25 +624,25 @@ Each data-fix PR:
 
 ```bash
 # Run all offline gates
-python apps/api/scripts/screening/run_jurisdiction_verification.py --offline
+python apps/api/scripts/run_jurisdiction_verification.py --offline
 
 # Run passage gate for one jurisdiction
-python apps/api/scripts/screening/verify_jurisdiction_passages.py --jurisdiction uk --verbose
+python apps/api/scripts/verify_jurisdiction_passages.py --jurisdiction uk --verbose
 
 # Run completeness for all
-python apps/api/scripts/screening/verify_jurisdiction_completeness.py
+python apps/api/scripts/verify_jurisdiction_completeness.py
 
 # Run gold deal regression
 pytest apps/api/tests/test_jurisdiction_regression.py -v
 
 # Check staleness (live)
-python apps/api/scripts/screening/monitor_jurisdiction_staleness.py --annual-adjustment-only
+python apps/api/scripts/monitor_jurisdiction_staleness.py --annual-adjustment-only
 
 # Existing URL check (tier 0)
-python apps/api/scripts/screening/verify_jurisdiction_urls.py
+python apps/api/scripts/verify_jurisdiction_urls.py
 
 # Baseline source coverage report
-python apps/api/scripts/screening/report_jurisdiction_verification_baseline.py
+python apps/api/scripts/report_jurisdiction_verification_baseline.py
 ```
 
 ---
