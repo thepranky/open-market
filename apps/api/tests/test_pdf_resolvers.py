@@ -133,9 +133,43 @@ def test_eu_no_manifestation_in_any_language_is_not_found():
     assert res.status == "not_found"
 
 
+def test_eu_not_found_reason_surfaces_non_404_status():
+    # A transient 5xx on one language must not be hidden behind the others' 404s.
+    fetcher = _FakeFetcher(heads={_cellar("ENG"): HeadResult(503, "", _cellar("ENG"))})
+    res = EuCellarResolver(fetcher).resolve(_Entry(), timeout=5)
+    assert res.status == "not_found"
+    assert res.reason == "cellar_no_pdf_status_503"
+
+
 def test_eu_transport_error_is_error_status():
     res = EuCellarResolver(_FakeFetcher(raise_on="head")).resolve(_Entry(), timeout=5)
     assert res.status == "error"
+
+
+class _RaiseAfter:
+    """Returns 404 for the first n HEADs, then raises a transport error."""
+
+    def __init__(self, n):
+        self.n = n
+        self.calls = 0
+
+    def head(self, url, *, timeout):
+        self.calls += 1
+        if self.calls > self.n:
+            raise ConnectionError("boom")
+        return HeadResult(404, "", url)
+
+    def get_text(self, url, *, timeout):  # pragma: no cover - unused
+        return ""
+
+
+def test_eu_transport_error_mid_loop_is_error_not_not_found():
+    # First language 404s, the next raises a transport error: a network failure
+    # must abort as `error`, never be swallowed into `not_found`.
+    fetcher = _RaiseAfter(1)
+    res = EuCellarResolver(fetcher).resolve(_Entry(), timeout=5)
+    assert res.status == "error"
+    assert fetcher.calls == 2  # aborted on the 2nd HEAD, did not try all 24
 
 
 # --------------------------------------------------------------------------- UK

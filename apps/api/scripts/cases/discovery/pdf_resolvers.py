@@ -232,7 +232,11 @@ class EuCellarResolver:
             if head.status_code == 200 and "pdf" in head.content_type:
                 return PdfResolution.resolved(
                     self.name, head.url, f"cellar_celex_{celex}_{lang.lower()}")
-            last_status = head.status_code
+            # A 404 just means this language manifestation is absent (expected).
+            # Surface the first non-404 status so a transient 5xx on one language
+            # isn't hidden behind the 404s of the others.
+            if last_status is None or last_status == 404:
+                last_status = head.status_code
         return PdfResolution.missing(
             self.name, f"cellar_no_pdf_status_{last_status}")
 
