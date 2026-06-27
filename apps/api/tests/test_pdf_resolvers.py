@@ -217,6 +217,37 @@ def test_uk_lone_surviving_pdf_is_resolved():
     assert res.reason == "lone_surviving_pdf"
 
 
+def test_uk_webarchive_pdf_is_normalized_to_raw_id_url():
+    archived = (
+        "https://webarchive.nationalarchives.gov.uk/20140402204338/"
+        "http://www.competition-commission.org.uk/assets/final_report_excised.pdf"
+    )
+    page = f'<a href="{archived}">Final report</a>'
+    res = _uk(page).resolve(_Entry(jurisdiction="UK", outcome="blocked",
+                                   source_url=_UK_URL), timeout=5)
+    assert res.status == "resolved"
+    assert res.pdf_url == (
+        "https://webarchive.nationalarchives.gov.uk/ukgwa/20140402204338id_/"
+        "http://www.competition-commission.org.uk/assets/final_report_excised.pdf"
+    )
+
+
+def test_uk_scores_full_text_decision_anchor_text():
+    page = f'<a href="{_HOST}/Kemira.pdf">Full text decision</a>'
+    res = _uk(page).resolve(_Entry(jurisdiction="UK", outcome="cleared_with_conditions",
+                                   source_url=_UK_URL), timeout=5)
+    assert res.status == "resolved"
+    assert res.pdf_url.endswith("Kemira.pdf")
+
+
+def test_uk_disqualifies_news_releases_and_disclosures():
+    page = _uk_page("news_release.pdf", "enforcement_order.pdf",
+                    "disclosure_of_interest.pdf")
+    res = _uk(page).resolve(_Entry(jurisdiction="UK", outcome="blocked",
+                                   source_url=_UK_URL), timeout=5)
+    assert res.status == "manual_required"
+
+
 def test_uk_no_pdf_links_is_not_found():
     res = _uk("<html>no pdfs here</html>").resolve(
         _Entry(jurisdiction="UK", outcome="blocked", source_url=_UK_URL), timeout=5)

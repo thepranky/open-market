@@ -123,6 +123,7 @@ def run(
                 return counts
 
             entry = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+            has_status = "extraction_status" in entry
             current = entry.get("extraction_status", "pending")
             canonical = canonical_exists_fn(jur, path.stem)
 
@@ -150,7 +151,7 @@ def run(
 
             marker = "" if result == current else " *"
             print(f"  {path.stem:<55} {result}{marker}")
-            if not dry_run and result != current:
+            if not dry_run and (result != current or not has_status):
                 _apply_status(path, result)
 
     return counts

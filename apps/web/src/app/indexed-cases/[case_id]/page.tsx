@@ -7,7 +7,7 @@ import {
 } from "@/lib/utils";
 import { Badge } from "@/components/Badge";
 import { Juris } from "@/features/cases/components/Juris";
-import type { ConceptRef } from "@/lib/types";
+import type { ConceptRef, IndexedCaseDetail } from "@/lib/types";
 
 interface Props {
   params: Promise<{ case_id: string }>;
@@ -45,11 +45,53 @@ function ConceptRefRow({ cr }: { cr: ConceptRef }) {
   );
 }
 
+function extractionCopy(entry: IndexedCaseDetail) {
+  if (entry.extraction_status === "not_applicable" && entry.outcome === "abandoned") {
+    return {
+      title: "Transaction abandoned - metadata only.",
+      body: "This transaction was abandoned before a final substantive assessment. Meridian keeps the authority metadata, but there is no source-backed market analysis to extract.",
+      badge: "not applicable",
+      note: "No extraction is planned for this indexed record.",
+    };
+  }
+  if (entry.extraction_status === "not_applicable") {
+    return {
+      title: "Cleared without published substantive analysis.",
+      body: "This case is indexed for coverage, but the available authority document does not contain extractable market-analysis sections. Markets, theories of harm, remedies, and source passages are not available here.",
+      badge: "not applicable",
+      note: "No extraction is planned for this indexed record.",
+    };
+  }
+  if (entry.extraction_status === "extracted") {
+    return {
+      title: "Canonical record available.",
+      body: "A source-backed case record exists for this indexed entry. The indexed page remains available as discovery metadata.",
+      badge: "extracted",
+      note: "Use the source-reviewed case record for legal analysis.",
+    };
+  }
+  if (entry.extraction_status === "pending") {
+    return {
+      title: "Index entry - extraction pending.",
+      body: "This record has not yet undergone source-backed extraction. Markets, theories of harm, remedies, and legal propositions are not available here.",
+      badge: "pending",
+      note: "Source-backed extraction can add market definitions, theories of harm, and passage-level citations to this record.",
+    };
+  }
+  return {
+    title: "Index entry - source unresolved.",
+    body: "This record is indexed, but Meridian has not resolved enough source material to decide whether source-backed extraction applies.",
+    badge: "unresolved",
+    note: "Resolve the source document before deciding whether extraction is applicable.",
+  };
+}
+
 export default async function IndexedCaseDetailPage({ params }: Props) {
   const { case_id } = await params;
 
-  let entry;
+  let entry: IndexedCaseDetail;
   try { entry = await getIndexedCase(case_id); } catch { notFound(); }
+  const extraction = extractionCopy(entry);
 
   return (
     <div className="mx-auto max-w-content px-6 lg:px-8 py-8">
@@ -64,8 +106,8 @@ export default async function IndexedCaseDetailPage({ params }: Props) {
       <div className="rounded-xl border border-ai-soft bg-ai-soft px-5 py-3.5 mb-7 flex items-start gap-3">
         <svg width={16} height={16} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" className="text-ai-ink mt-0.5 shrink-0" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="M10 10v4M10 7h.01"/></svg>
         <div className="text-[13.5px] text-ai-ink leading-relaxed">
-          <span className="font-semibold">Index entry — metadata only.</span>{" "}
-          This record has not yet undergone source-backed extraction. Markets, theories of harm, remedies, and legal propositions are not available here.
+          <span className="font-semibold">{extraction.title}</span>{" "}
+          {extraction.body}
         </div>
       </div>
 
@@ -101,6 +143,7 @@ export default async function IndexedCaseDetailPage({ params }: Props) {
               <Field label="Jurisdiction"><Juris code={entry.jurisdiction} /></Field>
               <Field label="Sector">{entry.sector}</Field>
               <Field label="Case type">{entry.case_type}</Field>
+              <Field label="Extraction">{extraction.badge}</Field>
             </dl>
           </section>
 
@@ -132,7 +175,11 @@ export default async function IndexedCaseDetailPage({ params }: Props) {
 
           {/* Placeholder for source-backed content */}
           <div className="rounded-xl border border-dashed border-line p-6 text-[14px] text-muted">
-            <p className="font-semibold text-ink mb-2">Source-backed sections not yet available</p>
+            <p className="font-semibold text-ink mb-2">
+              {entry.extraction_status === "not_applicable"
+                ? "Source-backed sections not applicable"
+                : "Source-backed sections not yet available"}
+            </p>
             <ul className="space-y-1.5 text-[13.5px]">
               {["Product and geographic markets considered", "Theories of harm", "Remedies and commitments", "Source passages and document citations"].map((item) => (
                 <li key={item} className="flex items-center gap-2">
@@ -175,6 +222,17 @@ export default async function IndexedCaseDetailPage({ params }: Props) {
             </div>
           )}
 
+          {entry.pdf_url && (
+            <div className="bg-surface border border-line rounded-xl p-5">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.07em] text-faint mb-3">Decision document</p>
+              <a href={entry.pdf_url} target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-[13.5px] font-medium text-brand-ink hover:underline break-all">
+                <svg width={16} height={16} viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M7 3h4l4 4v10H7z" /><path d="M11 3v4h4" /></svg>
+                Published PDF{entry.pdf_language ? ` (${entry.pdf_language})` : ""}
+              </a>
+            </div>
+          )}
+
           {/* Record status */}
           <div className="bg-surface border border-line rounded-xl p-5">
             <p className="text-[11px] font-semibold uppercase tracking-[0.07em] text-faint mb-3">Record status</p>
@@ -185,11 +243,11 @@ export default async function IndexedCaseDetailPage({ params }: Props) {
               </div>
               <div className="flex items-center justify-between text-[13.5px]">
                 <span className="text-muted">Extraction</span>
-                <Badge tone="slatey">not started</Badge>
+                <Badge tone={entry.extraction_status === "pending" ? "ai" : "slatey"}>{extraction.badge}</Badge>
               </div>
             </div>
             <p className="mt-4 text-[12px] text-faint leading-relaxed">
-              Source-backed extraction will add market definitions, theories of harm, and passage-level citations to this record.
+              {extraction.note}
             </p>
           </div>
         </aside>

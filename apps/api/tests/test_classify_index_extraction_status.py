@@ -96,6 +96,16 @@ def test_run_writes_status_for_short_pdf(tmp_path):
     assert written["extraction_status"] == "not_applicable"
 
 
+def test_run_writes_explicit_pending_for_long_pdf_without_status(tmp_path):
+    idx = _write_index(tmp_path, "eu", [_entry("eu_substantive_2022")])
+    counts = run(index_dir=idx, jurisdictions=["eu"], case_id=None, limit=None,
+                 max_simplified_pages=3, reclassify=False, dry_run=False,
+                 page_count_fn=_const_pages(30), canonical_exists_fn=lambda jur, cid: False)
+    assert counts["pending"] == 1
+    written = yaml.safe_load((idx / "eu" / "eu_substantive_2022.yaml").read_text())
+    assert written["extraction_status"] == "pending"
+
+
 def test_run_dry_run_does_not_write(tmp_path):
     idx = _write_index(tmp_path, "eu", [_entry("eu_simplified_2022")])
     run(index_dir=idx, jurisdictions=["eu"], case_id=None, limit=None,
@@ -153,3 +163,14 @@ def test_reclassify_failed_fetch_keeps_settled_status(tmp_path):
                  page_count_fn=lambda url: None, canonical_exists_fn=lambda jur, cid: False)
     assert counts["unknown"] == 1
     assert yaml.safe_load((idx / "eu" / "eu_simplified_2022.yaml").read_text())["extraction_status"] == "not_applicable"
+
+
+def test_reclassify_failed_fetch_keeps_settled_extracted_status(tmp_path):
+    e = _entry("eu_promoted_2022")
+    e["extraction_status"] = "extracted"
+    idx = _write_index(tmp_path, "eu", [e])
+    counts = run(index_dir=idx, jurisdictions=["eu"], case_id=None, limit=None,
+                 max_simplified_pages=3, reclassify=True, dry_run=False,
+                 page_count_fn=lambda url: None, canonical_exists_fn=lambda jur, cid: False)
+    assert counts["unknown"] == 1
+    assert yaml.safe_load((idx / "eu" / "eu_promoted_2022.yaml").read_text())["extraction_status"] == "extracted"

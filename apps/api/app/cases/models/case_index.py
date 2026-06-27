@@ -9,7 +9,7 @@ from .concept import ConceptRef
 # Whether an index entry is a candidate for deep extraction into a canonical record:
 #   extracted      — a canonical CaseRecord already exists for this case
 #   not_applicable — simplified procedure / no market-analysis sections to extract
-#   pending        — substantive, not yet extracted (default)
+#   pending        — substantive, not yet extracted
 ExtractionStatus = Literal["pending", "not_applicable", "extracted"]
 
 
@@ -33,7 +33,7 @@ class CaseIndexEntry(BaseModel):
     ai_summary: Optional[str] = None
     parties: list[Party] = Field(default_factory=list)
     concept_refs: list[ConceptRef] = Field(default_factory=list)
-    extraction_status: ExtractionStatus = "pending"
+    extraction_status: Optional[ExtractionStatus] = None
 
     @field_validator("jurisdiction")
     @classmethod
