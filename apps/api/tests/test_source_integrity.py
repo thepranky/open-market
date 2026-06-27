@@ -3,13 +3,11 @@ Unit tests for check_source_integrity.py
 
 All HTTP calls are mocked — no network access required.
 """
-import io
 import sys
 import textwrap
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 
-import pytest
 
 # Make scripts importable
 sys.path.insert(0, str(Path(__file__).parent.parent))
@@ -17,7 +15,6 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "scripts"))
 
 from check_source_integrity import (
     FetchResult,
-    Issue,
     Level,
     _doc_type_hints_in_url,
     _pdf_url_looks_like_portal,
@@ -47,7 +44,7 @@ def _ok_pdf(text: str = "The Court finds the relevant market is X.") -> FetchRes
     # Build a minimal in-memory PDF using pypdf's writer so extract_text works
     try:
         import pypdf
-        writer = pypdf.PdfWriter()
+        pypdf.PdfWriter()
         # pypdf 4.x: add_blank_page then add annotation for text is complex;
         # instead we just return raw bytes that pypdf can partially parse.
         # For test purposes, we mock extract_text directly where needed.
@@ -401,6 +398,20 @@ class TestCheckPassage:
         issues = check_passage("case1", passage, self._doc_map(), {"doc1": text})
         assert any(i.level == Level.INFO and "found" in i.message for i in issues)
         assert not any(i.level == Level.ERROR for i in issues)
+
+    def test_non_english_quote_grounding_uses_verbatim_snippet_not_translation(self):
+        text = "Die Kommission kommt zu dem Schluss, dass der Markt national ist."
+        passage = {
+            "passage_id": "sp1",
+            "source_document_id": "doc1",
+            "quote_snippet": text,
+            "source_language": "deu",
+            "quote_translation": "The Commission concludes that the market is national.",
+        }
+        issues = check_passage("case1", passage, self._doc_map(), {"doc1": text})
+        assert any(i.level == Level.INFO and "found" in i.message for i in issues)
+        assert not any(i.level == Level.ERROR for i in issues)
+        assert not any(i.level == Level.WARNING for i in issues)
 
     def test_quote_not_found_is_warning(self):
         text = "This document discusses a completely different topic with no relevant passage."

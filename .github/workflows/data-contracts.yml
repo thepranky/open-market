@@ -1,0 +1,75 @@
+name: Data contracts
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/cases/**'
+      - 'data/case_index/**'
+
+permissions:
+  contents: read
+
+# Cancel superseded runs on the same ref (parity with the API and web workflows).
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate-cases:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: apps/api
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+          cache: pip  # cache pip downloads to speed installs
+          cache-dependency-path: apps/api/requirements.txt
+
+      - name: Install dependencies
+        run: |
+          python -m venv .venv
+          .venv/bin/pip install --upgrade pip
+          .venv/bin/pip install -r requirements.txt
+
+      - name: Validate case schema
+        run: .venv/bin/python scripts/cases/integrity/validate_cases.py --cases-dir ../../data/cases
+
+      - name: Semantic lint
+        run: .venv/bin/python scripts/cases/integrity/lint_case_semantics.py --cases-dir ../../data/cases
+
+      - name: Run schema tests
+        run: .venv/bin/python -m pytest tests/test_schema.py -v
+
+  validate-case-index:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: apps/api
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+          cache: pip  # cache pip downloads to speed installs
+          cache-dependency-path: apps/api/requirements.txt
+
+      - name: Install dependencies
+        run: |
+          python -m venv .venv
+          .venv/bin/pip install --upgrade pip
+          .venv/bin/pip install -r requirements.txt
+
+      - name: Validate case-index schema
+        run: .venv/bin/python scripts/cases/discovery/validate_case_index.py --index-dir ../../data/case_index

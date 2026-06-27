@@ -15,20 +15,16 @@ from datetime import date
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 
-import pytest
 import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from app.models.case_index import CaseIndexEntry
-from scripts.check_case_index_sources import (
-    CaseResult,
-    CheckItem,
+from app.cases.models.case_index import CaseIndexEntry
+from scripts.cases.discovery.check_case_index_sources import (
     check_domain_official,
     check_ec_case_format,
     check_entry,
     check_ftc_matter_format,
-    check_http,
     check_url_present,
     main,
     run_checks,
@@ -346,10 +342,16 @@ class TestCheckEntry:
 # ---------------------------------------------------------------------------
 
 class TestRunChecks:
-    def test_loads_all_thirty_four_entries(self):
+    def test_loads_one_result_per_index_entry(self):
+        # Assert the invariant (one result per loaded entry), not a frozen count —
+        # the index grows over time.
+        from app.cases.loader.index_loader import load_all_index_cases
+
         index_dir = Path(__file__).resolve().parents[3] / "data" / "case_index"
+        expected = sum(1 for _ in load_all_index_cases(str(index_dir)))
         results = run_checks(index_dir, client=None, timeout=10)
-        assert len(results) == 34
+        assert expected > 0
+        assert len(results) == expected
 
     def test_all_entries_have_case_id(self):
         index_dir = Path(__file__).resolve().parents[3] / "data" / "case_index"
@@ -437,7 +439,7 @@ class TestMain:
         }))
         url = "https://competition-cases.ec.europa.eu/cases/M.10000"
         mock_client = _mock_http_client({url: 200})
-        with patch("scripts.check_case_index_sources.httpx.Client", return_value=mock_client):
+        with patch("scripts.cases.discovery.check_case_index_sources.httpx.Client", return_value=mock_client):
             rc = main(["--index-dir", str(tmp_path)])
         assert rc == 0
 
@@ -457,7 +459,7 @@ class TestMain:
         }))
         url = "https://competition-cases.ec.europa.eu/cases/M.10000"
         mock_client = _mock_http_client({url: 404})
-        with patch("scripts.check_case_index_sources.httpx.Client", return_value=mock_client):
+        with patch("scripts.cases.discovery.check_case_index_sources.httpx.Client", return_value=mock_client):
             rc = main(["--index-dir", str(tmp_path)])
         assert rc == 1
         out = capsys.readouterr().out

@@ -1,12 +1,11 @@
 """
-Tests for apps/api/scripts/create_review_learning_log.py.
+Tests for apps/api/scripts/cases/review/create_review_learning_log.py.
 
 Covers: definition_status change, support linkage corrections, outcome_passage_misuse,
 draft-only field stripping, metadata completion, and end-to-end file writing.
 No network access; no LLM calls; isolated filesystem via tmp_path.
 """
 
-import json
 import sys
 from pathlib import Path
 

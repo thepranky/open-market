@@ -1,6 +1,6 @@
 # Review Learning Proposals
 
-Generated: 2026-06-02T03:00:11Z  
+Generated: 2026-06-25T23:40:16Z  
 Cases reviewed: 6  |  Total corrections: 19  |  Patterns identified: 8
 
 ---
@@ -19,28 +19,28 @@ Cases reviewed: 6  |  Total corrections: 19  |  Patterns identified: 8
 ### `definition_status_mapping` — 1 occurrence (cases: `eu_apple_shazam_2018`)
 
 **Proposed action:** `extraction_prompt_update`  
-**Rule candidate:** Article 8(1) EUMR unconditional clearance decisions should map to outcome=cleared. The operative part of the decision (dispositif) is the authoritative source for outcome; it should be preferred over …
+**Rule candidate:** Article 8(1) EUMR unconditional clearance decisions should map to outcome=cleared. The operative part of the decision (dispositif) is the authoritative source for outcome; it should be preferred over incidental references in recitals.
 
 - Case `eu_apple_shazam_2018` `eu_apple_shazam_2018` (case): `outcome`: `None` → `cleared`
 
 ### `missing_market_added` — 1 occurrence (cases: `eu_apple_shazam_2018`)
 
 **Proposed action:** `extraction_prompt_update`  
-**Rule candidate:** When a product market is extracted, the extraction prompt should explicitly probe for a corresponding geographic market assessment. Decisions that discuss EEA-wide or global scope should yield at leas…
+**Rule candidate:** When a product market is extracted, the extraction prompt should explicitly probe for a corresponding geographic market assessment. Decisions that discuss EEA-wide or global scope should yield at least one geographic market entry per product market.
 
 - Case `eu_apple_shazam_2018` `eu_apple_shazam_2018` (geographic_market): added: ['count_added', 'description']
 
 ### `missing_market_added` — 1 occurrence (cases: `eu_apple_shazam_2018`)
 
 **Proposed action:** `extraction_prompt_update`  
-**Rule candidate:** When a decision explicitly uses language such as "narrowest relevant product market" or names a sub-segment separately, that sub-segment should be extracted as its own product_market entry with defini…
+**Rule candidate:** When a decision explicitly uses language such as "narrowest relevant product market" or names a sub-segment separately, that sub-segment should be extracted as its own product_market entry with definition_status=defined.
 
 - Case `eu_apple_shazam_2018` `eu_apple_shazam_2018` (product_market): added: ['count_added', 'description']
 
 ### `outcome_passage_misuse` — 1 occurrence (cases: `eu_apple_shazam_2018`)
 
 **Proposed action:** `extraction_prompt_update`  
-**Rule candidate:** Passages whose quote indicates that a market was "left open" or "need not be resolved" because competitive harm was excluded should not be linked to product_markets_considered or geographic_markets_co…
+**Rule candidate:** Passages whose quote indicates that a market was "left open" or "need not be resolved" because competitive harm was excluded should not be linked to product_markets_considered or geographic_markets_considered entries as primary evidence. They may be retained in source_passages with source_role=outcome_finding.
 
 - Case `eu_apple_shazam_2018` `eu_apple_shazam_2018` (source_passage): `action`: `None` → `Passages re-classified or de-linked from market definitions.`; `passages_affected`: `['sp_3', 'sp_9', 'sp_12']` → `None`; `pattern`: `Passages concluding "left open because no competitive harm" were linked to market entries as primary market-definition evidence.` → `None`
 
@@ -92,7 +92,7 @@ Cases reviewed: 6  |  Total corrections: 19  |  Patterns identified: 8
 
 **Case `eu_sika_dry_mix_2019`** — triage status: `needs_legal_review`
 
-> Multiple product markets carry definition_status "defined" but the Commission's language consistently uses "should be considered as a separate product market for assessing the Transaction" — a working assumption formula that CompMap maps to "considered", not "defined". Additionally, sp_19 is a mixed passage (geographic left-open language combined with an outcome sentence) that warrants reviewer attention, and the UK overlap mentioned in sp_21 context suggests a possible missing geographic market entry for structural reinforcing/strengthening in the United Kingdom.
+> Multiple product markets carry definition_status "defined" but the Commission's language consistently uses "should be considered as a separate product market for assessing the Transaction" — a working assumption formula that Meridian maps to "considered", not "defined". Additionally, sp_19 is a mixed passage (geographic left-open language combined with an outcome sentence) that warrants reviewer attention, and the UK overlap mentioned in sp_21 context suggests a possible missing geographic market entry for structural reinforcing/strengthening in the United Kingdom.
 
 **Implied proposals (require human judgement before acting):**
 - `review_prompt_update`: Clarify `considered` vs `defined` working-assumption language in the LLM review prompt.

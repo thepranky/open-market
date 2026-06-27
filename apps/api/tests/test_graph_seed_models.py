@@ -1,9 +1,8 @@
 """Tests for CaseIndexEntry, ConceptNode, and graph seed functions (no Neo4j required)."""
 
 import sys
-from datetime import date
 from pathlib import Path
-from unittest.mock import MagicMock, call, patch
+from unittest.mock import MagicMock
 
 import pytest
 
@@ -11,9 +10,9 @@ REPO_ROOT = Path(__file__).parent.parent.parent.parent
 sys.path.insert(0, str(Path(__file__).parent.parent))
 sys.path.insert(0, str(REPO_ROOT))
 
-from app.models.case_index import CaseIndexEntry
-from app.models.concept import ConceptNode, ConceptRef
-from app.models import Outcome
+from app.cases.models.case_index import CaseIndexEntry
+from app.cases.models.concept import ConceptNode, ConceptRef
+from app.cases.models import Outcome
 
 
 # ---------------------------------------------------------------------------
@@ -40,6 +39,8 @@ def test_case_index_entry_minimal_valid():
     assert entry.concept_refs == []
     assert entry.source_url is None
     assert entry.ai_summary is None
+    # Additive field defaults so existing index YAMLs load unchanged.
+    assert entry.extraction_status == "pending"
 
 
 def test_case_index_entry_with_parties_and_concepts():
@@ -141,7 +142,6 @@ def test_seed_index_case_sets_data_layer():
 
     # Verify property values passed
     props_call = next(c for c in session.run.call_args_list if "data_layer" in str(c.args[0]))
-    kwargs = props_call.kwargs if props_call.kwargs else {}
     # data_layer is a literal in the Cypher string ('indexed'), not a parameter
     assert "'indexed'" in props_call.args[0] or "indexed" in props_call.args[0]
 
@@ -188,7 +188,7 @@ def test_seed_case_sets_canonical_data_layer():
     if not yaml_path.exists():
         pytest.skip("eu_sika_dry_mix_2019.yaml not present")
 
-    from app.loader.yaml_loader import load_yaml_file
+    from app.cases.loader.yaml_loader import load_yaml_file
     case = load_yaml_file(yaml_path)
 
     session = _make_session()

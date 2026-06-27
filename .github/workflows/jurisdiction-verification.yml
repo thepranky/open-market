@@ -4,6 +4,10 @@ on:
   schedule:
     # Nightly: offline passage fixtures + staleness anchors (no live fetch by default).
     - cron: "0 4 * * *"
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/jurisdictions/**'
   workflow_dispatch:
     inputs:
       tier:
@@ -18,6 +22,13 @@ on:
 
 permissions:
   contents: read
+
+# Cancel superseded runs on the same ref (parity with the API and web workflows).
+# A PR run and a nightly cron run use different refs, so they never cancel each other;
+# a manual workflow_dispatch on main shares the cron's ref and would supersede it (intended).
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   verify:
@@ -34,6 +45,8 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.10"
+          cache: pip  # cache pip downloads to speed installs
+          cache-dependency-path: apps/api/requirements.txt
 
       - name: Install dependencies
         run: |
@@ -48,7 +61,9 @@ jobs:
         run: |
           if [ "$EVENT_NAME" = "schedule" ]; then
             TIER="nightly"
+          elif [ "$EVENT_NAME" = "pull_request" ]; then
+            TIER="push"
           else
             TIER="${INPUT_TIER:-push}"
           fi
-          .venv/bin/python scripts/run_jurisdiction_verification.py --tier "$TIER"
+          .venv/bin/python scripts/screening/run_jurisdiction_verification.py --tier "$TIER"

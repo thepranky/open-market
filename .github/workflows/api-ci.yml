@@ -1,13 +1,29 @@
 name: API CI
 
 on:
+  # Only run when API code, shared data, or this workflow itself changes — saves
+  # minutes on docs/web-only PRs. Caveat: main is currently unprotected; if this
+  # workflow is ever made a *required* status check, a path filter leaves it
+  # "pending" on PRs that don't touch these paths, so reconsider then.
   push:
     branches: [main]
+    paths:
+      - 'apps/api/**'
+      - 'data/**'
+      - '.github/workflows/api-ci.yml'
   pull_request:
     branches: [main]
+    paths:
+      - 'apps/api/**'
+      - 'data/**'
+      - '.github/workflows/api-ci.yml'
 
 permissions:
   contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   test:
@@ -24,6 +40,8 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.10"
+          cache: pip  # cache pip downloads to speed installs
+          cache-dependency-path: apps/api/requirements.txt
 
       - name: Install dependencies
         run: |
@@ -47,7 +65,43 @@ jobs:
 
       - name: Run market-definition benchmark (CI fixtures)
         run: >
-          .venv/bin/python scripts/run_eval_benchmark.py
+          .venv/bin/python scripts/cases/evals/run_eval_benchmark.py
           --config ../../data/evals/benchmark.market_definition.ci.yaml
           --output-json /tmp/benchmark.market_definition.ci.summary.json
           --output-markdown /tmp/benchmark.market_definition.ci.summary.md
+
+      - name: Upload benchmark summary
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: benchmark-market-definition-ci
+          path: |
+            /tmp/benchmark.market_definition.ci.summary.json
+            /tmp/benchmark.market_definition.ci.summary.md
+          retention-days: 90
+
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: apps/api
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+          cache: pip  # cache pip downloads to speed installs
+          cache-dependency-path: apps/api/requirements.txt
+
+      - name: Install dependencies
+        run: |
+          python -m venv .venv
+          .venv/bin/pip install --upgrade pip
+          .venv/bin/pip install -r requirements.txt
+
+      - name: Ruff
+        run: .venv/bin/ruff check .

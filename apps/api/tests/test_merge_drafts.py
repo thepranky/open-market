@@ -15,9 +15,7 @@ Covers:
 """
 
 import copy
-import tempfile
 from pathlib import Path
-from unittest.mock import patch
 
 import pytest
 import yaml
@@ -25,25 +23,16 @@ import yaml
 import sys
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from scripts.merge_drafts import (
+from scripts.cases.extract.merge_drafts import (
     _IdMap,
-    _commitment_key,
     _finding_key,
     _focus_of,
     _is_empty,
-    _market_key,
-    _merge_commitments,
-    _merge_markets,
-    _merge_passages,
     _merge_source_documents,
-    _merge_theories,
     _merge_unit_assessments,
     _norm,
     _normalize_definition_statuses,
-    _passage_key,
     _pick_metadata,
-    _synthesize_back_refs,
-    _theory_key,
     _unit_key,
     _validate_merged,
     main,
@@ -667,6 +656,26 @@ class TestPassageDedupe:
         pb.write_text(yaml.dump(b))
         merged, _ = merge_drafts([pa, pb])
         assert len(merged["source_passages"]) == 2
+
+    def test_passage_dedupe_preserves_language_and_translation(self, tmp_path):
+        quote = "Die Kommission definiert den Markt."
+        p1 = _passage("sp_1", quote)
+        p1["source_language"] = "deu"
+        p2 = _passage("sp_1", quote)
+        p2["quote_translation"] = "The Commission defines the market."
+        a = _base_draft(source_passages=[p1])
+        b = _base_draft(source_passages=[p2])
+        pa = tmp_path / "eu_test.theories.a.draft.yaml"
+        pb = tmp_path / "eu_test.theories.b.draft.yaml"
+        pa.write_text(yaml.dump(a))
+        pb.write_text(yaml.dump(b))
+
+        merged, _ = merge_drafts([pa, pb])
+
+        assert len(merged["source_passages"]) == 1
+        passage = merged["source_passages"][0]
+        assert passage["source_language"] == "deu"
+        assert passage["quote_translation"] == "The Commission defines the market."
 
 
 # ---------------------------------------------------------------------------

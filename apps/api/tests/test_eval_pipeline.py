@@ -1,15 +1,14 @@
 """
 Tests for the eval + gold-draft pipeline:
-  - scripts/create_gold_draft.py
-  - scripts/evaluate_extraction.py
-  - scripts/validate_gold_quotes.py
+  - scripts/cases/evals/create_gold_draft.py
+  - scripts/cases/evals/evaluate_extraction.py
+  - scripts/cases/evals/validate_gold_quotes.py
 
 No network access, no Claude API calls, no canonical YAML mutation.
 """
 import sys
 from pathlib import Path
 
-import pytest
 import yaml
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
@@ -17,11 +16,8 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "scripts"))
 
 from create_gold_draft import (
     _FoldedStr,
-    _GoldDumper,
     _PAIRING_MIN_TOKEN_LEN,
     _PAIRING_STOPWORDS,
-    _build_market_id_index,
-    _build_passage_index,
     _create_gold_draft,
     _max_pairing_signal,
     _normalize_market_name,
@@ -35,13 +31,9 @@ from evaluate_extraction import (
     _evaluate_markets,
     _find_matching_market,
     _nearest_draft_candidates,
-    _normalize_name,
     _token_overlap_score,
 )
 from repair_gold_quotes import (
-    MarketRepairResult,
-    RepairReport,
-    _find_draft_passages,
     _has_name_overlap,
     _sort_passages,
     _source_role_priority,
@@ -50,8 +42,6 @@ from repair_gold_quotes import (
 )
 from validate_gold_quotes import (
     load_gold_yaml,
-    GoldQuoteReport,
-    QuoteCheckResult,
     normalize_for_gold_match,
     validate_gold_passages,
     validate_quote_on_page,
@@ -2031,7 +2021,6 @@ class TestEvaluateMarketsPartial:
         """Quote validation failures → reject even when recall is perfect."""
         from evaluate_extraction import _evaluate_extraction
         import json as _json
-        from pathlib import Path as _Path
 
         # Gold with one passage that cannot be found in any cache
         gold = self._partial_gold_yaml(["Market A"])
@@ -2363,8 +2352,7 @@ class TestTerminalSummaryWording:
 
     def _run_main_stdout(self, gold_yaml, draft_yaml, report, tmp_path) -> str:
         """Run _evaluate_extraction and format what the CLI would print."""
-        import io
-        from evaluate_extraction import _evaluate_extraction, _check_promotion_safety
+        from evaluate_extraction import _evaluate_extraction
 
         cache_dir = tmp_path / "cache"
         cache_dir.mkdir()
@@ -2623,7 +2611,6 @@ class TestZeroReviewedGoldGating:
 
     def test_terminal_summary_includes_reviewed_count(self, tmp_path):
         """Terminal summary must show 'Reviewed gold entries' line."""
-        import io, sys
         from evaluate_extraction import _evaluate_extraction
         cache_dir = tmp_path / "cache"
         cache_dir.mkdir()

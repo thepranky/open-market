@@ -1,16 +1,13 @@
 """
-Unit tests for scripts/repair_source_passages.py
+Unit tests for scripts/cases/integrity/repair_source_passages.py
 
 No network access, no PDF downloads, no filesystem writes to real YAML.
 """
-import copy
 import json
 import sys
-import tempfile
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 
-import pytest
 import yaml
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
@@ -24,22 +21,18 @@ from repair_source_passages import (
     _check_mislabelled_propositions,
     _confidence_label,
     _detect_toh_subtype,
-    _extract_keywords,
     _extract_section_map,
     _find_candidates,
     _find_unsupported,
     _is_toc_page,
     _proposition_keywords,
-    _score_toh_subtype_signals,
     _section_coherence_score,
     _select_with_claude,
     _topic_words,
     _validate_passages,
-    _write_yaml,
     repair_case,
     serialize_reports,
 )
-from check_source_integrity import quote_found_in_text
 
 
 # ---------------------------------------------------------------------------
@@ -1277,7 +1270,7 @@ class TestDryRunNoModification:
             (21, "The relevant product market is wearable devices and they are defined narrowly."),
         ])
         with patch("repair_source_passages.load_cache", return_value=cache):
-            rpt = repair_case(
+            repair_case(
                 yaml_path,
                 cache_dir=tmp_path / "cache",
                 build_cache=False,

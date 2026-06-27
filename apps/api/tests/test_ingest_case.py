@@ -1,14 +1,12 @@
 """
-Minimal tests for apps/api/scripts/ingest_case.py.
+Minimal tests for apps/api/scripts/cases/extract/ingest_case.py.
 
 Covers: extraction mode is recorded correctly in the review report.
 No network access, no Claude calls, no filesystem writes to production YAML.
 """
 import sys
-import tempfile
 from pathlib import Path
 
-import pytest
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 sys.path.insert(0, str(Path(__file__).parent.parent / "scripts"))
@@ -72,6 +70,49 @@ def test_stage_validate_draft_passes_clean_record():
     assert warnings == []
 
 
+def test_stage_validate_draft_requires_passage_language_to_match_non_english_doc():
+    record = {
+        "case_id": "test_case",
+        "outcome": "cleared",
+        "source_documents": [{"doc_id": "doc1", "language": "deu"}],
+        "source_passages": [
+            {
+                "passage_id": "sp_1",
+                "source_document_id": "doc1",
+                "review_status": "unreviewed",
+                "extraction_method": "pdf_extracted",
+                "source_language": "fra",
+                "quote_translation": "Translated quote.",
+            }
+        ],
+    }
+    ok, errors, warnings = stage_validate_draft(record)
+    assert not ok
+    assert any("must match non-English source document language 'deu'" in e for e in errors)
+    assert warnings == []
+
+
+def test_stage_validate_draft_warns_when_non_english_translation_missing():
+    record = {
+        "case_id": "test_case",
+        "outcome": "cleared",
+        "source_documents": [{"doc_id": "doc1", "language": "deu"}],
+        "source_passages": [
+            {
+                "passage_id": "sp_1",
+                "source_document_id": "doc1",
+                "review_status": "unreviewed",
+                "extraction_method": "pdf_extracted",
+                "source_language": "deu",
+            }
+        ],
+    }
+    ok, errors, warnings = stage_validate_draft(record)
+    assert ok
+    assert errors == []
+    assert warnings == ["passage sp_1: non-English quote is missing quote_translation"]
+
+
 def test_stage_validate_draft_catches_invalid_outcome():
     record = {
         "case_id": "test_case",
@@ -114,7 +155,7 @@ def test_stage_validate_draft_warns_conclusion_role_linked_to_market():
                 "review_status": "unreviewed",
                 "extraction_method": "pdf_extracted",
                 "source_role": "conclusion",
-                "quote_snippet": "The Commission clears the transaction.",
+                "quote_snippet": "The Commission cleared the transaction.",
                 "supports_markets": ["pm_1"],
                 "supports_geographic_markets": [],
             }
@@ -246,7 +287,6 @@ def test_review_report_no_coverage_warning_for_other_focus(tmp_path):
 # --page-range argument parsing (tested via main() with a minimal YAML fixture)
 # ---------------------------------------------------------------------------
 
-import io
 import textwrap
 from unittest.mock import patch
 
@@ -359,7 +399,6 @@ class TestPageRangeParsing:
         """Draft path uses pp{start}-{end} suffix when --output-suffix is omitted."""
         _write_minimal_seed(tmp_path)
         import ingest_case as ic
-        import yaml as _yaml
 
         with patch.object(ic, "_CASES_DIR", tmp_path):
             with patch("sys.argv", [
@@ -372,7 +411,8 @@ class TestPageRangeParsing:
                 # Capture the draft_path value by patching extract_case and reading
                 # what path ingest_case derives. We just need the suffix in the
                 # console header, which already includes Draft out: line.
-                import io, contextlib
+                import io
+                import contextlib
                 buf = io.StringIO()
                 with contextlib.redirect_stdout(buf):
                     ic.main()
@@ -393,14 +433,15 @@ class TestPageRangeParsing:
                 "--no-claude",
                 "--focus", "theories",
             ]):
-                import io, contextlib
+                import io
+                import contextlib
                 buf = io.StringIO()
                 with contextlib.redirect_stdout(buf):
                     ic.main()
         output = buf.getvalue()
         assert "section_viii" in output
         # Draft path uses the explicit suffix, not the auto-derived pp{start}-{end}
-        draft_line = next((l for l in output.splitlines() if "Draft out:" in l), "")
+        draft_line = next((line for line in output.splitlines() if "Draft out:" in line), "")
         assert "section_viii" in draft_line
         assert "pp100-200" not in draft_line
 
@@ -416,7 +457,8 @@ class TestPageRangeParsing:
                 "--no-claude",
                 "--focus", "market_definition",
             ]):
-                import io, contextlib
+                import io
+                import contextlib
                 buf = io.StringIO()
                 with contextlib.redirect_stdout(buf):
                     ic.main()

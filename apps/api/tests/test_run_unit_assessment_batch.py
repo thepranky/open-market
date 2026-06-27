@@ -7,10 +7,9 @@ All extractions are mocked; draft files are written to pytest tmp_path.
 from __future__ import annotations
 
 import sys
-from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Optional
-from unittest.mock import MagicMock, call, patch
+from unittest.mock import MagicMock, patch
 
 import pytest
 import yaml
@@ -697,7 +696,7 @@ class TestFormatBatchReport:
             uab.WindowResult(
                 label="x", page_range=(1, 5), output_suffix="unit_x_1",
                 draft_path=Path("/tmp/x.yaml"), status="dry_run",
-                command="apps/api/.venv/bin/python apps/api/scripts/ingest_case.py --focus unit_assessment",
+                command="apps/api/.venv/bin/python apps/api/scripts/cases/extract/ingest_case.py --focus unit_assessment",
             )
         ]
         report = uab.format_batch_report(results, "tc")
@@ -723,7 +722,7 @@ class TestFormatBatchReport:
 class TestNoHardcodedNames:
     """Ensure the script contains no domain-specific hard-coded names."""
 
-    _script = Path(__file__).parent.parent / "scripts" / "run_unit_assessment_batch.py"
+    _script = Path(__file__).parent.parent / "scripts" / "cases" / "extract" / "run_unit_assessment_batch.py"
 
     @pytest.mark.parametrize("term", [
         "cucumber", "eggplant", "carrot", "lettuce", "onion",
@@ -829,7 +828,6 @@ class TestSkipExisting:
     def test_skip_when_draft_missing_runs_extraction(self, tmp_path):
         """No draft → extraction runs even with skip_existing=True."""
         w = _window(70, 78, "alpha_70")
-        suffix = uab._make_suffix(w.context_suffix)
         # do NOT pre-create the draft
 
         with patch("run_unit_assessment_batch.extract_case", return_value=_mock_rpt()) as mock_ec:

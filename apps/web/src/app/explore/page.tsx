@@ -1,8 +1,8 @@
 import { Suspense } from "react";
-import { getCases, getIndexedCases, searchCases, searchIndexedCases } from "@/lib/api";
+import { getCases, getIndexedCases, searchCases, searchIndexedCases } from "@/features/cases/api";
 import type { CaseRecord, IndexedCaseDetail } from "@/lib/types";
-import { ExploreClient } from "./ExploreClient";
-import { ExploreResults } from "./ExploreResults";
+import { ExploreClient } from "@/features/cases/explore/ExploreClient";
+import { ExploreResults } from "@/features/cases/explore/ExploreResults";
 
 interface ExplorePageProps {
   searchParams: Promise<{

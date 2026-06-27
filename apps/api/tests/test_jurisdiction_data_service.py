@@ -6,7 +6,7 @@ from datetime import date, datetime, timezone
 
 import yaml
 
-from app.models.jurisdiction import (
+from app.screening.models.jurisdiction import (
     Authority,
     FilingDeadlines,
     JurisdictionRule,
@@ -19,15 +19,15 @@ from app.models.jurisdiction import (
     ThresholdCondition,
     ThresholdTest,
 )
-from app.models.jurisdiction_verification import (
+from app.screening.models.jurisdiction_verification import (
     FreshnessStatus,
     JurisdictionVerification,
     RegressionStatus,
     SourceVerificationTier,
 )
-from app.services.jurisdiction_data_service import load_bundle, verification_metadata
-from app.services.jurisdiction_verification_store import clear_sidecar_cache, write_sidecar
-from app.services.threshold_engine import _jurisdiction_cache
+from app.screening.services.jurisdiction_data_service import load_bundle, verification_metadata
+from app.screening.services.jurisdiction_verification_store import clear_sidecar_cache, write_sidecar
+from app.screening.services.threshold_engine import _jurisdiction_cache
 
 
 def _write_rule(data_dir) -> None:

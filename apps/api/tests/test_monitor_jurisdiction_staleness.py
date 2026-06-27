@@ -7,7 +7,7 @@ import sys
 from datetime import date, timedelta
 from pathlib import Path
 
-from app.models.jurisdiction import (
+from app.screening.models.jurisdiction import (
     Authority,
     FilingDeadlines,
     JurisdictionRule,
@@ -19,17 +19,16 @@ from app.models.jurisdiction import (
     ThresholdCondition,
     ThresholdTest,
 )
-from app.models.jurisdiction import MetricType
-from app.models.jurisdiction_verification import FreshnessStatus
-from app.services.jurisdiction_staleness import (
-    StalenessAnchor,
+from app.screening.models.jurisdiction import MetricType
+from app.screening.models.jurisdiction_verification import FreshnessStatus
+from app.screening.services.jurisdiction_staleness import (
     evaluate_staleness,
     load_anchors,
     update_sidecar_freshness,
 )
 
 ANCHORS = Path(__file__).resolve().parents[3] / "data" / "jurisdictions" / "_staleness_anchors.yaml"
-SCRIPT = Path(__file__).resolve().parents[1] / "scripts" / "monitor_jurisdiction_staleness.py"
+SCRIPT = Path(__file__).resolve().parents[1] / "scripts" / "screening" / "monitor_jurisdiction_staleness.py"
 
 
 def _hsr_rule(**overrides) -> JurisdictionRule:
@@ -118,8 +117,8 @@ def test_missing_condition_flagged_as_drift():
 
 
 def test_verified_at_only_advances_when_fresh(tmp_path):
-    from app.services.jurisdiction_staleness import StalenessReport
-    from app.services.jurisdiction_verification_store import load_sidecar
+    from app.screening.services.jurisdiction_staleness import StalenessReport
+    from app.screening.services.jurisdiction_verification_store import load_sidecar
 
     anchor = load_anchors(ANCHORS)["us_hsr"]
     report = StalenessReport("us_hsr", FreshnessStatus.drift_detected, drift=["x"])

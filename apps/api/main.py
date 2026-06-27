@@ -3,11 +3,11 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.core.config import settings
-from app.core.pg_client import close_pool
-from app.routers import cases, graph, health, indexed_cases, search
-from app.routers import graph_entities
-from app.routers import jurisdictions
+from app.shared.core.config import settings
+from app.shared.core.pg_client import close_pool
+from app.cases.routers import cases, graph, indexed_cases, search, graph_entities
+from app.screening.routers import jurisdictions
+from app.shared.routers import health
 
 
 @asynccontextmanager

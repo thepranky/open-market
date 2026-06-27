@@ -1,4 +1,4 @@
-# CompMap — central market-definition rules registry
+# Meridian — central market-definition rules registry
 # Authoritative source for rules that govern extraction and LLM review.
 # Prompts in review_draft.py and extract_case_from_source.py must remain
 # consistent with active rules in this file.
@@ -74,13 +74,13 @@ rules:
     applies_to: both
     deterministic_enforcement: false
     llm_guidance: >
-      CompMap uses "considered" when the Commission adopts a market scope for its
+      Meridian uses "considered" when the Commission adopts a market scope for its
       assessment with cautious or context-specific wording such as "for the purpose
       of this decision, the Commission will consider…" or "for assessing the
       Transaction, the relevant market could be…". This is lower in precedential
       weight than "defined" but more concrete than "left_open". Do NOT flag
       "considered" as undocumented, incorrect, or as requiring upgrade to "defined"
-      or "left_open". It is an intentional CompMap status.
+      or "left_open". It is an intentional Meridian status.
     examples:
       good: >
         Market entry has definition_status: considered and the supporting passage

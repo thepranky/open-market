@@ -1,7 +1,7 @@
-import { getJurisdiction } from "@/lib/api";
+import { getJurisdiction } from "@/features/screening/api";
 import { notFound } from "next/navigation";
-import { SourcePill } from "@/components/SourcePill";
-import { VerificationBadges } from "@/components/VerificationBadges";
+import { SourcePill } from "@/features/screening/components/SourcePill";
+import { VerificationBadges } from "@/features/screening/components/VerificationBadges";
 import type {
   ThresholdCondition,
   ThresholdTest,

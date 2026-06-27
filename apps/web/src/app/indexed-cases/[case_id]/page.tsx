@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getIndexedCase } from "@/lib/api";
+import { getIndexedCase } from "@/features/cases/api";
 import {
   formatDate, formatOutcome, outcomeTone,
   conceptCategoryColor, formatConceptId,
 } from "@/lib/utils";
 import { Badge } from "@/components/Badge";
-import { Juris } from "@/components/Juris";
+import { Juris } from "@/features/cases/components/Juris";
 import type { ConceptRef } from "@/lib/types";
 
 interface Props {
@@ -159,7 +159,7 @@ export default async function IndexedCaseDetailPage({ params }: Props) {
               <p className="text-[14px] leading-relaxed text-ink whitespace-pre-wrap">
                 {entry.ai_summary.trim()}
               </p>
-              <p className="mt-3 text-[11.5px] text-ai-ink">Summary only — not source-verified. Confirm against the authority's published decision.</p>
+              <p className="mt-3 text-[11.5px] text-ai-ink">Summary only — not source-verified. Confirm against the authority&apos;s published decision.</p>
             </div>
           )}
 

@@ -5,10 +5,9 @@ from __future__ import annotations
 from pathlib import Path
 
 import httpx
-import pytest
 
-from app.models.jurisdiction_verification import FetchStatus
-from app.services.source_fetcher import (
+from app.screening.models.jurisdiction_verification import FetchStatus
+from app.screening.services.source_fetcher import (
     bytes_to_text,
     cache_key_for_url,
     fetch_source,
