@@ -287,7 +287,14 @@ def main(argv: list[str] | None = None) -> int:
             _print_summary(status, args.case_id, args.focus, aborted=True,
                            draft_path=effective_draft)
             return 1
-        open_fields = unresolved_conflicts(report_path)
+        try:
+            open_fields = unresolved_conflicts(report_path)
+        except ValueError as exc:
+            status["conflict_report"] = "FAIL (invalid file)"
+            print(f"\nERROR: {exc}", file=sys.stderr)
+            _print_summary(status, args.case_id, args.focus, aborted=True,
+                           draft_path=effective_draft)
+            return 1
         if open_fields:
             status["conflict_report"] = f"FAIL ({len(open_fields)} unresolved)"
             print(

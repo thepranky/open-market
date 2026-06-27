@@ -80,3 +80,11 @@ def test_unwrapped_report_is_accepted(tmp_path):
     p = tmp_path / "unwrapped.yaml"
     p.write_text(yaml.dump({"conflicts": [{"field": "outcome", "resolution": None}]}), encoding="utf-8")
     assert unresolved_conflicts(p) == ["outcome"]
+
+
+def test_main_blocks_on_non_report_file(tmp_path):
+    # Passing a draft YAML as --conflict-report aborts cleanly (no traceback).
+    p = tmp_path / "draft.yaml"
+    p.write_text(yaml.dump({"product_markets_considered": []}), encoding="utf-8")
+    rc = main(["--case-id", "eu_test_2023", "--conflict-report", str(p)])
+    assert rc == 1
