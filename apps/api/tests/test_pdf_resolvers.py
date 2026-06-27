@@ -49,7 +49,8 @@ class _FakeFetcher:
     def head(self, url, *, timeout):
         if self._raise_on == "head":
             raise ConnectionError("boom")
-        return self._heads[url]
+        # An unset URL behaves like a real 404 (the manifestation doesn't exist).
+        return self._heads.get(url, HeadResult(404, "", url))
 
     def get_text(self, url, *, timeout):
         if self._raise_on == "get":
@@ -68,6 +69,7 @@ def test_eu_resolves_phase1_via_cellar():
     assert res.status == "resolved"
     assert res.pdf_url == _CELLAR
     assert "32022M10852" in res.reason
+    assert res.language == "eng"
 
 
 def test_eu_phase2_outcome_is_manual_without_fetch():
@@ -102,9 +104,75 @@ def test_eu_cellar_miss_is_not_found():
     assert res.status == "not_found"
 
 
+def _cellar(lang):
+    return f"http://publications.europa.eu/resource/celex/32022M10852.{lang}.pdf"
+
+
+def test_eu_falls_back_to_non_english_language():
+    # No English manifestation, but a German one exists → resolve to German.
+    fetcher = _FakeFetcher(heads={_cellar("DEU"): HeadResult(200, "application/pdf",
+                                                             _cellar("DEU"))})
+    res = EuCellarResolver(fetcher).resolve(_Entry(), timeout=5)
+    assert res.status == "resolved"
+    assert res.pdf_url == _cellar("DEU")
+    assert res.reason.endswith("_deu")
+    assert res.language == "deu"
+
+
+def test_eu_prefers_english_when_both_exist():
+    # English is tried first, so it wins even when other languages also exist.
+    fetcher = _FakeFetcher(heads={
+        _cellar("ENG"): HeadResult(200, "application/pdf", _cellar("ENG")),
+        _cellar("DEU"): HeadResult(200, "application/pdf", _cellar("DEU")),
+    })
+    res = EuCellarResolver(fetcher).resolve(_Entry(), timeout=5)
+    assert res.pdf_url == _cellar("ENG")
+    assert res.reason.endswith("_eng")
+    assert res.language == "eng"
+
+
+def test_eu_no_manifestation_in_any_language_is_not_found():
+    res = EuCellarResolver(_FakeFetcher()).resolve(_Entry(), timeout=5)
+    assert res.status == "not_found"
+
+
+def test_eu_not_found_reason_surfaces_non_404_status():
+    # A transient 5xx on one language must not be hidden behind the others' 404s.
+    fetcher = _FakeFetcher(heads={_cellar("ENG"): HeadResult(503, "", _cellar("ENG"))})
+    res = EuCellarResolver(fetcher).resolve(_Entry(), timeout=5)
+    assert res.status == "not_found"
+    assert res.reason == "cellar_no_pdf_status_503"
+
+
 def test_eu_transport_error_is_error_status():
     res = EuCellarResolver(_FakeFetcher(raise_on="head")).resolve(_Entry(), timeout=5)
     assert res.status == "error"
+
+
+class _RaiseAfter:
+    """Returns 404 for the first n HEADs, then raises a transport error."""
+
+    def __init__(self, n):
+        self.n = n
+        self.calls = 0
+
+    def head(self, url, *, timeout):
+        self.calls += 1
+        if self.calls > self.n:
+            raise ConnectionError("boom")
+        return HeadResult(404, "", url)
+
+    def get_text(self, url, *, timeout):  # pragma: no cover - unused
+        return ""
+
+
+def test_eu_transport_error_mid_loop_is_error_not_not_found():
+    # First language 404s, the next raises a transport error: a network failure
+    # must abort as `error`, never be swallowed into `not_found`.
+    fetcher = _RaiseAfter(1)
+    res = EuCellarResolver(fetcher).resolve(_Entry(), timeout=5)
+    assert res.status == "error"
+    assert fetcher.calls == 2  # aborted on the 2nd HEAD, did not try all 24
 
 
 # --------------------------------------------------------------------------- UK
