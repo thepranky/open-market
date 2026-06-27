@@ -309,6 +309,53 @@ now triggers supplemental fallback, raising coverage to ≈ 84% of non-TOC pages
 
 ---
 
+## PDF resolution for indexed cases
+
+A `data/case_index/` entry carries a `source_url` (the authority case page) but is
+only extractable once it also has a `pdf_url` pointing at the substantive decision
+document. Resolution is a separate, retryable enrichment step from scraping —
+scraping builds the backlog cheaply; resolution is slower and authority-specific.
+
+One shared registry (`scripts/cases/discovery/pdf_resolvers.py`) holds small
+per-authority adapters; the batch CLI and `ingest_case.py --from-index` both call
+it, so single-case and batch resolution never diverge.
+
+```bash
+# Dry-run is the default workflow — inspect before writing.
+.venv/bin/python scripts/cases/discovery/resolve_case_index_pdf_urls.py \
+    --jurisdiction us --dry-run --limit 5
+# Drop --dry-run to write pdf_url. --overwrite re-resolves existing ones.
+```
+
+Flags: `--jurisdiction {eu,uk,us,all}`, `--authority`, `--case-id`,
+`--all-outcomes`, `--limit`, `--overwrite`, `--delay`, `--timeout`, `--dry-run`.
+The write is surgical — only the `pdf_url` line is inserted/replaced. By default
+each adapter processes only the outcomes worth resolving (UK skips brief Phase 1
+clearances); `--all-outcomes` disables that filter.
+
+Per-entry **status** (grouped in the summary, never fatal for ordinary misses):
+
+| Status | Meaning | Action |
+|--------|---------|--------|
+| `resolved` | One confident decision PDF; `pdf_url` written (unless `--dry-run`). | Spot-check the URL. |
+| `manual_required` | Plausible candidates but no safe single pick (e.g. several court opinions, or only complaints/orders). Candidates are listed; **nothing is written.** | Pick the right PDF by hand and set it with `ingest_case.py --from-index --pdf-url`. |
+| `not_found` | No usable PDF link on the page / not in the derived endpoint. | Inspect the source page manually. |
+| `error` | Operational failure (transport, invalid entry). | Retry. |
+
+Adapters are deliberately conservative: they prefer a correct `manual_required`
+over an overconfident wrong `pdf_url`. EU Phase II / appeal outcomes are not in
+EUR-Lex / Cellar and return `manual_required` by design.
+
+The old `resolve_eu_pdf_urls.py` / `resolve_uk_pdf_urls.py` remain as thin
+deprecated wrappers for one release; they forward to the shared CLI.
+
+`ingest_case.py --from-index` resolves a `pdf_url` in this order: explicit
+`--pdf-url`, then a `pdf_url` already on the index entry, then the shared
+registry. If the registry cannot resolve, it fails with the structured reason and
+candidate list rather than guessing.
+
+---
+
 ## File locations
 
 | Path | Purpose |
