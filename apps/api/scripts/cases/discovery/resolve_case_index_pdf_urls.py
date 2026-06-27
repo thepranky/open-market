@@ -51,10 +51,10 @@ def _upsert_line(yaml_text: str, field: str, value: str, after: str) -> str:
     are used so the value is inserted literally — a value containing a ``\\1``-style
     sequence is never interpreted as an re.sub backreference.
     """
-    field_re = re.compile(rf"^{field}:.*$", re.MULTILINE)
+    field_re = re.compile(rf"^{re.escape(field)}:.*$", re.MULTILINE)
     if field_re.search(yaml_text):
         return field_re.sub(lambda _m: f"{field}: {value}", yaml_text, count=1)
-    after_re = re.compile(rf"^({after}:.*)$", re.MULTILINE)
+    after_re = re.compile(rf"^({re.escape(after)}:.*)$", re.MULTILINE)
     if after_re.search(yaml_text):
         return after_re.sub(
             lambda m: f"{m.group(1)}\n{field}: {value}", yaml_text, count=1)

@@ -69,6 +69,7 @@ def test_eu_resolves_phase1_via_cellar():
     assert res.status == "resolved"
     assert res.pdf_url == _CELLAR
     assert "32022M10852" in res.reason
+    assert res.language == "eng"
 
 
 def test_eu_phase2_outcome_is_manual_without_fetch():
