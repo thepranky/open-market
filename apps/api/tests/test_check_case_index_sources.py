@@ -342,10 +342,16 @@ class TestCheckEntry:
 # ---------------------------------------------------------------------------
 
 class TestRunChecks:
-    def test_loads_all_thirty_four_entries(self):
+    def test_loads_one_result_per_index_entry(self):
+        # Assert the invariant (one result per loaded entry), not a frozen count —
+        # the index grows over time.
+        from app.cases.loader.index_loader import load_all_index_cases
+
         index_dir = Path(__file__).resolve().parents[3] / "data" / "case_index"
+        expected = sum(1 for _ in load_all_index_cases(str(index_dir)))
         results = run_checks(index_dir, client=None, timeout=10)
-        assert len(results) == 34
+        assert expected > 0
+        assert len(results) == expected
 
     def test_all_entries_have_case_id(self):
         index_dir = Path(__file__).resolve().parents[3] / "data" / "case_index"
