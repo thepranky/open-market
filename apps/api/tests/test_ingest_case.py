@@ -155,7 +155,7 @@ def test_stage_validate_draft_warns_conclusion_role_linked_to_market():
                 "review_status": "unreviewed",
                 "extraction_method": "pdf_extracted",
                 "source_role": "conclusion",
-                "quote_snippet": "The Commission clears the transaction.",
+                "quote_snippet": "The Commission cleared the transaction.",
                 "supports_markets": ["pm_1"],
                 "supports_geographic_markets": [],
             }

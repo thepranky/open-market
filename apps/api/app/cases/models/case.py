@@ -7,6 +7,10 @@ from pydantic import BaseModel, Field, field_validator
 from .concept import ConceptRef
 
 
+def _is_iso639_2_code(value: object) -> bool:
+    return isinstance(value, str) and len(value) == 3 and value.islower() and value.isalpha()
+
+
 class ExtractionMethod(str, Enum):
     ai_extracted = "ai_extracted"
     manually_added = "manually_added"
@@ -135,7 +139,7 @@ class SourcePassage(BaseModel):
     def validate_source_language(cls, v: Optional[str]) -> Optional[str]:
         if v is None:
             return v
-        if not isinstance(v, str) or not v.islower() or len(v) != 3 or not v.isalpha():
+        if not _is_iso639_2_code(v):
             raise ValueError("source_language must be a lowercase ISO 639-2 code")
         return v
 
@@ -158,7 +162,7 @@ class SourceDocument(BaseModel):
     def validate_language(cls, v: Optional[str]) -> Optional[str]:
         if v is None:
             return v
-        if not isinstance(v, str) or not v.islower() or len(v) != 3 or not v.isalpha():
+        if not _is_iso639_2_code(v):
             raise ValueError("language must be a lowercase ISO 639-2 code")
         return v
 

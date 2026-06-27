@@ -56,6 +56,7 @@ try:
 except ImportError:
     pass
 
+from app.cases.models.case import _is_iso639_2_code
 from app.cases.models.case_index import CaseIndexEntry
 from app.shared.utils.pdf_extractor import DEFAULT_CACHE_DIR, fetch_and_extract
 from check_source_integrity import Level, check_record
@@ -89,8 +90,6 @@ _VALID_EXTRACTION_METHODS = {
 }
 
 
-def _is_iso639_2_code(value: object) -> bool:
-    return isinstance(value, str) and len(value) == 3 and value.islower() and value.isalpha()
 
 
 # ---------------------------------------------------------------------------
@@ -150,7 +149,6 @@ _OUTCOME_LANGUAGE_PATTERNS = (
     "does not raise serious doubts",
     "compatible with the internal market",
     "cleared",
-    "clears",
     "authorised",
 )
 
@@ -197,10 +195,20 @@ def stage_validate_draft(draft_record: dict) -> tuple[bool, list[str], list[str]
     # Source passages: review_status, extraction_method, referential integrity,
     # and outcome-passage-to-market linkage.
     doc_ids = {d.get("doc_id") for d in (draft_record.get("source_documents") or []) if d.get("doc_id")}
+
+    # Validate each document's language format once (not once-per-passage).
+    for d in (draft_record.get("source_documents") or []):
+        doc_id = d.get("doc_id")
+        lang = d.get("language")
+        if doc_id and lang and not _is_iso639_2_code(lang):
+            errors.append(
+                f"source_document {doc_id}: language '{lang}' must be a lowercase ISO 639-2 code"
+            )
+
     doc_languages = {
         d.get("doc_id"): d.get("language")
         for d in (draft_record.get("source_documents") or [])
-        if d.get("doc_id") and d.get("language")
+        if d.get("doc_id") and d.get("language") and _is_iso639_2_code(d.get("language"))
     }
     for sp in (draft_record.get("source_passages") or []):
         pid = sp.get("passage_id", "?")
@@ -221,21 +229,16 @@ def stage_validate_draft(draft_record: dict) -> tuple[bool, list[str], list[str]
                 f"passage {pid}: source_language '{source_language}' must be a lowercase ISO 639-2 code"
             )
         doc_language = doc_languages.get(ref)
-        if doc_language:
-            if not _is_iso639_2_code(doc_language):
+        if doc_language and doc_language != "eng":
+            if source_language != doc_language:
                 errors.append(
-                    f"source_document {ref}: language '{doc_language}' must be a lowercase ISO 639-2 code"
+                    f"passage {pid}: source_language must match non-English source document "
+                    f"language '{doc_language}'"
                 )
-            elif doc_language != "eng":
-                if source_language != doc_language:
-                    errors.append(
-                        f"passage {pid}: source_language must match non-English source document "
-                        f"language '{doc_language}'"
-                    )
-                if not sp.get("quote_translation"):
-                    warnings.append(
-                        f"passage {pid}: non-English quote is missing quote_translation"
-                    )
+            if not sp.get("quote_translation"):
+                warnings.append(
+                    f"passage {pid}: non-English quote is missing quote_translation"
+                )
 
         # Clearance/outcome passage linked to market: warn (not block).
         # Note: source_role='conclusion' passages MAY link to markets — "Commission concludes
@@ -759,8 +762,15 @@ def _build_scaffold_from_index(index_entry: dict, pdf_url: str) -> dict:
         "case_page_url": index_entry.get("source_url", ""),
         "pdf_url": pdf_url,
     }
-    if index_entry.get("pdf_language"):
-        source_doc["language"] = index_entry["pdf_language"]
+    pdf_lang = index_entry.get("pdf_language")
+    if pdf_lang:
+        if not _is_iso639_2_code(pdf_lang):
+            print(
+                f"WARN: case_index pdf_language '{pdf_lang}' for "
+                f"'{index_entry.get('case_id', '?')}' is not a valid ISO 639-2 code — skipping"
+            )
+        else:
+            source_doc["language"] = pdf_lang
 
     return {
         "case_id": case_id,

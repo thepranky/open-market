@@ -48,6 +48,7 @@ try:
 except ImportError:
     pass
 
+from app.cases.models.case import _is_iso639_2_code
 from app.shared.utils.pdf_extractor import DEFAULT_CACHE_DIR, iter_pages, load_cache
 from check_source_integrity import quote_found_in_text
 from pipeline_profile import select_profile
@@ -118,10 +119,6 @@ _VALID_MARKET_IMPORTANCE: frozenset[str] = frozenset({
     "background",           # Mentioned in overview/background only, no formal analysis
     "incomplete_source",    # Conclusion expected but absent from supplied text chunks
 })
-
-
-def _is_iso639_2_code(value: object) -> bool:
-    return isinstance(value, str) and len(value) == 3 and value.islower() and value.isalpha()
 
 
 def _document_language_map(record: dict) -> dict[str, str]:
@@ -2190,10 +2187,10 @@ def _validate_unit_assessment(
             source_role = ""
         source_language = str(rp.get("source_language", "") or "").strip()
         doc_language = chunk_doc_language_map.get(chunk_id, "")
-        if doc_language and source_language != doc_language:
-            source_language = doc_language
-        elif source_language and not _is_iso639_2_code(source_language):
+        if source_language and not _is_iso639_2_code(source_language):
             source_language = ""
+        if not source_language and doc_language:
+            source_language = doc_language
         quote_translation = str(rp.get("quote_translation", "") or "").strip()
         try:
             page_num = int(rp.get("page_number") or 0)
@@ -2514,10 +2511,10 @@ def _validate_extraction(
                 source_role = ""
             source_language = str(rp.get("source_language", "") or "").strip()
             doc_language = chunk_doc_language_map.get(chunk_id, "")
-            if doc_language and source_language != doc_language:
-                source_language = doc_language
-            elif source_language and not _is_iso639_2_code(source_language):
+            if source_language and not _is_iso639_2_code(source_language):
                 source_language = ""
+            if not source_language and doc_language:
+                source_language = doc_language
             quote_translation = str(rp.get("quote_translation", "") or "").strip()
             try:
                 page_num = int(rp.get("page_number") or 0)

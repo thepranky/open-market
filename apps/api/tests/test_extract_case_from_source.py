@@ -203,7 +203,7 @@ class TestNonEnglishPassageMetadata:
                             "chunk_id": "chunk_1",
                             "page_number": 5,
                             "quote": quote,
-                            "source_language": "eng",
+                            "source_language": "deu",
                             "quote_translation": (
                                 "The Commission concludes that the market is national."
                             ),
@@ -232,6 +232,89 @@ class TestNonEnglishPassageMetadata:
         assert passage["quote_translation"] == (
             "The Commission concludes that the market is national."
         )
+
+    def test_non_english_doc_language_fills_empty_source_language(self):
+        quote = "Die Kommission kommt zu dem Schluss, dass der Markt national ist."
+        chunks = [_make_chunk("chunk_1", "Market definition", [(5, quote)], doc_id="main_doc")]
+        raw = {
+            "product_markets": [
+                {
+                    "name": "Widget manufacturing",
+                    "definition_status": "defined",
+                    "market_importance": "core_assessed",
+                    "notes": "The Commission defined a national market.",
+                    "not_found": False,
+                    "passages": [
+                        {
+                            "chunk_id": "chunk_1",
+                            "page_number": 5,
+                            "quote": quote,
+                            "source_language": "",
+                            "quote_translation": (
+                                "The Commission concludes that the market is national."
+                            ),
+                            "source_role": "conclusion",
+                        }
+                    ],
+                }
+            ],
+            "geographic_markets": [],
+            "theories_of_harm": [],
+            "overall_outcome": "unknown",
+            "source_passages": [],
+            "caveats": [],
+        }
+        result = _validate_extraction(
+            raw,
+            chunks,
+            {"chunk_1": "main_doc"},
+            {"chunk_1": "deu"},
+        )
+        draft = _build_draft_record(result, _make_record())
+
+        passage = draft["source_passages"][0]
+        assert passage["source_language"] == "deu"
+
+    def test_valid_source_language_preserved_when_differs_from_doc_language(self):
+        # An English verbatim quote inside a German decision should keep source_language="eng".
+        quote = "The relevant product market is the market for widget manufacturing."
+        chunks = [_make_chunk("chunk_1", "Market definition", [(5, quote)], doc_id="main_doc")]
+        raw = {
+            "product_markets": [
+                {
+                    "name": "Widget manufacturing",
+                    "definition_status": "defined",
+                    "market_importance": "core_assessed",
+                    "notes": "",
+                    "not_found": False,
+                    "passages": [
+                        {
+                            "chunk_id": "chunk_1",
+                            "page_number": 5,
+                            "quote": quote,
+                            "source_language": "eng",
+                            "quote_translation": "",
+                            "source_role": "evidence",
+                        }
+                    ],
+                }
+            ],
+            "geographic_markets": [],
+            "theories_of_harm": [],
+            "overall_outcome": "unknown",
+            "source_passages": [],
+            "caveats": [],
+        }
+        result = _validate_extraction(
+            raw,
+            chunks,
+            {"chunk_1": "main_doc"},
+            {"chunk_1": "deu"},
+        )
+        draft = _build_draft_record(result, _make_record())
+
+        passage = draft["source_passages"][0]
+        assert passage["source_language"] == "eng"
 
 
 # ---------------------------------------------------------------------------

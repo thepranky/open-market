@@ -365,7 +365,7 @@ def _merge_passages(
     warnings: list[str],
 ) -> list[dict]:
     """Deduplicate passages and track per-draft ID-reference lists for later rewriting."""
-    passages = _merge_records(
+    return _merge_records(
         items,
         _passage_key,
         "sp_",
@@ -380,20 +380,6 @@ def _merge_passages(
         ],
         description_field=None,
     )
-    for passage in passages:
-        key = _passage_key(passage)
-        duplicates = [rec for _, rec in items if _passage_key(rec) == key]
-        if not passage.get("source_language"):
-            for rec in duplicates:
-                if rec.get("source_language"):
-                    passage["source_language"] = rec["source_language"]
-                    break
-        if not passage.get("quote_translation"):
-            for rec in duplicates:
-                if rec.get("quote_translation"):
-                    passage["quote_translation"] = rec["quote_translation"]
-                    break
-    return passages
 
 
 def _merge_theories(
