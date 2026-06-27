@@ -49,11 +49,15 @@ class PdfResolution:
     candidates: list[PdfCandidate]
     resolver: str
     reason: str
+    # ISO 639-2 code of the resolved PDF's language, when the resolver determined
+    # it (the EU adapter does, from the Cellar manifestation it requested).
+    language: Optional[str] = None
 
     @classmethod
     def resolved(cls, resolver: str, url: str, reason: str,
-                 candidates: Optional[list[PdfCandidate]] = None) -> "PdfResolution":
-        return cls("resolved", url, candidates or [], resolver, reason)
+                 candidates: Optional[list[PdfCandidate]] = None,
+                 language: Optional[str] = None) -> "PdfResolution":
+        return cls("resolved", url, candidates or [], resolver, reason, language)
 
     @classmethod
     def manual(cls, resolver: str, reason: str,
@@ -231,7 +235,8 @@ class EuCellarResolver:
                 return PdfResolution.errored(self.name, f"head_failed: {exc}")
             if head.status_code == 200 and "pdf" in head.content_type:
                 return PdfResolution.resolved(
-                    self.name, head.url, f"cellar_celex_{celex}_{lang.lower()}")
+                    self.name, head.url, f"cellar_celex_{celex}_{lang.lower()}",
+                    language=lang.lower())
             # A 404 just means this language manifestation is absent (expected).
             # Surface the first non-404 status so a transient 5xx on one language
             # isn't hidden behind the 404s of the others.

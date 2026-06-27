@@ -40,11 +40,13 @@ derived CELEX instead of English only:
    stopping at the first `200` + `pdf` content-type. English is tried first so an
    English manifestation is still preferred when one exists.
 3. If no language returns a PDF, report `not_found` (genuinely not in Cellar).
-4. Record the resolved language in the resolution `reason`
-   (e.g. `cellar_celex_32023M10969_deu`) so dry-run reports show it. No
-   `CaseIndexEntry` schema change — consistent with the v1 "write only `pdf_url`"
-   decision. Durable per-entry language capture, if wanted later, is a separate
-   schema-change PR.
+4. Record the resolved language both in the resolution `reason`
+   (e.g. `cellar_celex_32023M10969_deu`, shown in dry-run reports) and durably on
+   the entry via a new optional `pdf_language` field on `CaseIndexEntry` (ISO
+   639-2 code). The batch writer inserts `pdf_language` right after `pdf_url`.
+   This makes later English-only triage / extraction-language routing possible
+   without re-resolving. `PdfResolution` carries a `language` field so the CLI
+   writes it without parsing the reason string.
 
 Language priority (ISO 639-2 / Cellar codes), common authentic languages first
 then the remaining official EU languages:
@@ -74,9 +76,12 @@ preference.
 
 | File | Change |
 |------|--------|
-| `apps/api/scripts/cases/discovery/pdf_resolvers.py` | EU resolver tries a language chain; `_CELLAR_TEMPLATE` parameterised by language; resolved language in `reason` |
-| `apps/api/tests/test_pdf_resolvers.py` | Tests: English preferred when present, non-English fallback, all-language miss → `not_found`, Phase II still short-circuits with no HTTP |
-| `docs/operations/ingestion.md` | Note the EU resolver tries non-English manifestations |
+| `apps/api/scripts/cases/discovery/pdf_resolvers.py` | EU resolver tries a language chain; `_CELLAR_TEMPLATE` parameterised by language; `PdfResolution.language` set; resolved language in `reason` |
+| `apps/api/app/cases/models/case_index.py` | New optional `pdf_language` field (ISO 639-2), after `pdf_url` |
+| `apps/api/scripts/cases/discovery/resolve_case_index_pdf_urls.py` | Generic `_upsert_line` writer; write `pdf_language` after `pdf_url` when resolved |
+| `apps/api/tests/test_pdf_resolvers.py` | Tests: English preferred, non-English fallback + language capture, all-language miss → `not_found`, Phase II short-circuit, transport error mid-loop |
+| `apps/api/tests/test_resolve_case_index_pdf_urls.py` | Tests: `pdf_language` written after `pdf_url`; omitted when resolver gives none |
+| `docs/operations/ingestion.md` | Note the EU resolver tries non-English manifestations and records `pdf_language` |
 | `ROADMAP.md` | Note the 5.10 follow-up |
 
 ## Verification

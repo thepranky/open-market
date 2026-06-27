@@ -350,7 +350,9 @@ The EU adapter tries Cellar language manifestations in order (English first, the
 the other official EU languages): simplified / Phase I clearances are frequently
 published only in the authentic language of the notifying parties, so it resolves
 e.g. a German or French decision when no English version exists. The resolved
-language is shown in the dry-run `reason` (`cellar_celex_…_deu`).
+language is shown in the dry-run `reason` (`cellar_celex_…_deu`) and written
+durably to the entry's optional `pdf_language` field (ISO 639-2, after `pdf_url`)
+for later English-only triage / extraction-language routing.
 
 The old `resolve_eu_pdf_urls.py` / `resolve_uk_pdf_urls.py` remain as thin
 deprecated wrappers for one release; they forward to the shared CLI.

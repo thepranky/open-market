@@ -115,6 +115,7 @@ def test_eu_falls_back_to_non_english_language():
     assert res.status == "resolved"
     assert res.pdf_url == _cellar("DEU")
     assert res.reason.endswith("_deu")
+    assert res.language == "deu"
 
 
 def test_eu_prefers_english_when_both_exist():
@@ -126,6 +127,7 @@ def test_eu_prefers_english_when_both_exist():
     res = EuCellarResolver(fetcher).resolve(_Entry(), timeout=5)
     assert res.pdf_url == _cellar("ENG")
     assert res.reason.endswith("_eng")
+    assert res.language == "eng"
 
 
 def test_eu_no_manifestation_in_any_language_is_not_found():

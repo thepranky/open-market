@@ -26,6 +26,10 @@ class CaseIndexEntry(BaseModel):
     case_type: str = "merger"
     source_url: Optional[str] = None
     pdf_url: Optional[str] = None
+    # ISO 639-2 code of the resolved pdf_url's language manifestation (e.g. "deu",
+    # "fra"). EC simplified clearances are often published only in the authentic
+    # language; this records which one was resolved. Set by the PDF resolver.
+    pdf_language: Optional[str] = None
     ai_summary: Optional[str] = None
     parties: list[Party] = Field(default_factory=list)
     concept_refs: list[ConceptRef] = Field(default_factory=list)

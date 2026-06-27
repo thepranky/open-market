@@ -111,6 +111,28 @@ def test_run_writes_resolved_pdf_url(tmp_path):
     assert written["pdf_url"] == "https://x/doc.pdf"
 
 
+def test_run_writes_pdf_language_after_pdf_url(tmp_path):
+    _write(tmp_path, "us", [_entry()])
+    resolved = PdfResolution.resolved("stub", "https://x/doc.pdf", "ok",
+                                      language="deu")
+    counts = _run(tmp_path, _StubResolver(resolved))
+    assert counts["resolved"] == 1
+    text = (tmp_path / "us" / "us_test_2022.yaml").read_text()
+    lines = text.splitlines()
+    # pdf_language sits immediately after pdf_url (canonical order).
+    assert lines[lines.index("pdf_url: https://x/doc.pdf") + 1] == "pdf_language: deu"
+    written = yaml.safe_load(text)
+    assert written["pdf_language"] == "deu"
+
+
+def test_run_omits_pdf_language_when_resolver_gives_none(tmp_path):
+    _write(tmp_path, "us", [_entry()])
+    _run(tmp_path, _StubResolver(_RESOLVED))  # _RESOLVED has language=None
+    written = yaml.safe_load((tmp_path / "us" / "us_test_2022.yaml").read_text())
+    assert written["pdf_url"] == "https://x/doc.pdf"
+    assert "pdf_language" not in written
+
+
 def test_run_dry_run_does_not_write(tmp_path):
     _write(tmp_path, "us", [_entry()])
     counts = _run(tmp_path, _StubResolver(_RESOLVED), dry_run=True)

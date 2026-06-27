@@ -43,27 +43,29 @@ from pdf_resolvers import (  # noqa: E402
     select_resolver,
 )
 
-_PDF_LINE_RE = re.compile(r"^pdf_url:.*$", re.MULTILINE)
-_SOURCE_LINE_RE = re.compile(r"^(source_url:.*)$", re.MULTILINE)
+def _upsert_line(yaml_text: str, field: str, value: str, after: str) -> str:
+    """Insert or replace only ``field: value``; leave every other byte intact.
+
+    A new line is placed right after the ``after`` field (canonical order); if
+    that field is absent the line is appended at end of file. Lambda replacements
+    are used so the value is inserted literally — a value containing a ``\\1``-style
+    sequence is never interpreted as an re.sub backreference.
+    """
+    field_re = re.compile(rf"^{field}:.*$", re.MULTILINE)
+    if field_re.search(yaml_text):
+        return field_re.sub(lambda _m: f"{field}: {value}", yaml_text, count=1)
+    after_re = re.compile(rf"^({after}:.*)$", re.MULTILINE)
+    if after_re.search(yaml_text):
+        return after_re.sub(
+            lambda m: f"{m.group(1)}\n{field}: {value}", yaml_text, count=1)
+    if not yaml_text.endswith("\n"):
+        yaml_text += "\n"
+    return yaml_text + f"{field}: {value}\n"
 
 
 def patch_pdf_url(yaml_text: str, pdf_url: str) -> str:
-    """Insert or replace only the ``pdf_url`` line; leave every other byte intact.
-
-    A new ``pdf_url`` is placed right after ``source_url`` (canonical order); if
-    there is no ``source_url`` line it is appended at end of file.
-
-    Lambda replacements are used so the URL is inserted literally — a value
-    containing a ``\\1``-style sequence is never interpreted as a backreference.
-    """
-    if _PDF_LINE_RE.search(yaml_text):
-        return _PDF_LINE_RE.sub(lambda _m: f"pdf_url: {pdf_url}", yaml_text, count=1)
-    if _SOURCE_LINE_RE.search(yaml_text):
-        return _SOURCE_LINE_RE.sub(
-            lambda m: f"{m.group(1)}\npdf_url: {pdf_url}", yaml_text, count=1)
-    if not yaml_text.endswith("\n"):
-        yaml_text += "\n"
-    return yaml_text + f"pdf_url: {pdf_url}\n"
+    """Insert or replace the ``pdf_url`` line, placed after ``source_url``."""
+    return _upsert_line(yaml_text, "pdf_url", pdf_url, "source_url")
 
 
 def _new_counts() -> dict:
@@ -140,7 +142,11 @@ def run(
             _report(path.stem, outcome, res, dry_run)
 
             if res.status == "resolved" and res.pdf_url and not dry_run:
-                path.write_text(patch_pdf_url(text, res.pdf_url), encoding="utf-8")
+                new_text = patch_pdf_url(text, res.pdf_url)
+                if res.language:
+                    new_text = _upsert_line(
+                        new_text, "pdf_language", res.language, "pdf_url")
+                path.write_text(new_text, encoding="utf-8")
 
     return counts
 
