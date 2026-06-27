@@ -99,7 +99,7 @@ threshold_tests:
 
     conditions:
       - condition_id: ke_combined_domestic
-        metric: revenue
+        metric: revenue_or_assets
         scope: domestic
         party: combined
         operator: ">="
@@ -112,7 +112,7 @@ threshold_tests:
           merging parties, including the Kenyan operations of non-Kenyan entities.
 
       - condition_id: ke_target_domestic
-        metric: revenue
+        metric: revenue_or_assets
         scope: domestic
         party: target_group
         operator: ">"
@@ -133,12 +133,15 @@ threshold_tests:
       (whichever higher) in Kenya exceeds KES 10bn and the parties are in the same market
       or can be vertically integrated — unless the transaction meets the COMESA Competition
       Commission notification thresholds (in which case COMESA review applies instead).
+      LIMITATION: the engine cannot model the same-market/vertical-integration condition;
+      it will fire for conglomerate deals above KES 10bn where para 4(b) does not in fact
+      apply. Apply the market-overlap filter manually when reviewing engine output.
     annual_adjustment: false
     effective_date: "2019-12-06"
 
     conditions:
       - condition_id: ke_acquirer_domestic
-        metric: revenue
+        metric: revenue_or_assets
         scope: domestic
         party: acquirer_group
         operator: ">"

@@ -109,7 +109,8 @@ threshold_tests:
         note: >
           EGP 900m combined turnover OR assets in Egypt of all parties. EGP has
           depreciated sharply since 2022 — verify the USD-equivalent before assessing
-          practical impact.
+          practical impact. SOURCE NEEDED: verbatim domestic-pathway text of Art. 19 Bis
+          not yet extracted; add to eg_cpl_art19bis_domestic passage when verified.
 
       - condition_id: eg_two_parties_domestic
         metric: revenue
@@ -124,7 +125,10 @@ threshold_tests:
           type: "count_of_parties"
           operator: ">="
           count: 2
-        note: "At least two parties each with turnover in Egypt exceeding EGP 200m."
+        note: >
+          At least two parties each with turnover in Egypt exceeding EGP 200m. SOURCE
+          NEEDED: verbatim domestic-pathway text of Art. 19 Bis not yet extracted; add
+          to eg_cpl_art19bis_domestic passage when verified.
 
   - test_id: eg_worldwide_pathway
     description: "Combined worldwide turnover/assets >EGP 7.5bn AND ≥1 party >EGP 200m in Egypt (Art. 19 Bis)"
@@ -221,8 +225,9 @@ scope:
   note: >
     Egypt moved to mandatory pre-merger notification in 2022 (Law No. 175/2022).
     Prior to this amendment, only post-closing notification was required. The EGP
-    threshold values (EGP 900m worldwide, EGP 100m Egypt) should be verified with
-    the ECA before advising, given EGP depreciation since 2022.
+    threshold values (EGP 900m combined domestic; EGP 200m per-party Egypt nexus; EGP 7.5bn
+    combined worldwide) should be verified with the ECA before advising, given EGP depreciation
+    since 2022.
 
 minority_thresholds:
   applies: true
@@ -237,7 +242,8 @@ minority_thresholds:
     material influence or South African material influence concepts. The ECA has limited
     published practice since the 2022 amendment — conservative assessment and informal
     ECA engagement is advisable. EGP depreciation has made the EGP-denominated thresholds
-    substantially lower in USD terms (EGP 900m worldwide threshold ~USD 18m at 2025 rates).
+    substantially lower in USD terms (EGP 900m domestic threshold ~USD 18m; EGP 7.5bn worldwide
+    threshold ~USD 150m at 2025 rates).
   rules:
     - rule_id: "eg_minority_significant_influence"
       relationship_type: "any"
@@ -294,17 +300,18 @@ source_passages:
 
   - passage_id: eg_cpl_art19bis
     document_title: "Law No. 3 of 2005 on the Protection of Competition, as amended by Law No. 175 of 2022, Article 19 Bis"
-    article_reference: "Article 19 Bis"
+    article_reference: "Article 19 Bis (worldwide pathway)"
     document_url: "https://eg.andersen.com/wp-content/uploads/2025/05/Law-No.-3-of-2005-1.pdf"
     source_type: primary_legislation
     quoted_text: >
       "Article 19 Bis: Economic concentration shall be subject to review by the Authority
-      if it meets any of the following thresholds: ... The combined global annual turnover
-      or consolidated assets of the concerned persons exceed seven billion five hundred
-      million Egyptian pounds for the last year in the latest approved consolidated
-      financial statements, provided that the annual turnover in Egypt for at least one of
-      the concerned persons exceeds two hundred million Egyptian pounds in the latest
-      approved consolidated financial statements."
+      if it meets any of the following thresholds: [domestic pathway — SOURCE NEEDED, see
+      eg_combined_domestic and eg_two_parties_domestic condition notes] The combined global
+      annual turnover or consolidated assets of the concerned persons exceed seven billion
+      five hundred million Egyptian pounds for the last year in the latest approved
+      consolidated financial statements, provided that the annual turnover in Egypt for at
+      least one of the concerned persons exceeds two hundred million Egyptian pounds in the
+      latest approved consolidated financial statements."
     supports_conditions:
       - eg_combined_worldwide
       - eg_one_party_domestic
@@ -314,7 +321,7 @@ practitioner_notes:
     firm: "GLA & Company"
     url: "https://www.glaco.com/blog/egypt-issues-new-merger-control-regime-under-the-executive-regulations-of-the-competition-law/"
     date: "2024"
-    summary: "Practical guide to Egypt's pre-closing merger control regime effective June 1, 2024, covering the EGP 900M domestic and EGP 5B worldwide thresholds, material influence triggers at 25% voting rights, filing fees, and 30-working-day initial review timeline."
+    summary: "Practical guide to Egypt's pre-closing merger control regime effective June 1, 2024, covering the EGP 900M domestic and EGP 5B worldwide thresholds, material influence triggers at 25% voting rights, filing fees, and 30-working-day initial review timeline. NOTE: this article cites EGP 5B for the worldwide combined threshold; the operative Art. 19 Bis (PM Decree 1120/2024) sets this at EGP 7.5bn — the discrepancy may reflect a pre-Decree draft or different instrument; verify against the official ECA source before advising."
   - title: "Practical Insights into the Egypt Ex-Ante Merger Control Regime and the Most Recent Roundtable Discussions Held by the Regulator"
     firm: "GLA & Company"
     url: "https://www.glaco.com/blog/practical-insights-into-the-egypt-ex-ante-merger-control-regime-and-the-most-recent-rountable-discussions-held-by-the-regultor/"

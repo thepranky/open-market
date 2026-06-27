@@ -73,34 +73,34 @@ threshold_tests:
   # assets (activos totales) above the figure the SIC sets annually in minimum-wage units
   # (statutorily 60,000 SMLMV; since 2024/2025 the SIC expresses it as 7,074,307.43 UVB).
   #
-  # Whether the operation needs PRIOR APPROVAL or only NOTIFICATION turns on market share:
-  #   - combined relevant-market share >= 20%  -> prior evaluation/approval required
-  #   - combined relevant-market share  < 20%  -> deemed authorised; notify SIC only
+  # The SAME monetary threshold drives two different outcomes depending on market share:
+  #   - combined relevant-market share < 20%  -> notification only (deemed authorised)
+  #   - combined relevant-market share >= 20% -> PRIOR SIC APPROVAL required
   #
-  # 2026 figure: 7,074,307.43 UVB ~= COP 85.7 billion (~USD 22.8m) — SIC Resolution
-  # 15 of 2 Jan 2026. 2025 was the same UVB count (~COP 82bn) — SIC Res. 81005/2024.
-  # There is NO separate per-party "20,000 SMMLV" leg; the single threshold applies
-  # aggregate-or-individually. The figure is reset annually and may not change mid-year.
+  # Modelled as two separate tests so the engine fires the correct outcome:
+  #   co_notification  — fires whenever the monetary threshold is met (notification always due)
+  #   co_prior_approval — fires when monetary threshold AND >=20% share are both met
 
-  - test_id: co_standard
-    description: "Operating income OR assets (aggregate or individual) > ~COP 85.7bn (7,074,307.43 UVB, 2026) AND combined market share ≥ 20%"
+  - test_id: co_notification
+    description: "Operating income OR assets (aggregate or individual) in Colombia > ~COP 85.7bn (7,074,307.43 UVB, 2026) — notification to SIC required"
     legal_basis: "Law 1340 of 2009, Article 9 (amending Article 4 of Law 155 of 1959); SIC Resolution 15 of 2026 (2026 threshold)"
     source_url: "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=36912"
     note: >
-      Two limbs. The monetary limb is met where the parties' operating income OR total
-      assets, taken in aggregate OR individually, exceed the SIC's annual figure
-      (7,074,307.43 UVB ≈ COP 85.7bn for 2026). The market-share limb determines the
-      consequence: at or above 20% combined share the operation requires prior SIC
-      approval; below 20% it is deemed authorised and only a notification is filed.
-      UVB/SMLMV-INDEXED: the figure is set by SIC resolution each year-end for the
-      following year and cannot be changed mid-year (Law 1340/2009 Art. 9).
+      Mandatory notification threshold. Parties in the same economic activity or value
+      chain in Colombia must notify the SIC when operating income OR total assets —
+      taken in aggregate OR individually — exceed the SIC's annual figure (7,074,307.43
+      UVB ≈ COP 85.7bn for 2026). Where combined relevant-market share is below 20%
+      the operation is deemed authorised and only notification (not prior approval) is
+      required. NOTE: the engine cannot model the "same economic activity in Colombia"
+      nexus requirement — apply that filter manually. UVB/SMLMV-INDEXED: reset each
+      January by SIC resolution.
     annual_adjustment: true
     effective_date: "2026-01-01"
 
     conditions:
       - condition_id: co_threshold_monetary
-        metric: revenue
-        scope: worldwide
+        metric: revenue_or_assets
+        scope: domestic
         party: combined
         operator: ">"
         value: 85700000000
@@ -109,10 +109,35 @@ threshold_tests:
         source_type: primary_legislation
         note: >
           ~COP 85.7bn (7,074,307.43 UVB, 2026). Measured on operating income OR total
-          assets, whichever is higher, and met whether the parties reach it in aggregate
-          or individually. Art. 9 does not impose an explicit domestic-only carve-out;
-          Colombian nexus is applied through the "same economic activity in Colombia"
-          requirement. VERIFY ANNUALLY: reset each January by SIC resolution.
+          assets, whichever is higher for each party, and met whether the parties reach it
+          in aggregate or individually ("en conjunto o individualmente consideradas").
+          VERIFY ANNUALLY: reset each January by SIC resolution.
+
+  - test_id: co_prior_approval
+    description: "Operating income OR assets in Colombia > ~COP 85.7bn AND combined relevant-market share ≥ 20% — prior SIC approval required"
+    legal_basis: "Law 1340 of 2009, Article 9 (amending Article 4 of Law 155 of 1959); SIC Resolution 15 of 2026 (2026 threshold)"
+    source_url: "https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=36912"
+    note: >
+      Prior-approval threshold. Where the monetary threshold is met AND combined
+      relevant-market share equals or exceeds 20%, the operation requires prior SIC
+      evaluation and approval before implementation. Below 20% the operation is deemed
+      authorised and only notification is filed ("se entenderá autorizada la operación").
+    annual_adjustment: true
+    effective_date: "2026-01-01"
+
+    conditions:
+      - condition_id: co_threshold_monetary
+        metric: revenue_or_assets
+        scope: domestic
+        party: combined
+        operator: ">"
+        value: 85700000000
+        currency: COP
+        source: "Law 1340/2009 Art. 9; SIC Resolution 15 of 2026 = 7,074,307.43 UVB"
+        source_type: primary_legislation
+        note: >
+          ~COP 85.7bn (7,074,307.43 UVB, 2026). See co_notification for measurement
+          rules. VERIFY ANNUALLY.
 
       - condition_id: co_market_share_20pct
         metric: market_share
@@ -144,10 +169,10 @@ notes:
     and with the Superintendency of Public Utilities (Superservicios) for regulated
     utilities. These sector authorities may have separate or concurrent review requirements.
   - >
-    Colombia's low USD-equivalent threshold (~USD 34m combined) means many cross-border
-    transactions with even modest Colombian operations will trigger a filing obligation.
+    Colombia's USD-equivalent threshold (~USD 22.8m combined, 2026) means many transactions
+    with even modest Colombian operations will trigger a notification obligation.
     Automatic clearance (silencio administrativo positivo) after 30 days without a SIC
-    decision provides practical comfort for routine transactions.
+    decision provides practical comfort for sub-20%-share transactions.
 
 # ── Scope / trigger events ────────────────────────────────────────────────────
 scope:

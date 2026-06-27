@@ -1,83 +1,123 @@
-# CLAUDE.md
+# Meridian (`open-market` repo)
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Market-definition research + merger-control threshold screening for competition lawyers.
+**Product name:** Meridian. **Repo folder:** `open-market`.
 
-## What this is
+## Products
 
-CompMap — a market-definition research graph for competition lawyers, plus a merger-control threshold screening engine. Two products share one repo:
-
-1. **Case research** — source-linked YAML records of EU/UK/US merger decisions, queryable by sector, market, theory of harm, outcome, with semantic search and graph views.
-2. **Jurisdiction screening** — `data/jurisdictions/*.yaml` profiles of merger-control thresholds across ~60 jurisdictions, evaluated against a deal by `threshold_engine.py`.
-
-> **README/spec drift:** `README.md` and `v0-spec.md` describe the original v0 (Neo4j-centric, 5 sample cases). The repo has moved well past that. The live datastore is **Postgres + pgvector**, not Neo4j; there are 270+ cases and ~60 jurisdiction profiles. Neo4j code (`core/neo4j_client.py`, `graph_service.py`, `graph/*.cypher`) is legacy and optional — graph routes fall back to YAML-derived data. Trust the code and `docs/`, not the README, when they disagree.
+1. **Case research** — source-linked EU/UK/US merger YAML; keyword + semantic search; graph views.
+2. **Jurisdiction screening** — ~60 `data/jurisdictions/*.yaml` profiles; `threshold_engine.py`; `/screen` deal intake.
 
 ## Layout
 
-- `apps/api/` — FastAPI backend (Python 3.10). `app/` is the web service; `scripts/` (41 files) is the data pipeline; `tests/` is the pytest suite.
-- `apps/web/` — Next.js 14 frontend (App Router, TypeScript, Tailwind). Pages: `/explore`, `/cases/[case_id]`, `/indexed-cases`, `/jurisdictions`, `/screen` (deal-intake chat), `/graph`.
-- `data/` — canonical source of truth (all YAML). `cases/{eu,uk,us}/` canonical case records; `drafts/` AI-extracted drafts (never promoted automatically); `jurisdictions/` threshold profiles; `evals/gold/` regression fixtures; `case_index/`, `source_text/` (PDF text cache), `concepts/`, `review_learning/`, `pipeline_profiles/`.
-- `docs/` — the real design docs. Start with `docs/ingestion-design.md`, `docs/jurisdiction-verification-build.md`, `docs/human-promotion-checklist.md`.
-
-## Common commands
-
-All backend commands run from `apps/api/` with the venv active (`.venv/bin/python`).
-
-```bash
-# Setup
-cd apps/api && python -m venv .venv && .venv/bin/pip install -r requirements.txt
-
-# Run the full stack (Postgres + API + web)
-docker compose up --build            # from repo root; postgres on host :5433, api :8000, web :3000
-docker compose --profile embed up embed   # one-shot: embed cases into pgvector
-
-# Run API locally (needs DATABASE_URL to a running pgvector Postgres)
-cd apps/api && .venv/bin/uvicorn main:app --reload
-
-# Frontend
-cd apps/web && npm install && npm run dev    # lint: npm run lint; build: npm run build
-
-# Tests (no DB required; graph/search fall back to YAML)
-cd apps/api && .venv/bin/python -m pytest tests/ -v
-.venv/bin/python -m pytest tests/test_schema.py -v          # single file
-.venv/bin/python -m pytest tests/test_schema.py::test_name  # single test
-
-# Lint Python
-cd apps/api && .venv/bin/ruff check .
+```
+apps/api/     FastAPI — app/{cases,screening,shared}/, scripts/{cases,screening}/, tests/
+apps/web/     Next.js 14 — src/app/ (routes), src/features/{cases,screening}/, src/components/ (shared)
+data/         YAML source of truth
+docs/         architecture/, operations/, specs/, architecture/decisions/
 ```
 
-## Data validation gates (run before committing data changes)
+**Data:**
+- `data/cases/` — canonical `CaseRecord` (270+)
+- `data/drafts/` — AI extraction only; never auto-promoted
+- `data/case_index/` — lighter discovery metadata
+- `data/jurisdictions/` — threshold profiles
+- `data/evals/`, `source_text/`, `pipeline_profiles/`, `review_learning/`
 
-These are the integrity gates; CI runs a subset. All are non-mutating and exit non-zero on failure.
-
-```bash
-cd apps/api
-.venv/bin/python scripts/validate_cases.py --cases-dir ../../data/cases   # Pydantic schema (canonical only)
-.venv/bin/python scripts/check_source_links.py                            # URLs resolve
-.venv/bin/python scripts/check_source_integrity.py --cases-dir ../../data/cases  # quotes grounded in source PDFs
-.venv/bin/python scripts/run_eval_benchmark.py --config ../../data/evals/benchmark.market_definition.ci.yaml
-
-# Jurisdiction verification (orchestrator mirrors CI tiers)
-.venv/bin/python scripts/run_jurisdiction_verification.py --tier push     # schema + completeness + regression
-#   tiers: push (fast, CI-on-PR) | nightly (+offline passages/staleness) | full (live URL/quote fetch)
-```
+**Derived:** Postgres+pgvector (case embeddings only). Neo4j is legacy optional — graph routes fall back to YAML.
 
 ## Architecture
 
-**Backend service** (`apps/api/app/`): `routers/` → `services/` → `loader/` (YAML) + `core/pg_client.py` (asyncpg pool to pgvector). `models/` holds the Pydantic schemas — `case.py` (`CaseRecord`) and `jurisdiction.py` (`JurisdictionRule`) are the two contracts everything else conforms to. Semantic search uses Google `gemini-embedding-001` (768-dim) via `embedding_service.py`, stored in pgvector (`migrations/001_create_vector_schema.sql`).
+```
+app/cases/routers → app/cases/services → app/cases/loader → data/cases/
+app/screening/routers → app/screening/services (threshold_engine) → data/jurisdictions/
+app/shared/ — config, pg_client, health only
+```
 
-**Threshold engine** (`services/threshold_engine.py`): loads `data/jurisdictions/*.yaml`, evaluates a deal's revenue/share/asset parameters against each jurisdiction's `threshold_tests`, returns per-jurisdiction status + triggering test + gap-to-trigger. Exposed at `/jurisdictions/screen`.
+**Pipeline:** PDF → `scripts/cases/extract/extract_case_from_source.py` / `extract/ingest_case.py` → `data/drafts/` → integrity gates → human review → `scripts/cases/promote/promote_case_pipeline.py` → `data/cases/`.
 
-**Extraction pipeline** (`apps/api/scripts/`): the path from a source PDF to a canonical case record. Key stages, all driven by standalone scripts:
-- `extract_case_from_source.py` / `ingest_case.py` — fetch PDF → Claude extraction → **draft** YAML (written to `data/drafts/`, never `data/cases/`).
-- Structural + source-integrity gates ground every `quote_snippet` against the actual PDF text. A quote not found in source is rejected.
-- `review_draft.py` (LLM critic triage), `create_review_learning_log.py` / `apply_review_learning.py` (capture corrections, propose schema/prompt fixes).
-- `promote_draft_to_canonical.py` / `promote_case_pipeline.py` — strip draft-only fields, run full Pydantic validation, move into `data/cases/`. This is the only way a draft becomes canonical.
-- Bulk runs: `run_bulk_extraction.py`, `bulk_promote_pass.py`. Pipeline behaviour is configured per jurisdiction/doc-type via `data/pipeline_profiles/`.
+**Screening:** in-memory YAML at `POST /jurisdictions/screen`.
 
-## Working norms specific to this repo
+## Product boundaries
 
-- **YAML is the source of truth.** Postgres/pgvector and any Neo4j graph are derived stores, rebuilt by seed/embed scripts. Never treat the database as authoritative over the YAML.
-- **Drafts vs canonical is a hard boundary.** AI extraction writes to `data/drafts/` only. Promotion to `data/cases/` requires passing validation + integrity gates. Drafts intentionally omit fields (`metadata`, `procedure_stage`) that promotion adds — so `validate_cases.py` (full Pydantic) applies to canonical records only; drafts get a lighter structural check.
-- **Ground every proposition in primary sources.** Every `source_passage` must cite a `source_document_id` in the same record, and its `quote_snippet` must be verbatim text found at the stated page/paragraph in the linked document — never paraphrased or AI-reconstructed. If no verified source exists, omit the passage and mark notes `SOURCE NEEDED`. Do not characterise complaint allegations as adjudicated findings (`definition_status: discussed`, not `defined`). Verification grounds against official primary sources, never against AI-paraphrased fixtures.
-- **Long-running extraction/verification runs:** use `caffeinate` + `nohup` + `timeout` for overnight bulk jobs.
-- **Cost note:** the `$0.53` cost display in extraction scripts is inflated (uses a Sonnet rate); "simplified" skipped cases are not failures.
+| Product | API | Web routes + features |
+|---------|-----|----------------------|
+| Case research | `app/cases/` | `/explore`, `/graph`, `/cases`, `/indexed-cases` → `src/features/cases/` |
+| Screening | `app/screening/` | `/jurisdictions`, `/screen` → `src/features/screening/` |
+
+**`jurisdiction` overloaded:** cases = regulator (`EU`/`UK`/`US`); screening = country id (`au`, `de`).
+
+## Commands
+
+```bash
+# repo root
+docker compose up --build
+docker compose --profile embed up embed   # needs GOOGLE_API_KEY
+
+# apps/api/ (.venv active)
+.venv/bin/uvicorn main:app --reload
+.venv/bin/python -m pytest tests/ -v
+.venv/bin/python scripts/cases/integrity/validate_cases.py --cases-dir ../../data/cases
+.venv/bin/python scripts/cases/integrity/check_source_links.py
+.venv/bin/python scripts/cases/integrity/check_source_integrity.py --cases-dir ../../data/cases
+.venv/bin/python scripts/cases/evals/run_eval_benchmark.py --config ../../data/evals/benchmark.market_definition.ci.yaml
+.venv/bin/python scripts/screening/run_jurisdiction_verification.py --tier push
+.venv/bin/ruff check .
+
+# apps/web/
+npm run dev
+npm run lint && npm run build
+```
+
+Env: `DATABASE_URL`, `DATA_CASES_PATH`, `DATA_CASE_INDEX_PATH`, `GOOGLE_API_KEY`.
+
+## Non-negotiables
+
+- YAML is source of truth; Postgres is derived.
+- Drafts never auto-promote to `data/cases/`.
+- Verbatim `quote_snippet` at stated page/paragraph; else omit and mark `SOURCE NEEDED`.
+- Complaint allegations → `definition_status: discussed`, not `defined`.
+- Surgical changes only; no drive-by refactors.
+- No auth, observability, or new abstractions unless the spec requires them.
+
+## Spec-driven development
+
+**Trivial** (typo, one-line fix with test): implement directly.
+
+**Non-trivial** (>3 files, schema change, restructure, new feature):
+
+1. **Spec** in `docs/specs/YYYY-MM-DD-name.md` — goal, approach, files, verification (not progress/status).
+2. **Small PR** — one spec, one change set.
+3. **Verify** — every command/check from the spec.
+4. **Independent review** — once the PR is open and the user has no outstanding comments, spawn a *fresh* sub-agent on a different model (e.g. Sonnet, for uncorrelated judgement — same reason the pipeline favours independent extraction over one model rubber-stamping another) to critically review the diff. Triage its findings, fix the real ones, and report what you accepted or rejected and why.
+5. **Progress** — update `ROADMAP.md` only; do not duplicate status in specs or DDRs. Move the implemented spec to `docs/specs/completed/`.
+
+**DDRs** (`docs/architecture/decisions/`) — decisions and rationale; reference when changing that area.
+
+## How to work (bias to caution over speed; use judgment on trivial tasks)
+- **Think before coding.** State assumptions explicitly; if uncertain, ask. 
+If multiple interpretations or a simpler approach exist, surface them — 
+don't pick silently. When something is unclear, stop and name it.
+- **Simplicity first.** Write the minimum code that solves the problem — 
+nothing speculative. No unrequested features, abstractions for single-use 
+code, "flexibility," or error handling for impossible cases. If 200 lines 
+could be 50, rewrite it.
+- **Surgical changes.** Touch only what the request requires; every changed 
+line should trace to it. Match existing style; don't refactor what isn't 
+broken or "improve" adjacent code. Remove only the orphans your own changes 
+created — flag pre-existing dead code, don't delete it unasked.
+- **Goal-driven execution.** Turn tasks into verifiable criteria and loop 
+until met (e.g. "fix the bug" → write a failing test that reproduces it, 
+then make it pass; "refactor X" → tests green before and after). For multi-
+step work, state a brief plan with a verify step each.
+- **Name by purpose, not by plan.** Never bake transient planning labels — 
+`phase`, `gap`, `step`, ROADMAP/PR numbers — into durable artifacts (variable, 
+file, function names; docstrings; comments). They read as noise once the plan 
+moves on. Describe what the thing does, not which task introduced it.
+
+## Key docs
+
+- `README.md` — onboarding
+- `docs/architecture/overview.md` — system map
+- `ROADMAP.md` — phased work to production (single source of truth for progress)
+- `docs/specs/completed/2026-06-24-restructure-layout.md` — repo layout spec
