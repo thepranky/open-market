@@ -43,8 +43,10 @@ _REPO_ROOT = _API_DIR.parents[1]
 for _p in (str(_API_DIR), str(_SCRIPTS_DIR)):
     if _p not in sys.path:
         sys.path.insert(0, _p)
-# cross-bucket flat sibling: check_source_integrity lives in integrity/
+# cross-bucket flat siblings: check_source_integrity lives in integrity/,
+# the shared PDF resolver registry in discovery/
 sys.path.insert(0, str(_SCRIPTS_DIR.parent / "integrity"))
+sys.path.insert(0, str(_SCRIPTS_DIR.parent / "discovery"))
 
 # Load .env from repo root so GOOGLE_API_KEY / ANTHROPIC_API_KEY are available
 # when the script is invoked directly (not via a shell that already exports them).
@@ -54,6 +56,7 @@ try:
 except ImportError:
     pass
 
+from app.cases.models.case_index import CaseIndexEntry
 from app.shared.utils.pdf_extractor import DEFAULT_CACHE_DIR, fetch_and_extract
 from check_source_integrity import Level, check_record
 from extract_case_from_source import (
@@ -62,6 +65,7 @@ from extract_case_from_source import (
     _resolve_canonical_yaml,
     extract_case,
 )
+from pdf_resolvers import resolve_pdf_url
 
 _CASES_DIR = _REPO_ROOT / "data" / "cases"
 _DRAFTS_DIR = _REPO_ROOT / "data" / "drafts"
@@ -694,41 +698,24 @@ def _load_index_entry(case_id: str) -> Optional[dict]:
     return None
 
 
-def _resolve_pdf_url_from_ec_portal(
-    source_url: str, decision_date: str, timeout: int = 30
-) -> Optional[str]:
-    """
-    Resolve the decision PDF URL for EC Phase I (non-opposition) merger decisions.
+def _resolve_from_index_pdf_url(
+    index_entry: dict, explicit_pdf_url: Optional[str], *, resolve_fn=resolve_pdf_url
+):
+    """Resolve the decision PDF URL for a --from-index ingest.
 
-    Phase I decisions are published in EUR-Lex / cellar.  The CELEX identifier
-    follows the pattern 3{YEAR}M{CASE_NUMBER} (e.g. M.11115 decided 2023 →
-    32023M11115), and the cellar URL
-        http://publications.europa.eu/resource/celex/{CELEX}.ENG.pdf
-    content-negotiates to a PDF when requested with Accept: application/pdf.
-
-    Phase II decisions (cleared with conditions, blocked) are NOT in EUR-Lex;
-    their PDFs are on ec.europa.eu/competition/mergers/cases1/... — those
-    require --pdf-url.  Returns None if resolution fails.
+    Order: explicit --pdf-url, then a pdf_url already on the index entry, then
+    the shared resolver registry. Returns ``(pdf_url, resolution)`` where
+    ``resolution`` is the registry result when the registry was consulted (so the
+    caller can report the reason / candidates), else ``None``. ``pdf_url`` is
+    ``None`` only when the registry was consulted and failed to resolve.
     """
-    import re as _re
-    m = _re.search(r"M\.(\d+)$", source_url)
-    if not m:
-        return None
-    case_number = m.group(1)
-    year = (decision_date or "")[:4]
-    if not year.isdigit():
-        return None
-    celex = f"3{year}M{case_number}"
-    cellar_url = f"http://publications.europa.eu/resource/celex/{celex}.ENG.pdf"
-    try:
-        _pdf_headers = {"Accept": "application/pdf, */*;q=0.5"}
-        with httpx.Client(follow_redirects=True, timeout=timeout) as client:
-            resp = client.head(cellar_url, headers=_pdf_headers)
-            if resp.status_code == 200 and "pdf" in resp.headers.get("content-type", ""):
-                return str(resp.url)  # resolved DOC_1 direct URL
-    except Exception:
-        pass
-    return None
+    pdf_url = explicit_pdf_url or index_entry.get("pdf_url")
+    if pdf_url:
+        return pdf_url, None
+    resolution = resolve_fn(CaseIndexEntry.model_validate(index_entry))
+    if resolution.status == "resolved" and resolution.pdf_url:
+        return resolution.pdf_url, resolution
+    return None, resolution
 
 
 def _build_scaffold_from_index(index_entry: dict, pdf_url: str) -> dict:
@@ -828,7 +815,8 @@ def main() -> int:
         help=(
             "Ingest a case that has an index entry but no canonical YAML. "
             "Reads from data/case_index/ and builds a minimal scaffold for extraction. "
-            "Requires --pdf-url or an auto-resolvable EUR-Lex CELEX URL."
+            "Requires --pdf-url, a pdf_url on the index entry, or an "
+            "auto-resolvable URL via the shared resolver registry."
         ),
     )
     parser.add_argument(
@@ -837,7 +825,8 @@ def main() -> int:
         metavar="URL",
         help=(
             "Decision PDF URL for --from-index ingestion. "
-            "If omitted, the URL is derived automatically from the EUR-Lex CELEX pattern."
+            "If omitted, the URL is resolved automatically via the shared "
+            "per-authority resolver registry."
         ),
     )
     parser.add_argument(
@@ -907,22 +896,23 @@ def main() -> int:
         if index_entry is None:
             print(f"ERROR: No index entry found for '{args.case_id}' under {_INDEX_DIR}")
             return 1
-        pdf_url: Optional[str] = args.pdf_url or index_entry.get("pdf_url")
-        if not pdf_url:
-            source_url = index_entry.get("source_url", "")
-            decision_date = index_entry.get("decision_date", "")
+        # Same code path as the batch resolver, so single-case and batch never
+        # diverge. Order: explicit --pdf-url, index pdf_url, shared registry.
+        if not (args.pdf_url or index_entry.get("pdf_url")):
             print(f"  Resolving PDF URL for {args.case_id}…", end=" ", flush=True)
-            pdf_url = _resolve_pdf_url_from_ec_portal(source_url, decision_date)
-            if pdf_url:
-                print("ok")
-            else:
-                print("failed (Phase II / not in EUR-Lex)")
-                print(
-                    f"ERROR: Could not auto-resolve PDF URL for '{args.case_id}'.\n"
-                    f"  Phase II decisions are not in EUR-Lex — find the PDF at: {source_url}\n"
-                    f"  Then re-run with: --from-index --pdf-url <url>"
-                )
-                return 1
+        pdf_url, resolution = _resolve_from_index_pdf_url(index_entry, args.pdf_url)
+        if pdf_url is None:
+            print(f"{resolution.status} ({resolution.resolver}: {resolution.reason})")
+            print(
+                f"ERROR: Could not auto-resolve PDF URL for '{args.case_id}'.\n"
+                f"  Find the decision PDF at: {index_entry.get('source_url', '')}\n"
+                f"  Then re-run with: --from-index --pdf-url <url>"
+            )
+            for cand in resolution.candidates[:5]:
+                print(f"    candidate ({cand.score}): {cand.label} — {cand.url}")
+            return 1
+        if resolution is not None:
+            print(f"ok ({resolution.resolver}: {resolution.reason})")
         scaffold = _build_scaffold_from_index(index_entry, pdf_url)
         jur = (index_entry.get("jurisdiction") or "unknown").lower()
         scaffold_dir = _DRAFTS_DIR / jur
