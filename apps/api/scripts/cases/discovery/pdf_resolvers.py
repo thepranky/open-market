@@ -257,6 +257,12 @@ class EuCellarResolver:
 _UK_ASSET_HOSTS = (
     "assets.publishing.service.gov.uk",
     "assets.digital.cabinet-office.gov.uk",
+    "webarchive.nationalarchives.gov.uk",
+)
+_UK_WEBARCHIVE_RE = re.compile(
+    r"^https?://webarchive\.nationalarchives\.gov\.uk/"
+    r"(?:ukgwa/)?(\d{14})(?:id_)?/(https?://.+)$",
+    re.IGNORECASE,
 )
 
 # Substantive Phase 2 inquiry reports — the default target. Phase 1 clearances
@@ -284,6 +290,8 @@ _UK_DISQUALIFY = re.compile(
     r"|notice|summary|appendix|appendices|glossary|annex"
     r"|response|submission|working.paper|issues.statement"
     r"|survey|research|timetable|extension|cancellation"
+    r"|news.release|press.rel|press_rel|enforcement.order"
+    r"|disclosures?.of.interest"
     r"|explanatory.note|draft.final|draft_final"
     r"|terms.of.reference|ieo|directions|commencement"
     r"|derogation|revocation.order|revocation_order)",
@@ -291,15 +299,25 @@ _UK_DISQUALIFY = re.compile(
 )
 
 
-def _uk_score(url: str) -> int:
-    """Priority score for a GOV.UK PDF URL by filename. 0 = disqualified/no match."""
+def _uk_score(url: str, text: str = "") -> int:
+    """Priority score for a GOV.UK PDF URL/link. 0 = disqualified/no match."""
     filename = url.rsplit("/", 1)[-1]
-    if _UK_DISQUALIFY.search(filename):
+    target = f"{filename} {text}"
+    if _UK_DISQUALIFY.search(target):
         return 0
     for score, pattern in _UK_REPORT_PATTERNS:
-        if pattern.search(filename):
+        if pattern.search(target):
             return score
     return 0
+
+
+def _uk_normalize_pdf_url(url: str) -> str:
+    """Return a direct PDF URL; National Archives wrappers need ``id_`` raw mode."""
+    m = _UK_WEBARCHIVE_RE.match(url)
+    if not m:
+        return url
+    timestamp, original_url = m.groups()
+    return f"https://webarchive.nationalarchives.gov.uk/ukgwa/{timestamp}id_/{original_url}"
 
 
 @dataclass
@@ -334,7 +352,7 @@ class UkGovUkResolver:
             return PdfResolution.missing(self.name, "page_not_found")
 
         pdf_links = [
-            abs_u for u, _ in _extract_pdf_anchors(html)
+            (_uk_normalize_pdf_url(abs_u), text) for u, text in _extract_pdf_anchors(html)
             for abs_u in (urljoin(source_url, u),)
             if any(h in abs_u for h in _UK_ASSET_HOSTS)
         ]
@@ -342,9 +360,9 @@ class UkGovUkResolver:
             return PdfResolution.missing(self.name, "no_pdf_links")
 
         scored = [
-            PdfCandidate(u, u.rsplit("/", 1)[-1], "govuk", _uk_score(u),
-                         "filename_score")
-            for u in pdf_links
+            PdfCandidate(u, text or u.rsplit("/", 1)[-1], "govuk",
+                         _uk_score(u, text), "link_score")
+            for u, text in pdf_links
         ]
         ranked = sorted([c for c in scored if c.score > 0],
                         key=lambda c: c.score, reverse=True)

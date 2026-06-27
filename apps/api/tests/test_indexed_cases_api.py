@@ -129,6 +129,15 @@ def test_indexed_case_detail_uk(client):
     data = r.json()
     assert data["outcome"] == "abandoned"
     assert data["data_layer"] == "indexed"
+    assert data["extraction_status"] == "not_applicable"
+
+
+def test_indexed_case_detail_exposes_pdf_metadata(client):
+    r = client.get("/indexed-cases/uk_kemira_growhow_oyj_terra_industries_inc_merger_inquiry_cc_2007")
+    assert r.status_code == 200
+    data = r.json()
+    assert data["pdf_url"] == "https://assets.publishing.service.gov.uk/media/555de39fe5274a74ca0000af/Kemira.pdf"
+    assert data["extraction_status"] == "pending"
 
 
 def test_indexed_case_detail_us(client):

@@ -39,8 +39,8 @@ def test_case_index_entry_minimal_valid():
     assert entry.concept_refs == []
     assert entry.source_url is None
     assert entry.ai_summary is None
-    # Additive field defaults so existing index YAMLs load unchanged.
-    assert entry.extraction_status == "pending"
+    # Missing status remains unresolved until the classifier writes an explicit value.
+    assert entry.extraction_status is None
 
 
 def test_case_index_entry_with_parties_and_concepts():

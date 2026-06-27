@@ -20,6 +20,8 @@ export type Outcome =
   | "upheld_on_appeal"
   | "unknown";
 
+export type IndexedExtractionStatus = "pending" | "not_applicable" | "extracted";
+
 export type VerificationStatus = "source_linked" | "verified" | "no_source_linked";
 export type RetrievalStatus = "direct" | "fallback" | "broken" | "unknown";
 
@@ -175,9 +177,12 @@ export interface IndexedCaseDetail {
   outcome: Outcome;
   case_type: string;
   source_url?: string;
+  pdf_url?: string;
+  pdf_language?: string;
   ai_summary?: string;
   parties: Party[];
   concept_refs: ConceptRef[];
+  extraction_status?: IndexedExtractionStatus;
 }
 
 export interface GraphNeighbourhood {

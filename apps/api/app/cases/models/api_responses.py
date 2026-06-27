@@ -49,9 +49,12 @@ class IndexedCaseDetail(BaseModel):
     outcome: Outcome
     case_type: str
     source_url: Optional[str] = None
+    pdf_url: Optional[str] = None
+    pdf_language: Optional[str] = None
     ai_summary: Optional[str] = None
     parties: list[Party]
     concept_refs: list[ConceptRef]
+    extraction_status: Optional[Literal["pending", "not_applicable", "extracted"]] = None
 
 
 class CaseSearchHit(BaseModel):
