@@ -83,6 +83,25 @@ A market definition finding or theory of harm that has no passing passage
 should have `definition_status: discussed` (not `defined`) and should carry
 an explicit `SOURCE NEEDED` note.
 
+### Stage 4a — Non-English source passages
+
+For source documents with `source_documents[].language` set to a non-English
+ISO 639-2 code, structured analytical fields remain English-facing. Market
+names, theories, commitments, summaries, and notes should be written in English.
+
+Evidence stays source-faithful:
+
+- `quote_snippet` is copied verbatim from the authority document in the source
+  language.
+- `source_language` records the language of that verbatim snippet.
+- `quote_translation` may store a concise English translation for reviewer/UI
+  convenience.
+
+Translations are never legal authority and must not be used for grounding.
+`check_source_integrity.py` validates only `quote_snippet` against the original
+extracted source text. Missing `quote_translation` on a non-English passage is a
+review warning, not a promotion blocker.
+
 ### Stage 5 — Integrity gate
 
 Run `check_source_integrity.py` against the candidate YAML. The pipeline must

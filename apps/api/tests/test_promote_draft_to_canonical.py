@@ -197,11 +197,14 @@ class TestStripDraftFields:
         d = {
             "source_passages": [
                 {"passage_id": "sp_1", "source_role": "commission_assessment",
-                 "quote_snippet": "..."}
+                 "quote_snippet": "...", "source_language": "deu",
+                 "quote_translation": "Translated quote."}
             ]
         }
         _strip_draft_fields_inplace(d)
         assert "source_role" not in d["source_passages"][0]
+        assert d["source_passages"][0]["source_language"] == "deu"
+        assert d["source_passages"][0]["quote_translation"] == "Translated quote."
 
     def test_preserves_unrelated_market_fields(self):
         d = {
@@ -426,6 +429,15 @@ class TestDraftWarnings:
         warnings = check_draft_warnings(draft)
         assert len(warnings) == 1
         assert "not_set" in warnings[0]
+        assert "sp_1" in warnings[0]
+
+    def test_warns_for_non_english_passage_missing_translation(self):
+        passage = self._passage("sp_1", "commission_assessment")
+        passage["source_language"] = "deu"
+        draft = {"source_passages": [passage]}
+        warnings = check_draft_warnings(draft)
+        assert len(warnings) == 1
+        assert "missing quote_translation" in warnings[0]
         assert "sp_1" in warnings[0]
 
     def test_warns_lists_all_not_set_passages(self):

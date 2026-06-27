@@ -13,7 +13,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts" / "cases" / "discovery"))
 
 from pdf_resolvers import PdfCandidate, PdfResolution  # noqa: E402
-from scripts.cases.extract.ingest_case import _resolve_from_index_pdf_url  # noqa: E402
+from scripts.cases.extract.ingest_case import (  # noqa: E402
+    _build_scaffold_from_index,
+    _resolve_from_index_pdf_url,
+)
 
 
 def _entry(pdf_url=None):
@@ -64,3 +67,12 @@ def test_registry_failure_returns_none_and_reason():
     assert pdf_url is None
     assert resolution.status == "manual_required"
     assert resolution.candidates
+
+
+def test_scaffold_copies_pdf_language_to_source_document():
+    entry = _entry(pdf_url="https://x/index.pdf")
+    entry["pdf_language"] = "deu"
+
+    scaffold = _build_scaffold_from_index(entry, "https://x/index.pdf")
+
+    assert scaffold["source_documents"][0]["language"] == "deu"

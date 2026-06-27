@@ -48,6 +48,7 @@ try:
 except ImportError:
     pass
 
+from app.cases.models.case import _is_iso639_2_code
 from app.shared.utils.pdf_extractor import DEFAULT_CACHE_DIR, iter_pages, load_cache
 from check_source_integrity import quote_found_in_text
 from pipeline_profile import select_profile
@@ -118,6 +119,30 @@ _VALID_MARKET_IMPORTANCE: frozenset[str] = frozenset({
     "background",           # Mentioned in overview/background only, no formal analysis
     "incomplete_source",    # Conclusion expected but absent from supplied text chunks
 })
+
+
+def _document_language_map(record: dict) -> dict[str, str]:
+    return {
+        str(doc.get("doc_id")): str(doc.get("language"))
+        for doc in (record.get("source_documents") or [])
+        if doc.get("doc_id") and _is_iso639_2_code(doc.get("language"))
+    }
+
+
+def _format_document_languages_for_prompt(record: dict) -> str:
+    languages = _document_language_map(record)
+    if not languages:
+        return ""
+    pairs = ", ".join(f"{doc_id}={language}" for doc_id, language in sorted(languages.items()))
+    non_english = sorted({language for language in languages.values() if language != "eng"})
+    if non_english:
+        return (
+            "Source document languages: " + pairs + "\n"
+            "Language contract: write analytical fields in English; copy quote text "
+            "verbatim in the source language; set source_language to the document "
+            "language; provide quote_translation in English for non-English quotes."
+        )
+    return "Source document languages: " + pairs
 
 # Reconciliation group labels — used for structured output grouping.
 _RECON_GROUP: dict[str, str] = {
@@ -362,6 +387,8 @@ class ExtractedPassage:
     source_document_id: str = ""
     rejection_reason: str = ""
     source_role: str = ""  # see _VALID_SOURCE_ROLES
+    source_language: str = ""
+    quote_translation: str = ""
 
 
 @dataclass
@@ -1177,6 +1204,12 @@ Extract the following from the supplied source text ONLY.
 - Do NOT invent quotes, page numbers, or conclusions absent from the text.
 - For every item, cite the exact chunk_id and page_number from the supplied text.
 - Copy quote text VERBATIM — do not paraphrase or summarise.
+- Write extracted analytical fields in English, even when the source document is
+  not English.
+- For non-English source documents, keep `quote` verbatim in the source language,
+  set `source_language` to the supplied document language code, and provide a
+  concise English `quote_translation`.
+- Do not translate `quote`; only `quote_translation` may be translated.
 - If evidence is not in the supplied text, set "not_found": true.
 
 CRITICAL - COMPLETE RESPONSE: You MUST return a complete JSON object with all
@@ -1320,6 +1353,8 @@ definition language and belong linked to the market entry they define.
 VERBATIM QUOTES ONLY:
 Copy passage text EXACTLY as it appears in the source. Do NOT paraphrase, summarise,
 or rephrase. If you cannot find an exact verbatim quote, do not include the passage.
+For non-English documents, this means `quote` remains in the original source language;
+put the English rendering only in `quote_translation`.
 
 QUOTE CLEANLINESS — PDF NORMALISATION TRAPS (rule mdr_009):
 PDF-extracted text commonly contains artifacts that make quote snippets hard to verify.
@@ -1495,6 +1530,20 @@ _PASSAGE_ITEM_SCHEMA = {
         "chunk_id": {"type": "string"},
         "page_number": {"type": "integer"},
         "quote": {"type": "string"},
+        "source_language": {
+            "type": "string",
+            "description": (
+                "Lowercase ISO 639-2 language code for quote, e.g. eng, deu, fra. "
+                "Set to the supplied source document language when known."
+            ),
+        },
+        "quote_translation": {
+            "type": "string",
+            "description": (
+                "Concise English translation of quote for non-English source passages. "
+                "Leave empty for English quotes."
+            ),
+        },
         "supports": {
             "type": "array",
             "items": {"type": "string"},
@@ -1834,6 +1883,9 @@ CRITICAL RULES:
 - Assign short passage IDs (e.g. "sp_1", "sp_2") in source_passages and reference
   the same IDs in source_passage_refs.
 - Quote text VERBATIM — do not paraphrase.
+- Write findings and descriptions in English. For non-English source documents,
+  keep passage quote text verbatim in the source language, set source_language to
+  the document language code, and provide an English quote_translation.
 - Set source_role on each passage:
     commission_assessment → Commission actively analysing
     conclusion            → Commission's explicit finding
@@ -1875,6 +1927,9 @@ def _build_extraction_prompt(
         + "Authority: " + case_context.get("authority", "?") + "\n"
         + "Parties: " + (parties_str or "?")
     )
+    language_lines = _format_document_languages_for_prompt(case_context)
+    if language_lines:
+        context_block += "\n" + language_lines
     chunks_block = _format_chunks_for_prompt(chunks)
     # Inject profile-specific source-role block when a profile is available.
     # This replaces the static SOURCE ROLE CLASSIFICATION section in _EXTRACTION_TASK
@@ -1906,6 +1961,9 @@ def _build_unit_assessment_prompt(chunks: list[ChunkInfo], case_context: dict) -
         + "Authority: " + case_context.get("authority", "?") + "\n"
         + "Parties: " + (parties_str or "?")
     )
+    language_lines = _format_document_languages_for_prompt(case_context)
+    if language_lines:
+        context_block += "\n" + language_lines
     chunks_block = _format_chunks_for_prompt(chunks)
     return (
         "You are a competition law research assistant extracting structured "
@@ -2095,6 +2153,7 @@ def _validate_unit_assessment(
     raw: dict,
     chunks: list[ChunkInfo],
     chunk_doc_map: dict[str, str],
+    chunk_doc_language_map: Optional[dict[str, str]] = None,
 ) -> "ExtractionResult":
     """Parse and validate a unit_assessment Claude response.
 
@@ -2104,6 +2163,7 @@ def _validate_unit_assessment(
     """
     validated_count = 0
     rejected_count = 0
+    chunk_doc_language_map = chunk_doc_language_map or {}
 
     # Build a map from Claude's raw passage IDs to validated sp snippets so the
     # draft builder can emit stable passage refs in the findings.
@@ -2125,6 +2185,13 @@ def _validate_unit_assessment(
         source_role = str(rp.get("source_role", "") or "")
         if source_role and source_role not in _VALID_SOURCE_ROLES:
             source_role = ""
+        source_language = str(rp.get("source_language", "") or "").strip()
+        doc_language = chunk_doc_language_map.get(chunk_id, "")
+        if source_language and not _is_iso639_2_code(source_language):
+            source_language = ""
+        if not source_language and doc_language:
+            source_language = doc_language
+        quote_translation = str(rp.get("quote_translation", "") or "").strip()
         try:
             page_num = int(rp.get("page_number") or 0)
         except (TypeError, ValueError):
@@ -2137,6 +2204,8 @@ def _validate_unit_assessment(
                 validated=False,
                 rejection_reason="Missing required field(s): chunk_id, quote, or page_number",
                 source_role=source_role,
+                source_language=source_language,
+                quote_translation=quote_translation,
             ))
             continue
 
@@ -2152,6 +2221,8 @@ def _validate_unit_assessment(
             source_document_id=chunk_doc_map.get(chunk_id, ""),
             rejection_reason="" if valid else note,
             source_role=source_role,
+            source_language=source_language,
+            quote_translation=quote_translation,
         )
         if valid:
             validated_count += 1
@@ -2414,6 +2485,7 @@ def _validate_extraction(
     raw: dict,
     chunks: list[ChunkInfo],
     chunk_doc_map: dict[str, str],
+    chunk_doc_language_map: Optional[dict[str, str]] = None,
 ) -> ExtractionResult:
     """
     Walk the raw Claude extraction, validate every passage quote, and return
@@ -2423,6 +2495,7 @@ def _validate_extraction(
     """
     validated_count = 0
     rejected_count = 0
+    chunk_doc_language_map = chunk_doc_language_map or {}
 
     def _process_passages(raw_passages: list) -> list[ExtractedPassage]:
         nonlocal validated_count, rejected_count
@@ -2436,6 +2509,13 @@ def _validate_extraction(
             # Coerce unknown source roles to empty string rather than propagating invalid values.
             if source_role and source_role not in _VALID_SOURCE_ROLES:
                 source_role = ""
+            source_language = str(rp.get("source_language", "") or "").strip()
+            doc_language = chunk_doc_language_map.get(chunk_id, "")
+            if source_language and not _is_iso639_2_code(source_language):
+                source_language = ""
+            if not source_language and doc_language:
+                source_language = doc_language
+            quote_translation = str(rp.get("quote_translation", "") or "").strip()
             try:
                 page_num = int(rp.get("page_number") or 0)
             except (TypeError, ValueError):
@@ -2447,6 +2527,8 @@ def _validate_extraction(
                     chunk_id="", page_number=page_num, quote=quote,
                     validated=False, rejection_reason="Missing required field: chunk_id",
                     source_role=source_role,
+                    source_language=source_language,
+                    quote_translation=quote_translation,
                 ))
                 rejected_count += 1
                 continue
@@ -2455,6 +2537,8 @@ def _validate_extraction(
                     chunk_id=chunk_id, page_number=page_num, quote="",
                     validated=False, rejection_reason="Missing required field: quote",
                     source_role=source_role,
+                    source_language=source_language,
+                    quote_translation=quote_translation,
                 ))
                 rejected_count += 1
                 continue
@@ -2463,6 +2547,8 @@ def _validate_extraction(
                     chunk_id=chunk_id, page_number=0, quote=quote,
                     validated=False, rejection_reason="Missing required field: page_number",
                     source_role=source_role,
+                    source_language=source_language,
+                    quote_translation=quote_translation,
                 ))
                 rejected_count += 1
                 continue
@@ -2477,6 +2563,8 @@ def _validate_extraction(
                         f"(last chars: ...{quote[-30:]!r})"
                     ),
                     source_role=source_role,
+                    source_language=source_language,
+                    quote_translation=quote_translation,
                 ))
                 rejected_count += 1
                 continue
@@ -2493,6 +2581,8 @@ def _validate_extraction(
                 source_document_id=chunk_doc_map.get(chunk_id, ""),
                 rejection_reason="" if valid else note,
                 source_role=source_role,
+                source_language=source_language,
+                quote_translation=quote_translation,
             )
             if valid:
                 validated_count += 1
@@ -2680,6 +2770,12 @@ def _extract_section_batch(
     section_label = _section_label_for_batch(prefix, chunks)
     debug_label = f"{case_id}_section_{prefix.replace('.', '_')}"
     chunk_doc_map = {c.chunk_id: c.source_document_id for c in chunks}
+    doc_languages = _document_language_map(case_context)
+    chunk_doc_language_map = {
+        c.chunk_id: doc_languages[c.source_document_id]
+        for c in chunks
+        if c.source_document_id in doc_languages
+    }
 
     total_pages = sum(len(c.pages) for c in chunks)
     total_chars = sum(len(c.prompt_text) for c in chunks)
@@ -2845,7 +2941,7 @@ def _extract_section_batch(
                 debug_path=debug_path,
             )
 
-    result = _validate_extraction(raw, chunks, chunk_doc_map)
+    result = _validate_extraction(raw, chunks, chunk_doc_map, chunk_doc_language_map)
     result.raw_response = response_text
     result.section_label = section_label  # used by merge to scope caveats
 
@@ -3094,6 +3190,8 @@ def _build_draft_record(
                     "source_document_id": ep.source_document_id,
                     "page": str(ep.page_number),
                     "quote_snippet": ep.quote,
+                    **({"source_language": ep.source_language} if ep.source_language else {}),
+                    **({"quote_translation": ep.quote_translation} if ep.quote_translation else {}),
                     "source_role": ep.source_role or "not_set",
                     "extraction_method": "pdf_extracted",
                     "review_status": "unreviewed",
@@ -3125,6 +3223,8 @@ def _build_draft_record(
             "source_document_id": ep.source_document_id or "",
             "page": str(ep.page_number),
             "quote_snippet": ep.quote,
+            **({"source_language": ep.source_language} if ep.source_language else {}),
+            **({"quote_translation": ep.quote_translation} if ep.quote_translation else {}),
             "source_role": ep.source_role or "not_set",
             "extraction_method": "pdf_extracted",
             "review_status": "unreviewed",
@@ -4435,6 +4535,12 @@ def extract_case(
     # -----------------------------------------------------------------------
     else:
         chunk_doc_map = {c.chunk_id: c.source_document_id for c in selected}
+        doc_languages = _document_language_map(existing_record)
+        chunk_doc_language_map = {
+            c.chunk_id: doc_languages[c.source_document_id]
+            for c in selected
+            if c.source_document_id in doc_languages
+        }
 
         total_pages = sum(len(c.pages) for c in selected)
         total_chars = sum(len(c.full_text) for c in selected)
@@ -4473,7 +4579,9 @@ def extract_case(
                 )
                 return report
 
-            result = _validate_unit_assessment(raw, selected, chunk_doc_map)
+            result = _validate_unit_assessment(
+                raw, selected, chunk_doc_map, chunk_doc_language_map
+            )
             result.raw_response = response_text
             report.result = result
 
@@ -4572,7 +4680,7 @@ def extract_case(
                     )
                     return report
 
-            result = _validate_extraction(raw, selected, chunk_doc_map)
+            result = _validate_extraction(raw, selected, chunk_doc_map, chunk_doc_language_map)
             result.raw_response = response_text
             report.result = result
 
@@ -4703,7 +4811,13 @@ def replay_section_debug(
         return report
 
     chunk_doc_map = {c.chunk_id: c.source_document_id for c in chunks}
-    result = _validate_extraction(raw, chunks, chunk_doc_map)
+    doc_languages = _document_language_map(existing_record)
+    chunk_doc_language_map = {
+        c.chunk_id: doc_languages[c.source_document_id]
+        for c in chunks
+        if c.source_document_id in doc_languages
+    }
+    result = _validate_extraction(raw, chunks, chunk_doc_map, chunk_doc_language_map)
     result.raw_response = f"replayed from {debug_path.name}"
     report.result = result
 

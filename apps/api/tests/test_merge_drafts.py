@@ -657,6 +657,26 @@ class TestPassageDedupe:
         merged, _ = merge_drafts([pa, pb])
         assert len(merged["source_passages"]) == 2
 
+    def test_passage_dedupe_preserves_language_and_translation(self, tmp_path):
+        quote = "Die Kommission definiert den Markt."
+        p1 = _passage("sp_1", quote)
+        p1["source_language"] = "deu"
+        p2 = _passage("sp_1", quote)
+        p2["quote_translation"] = "The Commission defines the market."
+        a = _base_draft(source_passages=[p1])
+        b = _base_draft(source_passages=[p2])
+        pa = tmp_path / "eu_test.theories.a.draft.yaml"
+        pb = tmp_path / "eu_test.theories.b.draft.yaml"
+        pa.write_text(yaml.dump(a))
+        pb.write_text(yaml.dump(b))
+
+        merged, _ = merge_drafts([pa, pb])
+
+        assert len(merged["source_passages"]) == 1
+        passage = merged["source_passages"][0]
+        assert passage["source_language"] == "deu"
+        assert passage["quote_translation"] == "The Commission defines the market."
+
 
 # ---------------------------------------------------------------------------
 # Dry-run
