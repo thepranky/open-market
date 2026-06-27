@@ -171,7 +171,18 @@ def _extract_pdf_anchors(html: str) -> list[tuple[str, str]]:
 _EU_MANUAL_OUTCOMES = {"cleared_with_conditions", "blocked", "annulled",
                        "partially_annulled", "under_appeal"}
 _EU_CASE_RE = re.compile(r"M\.(\d+)$")
-_CELLAR_TEMPLATE = "http://publications.europa.eu/resource/celex/{celex}.ENG.pdf"
+_CELLAR_TEMPLATE = "http://publications.europa.eu/resource/celex/{celex}.{lang}.pdf"
+
+# Cellar language manifestations to try, in priority order. English first (the
+# product is English-facing); then the languages EC merger clearances are most
+# often published in, then the remaining official EU languages. Simplified /
+# Phase I decisions are frequently published ONLY in the authentic language of
+# the notifying parties, so an English manifestation often does not exist.
+_EU_LANGUAGES = (
+    "ENG", "FRA", "DEU", "ITA", "NLD", "SPA", "POL", "POR", "SWE", "DAN",
+    "FIN", "CES", "ELL", "HUN", "RON", "BUL", "HRV", "SLK", "SLV", "EST",
+    "LAV", "LIT", "GLE", "MLT",
+)
 
 
 @dataclass
@@ -179,8 +190,11 @@ class EuCellarResolver:
     """Resolve EC Phase I (non-opposition) decisions via the EUR-Lex Cellar endpoint.
 
     The CELEX id follows ``3{YEAR}M{CASE_NUMBER}`` (M.11115 decided 2023 →
-    ``32023M11115``); the Cellar URL content-negotiates to a PDF. Phase II /
-    appeal outcomes are returned as ``manual_required`` rather than guessed.
+    ``32023M11115``). Cellar publishes a separate PDF manifestation per language;
+    the resolver tries English first, then the other official EU languages,
+    because simplified / Phase I clearances are often published only in the
+    authentic language of the notifying parties. Phase II / appeal outcomes are
+    returned as ``manual_required`` rather than guessed.
     """
 
     fetcher: Fetcher
@@ -208,15 +222,19 @@ class EuCellarResolver:
         if not year.isdigit():
             return PdfResolution.missing(self.name, "no_decision_year")
         celex = f"3{year}M{m.group(1)}"
-        url = _CELLAR_TEMPLATE.format(celex=celex)
-        try:
-            head = self.fetcher.head(url, timeout=timeout)
-        except Exception as exc:  # noqa: BLE001 — transport failure is operational
-            return PdfResolution.errored(self.name, f"head_failed: {exc}")
-        if head.status_code == 200 and "pdf" in head.content_type:
-            return PdfResolution.resolved(
-                self.name, head.url, f"cellar_celex_{celex}")
-        return PdfResolution.missing(self.name, f"cellar_no_pdf_status_{head.status_code}")
+        last_status = None
+        for lang in _EU_LANGUAGES:
+            url = _CELLAR_TEMPLATE.format(celex=celex, lang=lang)
+            try:
+                head = self.fetcher.head(url, timeout=timeout)
+            except Exception as exc:  # noqa: BLE001 — transport failure is operational
+                return PdfResolution.errored(self.name, f"head_failed: {exc}")
+            if head.status_code == 200 and "pdf" in head.content_type:
+                return PdfResolution.resolved(
+                    self.name, head.url, f"cellar_celex_{celex}_{lang.lower()}")
+            last_status = head.status_code
+        return PdfResolution.missing(
+            self.name, f"cellar_no_pdf_status_{last_status}")
 
 
 # ---------------------------------------------------------------------------

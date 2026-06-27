@@ -49,7 +49,8 @@ class _FakeFetcher:
     def head(self, url, *, timeout):
         if self._raise_on == "head":
             raise ConnectionError("boom")
-        return self._heads[url]
+        # An unset URL behaves like a real 404 (the manifestation doesn't exist).
+        return self._heads.get(url, HeadResult(404, "", url))
 
     def get_text(self, url, *, timeout):
         if self._raise_on == "get":
@@ -99,6 +100,36 @@ def test_eu_no_case_number_is_not_found():
 def test_eu_cellar_miss_is_not_found():
     fetcher = _FakeFetcher(heads={_CELLAR: HeadResult(404, "text/html", _CELLAR)})
     res = EuCellarResolver(fetcher).resolve(_Entry(), timeout=5)
+    assert res.status == "not_found"
+
+
+def _cellar(lang):
+    return f"http://publications.europa.eu/resource/celex/32022M10852.{lang}.pdf"
+
+
+def test_eu_falls_back_to_non_english_language():
+    # No English manifestation, but a German one exists → resolve to German.
+    fetcher = _FakeFetcher(heads={_cellar("DEU"): HeadResult(200, "application/pdf",
+                                                             _cellar("DEU"))})
+    res = EuCellarResolver(fetcher).resolve(_Entry(), timeout=5)
+    assert res.status == "resolved"
+    assert res.pdf_url == _cellar("DEU")
+    assert res.reason.endswith("_deu")
+
+
+def test_eu_prefers_english_when_both_exist():
+    # English is tried first, so it wins even when other languages also exist.
+    fetcher = _FakeFetcher(heads={
+        _cellar("ENG"): HeadResult(200, "application/pdf", _cellar("ENG")),
+        _cellar("DEU"): HeadResult(200, "application/pdf", _cellar("DEU")),
+    })
+    res = EuCellarResolver(fetcher).resolve(_Entry(), timeout=5)
+    assert res.pdf_url == _cellar("ENG")
+    assert res.reason.endswith("_eng")
+
+
+def test_eu_no_manifestation_in_any_language_is_not_found():
+    res = EuCellarResolver(_FakeFetcher()).resolve(_Entry(), timeout=5)
     assert res.status == "not_found"
 
 

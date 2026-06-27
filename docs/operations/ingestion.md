@@ -346,6 +346,12 @@ Adapters are deliberately conservative: they prefer a correct `manual_required`
 over an overconfident wrong `pdf_url`. EU Phase II / appeal outcomes are not in
 EUR-Lex / Cellar and return `manual_required` by design.
 
+The EU adapter tries Cellar language manifestations in order (English first, then
+the other official EU languages): simplified / Phase I clearances are frequently
+published only in the authentic language of the notifying parties, so it resolves
+e.g. a German or French decision when no English version exists. The resolved
+language is shown in the dry-run `reason` (`cellar_celex_…_deu`).
+
 The old `resolve_eu_pdf_urls.py` / `resolve_uk_pdf_urls.py` remain as thin
 deprecated wrappers for one release; they forward to the shared CLI.
 
