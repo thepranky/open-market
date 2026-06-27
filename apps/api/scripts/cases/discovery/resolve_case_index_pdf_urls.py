@@ -43,9 +43,6 @@ from pdf_resolvers import (  # noqa: E402
     select_resolver,
 )
 
-# Jurisdiction subdir <-> CaseIndexEntry.jurisdiction value.
-_JUR_DIRS = {"eu": "EU", "uk": "UK", "us": "US"}
-
 _PDF_LINE_RE = re.compile(r"^pdf_url:.*$", re.MULTILINE)
 _SOURCE_LINE_RE = re.compile(r"^(source_url:.*)$", re.MULTILINE)
 
@@ -55,11 +52,15 @@ def patch_pdf_url(yaml_text: str, pdf_url: str) -> str:
 
     A new ``pdf_url`` is placed right after ``source_url`` (canonical order); if
     there is no ``source_url`` line it is appended at end of file.
+
+    Lambda replacements are used so the URL is inserted literally — a value
+    containing a ``\\1``-style sequence is never interpreted as a backreference.
     """
     if _PDF_LINE_RE.search(yaml_text):
-        return _PDF_LINE_RE.sub(f"pdf_url: {pdf_url}", yaml_text, count=1)
+        return _PDF_LINE_RE.sub(lambda _m: f"pdf_url: {pdf_url}", yaml_text, count=1)
     if _SOURCE_LINE_RE.search(yaml_text):
-        return _SOURCE_LINE_RE.sub(rf"\1\npdf_url: {pdf_url}", yaml_text, count=1)
+        return _SOURCE_LINE_RE.sub(
+            lambda m: f"{m.group(1)}\npdf_url: {pdf_url}", yaml_text, count=1)
     if not yaml_text.endswith("\n"):
         yaml_text += "\n"
     return yaml_text + f"pdf_url: {pdf_url}\n"

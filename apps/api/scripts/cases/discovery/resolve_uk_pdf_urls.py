@@ -44,7 +44,7 @@ def main() -> int:
         argv.append("--dry-run")
     if args.all_outcomes:
         argv.append("--all-outcomes")
-    if args.limit is not None:
+    if args.limit:  # old script treated --limit 0 as "no limit" (falsy)
         argv += ["--limit", str(args.limit)]
     if args.overwrite:
         argv.append("--overwrite")

@@ -93,6 +93,14 @@ def test_patch_appends_when_no_source_url():
     assert out.endswith("pdf_url: http://p\n")
 
 
+def test_patch_inserts_url_with_backreference_literally():
+    # A URL containing a \1-style sequence must be written verbatim, not treated
+    # as an re.sub backreference.
+    text = "source_url: http://s\n"
+    out = patch_pdf_url(text, r"http://x/\1_doc.pdf")
+    assert r"pdf_url: http://x/\1_doc.pdf" in out
+
+
 # ------------------------------------------------------------- run loop
 
 def test_run_writes_resolved_pdf_url(tmp_path):

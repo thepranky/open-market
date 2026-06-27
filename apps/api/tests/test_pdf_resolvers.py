@@ -13,6 +13,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
 
+import pytest
+
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts" / "cases" / "discovery"))
 
 from pdf_resolvers import (  # noqa: E402
@@ -75,6 +77,16 @@ def test_eu_phase2_outcome_is_manual_without_fetch():
         _Entry(outcome="cleared_with_conditions"), timeout=5)
     assert res.status == "manual_required"
     assert res.reason == "phase_ii_not_in_cellar"
+
+
+@pytest.mark.parametrize("outcome",
+                         ["cleared_with_conditions", "blocked", "annulled",
+                          "partially_annulled", "under_appeal"])
+def test_eu_all_manual_outcomes_skip_cellar(outcome):
+    # Every outcome not published in Cellar must return manual_required, no HTTP.
+    res = EuCellarResolver(_FakeFetcher(raise_on="head")).resolve(
+        _Entry(outcome=outcome), timeout=5)
+    assert res.status == "manual_required"
 
 
 def test_eu_no_case_number_is_not_found():
@@ -191,6 +203,16 @@ def test_us_multiple_close_merits_is_manual():
     assert res.status == "manual_required"
     assert res.reason == "multiple_close_merits_docs"
     assert len(res.candidates) == 2
+
+
+def test_us_pdf_url_with_query_string_is_extracted():
+    # Asset URLs sometimes carry a ?query / #fragment — must still be seen.
+    page = ('<a href="https://x/415418.pdf?download=1">Memorandum Opinion</a>'
+            '<a href="https://x/complaint.pdf">Complaint</a>')
+    res = UsDojFtcResolver(_FakeFetcher(pages={_US_URL: page})).resolve(
+        _us_entry(), timeout=5)
+    assert res.status == "resolved"
+    assert res.pdf_url == "https://x/415418.pdf?download=1"
 
 
 def test_us_clear_winner_among_multiple_resolves():

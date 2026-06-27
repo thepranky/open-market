@@ -143,9 +143,11 @@ def _year(entry: IndexEntryLike) -> str:
     return str(getattr(entry, "decision_date", "") or "")[:4]
 
 
-# Anchor links to PDFs, as (url, anchor_text) pairs.
+# Anchor links to PDFs, as (url, anchor_text) pairs. The path must end in .pdf,
+# optionally followed by a ?query or #fragment (DOJ/FTC asset URLs sometimes
+# carry one — without this they would be silently missed).
 _ANCHOR_RE = re.compile(
-    r'<a\b[^>]*?href=["\']([^"\']+?\.pdf)["\'][^>]*?>(.*?)</a>',
+    r'<a\b[^>]*?href=["\']([^"\']+?\.pdf(?:[?#][^"\']*)?)["\'][^>]*?>(.*?)</a>',
     re.IGNORECASE | re.DOTALL,
 )
 _TAG_RE = re.compile(r"<[^>]+>")
@@ -184,7 +186,10 @@ class EuCellarResolver:
     fetcher: Fetcher
     jurisdiction: str = "EU"
     authority: Optional[str] = None
-    default_outcomes: Optional[set[str]] = None  # attempt all; Phase II → manual
+    # None → the batch outcome filter is bypassed for EU: every outcome is
+    # attempted and Phase II / appeal cases self-report manual_required from
+    # resolve(). So --all-outcomes is effectively a no-op for EU.
+    default_outcomes: Optional[set[str]] = None
 
     name: str = "eu_cellar"
 
