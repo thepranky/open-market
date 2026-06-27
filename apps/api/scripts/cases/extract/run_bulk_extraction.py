@@ -27,6 +27,7 @@ import json
 import subprocess
 import sys
 import time
+from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -80,25 +81,65 @@ def _build_queue(jurisdiction: str) -> list[dict]:
         case_id = entry.get("case_id", path.stem)
         outcome = entry.get("outcome", "")
         pdf_url = entry.get("pdf_url")
+        extraction_status = entry.get("extraction_status")
+        pdf_language = entry.get("pdf_language") or "unknown"
+
+        # Backfilled non-substantive entries are excluded before language routing.
+        if extraction_status == "not_applicable":
+            queue.append({
+                "case_id": case_id,
+                "skip_reason": "not_applicable",
+                "pdf_language": pdf_language,
+                "extraction_status": extraction_status,
+            })
+            continue
 
         # Skip Phase II — need manual review, already handled separately
         if outcome in _SKIP_OUTCOMES:
-            queue.append({"case_id": case_id, "skip_reason": f"phase2 ({outcome})"})
+            queue.append({
+                "case_id": case_id,
+                "skip_reason": f"phase2 ({outcome})",
+                "pdf_language": pdf_language,
+                "extraction_status": extraction_status,
+            })
             continue
 
         # Skip if no pdf_url (resolver failed or too old a decision)
         if not pdf_url:
-            queue.append({"case_id": case_id, "skip_reason": "no_pdf_url"})
+            queue.append({
+                "case_id": case_id,
+                "skip_reason": "no_pdf_url",
+                "pdf_language": pdf_language,
+                "extraction_status": extraction_status,
+            })
             continue
 
         # Already promoted to canonical
         if (cases_dir / f"{case_id}.yaml").exists():
-            queue.append({"case_id": case_id, "skip_reason": "already_canonical"})
+            queue.append({
+                "case_id": case_id,
+                "skip_reason": "already_canonical",
+                "pdf_language": pdf_language,
+                "extraction_status": extraction_status,
+            })
             continue
 
-        queue.append({"case_id": case_id, "skip_reason": None})
+        queue.append({
+            "case_id": case_id,
+            "skip_reason": None,
+            "pdf_language": pdf_language,
+            "extraction_status": extraction_status,
+        })
 
     return queue
+
+
+def _language_counts(cases: list[dict]) -> Counter:
+    return Counter(c.get("pdf_language") or "unknown" for c in cases)
+
+
+def _format_counts(counts: Counter) -> str:
+    return ", ".join(f"{lang}={count}" for lang, count in sorted(counts.items())) or "none"
 
 
 def _run_case(case_id: str, jurisdiction: str, provider: str) -> tuple[str, str]:
@@ -146,7 +187,7 @@ def _run_case(case_id: str, jurisdiction: str, provider: str) -> tuple[str, str]
         return "failed", summary
 
 
-def main() -> None:
+def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(description="Resumable bulk extraction for Phase I cases")
     parser.add_argument("--jurisdiction", default="eu")
     parser.add_argument("--provider", default="gemini")
@@ -157,7 +198,7 @@ def main() -> None:
     parser.add_argument("--limit", type=int, default=0)
     parser.add_argument("--delay", type=int, default=10)
     parser.add_argument("--force", action="store_true")
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     # Resolve run ID
     if args.resume_id:
@@ -185,8 +226,9 @@ def main() -> None:
     runnable = [c for c in queue if not c["skip_reason"]]
 
     print(f"Index entries:    {total}")
-    print(f"  Skippable:      {skippable}  (phase2 / no pdf / already canonical)")
+    print(f"  Skippable:      {skippable}  (not applicable / phase2 / no pdf / already canonical)")
     print(f"  To extract:     {len(runnable)}")
+    print(f"  Languages:      {_format_counts(_language_counts(runnable))}")
     _terminal_statuses = ("done", "skipped")
     already_done = sum(
         1 for c in runnable
@@ -198,12 +240,18 @@ def main() -> None:
     print()
 
     if args.dry_run:
+        pending_cases = [
+            c for c in runnable
+            if state["cases"].get(c["case_id"], {}).get("status") not in _terminal_statuses
+            or args.force
+        ]
+        print(f"Pending languages: {_format_counts(_language_counts(pending_cases))}")
         print("DRY RUN — first 20 pending cases:")
         shown = 0
         for c in runnable:
             if state["cases"].get(c["case_id"], {}).get("status") in _terminal_statuses and not args.force:
                 continue
-            print(f"  {c['case_id']}")
+            print(f"  {c['case_id']}  [{c.get('pdf_language') or 'unknown'}]")
             shown += 1
             if shown >= 20:
                 print("  ...")

@@ -251,6 +251,19 @@ def check_draft_warnings(draft: dict) -> list[str]:
             f"({ids}). Assign roles before promotion or accept unclassified evidence."
         )
 
+    untranslated_non_english = [
+        p.get("passage_id", "<unknown>")
+        for p in (draft.get("source_passages") or [])
+        if p.get("source_language") and p.get("source_language") != "eng"
+        and not p.get("quote_translation")
+    ]
+    if untranslated_non_english:
+        ids = ", ".join(untranslated_non_english)
+        warnings.append(
+            f"WARNING: {len(untranslated_non_english)} non-English passage(s) are missing "
+            f"quote_translation ({ids}). Verbatim quote_snippet remains authoritative."
+        )
+
     return warnings
 
 

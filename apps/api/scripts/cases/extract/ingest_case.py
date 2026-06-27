@@ -89,6 +89,10 @@ _VALID_EXTRACTION_METHODS = {
 }
 
 
+def _is_iso639_2_code(value: object) -> bool:
+    return isinstance(value, str) and len(value) == 3 and value.islower() and value.isalpha()
+
+
 # ---------------------------------------------------------------------------
 # Stage 1 — Fetch / cache source PDFs
 # ---------------------------------------------------------------------------
@@ -146,6 +150,7 @@ _OUTCOME_LANGUAGE_PATTERNS = (
     "does not raise serious doubts",
     "compatible with the internal market",
     "cleared",
+    "clears",
     "authorised",
 )
 
@@ -192,6 +197,11 @@ def stage_validate_draft(draft_record: dict) -> tuple[bool, list[str], list[str]
     # Source passages: review_status, extraction_method, referential integrity,
     # and outcome-passage-to-market linkage.
     doc_ids = {d.get("doc_id") for d in (draft_record.get("source_documents") or []) if d.get("doc_id")}
+    doc_languages = {
+        d.get("doc_id"): d.get("language")
+        for d in (draft_record.get("source_documents") or [])
+        if d.get("doc_id") and d.get("language")
+    }
     for sp in (draft_record.get("source_passages") or []):
         pid = sp.get("passage_id", "?")
         rs = sp.get("review_status", "")
@@ -205,6 +215,27 @@ def stage_validate_draft(draft_record: dict) -> tuple[bool, list[str], list[str]
             errors.append(
                 f"passage {pid}: source_document_id '{ref}' not found in source_documents"
             )
+        source_language = sp.get("source_language")
+        if source_language and not _is_iso639_2_code(source_language):
+            errors.append(
+                f"passage {pid}: source_language '{source_language}' must be a lowercase ISO 639-2 code"
+            )
+        doc_language = doc_languages.get(ref)
+        if doc_language:
+            if not _is_iso639_2_code(doc_language):
+                errors.append(
+                    f"source_document {ref}: language '{doc_language}' must be a lowercase ISO 639-2 code"
+                )
+            elif doc_language != "eng":
+                if source_language != doc_language:
+                    errors.append(
+                        f"passage {pid}: source_language must match non-English source document "
+                        f"language '{doc_language}'"
+                    )
+                if not sp.get("quote_translation"):
+                    warnings.append(
+                        f"passage {pid}: non-English quote is missing quote_translation"
+                    )
 
         # Clearance/outcome passage linked to market: warn (not block).
         # Note: source_role='conclusion' passages MAY link to markets — "Commission concludes
@@ -721,6 +752,16 @@ def _resolve_from_index_pdf_url(
 def _build_scaffold_from_index(index_entry: dict, pdf_url: str) -> dict:
     """Build a minimal extraction-ready scaffold record from a case index entry."""
     case_id = index_entry["case_id"]
+    source_doc = {
+        "doc_id": f"{case_id}_decision",
+        "title": f"{index_entry.get('case_name', case_id)} — Decision",
+        "doc_type": "decision",
+        "case_page_url": index_entry.get("source_url", ""),
+        "pdf_url": pdf_url,
+    }
+    if index_entry.get("pdf_language"):
+        source_doc["language"] = index_entry["pdf_language"]
+
     return {
         "case_id": case_id,
         "case_name": index_entry.get("case_name", ""),
@@ -731,15 +772,7 @@ def _build_scaffold_from_index(index_entry: dict, pdf_url: str) -> dict:
         "decision_date": index_entry.get("decision_date", ""),
         "case_type": index_entry.get("case_type", "merger"),
         "parties": index_entry.get("parties", []),
-        "source_documents": [
-            {
-                "doc_id": f"{case_id}_decision",
-                "title": f"{index_entry.get('case_name', case_id)} — Decision",
-                "doc_type": "decision",
-                "case_page_url": index_entry.get("source_url", ""),
-                "pdf_url": pdf_url,
-            }
-        ],
+        "source_documents": [source_doc],
         "product_markets_considered": [],
         "geographic_markets_considered": [],
         "theories_of_harm": [],

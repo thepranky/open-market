@@ -399,6 +399,20 @@ class TestCheckPassage:
         assert any(i.level == Level.INFO and "found" in i.message for i in issues)
         assert not any(i.level == Level.ERROR for i in issues)
 
+    def test_non_english_quote_grounding_uses_verbatim_snippet_not_translation(self):
+        text = "Die Kommission kommt zu dem Schluss, dass der Markt national ist."
+        passage = {
+            "passage_id": "sp1",
+            "source_document_id": "doc1",
+            "quote_snippet": text,
+            "source_language": "deu",
+            "quote_translation": "The Commission concludes that the market is national.",
+        }
+        issues = check_passage("case1", passage, self._doc_map(), {"doc1": text})
+        assert any(i.level == Level.INFO and "found" in i.message for i in issues)
+        assert not any(i.level == Level.ERROR for i in issues)
+        assert not any(i.level == Level.WARNING for i in issues)
+
     def test_quote_not_found_is_warning(self):
         text = "This document discusses a completely different topic with no relevant passage."
         passage = {"passage_id": "sp1", "source_document_id": "doc1",

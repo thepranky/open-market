@@ -119,6 +119,8 @@ class SourcePassage(BaseModel):
     paragraph: Optional[str] = None
     section: Optional[str] = None
     quote_snippet: str
+    source_language: Optional[str] = None
+    quote_translation: Optional[str] = None
     extraction_method: ExtractionMethod
     review_status: ReviewStatus
     confidence_score: float = Field(ge=0.0, le=1.0)
@@ -127,6 +129,15 @@ class SourcePassage(BaseModel):
     supports_geographic_markets: list[str] = Field(default_factory=list)
     supports_theories: list[str] = Field(default_factory=list)
     supports_commitments: list[str] = Field(default_factory=list)
+
+    @field_validator("source_language")
+    @classmethod
+    def validate_source_language(cls, v: Optional[str]) -> Optional[str]:
+        if v is None:
+            return v
+        if not isinstance(v, str) or not v.islower() or len(v) != 3 or not v.isalpha():
+            raise ValueError("source_language must be a lowercase ISO 639-2 code")
+        return v
 
 
 class SourceDocument(BaseModel):
@@ -138,8 +149,18 @@ class SourceDocument(BaseModel):
     doc_type: str
     authority_reference: Optional[str] = None
     retrieval_status: RetrievalStatus = RetrievalStatus.unknown
+    language: Optional[str] = None
     published_date: Optional[date] = None
     last_checked: Optional[date] = None
+
+    @field_validator("language")
+    @classmethod
+    def validate_language(cls, v: Optional[str]) -> Optional[str]:
+        if v is None:
+            return v
+        if not isinstance(v, str) or not v.islower() or len(v) != 3 or not v.isalpha():
+            raise ValueError("language must be a lowercase ISO 639-2 code")
+        return v
 
 
 class Party(BaseModel):

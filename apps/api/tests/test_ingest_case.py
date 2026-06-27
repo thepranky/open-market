@@ -70,6 +70,49 @@ def test_stage_validate_draft_passes_clean_record():
     assert warnings == []
 
 
+def test_stage_validate_draft_requires_passage_language_to_match_non_english_doc():
+    record = {
+        "case_id": "test_case",
+        "outcome": "cleared",
+        "source_documents": [{"doc_id": "doc1", "language": "deu"}],
+        "source_passages": [
+            {
+                "passage_id": "sp_1",
+                "source_document_id": "doc1",
+                "review_status": "unreviewed",
+                "extraction_method": "pdf_extracted",
+                "source_language": "fra",
+                "quote_translation": "Translated quote.",
+            }
+        ],
+    }
+    ok, errors, warnings = stage_validate_draft(record)
+    assert not ok
+    assert any("must match non-English source document language 'deu'" in e for e in errors)
+    assert warnings == []
+
+
+def test_stage_validate_draft_warns_when_non_english_translation_missing():
+    record = {
+        "case_id": "test_case",
+        "outcome": "cleared",
+        "source_documents": [{"doc_id": "doc1", "language": "deu"}],
+        "source_passages": [
+            {
+                "passage_id": "sp_1",
+                "source_document_id": "doc1",
+                "review_status": "unreviewed",
+                "extraction_method": "pdf_extracted",
+                "source_language": "deu",
+            }
+        ],
+    }
+    ok, errors, warnings = stage_validate_draft(record)
+    assert ok
+    assert errors == []
+    assert warnings == ["passage sp_1: non-English quote is missing quote_translation"]
+
+
 def test_stage_validate_draft_catches_invalid_outcome():
     record = {
         "case_id": "test_case",

@@ -34,6 +34,7 @@ from extract_case_from_source import (
     _EXTRACTION_TOOL_SCHEMA,
     _apply_focus_guardrails,
     _build_canonical_merge_candidates,
+    _build_extraction_prompt,
     _build_promotion_plan,
     _build_promotion_plan_summary,
     _build_reconciliation_triage,
@@ -166,6 +167,71 @@ def _make_record(
              "description": "Overlap in widget market."}
         ],
     }
+
+
+# ---------------------------------------------------------------------------
+# Non-English passage metadata
+# ---------------------------------------------------------------------------
+
+class TestNonEnglishPassageMetadata:
+    def test_prompt_includes_non_english_language_contract(self):
+        record = _make_record()
+        record["source_documents"][0]["language"] = "deu"
+
+        prompt = _build_extraction_prompt(
+            [_make_chunk("chunk_1", "Assessment", [(1, "Text")], doc_id="main_doc")],
+            record,
+        )
+
+        assert "Source document languages: main_doc=deu" in prompt
+        assert "analytical fields in English" in prompt
+        assert "quote_translation" in prompt
+
+    def test_non_english_passage_language_and_translation_emitted(self):
+        quote = "Die Kommission kommt zu dem Schluss, dass der Markt national ist."
+        chunks = [_make_chunk("chunk_1", "Market definition", [(5, quote)], doc_id="main_doc")]
+        raw = {
+            "product_markets": [
+                {
+                    "name": "Widget manufacturing",
+                    "definition_status": "defined",
+                    "market_importance": "core_assessed",
+                    "notes": "The Commission defined a national market.",
+                    "not_found": False,
+                    "passages": [
+                        {
+                            "chunk_id": "chunk_1",
+                            "page_number": 5,
+                            "quote": quote,
+                            "source_language": "eng",
+                            "quote_translation": (
+                                "The Commission concludes that the market is national."
+                            ),
+                            "source_role": "conclusion",
+                        }
+                    ],
+                }
+            ],
+            "geographic_markets": [],
+            "theories_of_harm": [],
+            "overall_outcome": "unknown",
+            "source_passages": [],
+            "caveats": [],
+        }
+        result = _validate_extraction(
+            raw,
+            chunks,
+            {"chunk_1": "main_doc"},
+            {"chunk_1": "deu"},
+        )
+        draft = _build_draft_record(result, _make_record())
+
+        passage = draft["source_passages"][0]
+        assert passage["quote_snippet"] == quote
+        assert passage["source_language"] == "deu"
+        assert passage["quote_translation"] == (
+            "The Commission concludes that the market is national."
+        )
 
 
 # ---------------------------------------------------------------------------
