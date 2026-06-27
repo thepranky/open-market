@@ -14,6 +14,7 @@ Short DDRs documenting **why** the system is built this way. Fill one per deep-d
 | G | [ddr-g-web-frontend.md](ddr-g-web-frontend.md) | Next.js pages, components, API client |
 | H | [ddr-h-ci-validation.md](ddr-h-ci-validation.md) | PR CI, pytest, gates, what's not gated |
 | I | [ddr-i-infrastructure.md](ddr-i-infrastructure.md) | Docker, Postgres, env, deploy path |
+| J | [ddr-j-dual-extraction.md](ddr-j-dual-extraction.md) | Dual extraction: align/diff two cold extractions, calibration gate |
 
 ## Conventions
 

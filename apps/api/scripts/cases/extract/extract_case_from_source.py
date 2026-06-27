@@ -1920,20 +1920,23 @@ def _build_unit_assessment_prompt(chunks: list[ChunkInfo], case_context: dict) -
 # Claude API call
 # ---------------------------------------------------------------------------
 
-def _call_claude_raw(prompt: str, anthropic_client):
+def _call_claude_raw(prompt: str, anthropic_client, temperature: Optional[float] = None):
     """Call Claude using tool_use; return the raw Anthropic message object."""
-    return anthropic_client.messages.create(
+    kwargs: dict = dict(
         model="claude-sonnet-4-6",
         max_tokens=4096,
         tools=[_EXTRACTION_TOOL_SCHEMA],
         tool_choice={"type": "tool", "name": "record_extraction"},
         messages=[{"role": "user", "content": prompt}],
     )
+    if temperature is not None:
+        kwargs["temperature"] = temperature
+    return anthropic_client.messages.create(**kwargs)
 
 
-def _call_claude(prompt: str, anthropic_client) -> str:
+def _call_claude(prompt: str, anthropic_client, temperature: Optional[float] = None) -> str:
     """Call Claude using tool_use for structured JSON output; return JSON string."""
-    message = _call_claude_raw(prompt, anthropic_client)
+    message = _call_claude_raw(prompt, anthropic_client, temperature=temperature)
     for block in message.content:
         if getattr(block, "type", None) == "tool_use":
             return json.dumps(block.input)
@@ -1944,20 +1947,23 @@ def _call_claude(prompt: str, anthropic_client) -> str:
     return ""
 
 
-def _call_claude_unit_assessment_raw(prompt: str, anthropic_client):
+def _call_claude_unit_assessment_raw(prompt: str, anthropic_client, temperature: Optional[float] = None):
     """Call Claude with the unit_assessment tool; return raw Anthropic message."""
-    return anthropic_client.messages.create(
+    kwargs: dict = dict(
         model="claude-sonnet-4-6",
         max_tokens=4096,
         tools=[_UNIT_ASSESSMENT_TOOL_SCHEMA],
         tool_choice={"type": "tool", "name": "record_unit_assessment"},
         messages=[{"role": "user", "content": prompt}],
     )
+    if temperature is not None:
+        kwargs["temperature"] = temperature
+    return anthropic_client.messages.create(**kwargs)
 
 
-def _call_claude_unit_assessment(prompt: str, anthropic_client) -> str:
+def _call_claude_unit_assessment(prompt: str, anthropic_client, temperature: Optional[float] = None) -> str:
     """Call Claude with the unit_assessment tool; return JSON string."""
-    message = _call_claude_unit_assessment_raw(prompt, anthropic_client)
+    message = _call_claude_unit_assessment_raw(prompt, anthropic_client, temperature=temperature)
     for block in message.content:
         if getattr(block, "type", None) == "tool_use":
             return json.dumps(block.input)
@@ -1974,7 +1980,7 @@ def _call_claude_unit_assessment(prompt: str, anthropic_client) -> str:
 _GEMINI_MODEL = "gemini-2.5-flash"
 
 
-def _call_gemini(prompt: str, gemini_client) -> str:
+def _call_gemini(prompt: str, gemini_client, temperature: Optional[float] = None) -> str:
     """Call Gemini with JSON output mode; return JSON string.
 
     *gemini_client* is a ``google.genai.Client`` instance.
@@ -1984,15 +1990,19 @@ def _call_gemini(prompt: str, gemini_client) -> str:
     import time as _time
     from google.genai import types as _gtypes
 
+    _config_kwargs: dict = dict(
+        response_mime_type="application/json",
+        max_output_tokens=65536,
+    )
+    if temperature is not None:
+        _config_kwargs["temperature"] = temperature
+
     for attempt in range(5):
         try:
             response = gemini_client.models.generate_content(
                 model=_GEMINI_MODEL,
                 contents=prompt,
-                config=_gtypes.GenerateContentConfig(
-                    response_mime_type="application/json",
-                    max_output_tokens=65536,
-                ),
+                config=_gtypes.GenerateContentConfig(**_config_kwargs),
             )
             return response.text.strip()
         except Exception as exc:
@@ -2052,23 +2062,27 @@ class LLMClient:
         client = LLMClient("gemini", genai.Client(api_key=...))
     """
 
-    def __init__(self, provider: str, client) -> None:
+    def __init__(self, provider: str, client, temperature: Optional[float] = None) -> None:
         if provider not in ("anthropic", "gemini"):
             raise ValueError(f"Unknown provider {provider!r}; must be 'anthropic' or 'gemini'")
         self.provider = provider
         self._client = client
+        # Optional sampling temperature; None → provider default. Used by dual
+        # extraction to raise Draft B's temperature in same-model mode so the two
+        # drafts diverge instead of producing a trivial (falsely confident) match.
+        self.temperature = temperature
 
     def call_extraction(self, prompt: str) -> str:
         """Return JSON string matching the extraction schema."""
         if self.provider == "anthropic":
-            return _call_claude(prompt, self._client)
-        return _call_gemini(prompt, self._client)
+            return _call_claude(prompt, self._client, temperature=self.temperature)
+        return _call_gemini(prompt, self._client, temperature=self.temperature)
 
     def call_unit_assessment(self, prompt: str) -> str:
         """Return JSON string matching the unit_assessment schema."""
         if self.provider == "anthropic":
-            return _call_claude_unit_assessment(prompt, self._client)
-        return _call_gemini(prompt, self._client)
+            return _call_claude_unit_assessment(prompt, self._client, temperature=self.temperature)
+        return _call_gemini(prompt, self._client, temperature=self.temperature)
 
     def call_repair(self, bad_response: str, errors: list[str]) -> str:
         """Return corrected JSON string."""

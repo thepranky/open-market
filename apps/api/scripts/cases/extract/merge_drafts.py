@@ -37,6 +37,7 @@ _API_DIR = _SCRIPTS_DIR.parent.parent.parent
 _REPO_ROOT = _API_DIR.parents[1]
 
 sys.path.insert(0, str(_API_DIR))
+sys.path.insert(0, str(_SCRIPTS_DIR))  # flat import of sibling compare_extractions
 
 # ---------------------------------------------------------------------------
 # YAML output helpers (shared with promote_draft_to_canonical)
@@ -1013,16 +1014,299 @@ def _print_report(
 # Main
 # ---------------------------------------------------------------------------
 
+# ---------------------------------------------------------------------------
+# Conflict-report merge (dual extraction, ROADMAP 5.9)
+# ---------------------------------------------------------------------------
+
+# Map the ConflictReport path label → the draft list key it addresses.
+_LABEL_TO_LIST_KEY = {
+    "product_markets": "product_markets_considered",
+    "geographic_markets": "geographic_markets_considered",
+    "theories": "theories_of_harm",
+}
+# Per list: (id field on the market, the passage field that references that id).
+_LIST_ID_AND_SUPPORT = {
+    "product_markets_considered": ("market_id", "supports_markets"),
+    "geographic_markets_considered": ("market_id", "supports_geographic_markets"),
+    "theories_of_harm": ("theory_id", "supports_theories"),
+}
+_DROP_WORDS = {"drop", "remove", "reject", "discard", "exclude", "no"}
+_KEEP_WORDS = {"keep", "add", "accept", "include", "yes"}
+
+
+def _list_key_or_raise(label: str) -> str:
+    """Map a ConflictReport list label → draft list key; raise on an unknown label."""
+    list_key = _LABEL_TO_LIST_KEY.get(label)
+    if list_key is None:
+        raise ValueError(f"unknown market list label in conflict field: {label!r}")
+    return list_key
+
+
+def _decision(resolution: Any) -> str:
+    """Normalize an a_only/b_only resolution to 'keep' | 'drop' | '' (unknown)."""
+    val = str(resolution or "").strip().lower()
+    if val in _DROP_WORDS:
+        return "drop"
+    if val in _KEEP_WORDS:
+        return "keep"
+    return ""
+
+
+def _remove_market(record: dict, list_key: str, name: str, norm) -> None:
+    target = norm(name)
+    record[list_key] = [
+        m for m in (record.get(list_key) or []) if norm(m.get("name", "")) != target
+    ]
+
+
+# Per list: the market-id prefix used when minting a fresh (collision-free) id.
+_LIST_ID_PREFIX = {
+    "product_markets_considered": "pm",
+    "geographic_markets_considered": "gm",
+    "theories_of_harm": "toh",
+}
+
+
+def _fresh_id(list_key: str, existing: set) -> str:
+    prefix = _LIST_ID_PREFIX.get(list_key, "pm")
+    n = 1
+    while f"{prefix}_merged_{n}" in existing:
+        n += 1
+    return f"{prefix}_merged_{n}"
+
+
+def _add_market_from_b(merged: dict, draft_b: dict, list_key: str, name: str, norm) -> None:
+    """Copy a B-only market (and its supporting passages) into the merged record.
+
+    Rewrites the market's id if it would collide with an existing merged id, keeping
+    the copied passages' support references consistent. To avoid mis-grounding, a
+    copied passage's support list is filtered to ids that actually exist in the
+    merged record for that list — B-origin refs to markets that were not copied
+    (which would dangle or collide with an unrelated A market) are dropped.
+    Passages already present (by passage_id) are not duplicated.
+    """
+    import copy as _copy
+
+    src = next(
+        (m for m in (draft_b.get(list_key) or []) if norm(m.get("name", "")) == norm(name)),
+        None,
+    )
+    if src is None:
+        return
+    id_field, support_key = _LIST_ID_AND_SUPPORT[list_key]
+    market = _copy.deepcopy(src)
+    old_id = market.get(id_field, "")
+    existing_ids = {m.get(id_field) for m in (merged.get(list_key) or [])}
+    new_id = old_id
+    if not new_id or new_id in existing_ids:
+        new_id = _fresh_id(list_key, existing_ids)
+        market[id_field] = new_id
+    merged.setdefault(list_key, []).append(market)
+
+    # Ids valid for this support field after the market was added.
+    valid_ids = {m.get(id_field) for m in (merged.get(list_key) or [])}
+    merged_passages = merged.setdefault("source_passages", [])
+    by_pid = {sp.get("passage_id"): sp for sp in merged_passages}
+    for sp in (draft_b.get("source_passages") or []):
+        if old_id not in (sp.get(support_key) or []):
+            continue
+        rewritten = [new_id if r == old_id else r for r in (sp.get(support_key) or [])]
+        kept = [r for r in rewritten if r in valid_ids]
+        existing = by_pid.get(sp.get("passage_id"))
+        if existing is not None:
+            # Passage already copied for another kept B-only market that shares it;
+            # add this market's now-valid ref instead of dropping it.
+            refs = existing.setdefault(support_key, [])
+            refs.extend(r for r in kept if r not in refs)
+            continue
+        sp_copy = _copy.deepcopy(sp)
+        sp_copy[support_key] = kept
+        merged_passages.append(sp_copy)
+        by_pid[sp_copy.get("passage_id")] = sp_copy
+
+
+def merge_from_conflict_report(
+    draft_a: dict,
+    draft_b: dict,
+    report: dict,
+    focus: Optional[str] = None,
+) -> dict:
+    """Apply a resolved ConflictReport to Draft A, producing one merged draft.
+
+    Aligned fields both drafts agreed on are already correct in A. Resolved
+    value_mismatch / rename conflicts overwrite A's field with the human's value;
+    auto-resolved names are applied; a_only markets are kept (default) or dropped;
+    b_only markets are added from B (with their supporting passages) when kept.
+
+    Raises ValueError if any conflict still has an empty `resolution` — unresolved
+    conflicts must block, never silently drop a field.
+    """
+    import copy as _copy
+
+    from compare_extractions import (
+        _index_markets_by_name,
+        _normalize_for_similarity,
+        align_drafts,
+    )
+    norm = _normalize_for_similarity
+
+    cr = report.get("conflict_report", report)
+    conflicts = cr.get("conflicts") or []
+    auto_resolved = cr.get("auto_resolved") or []
+
+    unresolved = [c for c in conflicts if not str(c.get("resolution") or "").strip()]
+    if unresolved:
+        fields = ", ".join(str(c.get("field")) for c in unresolved)
+        raise ValueError(
+            f"{len(unresolved)} unresolved conflict(s) — fill 'resolution' for: {fields}"
+        )
+
+    # keep/drop conflicts must carry a recognized decision — a non-empty but
+    # unparseable value (e.g. "merge", "yes please") must not silently default to
+    # keep/drop and lose or invent a market.
+    bad = [
+        c for c in conflicts
+        if c.get("kind") in ("a_only", "b_only") and not _decision(c.get("resolution"))
+    ]
+    if bad:
+        items = ", ".join(
+            f"{c.get('field')}={c.get('resolution')!r}" for c in bad
+        )
+        raise ValueError(
+            f"{len(bad)} keep/drop conflict(s) with an unrecognized resolution "
+            f"(must be 'keep' or 'drop'): {items}"
+        )
+
+    merged = _copy.deepcopy(draft_a)
+    align = align_drafts(draft_a, draft_b, focus=focus)
+    idx_merged = _index_markets_by_name(merged)
+
+    # Locate the merged (A-origin) market for an aligned-pair prefix. The prefix in
+    # the report uses B's name; the pair carries A's name so the lookup is correct
+    # even when the pair was renamed.
+    pair_by_prefix = {
+        f"{p['label']}/{p['name_b'] or p['name_a']}": p for p in align["pairs"]
+    }
+
+    def _market_for_prefix(prefix: str) -> Optional[dict]:
+        p = pair_by_prefix.get(prefix)
+        if p is None:
+            return None
+        return idx_merged[p["list_key"]].get(norm(p["name_a"]))
+
+    # 1. Aligned-pair field resolutions (value_mismatch, rename_candidate) and
+    #    top-level record scalars (field path without a "/"). A resolved conflict
+    #    whose target cannot be located is raised, never silently skipped — that
+    #    would discard a human decision into the promotion record.
+    for c in conflicts:
+        if c.get("kind") not in ("value_mismatch", "rename_candidate"):
+            continue
+        field = c.get("field", "")
+        if "/" not in field:
+            merged[field] = c["resolution"]
+            continue
+        prefix, _, leaf = field.rpartition("/")
+        m = _market_for_prefix(prefix)
+        if m is None:
+            raise ValueError(
+                f"resolved conflict '{field}' could not be located in Draft A "
+                "(alignment changed since the report was generated?)"
+            )
+        m[leaf] = c["resolution"]
+
+    # 2. Auto-resolved names → apply the expanded canonical name.
+    for a in auto_resolved:
+        prefix, _, leaf = a.get("field", "").rpartition("/")
+        m = _market_for_prefix(prefix)
+        if m is not None and leaf == "name" and a.get("resolved_to"):
+            m["name"] = a["resolved_to"]
+
+    # 3. a_only — keep or drop (decision already validated above).
+    for c in conflicts:
+        if c.get("kind") != "a_only":
+            continue
+        list_key = _list_key_or_raise(c.get("field", ""))
+        if _decision(c.get("resolution")) == "drop":
+            _remove_market(merged, list_key, c.get("draft_a", ""), norm)
+
+    # 4. b_only — keep (add from B with passages) or drop.
+    for c in conflicts:
+        if c.get("kind") != "b_only":
+            continue
+        list_key = _list_key_or_raise(c.get("field", ""))
+        if _decision(c.get("resolution")) == "keep":
+            _add_market_from_b(merged, draft_b, list_key, c.get("draft_b", ""), norm)
+
+    return merged
+
+
+def _main_conflict_report_merge(args) -> int:
+    """CLI handler for `--from-conflict-report` (dual-extraction merge)."""
+    if not args.draft_a or not args.draft_b:
+        print("ERROR: --from-conflict-report requires --draft-a and --draft-b", file=sys.stderr)
+        return 1
+    report_path = Path(args.from_conflict_report)
+    draft_a_path = Path(args.draft_a)
+    draft_b_path = Path(args.draft_b)
+    for p in (report_path, draft_a_path, draft_b_path):
+        if not p.exists():
+            print(f"ERROR: not found: {p}", file=sys.stderr)
+            return 1
+
+    report = yaml.safe_load(report_path.read_text(encoding="utf-8"))
+    draft_a = yaml.safe_load(draft_a_path.read_text(encoding="utf-8"))
+    draft_b = yaml.safe_load(draft_b_path.read_text(encoding="utf-8"))
+    focus = (report.get("conflict_report", report) or {}).get("focus") or None
+
+    try:
+        merged = merge_from_conflict_report(draft_a, draft_b, report, focus=focus)
+    except ValueError as exc:
+        print(f"BLOCKED: {exc}", file=sys.stderr)
+        return 1
+
+    ok, err_msg = _validate_merged(merged)
+    print("Validation: PASS" if ok else f"Validation: WARN — {err_msg}")
+
+    if args.output:
+        out_path = Path(args.output)
+    elif draft_a_path.name.endswith(".draft_a.yaml"):
+        out_path = draft_a_path.parent / draft_a_path.name.replace(
+            ".draft_a.yaml", ".merged.draft.yaml")
+    else:
+        # Never write back over an input draft when the name is unexpected.
+        out_path = draft_a_path.parent / (draft_a_path.name + ".merged.draft.yaml")
+    yaml_text = _dump_yaml(merged)
+    if args.dry_run:
+        print("\n--- DRY RUN — merged YAML (not written) ---\n")
+        print(yaml_text)
+        return 0
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(yaml_text, encoding="utf-8")
+    print(f"Written: {out_path}")
+    return 0
+
+
 def main(argv: Optional[list[str]] = None) -> int:
     parser = argparse.ArgumentParser(
         description="Merge partial extraction drafts into one reviewable draft YAML."
     )
     parser.add_argument(
         "drafts",
-        nargs="+",
+        nargs="*",
         metavar="DRAFT_PATH",
-        help="Paths to draft YAML files to merge.",
+        help="Paths to draft YAML files to merge (multi-focus merge mode).",
     )
+    parser.add_argument(
+        "--from-conflict-report",
+        metavar="PATH",
+        help=(
+            "Dual-extraction merge (ROADMAP 5.9): apply a resolved ConflictReport "
+            "to Draft A, producing one merged draft. Requires --draft-a and "
+            "--draft-b. Blocks if any conflict is unresolved."
+        ),
+    )
+    parser.add_argument("--draft-a", help="Draft A path (with --from-conflict-report).")
+    parser.add_argument("--draft-b", help="Draft B path (with --from-conflict-report).")
     parser.add_argument(
         "--case-id",
         help="Expected case ID. Fails if any draft does not match.",
@@ -1042,6 +1326,14 @@ def main(argv: Optional[list[str]] = None) -> int:
         help="Root directory for draft files (used for default output path).",
     )
     args = parser.parse_args(argv)
+
+    # Dual-extraction conflict-report merge takes a distinct path.
+    if args.from_conflict_report:
+        return _main_conflict_report_merge(args)
+
+    if not args.drafts:
+        print("ERROR: no draft paths given (or use --from-conflict-report)", file=sys.stderr)
+        return 1
 
     draft_paths = [Path(p) for p in args.drafts]
     drafts_dir = Path(args.drafts_dir)

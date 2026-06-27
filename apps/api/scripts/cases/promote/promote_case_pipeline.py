@@ -45,6 +45,8 @@ import sys
 from pathlib import Path
 from typing import Optional
 
+import yaml
+
 _SCRIPTS_DIR = Path(__file__).resolve().parent
 _API_DIR = _SCRIPTS_DIR.parent.parent.parent
 _REPO_ROOT = _API_DIR.parent.parent
@@ -106,6 +108,34 @@ def _run_capture(cmd: list[str]) -> subprocess.CompletedProcess:
 
 
 # ---------------------------------------------------------------------------
+# Conflict-report gate (dual extraction, ROADMAP 5.9)
+# ---------------------------------------------------------------------------
+
+def unresolved_conflicts(report_path: Path) -> list[str]:
+    """Return the field names of conflicts that still lack a resolution.
+
+    Report-only check: a conflict is unresolved when its `resolution` is null /
+    empty / whitespace. An empty list means the report is fully resolved and
+    promotion may proceed. (Keep/drop wording is validated at merge time.)
+
+    Raises ValueError if the file is not a conflict report (no `conflicts` key,
+    wrapped or unwrapped). Without this guard a draft YAML passed by mistake would
+    yield no conflicts and silently pass the gate.
+    """
+    data = yaml.safe_load(report_path.read_text(encoding="utf-8")) or {}
+    cr = data.get("conflict_report", data)
+    if not isinstance(cr, dict) or "conflicts" not in cr:
+        raise ValueError(
+            f"{report_path} is not a conflict report (missing 'conflicts' key)"
+        )
+    open_fields: list[str] = []
+    for c in (cr.get("conflicts") or []):
+        if not str(c.get("resolution") or "").strip():
+            open_fields.append(str(c.get("field", "?")))
+    return open_fields
+
+
+# ---------------------------------------------------------------------------
 # Draft integrity gate
 # ---------------------------------------------------------------------------
 
@@ -156,6 +186,7 @@ def _print_summary(
     print(f"STATUS: {'ABORTED' if aborted else 'COMPLETE'}")
     print(f"{'─'*60}")
     _LABELS: list[tuple[str, str]] = [
+        ("conflict_report",    "Conflict-report gate"),
         ("draft_integrity",    "Draft integrity"),
         ("promote",            "Promote to canonical"),
         ("validate_cases",     "Canonical validation"),
@@ -193,6 +224,11 @@ def main(argv: list[str] | None = None) -> int:
         "--focus", default="market_definition",
         help="Extraction focus (default: market_definition). "
              "Ignored when --draft is supplied or a merged draft is auto-detected.",
+    )
+    parser.add_argument(
+        "--conflict-report",
+        help="Path to a dual-extraction ConflictReport (ROADMAP 5.9). When supplied, "
+             "promotion is blocked unless every conflict has a resolution.",
     )
     parser.add_argument(
         "--procedure-stage",
@@ -238,6 +274,39 @@ def main(argv: list[str] | None = None) -> int:
     if args.dry_run:
         print("[DRY RUN]")
     print(f"{'='*60}")
+
+    # ------------------------------------------------------------------
+    # 0. Conflict-report gate (dual extraction) — block on any open conflict
+    # ------------------------------------------------------------------
+    if args.conflict_report:
+        report_path = Path(args.conflict_report)
+        print("\n[0] Conflict-report resolution gate …")
+        if not report_path.exists():
+            status["conflict_report"] = "FAIL (not found)"
+            print(f"\nERROR: conflict report not found: {report_path}", file=sys.stderr)
+            _print_summary(status, args.case_id, args.focus, aborted=True,
+                           draft_path=effective_draft)
+            return 1
+        try:
+            open_fields = unresolved_conflicts(report_path)
+        except ValueError as exc:
+            status["conflict_report"] = "FAIL (invalid file)"
+            print(f"\nERROR: {exc}", file=sys.stderr)
+            _print_summary(status, args.case_id, args.focus, aborted=True,
+                           draft_path=effective_draft)
+            return 1
+        if open_fields:
+            status["conflict_report"] = f"FAIL ({len(open_fields)} unresolved)"
+            print(
+                f"\nERROR: {len(open_fields)} unresolved conflict(s) in {report_path}.\n"
+                "Resolve every conflict (fill 'resolution') before promoting.\n"
+                "  " + "\n  ".join(open_fields),
+                file=sys.stderr,
+            )
+            _print_summary(status, args.case_id, args.focus, aborted=True,
+                           draft_path=effective_draft)
+            return 1
+        status["conflict_report"] = "PASS (all resolved)"
 
     # ------------------------------------------------------------------
     # 1. Draft source integrity — must pass with 0 errors AND 0 warnings
