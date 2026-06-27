@@ -1,0 +1,169 @@
+generated_at: "2026-06-27"
+command: "/Users/bhavyasharma/open-market/apps/api/.venv/bin/python scripts/cases/discovery/resolve_case_index_pdf_urls.py --jurisdiction all --all-outcomes --dry-run --delay 0 --timeout 20"
+counts:
+  missing_before:
+    eu: 1
+    uk: 14
+    us: 10
+  resolved: 9
+  unresolved: 16
+entries:
+  - case_id: eu_illumina_grail_2022
+    jurisdiction: EU
+    resolver_status: manual_required
+    resolver_reason: phase_ii_not_in_cellar
+    resolution: source_page_missing_pdf
+    note: EC case page reviewed; no direct substantive decision PDF selected.
+  - case_id: uk_aah_pharmaceuticals_ltd_east_anglian_pharmaceuticals_2003
+    jurisdiction: UK
+    resolver_status: manual_required
+    resolver_reason: no_report_match
+    resolution: wrong_document_type_only
+    note: GOV.UK page links terms of reference, cancellation release, and cancellation notice only.
+  - case_id: uk_dods_dehavilland_merger_inquiry_cc_2012
+    jurisdiction: UK
+    resolver_status: manual_required
+    resolver_reason: no_report_match
+    resolution: wrong_document_type_only
+    note: GOV.UK page links terms of reference and cancellation notice only.
+  - case_id: uk_getty_image_inc_rex_features_ltd_merger_inquiry_cc_2010
+    jurisdiction: UK
+    resolver_status: manual_required
+    resolver_reason: no_report_match
+    resolution: wrong_document_type_only
+    note: GOV.UK page links terms of reference, cancellation release, and cancellation notice only.
+  - case_id: uk_kemira_growhow_oyj_terra_industries_inc_merger_inquiry_cc_2007
+    jurisdiction: UK
+    resolver_status: not_found
+    resolver_reason: no_pdf_links
+    resolution: source_page_missing_pdf
+    note: GOV.UK page links an archived final-report landing page, but no direct raw report PDF was recovered; PDF links found were release, undertakings, and disclosure documents.
+  - case_id: uk_linde_ag_ineos_chlor_ltd_merger_inquiry_cc_2008
+    jurisdiction: UK
+    resolver_status: not_found
+    resolver_reason: no_pdf_links
+    resolution: source_page_missing_pdf
+    note: GOV.UK page links an archived final-report landing page, but no direct raw report PDF was recovered; PDF links found were release, undertakings, and disclosure documents.
+  - case_id: uk_linergy_ltd_ulster_farm_by_products_ltd_proposed_merger_2012
+    jurisdiction: UK
+    resolver_status: manual_required
+    resolver_reason: no_report_match
+    resolution: wrong_document_type_only
+    note: GOV.UK page links terms of reference and cancellation notice only.
+  - case_id: uk_mbl_holdings_ltd_trigoldcrystal_group_ltd_merger_inquiry_cc_2011
+    jurisdiction: UK
+    resolver_status: manual_required
+    resolver_reason: no_report_match
+    resolution: wrong_document_type_only
+    note: GOV.UK page links terms of reference and cancellation notice only.
+  - case_id: uk_national_grid_ppl_wpd_investments_2021
+    jurisdiction: UK
+    resolver_status: manual_required
+    resolver_reason: no_report_match
+    resolution: direct_pdf_found
+    pdf_url: https://assets.publishing.service.gov.uk/media/616566308fa8f52982a86086/131021_National_Grid-WPD.pdf
+    note: official CMA full text clearance decision PDF.
+  - case_id: uk_news_corporation_british_sky_broadcasting_plc_merger_2011
+    jurisdiction: UK
+    resolver_status: manual_required
+    resolver_reason: no_report_match
+    resolution: wrong_document_type_only
+    note: GOV.UK page links terms of reference, cancellation release, and cancellation notice only.
+  - case_id: uk_south_staffordshire_plc_cambridge_water_plc_merger_2012
+    jurisdiction: UK
+    resolver_status: not_found
+    resolver_reason: no_pdf_links
+    resolution: direct_pdf_found
+    pdf_url: https://webarchive.nationalarchives.gov.uk/ukgwa/20140402204338id_/http://www.competition-commission.org.uk/assets/competitioncommission/docs/2012/south-staff-cambridge-water/final_report_excised.pdf
+    note: archived Competition Commission final report PDF.
+  - case_id: uk_stagecoach_first_devon_merger_inquiry_cc_2012
+    jurisdiction: UK
+    resolver_status: manual_required
+    resolver_reason: no_report_match
+    resolution: wrong_document_type_only
+    note: GOV.UK page links terms of reference and cancellation notice only.
+  - case_id: uk_stericycle_inc_ecowaste_southwest_ltd_merger_inquiry_cc_2012
+    jurisdiction: UK
+    resolver_status: not_found
+    resolver_reason: no_pdf_links
+    resolution: direct_pdf_found
+    pdf_url: https://webarchive.nationalarchives.gov.uk/ukgwa/20140402205239id_/http://www.competition-commission.org.uk/assets/competitioncommission/docs/2011/srcl-ecowaste/ecowaste_final_report_excised.pdf
+    note: archived Competition Commission final report PDF.
+  - case_id: uk_tayto_group_limited_the_real_pork_crackling_company_limited_2018
+    jurisdiction: UK
+    resolver_status: manual_required
+    resolver_reason: no_report_match
+    resolution: direct_pdf_found
+    pdf_url: https://assets.publishing.service.gov.uk/media/5bffcbcbed915d11a41d245c/181113_-_Tayto_-_RPCC_-_Final.pdf
+    note: official CMA full text clearance decision PDF.
+  - case_id: uk_unum_ltd_swiss_life_uk_plc_merger_inquiry_cc_2003
+    jurisdiction: UK
+    resolver_status: manual_required
+    resolver_reason: no_report_match
+    resolution: wrong_document_type_only
+    note: GOV.UK page links terms of reference, cancellation release, and cancellation notice only.
+  - case_id: us_doj_aetna_humana_2017
+    jurisdiction: US
+    resolver_status: manual_required
+    resolver_reason: multiple_close_merits_docs
+    resolution: direct_pdf_found
+    pdf_url: https://www.justice.gov/atr/case-document/file/930696/dl
+    note: official DOJ-hosted district court memorandum opinion.
+  - case_id: us_doj_american_jetblue_alliance_2023
+    jurisdiction: US
+    resolver_status: manual_required
+    resolver_reason: no_merits_match
+    resolution: wrong_document_type_only
+    note: DOJ page links appellate brief, complaint, and opening or closing argument materials only.
+  - case_id: us_doj_anthem_cigna_2017
+    jurisdiction: US
+    resolver_status: manual_required
+    resolver_reason: multiple_close_merits_docs
+    resolution: direct_pdf_found
+    pdf_url: https://www.justice.gov/atr/case-document/file/940946/dl
+    note: official DOJ-hosted district court memorandum opinion.
+  - case_id: us_doj_att_timewarner_2018
+    jurisdiction: US
+    resolver_status: manual_required
+    resolver_reason: multiple_close_merits_docs
+    resolution: wrong_document_type_only
+    note: DOJ page links briefs, proposed findings, expert reports, and procedural filings; no direct merits opinion PDF found on the authority page.
+  - case_id: us_doj_jetblue_spirit_2024
+    jurisdiction: US
+    resolver_status: manual_required
+    resolver_reason: multiple_close_merits_docs
+    resolution: direct_pdf_found
+    pdf_url: https://www.justice.gov/atr/media/1380311/dl
+    note: official DOJ-hosted court findings of fact and conclusions of law PDF.
+  - case_id: us_doj_penguin_simonschuster_2022
+    jurisdiction: US
+    resolver_status: manual_required
+    resolver_reason: multiple_close_merits_docs
+    resolution: direct_pdf_found
+    pdf_url: https://www.justice.gov/atr/case-document/file/1549941/dl
+    note: official DOJ-hosted district court memorandum opinion.
+  - case_id: us_doj_sabre_farelogix_2020
+    jurisdiction: US
+    resolver_status: manual_required
+    resolver_reason: no_merits_match
+    resolution: wrong_document_type_only
+    note: DOJ page links vacatur motion, trial materials, and complaint only; no direct merits decision PDF found on the authority page.
+  - case_id: us_ftc_illumina_grail_2023
+    jurisdiction: US
+    resolver_status: manual_required
+    resolver_reason: multiple_close_merits_docs
+    resolution: direct_pdf_found
+    pdf_url: https://www.ftc.gov/system/files/ftc_gov/pdf/d09401commissionfinalopinion.pdf
+    note: official FTC Commission final opinion PDF.
+  - case_id: us_ftc_meta_within_2023
+    jurisdiction: US
+    resolver_status: manual_required
+    resolver_reason: no_merits_match
+    resolution: wrong_document_type_only
+    note: FTC page links preliminary-injunction complaints only.
+  - case_id: us_ftc_microsoft_activision_2023
+    jurisdiction: US
+    resolver_status: manual_required
+    resolver_reason: no_merits_match
+    resolution: wrong_document_type_only
+    note: FTC page currently links administrative/procedural orders, not the district court merits opinion.

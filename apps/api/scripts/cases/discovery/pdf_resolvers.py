@@ -23,6 +23,7 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass, field
 from typing import Literal, Optional, Protocol, runtime_checkable
+from urllib.parse import urljoin
 
 import httpx
 
@@ -147,22 +148,24 @@ def _year(entry: IndexEntryLike) -> str:
     return str(getattr(entry, "decision_date", "") or "")[:4]
 
 
-# Anchor links to PDFs, as (url, anchor_text) pairs. The path must end in .pdf,
-# optionally followed by a ?query or #fragment (DOJ/FTC asset URLs sometimes
-# carry one — without this they would be silently missed).
+# Anchor links to PDFs, as (url, anchor_text) pairs. The href must contain
+# ".pdf" (optionally with a ?query or #fragment) or end in "/dl" (DOJ/FTC
+# download endpoints that serve PDFs without a .pdf extension).
 _ANCHOR_RE = re.compile(
-    r'<a\b[^>]*?href=["\']([^"\']+?\.pdf(?:[?#][^"\']*)?)["\'][^>]*?>(.*?)</a>',
+    r'<a\b[^>]*?href=["\']([^"\']+)["\'][^>]*?>(.*?)</a>',
     re.IGNORECASE | re.DOTALL,
 )
+_PDF_HREF_RE = re.compile(r"\.pdf(?:[?#]|$)|/dl(?:[?#]|$)", re.IGNORECASE)
 _TAG_RE = re.compile(r"<[^>]+>")
 
 
 def _extract_pdf_anchors(html: str) -> list[tuple[str, str]]:
-    """Return (url, visible_text) for every <a href="*.pdf"> in the page."""
+    """Return (url, visible_text) for links whose href matches _PDF_HREF_RE."""
     out: list[tuple[str, str]] = []
     for url, inner in _ANCHOR_RE.findall(html):
-        text = re.sub(r"\s+", " ", _TAG_RE.sub(" ", inner)).strip()
-        out.append((url, text))
+        if _PDF_HREF_RE.search(url):
+            text = re.sub(r"\s+", " ", _TAG_RE.sub(" ", inner)).strip()
+            out.append((url, text))
     return out
 
 
@@ -331,8 +334,9 @@ class UkGovUkResolver:
             return PdfResolution.missing(self.name, "page_not_found")
 
         pdf_links = [
-            u for u, _ in _extract_pdf_anchors(html)
-            if any(h in u for h in _UK_ASSET_HOSTS)
+            abs_u for u, _ in _extract_pdf_anchors(html)
+            for abs_u in (urljoin(source_url, u),)
+            if any(h in abs_u for h in _UK_ASSET_HOSTS)
         ]
         if not pdf_links:
             return PdfResolution.missing(self.name, "no_pdf_links")
@@ -429,7 +433,8 @@ class UsDojFtcResolver:
             return PdfResolution.missing(self.name, "no_pdf_links")
 
         scored = [
-            PdfCandidate(u, text or u.rsplit("/", 1)[-1], "us_page",
+            PdfCandidate(urljoin(source_url, u),
+                         text or u.rsplit("/", 1)[-1], "us_page",
                          _us_score(text), "anchor_text_score")
             for u, text in anchors
         ]

@@ -283,6 +283,24 @@ def test_us_pdf_url_with_query_string_is_extracted():
     assert res.pdf_url == "https://x/415418.pdf?download=1"
 
 
+def test_us_download_endpoint_marked_pdf_is_extracted():
+    # DOJ case pages often expose PDFs as /dl download endpoints, not .pdf hrefs.
+    page = ('<a href="https://www.justice.gov/atr/case-document/file/930696/dl">'
+            'Memorandum Opinion <span>[PDF]</span></a>')
+    res = UsDojFtcResolver(_FakeFetcher(pages={_US_URL: page})).resolve(
+        _us_entry(), timeout=5)
+    assert res.status == "resolved"
+    assert res.pdf_url == "https://www.justice.gov/atr/case-document/file/930696/dl"
+
+
+def test_us_relative_download_endpoint_is_absolutized():
+    page = '<a href="/atr/case-document/file/930696/dl">Memorandum Opinion [PDF]</a>'
+    res = UsDojFtcResolver(_FakeFetcher(pages={_US_URL: page})).resolve(
+        _us_entry(), timeout=5)
+    assert res.status == "resolved"
+    assert res.pdf_url == "https://www.justice.gov/atr/case-document/file/930696/dl"
+
+
 def test_us_clear_winner_among_multiple_resolves():
     # Memorandum opinion (100) clearly beats decision-and-order (90) by >=10.
     page = _us_page("Memorandum Opinion", "Decision and Order")
