@@ -76,6 +76,27 @@ def test_build_ingest_cmd_dual_and_outcome_defaults(tmp_path):
     assert outcome_cmd[-2:] == ["--page-range", "1:30"]
 
 
+def test_completed_merge_inputs_include_single_focus_draft(tmp_path, monkeypatch):
+    monkeypatch.setattr(e2e, "_DRAFTS_DIR", tmp_path)
+    state = {
+        "focuses": {
+            "market_definition": "completed",
+            "outcome_metadata": "completed",
+            "theories": "failed",
+        }
+    }
+    market_path = e2e._artifact_paths("eu_test_2025", "eu", "market_definition")["draft_a"]
+    outcome_path = e2e._artifact_paths("eu_test_2025", "eu", "outcome_metadata")["draft"]
+    market_path.parent.mkdir(parents=True)
+    market_path.write_text(yaml.safe_dump(_minimal_draft("eu_test_2025")), encoding="utf-8")
+    outcome_path.write_text(yaml.safe_dump(_minimal_draft("eu_test_2025")), encoding="utf-8")
+
+    assert e2e._completed_merge_input_paths("eu_test_2025", "eu", state) == [
+        market_path,
+        outcome_path,
+    ]
+
+
 def test_main_runs_focuses_merges_and_writes_state(tmp_path, monkeypatch):
     monkeypatch.setattr(e2e, "_DRAFTS_DIR", tmp_path / "drafts")
 
@@ -109,6 +130,59 @@ def test_main_runs_focuses_merges_and_writes_state(tmp_path, monkeypatch):
     assert state["readiness_status"] == "PASS"
     assert (tmp_path / "drafts" / "eu" / "eu_test_2025.e2e.merged.draft.yaml").exists()
     assert (tmp_path / "drafts" / "eu" / "eu_test_2025.e2e.summary.md").exists()
+
+
+def test_main_merges_outcome_metadata_single_draft(tmp_path, monkeypatch):
+    monkeypatch.setattr(e2e, "_DRAFTS_DIR", tmp_path / "drafts")
+
+    def fake_run_focus(args, focus):
+        paths = e2e._artifact_paths(args.case_id, "eu", focus)
+        if focus in e2e.DUAL_FOCUSES:
+            paths["draft_a"].parent.mkdir(parents=True, exist_ok=True)
+            paths["draft_a"].write_text(
+                yaml.safe_dump(_minimal_draft(args.case_id, status="defined")),
+                encoding="utf-8",
+            )
+            paths["draft_b"].write_text(yaml.safe_dump(_minimal_draft(args.case_id)), encoding="utf-8")
+            paths["conflicts"].write_text("conflict_report:\n  conflicts: []\n", encoding="utf-8")
+        else:
+            paths["draft"].parent.mkdir(parents=True, exist_ok=True)
+            paths["draft"].write_text(
+                yaml.safe_dump(
+                    _minimal_draft(args.case_id)
+                    | {
+                        "outcome": "cleared_with_conditions",
+                        "decision_date": "2025-02-03",
+                        "parties": [{"name": "Buyer", "role": "acquirer"}],
+                    }
+                ),
+                encoding="utf-8",
+            )
+        return subprocess.CompletedProcess(args=["ingest"], returncode=0, stdout="", stderr="")
+
+    monkeypatch.setattr(e2e, "_run_focus", fake_run_focus)
+    monkeypatch.setattr(
+        e2e,
+        "_run_readiness",
+        lambda case_id, jurisdiction, profile, merged_path, draft_paths: ("PASS", [], tmp_path / "packet.md"),
+    )
+
+    rc = e2e.main([
+        "--case-id",
+        "eu_test_2025",
+        "--focuses",
+        "market_definition,outcome_metadata",
+        "--cache-dir",
+        str(tmp_path / "cache"),
+    ])
+
+    assert rc == 0
+    merged = yaml.safe_load(
+        (tmp_path / "drafts" / "eu" / "eu_test_2025.e2e.merged.draft.yaml").read_text()
+    )
+    assert merged["outcome"] == "cleared_with_conditions"
+    assert merged["decision_date"] == "2025-02-03"
+    assert merged["parties"] == [{"name": "Buyer", "role": "acquirer"}]
 
 
 def test_resume_skips_completed_focus(tmp_path, monkeypatch):

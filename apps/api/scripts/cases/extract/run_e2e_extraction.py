@@ -165,12 +165,13 @@ def _run_focus(args: argparse.Namespace, focus: str) -> subprocess.CompletedProc
     )
 
 
-def _completed_draft_a_paths(case_id: str, jurisdiction: str, state: dict) -> list[Path]:
+def _completed_merge_input_paths(case_id: str, jurisdiction: str, state: dict) -> list[Path]:
     draft_paths = []
     for focus, status in state.get("focuses", {}).items():
-        if status != "completed" or focus not in DUAL_FOCUSES:
+        if status != "completed":
             continue
-        draft_path = _artifact_paths(case_id, jurisdiction, focus)["draft_a"]
+        paths = _artifact_paths(case_id, jurisdiction, focus)
+        draft_path = paths["draft_a"] if focus in DUAL_FOCUSES else paths["draft"]
         if draft_path.exists():
             draft_paths.append(draft_path)
     return draft_paths
@@ -181,9 +182,9 @@ def _merge_completed_drafts(
     jurisdiction: str,
     state: dict,
 ) -> tuple[Optional[Path], list[str], list[Path]]:
-    draft_paths = _completed_draft_a_paths(case_id, jurisdiction, state)
+    draft_paths = _completed_merge_input_paths(case_id, jurisdiction, state)
     if not draft_paths:
-        return None, ["No completed Draft A files found to merge."], []
+        return None, ["No completed draft files found to merge."], []
 
     merged, warnings = merge_drafts(draft_paths, case_id_override=case_id)
     out_path = _DRAFTS_DIR / jurisdiction / f"{case_id}.e2e.merged.draft.yaml"
@@ -261,7 +262,7 @@ def _write_summary(
     lines.extend([
         "",
         "## Next Steps",
-        "1. Resolve each completed focus conflict report with `merge_drafts.py --from-conflict-report`.",
+        "1. Resolve each completed dual-focus conflict report with `merge_drafts.py --from-conflict-report`.",
         "2. Re-merge the resolved per-focus drafts with `merge_drafts.py`.",
         "3. Re-run `check_review_readiness.py --packet` on the final merged draft.",
         "4. Promote with `promote_case_pipeline.py` after human sign-off.",

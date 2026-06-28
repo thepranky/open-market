@@ -17,9 +17,9 @@ python apps/api/scripts/cases/extract/run_e2e_extraction.py \
   --case-id eu_example_2024 --from-index
 ```
 
-outputs per-focus Draft A files, Draft B files, conflict reports, a merged draft
-(combining the three Draft A outputs), and a readiness summary. The human then
-resolves conflicts from the three conflict reports and (if needed) re-merges.
+outputs per-focus Draft A files, Draft B files, conflict reports, any single-pass
+metadata draft, a merged draft, and a readiness summary. The human then resolves
+conflicts from the dual-focus conflict reports and (if needed) re-merges.
 
 Out of scope:
 - Automated conflict resolution or promotion without human sign-off.
@@ -89,11 +89,13 @@ exists yet, run `ingest_case.py` (single extraction, no `--dual-extract`) for fo
 pass for procedural metadata (dates, outcome, parties) that is short and low-risk.
 Record it in state as a completed `outcome_metadata` focus.
 
-**Step 4 — Additive merge of Draft A outputs**
+**Step 4 — Additive merge of completed draft outputs**
 
-Collect all `<case_id>.<focus>.draft_a.yaml` files that are marked completed in
-state. Call `merge_drafts.merge_drafts(draft_paths, case_id_override=case_id)` in
-process (not subprocess) and write the result to:
+Collect each completed focus's merge input: `<case_id>.<focus>.draft_a.yaml` for
+dual-extraction focuses and `<case_id>.outcome_metadata.draft.yaml` for the
+single-pass metadata focus. Call
+`merge_drafts.merge_drafts(draft_paths, case_id_override=case_id)` in process
+(not subprocess) and write the result to:
 
 ```
 data/drafts/<jur>/<case_id>.e2e.merged.draft.yaml
@@ -111,11 +113,13 @@ CaseRecord:
 is needed.
 
 The merged draft at this stage is a preliminary view derived from Draft A for each
-focus. Its purpose is to let `check_review_readiness.py` run and to give the reviewer
-a holistic draft while they work through the conflict reports. After the reviewer
-resolves each conflict report and runs per-focus `merge_drafts.py --from-conflict-report`,
-they should re-merge the resulting `<focus>.merged.draft.yaml` files using
-`merge_drafts.py` to produce the final pre-promotion draft.
+dual focus plus the single-pass metadata draft. Its purpose is to let
+`check_review_readiness.py` run and to give the reviewer a holistic draft while
+they work through the conflict reports. After the reviewer resolves each
+dual-focus conflict report and runs per-focus
+`merge_drafts.py --from-conflict-report`, they should re-merge the resulting
+`<focus>.merged.draft.yaml` files plus the metadata draft using `merge_drafts.py`
+to produce the final pre-promotion draft.
 
 **Step 5 — check_review_readiness**
 
@@ -170,7 +174,7 @@ Explicitly passing `--resume` is required to avoid silently reusing stale drafts
 | Pipeline profile selection | Existing (`pipeline_profile.select_profile`) — imported |
 | Per-focus dual extraction | Existing (`ingest_case.py --dual-extract`) — called via subprocess |
 | Conflict report generation | Existing (inside `ingest_case.py Stage 2b`) — no new call |
-| Additive merge of Draft A files | Existing (`merge_drafts.merge_drafts()`) — imported |
+| Additive merge of completed draft files | Existing (`merge_drafts.merge_drafts()`) — imported |
 | Review readiness | Existing (`check_review_readiness.run_checks()`) — imported |
 | Summary report | New (thin Markdown writer inside orchestrator) |
 | State file read/write | New (simple YAML, ~30 lines) |
@@ -263,8 +267,8 @@ p.write_text(yaml.dump(s))
 .venv/bin/python -m pytest apps/api/tests/ -v
 ```
 
-Expected result for eu_sika_mbcc_2023: three focuses complete, conflict reports
-show few or zero unresolved conflicts (the case has a known-good canonical to
-converge towards), merged draft has non-empty `product_markets_considered`,
-`theories_of_harm`, and `commitments` (if any), and `check_review_readiness`
-returns PASS or WARN with no structural errors.
+Expected result for eu_sika_mbcc_2023: profile-selected focuses complete, dual
+focus conflict reports show few or zero unresolved conflicts (the case has a
+known-good canonical to converge towards), merged draft has non-empty
+`product_markets_considered`, `theories_of_harm`, and `commitments` (if any),
+and `check_review_readiness` returns PASS or WARN with no structural errors.
