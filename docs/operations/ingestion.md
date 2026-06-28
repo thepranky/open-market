@@ -113,48 +113,6 @@ exit non-zero (and must not commit) if any **ERROR**-level issues remain:
 
 Warnings may be reviewed and accepted by a human; errors must be resolved.
 
-### Stage 5a — LLM review / promotion triage (optional)
-
-After Stage 5 (integrity gate) passes, an optional LLM critic stage evaluates the
-draft semantically before human promotion.
-
-**Script:** `apps/api/scripts/cases/review/review_draft.py`
-
-**What it checks:**
-- Whether each quote actually supports the proposition it is linked to
-- Whether `definition_status` values appear correct (`defined` vs. `left_open` vs. `discussed`)
-- Whether `source_role` labels are accurate (Commission finding vs. party submission vs. precedent)
-- Whether outcome / clearance passages are being misused as market-definition support (general rule: any outcome passage linked to `supports_markets` or `supports_geographic_markets` is a violation)
-- Whether geographic markets are missing from the record
-- Whether theories of harm are missing or improperly linked
-- Whether important market-definition sections appear absent
-
-**Outputs:**
-- `data/drafts/{jurisdiction}/{case_id}.{focus}.llm_review.json` — machine-readable
-- `data/drafts/{jurisdiction}/{case_id}.{focus}.llm_review.md` — human-readable
-
-**Triage statuses:**
-- `auto_verified_candidate` — all passages strong, all statuses correct, no gaps
-- `needs_light_review` — minor issues a non-lawyer can check against the source
-- `needs_legal_review` — status misclassification or gaps requiring legal judgment
-- `blocked` — passages contradict propositions or fundamental structural problems
-
-**What this stage must never do:**
-- Write to or modify `data/cases/`
-- Mark any passage or record as `lawyer_reviewed`
-- Substitute for human or legal review
-- Invent new propositions not supported by passages already in the draft
-
-Run standalone or via `ingest_case.py --llm-review`:
-```bash
-python apps/api/scripts/cases/review/review_draft.py \\
-    --case-id eu_sika_dry_mix_2019 \\
-    --focus market_definition \\
-    --max-cost 0.50
-```
-
----
-
 ### Stage 6 — Schema validation
 
 Run `validate_cases.py` against the candidate YAML:
@@ -233,36 +191,33 @@ The script is also runnable in CI as a pre-merge gate.
 ## Central rule registry
 
 `data/pipeline_rules/market_definition_rules.yaml` is the authoritative registry of
-market-definition rules that govern both extraction and LLM review.
+market-definition rules that govern extraction and deterministic integrity checks.
 
 Each rule entry records:
 - `id` — stable slug (e.g. `mdr_001_outcome_no_market_link`)
 - `status` — `active` | `deprecated` | `draft`
 - `severity` — `error` | `warning` | `info`
 - `short_rule` — one-sentence version used in compact prompt sections
-- `applies_to` — `extractor` | `reviewer` | `both`
+- `applies_to` — pipeline stage the rule applies to
 - `deterministic_enforcement` — `true` if `check_source_integrity.py` also enforces it
-- `llm_guidance` — fuller explanation included in LLM system prompts
+- `llm_guidance` — fuller explanation included in extraction prompts when relevant
 - `examples` — illustrative good/bad cases
 
 **How the registry feeds prompts:**
 
-The `review_draft.py` script maintains an `_ACTIVE_RULES_BLOCK` constant that mirrors
-active registry rules in compact form and is appended to `_REVIEW_SYSTEM_PROMPT`.
 The `extract_case_from_source.py` script includes `_EXTRACTION_TASK` guidance derived
 from the registry (especially mdr_009 for quote cleanliness).
 
 **Tests:**
 
-`apps/api/tests/test_review_draft.py` includes tests that fail if key active rule IDs
-(mdr_001 through mdr_010) are absent from `_ACTIVE_RULES_BLOCK` or from the system
-prompt. This prevents silent rule drift when the registry is updated.
+Extractor and integrity tests should fail if active rules drift out of the prompt or
+deterministic gate that enforces them.
 
 **Update discipline:**
 
 When adding or modifying a rule: (1) update the YAML registry first, (2) update
-`_ACTIVE_RULES_BLOCK` in `review_draft.py` and any relevant prompt text in
-`extract_case_from_source.py`, (3) run the tests to confirm coverage.
+any relevant prompt text in `extract_case_from_source.py`, (3) run the tests to
+confirm coverage.
 
 ---
 
@@ -324,7 +279,7 @@ now triggers supplemental fallback, raising coverage to ≈ 84% of non-TOC pages
 - `data/drafts/{jurisdiction}/{case_id}.merged.draft.yaml` — output of `merge_drafts.py`, combining multiple focus passes for a hard case.
 - `data/cases/{jurisdiction}/{case_id}.yaml` — the promoted, human-reviewed canonical record.
 
-**Bulk EU Phase I lane** (separate from the single-case path): `scrape_eu_index.py` populates `data/case_index/`; `run_bulk_extraction.py` is a thin, resumable wrapper that loops `ingest_case.py` over index entries with no LLM review. It stays a wrapper by design.
+**Bulk EU Phase I lane** (separate from the single-case path): `scrape_eu_index.py` populates `data/case_index/`; `run_bulk_extraction.py` is a thin, resumable wrapper that loops `ingest_case.py` over index entries. It stays a wrapper by design.
 
 ---
 

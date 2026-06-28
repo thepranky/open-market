@@ -48,12 +48,10 @@ True independence requires the second agent to read the source document with no
 knowledge of what the first agent produced. The comparison step is then structural
 — field A says X, field B says Y — not interpretive.
 
-**Relationship to the existing Stage 5a critic (`review_draft.py`).** Stage 5a is a
-single-draft critic that triages one extraction. Dual extraction supersedes it for
-cases run in `--dual-extract` mode: the conflict surface is a strictly better
-review signal than a self-critique of one draft, and running both is redundant
-cost. Stage 5a remains available for single-extraction runs. When `--dual-extract`
-is set, Stage 5a is skipped.
+**Relationship to the former Stage 5a critic.** Stage 5a was a single-draft critic
+that triaged one extraction. Dual extraction superseded it: the conflict surface is
+a strictly better review signal than a self-critique of one draft, and running both
+was redundant cost.
 
 ### Extraction independence constraints
 
@@ -245,7 +243,7 @@ below.
 
 | File | Change |
 |------|--------|
-| `apps/api/scripts/cases/extract/ingest_case.py` | Add `--dual-extract` and `--dual-same-model` flags; when set, run extraction twice (A primary provider, B secondary provider by default) and write both drafts; skip Stage 5a in dual mode |
+| `apps/api/scripts/cases/extract/ingest_case.py` | Add `--dual-extract` and `--dual-same-model` flags; when set, run extraction twice (A primary provider, B secondary provider by default) and write both drafts |
 | `apps/api/scripts/cases/extract/compare_extractions.py` | New — aligns Draft A↔B via `_reconcile`/`_group_reconciliation`, runs deterministic + LLM diff layers, writes `ConflictReport` YAML |
 | `apps/api/scripts/cases/extract/merge_drafts.py` | Add `--from-conflict-report` mode: apply agreed values + human resolutions + auto-normalizations → single merged draft; block on any unresolved conflict |
 | `apps/api/scripts/cases/promote/promote_case_pipeline.py` | Add optional `--conflict-report` flag; when present, require a fully-resolved report (no `resolution: null`) before promotion |
@@ -309,7 +307,7 @@ volume — break-even is roughly 5 minutes of lawyer attention per case avoided.
 ## Rollback
 
 `--dual-extract` is an additive flag; removing it reverts to the existing
-single-extraction path (Stage 5a critic still available there). No schema changes to
+single-extraction path. No schema changes to
 `data/cases/` are required — `draft_a`, `draft_b`, and `conflicts` files are
 intermediate artifacts that can be deleted. `merge_drafts.py --from-conflict-report`
 is additive to the existing merge entrypoint.

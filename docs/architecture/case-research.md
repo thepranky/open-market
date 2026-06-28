@@ -14,7 +14,6 @@ and graph views.
 | `data/concepts/` | Shared concept nodes for graph |
 | `data/evals/` | Gold fixtures and benchmark configs |
 | `data/pipeline_profiles/` | Per-jurisdiction extraction config |
-| `data/review_learning/` | Human correction deltas |
 
 The shape and grounding rules for these records are the data contracts described in
 [DDR-A: Data contracts and source integrity](decisions/ddr-a-data-contracts.md).
@@ -32,7 +31,7 @@ The shape and grounding rules for these records are the data contracts described
 ## Pipeline (scripts)
 
 Source PDF → `scripts/cases/extract/extract_case_from_source.py` / `ingest_case.py` → draft → integrity gates →
-`scripts/cases/review/review_draft.py` → human review → `scripts/cases/promote/promote_case_pipeline.py` → canonical.
+human review → `scripts/cases/promote/promote_case_pipeline.py` → canonical.
 
 See [operations/ingestion.md](../operations/ingestion.md) and
 [promotion-checklist.md](../operations/promotion-checklist.md).

@@ -10,8 +10,6 @@ Runs the full gate sequence in order:
   5. check_source_links   (canonical URL liveness)
   6. check_source_integrity --no-cache  (canonical quote/locator checks)
   7. graph/seed_graph
-  8. create_review_learning_log
-  9. apply_review_learning
 
 Fails fast on any blocking error. Promotion is skipped if draft integrity has
 any error or warning.
@@ -194,8 +192,6 @@ def _print_summary(
         ("source_links",       "Source links"),
         ("canonical_integrity","Canonical source integrity"),
         ("graph_seed",         "Graph seed"),
-        ("learning_log",       "Learning log"),
-        ("proposals",          "Proposals path"),
     ]
     for key, label in _LABELS:
         val = status.get(key, "—")
@@ -311,7 +307,7 @@ def main(argv: list[str] | None = None) -> int:
     # ------------------------------------------------------------------
     # 1. Draft source integrity — must pass with 0 errors AND 0 warnings
     # ------------------------------------------------------------------
-    print("\n[1/9] Draft source integrity check (target draft only) …")
+    print("\n[1/7] Draft source integrity check (target draft only) …")
     errors, warnings = check_draft_integrity(args.case_id)
 
     if errors > 0 or warnings > 0:
@@ -331,7 +327,7 @@ def main(argv: list[str] | None = None) -> int:
     # ------------------------------------------------------------------
     # 2. Promote draft → canonical
     # ------------------------------------------------------------------
-    print("\n[2/9] Promoting draft to canonical …")
+    print("\n[2/7] Promoting draft to canonical …")
     promote_cmd = [
         PYTHON, "apps/api/scripts/cases/promote/promote_draft_to_canonical.py",
         "--case-id", args.case_id,
@@ -364,7 +360,7 @@ def main(argv: list[str] | None = None) -> int:
     # ------------------------------------------------------------------
     # 3. Canonical schema validation
     # ------------------------------------------------------------------
-    print("\n[3/9] Canonical schema validation …")
+    print("\n[3/7] Canonical schema validation …")
     try:
         _run_check([PYTHON, "apps/api/scripts/cases/integrity/validate_cases.py"])
         status["validate_cases"] = "PASS"
@@ -377,7 +373,7 @@ def main(argv: list[str] | None = None) -> int:
     # ------------------------------------------------------------------
     # 4. Semantic lint (deterministic legal-meaning checks, target case only)
     # ------------------------------------------------------------------
-    print("\n[4/9] Semantic lint …")
+    print("\n[4/7] Semantic lint …")
     try:
         _run_check([
             PYTHON, "apps/api/scripts/cases/integrity/lint_case_semantics.py",
@@ -394,7 +390,7 @@ def main(argv: list[str] | None = None) -> int:
     # ------------------------------------------------------------------
     # 5. Source links
     # ------------------------------------------------------------------
-    print("\n[5/9] Canonical source links check …")
+    print("\n[5/7] Canonical source links check …")
     try:
         _run_check([PYTHON, "apps/api/scripts/cases/integrity/check_source_links.py"])
         status["source_links"] = "PASS"
@@ -407,7 +403,7 @@ def main(argv: list[str] | None = None) -> int:
     # ------------------------------------------------------------------
     # 6. Canonical source integrity
     # ------------------------------------------------------------------
-    print("\n[6/9] Canonical source integrity check …")
+    print("\n[6/7] Canonical source integrity check …")
     try:
         _run_check([
             PYTHON, "apps/api/scripts/cases/integrity/check_source_integrity.py",
@@ -423,7 +419,7 @@ def main(argv: list[str] | None = None) -> int:
     # ------------------------------------------------------------------
     # 7. Graph seed
     # ------------------------------------------------------------------
-    print("\n[7/9] Graph seed …")
+    print("\n[7/7] Graph seed …")
     try:
         _run_check([PYTHON, "graph/seed_graph.py"])
         status["graph_seed"] = "PASS"
@@ -432,46 +428,6 @@ def main(argv: list[str] | None = None) -> int:
         _print_summary(status, args.case_id, args.focus, aborted=True,
                        draft_path=effective_draft)
         return 1
-
-    # ------------------------------------------------------------------
-    # 8. Create review learning log
-    # ------------------------------------------------------------------
-    print("\n[8/9] Creating review learning log …")
-    try:
-        _run_check([
-            PYTHON, "apps/api/scripts/cases/review/create_review_learning_log.py",
-            "--case-id", args.case_id,
-            "--focus", args.focus,
-        ])
-    except subprocess.CalledProcessError:
-        status["learning_log"] = "FAIL"
-        _print_summary(status, args.case_id, args.focus, aborted=True,
-                       draft_path=effective_draft)
-        return 1
-
-    learning_log_path = (
-        _REPO_ROOT / "data" / "review_learning"
-        / f"{args.case_id}.{args.focus}.review_delta.yaml"
-    )
-    status["learning_log"] = (
-        str(learning_log_path.relative_to(_REPO_ROOT))
-        if learning_log_path.exists()
-        else "written (see data/review_learning/)"
-    )
-
-    # ------------------------------------------------------------------
-    # 9. Apply review learning
-    # ------------------------------------------------------------------
-    print("\n[9/9] Applying review learning …")
-    try:
-        _run_check([PYTHON, "apps/api/scripts/cases/review/apply_review_learning.py"])
-    except subprocess.CalledProcessError:
-        status["proposals"] = "FAIL"
-        _print_summary(status, args.case_id, args.focus, aborted=True,
-                       draft_path=effective_draft)
-        return 1
-
-    status["proposals"] = "data/review_learning/proposals/"
 
     _print_summary(status, args.case_id, args.focus, draft_path=effective_draft)
     return 0
