@@ -114,6 +114,11 @@ step work, state a brief plan with a verify step each.
 `phase`, `gap`, `step`, ROADMAP/PR numbers — into durable artifacts (variable, 
 file, function names; docstrings; comments). They read as noise once the plan 
 moves on. Describe what the thing does, not which task introduced it.
+- **Explain after implementing.** Close every non-trivial change with a short 
+plain-English summary (3–5 bullets). Lead with the underlying concept — what 
+problem this solves and why the pattern exists — then explain what specifically 
+changed. Assume the reader is still building their mental model; teach the "why" 
+before the "what".
 
 ## Key docs
 
