@@ -62,7 +62,7 @@ def _args(**kwargs):
     ns.max_cost = kwargs.get("max_cost", None)
     ns.dry_run = kwargs.get("dry_run", False)
     ns.overwrite_drafts = kwargs.get("overwrite_drafts", False)
-    ns.skip_llm_review = kwargs.get("skip_llm_review", False)
+    ns.skip_extraction = kwargs.get("skip_extraction", False)
     ns.promote = kwargs.get("promote", False)
     return ns
 
@@ -311,7 +311,7 @@ class TestBuildStagePlan:
             has_source_cache=False,
             has_existing_drafts=False,
             dry_run=False,
-            skip_llm=False,
+            skip_extraction=False,
             focuses=["market_definition"],
         )
         assert "seed" in plan
@@ -322,12 +322,12 @@ class TestBuildStagePlan:
         assert "merge_drafts" in plan
         assert "check_readiness" in plan
 
-    def test_skip_llm_removes_extract(self):
+    def test_skip_extraction_removes_extract(self):
         plan = build_stage_plan(
             has_source_cache=True,
             has_existing_drafts=True,
             dry_run=False,
-            skip_llm=True,
+            skip_extraction=True,
             focuses=["market_definition"],
         )
         assert "extract" not in plan
@@ -337,7 +337,7 @@ class TestBuildStagePlan:
             has_source_cache=False,
             has_existing_drafts=False,
             dry_run=True,
-            skip_llm=False,
+            skip_extraction=False,
             focuses=["market_definition"],
         )
         assert "seed" in plan
@@ -550,7 +550,7 @@ class TestOrchestratorRun:
         assert result.profile_id == "cma_report"
 
     def test_failed_readiness_returns_not_ready(self, tmp_path):
-        args = _args(skip_llm_review=True)
+        args = _args(skip_extraction=True)
         drafts_dir = tmp_path / "drafts" / "us"
         drafts_dir.mkdir(parents=True)
         fake_draft = drafts_dir / "us_test_co_2025.market_definition.v1.draft.yaml"
@@ -566,7 +566,7 @@ class TestOrchestratorRun:
         assert result.status == NOT_READY
 
     def test_clean_readiness_returns_ready(self, tmp_path):
-        args = _args(skip_llm_review=True)
+        args = _args(skip_extraction=True)
         drafts_dir = tmp_path / "drafts" / "us"
         drafts_dir.mkdir(parents=True)
         fake_draft = drafts_dir / "us_test_co_2025.market_definition.v1.draft.yaml"
@@ -672,7 +672,7 @@ class TestStageExtract:
                 result, drafts = stage_extract(
                     "eu_test_co_2023",
                     ["market_definition"],
-                    dry_run=False, skip_llm=False, max_cost=None,
+                    dry_run=False, skip_extraction=False, max_cost=None,
                 )
         assert result.status == "error"
         assert any("ModuleNotFoundError" in d for d in result.details)
@@ -689,16 +689,16 @@ class TestStageExtract:
                 result, drafts = stage_extract(
                     "eu_test_co_2023",
                     ["market_definition"],
-                    dry_run=False, skip_llm=False, max_cost=None,
+                    dry_run=False, skip_extraction=False, max_cost=None,
                 )
         assert result.status == "error"
         assert any("ValueError" in d or "bad input" in d for d in result.details)
 
-    def test_skip_llm_returns_skip(self, tmp_path):
+    def test_skip_extraction_returns_skip(self, tmp_path):
         result, drafts = stage_extract(
             "eu_test_co_2023",
             ["market_definition"],
-            dry_run=False, skip_llm=True, max_cost=None,
+            dry_run=False, skip_extraction=True, max_cost=None,
         )
         assert result.status == "skip"
         assert drafts == []
@@ -707,7 +707,7 @@ class TestStageExtract:
         result, drafts = stage_extract(
             "eu_test_co_2023",
             ["market_definition"],
-            dry_run=True, skip_llm=False, max_cost=None,
+            dry_run=True, skip_extraction=False, max_cost=None,
         )
         assert result.status == "ok"
         assert drafts == []

@@ -74,7 +74,6 @@ data/
 ├── concepts/               # Shared graph concept nodes
 ├── evals/                  # Gold fixtures + benchmarks
 ├── pipeline_profiles/      # Per-jurisdiction extraction config
-└── review_learning/        # Human correction deltas for pipeline
 ```
 
 Pipeline: `PDF → extract → drafts/ → integrity + review → promote → cases/`
@@ -143,7 +142,7 @@ UI (`Evidence.tsx`) displays passages and builds `#page=` links from YAML — it
 
 ### Q4. How is `confidence_score` determined?
 
-**Answer:** **Not algorithmically scored against source text.** Pipeline defaults `0.70` for `pdf_extracted` passages. Humans raise it (often `0.97`) when spot-checking. It's operational metadata for triage — explicitly excluded from `review_learning` diff corrections.
+**Answer:** **Not algorithmically scored against source text.** Pipeline defaults `0.70` for `pdf_extracted` passages. Humans raise it (often `0.97`) when spot-checking. It's operational metadata for triage — not recomputed during promotion.
 
 **Timing:** **No implementation change.** If we want real scores later, tie to integrity match confidence — roadmap.
 
