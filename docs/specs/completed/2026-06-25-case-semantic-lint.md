@@ -27,7 +27,7 @@ Out of scope:
   could stand in — populated on just 9 of 7,566 passages (0.12%), and those few values are
   *theory conclusions* that legitimately link markets/theories. So the rule would have to be
   a phrase heuristic over prose, which carries false positives, and a deterministic gate is
-  the wrong place for that judgement. Its home is the Stage 5a critic (`review_draft.py`)
+  the wrong place for that judgement. Its home was the former Stage 5a critic
   and human review, and — once it lands — the dual-extraction comparison (ROADMAP 5.9).
   Revisit only if extraction begins emitting a reliable passage-role tag.
 - Re-reading source prose to re-derive a definition status or classify a passage.
@@ -41,7 +41,7 @@ in DDR-A §1 (schema, source-integrity): same YAML in → same verdict out, no n
 model spend, safe on every PR and in promotion.
 
 Why deterministic matters here specifically — the pipeline's misinterpretation defenses
-are otherwise LLM-based (Stage 5a critic) or LLM-cross-checked (dual extraction, 5.9).
+are otherwise LLM-cross-checked (dual extraction, 5.9).
 Both reduce *independent/stochastic* extraction errors but are blind to *correlated*
 errors where every pass shares the same blind spot (e.g. LLMs reading complaint
 allegations as findings). A hard-coded legal invariant is the one defense that holds

@@ -81,10 +81,10 @@ scripts/cases/
     run_controlled_case.py
     run_unit_assessment_batch.py
   review/                   # critic, readiness, review-learning loop
-    review_draft.py
+    retired_stage5a_critic.py
     check_review_readiness.py
-    create_review_learning_log.py
-    apply_review_learning.py
+    retired_review_delta_capture.py
+    retired_review_proposal_aggregation.py
   promote/                  # draft -> canonical
     promote_case_pipeline.py
     promote_draft_to_canonical.py
@@ -330,9 +330,9 @@ depth incremented. Audited anchor lines to bump:
   `plan_coverage.py:42`, `plan_extraction_ranges.py:45`, `repair_source_passages.py:75`,
   `resolve_pdf_urls.py:27`, `resolve_cma_pdf_urls.py:32`, `run_bulk_extraction.py:35`,
   `scrape_cma_index.py:28`, `scrape_ec_registry.py:39`.
-- `_SCRIPTS_DIR.parent.parent` (→ add one `.parent`): `apply_review_learning.py:28`,
-  `create_review_learning_log.py:32`, `ingest_case.py:40`, `merge_drafts.py:36`,
-  `promote_case_pipeline.py:49`, `promote_draft_to_canonical.py:57`, `review_draft.py:36`,
+- `_SCRIPTS_DIR.parent.parent` (→ add one `.parent`): retired review-learning scripts,
+  `ingest_case.py:40`, `merge_drafts.py:36`,
+  `promote_case_pipeline.py:49`, `promote_draft_to_canonical.py:57`, retired Stage 5a critic,
   `run_controlled_case.py:55`, `run_unit_assessment_batch.py:46`.
 - `os.path`-style: `index_embeddings.py:14` (`os.path.dirname(__file__), "..", ".."` →
   add one more `".."`).

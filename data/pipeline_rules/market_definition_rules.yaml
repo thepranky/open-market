@@ -1,7 +1,6 @@
 # Meridian — central market-definition rules registry
-# Authoritative source for rules that govern extraction and LLM review.
-# Prompts in review_draft.py and extract_case_from_source.py must remain
-# consistent with active rules in this file.
+# Authoritative source for rules that govern extraction and deterministic review gates.
+# Prompts in extract_case_from_source.py must remain consistent with active rules in this file.
 #
 # Fields per rule:
 #   id                       — stable slug, never reuse

@@ -2,7 +2,7 @@
 run_bulk_extraction.py — resumable batch extraction for Phase I EC cases.
 
 Reads all case index YAMLs with pdf_url set, skips Phase II and already-promoted
-cases, and runs each through the full ingest_case.py pipeline (no LLM review).
+cases, and runs each through the full ingest_case.py pipeline.
 Progress is tracked in a state file so the run can be interrupted and resumed.
 
 Usage:

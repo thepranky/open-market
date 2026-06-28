@@ -5,16 +5,15 @@
 
 Read/trace:
 - `apps/api/scripts/cases/extract/extract_case_from_source.py`, `ingest_case.py`
-- `apps/api/scripts/cases/review/review_draft.py`, `promote_case_pipeline.py`
+- `apps/api/scripts/cases/review/check_review_readiness.py`, `promote_case_pipeline.py`
 - `docs/operations/ingestion.md`, `promotion-checklist.md`
 - `data/pipeline_profiles/` (one example)
-- `data/review_learning/` structure
 
 Run (read-only): `promote_case_pipeline.py --dry-run` on a known case if available.
 
 ## Agent prompt
 
-> Explain the full case extraction pipeline from PDF URL to canonical YAML. Walk through each script stage, what can fail, and why drafts never auto-promote. Cover `review_draft.py` and the review-learning loop. Explain multi-focus extraction at a high level (`docs/operations/hard-cases.md`). Compare pipeline-in-scripts vs a workflow engine. What's missing for scale to 1000 cases?
+> Explain the full case extraction pipeline from PDF URL to canonical YAML. Walk through each script stage, what can fail, and why drafts never auto-promote. Cover deterministic review readiness and dual extraction as the current review surface. Explain multi-focus extraction at a high level (`docs/operations/hard-cases.md`). Compare pipeline-in-scripts vs a workflow engine. What's missing for scale to 1000 cases?
 
 ---
 
@@ -36,13 +35,11 @@ scrape_eu_index.py ──▶ data/case_index/    (EU Phase I bulk lane only)
                    ▼
    deterministic gates: structural validation + check_source_integrity (quote grounding)
                    ▼
-        review_draft.py  (optional LLM triage — skipped in bulk)
-                   ▼
         human review (promotion-checklist.md) ── verifies quotes, sets status
                    ▼
         promote_case_pipeline.py --overwrite    ← manual trigger
                    ▼
-        data/cases/{jur}/{case_id}.yaml  +  review_learning delta + proposals
+        data/cases/{jur}/{case_id}.yaml
 ```
 
 - **Hard cases (400+ pp):** multiple focus passes (`market_definition`, `theories`,
@@ -69,6 +66,9 @@ actually hit, not designed up front:
 - **YAML as source of truth** because it is diff-able, reviewable, and git-auditable; Postgres
   is derived. Scripts (not an engine) because volume is low and traceability/local-run matter more
   than orchestration.
+- **Stage 5a retired (2026-06-27):** the optional LLM critic was removed because dual extraction
+  produces an independent conflict surface, while self-critique added latency and cost without
+  replacing human review.
 
 ## Alternatives considered
 
@@ -77,19 +77,16 @@ actually hit, not designed up front:
 - **DB-first (Postgres as truth):** rejected — loses git-reviewable diffs; YAML stays canonical.
 - **Workflow engine (Temporal/Prefect):** deferred — real value only at sustained high
   throughput / parallel fan-out; today it adds ops burden for no payoff (see Q7).
-- **Auto-apply review learnings to prompts:** rejected — unsafe/circular; learnings stay as
-  human-approved proposals (see Q5).
+- **Auto-apply review learnings to prompts:** rejected — unsafe/circular; prompt and rule changes
+  stay explicit code review work.
 
 ## Questions
 
 1. **Dual extraction vs LLM review — replace or keep both?**
-   Different jobs. `review_draft.py` (LLM-as-judge) is a *triage accelerator* that prioritises
-   human time; dual extraction (`2026-06-25-case-dual-extraction.md`) is a *scalable review model*
-   that shrinks the human surface to conflicts only. Dual extraction is the better long-term bet
-   and supersedes LLM-as-judge for cases run through it. On spend: dual extraction is ~2× extraction
-   cost but removes per-case full review; the judge stage is one extra call. Recommendation: keep the
-   optional judge for now (already built), build dual extraction as the scale path, and retire the
-   judge once dual extraction proves out. Deferred.
+   Dual extraction (`2026-06-25-case-dual-extraction.md`) is the scalable review model: two cold,
+   independent extractions shrink the human surface to conflicts. The prior LLM-as-judge stage was
+   retired on 2026-06-27 because it reviewed one model output with another model call, adding latency
+   and cost without replacing human judgment.
 
 2. **merged_draft vs draft vs case; is bulk EU a separate script?**
    `draft` = one focus pass; `merged.draft` = `merge_drafts.py` output combining many passes for a
@@ -115,27 +112,19 @@ actually hit, not designed up front:
    cost, the document is. It is justified: it carries the grounding rules and is test-guarded against
    rule drift. Not a priority; trim only if a token audit shows it matters. No change.
 
-5. **How robust is the review-learning loop? Auto-apply?**
-   It is deterministic and safe but deliberately manual: `create_review_learning_log.py` captures
-   draft→canonical deltas, `apply_review_learning.py` aggregates them into *proposals only* — it never
-   edits prompts, validators, schemas, or data. Keep it manual: auto-applying LLM-derived corrections
-   to the prompt is circular and risks silently degrading extraction. The human-approval checklist +
-   eval-benchmark re-run is the right gate. No change (keep checking each time).
+5. **How should human corrections feed back into extraction? Auto-apply?**
+   Keep corrections explicit. Auto-applying LLM-derived or review-derived deltas to prompts is
+   circular and risks silently degrading extraction. Prompt, validator, schema, and data changes
+   should be reviewed directly and regression-tested.
 
-6. **Proposals rule candidates look truncated.**
-   Confirmed — `apply_review_learning.py._truncate()` cuts the `.md` at 200 chars (`…`). The full,
-   untruncated `reusable_rule_candidate` text is already in the sibling
-   `review_learning_proposals.yaml`. Fix: either raise/remove the `.md` cap or add a note pointing to
-   the YAML. Now (trivial).
-
-7. **When is a workflow engine actually useful? Build it for 1000 cases?**
+6. **When is a workflow engine actually useful? Build it for 1000 cases?**
    Useful when you have sustained high throughput, parallel fan-out (e.g. dozens of hard-case windows
    at once), durable resume across crashes, and central cost/observability. At ~270 cases with a
    human in the loop, scripts win on simplicity and traceability. For 1000 cases the bottleneck is
    *human review*, not orchestration — solve that (dual extraction) before adding an engine. Defer;
    reconsider only if extraction volume, not review, becomes the limit.
 
-8. **Make hard-case orchestration less manual?**
+7. **Make hard-case orchestration less manual?**
    Today an operator hand-runs ~60 commands (Bayer = 61 component drafts). Incremental wins without a
    full engine: have `plan_extraction_ranges.py` emit a runnable batch plan, let `run_unit_assessment_batch.py`
    cover all focuses (not just `unit_assessment`), and auto-invoke `merge_drafts.py` + `check_review_readiness.py`

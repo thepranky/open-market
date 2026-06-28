@@ -295,8 +295,6 @@ def write_review_report(
     integrity_errors: int,
     integrity_warnings: int,
     integrity_issues: list,
-    llm_triage_status: Optional[str] = None,
-    llm_review_path: Optional[Path] = None,
 ) -> None:
     from extract_case_from_source import (
         _MARKET_DEF_COVERAGE_MIN_RATIO,
@@ -492,109 +490,22 @@ def write_review_report(
         except Exception:
             pass
 
-    # Stage 5 — LLM review (optional)
-    if llm_triage_status is not None:
-        lines += ["## Stage 5 — LLM review (triage)", ""]
-        lines.append(f"Triage status: **`{llm_triage_status}`**")
-        if llm_review_path:
-            lines.append(f"Report: `{llm_review_path}`")
-        lines.append("")
-
     # Next steps
     lines += ["## Next steps", ""]
     if blocking:
         lines.append("1. Fix the errors listed above before proceeding.")
     else:
-        step = 1
-        if llm_triage_status is not None:
-            lines.append(f"{step}. Review LLM triage report at `{llm_review_path or 'see above'}`.")
-            step += 1
         lines += [
-            f"{step}. Review passages marked `unreviewed` against the source PDF.",
-            f"{step + 1}. For passages that are verbatim and correctly located, set `review_status: spot_checked`.",
-            f"{step + 2}. Promote markets with `promote_to_canonical` action to canonical YAML.",
-            f"{step + 3}. Run `python apps/api/scripts/cases/integrity/validate_cases.py` after canonical promotion.",
-            f"{step + 4}. Run `python apps/api/scripts/cases/integrity/check_source_integrity.py --no-cache` as final gate.",
+            "1. Review passages marked `unreviewed` against the source PDF.",
+            "2. For passages that are verbatim and correctly located, set `review_status: spot_checked`.",
+            "3. Promote markets with `promote_to_canonical` action to canonical YAML.",
+            "4. Run `python apps/api/scripts/cases/integrity/validate_cases.py` after canonical promotion.",
+            "5. Run `python apps/api/scripts/cases/integrity/check_source_integrity.py --no-cache` as final gate.",
         ]
     lines.append("")
 
     report_path.parent.mkdir(parents=True, exist_ok=True)
     report_path.write_text("\n".join(lines), encoding="utf-8")
-
-
-# ---------------------------------------------------------------------------
-# Stage 5a — LLM review (optional)
-# ---------------------------------------------------------------------------
-
-def stage_llm_review(
-    draft_path: Path,
-    report_path: Path,
-    cache_dir: Path,
-    max_cost: float,
-    provider: str = "anthropic",
-    gemini_client=None,
-) -> tuple[Optional[str], Optional[Path], Optional[Path]]:
-    """
-    Run the optional LLM review / triage stage after Stage 4 passes.
-
-    Returns (triage_status, json_path, md_path).
-    Returns (None, None, None) if the review cannot run (missing API key, etc.).
-    Never raises — logs errors and returns None on failure.
-    """
-    try:
-        from review_draft import run_llm_review as _run_llm_review
-    except ImportError as exc:
-        print(f"  WARN: Could not import review_draft: {exc}")
-        return None, None, None
-
-    json_out = draft_path.parent / (draft_path.stem.replace(".draft", "") + ".llm_review.json")
-    md_out = draft_path.parent / (draft_path.stem.replace(".draft", "") + ".llm_review.md")
-
-    anthropic_client = None
-    if provider == "gemini":
-        if gemini_client is None:
-            print("  WARN: LLM review skipped — gemini_client not provided")
-            return None, None, None
-    else:
-        try:
-            import anthropic as _anthropic
-            anthropic_client = _anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
-        except (ImportError, KeyError) as exc:
-            print(f"  WARN: LLM review skipped — {exc}")
-            return None, None, None
-
-    print(f"Stage 5a — LLM review ({provider})")
-    try:
-        triage, validation_errors = _run_llm_review(
-            draft_path=draft_path,
-            review_md_path=report_path,
-            json_out=json_out,
-            md_out=md_out,
-            cache_dir=cache_dir,
-            anthropic_client=anthropic_client,
-            gemini_model=gemini_client,
-            provider=provider,
-            max_cost=max_cost,
-            skip_preflight=True,
-        )
-    except (ValueError, RuntimeError) as exc:
-        print(f"  WARN: LLM review failed — {exc}")
-        return None, None, None
-
-    marker = {
-        "auto_verified_candidate": "✓",
-        "needs_light_review": "⚠",
-        "needs_legal_review": "⚠",
-        "blocked": "✗",
-    }.get(triage, "?")
-    print(f"  {marker} Triage: {triage}")
-    if validation_errors:
-        for ve in validation_errors:
-            print(f"    WARN: {ve}")
-    print(f"  JSON:    {json_out}")
-    print(f"  MD:      {md_out}")
-    print()
-    return triage, json_out, md_out
 
 
 # ---------------------------------------------------------------------------
@@ -817,12 +728,6 @@ def main() -> int:
                         help="Skip Claude extraction; validate an existing draft if present")
     parser.add_argument("--cache-dir", default=str(DEFAULT_CACHE_DIR),
                         help=f"PDF text cache directory (default: {DEFAULT_CACHE_DIR})")
-    parser.add_argument("--llm-review", action="store_true",
-                        help=(
-                            "Run LLM review / triage stage after Stage 4 passes. "
-                            "Writes llm_review.json and llm_review.md to drafts/. "
-                            "Requires ANTHROPIC_API_KEY. Does not promote to data/cases/."
-                        ))
     parser.add_argument("--full-market-definition-pass", action="store_true",
                         help=(
                             "Merge page-text fallback with section-path selection regardless "
@@ -885,7 +790,7 @@ def main() -> int:
             "Run two independent extractions (Draft A + Draft B) and diff them into "
             "a ConflictReport for human review of conflicts only (ROADMAP 5.9). "
             "By default Draft B uses a different provider than Draft A so that "
-            "agreement between the two implies confidence. Skips Stage 5a."
+            "agreement between the two implies confidence."
         ),
     )
     parser.add_argument(
@@ -1030,15 +935,14 @@ def main() -> int:
     # -----------------------------------------------------------------------
     extraction_report = ExtractionReport(case_id=args.case_id, yaml_path=yaml_path)
 
-    # Build LLM client upfront — needed for both Stage 2 and Stage 5a (LLM review).
+    # Build LLM client upfront for extraction.
     provider = args.provider
-    _gemini_raw_client = None
     llm_client: Optional[LLMClient] = None
     if provider == "gemini":
         try:
             from google import genai as _genai
-            _gemini_raw_client = _genai.Client(api_key=os.environ["GOOGLE_API_KEY"])
-            llm_client = LLMClient("gemini", _gemini_raw_client)
+            _gemini_client = _genai.Client(api_key=os.environ["GOOGLE_API_KEY"])
+            llm_client = LLMClient("gemini", _gemini_client)
         except (ImportError, KeyError) as exc:
             print(f"  WARN: google-genai or GOOGLE_API_KEY not available ({exc})")
     else:
@@ -1211,26 +1115,6 @@ def main() -> int:
     print()
 
     # -----------------------------------------------------------------------
-    # Stage 5a — LLM review (optional, only when Stage 4 passed)
-    # -----------------------------------------------------------------------
-    llm_triage: Optional[str] = None
-    llm_json_path: Optional[Path] = None
-    llm_md_path: Optional[Path] = None
-
-    # Dual extraction supersedes Stage 5a: the conflict surface is a strictly better
-    # review signal than a self-critique of one draft (spec §"Relationship to Stage 5a").
-    stage4_passed = not (bool(extraction_report.error) or not schema_ok or int_errors > 0)
-    if getattr(args, "llm_review", False) and stage4_passed and not args.dual_extract:
-        llm_triage, llm_json_path, llm_md_path = stage_llm_review(
-            draft_path=draft_path,
-            report_path=report_path,
-            cache_dir=cache_dir,
-            max_cost=args.max_cost,
-            provider=args.provider,
-            gemini_client=_gemini_raw_client,
-        )
-
-    # -----------------------------------------------------------------------
     # Stage 5 — Review report
     # -----------------------------------------------------------------------
     print("Stage 5 — Review report")
@@ -1248,8 +1132,6 @@ def main() -> int:
         integrity_errors=int_errors,
         integrity_warnings=int_warnings,
         integrity_issues=int_issues,
-        llm_triage_status=llm_triage,
-        llm_review_path=llm_json_path,
     )
     print(f"  Written: {report_path}")
     print()

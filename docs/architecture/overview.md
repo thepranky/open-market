@@ -68,7 +68,6 @@ Group them mentally (and in code ownership) as two blobs:
 | `data/evals/` | Gold fixtures and extraction benchmarks |
 | `data/pipeline_profiles/` | Per-jurisdiction/doc-type extraction config |
 | `data/pipeline_rules/` | Pipeline rule helpers |
-| `data/review_learning/` | Human correction deltas from promotion |
 | `data/batch_runs/` | Batch extraction run metadata |
 
 **Critical boundary:** `drafts/` → human review → `cases/` via `scripts/cases/promote/promote_case_pipeline.py` only.

@@ -12,8 +12,6 @@ Use this checklist when promoting a draft from `data/drafts/` to `data/cases/`.
       `data/drafts/{jurisdiction}/{case_id}.{focus}.review.md`
 - [ ] Source integrity check passed (0 errors):  
       `apps/api/.venv/bin/python apps/api/scripts/cases/integrity/check_source_integrity.py --cases-dir data/drafts --no-cache`
-- [ ] LLM review report read and triage understood:  
-      `data/drafts/{jurisdiction}/{case_id}.{focus}.llm_review.md`
 - [ ] Source PDF open and accessible for passage verification
 
 ---
@@ -97,31 +95,17 @@ For each theory of harm entry:
 
 ---
 
-## Step 4 — Review LLM triage findings
-
-Read the LLM review report and for each flagged item decide:
-
-- **`definition_status_flags`** — check the flagged passage against the source; correct or add a review note
-- **`role_misuse_flags`** — verify the passage text; correct `source_role` or document why the current role is right
-- **`gap_findings` with confidence `source_backed`** — verify the cited passage; add the missing entry or document why it is not needed
-- **`gap_findings` with confidence `speculative`** — exercise legal judgment; the LLM may be wrong
-- **`outcome_passage_misuse`** — remove the mislinked passage from product/geographic market support
-
-You do not have to act on every LLM suggestion. Document your decision for items you disagree with in the market's `notes` field.
-
----
-
-## Step 5 — Set confidence scores and review status
+## Step 4 — Set confidence scores and review status
 
 - `review_status: spot_checked` — quote, locator, source_role, and support linkage all independently verified
 - `review_status: lawyer_reviewed` — only after a qualified lawyer has reviewed the passage for legal accuracy
 - `overall_confidence` on `CaseMetadata` — set to ≤ 0.70 until at least `spot_checked` on all passages; higher only after legal review
 
-Do **not** set `review_status: lawyer_reviewed` on any passage unless a lawyer has reviewed it. The LLM review stage does not count.
+Do **not** set `review_status: lawyer_reviewed` on any passage unless a lawyer has reviewed it.
 
 ---
 
-## Step 6 — Structural checks before promotion
+## Step 5 — Structural checks before promotion
 
 Run these in order. Both must pass cleanly before promoting.
 
@@ -141,12 +125,12 @@ If either produces errors, fix them before proceeding.
 
 ---
 
-## Step 7 — Promote the draft to canonical
+## Step 6 — Promote the draft to canonical
 
 **Use the pipeline script — do not copy the draft by hand and do not run the
 individual promotion commands manually.**  Manual promotion has caused mistakes
-in the past: draft-only fields ending up in canonical records, missed learning
-logs, and unrelated integrity warnings obscuring real issues.
+in the past: draft-only fields ending up in canonical records and unrelated
+integrity warnings obscuring real issues.
 
 ### Prerequisites for the seed file
 
@@ -190,7 +174,7 @@ apps/api/.venv/bin/python apps/api/scripts/cases/promote/promote_case_pipeline.p
     --procedure-stage phase1 \
     --dry-run
 
-# Full promotion (runs all gates, seeds graph, writes learning log)
+# Full promotion (runs all gates and seeds graph)
 apps/api/.venv/bin/python apps/api/scripts/cases/promote/promote_case_pipeline.py \
     --case-id {case_id} \
     --focus market_definition \
@@ -206,15 +190,13 @@ The pipeline will, in order:
 4. Run `check_source_links.py` (live URL liveness check on canonical records).
 5. Run `check_source_integrity.py --no-cache` (quote/locator checks on canonical).
 6. Run `graph/seed_graph.py` (optional Neo4j seed; graph routes fall back to YAML if Neo4j is unavailable).
-7. Run `create_review_learning_log.py` (capture human corrections as a delta log).
-8. Run `apply_review_learning.py` (aggregate proposals from all learning logs).
 
 The script **fails clearly** at the first blocking step and prints a concise
 summary at exit showing the status of every gate.
 
 ---
 
-## Step 8 — Post-promotion validation
+## Step 7 — Post-promotion validation
 
 The pipeline (Step 7) already runs all canonical gates automatically. After it
 completes, run the test suite:
@@ -227,7 +209,7 @@ All tests must pass before committing.
 
 ---
 
-## Step 9 — Commit checklist
+## Step 8 — Commit checklist
 
 - [ ] No files modified under `data/drafts/` in this commit (drafts stay as-is for audit trail)
 - [ ] No `review_status: lawyer_reviewed` set unless a lawyer reviewed the passage

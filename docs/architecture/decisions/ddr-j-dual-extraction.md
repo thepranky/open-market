@@ -55,8 +55,8 @@ Five load-bearing decisions:
 2. **Two cold extractions, not one extraction + an LLM reviewer.** A reviewer LLM is
    anchored by the first agent's confident framing and shares its model bias — the
    circularity this design exists to avoid. The second agent reads the source with
-   no knowledge of Draft A. This supersedes the Stage 5a critic (`review_draft.py`)
-   for cases run in dual mode; Stage 5a is skipped there.
+   no knowledge of Draft A. This superseded the old single-draft critic, which has
+   since been retired.
 
 3. **Alignment reuses the existing reconciliation machinery.** `_reconcile` /
    `_group_reconciliation` (from `extract_case_from_source.py`) already align a draft
@@ -116,10 +116,9 @@ Five load-bearing decisions:
 
 ## Alternatives considered
 
-- **One extraction + LLM-as-judge (keep only Stage 5a):** rejected as the *scale*
-  model — circular and shares model bias. Stage 5a survives as a triage accelerator
-  for single-extraction runs, but dual extraction supersedes it for cases run through
-  it (DDR-B Q1).
+- **One extraction + LLM-as-judge:** rejected as the *scale* model — circular and
+  shares model bias. Dual extraction superseded that path, and DDR-B records the
+  later retirement of the single-draft critic.
 - **Same-model dual extraction as default:** rejected — correlated errors manufacture
   false high-confidence agreement. Kept only as an availability fallback, flagged in
   the report.

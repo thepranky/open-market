@@ -211,8 +211,6 @@ class TestMainPipelineHappyPath:
         assert any("check_source_links" in s for s in script_names)
         assert any("check_source_integrity" in s for s in script_names)
         assert any("seed_graph" in s for s in script_names)
-        assert any("create_review_learning_log" in s for s in script_names)
-        assert any("apply_review_learning" in s for s in script_names)
 
     def test_promote_called_with_overwrite_flag(self):
         calls_made = []
@@ -281,20 +279,17 @@ class TestMainPipelineDownstreamFailures:
     def test_validate_cases_failure_aborts(self):
         assert self._run_with_nth_failure(2) == 1
 
-    def test_source_links_failure_aborts(self):
+    def test_semantic_lint_failure_aborts(self):
         assert self._run_with_nth_failure(3) == 1
 
-    def test_canonical_integrity_failure_aborts(self):
+    def test_source_links_failure_aborts(self):
         assert self._run_with_nth_failure(4) == 1
 
-    def test_graph_seed_failure_aborts(self):
+    def test_canonical_integrity_failure_aborts(self):
         assert self._run_with_nth_failure(5) == 1
 
-    def test_learning_log_failure_aborts(self):
+    def test_graph_seed_failure_aborts(self):
         assert self._run_with_nth_failure(6) == 1
-
-    def test_apply_learning_failure_aborts(self):
-        assert self._run_with_nth_failure(7) == 1
 
 
 class TestDryRun:
