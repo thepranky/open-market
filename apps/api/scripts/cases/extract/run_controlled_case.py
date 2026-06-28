@@ -27,12 +27,12 @@ Usage (from repo root):
         --authority "SDNY" --procedure-stage federal_district_court \\
         --outcome blocked --dry-run
 
-    # Skip LLM extraction (validate existing drafts only):
+    # Skip extraction (validate existing drafts only):
     python apps/api/scripts/cases/extract/run_controlled_case.py \\
         --case-id us_example_co_2025 --source-url https://... \\
         --case-name "FTC v. Example Co" --jurisdiction US \\
         --authority "SDNY" --procedure-stage federal_district_court \\
-        --outcome blocked --skip-llm-review
+        --outcome blocked --skip-extraction
 """
 
 from __future__ import annotations
@@ -344,12 +344,12 @@ def stage_extract(
     focuses: list[str],
     *,
     dry_run: bool,
-    skip_llm: bool,
+    skip_extraction: bool,
     max_cost: Optional[float],
 ) -> tuple[StageResult, list[Path]]:
     """Run ingest_case.py for each focus. Returns (result, list of draft paths)."""
-    if skip_llm:
-        return StageResult("extract", "skip", "Extraction skipped (--skip-llm-review)"), []
+    if skip_extraction:
+        return StageResult("extract", "skip", "Extraction skipped (--skip-extraction)"), []
 
     if dry_run:
         return (
@@ -520,7 +520,6 @@ def stage_check_readiness(
 _UNTRACKED_WARN_PATTERNS = (
     "data/source_text/",
     "data/drafts/",
-    "data/review_learning/",
     "data/evals/results/",
     ".pyc",
     "__pycache__",
@@ -573,7 +572,7 @@ def write_run_report(
     focuses = getattr(run_args, 'focuses', None) or []
     lines.append(f"  focuses:       {', '.join(str(f) for f in focuses)}")
     lines.append(f"  dry_run:       {getattr(run_args, 'dry_run', False)}")
-    lines.append(f"  skip_llm:      {getattr(run_args, 'skip_llm_review', False)}")
+    lines.append(f"  skip_extraction: {getattr(run_args, 'skip_extraction', False)}")
     lines.append("")
 
     lines += ["## Stage Summary", ""]
@@ -633,8 +632,7 @@ def write_run_report(
         lines.extend(result.git_warnings)
         lines.append("")
         lines.append("  Ensure these paths are covered by .gitignore:")
-        lines.append("    data/source_text/  data/drafts/  data/review_learning/")
-        lines.append("    data/evals/results/  *.pyc  __pycache__/")
+        lines.append("    data/source_text/  data/drafts/  data/evals/results/  *.pyc  __pycache__/")
     else:
         lines.append("  No unintended generated files detected in git status.")
     lines.append("")
@@ -693,12 +691,12 @@ def build_stage_plan(
     has_source_cache: bool,
     has_existing_drafts: bool,
     dry_run: bool,
-    skip_llm: bool,
+    skip_extraction: bool,
     focuses: list[str],
 ) -> list[str]:
     """Return the ordered list of stage names that will be executed."""
     stages = ["seed", "fetch_source", "select_profile", "plan_coverage"]
-    if not skip_llm:
+    if not skip_extraction:
         stages.append("extract")
     elif has_existing_drafts:
         stages.append("use_existing_drafts")
@@ -784,19 +782,19 @@ def run(args: argparse.Namespace) -> RunResult:
         result.generated_files.append(plan_path)
 
     # ---- Stage 5: Extraction ----
-    skip_llm = getattr(args, "skip_llm_review", False)
+    skip_extraction = getattr(args, "skip_extraction", False)
     max_cost = getattr(args, "max_cost", None)
     s5, draft_paths = stage_extract(
         case_id, focuses,
-        dry_run=args.dry_run, skip_llm=skip_llm, max_cost=max_cost,
+        dry_run=args.dry_run, skip_extraction=skip_extraction, max_cost=max_cost,
     )
     result.stages.append(s5)
     if s5.status == "error":
         result.blockers.append(f"Extraction failed: {s5.message}")
     result.generated_files.extend(draft_paths)
 
-    # If skipping LLM, discover existing drafts
-    if skip_llm:
+    # If skipping extraction, discover existing drafts
+    if skip_extraction:
         jur_dir = _DRAFTS_DIR / jurisdiction.lower()
         if jur_dir.exists():
             draft_paths = sorted(
@@ -902,7 +900,7 @@ def _parse_args(argv: Optional[list[str]] = None) -> argparse.Namespace:
     # Orchestration flags
     parser.add_argument("--dry-run", action="store_true", help="Print what would happen without writing files")
     parser.add_argument("--overwrite-drafts", action="store_true", help="Overwrite existing seed, cache, and drafts")
-    parser.add_argument("--skip-llm-review", action="store_true", help="Skip Claude extraction; validate existing drafts only")
+    parser.add_argument("--skip-extraction", action="store_true", help="Skip Claude extraction; validate existing drafts only")
 
     # Promote gate (explicit opt-in only)
     parser.add_argument(
