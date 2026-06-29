@@ -326,6 +326,14 @@ def build_offline_fetch(fixtures_dir: Path) -> Callable[[str], SourceFetchResult
                 named["dre.pt"] = path
 
     def fetch(url: str) -> SourceFetchResult:
-        return _fetch_with_fixtures(url, named, lambda u: fetch_source(u))
+        return _fetch_with_fixtures(
+            url,
+            named,
+            lambda u: SourceFetchResult(
+                url=u,
+                fetch_status=FetchStatus.unsupported,
+                error="offline fixture not found",
+            ),
+        )
 
     return fetch

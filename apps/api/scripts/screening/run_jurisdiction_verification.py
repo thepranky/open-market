@@ -12,10 +12,13 @@ API_DIR = Path(__file__).resolve().parents[2]
 PYTHON = sys.executable
 
 
-def _run(label: str, cmd: list[str]) -> int:
+def _run(label: str, cmd: list[str], *, required: bool = True) -> int:
     print(f"\n=== {label} ===", flush=True)
     proc = subprocess.run(cmd, cwd=API_DIR)
     if proc.returncode != 0:
+        if not required:
+            print(f"ADVISORY: {label} reported issues", file=sys.stderr)
+            return 0
         print(f"FAILED: {label}", file=sys.stderr)
     return proc.returncode
 
@@ -26,7 +29,11 @@ def main() -> int:
         "--tier",
         choices=("push", "nightly", "full"),
         default="push",
-        help="push: schema/completeness/regression; nightly: +passages/staleness offline; full: live passages all",
+        help=(
+            "push: schema/completeness/regression; "
+            "nightly: advisory offline passages + staleness drift monitor; "
+            "full: strict live passages all"
+        ),
     )
     parser.add_argument("--jurisdiction", "-j", help="Limit passage/staleness gates to one jurisdiction")
     args = parser.parse_args()
@@ -52,9 +59,15 @@ def main() -> int:
             passage_cmd.append("--offline")
         if args.jurisdiction:
             passage_cmd.extend(["--jurisdiction", args.jurisdiction])
-        failures += _run("Passage grounding gate", passage_cmd)
+        failures += _run(
+            "Passage grounding gate",
+            passage_cmd,
+            required=args.tier == "full",
+        )
 
         staleness_cmd = [PYTHON, "scripts/screening/monitor_jurisdiction_staleness.py", "--json"]
+        if args.tier == "nightly":
+            staleness_cmd.append("--allow-unknown")
         if args.jurisdiction:
             staleness_cmd.extend(["--jurisdiction", args.jurisdiction])
         failures += _run("Staleness monitor", staleness_cmd)

@@ -2,7 +2,7 @@ name: Jurisdiction Verification
 
 on:
   schedule:
-    # Nightly: offline passage fixtures + staleness anchors (no live fetch by default).
+    # Nightly: push gates + advisory offline passage report + staleness drift monitor.
     - cron: "0 4 * * *"
   pull_request:
     branches: [main]

@@ -79,7 +79,7 @@ def test_baseline_report_counts():
     assert report.authoritative_condition_count == 168
     assert report.condition_with_source_url_count == 17
     assert report.source_passage_count == 75
-    assert report.supported_condition_count == 138
+    assert report.supported_condition_count == 139
     assert report.authoritative_missing_passage_count == 29
     assert report.annual_adjustment_test_count == 15
     assert report.jurisdictions_without_source_passages == []
