@@ -1,0 +1,61 @@
+_gold_metadata:
+  case_id: microsoft_activision_2023
+  gold_status: canonical_derived
+  partial: false
+  review_required: false
+  created_from: data/cases/us/microsoft_activision_2023.yaml
+  notes: >
+    Derived from the promoted canonical record. The FTC complaint challenged the
+    acquisition across three product markets (high-performance console gaming,
+    cloud gaming services, and AAA game publishing/content), all discussed but not
+    formally defined by the court. Geographic markets were US-scoped for each.
+    All 3 product markets and 2 geographic markets are marked reviewed.
+
+case_id: microsoft_activision_2023
+case_name: "Microsoft / Activision Blizzard"
+authority: FTC (District Court)
+jurisdiction: US
+sector: technology / gaming
+decision_date: "2023-07-10"
+parties:
+  - name: Microsoft Corporation
+    role: acquirer
+  - name: Activision Blizzard Inc
+    role: target
+
+source_documents:
+  - doc_id: ftc_msft_activision_complaint
+    title: "FTC v. Microsoft Corp — Complaint for Temporary Restraining Order and Preliminary Injunction"
+    doc_type: complaint
+
+product_markets_considered:
+
+  - name: High-performance console gaming
+    market_type: product
+    expected_definition_status: discussed
+    reviewed: true
+
+  - name: Cloud gaming services / subscription
+    market_type: product
+    expected_definition_status: discussed
+    reviewed: true
+
+  - name: Gaming content / AAA game publishing
+    market_type: product
+    expected_definition_status: discussed
+    reviewed: true
+
+geographic_markets_considered:
+
+  - name: United States (console gaming)
+    market_type: geographic
+    expected_definition_status: discussed
+    reviewed: true
+
+  - name: United States (cloud gaming)
+    market_type: geographic
+    expected_definition_status: discussed
+    reviewed: true
+
+theories_of_harm: []
+commitments: []

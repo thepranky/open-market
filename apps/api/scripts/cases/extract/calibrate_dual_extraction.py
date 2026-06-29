@@ -64,7 +64,10 @@ from compare_extractions import (  # noqa: E402
 # Gold fixtures store the human-reviewed value of a market-scalar field under an
 # `expected_<field>` key (e.g. `expected_definition_status`), distinct from the
 # draft's own `<field>`. Map draft field name -> gold key when reading gold.
-_GOLD_FIELD_ALIAS = {"definition_status": "expected_definition_status"}
+_GOLD_FIELD_ALIAS = {
+    "definition_status": "expected_definition_status",
+    "commitment_type": "expected_commitment_type",
+}
 
 # Sentinel: this draft did not align any of its markets to the gold market, so the
 # field has no value at all — distinct from a found market whose field is empty.
@@ -92,7 +95,7 @@ def _gold_field_table(gold: dict, is_partial: bool) -> dict:
         for m in gold.get(list_key) or []:
             if is_partial and not m.get("reviewed"):
                 continue
-            name = m.get("name", "")
+            name = m.get("name", "") or m.get("title", "")
             if not name:
                 continue
             prefix = f"{label}/{name}"

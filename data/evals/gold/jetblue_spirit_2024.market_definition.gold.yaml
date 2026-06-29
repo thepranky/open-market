@@ -1,0 +1,54 @@
+_gold_metadata:
+  case_id: jetblue_spirit_2024
+  gold_status: canonical_derived
+  partial: false
+  review_required: false
+  created_from: data/cases/us/jetblue_spirit_2024.yaml
+  notes: >
+    Derived from the promoted canonical record. The district court opinion (DOJ v. JetBlue)
+    defined scheduled air passenger service on overlap city-pair routes as the primary
+    product market; the ULCC sub-market was discussed but left open. Geographic markets
+    were defined as individual city-pair routes. All 2 product markets and 1 geographic
+    market are marked reviewed.
+
+case_id: jetblue_spirit_2024
+case_name: "JetBlue / Spirit Airlines"
+authority: DOJ (District Court)
+jurisdiction: US
+sector: transportation / aviation
+decision_date: "2024-01-16"
+parties:
+  - name: JetBlue Airways Corporation
+    role: acquirer
+  - name: Spirit Airlines Inc
+    role: target
+
+source_documents:
+  - doc_id: doj_jetblue_spirit_complaint
+    title: "United States v. JetBlue Airways Corp — Complaint"
+    doc_type: complaint
+  - doc_id: doj_jetblue_spirit_opinion
+    title: "United States v. JetBlue Airways Corp — Memorandum of Decision"
+    doc_type: court_opinion
+
+product_markets_considered:
+
+  - name: Scheduled air passenger service – overlap city-pair routes
+    market_type: product
+    expected_definition_status: defined
+    reviewed: true
+
+  - name: ULCC air passenger service (price-sensitive travellers)
+    market_type: product
+    expected_definition_status: discussed
+    reviewed: true
+
+geographic_markets_considered:
+
+  - name: Individual city-pair routes (United States)
+    market_type: geographic
+    expected_definition_status: defined
+    reviewed: true
+
+theories_of_harm: []
+commitments: []

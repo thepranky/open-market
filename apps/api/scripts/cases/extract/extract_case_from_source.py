@@ -3431,7 +3431,7 @@ def _reconcile(
 
     def _draft_meta(dr: dict) -> dict:
         """Extract draft market metadata from a draft item dict."""
-        mid = str(dr.get("market_id") or dr.get("theory_id") or "")
+        mid = str(dr.get("market_id") or dr.get("theory_id") or dr.get("commitment_id") or "")
         return {
             "draft_market_importance": str(dr.get("market_importance") or ""),
             "draft_definition_status": str(dr.get("definition_status") or ""),
@@ -3445,12 +3445,13 @@ def _reconcile(
         item_label: str,
         is_geo: bool = False,
         market_type: str = "",
+        name_field: str = "name",
     ) -> None:
         matched_draft: set[int] = set()
 
         for ex in existing_items:
             ex_id = ex.get(id_field, "?")
-            ex_name = ex.get("name", "")
+            ex_name = ex.get(name_field, "")
 
             # Score all draft candidates upfront so we can sort and fall back.
             # For product markets: apply device-context conflict penalty so
@@ -3460,7 +3461,7 @@ def _reconcile(
             #   context can outweigh raw string similarity from spurious region matches.
             scored: list[tuple[float, int, str, dict]] = []
             for j, dr in enumerate(draft_items):
-                dr_name = dr.get("name", "")
+                dr_name = dr.get(name_field, "")
                 sim = _market_similarity(ex_name, dr_name)
                 if is_geo:
                     ctx_boost = min(
@@ -3578,7 +3579,7 @@ def _reconcile(
                     finding_type="new_from_source",
                     group=_RECON_GROUP["new_from_source"],
                     existing_id="", existing_name="",
-                    draft_name=dr.get("name", ""),
+                    draft_name=dr.get(name_field, ""),
                     message=f"New {item_label} found in source, not in existing YAML.",
                     similarity=0.0,
                     draft_market_type=market_type,
@@ -3610,6 +3611,15 @@ def _reconcile(
             draft_record.get("theories_of_harm") or [],
             "theory_id", "theory of harm",
             is_geo=False, market_type="",
+        )
+    if focus == "remedies":
+        _match_list(
+            existing_record.get("commitments") or [],
+            draft_record.get("commitments") or [],
+            id_field="commitment_id",
+            item_label="commitment",
+            name_field="title",
+            market_type="commitment",
         )
     return findings
 

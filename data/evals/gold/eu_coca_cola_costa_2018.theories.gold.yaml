@@ -1,0 +1,42 @@
+_gold_metadata:
+  case_id: eu_coca_cola_costa_2018
+  gold_status: canonical_derived
+  partial: false
+  review_required: false
+  created_from: data/cases/eu/eu_coca_cola_costa_2018.yaml
+  notes: >
+    Derived from the promoted canonical record. Four theories of harm were assessed
+    by the Commission: vertical foreclosure in NABs/coffee shops, and three conglomerate
+    effects theories (NABs on-premise / Costa out-of-home; NABs off-premise / Costa
+    in-home R&G and Tassimo; cold drinks vending / Costa Express). All 4 theories
+    are marked reviewed.
+
+case_id: eu_coca_cola_costa_2018
+case_name: "Coca-Cola / Costa"
+authority: European Commission
+jurisdiction: EU
+sector: consumer goods / beverages
+decision_date: "2019-03-21"
+
+product_markets_considered: []
+geographic_markets_considered: []
+
+theories_of_harm:
+
+  - theory_id: th_1
+    name: "Vertical foreclosure — NABs upstream / coffee shops downstream"
+    reviewed: true
+
+  - theory_id: th_2
+    name: "Conglomerate effects — NABs on-premise / Costa out-of-home coffee"
+    reviewed: true
+
+  - theory_id: th_3
+    name: "Conglomerate effects — NABs off-premise / Costa in-home R&G and Tassimo"
+    reviewed: true
+
+  - theory_id: th_4
+    name: "Conglomerate effects — cold drinks vending / Costa Express"
+    reviewed: true
+
+commitments: []

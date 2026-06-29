@@ -1,0 +1,25 @@
+focus: remedies
+# cache_dir points to the source-text fixture directory for each case.
+# output_dir is gitignored — results are generated locally and never committed.
+output_dir: data/evals/results
+
+# Gold files for the remedies focus must be produced by running focus=remedies
+# extraction on the candidate cases and verifying the commitments list against
+# the source PDF. No canonical case currently has non-empty commitments, so
+# these golds cannot be derived from existing records.
+#
+# Candidate cases per jurisdiction:
+#   EU: eu_google_fitbit_2021 (cleared_with_remedies outcome — run remedies extraction,
+#       verify commitments array against the Commission decision PDF)
+#   UK: identify from uk_viasat_inmarsat_2023 or meta_giphy_2022 whether the CMA
+#       imposed structural / behavioural commitments; if not, promote a UK case with
+#       known commitments before adding it here
+#   US: microsoft_activision_2023 (DOJ sought divestiture — run remedies extraction)
+#
+# Process for each case:
+#   1. .venv/bin/python scripts/cases/extract/ingest_case.py --case-id <id> --focus remedies
+#   2. Verify commitments array against source PDF
+#   3. Save verified YAML to data/evals/gold/<case_id>.remedies.gold.yaml
+#   4. Add entry below
+
+benchmarks: []

@@ -1,0 +1,66 @@
+_gold_metadata:
+  case_id: meta_giphy_2022
+  gold_status: canonical_derived
+  partial: false
+  review_required: false
+  created_from: data/cases/uk/meta_giphy_2022.yaml
+  notes: >
+    Derived from the promoted canonical record. The CMA's Final Report found Meta's
+    acquisition of GIPHY harmed competition in social media (horizontal), display
+    advertising on social media (horizontal), and supply of GIF libraries/APIs (vertical).
+    All 3 product markets and 3 geographic markets are marked reviewed.
+
+case_id: meta_giphy_2022
+case_name: "Meta / GIPHY"
+authority: Competition and Markets Authority
+jurisdiction: UK
+sector: technology / social media
+decision_date: "2022-11-01"
+parties:
+  - name: Meta Platforms Inc
+    role: acquirer
+  - name: GIPHY Inc
+    role: target
+
+source_documents:
+  - doc_id: cma_meta_giphy_final_report
+    title: "Meta / GIPHY: Final Report"
+    doc_type: final_report
+    authority_reference: ME/6821/21
+
+product_markets_considered:
+
+  - name: Social media
+    market_type: product
+    expected_definition_status: defined
+    reviewed: true
+
+  - name: Display advertising on social media
+    market_type: product
+    expected_definition_status: defined
+    reviewed: true
+
+  - name: Provision of GIF libraries / searchable GIF APIs
+    market_type: product
+    expected_definition_status: defined
+    reviewed: true
+
+geographic_markets_considered:
+
+  - name: UK (social media)
+    market_type: geographic
+    expected_definition_status: defined
+    reviewed: true
+
+  - name: UK (display advertising on social media)
+    market_type: geographic
+    expected_definition_status: defined
+    reviewed: true
+
+  - name: Global (GIF libraries / APIs)
+    market_type: geographic
+    expected_definition_status: defined
+    reviewed: true
+
+theories_of_harm: []
+commitments: []

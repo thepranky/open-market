@@ -1,0 +1,32 @@
+_gold_metadata:
+  case_id: jetblue_spirit_2024
+  gold_status: canonical_derived
+  partial: false
+  review_required: false
+  created_from: data/cases/us/jetblue_spirit_2024.yaml
+  notes: >
+    Derived from the promoted canonical record. The district court found two theories
+    of harm — elimination of the ULCC competitive constraint, and horizontal consolidation
+    on overlap routes. Both theories are marked reviewed.
+
+case_id: jetblue_spirit_2024
+case_name: "JetBlue / Spirit Airlines"
+authority: DOJ (District Court)
+jurisdiction: US
+sector: transportation / aviation
+decision_date: "2024-01-16"
+
+product_markets_considered: []
+geographic_markets_considered: []
+
+theories_of_harm:
+
+  - theory_id: toh_1
+    name: Elimination of the ultra-low-cost carrier (ULCC) competitive constraint
+    reviewed: true
+
+  - theory_id: toh_2
+    name: Horizontal consolidation on overlap routes
+    reviewed: true
+
+commitments: []

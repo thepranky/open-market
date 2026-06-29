@@ -1,0 +1,56 @@
+_gold_metadata:
+  case_id: us_tapestry_capri_2024
+  gold_status: canonical_derived
+  partial: false
+  review_required: false
+  created_from: data/cases/us/us_tapestry_capri_2024.yaml
+  notes: >
+    Derived from the promoted canonical record. The district court opinion (FTC v.
+    Tapestry/Capri) defined accessible-luxury handbags as the relevant product market;
+    mass-market and true-luxury handbag segments were considered but excluded. The
+    geographic market was the United States. All 3 product markets and 1 geographic
+    market are marked reviewed.
+
+case_id: us_tapestry_capri_2024
+case_name: "FTC v. Tapestry / Capri"
+authority: FTC (District Court)
+jurisdiction: US
+sector: consumer goods / fashion
+decision_date: "2024-10-24"
+parties:
+  - name: Tapestry Inc
+    role: acquirer
+  - name: Capri Holdings Limited
+    role: target
+
+source_documents:
+  - doc_id: sdny_tapestry_capri_pi_opinion
+    title: "FTC v. Tapestry Inc — Memorandum Opinion and Order"
+    doc_type: court_opinion
+
+product_markets_considered:
+
+  - name: Accessible-luxury handbags
+    market_type: product
+    expected_definition_status: defined
+    reviewed: true
+
+  - name: Mass-market handbags (fast fashion / opening price point)
+    market_type: product
+    expected_definition_status: considered
+    reviewed: true
+
+  - name: True-luxury handbags (luxury / pinnacle luxury / traditional European luxury)
+    market_type: product
+    expected_definition_status: considered
+    reviewed: true
+
+geographic_markets_considered:
+
+  - name: United States
+    market_type: geographic
+    expected_definition_status: defined
+    reviewed: true
+
+theories_of_harm: []
+commitments: []

@@ -1,0 +1,66 @@
+_gold_metadata:
+  case_id: uk_viasat_inmarsat_2023
+  gold_status: canonical_derived
+  partial: false
+  review_required: false
+  created_from: data/cases/uk/uk_viasat_inmarsat_2023.yaml
+  notes: >
+    Derived from the promoted canonical record. All 4 product markets and 2 geographic
+    markets are marked reviewed. The CMA's Final Report defines broadband IFC markets
+    (commercial airlines and large business aircraft) as the primary relevant markets;
+    narrowband IFC and small business aircraft IFC are discussed but left open.
+
+case_id: uk_viasat_inmarsat_2023
+case_name: "Viasat / Inmarsat (CMA)"
+authority: Competition and Markets Authority
+jurisdiction: UK
+sector: telecommunications / satellite services
+decision_date: "2023-05-09"
+parties:
+  - name: Viasat Inc
+    role: acquirer
+  - name: Inmarsat Holdings Limited
+    role: target
+
+source_documents:
+  - doc_id: cma_viasat_inmarsat_final_report
+    title: "Viasat / Inmarsat: Final Report"
+    doc_type: final_report
+    authority_reference: ME/6975/21
+
+product_markets_considered:
+
+  - name: Supply of broadband IFC services to commercial airlines
+    market_type: product
+    expected_definition_status: defined
+    reviewed: true
+
+  - name: Supply of broadband IFC services to operators of large business aircraft
+    market_type: product
+    expected_definition_status: defined
+    reviewed: true
+
+  - name: Supply of narrowband IFC services
+    market_type: product
+    expected_definition_status: discussed
+    reviewed: true
+
+  - name: Supply of IFC services to small business aircraft operators
+    market_type: product
+    expected_definition_status: discussed
+    reviewed: true
+
+geographic_markets_considered:
+
+  - name: Global supply of broadband IFC services to commercial airlines
+    market_type: geographic
+    expected_definition_status: defined
+    reviewed: true
+
+  - name: Global supply of broadband IFC services to operators of large business aircraft
+    market_type: geographic
+    expected_definition_status: defined
+    reviewed: true
+
+theories_of_harm: []
+commitments: []

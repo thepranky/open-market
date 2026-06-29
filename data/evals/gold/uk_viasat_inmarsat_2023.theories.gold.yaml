@@ -1,0 +1,32 @@
+_gold_metadata:
+  case_id: uk_viasat_inmarsat_2023
+  gold_status: canonical_derived
+  partial: false
+  review_required: false
+  created_from: data/cases/uk/uk_viasat_inmarsat_2023.yaml
+  notes: >
+    Derived from the promoted canonical record. The CMA identified two theories of harm
+    — horizontal unilateral effects in broadband IFC services to commercial airlines,
+    and to large business aircraft operators. Both theories are marked reviewed.
+
+case_id: uk_viasat_inmarsat_2023
+case_name: "Viasat / Inmarsat (CMA)"
+authority: Competition and Markets Authority
+jurisdiction: UK
+sector: telecommunications / satellite services
+decision_date: "2023-05-09"
+
+product_markets_considered: []
+geographic_markets_considered: []
+
+theories_of_harm:
+
+  - theory_id: toh_1
+    name: Horizontal unilateral effects in the supply of broadband IFC services to commercial airlines
+    reviewed: true
+
+  - theory_id: toh_2
+    name: Horizontal unilateral effects in the supply of broadband IFC services to large business aircraft operators
+    reviewed: true
+
+commitments: []
