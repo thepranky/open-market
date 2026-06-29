@@ -1,27 +1,61 @@
-# Spec: Grounding gates on the bulk promote lane (ROADMAP 5.17)
+# Spec: Promotion gate module and bulk promotion gates (ROADMAP 5.17)
 
 ## Goal
 
-Bulk promotion must not write canonical case YAML until the promoted candidate has
-passed the same batch-safe data gates that the single-case promotion path runs today.
-Before this change, `bulk_promote_pass.py` scans reviewed market-definition drafts
-and calls `promote_draft_to_canonical.py` directly; a draft with a real-looking but
-unfindable quote can be promoted at volume. After this change, the bulk lane first
-builds a canonical candidate in a temporary cases tree, runs case-scoped schema,
-link, grounding, semantic, and conflict checks against that candidate, blocks on
-any data-gate failure, records the per-case outcome in `data/batch_runs/`, and only
-then writes the real canonical YAML.
+Promotion policy must live behind one deep module that both single-case and bulk
+promotion call through thin CLI adapters. Before this change, `promote_case_pipeline.py`
+and `bulk_promote_pass.py` know different fragments of the draft-to-canonical safety
+rules: the single-case path runs the full gate sequence, while the bulk lane scans
+reviewed market-definition drafts and calls `promote_draft_to_canonical.py` directly.
+A draft with a real-looking but unfindable quote can therefore be promoted at volume.
+After this change, the shared promotion gate first builds a canonical candidate in a
+temporary cases tree, runs case-scoped schema, link, grounding, semantic, and conflict
+checks against that candidate, blocks on any data-gate failure, records the per-case
+outcome in `data/batch_runs/`, and only then writes the real canonical YAML.
 
 Out of scope:
 - Changing `check_source_integrity.py` issue levels or global exit-code behavior.
   The bulk lane parses its summary and treats warnings as blocking locally.
-- Routing bulk promotion through the single-case pipeline. The bulk runner needs
+- Routing bulk promotion through the single-case CLI. The bulk runner needs
   case-scoped candidate gates and batch-level state, not per-case graph reseeding.
 - Repairing bad quotes, URLs, pages, support references, or review packets.
 - Automating conflict resolution or human sign-off for dual-extraction reports.
 - Running extraction or review-readiness checks during promotion.
 
 ## Approach
+
+### Put promotion policy behind one module
+
+Add `promotion_gate.py` under `apps/api/scripts/cases/promote/`. This is the module
+that owns candidate construction, gate execution, conflict checks, result categories,
+and the structured outcome object used by both CLIs.
+
+The interface should be small:
+
+```python
+run_promotion_gate(
+    candidate: PromotionCandidate,
+    *,
+    paths: PromotionPaths,
+    policy: PromotionPolicy,
+) -> PromotionOutcome
+```
+
+`PromotionCandidate` identifies the draft, case ID, jurisdiction, draft kind, review
+status, and real output path. `PromotionPolicy` carries caller policy such as
+`overwrite`, `dry_run`, warning behavior, graph-seed mode, and whether missing conflict
+reports are allowed. `PromotionOutcome` is serialisable into both the terminal summary
+and the batch-run artifact.
+
+`run_case_promotion.py` becomes the single-case CLI adapter. It parses operator flags,
+selects one candidate, calls the promotion gate, prints the existing summary shape,
+and optionally runs graph seeding for that one promotion. `run_bulk_promotion.py`
+becomes the batch CLI adapter. It discovers candidates, calls the same promotion gate
+per case, writes batch state, and runs graph seeding once after the batch.
+
+`promote_draft_to_canonical.py` stays a lower-level transformer. It is called by the
+promotion gate when constructing a temporary canonical candidate; it does not learn
+source-integrity policy, batch state, or graph-seed policy.
 
 ### Keep bulk promotion as the batch driver
 
@@ -284,8 +318,9 @@ completed specs or only require active docs/runtime messages to use the new name
 
 ### Testable helpers
 
-Factor small helpers inside `run_bulk_promotion.py` so tests can cover the behavior
-without shelling out to real network checks:
+Factor helpers inside `promotion_gate.py` for shared behavior and keep only discovery
+or summary helpers in `run_bulk_promotion.py`. Tests should cover behavior without
+shelling out to real network checks:
 
 - `discover_candidates(drafts_dir, jurisdiction, draft_kind) -> list[Candidate]`
 - `parse_full_depth_readiness(packet_path) -> str`
@@ -303,12 +338,14 @@ change normal CLI usage.
 
 | File | Change |
 |------|--------|
-| `apps/api/scripts/cases/promote/run_bulk_promotion.py` | New primary bulk runner: candidate discovery for full-depth drafts, temp-canonical gate flow, schema/source-link/source-integrity/semantic/conflict gates, batch artifact writing, one final graph seed, and testable helpers. |
+| `apps/api/scripts/cases/promote/promotion_gate.py` | New shared promotion module: candidate model, path/policy objects, temp-canonical candidate construction, schema/source-link/source-integrity/semantic/conflict gates, outcome categories, and serialisable gate results. |
+| `apps/api/scripts/cases/promote/run_bulk_promotion.py` | New primary bulk runner: candidate discovery for full-depth drafts, per-case calls into `promotion_gate.py`, batch artifact writing, and one final graph seed. |
 | `apps/api/scripts/cases/promote/bulk_promote_pass.py` | Compatibility wrapper for the old command/import path; prints deprecation warning and delegates to `run_bulk_promotion.py`. |
-| `apps/api/scripts/cases/promote/run_case_promotion.py` | New primary single-case runner, moved from `promote_case_pipeline.py` with imports and subprocess references updated to new names. |
+| `apps/api/scripts/cases/promote/run_case_promotion.py` | New primary single-case runner, moved from `promote_case_pipeline.py`; delegates shared gate behavior to `promotion_gate.py` and keeps single-case summary behavior. |
 | `apps/api/scripts/cases/promote/promote_case_pipeline.py` | Compatibility wrapper for the old command/import path; prints deprecation warning and delegates to `run_case_promotion.py`. |
 | `apps/api/scripts/cases/integrity/check_source_links.py` | Add `--cases-dir` and `--case-id` while preserving existing default all-cases behavior. |
 | `apps/api/tests/test_run_bulk_promotion.py` | New/renamed tests for discovery modes, full-depth readiness parsing, duplicate full-depth preference, all blocking gates, no real write on gate failure, dry-run no gates, graph seeding once, and batch artifact contents. |
+| `apps/api/tests/test_promotion_gate.py` | New direct tests for shared candidate construction, gate-result categorisation, conflict-report policy, warning-as-blocking policy, and serialisable outcomes. |
 | `apps/api/tests/test_run_case_promotion.py` | Renamed single-case promotion tests importing the new module name. |
 | `apps/api/tests/test_promotion_script_compat.py` | New smoke tests that old script paths and old import paths still delegate and emit deprecation warnings. |
 | Active docs/runtime messages listed above | Replace `promote_case_pipeline.py` and `bulk_promote_pass.py` command examples with `run_case_promotion.py` and `run_bulk_promotion.py`; mention old names as deprecated aliases only where helpful. |
@@ -321,6 +358,9 @@ cd apps/api
 
 # New focused tests for the batch lane.
 .venv/bin/python -m pytest tests/test_run_bulk_promotion.py -v
+
+# Shared promotion gate policy.
+.venv/bin/python -m pytest tests/test_promotion_gate.py -v
 
 # Existing single-case promotion tests should remain green.
 .venv/bin/python -m pytest tests/test_run_case_promotion.py -v
@@ -349,12 +389,14 @@ cd apps/api
 
 # Whole API lint/test smoke for touched script surfaces.
 .venv/bin/ruff check \
+  scripts/cases/promote/promotion_gate.py \
   scripts/cases/promote/run_bulk_promotion.py \
   scripts/cases/promote/bulk_promote_pass.py \
   scripts/cases/promote/run_case_promotion.py \
   scripts/cases/promote/promote_case_pipeline.py \
   scripts/cases/integrity/check_source_links.py \
   tests/test_run_bulk_promotion.py \
+  tests/test_promotion_gate.py \
   tests/test_run_case_promotion.py \
   tests/test_promotion_script_compat.py
 ```
