@@ -1,10 +1,11 @@
-"""US case-index discovery contract shared by future DOJ and FTC scrapers."""
+"""US case-index discovery contract shared by DOJ and FTC scrapers."""
 
 from __future__ import annotations
 
 import re
 from dataclasses import dataclass
 from typing import Literal
+from urllib.parse import urlparse
 
 try:
     from scripts.cases.discovery.case_index_builder import (
@@ -31,84 +32,61 @@ class UsScrapedCase:
     sector: str
 
 
-_CAPTION_PREFIXES = (
-    r"u\.?s\.?\s+et\s+al\.?\s+v\.?\s+",
-    r"united\s+states\s+et\s+al\.?\s+v\.?\s+",
-    r"united\s+states\s+v\.?\s+",
-    r"federal\s+trade\s+commission\s+v\.?\s+",
-    r"ftc\s+v\.?\s+",
+_DOJ_CAPTION_PREFIXES = (
+    "us-and-plaintiff-states-v-",
+    "us-et-al-v-",
+    "us-v-",
 )
-_LEGAL_SUFFIXES = {
-    "co",
-    "company",
-    "corp",
-    "corporation",
-    "inc",
-    "incorporated",
-    "llc",
-    "ltd",
-    "limited",
-    "lp",
-    "plc",
-}
-_DESCRIPTORS = {
-    "airlines",
-    "airways",
-    "group",
-    "holdings",
-    "northeast",
-    "unlimited",
-}
-_PHRASE_SLUGS = (
-    ("at and t", "att"),
-    ("at t", "att"),
-    ("time warner", "timewarner"),
-    ("change healthcare", "changehealthcare"),
-    ("simon schuster", "simonschuster"),
-    ("activision blizzard", "activision"),
-    ("penguin random house", "penguin"),
-)
+_FTC_MATTER_RE = re.compile(r"^(\d{3})-?(\d{4})-(.+)$")
+_SLUG_MAX_LEN = 55
 
 
-def _strip_caption_boilerplate(case_name: str) -> str:
-    normalized = case_name.strip()
-    for pattern in _CAPTION_PREFIXES:
-        normalized = re.sub(pattern, "", normalized, flags=re.IGNORECASE)
-    normalized = re.sub(r",?\s+in\s+the\s+matter\s+of\s*$", "", normalized, flags=re.IGNORECASE)
+def _url_path_slug(source_url: str) -> str:
+    path = urlparse(source_url).path.rstrip("/")
+    if not path:
+        raise ValueError("source_url must include a path segment")
+    return path.rsplit("/", 1)[-1]
+
+
+def _normalize_slug(slug: str) -> str:
+    normalized = re.sub(r"[^a-z0-9]+", "_", slug.lower()).strip("_")
+    if len(normalized) > _SLUG_MAX_LEN:
+        normalized = normalized[:_SLUG_MAX_LEN].rstrip("_")
     return normalized
 
 
-def _party_slug(party_name: str) -> str:
-    normalized = party_name.lower().replace("&", " and ")
-    normalized = re.sub(r"[^a-z0-9]+", " ", normalized)
-    normalized = re.sub(r"\s+", " ", normalized).strip()
-    for phrase, replacement in _PHRASE_SLUGS:
-        normalized = re.sub(rf"\b{re.escape(phrase)}\b", replacement, normalized)
-    tokens = [
-        token
-        for token in normalized.split()
-        if token not in _LEGAL_SUFFIXES and token not in _DESCRIPTORS and token != "and"
-    ]
-    return "_".join(tokens)
+def _doj_slug_from_url(source_url: str) -> str:
+    slug = _url_path_slug(source_url)
+    for prefix in _DOJ_CAPTION_PREFIXES:
+        if slug.startswith(prefix):
+            slug = slug[len(prefix) :]
+            break
+    if slug.endswith("-et-al"):
+        slug = slug[: -len("-et-al")]
+    normalized = _normalize_slug(slug)
+    if not normalized:
+        raise ValueError("could not derive a DOJ case slug from source_url")
+    return normalized
 
 
-def generate_us_case_id(authority: Literal["DOJ", "FTC"], case_name: str, year: str) -> str:
-    """Generate a stable US case-index id for a DOJ or FTC matter."""
+def _ftc_slug_from_url(source_url: str) -> str:
+    slug = _url_path_slug(source_url)
+    match = _FTC_MATTER_RE.match(slug)
+    if match:
+        return f"{match.group(1)}_{match.group(2)}"
+    normalized = _normalize_slug(slug)
+    if not normalized:
+        raise ValueError("could not derive an FTC case slug from source_url")
+    return normalized
+
+
+def generate_us_case_id(authority: Literal["DOJ", "FTC"], source_url: str, year: str) -> str:
+    """Generate a stable US case-index id from an authority listing source URL."""
     authority_slug = authority.lower()
-    normalized = _strip_caption_boilerplate(case_name)
-    party_slugs = [
-        slug
-        for slug in (
-            _party_slug(part)
-            for part in re.split(r"\s*(?:/|\+|,?\s+and\s+)\s*", normalized)
-        )
-        if slug
-    ]
-    name_slug = "_".join(party_slugs)
-    if len(name_slug) > 60:
-        name_slug = name_slug[:60].rstrip("_")
-    if not name_slug:
-        name_slug = "case"
+    if authority == "DOJ":
+        name_slug = _doj_slug_from_url(source_url)
+    else:
+        name_slug = _ftc_slug_from_url(source_url)
     return f"us_{authority_slug}_{name_slug}_{year}"
 
 
@@ -118,7 +96,7 @@ def to_case_index_seed(record: UsScrapedCase) -> CaseIndexSeed:
         raise ValueError("decision_date is required to build a case-index entry")
     year = record.decision_date[:4]
     return CaseIndexSeed(
-        case_id=generate_us_case_id(record.authority, record.case_name, year),
+        case_id=generate_us_case_id(record.authority, record.source_url, year),
         case_name=record.case_name,
         jurisdiction="US",
         authority=record.authority,
