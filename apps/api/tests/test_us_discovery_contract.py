@@ -47,8 +47,8 @@ def test_generate_us_case_id_from_fixture_urls():
     ftc_href = _href_from_fixture("us_ftc/listing_sample.html")
 
     assert (
-        generate_us_case_id("DOJ", doj_href, "2024")
-        == "us_doj_jetblue_airways_corporation_and_spirit_airlines_inc_2024"
+        generate_us_case_id("DOJ", doj_href, "2026")
+        == "us_doj_cal_maine_foods_inc_2026"
     )
     assert generate_us_case_id("FTC", ftc_href, "2023") == "us_ftc_201_0144_2023"
 
