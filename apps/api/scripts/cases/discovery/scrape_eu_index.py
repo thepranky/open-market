@@ -35,6 +35,19 @@ from typing import Optional
 import httpx
 import yaml
 
+try:
+    from scripts.cases.discovery.case_index_builder import (
+        CaseIndexParty,
+        CaseIndexSeed,
+        build_case_index_dict,
+    )
+except ModuleNotFoundError:
+    from case_index_builder import (
+        CaseIndexParty,
+        CaseIndexSeed,
+        build_case_index_dict,
+    )
+
 REPO_ROOT = Path(__file__).resolve().parents[5]
 INDEX_DIR = REPO_ROOT / "data" / "case_index" / "eu"
 
@@ -95,7 +108,7 @@ _PARTIES_SPLIT_RE = re.compile(r"\s*/\s*")
 # ---------------------------------------------------------------------------
 
 @dataclass
-class ScrapedCase:
+class EuScrapedCase:
     case_number: str          # e.g. "11141"
     decision_celex: str       # e.g. "32023M11141"
     decision_date: str        # ISO date "YYYY-MM-DD"
@@ -129,7 +142,7 @@ def _fetch_decision_batch(
     to_date: str,
     limit: int,
     offset: int,
-) -> list[ScrapedCase]:
+) -> list[EuScrapedCase]:
     """Fetch one page of merger decisions from EUR-Lex SPARQL."""
     # Request 4× the desired limit because each case can have multiple NACE code rows
     # in the SPARQL results (one row per NACE code per case).  We deduplicate below,
@@ -156,8 +169,8 @@ SELECT DISTINCT ?decisionCelex ?date ?nace ?notifTitle ?notif WHERE {{
 
     bindings = _sparql(client, query)
 
-    # Build one ScrapedCase per celex, accumulating NACE codes across duplicate rows.
-    case_map: dict[str, ScrapedCase] = {}
+    # Build one EuScrapedCase per celex, accumulating NACE codes across duplicate rows.
+    case_map: dict[str, EuScrapedCase] = {}
     order: list[str] = []  # preserve DESC(?date) ordering
 
     for b in bindings:
@@ -173,7 +186,7 @@ SELECT DISTINCT ?decisionCelex ?date ?nace ?notifTitle ?notif WHERE {{
             if notif_uri:
                 notif_cellar_id = notif_uri.rstrip("/").split("/")[-1]
             title_from_sparql = b.get("notifTitle", {}).get("value") or None
-            case_map[celex] = ScrapedCase(
+            case_map[celex] = EuScrapedCase(
                 case_number=case_number.group(1),
                 decision_celex=celex,
                 decision_date=date_val,
@@ -251,7 +264,7 @@ def _fetch_case_name_from_cellar(
 
 def resolve_case_name(
     client: httpx.Client,
-    sc: ScrapedCase,
+    sc: EuScrapedCase,
     *,
     fetch_cellar: bool = True,
 ) -> None:
@@ -297,7 +310,7 @@ def _slug(text: str) -> str:
     return text[:30]
 
 
-def make_case_id(sc: ScrapedCase) -> str:
+def make_case_id(sc: EuScrapedCase) -> str:
     """Generate a case_id like eu_wendel_topscale_2023."""
     year = sc.decision_date[:4]
     if sc.parties:
@@ -310,31 +323,31 @@ def make_case_id(sc: ScrapedCase) -> str:
 # YAML generation
 # ---------------------------------------------------------------------------
 
-def build_yaml(sc: ScrapedCase, case_id: str) -> dict:
+def to_case_index_seed(sc: EuScrapedCase, case_id: str) -> CaseIndexSeed:
+    """Convert one EU scraped decision record into the shared case-index seed."""
+    parties = tuple(
+        CaseIndexParty(
+            name=party,
+            role="target" if index == len(sc.parties) - 1 else "acquirer",
+        )
+        for index, party in enumerate(sc.parties)
+    )
+    return CaseIndexSeed(
+        case_id=case_id,
+        case_name=sc.case_name or f"M.{sc.case_number}",
+        jurisdiction="EU",
+        authority="European Commission",
+        decision_date=sc.decision_date,
+        sector=nace_to_sector(sc.nace_codes),
+        outcome=sc.outcome,
+        source_url=f"https://competition-cases.ec.europa.eu/cases/M.{sc.case_number}",
+        parties=parties,
+    )
+
+
+def build_yaml(sc: EuScrapedCase, case_id: str) -> dict:
     """Produce the YAML dict for a CaseIndexEntry."""
-    record: dict = {
-        "case_id": case_id,
-        "case_name": sc.case_name or f"M.{sc.case_number}",
-        "jurisdiction": "EU",
-        "authority": "European Commission",
-        "decision_date": sc.decision_date,
-        "sector": nace_to_sector(sc.nace_codes),
-        "outcome": sc.outcome,
-        "case_type": "merger",
-        "source_url": f"https://competition-cases.ec.europa.eu/cases/M.{sc.case_number}",
-        "ai_summary": None,
-        "parties": [],
-        "concept_refs": [],
-    }
-
-    if sc.parties:
-        party_list = []
-        for i, p in enumerate(sc.parties):
-            role = "target" if i == len(sc.parties) - 1 else "acquirer"
-            party_list.append({"name": p, "role": role})
-        record["parties"] = party_list
-
-    return record
+    return build_case_index_dict(to_case_index_seed(sc, case_id))
 
 
 def write_yaml(out_path: Path, record: dict) -> None:
