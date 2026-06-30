@@ -9551,3 +9551,105 @@ class TestUnitAssessmentFocus:
         ctx = {"case_name": "Bayer / Monsanto", "authority": "EC", "parties": []}
         prompt = _build_unit_assessment_prompt([chunk], ctx)
         assert "Bayer / Monsanto" in prompt
+
+
+# ---------------------------------------------------------------------------
+# Commitments reconciliation (focus=remedies)
+# ---------------------------------------------------------------------------
+
+class TestCommitmentsReconciliation:
+    """_reconcile handles commitments when focus=remedies, keyed by title."""
+
+    def _existing_with_commitment(self) -> dict:
+        return {
+            "product_markets_considered": [],
+            "geographic_markets_considered": [],
+            "theories_of_harm": [],
+            "commitments": [
+                {"commitment_id": "cm_1", "title": "Divest Activision mobile games",
+                 "commitment_type": "divestiture"},
+            ],
+        }
+
+    def test_focus_remedies_reconciles_commitments(self):
+        """focus=remedies: matching commitment in draft produces supported_as_is finding."""
+        draft = {
+            "product_markets_considered": [],
+            "geographic_markets_considered": [],
+            "theories_of_harm": [],
+            "commitments": [
+                {"commitment_id": "cm_1", "title": "Divest Activision mobile games",
+                 "commitment_type": "divestiture"},
+            ],
+            "source_passages": [],
+        }
+        findings = _reconcile(draft, self._existing_with_commitment(), focus="remedies")
+        cm_findings = [f for f in findings if f.existing_id == "cm_1"]
+        assert len(cm_findings) == 1
+        assert cm_findings[0].finding_type == "supported_as_is"
+
+    def test_focus_remedies_surfaces_missing_commitment(self):
+        """focus=remedies: commitment in existing but not in draft → unsupported_remove."""
+        draft = {
+            "product_markets_considered": [],
+            "geographic_markets_considered": [],
+            "theories_of_harm": [],
+            "commitments": [],
+            "source_passages": [],
+        }
+        findings = _reconcile(draft, self._existing_with_commitment(), focus="remedies")
+        cm_removals = [f for f in findings if f.existing_id == "cm_1"]
+        assert len(cm_removals) == 1
+        assert cm_removals[0].finding_type == "unsupported_remove"
+
+    def test_focus_remedies_surfaces_new_commitment(self):
+        """focus=remedies: commitment in draft but not in existing → new_from_source."""
+        draft = {
+            "product_markets_considered": [],
+            "geographic_markets_considered": [],
+            "theories_of_harm": [],
+            "commitments": [
+                {"commitment_id": "cm_99", "title": "Behavioural access remedy",
+                 "commitment_type": "behavioural"},
+            ],
+            "source_passages": [],
+        }
+        findings = _reconcile(draft, {"product_markets_considered": [], "geographic_markets_considered": [],
+                                      "theories_of_harm": [], "commitments": []}, focus="remedies")
+        new_findings = [f for f in findings if f.finding_type == "new_from_source"]
+        assert len(new_findings) == 1
+        assert new_findings[0].draft_name == "Behavioural access remedy"
+
+    def test_focus_market_definition_skips_commitments(self):
+        """focus=market_definition: commitments are not reconciled."""
+        draft = {
+            "product_markets_considered": [],
+            "geographic_markets_considered": [],
+            "theories_of_harm": [],
+            "commitments": [],
+            "source_passages": [],
+        }
+        findings = _reconcile(draft, self._existing_with_commitment(), focus="market_definition")
+        cm_removals = [f for f in findings if f.existing_id == "cm_1"]
+        assert cm_removals == [], "Commitments must not be flagged when focus=market_definition"
+
+    def test_draft_meta_falls_back_to_commitment_id(self):
+        """_reconcile: new_from_source finding for a commitment carries commitment_id in ref lookup."""
+        draft = {
+            "product_markets_considered": [],
+            "geographic_markets_considered": [],
+            "theories_of_harm": [],
+            "commitments": [
+                {"commitment_id": "cm_1", "title": "Divest games unit",
+                 "commitment_type": "divestiture"},
+            ],
+            "source_passages": [
+                {"page": "5", "supports_markets": [], "supports_geographic_markets": [],
+                 "supports_theories": [], "supports_commitments": ["cm_1"]},
+            ],
+        }
+        findings = _reconcile(draft, {"product_markets_considered": [], "geographic_markets_considered": [],
+                                      "theories_of_harm": [], "commitments": []}, focus="remedies")
+        new_findings = [f for f in findings if f.finding_type == "new_from_source"]
+        assert len(new_findings) == 1
+        assert new_findings[0].draft_source_refs == ["5"]

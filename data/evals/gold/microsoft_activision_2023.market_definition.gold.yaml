@@ -1,0 +1,66 @@
+_gold_metadata:
+  case_id: microsoft_activision_2023
+  gold_status: canonical_derived
+  partial: false
+  review_required: false
+  created_from: data/cases/us/microsoft_activision_2023.yaml
+  notes: >
+    Derived from the promoted canonical record. The FTC complaint challenged the
+    acquisition across three product markets (high-performance console gaming,
+    cloud gaming services, and multi-game content library subscription services), all
+    discussed but not formally defined by the court. Geographic markets were US-scoped
+    for each. Human reviewed.
+
+case_id: microsoft_activision_2023
+case_name: "Microsoft / Activision Blizzard"
+authority: FTC (District Court)
+jurisdiction: US
+sector: technology / gaming
+decision_date: "2023-07-10"
+parties:
+  - name: Microsoft Corporation
+    role: acquirer
+  - name: Activision Blizzard Inc
+    role: target
+
+source_documents:
+  - doc_id: ftc_msft_activision_complaint
+    title: "FTC v. Microsoft Corp — Complaint for Temporary Restraining Order and Preliminary Injunction"
+    doc_type: complaint
+
+product_markets_considered:
+
+  - name: High-performance consoles
+    market_type: product
+    expected_definition_status: discussed
+    reviewed: true
+
+  - name: Cloud gaming subscription services
+    market_type: product
+    expected_definition_status: discussed
+    reviewed: true
+
+  - name: Multi-game content library subscription services
+    market_type: product
+    expected_definition_status: discussed
+    reviewed: true
+
+geographic_markets_considered:
+
+  - name: United States (High-performance consoles)
+    market_type: geographic
+    expected_definition_status: discussed
+    reviewed: true
+
+  - name: United States (cloud gaming subscription services)
+    market_type: geographic
+    expected_definition_status: discussed
+    reviewed: true
+
+  - name: United States (multi-game content library subscription services)
+    market_type: geographic
+    expected_definition_status: discussed
+    reviewed: true
+
+theories_of_harm: []
+commitments: []

@@ -39,3 +39,35 @@ benchmarks:
     draft_yaml: data/evals/fixtures/market_definition/eu_daimler_geely_smart_2020/draft.yaml
     report_json: data/evals/fixtures/market_definition/eu_daimler_geely_smart_2020/report.json
     cache_dir: data/evals/fixtures/market_definition/eu_daimler_geely_smart_2020
+
+  # UK cases — draft pairs produced by running calibration without --reuse-drafts
+  - case_id: uk_viasat_inmarsat_2023
+    gold_yaml: data/evals/gold/uk_viasat_inmarsat_2023.market_definition.gold.yaml
+    draft_yaml: data/evals/fixtures/market_definition/uk_viasat_inmarsat_2023/draft.yaml
+    report_json: data/evals/fixtures/market_definition/uk_viasat_inmarsat_2023/report.json
+    cache_dir: data/evals/fixtures/market_definition/uk_viasat_inmarsat_2023
+
+  - case_id: meta_giphy_2022
+    gold_yaml: data/evals/gold/meta_giphy_2022.market_definition.gold.yaml
+    draft_yaml: data/evals/fixtures/market_definition/meta_giphy_2022/draft.yaml
+    report_json: data/evals/fixtures/market_definition/meta_giphy_2022/report.json
+    cache_dir: data/evals/fixtures/market_definition/meta_giphy_2022
+
+  # US cases — draft pairs produced by running calibration without --reuse-drafts
+  - case_id: jetblue_spirit_2024
+    gold_yaml: data/evals/gold/jetblue_spirit_2024.market_definition.gold.yaml
+    draft_yaml: data/evals/fixtures/market_definition/jetblue_spirit_2024/draft.yaml
+    report_json: data/evals/fixtures/market_definition/jetblue_spirit_2024/report.json
+    cache_dir: data/evals/fixtures/market_definition/jetblue_spirit_2024
+
+  - case_id: microsoft_activision_2023
+    gold_yaml: data/evals/gold/microsoft_activision_2023.market_definition.gold.yaml
+    draft_yaml: data/evals/fixtures/market_definition/microsoft_activision_2023/draft.yaml
+    report_json: data/evals/fixtures/market_definition/microsoft_activision_2023/report.json
+    cache_dir: data/evals/fixtures/market_definition/microsoft_activision_2023
+
+  - case_id: us_tapestry_capri_2024
+    gold_yaml: data/evals/gold/us_tapestry_capri_2024.market_definition.gold.yaml
+    draft_yaml: data/evals/fixtures/market_definition/us_tapestry_capri_2024/draft.yaml
+    report_json: data/evals/fixtures/market_definition/us_tapestry_capri_2024/report.json
+    cache_dir: data/evals/fixtures/market_definition/us_tapestry_capri_2024

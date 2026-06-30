@@ -1,0 +1,38 @@
+_gold_metadata:
+  case_id: eu_apple_shazam_2018
+  gold_status: canonical_derived
+  partial: false
+  review_required: false
+  created_from: data/cases/eu/eu_apple_shazam_2018.yaml
+  notes: >
+    Derived from the promoted canonical record and corrected against the Commission
+    decision. The Commission's phase II assessment focused on access to commercially
+    sensitive information about rival digital music streaming providers, possible denial
+    or degradation of Shazam referrals and related inputs to rival streaming apps, and
+    possible foreclosure of competing ACR software solution providers. Human reviewed.
+
+case_id: eu_apple_shazam_2018
+case_name: "Apple / Shazam"
+authority: European Commission
+jurisdiction: EU
+sector: technology / music streaming
+decision_date: "2018-09-06"
+
+product_markets_considered: []
+geographic_markets_considered: []
+
+theories_of_harm:
+
+  - theory_id: toh_1
+    name: Access to commercially sensitive information — rival digital music streaming providers
+    reviewed: true
+
+  - theory_id: toh_2
+    name: Conglomerate foreclosure — denial or degradation of Shazam referrals and related inputs to rival digital music streaming apps
+    reviewed: true
+
+  - theory_id: toh_3
+    name: Conglomerate foreclosure — competing ACR software solutions
+    reviewed: true
+
+commitments: []

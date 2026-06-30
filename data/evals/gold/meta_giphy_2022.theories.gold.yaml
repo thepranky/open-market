@@ -1,0 +1,33 @@
+_gold_metadata:
+  case_id: meta_giphy_2022
+  gold_status: canonical_derived
+  partial: false
+  review_required: false
+  created_from: data/cases/uk/meta_giphy_2022.yaml
+  notes: >
+    Derived from the promoted canonical record and corrected against the CMA remittal
+    final report. The CMA identified horizontal unilateral effects from loss of dynamic
+    competition in UK display advertising services, and vertical input foreclosure in
+    social media services worldwide including the UK. Human reviewed.
+
+case_id: meta_giphy_2022
+case_name: "Meta / GIPHY"
+authority: Competition and Markets Authority
+jurisdiction: UK
+sector: technology / social media
+decision_date: "2022-10-18"
+
+product_markets_considered: []
+geographic_markets_considered: []
+
+theories_of_harm:
+
+  - theory_id: toh_1
+    name: "Horizontal unilateral effects — loss of dynamic competition in UK display advertising services"
+    reviewed: true
+
+  - theory_id: toh_2
+    name: "Vertical input foreclosure — access to GIPHY for rival social media platforms"
+    reviewed: true
+
+commitments: []

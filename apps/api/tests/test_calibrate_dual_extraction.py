@@ -129,3 +129,72 @@ def test_partial_gold_scores_only_reviewed():
     # The unreviewed gold market contributes no fields → no error for the missing one.
     assert s["error"] == 0
     assert s["agreed_correct"] == s["agreed"]
+
+
+# ---------------------------------------------------------------------------
+# Commitments (focus=remedies)
+# ---------------------------------------------------------------------------
+
+def _commitment_draft(commitments):
+    return {
+        "case_id": "eu_test_2023",
+        "product_markets_considered": [],
+        "geographic_markets_considered": [],
+        "theories_of_harm": [],
+        "commitments": commitments,
+    }
+
+
+def _draft_commitment(title, commitment_type="divestiture"):
+    return {"commitment_id": "cm_1", "title": title, "commitment_type": commitment_type}
+
+
+def _gold_commitment(title, expected_type="divestiture", reviewed=True):
+    return {"title": title, "expected_commitment_type": expected_type, "reviewed": reviewed}
+
+
+def _commitment_gold(commitments):
+    return {
+        "_gold_metadata": {"partial": False},
+        "product_markets_considered": [],
+        "geographic_markets_considered": [],
+        "theories_of_harm": [],
+        "commitments": commitments,
+    }
+
+
+def test_commitment_agree_and_correct():
+    a = _commitment_draft([_draft_commitment("Divest mobile games", "divestiture")])
+    b = _commitment_draft([_draft_commitment("Divest mobile games", "divestiture")])
+    gold = _commitment_gold([_gold_commitment("Divest mobile games", "divestiture")])
+
+    s = score_case(a, b, gold, focus="remedies")
+
+    assert s["agreed"] >= 2  # name + commitment_type
+    assert s["agreed"] == s["agreed_correct"]
+    assert s["error"] == 0
+    assert s["bad_agreements"] == []
+
+
+def test_commitment_type_blind_spot():
+    # Both drafts agree on wrong commitment_type → blind spot.
+    a = _commitment_draft([_draft_commitment("Divest unit", "behavioural")])
+    b = _commitment_draft([_draft_commitment("Divest unit", "behavioural")])
+    gold = _commitment_gold([_gold_commitment("Divest unit", "divestiture")])
+
+    s = score_case(a, b, gold, focus="remedies")
+
+    assert any(bs["field"].endswith("/commitment_type") for bs in s["blind_spots"])
+    assert s["error_raised"] == 0
+
+
+def test_commitment_type_disagreement_raised():
+    a = _commitment_draft([_draft_commitment("Divest unit", "divestiture")])
+    b = _commitment_draft([_draft_commitment("Divest unit", "behavioural")])
+    gold = _commitment_gold([_gold_commitment("Divest unit", "divestiture")])
+
+    s = score_case(a, b, gold, focus="remedies")
+
+    assert s["error"] >= 1
+    assert s["error_raised"] >= 1
+    assert s["blind_spots"] == []

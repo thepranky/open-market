@@ -226,3 +226,69 @@ def test_build_conflict_report_carries_model_metadata():
     assert cr["models"]["draft_a"] == "anthropic/claude-sonnet-4-6"
     assert cr["models"]["same_model"] is False
     assert cr["conflicts"] == []
+
+
+# ---------------------------------------------------------------------------
+# Commitments (focus=remedies)
+# ---------------------------------------------------------------------------
+
+def _commitment(commitment_id, title, commitment_type="divestiture"):
+    return {"commitment_id": commitment_id, "title": title, "commitment_type": commitment_type}
+
+
+def _remedies_draft(commitments, markets=None):
+    return {
+        "case_id": "eu_test_2023",
+        "outcome": "cleared_with_remedies",
+        "product_markets_considered": markets or [],
+        "geographic_markets_considered": [],
+        "theories_of_harm": [],
+        "commitments": commitments,
+        "source_passages": [],
+    }
+
+
+def test_remedies_focus_aligned_commitments_agree():
+    a = _remedies_draft([_commitment("cm_1", "Divest mobile games unit")])
+    b = _remedies_draft([_commitment("cm_1", "Divest mobile games unit")])
+    result = compare_drafts(a, b, focus="remedies")
+    assert result["conflicts"] == []
+    assert any("commitments/Divest mobile games unit" in f for f in result["agreed_fields"])
+
+
+def test_remedies_focus_commitment_type_mismatch():
+    a = _remedies_draft([_commitment("cm_1", "Licensing remedy", "behavioural")])
+    b = _remedies_draft([_commitment("cm_1", "Licensing remedy", "divestiture")])
+    result = compare_drafts(a, b, focus="remedies")
+    mismatches = [c for c in result["conflicts"] if c["kind"] == "value_mismatch"]
+    assert any(c["field"].endswith("/commitment_type") for c in mismatches)
+
+
+def test_remedies_focus_a_only_commitment():
+    a = _remedies_draft([_commitment("cm_1", "Divest unit A"), _commitment("cm_2", "Access remedy")])
+    b = _remedies_draft([_commitment("cm_1", "Divest unit A")])
+    result = compare_drafts(a, b, focus="remedies")
+    a_only = [c for c in result["conflicts"] if c["kind"] == "a_only"]
+    assert len(a_only) == 1
+    assert a_only[0]["field"] == "commitments"
+    assert a_only[0]["draft_a"] == "Access remedy"
+
+
+def test_remedies_focus_b_only_commitment():
+    a = _remedies_draft([_commitment("cm_1", "Divest unit A")])
+    b = _remedies_draft([_commitment("cm_1", "Divest unit A"), _commitment("cm_2", "Access remedy")])
+    result = compare_drafts(a, b, focus="remedies")
+    b_only = [c for c in result["conflicts"] if c["kind"] == "b_only"]
+    assert len(b_only) == 1
+    assert b_only[0]["field"] == "commitments"
+    assert b_only[0]["draft_b"] == "Access remedy"
+
+
+def test_remedies_focus_commitment_type_skipped_on_market_entries():
+    # commitment_type is absent on market dicts — the guard (both empty → skip) prevents
+    # phantom conflicts when commitments are in scope but market entries have no such field.
+    a = _remedies_draft([], markets=[_market("pm_1", "Cement")])
+    b = _remedies_draft([], markets=[_market("pm_1", "Cement")])
+    result = compare_drafts(a, b, focus="market_definition")
+    type_conflicts = [c for c in result["conflicts"] if "commitment_type" in c.get("field", "")]
+    assert type_conflicts == []

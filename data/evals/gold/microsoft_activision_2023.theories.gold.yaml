@@ -1,0 +1,37 @@
+_gold_metadata:
+  case_id: microsoft_activision_2023
+  gold_status: canonical_derived
+  partial: false
+  review_required: false
+  created_from: data/cases/us/microsoft_activision_2023.yaml
+  notes: >
+    Derived from the promoted canonical record. The FTC complaint alleged three theories
+    of harm — vertical foreclosure in console gaming (withholding Call of Duty from
+    PlayStation), vertical foreclosure in cloud gaming, and vertical foreclosure in
+    gaming subscription services. Human reviewed.
+
+case_id: microsoft_activision_2023
+case_name: "Microsoft / Activision Blizzard"
+authority: FTC (District Court)
+jurisdiction: US
+sector: technology / gaming
+decision_date: "2023-07-10"
+
+product_markets_considered: []
+geographic_markets_considered: []
+
+theories_of_harm:
+
+  - theory_id: toh_1
+    name: "Vertical foreclosure or withholding/degrading – high-performance consoles"
+    reviewed: true
+
+  - theory_id: toh_2
+    name: "Vertical foreclosure or withholding/degrading – cloud gaming subscription services"
+    reviewed: true
+
+  - theory_id: toh_3
+    name: "Vertical foreclosure or withholding/degrading – multi-game content library subscription services"
+    reviewed: true
+
+commitments: []

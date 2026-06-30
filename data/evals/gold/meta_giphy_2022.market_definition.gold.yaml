@@ -1,0 +1,68 @@
+_gold_metadata:
+  case_id: meta_giphy_2022
+  gold_status: canonical_derived
+  partial: false
+  review_required: false
+  created_from: data/cases/uk/meta_giphy_2022.yaml
+  notes: >
+    Derived from the promoted canonical record and corrected against the CMA remittal
+    final report. The CMA found SLCs in UK display advertising services through
+    horizontal unilateral effects/loss of dynamic competition, and in social media
+    services worldwide including the UK through vertical input foreclosure. The supply
+    of searchable GIF libraries was an upstream/input market, not a separate SLC market.
+    Human reviewed.
+
+case_id: meta_giphy_2022
+case_name: "Meta / GIPHY"
+authority: Competition and Markets Authority
+jurisdiction: UK
+sector: technology / social media
+decision_date: "2022-10-18"
+parties:
+  - name: Meta Platforms Inc
+    role: acquirer
+  - name: GIPHY Inc
+    role: target
+
+source_documents:
+  - doc_id: cma_meta_giphy_final_report
+    title: "Meta / GIPHY: Final Report"
+    doc_type: final_report
+    authority_reference: ME/6821/21
+
+product_markets_considered:
+
+  - name: Social media services
+    market_type: product
+    expected_definition_status: defined
+    reviewed: true
+
+  - name: Display advertising services
+    market_type: product
+    expected_definition_status: defined
+    reviewed: true
+
+  - name: Supply of searchable GIF libraries
+    market_type: product
+    expected_definition_status: defined
+    reviewed: true
+
+geographic_markets_considered:
+
+  - name: Worldwide supply of social media services (including the UK)
+    market_type: geographic
+    expected_definition_status: defined
+    reviewed: true
+
+  - name: UK supply of display advertising services
+    market_type: geographic
+    expected_definition_status: defined
+    reviewed: true
+
+  - name: Global supply of searchable GIF libraries
+    market_type: geographic
+    expected_definition_status: left_open
+    reviewed: true
+
+theories_of_harm: []
+commitments: []

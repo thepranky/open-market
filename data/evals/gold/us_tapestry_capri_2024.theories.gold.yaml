@@ -1,0 +1,30 @@
+_gold_metadata:
+  case_id: us_tapestry_capri_2024
+  gold_status: canonical_derived
+  partial: false
+  review_required: false
+  created_from: data/cases/us/us_tapestry_capri_2024.yaml
+  notes: >
+    Derived from the promoted canonical record and corrected against the district court
+    opinion. The court treated market concentration and the prima facie Section 7 case
+    as evidentiary support, not as a standalone theory of harm; the standalone theory
+    here is horizontal unilateral effects from eliminating head-to-head competition in
+    accessible-luxury handbags. Human reviewed.
+
+case_id: us_tapestry_capri_2024
+case_name: "FTC v. Tapestry / Capri"
+authority: FTC (District Court)
+jurisdiction: US
+sector: consumer goods / fashion
+decision_date: "2024-10-24"
+
+product_markets_considered: []
+geographic_markets_considered: []
+
+theories_of_harm:
+
+  - theory_id: toh_1
+    name: "Horizontal unilateral effects — elimination of head-to-head competition between close competitors (Coach, Kate Spade, Michael Kors)"
+    reviewed: true
+
+commitments: []

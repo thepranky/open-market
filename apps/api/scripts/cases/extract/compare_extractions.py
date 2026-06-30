@@ -55,7 +55,7 @@ from extract_case_from_source import (  # noqa: E402
 
 # Aligned-pair scalar fields compared by the deterministic layer. Market-level
 # fields live on each market dict; top-level fields live on the record root.
-_MARKET_SCALAR_FIELDS = ("definition_status", "market_importance")
+_MARKET_SCALAR_FIELDS = ("definition_status", "market_importance", "commitment_type")
 _RECORD_SCALAR_FIELDS = ("outcome", "decision_date", "deal_value")
 
 # Market-list keys, paired with the human-facing label used in conflict field paths.
@@ -63,6 +63,7 @@ _MARKET_LISTS = (
     ("product_markets_considered", "product_markets"),
     ("geographic_markets_considered", "geographic_markets"),
     ("theories_of_harm", "theories"),
+    ("commitments", "commitments"),
 )
 
 # Reconciliation findings carry a draft_market_type ("product" | "geographic" | ""
@@ -72,6 +73,7 @@ _TYPE_TO_LIST = {
     "product": ("product_markets_considered", "product_markets"),
     "geographic": ("geographic_markets_considered", "geographic_markets"),
     "theory": ("theories_of_harm", "theories"),
+    "commitment": ("commitments", "commitments"),
 }
 
 
@@ -186,7 +188,7 @@ def _index_markets_by_name(record: dict) -> dict[str, dict[str, dict]]:
     for list_key, _label in _MARKET_LISTS:
         bucket: dict[str, dict] = {}
         for m in (record.get(list_key) or []):
-            name = m.get("name", "")
+            name = m.get("name", "") or m.get("title", "")
             if name:
                 bucket[_normalize_for_similarity(name)] = m
         index[list_key] = bucket
@@ -201,7 +203,10 @@ def _list_and_label_for_name(record: dict, name: str) -> tuple[str, str]:
     """
     norm = _normalize_for_similarity(name)
     for list_key, label in _MARKET_LISTS:
-        if any(_normalize_for_similarity(m.get("name", "")) == norm for m in (record.get(list_key) or [])):
+        if any(
+            _normalize_for_similarity(m.get("name", "") or m.get("title", "")) == norm
+            for m in (record.get(list_key) or [])
+        ):
             return list_key, label
     return _MARKET_LISTS[0]
 
