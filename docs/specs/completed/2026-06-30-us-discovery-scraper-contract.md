@@ -1,5 +1,9 @@
 # 5.22a - US discovery scraper contract and shared index builder
 
+> **Superseded for ID generation:** [5.22a-fix](2026-06-30-us-case-id-from-source-url.md)
+> revised `generate_us_case_id()` to derive IDs from `source_url` (DOJ caption slugs, FTC
+> matter numbers), not `case_name`. The rest of this spec remains accurate.
+
 ## Goal
 
 **Before:** No US scraper scripts exist. The `UsDojFtcResolver` in `pdf_resolvers.py` can
@@ -119,11 +123,8 @@ omit dates. `to_case_index_seed()` raises `ValueError` when it is missing, and t
 
 `us_discovery_contract.py` owns only US-specific normalization:
 
-- `generate_us_case_id(authority, case_name, year) -> str`
-  - produces `us_doj_..._{year}` or `us_ftc_..._{year}` slugs
-  - lowercases, replaces non-alphanumeric runs with underscores, collapses runs, trims
-  - follows existing hand-curated IDs such as `us_doj_att_timewarner_2018` and
-    `us_ftc_illumina_grail_2023`
+- `generate_us_case_id(authority, source_url, year) -> str` — see
+  [5.22a-fix](2026-06-30-us-case-id-from-source-url.md) for DOJ/FTC URL rules
 - `to_case_index_seed(record: UsScrapedCase) -> CaseIndexSeed`
   - sets `jurisdiction: "US"`
   - sets `authority` to `"DOJ"` or `"FTC"`

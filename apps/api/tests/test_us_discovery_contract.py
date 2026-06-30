@@ -1,7 +1,8 @@
 import re
-import yaml
-import pytest
 from pathlib import Path
+
+import pytest
+import yaml
 
 from app.cases.models.case_index import CaseIndexEntry
 from case_index_builder import CaseIndexParty
