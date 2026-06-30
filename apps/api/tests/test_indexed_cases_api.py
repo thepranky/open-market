@@ -141,7 +141,7 @@ def test_indexed_case_detail_exposes_pdf_metadata(client):
 
 
 def test_indexed_case_detail_us(client):
-    r = client.get("/indexed-cases/us_ftc_microsoft_activision_2023")
+    r = client.get("/indexed-cases/us_ftc_221_0077_2023")
     assert r.status_code == 200
     data = r.json()
     assert data["jurisdiction"] == "US"

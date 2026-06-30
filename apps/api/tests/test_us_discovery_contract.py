@@ -1,3 +1,5 @@
+import re
+import yaml
 import pytest
 from pathlib import Path
 
@@ -32,41 +34,122 @@ def _us_record(**overrides):
     return UsScrapedCase(**values)
 
 
-def test_generate_us_case_id_normalizes_authority_name_and_year():
+def _href_from_fixture(relative_path: str) -> str:
+    html = (Path(__file__).parent / "fixtures" / relative_path).read_text()
+    match = re.search(r'href="([^"]+)"', html)
+    assert match is not None
+    return match.group(1)
+
+
+def test_generate_us_case_id_from_fixture_urls():
+    doj_href = _href_from_fixture("us_doj/listing_sample.html")
+    ftc_href = _href_from_fixture("us_ftc/listing_sample.html")
+
     assert (
-        generate_us_case_id("FTC", "Illumina / GRAIL", "2023")
-        == "us_ftc_illumina_grail_2023"
+        generate_us_case_id("DOJ", doj_href, "2024")
+        == "us_doj_jetblue_airways_corporation_and_spirit_airlines_inc_2024"
     )
-    assert (
-        generate_us_case_id("DOJ", "JetBlue Airways + Spirit Airlines", "2024")
-        == "us_doj_jetblue_spirit_2024"
-    )
+    assert generate_us_case_id("FTC", ftc_href, "2023") == "us_ftc_201_0144_2023"
+
+
+def test_generate_us_case_id_accepts_absolute_doj_urls():
     assert (
         generate_us_case_id(
             "DOJ",
-            "U.S. et al. v. JetBlue Airways Corporation and Spirit Airlines, Inc.",
-            "2024",
+            (
+                "https://www.justice.gov/atr/case/"
+                "us-v-att-inc-directv-group-holdings-llc-and-time-warner-inc"
+            ),
+            "2018",
         )
-        == "us_doj_jetblue_spirit_2024"
+        == "us_doj_att_inc_directv_group_holdings_llc_and_time_warner_inc_2018"
     )
+
+
+def test_generate_us_case_id_parses_concatenated_ftc_matter_numbers():
     assert (
         generate_us_case_id(
             "FTC",
-            "Illumina, Inc., and GRAIL, Inc., In the Matter of",
+            (
+                "https://www.ftc.gov/legal-library/browse/cases-proceedings/"
+                "2210077-microsoftactivision-blizzard-matter"
+            ),
             "2023",
         )
-        == "us_ftc_illumina_grail_2023"
+        == "us_ftc_221_0077_2023"
     )
+
+
+def test_generate_us_case_id_ftc_fallback_when_matter_number_missing():
     assert (
-        generate_us_case_id("DOJ", "AT&T Inc. / Time Warner Inc.", "2018")
-        == "us_doj_att_timewarner_2018"
+        generate_us_case_id(
+            "FTC",
+            "https://www.ftc.gov/legal-library/browse/cases-proceedings/custom-slug",
+            "2024",
+        )
+        == "us_ftc_custom_slug_2024"
     )
+
+
+@pytest.mark.parametrize(
+    ("authority", "source_url", "year", "expected"),
+    [
+        (
+            "DOJ",
+            "https://www.justice.gov/atr/case/us-and-plaintiff-states-v-aetna-inc-and-humana-inc",
+            "2017",
+            "us_doj_aetna_inc_and_humana_inc_2017",
+        ),
+        (
+            "DOJ",
+            (
+                "https://www.justice.gov/atr/case/"
+                "us-and-plaintiff-states-v-american-airlines-group-inc-and-jetblue-airways-corporation"
+            ),
+            "2023",
+            "us_doj_american_airlines_group_inc_and_jetblue_airways_corpora_2023",
+        ),
+        (
+            "DOJ",
+            "https://www.justice.gov/atr/case/us-v-bertelsmann-se-co-kgaa-et-al",
+            "2022",
+            "us_doj_bertelsmann_se_co_kgaa_2022",
+        ),
+        (
+            "DOJ",
+            "https://www.justice.gov/atr/case/us-v-sabre-corp-et-al",
+            "2020",
+            "us_doj_sabre_corp_2020",
+        ),
+        (
+            "FTC",
+            (
+                "https://www.ftc.gov/legal-library/browse/cases-proceedings/"
+                "221-0040-meta-platforms-incmark-zuckerbergwithin-unlimited-ftc-v"
+            ),
+            "2023",
+            "us_ftc_221_0040_2023",
+        ),
+    ],
+)
+def test_generate_us_case_id_seed_source_urls(authority, source_url, year, expected):
+    assert generate_us_case_id(authority, source_url, year) == expected
+
+
+def test_seed_yaml_case_ids_match_source_urls():
+    root = Path(__file__).resolve().parents[2] / "data" / "case_index" / "us"
+    for path in sorted(root.glob("*.yaml")):
+        entry = yaml.safe_load(path.read_text())
+        year = str(entry["decision_date"])[:4]
+        expected = generate_us_case_id(entry["authority"], entry["source_url"], year)
+        assert entry["case_id"] == expected, (path.name, entry["case_id"], expected)
+        assert path.stem == entry["case_id"], (path.name, entry["case_id"])
 
 
 def test_to_case_index_seed_maps_us_defaults():
     seed = to_case_index_seed(_us_record())
 
-    assert seed.case_id == "us_ftc_illumina_grail_2023"
+    assert seed.case_id == "us_ftc_201_0144_2023"
     assert seed.jurisdiction == "US"
     assert seed.authority == "FTC"
     assert seed.outcome == "pending"
@@ -85,7 +168,7 @@ def test_to_case_index_dict_validates_and_hands_off_to_us_resolver():
     record = to_case_index_dict(_us_record(outcome_guess="cleared_with_conditions"))
     entry = CaseIndexEntry.model_validate(record)
 
-    assert record["case_id"] == "us_ftc_illumina_grail_2023"
+    assert record["case_id"] == "us_ftc_201_0144_2023"
     assert record["outcome"] == "cleared_with_conditions"
     assert "pdf_url" not in record
     assert "pdf_language" not in record
