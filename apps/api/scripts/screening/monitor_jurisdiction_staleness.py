@@ -23,12 +23,20 @@ def main() -> int:
     parser.add_argument("--json", action="store_true")
     parser.add_argument("--write-sidecar", action="store_true")
     parser.add_argument("--jurisdiction", "-j", help="Limit the report to a single jurisdiction id")
+    parser.add_argument(
+        "--allow-unknown",
+        action="store_true",
+        help="Report unknown/no-anchor jurisdictions without failing; drift_detected still fails",
+    )
     args = parser.parse_args()
 
     reports = evaluate_all(DATA_DIR, ANCHORS_PATH)
     if args.jurisdiction:
         reports = [r for r in reports if r.jurisdiction_id == args.jurisdiction]
-    failed = [r for r in reports if r.freshness_status in {FreshnessStatus.drift_detected, FreshnessStatus.unknown}]
+    failing_statuses = {FreshnessStatus.drift_detected}
+    if not args.allow_unknown:
+        failing_statuses.add(FreshnessStatus.unknown)
+    failed = [r for r in reports if r.freshness_status in failing_statuses]
 
     payload = {
         "checked": len(reports),
