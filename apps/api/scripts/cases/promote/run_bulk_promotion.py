@@ -22,6 +22,7 @@ from scripts.cases.promote.promotion_gate import (  # noqa: E402
     PromotionOutcome,
     PromotionPaths,
     PromotionPolicy,
+    default_promotion_python,
     run_graph_seed,
     run_promotion_gate,
     utc_timestamp,
@@ -31,8 +32,7 @@ _DRAFTS_DIR = _REPO_ROOT / "data" / "drafts"
 _CASES_DIR = _REPO_ROOT / "data" / "cases"
 _BATCH_RUNS_DIR = _REPO_ROOT / "data" / "batch_runs"
 
-_VENV_PYTHON = _API_DIR / ".venv" / "bin" / "python3"
-PYTHON = str(_VENV_PYTHON) if _VENV_PYTHON.exists() else sys.executable
+PYTHON = default_promotion_python(_API_DIR)
 
 PROMOTABLE_MARKET_STATUSES = {"PASS", "WARNINGS"}
 PROMOTABLE_FULL_DEPTH_STATUSES = {"PASS", "WARN"}
@@ -322,6 +322,12 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--batch-runs-dir", default=str(_BATCH_RUNS_DIR))
     parser.add_argument("--run-id", default=None)
     parser.add_argument("--skip-graph-seed", action="store_true")
+    parser.add_argument(
+        "--verbose",
+        "-v",
+        action="store_true",
+        help="Print subprocess commands and gate output for each promoted case.",
+    )
     args = parser.parse_args(argv)
 
     drafts_dir = _resolve_root_path(args.drafts_dir)
@@ -338,7 +344,7 @@ def main(argv: list[str] | None = None) -> int:
         batch_runs_dir=batch_runs_dir,
         python=PYTHON,
     )
-    policy = PromotionPolicy(overwrite=args.overwrite)
+    policy = PromotionPolicy(overwrite=args.overwrite, verbose=args.verbose)
 
     candidates = discover_candidates(
         drafts_dir,
@@ -452,7 +458,7 @@ def main(argv: list[str] | None = None) -> int:
 
     if not args.dry_run and counts["promoted"] > 0 and not args.skip_graph_seed:
         print("\nGraph seed ...", end=" ", flush=True)
-        graph_seed = run_graph_seed(paths)
+        graph_seed = run_graph_seed(paths, verbose=args.verbose)
         if graph_seed.status == "pass":
             print("OK")
         else:

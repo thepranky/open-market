@@ -43,4 +43,3 @@ def test_old_import_paths_reexport_public_helpers():
     assert callable(promote_case_pipeline.unresolved_conflicts)
     assert callable(bulk_promote_pass.review_status)
     assert callable(bulk_promote_pass.discover_candidates)
-    assert callable(bulk_promote_pass.parse_source_integrity_counts)

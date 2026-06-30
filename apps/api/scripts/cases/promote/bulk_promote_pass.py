@@ -18,7 +18,6 @@ from scripts.cases.promote.run_bulk_promotion import (  # noqa: E402,F401
     review_status,
     write_batch_state,
 )
-from scripts.cases.promote.promotion_gate import parse_source_integrity_counts  # noqa: E402,F401
 
 
 def main(argv: list[str] | None = None) -> int:

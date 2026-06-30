@@ -31,7 +31,7 @@ The shape and grounding rules for these records are the data contracts described
 ## Pipeline (scripts)
 
 Source PDF → `scripts/cases/extract/extract_case_from_source.py` / `ingest_case.py` → draft → integrity gates →
-human review → `scripts/cases/promote/run_case_promotion.py` → canonical.
+human review → `scripts/cases/promote/promote_case_pipeline.py` → canonical.
 
 See [operations/ingestion.md](../operations/ingestion.md) and
 [promotion-checklist.md](../operations/promotion-checklist.md).

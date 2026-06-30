@@ -168,14 +168,14 @@ metadata:
 
 ```bash
 # Dry run first — checks draft integrity and prints what would be written
-apps/api/.venv/bin/python apps/api/scripts/cases/promote/run_case_promotion.py \
+apps/api/.venv/bin/python apps/api/scripts/cases/promote/promote_case_pipeline.py \
     --case-id {case_id} \
     --focus market_definition \
     --procedure-stage phase1 \
     --dry-run
 
 # Full promotion (runs all gates and seeds graph)
-apps/api/.venv/bin/python apps/api/scripts/cases/promote/run_case_promotion.py \
+apps/api/.venv/bin/python apps/api/scripts/cases/promote/promote_case_pipeline.py \
     --case-id {case_id} \
     --focus market_definition \
     --procedure-stage phase1 \
@@ -215,7 +215,7 @@ All tests must pass before committing.
 - [ ] No `review_status: lawyer_reviewed` set unless a lawyer reviewed the passage
 - [ ] `overall_confidence` is ≤ 0.70 if only `spot_checked` passages (no legal review)
 - [ ] `_draft_note` line removed from the promoted YAML
-- [ ] `run_case_promotion.py` exited 0 (all gates passed, including `validate_cases.py` and canonical source integrity)
+- [ ] `promote_case_pipeline.py` exited 0 (all gates passed, including `validate_cases.py` and canonical source integrity)
 - [ ] Tests pass
 - [ ] Commit message references the case ID and notes what was promoted
 

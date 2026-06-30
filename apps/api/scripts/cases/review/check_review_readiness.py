@@ -526,9 +526,7 @@ def write_review_packet(
     elif warnings:
         lines.append("  REVIEW REQUIRED — no errors, but warnings need human sign-off.")
     else:
-        lines.append(
-            "  READY — no errors or warnings. Run scripts/cases/promote/run_case_promotion.py."
-        )
+        lines.append("  READY — no errors or warnings. Run run_case_promotion.py.")
     lines.append("")
 
     out_path.write_text("\n".join(lines))

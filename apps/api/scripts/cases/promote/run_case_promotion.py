@@ -4,7 +4,6 @@
 from __future__ import annotations
 
 import argparse
-import re
 import subprocess
 import sys
 from pathlib import Path
@@ -21,12 +20,14 @@ from scripts.cases.promote.promotion_gate import (  # noqa: E402
     PromotionCandidate,
     PromotionPaths,
     PromotionPolicy,
+    default_promotion_python,
+    parse_source_integrity_counts,
     run_graph_seed,
     run_promotion_gate,
     unresolved_conflicts as _unresolved_conflicts,
 )
 
-PYTHON = sys.executable
+PYTHON = default_promotion_python(_API_DIR)
 _DRAFTS_DIR = _REPO_ROOT / "data" / "drafts"
 _CASES_DIR = _REPO_ROOT / "data" / "cases"
 
@@ -90,10 +91,10 @@ def check_draft_integrity(case_id: str) -> tuple[int, int]:
         "--no-cache",
     ]
     result = _run_capture(cmd)
-
-    match = re.search(r"(\d+)\s+error\(s\),\s*(\d+)\s+warning\(s\)", result.stdout)
-    if match:
-        return int(match.group(1)), int(match.group(2))
+    output = (result.stdout or "") + (result.stderr or "")
+    counts = parse_source_integrity_counts(output)
+    if counts is not None:
+        return counts
     if result.returncode != 0:
         return 1, 0
     return 0, 0
@@ -129,13 +130,13 @@ def _print_summary(
     print(f"STATUS: {'ABORTED' if aborted else 'COMPLETE'}")
     print("-" * 60)
     labels: list[tuple[str, str]] = [
+        ("conflict_report", "Conflict-report gate"),
         ("draft_integrity", "Draft integrity"),
         ("candidate", "Canonical candidate"),
         ("validate_cases", "Canonical validation"),
         ("semantic_lint", "Semantic lint"),
         ("source_links", "Source links"),
         ("canonical_integrity", "Canonical source integrity"),
-        ("conflict_report", "Conflict-report gate"),
         ("graph_seed", "Graph seed"),
     ]
     for key, label in labels:
@@ -198,6 +199,69 @@ def _should_check_legacy_draft_integrity(
     return focus == "market_definition"
 
 
+def _check_explicit_conflict_report(
+    args: argparse.Namespace,
+    status: dict[str, str],
+    effective_draft: Optional[str],
+    *,
+    dry_run: bool = False,
+) -> int | None:
+    """Fast-path the operator-supplied conflict report before other promotion work."""
+    if not args.conflict_report:
+        return None
+
+    report_path = Path(args.conflict_report)
+    print("\n[0] Conflict-report resolution gate ...")
+    if not report_path.exists():
+        status["conflict_report"] = "FAIL (not found)"
+        print(f"\nERROR: conflict report not found: {report_path}", file=sys.stderr)
+        _print_summary(
+            status,
+            args.case_id,
+            args.focus,
+            aborted=True,
+            dry_run=dry_run,
+            draft_path=effective_draft,
+        )
+        return 1
+
+    try:
+        open_fields = unresolved_conflicts(report_path)
+    except ValueError as exc:
+        status["conflict_report"] = "FAIL (invalid file)"
+        print(f"\nERROR: {exc}", file=sys.stderr)
+        _print_summary(
+            status,
+            args.case_id,
+            args.focus,
+            aborted=True,
+            dry_run=dry_run,
+            draft_path=effective_draft,
+        )
+        return 1
+
+    if open_fields:
+        status["conflict_report"] = f"FAIL ({len(open_fields)} unresolved)"
+        print(
+            f"\nERROR: {len(open_fields)} unresolved conflict(s) in {report_path}.\n"
+            "Resolve every conflict (fill 'resolution') before promoting.\n"
+            "  " + "\n  ".join(open_fields),
+            file=sys.stderr,
+        )
+        _print_summary(
+            status,
+            args.case_id,
+            args.focus,
+            aborted=True,
+            dry_run=dry_run,
+            draft_path=effective_draft,
+        )
+        return 1
+
+    status["conflict_report"] = "PASS (all resolved)"
+    return None
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         description="Orchestrate full draft to canonical promotion."
@@ -220,6 +284,12 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--overwrite", action="store_true")
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--skip-graph-seed", action="store_true")
+    parser.add_argument(
+        "--verbose",
+        "-v",
+        action="store_true",
+        help="Print subprocess commands and gate output during promotion.",
+    )
     args = parser.parse_args(argv)
 
     effective_draft, draft_source = _resolve_draft(args)
@@ -236,6 +306,15 @@ def main(argv: list[str] | None = None) -> int:
     if args.dry_run:
         print("[DRY RUN]")
     print(f"{'=' * 60}")
+
+    conflict_abort = _check_explicit_conflict_report(
+        args,
+        status,
+        effective_draft,
+        dry_run=args.dry_run,
+    )
+    if conflict_abort is not None:
+        return conflict_abort
 
     if _should_check_legacy_draft_integrity(effective_draft, args.focus):
         print("\n[1/7] Draft source integrity check (target draft only) ...")
@@ -305,6 +384,7 @@ def main(argv: list[str] | None = None) -> int:
     policy = PromotionPolicy(
         overwrite=args.overwrite,
         procedure_stage=args.procedure_stage,
+        verbose=args.verbose,
     )
 
     print("\n[2/7] Candidate build and promotion gates ...")
@@ -314,7 +394,8 @@ def main(argv: list[str] | None = None) -> int:
     status["source_links"] = _display_gate(outcome.gates.get("source_links"))
     status["canonical_integrity"] = _display_gate(outcome.gates.get("source_integrity"))
     status["semantic_lint"] = _display_gate(outcome.gates.get("semantic_lint"))
-    status["conflict_report"] = _display_gate(outcome.gates.get("conflict_gate"))
+    if "conflict_report" not in status:
+        status["conflict_report"] = _display_gate(outcome.gates.get("conflict_gate"))
 
     if outcome.status != "promoted":
         status["candidate"] = _status_from_outcome(outcome.status)
@@ -330,7 +411,7 @@ def main(argv: list[str] | None = None) -> int:
         return 0
 
     print("\n[7/7] Graph seed ...")
-    graph_seed = run_graph_seed(paths)
+    graph_seed = run_graph_seed(paths, verbose=args.verbose)
     status["graph_seed"] = "PASS" if graph_seed.status == "pass" else "FAIL"
     if graph_seed.status != "pass":
         print(f"\nERROR: Graph seed failed - {graph_seed.message}", file=sys.stderr)

@@ -34,7 +34,7 @@ app/screening/routers → app/screening/services (threshold_engine) → data/jur
 app/shared/ — config, pg_client, health only
 ```
 
-**Pipeline:** PDF → `scripts/cases/extract/extract_case_from_source.py` / `extract/ingest_case.py` → `data/drafts/` → integrity gates → human review → `scripts/cases/promote/promote_case_pipeline.py` → `data/cases/`.
+**Pipeline:** PDF → `scripts/cases/extract/extract_case_from_source.py` / `extract/ingest_case.py` → `data/drafts/` → integrity gates → human review → `scripts/cases/promote/run_case_promotion.py` → `data/cases/`. (`promote_case_pipeline.py` and `bulk_promote_pass.py` remain as deprecated wrappers.)
 
 **Screening:** in-memory YAML at `POST /jurisdictions/screen`.
 

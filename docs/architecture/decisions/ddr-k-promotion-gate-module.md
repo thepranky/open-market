@@ -4,11 +4,11 @@
 
 ## Decision
 
-Promotion should be a deep module with CLI adapters, not two independent scripts that each remember part of the draft-to-canonical safety policy. The single-case runner and bulk runner should both use the same promotion gate implementation for canonical candidate construction, schema validation, source-link checks, source-integrity checks, semantic lint, conflict-report checks, and result reporting. The implementation spec is `docs/specs/2026-06-29-grounding-gates-bulk-promote-lane.md`.
+Promotion should be a deep module with CLI adapters, not two independent scripts that each remember part of the draft-to-canonical safety policy. The single-case runner and bulk runner should both use the same promotion gate implementation for canonical candidate construction, schema validation, source-link checks, source-integrity checks, semantic lint, conflict-report checks, and result reporting. The implementation spec is `docs/specs/completed/2026-06-29-grounding-gates-bulk-promote-lane.md`.
 
 ## Context
 
-Single-case promotion already runs deterministic safety gates before writing canonical YAML. The bulk lane currently discovers reviewed drafts and calls the lower-level transformer directly, so batch promotion can miss the safety envelope that protects one-off promotion. That split becomes riskier as Phase 5 moves from individual curated promotions to full-depth backlog promotion.
+Single-case promotion already runs deterministic safety gates before writing canonical YAML. The bulk lane previously discovered reviewed drafts and called the lower-level transformer directly, so batch promotion could miss the safety envelope that protects one-off promotion. That split becomes riskier as Phase 5 moves from individual curated promotions to full-depth backlog promotion.
 
 ## Why this way
 
@@ -18,7 +18,7 @@ The lower-level `promote_draft_to_canonical.py` remains a transformer. It should
 
 ## Alternatives considered
 
-- Keep single-case and bulk promotion separate. Rejected because the safety policy has already drifted.
+- Keep single-case and bulk promotion separate. Rejected because the safety policy had already drifted.
 - Route every bulk item through the single-case CLI. Rejected because batch promotion needs candidate temp roots, per-case artifacts, and one batch graph seed rather than per-case graph reseeding.
 - Put all helpers in the bulk runner. Rejected because it would deepen only the bulk path and leave the single-case path with parallel policy.
 

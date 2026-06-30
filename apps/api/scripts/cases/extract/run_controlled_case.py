@@ -610,7 +610,7 @@ def write_run_report(
             f"    1. Review the packet: data/drafts/{_infer_jurisdiction(result.case_id)}/{result.case_id}.review_packet.md",
             "    2. Spot-check source passages against the PDF.",
             "    3. When satisfied, run:",
-            f"       python apps/api/scripts/cases/promote/run_case_promotion.py --case-id {result.case_id}",
+            f"       python apps/api/scripts/cases/promote/promote_case_pipeline.py --case-id {result.case_id}",
         ]
     elif result.status == NOT_READY:
         lines += [
@@ -666,7 +666,7 @@ def print_summary(result: RunResult, packet_path: Optional[Path]) -> None:
     print("\n  Next commands:")
     if result.status == READY:
         print("    # Spot-check then promote:")
-        print(f"    python apps/api/scripts/cases/promote/run_case_promotion.py --case-id {result.case_id}")
+        print(f"    python apps/api/scripts/cases/promote/promote_case_pipeline.py --case-id {result.case_id}")
     elif result.status == NOT_READY:
         print("    # Fix blockers then re-run:")
         print("    python apps/api/scripts/cases/extract/run_controlled_case.py \\")
@@ -907,7 +907,7 @@ def _parse_args(argv: Optional[list[str]] = None) -> argparse.Namespace:
         "--promote",
         action="store_true",
         help=(
-            "NOT IMPLEMENTED: use run_case_promotion.py explicitly after human review. "
+            "NOT IMPLEMENTED: use promote_case_pipeline.py explicitly after human review. "
             "This flag is accepted but does nothing — promotion requires a separate human-confirmed step."
         ),
     )
@@ -922,7 +922,7 @@ def main(argv: Optional[list[str]] = None) -> int:
         print(
             "NOTE: --promote is not implemented in this orchestrator. "
             "After reviewing the packet, run:\n"
-            f"  python apps/api/scripts/cases/promote/run_case_promotion.py --case-id {args.case_id}",
+            f"  python apps/api/scripts/cases/promote/promote_case_pipeline.py --case-id {args.case_id}",
             file=sys.stderr,
         )
 
