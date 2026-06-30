@@ -265,7 +265,7 @@ def _write_summary(
         "1. Resolve each completed dual-focus conflict report with `merge_drafts.py --from-conflict-report`.",
         "2. Re-merge the resolved per-focus drafts with `merge_drafts.py`.",
         "3. Re-run `check_review_readiness.py --packet` on the final merged draft.",
-        "4. Promote with `promote_case_pipeline.py` after human sign-off.",
+        "4. Promote with `run_case_promotion.py` after human sign-off.",
         "",
     ])
     summary_path.write_text("\n".join(lines), encoding="utf-8")

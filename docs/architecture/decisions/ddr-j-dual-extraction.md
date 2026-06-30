@@ -6,7 +6,7 @@ Read/trace:
 - `apps/api/scripts/cases/extract/compare_extractions.py` (alignment + diff)
 - `apps/api/scripts/cases/extract/ingest_case.py` (`stage_dual_extract`, the `--dual-extract` flags)
 - `apps/api/scripts/cases/extract/merge_drafts.py` (`merge_from_conflict_report`)
-- `apps/api/scripts/cases/promote/promote_case_pipeline.py` (`unresolved_conflicts` gate)
+- `apps/api/scripts/cases/promote/run_case_promotion.py` (`unresolved_conflicts` gate)
 - `apps/api/scripts/cases/extract/calibrate_dual_extraction.py` (the calibration gate)
 - `docs/specs/completed/2026-06-25-case-dual-extraction.md` (the *how*)
 - DDR-B (the pipeline this sits inside) and DDR-A (source-integrity gate it relies on)

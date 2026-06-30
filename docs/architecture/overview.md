@@ -70,7 +70,7 @@ Group them mentally (and in code ownership) as two blobs:
 | `data/pipeline_rules/` | Pipeline rule helpers |
 | `data/batch_runs/` | Batch extraction run metadata |
 
-**Critical boundary:** `drafts/` → human review → `cases/` via `scripts/cases/promote/promote_case_pipeline.py` only.
+**Critical boundary:** `drafts/` → human review → `cases/` via `scripts/cases/promote/run_case_promotion.py` only.
 
 ### Screening blob
 

@@ -5,11 +5,11 @@
 
 Read/trace:
 - `apps/api/scripts/cases/extract/extract_case_from_source.py`, `ingest_case.py`
-- `apps/api/scripts/cases/review/check_review_readiness.py`, `promote_case_pipeline.py`
+- `apps/api/scripts/cases/review/check_review_readiness.py`, `run_case_promotion.py`
 - `docs/operations/ingestion.md`, `promotion-checklist.md`
 - `data/pipeline_profiles/` (one example)
 
-Run (read-only): `promote_case_pipeline.py --dry-run` on a known case if available.
+Run (read-only): `run_case_promotion.py --dry-run` on a known case if available.
 
 ## Agent prompt
 
@@ -37,7 +37,7 @@ scrape_eu_index.py ──▶ data/case_index/    (EU Phase I bulk lane only)
                    ▼
         human review (promotion-checklist.md) ── verifies quotes, sets status
                    ▼
-        promote_case_pipeline.py --overwrite    ← manual trigger
+        run_case_promotion.py --overwrite    ← manual trigger
                    ▼
         data/cases/{jur}/{case_id}.yaml
 ```

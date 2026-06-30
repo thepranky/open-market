@@ -9,7 +9,9 @@ downgraded to a warning (not an error) when the same document's pdf_url passes.
 The PDF is the authoritative source; case_page_url is navigation metadata only.
 
 Usage:
-    python scripts/cases/integrity/check_source_links.py [--timeout 10] [--verbose]
+    python scripts/cases/integrity/check_source_links.py [--cases-dir data/cases]
+                                                [--case-id eu_..._2020]
+                                                [--timeout 10] [--verbose]
 """
 import argparse
 import sys
@@ -131,14 +133,36 @@ def classify_results(
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Check source URLs in Meridian YAML case files")
+    parser.add_argument("--cases-dir", default=str(DATA_DIR), help=f"Path to data/cases directory (default: {DATA_DIR})")
+    parser.add_argument("--case-id", default=None, help="Check only this case by id")
     parser.add_argument("--timeout", type=int, default=15, help="Request timeout in seconds (default: 15)")
     parser.add_argument("--verbose", "-v", action="store_true", help="Print results for all URLs, not just failures")
     args = parser.parse_args(argv)
 
-    yaml_files = sorted(DATA_DIR.rglob("*.yaml"))
-    if not yaml_files:
-        print(f"No YAML files found under {DATA_DIR}", file=sys.stderr)
-        return 1
+    cases_dir = Path(args.cases_dir)
+
+    if args.case_id:
+        candidates = [
+            cases_dir / f"{args.case_id}.yaml",
+            *cases_dir.rglob(f"{args.case_id}.yaml"),
+        ]
+        seen: set[Path] = set()
+        yaml_files = []
+        for path in candidates:
+            if path.exists() and path not in seen:
+                seen.add(path)
+                yaml_files.append(path)
+        if not yaml_files:
+            print(
+                f"No file found for case-id '{args.case_id}' under {cases_dir}.",
+                file=sys.stderr,
+            )
+            return 1
+    else:
+        yaml_files = sorted(cases_dir.rglob("*.yaml"))
+        if not yaml_files:
+            print(f"No YAML files found under {cases_dir}", file=sys.stderr)
+            return 1
 
     all_specs: list[UrlSpec] = []
     for path in yaml_files:
