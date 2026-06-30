@@ -49,6 +49,8 @@ Follow the spec exactly. Apply the CLAUDE.md surgical-changes rules:
 
 Run every gate that matches the files touched, then run the spec's own verification commands. Record actual output for the PR body.
 
+Keep broad gate output compact. Use verbose output for targeted tests when it is useful, but run full suites with quiet output or redirect the full log to a temp file and include only the final summary/tail in the PR body. Avoid streaming thousands of passing test lines into context.
+
 **If `data/cases/` was touched — run full integrity check (`/integrity`):**
 ```bash
 cd apps/api
@@ -74,7 +76,7 @@ cd apps/api
 ```bash
 cd apps/api
 .venv/bin/ruff check .
-.venv/bin/python -m pytest tests/ -v
+.venv/bin/python -m pytest tests/ -q
 ```
 
 **If `apps/web/` code was touched:**

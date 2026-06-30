@@ -14,7 +14,7 @@ require_draft_pr = true
 
 [worktree]
 enabled = true
-base_dir = "../.agent-flow-worktrees"
+base_dir = ".agent-flow/worktrees"
 branch_prefix = "agent-flow"
 
 [agents.claude]
@@ -23,4 +23,4 @@ extra_args = ["--permission-mode", "auto"]
 
 [agents.codex]
 command = "codex"
-extra_args = ["--sandbox", "danger-full-access", "--ask-for-approval", "never"]
+extra_args = ["--yolo"]
