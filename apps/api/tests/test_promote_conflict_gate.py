@@ -1,19 +1,20 @@
 """
-Tests for the --conflict-report gate in promote_case_pipeline.py (ROADMAP 5.9).
+Tests for the --conflict-report gate in run_case_promotion.py (ROADMAP 5.9).
 
-The gate is report-only and runs before any subprocess, so the block paths are
-testable without invoking the real promotion steps.
+When --conflict-report is supplied, the gate runs before draft integrity and
+promotion subprocesses so block paths stay testable without real gate work.
 """
 
 import sys
 from pathlib import Path
+from unittest.mock import patch
 
 import pytest
 import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from scripts.cases.promote.promote_case_pipeline import (
+from scripts.cases.promote.run_case_promotion import (
     main,
     unresolved_conflicts,
 )
@@ -52,20 +53,39 @@ def test_fully_resolved_report_is_clean(tmp_path):
 
 def test_main_blocks_on_unresolved_report(tmp_path):
     p = _write(tmp_path, [{"field": "outcome", "resolution": None}])
-    rc = main(["--case-id", "eu_test_2023", "--conflict-report", str(p)])
-    assert rc == 1  # aborts at the gate, before any promotion subprocess
+    with (
+        patch(
+            "scripts.cases.promote.run_case_promotion.check_draft_integrity",
+            side_effect=AssertionError("draft integrity should not run"),
+        ),
+        patch(
+            "scripts.cases.promote.run_case_promotion.run_promotion_gate",
+            side_effect=AssertionError("promotion gate should not run"),
+        ),
+    ):
+        rc = main(["--case-id", "eu_test_2023", "--conflict-report", str(p)])
+    assert rc == 1
 
 
 def test_main_blocks_on_missing_report(tmp_path):
-    rc = main([
-        "--case-id", "eu_test_2023",
-        "--conflict-report", str(tmp_path / "does_not_exist.yaml"),
-    ])
+    with (
+        patch(
+            "scripts.cases.promote.run_case_promotion.check_draft_integrity",
+            side_effect=AssertionError("draft integrity should not run"),
+        ),
+        patch(
+            "scripts.cases.promote.run_case_promotion.run_promotion_gate",
+            side_effect=AssertionError("promotion gate should not run"),
+        ),
+    ):
+        rc = main([
+            "--case-id", "eu_test_2023",
+            "--conflict-report", str(tmp_path / "does_not_exist.yaml"),
+        ])
     assert rc == 1
 
 
 def test_non_report_yaml_is_rejected(tmp_path):
-    # A draft YAML (no `conflicts` key) must not silently pass the gate.
     p = tmp_path / "not_a_report.yaml"
     p.write_text(yaml.dump({
         "case_id": "eu_test_2023",
@@ -76,15 +96,23 @@ def test_non_report_yaml_is_rejected(tmp_path):
 
 
 def test_unwrapped_report_is_accepted(tmp_path):
-    # A report without the `conflict_report:` wrapper is still a valid report.
     p = tmp_path / "unwrapped.yaml"
     p.write_text(yaml.dump({"conflicts": [{"field": "outcome", "resolution": None}]}), encoding="utf-8")
     assert unresolved_conflicts(p) == ["outcome"]
 
 
 def test_main_blocks_on_non_report_file(tmp_path):
-    # Passing a draft YAML as --conflict-report aborts cleanly (no traceback).
     p = tmp_path / "draft.yaml"
     p.write_text(yaml.dump({"product_markets_considered": []}), encoding="utf-8")
-    rc = main(["--case-id", "eu_test_2023", "--conflict-report", str(p)])
+    with (
+        patch(
+            "scripts.cases.promote.run_case_promotion.check_draft_integrity",
+            side_effect=AssertionError("draft integrity should not run"),
+        ),
+        patch(
+            "scripts.cases.promote.run_case_promotion.run_promotion_gate",
+            side_effect=AssertionError("promotion gate should not run"),
+        ),
+    ):
+        rc = main(["--case-id", "eu_test_2023", "--conflict-report", str(p)])
     assert rc == 1
