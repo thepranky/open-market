@@ -39,7 +39,27 @@ def test_generate_us_case_id_normalizes_authority_name_and_year():
     )
     assert (
         generate_us_case_id("DOJ", "JetBlue Airways + Spirit Airlines", "2024")
-        == "us_doj_jetblue_airways_spirit_airlines_2024"
+        == "us_doj_jetblue_spirit_2024"
+    )
+    assert (
+        generate_us_case_id(
+            "DOJ",
+            "U.S. et al. v. JetBlue Airways Corporation and Spirit Airlines, Inc.",
+            "2024",
+        )
+        == "us_doj_jetblue_spirit_2024"
+    )
+    assert (
+        generate_us_case_id(
+            "FTC",
+            "Illumina, Inc., and GRAIL, Inc., In the Matter of",
+            "2023",
+        )
+        == "us_ftc_illumina_grail_2023"
+    )
+    assert (
+        generate_us_case_id("DOJ", "AT&T Inc. / Time Warner Inc.", "2018")
+        == "us_doj_att_timewarner_2018"
     )
 
 
