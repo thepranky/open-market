@@ -138,3 +138,13 @@ def test_cli_runs_without_error():
     )
     assert result.returncode in (0, 1), result.stderr
     assert '"checked"' in result.stdout
+
+
+def test_cli_allow_unknown_keeps_missing_anchors_advisory():
+    result = subprocess.run(
+        [sys.executable, str(SCRIPT), "--json", "--allow-unknown"],
+        capture_output=True,
+        text=True,
+    )
+    assert result.returncode == 0, result.stderr
+    assert '"checked"' in result.stdout

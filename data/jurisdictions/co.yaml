@@ -98,7 +98,7 @@ threshold_tests:
     effective_date: "2026-01-01"
 
     conditions:
-      - condition_id: co_threshold_monetary
+      - condition_id: co_notification_monetary
         metric: revenue_or_assets
         scope: domestic
         party: combined
@@ -126,7 +126,7 @@ threshold_tests:
     effective_date: "2026-01-01"
 
     conditions:
-      - condition_id: co_threshold_monetary
+      - condition_id: co_prior_approval_monetary
         metric: revenue_or_assets
         scope: domestic
         party: combined
@@ -305,7 +305,8 @@ source_passages:
       relevante, se entenderá autorizada la operación. Para este último caso se deberá
       únicamente notificar a la Superintendencia de Industria y Comercio de esta operación."
     supports_conditions:
-      - co_threshold_monetary
+      - co_notification_monetary
+      - co_prior_approval_monetary
       - co_market_share_20pct
 
 practitioner_notes:

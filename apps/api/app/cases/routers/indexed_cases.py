@@ -1,14 +1,9 @@
 from fastapi import APIRouter, HTTPException, Query
 
 from app.cases.models.api_responses import IndexedCaseDetail
-from app.cases.models.case_index import CaseIndexEntry
-from app.cases.services.index_case_service import get_all_indexed, get_indexed_case
+from app.cases.services.case_catalog import CatalogListQuery, get_case_catalog
 
 router = APIRouter(prefix="/indexed-cases", tags=["indexed-cases"])
-
-
-def _to_detail(entry: CaseIndexEntry) -> IndexedCaseDetail:
-    return IndexedCaseDetail.model_validate(entry.model_dump())
 
 
 @router.get("", response_model=list[IndexedCaseDetail])
@@ -19,23 +14,22 @@ def list_indexed_cases(
     year_from: int | None = Query(None),
     year_to: int | None = Query(None),
 ):
-    entries = get_all_indexed()
-    if jurisdiction:
-        entries = [e for e in entries if e.jurisdiction.upper() == jurisdiction.upper()]
-    if sector:
-        entries = [e for e in entries if sector.lower() in e.sector.lower()]
-    if outcome:
-        entries = [e for e in entries if e.outcome.value == outcome]
-    if year_from:
-        entries = [e for e in entries if e.decision_date.year >= year_from]
-    if year_to:
-        entries = [e for e in entries if e.decision_date.year <= year_to]
-    return [_to_detail(e) for e in entries]
+    catalog = get_case_catalog()
+    records = catalog.list(CatalogListQuery(
+        scope="indexed",
+        jurisdiction=jurisdiction,
+        sector=sector,
+        outcome=outcome,
+        year_from=year_from,
+        year_to=year_to,
+    ))
+    return [catalog.project_indexed_detail(record) for record in records]
 
 
 @router.get("/{case_id}", response_model=IndexedCaseDetail)
 def indexed_case_detail(case_id: str):
-    entry = get_indexed_case(case_id)
-    if not entry:
+    catalog = get_case_catalog()
+    record = catalog.get(case_id, data_layer="indexed")
+    if not record:
         raise HTTPException(status_code=404, detail=f"Indexed case '{case_id}' not found")
-    return _to_detail(entry)
+    return catalog.project_indexed_detail(record)

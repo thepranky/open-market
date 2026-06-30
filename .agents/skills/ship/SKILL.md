@@ -25,34 +25,41 @@ gh pr diff <number>
 
 Also read the linked spec file (usually referenced in the PR body).
 
-### Step 2 — Independent sub-agent review
+### Step 2 — Independent review
 
-Spawn a **fresh sub-agent** on a different model. The sub-agent must be cold — no context from this session — so its review is uncorrelated with the implementation decisions already made.
+Spawn a **fresh reviewer in an isolated worktree/session**. Prefer the other agent family when available (Claude Sonnet reviewing Codex work, or Codex reviewing Claude work). The reviewer must be cold — no context from this session — so its judgment is uncorrelated with the implementation decisions already made.
 
-Use `haiku` model for speed on small-to-medium PRs; use `sonnet` for large diffs or changes to core pipeline logic.
+Use a high-effort review for small/focused changes. Use max/deep effort for multi-file changes, schema changes, data changes, source grounding, or core extraction/promotion/screening logic.
 
 The sub-agent prompt must be self-contained:
 
 ```
-You are reviewing a PR for the Meridian project (open-market repo).
-Meridian is a merger-case research tool for competition lawyers.
-Core invariants: YAML is source of truth; drafts never auto-promote to data/cases/;
-quote_snippet must be verbatim text at the stated page in the PDF.
+You are doing a code review for a Meridian PR. Meridian is a merger-case research tool
+for competition lawyers in the open-market repo.
 
-Spec this PR implements: <paste spec Goal + Approach sections>
-PR diff: <paste full diff>
+Core invariants:
+- YAML is source of truth; Postgres is derived
+- Drafts never auto-promote to data/cases/
+- quote_snippet must be verbatim text at the stated page in the PDF
 
-Review for:
-1. Correctness bugs — wrong logic, off-by-one, broken edge cases
-2. Contract violations — the three invariants above
-3. Scope creep — anything beyond what the spec requires
-4. Missing verification — do the stated test/check commands actually exercise the change?
+Steps:
+1. Check out PR <number> in an isolated worktree/session.
+2. Read the linked spec and any linked DDR.
+3. Review the full PR diff against the spec.
+4. Check for correctness bugs, invariant violations, scope creep, missing tests,
+   missing docs/callers/compatibility surfaces, and weak verification.
+5. Return all findings classified as:
+   - BLOCKER (must fix before merge)
+   - ADVISORY (valid but optional)
+   - NOTED (informational only)
 
-For each finding: state file+line, describe the problem, and classify as:
-- BLOCKER (must fix before merge)
-- ADVISORY (valid but optional; small enough to fix now or worth noting for later)
-- NOTED (informational only)
+For each finding, include file+line and the reason it matters.
+
+Spec scope reference:
+<paste spec Goal + Approach sections>
 ```
+
+If an independent review cannot run, stop and report that shipping is blocked. Do not substitute your own review as the independent review.
 
 ### Step 3 — Triage findings
 
@@ -66,17 +73,12 @@ Report the triage to the user before making any changes: what you'll fix, what y
 
 ### Step 4 — Fix blockers
 
-Apply accepted blocker fixes to the branch. Keep fixes minimal — do not refactor or improve adjacent code.
+Apply accepted blocker fixes to the branch. Keep fixes minimal — do not refactor or improve adjacent code. Fix advisories only when they are small, clearly valid, and do not broaden the PR.
 
 ```bash
 git add <specific files>
 git commit -m "fix: <brief description of what the review found>"
 git push
-```
-
-Wait for CI to pass:
-```bash
-gh pr checks <number> --watch
 ```
 
 ### Step 5 — ROADMAP update and spec archive
@@ -90,19 +92,37 @@ gh pr checks <number> --watch
    ```bash
    mv docs/specs/<spec-filename>.md docs/specs/completed/<spec-filename>.md
    ```
-4. Commit:
+4. If the spec references a DDR, confirm the DDR still matches the final implementation. If the implementation changed the decision, update the DDR before merging.
+5. Commit:
    ```bash
-   git add ROADMAP.md docs/specs/
+   git add ROADMAP.md docs/specs/ docs/architecture/decisions/
    git commit -m "docs(<scope>): mark ROADMAP <id> done; archive spec (#N)"
    git push
    ```
 
-### Step 6 — Merge
+### Step 6 — Final verification
+
+Always verify the final PR state after all blocker fixes, ROADMAP edits, spec archive moves, and DDR edits:
+
+```bash
+git status --short --branch
+gh pr view <number> --json isDraft,mergeStateStatus,mergeable,statusCheckRollup,headRefName,baseRefName,headRefOid
+gh pr checks <number> --watch
+gh pr diff <number>
+```
+
+Merge only if CI is green, the working tree is clean except for no intended local changes, the final diff is still scoped to the spec, and the independent review has no accepted unresolved blockers.
+
+### Step 7 — Merge
 
 Confirm with the user if anything unexpected came up during review.
 
 ```bash
+gh pr ready <number>   # only if the PR is still a draft and all gates are green
 gh pr merge <number> --squash --delete-branch
+gh pr view <number> --json state,mergedAt,mergeCommit
+git status --short --branch
+git log --oneline -1
 ```
 
 Use `--squash` to keep main history as one commit per feature.

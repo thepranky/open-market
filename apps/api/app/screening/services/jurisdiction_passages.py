@@ -19,7 +19,7 @@ from app.screening.models.jurisdiction_verification import (
 )
 from app.screening.services.jurisdiction_numeric import value_in_text
 from app.screening.services.jurisdiction_verification_store import load_sidecar, write_sidecar
-from app.screening.services.source_fetcher import FetchStatus, SourceFetchResult, fetch_source, quote_in_text
+from app.screening.services.source_fetcher import FetchStatus, SourceFetchResult, quote_in_text
 
 
 @dataclass
@@ -326,6 +326,14 @@ def build_offline_fetch(fixtures_dir: Path) -> Callable[[str], SourceFetchResult
                 named["dre.pt"] = path
 
     def fetch(url: str) -> SourceFetchResult:
-        return _fetch_with_fixtures(url, named, lambda u: fetch_source(u))
+        return _fetch_with_fixtures(
+            url,
+            named,
+            lambda u: SourceFetchResult(
+                url=u,
+                fetch_status=FetchStatus.unsupported,
+                error="offline fixture not found",
+            ),
+        )
 
     return fetch

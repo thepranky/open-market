@@ -21,6 +21,7 @@ from app.screening.models.jurisdiction import (
     ThresholdCondition,
     ThresholdTest,
 )
+from app.screening.models.jurisdiction_verification import FetchStatus
 from app.screening.services.jurisdiction_numeric import value_in_text
 from app.screening.services.jurisdiction_passages import (
     build_offline_fetch,
@@ -131,6 +132,13 @@ def test_offline_uk_passage_gate_passes():
     assert report.passages_grounded
     assert report.numbers_confirmed
     assert "uk_turnover_target" in report.conditions_verified
+
+
+def test_offline_fetch_does_not_fall_back_to_live_network():
+    fetch = build_offline_fetch(FIXTURES)
+    result = fetch("https://example.test/no-fixture")
+    assert result.fetch_status == FetchStatus.unsupported
+    assert result.error == "offline fixture not found"
 
 
 def test_quote_mismatch_fails():

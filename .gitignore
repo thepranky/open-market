@@ -26,9 +26,21 @@ apps/web/.env.local
 
 # Bulk extraction run outputs (local pipeline artifacts)
 data/batch_runs/
+.agent-flow/
 
 # Cursor / local agent state
-.claude/
+.claude/*
+# Track only symlinked workflow skill entrypoints; keep settings and personal skills local.
+!.claude/skills/
+.claude/skills/*
+!.claude/skills/spec/
+!.claude/skills/spec/SKILL.md
+!.claude/skills/implement/
+!.claude/skills/implement/SKILL.md
+!.claude/skills/ship/
+!.claude/skills/ship/SKILL.md
+!.claude/skills/integrity/
+!.claude/skills/integrity/SKILL.md
 
 # Local/generated extraction artifacts
 data/source_text/debug/

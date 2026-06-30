@@ -88,7 +88,7 @@ export async function getGraphNeighborhood(
 }
 
 export async function searchAllCases(q: string): Promise<
-  { data_layer: string; case_id: string; case_name: string }[]
+  { data_layer: string; href?: string; case_id: string; case_name: string }[]
 > {
   if (!q.trim()) return [];
   return apiFetch(`/search/all?q=${encodeURIComponent(q)}`);

@@ -29,15 +29,15 @@ number even when regrouped, so existing spec / PR / DDR cross-references stay va
 |------|------|---------------|-----|-----|
 | ✅ 2.A | DDR-A data contracts + source integrity | `ddr-a-data-contracts.md` | Contract and grounding model understood | ✅ Done |
 | ✅ 2.B | DDR-B extraction pipeline | `ddr-b-extraction-pipeline.md` | Draft → promote pipeline, scripts, review loop | ✅ Done |
-| 2.C–2.I | DDR deep-dives (C–I) | `docs/architecture/decisions/` | Defensible understanding | Ready — restructure complete |
-| 2.K *(optional)* | Consolidate promotion policy in gate module | `promotion_gate.py`, `PromotionPolicy`, [DDR-K](docs/architecture/decisions/ddr-k-promotion-gate-module.md) | After 5.17, draft pre-check, explicit `--conflict-report` ordering, and graph-seed timing still live in the CLI adapters (`run_case_promotion.py` vs `run_bulk_promotion.py`) | **Defer** — evaluate folding `require_draft_integrity`, conflict fast-path, and `graph_seed_mode` (`per_case` / `batch_once` / `skip`) into `PromotionPolicy` + `run_promotion_gate`; keep bulk discovery and batch artifacts in `run_bulk_promotion.py`. No urgency while promotion volume is low. |
+| 2.C–2.I | DDR study set: original deep-dives | `ddr-c-search-graph.md` through `ddr-i-infrastructure.md` | Defensible understanding of search, screening, frontend, CI, and infra | Review/study; keep open until reviewed |
+| 2.J–2.P | DDR study set: pipeline + architecture decisions | `ddr-j-dual-extraction.md` through `ddr-p-gemini-screening-tools.md` | Understand recent extraction, promotion, grounding, graph, catalog, screening, and LLM tool decisions | Review/study; keep open until reviewed |
 
 ## Phase 3 — CI ✅
 
 | Step | What | Files / areas | Why | How |
 |------|------|---------------|-----|-----|
 | ✅ 3.1 | Canonical case schema gate on PR | `.github/workflows/data-contracts.yml`, `validate_cases.py` | Canonical YAML breaks silently today | ✅ Done (#19) |
-| ✅ 3.2 | Jurisdiction push tier on PR | `jurisdiction-verification.yml`, `run_jurisdiction_verification.py` | Screening regressions not gated on merge | ✅ Done (#19) |
+| ✅ 3.2 | Jurisdiction push tier on PR | `jurisdiction-verification.yml`, `run_jurisdiction_verification.py` | Screening regressions not gated on merge | ✅ Done (#19, nightly advisory tier #43) |
 | ✅ 3.3 | Case index schema gate on PR | `validate_case_index.py` | Index YAML drifts from `CaseIndexEntry` | ✅ Done (#19) |
 | ✅ 3.4 | Link DDR-A from case-research doc | `docs/architecture/case-research.md` | Onboarding misses contract reference | ✅ Done (#19) |
 | ✅ 3.5 | Web lint + build in CI | new `web-ci.yml` | Frontend breaks undetected | ✅ Done — [spec](docs/specs/completed/2026-06-25-ci-gaps.md): path-filtered Node-20 lint+build; baseline `.eslintrc.json` (`next/core-web-vitals` + `@typescript-eslint` plugin) + 2 entity escapes |
@@ -51,15 +51,28 @@ Cross-cutting refactors and contract clean-ups that aren't tied to one product s
 
 | Step | What | Files / areas | Why | How |
 |------|------|---------------|-----|-----|
-| 4.1 | Split `jurisdictions.py` router | `app/screening/routers/` | God-router | Spec: screening vs chat vs CRUD |
 | 4.2 | `data_jurisdictions_path` config | `app/shared/core/config.py` | Path derived from cases path | Explicit env var |
 | 4.3 | Rename overloaded symbols | `Juris.tsx`, home stats | Naming collision | `CaseRegulatorBadge`, `case_regulator_count` |
-| 4.4 | Neo4j deprecation decision | `graph/`, `neo4j_client.py` | Legacy noise | DDR-C then spec |
 | ✅ 4.5 | Case YAML semantic lint | `semantic_lint.py`, `lint_case_semantics.py` | Lawyer rules not enforced by Pydantic | ✅ Done (#20) — [spec](docs/specs/completed/2026-06-25-case-semantic-lint.md): deterministic gate (complaint-only markets not `defined`; dangling `supports_*` refs). Outcome-passage rule dropped (prose judgement; `section` on 9/7566 passages) → Stage 5a critic + dual extraction 5.9 |
-| 4.7 | Unify SourcePassage contracts | `case.py`, `jurisdiction.py`, integrity scripts | Two passage types, one grounding concept | Shared fields or aliases; one check module |
-| 4.8 | Deprecate `SourceDocument.url` | `case.py`, `data/cases/` | Legacy fallback after `pdf_url` / `case_page_url` | Audit records; migrate; then remove field |
+| 4.8a | Audit `SourceDocument.url` usage | `case.py`, loaders, integrity scripts, web evidence UI, `data/cases/` | Need to know which records and callers still depend on generic URL fallback before migration | Add audit command/report only; no schema or data removal |
+| 4.8b | Migrate source-document writers/data off generic `url` | extraction/promote writers, `data/cases/`, tests | New records should use `pdf_url` / `case_page_url` explicitly so fallback stops growing | Backfill existing canonical records where source role is clear; preserve read compatibility |
+| 4.8c | Remove `SourceDocument.url` fallback | `case.py`, web types/UI, integrity scripts | Legacy field can go only after callers and data no longer rely on it | Remove field and fallback branches; keep validation proving no canonical record uses `url` |
 | 4.9 | Printed-folio detection in PDF cache | `pdf_extractor.py`, `source_text/` | EC folio vs PDF-index offset is manual | Optional folio parse when building page cache |
 | ✅ 4.10 | Regroup `scripts/cases/` by stage | `apps/api/scripts/cases/` | Flat folder mixes discovery / extract / review / promote / integrity (ddr-b Q3a) | ✅ Done — [spec](docs/specs/completed/2026-06-25-regroup-cases-scripts.md): 7 buckets (`discovery/ extract/ review/ promote/ integrity/ evals/ embeddings/`); 4 discovery scripts renamed to `scrape_{eu,uk}_index` / `resolve_{eu,uk}_pdf_urls`; no behaviour change. Not path-only — fixed depth-anchored `__file__` arithmetic, cross-bucket flat imports, subprocess paths, and test imports |
+
+## Architecture
+
+Deep-module changes from the 2026-06-29 architecture review. Rows reuse existing IDs where they replace older open roadmap rows, so the work stays DRY and traceable.
+
+| Step | What | Files / areas | Why | How |
+|------|------|---------------|-----|-----|
+| 4.1 | Jurisdiction screening application module | `app/screening/services/screening_application.py`, `app/screening/routers/jurisdictions.py`, `threshold_engine.py` | `jurisdictions.py` mixes HTTP routing, catalog loading, deal adaptation, screening orchestration, verification joins, and response projection; `threshold_engine.py` should remain focused on threshold evaluation | [spec](docs/specs/2026-06-29-jurisdiction-screening-application.md), [DDR-O](docs/architecture/decisions/ddr-o-jurisdiction-screening-application.md) |
+| 4.4 | Graph neighborhood projection module | `app/cases/services/graph_projection.py`, `app/cases/routers/graph.py`, `graph/seed_graph.py`, `neo4j_client.py` | Node IDs, edge types, quality labels, hrefs, and Neo4j/YAML fallback shape are duplicated; Neo4j should be an adapter, not the public graph contract | [spec](docs/specs/2026-06-29-graph-neighborhood-projection.md), [DDR-N](docs/architecture/decisions/ddr-n-graph-neighborhood-projection.md) |
+| 4.7 | Source grounding module | `app/shared/source_grounding/`, `check_source_integrity.py`, `check_source_links.py`, `jurisdiction_passages.py`, `source_fetcher.py` | Case and jurisdiction grounding duplicate fetch/text/quote mechanics, but their `SourcePassage` contracts are product-owned and should not be merged | [spec](docs/specs/2026-06-29-source-grounding-module.md), [DDR-L](docs/architecture/decisions/ddr-l-source-grounding-module.md). Consolidates old 4.6 quote-integrity work; 4.6a remains the non-threshold field-support extension |
+| 4.11 | Gemini-backed screening tools | `app/screening/llm/`, `app/screening/tools/`, `jurisdictions.py`, `ChatIntake.tsx`, `JurisdictionChat.tsx` | Knowledge chat, intake chat, parse-financials prompts, model fallback, JSON recovery, and file parsing live inside the router and lack fake-adapter tests | [spec](docs/specs/2026-06-29-gemini-screening-tools.md), [DDR-P](docs/architecture/decisions/ddr-p-gemini-screening-tools.md). Rate limiting remains 8.4 |
+| ✅ 5.2 | Case research catalog module | `app/cases/services/case_catalog.py`, `case_service.py`, `index_case_service.py`, `cases.py`, `indexed_cases.py`, `search.py`, `features/cases/api.ts` | Canonical-vs-indexed policy, filters, search-hit projection, route targets, and trust labels are scattered across routes, services, and frontend assumptions | ✅ Done (#44) — CaseCatalog module owns list/search/filter policy, record-status labels, href routing, and hit projection; endpoint shapes preserved; 6 catalog tests + 55 API tests green |
+| ✅ 5.17 | Promotion gate module | `promotion_gate.py`, `run_case_promotion.py`, `run_bulk_promotion.py`, `check_source_links.py` | Single-case and bulk promotion knew different fragments of draft-to-canonical safety policy; bulk promotion could bypass grounding, semantic, and conflict gates at volume | ✅ Done (#45) — [spec](docs/specs/completed/2026-06-29-grounding-gates-bulk-promote-lane.md), [DDR-K](docs/architecture/decisions/ddr-k-promotion-gate-module.md): shared temp-canonical gate flow, batch artifacts, deprecated CLI wrappers |
+| 5.17a *(optional)* | Consolidate promotion policy in gate module | `promotion_gate.py`, `PromotionPolicy` | Draft pre-check, explicit `--conflict-report` ordering, and graph-seed timing still live in CLI adapters | **Defer** — fold `require_draft_integrity`, conflict fast-path, and `graph_seed_mode` into `PromotionPolicy`; keep bulk discovery and batch artifacts in `run_bulk_promotion.py` |
 
 ## Phase 5 — Product: Case research
 
@@ -78,12 +91,15 @@ unpromoted drafts EU 2,537 / UK 578 / US 9.
 | Step | What | Files / areas | Why | How |
 |------|------|---------------|-----|-----|
 | ✅ 5.1 | Unify branding | `README`, web nav, API title | CompMap vs Meridian | ✅ Done |
-| 5.2 | Indexed vs canonical decision | `case-research.md`, web UX | Two case layers confuse users (ddr-a Q7) | UX copy now; later merge or keep dual layer |
-| 5.3 | Eval metrics in UI (admin) | new `/admin` or debug panel | Reliability story hidden | Read-only view of benchmark output |
-| 5.5 | Embedding search eval | `data/evals/`, scripts | No quality gate on semantic search | Small gold query set + recall@k |
-| 5.6 | Wire verification to integrity | `Evidence.tsx`, models | `PropositionVerification` vs passage status diverge | Single trust signal from integrity results |
-| 5.7 | `case_type` enum expansion | `case.py` | JV / minority cases need typed `case_type`; US litigation also needs complaint-vs-decision typing (see 5.23) | When ingesting non-merger / litigation cases |
-| 5.8 | Automated `similar_cases` | graph / search services | Curated manually in YAML today | Scoring pipeline with quality bar |
+| 5.3 | Eval metrics admin view | `/admin/evals`, benchmark summary API/file reader | Reliability story hidden | Read-only page for latest `data/evals/results` benchmark summaries; no auth or benchmark recomputation in this PR |
+| 5.5 | Embedding search eval | `data/evals/`, semantic search eval script | No quality gate on semantic search | Small gold query set + recall@k runner; record baseline first, do not fail CI until threshold is agreed |
+| 5.6a | Case integrity trust-signal contract | `check_source_integrity.py`, API response models/tests | `PropositionVerification` and source-integrity output diverge | Add stable per-document/per-passage trust output from integrity checks; no UI change |
+| 5.6b | Evidence UI consumes trust signal | `Evidence.tsx`, `lib/types.ts`, case API | Users need one visible source-trust signal | Display optional integrity-derived status with fallback to existing `PropositionVerification` semantics |
+| 5.7a | `case_type` enum compatibility | `case.py`, API/web types, validation tests | JV / minority / litigation cases need typed values without breaking existing YAML | Introduce enum/aliases with backward-compatible default; no data backfill |
+| 5.7b | Backfill missing `case_type` values | `data/cases/`, `data/drafts/`, validation scripts | Many older canonical/draft records omit `case_type`; typed model should not rely on implicit defaults forever | Add explicit `case_type: merger` where known; validate canonical and representative drafts |
+| 5.8a | Similar-case scoring evaluation | graph/search services, `data/evals/` | Automated links need a quality bar before writing YAML | Define candidate scoring + small judged set; report precision/recall-style metrics only |
+| 5.8b | Offline `similar_cases` generator | graph/search services, scripts | Curated manually in YAML today | Generate candidate artifact from scoring pipeline; no canonical YAML writes by default |
+| 5.8c | Controlled `similar_cases` write path | generator, `data/cases/`, case UI/API | Good candidates should become reviewed canonical data | Write bounded reviewed batch to YAML and preserve existing display contract |
 
 ### Pipeline — full-depth, grounded, end-to-end
 
@@ -96,40 +112,51 @@ unpromoted drafts EU 2,537 / UK 578 / US 9.
 | ✅ 5.14 | Resolve remaining unresolved case-index PDFs | `resolve_case_index_pdf_urls.py`, `ingest_case.py --from-index --pdf-url`, `data/case_index/` | The conservative resolver leaves entries with no `pdf_url` — EU Phase II / appeals not in Cellar, older UK CC pages, US litigation dockets with no single decision PDF | ✅ Done — [spec](docs/specs/completed/2026-06-27-case-index-pdf-gap-resolution.md): audited 25 remaining misses; added 9 official decision/report/opinion PDFs (4 UK, 5 US), plus Kemira's official OFT PDF. Remaining unresolved entries are now 1 EU / 0 UK / 9 US. Audit artifact: `data/batch_runs/case_index_pdf_resolution_20260627.yaml` |
 | ✅ 5.24 | Deprecate LLM review stage (Stage 5a) | `scripts/cases/review/review_draft.py`, `apply_review_learning.py`, `create_review_learning_log.py`, pipeline docs | Dual extraction (5.9) supersedes the extract-then-LLM-critic loop; Stage 5a was already skipped in bulk runs and added latency + cost without replacing human review on conflicts | ✅ Done — [spec](docs/specs/completed/2026-06-27-deprecate-llm-review-stage.md): removed Stage 5a scripts, review-learning call sites/artifacts, `ingest_case --llm-review`, promotion Stage 8/9 calls, and active pipeline docs; `ddr-b` records the retirement decision |
 | ✅ 5.11 | Full-depth end-to-end orchestration | `run_e2e_extraction.py`, `ingest_case.py`, `compare_extractions.py`, `merge_drafts.py`, `check_review_readiness.py` | ~60 manual commands per case, and the bulk lane only ran `market_definition` — theories of harm + remedies are absent from 260/271 cases (ddr-b Q8) | ✅ Done — [spec](docs/specs/completed/2026-06-27-e2e-extraction-orchestrator.md): one CLI runs profile-selected extraction focuses, records resumable state, merges completed dual Draft A outputs plus single-pass metadata drafts, writes deterministic readiness packet + summary, and keeps human conflict resolution/promotion explicit after Stage 5a retirement |
-| ✅ 5.17 | Promotion gate module | `promotion_gate.py`, `run_case_promotion.py`, `run_bulk_promotion.py`, `check_source_links.py` | Single-case and bulk promotion knew different fragments of draft-to-canonical safety policy; bulk promotion could bypass grounding, semantic, and conflict gates at volume | ✅ Done — [spec](docs/specs/completed/2026-06-29-grounding-gates-bulk-promote-lane.md), [DDR-K](docs/architecture/decisions/ddr-k-promotion-gate-module.md): shared `promotion_gate.py` temp-canonical gate flow, `run_bulk_promotion.py` batch artifacts + one graph seed, deprecated wrappers for old CLI names |
-| 5.18 | Dual-extraction calibration for full depth & per jurisdiction | `calibrate_dual_extraction.py`, `compare_extractions.py`, `data/evals/` | 5.9 calibrated agreement-precision / conflict-recall on **EU market-definition golds only**; theories/remedies and the UK/US lanes have no calibration, so "review conflicts only" isn't yet trustworthy outside that slice | Add gold sets per focus (theories, remedies) and per jurisdiction (UK, US); recalibrate the conflict gate before each lane scales |
-| 5.12 | Workflow engine evaluation (conditional) | pipeline orchestration | Only if extraction (not human review) throughput becomes the bottleneck near 1000 cases (ddr-b Q7) | Evaluate Temporal/Prefect for durable resume + parallel fan-out; defer until justified |
+| ✅ 5.18 | Dual-extraction calibration for full depth & per jurisdiction | `calibrate_dual_extraction.py`, `compare_extractions.py`, `data/evals/` | 5.9 calibrated agreement-precision / conflict-recall on **EU market-definition golds only**; theories/remedies and the UK/US lanes have no calibration, so "review conflicts only" isn't yet trustworthy outside that slice | ✅ Done (#42) — [spec](docs/specs/completed/2026-06-28-dual-extraction-calibration-expansion.md): commitments now participate in reconciliation/comparison/calibration, and reviewed UK/US market-definition plus EU/UK/US theories golds are wired into benchmark configs. Remedies calibration is scaffolded pending reviewed remedies golds from future remedy-focused extractions. |
+| 5.12 | Workflow engine evaluation (conditional) | pipeline orchestration | Only if extraction (not human review) throughput becomes the bottleneck near 1000 cases (ddr-b Q7) | Do not run via default agent-flow. When throughput evidence exists, evaluate Temporal/Prefect for durable resume + parallel fan-out |
 
 ### EU lane — finish first
 
 | Step | What | Files / areas | Why | How |
 |------|------|---------------|-----|-----|
 | ✅ 5.15 | Non-English decision extraction | `extract_case_from_source.py`, `quote_snippet` schema, `case.py` | 168 EU entries resolve only to non-English decisions (`pdf_language` ≠ eng); the product is English-facing but `quote_snippet` must stay verbatim in the source language | ✅ Done — [spec](docs/specs/completed/2026-06-27-non-english-decision-extraction.md): threads `pdf_language` from the index scaffold through extraction prompts and emitted drafts; adds `source_language` + optional non-authoritative `quote_translation` to `SourcePassage`/`SourceDocument` (verbatim `quote_snippet` stays in the source language); bulk dry-run reports pending language buckets. Structured fields stay English; not a bulk-promotion drive |
-| 5.19 | EU full-depth backlog promotion | `data/drafts/eu/`, promote lane | 2,537 EU drafts exist but only 266 are promoted; the substantive remainder needs promoting at full depth, not the old market-def-only path | Triage by `extraction_status` (5.16); run the full-depth orchestration (5.11) + dual extraction (5.18) + grounded promote (5.17) over the substantive backlog |
-| 5.20 | EU theories/remedies backfill on promoted cases | `data/cases/eu/`, theories + remedies focuses | The 260 already-promoted EU cases are market-definition-only; they need theories of harm + remedies added without re-extracting market definition | Run theories + remedies focus passes; merge into existing canonical records; re-run integrity + semantic lint |
+| 5.19a | EU backlog triage manifest | `data/drafts/eu/`, `data/case_index/eu/`, promote lane | The EU backlog is too large to promote safely without a batch plan | Produce a reviewed manifest grouped by `extraction_status`, draft kind, review status, language, and blocking reason; no canonical writes |
+| 5.19b | EU full-depth pilot promotion | `data/drafts/eu/`, `data/cases/eu/`, promote lane | Prove full-depth promotion on real EU cases before batch writes | Promote a tiny reviewed pilot set (target <=5 cases) through 5.17 gates; record blockers separately |
+| 5.19c | EU full-depth batch 1 | `data/drafts/eu/`, `data/cases/eu/`, batch artifact | Substantive EU backlog needs bounded promotion PRs, not one corpus-wide PR | Promote first manifest-selected batch (target <=25 cases); create follow-up rows for later batches |
+| 5.20a | EU promoted-case depth gap manifest | `data/cases/eu/`, pipeline profiles | 260 promoted EU cases are market-definition-only; choose batches before re-extraction | Identify canonical cases missing theories/remedies and rank by source availability/complexity; no data writes |
+| 5.20b | EU theories/remedies pilot backfill | `data/cases/eu/`, theories + remedies focuses | Backfilling existing canonical records has merge risk | Add theories/remedies to a tiny reviewed pilot set (target <=5 cases); preserve market definitions |
+| 5.20c | EU theories/remedies batch 1 | `data/cases/eu/`, batch artifact | Full corpus depth should move in auditable chunks | Backfill first manifest-selected batch (target <=25 cases); create follow-up rows for later batches |
 
 ### UK lane
 
 | Step | What | Files / areas | Why | How |
 |------|------|---------------|-----|-----|
-| 5.21 | UK full-depth promotion drive | `data/drafts/uk/`, `cma_report` pipeline profile, promote lane | 487 UK index entries, 578 drafts, only **2** promoted — the lane is built but never driven | Confirm the `cma_report` profile covers theories/remedies section paths; calibrate dual extraction on CMA golds (5.18); run full-depth orchestration + grounded promote across the UK backlog |
+| 5.21a | UK full-depth readiness check | `cma_report` profile, UK golds/tests, promote lane | UK lane is built but not proven across CMA reports | Confirm profile coverage for theories/remedies and gate behavior; no backlog writes |
+| 5.21b | UK full-depth pilot promotion | `data/drafts/uk/`, `data/cases/uk/`, promote lane | UK has only 2 promoted cases; start with a tiny reviewed set | Promote target <=5 CMA cases through full-depth extraction + 5.17 gates |
+| 5.21c | UK full-depth batch 1 | `data/drafts/uk/`, `data/cases/uk/`, batch artifact | UK backlog promotion needs bounded auditable chunks | Promote first manifest-selected batch (target <=25 cases); create follow-up rows for later batches |
 
 ### US lane — build from scratch
 
 | Step | What | Files / areas | Why | How |
 |------|------|---------------|-----|-----|
-| 5.22 | US index discovery | new `scrape_us_index.py`, `scripts/cases/discovery/` | No US scraper exists — the 11 US index entries are hand-added and 10 lack a `pdf_url`; discovery must be built before any US extraction | Scrape DOJ Antitrust Division + FTC competition case listings into `CaseIndexEntry`; resolve PDFs via the existing `UsDojFtcResolver` (5.10) |
-| 5.23 | US extraction enablement (litigation-shaped) | `extract_case_from_source.py`, `case.py`, ties 5.7 | US merits documents are complaints / competitive-impact statements, not single decisions; complaint allegations must map to `definition_status: discussed`, not `defined`; needs a US gold set + calibration | Complaint-vs-decision handling in extraction; US golds for dual-extraction calibration (5.18); `case_type` typing for litigation (5.7) |
+| ✅ 5.22a | US discovery scraper contract | `scripts/cases/discovery/`, tests/fixtures | No US scraper exists; DOJ and FTC pages differ enough to need a shared contract first | ✅ Done (#46) — Added the shared index builder, US source-record contract, fixture tests, and resolver handoff |
+| ✅ 5.22a-fix | US case-index IDs from source URLs | `us_discovery_contract.py`, `data/case_index/us/` | Party-name ID heuristics were fitted to 11 seed cases and would not generalize for 5.22b/c | ✅ Done — [spec](docs/specs/completed/2026-06-30-us-case-id-from-source-url.md): DOJ caption slugs + FTC matter numbers from `source_url`; renamed 11 seed YAML files |
+| 5.22b | DOJ case-index scraper | new `scrape_us_doj_index.py`, `pdf_resolvers.py`, fixtures | DOJ litigation/decree listings need repeatable discovery | Scrape DOJ entries into `CaseIndexEntry` fixture/output shape; no FTC work |
+| 5.22c | FTC case-index scraper | new `scrape_us_ftc_index.py`, `pdf_resolvers.py`, fixtures | FTC administrative/federal-court listings differ from DOJ | Scrape FTC entries into the same contract; no DOJ refactor beyond shared helpers |
+| 5.22d | US index backfill + PDF resolution | `data/case_index/us/`, US discovery scripts | Hand-added US index is too small and has missing PDFs | Add a bounded reviewed US index batch from DOJ/FTC output and resolve official PDFs; record unresolved cases explicitly |
+| 5.23a | US litigation extraction profile | `extract_case_from_source.py`, `pipeline_profiles/us_court_opinion.yaml`, tests | Complaints and competitive-impact statements are not authority decisions | Teach extraction to map allegations to `definition_status: discussed`; depends on 5.7a |
+| 5.23b | US litigation gold set | `data/evals/gold/`, `data/evals/fixtures/` | US calibration needs reviewed complaint/opinion examples | Add small reviewed gold set for US litigation-shaped documents; source quotes must be official and exact |
+| 5.23c | US litigation calibration | `calibrate_dual_extraction.py`, benchmark configs | Dual extraction is not yet trustworthy for US litigation documents | Wire US litigation golds into calibration and record pass/fail thresholds |
+| 5.23d | US pilot extraction | `data/drafts/us/`, `data/cases/us/`, promote lane | US extraction should prove the full path before scaling | Run a tiny reviewed pilot (target <=3 cases) through extraction, calibration-informed review, and 5.17 gates |
 
 ## Phase 6 — Product: Screening
 
 | Step | What | Files / areas | Why | How |
 |------|------|---------------|-----|-----|
-| 4.6 | Jurisdiction quote integrity | `scripts/screening/` | `quoted_text` / `supports_conditions` unvalidated | Parity with `check_source_integrity.py`; partial overlap with 6.1 push offline passage gate |
 | 4.6a | Expand grounding to non-threshold fields | `jurisdiction.py`, `jurisdiction_passages.py`, `jurisdiction_verification.py`, `jurisdiction_baseline.py` | Review periods, fees, gun-jumping fines, regime flags ungrounded; errors found in Batch A/B sweep | [spec](docs/specs/2026-06-25-expand-field-grounding.md): add `supports_fields` to `SourcePassage`; field-path resolver; qualitative fields get passage-existence check; Tier 4 re-extraction handles interpretation cross-check |
 | 5.4 | Threshold engine unit tests | `tests/test_threshold_engine.py` | Only gold-deal regression today | Direct tests per test type |
 | 6.1 | Verification CI phase 1 — anchors + push offline passages | `_staleness_anchors.yaml`, `run_jurisdiction_verification.py`, `jurisdiction_passages.py`, `jurisdiction-verification.yml` | Only US HSR has staleness anchor; PRs can edit grounded quotes without fixture regression; broken source URLs undetected | [spec](docs/specs/2026-06-30-jurisdiction-verification-ci-phases.md) phase 1: anchors for all 13 `annual_adjustment` jurisdictions; push hard-fails offline passage on git-changed fixture-backed YAML; nightly advisory URL check |
-| 6.2 | Verification CI phase 2 — weekly live monitor + alerts | `jurisdiction-verification-weekly.yml`, `run_jurisdiction_verification.py`, `evaluate_weekly_verification.py` | Live regulator drift invisible until manual `--tier full`; no alert path | [spec](docs/specs/2026-06-30-jurisdiction-verification-ci-phases.md) phase 2: Sunday cron full-tier live fetch + re-extract artifacts; fail workflow on staleness drift or tier-2+ regression only; step summary + optional webhook (feeds 9.3 jurisdiction lane) |
+| 6.2 | Verification CI phase 2 — weekly live monitor + alerts | `jurisdiction-verification-weekly.yml`, `run_jurisdiction_verification.py`, `evaluate_weekly_verification.py` | Live regulator drift invisible until manual `--tier full`; no alert path | [spec](docs/specs/2026-06-30-jurisdiction-verification-ci-phases.md) phase 2: Sunday cron full-tier live fetch + re-extract artifacts; fail workflow on staleness drift or tier-2+ regression only; step summary + optional webhook (feeds 9.3b jurisdiction lane) |
 | 6.3 | Verification CI phase 3 — progressive tier-2 gates | `run_jurisdiction_verification.py`, `jurisdiction-fixture-capture.md` | Verified jurisdictions can regress on PR; fixtures not captured after live remediation | [spec](docs/specs/2026-06-30-jurisdiction-verification-ci-phases.md) phase 3: hard-fail push when sidecar ≥ `numbers_confirmed` and passage regresses; require offline fixture for verified jurisdictions; fixture capture runbook |
 
 ## Phase 7 — Deploy
@@ -137,28 +164,33 @@ unpromoted drafts EU 2,537 / UK 578 / US 9.
 | Step | What | Files / areas | Why | How |
 |------|------|---------------|-----|-----|
 | 7.1 | Production Docker / compose prod | `docker-compose.prod.yml`, Dockerfiles | Dev compose not production-ready | Multi-stage builds, non-root, healthchecks |
-| 7.2 | Managed Postgres + pgvector | env docs, migrations | Local-only DB today | Neon/Supabase/RDS; connection pooling |
-| 7.3 | API deploy (Fly/Railway/ECS) | `apps/api/`, CI | No hosted API | Container deploy + `DATABASE_URL` secrets |
-| 7.4 | Web deploy (Vercel) | `apps/web/`, env | No hosted frontend | `NEXT_PUBLIC_API_URL` to prod API |
-| 7.5 | Embed job + sync manifest | `index_embeddings.py`, CI or scheduler | Manual embed; stale vectors unknown | Post-deploy or nightly re-embed; content-hash manifest per case |
+| 7.2a | Managed Postgres provider decision | env docs, migrations | Local-only DB today | Decision/spec only: compare Neon/Supabase/RDS for pgvector, connection pooling, backups, and secrets; no deploy |
+| 7.2b | Managed Postgres config | env docs, migrations, smoke script | App needs a selected managed Postgres target | Add selected-provider env/runbook and migration smoke; depends on 7.2a |
+| 7.3a | API deploy target decision | `apps/api/`, CI docs | Fly/Railway/ECS have different operational contracts | Decision/spec only: choose API platform and required secrets/health checks; no deploy config |
+| 7.3b | API deploy config | `apps/api/`, selected platform config, CI | No hosted API | Add selected-platform config using `DATABASE_URL`, health check, and non-root production image; depends on 7.1 and 7.3a |
+| 7.4 | Web deploy (Vercel) | `apps/web/`, env | No hosted frontend | Configure Vercel with `NEXT_PUBLIC_API_URL` pointing at deployed API; depends on 7.3b |
+| 7.5a | Embedding sync manifest | `index_embeddings.py`, data hash manifest | Manual embed; stale vectors unknown | Track content hashes per case/market/theory and skip unchanged embeddings; no scheduler |
+| 7.5b | Scheduled embed job | `index_embeddings.py`, CI/deploy scheduler | Vectors need routine refresh after data changes | Add post-deploy or nightly re-embed using the sync manifest; depends on 7.5a |
 
 ## Phase 8 — Auth
 
 | Step | What | Files / areas | Why | How |
 |------|------|---------------|-----|-----|
-| 8.1 | Auth provider choice + spec | `docs/specs/auth.md` | Open API not production-safe | Clerk/Auth0; scope read vs write |
-| 8.2 | API middleware | `apps/api/main.py`, deps | Protect write/LLM endpoints | JWT validation on POST routes |
-| 8.3 | Web auth shell | `apps/web/` middleware | Gated routes | Sign-in, session, protected `/screen` |
-| 8.4 | Rate limiting on LLM routes | `jurisdictions` chat/parse | Cost/abuse surface | Per-user or per-IP limits |
+| 8.1 | Auth provider choice + spec | `docs/specs/auth.md` | Open API not production-safe | Decision/spec only: choose Clerk vs Auth0 and define read/write route policy |
+| 8.2 | API middleware | `apps/api/main.py`, deps | Protect write/LLM endpoints | JWT validation on POST routes; depends on 8.1 |
+| 8.3 | Web auth shell | `apps/web/` middleware | Gated routes | Sign-in, session, protected `/screen`; depends on 8.1 |
+| 8.4 | Rate limiting on LLM routes | `jurisdictions` chat/parse | Cost/abuse surface | Start with per-IP limits for unauthenticated LLM endpoints; switch key to authenticated user after 8.2/8.3 |
 
 ## Phase 9 — Ops
 
 | Step | What | Files / areas | Why | How |
 |------|------|---------------|-----|-----|
 | 9.1 | Structured logging | `apps/api/app/` | No production debugging | JSON logs, request IDs |
-| 9.2 | Error tracking | Sentry or similar | Silent failures in prod | SDK on API + web |
-| 9.3 | Nightly drift checks + alerts | `jurisdiction-verification.yml`, integrity scripts | Jurisdiction + case source drift undetected | Jurisdiction lane: 6.2 weekly live workflow + nightly staleness hard-fail (6.1 anchors). Case lane (still open): `check_source_integrity` on canonical cases with cache; optional webhook via 6.2 |
-| 9.4 | Secrets management | deploy platform | `.env` local only | Platform secrets, no keys in repo |
+| 9.2a | API error tracking | Sentry SDK, `apps/api/` | Silent API failures in prod | Add no-op-without-DSN SDK wiring and request context; no web changes |
+| 9.2b | Web error tracking | Sentry SDK, `apps/web/` | Silent frontend failures in prod | Add no-op-without-DSN SDK wiring and source-map/env docs; depends on 9.2a |
+| 9.3a | Case source-integrity nightly | integrity scripts, new workflow | Case source drift undetected | Add nightly canonical-case `check_source_integrity` job with cache and artifact output; no alerting yet |
+| 9.3b | Drift alerting channel | verification workflows, deploy/ops docs | Nightly failures need human attention | Add Slack/email alerting for jurisdiction and case drift jobs; jurisdiction lane via 6.2 weekly workflow + nightly staleness (6.1 anchors); case lane depends on 9.3a and chosen secrets platform |
+| 9.4 | Secrets management | deploy platform | `.env` local only | After deploy platform is selected, document required secrets and move runtime config into platform secrets; no keys in repo |
 
 ---
 

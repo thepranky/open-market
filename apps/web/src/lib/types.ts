@@ -233,6 +233,7 @@ export interface GraphNeighborhoodResponse {
 export interface CaseSearchHit {
   data_layer: string;
   record_status: string;
+  href?: string;
   case_id: string;
   case_name: string;
   jurisdiction: string;

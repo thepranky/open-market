@@ -3,11 +3,9 @@ from typing import Any
 from fastapi import APIRouter, HTTPException, Query
 
 from app.cases.models.api_responses import GraphEdge, GraphNeighborhoodResponse, GraphNode
-from app.cases.models.case import CaseRecord
-from app.cases.models.case_index import CaseIndexEntry
+from app.cases.services.case_catalog import CaseCatalog, CatalogRecord, get_case_catalog
 from app.cases.services.case_service import get_case
 from app.cases.services.graph_service import get_case_neighbourhood
-from app.cases.services.index_case_service import get_indexed_case
 
 router = APIRouter(prefix="/graph", tags=["graph"])
 
@@ -36,19 +34,22 @@ async def graph_neighborhood(
     Edges include id, source, target, type, quality_level, provenance.
     Falls back to YAML-derived data when Neo4j is unavailable.
     """
-    case = get_case(case_id)
-    if case:
-        return _neighborhood_canonical(case)
+    catalog = get_case_catalog()
+    record = catalog.get(case_id, include_indexed=include_indexed)
+    if record and record.data_layer == "canonical":
+        return _neighborhood_canonical(record, catalog)
 
-    if include_indexed:
-        entry = get_indexed_case(case_id)
-        if entry:
-            return _neighborhood_indexed(entry)
+    if record and record.data_layer == "indexed":
+        return _neighborhood_indexed(record, catalog)
 
     raise HTTPException(status_code=404, detail=f"Case '{case_id}' not found")
 
 
-def _neighborhood_canonical(case: CaseRecord) -> GraphNeighborhoodResponse:
+def _neighborhood_canonical(
+    record: CatalogRecord,
+    catalog: CaseCatalog,
+) -> GraphNeighborhoodResponse:
+    case = record.canonical
     nodes: list[GraphNode] = []
     edges: list[GraphEdge] = []
     center_id = f"case:{case.case_id}"
@@ -57,12 +58,12 @@ def _neighborhood_canonical(case: CaseRecord) -> GraphNeighborhoodResponse:
         id=center_id,
         label=case.case_name,
         type="case",
-        data_layer="canonical",
-        record_status="canonical_reviewed",
-        href=f"/cases/{case.case_id}",
+        data_layer=record.data_layer,
+        record_status=record.record_status,
+        href=catalog.href_for(record),
     ))
 
-    quality = "canonical_reviewed"
+    quality = record.record_status
 
     auth_id = f"authority:{case.authority}"
     nodes.append(GraphNode(id=auth_id, label=case.authority, type="authority"))
@@ -136,13 +137,10 @@ def _neighborhood_canonical(case: CaseRecord) -> GraphNeighborhoodResponse:
 
     for sim in case.similar_cases:
         sim_case_id = f"case:{sim.case_id}"
-        href = f"/cases/{sim.case_id}"
-        data_layer = "canonical"
-        record_status = "canonical_reviewed"
-        if not get_case(sim.case_id):
-            href = f"/indexed-cases/{sim.case_id}"
-            data_layer = "indexed"
-            record_status = "indexed_metadata"
+        sim_record = catalog.get(sim.case_id)
+        href = catalog.href_for(sim_record) if sim_record else None
+        data_layer = sim_record.data_layer if sim_record else None
+        record_status = sim_record.record_status if sim_record else None
         nodes.append(GraphNode(
             id=sim_case_id,
             label=sim.case_id.replace("_", " "),
@@ -165,7 +163,11 @@ def _neighborhood_canonical(case: CaseRecord) -> GraphNeighborhoodResponse:
     )
 
 
-def _neighborhood_indexed(entry: CaseIndexEntry) -> GraphNeighborhoodResponse:
+def _neighborhood_indexed(
+    record: CatalogRecord,
+    catalog: CaseCatalog,
+) -> GraphNeighborhoodResponse:
+    entry = record.indexed
     nodes: list[GraphNode] = []
     edges: list[GraphEdge] = []
     center_id = f"case:{entry.case_id}"
@@ -174,12 +176,12 @@ def _neighborhood_indexed(entry: CaseIndexEntry) -> GraphNeighborhoodResponse:
         id=center_id,
         label=entry.case_name,
         type="case",
-        data_layer="indexed",
-        record_status="indexed_metadata",
-        href=f"/indexed-cases/{entry.case_id}",
+        data_layer=record.data_layer,
+        record_status=record.record_status,
+        href=catalog.href_for(record),
     ))
 
-    quality = "indexed_metadata"
+    quality = record.record_status
 
     auth_id = f"authority:{entry.authority}"
     nodes.append(GraphNode(id=auth_id, label=entry.authority, type="authority"))

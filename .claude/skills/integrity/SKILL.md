@@ -1,0 +1,1 @@
+../../../.agents/skills/integrity/SKILL.md
