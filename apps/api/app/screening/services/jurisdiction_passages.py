@@ -19,7 +19,7 @@ from app.screening.models.jurisdiction_verification import (
 )
 from app.screening.services.jurisdiction_numeric import value_in_text
 from app.screening.services.jurisdiction_verification_store import load_sidecar, write_sidecar
-from app.screening.services.source_fetcher import FetchStatus, SourceFetchResult, fetch_source, quote_in_text
+from app.screening.services.source_fetcher import FetchStatus, SourceFetchResult, quote_in_text
 
 
 @dataclass
