@@ -1,0 +1,26 @@
+[skills]
+spec = "/spec"
+implement = "/implement"
+ship = "/ship"
+
+[defaults]
+planner = "claude"
+implementer = "codex"
+reviewer = "claude"
+
+[policy]
+require_clean_tree = true
+require_draft_pr = true
+
+[worktree]
+enabled = true
+base_dir = "../.agent-flow-worktrees"
+branch_prefix = "agent-flow"
+
+[agents.claude]
+command = "claude"
+extra_args = ["--permission-mode", "auto"]
+
+[agents.codex]
+command = "codex"
+extra_args = ["--sandbox", "danger-full-access", "--ask-for-approval", "never"]
