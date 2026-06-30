@@ -13,10 +13,13 @@ config would produce meaningless results: the reconciliation machinery does not 
 `commitments` at all (theories_of_harm is handled; commitments are not), and no gold
 files exist for theories/remedies focuses or UK/US jurisdictions.
 
-After this spec: the comparison and calibration scripts handle commitments; gold sets
-exist for every focus × jurisdiction slice; benchmark configs reference those golds;
-and calibration gate runs confirm ≥ 0.98 agreement precision across all slices before
-the expanded lanes are trusted at scale.
+After this spec: the comparison and calibration scripts handle commitments; reviewed
+market-definition and theories golds exist for the UK/US and EU/UK/US slices covered
+by the current canonical case set; benchmark configs reference those available golds;
+and the market-definition / theories calibration lanes can be scored before those
+lanes are trusted at scale. Remedies calibration is wired as a scaffold, but verified
+remedies golds remain deferred until candidate cases with structured commitments are
+extracted and human reviewed.
 
 ## Out of scope
 
@@ -28,6 +31,9 @@ the expanded lanes are trusted at scale.
   `commitments: list[Commitment]` field is calibrated here
 - The EU market_definition slice — already calibrated; benchmark config may gain new
   cases but no code changes affect that slice
+- Creating reviewed remedies golds when no current canonical case has structured
+  `commitments`; this spec wires the commitments path so that follow-up gold creation
+  can be scored once remedy-focused extractions exist
 
 ## Approach
 
@@ -158,13 +164,13 @@ value>` alongside the extracted `commitment_type`.
 | Slice | Target count | Candidate cases |
 |-------|-------------|-----------------|
 | EU theories | 2–3 | eu_apple_shazam_2018 + 2 EU cases with non-empty `theories_of_harm` in the canonical record that have PDF source text cached or a `pdf_url` |
-| EU remedies | 2–3 | 2–3 EU Phase-I-with-conditions or Phase-II-with-commitments decisions; confirmed by running a remedies-focus extraction and checking `commitments` is non-empty |
+| EU remedies | deferred | 2–3 EU Phase-I-with-conditions or Phase-II-with-commitments decisions; confirmed by running a remedies-focus extraction and checking `commitments` is non-empty |
 | UK market_definition | 2 | uk_viasat_inmarsat_2023, meta_giphy_2022 (only 2 canonical UK cases exist) |
 | UK theories | 2 | uk_viasat_inmarsat_2023, meta_giphy_2022 |
-| UK remedies | 1–2 | UK cases where the CMA imposed behavioural or structural commitments; identify from the 2 canonical cases or promote 1 additional UK case with known remedies before creating the gold |
+| UK remedies | deferred | UK cases where the CMA imposed behavioural or structural commitments; identify from the 2 canonical cases or promote 1 additional UK case with known remedies before creating the gold |
 | US market_definition | 3 | jetblue_spirit_2024, microsoft_activision_2023, us_tapestry_capri_2024 |
 | US theories | 3 | same 3 US cases |
-| US remedies | 2–3 | microsoft_activision_2023 (DOJ sought divestiture) + 1–2 additional US cases with consent decree or divestiture terms |
+| US remedies | deferred | microsoft_activision_2023 (DOJ sought divestiture) + 1–2 additional US cases with consent decree or divestiture terms |
 
 Gold files live in `data/evals/gold/` and follow the naming convention already in use:
 `<case_id>.<focus>.gold.yaml` (full) or `<case_id>.<focus>.partial.gold.yaml`
@@ -201,11 +207,14 @@ benchmarks:
 ```
 
 **Create `data/evals/benchmark.remedies.ci.yaml`:**
-Same structure, `focus: remedies`, all EU/UK/US remedies golds.
+Create the `focus: remedies` config as explicit scaffolding with `benchmarks: []` and
+instructions for adding reviewed remedies golds. It should not be part of the passing
+calibration gate until at least one verified remedies gold exists.
 
 ### 6. Calibration runs
 
-Run all three configs against the gold fixtures. Each must exit 0:
+Run the populated market-definition and theories configs against the gold fixtures.
+Each populated config must exit 0:
 
 ```bash
 cd apps/api
@@ -214,13 +223,11 @@ cd apps/api
 
 .venv/bin/python scripts/cases/extract/calibrate_dual_extraction.py \
   --golds --config ../../data/evals/benchmark.theories.ci.yaml
-
-.venv/bin/python scripts/cases/extract/calibrate_dual_extraction.py \
-  --golds --config ../../data/evals/benchmark.remedies.ci.yaml
 ```
 
 If any slice shows agreement precision < 0.98, investigate before trusting that focus
-or jurisdiction at scale. Findings go into the PR description, not this spec.
+or jurisdiction at scale. Findings go into the PR description, not this spec. Do not
+treat the remedies scaffold as a passing gate until remedies golds are populated.
 
 ## Verification
 
@@ -242,18 +249,17 @@ cd apps/api
   --focus remedies
 # Expected: "Agreed fields: N" and/or "Conflicts: M" where N+M > 0
 
-# Calibration gate — all three must exit 0
+# Calibration gate — populated configs must exit 0
 .venv/bin/python scripts/cases/extract/calibrate_dual_extraction.py \
   --golds --reuse-drafts --config ../../data/evals/benchmark.market_definition.ci.yaml
 
 .venv/bin/python scripts/cases/extract/calibrate_dual_extraction.py \
   --golds --reuse-drafts --config ../../data/evals/benchmark.theories.ci.yaml
-
-.venv/bin/python scripts/cases/extract/calibrate_dual_extraction.py \
-  --golds --reuse-drafts --config ../../data/evals/benchmark.remedies.ci.yaml
 ```
 
-Expected output for each: `PASS: agreement precision X.XXX >= threshold 0.980`
+Expected output for each populated config: `PASS: agreement precision X.XXX >= threshold 0.980`.
+The remedies config is expected to remain a non-passing scaffold until remedies golds
+are added.
 
 Note: `--reuse-drafts` scores drafts already on disk (no model calls). During
 implementation, remove the flag for the first run of each focus to actually extract and

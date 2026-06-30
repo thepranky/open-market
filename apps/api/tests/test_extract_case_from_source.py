@@ -9652,3 +9652,4 @@ class TestCommitmentsReconciliation:
                                       "theories_of_harm": [], "commitments": []}, focus="remedies")
         new_findings = [f for f in findings if f.finding_type == "new_from_source"]
         assert len(new_findings) == 1
+        assert new_findings[0].draft_source_refs == ["5"]

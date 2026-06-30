@@ -270,7 +270,18 @@ def test_remedies_focus_a_only_commitment():
     result = compare_drafts(a, b, focus="remedies")
     a_only = [c for c in result["conflicts"] if c["kind"] == "a_only"]
     assert len(a_only) == 1
+    assert a_only[0]["field"] == "commitments"
     assert a_only[0]["draft_a"] == "Access remedy"
+
+
+def test_remedies_focus_b_only_commitment():
+    a = _remedies_draft([_commitment("cm_1", "Divest unit A")])
+    b = _remedies_draft([_commitment("cm_1", "Divest unit A"), _commitment("cm_2", "Access remedy")])
+    result = compare_drafts(a, b, focus="remedies")
+    b_only = [c for c in result["conflicts"] if c["kind"] == "b_only"]
+    assert len(b_only) == 1
+    assert b_only[0]["field"] == "commitments"
+    assert b_only[0]["draft_b"] == "Access remedy"
 
 
 def test_remedies_focus_commitment_type_skipped_on_market_entries():

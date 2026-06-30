@@ -3428,6 +3428,8 @@ def _reconcile(
             _ref_map.setdefault(_mid, []).append(_page)
         for _mid in (_sp.get("supports_theories") or []):
             _ref_map.setdefault(_mid, []).append(_page)
+        for _mid in (_sp.get("supports_commitments") or []):
+            _ref_map.setdefault(_mid, []).append(_page)
 
     def _draft_meta(dr: dict) -> dict:
         """Extract draft market metadata from a draft item dict."""

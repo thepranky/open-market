@@ -203,7 +203,10 @@ def _list_and_label_for_name(record: dict, name: str) -> tuple[str, str]:
     """
     norm = _normalize_for_similarity(name)
     for list_key, label in _MARKET_LISTS:
-        if any(_normalize_for_similarity(m.get("name", "")) == norm for m in (record.get(list_key) or [])):
+        if any(
+            _normalize_for_similarity(m.get("name", "") or m.get("title", "")) == norm
+            for m in (record.get(list_key) or [])
+        ):
             return list_key, label
     return _MARKET_LISTS[0]
 
