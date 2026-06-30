@@ -66,6 +66,7 @@ class CaseSearchHit(BaseModel):
 
     data_layer: str
     record_status: str
+    href: Optional[str] = None
 
     case_id: str
     case_name: str

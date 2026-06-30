@@ -1,13 +1,13 @@
 from functools import lru_cache
 
-from app.shared.core.config import settings
+from app.shared.core import config
 from app.cases.loader.yaml_loader import load_cases_dict
 from app.cases.models import CaseRecord
 
 
 @lru_cache(maxsize=1)
 def _load_cases() -> dict[str, CaseRecord]:
-    return load_cases_dict(settings.data_cases_path)
+    return load_cases_dict(config.settings.data_cases_path)
 
 
 def get_all_cases() -> list[CaseRecord]:
