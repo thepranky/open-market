@@ -5,10 +5,11 @@ _gold_metadata:
   review_required: false
   created_from: data/cases/eu/eu_apple_shazam_2018.yaml
   notes: >
-    Derived from the promoted canonical record. Three theories of harm were assessed
-    by the Commission: data-advantage foreclosure via music taste data, input foreclosure
-    via removal of referral links to rival streaming services, and conglomerate foreclosure
-    in ACR software. All 3 theories are marked reviewed.
+    Derived from the promoted canonical record and corrected against the Commission
+    decision. The Commission's phase II assessment focused on access to commercially
+    sensitive information about rival digital music streaming providers, possible denial
+    or degradation of Shazam referrals and related inputs to rival streaming apps, and
+    possible foreclosure of competing ACR software solution providers. Human reviewed.
 
 case_id: eu_apple_shazam_2018
 case_name: "Apple / Shazam"
@@ -23,15 +24,15 @@ geographic_markets_considered: []
 theories_of_harm:
 
   - theory_id: toh_1
-    name: Data advantage — music taste data for streaming advertising
+    name: Access to commercially sensitive information — rival digital music streaming providers
     reviewed: true
 
   - theory_id: toh_2
-    name: Input foreclosure — removal of referral links to rival streaming services
+    name: Conglomerate foreclosure — denial or degradation of Shazam referrals and related inputs to rival digital music streaming apps
     reviewed: true
 
   - theory_id: toh_3
-    name: Conglomerate foreclosure — ACR software solutions
+    name: Conglomerate foreclosure — competing ACR software solutions
     reviewed: true
 
 commitments: []

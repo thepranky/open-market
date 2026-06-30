@@ -5,17 +5,19 @@ _gold_metadata:
   review_required: false
   created_from: data/cases/uk/meta_giphy_2022.yaml
   notes: >
-    Derived from the promoted canonical record. The CMA's Final Report found Meta's
-    acquisition of GIPHY harmed competition in social media (horizontal), display
-    advertising on social media (horizontal), and supply of GIF libraries/APIs (vertical).
-    All 3 product markets and 3 geographic markets are marked reviewed.
+    Derived from the promoted canonical record and corrected against the CMA remittal
+    final report. The CMA found SLCs in UK display advertising services through
+    horizontal unilateral effects/loss of dynamic competition, and in social media
+    services worldwide including the UK through vertical input foreclosure. The supply
+    of searchable GIF libraries was an upstream/input market, not a separate SLC market.
+    Human reviewed.
 
 case_id: meta_giphy_2022
 case_name: "Meta / GIPHY"
 authority: Competition and Markets Authority
 jurisdiction: UK
 sector: technology / social media
-decision_date: "2022-11-01"
+decision_date: "2022-10-18"
 parties:
   - name: Meta Platforms Inc
     role: acquirer
@@ -30,36 +32,36 @@ source_documents:
 
 product_markets_considered:
 
-  - name: Social media
+  - name: Social media services
     market_type: product
     expected_definition_status: defined
     reviewed: true
 
-  - name: Display advertising on social media
+  - name: Display advertising services
     market_type: product
     expected_definition_status: defined
     reviewed: true
 
-  - name: Provision of GIF libraries / searchable GIF APIs
+  - name: Supply of searchable GIF libraries
     market_type: product
     expected_definition_status: defined
     reviewed: true
 
 geographic_markets_considered:
 
-  - name: UK (social media)
+  - name: Worldwide supply of social media services (including the UK)
     market_type: geographic
     expected_definition_status: defined
     reviewed: true
 
-  - name: UK (display advertising on social media)
+  - name: UK supply of display advertising services
     market_type: geographic
     expected_definition_status: defined
     reviewed: true
 
-  - name: Global (GIF libraries / APIs)
+  - name: Global supply of searchable GIF libraries
     market_type: geographic
-    expected_definition_status: defined
+    expected_definition_status: left_open
     reviewed: true
 
 theories_of_harm: []

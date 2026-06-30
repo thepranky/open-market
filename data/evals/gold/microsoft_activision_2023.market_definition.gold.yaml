@@ -7,9 +7,9 @@ _gold_metadata:
   notes: >
     Derived from the promoted canonical record. The FTC complaint challenged the
     acquisition across three product markets (high-performance console gaming,
-    cloud gaming services, and AAA game publishing/content), all discussed but not
-    formally defined by the court. Geographic markets were US-scoped for each.
-    All 3 product markets and 2 geographic markets are marked reviewed.
+    cloud gaming services, and multi-game content library subscription services), all
+    discussed but not formally defined by the court. Geographic markets were US-scoped
+    for each. Human reviewed.
 
 case_id: microsoft_activision_2023
 case_name: "Microsoft / Activision Blizzard"
@@ -30,29 +30,34 @@ source_documents:
 
 product_markets_considered:
 
-  - name: High-performance console gaming
+  - name: High-performance consoles
     market_type: product
     expected_definition_status: discussed
     reviewed: true
 
-  - name: Cloud gaming services / subscription
+  - name: Cloud gaming subscription services
     market_type: product
     expected_definition_status: discussed
     reviewed: true
 
-  - name: Gaming content / AAA game publishing
+  - name: Multi-game content library subscription services
     market_type: product
     expected_definition_status: discussed
     reviewed: true
 
 geographic_markets_considered:
 
-  - name: United States (console gaming)
+  - name: United States (High-performance consoles)
     market_type: geographic
     expected_definition_status: discussed
     reviewed: true
 
-  - name: United States (cloud gaming)
+  - name: United States (cloud gaming subscription services)
+    market_type: geographic
+    expected_definition_status: discussed
+    reviewed: true
+
+  - name: United States (multi-game content library subscription services)
     market_type: geographic
     expected_definition_status: discussed
     reviewed: true

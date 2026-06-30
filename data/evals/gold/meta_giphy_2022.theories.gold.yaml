@@ -5,17 +5,17 @@ _gold_metadata:
   review_required: false
   created_from: data/cases/uk/meta_giphy_2022.yaml
   notes: >
-    Derived from the promoted canonical record. The CMA identified two theories of harm
-    — horizontal consolidation in display advertising on social media, and vertical
-    foreclosure via GIF API supply to third-party platforms. Both theories are marked
-    reviewed.
+    Derived from the promoted canonical record and corrected against the CMA remittal
+    final report. The CMA identified horizontal unilateral effects from loss of dynamic
+    competition in UK display advertising services, and vertical input foreclosure in
+    social media services worldwide including the UK. Human reviewed.
 
 case_id: meta_giphy_2022
 case_name: "Meta / GIPHY"
 authority: Competition and Markets Authority
 jurisdiction: UK
 sector: technology / social media
-decision_date: "2022-11-01"
+decision_date: "2022-10-18"
 
 product_markets_considered: []
 geographic_markets_considered: []
@@ -23,11 +23,11 @@ geographic_markets_considered: []
 theories_of_harm:
 
   - theory_id: toh_1
-    name: "Horizontal consolidation – display advertising on social media"
+    name: "Horizontal unilateral effects — loss of dynamic competition in UK display advertising services"
     reviewed: true
 
   - theory_id: toh_2
-    name: "Vertical foreclosure – GIF API supply to third-party platforms"
+    name: "Vertical input foreclosure — access to GIPHY for rival social media platforms"
     reviewed: true
 
 commitments: []

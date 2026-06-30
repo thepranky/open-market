@@ -5,10 +5,10 @@ _gold_metadata:
   review_required: false
   created_from: data/cases/uk/uk_viasat_inmarsat_2023.yaml
   notes: >
-    Derived from the promoted canonical record. All 4 product markets and 2 geographic
-    markets are marked reviewed. The CMA's Final Report defines broadband IFC markets
-    (commercial airlines and large business aircraft) as the primary relevant markets;
-    narrowband IFC and small business aircraft IFC are discussed but left open.
+    Derived from the promoted canonical record. The CMA's Final Report defines broadband
+    IFC markets (commercial airlines and large business aircraft) as the primary relevant
+    markets; narrowband IFC and small business aircraft IFC are discussed but left open.
+    Human reviewed.
 
 case_id: uk_viasat_inmarsat_2023
 case_name: "Viasat / Inmarsat (CMA)"
@@ -19,7 +19,7 @@ decision_date: "2023-05-09"
 parties:
   - name: Viasat Inc
     role: acquirer
-  - name: Inmarsat Holdings Limited
+  - name: Inmarsat Group Holdings Limited
     role: target
 
 source_documents:
