@@ -138,7 +138,7 @@ unpromoted drafts EU 2,537 / UK 578 / US 9.
 
 | Step | What | Files / areas | Why | How |
 |------|------|---------------|-----|-----|
-| 5.22a | US discovery scraper contract | `scripts/cases/discovery/`, tests/fixtures | No US scraper exists; DOJ and FTC pages differ enough to need a shared contract first | Define normalized source records, fixture tests, and resolver handoff; no live scrape/data writes |
+| ✅ 5.22a | US discovery scraper contract | `scripts/cases/discovery/`, tests/fixtures | No US scraper exists; DOJ and FTC pages differ enough to need a shared contract first | ✅ Done (#46) — Added the shared index builder, US source-record contract, fixture tests, and resolver handoff |
 | 5.22b | DOJ case-index scraper | new `scrape_us_doj_index.py`, `pdf_resolvers.py`, fixtures | DOJ litigation/decree listings need repeatable discovery | Scrape DOJ entries into `CaseIndexEntry` fixture/output shape; no FTC work |
 | 5.22c | FTC case-index scraper | new `scrape_us_ftc_index.py`, `pdf_resolvers.py`, fixtures | FTC administrative/federal-court listings differ from DOJ | Scrape FTC entries into the same contract; no DOJ refactor beyond shared helpers |
 | 5.22d | US index backfill + PDF resolution | `data/case_index/us/`, US discovery scripts | Hand-added US index is too small and has missing PDFs | Add a bounded reviewed US index batch from DOJ/FTC output and resolve official PDFs; record unresolved cases explicitly |
