@@ -15,6 +15,12 @@ Short DDRs documenting **why** the system is built this way. Fill one per deep-d
 | H | [ddr-h-ci-validation.md](ddr-h-ci-validation.md) | PR CI, pytest, gates, what's not gated |
 | I | [ddr-i-infrastructure.md](ddr-i-infrastructure.md) | Docker, Postgres, env, deploy path |
 | J | [ddr-j-dual-extraction.md](ddr-j-dual-extraction.md) | Dual extraction: align/diff two cold extractions, calibration gate |
+| K | [ddr-k-promotion-gate-module.md](ddr-k-promotion-gate-module.md) | Shared promotion gate module and CLI adapters |
+| L | [ddr-l-source-grounding-module.md](ddr-l-source-grounding-module.md) | Shared source-grounding implementation with product-owned passage models |
+| M | [ddr-m-case-research-catalog.md](ddr-m-case-research-catalog.md) | Canonical/indexed case catalog and projection policy |
+| N | [ddr-n-graph-neighborhood-projection.md](ddr-n-graph-neighborhood-projection.md) | Graph neighborhood projection, YAML and Neo4j adapters |
+| O | [ddr-o-jurisdiction-screening-application.md](ddr-o-jurisdiction-screening-application.md) | Deterministic jurisdiction screening application module |
+| P | [ddr-p-gemini-screening-tools.md](ddr-p-gemini-screening-tools.md) | Gemini-backed screening tools behind a test adapter |
 
 ## Conventions
 
