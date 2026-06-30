@@ -37,7 +37,7 @@ number even when regrouped, so existing spec / PR / DDR cross-references stay va
 | Step | What | Files / areas | Why | How |
 |------|------|---------------|-----|-----|
 | ✅ 3.1 | Canonical case schema gate on PR | `.github/workflows/data-contracts.yml`, `validate_cases.py` | Canonical YAML breaks silently today | ✅ Done (#19) |
-| ✅ 3.2 | Jurisdiction push tier on PR | `jurisdiction-verification.yml`, `run_jurisdiction_verification.py` | Screening regressions not gated on merge | ✅ Done (#19) |
+| ✅ 3.2 | Jurisdiction push tier on PR | `jurisdiction-verification.yml`, `run_jurisdiction_verification.py` | Screening regressions not gated on merge | ✅ Done (#19, nightly advisory tier #43) |
 | ✅ 3.3 | Case index schema gate on PR | `validate_case_index.py` | Index YAML drifts from `CaseIndexEntry` | ✅ Done (#19) |
 | ✅ 3.4 | Link DDR-A from case-research doc | `docs/architecture/case-research.md` | Onboarding misses contract reference | ✅ Done (#19) |
 | ✅ 3.5 | Web lint + build in CI | new `web-ci.yml` | Frontend breaks undetected | ✅ Done — [spec](docs/specs/completed/2026-06-25-ci-gaps.md): path-filtered Node-20 lint+build; baseline `.eslintrc.json` (`next/core-web-vitals` + `@typescript-eslint` plugin) + 2 entity escapes |
@@ -154,6 +154,9 @@ unpromoted drafts EU 2,537 / UK 578 / US 9.
 |------|------|---------------|-----|-----|
 | 4.6a | Expand grounding to non-threshold fields | `jurisdiction.py`, `jurisdiction_passages.py`, `jurisdiction_verification.py`, `jurisdiction_baseline.py` | Review periods, fees, gun-jumping fines, regime flags ungrounded; errors found in Batch A/B sweep | [spec](docs/specs/2026-06-25-expand-field-grounding.md): add `supports_fields` to `SourcePassage`; field-path resolver; qualitative fields get passage-existence check; Tier 4 re-extraction handles interpretation cross-check |
 | 5.4 | Threshold engine unit tests | `tests/test_threshold_engine.py` | Only gold-deal regression today | Direct tests per test type |
+| 6.1 | Verification CI phase 1 — anchors + push offline passages | `_staleness_anchors.yaml`, `run_jurisdiction_verification.py`, `jurisdiction_passages.py`, `jurisdiction-verification.yml` | Only US HSR has staleness anchor; PRs can edit grounded quotes without fixture regression; broken source URLs undetected | [spec](docs/specs/2026-06-30-jurisdiction-verification-ci-phases.md) phase 1: anchors for all 13 `annual_adjustment` jurisdictions; push hard-fails offline passage on git-changed fixture-backed YAML; nightly advisory URL check |
+| 6.2 | Verification CI phase 2 — weekly live monitor + alerts | `jurisdiction-verification-weekly.yml`, `run_jurisdiction_verification.py`, `evaluate_weekly_verification.py` | Live regulator drift invisible until manual `--tier full`; no alert path | [spec](docs/specs/2026-06-30-jurisdiction-verification-ci-phases.md) phase 2: Sunday cron full-tier live fetch + re-extract artifacts; fail workflow on staleness drift or tier-2+ regression only; step summary + optional webhook (feeds 9.3b jurisdiction lane) |
+| 6.3 | Verification CI phase 3 — progressive tier-2 gates | `run_jurisdiction_verification.py`, `jurisdiction-fixture-capture.md` | Verified jurisdictions can regress on PR; fixtures not captured after live remediation | [spec](docs/specs/2026-06-30-jurisdiction-verification-ci-phases.md) phase 3: hard-fail push when sidecar ≥ `numbers_confirmed` and passage regresses; require offline fixture for verified jurisdictions; fixture capture runbook |
 
 ## Phase 7 — Deploy
 
@@ -185,7 +188,7 @@ unpromoted drafts EU 2,537 / UK 578 / US 9.
 | 9.2a | API error tracking | Sentry SDK, `apps/api/` | Silent API failures in prod | Add no-op-without-DSN SDK wiring and request context; no web changes |
 | 9.2b | Web error tracking | Sentry SDK, `apps/web/` | Silent frontend failures in prod | Add no-op-without-DSN SDK wiring and source-map/env docs; depends on 9.2a |
 | 9.3a | Case source-integrity nightly | integrity scripts, new workflow | Case source drift undetected | Add nightly canonical-case `check_source_integrity` job with cache and artifact output; no alerting yet |
-| 9.3b | Drift alerting channel | verification workflows, deploy/ops docs | Nightly failures need human attention | Add Slack/email alerting for jurisdiction and case drift jobs; depends on 9.3a and chosen secrets platform |
+| 9.3b | Drift alerting channel | verification workflows, deploy/ops docs | Nightly failures need human attention | Add Slack/email alerting for jurisdiction and case drift jobs; jurisdiction lane via 6.2 weekly workflow + nightly staleness (6.1 anchors); case lane depends on 9.3a and chosen secrets platform |
 | 9.4 | Secrets management | deploy platform | `.env` local only | After deploy platform is selected, document required secrets and move runtime config into platform secrets; no keys in repo |
 
 ---
