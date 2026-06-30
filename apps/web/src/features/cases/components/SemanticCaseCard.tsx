@@ -6,7 +6,7 @@ import { Juris } from "./Juris";
 
 export function SemanticCaseCard({ hit, compact = false }: { hit: CaseSearchHit; compact?: boolean }) {
   const isSource = hit.data_layer === "canonical";
-  const href = isSource ? `/cases/${hit.case_id}` : `/indexed-cases/${hit.case_id}`;
+  const href = hit.href ?? (isSource ? `/cases/${hit.case_id}` : `/indexed-cases/${hit.case_id}`);
 
   if (compact) {
     return (
