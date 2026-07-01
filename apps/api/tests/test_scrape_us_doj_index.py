@@ -6,8 +6,11 @@ import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts" / "cases" / "discovery"))
 
 from app.cases.models.case_index import CaseIndexEntry  # noqa: E402
+from case_index_builder import CaseIndexParty  # noqa: E402
 from scrape_us_doj_index import (  # noqa: E402
+    DojListingCase,
     _listing_page_url,
+    _parse_parties,
     parse_doj_case_detail,
     parse_doj_listing_page,
     run,
@@ -159,3 +162,118 @@ def test_run_reports_missing_decision_date_skip(tmp_path):
     assert counts["built"] == 0
     assert counts["missing_decision_date"] == 1
     assert counts["written"] == 0
+
+
+def test_parse_doj_case_detail_accepts_consent_decree_disposition():
+    facts = parse_doj_case_detail(
+        """
+        <p><a href="https://www.justice.gov/atr/media/1/dl?inline">
+        Consent Decree</a> (June 15, 2023)</p>
+        <p><a href="https://www.justice.gov/atr/media/2/dl?inline">
+        Complaint</a> (January 10, 2023)</p>
+        """
+    )
+
+    assert facts.decision_date == "2023-06-15"
+    assert facts.selected_label == "Consent Decree"
+    assert facts.outcome_guess == "cleared_with_conditions"
+
+
+def test_parse_doj_case_detail_maps_blocked_opinion_outcome():
+    facts = parse_doj_case_detail(
+        """
+        <p><a href="https://www.justice.gov/atr/media/1/dl?inline">
+        Memorandum Opinion</a> (March 5, 2024)</p>
+        <p>The court entered a permanent injunction blocking the merger.</p>
+        """
+    )
+
+    assert facts.decision_date == "2024-03-05"
+    assert facts.outcome_guess == "blocked"
+
+
+def test_parse_doj_case_detail_leaves_ambiguous_outcome_pending():
+    facts = parse_doj_case_detail(
+        """
+        <p><a href="https://www.justice.gov/atr/media/1/dl?inline">
+        Memorandum Opinion</a> (March 5, 2024)</p>
+        <p>Background and procedural history only.</p>
+        """
+    )
+
+    assert facts.decision_date == "2024-03-05"
+    assert facts.outcome_guess is None
+
+    listing = DojListingCase(
+        case_title="U.S. v. Example Corp., et al.",
+        case_page_url="https://www.justice.gov/atr/case/us-v-example-corp-et-al",
+        listing_open_date="2024-01-01",
+        case_type="Civil Merger",
+        industry_labels=(),
+        document_labels=(),
+    )
+    record = to_case_index_dict(to_us_scraped_case(listing, facts))
+    assert record["outcome"] == "pending"
+
+
+def test_parse_parties_splits_clear_two_party_captions():
+    parties = _parse_parties(
+        "U.S. v. JetBlue Airways Corporation and Spirit Airlines, Inc."
+    )
+
+    assert parties == (
+        CaseIndexParty(name="JetBlue Airways Corporation", role="acquirer"),
+        CaseIndexParty(name="Spirit Airlines, Inc", role="target"),
+    )
+
+
+def _run_fixture_once(tmp_path, *, force: bool, existing_case_id: str | None = None):
+    listing_html = _fixture("listing_sample.html")
+    detail_html = _fixture("detail_sample.html")
+    detail_url = parse_doj_listing_page(listing_html)[0].case_page_url
+    case_id = "us_doj_columbus_mckinnon_corporation_2026"
+    if existing_case_id is not None:
+        (tmp_path / f"{existing_case_id}.yaml").write_text(
+            "case_id: placeholder\n", encoding="utf-8"
+        )
+
+    def fetch_text(url: str, _timeout: float) -> str:
+        if url == _listing_page_url(0):
+            return listing_html
+        if url == detail_url:
+            return detail_html
+        raise AssertionError(f"unexpected URL: {url}")
+
+    return run(
+        output_dir=tmp_path,
+        dry_run=False,
+        limit=1,
+        force=force,
+        delay=0,
+        timeout=20,
+        start_page=0,
+        fetch_text=fetch_text,
+        sleep_fn=lambda _seconds: None,
+    ), case_id
+
+
+def test_run_skips_existing_output_without_force(tmp_path):
+    counts, case_id = _run_fixture_once(
+        tmp_path, force=False, existing_case_id="us_doj_columbus_mckinnon_corporation_2026"
+    )
+
+    assert counts["skipped_existing"] == 1
+    assert counts["written"] == 0
+    assert (tmp_path / f"{case_id}.yaml").read_text(encoding="utf-8") == "case_id: placeholder\n"
+
+
+def test_run_overwrites_existing_output_with_force(tmp_path):
+    counts, case_id = _run_fixture_once(
+        tmp_path, force=True, existing_case_id="us_doj_columbus_mckinnon_corporation_2026"
+    )
+
+    assert counts["written"] == 1
+    assert counts["skipped_existing"] == 0
+    written = (tmp_path / f"{case_id}.yaml").read_text(encoding="utf-8")
+    assert "case_id: placeholder" not in written
+    assert "us_doj_columbus_mckinnon_corporation_2026" in written

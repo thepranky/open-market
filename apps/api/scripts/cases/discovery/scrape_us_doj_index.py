@@ -19,8 +19,6 @@ import httpx
 import yaml
 
 _API_DIR = Path(__file__).resolve().parents[3]
-_REPO_ROOT = _API_DIR.parents[1]
-_INDEX_DIR = _REPO_ROOT / "data" / "case_index" / "us"
 _TEMP_OUTPUT_DIR = Path(tempfile.gettempdir()) / "meridian-us-doj-case-index"
 
 sys.path.insert(0, str(_API_DIR))
@@ -361,6 +359,7 @@ _DECISION_PATTERNS: tuple[tuple[int, re.Pattern[str]], ...] = (
     (110, re.compile(r"memorandum opinion", re.IGNORECASE)),
     (105, re.compile(r"\bopinion\b", re.IGNORECASE)),
     (100, re.compile(r"\bfinal judgment\b", re.IGNORECASE)),
+    (98, re.compile(r"consent decree", re.IGNORECASE)),
     (95, re.compile(r"\bjudgment\b", re.IGNORECASE)),
     (90, re.compile(r"\bdecision and order\b", re.IGNORECASE)),
     (80, re.compile(r"\border\b", re.IGNORECASE)),

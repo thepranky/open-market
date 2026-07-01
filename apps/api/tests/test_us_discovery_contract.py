@@ -43,12 +43,14 @@ def _href_from_fixture(relative_path: str) -> str:
 
 
 def test_generate_us_case_id_from_fixture_urls():
-    doj_href = _href_from_fixture("us_doj/listing_sample.html")
+    doj_href = (
+        "/atr/case/us-v-columbus-mckinnon-corporation-et-al"
+    )
     ftc_href = _href_from_fixture("us_ftc/listing_sample.html")
 
     assert (
         generate_us_case_id("DOJ", doj_href, "2026")
-        == "us_doj_cal_maine_foods_inc_2026"
+        == "us_doj_columbus_mckinnon_corporation_2026"
     )
     assert generate_us_case_id("FTC", ftc_href, "2023") == "us_ftc_201_0144_2023"
 
