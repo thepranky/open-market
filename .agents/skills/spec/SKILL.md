@@ -1,22 +1,36 @@
 ---
 name: spec
-description: Turn a Meridian ROADMAP item into a spec file ready for implementation. Use when the user says "write a spec for", "spec out", "plan this", or names a ROADMAP item ID (like "5.12"). Always surface ambiguities and ask questions BEFORE writing — never spec something unclear. Invoke with /spec <roadmap-item-id-or-description>.
+description: Turn a Meridian ROADMAP item or a resolved wayfinder ticket into a spec file ready for implementation. Use when the user says "write a spec for", "spec out", "plan this", names a ROADMAP item ID (like "5.12"), or names a GitHub issue (like "#50", or an issue URL). Always surface ambiguities and ask questions BEFORE writing — never spec something unclear. Invoke with /spec <roadmap-item-id-or-issue-or-description>.
 ---
 
 # spec
 
-Translate a ROADMAP item into `docs/specs/YYYY-MM-DD-name.md` and, when the design decision itself matters, a DDR under `docs/architecture/decisions/`.
+Translate a ROADMAP item or a resolved wayfinder ticket into `docs/specs/YYYY-MM-DD-name.md` and, when the design decision itself matters, a DDR under `docs/architecture/decisions/`.
 
 A spec is a contract between the person writing it and the person implementing it (who may be a fresh Claude instance with no context). It must be unambiguous enough that implementation requires no guesswork.
 
 ## Process
 
-### Step 1 — Read the ROADMAP item
+### Step 1 — Read the source item
+
+The input is either a **ROADMAP item** or a **resolved wayfinder ticket** (a closed GitHub issue labelled `wayfinder:*`). Both are valid; read whichever was named.
+
+**If a ROADMAP item ID or keyword:**
 
 1. Open `ROADMAP.md` and find the item by ID (e.g. `5.12`) or keyword match
 2. Read the full row: What, Files/areas, Why, How columns
 3. Follow any cross-references to existing specs (`docs/specs/completed/`) or DDRs (`docs/architecture/decisions/`) mentioned in that row
-4. Read `docs/specs/_template.md`; every new spec must follow that template exactly
+
+**If a GitHub issue number or URL (e.g. `#50`):**
+
+1. `gh issue view <n> --comments` — read the whole thing
+2. The **body** holds the question the ticket was opened to answer. It is *not* a spec: it names constraints and unknowns, not a change set.
+3. The **resolution comment** holds the answer — the decision, the evidence behind it, the alternatives rejected and why. This is the real input. Treat its reasoning as binding: if it says a threshold must never be loosened, the spec must not loosen it.
+4. **If the issue is still open, stop.** An unresolved ticket has no decision to spec. Say so and suggest `/wayfinder` on it instead.
+5. Read the parent map issue (labelled `wayfinder:map`) for the Notes block — it carries standing decisions every spec must honour — and the Decisions-so-far index for anything the resolution depends on.
+6. A single resolution may imply more than one spec-sized change. Say so and propose the split rather than writing one sprawling spec.
+
+**In both cases:** read `docs/specs/_template.md`; every new spec must follow that template exactly.
 
 ### Step 2 — Read the code and surrounding docs
 
