@@ -15,6 +15,7 @@ import pytest
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from app.shared.utils.pdf_extractor import (
+    DEFAULT_CACHE_DIR,
     extract_pages,
     fetch_and_extract,
     get_page_text,
@@ -22,6 +23,28 @@ from app.shared.utils.pdf_extractor import (
     load_cache,
     save_cache,
 )
+
+
+# ---------------------------------------------------------------------------
+# DEFAULT_CACHE_DIR
+# ---------------------------------------------------------------------------
+
+
+def test_default_cache_dir_points_at_the_repo_level_source_text():
+    """DEFAULT_CACHE_DIR must resolve to <repo>/data/source_text.
+
+    Regression: it was derived with parents[4], which lands on <repo>/apps.
+    Nothing raised — every caller relying on the default simply missed the
+    cache and silently re-fetched the PDF it already had.
+
+    The repo root is derived independently here (from the test's own path)
+    so the assertion cannot drift with the module it checks.
+    """
+    repo_root = Path(__file__).resolve().parents[3]
+
+    assert DEFAULT_CACHE_DIR == repo_root / "data" / "source_text"
+    # data/ is tracked; source_text/ is gitignored and absent in CI.
+    assert DEFAULT_CACHE_DIR.parent.is_dir()
 
 
 # ---------------------------------------------------------------------------

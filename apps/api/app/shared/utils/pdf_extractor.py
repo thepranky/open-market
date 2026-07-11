@@ -35,7 +35,8 @@ except ImportError:
     _HAS_PYPDF = False
 
 
-_REPO_ROOT = Path(__file__).resolve().parents[4]
+# apps/api/app/shared/utils/pdf_extractor.py -> five levels up is the repo root.
+_REPO_ROOT = Path(__file__).resolve().parents[5]
 DEFAULT_CACHE_DIR = _REPO_ROOT / "data" / "source_text"
 
 _HEADERS = {
